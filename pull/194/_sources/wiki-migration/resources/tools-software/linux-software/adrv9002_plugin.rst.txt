@@ -1,0 +1,154 @@
+ADRV9002 Plugin Description
+===========================
+
+The ADRV9002 plugin works with the :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`. You always use the latest version if possible. Changing any field will immediately write changes which have been made to the ADRV9002 settings to the hardware, and then read it back to make sure the setting is valid. If you want to set something that the GUI changes to a different number, that either means that GUI is rounding (sorry), or the hardware (either the ADRV9002 or the FPGA fabric) does not support that mode/precision.
+
+If you want to go play with ``/sys/bus/iio/devices/....`` and manipulate the devices behind the back of the GUI, it's still possible to see the settings by clicking the ``Reload Settings`` button at the bottom of the GUI.
+
+The ADRV9002 view is divided in four sections:
+
+-  **Device Global Settings**
+-  **Receive Chain**
+-  **Transmit Chain**
+-  **FPGA Settings**
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9001/main_plugin_1.png
+   :align: right
+   :width: 400px
+
+Device Global Settings
+----------------------
+
+-  **Profile configuration:** Allows a Profile configuration to be loaded from a file. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **Temperature:** Reports the device temperature.
+
+Receive Chain
+-------------
+
+-  **RF Bandwidth(MHz):** Displays the Primary Signal Bandwidth of the current Profile. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **Sampling Rate(MSPS):** Displays the RX Sample Rate of the current Profile. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **Gain Control:** Selects one of the available modes: spi, pin and automatic. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **Hardware Gain(dB):** Controls the RX gain only in SPI/PIN mode. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **RSSI(dB):** Displays the received strength signal level. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **Decimated Power(dB):** Displays the decimated power. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **NCO (Hz):** Controls the frequency offset correction. The setting is only visible if the loaded profile supports nco correction. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **Powerdown:** Disables the channel. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **Dynamic Adc Switch:** Enables dynamic adc switch. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **ENSM:** Selects one of the available modes. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **Port Enable:** Selects how the port can be enabled (spi or pin). :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **Local Oscillator (MHz):** Controls the carrier frequency. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **Digital Gain Control:** Selects the digital control mode to use. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **Interface Gain (dB):** Controls the Slicer block gain. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **Tracking:** :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+
+   -  **Quadrature FIC**
+   -  **BBDC Rejection**
+   -  **HD2**
+   -  **AGC**
+   -  **Quadrature Poly**
+   -  **RSSI**
+   -  **RDFC**
+
+Transmit Chain
+--------------
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9001/main_plugin_transmit.png
+   :align: right
+   :width: 400px
+
+-  **RF Bandwidth(MHz):** Displays the Primary Signal Bandwidth of the current Profile. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **Sampling Rate(MSPS):** Displays the RX Sample Rate of the current Profile. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **Attenuation (dB):** Controls TX attenuation. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **Attenuation Control:** Select control mode between spi, pin or bypass. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **ENSM:** Selects one of the available modes. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **Port Enable:** Selects how the port can be enabled (spi or pin). :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **Powerdown:** Disables the channel. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **NCO (Hz):** Controls the frequency offset correction. The setting is only visible if the loaded profile supports nco correction. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **Local Oscillator (MHz):** Controls the carrier frequency. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+-  **Tracking:** :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+
+   -  **Quadrature**
+   -  **PA Correction**
+   -  **LO Leakage**
+   -  **Close Loop Gain**
+   -  **Loopback Delay**
+
+FPGA Settings
+-------------
+
+Transmit/DDS
+~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/adrv9001/main_plugin_fpga.png
+   :width: 400px
+
+The plugin provides several options on how the transmitted data is generated.
+
+It is possible to either use the built-in two tone **Direct Digital Synthesizer (DDS)** to transmit a bi-tonal signal on channels I and Q of the DAC. Or it is possible to use the **Direct Memory Access (DMA) facility** to transmit custom data that you have stored in a file.
+
+This can be achieved by selecting one of the following options listed by the **DDS Mode**:
+
+One CW Tone
+~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/one_cw_tone.png
+   :align: right
+
+In **One CW Tone** mode one continuous wave (CW) tone will be outputted. The plugin displays the controls to set the Frequency, Amplitude and Phase for just one tone and makes sure that the amplitude of the other tone is set to 0. The resulting signal will be outputted on the Channel I of the DAC and the exact same signal but with a difference in phase of 90 degrees will be outputted on the Channel Q of the DAC.
+
+
+Two CW Tone
+~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/two_cw_tones.png
+   :align: right
+
+In **Two CW Tone** mode two continuous wave (CW) tones will be outputted. The plugin displays the controls to set the frequencies F1 and F2, amplitudes A1 and A2, phases P1 and P2 for the two tones. The resulting signal will be outputted on the Channel I of the DAC and the exact same signal but with a difference in phase of 90 degrees will be outputted on the Channel Q of the DAC.
+
+
+Independent I/Q Control
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/iq_independent.png
+   :align: right
+
+In **Independent I/Q Control** the plugin displays the controls to set the frequencies, amplitudes and phases for the two tones that will be outputted on channel I and additionally it allows for the two tones that will be outputted on channel Q of the DAC to be configured independently.
+
+|
+
+.. note::
+
+   Note: The bi-tonal signal (T) is defined as the sum of two tones:
+
+   | T(t) = A1 \* sin(2 \* p \* F1 \* t + P1) + A2 \* sin(2 \* p \* F2 \* t + P2),
+   | where A-amplitude, F-frequency, P-phase of a tone.
+
+
+
+DAC Buffer Output
+~~~~~~~~~~~~~~~~~
+
+|image1| The file selector under the **File Selection** section is used to locate and choose the desired data file. Under the **DAC Channels** section the enabled channels will be used to transmit the data stored in the file. To finalize the process, a click on the **Load** button is required.
+
+| **Restrictions:**
+| \* There are two types of files than can be loaded: **.txt** or **.mat**. The IIO-Oscilloscope comes with several :git-iio-oscilloscope:`data files <waveforms>` that can be used. If you want to create your own data files please take a look at the :doc:`Basic IQ Data Files </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/basic_iq_datafiles>` documentation first.
+| \* Due to hardware limitation only specific combinations of enabled channels are possible. You can enable a total of 1, 2, 4, etc. channels. If 1 channel is enabled then it can be any of them. If two channels are enabled then channels 0, 1 or channels 2, 3 can be enabled and so on.
+
+
+Disable
+~~~~~~~
+
+| In this mode both DDS and DMA are disabled causing the DAC channels to stop transmitting any data.
+|
+
+.. note::
+
+   Upon pressing **Reload Settings** button the values will be reloaded with the corresponding driver values. Useful in scenarios where the diver values get changed outside this plugin and a refresh on plugin's values is needed.
+
+
+.. hint::
+
+   Some plugin values will be rounded to the nearest value supported by the hardware.
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/linux-software/dac_output_buffer_panel.png

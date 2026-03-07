@@ -1,0 +1,125 @@
+AD5592R/AD5593R No-OS Software
+==============================
+
+Introduction
+------------
+
+This document describes the No-OS software used to control the AD5592R and AD5593R parts.
+
+Overview
+--------
+
+The :adi:`AD5592R`/:adi:`AD5593R` have eight I/Ox pins (I/O0 to I/O7) that can be independently configured as digital-to-analog converter (DAC) outputs, analog-to-digital converter (ADC) inputs, digital outputs, or digital inputs
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5592R`
+-  :adi:`AD5593R`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5592R`
+-  :adi:`EVAL-AD5593R`
+
+Driver Description
+------------------
+
+The driver contains three parts:
+
+-  The driver for the AD5592R base part, which may be used, without modifications, with any microcontroller.
+-  The specific communication part for AD5592R with SPI support which uses functions implemented in platform_drivers.
+-  The specific communication part for AD5593R with I2C support.
+
+The AD7124 driver contains the following files:
+
+-  ad5592r-base.h - Header file of the base driver. Contains register definitions, device structure and base driver function declarations.
+-  ad5592r-base.c - Implementation file of base driver.
+-  ad5592r.h - Header file of AD5592R driver. Contains driver function declarations.
+-  ad5592r.c - Implementation file of AD5592R driver.
+-  ad5593r.h - Header file of AD5593R driver. Contains driver function declarations.
+-  ad5593r.c - Implementation file of AD5592R driver.
+
+The following functions are implemented in this version of AD5592R driver:
+
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+| Function                                                                                          | Description                            |
++===================================================================================================+========================================+
+| ``int32_t ad5592r_base_reg_write(struct ad5592r_dev *dev, uint8_t reg, uint16_t value)``          | Write register.                        |
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+| ``int32_t ad5592r_base_reg_read(struct ad5592r_dev *dev, uint8_t reg, uint16_t value)``           | Read register.                         |
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+| ``int32_t ad5592r_gpio_get(struct ad5592r_dev *dev, uint8_t offset)``                             | Get GPIO value.                        |
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+| ``int32_t ad5592r_gpio_set(struct ad5592r_dev *dev, uint8_t offset, int32_t value)``              | Set GPIO value.                        |
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+| ``int32_t ad5592r_gpio_direction_input(struct ad5592r_dev *dev, uint8_t offset)``                 | Set GPIO as input.                     |
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+| ``int32_t ad5592r_gpio_direction_output(struct ad5592r_dev *dev, uint8_t offset, int32_t value)`` | Set GPIO as output.                    |
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+| ``int32_t ad5592r_software_reset(struct ad5592r_dev *dev)``                                       | Software reset device.                 |
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+| ``int32_t ad5592r_set_channel_modes(struct ad5592r_dev *dev)``                                    | Set channels modes.                    |
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+| ``int32_t ad5592r_reset_channel_modes(struct ad5592r_dev *dev)``                                  | Reset channels and set GPIO to unused. |
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+| ``static int32_t ad5592r_spi_wnop_r16(struct ad5592r_dev *dev, uint16_t *buf)``                   | Write NOP and read value.              |
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+| ``int32_t ad5592r_write_dac(struct ad5592r_dev *dev, uint8_t chan, uint16_t value)``              | Write DAC channel.                     |
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+| ``int32_t ad5592r_read_adc(struct ad5592r_dev *dev, uint8_t chan, uint16_t *value)``              | Read ADC channel.                      |
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+| ``int32_t ad5592r_reg_write(struct ad5592r_dev *dev, uint8_t reg, uint16_t value)``               | Write register.                        |
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+| ``int32_t ad5592r_reg_read(struct ad5592r_dev *dev, uint8_t reg, uint16_t *value)``               | Read register.                         |
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+| ``int32_t ad5592r_gpio_read(struct ad5592r_dev *dev, uint8_t *value)``                            | Read GPIOs.                            |
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+| ``int32_t ad5592r_init(struct ad5592r_dev *dev)``                                                 | Initialize AD5592r device.             |
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+| ``int32_t ad5593r_write_dac(struct ad5592r_dev *dev, uint8_t chan, uint16_t value)``              | Write DAC channel.                     |
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+| ``int32_t ad5593r_read_adc(struct ad5592r_dev *dev, uint8_t chan, uint16_t *value)``              | Read ADC channel.                      |
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+| ``int32_t ad5593r_reg_write(struct ad5592r_dev *dev, uint8_t reg, uint16_t value)``               | Write register.                        |
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+| ``int32_t ad5593r_reg_read(struct ad5592r_dev *dev, uint8_t reg, uint16_t *value)``               | Read register.                         |
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+| ``int32_t ad5593r_gpio_read(struct ad5592r_dev *dev, uint8_t *value)``                            | Read GPIOs.                            |
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+| ``int32_t ad5593r_init(struct ad5592r_dev *dev)``                                                 | Initialize AD5593r device.             |
++---------------------------------------------------------------------------------------------------+----------------------------------------+
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  \**AD5592R Driver: \*\* :git-no-OS:`drivers/adc-dac/ad5592r`
+   -  **Generic Platform Drivers** :git-no-OS:`drivers/platform/generic`
+   
+
+
+Using the API
+-------------
+
+| The driver can only work together with a structure that holds the state of a device, where state means all information about the device. This structure will henceforth be referred as an instance of a driver.
+| All driver functions take a handler of a driver instance as the first argument. This allows the driver to be used with multiple devices simultaneously, without the need to replicate the .c and .h files.
+
+Before using any API call, an instance of the driver must first be created and then initialized using the ad5592r_init() which has the following parameters:
+
+-  **device**: the reference of the new driver instance. A new instance can be obtained by simply declaring one: <code c> struct ad5592r_dev my_ad5592; </code>
+
+A ad5592r_init() call will also reset the part.
+
+More information
+================
+
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`_
+

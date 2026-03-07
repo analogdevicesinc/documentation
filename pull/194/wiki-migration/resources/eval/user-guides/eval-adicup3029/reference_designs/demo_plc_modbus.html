@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The Distributed Control System reference design is a hardware and software platform for developing HART-enabled analog input and output modules (or nodes). DCS Modules are assembled from several existing reference designs:" name="description" />
+
+    <title>Distributed Control System (DCS) Demo &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Distributed Control System (DCS) Demo</a><ul>
+<li><a class="reference internal" href="#general-description-overview">General Description/Overview</a></li>
+<li><a class="reference internal" href="#demo-requirements">Demo Requirements</a></li>
+<li><a class="reference internal" href="#setting-up-the-hardware">Setting up the Hardware</a><ul>
+<li><a class="reference internal" href="#plc-single-node-dcs-system-block-diagram">PLC / Single-node DCS System block diagram</a></li>
+<li><a class="reference internal" href="#dcs-system-block-diagram">DCS System block diagram</a></li>
+<li><a class="reference internal" href="#rs485-adapter-configuration">RS485 Adapter Configuration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#node-configuration">Node Configuration</a></li>
+<li><a class="reference internal" href="#direct-usb-connection">Direct USB connection</a></li>
+<li><a class="reference internal" href="#direct-usb-configuration">Direct USB Configuration</a></li>
+<li><a class="reference internal" href="#modbus-implementation">MODBUS Implementation</a><ul>
+<li><a class="reference internal" href="#dcs-reference-design-modbus-register-map">DCS reference design MODBUS Register Map</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuring-the-software">Configuring the Software</a></li>
+<li><a class="reference internal" href="#communicating-with-the-dcs-reference-design">Communicating with the DCS reference design</a><ul>
+<li><a class="reference internal" href="#command-line-interface">Command Line Interface</a><ul>
+<li><a class="reference internal" href="#serial-terminal-output">Serial Terminal Output</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#modbus-interface">Modbus Interface</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#obtaining-the-software">Obtaining the Software</a></li>
+<li><a class="reference internal" href="#how-to-use-the-tools">How to use the Tools</a><ul>
+<li><a class="reference internal" href="#importing">Importing</a></li>
+<li><a class="reference internal" href="#debugging">Debugging</a></li>
+<li><a class="reference internal" href="#project-structure">Project Structure</a><ul>
+<li><a class="reference internal" href="#cli-process">CLI Process</a></li>
+<li><a class="reference internal" href="#modbus-interface-process">MODBUS Interface Process</a></li>
+<li><a class="reference internal" href="#board-specific-processes">Board Specific Processes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#example-applications-and-utilities">Example Applications and Utilities</a><ul>
+<li><a class="reference internal" href="#utility-functions-in-python">Utility functions in Python</a><ul>
+<li><a class="reference internal" href="#read-common-analog-input-registers-basic-example">Read common analog input registers basic example</a></li>
+<li><a class="reference internal" href="#read-analog-input-registers-basic-example">Read analog input registers basic example</a></li>
+<li><a class="reference internal" href="#read-and-write-one-output-holding-register-for-eval-cn0414-ardz-example">Read and write one output holding register for EVAL-CN0414-ARDZ example</a></li>
+<li><a class="reference internal" href="#read-and-write-one-output-holding-register-for-eval-cn0418-ardz-example">Read and write one output holding register for EVAL-CN0418-ARDZ example</a></li>
+<li><a class="reference internal" href="#detect-system-configuration-example">Detect system configuration example</a></li>
+<li><a class="reference internal" href="#change-or-check-the-system-registers-example">Change or check the system registers example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#example-applications-in-python">Example Applications in Python</a><ul>
+<li><a class="reference internal" href="#simple-dcs-control">Simple DCS control</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="distributed-control-system-dcs-demo">
+<h1>Distributed Control System (DCS) Demo<a class="headerlink" href="#distributed-control-system-dcs-demo" title="Link to this heading"></a></h1>
+<section id="general-description-overview">
+<h2>General Description/Overview<a class="headerlink" href="#general-description-overview" title="Link to this heading"></a></h2>
+<p>The Distributed Control System reference design is a hardware and software platform for developing HART-enabled analog input and output modules (or nodes). DCS Modules are assembled from several existing reference designs:</p>
+<ul class="simple">
+<li><p><strong>EVAL-ADICUP3029</strong> is the processor board that implements a MODBUS slave and controls the analog input / output boards.</p></li>
+<li><p><strong>EVAL-CN0416-ARDZ</strong> provides robust RS485 connectivity between one or more nodes and a host computer</p></li>
+<li><p><strong>EVAL-CN0414-ARDZ</strong> provides four group-isolated voltage inputs and four HART enabled current inputs.</p></li>
+<li><p><strong>EVAL-CN0418-ARDZ</strong> provides four group-isolated voltage or HART-enabled current outputs</p></li>
+</ul>
+<p>The reference design provides software connectivity using the MODBUS protocol. Modbus is a ubiquitous, open, industrial communication protocol for which there are numerous open-source and commercial software libraries and utilities. It is a serial master-slave protocol where the master uses a set of standard commands to read and write registers on the slave device, and CRC error detection ensures data integrity. Reading a slave register can give information about the state and inputs of the slave and writing registers can change the state or outputs of the slave. The mapping of Modbus registers to application-specific functions is dependent on the end application, and the DCS reference design provides convenient access to all of the functionality of the analog input and output boards.</p>
+<p>Several options for communicating with the hardware are provided or demonstrated:</p>
+<ul class="simple">
+<li><p>A command-line interface, requiring only a terminal program on the host PC and no additional software, useful for initial board bringup and debug.</p></li>
+<li><p>An open-source Modbus debug tool</p></li>
+<li><p>A set of command-line utilities (Windows only)</p></li>
+<li><p>Example applications in Python, using an open-source Modbus library</p></li>
+</ul>
+</section>
+<section id="demo-requirements">
+<h2>Demo Requirements<a class="headerlink" href="#demo-requirements" title="Link to this heading"></a></h2>
+<p>The following is a list of items needed in order to replicate this demo.</p>
+<ul class="simple">
+<li><p>Hardware</p>
+<ul>
+<li><p>EVAL-ADICUP3029</p></li>
+<li><p>EVAL-CN0414-ARDZ and/or EVAL-CN0418-ARDZ, up to 4 boards total, in any configuration</p></li>
+<li><p>EVAL-CN0416-ARDZ (not needed for direct USB connection to a single node)</p></li>
+<li><p>Additional EVAL-CN0416-ARDZ, ADALM-UARTJTAG, and 2x5, 100mil cable such as <a class="icon link reference external" href="https://www.digikey.com/A3AAH-1006G" target="_blank">AMP A3AAH-1006G</a> <strong>or:</strong></p>
+<ul>
+<li><p>other RS485 host adapter</p></li>
+</ul>
+</li>
+<li><p>Mirco USB to USB cable</p></li>
+<li><p>PC or Laptop with a USB port</p></li>
+</ul>
+</li>
+<li><p>Software</p>
+<ul>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/EVAL-ADICUP3029/tree/main/projects/ADuCM3029_demo_cn0435" target="_blank">ADuCM3029_demo_cn0435 demo application</a></p></li>
+<li><p>CrossCore Embedded Studio (2.8.0 or higher)</p></li>
+<li><p>ADuCM302x DFP (3.2.0 or higher)</p></li>
+<li><p>ADICUP3029 BSP (1.1.0 or higher)</p></li>
+<li><p>Serial Terminal Program (Required for running in CLI mode only)</p>
+<ul>
+<li><p>Such as Putty or Tera Term</p></li>
+</ul>
+</li>
+<li><p>Python 3.6 (only required for modifying example applications)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="setting-up-the-hardware">
+<h2>Setting up the Hardware<a class="headerlink" href="#setting-up-the-hardware" title="Link to this heading"></a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Depending on the PLC/DCS Node configuration the power needs to be provided as follows:</p>
+<ul class="simple">
+<li><p>If the PLC/DCS Node contain at least a CN0418 board, then the power will be provided through any CN0418 board (the jumper for P17 <strong>MUST</strong> to be placed for each board).</p></li>
+<li><p>If the PLC/DCS Node contain only CN0414 boards, then the power can be provided through any CN0414 board.</p></li>
+</ul>
+<p>Refer to the <a class="reference internal" href="../hardware/cn0414.html"><span class="doc">CN0414</span></a> and <a class="reference internal" href="../hardware/cn0418.html"><span class="doc">CN0418</span></a> user guides for detailed information on power requirements.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== PLC / Single or multi-node DCS System Setup Configuration ==== Block diagrams for PLC / single-node DCS and multi-node DCS systems are shown below. These systems differ slightly in their allowable configurations:</div>
+</div>
+<ul class="simple">
+<li><p>A Single-node system can operate with either half-duplex or full-duplex RS-485. Termination must be enabled at both ends of the RS-485 line(s).</p></li>
+<li><p>Modbus address conflict is not a concern in a single-node system (but the address must be known to the host.)</p></li>
+<li><p>A Multi-node system can only operate in half-duplex mode.</p></li>
+<li><p>In a Multi-node system, termination must be enabled at the ends of the RS-485 line, which is most often the host RS485 adapter and most distant node.</p></li>
+<li><p>Each node in a multi-node system must be set to a different address.</p></li>
+</ul>
+<section id="plc-single-node-dcs-system-block-diagram">
+<h3>PLC / Single-node DCS System block diagram<a class="headerlink" href="#plc-single-node-dcs-system-block-diagram" title="Link to this heading"></a></h3>
+</section>
+<section id="dcs-system-block-diagram">
+<h3>DCS System block diagram<a class="headerlink" href="#dcs-system-block-diagram" title="Link to this heading"></a></h3>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/dcs_block_diagram.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/dcs_block_diagram.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="rs485-adapter-configuration">
+<h3>RS485 Adapter Configuration<a class="headerlink" href="#rs485-adapter-configuration" title="Link to this heading"></a></h3>
+<p>An ADALM-UARTJTAG board and a spare CN0416 can function as a convenient USB Virtual COM port to RS-485 adapter. Any RS485 adapter should work, if another is available. Isolated / Non-Isolated depends on the application and difference in ground potential between the host and nodes. Full-duplex operation is only supported in the PLC/single-node DCS configuration, as both TX and RX signals are driven continuously. Both single-node and multi-node configurations can use half-duplex.</p>
+<hr class="docutils" />
+<p>The CP2103 device must be programmed as follows to control the DE signal on the CN0416. Configure Silicon Labs Xpress Configurator as follows to program the device:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>IO2 configuration</p></td>
+<td><p>Mode: Push-Pull, Alternate Function: RS-485, Active High</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Once the CP2103 is programmed, unplug from the host computer and connect P1 on the ADALM-UARTJTAG to P11 on the CN0416 with a 2x5-socket, 100mil cable such as <a class="icon link reference external" href="https://www.digikey.com/A3AAH-1006G" target="_blank">AMP A3AAH-1006G</a>. Be sure to connect with proper polarity - pin 1 on the ADALM-UARTJTAG must correspond to pin 1 on the CN0416.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>CN0416 Setup</p></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td><p>Isolated Full Duplex</p></td>
+<td><p>Isolated Half Duplex</p></td>
+<td><p>Non-Isolated Full Duplex</p></td>
+<td><p>Non-isolated Half Duplex</p></td>
+</tr>
+<tr class="row-odd"><td><p>S1 position</p></td>
+<td><p>NA</p></td>
+<td><p>NA</p></td>
+<td><p>NA</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>S2 position</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>S4 position</p></td>
+<td><p>NA</p></td>
+<td><p>NA</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>S5 position</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>NA</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>S6 position</p></td>
+<td><p>NA</p></td>
+<td><p>NA</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>S7 position</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>NA</p></td>
+<td><p>NA</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="node-configuration">
+<h2>Node Configuration<a class="headerlink" href="#node-configuration" title="Link to this heading"></a></h2>
+<p>Configuration for each node is similar, noting that each node must be set to a different address (via S1 on the CN0416) and the most distant node must have its termination enabled (via S6 or S7 on CN0416.)</p>
+<hr class="docutils" />
+<p>(Full-duplex only valid in a single-node system.)</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Isolated Full Duplex</p></th>
+<th class="head"><p>Isolated Half Duplex</p></th>
+<th class="head"><p>Non-Isolated Full Duplex</p></th>
+<th class="head"><p>Non-isolated Half Duplex</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>S1 position</p></td>
+<td><p><a class="reference internal" href="../hardware/cn0416.html"><span class="doc">Any position but different from node to node</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>S2 position</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>S4 position</p></td>
+<td><p>NA</p></td>
+<td><p>NA</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>S5 position</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>NA</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>S6 position</p></td>
+<td><p>NA</p></td>
+<td><p>NA</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>S7 position</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>NA</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>CN0414 Setup (if available)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>P1 position</p></td>
+<td><p><a class="reference internal" href="../hardware/cn0414.html"><span class="doc">Any position from MULTI configuration</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>P2 position</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>P10 position</p></td>
+<td><p><a class="reference internal" href="../hardware/cn0414.html"><span class="doc">Any position to result a different EEPROM address from board to board</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>P11 position</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>P12 position</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>JP1 position</p></td>
+<td><p><a class="reference internal" href="../hardware/cn0414.html"><span class="doc">MULTI configuration position</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CN0418 Setup (if available)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>P10 position</p></td>
+<td><p><a class="reference internal" href="../hardware/cn0418.html"><span class="doc">Any position from MULTI configuration</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>P9 position</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>JP2 position</p></td>
+<td><p><a class="reference internal" href="../hardware/cn0418.html"><span class="doc">Any position to result a different EEPROM address from board to board</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>JP3 position</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>JP4 position</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>JP1 position</p></td>
+<td><p><a class="reference internal" href="../hardware/cn0418.html"><span class="doc">MULTI configuration position</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>P17 position</p></td>
+<td><p>Jumper should be placed to power the whole system</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>EVAL-ADICUP3029</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>S2 position</p></td>
+<td><p><a class="reference internal" href="../hardware/adicup3029.html"><span class="doc">ARDUINO position</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>S5 position</p></td>
+<td><p><a class="reference internal" href="../hardware/adicup3029.html"><span class="doc">WALL/USB position</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="direct-usb-connection">
+<h2>Direct USB connection<a class="headerlink" href="#direct-usb-connection" title="Link to this heading"></a></h2>
+<img alt="CLI setup" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0435_cli_setup.png" />
+</section>
+<section id="direct-usb-configuration">
+<h2>Direct USB Configuration<a class="headerlink" href="#direct-usb-configuration" title="Link to this heading"></a></h2>
+<p>The CLI program does not need the <strong>EVAL-CN0416-ARDZ</strong> board and is not affected by it’s presence either. Furthermore, the PLC/ single-node DCS configuration can also operate with a direct connection, useful for testing out individual nodes quickly.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>EVAL-ADICUP3029</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>S2 position</p></td>
+<td><p><a class="reference internal" href="../hardware/adicup3029.html"><span class="doc">USB position</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>S5 position</p></td>
+<td><p><a class="reference internal" href="../hardware/adicup3029.html"><span class="doc">WALL/USB position</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="modbus-implementation">
+<h2>MODBUS Implementation<a class="headerlink" href="#modbus-implementation" title="Link to this heading"></a></h2>
+<p>There are four types of standard registers in the MODBUS slave:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Coil/Register Number</p></th>
+<th class="head"><p>Data addresses</p></th>
+<th class="head"><p>Types</p></th>
+<th class="head"><p>Names</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1 - 9999</p></td>
+<td><p>0 to 270E</p></td>
+<td><p>Read-Write</p></td>
+<td><p>Discreet Output Coils</p></td>
+</tr>
+<tr class="row-odd"><td><p>10001 - 19999</p></td>
+<td><p>0 to 270E</p></td>
+<td><p>Read-Only</p></td>
+<td><p>Discreet Input Contacts</p></td>
+</tr>
+<tr class="row-even"><td><p>30001 - 39999</p></td>
+<td><p>0 to 270E</p></td>
+<td><p>Read-Only</p></td>
+<td><p>Analog Input Registers</p></td>
+</tr>
+<tr class="row-odd"><td><p>40001 - 49999</p></td>
+<td><p>0 to 270E</p></td>
+<td><p>Read-Write</p></td>
+<td><p>Output Holding Registers</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Each of these registers have a 16-bit address and a 16-bit value.</p>
+<p>The <strong>Discreet Output Coils</strong> are registers that control a single output wire that has a binary value (high or low). Reading this register returns the output value of the bit and writing to it will update the coil with either low value, for writing 0, or high value, for writing anything else. The <strong>Discreet Input Contacts</strong> are registers that represent the value of a single input logic wire. The register can be only read and it is 0 if the wire is logic low and 0XFFFF if the wire is logic high. The DCS reference design does not have any functions that would map to <strong>Discreet Output Coils</strong> or <strong>Discreet Input Contacts</strong>. The <strong>Analog Input Registers</strong> represent an analog value, usually from an analog wire. This register can be only read and returns a 16-bit value. The <strong>Output Holding Registers</strong> are registers that control an analog output or a state of the slave. Reading this register returns the state of a process or an output and writing to it may change them or start a process.</p>
+<p>Each register can be accessed using a function code:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function code</p></th>
+<th class="head"><p>Action</p></th>
+<th class="head"><p>Table name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1 (0x01)</p></td>
+<td><p>Read</p></td>
+<td><p>Discreet Output Coils</p></td>
+</tr>
+<tr class="row-odd"><td><p>5 (0x05)</p></td>
+<td><p>Write Single</p></td>
+<td><p>Discreet Output Coils</p></td>
+</tr>
+<tr class="row-even"><td><p>15 (0x0F)</p></td>
+<td><p>Write Multiple</p></td>
+<td><p>Discreet Output Coils</p></td>
+</tr>
+<tr class="row-odd"><td><p>2 (0x02)</p></td>
+<td><p>Read</p></td>
+<td><p>Discreet Input Contacts</p></td>
+</tr>
+<tr class="row-even"><td><p>4 (0x04)</p></td>
+<td><p>Read</p></td>
+<td><p>Analog Input Registers</p></td>
+</tr>
+<tr class="row-odd"><td><p>3 (0x03)</p></td>
+<td><p>Read</p></td>
+<td><p>Output Holding Registers</p></td>
+</tr>
+<tr class="row-even"><td><p>6 (0x06)</p></td>
+<td><p>Write Single</p></td>
+<td><p>Output Holding Registers</p></td>
+</tr>
+<tr class="row-odd"><td><p>16 (0x10)</p></td>
+<td><p>Write Multiple</p></td>
+<td><p>Output Holding Registers</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="dcs-reference-design-modbus-register-map">
+<h3>DCS reference design MODBUS Register Map<a class="headerlink" href="#dcs-reference-design-modbus-register-map" title="Link to this heading"></a></h3>
+<p>Because the DCS reference design may contain any combination of up to four input or output boards, as a <strong>MODBUS slave</strong>, it contains two type of <strong>MODBUS registers</strong>: common and board specific.</p>
+<p>The common registers are 5 read-only registers and 2 read-write registers. In standard <strong>MODBUS terminology</strong> that translates to 5 analog input registers and 2 holding registers:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Address</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Detected boards</p></td>
+<td><p>0x0000</p></td>
+<td><p>Analog Input Register</p></td>
+<td><p>Number of input and/or output boards present in the system.</p></td>
+</tr>
+<tr class="row-odd"><td><p>First board data</p></td>
+<td><p>0x0001</p></td>
+<td><p>Analog Input Register</p></td>
+<td><p>First board type (bit 0), First board CS address (bits 1,2)</p></td>
+</tr>
+<tr class="row-even"><td><p>Second board data</p></td>
+<td><p>0x0002</p></td>
+<td><p>Analog Input Register</p></td>
+<td><p>Second board type (bit 0), Second board CS address (bits 1,2)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Third board data</p></td>
+<td><p>0x0003</p></td>
+<td><p>Analog Input Register</p></td>
+<td><p>Third board type (bit 0), Third board CS address (bits 1,2)</p></td>
+</tr>
+<tr class="row-even"><td><p>Fourth board data</p></td>
+<td><p>0x0004</p></td>
+<td><p>Analog Input Register</p></td>
+<td><p>Fourth board type (bit 0), Fourth board CS address (bits 1,2)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Update rate MSW</p></td>
+<td><p>0x00FE</p></td>
+<td><p>Output Holding Register</p></td>
+<td><p>Most significant word of the update rate.</p></td>
+</tr>
+<tr class="row-even"><td><p>Update rate LSW</p></td>
+<td><p>0x00FF</p></td>
+<td><p>Output Holding Register</p></td>
+<td><p>Least significant word of the update rate.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The <strong>board type</strong> bit is “0” for <strong>CN0414</strong> and “1” for <strong>CN0418</strong>.</p>
+<p>The <strong>update rate</strong> is stored as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Update</span> <span class="n">rate</span> <span class="n">MSW</span> <span class="o">=</span> <span class="p">((</span><span class="n">Actual</span> <span class="n">update</span> <span class="n">rate</span> <span class="o">*</span> <span class="mi">10000</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFFFF0000</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span><span class="p">;</span>
+<span class="n">Update</span> <span class="n">rate</span> <span class="n">LSW</span> <span class="o">=</span> <span class="p">((</span><span class="n">Actual</span> <span class="n">update</span> <span class="n">rate</span> <span class="o">*</span> <span class="mi">10000</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0x0000FFFF</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>So the equation used to retrieve the update rate is:</p>
+<p>&lt;m 16&gt; Actual update rate = {(Update rate MSW * 65536) + Update rate LSW}/{10000} &lt;/m&gt;</p>
+<p>Or in code form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Actual</span> <span class="n">update</span> <span class="n">rate</span> <span class="o">=</span> <span class="p">(((</span><span class="n">Update</span> <span class="n">rate</span> <span class="n">MSW</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFFFF0000</span><span class="p">)</span> <span class="o">|</span> <span class="n">Update</span> <span class="n">rate</span> <span class="n">LSW</span><span class="p">)</span> <span class="o">/</span> <span class="mi">10000</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The register map is configured dynamically after power-up. Adding a board to the system adds a number of board specific registers: 50 analog input registers and 7 output holding registers for each <strong>EVAL-CN0414-ARDZ</strong>, and 30 analog input registers and 10 output holding registers for each <strong>EVAL-CN0418-ARDZ</strong>.</p>
+<p>As stated before, adding an <strong>EVAL-CN0414-ARDZ</strong> adds 57 registers to the device: 50 analog input registers and 7 output holding registers. The analog input registers are: 16 for ADC input values, 4 for ADC input open wire detection flags and 50 for HART receive buffer. The output holding registers are: 1 for ADC output coding, 1 for ADC filter options, 1 for ADC postfilter options, 1 for ADC output data rate options, 1 for ADC open wire detection enable, 1 for HART command zero and 1 for HART channel select. The output holding registers are: 16 for the channel registers, 4 for Open Wire Detection and 30 for the HART input buffer. Adding an <strong>EVAL-CN0418-ARDZ</strong> adds 40 registers: 30 analog input registers and 10 output holding registers. There are 30 HART input registers as analog input registers. The output holding registers are: 4 for channel ranges (one for each channel), 4 for the channels output (one for each channel), 1 for the HART active channel and 1 for the HART command zero.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Note that being a dynamic system the registers presented below do not have an unique address, but have an address offset that can be used to calculate their address. The function is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Address</span> <span class="o">=</span> <span class="p">(</span><span class="n">ADC_CS_address</span> <span class="o">&lt;&lt;</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">MODBUS_slave_address</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="n">Address_offset</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<p>Register map for the <strong>EVAL-CN0414-ARDZ</strong>:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Address Offset</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Channel 1 MSW</p></td>
+<td><p>0x05</p></td>
+<td><p>Analog Input Register</p></td>
+<td><p>Most significant word of the first ADC channel.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Channel 1 LSW</p></td>
+<td><p>0x06</p></td>
+<td><p>Analog Input Register</p></td>
+<td><p>Least significant word of the first ADC channel.</p></td>
+</tr>
+<tr class="row-even"><td><p>Channel 2 MSW</p></td>
+<td><p>0x07</p></td>
+<td><p>Analog Input Register</p></td>
+<td><p>Most significant word of the second ADC channel.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Channel 2 LSW</p></td>
+<td><p>0x08</p></td>
+<td><p>Analog Input Register</p></td>
+<td><p>Least significant word of the second ADC channel.</p></td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-odd"><td><p>Channel 8 MSW</p></td>
+<td><p>0x13</p></td>
+<td><p>Analog Input Register</p></td>
+<td><p>Most significant word of the eighth ADC channel.</p></td>
+</tr>
+<tr class="row-even"><td><p>Channel 8 LSW</p></td>
+<td><p>0x14</p></td>
+<td><p>Analog Input Register</p></td>
+<td><p>Least significant word of the eighth ADC channel.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Channel 1 OWD</p></td>
+<td><p>0x15</p></td>
+<td><p>Analog Input Register</p></td>
+<td><p>Open wire detection flag of the first voltage channel.</p></td>
+</tr>
+<tr class="row-even"><td><p>Channel 2 OWD</p></td>
+<td><p>0x16</p></td>
+<td><p>Analog Input Register</p></td>
+<td><p>Open wire detection flag of the second voltage channel.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Channel 3 OWD</p></td>
+<td><p>0x17</p></td>
+<td><p>Analog Input Register</p></td>
+<td><p>Open wire detection flag of the third voltage channel.</p></td>
+</tr>
+<tr class="row-even"><td><p>Channel 4 OWD</p></td>
+<td><p>0x18</p></td>
+<td><p>Analog Input Register</p></td>
+<td><p>Open wire detection flag of the fourth voltage channel.</p></td>
+</tr>
+<tr class="row-odd"><td><p>HART IN 1</p></td>
+<td><p>0x19</p></td>
+<td><p>Analog Input Register</p></td>
+<td><p>First word of the HART input buffer.</p></td>
+</tr>
+<tr class="row-even"><td><p>HART IN 2</p></td>
+<td><p>0x1A</p></td>
+<td><p>Analog Input Register</p></td>
+<td><p>Second word of the HART input buffer.</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-even"><td><p>HART IN 30</p></td>
+<td><p>0x36</p></td>
+<td><p>Analog Input Register</p></td>
+<td><p>50th word of the HART input buffer.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADC Output Code</p></td>
+<td><p>0x00</p></td>
+<td><p>Output Holding Register</p></td>
+<td><p>Set the output coding for the ADC:
+0 - bipolar coding (default);
+1 - unipolar coding.</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC Filter</p></td>
+<td><p>0x01</p></td>
+<td><p>Output Holding Register</p></td>
+<td><p>Set the input filter for the ADC:
+0 - s5+s1 (default);
+1 - s3.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADC Postfilter</p></td>
+<td><p>0x02</p></td>
+<td><p>Output Holding Register</p></td>
+<td><p>Set the input postfilter for the ADC:
+0 - 27 SPS, 47 dB rejection, 36.7 ms settling;
+1 - 25 SPS, 62 dB rejection, 40 ms settling;
+2 - 20 SPS, 86 dB rejection, 50 ms settling;
+3 - 16.67 SPS, 92 dB rejection, 60 ms settling;
+4 - disable postfilter (default).</p></td>
+</tr>
+<tr class="row-even"><td><p>ADC ODR</p></td>
+<td><p>0x03</p></td>
+<td><p>Output Holding Register</p></td>
+<td><p>Set the output data rate for the ADC:
+[0-5] - 31250 SPS (default);
+6 - 15625 SPS;
+7 - 10417 SPS;
+8 - 5208 SPS;
+9 - 2597 SPS;
+10 - 1007 SPS;
+11 - 503.8 SPS;
+12 - 381 SPS;
+13 - 200.3 SPS;
+14 - 100.5 SPS;
+15 - 59.52 SPS;
+16 - 49.68 SPS;
+17 - 20.01 SPS;
+18 - 16.63 SPS;
+19 - 10 SPS;
+20 - 5 SPS;
+21 - 2.5 SPS;
+22 - 1.25 SPS;</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADC OWD EN</p></td>
+<td><p>0x04</p></td>
+<td><p>Output Holding Register</p></td>
+<td><p>Enable/disable open wire detection for the ADC:
+0 - disable OWD (default);
+1 - enable OWD.</p></td>
+</tr>
+<tr class="row-even"><td><p>HART cmd 0</p></td>
+<td><p>0x05</p></td>
+<td><p>Output Holding Register</p></td>
+<td><p>Writing “1” to this register sends HART command 0 then the register resets to “0”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>HART CH select</p></td>
+<td><p>0x06</p></td>
+<td><p>Output Holding Register</p></td>
+<td><p>Select enable a current channel for HART communication:
+0 - Channel 1 (default);
+1 - Channel 2;
+2 - Channel 3;
+3 - Channel 4.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Register map for the <strong>EVAL-CN0418-ARDZ</strong>:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Address Offset</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HART IN 1</p></td>
+<td><p>0x05</p></td>
+<td><p>Analog Input Register</p></td>
+<td><p>First word of the HART input buffer.</p></td>
+</tr>
+<tr class="row-odd"><td><p>HART IN 2</p></td>
+<td><p>0x06</p></td>
+<td><p>Analog Input Register</p></td>
+<td><p>Second word of the HART input buffer.</p></td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-odd"><td><p>HART IN 30</p></td>
+<td><p>0x22</p></td>
+<td><p>Analog Input Register</p></td>
+<td><p>50th word of the HART input buffer.</p></td>
+</tr>
+<tr class="row-even"><td><p>Channel 1 range</p></td>
+<td><p>0x00</p></td>
+<td><p>Output Holding Register</p></td>
+<td><p>Output range for the first DAC channel:
+0 - 0V to 5V;
+1 - 0V to 10V;
+2 - -5V to 5V;
+3 - -10V to 10V;
+4 - 4ma to 20ma;
+5 - 0ma to 20ma;
+6 - 0ma to 24ma.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Channel 2 range</p></td>
+<td><p>0x01</p></td>
+<td><p>Output Holding Register</p></td>
+<td><p>Output range for the second DAC channel:
+0 - 0V to 5V;
+1 - 0V to 10V;
+2 - -5V to 5V;
+3 - -10V to 10V;
+4 - 4ma to 20ma;
+5 - 0ma to 20ma;
+6 - 0ma to 24ma.</p></td>
+</tr>
+<tr class="row-even"><td><p>Channel 3 range</p></td>
+<td><p>0x02</p></td>
+<td><p>Output Holding Register</p></td>
+<td><p>Output range for the third DAC channel:
+0 - 0V to 5V;
+1 - 0V to 10V;
+2 - -5V to 5V;
+3 - -10V to 10V;
+4 - 4ma to 20ma;
+5 - 0ma to 20ma;
+6 - 0ma to 24ma.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Channel 4 range</p></td>
+<td><p>0x03</p></td>
+<td><p>Output Holding Register</p></td>
+<td><p>Output range for the fourth DAC channel:
+0 - 0V to 5V;
+1 - 0V to 10V;
+2 - -5V to 5V;
+3 - -10V to 10V;
+4 - 4ma to 20ma;
+5 - 0ma to 20ma;
+6 - 0ma to 24ma.</p></td>
+</tr>
+<tr class="row-even"><td><p>Channel 1</p></td>
+<td><p>0x04</p></td>
+<td><p>Output Holding Register</p></td>
+<td><p>Output code of the first DAC channel.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Channel 2</p></td>
+<td><p>0x05</p></td>
+<td><p>Output Holding Register</p></td>
+<td><p>Output code of the second DAC channel.</p></td>
+</tr>
+<tr class="row-even"><td><p>Channel 3</p></td>
+<td><p>0x06</p></td>
+<td><p>Output Holding Register</p></td>
+<td><p>Output code of the third DAC channel.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Channel 4</p></td>
+<td><p>0x07</p></td>
+<td><p>Output Holding Register</p></td>
+<td><p>Output code of the fourth DAC channel.</p></td>
+</tr>
+<tr class="row-even"><td><p>HART cmd 0</p></td>
+<td><p>0x08</p></td>
+<td><p>Output Holding Register</p></td>
+<td><p>Writing “1” to this register sends HART command 0 then the register resets to “0”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>HART CH select</p></td>
+<td><p>0x09</p></td>
+<td><p>Output Holding Register</p></td>
+<td><p>Select enable a current channel for HART communication:
+0 - Channel A (default);
+1 - Channel B;
+2 - Channel C;
+3 - Channel D.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="configuring-the-software">
+<h2>Configuring the Software<a class="headerlink" href="#configuring-the-software" title="Link to this heading"></a></h2>
+<p>The software can be set up to work in CLI debug mode or in MODBUS mode. To set this make sure the relevant define in the <strong>config.h</strong> file is uncommented and the other one is commented:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="c1">#define CLI_INTEFACE</span>
+<span class="o">//</span><span class="c1">#define MODBUS_INTERFACE</span>
+</pre></div>
+</div>
+</section>
+<section id="communicating-with-the-dcs-reference-design">
+<h2>Communicating with the DCS reference design<a class="headerlink" href="#communicating-with-the-dcs-reference-design" title="Link to this heading"></a></h2>
+<p>There are two interfaces available for this application: a <strong>Command Line Interface (CLI)</strong> used mainly for debugging a single <strong>PLC</strong> node and a <strong>MODBUS interface</strong> used for <strong>PLC</strong>/<strong>DCS</strong> operation for single and multiple nodes.</p>
+<p>The <strong>CLI</strong> is implemented through <strong>UART</strong> and must be connected to a computer via <strong>USB cable</strong>. A serial terminal program must run on the <strong>host PC</strong> to display data and control the application.</p>
+<p>The <strong>MODBUS</strong> is connected through the <strong>EVAL-CN0416-ARDZ</strong> <strong>UART</strong> to <strong>RS485</strong> adapter and must communicate with a <strong>MODBUS master</strong> on the <strong>RS485 line</strong>.</p>
+<section id="command-line-interface">
+<h3>Command Line Interface<a class="headerlink" href="#command-line-interface" title="Link to this heading"></a></h3>
+<section id="serial-terminal-output">
+<h4>Serial Terminal Output<a class="headerlink" href="#serial-terminal-output" title="Link to this heading"></a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See <a class="icon link reference external" href="https://wiki.analog.com/wiki/common#serial_terminal_setup" target="_blank">wiki/common</a></p>
+</div>
+</section>
+<section id="available-commands">
+<h4>Available Commands<a class="headerlink" href="#available-commands" title="Link to this heading"></a></h4>
+<p>Typing <strong>help</strong> or <strong>h</strong> after initial calibration sequence will display the list of commands and their short versions. The <strong>CLI mode</strong> has a board command menu which is only used to select the board. Each board present in the system has it’s own command set based on the type.</p>
+<p>Bellow is the short command list for the board menu:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>h</em></p></td>
+<td><p>Display available commands.</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>bs</em></p></td>
+<td><p>Set the active board.
+&lt;<em>board_no</em>&gt; = de ID of the board assigned by the program. It its displayed at the start of the program. Calling this command without an argument displays available boards again.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<img alt="CLI main menu" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0435_main_menu_cli.png" />
+<p>The specific commands for each of the types of boards is described in they respective wiki pages:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="demo_cn0414.html"><span class="doc">EVAL-CN0414-ARDZ specific commands</span></a></p></li>
+<li><p><a class="reference internal" href="demo_cn0418.html"><span class="doc">EVAL-CN0418-ARDZ specific commands</span></a></p></li>
+</ul>
+</section>
+</section>
+<section id="modbus-interface">
+<h3>Modbus Interface<a class="headerlink" href="#modbus-interface" title="Link to this heading"></a></h3>
+<p>The Modbus protocol is not human-readable; as such, a Modbus master program is required to interact with the design. QModMaster is a free and open-source implementation of a Modbus master GUI application. This program is useful for board bringup and debug, and during application development. QModMaster is avalable at <a class="icon link reference external" href="https://sourceforge.net/projects/qmodmaster/" target="_blank">QModMaster on SourceForge</a></p>
+<p>QModMaster is used to demonstrate several basic register operations below.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Common analog input registers read</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Reading these registers with 2 <strong>EVAL-CN0414-ARDZ</strong> and 2 <strong>EVAL-CN0418-ARDZ</strong> connected to the system it can be seen that 4 boards are found at address “0000”.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0435_qmodmaster_general_reg.png"><img alt="Common registers" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0435_qmodmaster_general_reg.png" style="width: 1500px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>The next address read “0001” indication that the board is a <strong>EVAL-CN0418-ARDZ</strong> and has address 0;</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>The second address reads “0003” indication that the board is <strong>EVAL-CN0418-ARDZ</strong> and has the address 1;</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>The third register read “0004” indicating that the board is <strong>EVAL-CN0414-ARDZ</strong> and has address 2;</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>And the last register reads “0006” for <strong>EVAL-CN0414-ARDZ</strong> and address 3.</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>ADC channels of one of the input boards with <strong>MODBUS</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>The second read shows the input channels data for the last input board found. This is done by reading 16 analog input registers fount at address 0x3105.</p></td>
+<td><p><img alt="ADC MODBUS read" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0435_qmodmaster_adc_read.png" /></p></td>
+</tr>
+<tr class="row-odd"><td><p>ADC change the output code</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>This is an example on how to change the ADC output code of the third board (input board with address 3) by writing the output holding register at the address 0x3100.</p></td>
+<td><p><img alt="image3" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0345_write_holding_register_1.png" /></p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p><img alt="image4" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0345_write_holding_register_2.png" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="obtaining-the-software">
+<h2>Obtaining the Software<a class="headerlink" href="#obtaining-the-software" title="Link to this heading"></a></h2>
+<p>There are two basic ways to program the ADICUP3029 with the software for the CN0435.</p>
+<ul class="simple">
+<li><p>Dragging and Dropping the .Hex to the Daplink drive</p></li>
+<li><p>Building, Compiling, and Debugging using CCES</p></li>
+</ul>
+<p>Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the EASIEST way to get started with the reference design</p>
+<p>Importing the project into CrossCore is going to allow you to change parameters and customize the software to fit your needs, but will be a bit more advanced and will require you to download the CrossCore toolchain.</p>
+<p>The software for the <strong>ADuCM3029_demo_cn0435</strong> can be found here:</p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p>Prebuilt CN0435 Hex File</p>
+<ul class="simple">
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/EVAL-ADICUP3029/tree/main/releases/download/Latest/ADuCM3029_demo_cn0435.hex" target="_blank">ADuCM3029_demo_cn0435.Hex</a></p></li>
+</ul>
+<p>Complete CN0435 Source Files</p>
+<ul class="simple">
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/EVAL-ADICUP3029/tree/main/projects/ADuCM3029_demo_cn0435" target="_blank">AduCM3029_demo_cn0435 Source Code</a></p></li>
+</ul>
+</div>
+</section>
+<section id="how-to-use-the-tools">
+<h2>How to use the Tools<a class="headerlink" href="#how-to-use-the-tools" title="Link to this heading"></a></h2>
+<p>The official tool we promote for use with the EVAL-ADICUP3029 is CrossCore Embedded Studio. For more information on downloading the tools and a quick start guide on how to use the tool basics, please check out the <a class="reference internal" href="../tools.html"><span class="doc">Tools Overview page.</span></a></p>
+<section id="importing">
+<h3>Importing<a class="headerlink" href="#importing" title="Link to this heading"></a></h3>
+<p>For more detailed instructions on importing this application/demo example into the CrossCore Embedded Studios tools, please view our <a class="reference internal" href="../tools/cces_user_guide.html"><span class="doc">How to import existing projects into your workspace</span></a> section.</p>
+</section>
+<section id="debugging">
+<h3>Debugging<a class="headerlink" href="#debugging" title="Link to this heading"></a></h3>
+<p>For more detailed instructions on importing this application/demo example into the CrossCore Embedded Studios tools, please view our <a class="reference internal" href="../tools/cces_user_guide.html"><span class="doc">How to configure the debug session</span></a> section.</p>
+</section>
+<section id="project-structure">
+<h3>Project Structure<a class="headerlink" href="#project-structure" title="Link to this heading"></a></h3>
+<p>The application controls a dynamic system that can be physically different every time it is run. to do this it has two parts:</p>
+<ul class="simple">
+<li><p>The system initialization.</p></li>
+<li><p>The system main process.</p></li>
+</ul>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0435_main_flow.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0435_main_flow.png" />
+<p>After getting parameters of the system supplied by the user in code the program initializes the software modules common to all the boards: I2C, UART, SPI, microcontroller power, software UART and the AD5700 HART modem. If the MODBUS interface is used, the update timer for the input boards is also initialized in this stage as a common module. If, by comparison, the CLI is used, each input board present initializes its own version of the update timer driver.</p>
+<p>After these initializations the system runs a board discovery routine. By using the presence of I2C EEPROM memory and testing the SPI configuration, all boards in the system are discovered and labeled as either CN0414 or CN0418. If the MODBUS interface is used, the system also scans for its MODBUS slave address and maps and initializes MODBUS registers.</p>
+<p>After board discovery, if the CLI is used, no board is set as active and the system manager loads the main menu process. If the MODBUS is used, the system activates the first board it discovers.</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0435_initialization.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0435_initialization.png" />
+<section id="cli-process">
+<h4>CLI Process<a class="headerlink" href="#cli-process" title="Link to this heading"></a></h4>
+<p>If the CLI is used, no board is active after the initialization and the system stands by to receive commands. If the user sets one of the boards to be active, the program loads the commands and process specific to that board and starts sunning them until the application is stopped or the “exit” command is called.</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0435_cli_process.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0435_cli_process.png" />
+</section>
+<section id="modbus-interface-process">
+<h4>MODBUS Interface Process<a class="headerlink" href="#modbus-interface-process" title="Link to this heading"></a></h4>
+<p>If the MODBUS interface is used the first board discovered is the active board. If it is a CN0414 the program runs its process until all channels are updated. If it is a CN0418 the program runs its process only once. After this the system deactivates the board and activates the next board discovered until all the boards have been active and updated. The system than cycles back from the beginning.</p>
+<p>Meanwhile the system scans the MODBUS channel for commands and if one is found that is addressed to this node it executes it and sends back a response.</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0435_modbus_process.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/cn0435_modbus_process.png" />
+</section>
+<section id="board-specific-processes">
+<h4>Board Specific Processes<a class="headerlink" href="#board-specific-processes" title="Link to this heading"></a></h4>
+<p>The process and commands for each type of boards is described in the appropriate application page:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="demo_cn0414.html"><span class="doc">EVAL-CN0414-ARDZ</span></a></p></li>
+<li><p><a class="reference internal" href="demo_cn0418.html"><span class="doc">EVAL-CN0418-ARDZ</span></a></p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="example-applications-and-utilities">
+<h2>Example Applications and Utilities<a class="headerlink" href="#example-applications-and-utilities" title="Link to this heading"></a></h2>
+<p>User DCS programs running on the host will be highly application-specific, and written in any number of languages. This section presents several example applications and utilities written in Python that perform basic functions such as reading and writing analog voltages, detecting the configuration of a node, and changing the data rate of an analog input channel.</p>
+<section id="utility-functions-in-python">
+<h3>Utility functions in Python<a class="headerlink" href="#utility-functions-in-python" title="Link to this heading"></a></h3>
+<p>The following utility functions are demonstrated using the single-node configuration described above. It may be connected to the host either directly via USB (no RS485 interface) or over a USB to RS485 bridge. Minimalmodbus is an open-source (Apache license) Modbus RTU and Modbus ASCII implementation for Python, and is used in these examples. Similar libraries exist for other languages.</p>
+<section id="read-common-analog-input-registers-basic-example">
+<h4>Read common analog input registers basic example<a class="headerlink" href="#read-common-analog-input-registers-basic-example" title="Link to this heading"></a></h4>
+<p>For example, consider an instrument (slave) with Modbus RTU and address number 1 to which we are to communicate via a serial port with the name <code class="docutils literal notranslate"><span class="pre">COM12</span></code>. The instrument stores the actual configuration in registers 0 to 4. To read data from the instrument:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Read common analog input registers to determine PLC/DCS configuration.&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">minimalmodbus</span>
+
+<span class="c1"># declare an instrument object with port name, slave address as input arguments</span>
+<span class="n">INSTRUMENT</span> <span class="o">=</span> <span class="n">minimalmodbus</span><span class="o">.</span><span class="n">Instrument</span><span class="p">(</span><span class="s1">&#39;COM12&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># read 5 registers starting from address 0 by using function code 4</span>
+<span class="n">COMMON_ANALOG_INPUT_REGISTERS</span> <span class="o">=</span> <span class="n">INSTRUMENT</span><span class="o">.</span><span class="n">read_registers</span><span class="p">(</span>
+    <span class="n">registeraddress</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">numberOfRegisters</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">functioncode</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># result a list with 5 elements in decimal format</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">COMMON_ANALOG_INPUT_REGISTERS</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In this example, after we run the above piece of code it results that we have 4 boards connected. Two of this boards are <strong>EVAL-CN0414-ARDZ</strong> and other two are <strong>EVAL-CN0418-ARDZ</strong>. The <strong>EVAL-CN0414-ARDZ</strong> boards have address 0b10 and 0b11 while <strong>EVAL-CN0418-ARDZ</strong> boards have address 0b00 and 0b01.</p>
+</section>
+<section id="read-analog-input-registers-basic-example">
+<h4>Read analog input registers basic example<a class="headerlink" href="#read-analog-input-registers-basic-example" title="Link to this heading"></a></h4>
+<p>Next, if we want to read all analog input channels from one <strong>EVAL-CN0414-ARDZ</strong> we can use the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Read analog input registers to determine ADC channels code.&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">minimalmodbus</span>
+
+<span class="c1"># declare an instrument object with port name, slave address as input arguments</span>
+<span class="n">INSTRUMENT</span> <span class="o">=</span> <span class="n">minimalmodbus</span><span class="o">.</span><span class="n">Instrument</span><span class="p">(</span><span class="s1">&#39;COM12&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># read 16 registers starting from address 12549 by using function code 4</span>
+<span class="n">ADC_CHANNELS_CODES</span> <span class="o">=</span> <span class="n">INSTRUMENT</span><span class="o">.</span><span class="n">read_registers</span><span class="p">(</span>
+    <span class="n">registeraddress</span><span class="o">=</span><span class="mi">12549</span><span class="p">,</span> <span class="n">numberOfRegisters</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">functioncode</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># result a list with 16 elements in decimal format</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ADC_CHANNELS_CODES</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">127</span><span class="p">,</span> <span class="mi">65158</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="mi">65514</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="mi">65194</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="mi">64995</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="mi">65285</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="mi">65244</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="mi">65292</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="mi">65278</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In this example, after we run the above piece of code it results a list of 16 elements in decimal format. First 8 values corespond to voltage channels and last to current channels.</p>
+</section>
+<section id="read-and-write-one-output-holding-register-for-eval-cn0414-ardz-example">
+<h4>Read and write one output holding register for EVAL-CN0414-ARDZ example<a class="headerlink" href="#read-and-write-one-output-holding-register-for-eval-cn0414-ardz-example" title="Link to this heading"></a></h4>
+<p>Next, if we want to change the output code of one <strong>EVAL-CN0414-ARDZ</strong> ADC to be unipolar instead of bipolar we can use the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Read and write one output holding register to change ADC output code.&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">minimalmodbus</span>
+
+<span class="c1"># declare an instrument object with port name, slave address as input arguments</span>
+<span class="n">INSTRUMENT</span> <span class="o">=</span> <span class="n">minimalmodbus</span><span class="o">.</span><span class="n">Instrument</span><span class="p">(</span><span class="s1">&#39;COM12&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># read a single register from address 12544 by using function code 3</span>
+<span class="n">INITIAL_ADC_OUTPUT_CODE</span> <span class="o">=</span> <span class="n">INSTRUMENT</span><span class="o">.</span><span class="n">read_register</span><span class="p">(</span>
+    <span class="n">registeraddress</span><span class="o">=</span><span class="mi">12544</span><span class="p">,</span> <span class="n">functioncode</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># result an integer</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">INITIAL_ADC_OUTPUT_CODE</span><span class="p">)</span>
+
+<span class="c1"># wrie a single register from address 12544 by using function code 6</span>
+<span class="n">INSTRUMENT</span><span class="o">.</span><span class="n">write_register</span><span class="p">(</span><span class="n">registeraddress</span><span class="o">=</span><span class="mi">12544</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">functioncode</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="c1"># read a single register from address 12544 by using function code 3</span>
+<span class="n">FINAL_ADC_OUTPUT_CODE</span> <span class="o">=</span> <span class="n">INSTRUMENT</span><span class="o">.</span><span class="n">read_register</span><span class="p">(</span>
+    <span class="n">registeraddress</span><span class="o">=</span><span class="mi">12544</span><span class="p">,</span> <span class="n">functioncode</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># result an integer</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">FINAL_ADC_OUTPUT_CODE</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span>
+<span class="mi">1</span>
+</pre></div>
+</div>
+<p>In this example, after we run the above piece of code it results an integer which coresponds to ADC coding format. The default value 0, indicate that the ADC is set to bipolar coding format, while a value of 1 will indicate an unipolar coding format.</p>
+</section>
+<section id="read-and-write-one-output-holding-register-for-eval-cn0418-ardz-example">
+<h4>Read and write one output holding register for EVAL-CN0418-ARDZ example<a class="headerlink" href="#read-and-write-one-output-holding-register-for-eval-cn0418-ardz-example" title="Link to this heading"></a></h4>
+<p>Next, if we want to change the output code of one <strong>EVAL-CN0418-ARDZ</strong> DAC channel we can use the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Read and write one output holding register to change DAC channel voltage.&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">minimalmodbus</span>
+
+<span class="c1"># declare an instrument object with port name, slave address as input arguments</span>
+<span class="n">INSTRUMENT</span> <span class="o">=</span> <span class="n">minimalmodbus</span><span class="o">.</span><span class="n">Instrument</span><span class="p">(</span><span class="s1">&#39;COM12&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># read a single register from address 4356 by using function code 3</span>
+<span class="n">INITIAL_DAC_CHANNEL_1_CODE</span> <span class="o">=</span> <span class="n">INSTRUMENT</span><span class="o">.</span><span class="n">read_register</span><span class="p">(</span>
+    <span class="n">registeraddress</span><span class="o">=</span><span class="mi">4356</span><span class="p">,</span> <span class="n">functioncode</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># result an integer</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">INITIAL_DAC_CHANNEL_1_CODE</span><span class="p">)</span>
+
+<span class="c1"># wrie a single register from address 4356 by using function code 6</span>
+<span class="n">INSTRUMENT</span><span class="o">.</span><span class="n">write_register</span><span class="p">(</span><span class="n">registeraddress</span><span class="o">=</span><span class="mi">4356</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">65535</span><span class="p">,</span> <span class="n">functioncode</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="c1"># read a single register from address 4356 by using function code 3</span>
+<span class="n">FINAL_DAC_CHANNEL_1_CODE</span> <span class="o">=</span> <span class="n">INSTRUMENT</span><span class="o">.</span><span class="n">read_register</span><span class="p">(</span>
+    <span class="n">registeraddress</span><span class="o">=</span><span class="mi">4356</span><span class="p">,</span> <span class="n">functioncode</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># result an integer</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">FINAL_DAC_CHANNEL_1_CODE</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span>
+<span class="mi">65535</span>
+</pre></div>
+</div>
+<p>In this example, after we run the above piece of code it results an integer which coresponds to DAC channel 1 output code. Depending on channel configuration this output code will corespond to a voltage or a current value. In this example the DAC channel output code is by default 0V because the default channel range is set to 0V to 5V. The 65535 value will corespond in this case to a 5V output.</p>
+</section>
+<section id="detect-system-configuration-example">
+<h4>Detect system configuration example<a class="headerlink" href="#detect-system-configuration-example" title="Link to this heading"></a></h4>
+<p>Next, if we want to determine the system configuration we can run the following script from the attached archive.</p>
+<p><a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/detect_configuration.zip" target="_blank">detect_configuration.zip</a></p>
+<p>For a PLC configuration the script output will look similarly like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Welcome! Use &#39;CTRL+C&#39; to go back from the current menu or exit!
+
+Available devices:
+1 -&gt; Silicon Labs CP210x USB to UART Bridge (COM12)
+2 -&gt; Intel(R) Active Management Technology - SOL (COM3)
+
+Enter detected device index, or press ENTER to use COM12:
+No boards at MODBUS address: 1 No communication with the instrument (no answer)
+
+Boards found at MODBUS address: 2
+Address        Name                 Value
+-------------  -----------------  -------
+0000 (0x0000)  Detected boards          2
+0001 (0x0001)  First board data         4
+0002 (0x0002)  Second board data        6
+0003 (0x0003)  Third board data     65535
+0004 (0x0004)  Fourth board data    65535
+Analog input board at address: 10
+Analog input board at address: 11
+No boards at MODBUS address: 3 No communication with the instrument (no answer)
+No boards at MODBUS address: 4 No communication with the instrument (no answer)
+No boards at MODBUS address: 5 No communication with the instrument (no answer)
+No boards at MODBUS address: 6 No communication with the instrument (no answer)
+No boards at MODBUS address: 7 No communication with the instrument (no answer)
+No boards at MODBUS address: 8 No communication with the instrument (no answer)
+No boards at MODBUS address: 9 No communication with the instrument (no answer)
+No boards at MODBUS address: 10 No communication with the instrument (no answer)
+No boards at MODBUS address: 11 No communication with the instrument (no answer)
+No boards at MODBUS address: 12 No communication with the instrument (no answer)
+No boards at MODBUS address: 13 No communication with the instrument (no answer)
+No boards at MODBUS address: 14 No communication with the instrument (no answer)
+No boards at MODBUS address: 15 No communication with the instrument (no answer)
+No boards at MODBUS address: 16 No communication with the instrument (no answer)
+</pre></div>
+</div>
+<p>For a DCS configuration the script output will look similarly like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Welcome! Use &#39;CTRL+C&#39; to go back from the current menu or exit!
+
+Available devices:
+1 -&gt; Silicon Labs CP210x USB to UART Bridge (COM12)
+2 -&gt; Intel(R) Active Management Technology - SOL (COM3)
+
+Enter detected device index, or press ENTER to use COM12:
+
+Boards found at MODBUS address: 1
+Address        Name                 Value
+-------------  -----------------  -------
+0000 (0x0000)  Detected boards          2
+0001 (0x0001)  First board data         1
+0002 (0x0002)  Second board data        3
+0003 (0x0003)  Third board data     65535
+0004 (0x0004)  Fourth board data    65535
+Analog output board at address: 00
+Analog output board at address: 01
+
+Boards found at MODBUS address: 2
+Address        Name                 Value
+-------------  -----------------  -------
+0000 (0x0000)  Detected boards          2
+0001 (0x0001)  First board data         4
+0002 (0x0002)  Second board data        6
+0003 (0x0003)  Third board data     65535
+0004 (0x0004)  Fourth board data    65535
+Analog input board at address: 10
+Analog input board at address: 11
+No boards at MODBUS address: 3 No communication with the instrument (no answer)
+No boards at MODBUS address: 4 No communication with the instrument (no answer)
+No boards at MODBUS address: 5 No communication with the instrument (no answer)
+No boards at MODBUS address: 6 No communication with the instrument (no answer)
+No boards at MODBUS address: 7 No communication with the instrument (no answer)
+No boards at MODBUS address: 8 No communication with the instrument (no answer)
+No boards at MODBUS address: 9 No communication with the instrument (no answer)
+No boards at MODBUS address: 10 No communication with the instrument (no answer)
+No boards at MODBUS address: 11 No communication with the instrument (no answer)
+No boards at MODBUS address: 12 No communication with the instrument (no answer)
+No boards at MODBUS address: 13 No communication with the instrument (no answer)
+No boards at MODBUS address: 14 No communication with the instrument (no answer)
+No boards at MODBUS address: 15 No communication with the instrument (no answer)
+No boards at MODBUS address: 16 No communication with the instrument (no answer)
+</pre></div>
+</div>
+</section>
+<section id="change-or-check-the-system-registers-example">
+<h4>Change or check the system registers example<a class="headerlink" href="#change-or-check-the-system-registers-example" title="Link to this heading"></a></h4>
+<p>Next, if we want to check or change the system registers we can run the following script from the attached archive.</p>
+<p><a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/read_or_write_registers.zip" target="_blank">read_or_write_registers.zip</a></p>
+<p>Depending on the system configuration, one or more DCS nodes will be detected. After the user selects a valid DCS node, a menu will appear which contain all available system options. Now, depending on the node configuration, not all option will be valid, even if they are shown. For example, if a DCS node doesn’t contain CN0414 analog input board(s), any option which refers to CN0414 will do nothing.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Welcome! Use &#39;CTRL+C&#39; to go back from the current menu or exit!
+
+Available devices:
+1 -&gt; Silicon Labs CP210x USB to UART Bridge (COM12)
+2 -&gt; Intel(R) Active Management Technology - SOL (COM3)
+
+Enter detected device index, or press ENTER to use COM12:
+Enter MODBUS timeout (0.05[s] to inf), or press ENTER to use 0.1[s] timeout:
+
+Boards found at MODBUS address: 1
+Address        Name                 Value
+-------------  -----------------  -------
+0000 (0x0000)  Detected boards          2
+0001 (0x0001)  First board data         1
+0002 (0x0002)  Second board data        3
+0003 (0x0003)  Third board data     65535
+0004 (0x0004)  Fourth board data    65535
+analog output board at address: 00
+analog output board at address: 01
+
+Boards found at MODBUS address: 2
+Address        Name                 Value
+-------------  -----------------  -------
+0000 (0x0000)  Detected boards          2
+0001 (0x0001)  First board data         4
+0002 (0x0002)  Second board data        6
+0003 (0x0003)  Third board data     65535
+0004 (0x0004)  Fourth board data    65535
+analog input board at address: 10
+analog input board at address: 11
+No boards at MODBUS address: 3 No communication with the instrument (no answer)
+No boards at MODBUS address: 4 No communication with the instrument (no answer)
+No boards at MODBUS address: 5 No communication with the instrument (no answer)
+No boards at MODBUS address: 6 No communication with the instrument (no answer)
+No boards at MODBUS address: 7 No communication with the instrument (no answer)
+No boards at MODBUS address: 8 No communication with the instrument (no answer)
+No boards at MODBUS address: 9 No communication with the instrument (no answer)
+No boards at MODBUS address: 10 No communication with the instrument (no answer)
+No boards at MODBUS address: 11 No communication with the instrument (no answer)
+No boards at MODBUS address: 12 No communication with the instrument (no answer)
+No boards at MODBUS address: 13 No communication with the instrument (no answer)
+No boards at MODBUS address: 14 No communication with the instrument (no answer)
+No boards at MODBUS address: 15 No communication with the instrument (no answer)
+No boards at MODBUS address: 16 No communication with the instrument (no answer)
+
+Enter MODBUS address from this list [1, 2], or press ENTER to use MODBUS address 1:
+Enter commands delay (0[s] to inf), or press ENTER to use 0.1[s] delay:
+
+Test options:
+1 - Read common analog input registers.
+2 - Read common output holding registers.
+3 - Read analog input registers.
+4 - Read output holding registers.
+5 - Write output holding register.
+q - Quit.
+
+Enter test option:
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="example-applications-in-python">
+<h3>Example Applications in Python<a class="headerlink" href="#example-applications-in-python" title="Link to this heading"></a></h3>
+<p>The following section presents several example top-level DCS applications. Like the utilities, these are based on Minimalmodbus.</p>
+<section id="simple-dcs-control">
+<h4>Simple DCS control<a class="headerlink" href="#simple-dcs-control" title="Link to this heading"></a></h4>
+<p>This application provides a simple way to control a DCS system and also to detect HART devices by using the HART protocol.</p>
+<p>The HART protocol is proprietary, customers implementing a full HART stack should refer to <a class="icon link reference external" href="https://fieldcommgroup.org" target="_blank">https://fieldcommgroup.org</a> This reference design provides a basic implementation of “command zero” that can be used to verify connectivity with HART instruments. CN0267 is a Complete 4 mA to 20 mA Loop Powered Field Instrument with HART Interface that can be used to test the DCS HART functionality. This application allows to:</p>
+<ul class="simple">
+<li><p>detect sistem configuration;</p></li>
+<li><p>configure and read ADC channels;</p></li>
+<li><p>configure and write DAC channels;</p></li>
+<li><p>configure HART modems and send HART command zero.</p></li>
+</ul>
+<p><a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-adicup3029/reference_designs/dcs_cn0435.zip" target="_blank">dcs_cn0435.zip</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Welcome! Use &#39;CTRL+C&#39; to go back from the current menu or exit!
+
+Available devices:
+1 -&gt; Silicon Labs CP210x USB to UART Bridge (COM12)
+2 -&gt; Intel(R) Active Management Technology - SOL (COM3)
+
+Enter detected device index, or press ENTER to use COM12:
+Enter MODBUS timeout (0.05[s] to inf), or press ENTER to use 0.1[s] timeout:
+
+Boards found at MODBUS address: 1
+Address        Name                 Value
+-------------  -----------------  -------
+0000 (0x0000)  Detected boards          2
+0001 (0x0001)  First board data         1
+0002 (0x0002)  Second board data        3
+0003 (0x0003)  Third board data     65535
+0004 (0x0004)  Fourth board data    65535
+analog output board at address: 00
+analog output board at address: 01
+
+Boards found at MODBUS address: 2
+Address        Name                 Value
+-------------  -----------------  -------
+0000 (0x0000)  Detected boards          2
+0001 (0x0001)  First board data         4
+0002 (0x0002)  Second board data        6
+0003 (0x0003)  Third board data     65535
+0004 (0x0004)  Fourth board data    65535
+analog input board at address: 10
+analog input board at address: 11
+No boards at MODBUS address: 3 No communication with the instrument (no answer)
+No boards at MODBUS address: 4 No communication with the instrument (no answer)
+No boards at MODBUS address: 5 No communication with the instrument (no answer)
+No boards at MODBUS address: 6 No communication with the instrument (no answer)
+No boards at MODBUS address: 7 No communication with the instrument (no answer)
+No boards at MODBUS address: 8 No communication with the instrument (no answer)
+No boards at MODBUS address: 9 No communication with the instrument (no answer)
+No boards at MODBUS address: 10 No communication with the instrument (no answer)
+No boards at MODBUS address: 11 No communication with the instrument (no answer)
+No boards at MODBUS address: 12 No communication with the instrument (no answer)
+No boards at MODBUS address: 13 No communication with the instrument (no answer)
+No boards at MODBUS address: 14 No communication with the instrument (no answer)
+No boards at MODBUS address: 15 No communication with the instrument (no answer)
+No boards at MODBUS address: 16 No communication with the instrument (no answer)
+
+Enter MODBUS address from this list [1, 2], or press ENTER to use MODBUS address 1:
+Enter commands delay (0[s] to inf), or press ENTER to use 0.1[s] delay:
+
+Use CTRL+C to end a process or switch between nodes.
+CN0414                                 CN0418                        CN0435
+-------------------------------------  ----------------------------  ----------------------------------------
+1 - Read device voltage channel        e - Set DAC channel 1 output  o - Read common analog input registers
+2 - Read device current channel        f - Set DAC channel 2 output  p - Read common output holding registers
+3 - Read board voltage channels        g - Set DAC channel 3 output  r - Read analog input registers
+4 - Read board current channels        h - Set DAC channel 4 output  s - Read output holding registers
+5 - Read instrument voltage channels   i - Set DAC channel 1 range   t - Detect system configuration
+6 - Read instrument current channels   j - Set DAC channel 2 range
+7 - Set ADC output code                k - Set DAC channel 3 range
+8 - Set ADC filter                     l - Set DAC channel 4 range
+9 - Set ADC postfilter                 m - Send HART command zero
+a - Set ADC output data rate           n - Select HART channel
+b - Set ADC open wire detection state
+c - Send HART command zero
+d - Select HART channel                                              q - Quit
+
+Enter Option:
+</pre></div>
+</div>
+<p>// End of Document //</p>
+</section>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

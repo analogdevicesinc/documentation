@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="We are in the process of migrating our documentation to GitHubIO. This page is outdated. Please check out our latest Build guide at https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html" name="description" />
+
+    <title>Building HDL &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Building HDL</a><ul>
+<li><a class="reference internal" href="#setup-and-check-your-environment">Setup and check your environment</a></li>
+<li><a class="reference internal" href="#setup-the-hdl-repository">Setup the HDL repository</a></li>
+<li><a class="reference internal" href="#building-the-projects">Building the projects</a><ul>
+<li><a class="reference internal" href="#building-an-intel-project">Building an Intel project</a><ul>
+<li><a class="reference internal" href="#intel-checking-the-build-and-analyzing-results">Intel: checking the build and analyzing results</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#building-a-xilinx-project">Building a Xilinx project</a><ul>
+<li><a class="reference internal" href="#enabling-out-of-context-synthesis">Enabling Out-of-Context synthesis</a></li>
+<li><a class="reference internal" href="#xilinx-checking-the-build-and-analyzing-results-of-library-components">Xilinx: checking the build and analyzing results of library components</a></li>
+<li><a class="reference internal" href="#xilinx-checking-the-build-and-analyzing-results-of-projects">Xilinx: checking the build and analyzing results of projects</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tools-and-tool-versions">Tools and Tool versions</a><ul>
+<li><a class="reference internal" href="#tools">Tools</a></li>
+<li><a class="reference internal" href="#tool-versions">Tool versions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#environment">Environment</a><ul>
+<li><a class="reference internal" href="#linux-environment-setup">Linux environment setup</a></li>
+<li><a class="reference internal" href="#windows-environment-setup">Windows environment setup</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#make-supported-targets">Make: supported targets</a></li>
+<li><a class="reference internal" href="#xilinx-auto-tcl-build">Xilinx auto Tcl build</a><ul>
+<li><a class="reference internal" href="#building-the-libraries-adi-make-lib">Building the libraries (adi_make::lib)</a></li>
+<li><a class="reference internal" href="#building-the-project-itself">Building the project itself</a></li>
+<li><a class="reference internal" href="#preparing-the-sd-card">Preparing the SD card</a></li>
+<li><a class="reference internal" href="#make-the-boot-bin-adi-make-boot-bin">Make the BOOT.BIN (adi_make::boot_bin)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#building-manually">Building manually</a><ul>
+<li><a class="reference internal" href="#intel-building-manually-on-quartus">Intel: Building manually on Quartus</a></li>
+<li><a class="reference internal" href="#xilinx-building-manually-on-vivado">Xilinx: Building manually on Vivado</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#references">References</a></li>
+<li><a class="reference internal" href="#errors-warnings-and-notes">Errors, Warnings and Notes</a><ul>
+<li><a class="reference internal" href="#xilinx-vivado">Xilinx: Vivado</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>We are in the process of migrating our documentation to GitHubIO. This page is outdated. Please check out our latest Build guide at <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html" target="_blank">https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html</a></p>
+</div>
+<section id="building-hdl">
+<h1>Building HDL<a class="headerlink" href="#building-hdl" title="Link to this heading"></a></h1>
+<p>Please note that ADI only provides the source files necessary to create and build the designs. That means the burden of modifying and building these projects is on you. The build process, obviously, depends on certain software and tools. There are many ways you could use this software and tools. In other words, how you want to build these projects is entirely up to you. The only catch is that if you run into problems, you must use basic diligence in resolving it yourself.</p>
+<p>Here we are giving you a quick rundown on how we build things. That is, the steps below are NOT a recommendation, but a suggestion. We use exclusively command line and mostly Linux systems. On Windows, we use Cygwin. Please do not ask any installation and/or setup instructions on these.</p>
+<section id="setup-and-check-your-environment">
+<h2>Setup and check your environment<a class="headerlink" href="#setup-and-check-your-environment" title="Link to this heading"></a></h2>
+<p>This section contains a guide about how to setup your environment in order to build any HDL project from the repository.</p>
+<ul class="simple">
+<li><p>Install the required FPGA Design Suite. You can find information about the proper version in the <a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/releases" target="_blank">release notes</a>. Make sure that you’re always using the latest release.</p></li>
+<li><p>The proper Vivado/Quartus version can be found in:</p>
+<ul>
+<li><p>Starting with the <code class="docutils literal notranslate"><span class="pre">hdl_2021_r1</span></code> release branch: <a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/scripts/adi_env.tcl" target="_blank">scripts/adi_env.tcl</a></p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">hdl_2019_r2</span></code> and older: <em>hdl/projects/scripts/adi_project_xilinx.tcl</em> for Vivado, and <em>hdl/projects/scripts/adi_project_intel.tcl</em> for Quartus.</p></li>
+</ul>
+</li>
+<li><p>Download the tools from the following links (it will take a lot of time and space):</p>
+<ul>
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/support/download.html" target="_blank">Xilinx tools</a> (make sure you’re downloading the proper installer! For full installation, it is better to choose the one that downloads and installs both Vivado and Vitis at the same time)</p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/https/www.intel.com/content/www/us/en/programmable/downloads/download-center.html" target="_blank">Intel tools</a></p></li>
+</ul>
+</li>
+<li><p>After you have installed the above mentioned tools, you will need the paths to those directories in the following steps, so have them in a note</p></li>
+<li><p>We are using <a class="icon link reference external" href="https://git-scm.com/" target="_blank">git</a> for version control and <a class="icon link reference external" href="https://www.gnu.org/software/make/" target="_blank">GNU Make</a> to build the projects. Depending on what OS you’re using, you have these options:</p></li>
+</ul>
+<p>++++ For Windows environment with Cygwin |</p>
+<p>Because GNU Make is not supported on Windows, you need to install <a class="icon link reference external" href="https://www.cygwin.com/" target="_blank">Cygwin</a>, which is a UNIX-like environment and command-line interface for Microsoft Windows. You do not need to install any special package, other than <strong>git</strong> and <strong>make</strong>.</p>
+<p>After you installed Cygwin, you need to add your FPGA Design Tools installation directory to your PATH environment variable. You can do that by modifying your <strong>~/.bashrc</strong> file, by adding the following lines <strong>changed accordingly to your installation directories</strong>. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export PATH=$PATH:/cygdrive/path_to/Xilinx/Vivado/202x.x/bin
+export PATH=$PATH:/cygdrive/path_to/Xilinx/Vivado_HLS/202x.x/bin
+export PATH=$PATH:/cygdrive/path_to/Xilinx/Vitis/202x.x/bin
+export PATH=$PATH:/cygdrive/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/nt/bin
+export PATH=$PATH:/cygdrive/path_to/Xilinx/Vitis/202x.x/gnu/arm/nt/bin
+export PATH=$PATH:/cygdrive/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/linux_toolchain/nt64_be/bin
+export PATH=$PATH:/cygdrive/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/linux_toolchain/nt64_le/bin
+export PATH=$PATH:/cygdrive/path_to/Xilinx/Vitis/202x.x/gnu/aarch32/nt/gcc-arm-none-eabi/bin
+export PATH=$PATH:/cygdrive/path_to/intelFPGA_pro/2x.x/quartus/bin
+</pre></div>
+</div>
+<p>&lt;fc #fa8072&gt;Replace the <strong>path_to</strong> string with your path to the installation folder and the <strong>tools version</strong> with the proper one!&lt;/fc&gt;</p>
+<hr class="docutils" />
+<p>++++ For Windows environment with WSL | You can also install <a class="icon link reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install/" target="_blank">WSL</a> (Windows Subsystem for Linux) which is both a UNIX-like environment and a command-line interface for Microsoft Windows. In order to be able to access the GUI, WSL2 is recommended. This can be done if we open PowerShell or Windows Command Prompt in Administrator mode. In the link above you can find the installation guide for wsl on windows.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When installing wsl, the Ubuntu distribution will be installed by default</p>
+</div>
+<p>If not, after installing wsl, write in the terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">wsl</span> <span class="o">--</span><span class="n">update</span>
+<span class="o">&gt;</span><span class="n">wsl</span> <span class="o">--</span><span class="n">install</span> <span class="o">-</span><span class="n">d</span> <span class="n">ubuntu</span>
+</pre></div>
+</div>
+<p>If you want to check the version for wsl, you can use the Windows Command Prompt command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">wsl</span> <span class="o">-</span><span class="n">l</span> <span class="o">-</span><span class="n">v</span>
+  <span class="n">NAME</span>      <span class="n">STATE</span>           <span class="n">VERSION</span>
+<span class="o">*</span> <span class="n">Ubuntu</span>    <span class="n">Running</span>         <span class="mi">2</span>
+</pre></div>
+</div>
+<p>If you want to check the version for wsl and Ubuntu, you can use the following commands in Ubuntu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:~$ uname -r
+5.15.90.1-microsoft-standard-WSL2
+
+:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 22.04.2 LTS
+Release:        22.04
+Codename:       jammy
+</pre></div>
+</div>
+<p>If you want to become root, you can use the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:~$ sudo -i
+[sudo] password for username:
+root@HYB-0FPP35J6CsI:~# exit
+logout
+</pre></div>
+</div>
+<p>Here the paths will look like this if the tools will be installed in the Windows file system:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export PATH=$PATH:/mnt/path_to/Xilinx/Vivado/202x.x/bin
+export PATH=$PATH:/mnt/path_to/Xilinx/Vivado_HLS/202x.x/bin
+export PATH=$PATH:/mnt/path_to/Xilinx/Vitis/202x.x/bin
+export PATH=$PATH:/mnt/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/nt/bin
+export PATH=$PATH:/mnt/path_to/Xilinx/Vitis/202x.x/gnu/arm/nt/bin
+export PATH=$PATH:/mnt/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/linux_toolchain/nt64_be/bin
+export PATH=$PATH:/mnt/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/linux_toolchain/nt64_le/bin
+export PATH=$PATH:/mnt/path_to/Xilinx/Vitis/202x.x/gnu/aarch32/nt/gcc-arm-none-eabi/bin
+export PATH=$PATH:/mnt/path_to/intelFPGA_pro/2x.x/quartus/bin
+</pre></div>
+</div>
+<p>&lt;fc #fa8072&gt;Replace the <strong>path_to</strong> string with your path to the installation folder and the <strong>tools version</strong> with the proper one!&lt;/fc&gt;</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Before building any project, it is necessary to install the Linux version for Vivado (see <a class="reference internal" href="#"><span class="doc">How to install Vivado on wsl section</span></a> ) and Quartus because on the Ubuntu distribution on <a class="icon link reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install/" target="_blank">WSL</a> you cannot run projects on the Windows version of them. When you have to choose the installation path, choose the location where wsl is installed (\\wsl.localhost\Ubuntu\opt). Also, to get the best performance, you must clone your hdl repository in the WSL file system. For example: (\\wsl.localhost\Ubuntu\home\username\hdl)</p>
+</div>
+<p>For more information you can consult the following link: <a class="icon link reference external" href="https://learn.microsoft.com/en-us/windows/wsl/filesystems#file-storage-and-performance-across-file-systems" target="_blank">WSLStorage</a>.</p>
+<p>Then the paths will look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export PATH=$PATH:/opt/path_to/Xilinx/Vivado/202x.x/bin
+export PATH=$PATH:/opt/path_to/Xilinx/Vivado_HLS/202x.x/bin
+export PATH=$PATH:/opt/path_to/Xilinx/Vitis/202x.x/bin
+export PATH=$PATH:/opt/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/nt/bin
+export PATH=$PATH:/opt/path_to/Xilinx/Vitis/202x.x/gnu/arm/nt/bin
+export PATH=$PATH:/opt/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/linux_toolchain/nt64_be/bin
+export PATH=$PATH:/opt/path_to/Xilinx/Vitis/202x.x/gnu/microblaze/linux_toolchain/nt64_le/bin
+export PATH=$PATH:/opt/path_to/Xilinx/Vitis/202x.x/gnu/aarch32/nt/gcc-arm-none-eabi/bin
+export PATH=$PATH:/opt/path_to/intelFPGA_pro/2x.x/quartus/bin
+</pre></div>
+</div>
+<p>&lt;fc #fa8072&gt;Replace the <strong>path_to</strong> string with your path to the installation folder and the <strong>tools version</strong> with the proper one!&lt;/fc&gt;</p>
+<hr class="docutils" />
+<p>++++ For Linux environment | Because, in general, both <strong>git</strong> and <strong>make</strong> are native tools in Linux, you do not need to do any special setup. If you don’t have these, install them.</p>
+<p>Further more, you need to add your FPGA Design Tools installation directory to your PATH environment variable. For Xilinx tools, you can run the <strong>settings64.sh</strong> script, which is located in your installation directory. Or you can add the required paths to your <strong>~/.bashrc</strong> file. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export PATH=$PATH:&quot;/opt/Xilinx/Vivado/202x.x/bin&quot;
+export PATH=$PATH:&quot;/opt/Xilinx/Vitis/202x.x/bin&quot;
+export PATH=$PATH:&quot;/opt/intelFPGA_pro/2x.x/quartus/bin&quot;
+</pre></div>
+</div>
+<p>&lt;fc #fa8072&gt;Replace the <strong>path_to</strong> string with your path to the installation folder and the <strong>tools version</strong> with the proper one!&lt;/fc&gt; ++++</p>
+<p>++++ How to install Vivado on WSL | Installing the linux kit for Vivado can be done from Ubuntu:</p>
+<ul class="simple">
+<li><p>Go to the path where the installation kit for Vivado is located.</p></li>
+<li><p>Make it executable</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:~$ chmod +x Xilinx_Vivado installation kit.bin
+:~$ ./Xilinx_Vivado installation kit.bin
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">you</span> <span class="n">unzip</span> <span class="n">the</span> <span class="n">installation</span> <span class="n">kit</span> <span class="ow">in</span> <span class="n">Ubuntu</span><span class="p">,</span> <span class="n">go</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Xilinx_Vivado</span> <span class="n">installation</span> <span class="n">kit</span> <span class="ow">and</span> <span class="n">run</span> <span class="o">.</span><span class="n">xsetup</span> <span class="n">file</span><span class="o">.</span> <span class="n">Make</span> <span class="n">sure</span> <span class="n">you</span> <span class="n">have</span> <span class="n">the</span> <span class="n">following</span> <span class="n">libraries</span> <span class="n">installed</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:~$ sudo apt-get install locales &amp;&amp; sudo localedef -i en_US -f UTF-8 en_US.UTF-8
+:~$ sudo ./installLibs.sh
+:~$ sudo apt-get install libxrender1 libxtst6 libxi6
+</pre></div>
+</div>
+<p>You must create a .bashrc file with the paths corresponding to the version of Vivado installed. ++++</p>
+<p>++++ How to verify your environment setup | Run any of the following commands. These commands will return a valid path if your setup is good.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">~</span><span class="p">]</span> <span class="n">which</span> <span class="n">git</span>
+<span class="p">[</span><span class="o">~</span><span class="p">]</span> <span class="n">which</span> <span class="n">make</span>
+<span class="p">[</span><span class="o">~</span><span class="p">]</span> <span class="n">which</span> <span class="n">vivado</span>
+<span class="p">[</span><span class="o">~</span><span class="p">]</span> <span class="n">which</span> <span class="n">quartus</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="setup-the-hdl-repository">
+<h2>Setup the HDL repository<a class="headerlink" href="#setup-the-hdl-repository" title="Link to this heading"></a></h2>
+<p>If you completed the above steps, next thing to do is clone the repository. This is the best method to get the sources. Here, I am cloning the repository inside a directory called <strong>adi</strong>. Please refer to the <a class="reference internal" href="git.html"><span class="doc">Git Repository</span></a> section for more details.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">~</span><span class="p">]</span> <span class="n">mkdir</span> <span class="n">adi</span>
+<span class="p">[</span><span class="o">~</span><span class="p">]</span> <span class="n">cd</span> <span class="n">adi</span>
+<span class="p">[</span><span class="o">~</span><span class="p">]</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">analogdevicesinc</span><span class="o">/</span><span class="n">hdl</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cloning the HDL repository is done now using SSH, because of GitHub security reasons. Check out this documentation on <a class="icon link reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent" target="_blank">how to deal with SSH keys in GitHub</a>. Both for <a class="icon link reference external" href="https://www.cygwin.com/" target="_blank">Cygwin</a> and <a class="icon link reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install/" target="_blank">WSL</a> it is necessary to create a unique SSH key. If you use WSL,to get the best performance, you must clone your hdl repository in the WSL file system. For example: (\\wsl.localhost\Ubuntu\home\username\hdl)</p>
+</div>
+<p>The above command clones the ‘default’ branch, which is the ‘master’ for HDL. The ‘master’ branch always points to the latest stable release branch, but it also has features <strong>that are not fully tested</strong>. If you want to switch to any other branch you need to checkout that branch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">~</span><span class="p">]</span> <span class="n">cd</span> <span class="n">hdl</span><span class="o">/</span>
+<span class="p">[</span><span class="o">~</span><span class="p">]</span> <span class="n">git</span> <span class="n">status</span>
+<span class="p">[</span><span class="o">~</span><span class="p">]</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">hdl_2021_r1</span>
+</pre></div>
+</div>
+<p>If this is your first time cloning, you have all the latest source files. If it has been a while, you can simply pull the latest sources using <strong>git pull</strong> or <strong>git rebase</strong> if you have local changes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">~</span><span class="p">]</span> <span class="n">git</span> <span class="n">fetch</span> <span class="n">origin</span>               <span class="c1"># this shows you what changes will be pulled on your local copy</span>
+<span class="p">[</span><span class="o">~</span><span class="p">]</span> <span class="n">git</span> <span class="n">rebase</span> <span class="n">origin</span><span class="o">/</span><span class="n">hdl_2021_r1</span>  <span class="c1"># this updates your local copy</span>
+</pre></div>
+</div>
+<p>++++ Screenshots: | <a class="reference internal" href="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_4.png"><img alt="image1" src="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_4.png" style="width: 800px;" /></a> ++++</p>
+</section>
+<section id="building-the-projects">
+<h2>Building the projects<a class="headerlink" href="#building-the-projects" title="Link to this heading"></a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Before building any project, you must have the environment prepared and the proper tools. See <a class="reference internal" href="#"><span class="doc">Tools</span></a> section on what you need to download and <a class="reference internal" href="#"><span class="doc">Environment</span></a> section on how to set-up your environment.</p>
+</div>
+<section id="building-an-intel-project">
+<h3>Building an Intel project<a class="headerlink" href="#building-an-intel-project" title="Link to this heading"></a></h3>
+<p>An Intel project build is relatively easy. There is no need to build any library components. However, the flow is the same, run ‘make’ to build your project of interest. In this example, I am only interested in the ‘ADRV9371X’ project on the ‘A10SOC’ carrier.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">projects</span><span class="o">/</span><span class="n">adrv9371x</span><span class="o">/</span><span class="n">a10soc</span>
+<span class="n">make</span>
+</pre></div>
+</div>
+<p>++++ Screen shots: | <a class="reference internal" href="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_12.png"><img alt="image2" src="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_12.png" style="width: 800px;" /></a> ++++</p>
+<p>This assumes that you have the tools and licenses setup correctly. If you don’t get to the last line, the make failed to build the project. There is nothing you can gather from the ‘make’ output (other than the build failed or not), the actual failure is in a log file. So let’s see how to analyze the build log files and results.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you want to use a NIOS-II based project with no-OS software, you have to turn off the MMU feature of the NIOS_II processor. In that case, the make will get an additional attribute: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">NIOS2_MMU=0</span></code></p>
+</div>
+<section id="intel-checking-the-build-and-analyzing-results">
+<h4>Intel: checking the build and analyzing results<a class="headerlink" href="#intel-checking-the-build-and-analyzing-results" title="Link to this heading"></a></h4>
+<p>If you look closely at the ‘rule’ for this target, you see it is just calling ‘quartus_sh’ with the project TCL file and redirecting the output to a log file. In this case ‘adrv9371_a10soc_quartus.log’ and is inside the ‘projects/adrv9371x/a10soc’ directory.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span><span class="p">:</span> <span class="n">Entering</span> <span class="n">directory</span> <span class="s1">&#39;/home/RKutty/gitadi/hdl/projects/adrv9371x/a10soc&#39;</span>
+<span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">*.</span><span class="n">log</span> <span class="o">*</span><span class="n">_INFO</span><span class="o">.</span><span class="n">txt</span> <span class="o">*</span><span class="n">_dump</span><span class="o">.</span><span class="n">txt</span> <span class="n">db</span> <span class="o">*.</span><span class="n">asm</span><span class="o">.</span><span class="n">rpt</span> <span class="o">*.</span><span class="n">done</span> <span class="o">*.</span><span class="n">eda</span><span class="o">.</span><span class="n">rpt</span> <span class="o">*.</span><span class="n">fit</span><span class="o">.*</span> <span class="o">*.</span><span class="n">map</span><span class="o">.*</span> <span class="o">*.</span><span class="n">sta</span><span class="o">.*</span> <span class="o">*.</span><span class="n">qsf</span> <span class="o">*.</span><span class="n">qpf</span>           <span class="o">*.</span><span class="n">qws</span> <span class="o">*.</span><span class="n">sof</span> <span class="o">*.</span><span class="n">cdf</span> <span class="o">*.</span><span class="n">sld</span> <span class="o">*.</span><span class="n">qdf</span> <span class="n">hc_output</span> <span class="n">system_bd</span> <span class="n">hps_isw_handoff</span> <span class="n">hps_sdram_</span><span class="o">*.</span><span class="n">csv</span> <span class="o">*</span><span class="n">ddr3_</span><span class="o">*.</span><span class="n">csv</span> <span class="n">increme</span>          <span class="n">ntal_db</span> <span class="n">reconfig_mif</span> <span class="o">*.</span><span class="n">sopcinfo</span> <span class="o">*.</span><span class="n">jdi</span> <span class="o">*.</span><span class="n">pin</span> <span class="o">*</span><span class="n">_summary</span><span class="o">.</span><span class="n">csv</span> <span class="o">*.</span><span class="n">dpf</span>
+<span class="n">quartus_sh</span> <span class="o">--</span><span class="mi">64</span><span class="n">bit</span> <span class="o">-</span><span class="n">t</span>  <span class="n">system_project</span><span class="o">.</span><span class="n">tcl</span>  <span class="o">&gt;&gt;</span> <span class="n">adrv9371x_a10soc_quartus</span><span class="o">.</span><span class="n">log</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span>
+<span class="n">make</span><span class="p">:</span> <span class="n">Leaving</span> <span class="n">directory</span> <span class="s1">&#39;/home/RKutty/gitadi/hdl/projects/adrv9371x/a10soc&#39;</span>
+</pre></div>
+</div>
+<p>Quick (or detailed) check on files. If you are seeking support from us, this is the most relevant information you can provide (do NOT copy-paste ‘make’ command line text).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">ltr</span> <span class="n">projects</span><span class="o">/</span><span class="n">adrv9371x</span><span class="o">/</span><span class="n">a10soc</span>
+<span class="n">tail</span> <span class="n">projects</span><span class="o">/</span><span class="n">adrv9371x</span><span class="o">/</span><span class="n">a10soc</span><span class="o">/</span><span class="n">adrv9371x_a10soc_quartus</span><span class="o">.</span><span class="n">log</span>
+</pre></div>
+</div>
+<p>++++ Screenshots: | <a class="reference internal" href="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_13.png"><img alt="image3" src="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_13.png" style="width: 800px;" /></a> ++++ ++++ Screenshots: | <a class="reference internal" href="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_15.png"><img alt="image4" src="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_15.png" style="width: 800px;" /></a> ++++</p>
+<p>And finally, if the project build is successful, the <strong>.sopcinfo</strong> and <strong>.sof</strong> files should be in the same folder.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">ltr</span> <span class="n">projects</span><span class="o">/</span><span class="n">adrv9371x</span><span class="o">/</span><span class="n">a10soc</span><span class="o">/*.</span><span class="n">sopcinfo</span>
+<span class="n">ls</span> <span class="o">-</span><span class="n">ltr</span> <span class="n">projects</span><span class="o">/</span><span class="n">adrv9371x</span><span class="o">/</span><span class="n">a10soc</span><span class="o">/*.</span><span class="n">sof</span>
+</pre></div>
+</div>
+<p>++++ Screenshots: | <a class="reference internal" href="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_14.png"><img alt="image5" src="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_14.png" style="width: 800px;" /></a> ++++</p>
+<p>You may now use this ‘sopcinfo’ file as the input to your no-OS and/or Linux build. The ‘sof’ file is used to program the device.</p>
+<p>++++ Building an Intel project in WSL - known issues | For a10Soc and s10Soc projects it is very possible to face the following error when you make a build:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Current module quartus_fit was unexpectedly terminated by signal 9. This may be because some system resource has been exhausted, or quartus_fit performed an illegal operation.</p>
+</div>
+<p>It can also happen that “<strong>make</strong>” get stuck when synthesizing some ips. This errors may appear because your device does not have enough RAM memory to build your FPGA design. This problem can be solved if it is created a linux Swap file. You can find more information about what a swap file is in the next link:<a class="icon link reference external" href="https://linuxize.com/post/create-a-linux-swap-file/" target="_blank">SwapFile</a>. Depending on the size of the project, more or less virtual memory must be allocated. If you type in the search bar <strong>System Information</strong>, you can see Total Physical Memory and Total Virtual Memory of your system. For example for the AD9213 with s10Soc project, it was necessary to allocate 15 GB of virtual memory, to be able to make a build for the project. To create a swap file you can use the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:~$ sudo fallocate -l &quot;memory size (e.g 1G, 2G, 8G, etc.)&quot; /swapfile
+:~$ sudo chmod 600 /swapfile
+:~$ sudo mkswap /swapfile
+:~$ sudo swapon /swapfile
+</pre></div>
+</div>
+<p>If you want to make the change permanent:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="ow">in</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">fstab</span> <span class="n">file</span> <span class="nb">type</span> <span class="n">the</span> <span class="n">command</span><span class="p">:</span>
+<span class="o">/</span><span class="n">swapfile</span> <span class="n">swap</span> <span class="n">swap</span> <span class="n">defaults</span> <span class="mi">0</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>If you want to deactivate the swap memory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:~$ sudo swapoff -v /swapfile
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="building-a-xilinx-project">
+<h3>Building a Xilinx project<a class="headerlink" href="#building-a-xilinx-project" title="Link to this heading"></a></h3>
+<p>A Xilinx project is built the same way as an ‘Intel’ project. The only exception is that there are a few ‘sub-make(s)’ for the library components. The way of building a project in Cygwin and WSL is the same, with small differences. In this example, it is building the ‘DAQ2’ project on the ‘ZC706’ carrier.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">projects</span><span class="o">/</span><span class="n">daq2</span><span class="o">/</span><span class="n">zc706</span>
+<span class="n">make</span>
+</pre></div>
+</div>
+<p>++++ Screenshots: | <a class="reference internal" href="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_5.png"><img alt="image6" src="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_5.png" style="width: 800px;" /></a> ++++ ++++ Screenshots: | <a class="reference internal" href="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_6.png"><img alt="image7" src="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_6.png" style="width: 800px;" /></a> ++++</p>
+<p>The <strong>make</strong> builds all the libraries first and then builds the project. This assumes that you have the tools and licenses setup correctly. If you don’t get to the last line, the make failed to build one or more targets: it could be a library component or the project itself. There is nothing you can gather from the ‘make’ output (other than which one failed). The actual failure is in a log file, so let’s see how to analyze the build log files and results.</p>
+<section id="enabling-out-of-context-synthesis">
+<h4>Enabling Out-of-Context synthesis<a class="headerlink" href="#enabling-out-of-context-synthesis" title="Link to this heading"></a></h4>
+<p>You can opt in for out-of-context synthesis during the build by defining the <strong>ADI_USE_OOC_SYNTHESIS</strong> system variable. By setting the <strong>ADI_MAX_OOC_JOBS</strong> system variable you can adjust the number of maximum parallel out-of-context synthesis jobs. If not set, the default parallel job number is set to 4.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">ADI_USE_OOC_SYNTHESIS</span><span class="o">=</span><span class="n">y</span>
+<span class="n">export</span> <span class="n">ADI_MAX_OOC_JOBS</span><span class="o">=</span><span class="mi">8</span>
+<span class="n">cd</span> <span class="n">projects</span><span class="o">/</span><span class="n">daq2</span><span class="o">/</span><span class="n">zc706</span>
+<span class="n">make</span>
+</pre></div>
+</div>
+<p>This will synthesize each IP from the block design individually and will store it in a common cache for future re-use. The cache is located in the <strong>ipcache</strong> folder and is common for all the projects, this way speeding up re-compile of the same project or compile time of common blocks used in base designs. Example: a MicroBlaze base design for VCU118 once compiled, it will be reused on other projects. Using the IP cache will speed up the re-compiles of every project in OOC mode since the cache is not cleared as with normal compile flow.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Starting with Vivado 2020.2, Out-of-Context is the default mode. There is no need to set ADI_USE_OOC_SYNTHESIS variable.</p>
+<p>Set:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">ADI_USE_OOC_SYNTHESIS</span><span class="o">=</span><span class="n">n</span>
+</pre></div>
+</div>
+<p>only in case you want to use Project Mode.</p>
+</div>
+</section>
+<section id="xilinx-checking-the-build-and-analyzing-results-of-library-components">
+<h4>Xilinx: checking the build and analyzing results of library components<a class="headerlink" href="#xilinx-checking-the-build-and-analyzing-results-of-library-components" title="Link to this heading"></a></h4>
+<p>If you look closely, you see what it is actually doing. It enters a library component folder then calls ‘Vivado’ in batch mode. The IP commands are in the source ‘Tcl’ file and output is redirected to a log file. In the below example that is ‘axi_ad9144_ip.log’ inside the ‘library/axi_ad9144’ directory.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">Entering</span> <span class="n">directory</span> <span class="s1">&#39;/home/RKutty/gitadi/hdl/library/axi_ad9144&#39;</span>
+<span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">*.</span><span class="n">cache</span> <span class="o">*.</span><span class="n">data</span> <span class="o">*.</span><span class="n">xpr</span> <span class="o">*.</span><span class="n">log</span> <span class="n">component</span><span class="o">.</span><span class="n">xml</span> <span class="o">*.</span><span class="n">jou</span> <span class="n">xgui</span> <span class="o">*.</span><span class="n">ip_user_files</span> <span class="o">*.</span><span class="n">srcs</span> <span class="o">*.</span><span class="n">hw</span> <span class="o">*.</span><span class="n">sim</span> <span class="o">.</span><span class="n">Xil</span>
+<span class="n">vivado</span> <span class="o">-</span><span class="n">mode</span> <span class="n">batch</span> <span class="o">-</span><span class="n">source</span> <span class="n">axi_ad9144_ip</span><span class="o">.</span><span class="n">tcl</span>  <span class="o">&gt;&gt;</span> <span class="n">axi_ad9144_ip</span><span class="o">.</span><span class="n">log</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>If you see ‘make’ returns an error (and stops), <strong>you must first check the contents of this log file</strong> before going crazy on us. You may also do a sanity checking just to see what are the generated files and the log file contents.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">ltr</span> <span class="n">library</span><span class="o">/</span><span class="n">axi_ad9144</span>
+<span class="n">tail</span> <span class="n">library</span><span class="o">/</span><span class="n">axi_ad9144</span><span class="o">/</span><span class="n">axi_ad9144_ip</span><span class="o">.</span><span class="n">log</span>
+</pre></div>
+</div>
+<p>++++ Screenshots: | <a class="reference internal" href="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_7.png"><img alt="image8" src="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_7.png" style="width: 800px;" /></a> ++++ ++++ Screenshots: | <a class="reference internal" href="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_8.png"><img alt="image9" src="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_8.png" style="width: 800px;" /></a> ++++</p>
+</section>
+<section id="xilinx-checking-the-build-and-analyzing-results-of-projects">
+<h4>Xilinx: checking the build and analyzing results of projects<a class="headerlink" href="#xilinx-checking-the-build-and-analyzing-results-of-projects" title="Link to this heading"></a></h4>
+<p>The last thing make does in this above example is building the project. It is exactly the same ‘rule’ as the library component. The log file, in this example, is called ‘daq2_zc706_vivado.log’ and is inside the ‘projects/daq2/zc706’ directory.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">*.</span><span class="n">cache</span> <span class="o">*.</span><span class="n">data</span> <span class="o">*.</span><span class="n">xpr</span> <span class="o">*.</span><span class="n">log</span> <span class="o">*.</span><span class="n">jou</span> <span class="n">xgui</span> <span class="o">*.</span><span class="n">runs</span> <span class="o">*.</span><span class="n">srcs</span> <span class="o">*.</span><span class="n">sdk</span> <span class="o">*.</span><span class="n">hw</span> <span class="o">*.</span><span class="n">sim</span> <span class="o">.</span><span class="n">Xil</span> <span class="o">*.</span><span class="n">ip_user_files</span>
+<span class="n">vivado</span> <span class="o">-</span><span class="n">mode</span> <span class="n">batch</span> <span class="o">-</span><span class="n">source</span> <span class="n">system_project</span><span class="o">.</span><span class="n">tcl</span> <span class="o">&gt;&gt;</span> <span class="n">daq2_zc706_vivado</span><span class="o">.</span><span class="n">log</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span>
+<span class="n">make</span><span class="p">:</span> <span class="n">Leaving</span> <span class="n">directory</span> <span class="s1">&#39;/home/RKutty/gitadi/hdl/projects/daq2/zc706&#39;</span>
+</pre></div>
+</div>
+<p>Quick (or detailed) check on files.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">ltr</span> <span class="n">projects</span><span class="o">/</span><span class="n">daq2</span><span class="o">/</span><span class="n">zc706</span>
+<span class="n">tail</span> <span class="n">projects</span><span class="o">/</span><span class="n">daq2</span><span class="o">/</span><span class="n">zc706</span><span class="o">/</span><span class="n">daq2_zc706_vivado</span><span class="o">.</span><span class="n">log</span>
+</pre></div>
+</div>
+<p>++++ Screenshots: | <a class="reference internal" href="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_9.png"><img alt="image10" src="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_9.png" style="width: 800px;" /></a> ++++ ++++ Screenshots: | <a class="reference internal" href="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_10.png"><img alt="image11" src="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_10.png" style="width: 800px;" /></a> ++++</p>
+<p>And finally, if the project build is successful, the hdf file should be in the ‘sdk’ folder.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">ltr</span> <span class="n">projects</span><span class="o">/</span><span class="n">daq2</span><span class="o">/</span><span class="n">zc706</span><span class="o">/</span><span class="n">daq2_zc706</span><span class="o">.</span><span class="n">sdk</span>
+</pre></div>
+</div>
+<p>++++ Screenshots: | <a class="reference internal" href="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_11.png"><img alt="image12" src="https://wiki.analog.com/_media/resources/fpga/docs/hdl/hdl_cygwin_11.png" style="width: 800px;" /></a> ++++</p>
+<p>You may now use this ‘hdf’ file as the input to your no-OS and/or Linux build. Starting with Vivado 2019.3, output file extension got change from .hdf to .xsa.</p>
+<p>++++ Building a Xilinx project in WSL - known issues | For some projects it is very possible to face the following error when you make a build:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><span class="math notranslate nohighlight">\(RDI_PROG&quot; &quot;\)</span>&#64;” crash” “Killed “<span class="math notranslate nohighlight">\(RDI_PROG&quot; &quot;\)</span>&#64;”</p>
+</div>
+<p>This error may appear because your device does not have enough RAM memory to build your FPGA design. For example, the project AD-FMCDAQ3-EBZ with Virtex UltraScale+ VCU118 (XCVU9P device) requires 20 GB (typical memory) and a peak of 32 GB memory RAM. The next link shows the typical and peak Vivado memory usage per target device:<a class="icon link reference external" href="https://www.xilinx.com/products/design-tools/vivado/vivado-ml.html#memory" target="_blank">MemoryUsage</a>. This problem can be solved if it is created a linux Swap file. You can find more information about what a swap file is in the next link:<a class="icon link reference external" href="https://linuxize.com/post/create-a-linux-swap-file/" target="_blank">SwapFile</a> To create a swap file you can use the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:~$ sudo fallocate -l &quot;memory size (e.g 1G, 2G, 8G, etc.)&quot; /swapfile
+:~$ sudo chmod 600 /swapfile
+:~$ sudo mkswap /swapfile
+:~$ sudo swapon /swapfile
+</pre></div>
+</div>
+<p>If you want to make the change permanent:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="ow">in</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">fstab</span> <span class="n">file</span> <span class="nb">type</span> <span class="n">the</span> <span class="n">command</span><span class="p">:</span>
+<span class="o">/</span><span class="n">swapfile</span> <span class="n">swap</span> <span class="n">swap</span> <span class="n">defaults</span> <span class="mi">0</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>If you want to deactivate the swap memory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:~$ sudo swapoff -v /swapfile
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="tools-and-tool-versions">
+<h1>Tools and Tool versions<a class="headerlink" href="#tools-and-tool-versions" title="Link to this heading"></a></h1>
+<section id="tools">
+<h2>Tools<a class="headerlink" href="#tools" title="Link to this heading"></a></h2>
+<p>ADI provides reference designs for both Intel and Xilinx. Please note that we have no preference over Intel or Xilinx, if possible we try to port the designs on both platforms. However, there are a few things you should be aware of when building the projects. This is NOT a comparison (generic or otherwise)- this is what you should expect and understand when using ADI HDL repository on these tools. A red text indicates that you must pay extra attention.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Notes</p></th>
+<th class="head"><p>Intel</p></th>
+<th class="head"><p>Xilinx</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Main Tools</p></td>
+<td><p>Quartus</p></td>
+<td><p>Vivado</p></td>
+</tr>
+<tr class="row-odd"><td><p>EDK Tools</p></td>
+<td><p>QSys</p></td>
+<td><p>IP Integrator</p></td>
+</tr>
+<tr class="row-even"><td><p>SDK Tools</p></td>
+<td><p>Eclipse-Nios, Eclipse-DS5</p></td>
+<td><p>Eclipse</p></td>
+</tr>
+<tr class="row-odd"><td><p>Building Library</p></td>
+<td><p>&lt;fc #008000&gt;Do nothing. Quartus only need the _hw.tcl and QSys parses them whenever invoked.&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #FF0000&gt;Need to build each and every library component. Vivado has its own way of identifying library components. This means you must build ALL the library components first before starting the project. You must re-run these scripts if there are any modifications.&lt;/fc&gt;</p></td>
+</tr>
+<tr class="row-even"><td><p>Building the project</p></td>
+<td><p>Source the system_project.tcl file.</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Timing Analysis</p></td>
+<td><p>The projects are usually tested and should be free of timing errors. There is no straightforward method to verify a timing pass (it usually involves writing a TCL proc by itself) on both the tools. The make build will fail and return with an error if the timing is not met (on both tools).</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>SDK (Microblaze/Nios)</p></td>
+<td><p>Use SOPCINFO and SOF files.</p></td>
+<td><p>Use XSA file.</p></td>
+</tr>
+<tr class="row-odd"><td><p>SDK (ARM/FPGA combo)</p></td>
+<td><p>&lt;fc #FF0000&gt;Not so well-thought procedure. Need to run different tools, manually edit build files etc. The steps involved are running bsp-editor, running make, modifying linker scripts, makefiles and sources, importing to SDK.&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #008000&gt;Same procedure as Microblaze.&lt;/fc&gt;</p></td>
+</tr>
+<tr class="row-even"><td><p>Upgrading/Version changes (non-ADI cores)</p></td>
+<td><p>&lt;fc #008000&gt;Quartus automatically updates the cores. Almost hassle-free for most of the cores.&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #FF0000&gt;Vivado does not automatically update the revisions in TCL flow (it does on GUI). It will stop at the first version mismatch (a rather slow and frustrating process).&lt;/fc&gt;</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="tool-versions">
+<h2>Tool versions<a class="headerlink" href="#tool-versions" title="Link to this heading"></a></h2>
+<p>Though the ADI libraries work across different versions of the tools, the projects we provide may not. The Xilinx and Intel IPs may or may not work across versions. We can only assure you that they are tested and works only for the versions we provide. The projects are usually upgraded to the latest tools after they are publicly released. The information about the version of the used tools can be found in the <a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/README.md" target="_blank">README.md</a> file of each branch. The script, which builds the project always double check the used tool version, and notifies the user, if he or she trying to use an unsupported version of tools.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are several ways to find out which tool version you should use. The easiest way is to check the <a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/releases" target="_blank">release notes</a>. You may also check out or browse the desired branch, and verify the tool version in the base Tcl script (<a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/projects/scripts/adi_project_xilinx.tcl#L4" target="_blank">./hdl/projects/scripts/adi_project_xilinx.tcl</a>) or (<a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/projects/scripts/adi_project_intel.tcl#L5" target="_blank">./hdl/projects/scripts/adi_project_intel.tcl</a>), which build the projects.</p>
+</div>
+</section>
+</section>
+<section id="environment">
+<h1>Environment<a class="headerlink" href="#environment" title="Link to this heading"></a></h1>
+<p>As said above, our recommended build flow is to use <strong>make</strong> and the command line versions of the tools. This method highly facilitates our overall build and release process as it automatically builds the required libraries and dependencies.</p>
+<section id="linux-environment-setup">
+<h2>Linux environment setup<a class="headerlink" href="#linux-environment-setup" title="Link to this heading"></a></h2>
+<p>All major distributions should have ‘make’ installed by default. If not if you try the command it should tell you how to install them with the package name. You may have to install ‘git’ (sudo apt-get install git)and the Intel and Xilinx tools. These tools come with certain ‘settings*.sh’ scripts that you may source in your ‘.bashrc’ file to set up the environment. You may also do this manually (for better or worse), the following snippet is from a <strong>.bashrc</strong> file. Please note that unless you are an expert at manipulating these things, leave it to the tools to set up the environment.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export PATH=$PATH:/opt/Xilinx/Vivado/202x.x/bin:/opt/Xilinx/Vitis/202x.x/bin
+export PATH=$PATH:/opt/intelFPGA_pro/2x.x/quartus/bin
+</pre></div>
+</div>
+</section>
+<section id="windows-environment-setup">
+<h2>Windows environment setup<a class="headerlink" href="#windows-environment-setup" title="Link to this heading"></a></h2>
+<p>The best option on Windows is to use <a class="icon link reference external" href="https://www.cygwin.com" target="_blank">Cygwin</a>. When installing it, select the ‘make’ and ‘git’ packages. The manual changes to your ‘.bashrc’ do a lot look like that of the Linux environment.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export PATH=$PATH:/cygdrive/d/Xilinx/Vivado/202x.x/bin:/cygdrive/d/Xilinx/Vitis/202x.x/bin
+export PATH=$PATH:/cygdrive/d/intelFPGA_pro/2x.x/quartus/bin64
+</pre></div>
+</div>
+<p>A very good alternative to Cygwin is <a class="icon link reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install/" target="_blank">WSL</a>. The manual changes to your ‘.bashrc’ looks like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export PATH=$PATH:/opt/path_to/Vivado/202x.x/bin:/opt/Vitis/202x.x/bin
+export PATH=$PATH:/opt/path_to/quartus/bin
+</pre></div>
+</div>
+<p>If you do not want to install Cygwin, there may still be some alternatives. There are ‘make’ alternatives for ‘windows command prompt’, minimalist GNU for Windows (‘MinGW’), or the ‘cygwin’ variations installed by the tools itself. Some of these may not be fully functional with our scripts and/or projects. If you are an Intel user, the “Nios II Command Shell” do support make. If you are a Xilinx user, use the ‘gnuwin’ installed as part of the SDK, usually C:\Xilinx\Vitis\202x.x\gnuwin\bin.</p>
+</section>
+</section>
+<section id="make-supported-targets">
+<h1>Make: supported targets<a class="headerlink" href="#make-supported-targets" title="Link to this heading"></a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><a class="icon link reference external" href="https://www.gnu.org/software/make/manual/make.html" target="_blank">Make</a> is a build automation tool, which uses <strong>Makefile(s)</strong> to define a set of directives (‘rules’) about how to compile and/or link a program (‘targets’).</p>
+</div>
+<p>In general, always run ‘make’ within a project folder such as ‘hdl/projects/daq2/a10soc’ or ‘hdl/projects/daq2/zc706’. There should not be a need for you to run ‘make’ inside the library or root folders. The ‘make’ framework passes the top level ‘targets’ to any sub-makes inside its sub-folders. What this means is that if you run ‘make’ inside ‘hdl/projects/daq2’, it builds all the carriers (‘kc705’, ‘a10soc’, ‘kcu105’, ‘zc706’ to ‘zcu102’) which is an overkill.</p>
+<p>The following ‘targets’ are supported.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>argument</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>all</p></td>
+<td><p>This builds everything in the current folder and its sub-folders, see context examples below.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>make -C library/axi_ad9122 all; ## build AD9122 library component (Xilinx only).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>make -C library all; ## build <strong>ALL</strong> library components inside ‘library’ (Xilinx only).</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>make -C projects/daq2/zc706 all; ## build DAQ2_ZC706 (Xilinx) project.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>make -C projects/daq2/a10soc all; ## build DAQ2_A10SOC(Intel) project.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>make -C projects/daq2 all; ## build DAQ2 <strong>ALL</strong> carrier (including Intel &amp; Xilinx) projects.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>make -C projects all; ## build <strong>ALL</strong> projects (something you really should NOT do).</p></td>
+</tr>
+<tr class="row-odd"><td><p>clean</p></td>
+<td><p>This removes all tool and temporary files in the current folder and its sub-folders, same context as above.</p></td>
+</tr>
+<tr class="row-even"><td><p>clean-all</p></td>
+<td><p>This removes more things (?) same context as above.</p></td>
+</tr>
+<tr class="row-odd"><td><p>lib</p></td>
+<td><p>This is same as ‘all’ in the library folder, ignored inside project folders.</p></td>
+</tr>
+<tr class="row-even"><td><p>project.platform</p></td>
+<td><p>This is a special target available only in the ‘hdl’ root folder and is ignored everywhere else, see syntax below.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>make daq2.a10soc ; ## build projects/daq2/a10soc.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>make daq2.zc706 ; ## build projects/daq2/zc706.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="xilinx-auto-tcl-build">
+<h1>Xilinx auto Tcl build<a class="headerlink" href="#xilinx-auto-tcl-build" title="Link to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We do not recommend using this flow (created mostly for Windows users that can’t use GNU make). The benefit of this flow is that a user can build all desired libraries without manually building each library. The disadvantage comparing with make is that the script will rebuild an IP regardless if its sources were modified or not (timestamp comparison).</p>
+</div>
+<p><strong>Open Vivado GUI, and in the Tcl console type:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">c</span><span class="p">:</span><span class="o">/</span><span class="n">github</span><span class="o">/</span><span class="n">hdl</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">daq2</span><span class="o">/</span><span class="n">zc706</span>
+<span class="n">source</span> <span class="o">../../</span><span class="n">scripts</span><span class="o">/</span><span class="n">adi_make</span><span class="o">.</span><span class="n">tcl</span>
+</pre></div>
+</div>
+<p>This will get you access to:</p>
+<ul class="simple">
+<li><p>adi_make::lib</p></li>
+<li><p>adi_make::boot_bin</p></li>
+</ul>
+<section id="building-the-libraries-adi-make-lib">
+<h2>Building the libraries (adi_make::lib)<a class="headerlink" href="#building-the-libraries-adi-make-lib" title="Link to this heading"></a></h2>
+<p>This command allows you to build the desired libraries directly from the target project folder location. It accepts as arguments “all” or you can specify a specific library name.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># How to use:</span>
+adi_make::lib<span class="w"> </span>all<span class="w"> </span><span class="c1"># builds all libraries on which the project is depending on</span>
+adi_make::lib<span class="w"> </span>axi_dmac<span class="w"> </span><span class="c1"># builds only the axi_dmac IP (and its dependencies)</span>
+adi_make::lib<span class="w"> </span>jesd204/jesd204_rx
+</pre></div>
+</div>
+</section>
+<section id="building-the-project-itself">
+<h2>Building the project itself<a class="headerlink" href="#building-the-project-itself" title="Link to this heading"></a></h2>
+<p>After all required libraries are built, run <strong>source ./system_project.tcl</strong> in the Tcl console of Vivado, to build the project.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">./</span><span class="n">system_project</span><span class="o">.</span><span class="n">tcl</span>
+</pre></div>
+</div>
+</section>
+<section id="preparing-the-sd-card">
+<h2>Preparing the SD card<a class="headerlink" href="#preparing-the-sd-card" title="Link to this heading"></a></h2>
+<p>Firstly, you have to check this <a class="reference internal" href="../../tools-software/linux-software/zynq_images/windows_hosts.html"><span class="doc">tutorial</span></a> on how to put the Linux image on your SD card. Once you are done with that, you can go on with the following steps.</p>
+<p>On the BOOT partition recently created, you will find folders for each carrier that we support, and each of these folders contain an archive called <strong>bootgen_sysfiles.tgz</strong>. These have all the files needed to generate the BOOT.BIN.</p>
+<p>Copy the corresponding archive (checking for the name of your carrier and components) into the root folder of your project, unzip it twice, and there you will find the files that are needed to generate the BOOT.BIN. Copy them to be in the root directory.</p>
+<ul class="simple">
+<li><p>fsbl.elf</p></li>
+<li><p>zynq.bif</p></li>
+<li><p>u-boot.elf</p></li>
+<li><p>and if you’re using ZCU102, then bl31.elf and pmu.elf</p></li>
+</ul>
+<p>Next, what your project needs, is the <strong>uImage</strong>(for zynq based carriers), <strong>Image</strong> (for zynq ultrascale - ZCU102 and adrv9009-zu11eg carriers) or zImage (for Intel based carriers) file that you will find in the <strong>zynq-common / zynqmp-common / socfpga_arria10_common / socfpga_cyclone5_common</strong> on your BOOT partition. Copy this file also in the root directory of your project.</p>
+<p>More info on how to generate this files you will find in the <a class="reference internal" href="#"><span class="doc">References</span></a> section or on ReadMe.txt file from boot partition.</p>
+<p>++++ How to build the boot image BOOT.BIN in WSL | After obtaining .xsa file, you must be sure that you have done source for Vivado and Vitis. To create boot.bin is recommended to run build_boot_bin.sh in terminal.To do this, the file can be called in the following form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">build_boot_bin</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">usage</span><span class="p">:</span> <span class="n">build_boot_bin</span><span class="o">.</span><span class="n">sh</span> <span class="n">system_top</span><span class="o">.</span><span class="n">xsa</span> <span class="n">u</span><span class="o">-</span><span class="n">boot</span><span class="o">.</span><span class="n">elf</span> <span class="p">[</span><span class="n">output</span><span class="o">-</span><span class="n">archive</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You can download the script by accessing the following link: <cite>build_boot_bin.sh &lt;:doc:</cite>/wiki-migration/resources/tools-software/linux-software/build-the-zynq-boot-image`&gt;`_.</p>
+</section>
+<hr class="docutils" />
+<section id="make-the-boot-bin-adi-make-boot-bin">
+<h2>Make the BOOT.BIN (adi_make::boot_bin)<a class="headerlink" href="#make-the-boot-bin-adi-make-boot-bin" title="Link to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Not for Linux users. To build the BOOT.BIN in Linux see the <a class="reference internal" href="#"><span class="doc">References</span></a> section.</p>
+</div>
+<p>As the name states, this procedure will build the “BOOT.BIN”. It does not require any arguments.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adi_make</span><span class="p">::</span><span class="n">boot_bin</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="building-manually">
+<h1>Building manually<a class="headerlink" href="#building-manually" title="Link to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We do not recommend using this flow, in general people are losing a lot of valuable time and nerve during this process.</p>
+</div>
+<section id="intel-building-manually-on-quartus">
+<h2>Intel: Building manually on Quartus<a class="headerlink" href="#intel-building-manually-on-quartus" title="Link to this heading"></a></h2>
+<p>There is no need to build any library for Quartus. However, you do need to specify the IP search path for QSYS. This is a global property, so only need to do it once. If you have multiple paths simply add to it. You get to this menu from the <strong>Tools-&gt;Options</strong>. The tool then parses these directories and picks up a <strong>_hw.tcl</strong> file (e.g. axi_ad9250_hw.tcl). The peripherals should show up on QSYS library.</p>
+<p>++++ Screen shots: | <a class="reference internal" href="https://wiki.analog.com/_media/resources/fpga/docs/hdl/altera_qsys_1.jpg"><img alt="image13" src="https://wiki.analog.com/_media/resources/fpga/docs/hdl/altera_qsys_1.jpg" style="width: 800px;" /></a> ++++</p>
+<p>You may now run the project (generate the sof and software hand-off files) on Quartus. Open the GUI and select TCL console. At the prompt change the directory to where the project is, and source the <strong>system_project.tcl</strong> file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">c</span><span class="p">:</span><span class="o">/</span><span class="n">github</span><span class="o">/</span><span class="n">hdl</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">fmcjesdadc1</span><span class="o">/</span><span class="n">a5gt</span>
+<span class="n">source</span> <span class="o">./</span><span class="n">system_project</span><span class="o">.</span><span class="n">tcl</span>
+</pre></div>
+</div>
+<p>You will see commands being executed, the script uses a board design in QSYS, generate all the IP targets, synthesize the netlist and implementation.</p>
+<p>++++ Screen shots: | <a class="reference internal" href="https://wiki.analog.com/_media/resources/fpga/docs/hdl/altera_quartus_1.jpg"><img alt="image14" src="https://wiki.analog.com/_media/resources/fpga/docs/hdl/altera_quartus_1.jpg" style="width: 800px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/fpga/docs/hdl/altera_quartus_2.jpg"><img alt="image15" src="https://wiki.analog.com/_media/resources/fpga/docs/hdl/altera_quartus_2.jpg" style="width: 800px;" /></a> ++++</p>
+</section>
+<section id="xilinx-building-manually-on-vivado">
+<h2>Xilinx: Building manually on Vivado<a class="headerlink" href="#xilinx-building-manually-on-vivado" title="Link to this heading"></a></h2>
+<p>In Vivado (Xilinx projects), you must build all the required libraries for your targeted project. Open the GUI and at the TCL console change the directory to where the libraries are, then source the ‘_ip.tcl’ file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">c</span><span class="p">:</span><span class="o">/</span><span class="n">github</span><span class="o">/</span><span class="n">hdl</span><span class="o">/</span><span class="n">library</span><span class="o">/</span><span class="n">axi_ad9122</span>
+<span class="n">source</span> <span class="o">./</span><span class="n">axi_ad9122_ip</span><span class="o">.</span><span class="n">tcl</span>
+</pre></div>
+</div>
+<p>You will see commands being executed, and the GUI will change into a project window. There is nothing to do here, you could browse the source if you prefer to do synthesis as stand-alone and such things. After you’re done, quit and change the directory to the next library and continue the process.</p>
+<p>++++ Screen shots: | <a class="reference internal" href="https://wiki.analog.com/_media/resources/fpga/docs/hdl/vivado_library_1.jpg"><img alt="image16" src="https://wiki.analog.com/_media/resources/fpga/docs/hdl/vivado_library_1.jpg" style="width: 800px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/fpga/docs/hdl/vivado_library_2.jpg"><img alt="image17" src="https://wiki.analog.com/_media/resources/fpga/docs/hdl/vivado_library_2.jpg" style="width: 800px;" /></a> ++++</p>
+<p>After you built all the required libraries for your project, you can run the project (generate bitstream and export the design to SDK). This is the same procedure as above except for changes in path and Tcl file names:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">c</span><span class="p">:</span><span class="o">/</span><span class="n">github</span><span class="o">/</span><span class="n">hdl</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">fmcomms1</span><span class="o">/</span><span class="n">zc706</span>
+<span class="n">source</span> <span class="o">./</span><span class="n">system_project</span><span class="o">.</span><span class="n">tcl</span>
+</pre></div>
+</div>
+<p>Same behavior as above, the GUI will change into a project window. The script will create a board design in IPI, generate all the IP targets, synthesize the netlist and implementation.</p>
+<p>++++ Screen shots: | <a class="reference internal" href="https://wiki.analog.com/_media/resources/fpga/docs/hdl/vivado_projects_1.jpg"><img alt="image18" src="https://wiki.analog.com/_media/resources/fpga/docs/hdl/vivado_projects_1.jpg" style="width: 800px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/fpga/docs/hdl/vivado_projects_2.jpg"><img alt="image19" src="https://wiki.analog.com/_media/resources/fpga/docs/hdl/vivado_projects_2.jpg" style="width: 800px;" /></a> ++++</p>
+</section>
+</section>
+<section id="references">
+<h1>References<a class="headerlink" href="#references" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../tools-software/linux-software/build-the-zynq-boot-image.html"><span class="doc">How to build the Zynq boot image BOOT.BIN</span></a></p></li>
+<li><p><a class="reference internal" href="../../tools-software/linux-software/build-the-zynqmp-boot-image.html"><span class="doc">How to build the ZynqMP boot image BOOT.BIN</span></a></p></li>
+<li><p><a class="reference internal" href="../../tools-software/linux-drivers-all.html"><span class="doc">Building the ADI Linux kernel</span></a></p></li>
+</ul>
+</section>
+<section id="errors-warnings-and-notes">
+<h1>Errors, Warnings and Notes<a class="headerlink" href="#errors-warnings-and-notes" title="Link to this heading"></a></h1>
+<p>Assuming the right to make an honest comment, the tools (both Quartus and Vivado) are not that useful or friendly when it comes to messages. In most cases, you may see ‘hacked-in’ debugging ‘printf’ sort of messages (Xilinx notoriously ranks high in this regard). So you are going to see a lot of ‘warnings’ and some ‘critical-warnings’ (critical to what could be hard to answer). Here are some of the commonly asked EngineerZone questions and its explanations.</p>
+<section id="xilinx-vivado">
+<h2>Xilinx: Vivado<a class="headerlink" href="#xilinx-vivado" title="Link to this heading"></a></h2>
+<p>&lt;fc #ffa500&gt; ERROR: [BD 5-216] VLNV &lt;analog.com:user:axi_clkgen:1.0&gt; is not supported for the current part.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ERROR</span><span class="p">:</span> <span class="p">[</span><span class="n">Common</span> <span class="mi">17</span><span class="o">-</span><span class="mi">39</span><span class="p">]</span> <span class="s1">&#39;create_bd_cell&#39;</span> <span class="n">failed</span> <span class="n">due</span> <span class="n">to</span> <span class="n">earlier</span> <span class="n">errors</span><span class="o">.</span>
+     <span class="k">while</span> <span class="n">executing</span>
+<span class="s2">&quot;create_bd_cell -type ip -vlnv analog.com:user:axi_clkgen:1.0 axi_hdmi_clkgen&quot;</span> <span class="n">invoked</span> <span class="kn">from</span><span class="w"> </span><span class="nn">within</span>
+<span class="s2">&quot;set axi_hdmi_clkgen [create_bd_cell -type ip -vlnv analog.com:user:axi_clkgen:1.0 axi_hdmi_clkgen]&quot;</span> <span class="p">(</span><span class="n">file</span> <span class="s2">&quot;../../../projects/common/zc706/zc706_system_bd.tcl&quot;</span> <span class="n">line</span> <span class="mi">57</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">fc</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>You haven’t generated the library component or have the wrong user IP repository setting. If you were using the GUI flow, now is a good time to evaluate the ‘make’ flow.</p>
+<p>&lt;fc #ffa500&gt;CRITICAL WARNING: [IP_Flow 19-459] IP file ‘C:/Git/hdl/library/common/ad_pnmon.v’ appears to be outside of the project area ‘C:/Git/hdl/library/axi_ad9467’. You can use the ipx::package_project -import_files option to copy remote files into the IP directory.&lt;/fc&gt;</p>
+<p>These warnings appear because the libraries are using common modules which are located under the <strong>./library/common/</strong>. These warnings can be ignored, they won’t affect the functionality of the IP or the project. However, you may not be able to ‘archive’ these projects. The irony is that it does copy these files to the project area, but ignores them.</p>
+<img alt="Releases and supported tool versions#hdl|Main page#run|Running on hardware" src="https://wiki.analog.com/_media/navigationHDLUserGuide#releases" />
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

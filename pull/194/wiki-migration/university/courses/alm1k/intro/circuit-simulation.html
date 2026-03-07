@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The objective of this activity is to gain experience with the tools electrical engineers use (i.e. electronic test and measuring equipment and the analysis software) and to gain some fundamental understanding of voltage dividers." name="description" />
+
+    <title>Activity: Circuit Simulation with LTspice - ADALM1000 &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Activity: Circuit Simulation with LTspice - ADALM1000</a><ul>
+<li><a class="reference internal" href="#objective">Objective:</a></li>
+<li><a class="reference internal" href="#background">Background:</a><ul>
+<li><a class="reference internal" href="#materials">Materials:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sine-waves-and-hearing">Sine Waves and Hearing</a><ul>
+<li><a class="reference internal" href="#equipment">Equipment:</a></li>
+<li><a class="reference internal" href="#the-sine-wave-equation">The sine wave equation:</a></li>
+<li><a class="reference internal" href="#including-a-dc-offset">Including a DC offset:</a></li>
+<li><a class="reference internal" href="#scalar-measurement-of-sine-waves">Scalar measurement of sine waves:</a></li>
+<li><a class="reference internal" href="#impedance-and-resistance">Impedance and resistance:</a></li>
+<li><a class="reference internal" href="#human-hearing">Human hearing:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#experiment">Experiment</a><ul>
+<li><a class="reference internal" href="#waveform-generator">Waveform Generator:</a></li>
+<li><a class="reference internal" href="#scope">Scope:</a></li>
+<li><a class="reference internal" href="#connecting-the-output-from-awg">Connecting the Output from AWG</a></li>
+<li><a class="reference internal" href="#experiment-with-the-equipment">Experiment with the Equipment</a></li>
+<li><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#introduction-to-ltspice">Introduction to LTspice</a><ul>
+<li><a class="reference internal" href="#learning-more-about-ltspice">Learning more about LTspice</a></li>
+<li><a class="reference internal" href="#background-1">Background</a></li>
+<li><a class="reference internal" href="#experiment-simulation">Experiment (Simulation)</a></li>
+<li><a class="reference internal" href="#summary-1">Summary</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="activity-circuit-simulation-with-ltspice-adalm1000">
+<h1>Activity: Circuit Simulation with LTspice - ADALM1000<a class="headerlink" href="#activity-circuit-simulation-with-ltspice-adalm1000" title="Link to this heading"></a></h1>
+<section id="objective">
+<h2>Objective:<a class="headerlink" href="#objective" title="Link to this heading"></a></h2>
+<p>The objective of this activity is to gain experience with the tools electrical engineers use (i.e. electronic test and measuring equipment and the analysis software) and to gain some fundamental understanding of voltage dividers.</p>
+</section>
+<section id="background">
+<h2>Background:<a class="headerlink" href="#background" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">Before doing this experiment, students should be able to</div>
+<div class="line">- Determine the values of resistors connected in series and parallel</div>
+<div class="line">- Identify the audible frequency range in humans</div>
+<div class="line">- Identify the value of standard resistors from the ALP2000 kit by color code</div>
+<div class="line">- Download and install ALICE desktop software on a Windows machine</div>
+<div class="line">- Download and install LTspice software on a Windows machine</div>
+</div>
+<section id="materials">
+<h3>Materials:<a class="headerlink" href="#materials" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">ADALM1000 hardware module</div>
+<div class="line">Solderless Breadboard</div>
+<div class="line">Jumper wires</div>
+<div class="line">3.5mm headphone jack adapter</div>
+<div class="line">Headphone or ear bubs (loudspeaker as option)</div>
+</div>
+</section>
+</section>
+<section id="sine-waves-and-hearing">
+<h2>Sine Waves and Hearing<a class="headerlink" href="#sine-waves-and-hearing" title="Link to this heading"></a></h2>
+<p>In this part of the activity, the ADALM1000 waveform generator will be used to produce electrical signals with various shapes, including sine waves. The objective is to learn about the basic properties of sine waves and related signals by visualizing them vs time with the oscilloscope tool and hearing them by connecting the generator output signal to headphones / ear buds. You will need a set of ear buds or something similar such as the loudspeaker from the ALP2000 part kit to hear the audio.</p>
+<p>We will also demonstrate some interesting facts about human hearing.</p>
+<section id="equipment">
+<h3>Equipment:<a class="headerlink" href="#equipment" title="Link to this heading"></a></h3>
+<p>What formerly would require the use of an entire benchtop of instruments can now be accomplished using the ADALM1000 (see figure 1) and a laptop computer. This hardware module, coupled with the ALICE Desktop software, can produce the same functionality as each of the following pieces of equipment (and more): a two channel oscilloscope (scope), a digital voltmeter (DVM), two DC power supplies and a two channel waveform generator. The digital voltmeter (DVM) has 2 channels. The oscilloscope is a measuring device that lets you view a graph of a voltage or current signal vs time. The DC power supplies generate constant DC voltage signals (like a battery). The waveform generator creates a voltage signal that varies with time. The computer is an integral part of the equipment setup. You use it to simulate many of the circuits you will build (using the LTspice program), as well as to control the ADALM1000 hardware.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-1.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-1.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-1.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 1, ADALM1000 hardware</p>
+</div>
+<p>The waveform generator can be programmed to generate signals with specified amplitude and frequency. Ear buds (headphones) or loud speakers convert an electrical signal to sound that can heard. The oscilloscope displays a graph of an electrical signal and further analysis can be performed. The combination of the oscilloscope and audio output allows us to see what we are hearing. The two waveform generators are labeled as CH A and CH B. Only one of the waveform generators will be used in this activity to start. See</p>
+</section>
+<section id="the-sine-wave-equation">
+<h3>The sine wave equation:<a class="headerlink" href="#the-sine-wave-equation" title="Link to this heading"></a></h3>
+<p>Everyone should have studied the sine and cosine trigonometric functions in math and physics classes. A sine wave is described by an equation of the form v(t) = A sin(2πft) = A sin(ωt), where the variable t represents time. We use the term “wave’” because the up and down shape is similar to a water wave that you might see in a body of water. Shown in figure 2, a sine wave is characterized by two parameters, called amplitude (A) and frequency (f). The amplitude A determines the maximum value that the sine wave achieves along the vertical axis. The sine wave takes on values between +A and -A at various times. In electronics the value might be the voltage or current in a circuit.</p>
+<p>The frequency f of a sine wave can be understood like this. The sine wave reaches its peak value of +A at regular intervals in time. The time between peaks is called the period of the sine wave. The letter T is used to denote the period and it is measured in seconds (Sec). The frequency is defined as the number of times that the sine wave reaches the peak value per second. Since adjacent peaks are separated by T sec, the wave has 1/T peaks per second. The frequency f is then equal to 1/T. The units of frequency are sec<sup>-1</sup>. Another name for the unit sec<sup>-1</sup> is Hertz, or abbreviated as Hz. Another way to denote the frequency of a wave is the product 2πf or ω, where ω is called the angular frequency in electronics. (In physics, ω is the rate of change of the angle in a rotating system, called angular velocity.) Note that one of the most common mistakes made is confusing frequency f and angular frequency ω.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-2.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-2.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-2.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 2. Sine wave with amplitude A, frequency f, and period T.</p>
+</div>
+</section>
+<section id="including-a-dc-offset">
+<h3>Including a DC offset:<a class="headerlink" href="#including-a-dc-offset" title="Link to this heading"></a></h3>
+<p>If a DC offset voltage is added to the sine wave signal it moves the entire wave up or down such that it is no longer centered around 0 but is instead centered on the DC voltage, V<sub>DC</sub>. The equation becomes v(t) = A sin(2πft) + V<sub>DC</sub>. In electronics, the AC and DC parts of a signal can be treated as two separate and distinct parts of the waveform.</p>
+</section>
+<section id="scalar-measurement-of-sine-waves">
+<h3>Scalar measurement of sine waves:<a class="headerlink" href="#scalar-measurement-of-sine-waves" title="Link to this heading"></a></h3>
+<p>Measurement devices may not give us the amplitude, A, directly. It is relatively easy to read off the maximum and minimum values of a waveform on an oscilloscope screen. This will likely include any DC offset. The DC offset is generally taken as the average voltage over one (or more) whole cycles. The difference between the maximum and minimum values is V<sub>P-P</sub> (the peak-to-peak voltage) so it should be nearly equal to A - (-A) = 2A. The RMS voltage, V<sub>RMS</sub>, is determined by taking the square root of the sum of the voltage squared over one cycle. If the voltage waveform is a sinusoid this reduces to:</p>
+<p><span class="math notranslate nohighlight">\(V_RMS = V/sqrt(2) = V/1.414\)</span></p>
+</section>
+<section id="impedance-and-resistance">
+<h3>Impedance and resistance:<a class="headerlink" href="#impedance-and-resistance" title="Link to this heading"></a></h3>
+<p>Everyone should be familiar with the term resistance at this point. It is a measure of the degree to which a circuit component like a resistor resists the flow of current. Circuits that have a combination of components (some of which are not simple resistors) also affect the current. The behavior of such circuits is more complicated because it changes with the frequency of the signal. We call this complicated response “impedance.” Both resistance and impedance are measured in Ohms (Ω) and the terms are often used interchangeably.</p>
+</section>
+<section id="human-hearing">
+<h3>Human hearing:<a class="headerlink" href="#human-hearing" title="Link to this heading"></a></h3>
+<p>We are exposed to a wide variety of sounds every day. We hear a sound after our brain processes the sensations detected by our ears. Two attributes that are commonly used to characterize sounds are loudness (amplitude) and pitch (frequency). Loudness, of course, refers to how loud or intense we perceive the sound to be. Pitch refers to whether we perceive the sound to be high or low. For example, the sound produced by a piano key to the right side has a higher pitch than the sound produced by a key on the left. Keep in mind that the human ear is a biological system. It is designed to hear certain pitches better than others even though, technically, they have the same loudness.</p>
+</section>
+</section>
+<section id="experiment">
+<h2>Experiment<a class="headerlink" href="#experiment" title="Link to this heading"></a></h2>
+<p>Setting up a Sine Wave on the waveform generator:</p>
+<p>For the first step, we need to set up a sinusoidal voltage. Set up the ALM1000 to generate a signal from waveform generator A and measure it with scope trace CA-V. The output of the generator and input of the scope are by default connected internally on the same ALM1000 pin (CH A in figure 1) so no external connections are needed.</p>
+<p>After correctly installing the ALICE Desktop software and connecting the ALM1000 to a USB port, open the software. You should see the windows similar to that shown in Figure 4 for the waveform generator controls and the oscilloscope. The values for various parameter settings shown in both windows will likely be different. You will adjust those now.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-3.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-3.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-3.png" style="width: 800px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 4 ALICE Screen.</p>
+</div>
+<section id="waveform-generator">
+<h3>Waveform Generator:<a class="headerlink" href="#waveform-generator" title="Link to this heading"></a></h3>
+<p>We only need one waveform generator in this experiment. Note that we will use the term waveform generator and AWG (Arbitrary Waveform Generator) pretty much interchangeably. The AWG can produce any time-varying signal, so the term arbitrary, but we mostly use it to produce sine, triangular and square waves like a function generator.</p>
+<p>First the frequency is set. The frequency of the function generator is adjusted as follows:</p>
+<p>Set the Freq Ch A entry to display 1000.</p>
+<p>Set the Max Ch A entry to 2.7. Set the Min voltage Ch A entry to 2.3. This will produce a waveform with a 0.2 V amplitude centered on 2.5 V. The AWG has three modes, SVMI (source voltage, measure current), SIMV (source current, measure voltage) and Hi-Z. For this step select the SVMI mode. Under the Shape menu the Sine shape should be checked.</p>
+<p>Your AWG window should look like Figure 5. Only the Min, Max, and Freq settings for AWG CH A matter at this point. The settings under AWG B can be anything at this point.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-5.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-5.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-5.png" style="width: 200px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 5, AWG settings.</p>
+</div>
+</section>
+<section id="scope">
+<h3>Scope:<a class="headerlink" href="#scope" title="Link to this heading"></a></h3>
+<p>Make sure trace CA-V is selected under the curves drop down menu. Uncheck CB-V, since we will not be using channel B.</p>
+<p>First we set up the vertical and horizontal scales for the display. On scope channel CA, select the Volts/div to 0.5, the offset to 2.5. The CA V Pos should be set to 2.5 (center of grid). The Time/div should be set at 0.2 ms/div. The vertical (voltage and current) scale settings are found at the bottom and the horizontal time scale settings are found at the top of the scope window.</p>
+<p>When you are ready, press the green “Run” button on the Scope screen.</p>
+<p>It is useful to know how to copy plots and paste them into a word processor. In the upper right hand corner, under the Files menu, select save screen and you can save the Oscilloscope screen to an encapsulated postscript file. Or you can use a screen snap shot tool such as the Windows Snipping tool to grab the scope screen image and paste it directly into your laboratory report. Save a copy of the Oscilloscope plot for your report.</p>
+<p>Change the frequency setting up or down as desired. The mouse wheel is useful for doing this when hovering inside the Freq entry spot. How does this change the signal trace displayed on the scope? The purpose of this step is to see what kind of signals this setup can produce. You should play around a little with different frequencies, voltage amplitudes, signal shapes, etc.</p>
+<p>Set the AWG again so the Freq display reads 1000 and the amplitude is 0.2 V (centered on the 2.5 V DC offset). Copy screen as an image and paste it in your report document. Clearly label both the amplitude and period as well as the DC offset of the signal you have measured.</p>
+</section>
+<section id="connecting-the-output-from-awg">
+<h3>Connecting the Output from AWG<a class="headerlink" href="#connecting-the-output-from-awg" title="Link to this heading"></a></h3>
+<p>We now wish to connect the waveform generator, scope and earphones to perform some simple experiments.</p>
+<p>The ADALP2000 Analog Parts Kit includes a 3.5 mm audio connector break-out-board, figure 6, that can be inserted in a solderless breadboard. The board pins are numbered 1-5. Pin 4 is the sleeve (ground), Pin 2 is the tip (left audio) and Pin 3 is the ring (right audio).</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-6.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-6.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-6.png" style="width: 300px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 6, stereo audio connector break-out-board</p>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-7.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-7.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-7.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 7, connecting an audio connector to AWG</p>
+</div>
+<p>There are typically two types of connectors used for earbuds, depending on whether or not a microphone is included. Both are shown in figure 7. If you have the three connection style plug then adapter pins 1 and 4 will be shorted together.</p>
+<p>Start by measuring the resistance of each channel for your ear buds or earphones (from left or right to common) using a handheld DMM or the ALICE ohmmeter tool. We only need an approximate value for the resistance, so any meter can be used for this purpose.</p>
+<p>To use the ALICE ohmmeter, open the Ohmmeter tool on the right side of the Scope main screen.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-8.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-8.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-8.png" style="width: 200px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 8, ALICE Ohmmeter</p>
+</div>
+<p>Connect either the right or left pin of the headphone jack and the common pin of the headphone jack to CH A and CH B respectively on the ALM1000 connector. In the ohmmeter controls make sure the Int option is selected for the Known Res and the Known Res value is set to 50 (the value of the internal resistor). Set the test voltage to about 2 or 3 volts so as to not send too much DC current through the headphone element. After you double check the connections and settings click on Run. You should see an Ohms reading somewhere between 15 and 45 ohms depending on your headphones. Be sure to Dismiss the Ohmmeter controls after you are finished measuring the resistance of your headphones.</p>
+<p>Connect the adapter jack to the ALM1000 connector as shown in figure 7. Double check to make sure the AWG settings are set as earlier in Figure 5 (Sync AWG box not checked). Run the Oscilloscope and confirm you are seeing the 200 mV amplitude sine wave.</p>
+<p>Plug your ear buds into the headphone adapter jack. Do not do this with the ear buds in your ears. The volume may be too high. It is best to turn on the (enable) the generator with the ear buds away from your ears and bring them closer until you are sure the volume level is comfortable. You should hear only one channel. If you use both AWG sources you will hear both channels.</p>
+<p>Adjust the volume of the signal to a comfortable level by changing the Min and Max values of the signal. Be sure the keep the values centered around 2.5 as best you can. By comfortable level, we mean the lowest amplitude that allows you to hear a distinct sound. What is the value of the voltage amplitude that you have selected?</p>
+<p>You can also display the current flowing in your headphones by selecting the CA-I trace from the Curves drop down menu. You can adjust the vertical range for the current trace as needed. Compare the maximum current you measure with what you would calculate using Ohm’s Law and the voltage amplitude and headphone resistance you measured earlier.</p>
+<p>Let’s investigate how our perception of loudness changes as the frequency of the sine wave is varied. With the sine wave amplitude fixed at your comfortable level, vary the frequency over the range from 100Hz to 10,000Hz. Try cycling through the following frequencies, without changing the signal amplitude: 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, and 10,000Hz. Does the maximum (peak) current change with frequency?</p>
+<p>Which frequency do you hear the loudest? Is there any variation among other class members? If you have problems discerning significant differences in loudness, try a different set of ear buds.</p>
+</section>
+<section id="experiment-with-the-equipment">
+<h3>Experiment with the Equipment<a class="headerlink" href="#experiment-with-the-equipment" title="Link to this heading"></a></h3>
+<p>At this point, you will have put the waveform generator and scope through some basic tasks. Experiment with the other features of the AWG and see what happens. Some very interesting and annoying sound waves can be produced. Play around a little and then find a particular set of operating conditions that you find the most interesting. Under what circumstances might you experience the sounds you have produced or generally when might you encounter a waveform like the one you have displayed on your scope?</p>
+</section>
+<section id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Link to this heading"></a></h3>
+<p>You should now know how to set up voltage signals with the waveform generator controls and display them using the oscilloscope. Connect the generator output to a headphone jack and headphone. You should understand the pitch/frequency and amplitude/volume relationships, and know how these relate to human hearing.</p>
+</section>
+</section>
+<section id="introduction-to-ltspice">
+<h2>Introduction to LTspice<a class="headerlink" href="#introduction-to-ltspice" title="Link to this heading"></a></h2>
+<p>In this section we will learn about the circuit analysis software we will use as our primary simulation tool. You should download and install this software on your laptop. It is recommended that you install the latest version. LTspice may be downloaded from the <a class="icon adi reference external" href="https://www.analog.com/ltspice" target="_blank">LTspice Home Page</a>. This page includes additional information about LTspice, documentation, articles,etc.</p>
+<section id="learning-more-about-ltspice">
+<h3>Learning more about LTspice<a class="headerlink" href="#learning-more-about-ltspice" title="Link to this heading"></a></h3>
+<p>In addition to the material on the LTspice home page, the following slide deck is available for either self-guided learning or presentation in a classroom setting.</p>
+<p>A slide deck is provided as a companion to this exercise, and can be used to help in presenting this material in classroom, lab setting, or in hands-on workshops.</p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon link reference external" href="https://wiki.analog.com/_media/university/courses/electronics/ltspice/ltspice_basic_lab_class_03-18-19.pptx" target="_blank">LTspice Basic Lab Class Slide Deck</a></p>
+</div>
+</section>
+<section id="background-1">
+<span id="id1"></span><h3>Background<a class="headerlink" href="#background-1" title="Link to this heading"></a></h3>
+<p>The software we will be using to simulate the operation of circuits in this lab activity is called LTspice which uses information on a circuit in the form of a schematic and analyzes how it will behave. When placing parts in the circuit, resistors, capacitors, inductors, diodes and wires all have their own symbols in the menu. All other parts are accessed through the “Place Components” button. See figure 9. Once the parts are placed, their values must be specified. This is usually done by right clicking your mouse on the circuit element or one of its parameters. Once the circuit is complete, the simulation must be setup. This is done through the ‘Simulate’ drop down menu. The example below shows a transient simulation that runs from 0 to 5ms with a maximum step size of 1µs. Once the simulation is run, it displays an output similar to what you would see if you hooked the circuit to an oscilloscope. Figure 10 contains a sample waveform diagram.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-9.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-9.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-9.png" style="width: 700px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9. Example Schematic main page</p>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-10.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-10.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-10.png" style="width: 700px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 10. Simulation result</p>
+</div>
+</section>
+<section id="experiment-simulation">
+<h3>Experiment (Simulation)<a class="headerlink" href="#experiment-simulation" title="Link to this heading"></a></h3>
+<p>**Opening a New Simulation **</p>
+<p>In this part of the experiment, we will draw the simple circuit we have been studying, a combination of resistors and a sinusoidal voltage source representing a resistive divider.</p>
+<p>**Run the “LTspice” program **</p>
+<p>It will open with no schematic or simulation loaded. Click on the File pull-down menu and select New Schematic. You will name your project when you save it. You should also decide where you want to save schematics. You will have to choose a directory when you save your work.</p>
+<p>**Drawing a Circuit **</p>
+<p>Figure 11 is the LTspice main screen with the circuit we will be drawing. Note that this is the circuit used in the resistor divider activity including the input resistance of one channel of the ADALM1000 as R3.</p>
+<p>In the circuit shown in figure 11, we have some resistors, a sinusoidal voltage source, a ground and some wires. To create this diagram, we will use the command buttons. For the resistors we will click on the button that looks like a resistor. You can also do this by using the Edit menu or by hitting the R key. You should see a resistor symbol that you are free to place anywhere in the schematic. The Edit menu also shows you what name goes with every symbol. For the ground, select the ground button, use the Edit menu or hit the G key. For the voltage source and most other components, you have to use the component button (which can also be selected from the Edit menu) and then pick Voltage from the many options offered.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-11.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-11.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-11.png" style="width: 700px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.</p>
+</div>
+<p>When you have finished placing resistors or doing just about anything else, hit the Esc key to get back to the basic diagram.</p>
+<p>When you have placed all resistors, the voltage source and the ground, connect everything with wires. Access wires by clicking on the symbol that looks like a pencil, next to the ground button.</p>
+<p>To complete the schematic, we have to change the component values. Each resistor was given a name in the order it was placed on the diagram. Thus, your resistors may not have the same names as shown in the figure. For simplicity, they will be referred to by the name shown here and you can change the names if you wish the same way their parameter values are changed.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-12.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-12.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-12.png" style="width: 400px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 12. Change resistor value</p>
+</div>
+<p>To change R3 to 1Meg Ohm, right click on the bottom R and you should get the window shown in Figure 12. Change the R to 1MEG. If you find that the number or anything else is in a hard to read position on the circuit diagram, move it with the mouse by first clicking on the Move button that looks like an open hand. When you type the value of the resistance, you must type 1Meg with no spaces. Note that you have to type Meg since SPICE uses M to mean 10<sup>-3</sup> (milli) and Meg for 10<sup>6</sup>. It is not case sensitive. Note that in the schematic pictured, R1 and R2 are the resistors in your voltage divider and R3 represents the impedance of the scope input. Since the scope impedance is 1 MΩ, R3 should be 1Meg. R1 and R2 should be 1k Ω.</p>
+<p>After you have changed all the resistor values and moved them to neat and readable positions, you must set up the voltage source. In LTspice, voltage sources are DC by default. To specify the source as sinusoidal, right click on the voltage source symbol and select the Advanced button. The window in figure 13 will appear. Select SINE and then set the values shown for offset, amplitude and frequency. Once the symbol is labeled as SINE, these parameters can be changed by right clicking on the symbol. The values are used to label the voltage source as shown in figure 11.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-13.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-13.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-13.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 13.</p>
+</div>
+<p>**Setting Up the Analysis **</p>
+<p>After all the components are defined, wired up and their values are set appropriately, you are ready to run a simulation.</p>
+<p>Find the Simulation drop-down menu and click and select Edit Simulation Cmd. You will get the window shown in Figure 14. Select the tab for the type of analysis you wish to perform. In this case it is Transient since we are interested in output that is vs time like a scope. The simulation will begin at time t = 0, but we can choose to start saving data after that. Thus, we specify the Stop Time (the end time of the simulation), the Time to Start Saving Data, and the Maximum Timestep (the resolution of our simulation). Here we choose, 5ms, 0 and 1µs, respectively. Note that there is no µ so we have to use the letter u.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-14.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-14.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-14.png" style="width: 400px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 14.</p>
+</div>
+<p>The final time (Stop Time:) has been set at 5ms because the period of a 1 kHz sine wave is 1 mSec. This allows us to simulate five periods of the sine wave. The Maximum Timestep needs to be set so that you get a reasonable representation of the output. A step size that is too small will take a long time to run, a step size that is too big will give you an under-sampled representation of the output. A step size between 1/100 to 1/1000 of the run time is reasonable. The analysis will begin saving data at 0 seconds. Note again that there should never be any spaces between the number and its units. Click on the OK button when you are finished putting in the numbers. You will be able to place the information on the simulation anywhere on your circuit. Choose a space where it is easy to read and does not block anything else.</p>
+<p>When you have finished, you can run the simulation either by clicking the button that looks like a little person running or select Run from the Simulation drop-down menu.</p>
+<p>**Transient Analysis **</p>
+<p>You are now ready to run the simulation.</p>
+<p>Click on the Run button. A set of axes with no signals shown will appear. You can now add voltages where ever you wish by left-clicking with your mouse. You will see that whenever you hover over a wire in the schematic with your mouse, a symbol like a voltage probe will appear. Click on the wire you want to know the voltage. If you want to plot current, hover over a device symbol and your mouse symbol will change to a current probe. If you click on a device, the current through it will appear on the plot. In the plot shown in Figure 15, the input and output voltages for the voltage divider are displayed. Note that the ratio between the two is what you should expect for this simple circuit.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-15.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-15.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-15.png" style="width: 700px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 15.</p>
+</div>
+<p>You should get something like (but maybe not identical to) the window shown in figure 15. The voltage divider expression we used in the voltage division activity can be applied to sinusoidal signals as well. For sinusoidal signals, the amplitude of the sine wave changes based on the voltage divider ratio. We can then perform the same comparison between source voltage amplitude and resistor voltage amplitude as we did where we compared the source DC voltage and the resistor DC voltage. For the 1 kΩ voltage divider circuit, do we see the same ratio of voltage amplitudes as seen for DC voltages?</p>
+<p>It is also useful to know how to copy plots and paste them into a word processor. Under the Tools menu, click on “Write image to .emf file”. Now there is a .emf file saved that you can insert into a word processor. Open your word processor and paste the image somewhere. Save this file or print the output plot for the 1k voltage divider directly. You should see a plot like the one shown in figure 16. If you get the schematic instead, click your mouse on the voltage plot window to select it and try again.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-16.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-16.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/intro/intro-simulation-fig-16.png" style="width: 700px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 16.</p>
+</div>
+<p>The “Copy bitmap to clipboard” and “Write image to .emf file” options under the Tools menu can be used to capture either the schematic drawing or waveform plots. By default the waveform lines on the plot can be a bit thin and hard to read. You can change the data display on the plots generated by selecting Control Panel from the Tools menu and then selecting Waveforms. Select Plot data with thick lines. They will be much easier to see.</p>
+<p>Change the values of the resistors in the voltage divider to 1 Meg and rerun the simulation. Save or print this plot as well. Both plots should have two traces: the source voltage, and the voltage across the resistor closest to ground. For the 1 MegΩ voltage divider circuit with the 1 MegΩ probe resistor, do we see the same ratio of voltage amplitudes as seen for DC voltages? Try varying the frequency, amplitude and offset of the V1 SINE source one at a time and rerun the analysis. What happens to your signal? Is the amplitude ratio still the same? Does it make sense based on your knowledge of sine waves and voltage dividers?</p>
+<p>Show your results for the 1 Meg simulation to a TA or instructor and have them check-off on your hand-drawn circuit diagram for this simulation.</p>
+<div class="line-block">
+<div class="line">For this and other activities in this course, you must explain:</div>
+<div class="line">- the purpose of the data (using your hand-drawn circuit diagram),</div>
+<div class="line">- what information is contained in the plot and</div>
+<div class="line">- why you believe that the plot is correct.</div>
+</div>
+</section>
+<section id="summary-1">
+<span id="id2"></span><h3>Summary<a class="headerlink" href="#summary-1" title="Link to this heading"></a></h3>
+<p>LTspice is a very powerful simulation tool meant to address the circuit simulation needs of all engineers who must do circuit design and analysis. Thus, there are many, many opportunities to make what seem like silly mistakes that prevent the analysis from working properly. In your first attempt at using these tools, it is likely that you have already made some of these mistakes. You should also have heard about some of them in class. What mistakes did you make?</p>
+<p>**For Further Reading: **</p>
+<p><strong>Return to</strong> <a class="reference internal" href="../../../labs/intro_ee.html"><span class="doc">Introduction to Electrical Engineering</span></a> <strong>Lab Activity Table of Contents</strong></p>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

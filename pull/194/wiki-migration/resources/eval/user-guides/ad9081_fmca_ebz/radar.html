@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This page is dedicated to the details of building an OFDM radar on a ZCU102 + AD9081 with GNURadio and IIO." name="description" />
+
+    <title>gr-ofdmradar - OFDM Radar on MxFE Platforms using IIO &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">gr-ofdmradar - OFDM Radar on MxFE Platforms using IIO</a><ul>
+<li><a class="reference internal" href="#software-hardware-quickstart">Software / Hardware Quickstart</a><ul>
+<li><a class="reference internal" href="#preparing-the-zcu102-boot-files">Preparing the ZCU102 boot files</a><ul>
+<li><a class="reference internal" href="#linux-kernel">Linux Kernel</a></li>
+<li><a class="reference internal" href="#building-the-hdl">Building the HDL</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#building-gnu-radio">Building GNU Radio</a></li>
+<li><a class="reference internal" href="#building-gr-ofdmradar">Building gr-ofdmradar</a></li>
+<li><a class="reference internal" href="#testing-the-ofdm-radar">Testing the OFDM Radar</a><ul>
+<li><a class="reference internal" href="#simulation">Simulation</a></li>
+<li><a class="reference internal" href="#on-zcu102-ad9081">On ZCU102 / AD9081</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#useful-resources">Useful resources</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#using-the-ofdm-radar">Using the OFDM Radar</a></li>
+<li><a class="reference internal" href="#system-deep-dive">System deep dive</a><ul>
+<li><a class="reference internal" href="#zcu102-ad9081">ZCU102 / AD9081</a></li>
+<li><a class="reference internal" href="#problem-statement">Problem statement</a></li>
+<li><a class="reference internal" href="#the-hdl">The HDL</a><ul>
+<li><a class="reference internal" href="#the-data-offload-engine">The data offload engine</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#linux-drivers">Linux Drivers</a><ul>
+<li><a class="reference internal" href="#data-offload">Data Offload</a></li>
+<li><a class="reference internal" href="#tdd">TDD</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#gnu-radio-integration">GNU Radio Integration</a><ul>
+<li><a class="reference internal" href="#gnuradio-gr-iio">gnuradio/gr-iio</a><ul>
+<li><a class="reference internal" href="#ad9081-source-sink">AD9081 Source / Sink</a></li>
+<li><a class="reference internal" href="#tdd-control">TDD Control</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#gr-ofdmradar">gr-ofdmradar</a><ul>
+<li><a class="reference internal" href="#ofdm-radar-blocks">OFDM Radar Blocks</a></li>
+<li><a class="reference internal" href="#doa-blocks">DoA Blocks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="gr-ofdmradar-ofdm-radar-on-mxfe-platforms-using-iio">
+<h1>gr-ofdmradar - OFDM Radar on MxFE Platforms using IIO<a class="headerlink" href="#gr-ofdmradar-ofdm-radar-on-mxfe-platforms-using-iio" title="Link to this heading"></a></h1>
+<p>This page is dedicated to the details of building an OFDM radar on a ZCU102 + AD9081 with GNURadio and IIO.</p>
+<p>This was based on a paper pressented at:</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><img alt="youtube&gt;hXLwt3q2evs" src="https://wiki.analog.com/_media/youtube&gt;hXLwt3q2evs" /></p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://events.gnuradio.org/event/8/contributions/130/attachments/54/103/GRCON%202021%20Winter.pdf" target="_blank">slides</a></p></li>
+</ul>
+<p>If you just want to get the software and hardware running, the following section covers the setup instructions:</p>
+<section id="software-hardware-quickstart">
+<h2>Software / Hardware Quickstart<a class="headerlink" href="#software-hardware-quickstart" title="Link to this heading"></a></h2>
+<p>To get started, in terms of hardware you will need:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/products/boards-and-kits/ek-u1-zcu102-g.html" target="_blank">Zynq UltraScale+ MPSoC ZCU102 Evaluation Kit</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9081.html" target="_blank">AD9081 Evaluation Board</a></p></li>
+<li><p>TX and RX antennas and cables, optionally additional external RF components like receiver LNA(s) or a TX PA</p></li>
+<li><p>A computer running linux. Windows may work too, but hasn’t been tested</p></li>
+</ul>
+<p>Required software:</p>
+<ul class="simple">
+<li><p>A development device running x86_64 Linux</p></li>
+<li><p>Vivado 2020.2 (Or whatever the current hdl master branch requires), the Vitis SDK and a License for MPSoC parts (Included with evaluation kit)</p></li>
+<li><p>A recent software build toolchain. (Usually provided by your Linux distribution. build-essential on debian stable+, base-devel on ArchLinux, etc.)</p></li>
+</ul>
+<section id="preparing-the-zcu102-boot-files">
+<h3>Preparing the ZCU102 boot files<a class="headerlink" href="#preparing-the-zcu102-boot-files" title="Link to this heading"></a></h3>
+<p>It is usually a good idea to start out by installing a recent image of <a class="reference internal" href="../../../tools-software/linux-software/kuiper-linux.html"><span class="doc">Kuiper Linux</span></a> onto the ZCU102’s SD card, so you don’t have to rebuild the rootfs.</p>
+<section id="linux-kernel">
+<h4>Linux Kernel<a class="headerlink" href="#linux-kernel" title="Link to this heading"></a></h4>
+<p>Depending on the age of your release, you may need to build a more recent kernel:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># First clone the repository
+git clone https://github.com/analogdevicesinc/linux.git
+cd linux
+
+# First we need to make the Vitis arm64 gcc toolchain available and enable cross compilation
+export PATH=$PATH:/opt/Xilinx/Vitis/2020.2/gnu/aarch64/lin/aarch64-linux/bin/
+export ARCH=arm64
+export CROSS_COMPILE=aarch64-linux-gnu-
+
+# Then we can initialize the .config to something that enables most ADI drivers
+make adi_zynqmp_defconfig
+
+# And finally build our image
+make -j$(nproc) Image UIMAGE_LOADADDR=0x8000
+
+# Finally you can copy arch/arm64/boot/Image into the boot directory of the ZCU102 sdcard:
+cp arch/arm64/boot/Image /mnt/boot/
+</pre></div>
+</div>
+<p>If you’re having trouble building the Linux image, there are more detailed articles describing the process (WHERE!).</p>
+<p>Finally you will have to build the correct device tree blob:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This step is always necessary if you installed the default Kuiper image, even if your Kernel is up to date!</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build the device tree blob</span>
+<span class="n">make</span> <span class="n">xilinx</span><span class="o">/</span><span class="n">zynqmp</span><span class="o">-</span><span class="n">zcu102</span><span class="o">-</span><span class="n">rev10</span><span class="o">-</span><span class="n">ad9081</span><span class="o">-</span><span class="n">m8</span><span class="o">-</span><span class="n">l4</span><span class="o">-</span><span class="n">tdd</span><span class="o">.</span><span class="n">dtb</span>
+
+<span class="c1"># Copy to ZCU102 boot directory</span>
+<span class="n">cp</span> <span class="n">arch</span><span class="o">/</span><span class="n">arm64</span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">dts</span><span class="o">/</span><span class="n">xilinx</span><span class="o">/</span><span class="n">zynqmp</span><span class="o">-</span><span class="n">zcu102</span><span class="o">-</span><span class="n">rev10</span><span class="o">-</span><span class="n">ad9081</span><span class="o">-</span><span class="n">m8</span><span class="o">-</span><span class="n">l4</span><span class="o">-</span><span class="n">tdd</span><span class="o">.</span><span class="n">dtb</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">system</span><span class="o">.</span><span class="n">dtb</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The device tree blob must be renamed to system.dtb!</p>
+</div>
+</section>
+<section id="building-the-hdl">
+<h4>Building the HDL<a class="headerlink" href="#building-the-hdl" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Source your Vivado 2020.2 (or later, depends on the adi/hdl release) settings</span>
+<span class="n">source</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">Xilinx</span><span class="o">/</span><span class="n">Vivado</span><span class="o">/</span><span class="mf">2020.2</span><span class="o">/</span><span class="n">settings64</span><span class="o">.</span><span class="n">sh</span>
+
+<span class="c1"># Clone the HDL</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Yamakaja</span><span class="o">/</span><span class="n">hdl</span><span class="o">.</span><span class="n">git</span>
+<span class="n">git</span> <span class="n">switch</span> <span class="n">data_offload</span>
+
+<span class="c1"># Navigate to the ad9081 / ZCU102 project</span>
+<span class="n">cd</span> <span class="n">projects</span><span class="o">/</span><span class="n">ad9081</span><span class="o">/</span><span class="n">ad9081_fmca_ebz</span><span class="o">/</span><span class="n">zcu102</span><span class="o">/</span>
+
+<span class="c1"># Build the project with TDD support. Note that enabling TDD support is only possible if you also enable shared device clocks, which means that your IO rates will be symmetrical.</span>
+<span class="n">make</span> <span class="n">TDD_SUPPORT</span><span class="o">=</span><span class="mi">1</span> <span class="n">SHARED_DEVCLK</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>The HDL build should take around 15 - 30 mins, and leave you with a projects/ad9081_fmca_ebz/zcu102/ad9081_fmca_ebz_zcu102.sdk/system_top.xsa when its done.</p>
+<p>This guide describes how you can use the system_top.xsa to build the BOOT.BIN, which also needs to be copied into the sdcard’s boot partition: <a class="reference internal" href="../../../tools-software/linux-software/build-the-zynqmp-boot-image.html"><span class="doc">build-the-zynqmp-boot-image</span></a></p>
+<p>Once you’ve got an updated linux Image, BOOT.BIN and system.dtb installed and the AD9081 eval board mounted on the ZCU102, you can start to hook up a receive and transmit antenna / or other RF components.</p>
+</section>
+</section>
+<section id="building-gnu-radio">
+<h3>Building GNU Radio<a class="headerlink" href="#building-gnu-radio" title="Link to this heading"></a></h3>
+<p>To use the gr-iio AD9081 and TDD blocks, you will have to build this GNU Radio fork/branch, which is fairly close to master: <a class="icon link reference external" href="https://github.com/Yamakaja/gnuradio/commits/feature/gr-iio-tdd" target="_blank">Yamakaja/GNURadio</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Checkout code
+git clone https://github.com/Yamakaja/gnuradio.git
+git switch feature/gr-iio-tdd
+
+# Note, you should adjust the cmake build command according to your local environment! This one was created to work with my environment
+mkdir -p build
+cmake -DCMAKE_INSTALL_PREFIX=/usr/local \
+    -DPYTHON_EXECUTABLE=$(which python3) \
+    -DPYTHON_INCLUDE_DIR=/usr/include/python3.9 \
+    -DPYTHON_LIBRARY=/usr/lib/libpython3.9.so \
+    -DGR_PYTHON_DIR=/usr/lib/python3.9/site-packages \
+    -DENABLE_GRC=ON \
+    -DENABLE_GR_QTGUI=ON \
+    -DQWT_LIBRARIES=/usr/lib/libqwt.so \
+    -DCMAKE_BUILD_TYPE=Debug \
+    -B build \
+    -S .
+
+make -C build -j$(nproc)
+
+# Install GNU Radio into system directories
+sudo make -C build install
+
+# Make sure the installation was successful by opening gnuradio-companion
+LD_LIBRARY_PATH=/usr/local/lib /usr/local/bin/gnuradio-companion
+</pre></div>
+</div>
+</section>
+<section id="building-gr-ofdmradar">
+<h3>Building gr-ofdmradar<a class="headerlink" href="#building-gr-ofdmradar" title="Link to this heading"></a></h3>
+<p>On account of being a GNU Radio module, the process to build gr-ofdmradar is quite similar:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Checkout code
+git clone https://github.com/analogdevicesinc/gr-ofdmradar.git
+cd gr-ofdmradar
+
+# Make sure this build command matches that of your GNU Radio installation!
+mkdir -p build
+cmake -DCMAKE_INSTALL_PREFIX=/usr/local \
+    -DPYTHON_EXECUTABLE=$(which python3) \
+    -DPYTHON_INCLUDE_DIR=/usr/include/python3.9 \
+    -DPYTHON_LIBRARY=/usr/lib/libpython3.9.so \
+    -DGR_PYTHON_DIR=/usr/lib/python3.9/site-packages \
+    -DCMAKE_BUILD_TYPE=Debug \
+    -B build \
+    -S .
+
+make -C build
+sudo make -C build install
+</pre></div>
+</div>
+<p>When you now start GNU Radio companion once again, the gr-ofdmradar blocks should show up in the block-list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LD_LIBRARY_PATH</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">gnuradio</span><span class="o">-</span><span class="n">companion</span>
+</pre></div>
+</div>
+</section>
+<section id="testing-the-ofdm-radar">
+<h3>Testing the OFDM Radar<a class="headerlink" href="#testing-the-ofdm-radar" title="Link to this heading"></a></h3>
+<section id="simulation">
+<h4>Simulation<a class="headerlink" href="#simulation" title="Link to this heading"></a></h4>
+<p>To validate that the ofdm radar module has been installed properly, you can launch the ofdmradar_test example in the examples directory of gr-ofdmradar:</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/ofdmradar-simulation-flowgraph.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/ofdmradar-simulation-flowgraph.png" />
+<p>Running the flowgraph should leave you with a radar screen simulating four targets:</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/ofdmradar-simulation-screen.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/ofdmradar-simulation-screen.png" />
+</section>
+<section id="on-zcu102-ad9081">
+<h4>On ZCU102 / AD9081<a class="headerlink" href="#on-zcu102-ad9081" title="Link to this heading"></a></h4>
+<p>To test the OFDM radar with real hardware and signals, open the ofdmradar_ad9081.grc flowgraph in the gr-ofdmradar example directory.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">iio_target</span></code> variable must point to the IP address of your ZCU102 target!</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The default configuration of the example flowgraph may be in violation of your local regulations! Make sure not to transmit on bands which are not allocated to you, and keep power limits in mind!</p>
+</div>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/ofdmradar-ad9081-flowgraph.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/ofdmradar-ad9081-flowgraph.png" />
+<p>The following video shows a test where we covered a distance of ~35m:</p>
+<p><img alt="youtube&gt;gtTILs929aU" src="https://wiki.analog.com/_media/youtube&gt;gtTILs929aU" /></p>
+</section>
+</section>
+<section id="useful-resources">
+<h3>Useful resources<a class="headerlink" href="#useful-resources" title="Link to this heading"></a></h3>
+<p>For more details in general about the theoretical underpinnings of OFDM radar, please check out Martin Brauns dissertation: <a class="icon link reference external" href="https://publikationen.bibliothek.kit.edu/1000038892" target="_blank">https://publikationen.bibliothek.kit.edu/1000038892</a></p>
+<p>For more information about gr-ofdmradar system parameters check out the <a class="icon git reference external" href="https://github.com/analogdevicesinc/gr-ofdmradar/tree/main/README.md" target="_blank">gr-ofdmradar/README.md</a></p>
+<ul class="simple">
+<li><p>:git-gr-ofdmradar&gt;`__</p></li>
+<li><p><cite>GNU Radio branch with AD9081 blocks &lt;https::`gr-ofdmradar &lt;/github.com/Yamakaja/gnuradio/tree/feature/gr-iio-tdd&gt;</cite></p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="using-the-ofdm-radar">
+<h2>Using the OFDM Radar<a class="headerlink" href="#using-the-ofdm-radar" title="Link to this heading"></a></h2>
+<p>This section will describe how you can use the OFDM radar to get some actual returns, how you can tune the system and choose your parameters.</p>
+<p>Before going on, please make yourself familiar with the basic operating principles of an OFDM radar, and the meaning of the system parameters: <a class="icon link reference external" href="https://github.com/analogdevicesinc/gr-ofdmradar#operating-principle" target="_blank">https://github.com/analogdevicesinc/gr-ofdmradar#operating-principle</a></p>
+<p>To reinforce your understanding, lets take a look at this example set of parameters.</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_sysparams.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_sysparams.png" />
+<ul class="simple">
+<li><p>The complex system sample rate is <code class="docutils literal notranslate"><span class="pre">f_s</span> <span class="pre">=</span> <span class="pre">250</span> <span class="pre">MS/s</span></code>,</p></li>
+<li><p>the FFT Size <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">=</span> <span class="pre">4096</span></code>,</p></li>
+<li><p>a frame has <code class="docutils literal notranslate"><span class="pre">M</span> <span class="pre">=</span> <span class="pre">16</span></code> symbols</p></li>
+<li><p>and the cyclic prefix length ‘’ N_CP = 256’’,</p></li>
+<li><p>and <code class="docutils literal notranslate"><span class="pre">N_NG</span> <span class="pre">=</span> <span class="pre">64</span></code> nyquist guard carriers</p></li>
+</ul>
+<p>thus</p>
+<ul class="simple">
+<li><p>the total TX frame length is <code class="docutils literal notranslate"><span class="pre">L</span> <span class="pre">=</span> <span class="pre">(N+N_CP)*M</span> <span class="pre">=</span> <span class="pre">69632</span> <span class="pre">samples</span></code>,</p></li>
+<li><p>the frame duration is <code class="docutils literal notranslate"><span class="pre">T</span> <span class="pre">=</span> <span class="pre">L</span> <span class="pre">/</span> <span class="pre">f_s</span> <span class="pre">=</span> <span class="pre">279µs</span></code>,</p></li>
+<li><p>the (non-oversampled), “theoretical” time domain resolution is <code class="docutils literal notranslate"><span class="pre">~c/(2\*f_s)</span> <span class="pre">=</span> <span class="pre">60</span> <span class="pre">cm</span></code>,</p></li>
+<li><p>the (non-oversampled) doppler resolution is <code class="docutils literal notranslate"><span class="pre">f_s</span> <span class="pre">/</span> <span class="pre">((N+N_CP)*M)</span> <span class="pre">=</span> <span class="pre">3590</span> <span class="pre">Hz</span></code> (Pretty bad when you want to estimate speeds, not distance),</p></li>
+<li><p>the true system bandwidth is <code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">=</span> <span class="pre">(N</span> <span class="pre">-</span> <span class="pre">2\*N_NG)/N</span> <span class="pre">*</span> <span class="pre">f_s</span> <span class="pre">=</span> <span class="pre">242.2</span> <span class="pre">MHz</span></code>,</p></li>
+<li><p>the final processing gain <code class="docutils literal notranslate"><span class="pre">G</span> <span class="pre">=</span> <span class="pre">10</span> <span class="pre">*</span> <span class="pre">log10(N</span> <span class="pre">*</span> <span class="pre">M)</span> <span class="pre">~=</span> <span class="pre">48</span> <span class="pre">dB</span></code>,</p></li>
+<li><p>and finally the covered distance spread: <code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">N_CP\*c</span> <span class="pre">/</span> <span class="pre">(4\*f_s)</span> <span class="pre">=</span> <span class="pre">~77</span> <span class="pre">m</span></code>. Other distances may be rendered, but the delay spread should stay below this value to keep the ofdm convolution cyclic.</p></li>
+</ul>
+<p>This leaves us with a couple flowgraph parameters that should be discussed:</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_sysparams_annotated.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_sysparams_annotated.png" />
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">buffer_size</span></code> is used to control how many samples the OFDM radar receiver should accept per frame, instead of the frame size itself - the frame length <code class="docutils literal notranslate"><span class="pre">L</span></code> may not always be a nice value. Note due to obvious reasons this value should never be smaller than the actual frame size!</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">amplitude</span></code> parameter controls the transmit power by pre-multiplying the TX signal. Note that because of the exhibited processing gain, the required transmit power may be rather small.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">t_0</span></code> is used in the TDD engine and allows you to adjust the offset between the start of the transmission and the start of the recording. This value should be calibrated according to your system to allow the determination of true ranges from the resulting returns.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">display_mult</span></code> parameter is used in the receive path to scale the intensity of the return signal for the optimal viewing experience™, but <strong>does not</strong> change the receiver <strong>sensitivity</strong>. This is simply a post-processing / visual operation!</p></li>
+</ul>
+<p>Now lets take a look at the OFDM radar screen as you may see it when opening the simulation example in gr-ofdmradar:</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_screen.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_screen.png" />
+<p>There are still four parameters left to be explained, that control visualization parameters (But don’t change anything about the signals themselves):</p>
+<ul class="simple">
+<li><p>The range slider controls range which is shown, and can be thought of as an inverted zoom slider: If you want to zoom in the range dimension, move the slider to the left.</p></li>
+<li><p>The doppler range slider works similarly, but reduces the doppler ranges which are shown. This isn’t usually too much of an issue.</p></li>
+</ul>
+<p>To explain the min and max value sliders, we need to take a look at how the visualization code works:</p>
+<ul class="simple">
+<li><p>The input values to the gui widget have already been fully processed and can be thought of as a complex 2D matrix over range and doppler. To visualize this matrix we first take the energy of each value, then use a mapping function like the following to map those energy values to something between 0 and 1, where <code class="docutils literal notranslate"><span class="pre">minV</span></code> and <code class="docutils literal notranslate"><span class="pre">maxV</span></code> are controlled by the sliders:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mapv</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">minV</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">maxV</span><span class="o">-</span><span class="n">minV</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This value is then fed though the turbo color map and shown on screen. For more information see the fragment shader in which all of this is happening: <a class="icon git reference external" href="https://github.com/analogdevicesinc/gr-ofdmradar/tree/main/lib/resources/screen" target="_blank">lib/resources/screen</a>.frag</p>
+<p>To really get an understanding of the max and min sliders you may need to play around with them in a simulation, but at least now you should have an idea of what they’re doing.</p>
+</section>
+<hr class="docutils" />
+<section id="system-deep-dive">
+<h2>System deep dive<a class="headerlink" href="#system-deep-dive" title="Link to this heading"></a></h2>
+<p>The system deep dive is meant to cover the details of the entire radar system from top to bottom. Unless you’re trying to recreate a similar system from scratch or trying to debug an issue, this section may not be too interesting.</p>
+<p>Subsystems which will be covered:</p>
+<ul class="simple">
+<li><p>The Transceiver / RF ADC/DAC (AD9081)</p></li>
+<li><p>Hardware, HDL</p></li>
+<li><p>Linux drivers</p></li>
+<li><p>gr-ofdmradar and its blocks</p></li>
+</ul>
+<section id="zcu102-ad9081">
+<h3>ZCU102 / AD9081<a class="headerlink" href="#zcu102-ad9081" title="Link to this heading"></a></h3>
+<p>Some notes on the device that were used:</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/en/products/ad9081.html" target="_blank">AD9081</a> is a 4-channel RF DAC/ADC in a single package, with multi-chip synchronization and various other interesting capabilities. Data is transferred from the DAC to the ADC over up to 8+8 (RX+TX) SERDES lanes running JESD 204 B/C. Unfortunately the transceivers of the ZU9EG on the <a class="icon link reference external" href="https://www.xilinx.com/products/boards-and-kits/ek-u1-zcu102-g.html" target="_blank">ZCU102</a> only go up to ~15 Gbps, as such only JESD 204B operation is available with this hardware configuration.</p>
+</section>
+<section id="problem-statement">
+<h3>Problem statement<a class="headerlink" href="#problem-statement" title="Link to this heading"></a></h3>
+<p>Before getting started with the implementation details, we need to establish why hardware changes are necessary: To be able to implement a <strong>reliable</strong> and <strong>accurate</strong> radar system, our interfaces must provide certain guarantees. Take a look at this picture illustrating an ordinary pulse radar:</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/pulse_radar.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/pulse_radar.png" />
+<p>In this monostatic setup, the transmitter produces a small pulse, and then listens for the return signal. To determine the distance to the target, the time of flight is calculated by taking the time at which the signal returned, and subtracting that from the transmit time. More information like the doppler shift, RCS estimation, etc. can be estimated later on in the signal chain, but these aren’t relevant right now. In this situation only the time of flight is actually interesting to us, not the absolute time at which the signal was received. To determine the time of flight, we need to rely on a <strong>known</strong>, <strong>fixed</strong> timing relationship between the signal was sent out, and our input samples at the receiver. There exist a number of solutions to this problem, for example a strongly attenuated version of the TX signal could be looped back to the receiver. In systems where the full data stream is available, and reliably so, this may be an adequate solution, but the iio link does not lend itself to such an approach - mostly because the data rates are much too high:</p>
+<p>For the remainder of this page, we will assume that the default ZCU102 / AD9081 JESD configuration has been selected:</p>
+<ul class="simple">
+<li><p>4 RX + 4 TX channels active &#64; 250 MS/s, 32-bit complex samples (16 + 16 bit)</p></li>
+<li><p>=&gt; <code class="docutils literal notranslate"><span class="pre">Rate</span> <span class="pre">/</span> <span class="pre">direction</span> <span class="pre">=</span> <span class="pre">4</span> <span class="pre">*</span> <span class="pre">250e6</span> <span class="pre">MS/s</span> <span class="pre">*</span> <span class="pre">32</span> <span class="pre">bit/S</span> <span class="pre">=</span> <span class="pre">32</span> <span class="pre">Gbps</span></code></p></li>
+</ul>
+<p>While the memory links and the FPGA can deal with these rates, the processing system and/or the Gigabit ethernet link clearly cannot.</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/system_link_rates.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/system_link_rates.png" />
+<p>An issue that result from this bandwidth bottleneck should be fairly obvious: We cannot transmit or receive a continuous sample stream from GNU Radio. This problem isn’t unique to the direct RF platform we’re working with here, but also applies to many other devices like the Pluto SDR, for all sample rates exceeding the ~3-8 MS/s (?) supported by the USB 2.0 link.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The following section assumes you have a basic understanding of iio buffers. If you’d like a refresher, take a look at the <a class="reference internal" href="../../../tools-software/linux-software/libiio_internals.html"><span class="doc">IIO internals wiki page</span></a>.</p>
+</div>
+<p>So what are the guarantees provided by iio?</p>
+<ul class="simple">
+<li><p>All samples which are part of a single buffer will be played as a continuous stream.</p></li>
+<li><p>Buffers will not be reordered</p></li>
+</ul>
+<p>By default this will result in a situation like the following, where RX and TX buffers are sampled completely independently, and the distance between each buffer is also apparently random:</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/iio_buffers_unaligned.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/iio_buffers_unaligned.png" />
+<p>To summarize, the two issues which we need to address:</p>
+<ul class="simple">
+<li><p>The data rates supported by the link make continuous transmissions impossible, we need to work with individual buffers</p></li>
+<li><p>When not transmitting continuously, the relationship between RX and TX is completely unknown.</p></li>
+</ul>
+<p>The first issue may be addressed fairly easily by increasing buffer sizes. On one hand this means that our entire transmit and receive waveform need to fit into memory at once, on the other we are guaranteed that this waveform will be continuous!</p>
+<p>The second problem is much more tricky to solve, and requires modifications to the HDL. The basic idea is as follows: What if we don’t stream continuously at the hardware level, but only in small bursts at predetermined times. This means that we’re effectively using hardware to cut out small windows of the transmit and receive signals and only allowing those to pass onto the DMA (Or from the DMA to the signal chain). This results in a greatly reduced data rates (in a controlled manner), and known relationships between RX and TX. The following picture illustrates what this system should do (Which is very similar to the triggering mechanism in an oscilloscope):</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/iio_buffers_aligned.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/iio_buffers_aligned.png" />
+</section>
+<section id="the-hdl">
+<h3>The HDL<a class="headerlink" href="#the-hdl" title="Link to this heading"></a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>As of writing this document, not all HDL changes have made it into the <a class="icon link reference external" href="https://github.com/analogdevicesinc/hdl" target="_blank">upstream</a> repository yet, thus you may either use my development branch, or make sure that the most recent commits from that branch have made it into master (Though at that point this paragraph should be updated): <a class="icon link reference external" href="https://github.com/Yamakaja/hdl/tree/data_offload" target="_blank">https://github.com/Yamakaja/hdl/tree/data_offload</a></p>
+</div>
+<p>On the HDL side we will be using a Timing Division Duplexing (TDD) core, which was originally developed to control the <a class="icon adi reference external" href="https://www.analog.com/en/products/ad9361.html" target="_blank">ad9361.html</a> family of transceivers: See the <a class="reference internal" href="../ad-pzsdr2400tdd-eb/reference_hdl.html"><span class="doc">reference_hdl</span></a> for more information about what the TDD core can do.</p>
+<p>Because the TDD engine was previously not available as a standalone IP core, i created a small wrapper which just references the existing tdd files from the util and/or common directory: <code class="docutils literal notranslate"><span class="pre">`axi_tdd</span></code> &lt;<a class="icon link reference external" href="https://github.com/analogdevicesinc/hdl/tree/master/library/axi_tdd" target="_blank">https://github.com/analogdevicesinc/hdl/tree/master/library/axi_tdd</a>&gt;`__.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>While the terminology of the TDD engine registers and signals is derived from their use with the AD9361, the different channels function completely independently, and may as well just have been numbered in this case.</p>
+</div>
+<section id="the-data-offload-engine">
+<h4>The data offload engine<a class="headerlink" href="#the-data-offload-engine" title="Link to this heading"></a></h4>
+<p>Now we should take a look at the “data offload”, which is responsible for sampling the stream when triggered by the TDD engine (It’s basically a glorified FIFO). The data offload is a rather complex block that offers a multitude of functions and configuration options, for more information see the readme: <a class="icon link reference external" href="https://github.com/Yamakaja/hdl/blob/data_offload/library/data_offload/README.md" target="_blank">README.md</a></p>
+<p>The interesting part for us are the synchronization modes, which allows the data offload to remain in a waiting state, until it is triggered either by a write to a register or externally. The integration into the HDL is as follows:</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/ad9081_zcu102_bd_tdd_do.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/ad9081_zcu102_bd_tdd_do.png" />
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>While the data offload engine is triggered by the positive level of the <code class="docutils literal notranslate"><span class="pre">sync_ext</span></code> signal, the value of that signal is only relevant in the initial waiting phase. Once the data offload has been triggered, the external sync signal may go LOW immediately. While the exact time that the TDD engine keeps that synchronization signal high isn’t too important, keeping it high for too long may trigger a second buffer!</p>
+</div>
+<p>As you can tell, the <code class="docutils literal notranslate"><span class="pre">tdd_tx_valid</span></code> line is simply connected to the external synchronization input of the TX data offload. This means that we can precisely control the start of the sample replay using the TDD engine. Once it has been triggered, it will fill up its internal buffer (Who’s size *must* be an integer multiple of the iio buffer size. If it’s not, you can use the transfer length register of the data offload to make sure things line up), and then play it back to the upack core that takes the packed sample stream and deinterleaves them into a parallel bus (two * 16 bit per complex channel, see JESD’s M parameter) with <code class="docutils literal notranslate"><span class="pre">128-bit</span> <span class="pre">&#64;</span> <span class="pre">250</span> <span class="pre">MHz</span></code>.</p>
+<p>For a more detailed look at the datapath with the M=8, L=4 configuration, take a look at the following illustration. Now however, that for our purposes the <code class="docutils literal notranslate"><span class="pre">UTIL_DACFIFO</span></code> and <code class="docutils literal notranslate"><span class="pre">UTIL_ADCFIFO</span></code> have both been replaced by data offloads.</p>
+<p><img alt="image1" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/ad9081_204b_m8l4.svg" /></p>
+<p>Synchronization on the RX side is a little more involved, to explain why we need to take a look at the data packing format and the cpack cores. Imagine the following situation (Which will be quite common ;) ), you’ve got the default JESD configuration running (Four complex channels), but only one of those channels is actually in use. It would obviously be a waste to transfer data which isn’t used, which is why the [cu]pack cores take a parallel stream of samples (All four channels, no matter which are in use) and turn that into an interleaved stream of a lower rate. That is if only a single channel out of four is active, in the above situation the output of the CPACK core will be valid only once for every four samples, and that one valid sample of 128-bit will contain all 4 complex samples for that single channel. Because the cpack core is located before the data offload in the sample stream, this means that we can store more samples when fewer channels are active.</p>
+<p>Now finally the problem i’ve been trying to hint at: The tdd synchronization signal is not in any way related to the cpacks sample timer. That is depending on where the cpack core is in its process of collecting four samples compared to when the sync signal arrives, we may receive an apparently random shift of zero to three samples. To correct for this phenomenon, currently the cpack core is just reset with every sync signal. While this certainly isn’t a great solution, it was the least invasive.</p>
+</section>
+</section>
+<section id="linux-drivers">
+<h3>Linux Drivers<a class="headerlink" href="#linux-drivers" title="Link to this heading"></a></h3>
+<p>There are two drivers which may be interesting to take a look at here, the data offload and TDD driver, though obviously from the system perspective more than those two are involved.</p>
+<section id="data-offload">
+<h4>Data Offload<a class="headerlink" href="#data-offload" title="Link to this heading"></a></h4>
+<p>The <a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/misc/adi-axi-data-offload.c" target="_blank">drivers/misc/adi-axi-data-offload.c</a> is for the most part just configuring the data offload registers based on the values provided in the device tree, and also providing a debugfs interface to modify those registers at runtime. For more information on the device tree options see <a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/Documentation/devicetree/bindings/misc/adi,axi-data-offload.yaml" target="_blank">Documentation/devicetree/bindings/misc/adi,axi-data-offload.yaml</a>.</p>
+<p>The second part of the driver is the integration into <a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/frequency/cf_axi_dds.c" target="_blank">drivers/iio/frequency/cf_axi_dds.c</a>, which allows cyclic / oneshot operation to be handled by the data offload - this feature in particular is interesting when you’re sending the same radar waveform repeatedly, because if the data offload is set to cyclic mode and synchronization is enabled, it will wait for the sync signal before each iteration. Effectively this will allow you to replay a buffer on the transmit side as often as you’d like, while only ever loading it once.</p>
+</section>
+<section id="tdd">
+<h4>TDD<a class="headerlink" href="#tdd" title="Link to this heading"></a></h4>
+<p>The <a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/iio/adc/cf_axi_tdd.c" target="_blank">TDD driver</a> provides a couple device tree attributes which can be used for static configuration, but more importantly it provides an IIO device which can be used to control the tdd timing registers via the usual iio interface.</p>
+<p>&lt;code&gt; iio:device2: axi-core-tdd</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="n">channels</span> <span class="n">found</span><span class="p">:</span>
+    <span class="n">data1</span><span class="p">:</span>  <span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">WARN</span><span class="p">:</span><span class="n">iio_channel_get_type</span><span class="p">()</span><span class="o">=</span><span class="n">UNKNOWN</span><span class="p">)</span>
+    <span class="mi">6</span> <span class="n">channel</span><span class="o">-</span><span class="n">specific</span> <span class="n">attributes</span> <span class="n">found</span><span class="p">:</span>
+        <span class="n">attr</span>  <span class="mi">0</span><span class="p">:</span> <span class="n">dp_off_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">1</span><span class="p">:</span> <span class="n">dp_on_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">2</span><span class="p">:</span> <span class="n">off_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">3</span><span class="p">:</span> <span class="n">on_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">4</span><span class="p">:</span> <span class="n">vco_off_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">5</span><span class="p">:</span> <span class="n">vco_on_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">data1</span><span class="p">:</span>  <span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">WARN</span><span class="p">:</span><span class="n">iio_channel_get_type</span><span class="p">()</span><span class="o">=</span><span class="n">UNKNOWN</span><span class="p">)</span>
+    <span class="mi">6</span> <span class="n">channel</span><span class="o">-</span><span class="n">specific</span> <span class="n">attributes</span> <span class="n">found</span><span class="p">:</span>
+        <span class="n">attr</span>  <span class="mi">0</span><span class="p">:</span> <span class="n">dp_off_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">1</span><span class="p">:</span> <span class="n">dp_on_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">2</span><span class="p">:</span> <span class="n">off_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">3</span><span class="p">:</span> <span class="n">on_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">4</span><span class="p">:</span> <span class="n">vco_off_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">5</span><span class="p">:</span> <span class="n">vco_on_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">data0</span><span class="p">:</span>  <span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">WARN</span><span class="p">:</span><span class="n">iio_channel_get_type</span><span class="p">()</span><span class="o">=</span><span class="n">UNKNOWN</span><span class="p">)</span>
+    <span class="mi">6</span> <span class="n">channel</span><span class="o">-</span><span class="n">specific</span> <span class="n">attributes</span> <span class="n">found</span><span class="p">:</span>
+        <span class="n">attr</span>  <span class="mi">0</span><span class="p">:</span> <span class="n">dp_off_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">1</span><span class="p">:</span> <span class="n">dp_on_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">2</span><span class="p">:</span> <span class="n">off_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">3</span><span class="p">:</span> <span class="n">on_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">4</span><span class="p">:</span> <span class="n">vco_off_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">5</span><span class="p">:</span> <span class="n">vco_on_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">data0</span><span class="p">:</span>  <span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">WARN</span><span class="p">:</span><span class="n">iio_channel_get_type</span><span class="p">()</span><span class="o">=</span><span class="n">UNKNOWN</span><span class="p">)</span>
+    <span class="mi">6</span> <span class="n">channel</span><span class="o">-</span><span class="n">specific</span> <span class="n">attributes</span> <span class="n">found</span><span class="p">:</span>
+        <span class="n">attr</span>  <span class="mi">0</span><span class="p">:</span> <span class="n">dp_off_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">1</span><span class="p">:</span> <span class="n">dp_on_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">2</span><span class="p">:</span> <span class="n">off_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">3</span><span class="p">:</span> <span class="n">on_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">4</span><span class="p">:</span> <span class="n">vco_off_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">5</span><span class="p">:</span> <span class="n">vco_on_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+<span class="mi">10</span> <span class="n">device</span><span class="o">-</span><span class="n">specific</span> <span class="n">attributes</span> <span class="n">found</span><span class="p">:</span>
+        <span class="n">attr</span>  <span class="mi">0</span><span class="p">:</span> <span class="n">burst_count</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">1</span><span class="p">:</span> <span class="n">counter_int</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">2</span><span class="p">:</span> <span class="n">dma_gateing_mode</span> <span class="n">value</span><span class="p">:</span> <span class="n">rx_tx</span>
+        <span class="n">attr</span>  <span class="mi">3</span><span class="p">:</span> <span class="n">dma_gateing_mode_available</span> <span class="n">value</span><span class="p">:</span> <span class="n">rx_tx</span> <span class="n">rx_only</span> <span class="n">tx_only</span> <span class="n">none</span>
+        <span class="n">attr</span>  <span class="mi">4</span><span class="p">:</span> <span class="n">en</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">5</span><span class="p">:</span> <span class="n">en_mode</span> <span class="n">value</span><span class="p">:</span> <span class="n">rx_tx</span>
+        <span class="n">attr</span>  <span class="mi">6</span><span class="p">:</span> <span class="n">en_mode_available</span> <span class="n">value</span><span class="p">:</span> <span class="n">rx_tx</span> <span class="n">rx_only</span> <span class="n">tx_only</span>
+        <span class="n">attr</span>  <span class="mi">7</span><span class="p">:</span> <span class="n">frame_length_ms</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">8</span><span class="p">:</span> <span class="n">secondary</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">attr</span>  <span class="mi">9</span><span class="p">:</span> <span class="n">sync_terminal_type</span> <span class="n">value</span><span class="p">:</span> <span class="mi">0</span>
+<span class="mi">1</span> <span class="n">debug</span> <span class="n">attributes</span> <span class="n">found</span><span class="p">:</span>
+        <span class="n">debug</span> <span class="n">attr</span>  <span class="mi">0</span><span class="p">:</span> <span class="n">direct_reg_access</span> <span class="n">value</span><span class="p">:</span> <span class="mh">0x10061</span>
+<span class="n">No</span> <span class="n">trigger</span> <span class="n">on</span> <span class="n">this</span> <span class="n">device</span>
+</pre></div>
+</div>
+<p>&lt;/code&gt;</p>
+</section>
+</section>
+<section id="gnu-radio-integration">
+<h3>GNU Radio Integration<a class="headerlink" href="#gnu-radio-integration" title="Link to this heading"></a></h3>
+<p>The GNU Radio integration consists of two parts:</p>
+<ul class="simple">
+<li><p>Hardware control blocks, part of in-tree gr-iio</p></li>
+<li><p>Hardware <strong>independent</strong> signal processing blocks, part of gr-ofdmradar</p></li>
+</ul>
+<section id="gnuradio-gr-iio">
+<h4>gnuradio/gr-iio<a class="headerlink" href="#gnuradio-gr-iio" title="Link to this heading"></a></h4>
+<p>These are:</p>
+<ul class="simple">
+<li><p>AD9081 Source / Sink</p></li>
+<li><p>TDD Engine Control</p></li>
+</ul>
+<section id="ad9081-source-sink">
+<h5>AD9081 Source / Sink<a class="headerlink" href="#ad9081-source-sink" title="Link to this heading"></a></h5>
+<p>These work like pretty much any other source and sink blocks, but with a small twist: We always assume to be working with bursty data, where one burst is the size of one iio buffer. Burst / buffer boundaries are indicated by a packet length tag like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-&gt;</span> <span class="p">[</span><span class="o">...</span> <span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">x4</span><span class="p">,</span> <span class="n">x5</span><span class="p">,</span> <span class="n">x6</span><span class="p">,</span> <span class="n">x7</span><span class="p">,</span> <span class="n">x8</span><span class="p">,</span> <span class="n">x9</span><span class="p">,</span> <span class="n">x10</span><span class="p">,</span> <span class="n">x11</span><span class="p">,</span> <span class="n">x12</span><span class="p">,</span> <span class="o">...</span> <span class="p">]</span>
+                  <span class="o">^</span>                                       <span class="o">^</span>
+                  <span class="o">|</span> <span class="p">{</span> <span class="n">packet_len</span><span class="p">:</span> <span class="mi">10</span> <span class="p">}</span>                    <span class="o">|</span> <span class="p">{</span> <span class="n">packet_len</span><span class="p">:</span> <span class="mi">10</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>Now because all iio buffers from one source will always have the same size, the length tags are somewhat redundant, but allow other blocks which cannot make these assumptions to work with those streams.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If the packet length tag name field is populated in the AD9081 sink block, it will enforce that the received stream is tagged correctly. A tagging error will not be handled gracefully and abort the flowgraph!</p>
+</div>
+<p>The attributes which are available in GR boil down to the following:</p>
+<ul class="simple">
+<li><p>IIO context uri</p></li>
+<li><p>IIO buffer size</p></li>
+<li><p>Packet length tag</p></li>
+<li><p>NCO attributes</p></li>
+</ul>
+<p>With some additional source/sink specific attributes:</p>
+<ul class="simple">
+<li><p>Sink: Cyclic Mode</p></li>
+<li><p>Source: Nyquist Zone (Odd / Even)</p></li>
+<li><p>Source: Programmable hardware FIR filter file</p></li>
+</ul>
+<p><strong>AD9081 Sink Block</strong></p>
+<p><img alt="image2" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_ad9081_sink_general.png" /> <img alt="image3" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_ad9081_sink_channels.png" /> <img alt="image4" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_ad9081_sink_coarse_duc.png" /> <img alt="image5" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_ad9081_sink_fine_duc.png" /></p>
+<p><strong>AD9081 Source Block</strong></p>
+<p><img alt="image6" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_ad9081_source_general.png" /> <img alt="image7" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_ad9081_source_coarse_ddc.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Note the use of <code class="docutils literal notranslate"><span class="pre">gr.nyquist_fold</span></code>. This function takes your targeted frequency and ADC sample rate, and calculates the required NCO frequencies taking aliasing and spectral inversion into account.</p>
+</div>
+</section>
+<section id="tdd-control">
+<h5>TDD Control<a class="headerlink" href="#tdd-control" title="Link to this heading"></a></h5>
+<p>The TDD control block does not have any stream io, and only provides easy access to the underlying IIO attributes:</p>
+<p><img alt="image8" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_tdd_general.png" /> <img alt="image9" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_iio_tdd_primary_timing.png" /></p>
+</section>
+</section>
+<section id="gr-ofdmradar">
+<h4>gr-ofdmradar<a class="headerlink" href="#gr-ofdmradar" title="Link to this heading"></a></h4>
+<p>gr-ofdmradar is where all the interesting signal processing is happening. gr-ofdmradar ships with two categories of blocks: Those implementing OFDM Radar, and those implementing direction of arrival (DoA) for a linear array.</p>
+<section id="ofdm-radar-blocks">
+<h5>OFDM Radar Blocks<a class="headerlink" href="#ofdm-radar-blocks" title="Link to this heading"></a></h5>
+<p>Many of the system parameters are shared between the TX, RX and GUI blocks, thus these are stored in a separate “OFDM Radar System Parameters” block:</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_params.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_params.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">OFDM</span> <span class="pre">Radar</span> <span class="pre">Transmitter</span></code> block takes just the system parameters and a length tag key, and outputs a full OFDM radar frame. This frame is length-tagged using the provided key to allow interoperability with the AD9081 sink:</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_tx.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_tx.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">OFDM</span> <span class="pre">Radar</span> <span class="pre">Receiver</span></code> is very similar in terms of parameters, but takes an additional buffer size:</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_rx.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_rx.png" />
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The `Buffer Size` parameter determines how many samples will be expected / ofdm frame. While the amount of samples which is actually processed is determined by the ofdm system parameters, the block can consume (and discard) additional samples to align frame boundaries to the iio buffers for example. The amount of discarded samples after each received ofdm frame can be determined as <code class="docutils literal notranslate"><span class="pre">buffer_size</span> <span class="pre">-</span> <span class="pre">radar_params.frame_length</span></code>.</p>
+</div>
+<p>Finally the <code class="docutils literal notranslate"><span class="pre">OFDM</span> <span class="pre">Radar</span> <span class="pre">GUI</span></code> block takes ofdm radar params and a GUI hint:</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_gui.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_gui.png" />
+<p><strong>For more information on the parameters and OFDM radar algorithm, take a look at the</strong> <a class="icon link reference external" href="https://github.com/analogdevicesinc/gr-ofdmradar#operating-principle" target="_blank">gr-ofdmradar/README.md</a><strong>.</strong></p>
+</section>
+<section id="doa-blocks">
+<h5>DoA Blocks<a class="headerlink" href="#doa-blocks" title="Link to this heading"></a></h5>
+<p>The Doa blocks are less integrated, but also don’t come with many parameters. The implicit assumption is that we’re working with a linear array and <code class="docutils literal notranslate"><span class="pre">lambda/2</span></code> spacing - the main parameter is pretty much how many targets we are expecting, and how many receiver channels we have.</p>
+<p>** DoA Autocorrelator **</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_doa_corr.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_doa_corr.png" />
+<p>** DoA Calibration Block **</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_doa_cal.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_doa_cal.png" />
+<p>** DoA MUSIC Estimator **</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_doa_music.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_doa_music.png" />
+<p>** DoA ESPRIT Estimator **</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_doa_esprit.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9081_fmca_ebz/radar/gr_ofdmradar_doa_esprit.png" />
+</section>
+</section>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

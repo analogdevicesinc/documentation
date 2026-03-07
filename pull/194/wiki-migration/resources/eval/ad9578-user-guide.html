@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Simple power connection using 6 V wall adapter and on-board voltage regulators" name="description" />
+
+    <title>AD9578 Evaluation Board User Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">AD9578 Evaluation Board User Guide</a></li>
+<li><a class="reference internal" href="#evaluation-board-features">Evaluation Board Features</a></li>
+<li><a class="reference internal" href="#equipment-needed">Equipment Needed</a></li>
+<li><a class="reference internal" href="#online-resources">Online Resources</a></li>
+<li><a class="reference internal" href="#general-description">General Description</a></li>
+<li><a class="reference internal" href="#evaluation-board-hardware">Evaluation Board Hardware</a><ul>
+<li><a class="reference internal" href="#power-connections">Power Connections</a><ul>
+<li><a class="reference internal" href="#connecting-external-supplies">Connecting External Supplies</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pc-connections">PC Connections</a></li>
+<li><a class="reference internal" href="#signal-connections">Signal Connections</a><ul>
+<li><a class="reference internal" href="#xo-inputs">XO Inputs</a></li>
+<li><a class="reference internal" href="#outputs">Outputs</a></li>
+<li><a class="reference internal" href="#spi-bus">SPI Bus</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#default-evaluation-boards-setup-summary">Default Evaluation Boards Setup Summary</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#evaluation-board-software">Evaluation Board Software</a><ul>
+<li><a class="reference internal" href="#software-installation">Software Installation</a></li>
+<li><a class="reference internal" href="#running-the-software">Running the Software</a><ul>
+<li><a class="reference internal" href="#setup-files">Setup Files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#quick-start-guide">Quick Start Guide</a></li>
+<li><a class="reference internal" href="#evaluation-software-components">Evaluation Software Components</a><ul>
+<li><a class="reference internal" href="#main-window">Main Window</a></li>
+<li><a class="reference internal" href="#active-and-inactive-controls">Active and Inactive Controls</a></li>
+<li><a class="reference internal" href="#invalid-value-indication">Invalid Value Indication</a></li>
+<li><a class="reference internal" href="#autocalculate-configure-and-read-buttons">Autocalculate, Configure, and Read Buttons</a></li>
+<li><a class="reference internal" href="#input-frequency-section">Input Frequency Section</a></li>
+<li><a class="reference internal" href="#pll-input-reference-selection">PLL Input Reference Selection</a></li>
+<li><a class="reference internal" href="#pll1-and-pll2-default-controls">PLL1 and PLL2 Default Controls</a></li>
+<li><a class="reference internal" href="#pll1-and-pll2-advanced-controls">PLL1 and PLL2 Advanced Controls</a></li>
+<li><a class="reference internal" href="#reference-output-section">Reference Output Section</a></li>
+<li><a class="reference internal" href="#pll-lock-indicators">PLL Lock Indicators</a></li>
+<li><a class="reference internal" href="#comments-box">Comments Box</a></li>
+<li><a class="reference internal" href="#frequency-wizard">Frequency Wizard</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#evaluation-software-menu-items">Evaluation Software Menu Items</a><ul>
+<li><a class="reference internal" href="#menu-bar">Menu Bar</a><ul>
+<li><a class="reference internal" href="#file-menu">File Menu</a></li>
+<li><a class="reference internal" href="#select-hardware">Select Hardware</a></li>
+<li><a class="reference internal" href="#enable-polling">Enable Polling</a></li>
+<li><a class="reference internal" href="#load-all-registers">Load All Registers</a></li>
+<li><a class="reference internal" href="#save-all-registers">Save All Registers</a></li>
+<li><a class="reference internal" href="#exit">Exit</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#view-menu-advanced-controls-mode-only">View Menu (Advanced Controls Mode Only)</a><ul>
+<li><a class="reference internal" href="#debug-window">Debug Window</a></li>
+<li><a class="reference internal" href="#crystal-settings">Crystal Settings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#help-menu">Help Menu</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="ad9578-evaluation-board-user-guide">
+<h1>AD9578 Evaluation Board User Guide<a class="headerlink" href="#ad9578-evaluation-board-user-guide" title="Link to this heading"></a></h1>
+</section>
+<section id="evaluation-board-features">
+<h1>Evaluation Board Features<a class="headerlink" href="#evaluation-board-features" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Simple power connection using 6 V wall adapter and on-board voltage regulators</p></li>
+<li><p>Prepopulated 49.152MHz XTAL to synthesize any frequency 11.8MHz – 919MHz</p></li>
+<li><p>2 reference input SMA connectors</p></li>
+<li><p>10 ac-coupled differential SMA output connectors (5 differential paths)</p></li>
+<li><p>USB connection to PC</p></li>
+<li><p>Microsoft Windows-based evaluation software with simple graphical user interface</p>
+<ul>
+<li><p>Supports 32-bit and 64-bit versions</p></li>
+</ul>
+</li>
+<li><p>SPI and eFuse programmable</p></li>
+<li><p>Two 12 pin headers to interface with Avnet LX9 MicroBoard</p></li>
+</ul>
+</section>
+<section id="equipment-needed">
+<h1>Equipment Needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Reference oscillator or signal generator (Optional)</p></li>
+<li><p>Other evaluation board to be clocked or test equipment</p>
+<ul>
+<li><p>Oscilloscope, spectrum analyzer, phase noise analyzer</p></li>
+</ul>
+</li>
+<li><p>SMA cables (50 Ω)</p></li>
+<li><p>6 V wall supply (provided)</p></li>
+<li><p>USB cable (provided)</p></li>
+</ul>
+</section>
+<section id="online-resources">
+<h1>Online Resources<a class="headerlink" href="#online-resources" title="Link to this heading"></a></h1>
+<p>Required Software</p>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/eval-ad9578" target="_blank">AD9578 Evaluation Board Software</a></p></li>
+</ul>
+<p>Documents Needed</p>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/static/imported-files/data_sheets/AD9578.pdf" target="_blank">AD9578 data sheet</a></p></li>
+</ul>
+</section>
+<section id="general-description">
+<h1>General Description<a class="headerlink" href="#general-description" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line">The <a class="icon adi reference external" href="https://www.analog.com/AD9578" target="_blank">AD9578</a> evaluation board is a compact, easy-to-use platform for evaluating all features of the <a class="icon adi reference external" href="https://www.analog.com/AD9578" target="_blank">AD9578</a>. The <a class="icon adi reference external" href="https://www.analog.com/AD9578" target="_blank">AD9578</a> is a programmable synthesizer intended for jitter attenuation and asynchronous clocking applications in high performance telecommunications, networking, data storage, serializer/deserializer (SERDES) and physical layer (PHY) applications. The evaluation board consists of one prepopulated 49.152MHz crystal and optional single ended SMA inputs to drive the XO2 and XO4 pins. Each output is accessed through edge launch ac-coupled SMA connectors. The on board power supply allows users to simply operate the <a class="icon adi reference external" href="https://www.analog.com/AD9578" target="_blank">AD9578</a> with 2.5V or 3.3V voltages by altering a few jumper settings. Use this user guide in conjunction with the <a class="icon adi reference external" href="https://www.analog.com/AD9578" target="_blank">AD9578</a> data sheet and the evaluation software available at <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9578.html#eb-overview" target="_blank">EVAL-AD9578.html#eb-overview</a>.</div>
+</div>
+<div class="centeralign docutils container">
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/ad9578evb_cropped.png"><img alt="image1" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/ad9578evb_cropped.png" style="width: 700px;" /></a></p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>//Figure 1. AD9578/PCBZ //</p>
+</div>
+</div></blockquote>
+</section>
+<section id="evaluation-board-hardware">
+<h1>Evaluation Board Hardware<a class="headerlink" href="#evaluation-board-hardware" title="Link to this heading"></a></h1>
+<hr class="docutils" />
+<p>The following instructions are for setting up the physical connections to the AD9578/PCBZ evaluation board.</p>
+<section id="power-connections">
+<h2>Power Connections<a class="headerlink" href="#power-connections" title="Link to this heading"></a></h2>
+<p>The AD9578/PCBZ is setup by default to power the AD9578 and remaining circuitry with 3.3V using the provided 6V wall power supply. The evaluation board can be configured to operate at 2.5V when using the 6V wall supply by removing jumpers P507 and P509. Make sure the jumper P508 is between pins 1 and 2.</p>
+<section id="connecting-external-supplies">
+<h3>Connecting External Supplies<a class="headerlink" href="#connecting-external-supplies" title="Link to this heading"></a></h3>
+<p>An external power source may be connected to both the AD9578 and digital circuitry by using header P506. The AD9578 and digital circuitry must operate at the same voltage level for proper functionality. To connect an external supply:</p>
+<ul class="simple">
+<li><p>Remove jumpers P502 and P510 and disconnect the 6V wall supply.</p></li>
+<li><p>Connect either 2.5V or 3.3V to pins 1,2,5,6 of the P506 header. Pins 3 and 4 are a shared universal ground for both power planes.</p></li>
+</ul>
+</section>
+</section>
+<section id="pc-connections">
+<h2>PC Connections<a class="headerlink" href="#pc-connections" title="Link to this heading"></a></h2>
+<p>The following instructions assume the evaluation board is set up with the default power configuration as described in the <strong>Power Connections</strong> section.</p>
+<ul class="simple">
+<li><p>Download the latest <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9578" target="_blank">AD9578 evaluation software</a> from AD9578/PCBZ website.</p></li>
+<li><p>Install the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9578" target="_blank">AD9578 evaluation software</a>; uninstall prior versions of the software before installation updates. Administrative privileges are needed to install the software.</p></li>
+<li><p>Connect the 6V wall power supply to the main power connector labeled P500.</p></li>
+<li><p>Connect the USB cables to the evaluation board and the computer. The &lt;fc #FF0000&gt;red&lt;/fc&gt; LED labeled CR300 on the evaluation board should illuminate.</p></li>
+<li><p>If the <strong>Found New Hardware Wizard</strong> window automatically appears when the evaluation board is connected, select <strong>Install the software automatically</strong> and click <strong>Next</strong>.</p>
+<ul>
+<li><p>The <strong>Found New Hardware Wizard</strong> window may appear twice, and a system restart may be required.</p></li>
+</ul>
+</li>
+</ul>
+<p>Refer to the Evaluation Board Software section for details on running the AD9578 evaluation board software.</p>
+</section>
+<section id="signal-connections">
+<h2>Signal Connections<a class="headerlink" href="#signal-connections" title="Link to this heading"></a></h2>
+<section id="xo-inputs">
+<h3>XO Inputs<a class="headerlink" href="#xo-inputs" title="Link to this heading"></a></h3>
+<p>The AD9578 evaluation board comes prepopulated with a 49.152MHz crystal (Y101) across the XO1 and XO2 pins. Crystal Y102 connects to the XO3 and XO4 pins and is not prepopulated. Any crystal between 22MHz and 54MHz in a 3.2mm x 2.5mm package is suitable but care must be taken to select the proper load capacitance to ensure oscillation.</p>
+</section>
+<section id="outputs">
+<h3>Outputs<a class="headerlink" href="#outputs" title="Link to this heading"></a></h3>
+<p>The REFOUT output (J217 and J218) can be configured to be a copy of either XO input or a divided version of the applied REFCLK input (includes divide by 1). The frequency source of OUT1 and OUT2 is PLL1 and the source of OUT3 and OUT4 is PLL2. The logic level of each output is selectable between CMOS, HCSL, LVDS and LVPECL. All outputs are terminated as 3.3V LVPECL by default and ac coupled to their respective SMA connectors. Using any logic type other than LVPECL will require modifications to the terminations. Refer to the AD9578 datasheet for the recommended termination for each logic type.</p>
+</section>
+<section id="spi-bus">
+<h3>SPI Bus<a class="headerlink" href="#spi-bus" title="Link to this heading"></a></h3>
+<p>The AD9574/PCBZ default configuration allows a PC running the AD9578 evaluation software to read and write the various registers of the AD9578 via a USB connection. The user may interface with the SPI bus from an external SPI controller by removing jumpers P107-P110 and driving the appropriate signals to the SDO, SCK, CSB, and SDI nodes at the pin 2 of the P107-P110. As GND, use TP102 point.</p>
+</section>
+</section>
+<section id="default-evaluation-boards-setup-summary">
+<h2>Default Evaluation Boards Setup Summary<a class="headerlink" href="#default-evaluation-boards-setup-summary" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Jumper P508 set to SW_OUT between pins 1 and 2 to provide the switcher output voltage to the on board LDO regulators.</p></li>
+<li><p>Jumpers P507 and P509 are populated to set LDO regulator outputs to 3.3V.</p></li>
+<li><p>Jumpers P502 and P510 are populated to connect LDO voltages to the AD9578 and the microcontroller.</p></li>
+<li><p>49.152MHz crystal oscillator connected to the XO1 and XO2 inputs is populated.</p></li>
+<li><p>OUT1 (J209 and J210), OUT2 (J211 and J212), OUT3 (J213 and J214), OUT4 (J215 and J216), and REFOUT (J217 and J218) are terminated for 3.3V LVPECL and ac coupled.</p></li>
+</ul>
+</section>
+</section>
+<section id="evaluation-board-software">
+<h1>Evaluation Board Software<a class="headerlink" href="#evaluation-board-software" title="Link to this heading"></a></h1>
+<hr class="docutils" />
+<p>Use the following instructions to set up the <a class="icon adi reference external" href="https://www.analog.com/AD9578" target="_blank">AD9578</a> evaluation board software.</p>
+<section id="software-installation">
+<h2>Software Installation<a class="headerlink" href="#software-installation" title="Link to this heading"></a></h2>
+<p>Connect the evaluation board to the PC until the software installation is complete.</p>
+<ul class="simple">
+<li><p>The latest evaluation software and documentation can be downloaded from <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9578" target="_blank">the AD9578 evaluation board page.</a>.</p></li>
+<li><p>Once downloaded, double-click <strong>AD9578 Evaluation Software Setup.msi</strong>. (Note that the website may have a newer version.) Follow the installation instructions.</p></li>
+</ul>
+</section>
+<section id="running-the-software">
+<h2>Running the Software<a class="headerlink" href="#running-the-software" title="Link to this heading"></a></h2>
+<p>Power up and connect the evaluation board to the PC. See the <strong>Evaluation Board Hardware</strong> section for details on the various connectors on the evaluation board. At start up, the AD9578 evaluation software checks to see if an evaluation board is connected. If no board is connected, the message in <strong>Figure 2</strong> will appear.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/noevbconnected.png"><img alt="image2" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/noevbconnected.png" style="width: 300px;" /></a></p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><em>Figure 2. Evaluation Board Not Connected Message</em></div>
+<div class="line"><br /></div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">Clicking <strong>OK</strong> allows the software to be used without a connected evaluation board. This mode is convenient for creating register setup files when an evaluation board is not present. If an evaluation board is present and the error message appears, check power and USB connections and re start the program. If the evaluation board is connected before starting the program, the standard GUI appears as shown in Figure 6. It is possible to connect the evaluation board after the software is started by selecting <strong>File/Select Hardware</strong> after the board has been powered and USB cable connected. When a board is properly connected, <strong>Read All Successful</strong> will appear in the <strong>Comments</strong> box.</div>
+</div>
+<section id="setup-files">
+<h3>Setup Files<a class="headerlink" href="#setup-files" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">The AD9578 software allows the user to save a setup file containing all of the current register settings generated by the software, which can be later read, and re used.</div>
+<div class="line">To create a setup file:</div>
+</div>
+<ul class="simple">
+<li><p>Open the AD9578 software with or without an evaluation board present.</p></li>
+<li><p>Adjust the AD9578 settings within the GUI.</p></li>
+<li><p>Select <strong>File/Save All Registers</strong> and enter a file name and file path where the register settings to be saved.</p></li>
+</ul>
+<p>To load a setup file:</p>
+<ul class="simple">
+<li><p>Select <strong>File/Load All Registers</strong>. The setup file will automatically be loaded into the evaluation board active settings and displayed in the Main Window.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="quick-start-guide">
+<h1>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Link to this heading"></a></h1>
+<hr class="docutils" />
+<p>Once the evaluation software is loaded and the evaluation board is connected, use the following steps to lock both PLLs on the AD9578. These steps use the on board 49.152MHz crystal as a reference for both PLL1 and PLL2 and the default power configuration using the provided 6V wall supply as described in the <strong>Evaluation Board Hardware</strong> section. The quick start guide covers only simple PLL operation. See the AD9578 datasheet and <strong>Evaluation Software Components</strong> section for a detailed explanation of the various AD9578 features. The following case is an example of the AD9578 using the values in <strong>Table 1</strong>.</p>
+<p><strong>Table 1. Quick Start Summary</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input Frequency</p></td>
+<td><p>49.152MHz across XO1 and XO2</p></td>
+</tr>
+<tr class="row-odd"><td><p>PLL1 Reference Selection</p></td>
+<td><p>Crystal 1</p></td>
+</tr>
+<tr class="row-even"><td><p>PLL2 Reference Selection</p></td>
+<td><p>Crystal 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>OUT1 Frequency and Logic Type</p></td>
+<td><p>125MHz LVPECL</p></td>
+</tr>
+<tr class="row-even"><td><p>OUT2 Frequency and Logic Type</p></td>
+<td><p>156.25MHz LVPECL</p></td>
+</tr>
+<tr class="row-odd"><td><p>OUT3 Frequency and Logic Type</p></td>
+<td><p>Disabled</p></td>
+</tr>
+<tr class="row-even"><td><p>OUT4 Frequency and Logic Type</p></td>
+<td><p>155.52MHz LVPECL</p></td>
+</tr>
+<tr class="row-odd"><td><p>REFOUT Frequency and Logic Type</p></td>
+<td><p>Disabled</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>Type the Crystal 1 reference frequency in the text box located in the upper left of the Main Window.</p></li>
+</ul>
+<div class="centeralign docutils container">
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/quickstart_crystal_freq.png"><img alt="image3" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/quickstart_crystal_freq.png" style="width: 200px;" /></a> <em>Figure 3. Crystal 1 Frequency Text Box</em></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Select <strong>Crystal 1</strong> as the <strong>PLL1 Reference</strong> and <strong>PLL2 Reference</strong> to using the drop down in the upper right of the Main Window.</p></li>
+</ul>
+<div class="centeralign docutils container">
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/quickstart_refsource.png"><img alt="image4" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/quickstart_refsource.png" style="width: 200px;" /></a> <em>Figure 4. Input Reference Selection</em></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Select the appropriate logic level for Output 1 through Output 4 and REFOUT by using each logic level drop down as shown in Figure 5 and type the desired frequency in each Output1 through Output 4 text box.</p></li>
+</ul>
+<div class="centeralign docutils container">
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/quickstart_outconfig.png"><img alt="image5" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/quickstart_outconfig.png" style="width: 200px;" /></a> <em>Figure 5. Logic Level Selection and Frequency Input</em></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Press the <strong>Autocalculate</strong> button at the bottom of the screen. The software will calculate to the closest possible output frequency given the specified reference frequency.</p></li>
+<li><p>Press the <strong>Configure</strong> button. This will load all of your settings into the AD9578. Pressing <strong>Read</strong> should turn the PLL1 and PLL2 lock indicators blue signifying that both PLLs are locked. All four outputs will be toggling at the desired frequencies.</p></li>
+</ul>
+</section>
+<section id="evaluation-software-components">
+<h1>Evaluation Software Components<a class="headerlink" href="#evaluation-software-components" title="Link to this heading"></a></h1>
+<hr class="docutils" />
+<section id="main-window">
+<h2>Main Window<a class="headerlink" href="#main-window" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/main_window.png"><img alt="image6" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/main_window.png" style="width: 600px;" /></a> <em>Figure 6. AD9578 Evaluation Software Main Window</em></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</section>
+<section id="active-and-inactive-controls">
+<h2>Active and Inactive Controls<a class="headerlink" href="#active-and-inactive-controls" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">Upon startup, many controls in the AD9578 main window are inactive and grayed out. To manipulate all controls within the main window check the <strong>Advanced</strong> box in the lower right corner of the main window.</div>
+</div>
+<div class="centeralign docutils container">
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/advancedcontrols.png"><img alt="image7" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/advancedcontrols.png" style="width: 200px;" /></a> <em>Figure 7. Advanced Box</em></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<p>Checking the <strong>Advanced</strong> box expands the main window to include a full register map and many other features, which are explained in the following sections of the user guide.</p>
+</section>
+<section id="invalid-value-indication">
+<h2>Invalid Value Indication<a class="headerlink" href="#invalid-value-indication" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">Certain combinations of values can cause the AD9578 operating parameters to exceed the valid ranges specified in the datasheet. In these cases, the invalid entry will be highlighted in yellow and a message will appear in the <strong>Comments</strong> box explaining why the entry is invalid.</div>
+<div class="line">The following conditions are checked within the software:</div>
+</div>
+<ul class="simple">
+<li><p>Crystal 1, Crystal 2, and External Reference input frequency ranges</p></li>
+<li><p>Output 1 through Output 4 and Reference Output frequency ranges.</p></li>
+<li><p>All text box entries within the expanded Main Window when the <strong>Advanced</strong> box is checked.</p></li>
+</ul>
+</section>
+<section id="autocalculate-configure-and-read-buttons">
+<h2>Autocalculate, Configure, and Read Buttons<a class="headerlink" href="#autocalculate-configure-and-read-buttons" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The <strong>Autocalculate</strong> button takes the user defined reference input and output frequency parameters and automatically configures the proper PLL settings using the Frequency Wizard. Autocalculate is disabled in <strong>Advanced Controls</strong> mode. For more information on the <strong>Frequency Wizard</strong> and <strong>Advanced Controls</strong>, refer to the respective sections in this document.</div>
+<div class="line">The <strong>Configure</strong> button loads all of the parameters from the GUI into the AD9578 on the evaluation board. <strong>“Write All Successful”</strong> will appear in the comments box upon the completion of a successful write operation.</div>
+<div class="line">The <strong>Read</strong> button reads the current register values from inside the AD9578 and loads them into the Main Window. <strong>“Read All Successful”</strong> will appear in the comments box upon the completion of a successful read operation.</div>
+</div>
+</section>
+<section id="input-frequency-section">
+<h2>Input Frequency Section<a class="headerlink" href="#input-frequency-section" title="Link to this heading"></a></h2>
+<p>The input frequency section of the Main Window is used to identify the reference input frequency of either crystal input. Each text box (<strong>Crystal 1</strong> and <strong>Crystal 2</strong>) is editable by the user and is used to calculate the output frequency of each output. If a differential input is used for an external reference, check the <strong>Differential Input</strong> check box.</p>
+</section>
+<section id="pll-input-reference-selection">
+<h2>PLL Input Reference Selection<a class="headerlink" href="#pll-input-reference-selection" title="Link to this heading"></a></h2>
+<p>The reference input to each PLL is specified by using the various drop down menus shown in Figure 8.</p>
+<div class="centeralign docutils container">
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/refinselect.png"><img alt="image8" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/refinselect.png" style="width: 200px;" /></a></p>
+<blockquote>
+<div><div class="centeralign docutils container">
+<p>//Figure 8. PLL Input Reference Selection Drop Downs //</p>
+</div>
+</div></blockquote>
+<p>Each PLL and REFOUT reference frequency can be supplied by Crystal 1, Crystal 2, or an external reference input Ref In. Crystal 2 and Ref In cannot be used simultaneously. The selection of Ref In or Crystal 2 is controlled by using the Ref In/Crystal 2 drop down.</p>
+</section>
+<section id="pll1-and-pll2-default-controls">
+<h2>PLL1 and PLL2 Default Controls<a class="headerlink" href="#pll1-and-pll2-default-controls" title="Link to this heading"></a></h2>
+<p>The AD9578 evaluation software automatically configures the settings for each PLL based on user inputs for both the reference frequency and output frequency by using an internal frequency wizard and the <strong>Autocalculate</strong> button. To enable an output text box, change the appropriate logic level in each outputs allocated drop down menu. Logic levels are selectable from LVDS, LVPECL, HCSL, and LVCMOS. Once a text box is enabled, the user may enter the desired output frequency. Pressing <strong>Autocalculate</strong> will then calculate the value closest to the user input. Figure 9 shows a standard configuration in the software’s default mode using Output 1 and Output 3.</p>
+<div class="centeralign docutils container">
+</div>
+<p><img alt="image9" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/pll1_and_pll2_default_controls.png" /></p>
+<blockquote>
+<div><div class="centeralign docutils container">
+<p>//Figure 9. PLL1 and PLL2 Default Controls //</p>
+</div>
+</div></blockquote>
+<p>The <strong>OEx</strong> and <strong>override</strong> check boxes allow the user to manipulate the various output enable bits from the register 0x02 of the AD9578. Default operation is for both boxes to be checked, allowing the software to have control over each output.</p>
+</section>
+<section id="pll1-and-pll2-advanced-controls">
+<h2>PLL1 and PLL2 Advanced Controls<a class="headerlink" href="#pll1-and-pll2-advanced-controls" title="Link to this heading"></a></h2>
+<p>Clicking the Advanced check box, as shown in Figure 7, expands the Main Window to allow the user to interact with individual PLL settings and the entire register map as the part is currently configured.</p>
+<div class="centeralign docutils container">
+</div>
+<p><img alt="image10" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/pll1_and_pll2_advanced_controls.png" /></p>
+<blockquote>
+<div><div class="centeralign docutils container">
+<p>//Figure 10. PLL1 and PLL2 Advanced Controls *</p>
+</div>
+</div></blockquote>
+<p>In* <strong>Advanced Controls</strong> <em>mode, all PLL feedback dividers, output dividers, charge pump and VCO settings are editable by typing in the various text boxes. It is recommended to allow the software to auto select the VCO band being used when in</em> <strong>Advanced Controls</strong> <em>mode. In this mode, all of the output frequencies are calculated based off the user’s settings for the reference frequencies and feedback/output division settings. The</em> <strong>Autocalcuate</strong> <em>feature is thus disabled in</em> <strong>Advanced Controls</strong> <em>mode. Another feature in</em> <strong>Advanced Controls</strong> <em>mode is the</em> <strong>Reset Fuses Button</strong><a href="#id1"><span class="problematic" id="id2">*</span></a>. This button allows the user to reset the AD9578 to its default fuse blown settings without power cycling evaluation board. The default fuse blown settings are then displayed in the Main Window.</p>
+<div class="centeralign docutils container">
+<div class="centeralign docutils container">
+<p><a href="#id3"><span class="problematic" id="id4">*</span></a>Figure 11. Reset Fuses Button //</p>
+</div>
+</div>
+</section>
+<section id="reference-output-section">
+<h2>Reference Output Section<a class="headerlink" href="#reference-output-section" title="Link to this heading"></a></h2>
+<p>The Reference Output source is selected in the <strong>Input Frequency Section</strong>. The output frequency is displayed in the <strong>Reference Output</strong> section and the logic level is selectable from LVDS, LVPECL, HCSL, and LVCMOS.</p>
+<div class="centeralign docutils container">
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/reference_output_selection.png"><img alt="image11" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/reference_output_selection.png" style="width: 250px;" /></a></p>
+<blockquote>
+<div><div class="centeralign docutils container">
+<p>//Figure 12. Reference Output Section //</p>
+</div>
+</div></blockquote>
+</section>
+<section id="pll-lock-indicators">
+<h2>PLL Lock Indicators<a class="headerlink" href="#pll-lock-indicators" title="Link to this heading"></a></h2>
+<p>When either PLL1 or PLL2 are in lock, the appropriate PLL lock indicator will turn blue.</p>
+<div class="centeralign docutils container">
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/pll_lock_indicators.png"><img alt="image12" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/pll_lock_indicators.png" style="width: 150px;" /></a></p>
+<blockquote>
+<div><div class="centeralign docutils container">
+<p>//Figure 13. PLL Lock Indicators //</p>
+</div>
+</div></blockquote>
+</section>
+<section id="comments-box">
+<h2>Comments Box<a class="headerlink" href="#comments-box" title="Link to this heading"></a></h2>
+<p>The Comments box displays notifications to the user upon successful read/write operations as well as warnings when maximum limits of the part have been exceeded. Pressing the <strong>Clear Comments</strong> button erases all previous comments.</p>
+<div class="centeralign docutils container">
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/comments_box.png"><img alt="image13" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/comments_box.png" style="width: 250px;" /></a></p>
+<blockquote>
+<div><div class="centeralign docutils container">
+<p>//Figure 14. Comments Box //</p>
+</div>
+</div></blockquote>
+</section>
+<section id="frequency-wizard">
+<h2>Frequency Wizard<a class="headerlink" href="#frequency-wizard" title="Link to this heading"></a></h2>
+<p>The AD9578 <strong>Frequency Wizard</strong> is responsible for calculating the optimum PLL settings for the user’s desired input and output frequencies when the <strong>Autocalculate</strong> feature is used. For any given frequency plan there may be multiple configurations possible for each PLL. The Frequency Wizard will automatically pick the best option by default, but every configuration can be accessed by pressing the <strong>Show Frequency Wizard</strong> button after <strong>Autocalculate</strong> has been pressed. The <strong>Frequency Wizard</strong> is shown in Figure 15.</p>
+<div class="centeralign docutils container">
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/frequency_wizard.png"><img alt="image14" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/frequency_wizard.png" style="width: 800px;" /></a></p>
+<blockquote>
+<div><div class="centeralign docutils container">
+<p>//Figure 15. Frequency Wizard //</p>
+</div>
+</div></blockquote>
+<p>Pressing the various <strong>Index</strong> buttons on the left of the window will load those particular settings into the <strong>Main Window</strong> and override the original settings chosen by the <strong>Frequency Wizard</strong>.</p>
+</section>
+</section>
+<section id="evaluation-software-menu-items">
+<h1>Evaluation Software Menu Items<a class="headerlink" href="#evaluation-software-menu-items" title="Link to this heading"></a></h1>
+<hr class="docutils" />
+<div class="centeralign docutils container">
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/menu_bar.png"><img alt="image15" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/menu_bar.png" style="width: 300px;" /></a></p>
+<blockquote>
+<div><div class="centeralign docutils container">
+<p>//Figure 16. Menu Bar //</p>
+</div>
+</div></blockquote>
+<section id="menu-bar">
+<h2>Menu Bar<a class="headerlink" href="#menu-bar" title="Link to this heading"></a></h2>
+<section id="file-menu">
+<h3>File Menu<a class="headerlink" href="#file-menu" title="Link to this heading"></a></h3>
+<p>The <strong>File</strong> menu has the following options:</p>
+</section>
+<section id="select-hardware">
+<h3>Select Hardware<a class="headerlink" href="#select-hardware" title="Link to this heading"></a></h3>
+<p>Select hardware is used to find and connect to an evaluation board that has been plugged in to the computer (or recently power cycled) after the evaluation software has already started.</p>
+</section>
+<section id="enable-polling">
+<h3>Enable Polling<a class="headerlink" href="#enable-polling" title="Link to this heading"></a></h3>
+<p>Polling allows the software to automatically update the software without having to press the <strong>Read</strong> button. To disable Polling, uncheck the box shown in Figure 16.</p>
+</section>
+<section id="load-all-registers">
+<h3>Load All Registers<a class="headerlink" href="#load-all-registers" title="Link to this heading"></a></h3>
+<p>Allows the user to load a previously created setup file into the software. Press the <strong>Configure</strong> button to load the setup file into the AD9578.</p>
+</section>
+<section id="save-all-registers">
+<h3>Save All Registers<a class="headerlink" href="#save-all-registers" title="Link to this heading"></a></h3>
+<p>Creates a register setup file of the current settings seen in the evaluation board software. This setup file can be saved and used later by using <strong>Load All Registers</strong>.</p>
+</section>
+<section id="exit">
+<h3>Exit<a class="headerlink" href="#exit" title="Link to this heading"></a></h3>
+<p>Exits the program. This is the same function as the “X” icon in the upper right of the screen.</p>
+</section>
+</section>
+<section id="view-menu-advanced-controls-mode-only">
+<h2>View Menu (Advanced Controls Mode Only)<a class="headerlink" href="#view-menu-advanced-controls-mode-only" title="Link to this heading"></a></h2>
+<p>The <strong>View</strong> menu has the following options:</p>
+<section id="debug-window">
+<h3>Debug Window<a class="headerlink" href="#debug-window" title="Link to this heading"></a></h3>
+<p>Allows the user to read write hex values to specific registers. The register address is selected in a drop down menu and the register value is written by the user. The <strong>Read</strong> button reads in the current register value at the address chosen the drop down. The <strong>Load</strong> button loads the setting in the <strong>Register Value</strong> text box into the register chosen in the drop down. The <strong>Debug Window</strong> expects register writes to be a hexadecimal number starting with “0x”.</p>
+<div class="centeralign docutils container">
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/debug_window.png"><img alt="image16" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/debug_window.png" style="width: 300px;" /></a></p>
+<blockquote>
+<div><div class="centeralign docutils container">
+<p>//Figure 17. Debug Window //</p>
+</div>
+</div></blockquote>
+</section>
+<section id="crystal-settings">
+<h3>Crystal Settings<a class="headerlink" href="#crystal-settings" title="Link to this heading"></a></h3>
+<p>Allows the user to alter the various XO settings found in registers 4 and 10. This is useful when configuring the part to use a different crystal value than what is originally placed on the board.</p>
+<div class="centeralign docutils container">
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/crystal_settings_window.png"><img alt="image17" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9578/crystal_settings_window.png" style="width: 300px;" /></a></p>
+<blockquote>
+<div><div class="centeralign docutils container">
+<p>//Figure 18. Crystal Settings Mode //</p>
+</div>
+</div></blockquote>
+</section>
+</section>
+<section id="help-menu">
+<h2>Help Menu<a class="headerlink" href="#help-menu" title="Link to this heading"></a></h2>
+<p>The Help Menu only contains the <strong>About</strong> section which shows a short summary of the software being used.</p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

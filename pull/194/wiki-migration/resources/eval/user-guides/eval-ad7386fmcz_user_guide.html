@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="AD7386" name="description" />
+
+    <title>EVAL-AD7386FMCZ-User Guide (UG-1615) &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">EVAL-AD7386FMCZ-User Guide (UG-1615)</a><ul>
+<li><a class="reference internal" href="#evaluating-the-ad7386-4-channel-16-bit-dual-simultaneous-sampling-sar-adc">Evaluating the AD7386 4-Channel 16-bit, Dual Simultaneous Sampling, SAR ADC</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
+<li><a class="reference internal" href="#evaluation-board">Evaluation Board</a></li>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#evaluation-kit-contents">Evaluation Kit Contents</a></li>
+<li><a class="reference internal" href="#equipment-needed">Equipment Needed</a></li>
+<li><a class="reference internal" href="#software-needed">Software Needed</a></li>
+<li><a class="reference internal" href="#general-description">General Description</a></li>
+<li><a class="reference internal" href="#evaluation-board-hardware">Evaluation Board Hardware</a><ul>
+<li><a class="reference internal" href="#power-supplies">Power Supplies</a></li>
+<li><a class="reference internal" href="#link-configuration-options">Link Configuration Options</a><ul>
+<li><a class="reference internal" href="#setup-conditions">Setup Conditions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#evaluation-board-circuitry">Evaluation Board Circuitry</a><ul>
+<li><a class="reference internal" href="#sockets-and-connectors">Sockets and Connectors</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#test-points">Test Points</a></li>
+<li><a class="reference internal" href="#evaluation-board-software">Evaluation Board Software</a><ul>
+<li><a class="reference internal" href="#software-installation-procedure">Software Installation Procedure</a><ul>
+<li><a class="reference internal" href="#installing-the-ace-software">Installing the ACE Software</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#evaluation-board-setup-procedures">Evaluation Board Setup Procedures</a><ul>
+<li><a class="reference internal" href="#connecting-the-eval-ad7386fmcz-and-the-sdp-h1-board-to-the-pc">Connecting the EVAL-AD7386FMCZ and the SDP-H1 Board to the PC</a></li>
+<li><a class="reference internal" href="#verifying-board-connection">Verifying Board Connection</a></li>
+<li><a class="reference internal" href="#disconnecting-the-eval-ad7386fmcz">Disconnecting the EVAL-AD7386FMCZ</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#using-the-ace-software-for-testing">Using the ACE Software for Testing</a><ul>
+<li><a class="reference internal" href="#launching-ace-software">Launching ACE Software</a><ul>
+<li><a class="reference internal" href="#description-of-chip-view">Description of Chip View</a><ul>
+<li><a class="reference internal" href="#channel-selection">Channel Selection</a></li>
+<li><a class="reference internal" href="#oversampling">Oversampling</a></li>
+<li><a class="reference internal" href="#reference">Reference</a></li>
+<li><a class="reference internal" href="#serial-mode">Serial Mode</a><ul>
+<li><a class="reference internal" href="#serial-2-wire-mode">Serial 2-wire Mode</a></li>
+<li><a class="reference internal" href="#serial-1-wire-mode">Serial 1-wire Mode</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#description-of-memory-map-window">Description of Memory Map Window</a><ul>
+<li><a class="reference internal" href="#capture-pane">CAPTURE PANE</a></li>
+<li><a class="reference internal" href="#general-capture-settings">General Capture Settings</a></li>
+<li><a class="reference internal" href="#device-settings">Device Settings</a></li>
+<li><a class="reference internal" href="#run-once">Run Once</a></li>
+<li><a class="reference internal" href="#run-continuously">Run Continuously</a></li>
+<li><a class="reference internal" href="#results-pane">RESULTS PANE</a></li>
+<li><a class="reference internal" href="#display-channels">Display Channels</a></li>
+<li><a class="reference internal" href="#waveform-results">WAVEFORM RESULTS</a></li>
+<li><a class="reference internal" href="#export-capture-data">Export Capture Data</a></li>
+<li><a class="reference internal" href="#waveform-graph">Waveform Graph</a></li>
+<li><a class="reference internal" href="#display-units-and-axis-controls">Display Units and Axis Controls</a></li>
+<li><a class="reference internal" href="#histogram-tab">HISTOGRAM TAB</a></li>
+<li><a class="reference internal" href="#results-pane-1">RESULTS PANE</a></li>
+<li><a class="reference internal" href="#histogram-graph">HISTOGRAM GRAPH</a></li>
+<li><a class="reference internal" href="#fft-tab">FFT TAB</a></li>
+<li><a class="reference internal" href="#analysis-pane">ANALYSIS PANE</a></li>
+<li><a class="reference internal" href="#general-settings">General Settings</a></li>
+<li><a class="reference internal" href="#windowing">Windowing</a></li>
+<li><a class="reference internal" href="#single-tone-and-two-tone-analysis">Single Tone and Two-Tone Analysis</a></li>
+<li><a class="reference internal" href="#results-pane-2">RESULTS PANE</a></li>
+<li><a class="reference internal" href="#signal">Signal</a></li>
+<li><a class="reference internal" href="#noise">Noise</a></li>
+<li><a class="reference internal" href="#distortion">Distortion</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#exiting-software">Exiting Software</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#evaluation-board-design-files">Evaluation Board Design Files</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="eval-ad7386fmcz-user-guide-ug-1615">
+<h1>EVAL-AD7386FMCZ-User Guide (UG-1615)<a class="headerlink" href="#eval-ad7386fmcz-user-guide-ug-1615" title="Link to this heading"></a></h1>
+<section id="evaluating-the-ad7386-4-channel-16-bit-dual-simultaneous-sampling-sar-adc">
+<h2>Evaluating the AD7386 4-Channel 16-bit, Dual Simultaneous Sampling, SAR ADC<a class="headerlink" href="#evaluating-the-ad7386-4-channel-16-bit-dual-simultaneous-sampling-sar-adc" title="Link to this heading"></a></h2>
+</section>
+</section>
+<section id="supported-devices">
+<h1>Supported Devices<a class="headerlink" href="#supported-devices" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD7386" target="_blank">AD7386</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD7387" target="_blank">AD7387</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD7388" target="_blank">AD7388</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD4684" target="_blank">AD4684</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD4685" target="_blank">AD4685</a></p></li>
+</ul>
+</section>
+<section id="evaluation-board">
+<h1>Evaluation Board<a class="headerlink" href="#evaluation-board" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7386FMCZ" target="_blank">EVAL-AD7386FMCZ</a></p></li>
+</ul>
+</section>
+<section id="features">
+<h1>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h1>
+<p>Full-featured evaluation board multichannel, simultaneous sampling ADC On-board reference, reference buffer, and ADC driver On-board power supplies Board-compatible high-speed system demonstration platform EVAL-SDP-CH1Z (SDP-H1)) controller PC software for control and data analysis</p>
+</section>
+<section id="evaluation-kit-contents">
+<h1>Evaluation Kit Contents<a class="headerlink" href="#evaluation-kit-contents" title="Link to this heading"></a></h1>
+<p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7386FMCZ" target="_blank">EVAL-AD7386FMCZ</a> evaluation board Instructions to download software</p>
+</section>
+<section id="equipment-needed">
+<h1>Equipment Needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h1>
+<p>EVAL-SDP-CH1Z Signal source PC running Windows XP SP3, Windows Vista, Windows 7, or Windows 10 with a USB port</p>
+</section>
+<section id="software-needed">
+<h1>Software Needed<a class="headerlink" href="#software-needed" title="Link to this heading"></a></h1>
+<p>ACE evaluation software AD738x ACE plugin</p>
+</section>
+<section id="general-description">
+<h1>General Description<a class="headerlink" href="#general-description" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line">The <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7386FMCZ" target="_blank">EVAL-AD7386FMCZ</a> is a full-featured evaluation board designed to evaluate all the features of the AD7386 analog-to-digital converter (ADC). The evaluation board can be controlled by the EVAL-SDP-CH1Z via the 160-way system demonstration platform connector, P7. The EVAL-SDP-CH1Z board controls the evaluation board through the USB port of the PC using the Analysis Control Evaluation (<a href="#id23"><span class="problematic" id="id24">`ACE]) software, which is available for download from the ACE software page. The EVAL-AD7386FMCZ can evaluate the [[https:www.analog.com/AD7387|AD7387]], [[https:\ www.analog.com/AD7388|AD7388 &lt;adi&gt;ace&gt;`__</span></a>, <a class="icon adi reference external" href="https://www.analog.com/AD4684" target="_blank">AD4684</a>, and <a class="icon adi reference external" href="https://www.analog.com/AD4685" target="_blank">AD4685</a>by using the AD738x ACE plugin found on the EVAL-AD7386FMCZ product page. The only difference is the number of SCLKs that clock out the conversion results, which is dependent on the resolution for each generic. Complete specifications for the <a class="icon adi reference external" href="https://www.analog.com/AD7386" target="_blank">AD7386</a>/<a class="icon adi reference external" href="https://www.analog.com/AD7387" target="_blank">AD7387</a>/<a class="icon adi reference external" href="https://www.analog.com/AD7388" target="_blank">AD7388</a>/<a class="icon adi reference external" href="https://www.analog.com/AD4684" target="_blank">AD4684</a>/<a class="icon adi reference external" href="https://www.analog.com/AD4685" target="_blank">AD4685</a>are provided in the <a class="icon adi reference external" href="https://www.analog.com/AD7386" target="_blank">AD7386</a>/<a class="icon adi reference external" href="https://www.analog.com/AD7387" target="_blank">AD7387</a>/<a class="icon adi reference external" href="https://www.analog.com/AD7388" target="_blank">AD7388</a>/<a class="icon adi reference external" href="https://www.analog.com/AD4684" target="_blank">AD4684</a>/<a class="icon adi reference external" href="https://www.analog.com/AD4685" target="_blank">AD4685</a>datasheet. Consult these specifications in conjunction with this user guide when using the evaluation board. Full details on the EVAL-SDP-CH1Z are available on the <a class="reference internal" href="../sdp.html"><span class="doc">SDP-H1</span></a></div>
+<div class="line">product page. The comprehensive ACE user guide is available on the <a class="icon adi reference external" href="https://www.analog.com/ace" target="_blank">ace</a> software page. Figure 1 shows the typical setup of the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7386FMCZ" target="_blank">EVAL-AD7386FMCZ</a>.</div>
+</div>
+<div class="centeralign docutils container">
+<p></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7386fmcz.jpg"><img alt="image1" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ad7386fmcz.jpg" style="width: 600px;" /></a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>//**Figure 1. <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7386FMCZ" target="_blank">EVAL-AD7386FMCZ</a> EVALUATION BOARD (LEFT) CONNECTED TO SDP-H1 BOARD (RIGHT) ** *</p>
+</div>
+</div>
+<dl class="simple">
+<dt>====== Evaluation Board Quick Start Guide====== The EVAL-AD7386FMCZ is powered by the* <a class="reference internal" href="../sdp.html"><span class="doc">SDP-H1</span></a><em>\\board by default. External power supplies can be applied. See Table 1 for a description of connectors required and Table 2 for the link configuration required. To evaluate the AD7386 with the</em> <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7386FMCZ" target="_blank">EVAL-AD7386FMCZ</a><em>, take the following steps: - Download and install the</em> <a class="icon adi reference external" href="https://www.analog.com/ace" target="_blank">ace</a> <em>software, which is available on the AD7386 product page. Installation details are found on the internal label of the EVAL-AD7386FMCZ box. Ensure that the SDP-H1 board is disconnected from the USB port of the PC when installing the</em> <a class="icon adi reference external" href="https://www.analog.com/ace" target="_blank">ace</a> <em>software. The PC may need to be restarted after the installation. - Ensure that the link options are configured as detailed in Table 2. - Connect the</em> <a class="reference internal" href="../sdp.html"><span class="doc">SDP-H1</span></a>*</dt><dd><p>board to the* <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7386FMCZ" target="_blank">EVAL-AD7386FMCZ</a> <em>via the 160-way connector, as shown in Table 2. - Connect the</em> <a class="reference internal" href="../sdp.html"><span class="doc">SDP-H1</span></a>*
+board to the PC via the USB cable. - If using Windows® XP, search for the* <a class="reference internal" href="../sdp.html"><span class="doc">SDP-H1</span></a>*
+drivers. Choose to automatically search for the drivers for the SDP-H1 board if prompted by the operating system. - Copy the ACE plugins file,* <strong>Board.AD738x</strong><em>, and the</em> <strong>Chip.AD738x</strong> <em>file from the EVAL-AD7386FMCZ evaluation board page to the</em> <strong>C:\ProgramData\Analog Devices\ACE\Plugins</strong> <em>folder. - Launch the ACE software from the</em> <a class="icon adi reference external" href="https://www.analog.com/ace" target="_blank">ace</a> <em>subfolder in the</em> <strong>Analog Devices</strong> <em>folder in the</em> <strong>All Programs</strong> <a href="#id1"><span class="problematic" id="id2">*</span></a>menu. - Connect an input signal to AINA0, AINA1, AINB0, or AINB1. ===== Evaluation Board Connection Diagram =====</p>
+</dd>
+</dl>
+<div class="centeralign docutils container">
+<div class="centeralign docutils container">
+<p><a href="#id3"><span class="problematic" id="id4">*</span></a>**Figure 2. Typical Setup of the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7386FMCZ" target="_blank">EVAL-AD7386FMCZ</a> and the SDP-H1 Board ** //</p>
+</div>
+</div>
+</section>
+<section id="evaluation-board-hardware">
+<h1>Evaluation Board Hardware<a class="headerlink" href="#evaluation-board-hardware" title="Link to this heading"></a></h1>
+<section id="power-supplies">
+<h2>Power Supplies<a class="headerlink" href="#power-supplies" title="Link to this heading"></a></h2>
+<p>The <em>&lt;fc #0000FF&gt;***EVAL-AD7386FMCZ*</em><em>&lt;/fc&gt;</em> perates from a 12 V power supply. Ensure that all link positions are set according to the required operating mode before applying power and signals to the <em>&lt;fc #0000FF&gt;***EVAL-AD7386FMCZ*</em><em>&lt;/fc&gt;</em>. See Table 2 for the complete list of link options. The <em>&lt;fc #0000FF&gt;E***VAL-AD7386FMCZ*</em><em>&lt;/fc&gt;</em> is powered by the <em>&lt;fc #0000FF&gt;SDP-H1&lt;/fc&gt;</em> board by default. External power supplies can also be applied to the board. See Table 1 for a description of the connectors used and Table 2 for the link configurations required. Figure 3 shows the functional block diagram of the <em>&lt;fc #0000FF&gt;***EVAL-AD7386FMCZ*</em><em>&lt;/fc&gt;</em> with the onboard AD7386.</p>
+<p><strong>Table 1. Optional External Power Supplies</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Power Supply</p></th>
+<th class="head"><p>Connector</p></th>
+<th class="head"><p>Voltage Range</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>12V</p></td>
+<td><p>P4-1</p></td>
+<td><p>12+/- 10%</p></td>
+<td><p>Mainboard power supply for all internal voltage regulators</p></td>
+</tr>
+<tr class="row-odd"><td><p>GND</p></td>
+<td><p>P4-2</p></td>
+<td><p>0</p></td>
+<td><p>Ground</p></td>
+</tr>
+<tr class="row-even"><td><p>EXT_VCC</p></td>
+<td><p>P5-1</p></td>
+<td><p>3.3+/- 5%</p></td>
+<td><p>ADC analog power supply</p></td>
+</tr>
+<tr class="row-odd"><td><p>GND</p></td>
+<td><p>P5-2</p></td>
+<td><p>0</p></td>
+<td><p>Ground</p></td>
+</tr>
+<tr class="row-even"><td><p>EXT_VLOGIC</p></td>
+<td><p>P5-3</p></td>
+<td><p>2.3+/- 5%</p></td>
+<td><p>Digital serial peripheral input (SPI) power supply</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXT_AMP_PWR+</p></td>
+<td><p>P6-1</p></td>
+<td><p>5 +/- 5%</p></td>
+<td><p>Amplifier positive power supply</p></td>
+</tr>
+<tr class="row-even"><td><p>EXT_GND</p></td>
+<td><p>P6-2</p></td>
+<td><p>0</p></td>
+<td><p>Ground</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXT_AMP_PWR-</p></td>
+<td><p>P6-3</p></td>
+<td><p>-2.5 +/- 5%</p></td>
+<td><p>Amplifier negative power supply</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad7386_board_block_diagram.jpg"><img alt="image2" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad7386_board_block_diagram.jpg" style="width: 600px;" /></a></p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>//<strong>Figure 3. EVAL-AD7386FMCZ Functional Block Diagram</strong> //</p>
+</div>
+</div></blockquote>
+</section>
+<section id="link-configuration-options">
+<h2>Link Configuration Options<a class="headerlink" href="#link-configuration-options" title="Link to this heading"></a></h2>
+<p>Multiple link options must be set correctly to select the appropriate operating set up before using the <em>&lt;fc #0000FF&gt;EVAL-AD7386FMCZ&lt;/fc&gt;</em>. The functions of these options are detailed in Table 2.</p>
+<section id="setup-conditions">
+<h3>Setup Conditions<a class="headerlink" href="#setup-conditions" title="Link to this heading"></a></h3>
+<p>Ensure that all link positions are set as required by the selected operating mode before applying power and signals to the EVAL-AD7386FMCZ. Table 2 shows the default positions of the links when the EVAL-AD7386FMCZ is packaged.</p>
+<p><strong>Table 2. Link Options for EVAL-AD7386FMCZ</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Link Name</p></th>
+<th class="head"><p>Function</p></th>
+<th class="head"><p>Default Position</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>LK1</p></td>
+<td><p>Internal or external selection for the negative supply of the amplifier</p></td>
+<td><p>1</p></td>
+<td><p>Use the internal −2.5 V from the onboard ADP7182 for the negative supply of the amplifier via the ADP5600.</p></td>
+</tr>
+<tr class="row-odd"><td><p>LK2</p></td>
+<td><p>Internal or external selection for the positive supply of the amplifier</p></td>
+<td><p>1</p></td>
+<td><p>Use the internal 5 V from the onboard ADP7104 for the positive supply of the amplifier.</p></td>
+</tr>
+<tr class="row-even"><td><p>LK3</p></td>
+<td><p>Internal or external selection for the 12 V supply</p></td>
+<td><p>1</p></td>
+<td><p>Use the 12 V power supply from the SDP-H1 board. Change to Position 3 to use an external supply.</p></td>
+</tr>
+<tr class="row-odd"><td><p>LK4</p></td>
+<td><p>Selection for the external voltage reference (VREF) of the ADC</p></td>
+<td><p>3-4</p></td>
+<td><p>Use the internal 3.3 V from the ADR4533 for VREF. Change to Position 5 connected to Position 6 (Position 5-6) to use the internal 2.5 V from the ADR4525.</p></td>
+</tr>
+<tr class="row-even"><td><p>LK5</p></td>
+<td><p>Selection for the logic voltage (VLOGIC) of the ADC</p></td>
+<td><p>3-4</p></td>
+<td><p>Change to Position 1-2 (link shorted on Pin 1 and Pin 2) to use the external source. Change to Position 3-4 (link shorted on Pin 3 and Pin 4) to use the onboard ADP166. Change to Position 5-6 (link shorted on Pin 5 and Pin 6) to use VLOGIC from the EVAL-SDP-CH1Z.</p></td>
+</tr>
+<tr class="row-odd"><td><p>JP1, JP2</p></td>
+<td><p>Amplifier selection for AINA−</p></td>
+<td><p>1(SMD resistor)</p></td>
+<td><p>Use the onboard ADA4896-2 amplifier for signal conditioning. Change to Position 3 to use an external amplifier mezzanine card (AMC) instead of the onboard ADC driver.</p></td>
+</tr>
+<tr class="row-even"><td><p>JP3, JP6</p></td>
+<td><p>Amplifier selection for AINA+</p></td>
+<td><p>1(SMD resistor)</p></td>
+<td><p>Use the onboard ADA4896-2 amplifier for signal conditioning. Change to Position 3 to use an external amplifier mezzanine card (AMC) instead of the onboard ADC driver.</p></td>
+</tr>
+<tr class="row-odd"><td><p>JP4</p></td>
+<td><p>Selection for the VREF of the ADC</p></td>
+<td><p>3(SMD resistor)</p></td>
+<td><p>The REFIO pin is driven with the on-board reference. Change to position to 2 to use an external voltage reference.</p></td>
+</tr>
+<tr class="row-even"><td><p>JP5</p></td>
+<td><p>Selection for the VCC of the ADC</p></td>
+<td><p>1(SMD resistor)</p></td>
+<td><p>The VCC pin is driven with the on-board reference 3.3V through ADP166. Change to position 3 to use external VCC.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+<section id="evaluation-board-circuitry">
+<h1>Evaluation Board Circuitry<a class="headerlink" href="#evaluation-board-circuitry" title="Link to this heading"></a></h1>
+<section id="sockets-and-connectors">
+<h2>Sockets and Connectors<a class="headerlink" href="#sockets-and-connectors" title="Link to this heading"></a></h2>
+<p>The sockets and connectors on the <strong>EVAL-AD7386FMCZ</strong> are described in Table 3. The default interface to the <strong>EVAL-AD7386FMCZ</strong> is via the 160-way connector, which connects the <strong>EVAL-AD7386FMCZ</strong> to the SDP-H1 board. When using the <strong>EVAL-AD7386FMCZ</strong> in standalone mode, communication is achieved via the P3 header pins.</p>
+</section>
+</section>
+<section id="test-points">
+<h1>Test Points<a class="headerlink" href="#test-points" title="Link to this heading"></a></h1>
+<p>There are several test points and single-in-line (SIL) headers on the EVAL-AD7386FMCZ. These test points and headers provide access to the evaluation board signals to allow probing, evaluation, and debugging.</p>
+<p><strong>Table 3. On-Board Sockets and Connectors</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Connector</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>J1</p></td>
+<td><p>Analog Input 0 for Channel A</p></td>
+</tr>
+<tr class="row-odd"><td><p>J2</p></td>
+<td><p>Analog Input 1 for Channel A</p></td>
+</tr>
+<tr class="row-even"><td><p>J3</p></td>
+<td><p>Analog Input 0 for Channel B</p></td>
+</tr>
+<tr class="row-odd"><td><p>J4</p></td>
+<td><p>Analog Input 1 for Channel B</p></td>
+</tr>
+<tr class="row-even"><td><p>P1</p></td>
+<td><p>Amplifier mezzanine card input</p></td>
+</tr>
+<tr class="row-odd"><td><p>P2</p></td>
+<td><p>Amplifier mezzanine card output</p></td>
+</tr>
+<tr class="row-even"><td><p>P3</p></td>
+<td><p>Digital SPI signals</p></td>
+</tr>
+<tr class="row-odd"><td><p>P4</p></td>
+<td><p>Main board power supply (12 V) for all internal voltage regulators</p></td>
+</tr>
+<tr class="row-even"><td><p>P5</p></td>
+<td><p>ADC power supply and digital SPI power supply</p></td>
+</tr>
+<tr class="row-odd"><td><p>P6</p></td>
+<td><p>Amplifier power supply</p></td>
+</tr>
+<tr class="row-even"><td><p>P7</p></td>
+<td><p>Field-programmable gate array (FPGA), mezzanine card (FMC) to low pin count (LPC), SDP connector</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXT_REF</p></td>
+<td><p>External voltage reference</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="evaluation-board-software">
+<h1>Evaluation Board Software<a class="headerlink" href="#evaluation-board-software" title="Link to this heading"></a></h1>
+<section id="software-installation-procedure">
+<h2>Software Installation Procedure<a class="headerlink" href="#software-installation-procedure" title="Link to this heading"></a></h2>
+<p>Download the <a class="icon adi reference external" href="https://www.analog.com/ace" target="_blank">ace</a> software from the AD7386 product page and install the ACE software on the PC before using the EVAL-AD7386FMCZ. The installation process consists of the <a class="icon adi reference external" href="https://www.analog.com/ace" target="_blank">ace</a> software installation and the SDP-H1 driver installation. To ensure that the evaluation system is recognized when it is connected to the PC, install the ACE software and SDP-H1 driver before connecting the EVAL-AD7386FMCZ and the SDP-H1 board to the USB port of the PC.</p>
+<section id="installing-the-ace-software">
+<h3>Installing the ACE Software<a class="headerlink" href="#installing-the-ace-software" title="Link to this heading"></a></h3>
+<p>To install the <a class="icon adi reference external" href="https://www.analog.com/ace" target="_blank">ace</a> software, take the following steps:</p>
+<ul class="simple">
+<li><p>Download the <a class="icon adi reference external" href="https://www.analog.com/ace" target="_blank">ace</a> software to a Windows-based PC.</p></li>
+<li><p>Double click the <strong>ACEInstall.exe</strong> file to begin the installation. By default, the software is saved to the following location: <strong>C:\Program Files (x86)\Analog Devices\ACE</strong>.</p></li>
+<li><p>A window appears asking for permission to allow the program to make changes to the PC. Click <strong>Yes</strong> to begin the installation process.</p></li>
+<li><p>Click <strong>Next</strong> &gt; to continue the installation, as shown in Figure 4.</p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-004.jpg"><img alt="image3" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad7380-4_fig-004.jpg" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>//<strong>Figure 4. ACE Software Installation Confirmation</strong> *</p>
+</div>
+</div>
+<p>* Read the software license agreement and click* <strong>I Agree</strong> <a href="#id5"><span class="problematic" id="id6">*</span></a>(see Figure 5).</p>
+<div class="centeralign docutils container">
+<p></p>
+<div class="centeralign docutils container">
+<p><em>**Figure 5. License Agreement*</em> *</p>
+</div>
+</div>
+<p>* Choose an installation location and click* <strong>Next</strong> <a href="#id7"><span class="problematic" id="id8">*</span></a>&gt; (see Figure 6).</p>
+<div class="centeralign docutils container">
+<p></p>
+<div class="centeralign docutils container">
+<p><em>**Figure 6. Choose Installation Location*</em> *</p>
+</div>
+</div>
+<p>* Select the* <strong>PreRequisites</strong> <em>checkbox to include the installation of the SDP-H1 driver and click</em> <strong>Install</strong> <a href="#id9"><span class="problematic" id="id10">*</span></a>(see Figure 7).</p>
+<div class="centeralign docutils container">
+<p></p>
+<div class="centeralign docutils container">
+<p><em>**Figure 7. Choose Components Section*</em> *</p>
+</div>
+</div>
+<p>* The* <strong>Windows Security</strong> <em>window appears. Click</em> <strong>Install</strong> <a href="#id11"><span class="problematic" id="id12">*</span></a>(see Figure 8). The installation is in progress. No action is required (see Figure 9).</p>
+<div class="centeralign docutils container">
+<p></p>
+<div class="centeralign docutils container">
+<p><em>**Figure 8. Windows Security Window*</em> *</p>
+</div>
+</div>
+<div class="centeralign docutils container">
+<p></p>
+<div class="centeralign docutils container">
+<p><em>**Figure 9. Installation in Progress*</em> *</p>
+</div>
+</div>
+<p>* When the installation is complete (see Figure 10), click* <strong>Next</strong> <em>&gt; and then click</em> <strong>Finish</strong> <a href="#id13"><span class="problematic" id="id14">*</span></a>to complete.</p>
+<div class="centeralign docutils container">
+<p></p>
+<div class="centeralign docutils container">
+<p><em>**Figure 10. Installation Completed*</em> //</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="evaluation-board-setup-procedures">
+<h1>Evaluation Board Setup Procedures<a class="headerlink" href="#evaluation-board-setup-procedures" title="Link to this heading"></a></h1>
+<p>Figure 2 shows a diagram of the connections between the EVAL-AD7386FMCZ and the SDP-H1 board. To ensure that the evaluation system is recognized when it is connected to the PC, install the ACE software and SDP-H1 driver before connecting the EVAL-AD7386FMCZ and the SDP-H1 board to the USB port of the PC. When the ACE software installation is complete, set up the EVAL-AD7386FMCZ and the SDP-H1 board as described in the following sections.</p>
+<section id="connecting-the-eval-ad7386fmcz-and-the-sdp-h1-board-to-the-pc">
+<h2>Connecting the EVAL-AD7386FMCZ and the SDP-H1 Board to the PC<a class="headerlink" href="#connecting-the-eval-ad7386fmcz-and-the-sdp-h1-board-to-the-pc" title="Link to this heading"></a></h2>
+<p>To connect the EVAL-AD7386FMCZ and the SDP-H1 board to the PC, take the following steps:</p>
+<ul class="simple">
+<li><p>Ensure that all configuration links are in the appropriate positions, as detailed in Table 2.</p></li>
+<li><p>Connect the EVAL-AD7386FMCZ securely to the P7 connector on the SDP-H1 board. The EVAL-AD7386FMCZ does not require an external power supply adapter.</p></li>
+<li><p>Connect the SDP-H1 board to the PC via the USB cable enclosed in the SDP-H1 kit.</p></li>
+<li><p>Connect a −2.5 V supply to the AMP− pin of the P6 connector terminal.</p></li>
+</ul>
+</section>
+<section id="verifying-board-connection">
+<h2>Verifying Board Connection<a class="headerlink" href="#verifying-board-connection" title="Link to this heading"></a></h2>
+<p>To verify the board connection, take the following steps:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">When</span> <span class="n">the</span> <span class="n">SDP</span><span class="o">-</span><span class="n">H1</span> <span class="n">board</span> <span class="ow">is</span> <span class="n">plugged</span> <span class="n">into</span> <span class="n">the</span> <span class="n">PC</span><span class="p">,</span> <span class="n">allow</span> <span class="n">the</span> <span class="o">**</span><span class="n">Found</span> <span class="n">New</span> <span class="n">Hardware</span> <span class="n">Wizard</span><span class="o">**</span> <span class="n">to</span> <span class="n">run</span><span class="o">.</span> <span class="n">If</span> <span class="n">using</span> <span class="n">Windows</span> <span class="n">XP</span><span class="p">,</span> <span class="n">search</span> <span class="k">for</span> <span class="n">the</span> <span class="n">SDP</span><span class="o">-</span><span class="n">H1</span> <span class="n">drivers</span><span class="o">.</span> <span class="n">If</span> <span class="n">prompted</span> <span class="n">by</span> <span class="n">the</span> <span class="n">operating</span> <span class="n">system</span><span class="p">,</span> <span class="n">choose</span> <span class="n">to</span> <span class="n">automatically</span> <span class="n">search</span> <span class="k">for</span> <span class="n">the</span> <span class="n">drivers</span> <span class="k">for</span> <span class="n">the</span> <span class="n">SDP</span><span class="o">-</span><span class="n">H1</span> <span class="n">board</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">A</span> <span class="n">window</span> <span class="n">may</span> <span class="n">appear</span> <span class="n">asking</span> <span class="k">for</span> <span class="n">permission</span> <span class="n">to</span> <span class="n">allow</span> <span class="n">the</span> <span class="n">program</span> <span class="n">to</span> <span class="n">make</span> <span class="n">changes</span> <span class="n">to</span> <span class="n">the</span> <span class="n">computer</span><span class="o">.</span> <span class="n">In</span> <span class="n">this</span> <span class="n">case</span><span class="p">,</span> <span class="n">click</span> <span class="o">**</span><span class="n">Yes</span><span class="o">**.</span> <span class="n">The</span> <span class="o">**</span><span class="n">Computer</span> <span class="n">Management</span><span class="o">**</span> <span class="n">window</span> <span class="n">opens</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">Under</span> <span class="n">System</span> <span class="n">Tools</span><span class="p">,</span> <span class="n">click</span> <span class="o">**</span><span class="n">Device</span> <span class="n">Manager</span><span class="o">**</span> <span class="ow">and</span> <span class="n">use</span> <span class="n">the</span> <span class="o">**</span><span class="n">Device</span> <span class="n">Manager</span><span class="o">**</span> <span class="n">window</span> <span class="n">to</span> <span class="n">ensure</span> <span class="n">that</span> <span class="n">the</span> <span class="n">SDP</span><span class="o">-</span><span class="n">H1</span> <span class="n">board</span> <span class="ow">is</span> <span class="n">connected</span> <span class="n">to</span> <span class="n">the</span> <span class="n">PC</span> <span class="n">properly</span><span class="o">.</span> <span class="n">If</span> <span class="n">the</span> <span class="n">SDP</span><span class="o">-</span><span class="n">H1</span> <span class="n">driver</span> <span class="n">software</span> <span class="ow">is</span> <span class="n">installed</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">board</span> <span class="ow">is</span> <span class="n">connected</span> <span class="n">to</span> <span class="n">the</span> <span class="n">PC</span> <span class="n">properly</span><span class="p">,</span> <span class="o">**</span><span class="n">Analog</span> <span class="n">Devices</span> <span class="n">SDP</span><span class="o">-</span><span class="n">H1</span><span class="o">**</span> <span class="n">appears</span> <span class="n">under</span> <span class="o">**</span><span class="n">ADI</span> <span class="n">Development</span> <span class="n">Tools</span><span class="o">**</span> <span class="ow">in</span> <span class="n">the</span> <span class="o">**</span><span class="n">Device</span> <span class="n">Manager</span> <span class="n">window</span><span class="o">**</span><span class="p">,</span> <span class="k">as</span> <span class="n">shown</span> <span class="ow">in</span> <span class="n">Figure</span> <span class="mf">11.</span>
+</pre></div>
+</div>
+<div class="centeralign docutils container">
+<p>{{ :resources:eval:user-guides:ad7380-4_fig-011.jpg?nolink&amp;600 <a href="#id15"><span class="problematic" id="id16">|</span></a>}}</p>
+<div class="centeralign docutils container">
+<p>//<a href="#id17"><span class="problematic" id="id18">**</span></a>Figure 11. Device Manager Window ** //</p>
+</div>
+</div>
+</section>
+<section id="disconnecting-the-eval-ad7386fmcz">
+<h2>Disconnecting the EVAL-AD7386FMCZ<a class="headerlink" href="#disconnecting-the-eval-ad7386fmcz" title="Link to this heading"></a></h2>
+<p>Always remove power from the SDP-H1 board and the EVAL-AD7386FMCZ or click the reset tact switch located alongside the USB port before disconnecting the EVAL-AD7386FMCZ from the SDP-H1 board.</p>
+</section>
+</section>
+<section id="using-the-ace-software-for-testing">
+<h1>Using the ACE Software for Testing<a class="headerlink" href="#using-the-ace-software-for-testing" title="Link to this heading"></a></h1>
+<section id="launching-ace-software">
+<h2>Launching ACE Software<a class="headerlink" href="#launching-ace-software" title="Link to this heading"></a></h2>
+<p>When the EVAL-AD7386FMCZ and SDP-H1 boards are properly connected to the PC, launch the ACE software. To launch the ACE software, take the following steps:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">From</span> <span class="n">the</span> <span class="o">**</span><span class="n">Start</span><span class="o">**</span> <span class="n">menu</span><span class="p">,</span> <span class="n">select</span> <span class="o">**</span><span class="n">All</span> <span class="n">Programs</span><span class="o">**</span> <span class="o">&gt;</span> <span class="o">**</span><span class="n">Analog</span> <span class="n">Devices</span><span class="o">**</span> <span class="o">&gt;</span> <span class="o">**</span><span class="n">ACE</span><span class="o">**</span> <span class="o">&gt;</span> <span class="o">**</span><span class="n">ACE</span><span class="o">.</span><span class="n">exe</span><span class="o">**</span> <span class="n">to</span> <span class="nb">open</span> <span class="n">the</span> <span class="n">main</span> <span class="n">software</span> <span class="n">window</span><span class="p">,</span> <span class="k">as</span> <span class="n">shown</span> <span class="ow">in</span> <span class="n">Figure</span> <span class="mf">12.</span>
+<span class="o">-</span> <span class="n">The</span> <span class="o">**</span><span class="n">AD7386</span> <span class="n">Eval</span> <span class="n">Board</span><span class="o">**</span> <span class="n">icon</span> <span class="n">appears</span> <span class="ow">in</span> <span class="n">the</span> <span class="o">**</span><span class="n">Attached</span> <span class="n">Hardware</span><span class="o">**</span> <span class="n">section</span><span class="o">.</span> <span class="n">If</span> <span class="n">the</span> <span class="n">EVAL</span><span class="o">-</span><span class="n">AD7386FMCZ</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">connected</span> <span class="n">to</span> <span class="n">the</span> <span class="n">USB</span> <span class="n">port</span> <span class="n">via</span> <span class="n">the</span> <span class="n">SDP</span><span class="o">-</span><span class="n">H1</span> <span class="n">board</span> <span class="n">when</span> <span class="n">the</span> <span class="n">software</span> <span class="ow">is</span> <span class="n">launched</span><span class="p">,</span> <span class="n">the</span> <span class="n">AD7386</span> <span class="n">Eval</span> <span class="n">Board</span> <span class="n">icon</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">appear</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Attached</span> <span class="n">Hardware</span> <span class="n">section</span><span class="o">.</span> <span class="n">In</span> <span class="n">this</span> <span class="n">case</span><span class="p">,</span> <span class="n">connect</span> <span class="n">the</span> <span class="n">EVAL</span><span class="o">-</span><span class="n">AD7386FMCZ</span> <span class="ow">and</span> <span class="n">SDP</span><span class="o">-</span><span class="n">H1</span> <span class="n">board</span> <span class="n">to</span> <span class="n">the</span> <span class="n">USB</span> <span class="n">port</span> <span class="n">of</span> <span class="n">the</span> <span class="n">PC</span><span class="p">,</span> <span class="n">wait</span> <span class="n">a</span> <span class="n">few</span> <span class="n">seconds</span><span class="p">,</span> <span class="ow">and</span> <span class="n">then</span> <span class="k">continue</span> <span class="n">following</span> <span class="n">these</span> <span class="n">instructions</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">Double</span> <span class="n">click</span> <span class="n">the</span> <span class="o">**</span><span class="n">AD7386</span> <span class="n">Eval</span> <span class="n">Board</span><span class="o">**</span> <span class="n">icon</span> <span class="n">to</span> <span class="nb">open</span> <span class="n">the</span> <span class="n">board</span> <span class="n">view</span> <span class="n">window</span> <span class="n">shown</span> <span class="ow">in</span> <span class="n">Figure</span> <span class="mf">13.</span>
+<span class="o">-</span> <span class="n">Double</span> <span class="n">click</span> <span class="n">the</span> <span class="o">**</span><span class="n">AD7386</span><span class="o">**</span> <span class="n">chip</span> <span class="n">icon</span> <span class="n">to</span> <span class="nb">open</span> <span class="n">the</span> <span class="n">chip</span> <span class="n">window</span> <span class="n">shown</span> <span class="ow">in</span> <span class="n">Figure</span> <span class="mf">14.</span>
+<span class="o">-</span> <span class="n">Click</span> <span class="o">**</span><span class="n">Software</span> <span class="n">Defaults</span><span class="o">**</span> <span class="ow">and</span> <span class="n">then</span> <span class="n">click</span> <span class="o">**</span><span class="n">Apply</span> <span class="n">Changes</span><span class="o">**.</span>
+</pre></div>
+</div>
+<div class="centeralign docutils container">
+<p>{{ :resources:eval:user-guides:ad7386_ace_plugin_launch.jpg?nolink&amp;600 <a href="#id19"><span class="problematic" id="id20">|</span></a>}}\</p>
+<div class="centeralign docutils container">
+<p>//<strong>Figure 12. ACE Software Main Window</strong> *</p>
+</div>
+</div>
+<div class="centeralign docutils container">
+<p></p>
+<div class="centeralign docutils container">
+<p><em>**Figure 13. EVAL-AD7386FMCZ View*</em> *</p>
+</div>
+</div>
+<p>==== Chip View ==== After completing the steps in the Software Installation Procedures section and the Evaluation Board Setup Procedures section, set up the system for data capture as follows: - Block icons that are dark blue are programmable blocks. Click a dark blue block icon to open a configurable pop-up window that allows customization for data capture, as shown in the oversampling block in Figure 15. - Type the value of the reference voltage in the Reference Voltage box when External Reference is selected (click the REF block in Figure 15 to access this option). The default value for the external reference is set to 3.3 V and 2.5 V for the internal reference. See the Software Installation Procedures section and the Evaluation Board Setup Procedures section for additional information.</p>
+<div class="centeralign docutils container">
+<div class="centeralign docutils container">
+<p><em>**Figure 14. Chip View*</em> *</p>
+</div>
+</div>
+<div class="centeralign docutils container">
+<p></p>
+<div class="centeralign docutils container">
+<p><em>**Figure 15. Channel Selection*</em> *</p>
+</div>
+</div>
+<div class="centeralign docutils container">
+<p></p>
+<div class="centeralign docutils container">
+<p><em>**Figure 16. Pop-Up Configurable Window*</em> //</p>
+</div>
+</div>
+<section id="description-of-chip-view">
+<h3>Description of Chip View<a class="headerlink" href="#description-of-chip-view" title="Link to this heading"></a></h3>
+<p>Click the AD7386 chip icon in the board view to open the window shown in Figure 14. The chip view shows the configurable block diagram of AD7386.</p>
+<section id="channel-selection">
+<h4>Channel Selection<a class="headerlink" href="#channel-selection" title="Link to this heading"></a></h4>
+<p>Click the multiplexer icons circled in red (see Figure 15) to select the ADC channel pairs for conversion (AINA0/AINB0 and AINA1/AINB1).</p>
+</section>
+<section id="oversampling">
+<h4>Oversampling<a class="headerlink" href="#oversampling" title="Link to this heading"></a></h4>
+<p>The AD7386 offers an oversampling function on-chip and has two user-configurable oversampling modes, normal average and rolling average. Click the OSC block to configure the oversampling ratio.</p>
+</section>
+<section id="reference">
+<h4>Reference<a class="headerlink" href="#reference" title="Link to this heading"></a></h4>
+<p>The AD7386 offers an oversampling function on-chip and has two user-configurable oversampling modes, normal average and rolling average. Click the OSC block to configure the oversampling ratio.</p>
+</section>
+<section id="serial-mode">
+<h4>Serial Mode<a class="headerlink" href="#serial-mode" title="Link to this heading"></a></h4>
+<p>The AD7386 offers an option to have a 1-wire or a 2-wire configuration for serial communication. Click the Control Logic block to configure this option.</p>
+<section id="serial-2-wire-mode">
+<h5>Serial 2-wire Mode<a class="headerlink" href="#serial-2-wire-mode" title="Link to this heading"></a></h5>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Configure</span> <span class="mi">2</span><span class="o">-</span><span class="n">wire</span> <span class="n">mode</span> <span class="n">by</span> <span class="n">setting</span> <span class="n">the</span> <span class="n">SDO</span> <span class="n">bit</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">CONFIGURATION2</span> <span class="n">register</span> <span class="p">(</span><span class="n">Address</span> <span class="mh">0x02</span><span class="p">)</span> <span class="n">to</span> <span class="mf">0.</span> <span class="n">In</span> <span class="mi">2</span><span class="o">-</span><span class="n">wire</span> <span class="n">mode</span><span class="p">,</span>
+<span class="n">the</span> <span class="n">conversion</span> <span class="n">result</span> <span class="k">for</span> <span class="n">ADC</span> <span class="n">A</span> <span class="ow">is</span> <span class="n">output</span> <span class="n">on</span> <span class="n">the</span> <span class="n">SDOA</span> <span class="n">pin</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">conversion</span> <span class="n">result</span> <span class="k">for</span> <span class="n">ADC</span> <span class="n">B</span> <span class="ow">is</span> <span class="n">output</span> <span class="n">on</span> <span class="n">the</span>
+<span class="n">SDOB</span><span class="o">/</span><span class="n">ALERT</span> <span class="n">pin</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="serial-1-wire-mode">
+<h5>Serial 1-wire Mode<a class="headerlink" href="#serial-1-wire-mode" title="Link to this heading"></a></h5>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="n">applications</span> <span class="n">where</span> <span class="n">slower</span> <span class="n">throughput</span> <span class="n">rates</span> <span class="n">are</span> <span class="n">allowed</span><span class="p">,</span> <span class="ow">or</span> <span class="n">normal</span> <span class="n">average</span> <span class="n">oversampling</span> <span class="ow">is</span> <span class="n">used</span><span class="p">,</span> <span class="n">the</span> <span class="n">serial</span>
+<span class="n">interface</span> <span class="n">can</span> <span class="n">operate</span> <span class="ow">in</span> <span class="mi">1</span><span class="o">-</span><span class="n">wire</span> <span class="n">mode</span><span class="o">.</span> <span class="n">In</span> <span class="mi">1</span><span class="o">-</span><span class="n">wire</span> <span class="n">mode</span><span class="p">,</span> <span class="n">the</span> <span class="n">conversion</span> <span class="n">results</span> <span class="kn">from</span><span class="w"> </span><span class="nn">ADC</span> <span class="n">A</span> <span class="ow">and</span> <span class="n">ADC</span> <span class="n">B</span> <span class="n">are</span> <span class="n">output</span> <span class="n">on</span>
+<span class="n">the</span> <span class="n">serial</span> <span class="n">output</span><span class="p">,</span> <span class="n">SDOA</span><span class="o">.</span> <span class="n">Additional</span> <span class="n">SCLK</span> <span class="n">cycles</span> <span class="n">are</span> <span class="n">required</span> <span class="n">to</span> <span class="n">propagate</span> <span class="nb">all</span> <span class="n">data</span><span class="o">.</span> <span class="n">ADC</span> <span class="n">A</span> <span class="n">data</span> <span class="ow">is</span> <span class="n">output</span> <span class="n">first</span><span class="p">,</span>
+<span class="n">followed</span> <span class="n">by</span> <span class="n">ADC</span> <span class="n">B</span> <span class="n">conversion</span> <span class="n">results</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="description-of-memory-map-window">
+<h3>Description of Memory Map Window<a class="headerlink" href="#description-of-memory-map-window" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Click Proceed to Memory Map in the bottom right corner of the chip view window to open the window shown in Figure 17. The memory map shows all registers of AD7386.</div>
+</div>
+<div class="centeralign docutils container">
+<p></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad7386_memory_map.jpg"><img alt="image4" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad7386_memory_map.jpg" style="width: 600px;" /></a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>//<strong>Figure 17. Memory Map Window</strong> *</p>
+</div>
+</div>
+<p>=== Apply Changes === The registers are populated with default values when powered up. To implement the values changed in all the registers, click Apply Changes to write to the registers. === Apply Selected === To implement changes on a selected register when the values of a register are changed, click Apply Selected to write the new value on the selected register to the AD7386. === Read All === Click Read All to read the values of all the registers from the chip. === Read Selected === Click Read Selected to read the selected register from the chip. === Reset Chip === Click Reset Chip to prompt the software to reset the AD7386. === Diff === Click Diff to check for differences in register values between the software and the chip. === Software Defaults === To revert all the register values to their defaults, click Software Defaults and then Apply Changes to write to the AD7386. ==== Description of Analysis Window ==== Click Proceed to Analysis in the chip view to open the window shown in Figure 18. The analysis view contains the Waveform tab, Histogram tab, and FFT tab.</p>
+<div class="centeralign docutils container">
+<p></p>
+<div class="centeralign docutils container">
+<p><em>**Figure 18. Analysis View*</em> *</p>
+</div>
+</div>
+<p>=== WAVEFORM TAB === The Waveform tab displays data in the form of time vs. discrete data values with the results (see Figure 19). The CAPTURE pane contains capture settings that apply to the registers automati¬cally before data capture.</p>
+<div class="centeralign docutils container">
+<p></p>
+<div class="centeralign docutils container">
+<p><em>**Figure 19. Waveform Tab*</em> //</p>
+</div>
+</div>
+<section id="capture-pane">
+<h4>CAPTURE PANE<a class="headerlink" href="#capture-pane" title="Link to this heading"></a></h4>
+</section>
+<section id="general-capture-settings">
+<h4>General Capture Settings<a class="headerlink" href="#general-capture-settings" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">Sample</span> <span class="n">Count</span> <span class="n">dropdown</span> <span class="nb">list</span> <span class="n">allows</span> <span class="n">the</span> <span class="n">user</span> <span class="n">to</span> <span class="n">select</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">samples</span> <span class="n">per</span> <span class="n">channel</span> <span class="n">per</span> <span class="n">capture</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">SPI</span> <span class="n">Frequency</span> <span class="p">(</span><span class="n">MHz</span><span class="p">)</span> <span class="n">dropdown</span> <span class="nb">list</span> <span class="n">allows</span> <span class="n">the</span> <span class="n">user</span> <span class="n">to</span> <span class="n">select</span> <span class="n">the</span> <span class="n">SPI</span> <span class="n">clock</span> <span class="n">frequency</span> <span class="n">used</span> <span class="n">to</span> <span class="n">transfer</span> <span class="n">data</span>
+<span class="n">between</span> <span class="n">the</span> <span class="n">FPGA</span> <span class="n">device</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">AD7386</span> <span class="n">during</span> <span class="n">device</span> <span class="n">register</span> <span class="n">reads</span> <span class="ow">and</span> <span class="n">writes</span> <span class="ow">and</span> <span class="n">during</span> <span class="n">data</span> <span class="n">capture</span><span class="o">.</span> <span class="n">This</span>
+<span class="n">frequency</span> <span class="n">must</span> <span class="n">be</span> <span class="nb">set</span> <span class="n">relatively</span> <span class="n">higher</span> <span class="n">than</span> <span class="n">the</span> <span class="nb">set</span> <span class="n">throughput</span> <span class="n">rate</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">user</span> <span class="n">can</span> <span class="n">enter</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">sample</span> <span class="n">frequency</span> <span class="ow">in</span> <span class="n">kSPS</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Sampling</span> <span class="n">Frequency</span><span class="p">(</span><span class="n">ksps</span><span class="p">)</span> <span class="n">box</span><span class="o">.</span> <span class="n">Refer</span> <span class="n">to</span> <span class="n">the</span> <span class="n">AD7386</span>
+<span class="n">datasheet</span> <span class="n">to</span> <span class="n">determine</span> <span class="n">the</span> <span class="n">maximum</span> <span class="n">sampling</span> <span class="n">frequency</span> <span class="k">for</span> <span class="n">the</span> <span class="n">selected</span> <span class="n">mode</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="device-settings">
+<h4>Device Settings<a class="headerlink" href="#device-settings" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">Over</span> <span class="n">Sampling</span> <span class="n">Ratio</span> <span class="n">box</span> <span class="n">includes</span> <span class="n">options</span> <span class="n">to</span> <span class="n">disable</span> <span class="n">the</span> <span class="n">oversampling</span> <span class="n">ratio</span> <span class="n">function</span> <span class="p">(</span><span class="n">Disabled</span><span class="p">)</span> <span class="ow">or</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">the</span>
+<span class="n">oversampling</span> <span class="n">ratio</span> <span class="n">between</span> <span class="mi">2</span> <span class="ow">and</span> <span class="mi">32</span><span class="p">,</span> <span class="n">which</span><span class="p">,</span> <span class="n">when</span> <span class="n">selected</span><span class="p">,</span> <span class="n">automatically</span> <span class="n">enables</span> <span class="n">the</span> <span class="n">oversampling</span> <span class="n">ratio</span> <span class="n">function</span>
+<span class="ow">and</span> <span class="n">provides</span> <span class="n">an</span> <span class="n">improved</span> <span class="n">signal</span> <span class="n">to</span> <span class="n">noise</span> <span class="n">ratio</span> <span class="p">(</span><span class="n">SNR</span><span class="p">)</span> <span class="n">performance</span><span class="o">.</span> <span class="n">Refer</span> <span class="n">to</span> <span class="n">the</span> <span class="n">AD7386</span> <span class="n">datasheet</span> <span class="n">to</span> <span class="n">determine</span> <span class="n">the</span>
+<span class="n">maximum</span> <span class="n">oversampling</span> <span class="n">ratio</span> <span class="k">for</span> <span class="n">the</span> <span class="n">selected</span> <span class="n">oversampling</span> <span class="n">mode</span><span class="o">.</span>
+<span class="n">When</span> <span class="n">an</span> <span class="n">option</span> <span class="n">other</span> <span class="n">than</span> <span class="n">Disabled</span> <span class="ow">is</span> <span class="n">selected</span><span class="p">,</span> <span class="n">a</span> <span class="n">drop</span><span class="o">-</span><span class="n">down</span> <span class="nb">list</span> <span class="n">appears</span><span class="o">.</span> <span class="n">Select</span> <span class="mi">18</span><span class="o">-</span><span class="n">Bit</span> <span class="n">Resolution</span> <span class="n">to</span> <span class="n">enter</span> <span class="mi">18</span><span class="o">-</span><span class="n">bit</span>
+<span class="n">resolution</span> <span class="n">mode</span><span class="o">.</span> <span class="n">The</span> <span class="n">resolution</span> <span class="n">boost</span> <span class="ow">is</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">conjunction</span> <span class="k">with</span> <span class="n">the</span> <span class="n">oversampling</span> <span class="n">rate</span> <span class="n">to</span> <span class="n">provide</span> <span class="n">two</span> <span class="n">extra</span> <span class="n">bits</span>
+<span class="n">of</span> <span class="n">resolution</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">Over</span> <span class="n">Sampling</span> <span class="n">Mode</span> <span class="n">dropdown</span> <span class="nb">list</span> <span class="n">allows</span> <span class="n">the</span> <span class="n">user</span> <span class="n">to</span> <span class="n">select</span> <span class="n">the</span> <span class="n">mode</span> <span class="n">of</span> <span class="n">oversampling</span><span class="o">.</span> <span class="n">This</span> <span class="n">setting</span> <span class="ow">is</span> <span class="n">only</span>
+<span class="n">applicable</span> <span class="n">when</span> <span class="n">oversampling</span> <span class="ow">is</span> <span class="n">enabled</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="run-once">
+<h4>Run Once<a class="headerlink" href="#run-once" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Click</span> <span class="n">Run</span> <span class="n">Once</span> <span class="n">to</span> <span class="n">start</span> <span class="n">a</span> <span class="n">data</span> <span class="n">capture</span> <span class="n">of</span> <span class="n">the</span> <span class="n">samples</span> <span class="n">at</span> <span class="n">the</span> <span class="n">sample</span> <span class="n">rate</span> <span class="n">specified</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Sample</span> <span class="n">Count</span> <span class="n">dropdown</span>
+<span class="nb">list</span> <span class="n">box</span><span class="o">.</span> <span class="n">These</span> <span class="n">samples</span> <span class="n">are</span> <span class="n">stored</span> <span class="n">on</span> <span class="n">the</span> <span class="n">FPGA</span> <span class="n">device</span> <span class="ow">and</span> <span class="n">are</span> <span class="n">transferred</span> <span class="n">to</span> <span class="n">the</span> <span class="n">PC</span> <span class="n">only</span> <span class="n">when</span> <span class="n">the</span> <span class="n">sample</span> <span class="n">frame</span> <span class="ow">is</span>
+<span class="n">complete</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="run-continuously">
+<h4>Run Continuously<a class="headerlink" href="#run-continuously" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Click</span> <span class="n">Run</span> <span class="n">Continuously</span> <span class="n">to</span> <span class="n">start</span> <span class="n">a</span> <span class="n">data</span> <span class="n">capture</span> <span class="n">that</span> <span class="n">gathers</span> <span class="n">samples</span> <span class="n">continuously</span> <span class="k">with</span> <span class="n">one</span> <span class="n">batch</span> <span class="n">of</span> <span class="n">data</span> <span class="n">at</span> <span class="n">a</span> <span class="n">time</span><span class="o">.</span>
+<span class="n">This</span> <span class="n">option</span> <span class="n">runs</span> <span class="n">the</span> <span class="n">Run</span> <span class="n">Once</span> <span class="n">operation</span> <span class="n">continuously</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="results-pane">
+<h4>RESULTS PANE<a class="headerlink" href="#results-pane" title="Link to this heading"></a></h4>
+</section>
+<section id="display-channels">
+<h4>Display Channels<a class="headerlink" href="#display-channels" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Display</span> <span class="n">Channels</span> <span class="n">allow</span> <span class="n">the</span> <span class="n">user</span> <span class="n">to</span> <span class="n">select</span> <span class="n">the</span> <span class="n">channels</span> <span class="n">to</span> <span class="n">capture</span><span class="o">.</span> <span class="n">The</span> <span class="n">channel</span> <span class="n">data</span> <span class="ow">is</span> <span class="n">shown</span> <span class="n">only</span> <span class="k">if</span> <span class="n">that</span> <span class="n">channel</span>
+<span class="ow">is</span> <span class="n">selected</span> <span class="n">before</span> <span class="n">the</span> <span class="n">capture</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="waveform-results">
+<h4>WAVEFORM RESULTS<a class="headerlink" href="#waveform-results" title="Link to this heading"></a></h4>
+<p>Waveform Results display amplitude, sample frequency, and noise analysis data for the selected channels.</p>
+</section>
+<section id="export-capture-data">
+<h4>Export Capture Data<a class="headerlink" href="#export-capture-data" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Click</span> <span class="n">Export</span> <span class="n">to</span> <span class="n">export</span> <span class="n">the</span> <span class="n">captured</span> <span class="n">data</span><span class="o">.</span> <span class="n">The</span> <span class="n">waveform</span><span class="p">,</span> <span class="n">histogram</span><span class="p">,</span> <span class="ow">and</span> <span class="n">FFT</span> <span class="n">data</span> <span class="n">are</span> <span class="n">stored</span> <span class="ow">in</span> <span class="o">.</span><span class="n">xml</span> <span class="n">files</span> <span class="n">along</span>
+<span class="k">with</span>
+<span class="n">the</span> <span class="n">values</span> <span class="n">of</span> <span class="n">parameters</span> <span class="n">at</span> <span class="n">capture</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="waveform-graph">
+<h4>Waveform Graph<a class="headerlink" href="#waveform-graph" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">data</span> <span class="n">Waveform</span> <span class="n">graph</span> <span class="n">shows</span> <span class="n">each</span> <span class="n">successive</span> <span class="n">sample</span> <span class="n">of</span> <span class="n">the</span> <span class="n">ADC</span> <span class="n">output</span><span class="o">.</span> <span class="n">The</span> <span class="n">user</span> <span class="n">can</span> <span class="n">zoom</span> <span class="ow">and</span> <span class="n">pan</span> <span class="n">the</span> <span class="n">waveform</span>
+<span class="n">using</span> <span class="n">the</span> <span class="n">embedded</span> <span class="n">waveform</span> <span class="n">tools</span><span class="o">.</span> <span class="n">The</span> <span class="n">channels</span> <span class="n">to</span> <span class="n">display</span> <span class="n">can</span> <span class="n">be</span> <span class="n">selected</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Display</span> <span class="n">Channels</span> <span class="n">section</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="display-units-and-axis-controls">
+<h4>Display Units and Axis Controls<a class="headerlink" href="#display-units-and-axis-controls" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Click</span> <span class="n">the</span> <span class="n">display</span> <span class="n">units</span> <span class="n">dropdown</span> <span class="nb">list</span> <span class="n">to</span> <span class="n">select</span> <span class="n">whether</span> <span class="n">the</span> <span class="n">data</span> <span class="n">graph</span> <span class="n">displays</span> <span class="ow">in</span> <span class="n">units</span> <span class="n">of</span> <span class="n">hexadecimal</span><span class="p">,</span> <span class="n">volts</span><span class="p">,</span> <span class="ow">or</span>
+<span class="n">codes</span><span class="o">.</span> <span class="n">The</span> <span class="n">axis</span> <span class="n">controls</span> <span class="n">are</span> <span class="n">dynamic</span><span class="o">.</span>
+<span class="n">When</span> <span class="n">selecting</span> <span class="n">either</span> <span class="n">y</span><span class="o">-</span><span class="n">scale</span> <span class="n">dynamic</span> <span class="ow">or</span> <span class="n">x</span><span class="o">-</span><span class="n">scale</span> <span class="n">dynamic</span><span class="p">,</span> <span class="n">the</span> <span class="n">corresponding</span> <span class="n">axis</span> <span class="n">width</span> <span class="n">automatically</span> <span class="n">adjusts</span> <span class="n">to</span>
+<span class="n">show</span> <span class="n">the</span> <span class="n">entire</span> <span class="nb">range</span> <span class="n">of</span> <span class="n">the</span> <span class="n">ADC</span> <span class="n">results</span> <span class="n">after</span> <span class="n">each</span> <span class="n">batch</span> <span class="n">of</span> <span class="n">samples</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="histogram-tab">
+<h4>HISTOGRAM TAB<a class="headerlink" href="#histogram-tab" title="Link to this heading"></a></h4>
+<p>The Histogram tab contains the histogram graph and the results pane, as shown in Figure 20.</p>
+</section>
+<section id="results-pane-1">
+<span id="id21"></span><h4>RESULTS PANE<a class="headerlink" href="#results-pane-1" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">RESULTS</span> <span class="n">pane</span> <span class="n">displays</span> <span class="n">the</span> <span class="n">information</span> <span class="n">related</span> <span class="n">to</span> <span class="n">the</span> <span class="n">dc</span> <span class="n">performance</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="histogram-graph">
+<h4>HISTOGRAM GRAPH<a class="headerlink" href="#histogram-graph" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">histogram</span> <span class="n">graph</span> <span class="n">displays</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">hits</span> <span class="n">per</span> <span class="n">code</span> <span class="n">within</span> <span class="n">the</span> <span class="n">sampled</span> <span class="n">data</span><span class="o">.</span> <span class="n">This</span> <span class="n">graph</span> <span class="ow">is</span> <span class="n">useful</span> <span class="k">for</span> <span class="n">dc</span>
+<span class="n">analysis</span> <span class="ow">and</span> <span class="n">indicates</span> <span class="n">the</span> <span class="n">noise</span> <span class="n">performance</span> <span class="n">of</span> <span class="n">the</span> <span class="n">device</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="fft-tab">
+<h4>FFT TAB<a class="headerlink" href="#fft-tab" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line">Figure 21 shows the FFT tab, which displays fast Fourier transform (FFT) information for the last batch of samples gathered.</div>
+</div>
+<div class="centeralign docutils container">
+<p></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad7386_fft_tab.jpg"><img alt="image5" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad7386_fft_tab.jpg" style="width: 600px;" /></a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>//<strong>Figure 21. FFT Tab</strong> //</p>
+</div>
+</div>
+</section>
+<section id="analysis-pane">
+<h4>ANALYSIS PANE<a class="headerlink" href="#analysis-pane" title="Link to this heading"></a></h4>
+</section>
+<section id="general-settings">
+<h4>General Settings<a class="headerlink" href="#general-settings" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">section</span> <span class="n">sets</span> <span class="n">up</span> <span class="n">the</span> <span class="n">preferred</span> <span class="n">configuration</span> <span class="n">of</span> <span class="n">the</span> <span class="n">FFT</span> <span class="n">analysis</span><span class="p">,</span> <span class="n">including</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">tones</span> <span class="n">analyzed</span> <span class="ow">and</span>
+<span class="n">whether</span> <span class="n">the</span> <span class="n">fundamental</span> <span class="ow">is</span> <span class="nb">set</span> <span class="n">manually</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="windowing">
+<h4>Windowing<a class="headerlink" href="#windowing" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">section</span> <span class="n">sets</span> <span class="n">up</span> <span class="n">the</span> <span class="n">preferred</span> <span class="n">windowing</span> <span class="nb">type</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">FFT</span> <span class="n">analysis</span><span class="o">.</span> <span class="n">The</span> <span class="n">number</span> <span class="n">of</span> <span class="n">harmonic</span> <span class="n">bins</span> <span class="ow">and</span>
+<span class="n">fundamental</span> <span class="n">bins</span> <span class="n">that</span> <span class="n">must</span> <span class="n">be</span> <span class="n">included</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">analysis</span> <span class="n">are</span> <span class="n">also</span> <span class="nb">set</span> <span class="n">up</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">section</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="single-tone-and-two-tone-analysis">
+<h4>Single Tone and Two-Tone Analysis<a class="headerlink" href="#single-tone-and-two-tone-analysis" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">These</span> <span class="n">sections</span> <span class="nb">set</span> <span class="n">up</span> <span class="n">the</span> <span class="n">fundamental</span> <span class="n">frequency</span> <span class="n">included</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">FFT</span> <span class="n">analysis</span><span class="o">.</span> <span class="n">Type</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">values</span> <span class="k">for</span> <span class="n">the</span> <span class="n">Two</span><span class="o">-</span><span class="n">Tone</span>
+<span class="n">Analysis</span> <span class="n">section</span> <span class="n">when</span> <span class="n">two</span> <span class="n">frequencies</span> <span class="n">are</span> <span class="n">analyzed</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="results-pane-2">
+<span id="id22"></span><h4>RESULTS PANE<a class="headerlink" href="#results-pane-2" title="Link to this heading"></a></h4>
+</section>
+<section id="signal">
+<h4>Signal<a class="headerlink" href="#signal" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Signal</span> <span class="n">displays</span> <span class="n">the</span> <span class="n">sampling</span> <span class="n">frequency</span><span class="p">,</span> <span class="n">fundamental</span> <span class="n">frequency</span><span class="p">,</span> <span class="ow">and</span> <span class="n">fundamental</span> <span class="n">power</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="noise">
+<h4>Noise<a class="headerlink" href="#noise" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Noise</span> <span class="n">displays</span> <span class="n">the</span> <span class="n">SNR</span> <span class="ow">and</span> <span class="n">other</span> <span class="n">noise</span> <span class="n">performance</span> <span class="n">results</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="distortion">
+<h4>Distortion<a class="headerlink" href="#distortion" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Distortion</span> <span class="n">displays</span> <span class="n">the</span> <span class="n">harmonic</span> <span class="n">content</span> <span class="n">of</span> <span class="n">the</span> <span class="n">sampled</span> <span class="n">signal</span> <span class="ow">and</span> <span class="n">dc</span> <span class="n">power</span> <span class="n">when</span> <span class="n">viewing</span> <span class="n">the</span> <span class="n">FFT</span> <span class="n">analysis</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="exiting-software">
+<h3>Exiting Software<a class="headerlink" href="#exiting-software" title="Link to this heading"></a></h3>
+<p>To exit the software, click File and Exit.</p>
+</section>
+</section>
+<section id="evaluation-board-design-files">
+<h2>Evaluation Board Design Files<a class="headerlink" href="#evaluation-board-design-files" title="Link to this heading"></a></h2>
+<p>Board schematic, layout and BOM files.<a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad7386_eval_board_design_files.zip" target="_blank">ad7386_eval_board_design_files.zip</a></p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

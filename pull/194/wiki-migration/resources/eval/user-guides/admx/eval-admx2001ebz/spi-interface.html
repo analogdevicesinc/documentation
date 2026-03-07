@@ -1,0 +1,3422 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The SPI interface can be used instead of the UART interface to send commands for configuration and measurement from the host. The SPI interface pins on the ADMX2001B module are SCK, SDI, SDO, and CS (B14-B17); see ADMX2001B Pin Configuration and Function Descriptions &lt;:doc:/wiki-migration/resources/eval/user-guides/admx/eval-admx2001ebz`&gt;`_ for the full pinout. On the evaluation board (EVAL-ADMX2001EBZ) the SPI interface is available on the Arduino style pin headers (P6 pins 5-8) and on both PMOD headers. See EVAL-ADMX2001EBZ Terminal Description &lt;:doc:/wiki-migration/resources/eval/user-guides/admx/eval-admx2001ebz`&gt;`_ for more details." name="description" />
+
+    <title>ADMX2001B SPI Interface &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ADMX2001B SPI Interface</a><ul>
+<li><a class="reference internal" href="#spi-protocol-timing">SPI Protocol &amp; Timing</a></li>
+<li><a class="reference internal" href="#spi-command-summary">SPI Command Summary</a></li>
+<li><a class="reference internal" href="#spi-command-details">SPI Command Details</a><ul>
+<li><a class="reference internal" href="#single-parameter-write">Single Parameter Write</a></li>
+<li><a class="reference internal" href="#single-parameter-read">Single Parameter Read</a></li>
+<li><a class="reference internal" href="#status-register-read-0x00">Status Register Read (0x00)</a></li>
+<li><a class="reference internal" href="#result-register-read-0x01">Result Register Read (0x01)</a></li>
+<li><a class="reference internal" href="#clear-error-0x02">Clear Error (0x02)</a></li>
+<li><a class="reference internal" href="#measurement-fifo-read-0x03">Measurement FIFO Read (0x03)</a></li>
+<li><a class="reference internal" href="#measure-z-0x0f">Measure “Z” (0x0F)</a></li>
+<li><a class="reference internal" href="#rdsweep-0x11">RDSWEEP (0x11)</a></li>
+<li><a class="reference internal" href="#reset-0x12">Reset (0x12)</a></li>
+<li><a class="reference internal" href="#initiate-0x17">Initiate (0x17)</a></li>
+<li><a class="reference internal" href="#trigger-0x18">Trigger (0x18)</a></li>
+<li><a class="reference internal" href="#abort-0x1a">Abort (0x1A)</a></li>
+<li><a class="reference internal" href="#frequency-0x23-0xa3">Frequency (0x23, 0xA3)</a></li>
+<li><a class="reference internal" href="#magnitude-0x25-0xa5">Magnitude (0x25, 0xA5)</a></li>
+<li><a class="reference internal" href="#offset-0x26-0xa6">Offset (0x26, 0xA6)</a></li>
+<li><a class="reference internal" href="#voltage-gain-0x28-0xa8">Voltage Gain (0x28, 0xA8)</a></li>
+<li><a class="reference internal" href="#current-gain-0x29-0xa9">Current Gain (0x29, 0xA9)</a></li>
+<li><a class="reference internal" href="#average-0x2a-0xaa">Average (0x2A, 0xAA)</a></li>
+<li><a class="reference internal" href="#measure-delay-mdelay-0x2b-0xab">Measure Delay MDELAY (0x2B, 0xAB)</a></li>
+<li><a class="reference internal" href="#trigger-delay-tdelay-0x2c-0xac">Trigger Delay TDELAY (0x2C, 0xAC)</a></li>
+<li><a class="reference internal" href="#trigger-count-tcount-0x2d-0xad">Trigger Count TCOUNT (0x2D, 0xAD)</a></li>
+<li><a class="reference internal" href="#sweep-start-0x30-0xb0">Sweep Start (0x30, 0xB0)</a></li>
+<li><a class="reference internal" href="#sweep-end-0x31-0xb1">Sweep End (0x31, 0xB1)</a></li>
+<li><a class="reference internal" href="#sweep-type-0x32-0xb2">Sweep Type (0x32, 0xB2)</a></li>
+<li><a class="reference internal" href="#sweep-scale-0x33-0xb3">Sweep Scale (0x33, 0xB3)</a></li>
+<li><a class="reference internal" href="#temperature-unit-0x3b-0xbb">Temperature Unit (0x3B, 0xBB)</a></li>
+<li><a class="reference internal" href="#output-format-0x41-0xc1">Output Format (0x41, 0xC1)</a></li>
+<li><a class="reference internal" href="#sample-count-0x42-0xc2">Sample Count (0x42, 0xC2)</a></li>
+<li><a class="reference internal" href="#correction-mode-0x43-0xc3">Correction Mode (0x43, 0xC3)</a></li>
+<li><a class="reference internal" href="#error-check-0xc4-0x0">Error Check (0xC4, 0x0)</a></li>
+<li><a class="reference internal" href="#dc-mode-0x45-0xc5">DC Mode (0x45, 0xC5)</a></li>
+<li><a class="reference internal" href="#auto-range-0x46-0xc6">Auto Range (0x46, 0xC6)</a></li>
+<li><a class="reference internal" href="#trigger-mode-0x4a-0xca">Trigger Mode (0x4A, 0xCA)</a></li>
+<li><a class="reference internal" href="#state-0xcd">State (0xCD)</a></li>
+<li><a class="reference internal" href="#self-test-0x51-0xd1">Self-Test (0x51, 0xD1)</a></li>
+<li><a class="reference internal" href="#unique-id-0xd2">Unique ID (0xD2)</a></li>
+<li><a class="reference internal" href="#warning-status-0xd3">Warning Status (0xD3)</a></li>
+<li><a class="reference internal" href="#calibration-command-summary">Calibration Command Summary</a></li>
+<li><a class="reference internal" href="#cal-0x04-comp-0x05">CAL (0x04) / COMP (0x05)</a></li>
+<li><a class="reference internal" href="#cal-commit-0x1b">CAL_COMMIT (0x1B)</a></li>
+<li><a class="reference internal" href="#cal-read-0x06-comp-read-0x0c">CAL_READ (0x06) / COMP_READ (0x0C)</a></li>
+<li><a class="reference internal" href="#resetcal-0x09">RESETCAL (0x09)</a></li>
+<li><a class="reference internal" href="#cal-erase-0x10">CAL_ERASE (0x10)</a></li>
+<li><a class="reference internal" href="#set-password-0x1c">SET_PASSWORD (0x1c)</a></li>
+<li><a class="reference internal" href="#cal-store-0x08">CAL_STORE (0x08)</a></li>
+<li><a class="reference internal" href="#comp-store-0x0d">COMP_STORE (0x0D)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="admx2001b-spi-interface">
+<h1>ADMX2001B SPI Interface<a class="headerlink" href="#admx2001b-spi-interface" title="Link to this heading"></a></h1>
+<p>The SPI interface can be used instead of the UART interface to send commands for configuration and measurement from the host. The SPI interface pins on the ADMX2001B module are SCK, SDI, SDO, and CS (B14-B17); see <cite>ADMX2001B Pin Configuration and Function Descriptions &lt;:doc:</cite>/wiki-migration/resources/eval/user-guides/admx/eval-admx2001ebz`&gt;`_ for the full pinout. On the evaluation board (EVAL-ADMX2001EBZ) the SPI interface is available on the Arduino style pin headers (P6 pins 5-8) and on both PMOD headers. See <cite>EVAL-ADMX2001EBZ Terminal Description &lt;:doc:</cite>/wiki-migration/resources/eval/user-guides/admx/eval-admx2001ebz`&gt;`_ for more details.</p>
+<p>There is an example program for the SDP-K1 microcontroller that implements some functions to communicate with the ADMX2001B over the SPI interface. That code is available here: <a class="icon link reference external" href="https://os.mbed.com/teams/AnalogDevices/code/EVAL-ADMX2001/" target="_blank">MBED SPI library</a>.</p>
+<section id="spi-protocol-timing">
+<h2>SPI Protocol &amp; Timing<a class="headerlink" href="#spi-protocol-timing" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/eval-admx2001ebz/wildcat_spi_timing_56bit_frame_full.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/admx/eval-admx2001ebz/wildcat_spi_timing_56bit_frame_full.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/eval-admx2001ebz/wildcat_spi_timing_56bit_frame_full.png" style="width: 600px;" />
+</a>
+<p><strong>SPI Interface Timing:</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Typical</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Unit</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Test Conditions / Comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SCLK Frequency</p></td>
+<td></td>
+<td><p>20</p></td>
+<td></td>
+<td><p>MHz</p></td>
+<td><p>SPI clock frequency</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>T<sub>1</sub></p></td>
+<td></td>
+<td><p>2.4</p></td>
+<td></td>
+<td><p>μsec</p></td>
+<td><p>SS falling edge to SCLK rising edge setup time</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>T<sub>2</sub></p></td>
+<td><p>45</p></td>
+<td></td>
+<td></td>
+<td><p>nsec</p></td>
+<td><p>SCLK cycle time</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>T<sub>3</sub></p></td>
+<td><p>22.5</p></td>
+<td></td>
+<td></td>
+<td><p>nsec</p></td>
+<td><p>SCLK low time</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>T<sub>4</sub></p></td>
+<td><p>22.5</p></td>
+<td></td>
+<td></td>
+<td><p>nsec</p></td>
+<td><p>SCLK high time</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>T<sub>5</sub></p></td>
+<td><p>22.5</p></td>
+<td></td>
+<td></td>
+<td><p>nsec</p></td>
+<td><p>Data setup time</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>T<sub>6</sub></p></td>
+<td><p>22.5</p></td>
+<td></td>
+<td></td>
+<td><p>nsec</p></td>
+<td><p>Data hold time</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>T<sub>7</sub></p></td>
+<td></td>
+<td><p>17.5</p></td>
+<td><p>20</p></td>
+<td><p>nsec</p></td>
+<td><p>SCLK falling edge to SDO valid</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>T<sub>8</sub></p></td>
+<td></td>
+<td><p>1.8</p></td>
+<td></td>
+<td><p>μsec</p></td>
+<td><p>SCLK falling edge to SS rising edge</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>T<sub>9</sub></p></td>
+<td><p>32</p></td>
+<td></td>
+<td></td>
+<td><p>μsec</p></td>
+<td><p>Minimum SS high time</p></td>
+<td><p>With <a class="icon link reference external" href="https://os.mbed.com/teams/AnalogDevices/code/EVAL-ADMX2001/" target="_blank">(MBED SPI library)</a></p></td>
+</tr>
+<tr class="row-even"><td><p>T<sub>10</sub></p></td>
+<td></td>
+<td><p>5.9</p></td>
+<td></td>
+<td><p>usec</p></td>
+<td><p>SCLK low time between bytes (byte-to-byte gap)</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="spi-command-summary">
+<h2>SPI Command Summary<a class="headerlink" href="#spi-command-summary" title="Link to this heading"></a></h2>
+<p><strong>SPI Command Mapping:</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>SPI Command</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x00</p></td>
+<td><p>Status Read</p></td>
+<td><p>Return Host SPI Status</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x01</p></td>
+<td><p>Result Read</p></td>
+<td><p>Return the command result value in the DATAR word</p></td>
+</tr>
+<tr class="row-even"><td><p>0x02</p></td>
+<td><p>Clear Error</p></td>
+<td><p>Discard all previous SPI commands, results and errors, clear done bits including easurement done and command done, return SPI interface to the ready state</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x03</p></td>
+<td><p>Measurement Read</p></td>
+<td><p>Return the result of the measurement</p></td>
+</tr>
+<tr class="row-even"><td><p>0x04</p></td>
+<td><p>Calibrate</p></td>
+<td><p>Executes calibration routine</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x05</p></td>
+<td><p>Compensation</p></td>
+<td><p>Executes compensation routine</p></td>
+</tr>
+<tr class="row-even"><td><p>0x06</p></td>
+<td><p>Readcal</p></td>
+<td><p>Read the calibration coefficients for different gain combinations</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x07</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-even"><td><p>0x08</p></td>
+<td><p>Storecal</p></td>
+<td><p>Write individual calibration coefficients</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x09</p></td>
+<td><p>Resetcal</p></td>
+<td><p>Reset calibration coefficients</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0C</p></td>
+<td><p>Rdcomp</p></td>
+<td><p>Read compensation coefficients</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0D</p></td>
+<td><p>Storecomp</p></td>
+<td><p>Write individual compensation coefficients</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0F</p></td>
+<td><p>Measure (z)</p></td>
+<td><p>Perform the requested measurement(s) and return the value(s) in the result FIFO</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x10</p></td>
+<td><p>Erase calibration</p></td>
+<td><p>Erase the calibration coefficients stored in the flash memory (1.2.0 only)</p></td>
+</tr>
+<tr class="row-even"><td><p>0x11</p></td>
+<td><p>Readsweep</p></td>
+<td><p>Read sweep points for the measured values</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x12</p></td>
+<td><p>Reset</p></td>
+<td><p>Reset the device</p></td>
+</tr>
+<tr class="row-even"><td><p>0x13</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x14</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-even"><td><p>0x15</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x16</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-even"><td><p>0x17</p></td>
+<td><p>Initiate</p></td>
+<td><p>Initiate the measurement</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x18</p></td>
+<td><p>Trigger</p></td>
+<td><p>Provide software trigger for measurement</p></td>
+</tr>
+<tr class="row-even"><td><p>0x19</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x1A</p></td>
+<td><p>Abort</p></td>
+<td><p>Abort the measurement</p></td>
+</tr>
+<tr class="row-even"><td><p>0x1B</p></td>
+<td><p>Calibration commit</p></td>
+<td><p>Commit the calibration coefficients to the flash</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x1C</p></td>
+<td><p>Set password</p></td>
+<td><p>Update the password for committing calibration coefficients</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Configure Parameters:</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>SPI Command</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x23</p></td>
+<td><p>Frequency</p></td>
+<td><p>Set the DDS frequency to N Hz where N is an IEEE-754 single precision floating point value</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x24</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-even"><td><p>0x25</p></td>
+<td><p>Magnitude</p></td>
+<td><p>Set the test signal magnitude to N volts, where N is an IEEE-754 single precision floating point</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x26</p></td>
+<td><p>Offset</p></td>
+<td><p>Set the test signal’s DC bias to N volts, where N is an IEEE-754 single precision floating point</p></td>
+</tr>
+<tr class="row-even"><td><p>0x27</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x28</p></td>
+<td><p>Voltage gain (CH0)</p></td>
+<td><p>Set the voltage gain (0 = 1, 1 = 2, 2 = 4, 3 = 8)</p></td>
+</tr>
+<tr class="row-even"><td><p>0x29</p></td>
+<td><p>Current gain (CH1)</p></td>
+<td><p>Set the current gain (0 = -96.154, 1 =- 961.54, 2 = -9615.4, 3 = -96154.0)</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x2A</p></td>
+<td><p>Average</p></td>
+<td><p>Set the measurement loop to run N loops where N is an unsigned integer</p></td>
+</tr>
+<tr class="row-even"><td><p>0x2B</p></td>
+<td><p>Mdelay</p></td>
+<td><p>Set the measurement delay between measurements selected by the ‘count’ command to N msec, where N is an IEEE-754 single precision floating point value</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x2C</p></td>
+<td><p>Tdelay</p></td>
+<td><p>Set the trigger delay between measurement cycles selected by the ‘tcount’ command to N msec, where N is an IEEE-754 single precision floating point value</p></td>
+</tr>
+<tr class="row-even"><td><p>0x2D</p></td>
+<td><p>Tcount</p></td>
+<td><p>Set the trigger count to N where N is an unsigned integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x30</p></td>
+<td><p>Sweep start</p></td>
+<td><p>Set the sweep start frequency/magnitude/offset</p></td>
+</tr>
+<tr class="row-even"><td><p>0x31</p></td>
+<td><p>Sweep end</p></td>
+<td><p>Set the sweep end frequency/magnitude/offset</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x32</p></td>
+<td><p>Sweep type</p></td>
+<td><p>Set the sweep type to off/frequency/magnitude/offset</p></td>
+</tr>
+<tr class="row-even"><td><p>0x33</p></td>
+<td><p>Sweep scale</p></td>
+<td><p>Set the sweep scale as linear/log</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x34</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-even"><td><p>0x38</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x39</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-even"><td><p>0x3B</p></td>
+<td><p>Temperature unit</p></td>
+<td><p>Set the temperature unit as Celsius or Fahrenheit</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x3C</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-even"><td><p>0x3D</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x41</p></td>
+<td><p>Display mode</p></td>
+<td><p>Set the measurement model output format</p></td>
+</tr>
+<tr class="row-even"><td><p>0x42</p></td>
+<td><p>Sample count</p></td>
+<td><p>Set the sample count for impedance/admittance measurements to N where N is an unsigned integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x43</p></td>
+<td><p>Correction mode</p></td>
+<td><p>Set calibration/compensation on or off</p></td>
+</tr>
+<tr class="row-even"><td><p>0x44</p></td>
+<td><p>Error check</p></td>
+<td><p>Set ADC/FPGA FIFO error checking on or off</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x45</p></td>
+<td><p>DC mode</p></td>
+<td><p>Enable or disable DC mode (must set offset instead of magnitude)</p></td>
+</tr>
+<tr class="row-even"><td><p>0x46</p></td>
+<td><p>Autorange</p></td>
+<td><p>Enable or disable autorange functionality</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x47</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-even"><td><p>0x48</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x49</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-even"><td><p>0x4A</p></td>
+<td><p>Trigger mode</p></td>
+<td><p>Set trigger mode to internal or external trigger</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x4F</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-even"><td><p>0x50</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x51</p></td>
+<td><p>Self-test</p></td>
+<td><p>Run self-test</p></td>
+</tr>
+<tr class="row-even"><td><p>0x52</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x53</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-even"><td><p>0x56</p></td>
+<td><p>GPIO control</p></td>
+<td><p>Set the digital output pins</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Read Parameters:</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>SPI Command</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x8E</p></td>
+<td><p>Temperature</p></td>
+<td><p>Read the current module temperature, value returned is an IEEE-754 single precision floating point in degrees Celsius or Fahrenheit</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x15</p></td>
+<td><p>Version</p></td>
+<td><p>Read the module FW version: returns 32 bits, to be interpreted bytewise: [Major Version : Minor Version : Patch : Build Number]</p></td>
+</tr>
+<tr class="row-even"><td><p>0xA3</p></td>
+<td><p>Frequency</p></td>
+<td><p>Read the DDS frequency in Hz</p></td>
+</tr>
+<tr class="row-odd"><td><p>0xA4</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-even"><td><p>0xA5</p></td>
+<td><p>Magnitude</p></td>
+<td><p>Read the DDS magnitude</p></td>
+</tr>
+<tr class="row-odd"><td><p>0xA6</p></td>
+<td><p>Offset</p></td>
+<td><p>Read the DC bias voltage</p></td>
+</tr>
+<tr class="row-even"><td><p>0xA7</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td><p>0xA8</p></td>
+<td><p>Voltage gain</p></td>
+<td><p>Read the voltage gain setting</p></td>
+</tr>
+<tr class="row-even"><td><p>0xA9</p></td>
+<td><p>Current gain</p></td>
+<td><p>Read the current gain setting</p></td>
+</tr>
+<tr class="row-odd"><td><p>0xAA</p></td>
+<td><p>Average</p></td>
+<td><p>Read measurement average count</p></td>
+</tr>
+<tr class="row-even"><td><p>0xAB</p></td>
+<td><p>Mdelay</p></td>
+<td><p>Read measurement delay</p></td>
+</tr>
+<tr class="row-odd"><td><p>0xAC</p></td>
+<td><p>Tdelay</p></td>
+<td><p>Read trigger delay</p></td>
+</tr>
+<tr class="row-even"><td><p>0xAD</p></td>
+<td><p>Tcount</p></td>
+<td><p>Read the trigger count</p></td>
+</tr>
+<tr class="row-odd"><td><p>0xB0</p></td>
+<td><p>Sweep start</p></td>
+<td><p>Read sweep start frequency/magnitude/offset</p></td>
+</tr>
+<tr class="row-even"><td><p>0xB1</p></td>
+<td><p>Sweep end</p></td>
+<td><p>Read sweep end frequency/magnitude/offset</p></td>
+</tr>
+<tr class="row-odd"><td><p>0xB2</p></td>
+<td><p>Sweep scale</p></td>
+<td><p>Read sweep scale as linear/log</p></td>
+</tr>
+<tr class="row-even"><td><p>0xB4</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td><p>0xB8</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-even"><td><p>0xB9</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td><p>0xBB</p></td>
+<td><p>Temperature unit</p></td>
+<td><p>Read temperature unit (Celsius or Fahrenheit)</p></td>
+</tr>
+<tr class="row-even"><td><p>0xBC</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td><p>0xBD</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-even"><td><p>0xC1</p></td>
+<td><p>Display mode</p></td>
+<td><p>Read the measurement model output format</p></td>
+</tr>
+<tr class="row-odd"><td><p>0xC2</p></td>
+<td><p>Sample count</p></td>
+<td><p>Read the sample count value</p></td>
+</tr>
+<tr class="row-even"><td><p>0xC3</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td><p>0xC4</p></td>
+<td><p>Error check</p></td>
+<td><p>Read whether ADC/FPGA FIFO error checking is on or off</p></td>
+</tr>
+<tr class="row-even"><td><p>0xC5</p></td>
+<td><p>DC mode</p></td>
+<td><p>Read whether DC mode is on or off</p></td>
+</tr>
+<tr class="row-odd"><td><p>0xC6</p></td>
+<td><p>Autorange</p></td>
+<td><p>Read whether autoranging is on or off</p></td>
+</tr>
+<tr class="row-even"><td><p>0xC7</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td><p>0xC8</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-even"><td><p>0xC9</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td><p>0xCA</p></td>
+<td><p>Trigger mode</p></td>
+<td><p>Read whether trigger mode is set to external or internal</p></td>
+</tr>
+<tr class="row-even"><td><p>0xCD</p></td>
+<td><p>State</p></td>
+<td><p>Read whether the state is in Idle or Wait for Trigger</p></td>
+</tr>
+<tr class="row-odd"><td><p>0xCF</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-even"><td><p>0xD0</p></td>
+<td><p>Reserved</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td><p>0xD1</p></td>
+<td><p>Self-test</p></td>
+<td><p>Read self-test status</p></td>
+</tr>
+<tr class="row-even"><td><p>0xD2</p></td>
+<td><p>Unique ID</p></td>
+<td><p>Read the device unique ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>0xD3</p></td>
+<td><p>Warning</p></td>
+<td><p>Read warning status</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Output Format Options:</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data</p></th>
+<th class="head"><p>Format</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>[Cs, Rs]</p></td>
+<td><p>Capacitance and equivalent series resistance</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>[Cs ,D]</p></td>
+<td><p>Equivalent series capacitance and dissipation factor</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>[Cs, Q]</p></td>
+<td><p>Equivalent series capacitance and quality factor</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>[Ls, Rs]</p></td>
+<td><p>Inductance and equivalent series resistance</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>[Ls ,D]</p></td>
+<td><p>Equivalent series inductance and dissipation factor</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>[Ls, Q]</p></td>
+<td><p>Equivalent series inductance and quality factor</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>[R, X]</p></td>
+<td><p>Impedance in rectangular coordinates (default)</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>[Z, deg]</p></td>
+<td><p>Impedance in magnitude and phase in degrees</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>[Z, rad]</p></td>
+<td><p>Impedance in magnitude and phase in radians</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p>[Cp, Rp]</p></td>
+<td><p>Capacitance and equivalent parallel resistance</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>[Cp, D]</p></td>
+<td><p>Equivalent parallel capacitance and dissipation factor</p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p>[Cp, Q]</p></td>
+<td><p>Equivalent parallel capacitance and quality factor</p></td>
+</tr>
+<tr class="row-even"><td><p>12</p></td>
+<td><p>[Lp, Rp]</p></td>
+<td><p>Inductance and equivalent parallel resistance</p></td>
+</tr>
+<tr class="row-odd"><td><p>13</p></td>
+<td><p>[Lp, D]</p></td>
+<td><p>Equivalent parallel Inductance and dissipation factor</p></td>
+</tr>
+<tr class="row-even"><td><p>14</p></td>
+<td><p>[Lp, Q]</p></td>
+<td><p>Equivalent parallel inductance and quality factor</p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p>[G, B]</p></td>
+<td><p>Admittance in rectangular coordinates</p></td>
+</tr>
+<tr class="row-even"><td><p>16</p></td>
+<td><p>[Y, deg]</p></td>
+<td><p>Admittance in magnitude and phase in degrees</p></td>
+</tr>
+<tr class="row-odd"><td><p>17</p></td>
+<td><p>[Y, rad]</p></td>
+<td><p>Admittance in magnitude and phase in radians</p></td>
+</tr>
+<tr class="row-even"><td><p>18</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>Reserved</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Warnings:</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Warning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x00</p></td>
+<td><p>No warning</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x01</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-even"><td><p>0x02</p></td>
+<td><p>Initializing calibration coefficient failed</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x04</p></td>
+<td><p>Autorange disabled for sweep</p></td>
+</tr>
+<tr class="row-even"><td><p>0x08</p></td>
+<td><p>Autorange failed</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x10</p></td>
+<td><p>Sweep/measurement count is greater than supported</p></td>
+</tr>
+<tr class="row-even"><td><p>0x20</p></td>
+<td><p>Magnitude is greater than 1 volt for AC autorange. Setting it to 1 V for AC autorange.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x40</p></td>
+<td><p>Offset is greater than 0 volts for AC autorange. Setting offset to 0 V for AC autorange.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x80</p></td>
+<td><p>Offset is greater than 1 volt for DC autorange. Setting offset to 1 V for DC autorange.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x100</p></td>
+<td><p>Offset is less than -1 volt for DC autorange. Setting offset to -1 V for DC autorange.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Errors:</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Error</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x0000</p></td>
+<td><p>Success. No error.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0001</p></td>
+<td><p>Command failure</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0002</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0003</p></td>
+<td><p>Invalid attribute</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0004</p></td>
+<td><p>Attribute out of range</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0005</p></td>
+<td><p>Invalid address for the command</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0006</p></td>
+<td><p>Uncommitted calibration coefficients (can be treated as warning)</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0007</p></td>
+<td><p>Invalid voltage/current gain</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0008</p></td>
+<td><p>Invalid display type for DC resistance mode</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0009</p></td>
+<td><p>Invalid sweep type for DC mode</p></td>
+</tr>
+<tr class="row-even"><td><p>0x000A</p></td>
+<td><p>Invalid sweep range</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x000B</p></td>
+<td><p>Invalid AC calibration coefficient type</p></td>
+</tr>
+<tr class="row-even"><td><p>0x000C</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x000D</p></td>
+<td><p>Invalid calibration type</p></td>
+</tr>
+<tr class="row-even"><td><p>0x000E</p></td>
+<td><p>Invalid DC calibration coefficient type</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x000F</p></td>
+<td><p>Calibration or compensation failed</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0010</p></td>
+<td><p>Invalid command for Wait for Trigger state</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0020</p></td>
+<td><p>Sweep start/end value can’t be zero for log scale</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0040</p></td>
+<td><p>Sweep start/end should have same sign for log scale</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0080</p></td>
+<td><p>Voltage ADC saturated</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0100</p></td>
+<td><p>Current ADC saturated</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0200</p></td>
+<td><p>Reserved</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="spi-command-details">
+<h2>SPI Command Details<a class="headerlink" href="#spi-command-details" title="Link to this heading"></a></h2>
+<section id="single-parameter-write">
+<h3>Single Parameter Write<a class="headerlink" href="#single-parameter-write" title="Link to this heading"></a></h3>
+<p>Procedure for writing single parameter command:</p>
+<ul class="simple">
+<li><p>Do <strong>Frame Write</strong> with the respective command, address and data</p></li>
+<li><p>Poll the status register until the <strong>Done</strong> bit is set</p></li>
+</ul>
+<p>Once the <strong>Done</strong> bit is set, the command has been processed. If any warnings or error occur, respective bit will be set</p>
+</section>
+<section id="single-parameter-read">
+<h3>Single Parameter Read<a class="headerlink" href="#single-parameter-read" title="Link to this heading"></a></h3>
+<p>Procedure for reading single parameter command:</p>
+<ul class="simple">
+<li><p>Do <strong>Frame Read</strong> with respective command, address and data</p></li>
+<li><p>Poll the status register until the <strong>Done</strong> bit is set</p></li>
+<li><p>Read result register if there is no error</p></li>
+</ul>
+</section>
+<section id="status-register-read-0x00">
+<h3>Status Register Read (0x00)<a class="headerlink" href="#status-register-read-0x00" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">The Status Register is a 32-bit read-only register and can be read using command <strong>0x00</strong>. Register fields are shown in <strong>Status Register Field Descriptions</strong>.</div>
+<div class="line"><strong>Status Register:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Bit</p></th>
+<th class="head"><p>31</p></th>
+<th class="head"><p>30</p></th>
+<th class="head"><p>29</p></th>
+<th class="head"><p>28</p></th>
+<th class="head"><p>27</p></th>
+<th class="head"><p>26</p></th>
+<th class="head"><p>25:16</p></th>
+<th class="head"><p>15:0</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Field</p></td>
+<td><p>Measurement Done</p></td>
+<td><p>Command Done</p></td>
+<td><p>Error</p></td>
+<td><p>Warning</p></td>
+<td><p>FIFO Error</p></td>
+<td><p>Reserved</p></td>
+<td><p>Result FIFO Depth [9:0]</p></td>
+<td><p>Result/Error Code</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">When any command is provided other than the Status, Result, and Measurement Read command, the <strong>Command Done</strong> bit will be cleared. After processing a given command, the <strong>Command Done</strong> bit will be set. The user must wait for this bit before providing the next command and/or to read data from The Result Register (0x01) or Measurement FIFO Register (0x03).</div>
+<div class="line"><strong>Status Register Field Descriptions:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Measurement Done</p></td>
+<td><p>Will be set after measurement is complete</p></td>
+</tr>
+<tr class="row-odd"><td><p>Command Done</p></td>
+<td><p>Will be set after processing a command</p></td>
+</tr>
+<tr class="row-even"><td><p>Error</p></td>
+<td><p>Will be set if there are any errors while processing the command</p></td>
+</tr>
+<tr class="row-odd"><td><p>Warning</p></td>
+<td><p>Will be set if one or more warnings occur during the command process. Should use the read warning command to fetch the warning code</p></td>
+</tr>
+<tr class="row-even"><td><p>FIFO Error</p></td>
+<td><p>Will be set when overflow or underflow occurs. This error will be cleared only by using the Clear Error command</p></td>
+</tr>
+<tr class="row-odd"><td><p>Result FIFO Depth [9:0]</p></td>
+<td><p>Contains a count of 32-bit data streams that are present in the FIFO</p></td>
+</tr>
+<tr class="row-even"><td><p>Result/Error Code</p></td>
+<td><p>Contains the Error Code when the Error bit is set</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Do a <strong>Single Parameter Read</strong> with the command <strong>0x00</strong> to get the status.</p>
+</section>
+<section id="result-register-read-0x01">
+<h3>Result Register Read (0x01)<a class="headerlink" href="#result-register-read-0x01" title="Link to this heading"></a></h3>
+<p>Result register contains the processed output for few commands. Refer to the respective command’s section to know the data format and number of valid bits in the 32-bit field. Do a <strong>Single Parameter Read</strong> with <strong>0x01</strong> command to get the result.</p>
+</section>
+<section id="clear-error-0x02">
+<h3>Clear Error (0x02)<a class="headerlink" href="#clear-error-0x02" title="Link to this heading"></a></h3>
+<p>In order to clear SPI Measurement FIFO error, send the clear error command. It can also clear previous commands, measurement and command done bits, as well as retuls. It will return SPI interface to the ready state. Do a <strong>Single Parameter Write</strong> with <strong>0x02</strong> command and address &amp; data field as zero to clear the error.</p>
+</section>
+<section id="measurement-fifo-read-0x03">
+<h3>Measurement FIFO Read (0x03)<a class="headerlink" href="#measurement-fifo-read-0x03" title="Link to this heading"></a></h3>
+<p>The Measurement FIFO contains either the measured value or sweep points. Refer to the respective command section to know the number of data and result data types stored in the FIFO. The Measurement FIFO should be read only when the Result FIFO Depth field in the status register is greater than 0. If the FIFO is read when it does not contain any data, FIFO Error will occur. Do a <strong>Single Parameter Read</strong> with <strong>0x03</strong> command to get the result.</p>
+</section>
+<section id="measure-z-0x0f">
+<h3>Measure “Z” (0x0F)<a class="headerlink" href="#measure-z-0x0f" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Initiates the measurement immediately and stores the result in the Measurement FIFO. Result will be in two IEEE-754 Double precision format. Since only 32-bit data format is supported during a <strong>Single Parameter Read</strong>, 64 bit double data is split as two 32 bit data and written into the FIFO. Commands that will affect the measurement are: output format, trigger count, sample count, offset, frequency, magnitude, voltage/current gain, sweep, measure delay, trigger delay.</div>
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note: Trigger mode command will be ignored by this command.</p>
+</div>
+<div class="line-block">
+<div class="line">The figure below shows how results are stored into the FIFO. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/eval-admx2001ebz/measurement_fifo.png"><img alt="image1" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/eval-admx2001ebz/measurement_fifo.png" style="width: 400px;" /></a> The number of 32-bit data stored into the FIFO for each measurement can be calculated using the following equation,</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">No</span><span class="o">.</span> <span class="n">of</span> <span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="n">sample</span> <span class="n">count</span> <span class="o">*</span> <span class="n">trigger</span> <span class="n">count</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Procedure:</strong></div>
+</div>
+<ul class="simple">
+<li><p>Configure the parameters (frequency, magnitude, etc…) with respective commands.</p></li>
+<li><p>Do Frame Write with z (0x0F) command.</p></li>
+<li><p>Poll status register until DONE and MEASURE DONE bit are set.</p></li>
+<li><p>Read the result from FIFO using MEASUREMENT FIFO READ command.</p></li>
+<li><p>Read sweep points using RDSWEEP command.</p></li>
+</ul>
+</section>
+<section id="rdsweep-0x11">
+<h3>RDSWEEP (0x11)<a class="headerlink" href="#rdsweep-0x11" title="Link to this heading"></a></h3>
+<p>After doing the measurement using <code class="docutils literal notranslate"><span class="pre">z</span></code> or <code class="docutils literal notranslate"><span class="pre">trigger</span></code> command, the sweep points can be read using this command. This command returns the count or frequency or magnitude or offset points as per the sweep type and count settings. Sweep points are in double precision format and are stored as two 32-bit data into the FIFO. These data can be read using the Measurement FIFO Read command. Number of points = (sample count * trigger count) <strong>Procedure:</strong></p>
+<ul class="simple">
+<li><p>Do Frame Write with (0x11) in command and number of points in data field.</p></li>
+<li><p>Poll register until Done bit is set.</p></li>
+<li><p>Read the result from FIFO using the MEASUREMENT FIFO READ command.</p></li>
+</ul>
+</section>
+<section id="reset-0x12">
+<h3>Reset (0x12)<a class="headerlink" href="#reset-0x12" title="Link to this heading"></a></h3>
+<p>This command resets the entire device and sets the configuration parameters to its default value. Do a <strong>Single Parameter Write</strong> with reset command.</p>
+</section>
+<section id="initiate-0x17">
+<h3>Initiate (0x17)<a class="headerlink" href="#initiate-0x17" title="Link to this heading"></a></h3>
+<p>Initiate command initializes device for measurement and waits for the external/software trigger. Once external trigger is received, the measurement will be done automatically if external trigger is enabled and result will be populated into the FIFO. In “wait for trigger” state trigger, parameter read command, abort and reset commands are supported; other commands are not supported. Do a Single Parameter Write with the initiate command.</p>
+</section>
+<section id="trigger-0x18">
+<h3>Trigger (0x18)<a class="headerlink" href="#trigger-0x18" title="Link to this heading"></a></h3>
+<p>This command is treated as a software trigger for measuring the device under test. After measurement is completed, result will be stored into the FIFO. There are a few rules for using this command.</p>
+<ul class="simple">
+<li><p>Should be provided only after providing initiate command i.e. when the device is in “wait for trigger” state.</p></li>
+<li><p>Should be provided when software trigger is required. Should not be sent when external trigger is enabled.</p></li>
+<li><p>Device will accept trigger command for trigger count times. For example, if trigger count is 2 only two triggers will be accepted.</p></li>
+</ul>
+<p><strong>External Trigger Procedure</strong></p>
+<ul class="simple">
+<li><p>Configure the device parameters. Enable external trigger with trigger mode command.</p></li>
+<li><p>Send initiate command.</p></li>
+<li><p>Provide external trigger and poll status register until Measurement Done bit is set.</p></li>
+<li><p>Read the result from FIFO. Refer to Measure Command to know how the data is stored in the FIFO. If required, read sweep points as well.</p></li>
+<li><p>Repeat steps 3 and 4 for tcount times.</p></li>
+</ul>
+<p><strong>Software Trigger Procedure</strong></p>
+<ul class="simple">
+<li><p>Configure the device parameters. Enable/Disable external trigger with trigger mode command.</p></li>
+<li><p>Send initiate command.</p></li>
+<li><p>Send trigger command and poll status register until Measurement Done bit is set.</p></li>
+<li><p>Read the result from FIFO. Refer to Measure command to know how the data is stored in the FIFO. If required, read sweep points as well.</p></li>
+<li><p>Repeat steps 3 and 4 for tcount times.</p></li>
+</ul>
+</section>
+<section id="abort-0x1a">
+<h3>Abort (0x1A)<a class="headerlink" href="#abort-0x1a" title="Link to this heading"></a></h3>
+<p>The abort command resets the state machine and sets it to “idle” state. It doesn’t change the configuration parameters. Do a <strong>Single Parameter Write</strong> with the abort command.</p>
+</section>
+<section id="frequency-0x23-0xa3">
+<h3>Frequency (0x23, 0xA3)<a class="headerlink" href="#frequency-0x23-0xa3" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Frequency at which measurement should happen. To configure or fetch data, do a <strong>Single Parameter Write</strong> or <strong>Single Parameter Read</strong>.</div>
+<div class="line"><strong>Frequency Command Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>1000 (unit:Hz)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write command</p></td>
+<td><p>0x23</p></td>
+</tr>
+<tr class="row-even"><td><p>Read command</p></td>
+<td><p>0xA3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-even"><td><p>Data range</p></td>
+<td><p>0 Hz, 0.2 Hz to 10000000 Hz</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data type</p></td>
+<td><p>IEEE-754 Single precision floating point</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="magnitude-0x25-0xa5">
+<h3>Magnitude (0x25, 0xA5)<a class="headerlink" href="#magnitude-0x25-0xa5" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Magnitude at which measurement should happen. To configure or fetch data, do a <strong>Single Parameter Write</strong> or <strong>Single Parameter Read</strong>.</div>
+<div class="line"><strong>Magnitude Command Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>1 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write command</p></td>
+<td><p>0x25</p></td>
+</tr>
+<tr class="row-even"><td><p>Read command</p></td>
+<td><p>0xA5</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-even"><td><p>Data range</p></td>
+<td><p>0.13 to 2.25 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data type</p></td>
+<td><p>IEEE-754 Single precision floating point</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="offset-0x26-0xa6">
+<h3>Offset (0x26, 0xA6)<a class="headerlink" href="#offset-0x26-0xa6" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Offset voltage at which measurement should happen. To configure or fetch data, do a <strong>Single Parameter Write</strong> or <strong>Single Parameter Read</strong>.</div>
+<div class="line"><strong>Offset Command Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>0 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write command</p></td>
+<td><p>0x26</p></td>
+</tr>
+<tr class="row-even"><td><p>Read command</p></td>
+<td><p>0xA6</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-even"><td><p>Data range</p></td>
+<td><p>-2.5 V to 2.5 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data type</p></td>
+<td><p>IEEE-754 Single precision floating point</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="voltage-gain-0x28-0xa8">
+<h3>Voltage Gain (0x28, 0xA8)<a class="headerlink" href="#voltage-gain-0x28-0xa8" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Set or get the voltage gain factor (0 = 1, 1 = 2, 2 = 4, 3 = 8). To configure or fetch data, do a <strong>Single Parameter Write</strong> or <strong>Single Parameter Read</strong>.</div>
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note: This value will be ignored when auto range is enabled.</p>
+</div>
+<div class="line-block">
+<div class="line"><strong>Voltage Gain Command Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write command</p></td>
+<td><p>0x28</p></td>
+</tr>
+<tr class="row-even"><td><p>Read command</p></td>
+<td><p>0xA8</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-even"><td><p>Data range</p></td>
+<td><p>0 to 3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data type</p></td>
+<td><p>32-bit integer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="current-gain-0x29-0xa9">
+<h3>Current Gain (0x29, 0xA9)<a class="headerlink" href="#current-gain-0x29-0xa9" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Set or get the current gain factor (0 = 96.154, 1 = 961.54, 2 = 9615.4, 3 = 96154.0). To configure or fetch data, do a <strong>Single Parameter Write</strong> or <strong>Single Parameter Read</strong>.</div>
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note: This value will be ignored when auto range is enabled.</p>
+</div>
+<div class="line-block">
+<div class="line"><strong>Current Gain Command Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write command</p></td>
+<td><p>0x29</p></td>
+</tr>
+<tr class="row-even"><td><p>Read command</p></td>
+<td><p>0xA9</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-even"><td><p>Data range</p></td>
+<td><p>0 to 3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data type</p></td>
+<td><p>32-bit integer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="average-0x2a-0xaa">
+<h3>Average (0x2A, 0xAA)<a class="headerlink" href="#average-0x2a-0xaa" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Number of samples to average while taking measurement. To configure or fetch data, do a <strong>Single Parameter Write</strong> or <strong>Single Parameter Read</strong>.</div>
+<div class="line"><strong>Average Command Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write command</p></td>
+<td><p>0x2A</p></td>
+</tr>
+<tr class="row-even"><td><p>Read command</p></td>
+<td><p>0xAA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-even"><td><p>Data range</p></td>
+<td><p>1 to 65536</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data type</p></td>
+<td><p>32-bit integer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="measure-delay-mdelay-0x2b-0xab">
+<h3>Measure Delay MDELAY (0x2B, 0xAB)<a class="headerlink" href="#measure-delay-mdelay-0x2b-0xab" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Delay (time to wait) before doing each measurement. To configure or fetch data, do a <strong>Single Parameter Write</strong> or <strong>Single Parameter Read</strong>.</div>
+<div class="line"><strong>Measure Delay Command Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>1 ms</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write command</p></td>
+<td><p>0x2B</p></td>
+</tr>
+<tr class="row-even"><td><p>Read command</p></td>
+<td><p>0xAB</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-even"><td><p>Data range</p></td>
+<td><p>0.0 to 65536.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data type</p></td>
+<td><p>IEEE-754 Single precision floating point</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="trigger-delay-tdelay-0x2c-0xac">
+<h3>Trigger Delay TDELAY (0x2C, 0xAC)<a class="headerlink" href="#trigger-delay-tdelay-0x2c-0xac" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Delay (time to wait) after receiving each (internal/external) trigger. This delay is necessary for the AC output signal to get settle before doing the measurement. To configure or fetch data, do a <strong>Single Parameter Write</strong> or <strong>Single Parameter Read</strong>.</div>
+<div class="line"><strong>Trigger Delay Command Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>4 ms</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write command</p></td>
+<td><p>0x2C</p></td>
+</tr>
+<tr class="row-even"><td><p>Read command</p></td>
+<td><p>0xAC</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-even"><td><p>Data range</p></td>
+<td><p>0.0 to 65536.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data type</p></td>
+<td><p>IEEE-754 Single precision floating point</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="trigger-count-tcount-0x2d-0xad">
+<h3>Trigger Count TCOUNT (0x2D, 0xAD)<a class="headerlink" href="#trigger-count-tcount-0x2d-0xad" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Number of time to trigger the sweep measurement. To configure or fetch data, do a <strong>Single Parameter Write</strong> or <strong>Single Parameter Read</strong>.</div>
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note: Only 256 measurement results can be stored in the measurement FIFO. If sample count * trigger count is greater than 256, readings will be lost.</p>
+</div>
+<div class="line-block">
+<div class="line"><strong>Trigger Count Command Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write command</p></td>
+<td><p>0x2D</p></td>
+</tr>
+<tr class="row-even"><td><p>Read command</p></td>
+<td><p>0xAD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-even"><td><p>Data range</p></td>
+<td><p>1 to 65536</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data type</p></td>
+<td><p>32-bit integer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sweep-start-0x30-0xb0">
+<h3>Sweep Start (0x30, 0xB0)<a class="headerlink" href="#sweep-start-0x30-0xb0" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Set or get the sweep start frequency or magnitude or offset. To configure or fetch data, do a <strong>Single Parameter Write</strong> or <strong>Single Parameter Read</strong>.</div>
+<div class="line"><strong>Sweep Start Command Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write command</p></td>
+<td><p>0x30</p></td>
+</tr>
+<tr class="row-even"><td><p>Read command</p></td>
+<td><p>0xB0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-even"><td><p>Data range</p></td>
+<td><p>Frequency: 0.2 to 10000000 (unit: Hz)
+Magnitude: 0.13 to 2.25 (unit: V)
+Offset: -2.5 to +2.5 (unit: V)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data type</p></td>
+<td><p>IEEE-754 Single precision floating point</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sweep-end-0x31-0xb1">
+<h3>Sweep End (0x31, 0xB1)<a class="headerlink" href="#sweep-end-0x31-0xb1" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Set or get the sweep end frequency or magnitude or offset. To configure or fetch data, do a <strong>Single Parameter Write</strong> or <strong>Single Parameter Read</strong>.</div>
+<div class="line"><strong>Sweep End Command Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write command</p></td>
+<td><p>0x31</p></td>
+</tr>
+<tr class="row-even"><td><p>Read command</p></td>
+<td><p>0xB1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-even"><td><p>Data range</p></td>
+<td><p>Frequency: 0.2 to 10000000 (unit: Hz)
+Magnitude: 0.13 to 2.25 (unit: V)
+Offset: -2.5 to +2.5 (unit: V)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data type</p></td>
+<td><p>IEEE-754 Single precision floating point</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sweep-type-0x32-0xb2">
+<h3>Sweep Type (0x32, 0xB2)<a class="headerlink" href="#sweep-type-0x32-0xb2" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Set or get the sweep type (0 = off, 1 = frequency, 2 = offset, 3 = magnitude). To configure or fetch data, do a <strong>Single Parameter Write</strong> or <strong>Single Parameter Read</strong>.</div>
+<div class="line"><strong>Sweep Type Command Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write command</p></td>
+<td><p>0x32</p></td>
+</tr>
+<tr class="row-even"><td><p>Read command</p></td>
+<td><p>0xB2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-even"><td><p>Data range</p></td>
+<td><p>0 to 3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data type</p></td>
+<td><p>32-bit integer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sweep-scale-0x33-0xb3">
+<h3>Sweep Scale (0x33, 0xB3)<a class="headerlink" href="#sweep-scale-0x33-0xb3" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Set or get the sweep scale (0 = linear, 1 = logarithmic). To configure or fetch data, do a <strong>Single Parameter Write</strong> or <strong>Single Parameter Read</strong>.</div>
+<div class="line"><strong>Sweep Scale Command Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write command</p></td>
+<td><p>0x33</p></td>
+</tr>
+<tr class="row-even"><td><p>Read command</p></td>
+<td><p>0xB3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-even"><td><p>Data range</p></td>
+<td><p>0 or 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data type</p></td>
+<td><p>32-bit integer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="temperature-unit-0x3b-0xbb">
+<h3>Temperature Unit (0x3B, 0xBB)<a class="headerlink" href="#temperature-unit-0x3b-0xbb" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Set or get the temperature unit (0 = Fahrenheit, 1 = Celsius). To configure or fetch data, do a <strong>Single Parameter Write</strong> or <strong>Single Parameter Read</strong>.</div>
+<div class="line"><strong>Temperature Unit Command Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write command</p></td>
+<td><p>0x3B</p></td>
+</tr>
+<tr class="row-even"><td><p>Read command</p></td>
+<td><p>0xBB</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-even"><td><p>Data range</p></td>
+<td><p>0 or 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data type</p></td>
+<td><p>Boolean</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="output-format-0x41-0xc1">
+<h3>Output Format (0x41, 0xC1)<a class="headerlink" href="#output-format-0x41-0xc1" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Set or get the output format, formats listed in the table below. To configure or fetch data, do a <strong>Single Parameter Write</strong> or <strong>Single Parameter Read</strong>.</div>
+<div class="line"><strong>Output Format Command Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write command</p></td>
+<td><p>0x41</p></td>
+</tr>
+<tr class="row-even"><td><p>Read command</p></td>
+<td><p>0xC1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-even"><td><p>Data range</p></td>
+<td><p>0 to 17</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data type</p></td>
+<td><p>32-bit integer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sample-count-0x42-0xc2">
+<h3>Sample Count (0x42, 0xC2)<a class="headerlink" href="#sample-count-0x42-0xc2" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Set or get the number of readings to be taken in a sweep. To configure or fetch data, do a <strong>Single Parameter Write</strong> or <strong>Single Parameter Read</strong>.</div>
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note: Only 256 measurement results can be stored in the measurement FIFO. If sample count * trigger count is greater than 256, readings will be lost.</p>
+</div>
+<div class="line-block">
+<div class="line"><strong>Sample Count Command Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write command</p></td>
+<td><p>0x42</p></td>
+</tr>
+<tr class="row-even"><td><p>Read command</p></td>
+<td><p>0xC2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-even"><td><p>Data range</p></td>
+<td><p>1 to 32768</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data type</p></td>
+<td><p>32-bit integer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="correction-mode-0x43-0xc3">
+<h3>Correction Mode (0x43, 0xC3)<a class="headerlink" href="#correction-mode-0x43-0xc3" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Set or get the correction mode (0 = off, 1 = calibration, 2 = calibration + compensation). To configure or fetch data, do a <strong>Single Parameter Write</strong> or <strong>Single Parameter Read</strong>.</div>
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note: Compensation cannot be used without calibration being enabled. Calibration must be turned on before compensation can be turned on.</p>
+</div>
+<div class="line-block">
+<div class="line"><strong>Correction Mode Command Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write command</p></td>
+<td><p>0x43</p></td>
+</tr>
+<tr class="row-even"><td><p>Read command</p></td>
+<td><p>0xC3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-even"><td><p>Data range</p></td>
+<td><p>0 to 2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data type</p></td>
+<td><p>32-bit integer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="error-check-0xc4-0x0">
+<h3>Error Check (0xC4, 0x0)<a class="headerlink" href="#error-check-0xc4-0x0" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Set or get ADC saturation error checking (0 = disable, 1 = enable). To configure or fetch data, do a <strong>Single Parameter Write</strong> or <strong>Single Parameter Read</strong>.</div>
+<div class="line"><strong>Error Check Command Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>0x44</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write command</p></td>
+<td><p>0xC4</p></td>
+</tr>
+<tr class="row-even"><td><p>Read command</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-even"><td><p>Data range</p></td>
+<td><p>0 or 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data type</p></td>
+<td><p>Boolean</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="dc-mode-0x45-0xc5">
+<h3>DC Mode (0x45, 0xC5)<a class="headerlink" href="#dc-mode-0x45-0xc5" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Set or get DC mode (1 = disable, 0 = enable). To configure or fetch data, do a <strong>Single Parameter Write</strong> or <strong>Single Parameter Read</strong>.</div>
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note: In order to do DC measurement, DC mode should be enabled (set parameter to 0) and frequency should be set to 0 Hz. Since the AC source is off in DC mode, the DC offset should be set to the desired value.</p>
+</div>
+<div class="line-block">
+<div class="line"><strong>DC Mode Command Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>1 (disabled)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write command</p></td>
+<td><p>0x45</p></td>
+</tr>
+<tr class="row-even"><td><p>Read command</p></td>
+<td><p>0xC5</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-even"><td><p>Data range</p></td>
+<td><p>0 or 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data type</p></td>
+<td><p>Boolean</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="auto-range-0x46-0xc6">
+<h3>Auto Range (0x46, 0xC6)<a class="headerlink" href="#auto-range-0x46-0xc6" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Set or get Auto ranging of voltage and current gain (0 = disable, 1 = enable). To configure or fetch data, do a <strong>Single Parameter Write</strong> or <strong>Single Parameter Read</strong>.</div>
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note1: When auto range is enabled, voltage gain &amp; current gain settings will be updated automatically.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note2: Auto range will be disabled during calibration, compensation and when sweep type is “frequency or offset or magnitude”</p>
+</div>
+<div class="line-block">
+<div class="line"><strong>Auto Range Command Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write command</p></td>
+<td><p>0x46</p></td>
+</tr>
+<tr class="row-even"><td><p>Read command</p></td>
+<td><p>0xC6</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-even"><td><p>Data range</p></td>
+<td><p>0 or 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data type</p></td>
+<td><p>Boolean</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="trigger-mode-0x4a-0xca">
+<h3>Trigger Mode (0x4A, 0xCA)<a class="headerlink" href="#trigger-mode-0x4a-0xca" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Set or get Trigger mode (0 = internal/software, 1 = external). To configure or fetch data, do a <strong>Single Parameter Write</strong> or <strong>Single Parameter Read</strong>.</div>
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note: This mode will be ignored during calibration, compensation and measure (Z) command.</p>
+</div>
+<div class="line-block">
+<div class="line"><strong>Trigger Mode Command Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Write command</p></td>
+<td><p>0x4A</p></td>
+</tr>
+<tr class="row-even"><td><p>Read command</p></td>
+<td><p>0xCA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-even"><td><p>Data range</p></td>
+<td><p>0 or 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data type</p></td>
+<td><p>Boolean</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="state-0xcd">
+<h3>State (0xCD)<a class="headerlink" href="#state-0xcd" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">This command reads the current state of the device. Value 0 means device is in <code class="docutils literal notranslate"><span class="pre">idle</span></code> state and 1 means device is in <code class="docutils literal notranslate"><span class="pre">wait</span> <span class="pre">for</span> <span class="pre">trigger</span></code> state. Do a <strong>Single Parameter Read</strong> to fetch the state.</div>
+<div class="line"><strong>State Machine Register Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read command</p></td>
+<td><p>0xCD</p></td>
+</tr>
+<tr class="row-even"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data range</p></td>
+<td><p>0 or 1</p></td>
+</tr>
+<tr class="row-even"><td><p>Data type</p></td>
+<td><p>32-bit integer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="self-test-0x51-0xd1">
+<h3>Self-Test (0x51, 0xD1)<a class="headerlink" href="#self-test-0x51-0xd1" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Self-test runs after powering on the device. Self-test (0x51) command initiates the self-test routine and returns pass or fail in the <em>error code</em> field in the status register. Self-test (0xD1) reads the self-test status code in result register. To initiate self-test, do <strong>Single Parameter Write</strong> and to fetch status code, do a <strong>Single Parameter Read</strong>.</div>
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note: Before initiating self-test make sure test leads/test fixture is in the open configuration, otherwise the analog test will fail. The self-test does not need to pass on every boot for the board to function properly.</p>
+<div class="line-block">
+<div class="line"><strong>Self-Test Command Format:</strong></div>
+</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Run command</p></td>
+<td><p>0x51</p></td>
+</tr>
+<tr class="row-even"><td><p>Read command</p></td>
+<td><p>0xD1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-even"><td><p>Data range</p></td>
+<td><p>0 to 63</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data type</p></td>
+<td><p>32-bit integer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Self-Test Status Code:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Bit</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>ADC IC test failed</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>DAC IC test failed</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Temperature IC test failed</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Analog test failed</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>Unique ID test failed</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>EEPROM/Flash IC test failed</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="unique-id-0xd2">
+<h3>Unique ID (0xD2)<a class="headerlink" href="#unique-id-0xd2" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Unique device ID can be fetched can be using this command. Do a <strong>Single Parameter Read</strong> with the respective command and address. The unique ID is a 64-bit integer, but frame format is only 32-bit data, so it is split into multiple address.</div>
+<div class="line"><strong>Unique ID Register Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Read command</p></td>
+<td><p>0xD2</p></td>
+</tr>
+<tr class="row-even"><td><p>Address</p></td>
+<td><p>0x0: lower 32-bit, 0x1: higher 32-bit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data range</p></td>
+<td><p>0 to 4294967295</p></td>
+</tr>
+<tr class="row-even"><td><p>Data type</p></td>
+<td><p>32-bit integer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="warning-status-0xd3">
+<h3>Warning Status (0xD3)<a class="headerlink" href="#warning-status-0xd3" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Warning status can be fetched using this command. Do a <strong>Single Parameter Read</strong> with this command. Refer to the list of warnings to know the description of the code.</div>
+<div class="line"><strong>Warning Status Register Format:</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Read command</p></td>
+<td><p>0xD3</p></td>
+</tr>
+<tr class="row-even"><td><p>Address</p></td>
+<td><p>0x0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data range</p></td>
+<td><p>0 to 65536</p></td>
+</tr>
+<tr class="row-even"><td><p>Data type</p></td>
+<td><p>32-bit integer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="calibration-command-summary">
+<h3>Calibration Command Summary<a class="headerlink" href="#calibration-command-summary" title="Link to this heading"></a></h3>
+<p>The section below describes all calibration commands and utilities.</p>
+</section>
+<section id="cal-0x04-comp-0x05">
+<h3>CAL (0x04) / COMP (0x05)<a class="headerlink" href="#cal-0x04-comp-0x05" title="Link to this heading"></a></h3>
+<p>CAL/COMP command is used to perform open, short and load calibration/compensation. The Rt and Xt values for load calibration/compensation are sent in the data field as a 32-bit floating point. For running open/short/load calibration or open/short/load compensation commands the data field is redundant. The result register will contain the appropriate error code if the calibration or compensation fails. Open and short calibration/compensation must be performed before load calibration/compensation to proceed. Refer to the Calibration and Compensation Commands table for details about the address and data fields.</p>
+<p><strong>Open/Short/Load Calibration Command Mapping</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Address</p></th>
+<th class="head"><p>Data range</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x04</p></td>
+<td><p>0</p></td>
+<td><p>N/A</p></td>
+<td><p>32-bit integer</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>1</p></td>
+<td><p>N/A</p></td>
+<td><p>32-bit integer</p></td>
+<td><p>Run short circuit calibration</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>2</p></td>
+<td><p>N/A</p></td>
+<td><p>32-bit integer</p></td>
+<td><p>Run open circuit calibration</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>3</p></td>
+<td><p>N/A</p></td>
+<td><p>32-bit integer</p></td>
+<td><p>Run load calibration with configured Rt/Xt. Must have Rt/Xt configured before running load calibration.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>4</p></td>
+<td><p>Rt as an IEEE-754 floating point</p></td>
+<td><p>32-bit integer</p></td>
+<td><p>Set Rt for load calibration</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>5</p></td>
+<td><p>Xt as an IEEE-754 floating point</p></td>
+<td><p>32-bit integer</p></td>
+<td><p>Set Xt for load calibration</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>0xFF</p></td>
+<td><p>N/A</p></td>
+<td><p>32-bit integer</p></td>
+<td><p>Run reload calibration. Will load the nearest frequency calibration coefficients from the nonvolatile memory and store them in the RAM</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Note the last row has an address field 0xFF. This command/address combination is for a new command called reload calibration (starting in firmware 1.2.2). To run this command, the address filed needs to be set as 0xFF. The reload command will load the nearest frequency calibration coefficients from the nonvolatile memory and store them in the RAM. This is especially useful when user wants to read calibration coefficients taken at different frequencies (i.e. calibration over frequency). Say a new frequency is set, user will need to run reload calibration first, then perform CAL_READ (0x06) to load calibration coefficients at that specific frequency from FLASH to RAM. Otherwise, calibration coefficients successfully read at previous set frequency will be misread for the new frequency.</p>
+<p><strong>Open/Short/Load Compensation Command Mapping</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Address</p></th>
+<th class="head"><p>Data range</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x05</p></td>
+<td><p>0</p></td>
+<td><p>N/A</p></td>
+<td><p>32-bit integer</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>1</p></td>
+<td><p>N/A</p></td>
+<td><p>32-bit integer</p></td>
+<td><p>Run short circuit compensation</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>2</p></td>
+<td><p>N/A</p></td>
+<td><p>32-bit integer</p></td>
+<td><p>Run open circuit compensation</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>3</p></td>
+<td><p>N/A</p></td>
+<td><p>32-bit integer</p></td>
+<td><p>Run load compensation with configured Rt/Xt. Must have Rt/Xt configured before running load compensation.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>4</p></td>
+<td><p>Rt as an IEEE-754 floating point</p></td>
+<td><p>32-bit integer</p></td>
+<td><p>Set Rt for load compensation</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>5</p></td>
+<td><p>Xt as an IEEE-754 floating point</p></td>
+<td><p>32-bit integer</p></td>
+<td><p>Set Xt for load compensation</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="cal-commit-0x1b">
+<h3>CAL_COMMIT (0x1B)<a class="headerlink" href="#cal-commit-0x1b" title="Link to this heading"></a></h3>
+<p>CAL_COMMIT command is used to commit the calibration data to the flash after performing a password check. The password is written to the <em>input password buffer</em> as ASCII values of characters corresponding to the first 12 address’s locations or fields (with values in decimal). The address field directs information from the data field to various locations or initiates specific processes. The address location 12 is reserved for the Unix timestamp of the commit. Sending 0xFF in the address field will compare the password stored and commit the calibration data if the password matches the set password. In case the password is incorrect sending 0xFF will clear the <em>input password buffer</em>. Performing calibration or using the CAL_STORE to store calibration coefficients is needed before committing the calibration data. Refer to the Commit Calibration Commands table for details about the address and data fields.</p>
+<p><strong>Commit Calibration Command Mapping</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Write Command</p></th>
+<th class="head"><p>Address</p></th>
+<th class="head"><p>Data range</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x1B</p></td>
+<td><p>0
+1
+2
+…
+10
+11</p></td>
+<td><p>26 upper and 26 lower case letters, 10 digits, and 33 special characters
+Space char (0x20) not allowed</p></td>
+<td><p>ASCII value of Nth character of password, as indicated by address field value</p></td>
+<td><p>Send char 0 of the password
+Send char 1 of the password
+Send char 2 of the password
+…
+Send char 10 of the password
+Send char 11 of the password</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>12</p></td>
+<td><p>-2147483648 to 2147483647</p></td>
+<td><p>32-bit integer</p></td>
+<td><p>Commit Timestamp, Unix epoch time in seconds since Jan 1, 1970 UTC</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>0xFF</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>Compare set password with the stored password, commit calibration data if the password is correct</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="cal-read-0x06-comp-read-0x0c">
+<h3>CAL_READ (0x06) / COMP_READ (0x0C)<a class="headerlink" href="#cal-read-0x06-comp-read-0x0c" title="Link to this heading"></a></h3>
+<p>The CAL_READ command is used to read the calibration coefficients and data by setting specific calibration address in the command’s address field. COMP_READ functions similarity, which reads the compensation coefficients and data by setting the corresponding compensation address in the command’s address field. The calibration and compensation data is polled from result register. The distinction between coefficients and data is that coefficients refer to the 12 AC coefficients (calibration and compensation) and 2 DC coefficients (calibration only), while data refers to status (open/short/load calibration or compensation), frequency and temperature. For more details refer to Read Calibration/Compensation Command Mapping Table. Such address is access bitwise as follows:</p>
+<ul class="simple">
+<li><p>The bit 3 to bit 0 of the address need to be set to the voltage and current gain for which the calibrations/compensation coefficients are to be read.</p></li>
+<li><p>The bit 8 to bit 4 of the address field are redundant.</p></li>
+<li><p>The bit 9 of the address can be used to toggle between two modes, <em>calibration/compensation data read mode</em> and <em>calibration/compensation coefficients read mode</em>. In case <em>calibration/compensation coefficients read mode</em> is used, the bit 14 is used to either read the MSB or the LSB of the 64-bit double valued calibration/compensation coefficient. The calibration/compensation coefficient is set by appropriately setting the bit 13 to bit 10. In case <em>calibration/compensation data read mode</em> is used, ignores bit 14 and can be used to read the calibration/compensation data in its respective formats.</p></li>
+</ul>
+<p>To send CAL_READ/COMP_READ commands, user can build a compound address using bitwise to the left operation to construct each sub-filed based on 2-bit voltage gain, 2-bit current gain, 1-bit mode type, 4-bit coefficient type, and (if relevant) 1-bit coefficients LSB/MSB. After writing the address and getting a successful status, the result register will contain the MSB/LSB of the calibration coefficient or the requested calibration data. The same applies to compensation read too. Refer to the Calibration Commands and Compensation Commands table for details about the address and data fields.</p>
+<p><strong>Read Calibration Command Mapping</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Read Command</p></th>
+<th class="head"><p>Address</p></th>
+<th class="head"><p>Data range</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x06</p></td>
+<td><p>Bit 14</p></td>
+<td><p>0 or 1</p></td>
+<td><p>1-bit address</p></td>
+<td><p>Coefficients LSB/MSB is decided by bit 14 (for calibration coefficient read, will be invalid for calibration data read).
+0 - LSB of double value
+1 - MSB of double value</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Bit 13 to bit 10</p></td>
+<td><p>For calibration coefficients refer to Table “Calibration/ Compensation Coefficients and Data Register Format”.
+For calibration data:
+- 0000 for AC calibration status
+- 0001 for AC calibration frequency
+- 0010 for AC calibration temperature</p></td>
+<td><p>4-bit address</p></td>
+<td><p>Calibration coefficient or calibration data to be read</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>Bit 9</p></td>
+<td><p>0 or 1</p></td>
+<td><p>1-bit address</p></td>
+<td><p>Flip between calibration coefficients/calibration data read mode
+0 - Read calibration coefficients
+1 - Read calibration data</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Bit 8 to bit 4</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>Redundant bits, can default to 0</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>Bit 3 to bit 2</p></td>
+<td><p>0 to 3, i.e. 00, 01, 10, 11</p></td>
+<td><p>2-bit address</p></td>
+<td><p>Current gain of coefficients</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Bit 1 to bit 0</p></td>
+<td><p>0 to 3, i.e. 00, 01, 10, 11</p></td>
+<td><p>2-bit address</p></td>
+<td><p>Voltage gain of coefficients</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Read Compensation Command Mapping</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Read Command</p></th>
+<th class="head"><p>Address</p></th>
+<th class="head"><p>Data range</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x0C</p></td>
+<td><p>Bit 14</p></td>
+<td><p>0 or 1</p></td>
+<td><p>1-bit address</p></td>
+<td><p>Coefficients LSB/MSB is decided by bit 14.
+0 - LSB of double value
+1 - MSB of double value</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Bit 13 to bit 10</p></td>
+<td><p>For calibration coefficients refer to Table “Calibration/ Compensation Coefficients and Data Register Format”.
+For compensation data:
+- 0000 for AC compensation status
+- 0001 for AC compensation frequency
+- 0010 for AC compensation temperature</p></td>
+<td><p>4-bit address</p></td>
+<td><p>Compensation coefficient or compensation data to be read</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>Bit 9</p></td>
+<td><p>0 or 1</p></td>
+<td><p>1-bit address</p></td>
+<td><p>Flip between compensation coefficients/compensation data read mode
+0 - Read compensation coefficients
+1 - Read compensation data</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Bit 8 to bit 4</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>Redundant bits, can default to 0</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>Bit 3 to bit 2</p></td>
+<td><p>0 to 3, i.e. 00, 01, 10, 11</p></td>
+<td><p>2-bit address</p></td>
+<td><p>Current gain of coefficients</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Bit 1 to bit 0</p></td>
+<td><p>0 to 3, i.e. 00, 01, 10, 11</p></td>
+<td><p>2-bit address</p></td>
+<td><p>Voltage gain of coefficients</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>When reading the coefficients, there may be instances where they don’t exist for the user-specified frequency and voltage/current gain settings. When implementing the command in SPI, users need to provide a set of default coefficients if the CAL_READ or COMP_READ command triggers an error flag (flag_ERROR). The default values commonly used by the ADMX2001 are as follows.</p>
+<p>When reading calibration or compensation status (command 0x06 or 0x0C) by correctly accessing the address value 00001 for bit 13 to bit 9, following masks will return, each indicating a different type of calibration coefficients are received.</p>
+<ul class="simple">
+<li><p>0x000F - indicates open calibration coefficients are received</p></li>
+<li><p>0x00F0 – indicates short calibration coefficients are received</p></li>
+<li><p>0x0F00 – indicates load calibration coefficients are received</p></li>
+</ul>
+<p><strong>Default Calibration/Compensation Coefficient Values</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Calibration/Compensation Coefficients</p></th>
+<th class="head"><p>Default values</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ro</p></td>
+<td><p>1.00E+06</p></td>
+</tr>
+<tr class="row-odd"><td><p>Xo</p></td>
+<td><p>1.00E+06</p></td>
+</tr>
+<tr class="row-even"><td><p>Go</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bo</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Rs</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Xs</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Gs</p></td>
+<td><p>1.00E+06</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bs</p></td>
+<td><p>1.00E+06</p></td>
+</tr>
+<tr class="row-even"><td><p>Rg</p></td>
+<td><p>-1.00E+06</p></td>
+</tr>
+<tr class="row-odd"><td><p>Xg</p></td>
+<td><p>-1.00E+06</p></td>
+</tr>
+<tr class="row-even"><td><p>Gg</p></td>
+<td><p>-1.00E+06</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bg</p></td>
+<td><p>-1.00E+06</p></td>
+</tr>
+<tr class="row-even"><td><p>Rdg</p></td>
+<td><p>1.00E+00</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rdo</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Calibration/Compensation Coefficients and Data Register Format</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Address (Bit 13 to Bit 9)</p></th>
+<th class="head"><p>Value returned in result register</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AC coefficients, applicable to both calibration and compensation</p></td>
+<td><p>0b00000</p></td>
+<td><p>Ro</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>0b00010</p></td>
+<td><p>Xo</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>0b00100</p></td>
+<td><p>Go</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>0b00110</p></td>
+<td><p>Bo</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>0b01000</p></td>
+<td><p>Rs</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>0b01010</p></td>
+<td><p>Xs</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>0b01100</p></td>
+<td><p>Gs</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>0b01110</p></td>
+<td><p>Bs</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>0b10000</p></td>
+<td><p>Rg</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>0b10010</p></td>
+<td><p>Xg</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>0b10100</p></td>
+<td><p>Gg</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>0b10110</p></td>
+<td><p>Bg</p></td>
+</tr>
+<tr class="row-even"><td><p>AC calibration/ compensation data</p></td>
+<td><p>0b00001</p></td>
+<td><p>AC calibration status (32-bit integer)</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>0b00011</p></td>
+<td><p>AC calibration frequency (IEEE-754 Floating point)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>0b00101</p></td>
+<td><p>AC calibration temperature (IEEE-754 Floating point)</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p><strong>Below: only for CAL_READ, invalid addresses for COMP_READ</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DC calibration coefficients</p></td>
+<td><p>0b11000</p></td>
+<td><p>Rdo</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>0b11010</p></td>
+<td><p>Rdg</p></td>
+</tr>
+<tr class="row-even"><td><p>DC calibration data</p></td>
+<td><p>0b00111</p></td>
+<td><p>DC calibration status (32 bit int)</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>0b01001</p></td>
+<td><p>DC calibration frequency (IEEE-754 Floating point)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>0b01011</p></td>
+<td><p>DC calibration temperature (IEEE-754 Floating point)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="resetcal-0x09">
+<h3>RESETCAL (0x09)<a class="headerlink" href="#resetcal-0x09" title="Link to this heading"></a></h3>
+<p>CAL_RESET command is used to reset the calibration coefficients. To clear calibration coefficients for a particular voltage and current gain setting, specify the first 4 address bits to the gain values. To clear all calibration coefficients, the address can be set to 0xFF. For running calibration reset commands the data field is redundant. Refer to the Reset Calibration Commands table for details about the address and data fields.</p>
+<p><strong>Reset Calibration Command Mapping</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Write Command</p></th>
+<th class="head"><p>Address</p></th>
+<th class="head"><p>Data range</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x09</p></td>
+<td><p>Bit 1 to bit 0</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>Voltage gain of coefficients</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Bit 3 to bit 2</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>Current gain of coefficients</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>0xFF</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>Reset all calibration coefficients</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="cal-erase-0x10">
+<h3>CAL_ERASE (0x10)<a class="headerlink" href="#cal-erase-0x10" title="Link to this heading"></a></h3>
+<p>CAL_ERASE command is used to permanently delete all saved calibration coefficient sets from the memory after performing a password check. When completed, it restores them to the default configurations. The password is written to the input password buffer as ASCII values of characters corresponding to the first 12 address’s locations or fields (with values in decimal). Sending 0xFF in the address field will compare it to the password stored and erase the calibration data if the password matches the set password, then initialize calibration coefficients to default configurations. In case the password is incorrect sending 0xFF will clear the <em>input password buffer</em>.</p>
+<p><strong>Erase Calibration Coefficients Command Mapping</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Write Command</p></th>
+<th class="head"><p>Address</p></th>
+<th class="head"><p>Data range</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x10</p></td>
+<td><p>0
+1
+2
+…
+10
+11</p></td>
+<td><p>26 upper and 26 lower case letters, 10 digits, and 33 special characters
+Space char (0x20) not allowed</p></td>
+<td><p>ASCII value of Nth character of password, as indicated by address field value</p></td>
+<td><p>Send char 0 of the password
+Send char 1 of the password
+Send char 2 of the password
+…
+Send char 10 of the password
+Send char 11 of the password</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>0xFF</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>Compare set password with the stored password, permanently erase calibration coefficients if the password is correct. Then restore calibration coefficients to default configurations.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="set-password-0x1c">
+<h3>SET_PASSWORD (0x1c)<a class="headerlink" href="#set-password-0x1c" title="Link to this heading"></a></h3>
+<p>SET_PASSWORD is used to set the commit password after performing a password check. The current password is written to the current password buffer as ASCII values of characters corresponding to the address locations 12-23. Upon completion, sending the address as 0xFE will have the current password buffer compared with the commit password. If it is a match, it enables setting the new password. The address locations 0-11 are reserved for writing the new password to the new password buffer. Each character of the new password is written in the same way as ASCII values of characters to the individual address. Sending 0xFF in the address field will set the new password if setting the password is enabled. Sending 0xFF will disable setting the password and clear the new password buffer if the password is set successfully. Example: the current commit password is “Analog123” (the default password); to change it to a new password “Admx2001pwd”, write the ASCII values of the characters to the current and new password buffers respectively, by sending the data along with the appropriate address (i.e. “Admx2001pwd” to address field 0 to 10, “Analog123” to address field 12 to 20). Once this is done, write 0xFE to verify the current commit password is correct. If this returns a success status, write 0xFF to set the new password. Refer to the Calibration Commands table for details about the address and data fields. Note max allowed password length is 12. If current password length is less than 12, it is ok to send the password that is less than 12 characters.</p>
+<p><strong>Set Password Command Mapping</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Write Command</p></th>
+<th class="head"><p>Address</p></th>
+<th class="head"><p>Data range</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x1c</p></td>
+<td><p>Write new commit password character by character as ASCII values to new password buffer</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>0
+1
+2
+…
+10
+11</p></td>
+<td><p>26 upper and 26 lower case letters, 10 digits, and 33 special characters
+Space char (0x20) not allowed</p></td>
+<td><p>ASCII value of Nth character of the new password, as indicated by address field value</p></td>
+<td><p>Send char 0 of the new password
+Send char 1 of the new password
+Send char 2 of the new password
+…
+Send char 10 of the new password
+Send char 11 of the new password</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>Write current password character by character as ASCII values to current password buffer</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>12
+13
+14
+…
+22
+23</p></td>
+<td><p>26 upper and 26 lower case letters, 10 digits, and 33 special characters
+Space char (0x20) not allowed</p></td>
+<td><p>ASCII value of Nth character of the current password, as indicated by address field value</p></td>
+<td><p>Send char 0 of the current password
+Send char 1 of the current password
+Send char 2 of the current password
+…
+Send char 10 of the current password
+Send char 11 of the current password</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>0xFE</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>Check if the current password is correct.
+If the password in the password bits is correct, return success status and enable writing of new passwords.
+Otherwise block writing of the new password and clear the current password bits</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>0xFF</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>Commit the new password.
+The new password won’t be committed unless the new password write has been enabled by writing 0xFE.
+Any error will clear the new password bits</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="cal-store-0x08">
+<h3>CAL_STORE (0x08)<a class="headerlink" href="#cal-store-0x08" title="Link to this heading"></a></h3>
+<p>CAL_STORE command is used to store the calibration addresses corresponding to the calibration coefficients. The first 4 bits of the address need to be set to the voltage and current gain for which the calibration coefficients are to be stored. The bit 14 is used to choose between the MSB and the LSB of the 64-bit double valued calibration coefficient to be stored. The calibration coefficient is set by appropriately setting the bit 13 to bit 10. Refer to the Store Calibration Coefficients Commands table for details about the address and data fields.</p>
+<p><strong>Store Calibration Coefficients Command Mapping</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Write Command</p></th>
+<th class="head"><p>Address</p></th>
+<th class="head"><p>Data range</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x08</p></td>
+<td><p>Bit 14</p></td>
+<td><p>0 or 1</p></td>
+<td><p>1-bit address</p></td>
+<td><p>Coefficients LSB/MSB is decided by bit 14
+0 - LSB of double value
+1 - MSB of double value</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Bit 13 to bit 10</p></td>
+<td><p>Calibration coefficients (see Calibration Coefficient Register Format table below)</p></td>
+<td><p>4-bit address</p></td>
+<td><p>Calibration coefficient to be stored</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>Bit 9 to bit 4</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>Redundant bits, can default to 0</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Bit 3 to bit 2</p></td>
+<td><p>0 to 3, i.e. 00, 01, 10, 11</p></td>
+<td><p>2-bit address</p></td>
+<td><p>Current gain of coefficients</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>Bit 1 to bit 0</p></td>
+<td><p>0 to 3, i.e. 00, 01, 10, 11</p></td>
+<td><p>2-bit address</p></td>
+<td><p>Voltage gain of coefficients</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Calibration Coefficient Register Format</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Address (bit 13 to bit 10)</p></th>
+<th class="head"><p>Selected Coefficient</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0b0000</p></td>
+<td><p>Ro</p></td>
+</tr>
+<tr class="row-odd"><td><p>0b0001</p></td>
+<td><p>Xo</p></td>
+</tr>
+<tr class="row-even"><td><p>0b0010</p></td>
+<td><p>Go</p></td>
+</tr>
+<tr class="row-odd"><td><p>0b0011</p></td>
+<td><p>Bo</p></td>
+</tr>
+<tr class="row-even"><td><p>0b0100</p></td>
+<td><p>Rs</p></td>
+</tr>
+<tr class="row-odd"><td><p>0b0101</p></td>
+<td><p>Xs</p></td>
+</tr>
+<tr class="row-even"><td><p>0b0110</p></td>
+<td><p>Gs</p></td>
+</tr>
+<tr class="row-odd"><td><p>0b0111</p></td>
+<td><p>Bs</p></td>
+</tr>
+<tr class="row-even"><td><p>0b1000</p></td>
+<td><p>Rg</p></td>
+</tr>
+<tr class="row-odd"><td><p>0b1001</p></td>
+<td><p>Xg</p></td>
+</tr>
+<tr class="row-even"><td><p>0b1010</p></td>
+<td><p>Gg</p></td>
+</tr>
+<tr class="row-odd"><td><p>0b1011</p></td>
+<td><p>Bg</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="comp-store-0x0d">
+<h3>COMP_STORE (0x0D)<a class="headerlink" href="#comp-store-0x0d" title="Link to this heading"></a></h3>
+<p>COMP_STORE command is used to store the compensation addresses corresponding to the compensation coefficients. The first 4 bits of the address should be set to 0, because the same compensation coefficients are used for all gain settings. The bit 14 is used to choose between the MSB or the LSB of the 64-bit double valued compensation coefficient to be stored. The compensation coefficient is set by appropriately setting the bit 13 to bit 10. Refer to the Store Compensation Commands table for details about the address and data fields Note: compensation feature is in development, the gain values in address bit 3 to bit 0 are defaulted to 0.</p>
+<p><strong>Store Compensation Coefficients Command Mapping</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Write Command</p></th>
+<th class="head"><p>Address</p></th>
+<th class="head"><p>Data range</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x08</p></td>
+<td><p>Bit 14</p></td>
+<td><p>0 or 1</p></td>
+<td><p>1-bit address</p></td>
+<td><p>Coefficients LSB/MSB is decided by bit 14
+0 - LSB of double value
+1 - MSB of double value</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Bit 13 to bit 10</p></td>
+<td><p>Compensation coefficients (see Compensation Coefficient Register Format table below)</p></td>
+<td><p>4-bit address</p></td>
+<td><p>Compensation coefficient to be stored</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>Bit 9 to bit 4</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>Redundant bits, can default to 0</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Bit 3 to bit 2</p></td>
+<td><p>0 (same compensation for all gain settings)</p></td>
+<td><p>2-bit address</p></td>
+<td><p>Current gain of coefficients</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>Bit 1 to bit 0</p></td>
+<td><p>0 (same compensation for all gain settings)</p></td>
+<td><p>2-bit address</p></td>
+<td><p>Voltage gain of coefficients</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Store Compensation Coefficient Register Format</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Address (bit 13 to bit 10)</p></th>
+<th class="head"><p>Selected Coefficient</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0b0000</p></td>
+<td><p>Ro</p></td>
+</tr>
+<tr class="row-odd"><td><p>0b0001</p></td>
+<td><p>Xo</p></td>
+</tr>
+<tr class="row-even"><td><p>0b0010</p></td>
+<td><p>Go</p></td>
+</tr>
+<tr class="row-odd"><td><p>0b0011</p></td>
+<td><p>Bo</p></td>
+</tr>
+<tr class="row-even"><td><p>0b0100</p></td>
+<td><p>Rs</p></td>
+</tr>
+<tr class="row-odd"><td><p>0b0101</p></td>
+<td><p>Xs</p></td>
+</tr>
+<tr class="row-even"><td><p>0b0110</p></td>
+<td><p>Gs</p></td>
+</tr>
+<tr class="row-odd"><td><p>0b0111</p></td>
+<td><p>Bs</p></td>
+</tr>
+<tr class="row-even"><td><p>0b1000</p></td>
+<td><p>Rg</p></td>
+</tr>
+<tr class="row-odd"><td><p>0b1001</p></td>
+<td><p>Xg</p></td>
+</tr>
+<tr class="row-even"><td><p>0b1010</p></td>
+<td><p>Gg</p></td>
+</tr>
+<tr class="row-odd"><td><p>0b1011</p></td>
+<td><p>Bg</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

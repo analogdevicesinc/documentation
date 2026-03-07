@@ -1,0 +1,213 @@
+AD717X No-OS Software Drivers
+=============================
+
+Introduction
+------------
+
+This document describes the No-OS software used to control the AD717X family parts and the AD4111 device. It also includes an example of how to initialize a AD7176 part.
+
+Overview
+--------
+
+The AD717x family of products are fast settling, high resolution, highly accurate, multiplexed Σ-Δ analog-to-digital converters (ADC) for low bandwidth input signals, with resolution options of both 32bit and 24bit available. The products are available in both TSSOP of LFCSP depending on the product selected. AD717x family of devices include:
+
+-  :adi:`AD7175-2`
+-  :adi:`AD7175-8`
+-  :adi:`AD7176-2`
+-  :adi:`AD7177-2`
+-  :adi:`AD7172-2`
+-  :adi:`AD7172-4`
+-  :adi:`AD7173-8`
+-  :adi:`AD4111`
+-  :adi:`AD4112`
+-  :adi:`AD4114`
+-  :adi:`AD4115`
+-  :adi:`AD4116`
+
+The inputs to the ADC can be configured as fully differential or pseudo differential inputs depending on the product chosen, this can be done via the integrated crosspoint multiplexer. An integrated precision, 2.5 V, low drift (2ppm/°C), band gap internal reference (with an output reference buffer) adds functionality and reduces the external component count. A maximum channel scan data rate is 50 kSPS (with a settling time of 20 μs), resulting in fully settled data of 17 noise free bits. User-selectable output data rates range from 5 SPS to 250 kSPS can be obtained from AD7175, AD7176 and AD7177 devices. A maximum channel scan data rate is 6.1 kSPS (with a settling time of 161 μs). User-selectable output data rates range from 1.25 SPS to 31.25 kSPS can be obtained from AD7172, AD7173 devices. The AD717x devices offers three key digital filters. The fast settling filter maximizes the channel scan rate. The Sinc3 filter maximizes the resolution for single-channel, low speed applications. For 50 Hz and 60 Hz environments, the AD717x specific filter minimizes the settling times or maximizes the rejection of the line frequency. These enhanced filters enable simultaneous 50 Hz and 60 Hz rejection with a 27 SPS output data rate (with a settling time of 36 ms). System offset and gain errors can be corrected on a per channel basis. This per channel configurability extends to the type of filter and output data rate used for each channel. All switching of the crosspoint multiplexer is controlled by the ADC and can be configured to automatically control an external multiplexer via the GPIO pins. The specified operating temperature range is −40°C to +105°C.
+
+The :adi:`AD4111`, :adi:`AD4112`, :adi:`AD4114`, :adi:`AD4115` and :adi:`AD4116` are low power, low noise, 24-bit, sigma delta (Σ-Δ) analog-to-digital converters (ADC) that integrate analog front ends (AFE) for fully differential or single-ended rail-to-rail, buffered bipolar, ±10 V voltage inputs, and 0 mA to 20 mA current inputs. They also integrate key analog and digital signal conditioning blocks to configure eight individual setups for each analog input channel in use. The AD4111 and AD4112 feature a maximum channel scan rate of 6.2 kSPS (161 μs) for fully settled data.
+
+The AD411x family also has the unique feature of open wire detection on the voltage inputs (patent pending) for system level diagnostics using a single 5 V or 3.3 V power supply. It is housed in a 40-lead, 6 mm × 6 mm LFCSP package.
+
+Applications
+~~~~~~~~~~~~
+
+-  Process control : PLC/DCS modules
+-  Temperature and pressure measurement
+-  Medical and scientific multichannel instrumentation
+-  Chromatography
+
+Supported Devices
+-----------------
+
+Entire `AD717X family and AD411X family <https://wiki.analog.com/>`_.
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7175-2`
+-  :adi:`EVAL-AD7176-2`
+-  :adi:`EVAL-AD7177-2`
+-  :adi:`EVAL-AD7172-2`
+-  :adi:`EVAL-AD7172-4`
+-  :adi:`EVAL-AD7173-8 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7173-8SDZ.html>`
+-  :adi:`EVAL-AD4111`
+-  :adi:`EVAL-AD4112`
+-  :adi:`EVAL-AD4114`
+-  :adi:`EVAL-AD4115`
+-  :adi:`EVAL-AD4116`
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the AD717X family, which may be used, without modifications, with any microcontroller.
+-  The Generic Platform Driver, which implements the actual communications with the device.
+
+.. include:: ../uc-drivers-all/generic-platform-drivers.rst
+
+AD717X Family Driver Description
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The AD717X driver contains the following:
+
+-  AD717X.h - Header file of the driver. Contains the register map definitions, the driver function declarations, custom data types to be used by the driver and driver specific constants.
+-  AD717X.c - Implementation file of the driver. Contains the implementations of the driver functions.
+
+The driver works with any of the following headers by including them in your main project just as you include the ad717x.h header:
+
+-  AD7172_2_regs.h
+-  AD7172_4_regs.h
+-  AD7173_8_regs.h
+-  AD7175_2_regs.h
+-  AD7175_8_regs.h
+-  AD7176_2_regs.h
+-  AD7177_2_regs.h
+-  AD411x_regs.h
+
+Each header declares an array of all register of the device that the header describes.
+
+The following functions are implemented in this version of AD717X driver:
+
++------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| Function                                                                     | Description                                                                 |
++==============================================================================+=============================================================================+
+| ``ad717x_st_reg *AD717X_GetReg(ad717x_device *device, uint8_t reg_address)`` | Retrieves a pointer to the register that matches the given address.         |
++------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| ``int32_t AD717X_ReadRegister(ad717x_device *device, uint8_t addr)``         | Reads the value of the specified register.                                  |
++------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| ``int32_t AD717X_WriteRegister(ad717x_device *device, uint8_t addr)``        | Writes the value of the specified register.                                 |
++------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| ``int32_t AD717X_Reset(ad717x_dev *device)``                                 | Resets the device.                                                          |
++------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| ``int32_t AD717X_WaitForReady(ad717x_dev *device, uint32_t timeout)``        | Waits until a new conversion result is available.                           |
++------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| ``int32_t AD717X_ReadData(ad717x_dev *device, int32_t* pData)``              | Reads the conversion result from the device.                                |
++------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| ``int32_t AD717X_ComputeDataregSize(ad717x_dev *device)``                    | Computes data register read size to account for bit number and status read. |
++------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| ``uint8_t AD717X_ComputeCRC8(uint8_t* pBuf, uint8_t bufSize)``               | Computes the CRC checksum for a data buffer.                                |
++------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| ``uint8_t AD717X_ComputeXOR8(uint8_t * pBuf, uint8_t bufSize)``              | Computes the XOR checksum for a data buffer.                                |
++------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| ``int32_t AD717X_UpdateCRCSetting(ad717x_dev *device)``                      | Updates the CRC settings.                                                   |
++------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| ``int32_t AD717X_Init(ad717x_dev **device, ad717x_init_param init_param)``   | Initializes the AD717x.                                                     |
++------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| ``int32_t AD717X_remove(ad717x_dev *dev)``                                   | Free the resources allocated by AD717X_Init().                              |
++------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  \**AD717X Driver: \*\* :git-no-OS:`drivers/adc/ad717x`
+   -  **Generic Platform Driver** :git-no-OS:`drivers/platform/generic`
+   
+
+
+Using the API
+-------------
+
+| The driver can only work together with a structure that holds the state of a device, where state means all information about the device including a copy of all register values written to the device at a certain point. This structure will henceforth be referred as an instance of a driver.
+| All driver functions take a handler of a driver instance as the first argument. This allows the driver to be used with multiple devices simultaneously, without the need to replicate the .c and .h files.
+
+Before using any API call an instance of the driver must first be created and then initialized using the AD717X_Init() which has the following parameters:
+
+-  **device**: the reference of the new driver instance. A new instance can be obtained by simply declaring a pointer to one then using it to call AD717X_Init(): <code c> ad717x_device \*my_ad7176_2; </code>
+-  **init_param**: the initialization structure. One must be declared and initial values must be added before calling AD717X_Init(). <code c> ad717x_init_param ad7176_2_init_param; </code> ad717x_init_param has the following definition: <code c> typedef struct {
+
+::
+
+     /* SPI */
+     spi_init_param      spi_init;
+     /* Device Settings */
+     ad717x_st_reg       *regs;
+     uint8_t         num_regs;
+
+} ad717x_init_param; </code> Where:
+
+-  **spi_init**: is the initialization structure for the SPI API described in the **Generic Platform Driver**
+-  **regs**: must point to a register array of the device. It will too be stored into the driver and used by the driver. The ad7176_2_regs array defined and initialized in ad7176_2_regs.h can be passed here as parameter provided that the following directives are added inside the file where the driver is being used: <code c> #include "ad7176_2_regs.h" </code> <code c> #define AD7176_2_INIT </code> Alternatively, a new register array can be defined by user which must be properly initialized before calling AD717X_Setup() function. ``ad717x_st_reg my_ad7176_2_regs[] = 
+   {
+       { AD717X_STATUS_REG, 0x00, 1 },
+       { AD717X_ADCMODE_REG, 0x0000, 2 },
+       ...
+   }``
+-  **num_regs**: must provide the number of elements in **regs**.
+
+A AD717X_Init() call will also reset the part then use all register values stored in the array pointed by the **regs** parameter to configure the part (the registers that are "Read-only" will not be written during this call).
+
+The following code snipped provides an example of driver usage:
+
+.. code:: c
+
+   #include "ad7176_2_regs.h"
+   #define AD7176_2_INIT
+
+   /* Create a new driver instance */
+   ad717x_device *my_ad7176_2;
+   ad717x_init_param ad7176_2_init;
+
+   ad7176_2_init.spi_init.chip_select = 0x01;
+   ad7176_2_init.spi_init.id = 0;
+   ad7176_2_init.spi_init.max_speed_hz = 1000000;
+   ad7176_2_init.spi_init.mode = SPI_MODE_3;
+   ad7176_2_init.spi_init.type = GENERIC_SPI;
+   ad7176_2_init.regs = ad7176_2_regs;
+   ad7176_2_init.num_regs = sizeof(ad7176_2_regs) / sizeof(ad7176_2_regs[0]);
+
+   /* Other variables */
+   long timeout = 1000;
+   long ret;
+   long sample;
+   .
+   .
+   .
+   /* Initialize the driver instance and let's use the ad7176_2_regs array defined in ad7176_2_regs.h */
+   ret = AD717X_Init(&my_ad7176_2, ad7176_2_init);
+   if (ret < 0)
+       /* Something went wrong, check the value of ret! */
+
+   /* Read data from the ADC */
+   ret = AD717X_WaitForReady(my_ad7176_2, timeout);
+   if (ret < 0)
+       /* Something went wrong, check the value of ret! */
+
+   ret = AD717X_ReadData(my_ad7176_2, &sample);
+   if (ret < 0)
+           /* Something went wrong, check the value of ret! */
+
+More information
+================
+
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`_
+

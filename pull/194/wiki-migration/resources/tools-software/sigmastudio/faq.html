@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Click here to return to SigmaStudio documentation Homepage." name="description" />
+
+    <title>SigmaStudio and SigmaStudio For SHARC &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">SigmaStudio and SigmaStudio For SHARC</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#general-q-a">General Q &amp; A</a></li>
+<li><a class="reference internal" href="#hardware-setup-q-a">Hardware Setup Q &amp; A</a></li>
+<li><a class="reference internal" href="#modules-q-a">Modules Q &amp; A</a></li>
+<li><a class="reference internal" href="#sigmastudio-for-sharc-host-packeting-q-a">SigmaStudio for SHARC Host Packeting Q &amp; A</a></li>
+<li><a class="reference internal" href="#sigmastudio-scripting-q-a">SigmaStudio Scripting Q &amp; A</a></li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <p><a class="reference internal" href="../sigmastudio.html"><span class="doc">Click here to return to SigmaStudio documentation Homepage.</span></a></p>
+<section id="sigmastudio-and-sigmastudio-for-sharc">
+<h1>SigmaStudio and SigmaStudio For SHARC<a class="headerlink" href="#sigmastudio-and-sigmastudio-for-sharc" title="Link to this heading"></a></h1>
+<p>Welcome to the SigmaStudio and SigmaStudio For SHARC FAQ documentation home page.</p>
+</section>
+<section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<p>This FAQ document prepared based on recent release of SigmaStudio 4.7 and SigmaStudio for SHARC 4.7.0 software. The documents or folder path referenced may be same for the older/newer version of SigmaStudio and SigmaStudio for SHARC package.</p>
+</section>
+<section id="general-q-a">
+<h1>General Q &amp; A<a class="headerlink" href="#general-q-a" title="Link to this heading"></a></h1>
+<p><strong>Q: What are the prerequisites for installing SigmaStudio and SigmaStudio for SHARC? What is the minimum RAM and processor requirements?</strong></p>
+<p>A: Please refer release note in <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/software/ss_sigst_02.html" target="_blank">SigmaStudio® | Analog Devices</a> page for prerequisites for installing SigmaStudio. Please find the prerequisites for installing SigmaStudio For SHARC.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pre-Requisite</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Hardware Platform</strong></p></td>
+<td><p>ADSP-SC573 EZ-BOARD
+Revision No 1.0, Silicon Revision 0.0, BOM Revision 1.5
+ADSP-SC584 EZ-BOARD
+Revision No 1.4, Silicon Revision 1.0, BOM Revision 2.4
+ADSP-SC589 EZ-BOARD
+Revision No 1.2, Silicon Revision 1.0, BOM Revision 1.8
+ADSP-21569 EZ-Kit
+Revision B, Silicon Revision 0.0, BOM Revision B
+EV-21569-SOM Revision A, Silicon Revision 0.2
+EV-SOMCRR-EZKIT Revision A
+ADZS-SC589-Mini board (SHARC Audio Module)
+Revision 1.5 Silicon Revision 1.0
+EV-21593-SOM Revision A, Silicon Revision 0.0
+EV-SOMCRR-EZKIT Revision A
+EV-SC594-SOM Revision B, Silicon Revision 0.0
+EV-SOMCRR-EZKIT Revision A</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Processor &amp; Silicon</strong></p></td>
+<td><p>ADSP-SC5xx or ADSP-215xx processor family</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ICE-2000/ICE-1000</strong></p></td>
+<td><p>ADZS-ICE-2000 Revision No 1.3 or higher
+ADZS-ICE-1000 Revision No 1.1 or higher</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>CrossCore Embedded Studio</strong></p></td>
+<td><p>Version 2.10.1 and above</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ADSP-SC5xx EZ-Kit Lite Board Support package</strong></p></td>
+<td><p>Version 2.0.2</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>SigmaStudio</strong></p></td>
+<td><p>Version 4.7</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>EVAL-ADUSB2EBZ (USBi)</strong></p></td>
+<td><p>Version 1.3 and above</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Q: Do we need Admin permission to install SigmaStudio and SigmaStudio for SHARC in Windows OS?</strong></p>
+<p>A: Yes, admin permission is required for SigmaStudio and SigmaStudio for SHARC installation in Windows OS.</p>
+<p><strong>Q: Does SigmaStudio supports MAC, Linux Operating System?</strong></p>
+<p>A: No, SigmaStudio supports only in Windows Operating System</p>
+<p><strong>Q: What is SigmaStudio for SHARC? Why SigmaStudio for SHARC is a separate package?</strong></p>
+<p>A: SigmaStudio for SHARC package is to add support for SHARC and SHARC+ processors to SigmaStudio. Customer can get the SigmaStudio for SHARC package by contacting regional ADI representative. The latest version of SigmaStudio for SHARC version is 4.7.0 or customer can get any specific version based on the requirement. The package will have two major components,</p>
+<p><strong>Target:</strong> The target component consists of different target applications based on EZ Kit evaluation boards.</p>
+<p><strong>Host:</strong> schematic examples, custom Plug-in modules examples and Plug-in files for SigmaStudio for SHARC modules. Both target and host component support different SHARC+ DSP processor of ADSP-214xx/ADSP-2156x/ADSP-2157x/ADSP-2158x/ADSP-2159x/ADSP-SC57x/ ADSP-SC58x and ADSP-SC59x family.</p>
+<p><strong>Q: Where can I get information about latest release package?</strong></p>
+<p>A: For latest SigmaStudio release please refer in <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/software/ss_sigst_02.html" target="_blank">SigmaStudio® | Analog Devices</a> page. SigmaStudio for SHARC releases are not available at ADI website, Customer can get the SigmaStudio for SHARC package by contacting regional ADI representative.</p>
+<p><strong>Q: What is the maximum path length allowed in SigmaStudio for saving the projects?</strong></p>
+<p>A: As we know 248 is the maximum path length supported by windows, the path length for SigmaStudio project should be within 248. In some cases, we have seen the CCES project in SigmaStudio for SHARC examples does not compile when project path length is more than 128. For CCES project we recommend keeping the project path length within 128.</p>
+<p><strong>Q: How can I export system files?</strong></p>
+<p>A: Please refer <a class="reference internal" href="usingsigmastudio/exportprogramandparameterdata.html"><span class="doc">Export Program and Parameters [Analog Devices Wiki</span></a>] link for SigmaStudio schematic system files export.</p>
+<p><strong>Q: How can I integrate A2B stack into the SigmaStudio for SHARC target applications?</strong></p>
+<p>A: Please refer to “AE_09_A2B_Stack_UserGuide.pdf” available in A2B software “C:\Analog Devices\ADI_A2B_Software-Rel19.x.x\Docs” for A2B stack integration. Please note that the a2b network discovery will be successful only when frame sync is available over the network. Hence, call the A2B discovery function after “AudioIoPcgInit()” function in SigmaStudio for SHARC target applications which will get called after SigmaStudio for SHARC schematic download.</p>
+<p><strong>Q: How can I modify the SS4G target application as A2B Slave application?</strong></p>
+<p>A: Please refer to the documents and examples available in A2B software “C:\Analog Devices\ADI_A2B_Software-Rel19.x.x\” for better understanding and this will give better insights about the modifications to be done in SS4G target application as A2B slave application.</p>
+<p><strong>Q: Is there any debugging tool available for SigmaDSP?</strong></p>
+<p>A: Yes, SigmaDSP simulator is available for ADAU145x/ADAU146x processors. Please contact your regional ADI representative.</p>
+<p><strong>Q: Where can I get details about custom module(plugin) development?</strong></p>
+<p>A:** SHARC:** Refer to “AE_42_SS4G_AlgorithmDesignerGuide.pdf” which is present in the following installation path “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Docs”</p>
+<p><strong>SigmaDSP:</strong> There is SigmaDSP custom module designer available for ADAU145x/ADAU146x processors. Please contact your regional ADI representative.</p>
+</section>
+<section id="hardware-setup-q-a">
+<h1>Hardware Setup Q &amp; A<a class="headerlink" href="#hardware-setup-q-a" title="Link to this heading"></a></h1>
+<p><strong>Q: There is no audio output after downloading the schematic. What could be the issue?</strong></p>
+<p>A: <strong>SigmaDSP:</strong> Please refer to SigmaDSP user guides for hardware setup and getting started with SigmaStudio schematic.</p>
+<p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/user-guides/EVAL-ADAU1452REVBZ-UG-1662.pdf" target="_blank">EVAL-ADAU1452REVBZ User Guide (Rev. 0) (analog.com)</a></p>
+<p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/user-guides/EVAL-ADAU1466Z_UG-1135.pdf" target="_blank">EVAL-ADAU1466Z User Guide (Rev. 0) (analog.com)</a></p>
+<p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/user-guides/EVAL-ADAU1467Z-UG-1134.pdf" target="_blank">EVAL-ADAU1467Z (Rev. 0) (analog.com)</a></p>
+<p>Please find the steps to be verified,</p>
+<ul class="simple">
+<li><p>Check whether the Eval board connected with USBi and powered On.</p></li>
+<li><p>Check whether the Input/Output channels are properly assigned in the schematic.</p></li>
+<li><p>Check whether any tuning to be done like disabling mute.</p></li>
+<li><p>Check whether the clock, SPORT, other register settings are correct.</p></li>
+<li><p>Check whether the audio input is connected to ADC (Line In) and DAC output (Line Out) connected to</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">speakers</span><span class="o">/</span><span class="n">headset</span> <span class="kn">from</span><span class="w"> </span><span class="nn">appropriate</span> <span class="n">channels</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><strong>SHARC:</strong></p>
+<ul class="simple">
+<li><p>Check whether target hardware is connected with USBi, powered On and the target application is running.</p></li>
+</ul>
+<p>Please refer to “AE_42_SS4G_QuickStartGuide.pdf” document available in “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Docs” folder.</p>
+<ul class="simple">
+<li><p>Check whether the correct SHARC core application DXE is selected.</p></li>
+<li><p>Check whether there are any changes to default schematic settings like block size, input/output channels, sample rate, SPORT configurations etc. If there are any changes in the default settings, the framework config file is required to be regenerated using “Generate config file” option. Additionally, target application framework should be updated if sample rate is changed.</p></li>
+<li><p>Check whether the Input/Output channels in schematic are properly assigned.</p></li>
+<li><p>Check whether any tuning to be done like disabling mute.</p></li>
+<li><p>Check whether the clock, SPORT, other register settings are fine.</p></li>
+<li><p>Check whether the audio input is connected to ADC (Line In) and DAC output (Line Out) connected to</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">speakers</span><span class="o">/</span><span class="n">headset</span> <span class="kn">from</span><span class="w"> </span><span class="nn">appropriate</span> <span class="n">channels</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><strong>Q: How can I access external volume input through GPIO?</strong></p>
+<p>A: There are various options:</p>
+<ul class="simple">
+<li><p>First option would be to use two pushbuttons as volume up and volume down buttons.</p></li>
+<li><p>Second option is to use a potentiometer for analog control of the audio level.</p></li>
+<li><p>Third option is to use a rotary encoder as a volume control.</p></li>
+<li><p>For more details, refer the following link</p></li>
+</ul>
+<p><a class="icon ez reference external" href="https://ez.analog.com/dsp/sigmadsp/w/documents/5188/how-do-i-implement-external-volume-control-using-gpios-or-aux-adcs" target="_blank">how-do-i-implement-external-volume-control-using-gpios-or-aux-adcs</a>.</p>
+<p><strong>Q: Does ADSP-21569 support USB data transmission? Or What are the debug options available for USB data transmission?</strong></p>
+<p>A: USB data transmission is not supported. SigmaStudio for SHARC will support only I2S or TDM data for audio signals. Customers should contact a 3rd party for the USB data transmission support. Please refer below pages for more information, <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/software/hcc-embedded-usb-device-host-stacks.html#software-overview" target="_blank">HCC Embedded USB Device and Host Stacks | Analog Devices</a></p>
+<p><strong>Q: In PDM microphone input, 120dB SPL is not getting 0dB FS, how can I resolve?</strong></p>
+<p>A: SigmaStudio handles the digital data for audio processing, so please refer to the data sheet of PDM microphone vender.</p>
+<p><strong>Q: How can I set up the evaluation board for executing the example?</strong></p>
+<p>A:<strong>SHARC:</strong> Please refer to “AE_42_SS4G_QuickStartGuide.pdf” document which is present in the path “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Docs”</p>
+<p><strong>SigmaDSP:</strong> Please refer to the user guides available in the corresponding product page in</p>
+<p><a class="icon adi reference external" href="https://www.analog.com/en/products/adau1452.html" target="_blank">ADAU1452 Datasheet and Product Info | Analog Devices</a></p>
+<p><a class="icon adi reference external" href="https://www.analog.com/en/products/adau1466.html" target="_blank">ADAU1466 Datasheet and Product Info | Analog Devices</a></p>
+<p><a class="icon adi reference external" href="https://www.analog.com/en/products/adau1467.html" target="_blank">ADAU1467 Datasheet and Product Info | Analog Devices</a></p>
+<p><strong>Q: SigmaStudio crashes while loading an application dxe. What could be the reason?</strong></p>
+<p>A: This occurs when CrossCore Embedded Studio (CCES) is not installed. Customers should have a CCES installation and a valid license to work with SigmaStudio for SHARC.</p>
+<p><strong>Q: Is it possible to generate an application LDR with schematic code and parameters embedded in ADSP-21569?</strong></p>
+<p>A: We have demoUc example in the SigmaStudio for SHARC installation folder which uses generated schematic files with the target supplication.</p>
+<p>You can refer to the section “Loader file Flashing and Generation” in “AE_42_SS4G_QuickStartGuide.pdf” for more details.</p>
+<p><strong>Q: What is 0dB Boost Bypass with SigmaStudio app settings?</strong></p>
+<p>A: The filter modules in SigmaStudio when using filtertypes like Peaking, PeakingZolzer, FirstOrderFilterLowShelf and FirstOrderFilterHighShelf are enabled with a bypass mode when the boost gain of the filter is set to 0 dB. This bypass mode which is enabled by default in SigmaStudio may cause pop sound when changing the boost from a non-zero value to 0 dB and vice-versa. The flag “Disable-Boost-Bypass” is used to disabled bypass mode for 0 dB Boost gain. The default settings may change in future releases.</p>
+<div class="line-block">
+<div class="line">The SS app settings config file “SStudio.exe.config” available in following location, “C:\Program Files\Analog Devices\SigmaStudio x.x”. For disabling the 0 dB boost bypass mode, please update the “SStudio.exe.config” settings as below.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/1.png"><img alt="image1" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/1.png" style="width: 400px;" /></a></div>
+<div class="line">====== Framework and Schematic Configurations Q &amp; A ====== <strong>Q: What is the default sample rate supported in SigmaStudio? How can I change the sample rate to a value other than the default value (Example like 96KHz)?</strong></div>
+</div>
+<p>A: The default SigmaStudio sample rate support is 48 kHz.</p>
+<p><strong>SigmaDSP:</strong></p>
+<p>Sample rate of SigmaDSP schematics can be modified by changing the sample rates of input and source modules present in the schematic. The SigmaDSP Eval board by default supports standalone mode for 44.1kHz and 48 kHz sample rate. The codec should be reconfigured using I2C master control port to support other sample rates. Please refer to corresponding SigmaDSP Eval board user manual for more details.</p>
+<p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/user-guides/EVAL-ADAU1467Z-UG-1134.pdf" target="_blank">EVAL-ADAU1467Z (Rev. 0) (analog.com)</a></p>
+<p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/user-guides/EVAL-ADAU1466Z_UG-1135.pdf" target="_blank">EVAL-ADAU1466Z User Guide (Rev. 0) (analog.com)</a></p>
+<p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/user-guides/EVAL-ADAU1452REVBZ-UG-1662.pdf" target="_blank">EVAL-ADAU1452REVBZ User Guide (Rev. 0) (analog.com)</a></p>
+<p><strong>SHARC:</strong></p>
+<p>The change in sample rate will be supported by changing the sample rate in the SigmaStudio schematic and target application. The SHARC target application by default supporting 44.1kHz and 48 kHz sample rate, for other sample rates the target application needs to be modified. Please refer Ezone links below, where the information’s regarding the sample rate change for the example target applications provided in the SigmaStudio for SHARC package.</p>
+<p><a class="icon ez reference external" href="https://ez.analog.com/dsp/software-and-development-tools/sigmastudio-for-sharc/f/q-a/120756/building-a-96k-192k-version-of-ss_app_core-for-adsp-sc58x-ez-board" target="_blank">Building a 96k / 192k version of SS_App_Core for ADSP-SC58x EZ board - Q &amp; A - SigmaStudio for SHARC - EngineerZone (analog.com)</a></p>
+<p><a class="icon ez reference external" href="https://ez.analog.com/dsp/software-and-development-tools/sigmastudio-for-sharc/f/q-a/168207/sigmastudio-4-sharc-adsp-21569-sample-rate" target="_blank">SigmaStudio 4 SharC ADSP-21569 sample rate - Q &amp; A - SigmaStudio for SHARC - EngineerZone (analog.com)</a></p>
+<p><strong>Q: How can I create multi-instances of a module for SHARC?</strong></p>
+<p>A: Multiple instances of one or more modules can be dragged into schematic (if module support multiple instances). Additionally, we could use add algorithm feature (if supported) to insert multiple instances of any module. When added, the multiple instances of the module may share the same GUI control.</p>
+<p><strong>Q: How can I create multi-instance schematic for SHARC?</strong></p>
+<p>A: The SigmaStudio for SHARC target application can support up to 3 SigmaStudio schematic instances on a single SHARC core. Steps to be followed:</p>
+<ul class="simple">
+<li><p>Drag multiple ADSP-SC5xx/215xx IC’s and connect with USBi as shown in below image</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/2.png"><img alt="image2" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/2.png" style="width: 400px;" /></a></div>
+<div class="line">* Select the same SHARC core (Either Core 1 or Core 2) for all instances in “IC x - ADSP-SC5xx Control à Hardware Configuration à Main” window.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/3.png"><img alt="image3" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/3.png" style="width: 400px;" /></a></div>
+<div class="line">* Change the instance ID of each instance in the order 0, 1, and 2.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/4.png"><img alt="image4" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/4.png" style="width: 400px;" /></a></div>
+<div class="line">* Select the application DXE in 0th instance of each SHARC core.</div>
+</div>
+<ul class="simple">
+<li><p>Create schematic to all IC instance of each SHARC core.</p></li>
+<li><p>As usual run target and perform link compile download for the schematic.</p></li>
+</ul>
+<p>For more information on the ADSP-SC5xx/ADSP-215xx multi-instancing support, please refer to “AE_42_SS4G_IntegrationGuide.pdf” document available in “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Docs”.</p>
+<p>For more information on the ADSP-214xx/ADSP-213xx multi-instancing support, please refer to “SigmaStudio_for_SHARC_Users_Guide.pdf” document available in “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Docs”.</p>
+<p><strong>Q: What could be the reason for compilation failure with “schematic DXE generation failed” message? How can I resolve compilation error with “schematic DXE generation failed” message?</strong></p>
+<p>A: There could be different reasons for “schematic DXE Generation failed” error message:</p>
+<ul class="simple">
+<li><p>SHARC core DXE’s are not selected in the “IC Control – Hardware Configuration”.</p></li>
+<li><p>One or more referenced libraries or symbols are not found. Example: missing library file when using plug-ins, FIR/IIR hardware accelerator libraries etc.</p></li>
+<li><p>Insufficient memory for Code, Parameter and state.</p></li>
+</ul>
+<p>The resolution steps are,</p>
+<ul class="simple">
+<li><p>Select the correct application DXE’s in the “IC Control – Hardware Configuration”.</p></li>
+<li><p>The referenced libraries should be present in correct location. Refer to the plug-in module user guides for more details.</p></li>
+<li><p>The developer should be aware of Memory and MIPS before adding any modules to the schematic. Refer to the “AE_42_SS4G_IntegrationGuide.pdf” document available in “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-x.x\Docs” folder for more information about GMAP and SMAP block use in SigmaStudio.</p></li>
+</ul>
+<p><strong>Q: How can I get the details of selected CCES tool chain in SigmaStudio for SHARC?</strong></p>
+<p>A: The following steps will guide to figure out the CCES tool chain in SigmaStudio for SHARC,</p>
+<ul class="simple">
+<li><p>Open SigmaStudio and go to “Tools”</p></li>
+<li><p>Select Settings</p></li>
+<li><p>Select SHARC – “Tool chain”</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/5.png"><img alt="image5" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/5.png" style="width: 400px;" /></a></div>
+<div class="line"><strong>Q: What is the difference between Demo, Demo uC and Library integration examples?</strong></div>
+</div>
+<p>A: <strong>Demo:</strong> The demo is the target application example for EZ kit evaluation board for different processors, which will help customers to get started with SigmaStudio applications and do customizations to meet their requirements. Additionally, this application will help customer to tune their audio processing application with the help of SigmaStudio host. This is a component-based target application for SigmaStudio schematic applications to achieve the audio signal processing. Some of the important components are,</p>
+<ul class="simple">
+<li><p>System components</p></li>
+<li><p>IPC</p></li>
+<li><p>Connecting and communication</p></li>
+<li><p>Control framework</p></li>
+<li><p>Audio process framework</p></li>
+</ul>
+<p>The demo application has dependency with SigmaStudio. The dependencies are,</p>
+<ul class="simple">
+<li><p>Framework configurations – I/O channels, I/O buffers, block size, processing mode, processing cores, serial sport configurations, sample rate etc.</p></li>
+<li><p>Schematic application – SMAP, Code, Parameter, version info, tuning, readback info etc.</p></li>
+</ul>
+<p>For more details, please refer to the section “Target Framework” in “AE_42_SS4G_IntegrationGuide.pdf” available in the SigmaStudio for SHARC installation folder “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Docs”.</p>
+<p><strong>DemoUc:</strong> The demoUc is the example application for the final product version of SigmaStudio schematic which is fine tuned with the demo application. The demoUc application has the schematic code and parameters embedded as a C source file using “Export system files” option. Please refer to the section “Utility for formatting Exported data from SigmaStudio” in “AE_42_SS4G_QuickStartGuide.pdf” available in the SigmaStudio for SHARC installation folder “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Docs”. While using this application, there is no need of SigmaStudio for performing the initial download. However, tuning is possible from SigmaStudio or Micro controller over SPI. The DemoUc considers ARM as a microcontroller, controls mute and filter enable through push buttons on the EZ Kit board.</p>
+<p><strong>Library Integration:</strong> The library integration is the example for simple BareMetal application to show SigmaStudio library integration. The library integration doesn’t have many components as demo or demoUc but can work with SigmaStudio for schematic design and tuning.</p>
+<p><strong>Q: How to resolve the Linker warning as shown below in SigmaStudio for SHARC examples framework?</strong></p>
+<p>**[Warning li2074] “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Rel4.7.0\Target\Examples\DemoUc\ADSP-SC58x\ADSP-SC589\SS_uC_App_Core1\system\startup_ldf\app.ldf”:1780 RESERVE_EXPAND command on line 10 of file “..\..\..\Source\adi_ss_uc_app.ldf” might claim the remainder of ‘mem_block0_bw’ memory, leaving no space for ‘dxe_block0_stack_and_heap_expand’ output section.</p>
+<p>[Warning li2074] “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Rel4.7.0\Target\Examples\DemoUc\ADSP-SC58x\ADSP-SC589\SS_uC_App_Core1\system\startup_ldf\app.ldf”:1792 RESERVE_EXPAND command on line 71 of file “..\..\..\Source\adi_ss_uc_app.ldf” might claim the remainder of ‘mem_L2B7B8_bw’ memory, leaving no space for ‘dxe_l2_stack_and_heap_expand’ output section.</p>
+<p>Linker finished with 2 warnings.**</p>
+<p>A: Please refer the Ezone thread which we have already addressed this query <a class="icon ez reference external" href="https://ez.analog.com/dsp/software-and-development-tools/sigmastudio-for-sharc/f/q-a/565549/building-the-example-uc-project-for-adsp-sc589-ez-in-cces-warnings" target="_blank">building-the-example-uc-project-for-adsp-sc589-ez-in-cces-warnings</a>.</p>
+<p><strong>Q: How can I use the lib integration as demo uC application?</strong></p>
+<p>A: Lib integration example can be used as demoUc by generating the SigmaStudio schematic source files from the exported system files. Please refer to the section “Utility for formatting Exported data from SigmaStudio” in “AE_42_SS4G_QuickStartGuide.pdf” available in the SigmaStudio for SHARC installation folder “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Docs”.</p>
+<p><strong>Q: How can I change the Block Size?</strong></p>
+<div class="line-block">
+<div class="line">A: Please find the steps to change the block size in the SigmaStudio for SHARC schematic.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/6.png"><img alt="image6" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/6.png" style="width: 400px;" /></a></div>
+<div class="line">* The main window shown in above image for setting the block size for the schematic.</div>
+</div>
+<ul class="simple">
+<li><p>The maximum block size value set in the target application needs to be changed when the SigmaStudio schematic block size is changed. The maximum block size “ADI_SS_FW_MAX_PROCESS_BLOCKSIZE” needs to be updated in “adi_ss_fw_common.h” file “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-x.x\Target\Examples\Framework\Include” folder.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/7.png"><img alt="image7" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/7.png" style="width: 400px;" /></a></div>
+<div class="line">* The input modules block size can be updated using “Set Block size” option shown in above image.</div>
+</div>
+<p><strong>Q: How can I configure the SPORT for IO in SigmaStudio for SHARC application?</strong></p>
+<div class="line-block">
+<div class="line">A: The SPORT configurations are received from the SigmaStudio host to SHARC target application. The SPORT configurations can be assigned in “IC 1 ADSP-SC5xx Control à Framework Config” window. For more details about the default SPORT configuration please refer section “Audio Input-Output Modes” in “AE_42_SS4G_IntegrationGuide.pdf” document available in “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Docs”.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/8.png"><img alt="image8" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/8.png" style="width: 400px;" /></a></div>
+<div class="line"><strong>Q: How can I configure the memory mapping for code, parameter, and state memory?</strong></div>
+</div>
+<p>A: Please refer to section “GMAP and SMAP” in “AE_42_SS4G_IntegrationGuide.pdf” document available in “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Docs”.</p>
+<p><strong>Q: What is ‘Single Core’ and ‘Dual Core’ in IC control window? Is there any example schematic?</strong></p>
+<p>A: SHARC+ DSP’s has maximum of two SHARC+ cores and each of the cores can have up to three SigmaStudio schematic instances. SHARC core selection for each of the instances need to be done in Default SHARC Core setting. The core instance should be in specific order, i.e. SHARC core 1 and followed by SHARC core 2.</p>
+<div class="line-block">
+<div class="line"><strong>Single Core:</strong></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-10-34.png"><img alt="image9" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-10-34.png" style="width: 400px;" /></a></div>
+<div class="line">In ‘Single Core’ mode, the schematic instance runs on any one of the SHARC+ core. Multiple schematic instances are possible only when ‘Single Core’ mode is set. A dual SHARC+ core DSP is supported with two “IC” instance as shown below.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-10-15.png"><img alt="image10" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-10-15.png" style="width: 400px;" /></a></div>
+<div class="line">The separate “IC” instance for each core helps to design the schematic for each core separately by dragging the modules from corresponding “IC” instance. The single core option is used to make the core processing mode as Serial or Parallel.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-5-51.png"><img alt="image11" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-5-51.png" style="width: 400px;" /></a></div>
+<div class="line">The example schematic for Single core is available in “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Host\Examples\Sample Schematics” folder.</div>
+</div>
+<p><strong>Dual Core:</strong></p>
+<div class="line-block">
+<div class="line">In ‘Dual Core’ mode, the schematic modules are processed using both the SHARC+ core. Thus, the SHARC core selection is not possible in Dual core mode. Multiple schematic instances are also not supported in this mode.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-0-44.png"><img alt="image12" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-0-44.png" style="width: 400px;" /></a></div>
+<div class="line">A dual SHARC+ core DSP can be supported with only one “IC” as shown below.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-0-23.png"><img alt="image13" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-0-23.png" style="width: 400px;" /></a></div>
+<div class="line">The single “IC” instance for designing the schematic using the modules dragged from the same.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-0-2.png"><img alt="image14" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_2-0-2.png" style="width: 400px;" /></a></div>
+<div class="line">The schematic processing is always serial and the modules to be processed on each of the cores can be assigned by the user using “Change Core” selection on the module.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_1-59-41.png"><img alt="image15" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_1-59-41.png" style="width: 400px;" /></a></div>
+<div class="line"><strong>Q: What is memory insufficiency error while compiling the SS Schematic? How to resolve it?</strong></div>
+</div>
+<div class="line-block">
+<div class="line">A: The memory insufficiency error can get reported due to the insufficiency of Code, Parameter or Data memory required by the modules used in SigmaStudio schematic. The developer should be aware of Memory and MIPS before adding any modules to the schematic. Refer to “AE_42_SS4G_IntegrationGuide.pdf” document available in “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Docs” folder for more information about GMAP and SMAP block use in SigmaStudio. If there is any memory insufficiency, the Code/Parameter/Data memory requirements can be verified by mapping all the memory to L3 buffers. Please follow the below steps for L3 memory mapping to find the actual memory requirements of the schematic.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-6-7.png"><img alt="image16" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-6-7.png" style="width: 400px;" /></a></div>
+<div class="line"><strong>Code Memory mapping to Code B(L3):</strong></div>
+</div>
+<ul class="simple">
+<li><p>Select the code memory tab in “Memory Sections”</p></li>
+<li><p>Click on load Section Map</p></li>
+<li><p>By default, the memory mapped to Code buffer.</p></li>
+<li><p>Change the Code buffer to “Code B”</p></li>
+<li><p>Click on Update Section Map to change the code memory mapping</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-5-30.png"><img alt="image17" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-5-30.png" style="width: 400px;" /></a></div>
+<div class="line"><strong>State Memory mapping to State C(L3):</strong></div>
+</div>
+<ul class="simple">
+<li><p>Select the State memory tab in “Memory Sections”</p></li>
+<li><p>Click on load Section Map</p></li>
+<li><p>By default, the memory mapped to “State A” buffer.</p></li>
+<li><p>Change all the memory sections from “State A” buffer to “State C”</p></li>
+<li><p>Click on Update Section Map to change the state memory mapping</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-4-42.png"><img alt="image18" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-4-42.png" style="width: 400px;" /></a></div>
+<div class="line"><strong>Parameter Memory mapping to State C(L3):</strong></div>
+</div>
+<ul class="simple">
+<li><p>Select the Parameter memory tab in “Memory Sections”</p></li>
+<li><p>Click on load Section Map</p></li>
+<li><p>By default, the memory mapped to “Param” buffer.</p></li>
+<li><p>Change the memory section from “Param” buffer to “Param B”</p></li>
+<li><p>Click on Update Section Map to change the parameter memory mapping</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-4-17.png"><img alt="image19" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-4-17.png" style="width: 400px;" /></a></div>
+<div class="line">Once Code/Parameter/Data memory are mapped to L3, perform link compile to see the memory requirements. The memory requirement information will help to modify the default SS buffers allocated in the target application. Please refer to section “GMAP and SMAP” in “AE_42_SS4G_IntegrationGuide.pdf” document available in “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Docs”. Mapping schematic memory to L3 memory may cause a lot of overhead on MIPS consumption. The user doesn’t have any control on splitting the memory mapping but can only change the default sections to be mapped.</div>
+</div>
+<p><strong>Q: Is it possible to allocate more memory for Param B when using a custom algorithm?</strong></p>
+<div class="line-block">
+<div class="line">A: The SigmaStudio framework supports either Param (L1) or ParamB (L3) memory mapping, as all parameters must reside within a single memory block. Therefore, Param and ParamB cannot be used simultaneously. Additionally, these memory blocks cannot be assigned through custom memory section mapping, since SigmaStudio internally determines the memory sections during compile time. If MIPS consumption is not a concern, the entire parameter block can be mapped to ParamB memory using the “Load Memory” and “Update Memory” options available in the Memory section tab.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/MemorySections.png"><img alt="image20" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/MemorySections.png" style="width: 400px;" /></a></div>
+<div class="line">The other options are:</div>
+</div>
+<ol class="arabic">
+<li><p>Global parameters can be mapped to any of the L1, L2, or L3 memory sections in the target application. These parameter buffers can then be accessed in custom modules as extern variables. To ensure they are retained during linking, you can preserve these buffers using the KEEP command in the target application’s LDF file.</p>
+<blockquote>
+<div><p>Define the global parameter buffer in target application.</p>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/ParamBufferDefination.png"><img alt="image21" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/ParamBufferDefination.png" style="width: 400px;" /></a></div>
+<div class="line">&gt;&gt; Preserve global parameter buffer symbol in ldf file</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/KeepSymbol.png"><img alt="image22" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/KeepSymbol.png" style="width: 400px;" /></a></div>
+<div class="line">&gt;&gt; Define the global parameter buffer as extern and use it in custom module.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/ExternDeclaration.png"><img alt="image23" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/ExternDeclaration.png" style="width: 400px;" /></a></div>
+<div class="line">2) The ParamB memory block, which is mapped to L3 by default, can be redirected to L2 memory if there are MIPS constraints. For L2 memory mapping please modify the “adi_ss_app.ldf” as shown below (Half of the memory will be reserved for StateC data buffer) .</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/l2mapping.png"><img alt="image24" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/l2mapping.png" style="width: 400px;" /></a></div>
+<div class="line"><strong>Q: How can I configure register window in SigmaDSP?</strong></div>
+</div>
+<p>A: Register Control Window allows access to internal registers and DSP core Registers. Launch the Register Control Window by clicking on the Hardware Configuration tab at the top of the workspace, and then clicking on the Register Controls tab at the bottom of the Configuration workspace. Users can configure the SigmaDSP register on this window by referring to the corresponding IC data sheet which can be downloaded from:</p>
+<p><a class="icon adi reference external" href="https://www.analog.com/en/products/adau1452.html" target="_blank">ADAU1452 Datasheet and Product Info | Analog Devices</a></p>
+<p><a class="icon adi reference external" href="https://www.analog.com/en/products/adau1466.html" target="_blank">ADAU1466 Datasheet and Product Info | Analog Devices</a></p>
+<p><a class="icon adi reference external" href="https://www.analog.com/en/products/adau1467.html" target="_blank">ADAU1467 Datasheet and Product Info | Analog Devices</a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-3-44.png"><img alt="image25" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-3-44.png" style="width: 400px;" /></a></div>
+<div class="line"><strong>Q: Where can I get ADAU1466 register config details? Or where can I get hardware setup details for ADAU1467 EVAL board?</strong></div>
+</div>
+<p>A: The ADAU1466 register configuration details can be referred from the data sheet and user guide. Refer <a class="icon adi reference external" href="https://www.analog.com/en/products/adau1466.html" target="_blank">ADAU1466 Datasheet and Product Info | Analog Devices</a>.</p>
+<p><strong>Q: What is the maximum speed supported for EEPROM Read/Write operation? or What is Flash boot? Where can I get details?</strong></p>
+<p>A: Refer data sheet and user guide of “ADAU14xx” user can see the EEPROM Read/Write and flash boot related information’s.</p>
+<p><strong>Q: How can I configure the peripheral through SigmaDSP?</strong></p>
+<p>A: The Master control port in SigmaStudio for ADAU145x/ADAU146x can be used to configure the peripherals. Please refer the link for more information.</p>
+<p><a class="reference internal" href="toolbox/mastercontrolport/mastercontrolportio.html"><span class="doc">Master Control Port Boot time I/O (ADAU145x) [Analog Devices Wiki</span></a>]</p>
+<p><strong>Q: How can I add serial port details in custom schematic?</strong></p>
+<p>A: <strong>SigmaDSP:</strong></p>
+<p>Please refer to the user guide available on the ADI website <a class="icon adi reference external" href="https://www.analog.com/en/index.html" target="_blank">https://www.analog.com/</a>. For example,</p>
+<p><a class="icon adi reference external" href="https://www.analog.com/en/products/adau1452.html" target="_blank">ADAU1452 Datasheet and Product Info | Analog Devices</a></p>
+<p><a class="icon adi reference external" href="https://www.analog.com/en/products/adau1467.html" target="_blank">ADAU1467 Datasheet and Product Info | Analog Devices</a></p>
+<p><a class="icon adi reference external" href="https://www.analog.com/en/products/adau1466.html" target="_blank">ADAU1466 Datasheet and Product Info | Analog Devices</a></p>
+<p>The <a class="icon ez reference external" href="https://ez.analog.com/dsp/sigmadsp/f/q-a" target="_blank">Q&amp;A - SigmaDSP Processors and SigmaStudio Development Tool - EngineerZone (analog.com)</a> threads can also be referred by searching the serial port.</p>
+<p><strong>SHARC:</strong></p>
+<p>Please refer to the “AE_42_SS4G_IntegrationGuide.pdf” available in the SigmaStudio for SHARC installation folder “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Docs”.</p>
+<p><strong>Q: How many I/O buffers are declared in ADSP-215xx SigmaStudio for SHARC Framework?</strong></p>
+<div class="line-block">
+<div class="line">A: The number of I/O buffers for each channel is declared in the “IC control – Hardware Configuration – Framework Config” window.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-3-13.png"><img alt="image26" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-3-13.png" style="width: 400px;" /></a></div>
+<div class="line"><strong>Q: Can customers use any unused framework buffer defined in the target firmware?</strong></div>
+</div>
+<p>A: Yes, if customers are sure that one or more of the defined buffers are unused, those buffers can be reused in the target firmware.</p>
+<p><strong>Q: Where can I get Serial port details of SigmaStudio for SHARC framework?</strong></p>
+<div class="line-block">
+<div class="line">A: Hardware schematic of the target hardware gives the information of the DAI pins used for I/O data. Configuration for the Serial port can be found in “IC control – Hardware Configuration – Framework Config” window.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-2-48.png"><img alt="image27" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_13-2-48.png" style="width: 400px;" /></a></div>
+<div class="line">For more details, please refer to the “AE_42_SS4G_IntegrationGuide.pdf” available in the SigmaStudio for SHARC installation folder “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Docs”.</div>
+</div>
+<p><strong>Q: How can I update SRU Routing for specific requirements in SigmaStudio for SHARC target application?</strong></p>
+<div class="line-block">
+<div class="line">A: SRU routing can be updated using CrossCore Embedded Studio project under the “system.svc” settings.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_12-59-5.png"><img alt="image28" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-12_12-59-5.png" style="width: 400px;" /></a></div>
+<div class="line"><strong>Q: Why does ADSP-215xx wait indefinitely for SSn code?</strong></div>
+</div>
+<p>A: Sometime communication error occurs while downloading code from SigmaStudio using USBi. This error may cause an indefinite wait. Please check the USBi or AARDVARK interface to the EZ Kit evaluation board.</p>
+<p><strong>Q: Does SigmaStudio for SHARC support SPDIF In/Out for SOM board? or where can I get more details about SPDIF interface for SOM board?</strong></p>
+<p>A: Yes, the SigmaStudio for SHARC version 4.7.0 onwards supported SPDIF In/Out on SOM boards. The earlier versions supported only SPDIF In. Please refer section “Enabling S/PDIF Transmitter Feature support In Example Demo applications” in “AE_42_SS4G_QuickStartGuide.pdf” document which is present in the following installation path “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Rel4.7.0\Docs”</p>
+<p><strong>Q: How to integrate 3rd party algorithm having higher block size?</strong> A:</p>
+<ul class="simple">
+<li><p>Third party algorithms can be added to target application directly or by using algorithm designer as a custom plug into SigmaStudio.</p></li>
+<li><p>Increase the number input and output buffers to 5 or 7 from the ‘Framework Config’ tab of the IC control window of the SigmaStudio schematic. A minimum of 5 or 7 buffers are recommended for SigmaStudio Block size of 64. Regenerate the framework config file by clicking on “Generate Config File” button within the ‘Framework Config’ tab of the IC control window and save the config file “adi_ss_fw_config.h” within “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-x.x\Target\Examples\Framework\Include” folder.</p></li>
+<li><p>Increase the IPC FIFO Depth (ADI_SS_IPC_FIFO_DEPTH) to the same value as that of ADI_SS_FW_MAX_NUM_BUFFERS.</p></li>
+<li><p>Increase in the number of input and output buffers may cause memory overflow issues. For ADSP-SC5xx processors, adjust the memory configuration by modifying the “ss4s.ld” linker description file (ensure that the MMU mappings defined in MMUConfig.c file matches the “ss4s.ld” changes). For ADSP-215xx processors, adjust the memory configuration by modifying the “app.ldf” linker description file.</p></li>
+<li><p>There may be a need to map some of the data buffers to L3 sections so that there is space available for SigmaStudio code, data and parameters in L1 memory.</p></li>
+<li><p>Disabling cache in the SHARC cores is observed to reduce MIPS. This can be done doing the following changes in adi_ss_cache_config.c file:</p></li>
+</ul>
+<p>Change pREG_SHL1C0_CFG = ENABLE_I_D_CACHE;</p>
+<p>To pREG_SHL1C0_CFG = DISABLE_I_D_CACHE;</p>
+<ul class="simple">
+<li><p>Define SYNCHRONIZE_SH_CORES in the preprocessor definitions for the SHARC Core projects. This make sure that there is proper synchronization between cores.</p></li>
+<li><p>The FIFO logic need to be implemented for accumulating required number of samples for calling 3rd party algorithm.</p></li>
+<li><p>Regenerate the .ldr file after making the above changes</p></li>
+</ul>
+</section>
+<section id="modules-q-a">
+<h1>Modules Q &amp; A<a class="headerlink" href="#modules-q-a" title="Link to this heading"></a></h1>
+<p><strong>Q: How can I get details of the modules present in SigmaStudio?</strong></p>
+<p>A: The steps to be followed for finding the list of modules supported for the selected IC,</p>
+<ul class="simple">
+<li><p>Open SigmaStudio and select new project</p></li>
+<li><p>Drag the IC to Hardware config window</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_14-30-25.png"><img alt="image29" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_14-30-25.png" style="width: 400px;" /></a></div>
+<div class="line">* Select the “Block Schematic” or “Schematic”</div>
+</div>
+<ul class="simple">
+<li><p>Enable the ToolBox view as shown in image to get details of modules supported in SigmaStudio</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_14-31-32.png"><img alt="image30" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_14-31-32.png" style="width: 400px;" /></a></div>
+<div class="line"><strong>Q: How can I add the custom plug in to SigmaStudio?</strong></div>
+</div>
+<p>A: The following step can be used to add the custom plug-in to SigmaStudio,</p>
+<ul class="simple">
+<li><p>Open SigmaStudio and go to Tools</p></li>
+<li><p>Select “Add Ins Browser.”</p></li>
+<li><p>Add the plug-in dll using “Add Dll” option.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_14-32-53_1_.png"><img alt="image31" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_14-32-53_1_.png" style="width: 400px;" /></a></div>
+<div class="line"><strong>Q: Do you have a separate Audio toolbox for SHARC?</strong></div>
+</div>
+<p>A: Yes, there is a separate audio toolbox for SHARC ADSP-214xx processors with some special modules. The customers should separately request for SHARC audio toolbox for ADSP-214xx. The SHARC+ already have the modules of SHARC audio toolbox within SigmaStudio for SHARC package and there is no need of any separate SHARC audio toolbox for SHARC+ processors.</p>
+<p><strong>Q: Where can I get the list of modules supported on SHARC?</strong></p>
+<p>A: The modules available in the SigmaStudio for SHARC package can be viewed in two steps,</p>
+<ul class="simple">
+<li><p>Open SigmaStudio and verify whether SigmaStudio for SHARC plugins are added in “Add Ins Browser…” list of dlls.</p></li>
+<li><p>Create new project and select required SHARC DSP ADSP-214xx or ADSP-215xx/ADSP-SC5xx</p></li>
+<li><p>Click on Block schematic/schematic</p></li>
+<li><p>On the left side “tree toolbox” shown which will have list of modules</p></li>
+<li><p>Drag the module to Block schematic/Schematic window</p></li>
+<li><p>Select the module and press “F1” to go to module help page.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-15-53.png"><img alt="image32" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-15-53.png" style="width: 400px;" /></a></div>
+<div class="line"><strong>Q: How to update parameter or coefficient for custom module?</strong></div>
+</div>
+<p>A: Please refer to the “AE_42_SS4G_AlgorithmDesignerGuide.pdf” document available in the SigmaStudio for SHARC installation folder “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Docs”.</p>
+<p><strong>Q: How are memory mapping done for custom plugin created using Algorithm Designer?</strong></p>
+<p>A: Please refer to the “AE_42_SS4G_AlgorithmDesignerGuide.pdf” under section “SigmaStudio Memory Type”. The data defined in the global space are mapped to selected parameter memory in the schematic.</p>
+<p><strong>Q: What are the modules available for Frequency domain analysis?</strong></p>
+<p>A: Refer the Wiki page link <a class="reference internal" href="toolbox/frequencydomain.html"><span class="doc">frequencydomain</span></a></p>
+<p><strong>Q: What are the standard audio modules ( e.g. Dolby, DTS etc.) available for SHARC?</strong></p>
+<p>A: Please refer “<a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/software/sh_sigst_00.html#software-overview" target="_blank">SigmaStudio for SHARC | Analog Devices</a>” or contact regional ADI representative for SHARC algorithms related queries.</p>
+<p><strong>Q: How can I get MIPS and memory requirements for custom schematic? Or How can I detect MIPS and memory overflow without downloading the schematic?</strong></p>
+<p>A: <strong>SigmaDSP:</strong> SigmaStudio display MIPS and memory details in the output window, which is at the right side of the tool. Output window also shows memory required for each of the modules in the schematic. User can get memory and MIPS requirements for each module by adding the module into to the simple schematic. The difference in MIPS and memory before and after adding the module will give the MIPS and memory requirement for the given module. Once the memory and MIPS of the modules are known, user can add the module into the original custom schematic under design. Good practice is that the user can add the memory and MIPS details into the Microsoft excel to keep track of memory and MIPS overflow.</p>
+<p><strong>SHARC:</strong> SigmaStudio displays the memory details in the output window, which is at the right side of the tool. Output window also shows memory required for each of the modules in the schematic. The MIPS information of SHARC ADSP-214xx/ADSP-215xx schematic modules can be generated using “IC Control – Hardware Configuration” window, please refer the below images. User should know the memory and MIPS requirements of each module by adding the module into to the simple schematic. The difference in MIPS and memory before and after adding the module will give the MIPS and memory requirement for the given module. Once the memory and MIPS of the module known, user can add the module into the original custom schematic under design. Good practice is that the user can add the memory and MIPS details into the Microsoft excel to keep track of memory and MIPS overflow.</p>
+<div class="line-block">
+<div class="line"><strong>Read MIPS ADSP-215xx:</strong></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-20-34_2_.png"><img alt="image33" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-20-34_2_.png" style="width: 400px;" /></a></div>
+<div class="line"><strong>Read MIPS ADSP-214xx:</strong></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-21-4.png"><img alt="image34" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-21-4.png" style="width: 400px;" /></a></div>
+<div class="line"><strong>Q: Is there any example for custom plugin?</strong></div>
+</div>
+<p>A: The custom plugin example for ADSP-215xx processors is available in “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Host\Examples\Sample Plug-Ins\ADSP-SC5xx” folder. Please refer to the “AE_42_SS4G_AlgorithmDesignerGuide.pdf” available in the SigmaStudio for SHARC installation folder “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Docs” for more details.</p>
+<p>The custom plugin example for ADSP-214xx processors is available in “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Rel2.2.0\Target\ExtModules” folder. Please refer to the “SigmaStudio_for_SHARC_AlgorithmDesigner.pdf” available in the SigmaStudio for SHARC installation folder “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Rel2.2.0\Docs” for more details.</p>
+<p><strong>Q: Do we support ADI surround block in ADSP-215xx?</strong></p>
+<p>A:No, there is no plan for supporting ADI surround block in ADSP-215xx.</p>
+<p><strong>Q: How do we get delay details for a given module?</strong></p>
+<p>A:Overall delay for the schematic processing is equal to the schematic block size i.e., 64 by default. If there is any module specific delay, user can get the details from Wiki help page for the module. Follow the steps,</p>
+<ul class="simple">
+<li><p>Drag the module to Block schematic/Schematic window</p></li>
+<li><p>Select the module and press “F1” to go to module help page.</p></li>
+</ul>
+<p><strong>Q: How can I update FIR Filter coefficients in SigmaStudio for SHARC?</strong> FIR filter coefficients can be updated using following steps:</p>
+<ul class="simple">
+<li><p>Click on the Table</p></li>
+<li><p>Enter the floating-point coefficient values in the form</p></li>
+<li><p>Click on the Update button to write the coefficients</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-23-34.png"><img alt="image35" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-23-34.png" style="width: 400px;" /></a></div>
+<div class="line"><strong>Q: How can I extend the filter order with available blocks in SigmaStudio?</strong></div>
+</div>
+<p>A: User can cascade the filters for required order or by using the “Nth order filter”. Please find the Wiki help page <a class="reference internal" href="toolbox/filters/nthorderfilter.html"><span class="doc">NthOrderFilter.</span></a></p>
+<p><strong>Q: How does the FIR Filter pool work?</strong></p>
+<p>A: Refer Wiki page <a class="reference internal" href="toolbox/filters/firfilterpool.html"><span class="doc">FIRFilterPool.</span></a> Additionally, user can go to SigmaStudio module related help content by following below steps,</p>
+<ul class="simple">
+<li><p>Drag the module to Block schematic/Schematic window</p></li>
+<li><p>Select the module and press “F1” to go to module help page.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-24-54.png"><img alt="image36" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-24-54.png" style="width: 400px;" /></a></div>
+<div class="line"><strong>Q: How can I add anti-aliasing filter IIR Up and Down sampler?</strong></div>
+</div>
+<div class="line-block">
+<div class="line">A: Anti-aliasing IIR filters need to be added after up sampling module and before Down sampling module.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-25-39.png"><img alt="image37" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-25-39.png" style="width: 400px;" /></a></div>
+<div class="line"><strong>Q: Does SigmaStudio for SHARC supports FIR/IIR accelerator for SOM boards? or How can I use FIR/IIR accelerator support for ADSP-SC598 SOM Board?</strong></div>
+</div>
+<div class="line-block">
+<div class="line">A: Yes, the modules for FIR/IIR accelerators are available in SigmaStudio for SHARC. Please refer to the below tree tool path.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-26-26.png"><img alt="image38" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-26-26.png" style="width: 400px;" /></a></div>
+<div class="line"><strong>FIR Accelerator:</strong></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-26-51.png"><img alt="image39" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-26-51.png" style="width: 400px;" /></a></div>
+<div class="line">Please refer to section “FIR/IIR Hardware Accelerator Multi-Instance support on ADSP-2159x/ADSP-SC59x” in “AE_42_SS4G_QuickStartGuide.pdf” document which is present in the following installation path “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Docs”.</div>
+</div>
+<p><strong>Q: How can I link the library function in SigmaStudio schematic process for SHARC?</strong></p>
+<p>A: Algorithm Designer can be used to create custom plugin module to link the 3rd party library modules by writing the wrapper functions for accessing the library function.</p>
+<p><strong>Q: Why the “Generate Assembly” buttons not working in SigmaStudio for SHARC Algorithm Designer for Custom plugin generation?</strong></p>
+<p>A: The Algorithm design form should have at least 1 control to generate the assembly. We should at least add a label control into the Algorithm design form.</p>
+<p><strong>Q: Why is parameter tuning not working for custom plugin?</strong></p>
+<p>A:</p>
+<ul class="simple">
+<li><p>Default parameters should be added into the custom plugin .xml file</p></li>
+<li><p>Runtime parameters should be added in algorithm designer</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-32-46.png"><img alt="image2023-1-5_11-32-46.png" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-32-46.png" style="width: 400px;" /></a></div>
+<div class="line">* The runtime parameter should be assigned to default parameters as shown below,</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-51-58.png"><img alt="image40" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-51-58.png" style="width: 400px;" /></a></div>
+<div class="line">* The runtime parameter should be assigned to UI controls as shown below, Step 1: Select and right click on the UI control, click on “Assign” option</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-52-38.png"><img alt="image41" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-52-38.png" style="width: 400px;" /></a></div>
+<div class="line">Step 2: In Control Action drop down select “ValueChanged”</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-53-54.png"><img alt="image42" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-53-54.png" style="width: 400px;" /></a></div>
+<div class="line">Step 3: Select the runtime parameter for corresponding UI control and click on apply</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-54-38.png"><img alt="image43" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-54-38.png" style="width: 400px;" /></a></div>
+<div class="line">Step 4: Review the UI control settings in properties window for Minimum, Maximum, Values</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-55-35.png"><img alt="image44" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2023-1-5_11-55-35.png" style="width: 400px;" /></a></div>
+<div class="line">These steps to be followed for every UI control to avoid runtime parameter tuning issues.</div>
+</div>
+</section>
+<section id="sigmastudio-for-sharc-host-packeting-q-a">
+<h1>SigmaStudio for SHARC Host Packeting Q &amp; A<a class="headerlink" href="#sigmastudio-for-sharc-host-packeting-q-a" title="Link to this heading"></a></h1>
+<p><strong>Q: How target packet created in SigmaStudio for SHARC?</strong></p>
+<p>A: Please refer to the “AE_42_SS4G_HostControllerGuide.pdf” document under “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Rel4.7.0\Docs” folder.</p>
+<p><strong>Q: What is the default SPI and I2C speed on USBi?</strong></p>
+<p>A: The default SPI speed on USBi in SigmaStudio host is approximately 732 kHz. The default I2C speed on USBi in SigmaStudio host is approximately 84 kHz.</p>
+<p><strong>Q: Whether the default SPI or I2C speed on USBi configurable?</strong></p>
+<p>A: No the speed can’t be configured for SPI or I2C on USBi.</p>
+<p><strong>Q: What is the SPI baud rate supported by SigmaStudio Host?</strong></p>
+<p>A: SPI speed is tested with SigmaStudio Host using Aardvark up to ~12 MHz. The limitation is due to time spent on packet data parsing and processing of the command and payload at the target side.</p>
+<p><strong>Q: What is the maximum data length which can be read from target to SS Host?</strong></p>
+<p>A: Seven words of data can be read in single param read. One payload word will have 16-bit of parameter data word. Please refer to the section A.1 Back Channel Protocol (SHARC Target to SigmaStudio Host) in “AE_42_SS4G_HostControllerGuide.pdf” document under “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Docs” folder.</p>
+<p><strong>Q: How can I get checksum details?</strong></p>
+<p>A: Please refer to the section “Packetizing Data” in “AE_42_SS4G_HostControllerGuide.pdf” available in the SigmaStudio for SHARC installation folder “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Docs”.</p>
+<p><strong>Q: How can I do Block Safe load write for FIR Filter in SigmaStudio for SHARC framework?</strong></p>
+<p>A: SigmaStudio host does not support block safeload write for FIR filter, since the block is configured for safeload write by default. Block safeload write for FIR filter can be achieved from microcontroller host. Please refer to the section “Packetizing Data” and “Block Safeload Parameter” in “AE_42_SS4G_HostControllerGuide.pdf” available in the SigmaStudio for SHARC installation folder “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Docs”</p>
+</section>
+<section id="sigmastudio-scripting-q-a">
+<h1>SigmaStudio Scripting Q &amp; A<a class="headerlink" href="#sigmastudio-scripting-q-a" title="Link to this heading"></a></h1>
+<p><strong>Q: What are the automation scripts supported in SigmaStudio? Do you have example codes for automation?</strong></p>
+<p>A: Please refer to <a class="reference internal" href="usingsigmastudio/scripting.html"><span class="doc">SigmaStudio Scripting [Analog Devices Wiki</span></a>] link for SigmaStudio automation script related information and examples.</p>
+<p><strong>Q: Do SigmaStudio for SHARC modules support automation scripts supported in SigmaStudio? Do you have example codes for automation?</strong></p>
+<p>A: Yes, SigmaStudio for SHARC modules support automation scripts supported in SigmaStudio. Please refer to “AE_42_SS4G_ScriptingGuide.pdf” available in the SigmaStudio for SHARC installation folder “C:\Analog Devices\SoftwareModules\SigmaStudioForSHARC-SH-Relx.x.x\Docs”. Additionally, the <a class="reference internal" href="usingsigmastudio/scripting.html"><span class="doc">SigmaStudio Scripting [Analog Devices Wiki</span></a>] link can be referred for more examples, since SigmaStudio for SHARC modules also supports the SigmaStudio scripting API’s.</p>
+<p><strong>Q: How can I tune Custom modules through script?</strong></p>
+<div class="line-block">
+<div class="line">A: The control parameter names for custom modules can be seen after enabling “View Control Parameter Names”, please refer the below image.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-33-7.png"><img alt="image45" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-33-7.png" style="width: 400px;" /></a></div>
+<div class="line">Just hover on the custom modules to see the control parameter names. Refer to the below image.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-33-33.png"><img alt="image46" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-33-33.png" style="width: 400px;" /></a></div>
+<div class="line">The control parameters can be used to tune the parameters using SigmaStudio script. For example:</div>
+</div>
+<p>object[] output; ss.ObjectSetProperties(“setControlValue”, “BiquadCascade1”, 0, 0, “checkBox1_Checked”, 0 );</p>
+<p>ss.ObjectGetProperties(“getControlValue”, “BiquadCascade1”, out output, 0, 0, “ checkBox1_Checked”);</p>
+<p>ss.PrintLine(output[0].ToString());</p>
+<p>ss.PrintLine(“BiquadCascade1 is in OFF”);</p>
+<p>ss.ScriptDelay(500);</p>
+<p>ss.ObjectSetProperties(“setControlValue”, “BiquadCascade1”, 0, 0, “checkBox1_Checked”, 1 );</p>
+<p>ss.ObjectGetProperties(“getControlValue”, “BiquadCascade1”, out output, 0, 0, “checkBox1_Checked”); ss.PrintLine(output[0].ToString());</p>
+<p>ss.PrintLine(“BiquadCascade1 is in ON”);</p>
+<div class="line-block">
+<div class="line">To change the name of the control parameter, refer below image,</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-34-22.png"><img alt="image47" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudio/image2022-12-13_18-34-22.png" style="width: 400px;" /></a></div>
+</div>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

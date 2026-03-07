@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the AD9208-DUAL-EBZ on the VCU118 platform." name="description" />
+
+    <title>AD9208-DUAL-EBZ Virtex UltraScale+ VCU118 Quick Start Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">AD9208-DUAL-EBZ Virtex UltraScale+ VCU118 Quick Start Guide</a><ul>
+<li><a class="reference internal" href="#design-and-integration-files">Design and Integration Files</a></li>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a><ul>
+<li><a class="reference internal" href="#required-hardware">Required Hardware</a></li>
+<li><a class="reference internal" href="#required-software">Required Software</a></li>
+<li><a class="reference internal" href="#board-setup">Board setup</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#steps">Steps</a><ul>
+<li><a class="reference internal" href="#build-the-hdl-project">1. Build the HDL project</a></li>
+<li><a class="reference internal" href="#build-the-linux-files">2. Build the Linux files</a></li>
+<li><a class="reference internal" href="#program-the-board">3. Program the board</a><ul>
+<li><a class="reference internal" href="#linux-boot-messages">Linux BOOT messages</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#connect-to-board-with-iio-scope">4. Connect to board with IIO Scope</a></li>
+<li><a class="reference internal" href="#capture-data-with-iio-scope">5. Capture data with IIO Scope</a><ul>
+<li><a class="reference internal" href="#jesd-subclass-0-example">JESD SubClass 0 example</a></li>
+<li><a class="reference internal" href="#jesd-subclass-1-example">JESD SubClass 1 example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#more-information">More Information</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ad9208-dual-ebz-hdl-reference-design">AD9208-DUAL-EBZ HDL reference design</a><ul>
+<li><a class="reference internal" href="#functional-overview">Functional Overview</a></li>
+<li><a class="reference internal" href="#supported-carriers">Supported Carriers</a></li>
+<li><a class="reference internal" href="#building-the-hdl-project">Building the HDL project</a></li>
+<li><a class="reference internal" href="#block-diagram">Block Diagram</a><ul>
+<li><a class="reference internal" href="#clock-sources">Clock sources</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">More Information</a></li>
+<li><a class="reference internal" href="#support">Support</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="ad9208-dual-ebz-virtex-ultrascale-vcu118-quick-start-guide">
+<h1>AD9208-DUAL-EBZ Virtex UltraScale+ VCU118 Quick Start Guide<a class="headerlink" href="#ad9208-dual-ebz-virtex-ultrascale-vcu118-quick-start-guide" title="Link to this heading"></a></h1>
+<p>This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the <a class="icon adi reference external" href="https://www.analog.com/AD9208-DUAL-EBZ" target="_blank">AD9208-DUAL-EBZ</a> on the <a class="icon link reference external" href="https://www.xilinx.com/VCU118" target="_blank">VCU118</a> platform.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad9208_dual_ebz/quickstart/hardware_setup.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad9208_dual_ebz/quickstart/hardware_setup.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9208_dual_ebz/quickstart/hardware_setup.png" style="width: 600px;" />
+</a>
+<p>The ADCs are set to run at full bandwidth mode 3 GSPS, which translates to a lane rate of 15.5 Gbps. Each converter has its own SYSREF that is driven from a common clock chip HMC7044. Ideally these SYREF lines should be length matched, if not the HMC has capability to adjust delays on its outputs. Sampling clocks are generated by the same HMC clock chip and should be ideally length matched as well.</p>
+<section id="design-and-integration-files">
+<h2>Design and Integration Files<a class="headerlink" href="#design-and-integration-files" title="Link to this heading"></a></h2>
+<p><a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad9208_dual_ebz/quickstart/ad9208-dual-ebz.zip" target="_blank">Schematic, Gerber layout and BOM</a></p>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
+<section id="required-hardware">
+<h3>Required Hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Xilinx <a class="icon link reference external" href="https://www.xilinx.com/VCU118" target="_blank">VCU118</a> Rev 1.0 or later board</p></li>
+<li><p>AD9208-DUAL-EBZ FMC board.</p></li>
+<li><p>2 x Micro-USB cable</p></li>
+<li><p>Ethernet cable</p></li>
+<li><p>Signal generator</p></li>
+<li><p>4 way splitter (optional)</p></li>
+</ul>
+</section>
+<section id="required-software">
+<h3>Required Software<a class="headerlink" href="#required-software" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>A Linux OS on a PC</p></li>
+<li><p>Xilinx Vivado 2019.1 or later</p></li>
+<li><p>UART terminal (e.g TeraTerm)</p></li>
+<li><p>IIO Scope <a class="icon git reference external" href="https://github.com/analogdevicesinc/iio-oscilloscope/tree/main/releases/download/v0.13-master/adi-osc-setup.exe" target="_blank">Download</a></p></li>
+</ul>
+</section>
+<section id="board-setup">
+<h3>Board setup<a class="headerlink" href="#board-setup" title="Link to this heading"></a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>** There are two options for powering the board, both require a rework :**</p>
+<ul class="simple">
+<li><p>In order to supply the board from the FMC connector populate F1 with a 2A fuse. Use this method if you can ensure the FMC carrier can drive 2A on its 12V power line.</p></li>
+<li><p>Use an external 12V power supply and connect it to the TP1 (PWR_IN) and TP2 (AGND) points.</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="steps">
+<h2>Steps<a class="headerlink" href="#steps" title="Link to this heading"></a></h2>
+<section id="build-the-hdl-project">
+<h3>1. Build the HDL project<a class="headerlink" href="#build-the-hdl-project" title="Link to this heading"></a></h3>
+<p>Before building the hdl project setup your computer based on the following guide: <a class="reference internal" href="../../../../fpga/docs/build.html"><span class="doc">Building HDL projects</span></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">analogdevicesinc</span><span class="o">/</span><span class="n">hdl</span><span class="o">.</span><span class="n">git</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">hdl_2019_r2</span><span class="p">;</span>  <span class="o">//</span> <span class="ow">or</span> <span class="n">latest</span> <span class="n">release</span>
+<span class="n">cd</span> <span class="n">hdl</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">ad9208_dual_ebz</span><span class="o">/</span><span class="n">vcu118</span>
+<span class="n">make</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Prebuild files for boards with 125MHz VCXO can be downloaded from <a class="icon link reference external" href="http://swdownloads.analog.com/cse/prebuilt/vcu118_dual_ad9208_VCXO125_binaries.zip" target="_blank">here</a></p>
+</div>
+</section>
+<section id="build-the-linux-files">
+<h3>2. Build the Linux files<a class="headerlink" href="#build-the-linux-files" title="Link to this heading"></a></h3>
+<p>Instructions on how to build the MicroBlaze Linux kernel and devicetrees from source can be found here:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../../tools-software/linux-drivers/platforms/microblaze.html"><span class="doc">Linux on the MicroBlaze based Xilinx FPGA development Board</span></a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/arch/microblaze/boot/dts/vcu118_dual_ad9208.dts" target="_blank">arch/microblaze/boot/dts/vcu118_dual_ad9208.dts</a></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">simpleImage</span><span class="o">.</span><span class="n">vcu118_dual_ad9208</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Prebuild files for boards with 125MHz VCXO can be downloaded from <a class="icon link reference external" href="http://swdownloads.analog.com/cse/prebuilt/vcu118_dual_ad9208_VCXO125_binaries.zip" target="_blank">here</a></p>
+</div>
+</section>
+<section id="program-the-board">
+<h3>3. Program the board<a class="headerlink" href="#program-the-board" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">First we need to prepare a working directory where we will gather all the required binary files.</div>
+<div class="line">From the HDL build directory locate the system_top.bit and copy it to the working directory. From the Linux build directory locate the simpleImage and copy it to the working directory.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">&lt;</span><span class="n">working_dir</span><span class="o">&gt;</span>
+<span class="n">cp</span> <span class="o">&lt;</span><span class="n">hdl_repo_dir</span><span class="o">&gt;/</span><span class="n">projects</span><span class="o">/</span><span class="n">ad9208_dual_ebz_vcu118</span><span class="o">.</span><span class="n">runs</span><span class="o">/</span><span class="n">impl_1</span><span class="o">/</span><span class="n">system_top</span><span class="o">.</span><span class="n">bit</span>  <span class="o">&lt;</span><span class="n">working_dir</span><span class="o">&gt;</span>
+<span class="n">cp</span> <span class="o">&lt;</span><span class="n">linux_repo_dir</span><span class="o">&gt;/</span><span class="n">arch</span><span class="o">/</span><span class="n">microblaze</span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">simpleImage</span><span class="o">.</span><span class="n">vcu118_dual_ad9208</span>  <span class="o">&lt;</span><span class="n">working_dir</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Next step is to program the board with xsct or similar tool. See generic instructions for programming the MicroBlaze bases systems here <a class="reference internal" href="../../../../tools-software/linux-drivers/platforms/microblaze.html"><span class="doc">Boot Kernel on FPGA Microblaze</span></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xsct</span><span class="o">%</span> <span class="n">connect</span>
+<span class="n">xsct</span><span class="o">%</span> <span class="n">fpga</span> <span class="o">-</span><span class="n">f</span> <span class="n">system_top</span><span class="o">.</span><span class="n">bit</span>
+<span class="n">xsct</span><span class="o">%</span> <span class="n">after</span> <span class="mi">1000</span>
+<span class="n">xsct</span><span class="o">%</span> <span class="n">target</span> <span class="mi">3</span>
+<span class="n">xsct</span><span class="o">%</span> <span class="n">dow</span> <span class="n">simpleImage</span><span class="o">.</span><span class="n">vcu118_dual_ad9208</span><span class="o">.</span><span class="n">strip</span>
+<span class="n">xsct</span><span class="o">%</span> <span class="n">after</span> <span class="mi">1000</span>
+<span class="n">xsct</span><span class="o">%</span> <span class="n">con</span>
+<span class="n">xsct</span><span class="o">%</span> <span class="n">disconnect</span>
+</pre></div>
+</div>
+<section id="linux-boot-messages">
+<h4>Linux BOOT messages<a class="headerlink" href="#linux-boot-messages" title="Link to this heading"></a></h4>
+<details><summary>Complete kernel boot log (Click to expand)</summary><div class="box bggreen docutils container">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This specifies any shell prompt running on the target</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Ramdisk addr 0x00000000,
+Compiled-in FDT at 8041955c
+Linux version 4.14.0-g6f4b7f7 (&lt;HOSTNAME&gt;) (gcc version 8.2.0 (crosstool-NG 1.20.0)) #4 Tue Aug 18 10:15:22 IST 2020
+setup_cpuinfo: initialising
+setup_cpuinfo: Using full CPU PVR support
+wt_msr_noirq
+setup_memory: max_mapnr: 0x30000
+setup_memory: min_low_pfn: 0x80000
+setup_memory: max_low_pfn: 0xb0000
+setup_memory: max_pfn: 0xb0000
+Zone ranges:
+  DMA      [mem 0x0000000080000000-0x00000000afffffff]
+  Normal   empty
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x0000000080000000-0x00000000ffffefff]
+Initmem setup node 0 [mem 0x0000000080000000-0x00000000ffffefff]
+On node 0 totalpages: 196608
+free_area_init_node: node 0, pgdat 805c5a4c, node_mem_map 808e8000
+  DMA zone: 1536 pages used for memmap
+  DMA zone: 0 pages reserved
+  DMA zone: 196608 pages, LIFO batch:31
+pcpu-alloc: s0 r0 d32768 u32768 alloc=1\*32768
+pcpu-alloc: [0] 0
+Built 1 zonelists, mobility grouping on.  Total pages: 195072
+Kernel command line: console=ttyUL0,115200
+PID hash table entries: 4096 (order: 2, 16384 bytes)
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Memory: 769556K/786432K available (4197K kernel code, 145K rwdata, 1496K rodata, 3074K init, 96K bss, 16876K reserved, 0K cma-reserved)
+Kernel virtual memory layout:
+  * 0xffffe000..0xfffff000  : fixmap
+  * 0xffffe000..0xffffe000  : early ioremap
+  * 0xb0000000..0xffffe000  : vmalloc &amp; ioremap
+NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+irq-xilinx: /amba_pl/interrupt-controller@41200000: num_irq=16, edge=0x35f8
+/amba_pl/timer@41c00000: irq=1
+clocksource: xilinx_clocksource: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+xilinx_timer_shutdown
+xilinx_timer_set_periodic
+sched_clock: 32 bits at 100MHz, resolution 10ns, wraps every 21474836475ns
+Calibrating delay loop... 49.35 BogoMIPS (lpj=246784)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 2048 (order: 1, 8192 bytes)
+Mountpoint-cache hash table entries: 2048 (order: 1, 8192 bytes)
+devtmpfs: initialized
+random: get_random_u32 called from bucket_table_alloc+0x248/0x29c with crng_init=0
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+futex hash table entries: 256 (order: -1, 3072 bytes)
+NET: Registered protocol family 16
+clocksource: Switched to clocksource xilinx_clocksource
+NET: Registered protocol family 2
+TCP established hash table entries: 8192 (order: 3, 32768 bytes)
+TCP bind hash table entries: 8192 (order: 3, 32768 bytes)
+TCP: Hash tables configured (established 8192 bind 8192)
+UDP hash table entries: 512 (order: 1, 8192 bytes)
+UDP-Lite hash table entries: 512 (order: 1, 8192 bytes)
+NET: Registered protocol family 1
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+random: fast init done
+Skipping unavailable RESET gpio -2 (reset)
+workingset: timestamp_bits=30 max_order=18 bucket_order=0
+jffs2: version 2.2. (NAND) (SUMMARY)  © 2001-2006 Red Hat, Inc.
+Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+io scheduler noop registered
+io scheduler deadline registered
+io scheduler cfq registered (default)
+io scheduler mq-deadline registered
+io scheduler kyber registered
+Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+40600000.serial: ttyUL0 at MMIO 0x40600000 (irq = 5, base_baud = 0) is a uartlite
+console [ttyUL0] enabled
+brd: module loaded
+Xilinx SystemACE device driver, major=254
+libphy: Fixed MDIO Bus: probed
+xilinx_axienet 40c00000.ethernet: TX_CSUM 2
+xilinx_axienet 40c00000.ethernet: RX_CSUM 2
+libphy: Xilinx Axi Ethernet MDIO: probed
+i2c /dev entries driver
+i2c i2c-0: Added multiplexed i2c bus 1
+at24 2-0050: 256 byte 24c02 EEPROM, writable, 1 bytes/write
+i2c i2c-0: Added multiplexed i2c bus 2
+i2c i2c-0: Added multiplexed i2c bus 3
+i2c i2c-0: Added multiplexed i2c bus 4
+i2c i2c-0: Added multiplexed i2c bus 5
+i2c i2c-0: Added multiplexed i2c bus 6
+i2c i2c-0: Added multiplexed i2c bus 7
+i2c i2c-0: Added multiplexed i2c bus 8
+pca954x 0-0075: registered 8 multiplexed busses for I2C switch pca9548
+axi_adxcvr 44a60000.axi-adxcvr-rx: AXI-ADXCVR-RX (17.01.a) using GTY4 at 0x44A60000 mapped to 0xb0110000. Number of lanes: 8.
+axi_adxcvr 44b60000.axi-adxcvr-rx: AXI-ADXCVR-RX (17.01.a) using GTY4 at 0x44B60000 mapped to 0xb0330000. Number of lanes: 8.
+NET: Registered protocol family 17
+ad9208 spi0.1: AD9208 PLL LOCKED
+ad9208 spi0.1: Failed to request FastDetect IRQs (-6)
+ad9208 spi0.1: AD9208 DUAL (MASTER with DMA) Rev. 3 Grade 0 (API 1.0.1) probed
+ad9208 spi0.2: AD9208 PLL LOCKED
+ad9208 spi0.2: Failed to request FastDetect IRQs (-6)
+ad9208 spi0.2: AD9208 Rev. 3 Grade 0 (API 1.0.1) probed
+iio_dmaengine_buffer_alloc:227 width 0 (DMA width &gt;= 256-bits ?)
+cf_axi_adc 44a10000.axi-ad9208-0-hpc: ADI AIM (10.01.b) at 0x44A10000 mapped to 0xb0101000, probed ADC AD9208 DUAL (MASTER with DMA) as MASTER
+cf_axi_adc 44b10000.axi-ad9208-1-hpc: ADI AIM (10.01.b) at 0x44B10000 mapped to 0xb010b000, probed ADC AD9208 as MASTER
+Freeing unused kernel memory: 3072K
+This architecture does not have kernel memory protection.
+Starting syslogd: OK
+Starting klogd: OK
+Initializing random number generator... done.
+Starting network: udhcpc: started, v1.29.3
+net eth0: Promiscuous mode disabled.
+net eth0: Promiscuous mode disabled.
+udhcpc: sending discover
+xilinx_axienet 40c00000.ethernet eth0: Link is Down
+udhcpc: sending discover
+xilinx_axienet 40c00000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
+udhcpc: sending discover
+udhcpc: sending discover
+udhcpc: sending select for 10.48.65.139
+udhcpc: lease of &lt;IP&gt; obtained, lease time 21600
+deleting routers
+adding dns &lt;IP&gt;
+adding dns &lt;IP&gt;
+Starting dropbear sshd: OK
+Starting IIO Server Daemon
+
+Welcome to Buildroot
+buildroot login: root
+Password:
+#
+#grep &quot;&quot; /sys/bus/platform/devices/*.axi-jesd*/status*
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/status:Link is enabled
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/status:Measured Link Clock: 350.821 MHz
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/status:Reported Link Clock: 375.000 MHz
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/status:Lane rate: 15000.000 MHz
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/status:Lane rate / 40: 375.000 MHz
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/status:LMFC rate: 46.875 MHz
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/status:Link status: DATA
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/status:SYSREF captured: Yes
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/status:SYSREF alignment error: No
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/status:Link is enabled
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/status:Measured Link Clock: 350.821 MHz
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/status:Reported Link Clock: 375.000 MHz
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/status:Lane rate: 15000.000 MHz
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/status:Lane rate / 40: 375.000 MHz
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/status:LMFC rate: 46.875 MHz
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/status:Link status: DATA
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/status:SYSREF captured: Yes
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/status:SYSREF alignment error: No
+#
+# grep &quot;&quot; /sys/bus/platform/devices/*.axi-jesd*/lane*
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane0_info:Errors: 0
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane0_info:CGS state: DATA
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane0_info:Initial Frame Synchronization: Yes
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane0_info:Lane Latency: 3 Multi-frames and 27 Octets
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane0_info:Initial Lane Alignment Sequence: Yes
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane0_info:DID: 0, BID: 0, LID: 0, L: 8, SCR: 1, F: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane0_info:K: 32, M: 2, N: 16, CS: 0, N&#39;: 16, S: 2, HD: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane0_info:FCHK: 0x86, CF: 0
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane0_info:ADJCNT: 0, PHADJ: 0, ADJDIR: 0, JESDV: 1, SUBCLASS: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane0_info:FC: 15000000
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane1_info:Errors: 0
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane1_info:CGS state: DATA
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane1_info:Initial Frame Synchronization: Yes
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane1_info:Lane Latency: 3 Multi-frames and 27 Octets
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane1_info:Initial Lane Alignment Sequence: Yes
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane1_info:DID: 0, BID: 0, LID: 1, L: 8, SCR: 1, F: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane1_info:K: 32, M: 2, N: 16, CS: 0, N&#39;: 16, S: 2, HD: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane1_info:FCHK: 0x87, CF: 0
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane1_info:ADJCNT: 0, PHADJ: 0, ADJDIR: 0, JESDV: 1, SUBCLASS: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane1_info:FC: 15000000
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane2_info:Errors: 0
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane2_info:CGS state: DATA
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane2_info:Initial Frame Synchronization: Yes
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane2_info:Lane Latency: 3 Multi-frames and 26 Octets
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane2_info:Initial Lane Alignment Sequence: Yes
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane2_info:DID: 0, BID: 0, LID: 2, L: 8, SCR: 1, F: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane2_info:K: 32, M: 2, N: 16, CS: 0, N&#39;: 16, S: 2, HD: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane2_info:FCHK: 0x88, CF: 0
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane2_info:ADJCNT: 0, PHADJ: 0, ADJDIR: 0, JESDV: 1, SUBCLASS: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane2_info:FC: 15000000
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane3_info:Errors: 0
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane3_info:CGS state: DATA
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane3_info:Initial Frame Synchronization: Yes
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane3_info:Lane Latency: 3 Multi-frames and 28 Octets
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane3_info:Initial Lane Alignment Sequence: Yes
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane3_info:DID: 0, BID: 0, LID: 3, L: 8, SCR: 1, F: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane3_info:K: 32, M: 2, N: 16, CS: 0, N&#39;: 16, S: 2, HD: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane3_info:FCHK: 0x89, CF: 0
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane3_info:ADJCNT: 0, PHADJ: 0, ADJDIR: 0, JESDV: 1, SUBCLASS: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane3_info:FC: 15000000
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane4_info:Errors: 0
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane4_info:CGS state: DATA
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane4_info:Initial Frame Synchronization: Yes
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane4_info:Lane Latency: 3 Multi-frames and 28 Octets
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane4_info:Initial Lane Alignment Sequence: Yes
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane4_info:DID: 0, BID: 0, LID: 4, L: 8, SCR: 1, F: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane4_info:K: 32, M: 2, N: 16, CS: 0, N&#39;: 16, S: 2, HD: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane4_info:FCHK: 0x8A, CF: 0
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane4_info:ADJCNT: 0, PHADJ: 0, ADJDIR: 0, JESDV: 1, SUBCLASS: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane4_info:FC: 15000000
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane5_info:Errors: 0
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane5_info:CGS state: DATA
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane5_info:Initial Frame Synchronization: Yes
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane5_info:Lane Latency: 3 Multi-frames and 24 Octets
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane5_info:Initial Lane Alignment Sequence: Yes
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane5_info:DID: 0, BID: 0, LID: 5, L: 8, SCR: 1, F: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane5_info:K: 32, M: 2, N: 16, CS: 0, N&#39;: 16, S: 2, HD: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane5_info:FCHK: 0x8B, CF: 0
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane5_info:ADJCNT: 0, PHADJ: 0, ADJDIR: 0, JESDV: 1, SUBCLASS: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane5_info:FC: 15000000
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane6_info:Errors: 0
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane6_info:CGS state: DATA
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane6_info:Initial Frame Synchronization: Yes
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane6_info:Lane Latency: 3 Multi-frames and 25 Octets
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane6_info:Initial Lane Alignment Sequence: Yes
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane6_info:DID: 0, BID: 0, LID: 6, L: 8, SCR: 1, F: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane6_info:K: 32, M: 2, N: 16, CS: 0, N&#39;: 16, S: 2, HD: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane6_info:FCHK: 0x8C, CF: 0
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane6_info:ADJCNT: 0, PHADJ: 0, ADJDIR: 0, JESDV: 1, SUBCLASS: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane6_info:FC: 15000000
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane7_info:Errors: 0
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane7_info:CGS state: DATA
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane7_info:Initial Frame Synchronization: Yes
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane7_info:Lane Latency: 3 Multi-frames and 25 Octets
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane7_info:Initial Lane Alignment Sequence: Yes
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane7_info:DID: 0, BID: 0, LID: 7, L: 8, SCR: 1, F: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane7_info:K: 32, M: 2, N: 16, CS: 0, N&#39;: 16, S: 2, HD: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane7_info:FCHK: 0x8D, CF: 0
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane7_info:ADJCNT: 0, PHADJ: 0, ADJDIR: 0, JESDV: 1, SUBCLASS: 1
+/sys/bus/platform/devices/44a90000.axi-jesd204-rx/lane7_info:FC: 15000000
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane0_info:Errors: 0
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane0_info:CGS state: DATA
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane0_info:Initial Frame Synchronization: Yes
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane0_info:Lane Latency: 3 Multi-frames and 26 Octets
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane0_info:Initial Lane Alignment Sequence: Yes
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane0_info:DID: 0, BID: 0, LID: 0, L: 8, SCR: 1, F: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane0_info:K: 32, M: 2, N: 16, CS: 0, N&#39;: 16, S: 2, HD: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane0_info:FCHK: 0x86, CF: 0
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane0_info:ADJCNT: 0, PHADJ: 0, ADJDIR: 0, JESDV: 1, SUBCLASS: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane0_info:FC: 15000000
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane1_info:Errors: 0
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane1_info:CGS state: DATA
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane1_info:Initial Frame Synchronization: Yes
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane1_info:Lane Latency: 3 Multi-frames and 28 Octets
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane1_info:Initial Lane Alignment Sequence: Yes
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane1_info:DID: 0, BID: 0, LID: 1, L: 8, SCR: 1, F: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane1_info:K: 32, M: 2, N: 16, CS: 0, N&#39;: 16, S: 2, HD: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane1_info:FCHK: 0x87, CF: 0
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane1_info:ADJCNT: 0, PHADJ: 0, ADJDIR: 0, JESDV: 1, SUBCLASS: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane1_info:FC: 15000000
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane2_info:Errors: 0
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane2_info:CGS state: DATA
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane2_info:Initial Frame Synchronization: Yes
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane2_info:Lane Latency: 3 Multi-frames and 26 Octets
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane2_info:Initial Lane Alignment Sequence: Yes
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane2_info:DID: 0, BID: 0, LID: 2, L: 8, SCR: 1, F: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane2_info:K: 32, M: 2, N: 16, CS: 0, N&#39;: 16, S: 2, HD: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane2_info:FCHK: 0x88, CF: 0
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane2_info:ADJCNT: 0, PHADJ: 0, ADJDIR: 0, JESDV: 1, SUBCLASS: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane2_info:FC: 15000000
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane3_info:Errors: 0
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane3_info:CGS state: DATA
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane3_info:Initial Frame Synchronization: Yes
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane3_info:Lane Latency: 3 Multi-frames and 27 Octets
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane3_info:Initial Lane Alignment Sequence: Yes
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane3_info:DID: 0, BID: 0, LID: 3, L: 8, SCR: 1, F: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane3_info:K: 32, M: 2, N: 16, CS: 0, N&#39;: 16, S: 2, HD: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane3_info:FCHK: 0x89, CF: 0
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane3_info:ADJCNT: 0, PHADJ: 0, ADJDIR: 0, JESDV: 1, SUBCLASS: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane3_info:FC: 15000000
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane4_info:Errors: 0
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane4_info:CGS state: DATA
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane4_info:Initial Frame Synchronization: Yes
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane4_info:Lane Latency: 3 Multi-frames and 26 Octets
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane4_info:Initial Lane Alignment Sequence: Yes
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane4_info:DID: 0, BID: 0, LID: 4, L: 8, SCR: 1, F: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane4_info:K: 32, M: 2, N: 16, CS: 0, N&#39;: 16, S: 2, HD: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane4_info:FCHK: 0x8A, CF: 0
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane4_info:ADJCNT: 0, PHADJ: 0, ADJDIR: 0, JESDV: 1, SUBCLASS: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane4_info:FC: 15000000
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane5_info:Errors: 0
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane5_info:CGS state: DATA
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane5_info:Initial Frame Synchronization: Yes
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane5_info:Lane Latency: 3 Multi-frames and 28 Octets
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane5_info:Initial Lane Alignment Sequence: Yes
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane5_info:DID: 0, BID: 0, LID: 5, L: 8, SCR: 1, F: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane5_info:K: 32, M: 2, N: 16, CS: 0, N&#39;: 16, S: 2, HD: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane5_info:FCHK: 0x8B, CF: 0
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane5_info:ADJCNT: 0, PHADJ: 0, ADJDIR: 0, JESDV: 1, SUBCLASS: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane5_info:FC: 15000000
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane6_info:Errors: 0
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane6_info:CGS state: DATA
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane6_info:Initial Frame Synchronization: Yes
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane6_info:Lane Latency: 3 Multi-frames and 25 Octets
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane6_info:Initial Lane Alignment Sequence: Yes
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane6_info:DID: 0, BID: 0, LID: 6, L: 8, SCR: 1, F: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane6_info:K: 32, M: 2, N: 16, CS: 0, N&#39;: 16, S: 2, HD: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane6_info:FCHK: 0x8C, CF: 0
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane6_info:ADJCNT: 0, PHADJ: 0, ADJDIR: 0, JESDV: 1, SUBCLASS: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane6_info:FC: 15000000
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane7_info:Errors: 0
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane7_info:CGS state: DATA
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane7_info:Initial Frame Synchronization: Yes
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane7_info:Lane Latency: 3 Multi-frames and 27 Octets
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane7_info:Initial Lane Alignment Sequence: Yes
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane7_info:DID: 0, BID: 0, LID: 7, L: 8, SCR: 1, F: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane7_info:K: 32, M: 2, N: 16, CS: 0, N&#39;: 16, S: 2, HD: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane7_info:FCHK: 0x8D, CF: 0
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane7_info:ADJCNT: 0, PHADJ: 0, ADJDIR: 0, JESDV: 1, SUBCLASS: 1
+/sys/bus/platform/devices/44b90000.axi-jesd204-rx/lane7_info:FC: 15000000
+</pre></div>
+</div>
+</div>
+</details><p>The following devices should be present:</p>
+<div class="box bggreen docutils container">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This specifies any shell prompt running on the target</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># iio_info | grep iio:device</span>
+        <span class="n">iio</span><span class="p">:</span><span class="n">device0</span><span class="p">:</span> <span class="n">hmc7044</span>
+        <span class="n">iio</span><span class="p">:</span><span class="n">device1</span><span class="p">:</span> <span class="n">axi</span><span class="o">-</span><span class="n">ad9208</span><span class="o">-</span><span class="mi">0</span><span class="o">-</span><span class="n">hpc</span> <span class="p">(</span><span class="n">buffer</span> <span class="n">capable</span><span class="p">)</span>
+        <span class="n">iio</span><span class="p">:</span><span class="n">device2</span><span class="p">:</span> <span class="n">axi</span><span class="o">-</span><span class="n">ad9208</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">hpc</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="connect-to-board-with-iio-scope">
+<h3>4. Connect to board with IIO Scope<a class="headerlink" href="#connect-to-board-with-iio-scope" title="Link to this heading"></a></h3>
+<p>From the UART console find out the board IP address that was allocated by the DHCP server. If you do not use a DHCP server manually assign an IP to the board Ethernet port. The default username:password for Linux is <strong>root:analog</strong>.</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad9208_dual_ebz/quickstart/iio_connect_noip.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9208_dual_ebz/quickstart/iio_connect_noip.png" />
+</section>
+<section id="capture-data-with-iio-scope">
+<h3>5. Capture data with IIO Scope<a class="headerlink" href="#capture-data-with-iio-scope" title="Link to this heading"></a></h3>
+<section id="jesd-subclass-0-example">
+<h4>JESD SubClass 0 example<a class="headerlink" href="#jesd-subclass-0-example" title="Link to this heading"></a></h4>
+<p>When the device is configured from device tree into subclass 0 we can observe the two links are not synchronized and the channels present phase differences.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad9208_dual_ebz/quickstart/subclass0_waves.png"><img alt="Subclass 0" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9208_dual_ebz/quickstart/subclass0_waves.png" style="width: 800px;" /></a></p>
+</section>
+<section id="jesd-subclass-1-example">
+<h4>JESD SubClass 1 example<a class="headerlink" href="#jesd-subclass-1-example" title="Link to this heading"></a></h4>
+<p>When the devices are configured into subclass 1 (default), we can observe the JESD links are synchronized and there is no phase difference between the input channels.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad9208_dual_ebz/quickstart/subclass1_waves.png"><img alt="Subclass 1" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9208_dual_ebz/quickstart/subclass1_waves.png" style="width: 800px;" /></a></p>
+</section>
+</section>
+</section>
+<section id="more-information">
+<h2>More Information<a class="headerlink" href="#more-information" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../ad9208_dual_ebz_hdl.html"><span class="doc">AD9208-DUAL-EBZ HDL reference design</span></a></p></li>
+<li><p><a class="reference internal" href="../../../../tools-software/linux-drivers/iio-adc/ad9208.html"><span class="doc">AD9208 ADC Linux Driver</span></a></p></li>
+</ul>
+</section>
+</section>
+<section id="ad9208-dual-ebz-hdl-reference-design">
+<h1>AD9208-DUAL-EBZ HDL reference design<a class="headerlink" href="#ad9208-dual-ebz-hdl-reference-design" title="Link to this heading"></a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/ad9208_dual_ebz/index.html" target="_blank">https://analogdevicesinc.github.io/hdl/projects/ad9208_dual_ebz/index.html</a></p>
+</div>
+<section id="functional-overview">
+<h2>Functional Overview<a class="headerlink" href="#functional-overview" title="Link to this heading"></a></h2>
+<p>The AD9208-DUAL-EBZ reference design is a processor based (e.g. Microblaze) embedded system. The device interfaces to the FPGA transceivers followed by the individual JESD204B and ADC cores. The cores are programmable through an AXI-Lite interface. The samples are passed to the system memory (DDR).</p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/projects/ad9208_dual_ebz" target="_blank">projects/ad9208_dual_ebz</a></p>
+</div>
+<p>The reference design supports the following evaluation board:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Hardware</p></th>
+<th class="head"><p>Evaluation Document</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/AD9208" target="_blank">DUAL-AD9208</a> DUAL-AD9208</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="supported-carriers">
+<h2>Supported Carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/VCU118" target="_blank">VCU118</a> FMC+ Slot</p></li>
+</ul>
+</section>
+<section id="building-the-hdl-project">
+<h2>Building the HDL project<a class="headerlink" href="#building-the-hdl-project" title="Link to this heading"></a></h2>
+<p>General build instructions can be found here: <a class="reference internal" href="../../../../fpga/docs/build.html"><span class="doc">Building HDL</span></a></p>
+</section>
+<section id="block-diagram">
+<h2>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h2>
+<p>The data path and clock domains are depicted on the below diagram:</p>
+<p><img alt="image1" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9208_dual_ebz/vcu118_ad9208_dual_ebz.png" /></p>
+<p>The design has two JESD receive chains each having 8 lanes at rate of 15Gbps. The JESD receive chain consists of a physical layer represented by an XCVR module, a link layer represented by an RX JESD LINK module and transport layer represented by a RX JESD TPL module. The links operate in Subclass 1 by using the SYSREF signal to edge align the internal local multiframe clock and to release the received data in the same moment from all lanes. Therefore ensuring that data from all channels is synchronized at the application layer.</p>
+<p>Both links are set for full bandwidth mode and operate with the following parameters:</p>
+<ul class="simple">
+<li><p>Deframer paramaters: L=8, M=2, F=1, S=2, N’=16</p></li>
+<li><p>GLBLCLK – 375MHz (Lane Rate/40)</p></li>
+<li><p>REFCLK – 750MHz (Lane Rate/20)</p></li>
+<li><p>SYSREF – 1.46MHz (DEVCLK/2048)</p></li>
+<li><p>DEVCLK – 3000MHz</p></li>
+<li><p>JESD204B Lane Rate – 15Gbps</p></li>
+</ul>
+<p>Both transport layer components present on their output 256 bits at once on every clock cycle, representing 8 samples per converter. The two receive chains are merged together and transferred to the DDR with a single DMA. An ADC buffer is used to store 65k samples per converter in the fabric before transferring it with the DMA.</p>
+<section id="clock-sources">
+<h3>Clock sources<a class="headerlink" href="#clock-sources" title="Link to this heading"></a></h3>
+<p>The clock sources are depicted on the below diagram:</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad9208_dual_ebz/ad9208_vcu118_clocking.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad9208_dual_ebz/ad9208_vcu118_clocking.png" />
+<p>Both physical layer transceiver modules receive the same reference clock from the clock chip SCLKOUT8 output. The global clock (LaneRate/40) it is received directly from the clock chip SCLKOUT9 output.</p>
+</section>
+</section>
+<section id="id4">
+<h2>More Information<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#"><span class="doc">AD9208-DUAL-EBZ Virtex UltraScale+ VCU118 Quick Start Guide</span></a></p></li>
+<li><p><a class="reference internal" href="../../../../fpga/docs/hdl.html"><span class="doc">ADI Reference Designs HDL User Guide</span></a></p></li>
+<li><p><a class="reference internal" href="../../../../fpga/docs/hdl/generic_jesd_bds.html"><span class="doc">Generic JESD204B block designs</span></a></p></li>
+<li><p><a class="reference internal" href="../../../../fpga/peripherals/jesd204.html"><span class="doc">JESD204B High-Speed Serial Interface Support</span></a></p></li>
+<li><p><a class="reference internal" href="../../../../tools-software/linux-drivers/iio-adc/ad9208.html"><span class="doc">AD9208 ADC Linux Driver</span></a></p></li>
+</ul>
+</section>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h2>
+<p>Analog Devices will provide limited online support for anyone using the core with Analog Devices components (ADC, DAC, Video, Audio, etc) via the <a class="icon ez reference external" href="https://ez.analog.com/community/fpga" target="_blank">EngineerZone</a>.</p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Small form factor (3.5 cm x 7.5 cm)" name="description" />
+
+    <title>EV-COG-AGILE-900Z &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">EV-COG-AGILE-900Z</a><ul>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#description">DESCRIPTION</a></li>
+<li><a class="reference internal" href="#functional-block-diagram">FUNCTIONAL BLOCK DIAGRAM</a></li>
+<li><a class="reference internal" href="#evaluation-board-hardware">EVALUATION BOARD HARDWARE</a><ul>
+<li><a class="reference internal" href="#evaluation-board-components">EVALUATION BOARD COMPONENTS</a></li>
+<li><a class="reference internal" href="#ev-mod-agile-900z-module">EV-MOD-AGILE-900Z MODULE</a></li>
+<li><a class="reference internal" href="#power-supply-options">POWER SUPPLY OPTIONS</a></li>
+<li><a class="reference internal" href="#leds">LEDs</a><ul>
+<li><a class="reference internal" href="#power-pwr">Power (PWR)</a></li>
+<li><a class="reference internal" href="#reset-rstled">Reset (RSTLED)</a></li>
+<li><a class="reference internal" href="#radio-reset-ds2">Radio Reset (DS2)</a></li>
+<li><a class="reference internal" href="#mbed-power-mbed">Mbed Power (MBED)</a></li>
+<li><a class="reference internal" href="#gpio-leds-ds1-ds3-ds4">GPIO LEDs (DS1, DS3, DS4)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#switches">SWITCHES</a><ul>
+<li><a class="reference internal" href="#boot-mode-select-boot">Boot Mode Select (BOOT)</a></li>
+<li><a class="reference internal" href="#reset-push-button-rst">Reset Push Button (RST)</a></li>
+<li><a class="reference internal" href="#gpio-push-button-btn2">GPIO Push Button (BTN2)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#connectors">CONNECTORS</a><ul>
+<li><a class="reference internal" href="#mcu-debug-interface-p26">MCU Debug Interface (P26)</a></li>
+<li><a class="reference internal" href="#shaker-connector-p10">Shaker Connector (P10)</a></li>
+<li><a class="reference internal" href="#expansion-connectors-c1-and-c2">Expansion Connectors (C1 and C2)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sensors">SENSORS</a></li>
+<li><a class="reference internal" href="#shunt-jumpers">SHUNT JUMPERS</a><ul>
+<li><a class="reference internal" href="#jh1">JH1</a></li>
+<li><a class="reference internal" href="#jh2">JH2</a></li>
+<li><a class="reference internal" href="#jh3">JH3</a></li>
+<li><a class="reference internal" href="#jh4">JH4</a></li>
+<li><a class="reference internal" href="#jh5">JH5</a></li>
+<li><a class="reference internal" href="#jh6">JH6</a></li>
+<li><a class="reference internal" href="#jh9">JH9</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#solder-jumpers">SOLDER JUMPERS</a><ul>
+<li><a class="reference internal" href="#jp1">JP1</a></li>
+<li><a class="reference internal" href="#jp2">JP2</a></li>
+<li><a class="reference internal" href="#jp4">JP4</a></li>
+<li><a class="reference internal" href="#jp5">JP5</a></li>
+<li><a class="reference internal" href="#jp6">JP6</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#other-shunts">Other shunts</a><ul>
+<li><a class="reference internal" href="#p2">P2</a></li>
+<li><a class="reference internal" href="#p3">P3</a></li>
+<li><a class="reference internal" href="#p4">P4</a></li>
+<li><a class="reference internal" href="#p7">P7</a></li>
+<li><a class="reference internal" href="#p8">P8</a></li>
+<li><a class="reference internal" href="#p9">P9</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#current-measuring-test-points">CURRENT MEASURING TEST POINTS</a></li>
+<li><a class="reference internal" href="#programming-and-debugging-the-ev-cog-agile-900z">PROGRAMMING AND DEBUGGING THE EV-COG-AGILE-900Z</a><ul>
+<li><a class="reference internal" href="#installing-the-agilenet-6t-software-package">INSTALLING THE AGILENET-6T SOFTWARE PACKAGE</a></li>
+<li><a class="reference internal" href="#programming-the-ev-cog-agile-900z-board-via-daplink-interface">PROGRAMMING THE EV-COG-AGILE-900Z BOARD via DAPLINK interface</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#flashing-another-board-using-the-ev-cog-agile-900z">FLASHING ANOTHER BOARD USING THE EV-COG-AGILE-900Z</a><ul>
+<li><a class="reference internal" href="#additional-resources">Additional resources</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="ev-cog-agile-900z">
+<h1>EV-COG-AGILE-900Z<a class="headerlink" href="#ev-cog-agile-900z" title="Link to this heading"></a></h1>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Small form factor (3.5 cm x 7.5 cm)</p></li>
+<li><p>Sub-GHz mesh networking module on board</p></li>
+<li><p>On-board debugging capability through the ARM® Mbed™ DAPLink software</p></li>
+<li><p>Multiple test points to monitor current consumption</p></li>
+<li><p>Multiple options to power up evaluation board</p></li>
+<li><p>On-board sensors such as the SHT31 temperature sensor and an accelerometer for fast prototyping</p></li>
+<li><p>Access to all GPIOs through expansion connectors</p></li>
+</ul>
+</section>
+<section id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>The EV-COG-AGILE-900Z board deploys and tests custom applications built with the AgileNet-6T protocol, a sub-GHz mesh networking solution. The EV-COG-AGILE-900Z is an evaluation board with an EV-MOD-AGILE-900Z assembled on board. The EV-MOD-AGILE-900Z contains the ADuCM4050 microcontroller (MCU), an ultra low power, mixed-signal microcontroller system and the ADF7030-1, a low power, sub GHz radio.</p>
+</section>
+<section id="functional-block-diagram">
+<h2>FUNCTIONAL BLOCK DIAGRAM<a class="headerlink" href="#functional-block-diagram" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig1_final.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig1_final.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig1_final.png" style="width: 400px;" />
+</a>
+<p>Figure.1</p>
+</section>
+<section id="evaluation-board-hardware">
+<h2>EVALUATION BOARD HARDWARE<a class="headerlink" href="#evaluation-board-hardware" title="Link to this heading"></a></h2>
+<p>The EV-COG-AGILE-900Z comes with the EV-MOD-AGILE-900Z assembled on board which provides multiple connectors, interfaces, buttons, and switches to power up, flash, and communicate with the EV-COG-AGILE-900Z board.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig2_final.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig2_final.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig2_final.png" style="width: 400px;" />
+</a>
+<p>Figure.2 Primary Side of the EV-COG-AGILE-900Z</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig3_final.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig3_final.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig3_final.png" style="width: 400px;" />
+</a>
+<p>Figure.3 Secondary Side of the EV-COG-AGILE-900Z</p>
+<section id="evaluation-board-components">
+<h3>EVALUATION BOARD COMPONENTS<a class="headerlink" href="#evaluation-board-components" title="Link to this heading"></a></h3>
+<p>The components in the EV-COG-AGILE-900Z are distributed between the primary side and the secondary side of the board (see Figure 4 and Figure 5).</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig4_final.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig4_final.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig4_final.png" style="width: 400px;" />
+</a>
+<p>Figure.4 Components on the Primary Side of the EV-COG-AGILE-900Z</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig5_final.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig5_final.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig5_final.png" style="width: 400px;" />
+</a>
+<p>Figure.5 Components on the Secondary Side of the EV-COG-AGILE-900Z</p>
+</section>
+<section id="ev-mod-agile-900z-module">
+<h3>EV-MOD-AGILE-900Z MODULE<a class="headerlink" href="#ev-mod-agile-900z-module" title="Link to this heading"></a></h3>
+<p>The EV-MOD-AGILE-900Z consists of the ADuCM4050, a low power microcontroller, and the ADF7030-1, a low power sub-GHz radio. This module is connected to the EV-COG-AGILE-900Z through 51 castellation pins soldered to the board. These castellation pins are soldered to connect the universal asynchronous receiver/transmitter (UART), I2C, serial peripheral interface (SPI), and general purpose input/output (GPIO) lines of the EV-MOD-AGILE-900Z to the EV-COG-AGILE-900Z. The EV-COG-AGILE-900Z power supply is routed to the EV-MOD-AGILE-900Z. The EV-MOD-AGILE-900Z also has an MMCX antenna connector to attach an antenna.</p>
+</section>
+<section id="power-supply-options">
+<h3>POWER SUPPLY OPTIONS<a class="headerlink" href="#power-supply-options" title="Link to this heading"></a></h3>
+<p>Depending on the end application of the customer, the EV-COG-AGILE-900Z can be powered on through a USB, battery, or external supply. A three-position switch, S7, is used to select the power supply (see Figure 6). The S7 configurations for the different power options are described in Table 1.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig6_final.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig6_final.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig6_final.png" style="width: 400px;" />
+</a>
+<p>Figure.6 Power Selection Switch</p>
+<p>Table 1</p>
+<p>The power sources can be used with or without the ADP5300 step-down regulator. The ADP5300 regulates the power supplied to the MCU, the radio, and components on the EV-COG-AGILE-900Z. The ADP5300 is configured to supply a constant 3 V output to the ADuCM4050 MCU processor and the ADF7030-1 radio. The bypass configurations for the different power options are described in Table 2.</p>
+<p>Table 2</p>
+</section>
+<section id="leds">
+<h3>LEDs<a class="headerlink" href="#leds" title="Link to this heading"></a></h3>
+<section id="power-pwr">
+<h4>Power (PWR)<a class="headerlink" href="#power-pwr" title="Link to this heading"></a></h4>
+<p>The power LED indicates the EV-COG-AGILE-900Z is powered on.</p>
+</section>
+<section id="reset-rstled">
+<h4>Reset (RSTLED)<a class="headerlink" href="#reset-rstled" title="Link to this heading"></a></h4>
+<p>The reset LED indicates the ADuCM4050 is in reset. The reset occurs by pressing the RST push button.</p>
+</section>
+<section id="radio-reset-ds2">
+<h4>Radio Reset (DS2)<a class="headerlink" href="#radio-reset-ds2" title="Link to this heading"></a></h4>
+<p>The radio reset LED indicates the ADF7030-1 is in reset. The radio reset is controlled through firmware programmed into the board.</p>
+</section>
+<section id="mbed-power-mbed">
+<h4>Mbed Power (MBED)<a class="headerlink" href="#mbed-power-mbed" title="Link to this heading"></a></h4>
+<p>The Mbed power LED indicates power is supplied to the Arm® Mbed™ chip.</p>
+</section>
+<section id="gpio-leds-ds1-ds3-ds4">
+<h4>GPIO LEDs (DS1, DS3, DS4)<a class="headerlink" href="#gpio-leds-ds1-ds3-ds4" title="Link to this heading"></a></h4>
+<p>DS1, DS3, and DS4 are three LEDs connected to the GPIO pins of the ADuCM4050. The LEDs are active high and are turned on by driving logic 1. The pin mapping between the GPIOs and the LEDs is described in Table 3.</p>
+<p>Table 3</p>
+</section>
+</section>
+<section id="switches">
+<h3>SWITCHES<a class="headerlink" href="#switches" title="Link to this heading"></a></h3>
+<section id="boot-mode-select-boot">
+<h4>Boot Mode Select (BOOT)<a class="headerlink" href="#boot-mode-select-boot" title="Link to this heading"></a></h4>
+<p>The BOOT push button determines the boot mode of the ADuCM4050 during reset. By default, the ADuCM4050 MCU processor boots from the internal flash memory.</p>
+</section>
+<section id="reset-push-button-rst">
+<h4>Reset Push Button (RST)<a class="headerlink" href="#reset-push-button-rst" title="Link to this heading"></a></h4>
+<p>The reset push button resets the ADuCM4050. RSTLED indicates the ADuCM4050 is in reset.</p>
+</section>
+<section id="gpio-push-button-btn2">
+<h4>GPIO Push Button (BTN2)<a class="headerlink" href="#gpio-push-button-btn2" title="Link to this heading"></a></h4>
+<p>The GPIO push button is connected to pin P1_12 of the ADuCM4050. The GPIO push button is available for user defined applications.</p>
+</section>
+</section>
+<section id="connectors">
+<h3>CONNECTORS<a class="headerlink" href="#connectors" title="Link to this heading"></a></h3>
+<section id="mcu-debug-interface-p26">
+<h4>MCU Debug Interface (P26)<a class="headerlink" href="#mcu-debug-interface-p26" title="Link to this heading"></a></h4>
+<p>P26 is a 0.05 inch 10-pin header that programs the ADuCM4050. The serial wire debug (SWD) lines of the ADuCM4050 are available through the 10-pin interface.</p>
+</section>
+<section id="shaker-connector-p10">
+<h4>Shaker Connector (P10)<a class="headerlink" href="#shaker-connector-p10" title="Link to this heading"></a></h4>
+<p>P10 provides an interface to allow external sensors to connect to the MCU through the I2C protocol. The pinout of the shaker connector is as follows:</p>
+<p>Table 4</p>
+</section>
+<section id="expansion-connectors-c1-and-c2">
+<h4>Expansion Connectors (C1 and C2)<a class="headerlink" href="#expansion-connectors-c1-and-c2" title="Link to this heading"></a></h4>
+<p>The C1 expansion connector and C2 expansion connector provide signals from the SPI, UART, I2C, synchronous serial peripheral port (SPORT), and GPIO interfaces of the ADuCM4050. C1 and C2 are present on the bottom side of the board. These expansion connectors enable daughter boards to connect to the EV-COG-AGILE-900Z and enable the user to develop a variety of applications. The pinouts of the expansion connectors are seen in Fig 7, 8</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig7_final.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig7_final.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig7_final.png" style="width: 400px;" />
+</a>
+<p>Figure 7. Pinout of Expansion Connector C1</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig8_final.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig8_final.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig8_final.png" style="width: 400px;" />
+</a>
+<p>Figure 8. Pinout of Expansion Connector C2</p>
+</section>
+</section>
+<section id="sensors">
+<h3>SENSORS<a class="headerlink" href="#sensors" title="Link to this heading"></a></h3>
+<p>For quick prototyping and development purposes, sensors are present onboard the EV-COG-AGILE-900Z. The SHT31 temperature sensor is present on the EV-COG-AGILE-900Z and can be used in user developed applications. A shunt jumper should be inserted in P9 to power up the sensor. SHT31 communicates with the ADuCM4050 through I2C0 lines.</p>
+</section>
+<section id="shunt-jumpers">
+<h3>SHUNT JUMPERS<a class="headerlink" href="#shunt-jumpers" title="Link to this heading"></a></h3>
+<p>The on-board jumpers multiplex GPIO lines for various functionalities. The shunt jumpers, or shunts, are 1.27 mm headers with shorted pins. By default, the shunt jumpers are inserted in the positions listed in Table 5</p>
+<p>Table 5 To change the jumper settings, remove the shunt jumper from the default position and insert the jumper in the new position. The pin numbers are written on the silk screen.</p>
+<section id="jh1">
+<h4>JH1<a class="headerlink" href="#jh1" title="Link to this heading"></a></h4>
+<p>JH1 connects VDD_MCU with VDD_MCU_B line to pull up the I2C lines and power any sensors connected via expansion connectors.</p>
+</section>
+<section id="jh2">
+<h4>JH2<a class="headerlink" href="#jh2" title="Link to this heading"></a></h4>
+<p>JH2 connects the power supply input to the regulator. The EV-COG-AGILE-900Z is not powered if the shunts are not inserted at JH2.</p>
+</section>
+<section id="jh3">
+<h4>JH3<a class="headerlink" href="#jh3" title="Link to this heading"></a></h4>
+<p>JH3 is a 4-pin header. Pin 1 and Pin 2 are shorted by default and connect VDD_MAIN to VDD_BOARD. Inserting shunts at Pin 3 and Pin 4 connects VDD_BOARD to GND.</p>
+</section>
+<section id="jh4">
+<h4>JH4<a class="headerlink" href="#jh4" title="Link to this heading"></a></h4>
+<p>JH4 is a 6-pin header that determines whether the ADP5300 is bypassed. Inserting shunts at Pin 1 and Pin 2 connects the output of the regulator to VDD_MAIN. Shunts at Pin 3 and Pin 4 bypass the regulator and connect EXT_VDD_IN to VDD_MAIN. Shunts at Pin 5 and Pin 6 bypass the regulator and connect VIN to VDD_MAIN. The ADP5300 should never by bypassed when the EV-COG-AGILE-900Z is powered through a USB supply.</p>
+</section>
+<section id="jh5">
+<h4>JH5<a class="headerlink" href="#jh5" title="Link to this heading"></a></h4>
+<p>JH5 is a 4-pin header that enables the Mbed chip. Shunts a Pin 1 and Pin 2 connect VDD_MAIN to VDD_MBED, which powers the Mbed chip.</p>
+</section>
+<section id="jh6">
+<h4>JH6<a class="headerlink" href="#jh6" title="Link to this heading"></a></h4>
+<p>Shunts at Pin 1 and Pin 2 route the Mbed chip signals to the ADuCM4050. If the shunts are removed, the Mbed chip routes the signals to P26. Connecting a 10-pin cable between P26 on EV-COG-AGILE-900Z and a supported external board allows the Mbed chip on the EV-COG-AGILE-900Z to program the external board.</p>
+</section>
+<section id="jh9">
+<h4>JH9<a class="headerlink" href="#jh9" title="Link to this heading"></a></h4>
+<p>Shunts at Pin 1 and Pin 2 power VDD_RF_H to VDD_MAIN. Removing the shunts disables the power supply to the ADF7030-1.</p>
+</section>
+</section>
+<section id="solder-jumpers">
+<h3>SOLDER JUMPERS<a class="headerlink" href="#solder-jumpers" title="Link to this heading"></a></h3>
+<p>Solder jumpers are shorted by soldering required points. There are five solder jumpers on the board. Four of the solder jumpers are located on the bottom side of the EV-COG-AGILE-900Z. To change a solder jumper using a hot soldering iron, melt a blob of solder and move the jumper to the new position.</p>
+<p>Table 6</p>
+<section id="jp1">
+<h4>JP1<a class="headerlink" href="#jp1" title="Link to this heading"></a></h4>
+<p>JP1 determines the routing of the GPIO28 and GPIO29 lines. By soldering Pin 1 and Pin 2, the GPIO28 and GPIO29 lines are routed to A_GPIO28 on the C1 expansion connector. By soldering Pin 2 and Pin 3, the GPIO28 and GPIO29 lines are routed to A_GPIO29 on P3.</p>
+</section>
+<section id="jp2">
+<h4>JP2<a class="headerlink" href="#jp2" title="Link to this heading"></a></h4>
+<p>JP2 determines the routing of the GPIO43 and GPIO27 lines. By soldering Pin 1 and Pin 2, the GPIO43 and GPIO27 lines are routed to A_GPIO43 on P2. By soldering Pin 2 and Pin 3, the GPIO43 and GPIO27 lines are routed to A_GPIO27 on P7.</p>
+</section>
+<section id="jp4">
+<h4>JP4<a class="headerlink" href="#jp4" title="Link to this heading"></a></h4>
+<p>JP4 routes the INT_WAKE2 line. By soldering Pin 1 and Pin 2, the INT_WAKE2 line is routed to the EXT_INT_WAKE2 line on the C1 expansion connector.</p>
+</section>
+<section id="jp5">
+<h4>JP5<a class="headerlink" href="#jp5" title="Link to this heading"></a></h4>
+<p>JP5 routes the SPI1_CS3 line. By soldering Pin 1 and Pin 2, the SPI1_CS3 line is routed to the EXT_SPI1_CS3 line on the C1 expansion connector.</p>
+</section>
+<section id="jp6">
+<h4>JP6<a class="headerlink" href="#jp6" title="Link to this heading"></a></h4>
+<p>JP6 determines the routing of the SWO line. By soldering Pin 1 and Pin 2, the SWO line is routed to the UART0_TXD line. By soldering Pin 2 and Pin 3, the SWO line is routed to the SPI1_CS0 line.</p>
+</section>
+</section>
+<section id="other-shunts">
+<h3>Other shunts<a class="headerlink" href="#other-shunts" title="Link to this heading"></a></h3>
+<section id="p2">
+<h4>P2<a class="headerlink" href="#p2" title="Link to this heading"></a></h4>
+<p>By default, shunts are inserted at Pin 1 and Pin 2. P2 connects the on-board accelerometer or the RTC sensorstrobe line to a GPIO depending on shunt position.</p>
+</section>
+<section id="p3">
+<h4>P3<a class="headerlink" href="#p3" title="Link to this heading"></a></h4>
+<p>P3 provides an option to mux the GPIO14 line for different functionalities. By default, shunts are inserted at Pin 1 and Pin 2 and Pin 7 and Pin 8. To support add on boards, the default position of P3 needs to be changed accordingly. For the EV-GEAR-EINK1Z add-on board, connect Pin 3 and Pin 4 instead of Pin 1 and Pin 2.</p>
+</section>
+<section id="p4">
+<h4>P4<a class="headerlink" href="#p4" title="Link to this heading"></a></h4>
+<p>P4 enables the GPIO34 line to be used for different functionalities. By default, shunts are inserted at Pin 1 and Pin 2.</p>
+</section>
+<section id="p7">
+<h4>P7<a class="headerlink" href="#p7" title="Link to this heading"></a></h4>
+<p>By default, shunts are inserted at Pin 1 and Pin 2. P7 connects one of two GPIOs (A_GPIO27 or GPIO12) to a GPIO mux depending on shunt position.</p>
+</section>
+<section id="p8">
+<h4>P8<a class="headerlink" href="#p8" title="Link to this heading"></a></h4>
+<p>P8 is a UART header that provides an option to route the UART lines to different interfaces. The shunts are placed at Pin 1 and Pin 2 and Pin 7 and Pin 9 by default, which routes the UART lines from the Mbed chip to the UART lines to the ADuCM4050.</p>
+</section>
+<section id="p9">
+<h4>P9<a class="headerlink" href="#p9" title="Link to this heading"></a></h4>
+<p>To power up the SHT31 temperature sensor, shunts must be inserted at P9.</p>
+</section>
+</section>
+</section>
+<section id="current-measuring-test-points">
+<h2>CURRENT MEASURING TEST POINTS<a class="headerlink" href="#current-measuring-test-points" title="Link to this heading"></a></h2>
+<p>The EV-COG-AGILE-900Z enables a user to measure and profile the current consumption throughout board. The EV-COG-AGILE-900Z also enables the isolation of current consumption hotspots. The current measuring test points shown in Table 1 can be used with a digital multimeter to profile the current consumption. These test points measure the board level current, ADuCM4050 current, and ADF7030-1 radio frequency (RF) current.</p>
+<p>Table 7</p>
+</section>
+<section id="programming-and-debugging-the-ev-cog-agile-900z">
+<h2>PROGRAMMING AND DEBUGGING THE EV-COG-AGILE-900Z<a class="headerlink" href="#programming-and-debugging-the-ev-cog-agile-900z" title="Link to this heading"></a></h2>
+<section id="installing-the-agilenet-6t-software-package">
+<h3>INSTALLING THE AGILENET-6T SOFTWARE PACKAGE<a class="headerlink" href="#installing-the-agilenet-6t-software-package" title="Link to this heading"></a></h3>
+<p>Download the AgileNet-6T software by filling in the request form at <a class="icon link reference external" href="https://form.analog.com/form_pages/softwaremodules/SRF.aspx" target="_blank">https://form.analog.com/form_pages/softwaremodules/SRF.aspx</a>. Take the following steps after navigating to the software request form:</p>
+<ul class="simple">
+<li><p>Fill in the requested information under the Software Recipient Information and Commercial information sections.</p></li>
+<li><p>Under the Software requested section, set the options to the following values: Target hardware to Ultra Low Power Microcontrollers, Product Number to ADuCM4050, and select the AgileNet 6T checkbox for Software requested.</p></li>
+<li><p>After the request is approved, a link to download the software is sent to the provided email address.</p></li>
+</ul>
+<p>Use the link to install the AgileNet-6T software package.</p>
+</section>
+<section id="programming-the-ev-cog-agile-900z-board-via-daplink-interface">
+<h3>PROGRAMMING THE EV-COG-AGILE-900Z BOARD via DAPLINK interface<a class="headerlink" href="#programming-the-ev-cog-agile-900z-board-via-daplink-interface" title="Link to this heading"></a></h3>
+<p>Program the EV-COG-AGILE-900Z board with the binary (.bin) and hex (.hex) file formats provided in the provided in the AgileNet-6T software package by taking the following steps:</p>
+<ul class="simple">
+<li><p>Make sure the antenna is connected to the EV-COG-AGILE-900Z board as shown in Figure 9. Note that excluding the antenna can damage the board.</p></li>
+<li><p>To connect the EV-COG-AGILE-900Z evaluation board to the PC, connect the microUSB end of the USB to microUSB cable to the board, and connect the USB end to the PC. All the necessary drivers are downloaded when using the Windows® operating system (OS).</p></li>
+<li><p>After the drivers are installed, a new drive named DAPLINK appears on the computer (see Figure 10). This virtual drive allows the user to reprogram the EV-COG-AGILE-900Z using a simple drag and drop method.</p></li>
+<li><p>Open the DAPLINK drive and drag and drop the .hex file provided in the software package from the computer onto this drive.</p></li>
+<li><p>After the file is copied, the file disappears and then reappears from the DAPLINK window. which indicates that the new firmware has been flashed.</p></li>
+<li><p>Press the middle button labeled RST on the EV-COG-AGILE-900Z to reset the board and to run the new firmware.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig9_final.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig9_final.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig9_final.png" style="width: 400px;" />
+</a>
+<p>Figure 9. The EV-COG-AGILE-900Z with an Antenna Connected</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig10_final.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig10_final.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig10_final.png" style="width: 400px;" />
+</a>
+<p>Figure 10. DAPLINK Drive</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig11_final.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig11_final.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig11_final.png" style="width: 400px;" />
+</a>
+<p>Figure 11. Flashing Through Drag-and-Drop Procedure</p>
+</section>
+</section>
+</section>
+<section id="flashing-another-board-using-the-ev-cog-agile-900z">
+<h1>FLASHING ANOTHER BOARD USING THE EV-COG-AGILE-900Z<a class="headerlink" href="#flashing-another-board-using-the-ev-cog-agile-900z" title="Link to this heading"></a></h1>
+<p>The DAPLink interface can download firmware onto either the EV-COG-AGILE-900Z or onto an external board, such as the EV-MTE-AGILE-900Z, that is connected to P26 on the EV-COG-AGILE-900Z. The procedure to flash an external board is as follows:</p>
+<ul class="simple">
+<li><p>Ensure both the EV-COG-AGILE-900Z and the external board are disconnected from any power source.</p></li>
+<li><p>Connect a 10-pin ribbon cable between P26 on the EV-COG-AGILE-900Z and the equivalent 10-pin header on the external board.</p></li>
+<li><p>Remove the jumper JH6 on the EV-COG-AGILE-900Z to redirect the MBED signals to P26.</p></li>
+<li><p>Power up both boards and connect the EV-COG-AGILE-900Z board to a PC using a USB to microUSB cable</p></li>
+<li><p>After the DAPLINK drive appears on the PC, perform the same drag and drop operation as detailed in Step 4 of the Programming Through DAPLink section.</p></li>
+<li><p>After resetting the board by pressing the on-board button labeled RST, reinstall the JH6 jumper that was removed in Step 3 to flash the EV-COG-AGILE-900Z board at any later point.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig12_final.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig12_final.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ev-cog-agile-900z/fig12_final.png" style="width: 400px;" />
+</a>
+<p>Figure 12 Flashing a Different Board Using the EV-COG-AGILE-900Z</p>
+<section id="additional-resources">
+<h2>Additional resources<a class="headerlink" href="#additional-resources" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="agilenet6t.html"><span class="doc">AgileNet-6T wiki page</span></a></p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

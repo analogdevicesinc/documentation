@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="DokuWiki supports some simple markup language, which tries to make the datafiles to be as readable as possible. This page contains all possible syntax you may use when editing the pages. Simply have a look at the source of this page by pressing the Edit this page button at the top or bottom of the page. If you want to try something, just use the playground page. The simpler markup is easily accessible via quickbuttons, too." name="description" />
+
+    <title>Formatting Syntax &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Formatting Syntax</a><ul>
+<li><a class="reference internal" href="#basic-text-formatting">Basic Text Formatting</a></li>
+<li><a class="reference internal" href="#links">Links</a><ul>
+<li><a class="reference internal" href="#external">External</a></li>
+<li><a class="reference internal" href="#internal">Internal</a></li>
+<li><a class="reference internal" href="#interwiki">Interwiki</a><ul>
+<li><a class="reference internal" href="#specific-to-the-adi-website">Specific to the ADI website</a></li>
+<li><a class="reference internal" href="#distributors">Distributors</a></li>
+<li><a class="reference internal" href="#others">Others</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#windows-shares">Windows Shares</a></li>
+<li><a class="reference internal" href="#image-links">Image Links</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#footnotes">Footnotes</a></li>
+<li><a class="reference internal" href="#sectioning">Sectioning</a><ul>
+<li><a class="reference internal" href="#headline-level-3">Headline Level 3</a><ul>
+<li><a class="reference internal" href="#headline-level-4">Headline Level 4</a><ul>
+<li><a class="reference internal" href="#headline-level-5">Headline Level 5</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#images-and-other-files">Images and Other Files</a></li>
+<li><a class="reference internal" href="#lists">Lists</a></li>
+<li><a class="reference internal" href="#text-conversions">Text Conversions</a><ul>
+<li><a class="reference internal" href="#text-to-image-conversions">Text to Image Conversions</a></li>
+<li><a class="reference internal" href="#text-to-html-conversions">Text to HTML Conversions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#quoting">Quoting</a></li>
+<li><a class="reference internal" href="#tables">Tables</a></li>
+<li><a class="reference internal" href="#no-formatting">No Formatting</a></li>
+<li><a class="reference internal" href="#code-blocks">Code Blocks</a><ul>
+<li><a class="reference internal" href="#syntax-highlighting">Syntax Highlighting</a></li>
+<li><a class="reference internal" href="#downloadable-code-blocks">Downloadable Code Blocks</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#embedding-html-and-php">Embedding HTML and PHP</a></li>
+<li><a class="reference internal" href="#rss-atom-feed-aggregation">RSS/ATOM Feed Aggregation</a></li>
+<li><a class="reference internal" href="#control-macros">Control Macros</a></li>
+<li><a class="reference internal" href="#syntax-plugins">Syntax Plugins</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="formatting-syntax">
+<h1>Formatting Syntax<a class="headerlink" href="#formatting-syntax" title="Link to this heading"></a></h1>
+<p><a class="icon link reference external" href="https://www.dokuwiki.org/DokuWiki" target="_blank">DokuWiki</a> supports some simple markup language, which tries to make the datafiles to be as readable as possible. This page contains all possible syntax you may use when editing the pages. Simply have a look at the source of this page by pressing the <em>Edit this page</em> button at the top or bottom of the page. If you want to try something, just use the <a class="reference internal" href="../playground/playground.html"><span class="doc">playground</span></a> page. The simpler markup is easily accessible via <a class="icon link reference external" href="https://www.dokuwiki.org/toolbar" target="_blank">quickbuttons</a>, too.</p>
+<section id="basic-text-formatting">
+<h2>Basic Text Formatting<a class="headerlink" href="#basic-text-formatting" title="Link to this heading"></a></h2>
+<p>DokuWiki supports <strong>bold</strong>, <em>italic</em>, <em>underlined</em> and <code class="docutils literal notranslate"><span class="pre">monospaced</span></code> texts. Of course you can <strong>``combine``</strong> all these.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DokuWiki</span> <span class="n">supports</span> <span class="o">**</span><span class="n">bold</span><span class="o">**</span><span class="p">,</span> <span class="o">//</span><span class="n">italic</span><span class="o">//</span><span class="p">,</span> <span class="n">__underlined__</span> <span class="ow">and</span> <span class="s1">&#39;&#39;</span><span class="n">monospaced</span><span class="s1">&#39;&#39;</span> <span class="n">texts</span><span class="o">.</span>
+<span class="n">Of</span> <span class="n">course</span> <span class="n">you</span> <span class="n">can</span> <span class="o">**</span><span class="n">__</span><span class="o">//</span><span class="s1">&#39;&#39;</span><span class="n">combine</span><span class="s1">&#39;&#39;</span><span class="o">//</span><span class="n">__</span><span class="o">**</span> <span class="nb">all</span> <span class="n">these</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>You can use <sub>subscript</sub> and <sup>superscript</sup>, too.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">You</span> <span class="n">can</span> <span class="n">use</span> <span class="o">&lt;</span><span class="n">sub</span><span class="o">&gt;</span><span class="n">subscript</span><span class="o">&lt;/</span><span class="n">sub</span><span class="o">&gt;</span> <span class="ow">and</span> <span class="o">&lt;</span><span class="n">sup</span><span class="o">&gt;</span><span class="n">superscript</span><span class="o">&lt;/</span><span class="n">sup</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">too</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>You can mark something as [STRIKEOUT:deleted] as well.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">You</span> <span class="n">can</span> <span class="n">mark</span> <span class="n">something</span> <span class="k">as</span> <span class="o">&lt;</span><span class="k">del</span><span class="o">&gt;</span><span class="n">deleted</span><span class="o">&lt;/</span><span class="k">del</span><span class="o">&gt;</span> <span class="k">as</span> <span class="n">well</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><strong>Paragraphs</strong> are created from blank lines. If you want to <strong>force a newline</strong> without a paragraph, you can use two backslashes followed by a whitespace or the end of line.</p>
+<div class="line-block">
+<div class="line">This is some text with some linebreaks</div>
+<div class="line">Note that the two backslashes are only recognized at the end of a line</div>
+<div class="line">or followed by</div>
+<div class="line">a whitespace \\this happens without it.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">some</span> <span class="n">text</span> <span class="k">with</span> <span class="n">some</span> <span class="n">linebreaks</span>\\ <span class="n">Note</span> <span class="n">that</span> <span class="n">the</span>
+<span class="n">two</span> <span class="n">backslashes</span> <span class="n">are</span> <span class="n">only</span> <span class="n">recognized</span> <span class="n">at</span> <span class="n">the</span> <span class="n">end</span> <span class="n">of</span> <span class="n">a</span> <span class="n">line</span>\\
+<span class="ow">or</span> <span class="n">followed</span> <span class="n">by</span>\\ <span class="n">a</span> <span class="n">whitespace</span> \\<span class="n">this</span> <span class="n">happens</span> <span class="n">without</span> <span class="n">it</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>You should use forced newlines only if really needed.</p>
+</section>
+<section id="links">
+<h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
+<p>DokuWiki supports multiple ways of creating links.</p>
+<section id="external">
+<h3>External<a class="headerlink" href="#external" title="Link to this heading"></a></h3>
+<p>External links are recognized automagically: <a class="icon link reference external" href="http://www.google.com" target="_blank">http://www.google.com</a> or simply www.google.com - You can set the link text as well: <a class="icon link reference external" href="http://www.google.com" target="_blank">This Link points to google</a>. Email addresses like this one: <a class="reference external" href="mailto:andi&#37;&#52;&#48;splitbrain&#46;org">andi<span>&#64;</span>splitbrain<span>&#46;</span>org</a> are recognized, too.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DokuWiki</span> <span class="n">supports</span> <span class="n">multiple</span> <span class="n">ways</span> <span class="n">of</span> <span class="n">creating</span> <span class="n">links</span><span class="o">.</span> <span class="n">External</span> <span class="n">links</span> <span class="n">are</span> <span class="n">recognized</span>
+<span class="n">automagically</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">com</span> <span class="ow">or</span> <span class="n">simply</span> <span class="n">www</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">com</span> <span class="o">-</span> <span class="n">You</span> <span class="n">can</span> <span class="nb">set</span>
+<span class="n">link</span> <span class="n">text</span> <span class="k">as</span> <span class="n">well</span><span class="p">:</span> <span class="p">[[</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">com</span><span class="o">|</span><span class="n">This</span> <span class="n">Link</span> <span class="n">points</span> <span class="n">to</span> <span class="n">google</span><span class="p">]]</span><span class="o">.</span> <span class="n">Email</span>
+<span class="n">addresses</span> <span class="n">like</span> <span class="n">this</span> <span class="n">one</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">andi</span><span class="nd">@splitbrain</span><span class="o">.</span><span class="n">org</span><span class="o">&gt;</span> <span class="n">are</span> <span class="n">recognized</span><span class="p">,</span> <span class="n">too</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="internal">
+<h3>Internal<a class="headerlink" href="#internal" title="Link to this heading"></a></h3>
+<p>Internal links are created by using square brackets. You can either just give a <a class="icon link reference external" href="https://wiki.analog.com/pagename" target="_blank">pagename</a> or use an additional <a class="icon link reference external" href="https://wiki.analog.com/pagename" target="_blank">link text</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Internal</span> <span class="n">links</span> <span class="n">are</span> <span class="n">created</span> <span class="n">by</span> <span class="n">using</span> <span class="n">square</span> <span class="n">brackets</span><span class="o">.</span> <span class="n">You</span> <span class="n">can</span> <span class="n">either</span> <span class="n">just</span> <span class="n">give</span>
+<span class="n">a</span> <span class="p">[[</span><span class="o">/</span><span class="n">pagename</span><span class="o">|</span><span class="n">pagename</span><span class="p">]]</span> <span class="ow">or</span> <span class="n">use</span> <span class="n">an</span> <span class="n">additional</span> <span class="p">[[</span><span class="o">/</span><span class="n">pagename</span><span class="o">|</span><span class="n">link</span> <span class="n">text</span><span class="p">]]</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><a class="icon link reference external" href="https://www.dokuwiki.org/pagename" target="_blank">Wiki pagenames</a> are converted to lowercase automatically, special characters are not allowed.</p>
+<p>You can use <a class="icon link reference external" href="https://wiki.analog.com/some/namespaces" target="_blank">namespaces</a> by using a colon in the pagename.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">You</span> <span class="n">can</span> <span class="n">use</span> <span class="p">[[</span><span class="o">/</span><span class="n">some</span><span class="o">/</span><span class="n">namespaces</span><span class="o">|</span><span class="n">namespaces</span><span class="p">]]</span> <span class="n">by</span> <span class="n">using</span> <span class="n">a</span> <span class="n">colon</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">pagename</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>For details about namespaces see <a class="icon link reference external" href="https://www.dokuwiki.org/namespaces" target="_blank">namespaces</a>.</p>
+<p>Linking to a specific section is possible, too. Just add the section name behind a hash character as known from HTML. This links to <a class="icon link reference external" href="https://wiki.analog.com/syntax" target="_blank">this Section</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">links</span> <span class="n">to</span> <span class="p">[[</span><span class="o">/</span><span class="n">syntax</span><span class="c1">#internal|this Section]].</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<ul class="simple">
+<li><p>Links to <a class="icon link reference external" href="https://wiki.analog.com/syntax" target="_blank">existing pages</a> are shown in a different style from <a class="icon link reference external" href="https://wiki.analog.com/nonexisting" target="_blank">nonexisting</a> ones.</p></li>
+<li><p>DokuWiki does not use <a class="icon link reference external" href="https://en.wikipedia.org/wiki/CamelCase" target="_blank">CamelCase</a> to automatically create links by default, but this behavior can be enabled in the <a class="icon link reference external" href="https://www.dokuwiki.org/config" target="_blank">config</a> file. Hint: If DokuWiki is a link, then it’s enabled.</p></li>
+<li><p>When a section’s heading is changed, its bookmark changes, too. So don’t rely on section linking too much.</p></li>
+</ul>
+</section>
+<section id="interwiki">
+<h3>Interwiki<a class="headerlink" href="#interwiki" title="Link to this heading"></a></h3>
+<p>DokuWiki supports <a class="icon link reference external" href="https://www.dokuwiki.org/Interwiki" target="_blank">Interwiki</a> links. These are quick links to other Wikis. For example this is a link to Wikipedia’s page about Wikis: <a class="icon link reference external" href="https://en.wikipedia.org/wiki/Wiki" target="_blank">Wiki</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DokuWiki</span> <span class="n">supports</span> <span class="p">[[</span><span class="n">doku</span><span class="o">&gt;</span><span class="n">Interwiki</span><span class="p">]]</span> <span class="n">links</span><span class="o">.</span> <span class="n">These</span> <span class="n">are</span> <span class="n">quick</span> <span class="n">links</span> <span class="n">to</span> <span class="n">other</span> <span class="n">Wikis</span><span class="o">.</span>
+<span class="n">For</span> <span class="n">example</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">link</span> <span class="n">to</span> <span class="n">Wikipedia</span><span class="s1">&#39;s page about Wikis: [[https://en.wikipedia.org/wiki/Wiki|Wiki]].</span>
+</pre></div>
+</div>
+<p>The icons are used beside the wiki links to help quickly visually identify the destination site of the link. This saves the reader a mouseover to understand where they are going to go.</p>
+<ul class="simple">
+<li><p><a href="#id12"><span class="problematic" id="id13">`Op Amp Applications Handbook &lt;amazon&gt;0750678445&gt;`__</span></a> (a link to amazon)</p></li>
+<li><p><a class="icon link reference external" href="https://www.dokuwiki.org/Interwiki" target="_blank">Interwiki</a> (a link to Dokuwiki)</p></li>
+<li><p><a class="icon link reference external" href="https://secure.php.net/strlen" target="_blank">strlen</a> (php manual)</p></li>
+<li><p><a class="icon link reference external" href="https://en.wikipedia.org/wiki/AnalogDevices" target="_blank">Analog Devices</a> (wikipedia)</p></li>
+</ul>
+<p>Additionally to the default dokuwiki interwiki links the following are available in this wiki:</p>
+<section id="specific-to-the-adi-website">
+<h4>Specific to the ADI website<a class="headerlink" href="#specific-to-the-adi-website" title="Link to this heading"></a></h4>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Some of the above (like footprint, and IBIS models) need a package suffix to function properly</p>
+</div>
+</section>
+<section id="distributors">
+<h4>Distributors<a class="headerlink" href="#distributors" title="Link to this heading"></a></h4>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tag</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">arrow</span></code></p></td>
+<td><p>Link to Arrow’s search</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[[arrow&gt;ADALM-PLUTO]]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">digikey</span></code></p></td>
+<td><p>Link to the digikey search, with a Digikey part number</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[[https://www.digikey.com/345-1146-ND|345-1146-ND]]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mouser</span></code></p></td>
+<td><p>Link to Arrow’s search</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[[https://www.mouser.com/584-ADALM-PLUTO|584-ADALM-PLUTO]]</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The above links to search, if you give an unambiguous, exact part number, it will take you to the product page, if it is not specific, it will drop you in search.</p>
+</div>
+</section>
+<section id="others">
+<h4>Others<a class="headerlink" href="#others" title="Link to this heading"></a></h4>
+</section>
+</section>
+<section id="windows-shares">
+<h3>Windows Shares<a class="headerlink" href="#windows-shares" title="Link to this heading"></a></h3>
+<p>Windows shares like <a class="icon link reference external" href="https://wiki.analog.com/\servershare" target="_blank">this</a> are recognized, too. Please note that these only make sense in a homogeneous user group like a corporate <a class="icon link reference external" href="https://en.wikipedia.org/wiki/Intranet" target="_blank">Intranet</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Windows</span> <span class="n">Shares</span> <span class="n">like</span> <span class="p">[[</span><span class="o">/</span>\\<span class="n">server</span>\<span class="n">share</span><span class="o">|</span><span class="n">this</span><span class="p">]]</span> <span class="n">are</span> <span class="n">recognized</span><span class="p">,</span> <span class="n">too</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<ul class="simple">
+<li><p>For security reasons direct browsing of windows shares only works in Microsoft Internet Explorer per default (and only in the “local zone”).</p></li>
+<li><p>For Mozilla and Firefox it can be enabled through different workaround mentioned in the <a class="icon link reference external" href="http://kb.mozillazine.org/Links_to_local_pages_don't_work" target="_blank">Mozilla Knowledge Base</a>.</p></li>
+</ul>
+</section>
+<section id="image-links">
+<h3>Image Links<a class="headerlink" href="#image-links" title="Link to this heading"></a></h3>
+<p>You can also use an image to link to another internal or external page by combining the syntax for links and <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">images</a> (see below) like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">php</span><span class="o">.</span><span class="n">net</span><span class="o">|</span><span class="p">{{</span><span class="n">wiki</span><span class="p">:</span><span class="n">dokuwiki</span><span class="o">-</span><span class="mf">128.</span><span class="n">png</span><span class="p">}}]]</span>
+
+
+<span class="o">|</span><span class="n">dokuwiki</span><span class="o">-</span><span class="mf">128.</span><span class="n">png</span><span class="o">|</span>
+</pre></div>
+</div>
+<p>Please note: The image formatting is the only formatting syntax accepted in link names.</p>
+<p>The whole <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">image</a> and <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">link</a> syntax is supported (including image resizing, internal and external images and URLs and interwiki links).</p>
+</section>
+</section>
+<section id="footnotes">
+<h2>Footnotes<a class="headerlink" href="#footnotes" title="Link to this heading"></a></h2>
+<p>You can add footnotes  <a class="footnote-reference brackets" href="#id10" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> by using double parentheses.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">You</span> <span class="n">can</span> <span class="n">add</span> <span class="n">footnotes</span> <span class="p">((</span><span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">footnote</span><span class="p">))</span> <span class="n">by</span> <span class="n">using</span> <span class="n">double</span> <span class="n">parentheses</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="sectioning">
+<h2>Sectioning<a class="headerlink" href="#sectioning" title="Link to this heading"></a></h2>
+<section id="headline-level-3">
+<h3>Headline Level 3<a class="headerlink" href="#headline-level-3" title="Link to this heading"></a></h3>
+<section id="headline-level-4">
+<h4>Headline Level 4<a class="headerlink" href="#headline-level-4" title="Link to this heading"></a></h4>
+<section id="headline-level-5">
+<h5>Headline Level 5<a class="headerlink" href="#headline-level-5" title="Link to this heading"></a></h5>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">====</span> <span class="n">Headline</span> <span class="n">Level</span> <span class="mi">3</span> <span class="o">====</span>
+<span class="o">===</span> <span class="n">Headline</span> <span class="n">Level</span> <span class="mi">4</span> <span class="o">===</span>
+<span class="o">==</span> <span class="n">Headline</span> <span class="n">Level</span> <span class="mi">5</span> <span class="o">==</span>
+</pre></div>
+</div>
+<p>By using four or more dashes, you can make a horizontal line:</p>
+</section>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="images-and-other-files">
+<h2>Images and Other Files<a class="headerlink" href="#images-and-other-files" title="Link to this heading"></a></h2>
+<p>You can include external and internal <a class="icon link reference external" href="https://www.dokuwiki.org/images" target="_blank">images</a> with curly brackets. Optionally you can specify the size of them.</p>
+<p>Real size:</p>
+<p><img alt="image1" src="https://wiki.analog.com/_media/wiki/dokuwiki-128.png" /></p>
+<p>Resize to given width:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/wiki/dokuwiki-128.png"><img alt="image2" src="https://wiki.analog.com/_media/wiki/dokuwiki-128.png" style="width: 50px;" /></a></p>
+<p>Resize to given width and height <a class="footnote-reference brackets" href="#id11" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/wiki/dokuwiki-128.png"><img alt="image3" src="https://wiki.analog.com/_media/wiki/dokuwiki-128.png" style="width: 200px; height: 50px;" /></a></p>
+<p>Resized external image:</p>
+<p><a class="reference internal" href="http://de3.php.net/images/php.gif"><img alt="http://de3.php.net/images/php.gif" src="http://de3.php.net/images/php.gif" style="width: 200px; height: 50px;" /></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Real size:                        {{wiki:dokuwiki-128.png}}
+Resize to given width:            {{wiki:dokuwiki-128.png?50}}
+Resize to given width and height: {{wiki:dokuwiki-128.png?200x50}}
+Resized external image:           {{http://de3.php.net/images/php.gif?200x50}}
+</pre></div>
+</div>
+<p>By using left or right whitespaces you can choose the alignment.</p>
+<img alt="dokuwiki-128.png" class="align-right" src="https://wiki.analog.com/_media/wiki/dokuwiki-128.png" />
+<img alt="dokuwiki-128.png" class="align-left" src="https://wiki.analog.com/_media/wiki/dokuwiki-128.png" />
+<img alt="dokuwiki-128.png" class="align-center" src="https://wiki.analog.com/_media/wiki/dokuwiki-128.png" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">wiki</span><span class="p">:</span><span class="n">dokuwiki</span><span class="o">-</span><span class="mf">128.</span><span class="n">png</span><span class="p">}}</span>
+<span class="p">{{</span><span class="n">wiki</span><span class="p">:</span><span class="n">dokuwiki</span><span class="o">-</span><span class="mf">128.</span><span class="n">png</span> <span class="p">}}</span>
+<span class="p">{{</span> <span class="n">wiki</span><span class="p">:</span><span class="n">dokuwiki</span><span class="o">-</span><span class="mf">128.</span><span class="n">png</span> <span class="p">}}</span>
+</pre></div>
+</div>
+<p>Of course, you can add a title (displayed as a tooltip by most browsers), too.</p>
+<img alt="This is the caption" class="align-center" src="https://wiki.analog.com/_media/wiki/dokuwiki-128.png" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">wiki</span><span class="p">:</span><span class="n">dokuwiki</span><span class="o">-</span><span class="mf">128.</span><span class="n">png</span> <span class="o">|</span><span class="n">This</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">caption</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p>If you specify a filename (external or internal) that is not an image (<code class="docutils literal notranslate"><span class="pre">gif,</span> <span class="pre">jpeg,</span> <span class="pre">png</span></code>), then it will be displayed as a link instead.</p>
+<p>For linking an image to another page see <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">#image_links</a> above.</p>
+</section>
+<section id="lists">
+<h2>Lists<a class="headerlink" href="#lists" title="Link to this heading"></a></h2>
+<p>Dokuwiki supports ordered and unordered lists. To create a list item, indent your text by two spaces and use a <code class="docutils literal notranslate"><span class="pre">*</span></code> for unordered lists or a <code class="docutils literal notranslate"><span class="pre">-</span></code> for ordered ones.</p>
+<ul class="simple">
+<li><p>This is a list</p></li>
+<li><p>The second item</p>
+<ul>
+<li><p>You may have different levels</p></li>
+</ul>
+</li>
+<li><p>Another item</p></li>
+<li><p>The same list but ordered</p></li>
+<li><p>Another item</p>
+<ul>
+<li><p>Just use indention for deeper levels</p></li>
+</ul>
+</li>
+<li><p>That’s it</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="nb">list</span>
+<span class="o">*</span> <span class="n">The</span> <span class="n">second</span> <span class="n">item</span>
+  <span class="o">*</span> <span class="n">You</span> <span class="n">may</span> <span class="n">have</span> <span class="n">different</span> <span class="n">levels</span>
+<span class="o">*</span> <span class="n">Another</span> <span class="n">item</span>
+
+<span class="o">*</span> <span class="n">The</span> <span class="n">same</span> <span class="nb">list</span> <span class="n">but</span> <span class="n">ordered</span>
+<span class="o">*</span> <span class="n">Another</span> <span class="n">item</span>
+  <span class="o">*</span> <span class="n">Just</span> <span class="n">use</span> <span class="n">indention</span> <span class="k">for</span> <span class="n">deeper</span> <span class="n">levels</span>
+<span class="o">*</span> <span class="n">That</span><span class="s1">&#39;s it</span>
+</pre></div>
+</div>
+<p>Also take a look at the <a class="icon link reference external" href="https://www.dokuwiki.org/faq:lists" target="_blank">FAQ on list items</a>.</p>
+</section>
+<section id="text-conversions">
+<h2>Text Conversions<a class="headerlink" href="#text-conversions" title="Link to this heading"></a></h2>
+<p>DokuWiki can convert certain pre-defined characters or strings into images or other text or HTML.</p>
+<p>The text to image conversion is mainly done for smileys. And the text to HTML conversion is used for typography replacements, but can be configured to use other HTML as well.</p>
+<section id="text-to-image-conversions">
+<h3>Text to Image Conversions<a class="headerlink" href="#text-to-image-conversions" title="Link to this heading"></a></h3>
+<p>DokuWiki converts commonly used <a class="icon link reference external" href="https://en.wikipedia.org/wiki/emoticon" target="_blank">emoticon</a>s to their graphical equivalents. Those <a class="icon link reference external" href="https://www.dokuwiki.org/Smileys" target="_blank">Smileys</a> and other images can be configured and extended. Here is an overview of Smileys included in DokuWiki:</p>
+<ul class="simple">
+<li><p>8-) %% 8-) %%</p></li>
+<li><p>8-O %% 8-O %%</p></li>
+<li><p>:-( %% :-( %%</p></li>
+<li><p>:-) %% :-) %%</p></li>
+<li><p>=) %% =) %%</p></li>
+<li><p>:-/ %% :-/ %%</p></li>
+<li><p>:-\ %% :-\ %%</p></li>
+<li><p>:-? %% :-? %%</p></li>
+<li><p>:-D %% :-D %%</p></li>
+<li><p>:-P %% :-P %%</p></li>
+<li><p>:-O %% :-O %%</p></li>
+<li><p>:-X %% :-X %%</p></li>
+<li><p>:-| %% :-| %%</p></li>
+<li><p>;-) %% ;-) %%</p></li>
+<li><p>^_^ %% ^_^ %%</p></li>
+<li><dl class="field-list simple">
+<dt class="field-odd">?<span class="colon">:</span></dt>
+<dd class="field-odd"><p>%% :?: %%</p>
+</dd>
+</dl>
+</li>
+<li><dl class="field-list simple">
+<dt class="field-odd">!<span class="colon">:</span></dt>
+<dd class="field-odd"><p>%% :!: %%</p>
+</dd>
+</dl>
+</li>
+<li><p>LOL %% LOL %%</p></li>
+<li><p>FIXME %% FIXME %%</p></li>
+<li><p>DELETEME %% DELETEME %%</p></li>
+</ul>
+</section>
+<section id="text-to-html-conversions">
+<h3>Text to HTML Conversions<a class="headerlink" href="#text-to-html-conversions" title="Link to this heading"></a></h3>
+<p>Typography: <a class="icon link reference external" href="https://wiki.analog.com/dokuwiki" target="_blank">dokuwiki</a> can convert simple text characters to their typographically correct entities. Here is an example of recognized characters.</p>
+<p>-&gt; &lt;- &lt;-&gt; =&gt; &lt;= &lt;=&gt; &gt;&gt; &lt;&lt; – — 640x480 (c) (tm) (r) “He thought ‘It’s a man’s world’…”</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-&gt;</span> <span class="o">&lt;-</span> <span class="o">&lt;-&gt;</span> <span class="o">=&gt;</span> <span class="o">&lt;=</span> <span class="o">&lt;=&gt;</span> <span class="o">&gt;&gt;</span> <span class="o">&lt;&lt;</span> <span class="o">--</span> <span class="o">---</span> <span class="mi">640</span><span class="n">x480</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="p">(</span><span class="n">tm</span><span class="p">)</span> <span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="s2">&quot;He thought &#39;It&#39;s a man&#39;s world&#39;...&quot;</span>
+</pre></div>
+</div>
+<p>The same can be done to produce any kind of HTML, it just needs to be added to the <a class="icon link reference external" href="https://www.dokuwiki.org/entities" target="_blank">pattern file</a>.</p>
+<p>There are three exceptions which do not come from that pattern file: multiplication entity (640x480), ‘single’ and “double quotes”. They can be turned off through a <a class="icon link reference external" href="https://www.dokuwiki.org/config:typography" target="_blank">config option</a>.</p>
+</section>
+</section>
+<section id="quoting">
+<h2>Quoting<a class="headerlink" href="#quoting" title="Link to this heading"></a></h2>
+<p>Some times you want to mark some text to show it’s a reply or comment. You can use the following syntax:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>I think we should do it
+
+&gt; No we shouldn&#39;t
+
+&gt;&gt; Well, I say we should
+
+&gt; Really?
+
+&gt;&gt; Yes!
+
+&gt;&gt;&gt; Then lets do it!
+</pre></div>
+</div>
+<p>I think we should do it</p>
+<blockquote>
+<div><p>No we shouldn’t</p>
+</div></blockquote>
+<blockquote>
+<div><blockquote>
+<div><p>Well, I say we should</p>
+</div></blockquote>
+<p>Really?</p>
+</div></blockquote>
+<blockquote>
+<div><p>Yes!</p>
+<blockquote>
+<div><p>Then lets do it!</p>
+</div></blockquote>
+</div></blockquote>
+</section>
+<section id="tables">
+<h2>Tables<a class="headerlink" href="#tables" title="Link to this heading"></a></h2>
+<p>DokuWiki supports a simple syntax to create tables.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Heading 1</p></th>
+<th class="head"><p>Heading 2</p></th>
+<th class="head"><p>Heading 3</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Row 1 Col 1</p></td>
+<td><p>Row 1 Col 2</p></td>
+<td><p>Row 1 Col 3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Row 2 Col 1</p></td>
+<td><p>some colspan (note the double pipe)</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Row 3 Col 1</p></td>
+<td><p>Row 3 Col 2</p></td>
+<td><p>Row 3 Col 3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Table rows have to start and end with a <code class="docutils literal notranslate"><span class="pre">|</span></code> for normal rows or a <code class="docutils literal notranslate"><span class="pre">^</span></code> for headers.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">^</span> <span class="n">Heading</span> <span class="mi">1</span>      <span class="o">^</span> <span class="n">Heading</span> <span class="mi">2</span>       <span class="o">^</span> <span class="n">Heading</span> <span class="mi">3</span>          <span class="o">^</span>
+<span class="o">|</span> <span class="n">Row</span> <span class="mi">1</span> <span class="n">Col</span> <span class="mi">1</span>    <span class="o">|</span> <span class="n">Row</span> <span class="mi">1</span> <span class="n">Col</span> <span class="mi">2</span>     <span class="o">|</span> <span class="n">Row</span> <span class="mi">1</span> <span class="n">Col</span> <span class="mi">3</span>        <span class="o">|</span>
+<span class="o">|</span> <span class="n">Row</span> <span class="mi">2</span> <span class="n">Col</span> <span class="mi">1</span>    <span class="o">|</span> <span class="n">some</span> <span class="n">colspan</span> <span class="p">(</span><span class="n">note</span> <span class="n">the</span> <span class="n">double</span> <span class="n">pipe</span><span class="p">)</span> <span class="o">||</span>
+<span class="o">|</span> <span class="n">Row</span> <span class="mi">3</span> <span class="n">Col</span> <span class="mi">1</span>    <span class="o">|</span> <span class="n">Row</span> <span class="mi">3</span> <span class="n">Col</span> <span class="mi">2</span>     <span class="o">|</span> <span class="n">Row</span> <span class="mi">3</span> <span class="n">Col</span> <span class="mi">3</span>        <span class="o">|</span>
+</pre></div>
+</div>
+<p>To connect cells horizontally, just make the next cell completely empty as shown above. Be sure to have always the same amount of cell separators!</p>
+<p>Vertical tableheaders are possible, too.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Heading 1</p></td>
+<td><p>Heading 2</p></td>
+</tr>
+<tr class="row-even"><td><p>Heading 3</p></td>
+<td><p>Row 1 Col 2</p></td>
+<td><p>Row 1 Col 3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Heading 4</p></td>
+<td><p>no colspan this time</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Heading 5</p></td>
+<td><p>Row 2 Col 2</p></td>
+<td><p>Row 2 Col 3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>As you can see, it’s the cell separator before a cell which decides about the formatting:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span>              <span class="o">^</span> <span class="n">Heading</span> <span class="mi">1</span>            <span class="o">^</span> <span class="n">Heading</span> <span class="mi">2</span>          <span class="o">^</span>
+<span class="o">^</span> <span class="n">Heading</span> <span class="mi">3</span>    <span class="o">|</span> <span class="n">Row</span> <span class="mi">1</span> <span class="n">Col</span> <span class="mi">2</span>
+
+<span class="o">|</span> <span class="n">Row</span> <span class="mi">1</span> <span class="n">Col</span> <span class="mi">3</span>        <span class="o">|</span>
+
+<span class="o">^</span> <span class="n">Heading</span> <span class="mi">4</span>    <span class="o">|</span> <span class="n">no</span> <span class="n">colspan</span> <span class="n">this</span> <span class="n">time</span>
+
+<span class="o">|</span>                    <span class="o">|</span>
+
+<span class="o">^</span> <span class="n">Heading</span> <span class="mi">5</span>    <span class="o">|</span> <span class="n">Row</span> <span class="mi">2</span> <span class="n">Col</span> <span class="mi">2</span>
+
+<span class="o">|</span> <span class="n">Row</span> <span class="mi">2</span> <span class="n">Col</span> <span class="mi">3</span>        <span class="o">|</span>
+</pre></div>
+</div>
+<p>You can have rowspans (vertically connected cells) by adding <code class="docutils literal notranslate"><span class="pre">:::</span></code> into the cells below the one to which they should connect.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Heading 1</p></th>
+<th class="head"><p>Heading 2</p></th>
+<th class="head"><p>Heading 3</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Row 1 Col 1</p></td>
+<td><p>this cell spans vertically</p></td>
+<td><p>Row 1 Col 3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Row 2 Col 1</p></td>
+<td><p>::</p></td>
+<td><p>Row 2 Col 3</p></td>
+</tr>
+<tr class="row-even"><td><p>Row 3 Col 1</p></td>
+<td><p>::</p></td>
+<td><p>Row 2 Col 3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Apart from the rowspan syntax those cells should not contain anything else.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">^</span> <span class="n">Heading</span> <span class="mi">1</span>      <span class="o">^</span> <span class="n">Heading</span> <span class="mi">2</span>                  <span class="o">^</span> <span class="n">Heading</span> <span class="mi">3</span>          <span class="o">^</span>
+<span class="o">|</span> <span class="n">Row</span> <span class="mi">1</span> <span class="n">Col</span> <span class="mi">1</span>    <span class="o">|</span> <span class="n">this</span> <span class="n">cell</span> <span class="n">spans</span> <span class="n">vertically</span> <span class="o">|</span> <span class="n">Row</span> <span class="mi">1</span> <span class="n">Col</span> <span class="mi">3</span>        <span class="o">|</span>
+<span class="o">|</span> <span class="n">Row</span> <span class="mi">2</span> <span class="n">Col</span> <span class="mi">1</span>    <span class="o">|</span>                            <span class="o">|</span> <span class="n">Row</span> <span class="mi">2</span> <span class="n">Col</span> <span class="mi">3</span>        <span class="o">|</span>
+<span class="o">|</span> <span class="n">Row</span> <span class="mi">3</span> <span class="n">Col</span> <span class="mi">1</span>    <span class="o">|</span>                            <span class="o">|</span> <span class="n">Row</span> <span class="mi">2</span> <span class="n">Col</span> <span class="mi">3</span>        <span class="o">|</span>
+</pre></div>
+</div>
+<p>You can align the table contents, too. Just add at least two whitespaces at the opposite end of your text: Add two spaces on the left to align right, two spaces on the right to align left and two spaces at least at both ends for centered text.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Table with alignment</p></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>right</p></td>
+<td><p>center</p></td>
+<td><p>left</p></td>
+</tr>
+<tr class="row-odd"><td><p>left</p></td>
+<td><p>right</p></td>
+<td><p>center</p></td>
+</tr>
+<tr class="row-even"><td><p>xxxxxxxxxxxx</p></td>
+<td><p>xxxxxxxxxxxx</p></td>
+<td><p>xxxxxxxxxxxx</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This is how it looks in the source:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">^</span>           <span class="n">Table</span> <span class="k">with</span> <span class="n">alignment</span>           <span class="o">^^^</span>
+<span class="o">|</span>         <span class="n">right</span><span class="o">|</span>    <span class="n">center</span>    <span class="o">|</span><span class="n">left</span>          <span class="o">|</span>
+<span class="o">|</span><span class="n">left</span>          <span class="o">|</span>         <span class="n">right</span><span class="o">|</span>    <span class="n">center</span>    <span class="o">|</span>
+<span class="o">|</span> <span class="n">xxxxxxxxxxxx</span> <span class="o">|</span> <span class="n">xxxxxxxxxxxx</span> <span class="o">|</span> <span class="n">xxxxxxxxxxxx</span> <span class="o">|</span>
+</pre></div>
+</div>
+<p>Note: Vertical alignment is not supported.</p>
+</section>
+<section id="no-formatting">
+<h2>No Formatting<a class="headerlink" href="#no-formatting" title="Link to this heading"></a></h2>
+<p>If you need to display text exactly like it is typed (without any formatting), enclose the area either with <code class="docutils literal notranslate"><span class="pre">&lt;nowiki&gt;</span></code> tags or even simpler, with double percent signs <code class="docutils literal notranslate"><span class="pre">%%</span></code>.</p>
+<p>This is some text which contains addresses like this: <a class="icon link reference external" href="http://www.splitbrain.org" target="_blank">http://www.splitbrain.org</a> and **formatting**, but nothing is done with it. The same is true for //__this__ text// with a smiley ;-).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">nowiki</span><span class="o">&gt;</span>
+<span class="n">This</span> <span class="ow">is</span> <span class="n">some</span> <span class="n">text</span> <span class="n">which</span> <span class="n">contains</span> <span class="n">addresses</span> <span class="n">like</span> <span class="n">this</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">splitbrain</span><span class="o">.</span><span class="n">org</span> <span class="ow">and</span> <span class="o">**</span><span class="n">formatting</span><span class="o">**</span><span class="p">,</span> <span class="n">but</span> <span class="n">nothing</span> <span class="ow">is</span> <span class="n">done</span> <span class="k">with</span> <span class="n">it</span><span class="o">.</span>
+<span class="o">&lt;/</span><span class="n">nowiki</span><span class="o">&gt;</span>
+<span class="n">The</span> <span class="n">same</span> <span class="ow">is</span> <span class="n">true</span> <span class="k">for</span> <span class="o">%%//</span><span class="n">__this__</span> <span class="n">text</span><span class="o">//</span> <span class="k">with</span> <span class="n">a</span> <span class="n">smiley</span> <span class="p">;</span><span class="o">-</span><span class="p">)</span><span class="o">%%.</span>
+</pre></div>
+</div>
+</section>
+<section id="code-blocks">
+<h2>Code Blocks<a class="headerlink" href="#code-blocks" title="Link to this heading"></a></h2>
+<p>You can include code blocks into your documents by either indenting them by at least two spaces (like used for the previous examples) or by using the tags <code class="docutils literal notranslate"><span class="pre">&lt;code&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;file&gt;</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">text</span> <span class="ow">is</span> <span class="n">indented</span> <span class="n">by</span> <span class="n">two</span> <span class="n">spaces</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">preformatted</span> <span class="n">code</span> <span class="nb">all</span> <span class="n">spaces</span> <span class="n">are</span> <span class="n">preserved</span><span class="p">:</span> <span class="n">like</span>              <span class="o">&lt;-</span><span class="n">this</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">pretty</span> <span class="n">much</span> <span class="n">the</span> <span class="n">same</span><span class="p">,</span> <span class="n">but</span> <span class="n">you</span> <span class="n">could</span> <span class="n">use</span> <span class="n">it</span> <span class="n">to</span> <span class="n">show</span> <span class="n">that</span> <span class="n">you</span> <span class="n">quoted</span> <span class="n">a</span> <span class="n">file</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Those blocks were created by this source:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">text</span> <span class="ow">is</span> <span class="n">indented</span> <span class="n">by</span> <span class="n">two</span> <span class="n">spaces</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">preformatted</span> <span class="n">code</span> <span class="nb">all</span> <span class="n">spaces</span> <span class="n">are</span> <span class="n">preserved</span><span class="p">:</span> <span class="n">like</span>              <span class="o">&lt;-</span><span class="n">this</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">file</span><span class="o">&gt;</span>
+<span class="n">This</span> <span class="ow">is</span> <span class="n">pretty</span> <span class="n">much</span> <span class="n">the</span> <span class="n">same</span><span class="p">,</span> <span class="n">but</span> <span class="n">you</span> <span class="n">could</span> <span class="n">use</span> <span class="n">it</span> <span class="n">to</span> <span class="n">show</span> <span class="n">that</span> <span class="n">you</span> <span class="n">quoted</span> <span class="n">a</span> <span class="n">file</span><span class="o">.</span>
+<span class="o">&lt;/</span><span class="n">file</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<section id="syntax-highlighting">
+<h3>Syntax Highlighting<a class="headerlink" href="#syntax-highlighting" title="Link to this heading"></a></h3>
+<p><a class="reference internal" href="dokuwiki.html"><span class="doc">dokuwiki</span></a> can highlight sourcecode, which makes it easier to read. It uses the <a class="icon link reference external" href="https://github.com/GeSHi/geshi-1.0" target="_blank">GeSHi</a> Generic Syntax Highlighter – so any language supported by GeSHi is supported. The syntax is the same like in the code and file blocks in the previous section, but this time the name of the used language is inserted inside the tag. Eg. <code class="docutils literal notranslate"><span class="pre">&lt;code</span> <span class="pre">java&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;file</span> <span class="pre">java&gt;</span></code>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm">  * The HelloWorldApp class implements an application that</span>
+<span class="cm">  * simply displays &quot;Hello World!&quot; to the standard output.</span>
+<span class="cm"> */</span>
+<span class="kd">class</span> <span class="nc">HelloWorldApp</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">//Display the string.</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The following language strings are currently recognized: <em>abap, actionscript-french, actionscript, actionscript3, ada, apache, applescript, asm, asp, autoit, avisynth, bash, basic4gl, bf, bibtex, blitzbasic, bnf, boo, c, c_mac, caddcl, cadlisp, cfdg, cfm, cil, cmake, cobol, cpp, cpp-qt, csharp, css, d, dcs, delphi, diff, div, dos, dot, eiffel, email, erlang, fo, fortran, freebasic, genero, glsl, gml, gnuplot, groovy, gettext, haskell, hq9plus, html, idl, ini, inno, intercal, io, java5, java, javascript, kixtart, klonec, klonecpp, latex, lisp, locobasic, lolcode, lotusformulas, lotusscript, lscript, lsl2, lua, m68k, make, matlab, mirc, modula3, mpasm, mxml, mysql, nsis, oberon2, objc, ocaml-brief, ocaml, oobas, oracle8, oracle11, pascal, perl, per, php-brief, php, pic16, pixelbender, plsql, povray, powershell, progress, prolog, properties, providex, python, qbasic, rails, rebol, reg, robots, ruby, sas, scala, scheme, scilab, sdlbasic, smalltalk, smarty, sql, tcl, teraterm, text, thinbasic, tsql, typoscript, vbnet, vb, verilog, vhdl, vim, visualfoxpro, visualprolog, whitespace, winbatch, whois, xml, xorg_conf, xpp, z80</em></p>
+</section>
+<section id="downloadable-code-blocks">
+<h3>Downloadable Code Blocks<a class="headerlink" href="#downloadable-code-blocks" title="Link to this heading"></a></h3>
+<p>When you use the <code class="docutils literal notranslate"><span class="pre">&lt;code&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;file&gt;</span></code> syntax as above, you might want to make the shown code available for download as well. You can to this by specifying a file name after language code like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;file php myexample.php&gt;
+&lt;?php echo &quot;hello world!&quot;; ?&gt;
+&lt;/file&gt;
+</pre></div>
+</div>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="s2">&quot;hello world!&quot;</span><span class="p">;</span> <span class="cp">?&gt;</span>
+</pre></div>
+</div>
+<p>If you don’t want any highlighting but want a downloadable file, specify a dash (<code class="docutils literal notranslate"><span class="pre">-</span></code>) as the language code: <code class="docutils literal notranslate"><span class="pre">&lt;code</span> <span class="pre">-</span> <span class="pre">myfile.foo&gt;</span></code>.</p>
+</section>
+</section>
+<section id="embedding-html-and-php">
+<h2>Embedding HTML and PHP<a class="headerlink" href="#embedding-html-and-php" title="Link to this heading"></a></h2>
+<p><strong>Please Note</strong>: HTML and PHP embedding is disabled, and will not be turned on on this wiki. (compare to other dokuwiki installations).</p>
+</section>
+<section id="rss-atom-feed-aggregation">
+<h2>RSS/ATOM Feed Aggregation<a class="headerlink" href="#rss-atom-feed-aggregation" title="Link to this heading"></a></h2>
+<p><a class="icon link reference external" href="https://wiki.analog.com/dokuwiki" target="_blank">dokuwiki</a> can integrate data from external XML feeds. For parsing the XML feeds, <a class="icon link reference external" href="http://simplepie.org/" target="_blank">SimplePie</a> is used. All formats understood by SimplePie can be used in DokuWiki as well. You can influence the rendering by multiple additional space separated parameters:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>any number</p></td>
+<td><p>will be used as maximum number items to show, defaults to 8</p></td>
+</tr>
+<tr class="row-odd"><td><p>reverse</p></td>
+<td><p>display the last items in the feed first</p></td>
+</tr>
+<tr class="row-even"><td><p>author</p></td>
+<td><p>show item authors names</p></td>
+</tr>
+<tr class="row-odd"><td><p>date</p></td>
+<td><p>show item dates</p></td>
+</tr>
+<tr class="row-even"><td><p>description</p></td>
+<td><p>show the item description. If <a class="icon link reference external" href="https://www.dokuwiki.org/config:htmlok" target="_blank">HTML</a> is disabled all tags will be stripped</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>n</em>[dhm]</p></td>
+<td><p>refresh period, where d=days, h=hours, m=minutes. (e.g. 12h = 12 hours).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The refresh period defaults to 4 hours. Any value below 10 minutes will be treated as 10 minutes. <a class="reference internal" href="dokuwiki.html"><span class="doc">dokuwiki</span></a> will generally try to supply a cached version of a page, obviously this is inappropriate when the page contains dynamic external content. The parameter tells <a class="reference internal" href="dokuwiki.html"><span class="doc">dokuwiki</span></a> to re-render the page if it is more than <em>refresh period</em> since the page was last rendered.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">wiki</span><span class="o">.</span><span class="n">analog</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">_media</span><span class="o">/</span><span class="n">rss</span><span class="o">&gt;</span><span class="n">http</span><span class="o">///</span><span class="n">slashdot</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">rss</span> <span class="mi">5</span> <span class="n">author</span> <span class="n">date</span> <span class="mi">1</span><span class="n">h</span><span class="o">|</span><span class="n">index</span><span class="o">.</span><span class="n">rss</span> <span class="mi">5</span> <span class="n">author</span> <span class="n">date</span> <span class="mi">1</span><span class="n">h</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p><a href="#id12"><span class="problematic" id="id14">`index.rss 5 author date 1h &lt;https://wiki.analog.com/_media/rss&gt;http///slashdot.org/index.rss 5 author date 1h&gt;`__</span></a></p>
+</section>
+<section id="control-macros">
+<h2>Control Macros<a class="headerlink" href="#control-macros" title="Link to this heading"></a></h2>
+<p>Some syntax influences how DokuWiki renders a page without creating any output it self. The following control macros are availble:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Macro</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="syntax-plugins">
+<h2>Syntax Plugins<a class="headerlink" href="#syntax-plugins" title="Link to this heading"></a></h2>
+<p>DokuWiki’s syntax can be extended by <a class="icon link reference external" href="https://www.dokuwiki.org/plugins" target="_blank">Plugins</a>. How the installed plugins are used is described on their appropriate description pages. The following syntax plugins are available in this particular DokuWiki installation:</p>
+<p>~~<a class="reference external" href="INFO:syntaxplugins">INFO:syntaxplugins</a>~~</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id10" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">1</a><span class="fn-bracket">]</span></span>
+<p>This is a footnote</p>
+</aside>
+<aside class="footnote brackets" id="id11" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">2</a><span class="fn-bracket">]</span></span>
+<p>when the aspect ratio of the given width and height doesn’t match that of the image, it will be cropped to the new ratio before resizing</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

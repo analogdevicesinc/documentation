@@ -1,0 +1,237 @@
+CN0276 Software User Guide
+==========================
+
+OVERVIEW
+--------
+
+:adi:`CN-0276 <CN0276>` is a high performance 10-bit to 16-bit RDC(resolver to digital converter) circuit. The system converts the modulated output of resolver to the digital output. The\ :adi:`AD2S1210` provided integrated solution for accurately measures angular position and velocity with resolver.
+
+In the system AD2S1210 generated programmable excitation signals, the AD8692 and AD8397 compose third order butterworth lowpass filter and power amplifier. The resolver’s excitation signal have two amplitude options, choice by the power supply voltage automatically. The output signals of resolver pass through the third order butterworth lowpass filter made by AD8694 to the AD2S1210 inputs. Both transmit and receive filter set for improve the performance of RDC and filter out the noise to increase EMC characters.
+
+The maximum tracking rate of the RDC is 3125 rps in the 10-bit mode (resolution = 21 arc min) and 156.25 rps in the 16-bit mode (resolution = 19.8 arc sec).
+
+
+|image1|
+
+Required Equipment
+------------------
+
+-  :adi:`EVAL-SDP-CB1Z` Evaluation Board (**SDP-B Board**)
+-  :adi:`EVAL-CN0276-SDPZ` Evaluation Board (**CN-0276 Board**)
+-  Resolver: `TS2620N21E11 <http://www.tamagawa-seiki.com/english/lvdt/post-1.html#a1>`_, made by `TAMAGAWA SEIKI CO.,LTD. <http://www.tamagawa-seiki.com/>`_
+-  Adjustable DC power supplies, output should be satisfied: from +6V to +12V over than 500mA.
+-  USB Type-A plug to USB Mini-B plug cable
+-  PC with the following
+
+   -  Microsoft Windows 7 with sp1 x86 or x64 version, or later
+   -  Intel Core processor (x86 or x64 compatible), 2GHz or faster
+   -  At least 4GB RAM and 8GB available hard disk space
+   -  `.NET Framework 4.5 <http://www.microsoft.com/en-us/download/details.aspx?id=30653>`_ or later
+   -  `Microsoft Visual C++ 2010 SP1 Redistributable <http://www.microsoft.com/en-us/download/details.aspx?id=13523>`_
+   -  SDP EEPROM Programmer software
+
+      -  Supplied with CD
+
+   -  CN0276 Programming File
+
+      -  Supplied with CD
+
+   -  CN0276 SDP Evaluation Software
+
+      -  Supplied with CD
+
+General Setup
+-------------
+
+-  The :adi:`EVAL-CN0276-SDPZ` **(CN-0276 Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin connector CON A
+-  Use the Adjustable DC power supplies to powers the :adi:`EVAL-CN0276-SDPZ` **(CN-0276 Board)** via the **J4** connector
+-  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable.
+-  The `TS2620N21E11 <http://www.tamagawa-seiki.com/english/lvdt/post-1.html#a1>`_ **(resolver)** connects to the :adi:`EVAL-CN0276-SDPZ` **(CN-0276 Board)** via the 6-pin header at **J3**.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0276/testdraft.png
+   :align: center
+   :width: 600px
+
+--------------
+
+Installing the Software
+-----------------------
+
+-  Extract the file **CN0276_Evaluation_Software.zip** and open the file **setup.exe**.
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you install the `CN0276_Evaluation_Software.zip <http://swdownloads.analog.com/cse/cftl/CN0276/1.0.0/CN0276_Evaluation_Software.zip>`_ to the default directory path **C:\\Program Files\\Analog Devices\\** *(in 32-bit operational system)* or **C:\\Program Files (x86)\\Analog Devices\\** *(in 64-bit operational system)*, and all National Instruments products to **C:\\Program Files\\National Instruments\\** *(in 32-bit operational system)* or **C:\\Program Files (x86)\\National Instruments\\** *(in 64-bit operational system)*
+
+
+   |image2|
+
+   \* Click **Next** to view the installation review page
+
+   |image3|
+
+   \* Click **Next** to start the installation, after the installation, the installer for the **ADI SDP Drivers** will execute.
+
+   |image4|
+
+   \* Press **“Next”** to set the installation location for the **SDP Drivers**.
+
+.. tip::
+
+   It is recommended that you install the drivers to the default directory path
+
+   **C:\\Program Files\\Analog Devices\\SDP\\DriversR2\\** *(in 32-bit operational system)* or **C:\\Program Files (x86)\\Analog Devices\\SDP\\DriversR2\\** *(in 64-bit operational system)*
+
+
+   |image5|
+
+   \* Press **“Next”** to install the **SDP Drivers** and complete the installation of all software. Click **"Finish"** when done.
+
+   |image6|
+
+--------------
+
+Connecting the Hardware
+-----------------------
+
+-  Connect the `TS2620N21E11 <http://www.tamagawa-seiki.com/english/lvdt/post-1.html#a1>`_ **(resolver)** to **J3** of the :adi:`EVAL-CN0276-SDPZ` **(CN-0276 Board)** as depicted below.
+
+.. tip::
+
+   \ **NOTE:** If a different resolver is used other than the TS2620N21E11 from Measurement Specialties, the wiring schematic maybe different!
+
+
+======= ======= =================
+J3 Pins Signals TS2620N21E11 wire
+======= ======= =================
+1       COS     Red
+2       COSLO   Black
+3       SINLO   Blue
+4       SIN     Yellow
+5       EXC     Red/White
+6       nEXC    Yellow/White
+======= ======= =================
+
+-  Connect the adjustable DC power supplies to the **J4** of the :adi:`EVAL-CN0276-SDPZ` **(CN-0276 Board)** as following table
+
+======= =====
+J4 Pins Types
+======= =====
+1       VCC
+2       GND
+======= =====
+
+--------------
+
+Using the Evaluation Software
+-----------------------------
+
+Software Control and Indicator Descriptions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| |image7|
+| |image8|
+| |image9|
+
+::
+
+   -**Connect/Disconnect Button**
+   * When this button is clicked, the SDP-B Board USB connection to the CN-0276 Board status will be filliped.  A connection to the SDP-B Board must be made to use the software.   
+   -**Start Button**
+   * When this button is pressed, the SDP-B Board will collect conversion data and present the acquisitions in the chart.
+   -**Stop Button**
+   * When this button is pressed, the software stop collecting data from the CN-0276 Board.
+   -**Samples setting**
+   * The number which input to this box is use to set the samples for each time the start button pressed.
+   -**Run mode setting**
+   * The check box set the persistent running mode of RDC samples.
+   -**Control Tabs**
+   * __Data Analyze__ This Tab showing the acquired data analyzed result in histogram.
+   * __RDC Output__ This Tab include two indicators to showing the position and velocity output of RDC, update in real time when RDC is converting.
+   * __RDC Configuration__ This Tab use to write and read the internal register of AD2S1210
+   * __SDP Information__ Showing the SDP-B Board information when USB connection available.
+   -**SDP Status String Indicator**
+   * This indicator displays a message to the SDP-B Board.
+   -**RDC working Status LED**
+   * This LED showing the RDC working status, when RDC is converting this LED will be light up, otherwise it will be turn off.
+   -**Position indicator**
+   * This indicator display the RDC position output in hexadecimal.
+   -**Velocity indicator**
+   * This indicator display the RDC velocity output in rps(revolutions per second).
+   -**Configuration write to AD2S1210**
+   * These values will be write to the AD2S1210's register, when Write Configuration Button has been pressed.
+   -**AD2S1210 register value**
+   * These values is the read back of the AD2S1210's register.
+   -**AD2S1210 Fault LED**
+   * These LED showing the fault status of AD2S1210.
+   -**Write Configuration Button**
+   * When this button is pressed, the values on the configuration area will write to the AD2S1210's register.
+
+--------------
+
+Establishing a USB Connection Link
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Follow the instructions to properly install the software and connect the hardware as described in the previous sections.
+-  Open the file named **CN0276.exe** in the installation directory.
+
+.. note::
+
+   \ **NOTE:** If the software was installed to the default location it will be found at
+
+   **C:\\Program Files\\Analog Devices\\CN0276\\CN0276.exe** *(in 32-bit operational system)* or **C:\\Program Files (x86)\\Analog Devices\\CN0276\\CN0276.exe** *(in 64-bit operational system)*\
+
+
+\* Click the **Connect Button**. A window with a progress bar will load.
+
+
+
+|image10|
+
+   \* Upon success, the **System Status String Indicator** will display *SDP Board serial number*
+
+--------------
+
+Capturing Data
+~~~~~~~~~~~~~~
+
+-  **Establish a USB Connection Link**.
+-  **Write the configure data to AD2S1210**.
+
+.. important::
+
+   \ **After power on the EVAL-CN0276-SDPZ, User must write the configure data to AD2S1210 before the first running.**\
+
+
+-  **Setting the sample times**.
+-  Click the **Start Button**.
+-  when sample times reached the sample times setting or **Stop Button** has been pressed, the converting will be halt.
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0276-SDPZ?&v=RevA>`_ to receive all these great benefits and more!
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0276/system.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0276/softwareinstall1.png
+   :width: 584px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0276/softwareinstall2.png
+   :width: 584px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0276/softwareinstall3.png
+   :width: 503px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0276/softwareinstall4.png
+   :width: 503px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0276/softwareinstall5.png
+   :width: 503px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0276/slide1.png
+   :width: 900px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0276/slide2.png
+   :width: 900px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0276/slide3.png
+   :width: 900px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0276/software4.png
+   :width: 320px

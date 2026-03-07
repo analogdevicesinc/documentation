@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The code for all the various pieces required to create testing SD cards can be found on Github. See the following list for links to the various parts:" name="description" />
+
+    <title>Creating ADRV9361 RF SOM production testing SD cards &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Creating ADRV9361 RF SOM production testing SD cards</a><ul>
+<li><a class="reference internal" href="#som2">SOM2</a><ul>
+<li><a class="reference internal" href="#fpga-bitstream">FPGA bitstream</a></li>
+<li><a class="reference internal" href="#creating-the-main-u-boot-test-binary">Creating the main U-Boot test binary</a></li>
+<li><a class="reference internal" href="#creating-the-qspi-u-boot-binary">Creating the QSPI U-Boot binary</a></li>
+<li><a class="reference internal" href="#creating-the-no-os-test-elfs">Creating the no-OS test ELFs</a></li>
+<li><a class="reference internal" href="#linux-and-the-device-tree">Linux and the device tree</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#som1">SOM1</a><ul>
+<li><a class="reference internal" href="#fpga-bitstream-1">FPGA bitstream</a></li>
+<li><a class="reference internal" href="#creating-the-main-u-boot-test-binary-1">Creating the main U-Boot test binary</a></li>
+<li><a class="reference internal" href="#creating-the-qspi-u-boot-binary-1">Creating the QSPI U-Boot binary</a></li>
+<li><a class="reference internal" href="#creating-the-no-os-test-elfs-1">Creating the no-OS test ELFs</a></li>
+<li><a class="reference internal" href="#linux-and-the-device-tree-1">Linux and the device tree</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#fmc-carrier">FMC Carrier</a><ul>
+<li><a class="reference internal" href="#fpga-bitstream-2">FPGA bitstream</a></li>
+<li><a class="reference internal" href="#creating-the-main-u-boot-test-binary-2">Creating the main U-Boot test binary</a></li>
+<li><a class="reference internal" href="#creating-the-no-os-test-elfs-2">Creating the no-OS test ELFs</a></li>
+<li><a class="reference internal" href="#linux-test-scripts">Linux test scripts</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#breakout-board">Breakout Board</a><ul>
+<li><a class="reference internal" href="#adi-image-changes">ADI image changes</a></li>
+<li><a class="reference internal" href="#raspberry-pi-image-changes">Raspberry Pi image changes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="creating-adrv9361-rf-som-production-testing-sd-cards">
+<h1>Creating ADRV9361 RF SOM production testing SD cards<a class="headerlink" href="#creating-adrv9361-rf-som-production-testing-sd-cards" title="Link to this heading"></a></h1>
+<section id="som2">
+<h2>SOM2<a class="headerlink" href="#som2" title="Link to this heading"></a></h2>
+<p>The code for all the various pieces required to create testing SD cards can be found on Github. See the following list for links to the various parts:</p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p><strong>U-Boot:</strong></p>
+<ul class="simple">
+<li><p>U-Boot test branch: <a class="icon git reference external" href="https://github.com/analogdevicesinc/u-boot-xlnx/tree/main/tree/pzsdr-test" target="_blank">tree/pzsdr-test</a></p></li>
+<li><p>U-Boot QSPI booting branch: <a class="icon git reference external" href="https://github.com/analogdevicesinc/u-boot-xlnx/tree/main/tree/qspiboot" target="_blank">tree/qspiboot</a></p></li>
+</ul>
+<p>A version of U-Boot built from the test branch will run through the tests assuming a properly formatted SD card while the QSPI branch is for flashing to the device.</p>
+<p><strong>No-OS:</strong></p>
+<ul class="simple">
+<li><p>HDL dev branch: <a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/projects/pzsdr/ccbrk" target="_blank">projects/pzsdr/ccbrk</a></p></li>
+<li><p>Loopback test: <a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/pzsdr/ccbrk/loopback" target="_blank">pzsdr/ccbrk/loopback</a></p></li>
+</ul>
+<p>Xilinx SDK 2015.2 is currently required to build both of these projects.</p>
+</div>
+<p>In order to create an SD card for testing, the various test binaries, u-boot versions, and other files must be built and placed in the correct location in the boot partition of the standard SD card image. See the following hierarchy of test and flash related files on an SD card’s boot partition mounted on /media/BOOT:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/media/BOOT
+├── BOOT.BIN
+├── devicetree.dtb
+├── flash
+│   ├── BOOT.BIN
+│   ├── system.bit
+│   └── uramdisk.image.gz
+├── ad9361.elf
+├── loopback.elf
+└── uImage
+</pre></div>
+</div>
+<p>Follow the instructions below to create the various files in the hierarchy seen above. Note that it is assumed the required Xilinx SDKs are installed and initialized properly for use in the current environment.</p>
+<section id="fpga-bitstream">
+<h3>FPGA bitstream<a class="headerlink" href="#fpga-bitstream" title="Link to this heading"></a></h3>
+<p>The bitstream is already available on the SD card in the bootgen_sysfiles.tgz file located in the related platform directory on the BOOT partition. This assumes the SD card’s BOOT partition is already mounted at /media/BOOT.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">/</span><span class="n">bootgen</span>
+<span class="n">cd</span> <span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">BOOT</span><span class="o">/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr</span><span class="o">-</span><span class="n">bob</span>
+<span class="n">tar</span> <span class="o">-</span><span class="n">xvf</span> <span class="n">bootgen_sysfiles</span><span class="o">.</span><span class="n">tgz</span> <span class="o">-</span><span class="n">C</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">/</span><span class="n">bootgen</span>
+<span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">BOOT</span><span class="o">/</span><span class="n">flash</span>
+<span class="n">cp</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">/</span><span class="n">bootgen</span><span class="o">/</span><span class="n">system</span><span class="o">.</span><span class="n">bit</span> <span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">BOOT</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Now we have to build a different bitstream used for various test features:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">analogdevicesinc</span><span class="o">/</span><span class="n">hdl</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">hdl</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">pzsdr</span><span class="o">/</span><span class="n">ccbrk</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">dev</span>
+<span class="n">make</span> <span class="n">pzsdr</span><span class="o">.</span><span class="n">ccbrk</span>
+</pre></div>
+</div>
+<p>Symlink the created bitstream into the unpacked bootgen directory for future use when building BOOT.BIN files.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">/</span><span class="n">bootgen</span>
+<span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">/</span><span class="n">hdl</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">pzsdr</span><span class="o">/</span><span class="n">ccbrk</span><span class="o">/</span><span class="n">ccbrk_pzsdr</span><span class="o">.</span><span class="n">runs</span><span class="o">/</span><span class="n">impl_1</span><span class="o">/</span><span class="n">system_top</span><span class="o">.</span><span class="n">bit</span>
+</pre></div>
+</div>
+</section>
+<section id="creating-the-main-u-boot-test-binary">
+<h3>Creating the main U-Boot test binary<a class="headerlink" href="#creating-the-main-u-boot-test-binary" title="Link to this heading"></a></h3>
+<p>The main U-Boot test ELF should be created using a process similar to the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd ~/zynq-picozed-sdr2
+git clone https://github.com/analogdevicesinc/u-boot-xlnx.git
+cd u-boot-xlnx
+git checkout pzsdr-test
+export CROSS_COMPILE=arm-xilinx-eabi-
+make zynq_picozed_sdr2_defconfig
+make -j$(nproc)
+</pre></div>
+</div>
+<p>Next the BOOT.BIN file must be created. Note that the default bif file used for BOOT.BIN generation has a few file name mismatches in it. We’ve already corrected the bitstream name mismatch (since we symlinked our own version in) and to fix the FSBL so do the below (or change the name in the bif file):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">/</span><span class="n">bootgen</span>
+<span class="n">mv</span> <span class="n">zynq_fsbl_0</span><span class="o">.</span><span class="n">elf</span> <span class="n">fsbl</span><span class="o">.</span><span class="n">elf</span>
+</pre></div>
+</div>
+<p>Copy in the U-Boot ELF file you just built:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">/</span><span class="n">bootgen</span>
+<span class="n">cp</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">/</span><span class="n">u</span><span class="o">-</span><span class="n">boot</span><span class="o">-</span><span class="n">xlnx</span><span class="o">/</span><span class="n">u</span><span class="o">-</span><span class="n">boot</span> <span class="o">./</span><span class="n">u</span><span class="o">-</span><span class="n">boot</span><span class="o">-</span><span class="n">picozed</span><span class="o">.</span><span class="n">elf</span>
+</pre></div>
+</div>
+<p>Create the BOOT.BIN file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">/</span><span class="n">bootgen</span>
+<span class="n">bootgen</span> <span class="o">-</span><span class="n">image</span> <span class="n">zynq</span><span class="o">.</span><span class="n">bif</span> <span class="o">-</span><span class="n">w</span> <span class="o">-</span><span class="n">o</span> <span class="n">BOOT</span><span class="o">.</span><span class="n">BIN</span>
+</pre></div>
+</div>
+<p>Copy the BOOT.BIN file to the root directory of the SD card’s BOOT partition:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">BOOT</span><span class="o">.</span><span class="n">BIN</span> <span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">BOOT</span><span class="o">/</span>
+</pre></div>
+</div>
+</section>
+<section id="creating-the-qspi-u-boot-binary">
+<h3>Creating the QSPI U-Boot binary<a class="headerlink" href="#creating-the-qspi-u-boot-binary" title="Link to this heading"></a></h3>
+<p>This assumes you have already cloned the U-Boot repository in the previous step.</p>
+<p>Build the U-Boot version targeting booting from QSPI flash:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd ~/zynq-picozed-sdr2/u-boot-xlnx
+git clean -fxd
+git checkout qspiboot
+make zynq_picozed_sdr2_defconfig
+make -j$(nproc)
+</pre></div>
+</div>
+<p>Copy it into the previously created folder of bootgen files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">u</span><span class="o">-</span><span class="n">boot</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">/</span><span class="n">bootgen</span><span class="o">/</span><span class="n">u</span><span class="o">-</span><span class="n">boot</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">qspi</span><span class="o">.</span><span class="n">elf</span>
+</pre></div>
+</div>
+<p>Create a new bif file in ~/zynq-picozed-sdr2/bootgen named zynq-qspi.bif with the following content:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">the_ROM_image</span><span class="p">:</span>
+<span class="p">{</span>
+<span class="p">[</span><span class="n">bootloader</span><span class="p">]</span><span class="o">./</span><span class="n">fsbl</span><span class="o">.</span><span class="n">elf</span>
+<span class="o">./</span><span class="n">u</span><span class="o">-</span><span class="n">boot</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">qspi</span><span class="o">.</span><span class="n">elf</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This removes the FPGA bitstream from the generated BOOT.BIN (it’ll be flashed separately) and points to our newly generated U-Boot ELF file.</p>
+<p>Generate the new BOOT.BIN file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">/</span><span class="n">bootgen</span>
+<span class="n">bootgen</span> <span class="o">-</span><span class="n">image</span> <span class="n">zynq</span><span class="o">-</span><span class="n">qspi</span><span class="o">.</span><span class="n">bif</span> <span class="o">-</span><span class="n">w</span> <span class="o">-</span><span class="n">o</span> <span class="n">BOOT</span><span class="o">.</span><span class="n">BIN</span>
+</pre></div>
+</div>
+<p>Copy the BOOT.BIN file to the flash directory of the SD card’s BOOT partition:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">BOOT</span><span class="o">.</span><span class="n">BIN</span> <span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">BOOT</span><span class="o">/</span><span class="n">flash</span><span class="o">/</span>
+</pre></div>
+</div>
+</section>
+<section id="creating-the-no-os-test-elfs">
+<h3>Creating the no-OS test ELFs<a class="headerlink" href="#creating-the-no-os-test-elfs" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">analogdevicesinc</span><span class="o">/</span><span class="n">no</span><span class="o">-</span><span class="n">OS</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">no</span><span class="o">-</span><span class="n">OS</span><span class="o">/</span><span class="n">pzsdr</span><span class="o">/</span><span class="n">ccbrk</span><span class="o">/</span><span class="n">loopback</span>
+<span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">/</span><span class="n">hdl</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">pzsdr</span><span class="o">/</span><span class="n">ccbrk</span><span class="o">/</span><span class="n">ccbrk_pzsdr</span><span class="o">.</span><span class="n">sdk</span><span class="o">/</span><span class="n">system_top</span><span class="o">.</span><span class="n">hdf</span>
+<span class="n">make</span>
+<span class="n">cp</span> <span class="n">sdk</span><span class="o">/</span><span class="n">loopback</span><span class="o">/</span><span class="n">Release</span><span class="o">/</span><span class="n">loopback</span><span class="o">.</span><span class="n">elf</span> <span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">BOOT</span>
+</pre></div>
+</div>
+<p>TODO: ad9361</p>
+</section>
+<section id="linux-and-the-device-tree">
+<h3>Linux and the device tree<a class="headerlink" href="#linux-and-the-device-tree" title="Link to this heading"></a></h3>
+<p>TODO</p>
+</section>
+</section>
+<section id="som1">
+<h2>SOM1<a class="headerlink" href="#som1" title="Link to this heading"></a></h2>
+<p>TODO</p>
+<section id="fpga-bitstream-1">
+<span id="id1"></span><h3>FPGA bitstream<a class="headerlink" href="#fpga-bitstream-1" title="Link to this heading"></a></h3>
+<p>TODO</p>
+</section>
+<section id="creating-the-main-u-boot-test-binary-1">
+<span id="id2"></span><h3>Creating the main U-Boot test binary<a class="headerlink" href="#creating-the-main-u-boot-test-binary-1" title="Link to this heading"></a></h3>
+<p>TODO</p>
+</section>
+<section id="creating-the-qspi-u-boot-binary-1">
+<span id="id3"></span><h3>Creating the QSPI U-Boot binary<a class="headerlink" href="#creating-the-qspi-u-boot-binary-1" title="Link to this heading"></a></h3>
+<p>TODO</p>
+</section>
+<section id="creating-the-no-os-test-elfs-1">
+<span id="id4"></span><h3>Creating the no-OS test ELFs<a class="headerlink" href="#creating-the-no-os-test-elfs-1" title="Link to this heading"></a></h3>
+<p>TODO</p>
+<p>TODO: ad9361</p>
+</section>
+<section id="linux-and-the-device-tree-1">
+<span id="id5"></span><h3>Linux and the device tree<a class="headerlink" href="#linux-and-the-device-tree-1" title="Link to this heading"></a></h3>
+<p>TODO</p>
+</section>
+</section>
+<section id="fmc-carrier">
+<h2>FMC Carrier<a class="headerlink" href="#fmc-carrier" title="Link to this heading"></a></h2>
+<p>The code for all the various pieces required to create testing SD cards can be found on Github. See the following list for links to the various parts:</p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p><strong>U-Boot:</strong></p>
+<ul class="simple">
+<li><p>U-Boot test branch: <a class="icon git reference external" href="https://github.com/analogdevicesinc/u-boot-xlnx/tree/main/tree/pzsdr-ccfmc-test" target="_blank">tree/pzsdr-ccfmc-test</a></p></li>
+</ul>
+<p><strong>No-OS:</strong></p>
+<ul class="simple">
+<li><p>Tests for various loopback modules (PMOD, camera, FMC, SFTP+) that are run at the U-Boot level: <a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/pzsdr/ccfmc/loopback" target="_blank">pzsdr/ccfmc/loopback</a></p></li>
+<li><p>HDL dev branch: <a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/projects/pzsdr/ccfmc" target="_blank">projects/pzsdr/ccfmc</a></p></li>
+</ul>
+<p><strong>Test script:</strong></p>
+<ul class="simple">
+<li><p>Bash script to automate the various interface tests: <a class="icon git reference external" href="https://github.com/analogdevicesinc/board-tests/tree/main/picozed-sdr2-fmc/runtests" target="_blank">picozed-sdr2-fmc/runtests</a>.sh</p></li>
+</ul>
+<p>The remaining files used by the tests can be found in the parent directory: <a class="icon git reference external" href="https://github.com/analogdevicesinc/board-tests/tree/main/picozed-sdr2-fmc" target="_blank">picozed-sdr2-fmc</a></p>
+</div>
+<p>First, write the latest available SD card image found at <a class="reference internal" href="../../../../tools-software/linux-software/zynq_images.html"><span class="doc">&lt;no title&gt;</span></a> to a spare card and prepare the card to boot into Linux as detailed on that page.</p>
+<p>When that is ready follow the instructions below the create the various files necessary to run the test suite.</p>
+<section id="fpga-bitstream-2">
+<span id="id6"></span><h3>FPGA bitstream<a class="headerlink" href="#fpga-bitstream-2" title="Link to this heading"></a></h3>
+<p>Unpack the bootgen_sysfiles.tgz file located in the related platform directory on the BOOT partition of the SD card. The following commands assume the SD card’s BOOT partition is already mounted at /media/BOOT.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">/</span><span class="n">bootgen</span>
+<span class="n">cd</span> <span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">BOOT</span><span class="o">/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr</span><span class="o">-</span><span class="n">bob</span>
+<span class="n">tar</span> <span class="o">-</span><span class="n">xvf</span> <span class="n">bootgen_sysfiles</span><span class="o">.</span><span class="n">tgz</span> <span class="o">-</span><span class="n">C</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">/</span><span class="n">bootgen</span>
+</pre></div>
+</div>
+<p>Build a loopback-enabled bitstream:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">analogdevicesinc</span><span class="o">/</span><span class="n">hdl</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">hdl</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">pzsdr</span><span class="o">/</span><span class="n">ccfmc</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">dev</span>
+<span class="n">make</span> <span class="n">pzsdr</span><span class="o">.</span><span class="n">ccfmc</span>
+</pre></div>
+</div>
+<p>Symlink the created bitstream into the unpacked bootgen directory for future use when building BOOT.BIN files.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">/</span><span class="n">bootgen</span>
+<span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">/</span><span class="n">hdl</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">pzsdr</span><span class="o">/</span><span class="n">ccbrk</span><span class="o">/</span><span class="n">ccbrk_pzsdr</span><span class="o">.</span><span class="n">runs</span><span class="o">/</span><span class="n">impl_1</span><span class="o">/</span><span class="n">system_top</span><span class="o">.</span><span class="n">bit</span>
+</pre></div>
+</div>
+</section>
+<section id="creating-the-main-u-boot-test-binary-2">
+<span id="id7"></span><h3>Creating the main U-Boot test binary<a class="headerlink" href="#creating-the-main-u-boot-test-binary-2" title="Link to this heading"></a></h3>
+<p>The main U-Boot test ELF should be created using a process similar to the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd ~/zynq-picozed-sdr2
+git clone https://github.com/analogdevicesinc/u-boot-xlnx.git
+cd u-boot-xlnx
+git checkout pzsdr-ccfmc-test
+export CROSS_COMPILE=arm-xilinx-eabi-
+make zynq_picozed_sdr2_defconfig
+make -j$(nproc)
+</pre></div>
+</div>
+<p>Next the BOOT.BIN file must be created. Note that the default bif file used for BOOT.BIN generation has a few file name mismatches in it. We’ve already corrected the bitstream name mismatch (since we symlinked our own version in) and to fix the FSBL so do the below (or change the name in the bif file):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">/</span><span class="n">bootgen</span>
+<span class="n">mv</span> <span class="n">zynq_fsbl_0</span><span class="o">.</span><span class="n">elf</span> <span class="n">fsbl</span><span class="o">.</span><span class="n">elf</span>
+</pre></div>
+</div>
+<p>Copy in the U-Boot ELF file you just built:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">/</span><span class="n">bootgen</span>
+<span class="n">cp</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">/</span><span class="n">u</span><span class="o">-</span><span class="n">boot</span><span class="o">-</span><span class="n">xlnx</span><span class="o">/</span><span class="n">u</span><span class="o">-</span><span class="n">boot</span> <span class="o">./</span><span class="n">u</span><span class="o">-</span><span class="n">boot</span><span class="o">-</span><span class="n">picozed</span><span class="o">.</span><span class="n">elf</span>
+</pre></div>
+</div>
+<p>Create the BOOT.BIN file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">/</span><span class="n">bootgen</span>
+<span class="n">bootgen</span> <span class="o">-</span><span class="n">image</span> <span class="n">zynq</span><span class="o">.</span><span class="n">bif</span> <span class="o">-</span><span class="n">w</span> <span class="o">-</span><span class="n">o</span> <span class="n">BOOT</span><span class="o">.</span><span class="n">BIN</span>
+</pre></div>
+</div>
+<p>Copy the BOOT.BIN file to the root directory of the SD card’s BOOT partition:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">BOOT</span><span class="o">.</span><span class="n">BIN</span> <span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">BOOT</span><span class="o">/</span>
+</pre></div>
+</div>
+</section>
+<section id="creating-the-no-os-test-elfs-2">
+<span id="id8"></span><h3>Creating the no-OS test ELFs<a class="headerlink" href="#creating-the-no-os-test-elfs-2" title="Link to this heading"></a></h3>
+<p>Next, create the no-OS loopback test ELF:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">analogdevicesinc</span><span class="o">/</span><span class="n">no</span><span class="o">-</span><span class="n">OS</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">no</span><span class="o">-</span><span class="n">OS</span><span class="o">/</span><span class="n">pzsdr</span><span class="o">/</span><span class="n">ccfmc</span><span class="o">/</span><span class="n">loopback</span>
+<span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">~/</span><span class="n">zynq</span><span class="o">-</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">/</span><span class="n">hdl</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">pzsdr</span><span class="o">/</span><span class="n">ccbrk</span><span class="o">/</span><span class="n">ccbrk_pzsdr</span><span class="o">.</span><span class="n">sdk</span><span class="o">/</span><span class="n">system_top</span><span class="o">.</span><span class="n">hdf</span>
+<span class="n">make</span>
+<span class="n">cp</span> <span class="n">sdk</span><span class="o">/</span><span class="n">loopback</span><span class="o">/</span><span class="n">Release</span><span class="o">/</span><span class="n">loopback</span><span class="o">.</span><span class="n">elf</span> <span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">BOOT</span>
+</pre></div>
+</div>
+</section>
+<section id="linux-test-scripts">
+<h3>Linux test scripts<a class="headerlink" href="#linux-test-scripts" title="Link to this heading"></a></h3>
+<p>Finally the test script repository must cloned onto the rootfs of the card and the script must be set to be run automated on boot. This can either be done by mounting the SD card on another computer or running the SD card on a board connected to the Internet which we’ll assume is the case here.</p>
+<p>Once the board is booted up open a terminal and run the following commands:</p>
+<p>First, clone the board testing git repo analog user’s home directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">analogdevicesinc</span><span class="o">/</span><span class="n">board</span><span class="o">-</span><span class="n">tests</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>Then remove all applications that are currently set to run at boot:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">analog</span><span class="o">/.</span><span class="n">config</span><span class="o">/</span><span class="n">autostart</span><span class="o">/*</span>
+</pre></div>
+</div>
+<p>Next, create a desktop launcher to launch the tests on boot:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">&lt;&lt;</span> <span class="n">EOF</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">analog</span><span class="o">/.</span><span class="n">config</span><span class="o">/</span><span class="n">autostart</span><span class="o">/</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">-</span><span class="n">fmc</span><span class="o">-</span><span class="n">tests</span><span class="o">.</span><span class="n">desktop</span>
+<span class="p">[</span><span class="n">Desktop</span> <span class="n">Entry</span><span class="p">]</span>
+<span class="n">Exec</span><span class="o">=</span><span class="n">sudo</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">analog</span><span class="o">/</span><span class="n">board</span><span class="o">-</span><span class="n">tests</span><span class="o">/</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">-</span><span class="n">fmc</span><span class="o">/</span><span class="n">runtests</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">Terminal</span><span class="o">=</span><span class="kc">True</span>
+<span class="n">Type</span><span class="o">=</span><span class="n">Application</span>
+<span class="n">Name</span><span class="o">=</span><span class="n">PicoZed</span> <span class="n">SDR2</span> <span class="n">FMC</span> <span class="n">tests</span>
+<span class="n">GenericName</span><span class="o">=</span><span class="n">PicoZed</span> <span class="n">SDR2</span> <span class="n">FMC</span> <span class="n">tests</span>
+<span class="n">EOF</span>
+</pre></div>
+</div>
+<p>Finally, make the test script executable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">analog</span><span class="o">/.</span><span class="n">config</span><span class="o">/</span><span class="n">autostart</span><span class="o">/</span><span class="n">picozed</span><span class="o">-</span><span class="n">sdr2</span><span class="o">-</span><span class="n">fmc</span><span class="o">-</span><span class="n">tests</span><span class="o">.</span><span class="n">desktop</span>
+</pre></div>
+</div>
+<p>Now the SD card could be ready to automatically launch the test script in a terminal window on startup.</p>
+</section>
+</section>
+<section id="breakout-board">
+<h2>Breakout Board<a class="headerlink" href="#breakout-board" title="Link to this heading"></a></h2>
+<section id="adi-image-changes">
+<h3>ADI image changes<a class="headerlink" href="#adi-image-changes" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">mount</span> <span class="pre">/dev/mmcblk0p1</span> <span class="pre">/media/boot/</span></code></p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">dtc</span> <span class="pre">-I</span> <span class="pre">dtb</span> <span class="pre">-O</span> <span class="pre">dts</span> <span class="pre">-o</span> <span class="pre">/media/boot/devicetree.dts</span> <span class="pre">/media/boot/devicetree.dtb</span></code> to obtain the source file in text format (.dts) from binary blob (.dtb)</p></li>
+<li><dl>
+<dt>Remove all gpio_keys mappings from the device tree (<code class="docutils literal notranslate"><span class="pre">vim</span> <span class="pre">/media/boot/devicetree.dts</span></code>)<a href="#id9"><span class="problematic" id="id10">``</span></a>gpio_keys {</dt><dd><blockquote>
+<div><p>compatible = “gpio-keys”;
+#address-cells = &lt;0x1&gt;;
+#size-cells = &lt;0x0&gt;;
+autorepeat;</p>
+<dl class="simple">
+<dt>pb0 {</dt><dd><p>label = “Left”;
+linux,code = &lt;0x69&gt;;
+gpios = &lt;0x6 0x36 0x0&gt;;</p>
+</dd>
+</dl>
+<p>};</p>
+<dl class="simple">
+<dt>pb1 {</dt><dd><p>label = “Right”;
+linux,code = &lt;0x6a&gt;;
+gpios = &lt;0x6 0x37 0x0&gt;;</p>
+</dd>
+</dl>
+<p>};</p>
+<dl class="simple">
+<dt>pb2 {</dt><dd><p>label = “Up”;
+linux,code = &lt;0x67&gt;;
+gpios = &lt;0x6 0x38 0x0&gt;;</p>
+</dd>
+</dl>
+<p>};</p>
+<dl class="simple">
+<dt>pb3 {</dt><dd><p>label = “Down”;
+linux,code = &lt;0x6c&gt;;
+gpios = &lt;0x6 0x39 0x0&gt;;</p>
+</dd>
+</dl>
+<p>};</p>
+<dl class="simple">
+<dt>sw0 {</dt><dd><p>label = “SW0”;
+linux,input-type = &lt;0x5&gt;;
+linux,code = &lt;0x0&gt;;
+gpios = &lt;0x6 0x3e 0x0&gt;;</p>
+</dd>
+</dl>
+<p>};</p>
+<dl class="simple">
+<dt>sw1 {</dt><dd><p>label = “SW1”;
+linux,input-type = &lt;0x5&gt;;
+linux,code = &lt;0x1&gt;;
+gpios = &lt;0x6 0x3f 0x0&gt;;</p>
+</dd>
+</dl>
+<p>};</p>
+<dl class="simple">
+<dt>sw2 {</dt><dd><p>label = “SW2”;
+linux,input-type = &lt;0x5&gt;;
+linux,code = &lt;0x2&gt;;
+gpios = &lt;0x6 0x40 0x0&gt;;</p>
+</dd>
+</dl>
+<p>};</p>
+<dl class="simple">
+<dt>sw3 {</dt><dd><p>label = “SW3”;
+linux,input-type = &lt;0x5&gt;;
+linux,code = &lt;0x3&gt;;
+gpios = &lt;0x6 0x41 0x0&gt;;</p>
+</dd>
+</dl>
+<p>};</p>
+</div></blockquote>
+<p>};``</p>
+</dd>
+</dl>
+</li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">dtc</span> <span class="pre">-I</span> <span class="pre">dts</span> <span class="pre">-O</span> <span class="pre">dtb</span> <span class="pre">-o</span> <span class="pre">/media/boot/devicetree.dtb</span> <span class="pre">/media/boot/devicetree.dts</span></code> to convert back the source file (.dts) in binary blob (.dtb)</p></li>
+<li><p>Copy <code class="docutils literal notranslate"><span class="pre">runtests.sh</span></code> to <code class="docutils literal notranslate"><span class="pre">/root</span></code></p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">runtests.sh</span></code> to make the script executable</p></li>
+<li><p>Add in <code class="docutils literal notranslate"><span class="pre">/etc/rc.local</span></code> a call to <code class="docutils literal notranslate"><span class="pre">/root/runtests.sh</span></code></p></li>
+</ul>
+</section>
+<section id="raspberry-pi-image-changes">
+<h3>Raspberry Pi image changes<a class="headerlink" href="#raspberry-pi-image-changes" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Configure <a class="icon link reference external" href="https://www.adafruit.com/product/2315" target="_blank">Adafruit PiTFT 2.2” HAT Mini Kit - 320x240 2.2” TFT - No Touch</a></p></li>
+<li><p>Add in <code class="docutils literal notranslate"><span class="pre">/home/pi/</span></code> the <code class="docutils literal notranslate"><span class="pre">breakout_board_test.py</span></code> and <code class="docutils literal notranslate"><span class="pre">reboot_poweroff.py</span></code> files.</p></li>
+<li><p>Add at the end of <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file this line:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">/home/pi/breakout_board_test.py</span> <span class="pre">&amp;</span> <span class="pre">python</span> <span class="pre">/home/pi/reboot_poweroff.py</span> <span class="pre">&amp;</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+AD5270 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5270`
+-  :adi:`AD5271`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5270SDZ`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-AD5270SDZ <AD5270>` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-AD5270SDZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/img_ad5270.jpg
+   :alt: img_ad5270.jpg
+   :align: center
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`_
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD5270SDZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5270_sdp1z.png
+   :alt: ad5270_sdp1z.png
+   :align: center
+   :width: 400px
+
+The **EVAL-AD5270SDZ** evaluation board is a member of a growing number of boards available for the **SDP**. Designed to help customers evaluate performance or quickly prototype new **AD5270** circuits and reduce design time, the **EVAL-AD5270SDZ** evaluation board can operate in single-supply and dual-supply mode and incorporates an internal power supply powered from the USB.
+
+The :adi:`AD5270` is a single-channel, 1024-position digital rheostat with less than ±1% end-to-end resistor tolerance error and 50-time programmable memory. The AD5270 supports a dual-supply ±2.5 V to ±2.75 V operation and a single-supply 2.7 V to 5.5 V operation, making it suited for battery-powered applications and many other applications. The AD5270 uses a versatile 3-wire serial interface that operates at clock rates up to 50 MHz, and it is compatible with standard SPI, QSPI™, MICROWIRE™, and DSP interface standards.
+
+More information
+----------------
+
+-  :adi:`AD5270 Product Info <AD5270>` - pricing, samples, datasheet
+-  :adi:`EVAL-AD5270SDZ evaluation board user guide </static/imported-files/user_guides/UG-094.pdf>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+-  FMC-SDP adapter board
+-  **EVAL-AD5270** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+-  The EVAL-AD5270 reference project for Xilinx KC705 FPGA.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **AD5270 Driver:** :git-no-OS:`device_drivers/AD5270`
+   
+   -  **AD5270 Commands:** :git-no-OS:`device_commands/AD5270`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Run the Demonstration Project
+=============================
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+   | Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-AD5270 reference project for Xilinx KC705 FPGA board.
+
++------------------+------------------------------------------------------------------------+
+| Command          | Description                                                            |
++==================+========================================================================+
+| **help?**        | Displays all available commands.                                       |
++------------------+------------------------------------------------------------------------+
+| **reset!**       | Makes a software reset of the device.                                  |
++------------------+------------------------------------------------------------------------+
+| **rdac=**        | Writes to the RDAC register. Accepted values:                          |
+|                  | 0 .. 1024 (0 .. 255 for AD5271) - the value written to RDAC.           |
++------------------+------------------------------------------------------------------------+
+| **rdac?**        | Displays the last written value in RDAC register.                      |
++------------------+------------------------------------------------------------------------+
+| **store!**       | Stores the RDAC setting to 50-TP.                                      |
++------------------+------------------------------------------------------------------------+
+| **50TPValue?**   | Displays the contents of the selected 50-TP register. Accepted values: |
+|                  | 0 .. 50 - selected 50-TP register.                                     |
++------------------+------------------------------------------------------------------------+
+| **50TPAddress?** | Displays the address of the last programmed 50-TP register.            |
++------------------+------------------------------------------------------------------------+
+| **power=**       | Turns on/off the device. Accepted values:                              |
+|                  | 1 - normal mode.(default)                                              |
+|                  | 0 - shutdown mode.                                                     |
++------------------+------------------------------------------------------------------------+
+| **power?**       | Displays the power status of the device.                               |
++------------------+------------------------------------------------------------------------+
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`_
+
+
+.. _more-information-1:
+
+More information
+================
+
+-  :doc:`AD5270 Digital Potentiometer Linux Driver </wiki-migration/resources/tools-software/linux-drivers/misc/dpot>`
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`_
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

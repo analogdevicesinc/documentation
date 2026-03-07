@@ -1,0 +1,183 @@
+AD5790 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5790`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5790SDZ`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-AD5790SDZ <AD5790>` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-AD5790SDZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/img_ad5790.jpg
+   :alt: img_ad5790.jpg
+   :align: center
+   :width: 400px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`_
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD5790SDZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5790_sdp1z.png
+   :alt: ad5790_sdp1z.png
+   :align: center
+   :width: 400px
+
+The :adi:`AD5790` is a single 20-bit, voltage out DAC that operates from a bipolar supply up to 33V. Reference buffers are also provided on-chip. The AD5790 accepts a positive reference input in the range of 5V to VDD – 2.5V and a negative reference input in the range of VSS + 2.5v to 0V. The AD5790 offers a relative accuracy of +/-2 LSB's max and operation is guaranteed monotonic with a -1 LSB to +3 LSB's DNL specification.
+
+The **EVAL-AD5790** evaluation board is a full-featured evaluation board, designed to allow the user to easily evaluate all features of the AD5790 voltage output, 20-bit DAC. The AD5790 pins are accessible at on-board connectors for external connection.
+
+More information
+----------------
+
+-  :adi:`AD5790 Product Info <AD5790>` - pricing, samples, datasheet
+-  :adi:`EVAL-AD5790SDZ evaluation board user guide </static/imported-files/user_guides/UG-342.pdf>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+-  FMC-SDP adapter board
+-  **EVAL-AD5790** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+-  The EVAL-AD5790 reference project for Xilinx KC705 FPGA.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **AD5790 Driver:** :git-no-OS:`device_drivers/AD5791`
+   
+   -  **AD5790 Commands:** :git-no-OS:`device_commands/AD5791`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Run the Demonstration Project
+=============================
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+
+   ..
+
+| Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+|
+
+.. important::
+
+   | To power on the EVAL-AD5790 evaluation board, you need to provide external differential supply voltage to J2 connector(for more information see: :adi:`EVAL-AD5790SDZ evaluation board user guide </static/imported-files/user_guides/UG-342.pdf>`) and a 5V reference voltage to VREF connector on the evaluation board. VREFN will be connected to AGND (LK8 option=B, LK2 option=B, LK3 option=B, LK4 inserted).
+
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-AD5790 reference project for Xilinx KC705 FPGA board.
+
++---------------+------------------------------------------------------------------+
+| Command       | Description                                                      |
++===============+==================================================================+
+| **help?**     | Displays all available commands.                                 |
++---------------+------------------------------------------------------------------+
+| **reset!**    | Resets the device.                                               |
++---------------+------------------------------------------------------------------+
+| **coding=**   | Selects the coding style. Accepted values:                       |
+|               | 0 - Two's complement coding.(default)                            |
+|               | 1 - Offset binary coding.                                        |
++---------------+------------------------------------------------------------------+
+| **coding?**   | Display the current coding style.                                |
++---------------+------------------------------------------------------------------+
+| **register=** | Writes to the DAC register. Accepted values:                     |
+|               | 0 .. 1048575 - the value written to the DAC.                     |
++---------------+------------------------------------------------------------------+
+| **register?** | Displays last written value to the DAC register.                 |
++---------------+------------------------------------------------------------------+
+| **voltage=**  | Sets the DAC output voltage. Accepted values:                    |
+|               | -10 .. +10 - desired output voltage in volts.                    |
++---------------+------------------------------------------------------------------+
+| **voltage?**  | Displays the output voltage.                                     |
++---------------+------------------------------------------------------------------+
+| **output=**   | Selects the DAC output state. Accepted values:                   |
+|               | 0 - Normal state.                                                |
+|               | 1 - Clamped via 6KOhm to AGND.(default)                          |
+|               | 2 - Tristate.                                                    |
++---------------+------------------------------------------------------------------+
+| **output?**   | Displays the DAC output state.                                   |
++---------------+------------------------------------------------------------------+
+| **rbuf=**     | Sets/resets the RBUF bit from control register. Accepted values: |
+|               | 0 - RBUF is reset.                                               |
+|               | 1 - RBUF is set.(default)                                        |
++---------------+------------------------------------------------------------------+
+| **rbuf?**     | Displays the value of RBUF bit from control register.            |
++---------------+------------------------------------------------------------------+
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`_
+
+
+.. _more-information-1:
+
+More information
+================
+
+-  :doc:`AD5790 IIO DAC Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dac/ad5791>`
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`_
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

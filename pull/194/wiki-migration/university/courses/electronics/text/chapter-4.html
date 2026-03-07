@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="In this chapter we explore a number of example op amp configuration that are presented to illustrate certain advanced applications for operational amplifiers. Many of these more advanced uses for op amps will probably make more sense after the reader has studied the material on Bipolar Junction and Field Effect transistors in later chapters. The reader can skip this material for now and circle back after gaining an understanding of how transistors work." name="description" />
+
+    <title>Chapter 4: Op Amp applications - Advanced topics &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Chapter 4: Op Amp applications - Advanced topics</a><ul>
+<li><a class="reference internal" href="#precision-voltage-to-current-converter">4.1 Precision Voltage to Current Converter</a><ul>
+<li><a class="reference internal" href="#the-active-voltage-to-current-converter">4.1.1 The Active Voltage to Current Converter</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#precision-current-to-voltage-converter">4.2 Precision Current to Voltage Converter</a></li>
+<li><a class="reference internal" href="#precision-current-mirror">4.3 Precision Current Mirror</a></li>
+<li><a class="reference internal" href="#simulated-inductor">4.4 Simulated Inductor</a></li>
+<li><a class="reference internal" href="#all-pass-filter">4.5 All-Pass Filter</a></li>
+<li><a class="reference internal" href="#negative-impedance-converter">4.6 Negative impedance converter</a></li>
+<li><a class="reference internal" href="#capacitance-multiplier">4.7 Capacitance Multiplier</a></li>
+<li><a class="reference internal" href="#using-op-amps-as-comparators">4.8 Using Op Amps As Comparators</a><ul>
+<li><a class="reference internal" href="#speed-considerations">4.8.1 Speed Considerations</a></li>
+<li><a class="reference internal" href="#output-considerations">4.8.2 Output Considerations</a></li>
+<li><a class="reference internal" href="#input-considerations">4.8.3 Input Considerations</a></li>
+<li><a class="reference internal" href="#section-summary">Section Summary</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#operational-amplifier-schmitt-trigger">4.9 Operational amplifier Schmitt trigger</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="chapter-4-op-amp-applications-advanced-topics">
+<h1>Chapter 4: Op Amp applications - Advanced topics<a class="headerlink" href="#chapter-4-op-amp-applications-advanced-topics" title="Link to this heading"></a></h1>
+<p>In this chapter we explore a number of example op amp configuration that are presented to illustrate certain advanced applications for operational amplifiers. Many of these more advanced uses for op amps will probably make more sense after the reader has studied the material on Bipolar Junction and Field Effect transistors in later chapters. The reader can skip this material for now and circle back after gaining an understanding of how transistors work.</p>
+<section id="precision-voltage-to-current-converter">
+<h2>4.1 Precision Voltage to Current Converter<a class="headerlink" href="#precision-voltage-to-current-converter" title="Link to this heading"></a></h2>
+<p>The very high forward gain (A<sub>VOL</sub>) and differential input nature of the operational amplifier can be used to create a nearly ideal voltage controlled current source or V-to-I converter. Note in figure 4.1, the input voltage to be converted is applied to the non-inverting input terminal of the op amp. The inverting input terminal is connected in feedback to one end of the resistor R<sub>1</sub> and the source of transistor M<sub>1</sub>. The output of the op-amp drives the Gate of the transistor. The high open loop gain of the amplifier will force the Gate of M<sub>1</sub> to the required voltage such that V<sub>IN</sub> appears across R<sub>1</sub>. The current in R<sub>1</sub> will thus be V<sub>IN</sub>/R<sub>1</sub> and will flow only in the Source of M<sub>1</sub> and also thus appear in the Drain of M<sub>1</sub>as I<sub>OUT</sub>.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f1.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f1.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f1.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 4.1 Precision Voltage to Current converter</p>
+</div>
+<p>This configuration is also often referred to as an Active Cascode. To understand the concept of the cascode or common gate (base) amplifier the reader is directed to study the section in Chapter 9 on the Cascode (9.3).</p>
+<p>An instructive application for this circuit technique can be found in this article on how to <a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/technical-articles/d61_en-convert.pdf" target="_blank">convert 1V to 5V signal to 4mA to 20mA output.</a></p>
+<section id="the-active-voltage-to-current-converter">
+<h3>4.1.1 The Active Voltage to Current Converter<a class="headerlink" href="#the-active-voltage-to-current-converter" title="Link to this heading"></a></h3>
+<p>Figure 4.1.1 shows a classic voltage to current (V-to-I) converter. The resistor values can be selected such that the output current in the load, varies only with the input voltage, V<sub>IN</sub>, and is independent of the load. The circuit is widely used in industrial instruments for supplying a 4 to 20 mA signal for example. Also often referred to as a Howland current pump this configuration has two advantages over the MOSFET based circuit shown in figure 4.1. The first is a high output impedance and the second is the ability to provide bipolar (both sourcing and sinking) output currents.</p>
+<p>The circuit has its limitations due in part to the requirement that the resistor ratios must be quite accurate to obtain a near ideal current source. Published literature describing the circuit provides design methods that are for special cases or are for approximate designs. In this chapter we explore simple design formulas that can be used to determine the component values that produce a near ideal current source. These formulas also provide a general method for calculating the output current, I<sub>LOAD</sub>, for any selection of resistor values, not just the constant-current selection. Usually in order to improve stability, the circuit is made symmetrical. Therefore R<sub>1</sub> = R<sub>3</sub>, R<sub>2</sub> = R<sub>4</sub>, and R<sub>S</sub> = R<sub>S’</sub>.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f2.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f2.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f2.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 4.1.1 non-inverting voltage to current converter</p>
+</div>
+<p>For a true current output, I<sub>LOAD</sub>, as a function of the input voltage, V<sub>IN</sub>, you must satisfy the following equations:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-e1.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-e1.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-e1.png" style="width: 300px;" />
+</a>
+<p>The load current is:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-e2.png"><img alt="image1" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-e2.png" style="width: 200px;" /></a>(1)</p>
+<p>The Output impedance is:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-e3.png"><img alt="image2" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-e3.png" style="width: 300px;" /></a>(2)</p>
+<p>In equation 1, any four of the terms can be arbitrarily selected and then the fifth term is determined by solving the resulting equation. With R<sub>1</sub> = 150 kΩ, R<sub>2</sub> = 15 kΩ, R<sub>S</sub> = 50 Ω, and V<sub>IN</sub> can vary from 0 to 5 V, I<sub>LOAD</sub> will vary from 0 mA to 10 mA, and the circuit has a very high output impedance.</p>
+<p>if R<sub>S</sub> changes from 50 Ω to 200 Ω, the feedback changes fourfold, and you would expect that the output current would change fourfold, to 0 to 2.5 mA. You can check the result by substituting in the general formula for the output current.</p>
+<p>Looking at equation 2, the output impedance, Z<sub>OUT</sub> will be infinity if R<sub>1</sub>=R<sub>3</sub>, R<sub>2</sub>=R<sub>4</sub> and R<sub>S</sub>=R<sub>S’</sub> because the bottom term in the ratio will be exactly zero. To the extent that the resistors do not match the output impedance could be either positive of negative. For example if R<sub>3</sub> were slightly larger than R<sub>1</sub> the bottom term would be negative.</p>
+<p>More details on the Howland current source can be found in <a class="icon adi reference external" href="https://www.analog.com/media/en/analog-dialogue/volume-52/number-4/a-large-current-source-with-high-accuracy-and-fast-settling.pdf" target="_blank">A large current source with high accuracy and fast settling</a> and <a class="icon adi reference external" href="https://www.analog.com/media/en/analog-dialogue/volume-47/number-2/articles/choose-resistors-to-minimize-errors.pdf" target="_blank">Choose resistors to minimize errors in grounded-load current source</a>.</p>
+</section>
+</section>
+<section id="precision-current-to-voltage-converter">
+<h2>4.2 Precision Current to Voltage Converter<a class="headerlink" href="#precision-current-to-voltage-converter" title="Link to this heading"></a></h2>
+<p>A simple single resistor can be used to convert a current into a voltage but the voltage cannot be used directly to drive other parts of a system without potentially disturbing or altering the voltage. Often a buffer amplifier is required or the voltage may need to be shifter or “referred” to a different node (supply voltage or ground) in the circuit. Op amp circuits like those in figure 4.2 can perform this function.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f3.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f3.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f3.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 4.2 Precision Current to Voltage converter</p>
+</div>
+<p>Two configurations are shown in figure 4.2. Version (a) produces an output voltage V<sub>OUT</sub> from input current I<sub>IN</sub>. The output voltage is produced with respect to ground due to the virtual ground at the - input terminal of the amplifier and is negative (V<sub>OUT</sub> = -I<sub>IN</sub>R<sub>1</sub>) for currents flowing into the virtual ground (from the +V as shown) and positive for currents flowing out of the virtual ground (flowing toward -V). Version (b) produces an output voltage V<sub>OUT</sub> from input current I<sub>IN</sub> as well but now it is produced with respect to some negative node potential, -V. Unlike version (a) which accepts both sourcing and sinking currents, version (b) will only operate for currents flowing into the virtual ground at the - input terminal. There is an advantage to using a MOSFET, M<sub>1</sub>, over a bipolar transistor. In the MOSFET all the current in the drain also flows in the source (no current in gate) whereas in the case of a BJT the emitter current is increased due to the base current. The current in R<sub>1</sub> will thus be slightly larger than I<sub>IN</sub> and the voltage V<sub>OUT</sub> will not be exactly equal to I<sub>IN</sub>*R<sub>1</sub>.</p>
+</section>
+<section id="precision-current-mirror">
+<h2>4.3 Precision Current Mirror<a class="headerlink" href="#precision-current-mirror" title="Link to this heading"></a></h2>
+<p>The simple transistor based current mirror is covered in detail in Chapter 11. Here we introduce the op amp in the feedback loop of the diode connected transistor. The very large gain of the amplifier greatly reduced many of the sources of error found in the simple two transistor current mirror.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f4.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f4.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f4.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 4.3 Precision Current Mirror</p>
+</div>
+<p>The two MOSFETs M<sub>1</sub> and M<sub>2</sub> must be well matched (and be at the same temperature) as well as the two resistors R<sub>1</sub> and R<sub>2</sub> if I<sub>OUT</sub> is to be well matched to I<sub>IN</sub>. If two bipolar (NPN) transistors were to be used in this case, the op amp will supply all the base current for the two transistors and providing the a and V<sub>BE</sub> (I<sub>S</sub> actually) of the two devices is well matched (and R<sub>1</sub> and R<sub>2</sub> of course) the gain of the mirror will be nearly exactly 1 in spite of the finite ß. It is also important to note that the feedback current from the drain of M<sub>1</sub> is to the + input terminal of the op amp. This is because of the phase inversion of the common source configuration of M<sub>1</sub>.</p>
+</section>
+<section id="simulated-inductor">
+<h2>4.4 Simulated Inductor<a class="headerlink" href="#simulated-inductor" title="Link to this heading"></a></h2>
+<p>Before the introduction of the transistor and the integrated circuit, coils of wire with large inductance were used in electronic filters. An inductor can be replaced by a much smaller assembly consisting of a capacitor, operational amplifiers or transistors, and resistors. This is especially useful in integrated circuit technology where building inductors from large loops of wire is impractical.</p>
+<p>The circuit in Figure 4.4 reverses the operation of a capacitor, thus making a simulated inductor. An inductor resists any change in its current, so when a dc voltage is applied to an inductance, the current rises slowly, and the voltage falls as the external resistance becomes more significant.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f5.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f5.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f5.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 4.4. Simulated Inductor Circuit</p>
+</div>
+<p>An inductor passes low frequencies more readily than high frequencies, the opposite of a capacitor. An ideal inductor has zero resistance. It passes dc without limitation, but it has infinite impedance at infinite frequency.</p>
+<p>For the circuit in figure 4.4, if a DC voltage step is suddenly applied to the inverting input through resistor R<sub>L</sub>, the op amp ignores the sudden step because the change is also coupled directly to the non-inverting input via C<sub>1</sub>. The op amp represents high impedance, just as an inductor does. As C<sub>1</sub> charges through R<sub>1</sub>, the voltage across R<sub>1</sub>falls, so the op-amp draws current from the input through R<sub>L</sub>. This continues as the capacitor charges, and eventually the op-amp has an input and output close to virtual ground because the lower end of R<sub>1</sub> is connected to ground.</p>
+<p>When C<sub>1</sub> is fully charged, resistor R<sub>L</sub> limits the current flow, and this appears as a series resistance within the simulated inductor. This series resistance limits the Q of the inductor. Real inductors generally have much less resistance than the simulated variety.</p>
+<div class="line-block">
+<div class="line">There are some limitations of a simulated inductor like this:</div>
+<div class="line">* One end of the inductor is connected to virtual ground.</div>
+<div class="line">* The simulated inductor cannot be made with high Q, due to the series resistor R<sub>L</sub>.</div>
+<div class="line">* It does not have the same energy storage as a real inductor. The collapse of the magnetic field in a real inductor causes large voltage spikes of opposite polarity. The simulated inductor is limited to the voltage swing of the op amp, so the flyback pulse is limited to the voltage swing.</div>
+</div>
+</section>
+<section id="all-pass-filter">
+<h2>4.5 All-Pass Filter<a class="headerlink" href="#all-pass-filter" title="Link to this heading"></a></h2>
+<p>The all-pass filter passes all frequencies at the same gain. It is used to change the phase of the signal, and it can also be used as a phase-correction circuit. The circuit shown in figure 4.5 has a 90° phase shift at F(90°). At DC, the phase shift is 180°, and at high frequencies it is 0°. R<sub>1</sub> = R<sub>2</sub> = R<sub>3</sub> = R F(90°) = 1/(2?R<sub>1</sub>*C<sub>1</sub>)</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f6.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f6.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f6.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 4.5. All-Pass Filter Circuit</p>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f7.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f7.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f7.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 4.6 Gain/Phase simulation plot of All-Pass circuit</p>
+</div>
+</section>
+<section id="negative-impedance-converter">
+<h2>4.6 Negative impedance converter<a class="headerlink" href="#negative-impedance-converter" title="Link to this heading"></a></h2>
+<p>The negative impedance converter (NIC) is an op-amp circuit which acts as a negative load. This is achieved by introducing a phase shift of 180° (inversion) between the voltage and the current for a signal source. There are two versions of this circuit - with voltage inversion (VNIC) and with current inversion (INIC). The basic circuit of an INIC and its analysis is shown figure 4.7.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f8.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f8.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f8.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 4.7 Negative impedance converter.</p>
+</div>
+<p>INIC is a non-inverting amplifier (the op-amp and the voltage divider R<sub>1</sub>, R<sub>2</sub> in figure 4.7) with a resistor (R<sub>3</sub>) connected between its output and input. The op-amp output voltage is</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-e4.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-e4.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-e4.png" style="width: 200px;" />
+</a>
+<p>The current going from the operational amplifier output through resistor R<sub>3</sub> toward the source Vin is -Is, and</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-e5.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-e5.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-e5.png" style="width: 200px;" />
+</a>
+<p>So the input V<sub>in</sub> experiences an opposing current - I<sub>in</sub> that is proportional to V<sub>in</sub>, and the circuit acts like a resistor with negative resistance</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-e6.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-e6.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-e6.png" style="width: 200px;" />
+</a>
+<p>In general, elements R<sub>1</sub>, R<sub>2</sub>, and R<sub>3</sub> need not be pure resistances (i.e., they may be capacitors, inductors, or impedance networks).</p>
+</section>
+<section id="capacitance-multiplier">
+<h2>4.7 Capacitance Multiplier<a class="headerlink" href="#capacitance-multiplier" title="Link to this heading"></a></h2>
+<p>The circuit in figure 4.8(a) uses an op-amp and a small capacitor, C<sub>1</sub>, to simulate a much larger capacitor. It simulates the simple RC circuit of figure 4.8(b); the resistor R<sub>2</sub>is the same size as the resistor in the circuit being simulated (R<sub>3</sub>), but the capacitor C<sub>1</sub> is N times smaller than C<sub>2</sub>.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f9.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f9.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f9.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 4.8 Op-amp capacitance multiplier</p>
+</div>
+<p>Current flows from the input source through R<sub>1</sub> to the capacitor (C<sub>1</sub>). If R<sub>1</sub>, for example, is 100 times larger than R<sub>2</sub>, there is 1/100th the current through it into the capacitor. For a given input voltage, the rate of change in voltage in C<sub>1</sub>is the same as in the equivalent C<sub>2</sub>in figure 4.8(b), but C<sub>2</sub> appears to have 100 times the capacitance to make up for 1/100th the current.</p>
+<p>The voltages across the two capacitors are the same, but the currents are not. The op-amp causes the negative input to be held at the same voltage as the voltage across C<sub>1</sub>. This means R<sub>2</sub> has the same voltage across it as R<sub>3</sub>, and therefore the same current. Since the total current from V<sub>IN</sub> is the sum of the current in R<sub>1</sub> and R<sub>2</sub> and R<sub>2</sub> is N times smaller than R<sub>1</sub> the apparent charging current is N+1 times larger than the current in C<sub>1</sub>.</p>
+</section>
+<section id="using-op-amps-as-comparators">
+<h2>4.8 Using Op Amps As Comparators<a class="headerlink" href="#using-op-amps-as-comparators" title="Link to this heading"></a></h2>
+<p>Op Amps and comparators may seem interchangeable at first glance based on their symbols and pinouts and one might be tempted to use or substitute readily available op amps as voltage comparators in their designs. There are some important differences however. Comparators are designed to work without negative feedback or open-loop, they are designed to drive digital logic circuits from their outputs, and they are designed to work at high speed with minimal instability. Op amps are not generally designed for use as comparators, they may saturate if over-driven which may cause it to recover comparatively slowly. Many have input stages which behave in unexpected ways when driven with large differential voltages, in fact, in many cases, the differential input voltage range of the op amp is limited. And op amp outputs are rarely compatible with logic.</p>
+<p>Yet many designers still try to use op amps as comparators. While this may work at low speeds and low resolutions, many times the results are not satisfactory. Not all of the issues involved with using an op amp as a comparator can be resolved by reference to the op amp data sheet, since op amps are not intended for use as comparators.</p>
+<p>The most common issues are speed (as we have already mentioned), the effects of input structures (protection diodes, phase inversion in FET amplifiers, and many others), output structures which are not intended to drive logic, hysteresis and stability, and common-mode effects.</p>
+<section id="speed-considerations">
+<h3>4.8.1 Speed Considerations<a class="headerlink" href="#speed-considerations" title="Link to this heading"></a></h3>
+<p>Most comparators are quite fast, but so are many op amps. Why should we expect low speed when using an op amp as a comparator?</p>
+<p>A comparator is designed to be used with large differential input voltages, whereas op amps normally operate with their differential input voltage minimized by negative feedback. When an op amp is over-driven, sometimes by as little as a few millivolts, some of the internal stages may saturate. If this occurs the device will take a comparatively long time to come out of saturation and will therefore be much slower than if it always remained unsaturated (see figure 4.9).</p>
+<p>The time to come out of saturation of an overdriven op amp is likely to be considerably longer than the normal group delay of the amplifier, and will often depend on the amount of overdrive. Since few op amps have this saturation recovery time specified for various amounts of overdrive it will generally be necessary to determine, by experimental measurements in the lab, the behavior of the amplifier under the conditions of overdrive to be expected in a particular design.</p>
+<p>The results of such experimental measurements should be regarded with suspicion and the values of propagation delay through the op amp comparator which is chosen for worst-case design calculations should be at least twice the worst value seen in any experiment.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f10.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f10.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f10.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 4.9: Effects of Saturation on Amplifier Speed when Used as a Comparator</p>
+</div>
+</section>
+<section id="output-considerations">
+<h3>4.8.2 Output Considerations<a class="headerlink" href="#output-considerations" title="Link to this heading"></a></h3>
+<p>The output of a comparator is designed to drive a particular logic family or families, while the output of an op amp is designed to swing close to it’s supply rails if not to the supply rails. Frequently the logic being driven by the op amp comparator will not share the op amp’s supplies and the op amp rail to rail swing may go outside the logic supply rails-this will probably damage the logic circuitry, and the resulting short circuit may damage the op amp as well.</p>
+<p>There are three types of logic which we must consider: ECL, TTL and CMOS.</p>
+<p>ECL is a very fast current steering logic family. It is unlikely that an op amp would be used as a comparator in applications where ECL’s highest speed is involved, for reasons given above, so we shall usually be concerned only to drive ECL logic levels from an op amp’s signal swing and some additional loss of speed due to stray capacities will be unimportant. To do this we need only three resistors, as shown in figure 4.10.</p>
+<p>R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> are chosen so that when the op amp output is positive the level at the gate is -0.8 V, and when it is low it is -1.6 V. ECL is occasionally used with positive, rather than negative, supplies (often called PECL where the -5.2V rail is connected to ground and the ground is connected to a positive supply voltage), the same basic interface circuit may be used but the values must be recalculated. Using low resistance values for R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub> will minimize the effects of stray capacitance but at the same time will increase power consumption.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f11.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f11.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f11.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 4.10: Op Amp Comparator Driving ECL Logic</p>
+</div>
+<p>Although CMOS and TTL input structures, logic levels, and current flows are quite different (although some versions of CMOS is specified to work with TTL input levels) the same interface circuitry will work perfectly well with both types of logic, since they both work for logic 0 near to 0V and logic 1 near to +5V or whatever the positive supply rail is for that logic family.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f12.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f12.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f12.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 4.11: Op Amp Comparator Driving TTL or CMOS Logic</p>
+</div>
+<p>The simplest interface uses a single N-channel MOS transistor, M<sub>1</sub> and a pull-up resistor, R<sub>L</sub>, as shown in figure 4.15. It is important to note here that this interface circuit inverts the output of the op amp and thus reverses the sense of the + and - inputs. A similar circuit may be made with an NPN transistor, Q<sub>1</sub>, R<sub>L</sub>, and an additional resistor, R<sub>1</sub> and diode D<sub>1</sub>. A resistor between the op amp output and the MOS FET gate and the diode to ground are generally not needed (left side of figure 4.11) because the gate can withstand relatively large voltages with respect to the source. In the case of the NPN BJT (right side of figure 4.11) the resistor serves to limit the base current and the diode limits the maximum reverse bias on the base to one diode drop (-0.7V) below ground. These circuits are simple, inexpensive and reliable, and the outputs of several op amps may be connected through separate transistors with their collectors connected in parallel and a single R<sub>L</sub> to give a “wired-or” function. The speed of the 0-1 transition depends on the value of R<sub>L</sub> and the stray capacity of the output node. The lower the value of R<sub>L</sub> the faster the response will be, but the higher the power consumption.</p>
+<p>By using two MOS devices, one P-channel and one N-channel, it is possible to make a CMOS/TTL interface using only two components which has no quiescent power consumption in either state (figure 4.16). Furthermore, it may be made inverting or non-inverting by simple positioning of components. It does, however, have a large current surge during switching, when both devices are on at once, and unless MOS devices with high channel resistance are used a current limiting resistor may be necessary to reduce this effect. It is also important, in this application and the one in figure 4.11, to use MOS devices with gate-source breakdown voltages, V<sub>BGS</sub>, greater than the output voltages of the comparator in either direction. A value of V<sub>BGS</sub> &gt; ±25 V is common in MOS devices and is usually adequate, but many MOS devices contain gate protection diodes which reduce the value-these should not be used.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f13.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f13.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f13.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 4.12: Op Amp Comparator with CMOS Driver</p>
+</div>
+</section>
+<section id="input-considerations">
+<h3>4.8.3 Input Considerations<a class="headerlink" href="#input-considerations" title="Link to this heading"></a></h3>
+<p>There are a number of effects which must be considered regarding the inputs of op amps when used as comparators. The first-level assumption engineers make about all op amps and comparators is that they have infinite input impedance and can be regarded as open circuits (except for current feedback (transimpedance) op amps, which have a high impedance on their non-inverting input but a low impedance of a few tens of ohms on their inverting input)</p>
+<p>But many op amps (especially bias-compensated ones such as the OP-07 and its many descendants) contain protective circuitry to prevent large differential input voltages from damaging the input stage transistors. Protective circuitry such as current limiting resistors and clamp diodes, as shown in figure 4.13, are often integrated between the input pins and the sensitive input transistors. This protection circuit will greatly lower the input impedance for differential input voltages greater than +/- 700 mV.</p>
+<p>Other op amp designs contain more complex input circuitry, which only has high impedance when the differential voltage applied to it is less than a few tens of mV, or which may actually be damaged by differential voltages of more than a few volts. It is therefore necessary, when using an op amp as a comparator, to study the manufacturer’s data sheet to determine how the input circuitry behaves when large differential voltages are applied to it. It is always necessary to study the data sheet when using an integrated circuit to ensure that its non-ideal behavior, and every integrated circuit ever made has some non-ideal behavior, is compatible with the proposed design - it is just more important than usual in the present case.</p>
+<p>Of course some comparator applications never involve large differential voltages-or if they do the comparator input impedance when large differential voltages are present is comparatively unimportant. In such cases it may be appropriate to use as a comparator an op amp whose input circuitry behaves non-linearly-but the issues involved must be considered, not just ignored.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f14.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f14.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f14.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 4.13: Op Amp Input Structure with Protection</p>
+</div>
+<p>As mentioned elsewhere in this text, nearly all BIFET op amps exhibit anomalous behavior when their inputs are close to one of their supplies (usually the negative supply). Their inverting and non-inverting inputs may become interchanged. If this should occur when the op amp is being used as a comparator the phase of the system involved will be inverted, which could well be inconvenient. The solution is, again, careful reading of the data sheet to determine just what common-mode range is acceptable.</p>
+<p>Also, the absence of negative feedback means that, unlike that of op amp circuits, the input impedance is not multiplied by the loop gain. As a result, the input current varies as the comparator switches. Therefore the driving impedance, along with parasitic feedback paths, can play a key role in affecting circuit stability. While negative feedback tends to keep amplifiers within their linear region, positive feedback forces them into saturation.</p>
+</section>
+<section id="section-summary">
+<h3>Section Summary<a class="headerlink" href="#section-summary" title="Link to this heading"></a></h3>
+<p>Operational amplifiers are not designed to be used as comparators, so this section has been, intentionally, a little discouraging. Nevertheless there are some cases where the use of an op amp as a comparator is a useful engineering decision-what is important is to make it a considered decision, and ensure that the op amp chosen will perform as expected. To do this it is necessary to read the manufacturer’s data sheet carefully, to consider the effects of non-ideal op amp performance, and to calculate the effects of op amp parameters on the overall circuit. Since the op amp is being used in a non-standard manner some experimentation may also be necessary, since the amplifier used for the experiment will not necessarily be typical and the results of experiments should always be interpreted somewhat pessimistically.</p>
+<p><strong>ADALM1000 Lab Activity</strong> <a class="reference internal" href="../../alm1k/alm-lab-comp.html"><span class="doc">Comparators</span></a></p>
+</section>
+</section>
+<section id="operational-amplifier-schmitt-trigger">
+<h2>4.9 Operational amplifier Schmitt trigger<a class="headerlink" href="#operational-amplifier-schmitt-trigger" title="Link to this heading"></a></h2>
+<p>Although the simple voltage comparator circuit using either an ordinary operational amplifier or a special comparator is often adequate, the input waveform may be slow or have noise superimposed on it. This can result in the possibility that the output will switch back and forth several times as the input transitions through the comparator threshold voltage. The very large open loop gain of the amplifier will allow only small levels of noise on the input to cause the output to change. This may not cause a problem in some circumstances, but if the output from the operational amplifier comparator is being fed into fast logic circuitry, then it can often result in problems. For example, if the desire is to count the number of times the input crosses the threshold then these multiple output changes per input transition will give false readings.</p>
+<p>The problem can be solved very easily by adding some positive feedback to the operational amplifier or comparator circuit. This is provided by the addition of R<sub>3</sub> in the circuit in figure 4.14. The circuit is known as a Schmitt trigger. Resistor divider R<sub>1</sub> and R<sub>2</sub> set the comparison voltage at the non-inverting input of the op amp.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f15.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f15.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f15.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 4.14 Operational amplifier Schmitt trigger circuit</p>
+</div>
+<p>The effect of the new resistor (R<sub>3</sub>) is to give the circuit different switching thresholds dependent upon the output state of the comparator or op amp. When the output of the comparator is high, this voltage is fed back to the non-inverting input of the op amp or comparator. As a result the comparison threshold becomes higher. When the output is switched low, the comparison threshold is lowered. This gives the circuit what is called hysteresis.</p>
+<p>It is straight forward to calculate the resistor values needed for the Schmitt trigger circuit. The center voltage about which the circuit will switch is determined by the voltage divider consisting of R<sub>1</sub> and R<sub>2</sub>. This should be chosen first. Then the feedback resistor R<sub>3</sub> can be calculated. This will provide a level of hysteresis that is equal to the output swing of the op amp reduced by the voltage divider (attenuation) formed as a result of R<sub>3</sub> and the parallel combination of R<sub>1</sub> and R<sub>2</sub>. The higher the value of R<sub>3</sub> with respect to R<sub>1</sub>||R<sub>2</sub> the smaller the hysteresis, or the difference between the two threshold levels.</p>
+<p>The fact that the positive feedback applied within the circuit ensures that there is effectively a higher gain and therefore the switching is faster. This is particularly useful when the input waveform may be slow. However a speed up capacitor can be applied within the Schmitt trigger circuit to increase the switching speed still further. By placing a capacitor across the positive feedback resistor R<sub>3</sub>, the gain can be increased during the changeover, making the switching even faster. This capacitor, known as a speed up capacitor may be anywhere between 10 pF and 100 pF dependent upon the circuit.</p>
+<p><strong>Return to</strong> <a class="reference internal" href="chapter-3.html"><span class="doc">Previous Chapter</span></a></p>
+<p><strong>Go to</strong> <a class="reference internal" href="chapter-5.html"><span class="doc">Next Chapter</span></a></p>
+<p><strong>Return to</strong> <a class="reference internal" href="electronics-toc.html"><span class="doc">Table of Contents</span></a></p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

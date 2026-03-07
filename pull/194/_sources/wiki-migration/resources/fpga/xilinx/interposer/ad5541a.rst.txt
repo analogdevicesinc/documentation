@@ -1,0 +1,161 @@
+AD5541A FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+=============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5541A`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5541ASDZ`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-AD5541ASDZ <AD5541A>` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-AD5541ASDZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/img_ad5541A.jpg
+   :alt: img_ad5541A.jpg
+   :align: center
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`_
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-AD5541ASDZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5541A_sdp1z.png
+   :alt: ad5541A_sdp1z.png
+   :align: center
+   :width: 400px
+
+The :adi:`AD5541A` is a single, 16-bit, serial input, unbuffered voltage output digital-to-analog converter (DAC) that operates from a single 2.7 V to 5.5 V supply. The DAC output range extends from 0 V to VREF and is guaranteed monotonic, providing ±1 LSB INL accuracy at 16 bits without adjustment over the full specified temperature range of -40°C to +125°C. Offering unbuffered outputs, the AD5541A achieves a 1 µs settling time with low power consumption and low offset errors. Providing low noise performance of 11.8 nV/vHz and low glitch, the AD5541A is suitable for deployment across multiple end systems. The AD5541A uses a versatile 3-wire interface that is compatible with 50 MHz SPI, QSPI™, MICROWIRE™, and DSP interface standards.
+
+The **EVAL-AD5541ASDZ** evaluation board is designed to help customers quickly prototype new AD5541A circuits and reduce design time.
+
+More information
+----------------
+
+-  :adi:`AD5541A Product Info <AD5541A>` - pricing, samples, datasheet
+-  `EVAL-AD5541ASDZ evaluation board user guide <https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ad5541a_ug.pdf>`_
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the reference project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+-  FMC-SDP adapter board
+-  **EVAL-AD5541ASDZ** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+-  The EVAL-AD5541A reference project for Xilinx KC705 FPGA.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **AD5541A Driver:** :git-no-OS:`device_drivers/AD5446`
+   
+   -  **AD5541A Commands:** :git-no-OS:`device_commands/AD5446`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Run the Demonstration Project
+=============================
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+
+   ..
+
+| Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+|
+
+.. important::
+
+   | The EVAL-AD5542A evaluation board will be powered from PCs USB interface (LK8 position=A, LK9 position=B, LK7 position=B, LK3 position=A, LK2 position=A).
+
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-AD5541A reference project for Xilinx KC705 FPGA board.
+
+============= ===================================================
+Command       Description
+============= ===================================================
+**help?**     Displays all available commands.
+**register=** Writes to the DAC register. Accepted values:
+              0 .. 65535 - the value written to the DAC.
+**register?** Displays last written value in the DAC register.
+**voltage=**  Sets the DAC output voltage. Accepted values:
+              0 .. +2500 - desired output voltage in milivolts.
+**voltage?**  Displays last written voltage value to the DAC.
+**ldacPin=**  Sets the output value of LDAC pin. Accepted values:
+              0 - sets LDAC pin low.(default)
+              1 - sets LDAC pin high.
+**ldacPin?**  Displays the value of LDAC pin.
+============= ===================================================
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`_
+
+
+.. _more-information-1:
+
+More information
+================
+
+-  :doc:`AD5541A IIO DAC Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dac/ad5446>`
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`_
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

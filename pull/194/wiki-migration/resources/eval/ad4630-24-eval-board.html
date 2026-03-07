@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Two differential input channels with SMA connectors" name="description" />
+
+    <title>AD4630/AD4030 Evaluation Board User Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">AD4630/AD4030 Evaluation Board User Guide</a><ul>
+<li><a class="reference internal" href="#general-description">General Description</a></li>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#evaluation-board-kit-contents">Evaluation Board Kit Contents</a></li>
+<li><a class="reference internal" href="#equipment-needed">Equipment Needed</a></li>
+<li><a class="reference internal" href="#quick-start-guide">Quick Start Guide</a></li>
+<li><a class="reference internal" href="#setting-up-the-evaluation-board">Setting Up the Evaluation Board</a></li>
+<li><a class="reference internal" href="#evaluation-board-hardware-eval-ad4630-24-16fmcz-rev-c-and-eval-ad4030-24fmcz-rev-a-b">Evaluation Board Hardware (EVAL-AD4630-24/16FMCZ REV C and EVAL-AD4030-24FMCZ REV A/B)</a><ul>
+<li><a class="reference internal" href="#power-supplies">Power Supplies</a></li>
+<li><a class="reference internal" href="#clock-circuit">Clock Circuit</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#evaluation-board-hardware-eval-ad4630-24-16fmcz-rev-e">Evaluation Board Hardware (EVAL-AD4630-24/16FMCZ REV E)</a><ul>
+<li><a class="reference internal" href="#power-supplies-1">Power Supplies</a></li>
+<li><a class="reference internal" href="#reference-circuit">Reference Circuit</a></li>
+<li><a class="reference internal" href="#clock-circuit-1">Clock Circuit</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#controller-board">Controller Board</a><ul>
+<li><a class="reference internal" href="#evaluation-hardware-setup">EVALUATION HARDWARE SETUP</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-support">Software Support</a></li>
+<li><a class="reference internal" href="#system-operational-constraints">System Operational Constraints</a><ul>
+<li><a class="reference internal" href="#sampling-frequency">Sampling Frequency</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-developers-guide">Software Developers Guide</a></li>
+<li><a class="reference internal" href="#evaluation-board-support-and-troubleshooting">Evaluation Board Support and Troubleshooting</a><ul>
+<li><a class="reference internal" href="#technical-support">Technical Support</a></li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="ad4630-ad4030-evaluation-board-user-guide">
+<h1>AD4630/AD4030 Evaluation Board User Guide<a class="headerlink" href="#ad4630-ad4030-evaluation-board-user-guide" title="Link to this heading"></a></h1>
+<section id="general-description">
+<h2>General Description<a class="headerlink" href="#general-description" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The EVAL-AD4630-24FMCZ, EVAL-AD4030-24FMCZ &amp; EVAL-AD4630-16FMCZ evaluation boards enable quick and easy evaluation of the AD4X3X family of 24-bit &amp; 16-bit precision successive approximation register (SAR) analog-to-digital converters (ADCs).</div>
+<div class="line">The <a class="icon link reference external" href="http://www.analog.com/en/products/AD4630-24.html" target="_blank">AD4630-24</a> &amp; <a class="icon link reference external" href="http://www.analog.com/en/products/AD4630-16.html" target="_blank">AD4630-16</a> are 2MSPS per channel, low power, dual channel 24-bit or 16-bit SAR ADCs while the <a class="icon link reference external" href="http://www.analog.com/en/products/AD4030-24.html" target="_blank">AD4030-24</a> is a single channel 24-bit precision SAR ADC that supports up to 2 MSPS per channel. The evaluation boards demonstrate the performance of either the AD4630-24, AD4030-24 or AD4630-16 and provides a configurable analog front end (AFE) for a variety of system applications.</div>
+<div class="line">The evaluations board are designed for use with the Digilent <a class="icon link reference external" href="http://digilent.com/shop/zedboard-zynq-7000-arm-fpga-soc-development-board/" target="_blank">ZedBoard</a>. The ZedBoard is used to control data capture and buffering. The evaluation board connects to the ZedBoard board via a field-programmable gate array (FPGA) mezzanine card (FMC) low pin count (LPC) connector. The ZedBoard hosts a Xilinx Zynq7000 SoC, which has two processor cores and programmable FPGA fabric. The ZedBoard connects to the PC through USB.</div>
+<div class="line">===== Evaluation Boards available ===== Two different EVAL board revision has been released on the market for AD4630-24 and AD4630-16, the old Rev C which is obsoleted and the new revision, Rev E. On the other hand, there is only one existing revision for AD4030-24, Rev A/B, which is still available:</div>
+</div>
+<div class="line-block">
+<div class="line">− <strong>OLD</strong> AD4630-24 and AD4630-16 <strong>Rev C</strong> (obsoleted) evaluation boards include:</div>
+</div>
+<ul class="simple">
+<li><p>Two differential input channels with SMA connectors</p></li>
+<li><p>A high precision buffered band gap 5V reference (<a class="icon adi reference external" href="https://www.analog.com/en/products/ltc6655.html" target="_blank">LTC6655</a>).</p></li>
+<li><p>An analog front end (AFE) that provides signal conditioning and drive for the AD4630-24 &amp; AD4630-16. The AFE can be configured to use either the <a class="icon link reference external" href="http://www.analog.com/en/products/ADA4896-2.html" target="_blank">ADA4896-2</a> in a dual buffer configuration, or the <a class="icon link reference external" href="http://www.analog.com/en/products/ADA4945-1.html" target="_blank">ADA4945-1</a>, a fully differential amplifier.</p></li>
+<li><p>An optional 100 MHz clock source that provides a reference clock for the FPGA and ADC.</p></li>
+<li><p>Full power supply solution that provides all the necessary voltage rails from a 12V supply that is provided from the ZedBoard through the FMC connector.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/eval-ad4630-16_top.jpg"><img alt="image1" src="https://wiki.analog.com/_media/resources/eval/eval-ad4630-16_top.jpg" style="width: 600px;" /></a></div>
+<div class="line"><strong>Figure 1a. EVAL-AD4630-24FMCZ and EVAL-AD4630-16FMCZ. Rev C</strong></div>
+</div>
+<div class="line-block">
+<div class="line">− <strong>NEW</strong> AD4630-24 and AD4630-16 <strong>Rev E</strong> evaluation boards include:</div>
+</div>
+<ul class="simple">
+<li><p>Two differential input channels with SMA connectors</p></li>
+<li><p>A high precision, low power and low noise 5V reference <a class="icon adi reference external" href="https://www.analog.com/en/products/adr4550.html#part-details" target="_blank">ADR4550</a>. There is also the option to mount a high precision buffered band gap 5V reference, the <a class="icon adi reference external" href="https://www.analog.com/en/products/ltc6655.html" target="_blank">LTC6655</a>.</p></li>
+<li><p>An analog front end (AFE) that provides signal conditioning and drive for the AD4630-24 &amp; AD4630-16. The AFE can be configured to use either the <a class="icon link reference external" href="http://www.analog.com/en/products/ADA4896-2.html" target="_blank">ADA4896-2</a> in a dual buffer configuration, or the <a class="icon link reference external" href="http://www.analog.com/en/products/ADA4945-1.html" target="_blank">ADA4945-1</a>, a fully differential amplifier.</p></li>
+<li><p>Multiple different input configurations with the amplifier <a class="icon link reference external" href="http://www.analog.com/en/products/ADA4896-2.html" target="_blank">ADA4896-2</a></p></li>
+<li><p>An optional 100 MHz clock source that provides a reference clock for the FPGA and ADC.</p></li>
+<li><p>New form format and improved full power supply solution that provides all the necessary voltage rails from a 12V supply that is provided from the ZedBoard through the FMC connector.</p></li>
+<li><p>Extra connectors to supply the board externally if needed.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>New boards EVAL-AD4630-24FMCZ and EVAL-AD4630-16FMCZ <strong>REV E</strong> have a date code bigger than DC&gt;2435</p>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/cb-ad464030-24fmcz_top-evaluation-board.jpg"><img alt="image2" src="https://wiki.analog.com/_media/resources/eval/cb-ad464030-24fmcz_top-evaluation-board.jpg" style="width: 600px;" /></a></div>
+<div class="line">**Figure 1b. New EVAL-AD4630-24FMCZ and EVAL-AD4630-16FMCZ. Rev E **</div>
+</div>
+<div class="line-block">
+<div class="line">− AD4030-24 <strong>Rev A/B</strong> evaluation board includes:</div>
+</div>
+<ul class="simple">
+<li><p>One differential input channel with SMA connectors</p></li>
+<li><p>A high precision buffered band gap 5V reference (<a class="icon adi reference external" href="https://www.analog.com/en/products/ltc6655.html" target="_blank">LTC6655</a>).</p></li>
+<li><p>An analog front end (AFE) that provides signal conditioning and drive for the AD4030-24. The AFE can be configured to use either the <a class="icon link reference external" href="http://www.analog.com/en/products/ADA4896-2.html" target="_blank">ADA4896-2</a> in a dual buffer configuration, or the <a class="icon link reference external" href="http://www.analog.com/en/products/ADA4945-1.html" target="_blank">ADA4945-1</a>, a fully differential amplifier.</p></li>
+<li><p>An optional 100 MHz clock source that provides a reference clock for the FPGA and ADC.</p></li>
+<li><p>Full power supply solution that provides all the necessary voltage rails from a 12V supply that is provided from the ZedBoard through the FMC connector.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/52675_2.jpg"><img alt="image3" src="https://wiki.analog.com/_media/resources/eval/52675_2.jpg" style="width: 400px;" /></a></div>
+<div class="line"><strong>Figure 1c. EVAL-AD4030-24FMCZ. Rev A/B</strong></div>
+</div>
+<div class="line-block">
+<div class="line">Full descriptions of these products are available in their respective data sheets, which should be consulted when using the evaluation board.</div>
+</div>
+</section>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>On-board voltage reference, clock source, and ADC drivers</p></li>
+<li><p>Versatile analog signal conditioning circuitry</p></li>
+<li><p>FMC-LPC system board connector</p></li>
+<li><p>ACE PC software for configuration and data analysis (time and frequency domain)</p></li>
+<li><p>Compatible with other off-the-shelf controller boards</p></li>
+</ul>
+</section>
+<section id="evaluation-board-kit-contents">
+<h2>Evaluation Board Kit Contents<a class="headerlink" href="#evaluation-board-kit-contents" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>EVAL-AD4630-24FMCZ, EVAL-AD4030-24FMCZ or EVAL-AD4630-16FMCZ evaluation board</p></li>
+<li><p>Micro-SD memory card (with adapter) containing system board boot software and Linux OS</p></li>
+<li><p>Optional - ZedBoard (system controller board )</p></li>
+</ul>
+</section>
+<section id="equipment-needed">
+<h2>Equipment Needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>PC with Windows 7 or Windows 10 operating system</p></li>
+<li><p>Digilent ZedBoard with 12 V wall adapter power supply</p></li>
+<li><p>Precision signal source</p></li>
+<li><p>SMA Cable(s) (input to evaluation board)</p></li>
+<li><p>Recommended - Band-pass filter centered on test signal frequency.</p></li>
+</ul>
+</section>
+<section id="quick-start-guide">
+<h2>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Link to this heading"></a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>To avoid potential issues, ensure the ZedBoard VADJ SELECT = 2.5V. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/adj.png"><img alt="image4" src="https://wiki.analog.com/_media/resources/eval/adj.png" style="width: 100px;" /></a></p>
+</div>
+<ul class="simple">
+<li><p>Download and install the ACE Software tool from the <a class="icon adi reference external" href="https://www.analog.com/ACE" target="_blank">ACE</a> download page. If ACE is already installed, make sure you have the latest version by using the ‘Check For Updates’ option in the ACE sidebar.</p></li>
+<li><p>An ACE Quickstart guide is available here: <a class="reference internal" href="../tools-software/ace/userguide/quickstart.html"><span class="doc">ACE Quickstart - Using ACE and Installing Plug-ins</span></a></p></li>
+<li><p>Insert the EVAL-SD-KUIPERZ SD card into the SD card slot on the underside of the ZedBoard.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If there is a need to re-image or create a new SD card, instructions are available here: <a class="reference internal" href="../tools-software/linux-software/adi-kuiper_images_for_ace.html"><span class="doc">ADI Kuiper Linux with support for ACE Evaluation</span></a>.</p>
+</div>
+<ul class="simple">
+<li><p>Ensure the ZedBoard boot configuration jumpers are set to use the SD card as shown.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/tools-software/linux-software/zedboard-sd-card-boot-jumpers.png"><img alt="https://wiki.analog.com/_media/resources/tools-software/linux-software/zedboard-sd-card-boot-jumpers.png" class="align-center" src="https://wiki.analog.com/_media/resources/tools-software/linux-software/zedboard-sd-card-boot-jumpers.png" style="width: 200px;" />
+</a>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>To avoid potential damage, ensure the VADJ SELECT jumper is set to the correct voltage for the Product Evaluation Board.</p>
+</div>
+<ul class="simple">
+<li><p>Connect the Product Evaluation Board to the FMC connector on the ZedBoard.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There may be additional steps and hardware required for a given Product Evaluation Board, for example, function generators connections and setup. This information may be included with the eval kit or in the User guide for the corresponding Product Evaluation Boards page that can be found by searching <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits.html" target="_blank">Product Evaluation Boards and Kits</a>.</p>
+</div>
+<ul class="simple">
+<li><p>Connect the USB cable from the PC to the J13/USB OTG port and the PSU to J20/DC input.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/tools-software/linux-software/zedboard-usb_otg-power.png"><img alt="https://wiki.analog.com/_media/resources/tools-software/linux-software/zedboard-usb_otg-power.png" class="align-center" src="https://wiki.analog.com/_media/resources/tools-software/linux-software/zedboard-usb_otg-power.png" style="width: 200px;" />
+</a>
+<ul class="simple">
+<li><p>Slide SW8/POWER switch to the ON position. The green LD13/POWER LED should turn on.</p></li>
+<li><p>The blue LD12/DONE LED &amp; red LD0 LED should start blinking ~20-30 seconds later which indicates the boot process is complete.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Linux versions prior to ADI Kuiper Linux for Evaluation version 2024-8-27 will instead boot with the BLUE LD12/DONE LED blinking immediately and LD7 blinking after ~20-30Seconds. This may indicate that an improved version of the ACE plugin is available if the SD-Card is updated to the latest version.</p>
+</div>
+<ul class="simple">
+<li><p>Launch the ACE software from the Analog Devices folder in the Windows Start menu. The Evaluation Board should appear in the ACE Start Tab &gt;&gt; Attached Hardware view.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/ad4630-24-eval-board/ace_attached_hw-screen.png"><img alt="https://wiki.analog.com/_media/resources/eval/ad4630-24-eval-board/ace_attached_hw-screen.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/ad4630-24-eval-board/ace_attached_hw-screen.png" style="width: 200px;" />
+</a>
+</section>
+<section id="setting-up-the-evaluation-board">
+<h2>Setting Up the Evaluation Board<a class="headerlink" href="#setting-up-the-evaluation-board" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">Figure 1 illustrates the evaluation system components. To use the system, connect the evaluation board to the ZedBoard, connect a micro-USB cable to the USB OTG port, apply power to the ZedBoard, open the ACE GUI, and supply an input stimulus to one or both ADC channels.</div>
+</div>
+<div class="line-block">
+<div class="line">Each ADC channel has dedicated SMA connectors that support either a singled-ended or differential input. The signals on these inputs are injected to the configurable AFE (see the <strong>Analog Front End</strong> section below for more details). The digital interface to the system controller board uses level shifters to translate between the VIO supply of the AD4630-16 and the I/O voltage of the Zynq 7000 on the ZedBoard. By default, the evaluation board is powered from the system controller board 12V supply through the FMC connector. The <strong>Power Supplies</strong> section contains a list of optional on-board connections that can be used to connect external supplies and references to the board.</div>
+</div>
+</section>
+<section id="evaluation-board-hardware-eval-ad4630-24-16fmcz-rev-c-and-eval-ad4030-24fmcz-rev-a-b">
+<h2>Evaluation Board Hardware (EVAL-AD4630-24/16FMCZ REV C and EVAL-AD4030-24FMCZ REV A/B)<a class="headerlink" href="#evaluation-board-hardware-eval-ad4630-24-16fmcz-rev-c-and-eval-ad4030-24fmcz-rev-a-b" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/20220509_112436.jpg"><img alt="image5" src="https://wiki.analog.com/_media/resources/eval/20220509_112436.jpg" style="width: 600px;" /></a></div>
+<div class="line"><strong>Figure 2. EVAL-AD4630-XXFMCZ Evaluation System</strong></div>
+</div>
+<section id="power-supplies">
+<h3>Power Supplies<a class="headerlink" href="#power-supplies" title="Link to this heading"></a></h3>
+<p>The primary 12V supply to the EVAL-AD4X30-XXFMCZ comes from the ZedBoard through the FMC connector. 12V is regulated down to an intermediate voltage with a switcher and then is post regulated down to the various voltage rails. 12V is also used to generate the negative rails for the buffers and final drive amplifiers.</p>
+<div class="line-block">
+<div class="line">Each of the voltage rails are brought out to turrets so they can be easily measured (see <strong>Figure 1</strong>). A bench supply can be used to drive these turrets to supply the evaluation board manually. This is useful if a current measurement is required. Each supply is decoupled where it enters the board and at each device. A single ground plane is used on this board to minimize the effect of high frequency interference. The voltage ranges listed in the table below represent the expected ranges for the board. If the user desires to connect external supplies to the board, the amplifier data sheets and the <a class="icon link reference external" href="http://www.analog.com/en/products/AD4630-24.html" target="_blank">AD4630-24 datasheet</a>, <a class="icon link reference external" href="http://www.analog.com/en/products/AD4030-24.html" target="_blank">AD4030-24 datasheet</a> or <a class="icon link reference external" href="http://www.analog.com/en/products/AD4630-16.html" target="_blank">AD4630-16 datasheet</a> should be consulted to ensure that the external supply values comply with the device requirements.</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Power Supply</p></th>
+<th class="head"><p>Function</p></th>
+<th class="head"><p>Min. (V)</p></th>
+<th class="head"><p>Max. (V)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>+12V</p></td>
+<td><p>12V primary supply via FMC connector</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-odd"><td><p>GND</p></td>
+<td><p>Ground connection</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-even"><td><p>+3.3V</p></td>
+<td><p>3.3V for various digital logic</p></td>
+<td><p>3.26</p></td>
+<td><p>3.33</p></td>
+</tr>
+<tr class="row-odd"><td><p>+1.8V</p></td>
+<td><p>1.8V for the ADC</p></td>
+<td><p>1.77</p></td>
+<td><p>1.81</p></td>
+</tr>
+<tr class="row-even"><td><p>VIO</p></td>
+<td><p>1.8V supply for the ADC digital I/O</p></td>
+<td><p>1.8</p></td>
+<td><p>1.87</p></td>
+</tr>
+<tr class="row-odd"><td><p>+5V</p></td>
+<td><p>5V for the ADC</p></td>
+<td><p>5.26</p></td>
+<td><p>5.4</p></td>
+</tr>
+<tr class="row-even"><td><p>REFIN</p></td>
+<td><p>5V ADC reference input</p></td>
+<td><p>4.95</p></td>
+<td><p>5.05</p></td>
+</tr>
+<tr class="row-odd"><td><p>VAMP+</p></td>
+<td><p>Positive supply for the amplifiers</p></td>
+<td><p>5.36</p></td>
+<td><p>5.47</p></td>
+</tr>
+<tr class="row-even"><td><p>VAMP-</p></td>
+<td><p>Negative supply for the amplifiers</p></td>
+<td><p>-3.5</p></td>
+<td><p>-3.28</p></td>
+</tr>
+<tr class="row-odd"><td><p>VP1</p></td>
+<td><p>5.7V at the input of the switcher</p></td>
+<td><p>5.45</p></td>
+<td><p>5.75</p></td>
+</tr>
+<tr class="row-even"><td><p>REF</p></td>
+<td><p>5V at the ADC reference output</p></td>
+<td><p>4.95</p></td>
+<td><p>5.05</p></td>
+</tr>
+<tr class="row-odd"><td><p>EN</p></td>
+<td><p>1.8V enable signal for the power supplies</p></td>
+<td><p>1.75</p></td>
+<td><p>1.85</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">** <em>Table 1. On-Board Power Supplies</em> **</div>
+<div class="line">==== Reference Circuit ==== By default, the on-board LT6655 provides a 5 V reference to the AD4630-24, AD4030-24 &amp; AD4630-16. It drives the REFIN pin of the ADC through an R-C filter (R=100Ω, C=1μF) that reduces the low frequency noise. The REFIN pin is connected to an internal buffer, eliminating the need for an external buffer. However, if the user desires to use an external reference that drives the internal buffer, it can be attached the EXT REF SMA connector (see figure below). R137 should be populated with a zero ohm resistor, and R136 should be open. The internal buffer can be bypassed by attaching an external reference to the REF turret on the board. To reduce the ADC power consumption, the internal reference buffer can be disabled (see respective products data sheet).</div>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad4630_ref_ckt.png"><img alt="image6" src="https://wiki.analog.com/_media/resources/eval/ad4630_ref_ckt.png" style="width: 400px;" /></a></div>
+<div class="line"><strong>Figure 3. EVAL-AD4X30-XXFMCZ Reference circuit (AD4630-24 shown. Configuration applies to all parts)</strong></div>
+</div>
+</section>
+<section id="clock-circuit">
+<h3>Clock Circuit<a class="headerlink" href="#clock-circuit" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">The ZedBoard uses a 100MHz reference clock to generate its internal clocks as well as the sample clock for the AD4630-24, AD4030-24 or AD4630-16. To simplify system operation an on-board 100MHz, low-jitter crystal oscillator (XO) on the EVAL-AD4X30-XXFMCZ board supplies this clock as the default configuration, as shown in the figure below. To use an external clock source, remove R55 and connect an external clock source to J1, the CLK IN SMA. <strong>The external clock frequency must be &lt; 100 MHz</strong>. The user should take care to use a low jitter clock source to achieve best system performance. The external clock level should be 10 to 12 dBm.</div>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/eval-ad4630-24_clk_ckt.png"><img alt="image7" src="https://wiki.analog.com/_media/resources/eval/eval-ad4630-24_clk_ckt.png" style="width: 400px;" /></a></div>
+<div class="line"><strong>Figure 4. EVAL-AD4X30-XXFMCZ clock circuit (AD4630-24 shown. Configuration applies to all parts)</strong></div>
+<div class="line">==== Analog Front End ==== The EVAL-AD4X30-XXFMCZ has a flexible driver network that can be configured for a variety topologies. The default network is shown in Figure 5, in which the ADA4945-1 fully differential amplifier is driving the ADC. It can accommodate both single-ended and differential signal sources, and drives the ADC differentially. As populated, it has a unity gain. When using a single-ended source, the unused input should be terminated with the equivalent source impedance. <strong>Note:</strong> As implemented, the AD4945-1 driver on the evaluation board preserves the differential value of IN+ - IN- (with appropriate gain scaling applied), but inverts the signal polarity that is injected to the ADC. Hence, if a positive DC signal is applied to the input, it should be attached to IN_A/B-, and likewise, a negative DC signal should be attached to IN_A/B+ to preserve the signal polarity.</div>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad4630_fda_ckt.svg"><img alt="image8" src="https://wiki.analog.com/_media/resources/eval/ad4630_fda_ckt.svg" style="width: 600px;" /></a></div>
+<div class="line"><strong>Figure 5. Differential Driver AFE (default) (AD4630-24 shown. Configuration applies to all parts)</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function:</p></th>
+<th class="head"><p>Single ended to differential via differential amplifier</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Comments:</p></td>
+<td><p>Best distortion</p></td>
+</tr>
+<tr class="row-odd"><td><p>Required changes from default configuration:</p></td>
+<td><p>No changes required</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><strong>Table 2. EVAL-AD4620-16FMCZ Default AFE Configuration</strong></div>
+<div class="line">A second topology can be seen in Figure 6. This topology consists of a pair of unity gain buffers, the ADA4896-2. It also can be driven by either a singled-ended or differential source. This network is ideal for observing the best noise performance of the AD4630-16, due to the low voltage and current noise of the ADA4896-2 (1 nV/rtHz and 2.8 pA/rtHz, respectively). It also offers a common mode input impedance of 10 MΩ and a wide input common mode voltage range of -4.9V to +4.1V (when using +/- 5V supplies). <strong>Note:</strong> This driver circuit also inverts the polarity of the input signal. To preserve polarity when measuring DC voltages, connect a positive voltage to IN_A/B-. Likewise, a negative DC voltage should be connected to IN_A/B+.</div>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad4630_dual_buf_ckt.svg"><img alt="image9" src="https://wiki.analog.com/_media/resources/eval/ad4630_dual_buf_ckt.svg" style="width: 600px;" /></a></div>
+<div class="line"><strong>// Figure 6. Dual Buffer AFE (AD4630-24 shown. Configuration applies to all parts) //</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function:</p></th>
+<th class="head"><p>Differential input using buffer amplifiers</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Comments:</p></td>
+<td><p>Best noise &amp; relaxed drive requirement for signal source</p></td>
+</tr>
+<tr class="row-odd"><td><p>Required changes from default configuration:</p></td>
+<td><p>Remove: R10, R12,R119, R120, R121 &amp; R122 (Ch. A); R20, R22, R123, R124, R125 &amp; R126 (Ch. B). Install: R31, R33, R47, &amp; R49 (Ch. A); R60, R62, R75 &amp; R78 (Ch. B)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">** <em>Table 3. Unity Gain Dual Buffer Configuration</em> **</div>
+</div>
+<div class="line-block">
+<div class="line">Figure 7 shows a driver network which combines the ADA4896-2 with the ADA4945-1. This circuit is ideal for applications that require a high input impedance along with gain to maximize the input range of the ADC. The gain of the ADA4945-1 can modified by changing either the feedback resistors or input resistors.</div>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad4630_cascaded_buf_fda_ckt.svg"><img alt="image10" src="https://wiki.analog.com/_media/resources/eval/ad4630_cascaded_buf_fda_ckt.svg" style="width: 800px;" /></a></div>
+<div class="line"><strong>Figure 7. High Impedance Buffer with Gain AFE (AD4630-24 shown. Configuration applies to all parts)</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function:</p></th>
+<th class="head"><p>High impedance input with gain</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Comments:</p></td>
+<td><p>Relaxed drive requirements from signal source plus signal scaling.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Required changes from default configuration:</p></td>
+<td><p>Remove:R120, R121 (Ch. A);R124, R125 (Ch. B). Install: R31, R127, R28, R47, R128 &amp; R43 (Ch. A); R60, R129, R57, R78, R130 &amp; R72 (Ch. B)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><strong>// Table 4. High Impedance with Gain Configuration //</strong></div>
+<div class="line">Figure 8 shows an input configuration that allows the AD4630-16 to be directly driven from the SMA connectors. This enables testing with alternative driver configurations mounted on an external PCB.</div>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad4630_direct_drive_ckt.png"><img alt="image11" src="https://wiki.analog.com/_media/resources/eval/ad4630_direct_drive_ckt.png" style="width: 600px;" /></a></div>
+<div class="line"><strong>Figure 8. Direct Driven Inputs (AD4630-24 shown. Configuration applies to all parts)</strong></div>
+<div class="line">^ Function: | Direct input path | ^ Comments: | Supports evaluation with an alternative driver | ^ Required changes from default configuration: | Remove: R10, R12, R119 &amp; R122 (Ch A); R20, R22, R123, R126 (Ch B). Install: R28, R29, R120, R121, R43 &amp; R44 (Ch A); R124, R57, R58, R125, R72 &amp; R73 (Ch B) |</div>
+<div class="line">** <em>Table 5. Direct Drive Configuration</em> **</div>
+</div>
+</section>
+</section>
+<section id="evaluation-board-hardware-eval-ad4630-24-16fmcz-rev-e">
+<h2>Evaluation Board Hardware (EVAL-AD4630-24/16FMCZ REV E)<a class="headerlink" href="#evaluation-board-hardware-eval-ad4630-24-16fmcz-rev-e" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/d_ad4630-24_setup.png"><img alt="image12" src="https://wiki.analog.com/_media/resources/eval/d_ad4630-24_setup.png" style="width: 600px;" /></a></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Figure 9. EVAL-AD4630-XXFMCZ Evaluation System</strong></div>
+</div>
+<section id="power-supplies-1">
+<span id="id6"></span><h3>Power Supplies<a class="headerlink" href="#power-supplies-1" title="Link to this heading"></a></h3>
+<p>The primary 12V supply to the EVAL-AD4X30-XXFMCZ comes from the ZedBoard through the FMC connector. 12V is regulated down to an intermediate voltage, +7.5V, with a switcher and then is post regulated down to the various voltage rails. 12V is also used to generate the negative rails, -3.3V for the buffers and final drive amplifiers.</p>
+<div class="line-block">
+<div class="line">Each of the voltage rails are brought out to turrets so they can be easily measured (see <strong>Figure 1</strong>). A bench supply can be used to drive these turrets to supply the evaluation board manually. This is useful if a current measurement is required. Each supply is decoupled where it enters the board and at each device. A single ground plane is used on this board to minimize the effect of high frequency interference. The voltage ranges listed in the table below represent the expected ranges for the board. If the user desires to connect external supplies to the board, the amplifier data sheets and the <a class="icon link reference external" href="http://www.analog.com/en/products/AD4630-24.html" target="_blank">AD4630-24 datasheet</a>, <a class="icon link reference external" href="http://www.analog.com/en/products/AD4030-24.html" target="_blank">AD4030-24 datasheet</a> or <a class="icon link reference external" href="http://www.analog.com/en/products/AD4630-16.html" target="_blank">AD4630-16 datasheet</a> should be consulted to ensure that the external supply values comply with the device requirements.</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Power Supply</p></th>
+<th class="head"><p>Function</p></th>
+<th class="head"><p>Min. (V)</p></th>
+<th class="head"><p>Max. (V)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>+12V</p></td>
+<td><p>12V primary supply via FMC connector</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-odd"><td><p>GND</p></td>
+<td><p>Ground connection</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-even"><td><p>+3.3V</p></td>
+<td><p>3.3V for various digital logic</p></td>
+<td><p>3.26</p></td>
+<td><p>3.33</p></td>
+</tr>
+<tr class="row-odd"><td><p>+1.8V</p></td>
+<td><p>1.8V for the ADC</p></td>
+<td><p>1.77</p></td>
+<td><p>1.81</p></td>
+</tr>
+<tr class="row-even"><td><p>VIO</p></td>
+<td><p>1.8V supply for the ADC digital I/O</p></td>
+<td><p>1.77</p></td>
+<td><p>1.81</p></td>
+</tr>
+<tr class="row-odd"><td><p>+5.4V</p></td>
+<td><p>5.4V for the ADC</p></td>
+<td><p>5.34</p></td>
+<td><p>5.46</p></td>
+</tr>
+<tr class="row-even"><td><p>REFIN</p></td>
+<td><p>5V ADC reference input</p></td>
+<td><p>4.95</p></td>
+<td><p>5.05</p></td>
+</tr>
+<tr class="row-odd"><td><p>VAMP+</p></td>
+<td><p>Positive supply for the amplifiers</p></td>
+<td><p>6.35</p></td>
+<td><p>6.5</p></td>
+</tr>
+<tr class="row-even"><td><p>VAMP-</p></td>
+<td><p>Negative supply for the amplifiers</p></td>
+<td><p>-3.35</p></td>
+<td><p>-3.28</p></td>
+</tr>
+<tr class="row-odd"><td><p>VP1</p></td>
+<td><p>7.5V at the input of the switcher</p></td>
+<td><p>7.425</p></td>
+<td><p>7.575</p></td>
+</tr>
+<tr class="row-even"><td><p>REF</p></td>
+<td><p>5V at the ADC reference output</p></td>
+<td><p>4.95</p></td>
+<td><p>5.05</p></td>
+</tr>
+<tr class="row-odd"><td><p>EN</p></td>
+<td><p>1.8V enable signal for the power supplies</p></td>
+<td><p>1.75</p></td>
+<td><p>1.85</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">** <em>Table 6. On-Board Power Supplies</em> **</div>
+<div class="line">The following block diagram shows all the different power supplies options available in the new evaluation board. In case necessary, it is possible to supply all the LDOs directly with external power supplies via J7 and J8. There is also two different options to generate the -3.3V although only the LT3093 is mounted on the board.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/powertree.png"><img alt="image13" src="https://wiki.analog.com/_media/resources/eval/powertree.png" style="width: 600px;" /></a></div>
+<div class="line"><strong>Figure 10. Power-tree</strong></div>
+</div>
+</section>
+<section id="reference-circuit">
+<h3>Reference Circuit<a class="headerlink" href="#reference-circuit" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">By default, the on-board ADR4550 provides a 5 V reference to the AD4630-24 &amp; AD4630-16. It drives the REFIN pin of the ADC through an R-C filter (R=100Ω, C=22μF) that reduces the low frequency noise. The REFIN pin is connected to an internal buffer, eliminating the need for an external buffer. However, if the user desires to use an external reference that drives the internal buffer, it can be attached the J5 SMA connector (see figure below). R124 should be populated with a zero ohm resistor, and R116 and R123 should be open. The internal buffer can be bypassed by attaching an external reference to the REF turret on the board. To reduce the ADC power consumption, the internal reference buffer can be disabled (see respective products data sheet). There is also the option to mount the LTC6655 or the LTC6655LN reference which is suitable to use it together with the unbuffered input of the ADC.</div>
+</div>
+<div class="line-block" id="section-1">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/reference2.png"><img alt="image14" src="https://wiki.analog.com/_media/resources/eval/reference2.png" style="width: 600px;" /></a></div>
+<div class="line"><strong>Figure 11. EVAL-AD4630-XXFMCZ Reference circuit (AD4630-24 shown. Configuration applies to all parts)</strong></div>
+</div>
+</section>
+<section id="clock-circuit-1">
+<span id="id10"></span><h3>Clock Circuit<a class="headerlink" href="#clock-circuit-1" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">The ZedBoard uses a 100MHz reference clock to generate its internal clocks as well as the sample clock for the AD4630-24 or AD4630-16. To simplify system operation an on-board 100MHz, low-jitter crystal oscillator (XO) on the EVAL-AD4630-XXFMCZ board supplies this clock as the default configuration, as shown in the figure below. To use an external clock source, remove R1 and connect an external clock source to J6, the CLK IN SMA. <strong>The external clock frequency must be &lt; 100 MHz</strong>. The user should take care to use a low jitter clock source to achieve best system performance. The external clock level should be 10 to 12 dBm.</div>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/clock_diagram.png"><img alt="image15" src="https://wiki.analog.com/_media/resources/eval/clock_diagram.png" style="width: 600px;" /></a></div>
+<div class="line"><strong>Figure 12. EVAL-AD4630-XXFMCZ clock circuit (AD4630-24 shown. Configuration applies to all parts)</strong></div>
+<div class="line">==== Analog Front End ==== The EVAL-AD4630-XXFMCZ has a flexible driver network that can be configured for a variety topologies. The default network is shown in Figure 13, in which the ADA4945-1 fully differential amplifier is driving the ADC. It can accommodate both single-ended and differential signal sources, and drives the ADC differentially. As populated, it has a unity gain. When using a single-ended source, the unused input should be terminated with the equivalent source impedance. <strong>Note:</strong> As implemented, the AD4945-1 driver on the evaluation board preserves the differential value of IN+ - IN- (with appropriate gain scaling applied), but inverts the signal polarity that is injected to the ADC. Hence, if a positive DC signal is applied to the input, it should be attached to IN_A/B-, and likewise, a negative DC signal should be attached to IN_A/B+ to preserve the signal polarity.</div>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/differential.png"><img alt="image16" src="https://wiki.analog.com/_media/resources/eval/differential.png" style="width: 600px;" /></a></div>
+<div class="line"><strong>Figure 13. Differential Driver AFE (default) (AD4630-24 shown. Configuration applies to all parts)</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function:</p></th>
+<th class="head"><p>Single ended to differential via differential amplifier</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Comments:</p></td>
+<td><p>Best distortion</p></td>
+</tr>
+<tr class="row-odd"><td><p>Required changes from default configuration:</p></td>
+<td><p>No changes required</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><strong>Table 7. EVAL-AD4620-16FMCZ Default AFE Configuration</strong></div>
+<div class="line">There is one buffer used to generate common mode voltage, U26. The voltage can be adjusted from 0V to Vref by selecting correctly the ratio between R98, (or R122 or R99) and R5.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/vocm.png"><img alt="image17" src="https://wiki.analog.com/_media/resources/eval/vocm.png" style="width: 600px;" /></a></div>
+<div class="line"><strong>// Figure 14. Common mode voltage generation //</strong></div>
+<div class="line">A second topology can be seen in Figure 15. This topology consists of a pair of unity gain buffers, the ADA4896-2. It also can be driven by either a singled-ended or differential source. This network is ideal for observing the best noise performance of the AD4630-16, due to the low voltage and current noise of the ADA4896-2 (1 nV/rtHz and 2.8 pA/rtHz, respectively). It also offers a common mode input impedance of 10 MΩ and a wide input common mode voltage range of -4.9V to +4.1V (when using +/- 5V supplies). To use the full span of the ADC the input signal of each buffer needs to be centered at 2.5V</div>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/single_ended_config1.png"><img alt="image18" src="https://wiki.analog.com/_media/resources/eval/single_ended_config1.png" style="width: 600px;" /></a></div>
+<div class="line"><strong>// Figure 15. Dual Buffer AFE.//</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function:</p></th>
+<th class="head"><p>Differential input using buffer amplifiers</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Comments:</p></td>
+<td><p>Best noise &amp; relaxed drive requirement for signal source</p></td>
+</tr>
+<tr class="row-odd"><td><p>Required changes from default configuration:</p></td>
+<td><p>Remove: R17, R23, R19, R25, R42, R45, R44 and R48. Install: R114, R108, R112, R106, R139, R136, R137 and R134</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">** <em>Table 8. Unity Gain Dual Buffer Configuration</em> **</div>
+<div class="line">If the signal generator connected to the inputs of the ADC cannot generate a DC offset, there is the option to use the VOCM buffer to create an DC offset and connect it to the non-inverting input of the ADA4896 amplifiers like Figure 16.</div>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/config2.png"><img alt="image19" src="https://wiki.analog.com/_media/resources/eval/config2.png" style="width: 600px;" /></a></div>
+<div class="line"><strong>Figure 16. High Impedance Buffer with VOCM generated internally</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function:</p></th>
+<th class="head"><p>High impedance input with gain</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Comments:</p></td>
+<td><p>Relaxed drive requirements from signal source plus DC offset.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Required changes from default configuration:</p></td>
+<td><p>Remove: R17, R23, R19, R25, R42, R45, R44 and R48. Install: R114, R108, R112, R106, R139, R136, R137, R134, R120, R119, R103, R102, R142, R141, R132 and R131</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><strong>// Table 9. High Impedance Buffer with VOCM //</strong></div>
+<div class="line">Another option available (Figure 17) on the board is to use the ADA4896 in an inverting configuration with the possibility of connecting an DC offset on the non-inverting pin. I this case it is necessary to have two input signals delayed 180º and select the correct resistors values to generate a 2.5V (R98 and R3) as VOCM.</div>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/config3.png"><img alt="image20" src="https://wiki.analog.com/_media/resources/eval/config3.png" style="width: 600px;" /></a></div>
+<div class="line"><strong>Figure 17. High Impedance Buffer with VOCM generated internally</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function:</p></th>
+<th class="head"><p>High impedance input with gain</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Comments:</p></td>
+<td><p>Relaxed drive requirements from signal source plus DC offset.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Required changes from default configuration:</p></td>
+<td><p>Remove: R17, R23, R19, R25, R42, R45, R44 and R48. Install: R126, R96, R112, R106, R145, R129, R137, R134, R120, R119, R103, R102, R142, R141, R132 and R131</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><strong>// Table 10 High Impedance Buffer with VOCM //</strong></div>
+<div class="line">Figure 18 shows an input configuration that allows the AD4630-16 to be directly driven from the SMA connectors. This enables testing with alternative driver configurations mounted on an external PCB.</div>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad4630_direct_drive_ckt.png"><img alt="image21" src="https://wiki.analog.com/_media/resources/eval/ad4630_direct_drive_ckt.png" style="width: 600px;" /></a></div>
+<div class="line"><strong>Figure 18. Direct Driven Inputs (AD4630-24 shown. Configuration applies to all parts)</strong></div>
+<div class="line">^ Function: | Direct input path | ^ Comments: | Supports evaluation with an alternative driver | ^ Required changes from default configuration: | Remove: R17, R23, R19, R25, R42, R45, R44 and R48. Install: R121, R118, R104, R105, R143, R140, R133 and R130.|</div>
+<div class="line">** <em>Table 10. Direct Drive Configuration</em> **</div>
+</div>
+</section>
+</section>
+<section id="controller-board">
+<h2>Controller Board<a class="headerlink" href="#controller-board" title="Link to this heading"></a></h2>
+<p>The ZedBoard, which is the system controller board, enables the configuration of the ADC and capture of data from the evaluation board by the PC via USB (or Ethernet). The AD4X30-XX family of parts support a multi-lane serial port interface (SPI) for each data converter channel. The SPI interface for each channel is connected to the ZedBoard via the FMC connector (P1). The ZedBoard™ functions as the communication link between the PC and connected evaluation board. It buffers samples captured from the evaluation board in its DDR3 memory. The ZedBoard board requires power from a 12V wall adapter (included with the ZedBoard). It hosts a Xilinx® ZYNQ® 7020 SoC, which contains two ARM® Cortex-A9 Processors and a Series-7 FPGA with 85k Programmable Logic cells. A Linux OS runs on the host processor system. It communicates with the PC through either a USB 2.0 high speed port or a 10/100/1000 Ethernet port. The default software configuration uses USB.</p>
+<section id="evaluation-hardware-setup">
+<h3>EVALUATION HARDWARE SETUP<a class="headerlink" href="#evaluation-hardware-setup" title="Link to this heading"></a></h3>
+<p>When the ACE evaluation software installation is complete, take the following steps to set up the ZedBoard and the evaluation board together:</p>
+<ol class="arabic simple">
+<li><p>Insert the SD card provided with the evaluation board into J12 on the ZedBoard</p></li>
+<li><p>Connect the Evaluation board to the FMC connector of the ZedBoard.</p></li>
+<li><p>Connect the provided power supplies to J20 on the ZedBoard.</p></li>
+<li><p>Connect the USB cable to the USB OTG (J13) on the ZedBoard and to the computer</p></li>
+<li><p>Connect the desired input signal to the appropriate input on the evaluation board (J2-J5)</p></li>
+<li><p>Move SW8 to the ON position to start the ZedBoard</p></li>
+<li><p>Start the ACE evaluation software (Refer to section below).</p></li>
+</ol>
+</section>
+</section>
+<section id="software-support">
+<h2>Software Support<a class="headerlink" href="#software-support" title="Link to this heading"></a></h2>
+<p>The ADI ACE application provides a ‘plug and play’ evaluation experience, enabling users to get up and running quickly with the product evaluation board. ACE can configure the embedded software on supported controller boards and provides a quick and easy way to get setup, configure the board and perform data capture and analysis and/or waveform generation. For ACE installation and documentation instructions see www.analog.com/ace. Make sure to follow the instructions to install the necessary evaluation board plug-in support.</p>
+<ul class="simple">
+<li><p>If the machine that ACE is installed on has internet access, you can find/install/update plug-ins directly from the ACE application. For environments without internet access, you can download these plug-ins from the previous link to portable storage and install them into ACE.</p></li>
+<li><p>Note: Product specific documentation for the evaluation software can be found within the ACE plug-in.</p></li>
+</ul>
+<p>The controller board supported by ACE with this product evaluation board is the ZedBoard.</p>
+</section>
+<section id="system-operational-constraints">
+<h2>System Operational Constraints<a class="headerlink" href="#system-operational-constraints" title="Link to this heading"></a></h2>
+<section id="sampling-frequency">
+<h3>Sampling Frequency<a class="headerlink" href="#sampling-frequency" title="Link to this heading"></a></h3>
+<p>The following table illustrates the maximum sampling rates that can be achieved based on the device configuration. Note that the FPGA SPI engine only supports Zone 2 data transfers from the AD4630/AD4030.</p>
+<p>**Table 11. Maximum sampling rate by device configuration <strong>^ Clocking Mode ^ Lane Mode (per channel) ^ Data Rate ^ Data format ^ Max sampling rate ^ | SPI | 1 | Single (SDR) | 32-bit | 1.75 MSPS (</strong>note 1<strong>) | |     |     | SDR | 24-bit | 2 MSPS | |     |     | Dual (DDR) | 32 or 24-bit | 2 MSPS | |     | 2 | SDR or DDR | 32 or 24-bit | 2 MSPS | |     | 4 | SDR or DDR | 32 or 24-bit | 2 MSPS | | Echo Clock | 1 | SDR | 32-bit | 1.75 MSPS (</strong>note 1<strong>) | |     |     | SDR | 24-bit | 2 MSPS | |     |     | DDR | 32 or 24-bit | 2 MSPS | |     | 2 | SDR or DDR | 32 or 24-bit | 2 MSPS | |     | 4 | SDR or DDR | 32 or 24-bit | 2 MSPS |</strong>Note 1**: The sampling rate in Single lane, 32-bit output formats in SDR mode are limited by the FPGA SPI engine. This is not a limitation of the AD4630/AD4030 device.</p>
+</section>
+</section>
+<section id="software-developers-guide">
+<h2>Software Developers Guide<a class="headerlink" href="#software-developers-guide" title="Link to this heading"></a></h2>
+<p>Analog Devices supports the development of custom applications using the EVAL-AD4X30-XX system and are described in the <a class="reference internal" href="ad4630-24-eval-board/ad4630-24-developer-guide.html"><span class="doc">AD463x and AD403x Developer’s Guide</span></a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Visit <a class="reference internal" href="ad4630-24-eval-board/ad4630-24-developer-guide.html"><span class="doc">AD463x and AD403x Developer’s Guide</span></a> for an overview of the additional software drivers that are provided with the evaluation system</p>
+</div>
+</section>
+<section id="evaluation-board-support-and-troubleshooting">
+<h2>Evaluation Board Support and Troubleshooting<a class="headerlink" href="#evaluation-board-support-and-troubleshooting" title="Link to this heading"></a></h2>
+<section id="technical-support">
+<h3>Technical Support<a class="headerlink" href="#technical-support" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Technical support for the evaluation board hardware and software can be obtained by posting a question to ADI’s <a class="icon ez reference external" href="https://ez.analog.com/data_converters/precision_adcs" target="_blank">EngineerZone</a> technical support community for precision ADCs.</div>
+<div class="line">The evaluation board schematic and other board files can be found on the <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD4630-16.html" target="_blank">EVAL-AD4630-16FMCZ</a>, <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD4630-24.html" target="_blank">EVAL-AD4630-24FMCZ</a> &amp; <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD4030-24.html" target="_blank">EVAL-AD4030-24FMCZ</a> web pages.</div>
+</div>
+</section>
+<section id="troubleshooting">
+<h3>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h3>
+<p>A troubleshooting guide can be found at: <a class="reference internal" href="../tools-software/linux-software/adi-kuiper_ace_troubleshooting.html"><span class="doc">Troubleshooting Guide for ADI Kuiper Linux for ACE Evaluation</span></a>. The latter covers some tips related to ZedBoard startup and the SD card containing the Kuiper Linux image.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

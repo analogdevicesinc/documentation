@@ -1,0 +1,126 @@
+EVAL-CN0571-EBZ User Guide
+==========================
+
+Overview
+--------
+
+The :adi:`CN0571` provides a completely galvanically isolated connection between a HDMI sink and a HDMI source running at 1080p/60Hz resolution.
+
+While galvanic isolation is typically not found implemented in a multimedia interface such as HDMI, many applications require the presence of such an isolation barrier. In general, galvanic isolation enables an interface with immunity to noise, ground loops and electrical line surges, while providing a safety barrier against electric shock for personnel and low voltage electronics. Certain applications, especially in the medical space, mandate this electrical safety via the relevant safety certification bodies and standards.
+
+Traditionally, the challenges associated with implementing a galvanically isolated gigabit digital interface such as HDMI, have made it typically cost and time prohibitive, with solutions limited to optical fiber or complex SerDes circuits. Recent advances in high-speed digital isolation technology from Analog Devices, Inc. provides unique options to system designers wishing to isolate high resolution video interfaces.
+
+Building on the previous :adi:`CN0422` design (720p resolution Isolated HDMI), this circuit note describes a complete solution for implementing an isolated High-Definition Multimedia Interface (HDMI) port at up to 1080p resolution providing two means of patient protection (2MOPP) against secondary circuits, and one means of patient protection (1MOPP) against mains circuits for medical applications. The design is based on Analog Devices 2.5 Gbps isolated low voltage differential signaling (LVDS) transceivers :adi:`adn4624` and includes the :adi:`ad8195` HDMI buffer for compensating long HDMI cable losses.
+
+
+|Figure 1. EVAL-CN0571-EBZ iCoupler® Isolation for HDMI Simplified Circuit Diagram|
+
+.. container:: center
+
+   *Figure 1. EVAL-CN0571-EBZ iCoupler® Isolation for HDMI Simplified Circuit Diagram*
+
+
+| 
+| Figure 2 shows a simplified block diagram of the power isolation and the isolation of the HDMI signals. Number 1 through Number 5 show the start-up communication sequence through the :adi:`ADN4070` (1 - power), :adi:`ADuM321` (2 - HPD), :adi:`ADuM1252` (3 - DDC), and :adi:`ADN4624` with :adi:`AD8195` (4 - TMDS) between the HDMI source and HDMI sink.
+
+|Figure 2. Isolated HDMI Signal Flow Diagram|
+
+.. container:: center
+
+   *Figure 2. Isolated HDMI Signal Flow Diagram*
+
+
+| 
+| ===== Hardware Setup =====
+
+Required Equipment
+~~~~~~~~~~~~~~~~~~
+
+-  1x :adi:`EVAL-CN0571-EBZ <CN0571>` Circuit Evaluation Board
+-  1x USB Type-C cable
+-  1x 5W Power Source equipped with USB type A female connector
+-  1x Host PC
+
+   -  Equipped with HDMI output
+
+      -  Must support 1080p/60Hz
+
+-  1x Monitor/TV/Display
+
+   -  Equipped with HDMI input
+
+      -  Must support 1080p/60Hz
+
+-  2x HDMI Cable
+
+| 
+| **The device is plug and play, no programming is required to initialize the circuit board.**
+
+| 
+| ==== Test Setup Functional Block Diagram ==== |Figure 4. EVAL-CN0571-EBZ iCoupler® Isolation for HDMI test setup|
+
+.. container:: center
+
+   *Figure 4. EVAL-CN0571-EBZ iCoupler® Isolation for HDMI Test Setup*
+
+
+| 
+| ==== Video Stream/Data Transfer Test ====
+
+-  Set the display settings of your PC to 1920x1080/60Hz.
+
+
+|image1|
+
+-  Power the HDMI board by means of the power source and the USB Type C cable. The **LED D51** will light up.
+-  Connect the :adi:`EVAL-CN0571-EBZ <CN0571>` HDMI input (P2) to your PC or laptop using a HDMI cable.
+-  Connect the :adi:`EVAL-CN0571-EBZ <CN0571>` HDMI output (J4) to a display or monitor using a HDMI cable.
+-  Verify that the isolation is transparent for the HDMI signals passing through :adi:`EVAL-CN0571-EBZ <CN0571>`.
+
+--------------
+
+| 
+| ===== Useful Links =====
+
+-  :adi:`CN0571 Product Page <CN0571>`
+-  :adi:`ADN4624 Product Page <ADN4624>`
+-  :adi:`ADuM1252 Product Page <ADuM1252>`
+-  :adi:`ADuM6028 Product Page <ADuM6028>`
+-  :adi:`AD8195 Product Page <AD8195>`
+-  :adi:`ADuM321N Product Page <ADuM321N>`
+-  :adi:`ADuM6422A Product Page <ADuM6422A>`
+
+| 
+| ===== Schematics, PCB Layout, Bill of Materials =====
+
+.. admonition:: Download
+   :class: download
+
+   `CN0571 Design and Integration Files <https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0571/cn0571_design_support_package.zip>`_
+
+   
+   -  Schematics
+   -  Layout Files
+   -  Gerber Files
+   -  Assembly Drawing
+   
+
+
+| 
+| =====Registration=====
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0571-EBZ?&v=RevA>`_ to receive all these great benefits and more!
+
+
+// End of Document //
+
+.. |Figure 1. EVAL-CN0571-EBZ iCoupler® Isolation for HDMI Simplified Circuit Diagram| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0571/full_block_diagram_final_copy.svg.png
+   :width: 3000px
+.. |Figure 2. Isolated HDMI Signal Flow Diagram| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0571/simplified_block_diagram_final_copy.svg.png
+   :width: 600px
+.. |Figure 4. EVAL-CN0571-EBZ iCoupler® Isolation for HDMI test setup| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0571_test_setup.png
+   :width: 2000px
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0571/pc_display_settings.png
+   :width: 600px

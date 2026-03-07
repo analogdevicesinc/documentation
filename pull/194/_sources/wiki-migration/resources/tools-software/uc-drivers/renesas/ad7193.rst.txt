@@ -1,0 +1,229 @@
+AD7193 - No-OS Driver for Renesas Microcontroller Platforms
+===========================================================
+
+.. include:: ../ad7193.rst
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`_
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `AD7193 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad7193_generic.zip>`_
+   -  `AD7193 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7193_rl78g13.zip>`_
+   -  `AD7193 RX62N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7193_rx62n.zip>`_
+   -  \**AD7193 Driver: \*\* :git-no-OS:`drivers/adc/ad7193`
+   -  \**PmodAD5 Demo for RL78G14: \*\* :git-no-OS:`Renesas/RL78G14/PmodAD5`
+   -  \**RL78G14 Common Drivers: \*\* :git-no-OS:`Renesas/RL78G14/Common`
+   
+
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD7193 demonstration project on a Renesas RL78G13 platform.
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+-  `PmodAD5 <http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,401,1161&Prod=PMOD-AD5>`_
+
+Required Software
+-----------------
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`_
+
+Hardware Setup
+--------------
+
+A PmodAD5 has to be connected to the PMOD1 connector, pins 1 to 6 (see image below).
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad5_rl78g13.jpg
+   :align: center
+   :width: 500px
+
+|
+
+.. important::
+
+
+   ..
+
+| \* When using AVDD > DVDD (= 3.3V), JP1 on PmodAD5 must be removed. The range for AVDD is 3.0V ≤ AVDD ≤ 5.25V
+   |
+
+Reference Project Overview
+--------------------------
+
+The reference project:
+
+-  checks if the AD7193 part is present;
+-  configures the AD7193 part for differential input on CH0(AIN1-AIN2);
+-  first reads data from a single conversion and displays it;
+-  then reads data from multiple conversions, calculates the average value and displays it;
+-  in the end reads data from the temperature sensor and displays it in degrees Celsius.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad5_rl78g13_screen.jpg
+   :align: center
+   :width: 200px
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
+
+
+Renesas RL78G14 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD7193 demonstration project on a Renesas RL78G14 platform using the PmodAD5.
+
+.. _required-hardware-1:
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RL78G14 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g14-yrdkrl78g14-demonstration-kit-rl78g14>`_
+-  PmodAD5
+
+.. _required-software-1:
+
+Required Software
+-----------------
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`_
+-  The AD7193 demonstration project for the Renesas RL78G14 platform.
+
+.. note::
+
+   The AD7193 demonstration project for the Renesas RL78G14 platform consists of three parts: the **AD7193 Driver**, the **PmodAD5 Demo for RL78G14** and the **RL78G14 Common Drivers**.
+
+   
+   All three parts have to be downloaded.
+
+
+.. _hardware-setup-1:
+
+Hardware Setup
+--------------
+
+A PmodAD5 has to be connected to the PMOD1 connector, pins 1 to 6 (see image below).
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad5_rl78g14.jpg
+   :align: center
+
+|
+
+.. important::
+
+
+   ..
+
+| \* When using AVDD > DVDD (= 3.3V), JP1 on PmodAD5 must be removed. The range for AVDD is 3.0V ≤ AVDD ≤ 5.25V
+   |
+
+.. _reference-project-overview-1:
+
+Reference Project Overview
+--------------------------
+
+The reference project:
+
+-  checks if the AD7193 part is present;
+-  configures the AD7193 part for differential input on CH0(AIN1-AIN2);
+-  first reads data from a single conversion and displays it;
+-  then reads data from multiple conversions, calculates the average value and displays it;
+-  in the end reads data from the temperature sensor and displays it in degrees Celsius.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_ad5_rl78g14_screen.jpg
+   :align: center
+
+Software Project Tutorial
+-------------------------
+
+
+.. note::
+
+   See `rl78g14_software_tutorial <https://wiki.analog.com/rl78g14_software_tutorial>`_
+
+
+Renesas RX62N Quick Start Guide
+===============================
+
+This section contains a description of the steps required to run the AD7193 demonstration project on a Renesas RX62N platform.
+
+.. _required-hardware-2:
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`_
+-  PmodAD5
+
+.. _required-software-2:
+
+Required Software
+-----------------
+
+-  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`_
+-  `Renesas Peripheral Driver Library for RX62N family <https://www.renesas.com/us/en/software-tool/renesas-peripheral-driver-library>`_
+
+.. _hardware-setup-2:
+
+Hardware Setup
+--------------
+
+A PmodAD5 has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+
+::
+
+     PmodAD5 Pin 1 (CS)   → YRDKRX62N J8 connector Pin 15
+     PmodAD5 Pin 2 (MOSI) → YRDKRX62N J8 connector Pin 19
+     PmodAD5 Pin 3 (MISO) → YRDKRX62N J8 connector Pin 22
+     PmodAD5 Pin 4 (CLK)  → YRDKRX62N J8 connector Pin 20
+     PmodAD5 Pin 5 (GND)  → YRDKRX62N J8 connector Pin 4
+     PmodAD5 Pin 6 (VCC)  → YRDKRX62N J8 connector Pin 3
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7193_rx62n.jpg
+   :align: center
+
+.. _reference-project-overview-2:
+
+Reference Project Overview
+--------------------------
+
+The reference project:
+
+-  checks if the AD7193 part is present;
+-  configures the AD7193 part;
+-  reads data from multiple conversions, calculates the average value and displays it;
+-  reads data from the temperature sensor and displays it in degrees Celsius.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7193_rx62n_screen.jpg
+   :align: center
+
+.. _software-project-setup-1:
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
+
+
+More information
+================
+
+.. include:: ../more-information.rst

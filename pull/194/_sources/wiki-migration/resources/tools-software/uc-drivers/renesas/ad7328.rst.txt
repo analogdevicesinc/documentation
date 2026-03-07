@@ -1,0 +1,133 @@
+AD7328 - Microcontroller No-OS Driver
+=====================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7328`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7328SDZ`
+
+Overview
+--------
+
+AD7328
+~~~~~~
+
+The AD7328 is an 8-channel, 12-bit plus sign, successive approximation ADC designed on the iCMOS (industrial CMOS) process. iCMOS is a process combining high voltage silicon with submicron CMOS and complementary bipolar technologies. It enables the development of a wide range of high performance analog ICs capable of 33 V operation in a footprint that no previous generation of high voltage parts could achieve. Unlike analog ICs using conventional CMOS processes, iCMOS components can accept bipolar input signals while providing increased performance, dramatically reduced power consumption, and reduced package size. The AD7328 can accept true bipolar analog input signals. The AD7328 has four software-selectable input ranges, ±10 V, ±5 V, ±2.5 V, and 0 V to +10 V. Each analog input channel can be independently programmed to one of the four input ranges. The analog input channels on the AD7328 can be programmed to be single-ended, true differential, or pseudo differential. The ADC contains a 2.5 V internal reference. The AD7328 also allows for external reference operation. If a 3 V reference is applied to the REFIN/OUT pin, the AD7328 can accept a true bipolar ±12 V analog input. Minimum ±12 V VDD and VSS supplies are required for the ±12 V input range. The ADC has a high speed serial interface that can operate at throughput rates up to 1 MSPS.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad7328sdz.jpg
+   :align: center
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+-  `Digilent Cerebot MX3cK (Digilent) <http://www.digilentinc.com/Products/Detail.cfm?Prod=CEREBOT-MX3CK>`_
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the AD7328 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD7328 driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD7328 driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   SPI driver architecture
+
+
+The following functions are implemented in this version of AD7328 driver:
+
++-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| Function                                                                                  | Description                                                                                                        |
++===========================================================================================+====================================================================================================================+
+| unsigned char AD7328_Init(unsigned char internalRef, unsigned char coding)                | Initializes AD7328.                                                                                                |
++-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| void AD7328_SetRegisterValue(unsigned char registerAddress, unsigned short registerValue) | Writes data into a register.                                                                                       |
++-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| void AD7328_SetRange(unsigned char channel, unsigned char range)                          | Select one analog input range per analog input channel.                                                            |
++-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| void AD7328_SequenceSetup(unsigned char sequenceMode, unsigned short channelSequence)     | Configures the channel sequence feature.                                                                           |
++-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| void AD7328_SetPower(unsigned char powerMode)                                             | Selects a power mode of the AD7328.                                                                                |
++-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| void AD7328_ChannelSetup(unsigned char channelMode, unsigned char channelIndex)           | Selects the configuration of the eight analog inputs and selects the analog input channel for the next conversion. |
++-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| void AD7328_SampleRead(unsigned short \*sampleValue, unsigned char \*channelId)           | Reads one sample from the device.                                                                                  |
++-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| float AD7328_CalcVoltage(unsigned short value, unsigned char chIndex, float vRef)         | Converts the raw data read from a channel to volts.                                                                |
++-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+
+Downloads
+---------
+
+-  `AD7328 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7328_generic.zip>`_
+-  `AD7328 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7328_rl78g13.zip>`_
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD7328 demonstration project on a Renesas RL78G13 platform.
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+-  :adi:`EVAL-AD7328SDZ (Analog Devices) <EVAL-AD7328SDZ>`
+
+Required Software
+-----------------
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`_
+
+Hardware Setup
+--------------
+
+An EVAL-AD7328SDZ has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+
+::
+
+     EVAL-AD7328SDZ Pin CS     →  YRDKRL78G13 J11 connector Pin 1
+     EVAL-AD7328SDZ Pin DIN    →  YRDKRL78G13 J11 connector Pin 2
+     EVAL-AD7328SDZ Pin DOUT   →  YRDKRL78G13 J11 connector Pin 3
+     EVAL-AD7328SDZ Pin SCLK   →  YRDKRL78G13 J11 connector Pin 4
+     EVAL-AD7328SDZ Pin GND    →  YRDKRL78G13 J11 connector Pin 5
+     
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad7328sdz_rl78g13.jpg
+   :align: center
+
+Reference Project Overview
+--------------------------
+
+The reference project samples the input voltage on channels 0 through 6 and displays the values on the LCD.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7328_rl78g13_screen.jpg
+   :align: center
+
+Software Project Tutorial
+-------------------------
+
+
+.. note::
+
+   See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png

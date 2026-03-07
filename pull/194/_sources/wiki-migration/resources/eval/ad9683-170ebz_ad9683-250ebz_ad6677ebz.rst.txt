@@ -1,0 +1,396 @@
+EVALUATING THE AD9683/AD6677 ANALOG-TO-DIGITAL CONVERTERS
+=========================================================
+
+Preface
+-------
+
+| This user guide describes the :adi:`ad9683` and :adi:`AD6677` evaluation boards; :adi:`AD9683-170EBZ <ad9683>`, :adi:`AD9683-250EBZ <AD9683>`, and :adi:`AD6677EBZ <AD6677>`; which provide all of the support circuitry required to operate these products in their various modes and configurations. The application software used to interface with the devices is also described. There are two versions of the :adi:`ad9683` and :adi:`AD6677` evaluation boards available, one with a Tyco connector and one with an FMC connector. Each version requires a specific data capture board. The evaluation board with the Tyco connector is supported by the :adi:`HSC-ADC-EVALDZ <hsadcevalboard>` and the evaluation board with the FMC connector is supported by the :adi:`HSC-ADC-EVALEZ <hsadcevalboard>`. The FMC version of the evaluation board may be powered externally via a 6V DC wall supply or via power provided from the :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` through the FMC connector.
+| The :adi:`ad9683` and :adi:`ad6677` data sheets provide additional information and should be consulted when using the evaluation board. All documents and software tools are available at :adi:`www.analog.com/hsadcevalboard <hsadcevalboard>`. For additional information or questions, send an email to highspeed.converters@analog.com.
+
+Typical Measurement Setup
+-------------------------
+
+|image1|\
+
+.. container:: centeralign
+
+   \ *Figure 1a. FMC Evaluation Board Connection (6V DC Wall Power)—*\ :adi:`AD9683-170EBZ <ad9683>`\ *,* :adi:`AD9683-250EBZ <AD9683>`\ *, or* :adi:`AD6677EBZ <AD6677>` *(on Left) and* :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` *(on Right)*\
+
+
+|image2|\
+
+.. container:: centeralign
+
+   \ *Figure 1b. FMC Evaluation Board Connection (DC Power Via FMC)—*\ :adi:`AD9683-170EBZ <ad9683>`\ *,* :adi:`AD9683-250EBZ <AD9683>`\ *, or* :adi:`AD6677EBZ <AD6677>` *(on Left) and* :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` *(on Right)*\
+
+
+|image3|\
+
+.. container:: centeralign
+
+   \ *Figure 2. Tyco Evaluation Board Connection—*\ :adi:`AD9683-170EBZ <ad9683>`\ *,* :adi:`AD9683-250EBZ <AD9683>`\ *, or* :adi:`AD6677EBZ <AD6677>` *(on Left) and* :adi:`HSC-ADC-EVALDZ <hsadcevalboard>` *(on Right)*\
+
+
+Features
+--------
+
+-  Full featured evaluation board for the :adi:`ad9683`/:adi:`AD6677`
+-  SPI interface for setup and control
+-  External, on-board oscillator, or :adi:`ad9525` clocking option
+-  Balun/transformer or amplifier input drive option
+-  On-board LDO regulator needing a single external 6 V, 2 A dc supply
+-  VisualAnalog® and SPI controller software interfaces
+
+Helpful Documents
+-----------------
+
+-  :adi:`AD9683` or :adi:`AD6677` data sheet
+-  Evaluation Board Schematic (FMC Connector) `02-040310-01-c-1.pdf <https://wiki.analog.com/_media/resources/eval/02-040310-01-c-1.pdf>`_
+-  Evaluation Board Schematic (Tyco Connectors) `ad9683_final_schematic_02_035115a.pdf <https://wiki.analog.com/_media/resources/eval/ad9683_final_schematic_02_035115a.pdf>`_
+-  High speed ADC FIFO evaluation kits (:adi:`HSC ADC Data Capture Boards <hsadcevalboard>`)
+-  High speed ADC FIFO evaluation kit with FMC Connector Wiki Page (:doc:`HSC-ADC-EVALEZ </wiki-migration/resources/eval/hsc-adc-evale>`)
+-  High speed ADC FIFO evaluation kit with Tyco Connector Wiki Page (:doc:`HSC-ADC-EVALDZ </wiki-migration/resources/eval/hsc-adc-evald>`)
+-  :adi:`AN-905 Application Note <an-905>`, *VisualAnalog\ TM Converter Evaluation Tool Version 1.0 User Manual*
+-  :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*
+-  :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*
+-  :adi:`AN-835 Application Note <an-835>`, *Understanding High Speed ADC Testing and Evaluation*
+
+Equipment Needed
+----------------
+
+-  Analog signal source and antialiasing filter
+-  Sample clock source (if not using the on-board oscillator)
+-  Reference clock source for the JESD204B link
+-  (1) 6.0 V, 2.5 A switching power supply, CUI EPS060250UH-PHP-SZ provided
+-  (1) 12.0V, 3.3 A switching power supply, V-Infinity ETSA120330UDC-PFP-SZ provided
+-  PC running Windows®
+-  USB 2.0 port
+-  :adi:`AD9683-170EBZ <AD9683>`, :adi:`AD9683-250EBZ <AD9683>`, or :adi:`AD6677EBZ <AD6677>` board
+-  :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` or :adi:`HSC-ADC-EVALDZ <hsadcevalboard>` FPGA-based data capture kit
+
+Getting Started
+---------------
+
+| This section provides quick start procedures for using the :adi:`AD9683-170EBZ <AD9683>`, :adi:`AD9683-250EBZ <AD9683>`, or :adi:`AD6677EBZ <AD6677>` board. Both the default and optional settings are described.
+
+Configuring the Board
+~~~~~~~~~~~~~~~~~~~~~
+
+Before using the software for testing, configure the evaluation board as follows:
+
+-  Connect the evaluation board to the data capture board, as shown in Figure 1a, 1b, or Figure 2.
+-  Connect one 6 V, 2.5 A switching power supply (such as the CUI, Inc., EPS060250UH-PHP-SZ that is supplied) to the :adi:`AD9683-170EBZ <AD9683>`, :adi:`AD9683-250EBZ <AD9683>`, or :adi:`AD6677EBZ <AD6677>`.
+-  Connect one 12 V, 3.3 A switching power supply (such as the supplied V-Infinity ETSA120330UDC-PFP-SZ) to the :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` board.
+-  Connect the :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` or :adi:`HSC-ADC-EVALDZ <hsadcevalboard>`\ board (P702) to the PC using a USB cable.
+-  On the ADC evaluation board, confirm that the correct jumpers are installed.
+
+   -  Common jumpers for both the Tyco and FMC evaluation boards are P202, P209, P204, P205, P206, P210
+   -  Additionally, jumpers should be placed on pins 1-2 of P2 and pins 1-2 of P4 on the FMC evaluation board.
+   -  See Figures 3 and 4 as well as Tables 1 and 2 for more details.
+
+-  On the ADC evaluation board, use a clean signal generator with low phase noise to provide an input signal to the :adi:`AD9683` analog input. Use a 1 m, shielded, RG-58, 50 Ω coaxial cable to connect the signal generator. For best results, use a narrow-band, band-pass filter with 50 Ω terminations and an appropriate center frequency. (Analog Devices, Inc., uses TTE, Allen Avionics, and K&L band-pass filters.)
+
+Evaluation Board Hardware
+-------------------------
+
+| The evaluation board provides the support circuitry required to operate the :adi:`AD9683` and :adi:`AD6677` in their various modes and configurations. Figures 1a, 1b and 2 show the typical bench characterization setup used to evaluate AC performance. It is critical that the signal sources used for the analog input and clock have very low phase noise (<1 ps rms jitter) to realize the optimum performance of the signal chain. Proper filtering of the analog input signal to remove harmonics and lower the integrated or broadband noise at the input is necessary to achieve the specified noise performance.
+| See the evaluation board pages linked from the :adi:`AD9683` and :adi:`AD6677` product pages for the complete schematics and bill of materials (BOM). The evaluation board layout is available upon request. The layout diagrams demonstrate the routing and grounding techniques that should be applied at the system level when designing application boards using these converters.
+| ==== Power Supplies ==== This evaluation board comes with a wall-mountable switching power supply that provides a 6 V, 2 A maximum output. Connect the supply to a 100 V ac to 240 V ac, 47 Hz to 63 Hz wall outlet. The output from the supply is provided through a 2.1 mm inner diameter jack that connects to the printed circuit board (PCB) at P201. The 6 V supply is fused and conditioned on the PCB before connecting to the low dropout linear regulators that supply the proper bias to each of the various sections on the board.
+| The evaluation board can be powered in a nondefault condition using external bench power supplies. To do this, remove the all the jumpers listed above (and in Table 1) to disconnect the outputs from the on-board LDOs. This enables the user to bias each section of the board individually. Use P1, P208, and P502 to connect a different supply for each section. A 1.8 V, 0.5 A supply is needed for 1.8 V_AVDD, 1.8 V_DVDD, and 1.8 V_DRVDD. Although the power supply requirements are the same for AVDD, DVDD, and DRVDD, it is recommended that separate supplies be used for both analog and digital domains. The DVDD and DRVDD voltages can be driven from the same power supply. The SPI and its level shifters and alternate clock options require a separate 3.3 V, 0.5 A analog supply. In addition, if using the :adi:`AD9525` and/or the :adi:`ADL5202`, a separate 5.0 V, 0.5 A analog supply is required.
+
+Input Signals
+~~~~~~~~~~~~~
+
+| When connecting the ADC clock and analog source, use clean signal generators with low phase noise, such as the Rohde & Schwarz SMA, or HP 8644B signal generators or an equivalent. Use a 1 m shielded, RG-58, 50 Ω coaxial cable for connecting to the evaluation board. Enter the desired frequency and amplitude (see the Specifications section in the data sheet of the respective part). When connecting the analog input source, use of a multipole, narrow-band band-pass filter with 50 Ω terminations is recommended. Analog Devices uses band-pass filters from TTE and K&L Microwave, Inc. Connect the filters directly to the evaluation board.
+| If an external clock source is used, it should also be supplied with a clean signal generator as previously specified. Analog Devices evaluation boards typically can accept ~2.8 V p-p or 13 dBm sine wave input for the clock.
+
+The reference clock input for the JESD204B link does not need to be a low phase noise source nor does it need to be phase aligned with the ADC input clock source, however, the reference clock frequency must match the frequency of the ADC input clock source.
+
+Output Signals
+~~~~~~~~~~~~~~
+
+The default setup uses the Analog Devices high speed converter evaluation platform (:adi:`HSC-ADC-EVALEZ <hsadcevalboard>`) for data capture. If using an evaluation board with the Tyco connector then the :adi:`HSC-ADC-EVALDZ <hsadcevalboard>` is required. The serial JESD204B outputs from the ADC are routed to Connector P1002 using 100 Ω differential traces. For more information on the data capture board and its optional settings, visit :adi:`www.analog.com/hsadcevalboard <hsadcevalboard>`.
+
+Jumper Settings
+---------------
+
+| Set the jumper settings/link options on the evaluation board for the required operating modes before powering on the board. The functions of the jumpers for each version of the board are described in Tables 1 and 2. Figures 3 and 4 show the default jumper settings.
+
+Table 1. Jumper Settings Common to Both the FMC and Tyco Evaluation Boards
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Jumper | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
++========+=========================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+
+| P202   | This jumper sets up the 5.0 V power supply voltage for the outputs of the on-board :adi:`ADL5202`. For the :adi:`ADL5202` to work properly, its outputs must be tied to a 5.0 V power supply via the appropriate sized inductors. On the :adi:`AD9683-170EBZ <AD9683>`/:adi:`AD9683-250EBZ <AD9683>`/:adi:`AD6677EBZ <AD6677>` boards these inductors are 1 uH.                                                                                                                         |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| P209   | This jumper sets up the 3.3V analog power supply voltage for the :adi:`ADL5202`.                                                                                                                                                                                                                                                                                                                                                                                                        |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| P210   | This jumper connects the DVDD power supply domain to the DRVDD power supply domain to power the JESD204B output drivers of the :adi:`ad9683` and :adi:`AD6677`.                                                                                                                                                                                                                                                                                                                         |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| P205   | This jumper connects the AVDD power supply domain of the :adi:`ad9683` and :adi:`AD6677`.                                                                                                                                                                                                                                                                                                                                                                                               |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| P206   | This jumper connects the DVDD power supply domain of the :adi:`ad9683` and :adi:`AD6677`.                                                                                                                                                                                                                                                                                                                                                                                               |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| P204   | This jumper sets up a 3.3 V digital power supply voltage for the :adi:`AD9525` and also powers SPI related circuitry.                                                                                                                                                                                                                                                                                                                                                                   |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+| 
+| == Table 2a. Jumper Settings Exclusive to the Tyco Evaluation Board== ^Jumper ^Description \| \|P504 \|This jumper connects the :adi:`ad9683` and :adi:`AD6677` external reference clock input to the reference clock of the FPGA (for the JESD204B link) on the :adi:`HSC-ADC-EVALDZ <hsadcevalboard>`.\|}}
+
+| 
+| == Table 2b. Jumper Settings Exclusive to the FMC Evaluation Board== ^Jumper ^Description \| \|P2 \|This jumper selects the wall power supply input for the 5.0 V, 3.3 V Analog, and 3.3 V Digital power supply voltages on the :adi:`AD9683-170EBZ <AD9683>`/:adi:`AD9683-250EBZ <AD9683>`/:adi:`AD6677EBZ <AD6677>` Board. Placing the jumper from pins 1-2 selects power from the 6V wall supply. Placing the jumper from pins 2-3 selects power from the FMC connector.\| \|P4 \|This jumper selects the wall power supply input for the AVDD, DVDD, and DRVDD power supply voltages on the FMC version of the :adi:`AD9683-170EBZ <AD9683>`/:adi:`AD9683-250EBZ <AD9683>`/:adi:`AD6677EBZ <AD6677>` Board. Placing the jumper from pins 2-3 selects power from the 6V wall supply. Placing the jumper from pins 1-2 selects power from the FMC connector.\| \|P503 \|This jumper connects the :adi:`ad9683` and :adi:`AD6677` external reference clock input to the reference clock of the FPGA (for the JESD204B link) on the :adi:`HSC-ADC-EVALEZ <hsadcevalboard>`.\|}}
+
+|image4|\
+
+.. container:: centeralign
+
+   \ *Figure 3. Default Jumper Connections for* :adi:`AD9683-170EBZ <AD9683>`\ */*\ :adi:`AD9683-250EBZ <AD9683>`\ */*\ :adi:`AD6677EBZ <AD6677>` *FMC Board*\
+
+
+|image5|\
+
+.. container:: centeralign
+
+   \ *Figure 4. Default Jumper Connections for* :adi:`AD9683-170EBZ <AD9683>`\ */*\ :adi:`AD9683-250EBZ <AD9683>`\ */*\ :adi:`AD6677EBZ <AD6677>` *Tyco Board*\
+
+
+Evaluation Board Circuitry
+--------------------------
+
+| This section explains the default and optional settings or modes allowed on the :adi:`AD9683-170EBZ <AD9683>`, :adi:`AD9683-250EBZ <AD9683>`, and :adi:`AD96677EBZ <AD6677>` boards.
+
+Power
+~~~~~
+
+| Plug the switching power supply into a wall outlet rated at 100 V ac to 240 V ac, 47 Hz to 63 Hz. Connect the DC output connector to P101 on the evaluation board.
+
+Analog Input
+~~~~~~~~~~~~
+
+| The analog input on the evaluation board is set up for a double balun-coupled analog input with a 50 Ω impedance. The default analog input configuration supports analog input frequencies of up to ~400 MHz. For additional information on recommended input networks, see the :adi:`AD9683` and :adi:`AD6677` data sheets.
+| Optionally, the :adi:`AD9683` and :adi:`AD6677` analog input can be configured to use the :adi:`ADL5202` digitally controlled, variable gain wide bandwidth amplifier. The :adi:`ADL5202` is included on the evaluation board at U401. The path into and out of the :adi:`ADL5202` can be configured many different ways depending on the application; therefore, several of the components in the input and output path are left unpopulated. See the :adi:`ADL5202` data sheet for additional information on this part and for configuring the inputs and outputs.
+| In order to connect the active path using the :adi:`ADL5202` a few resistors need to be changed. First, remove C305 and C306. Then populate R311 and R312. These changes disconnect the passive input and connect the output of the :adi:`ADL5202` to the analog inputs of the :adi:`AD9683` and :adi:`AD6677`. Next, place the desired filter components at the output of the :adi:`ADL5202`. As mentioned, these are not populated by default since there are many different possibilities. J404 must also be populated so that the input of the :adi:`ADL5202` can be driven with an external signal source.
+
+Clock
+~~~~~
+
+Nyquist Clock
+^^^^^^^^^^^^^
+
+The default clock input circuit connects to the Nyquist clock input of the :adi:`AD9683` and :adi:`AD6677`. The clock is derived from a simple transformer-coupled circuit using a high bandwidth 1:1 impedance ratio transformer (T503) that adds a low amount of jitter to the clock path. The clock input is 50 Ω terminated and ac-coupled to handle single-ended sine wave types of inputs. The transformer converts the single-ended input to a differential signal before entering the ADC clock inputs. The :adi:`AD9683` and :adi:`AD6677` ADCs are equipped with an internal 8:1 clock divider to facilitate usage with higher frequency clocks. The clock input for the Nyquist clock is the CLK+ SMA connector.
+
+RF Clock
+^^^^^^^^
+
+| The :adi:`AD9683` and :adi:`AD6677` are also equipped with a single-ended RF Clock input that can receive input frequencies from 625 MHz up to 1.5 GHz. This feature must be enabled via SPI and a clock of appropriate frequency must be connected to the RF_CLK SMA connector. The RF Clock circuitry within the :adi:`AD9683` and :adi:`AD6677` has a selectable /2 or /4 pre-divider in addition to the internal 8:1 clock divider to facilitate usage with higher frequency clocks up to 1.5 GHz.
+| Note: If using the RF clock, make sure to move the jumper from P504 to P503 and input a reference clock to the CLK- SMA input connector at a frequency equal to the sample rate of the ADC. For example, if the RF clock input frequency is 500 MHz and the /2 pre-divider is selected the ADC sample rate is 250 MSPS and the reference clock frequency should be 250 MHz.
+| ===Clocking with the AD9525=== The :adi:`AD9683` and :adi:`AD6677` boards may also be set up to be clocked from the :adi:`AD9525`.
+
+PDWN
+~~~~
+
+| To enable the power-down feature, add a shorting jumper across P3 (directly to the right of P209) at Pin 1 and Pin 2 to connect the PDWN pin to DRVDD.
+| ==== RSTB ==== To enable the reset feature, add a shorting jumper across P101 at Pin 1 and Pin 2 to connect the RSTB pin to GND.
+| ===== How To Use The Software For Testing =====
+
+Setting up the ADC Data Capture
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| After configuring the board, set up the ADC data capture using the following steps:
+
+-  Open VisualAnalog on the connected PC. The appropriate part type should be listed in the status bar of the **VisualAnalog – New Canvas** window. Select the template that corresponds to the type of testing to be performed (see Figure 5, where the :adi:`AD9683` is shown as an example).\ |image6|\
+
+.. container:: centeralign
+
+   \ *Figure 5. VisualAnalog, New Canvas Window*\
+
+
+-  After the template is selected, a message appears asking if the default configuration can be used to program the FPGA (see Figure 6). Click **Yes**, and the window closes.
+   |image7|\
+
+.. container:: centeralign
+
+   \ *Figure 6. VisualAnalog Default Configuration Message*\
+
+
+-  Click the **Settings** button on the **ADC Data Capture** block. In the pop-up window select the **Capture Board** tab. Select the checkbox **Poll Full Flag**. This must be checked in order to get data capture from the :adi:`AD9683` and :adi:`AD6677` (see Figure 7).
+
+
+
+|image8|
+
+.. container:: centeralign
+
+   \ *Figure 7. VisualAnalog ADC Data Capture Settings*\
+
+
+-  To change features to settings other than the default settings, click the **Expand Display** button, located in the bottom right corner of the window (see Figure 8), to see what is shown in Figure 7.
+-  Change the features and capture settings by consulting the detailed instructions in the :adi:`AN-905 Application Note <AN-905>`, *VisualAnalog\ TM Converter Evaluation Tool Version 1.0 User Manual*. After the changes are made to the capture settings, click the **Collapse Display** button.
+
+|image9|
+
+.. container:: centeralign
+
+   \ *Figure 8. VisualAnalog Window Toolbar, Collapsed Display*\
+
+
+.. container:: centeralign
+
+   \ |image10|\
+
+
+.. container:: centeralign
+
+   \ *Figure 9. VisualAnalog, Main Window, Expanded Display*\
+
+
+Evaluation And Test
+-------------------
+
+Setting up the SPI Controller Software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| After the ADC data capture board setup is complete, set up the SPI controller software using the following procedure:
+
+-  Open the SPI controller software by going to the **Start** menu or by double-clicking the **SPIController** software desktop icon. If prompted for a configuration file, select the appropriate one. If not, check the title bar of the window to determine which configuration is loaded. If necessary, choose **Cfg Open** from the **File** menu and select the appropriate file based on your part type. Note that the **CHIP ID(1)** box should be filled to indicate whether the correct SPI controller configuration file is loaded (see Figure 10). |image11|\
+
+.. container:: centeralign
+
+   \ *Figure 10a. SPI Controller, CHIP ID(1) Box*\
+
+
+| 
+| Note: If using the FMC version of the evaluation board and data capture board make sure to change the SDO Active setting in SPIController by clicking Config -> Controller Dialog from within SPIController and unchecking the box under PORT CONFIG labeled "SDO Active." See Figure 10b below. |image12|\
+
+.. container:: centeralign
+
+   \ *Figure 10b. SPI Controller, SDO Active Setting Box*\
+
+
+| \* Click the **New DUT** button in the **SPIController** window (see Figure 11).\ |image13|\
+
+.. container:: centeralign
+
+   \ *Figure 11. SPI Controller, New DUT Button*\
+
+
+-  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box (see Figure 12). If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. The Nyquist Clock is selected by default. If using the RF Clock, make sure to configure the device in this tab. For additional information, refer to the data sheet, the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*.\
+
+
+
+|image14|
+
+.. container:: centeralign
+
+   \ *Figure 12. SPI Controller, ADCBase0*\
+
+
+-  Note that other settings can be changed on the **ADCBase0** tab (see Figure 12) and the **ADCBase1**\ and **ADCBase2** tabs (see Figures 13 and 14) to set up the part in the desired mode. The **ADCBase0** tab settings affect ADC settings, whereas the settings on the **ADCBase1** and **ADCBase2** tabs affect the JESD204B link settings. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings. |image15|\
+
+.. container:: centeralign
+
+   \ *Figure 13. SPI Controller, Example ADCBase1 Page*\
+
+
+|image16|\
+
+.. container:: centeralign
+
+   \ *Figure 14. SPI Controller, Example ADCBase1 Page*\
+
+
+-  Click the **Run** button in the **VisualAnalog** toolbar (see Figure 15). |image17|\
+
+.. container:: centeralign
+
+   \ *Figure 15. Run Button (Encircled in Red) in VisualAnalog Toolbar, Collapsed Display*\
+
+
+Adjusting the Amplitude of the Input Signal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The next step is to adjust the amplitude of the input signal for each channel as follows:
+
+-  Adjust the amplitude of the input signal so that the fundamental is at the desired level. Examine the **Fund Power** reading in the left panel of the **VisualAnalog Graph - AD9683 FFT** window (see Figure 16).\ |image18|\
+
+.. container:: centeralign
+
+   \ *Figure 16. Graph Window of VisualAnalog*
+
+
+-  Click the disk icon within the **VisualAnalog Graph - AD9683 FFT** window to save the performance plot data as a .csv formatted file. See Figure 17 for an example.\
+
+
+
+|image19|
+
+.. container:: centeralign
+
+   //Figure 17. Typical FFT, :adi:`AD9683` //
+
+
+Troubleshooting Tips
+--------------------
+
+If the FFT plot appears abnormal, do the following:
+
+-  If you see an abnormal noise floor, go to the **ADCBase0** tab of the **SPIController** window and toggle the **Chip Power Mode** in **MODES(8)** from **Chip Run** to **Reset** and back.
+-  If you see a normal noise floor when you disconnect the signal generator from the analog input, be sure that you are not overdriving the ADC. Reduce the input level if necessary.
+-  In VisualAnalog, click the **Settings** icon in the **Input Formatter** block. Check that **Number Format** is set to the correct encoding (twos complement by default). Repeat for the other channels.
+
+If the FFT appears normal but the performance is poor, check the following:
+
+-  Make sure that an appropriate filter is used on the analog input.
+-  Make sure that the signal generators for the clock and the analog input are clean (low phase noise).
+-  Change the analog input frequency slightly if noncoherent sampling is being used.
+-  Make sure that the SPI configuration file matches the product being evaluated.
+
+If the FFT window remains blank after **Run** in VisualAnalog (see Figure 15) is clicked, do the following:
+
+-  Make sure that the evaluation board is securely connected to the :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` or :adi:`HSC-ADC-EVALDZ <hsadcevalboard>` board.
+-  Make sure that the FPGA has been programmed by verifying that the **DONE** LED is illuminated on the :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` or :adi:`HSC-ADC-EVALDZ <hsadcevalboard>` board. If this LED is not illuminated, make sure that the U4 switch on the board is in the correct position for USB CONFIG.
+-  Make sure that the correct FPGA program was installed by clicking the **Settings** icon in the **ADC Data Capture** block in VisualAnalog. Then select the **FPGA** tab and verify that the proper FPGA bin file is selected for the part.
+
+If VisualAnalog indicates that the **FIFO Capture timed out**, do the following:
+
+-  Make sure that all power and USB connections are secure.
+-  Make sure that the **Poll Full Flag** checkbox is checked under **ADC Capture Settings** in **Visual Analog**.
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9683_hadv62-ww.jpg
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9683_hadv62_fmc_power.jpg
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad9683_connections.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ad9683_jumpers.jpg
+   :width: 850px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ad9683_jumpers_v2.jpg
+   :width: 850px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/ad9683_new_canvas.png
+   :width: 450px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ad9683_program_fpga.png
+   :width: 450px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/ad9683_poll_full_flag.png
+   :width: 850px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/ad9683_expand_display.jpg
+   :width: 650px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/ad9683_va_fft.png
+   :width: 850px
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/ad9683_spicontroller_global.png
+   :width: 750px
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/ad9683_fmc_sdo.png
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/ad9683_spicontroller_adcglobal_newdut.jpg
+   :width: 750px
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/ad9683_spicontroller_adcbase0.png
+   :width: 750px
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/ad9683_spicontroller_adcbase1.png
+   :width: 750px
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/ad9683_spicontroller_adcbase2.png
+   :width: 750px
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/ad9683_va_run_button.jpg
+   :width: 650px
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/10235-013.png
+   :width: 400px
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/ad9683_fft_185mhz.png
+   :width: 400px

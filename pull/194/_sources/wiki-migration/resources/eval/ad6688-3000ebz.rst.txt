@@ -1,0 +1,421 @@
+EVALUATING THE AD6688 RF DIVERSITY and 1.2 GHz BANDWIDTH OBSERVATION RECEIVER
+=============================================================================
+
+Preface
+=======
+
+This user guide describes the :adi:`AD6688-3000EBZ <AD6688>` evaluation board which provides all of the support circuitry required to operate the ADC in its various modes and configurations. This guide entails both the hardware and software setup needed to acquire data capture from the evaluation board. This guide assumes the usage of the accompanying :adi:`ADS7-V2 EBZ High Speed Evaluation Board <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADS7-V2>`. The user guide for the :doc:`ADS7-V2 </wiki-migration/resources/eval/ads7-v2>` provides additional information available for consultation during usage. Documents and software tools, where available, can be found at the :adi:`HS-ADC Eval Board homepage <hsadcevalboard>`. For additional information or questions, post a question on :ez:`Engineer Zone <community/data_converters>`, or send an email to **highspeed.converters@analog.com**.
+
+<WRAP> </WRAP>
+
+<WRAP> </WRAP>
+
+<WRAP> </WRAP>
+
+<WRAP> </WRAP>
+
+<WRAP> </WRAP>
+
+Typical Setup
+=============
+
+|image1|\
+
+.. container:: centeralign
+
+   *Figure 1.* :adi:`AD6688-3000EBZ <AD6688>` *(Left) and* :adi:`ADS7-V2 <eval-ads7-v2>` *(Right)*\
+
+
+|image2|\
+
+.. container:: centeralign
+
+   *Figure 2. Top of* :adi:`AD6688-3000EBZ <AD6688>` *Board*\
+
+
+|image3|\
+
+.. container:: centeralign
+
+   *Figure 3. Bottom of* :adi:`AD6688-3000EBZ <AD6688>` *Board*\
+
+
+.. tip::
+
+   Tip: Click on any picture in this guide to open an enlarged version.
+
+
+.. tip::
+
+   Tip: The AD6688-3000EBZ is the export-controlled version of the :adi:`AD9208-3000EBZ <AD9208>`. To see the wiki page for the 9208, click `here <https://wiki.analog.com/ad9208-3000ebz>`_.
+
+
+Features
+========
+
+-  Full featured evaluation board for the :adi:`AD6688-3000EBZ <AD6688>`.
+-  JESD204B coded serial digital outputs with support for lane rates up to 16Gbps/lane.
+-  Wide full power bandwidth supports IF sampling of signals up to 9GHz (-3dB point).
+-  Four Integrated wide-band decimation filter and NCO blocks supporting multi-band receivers.
+-  Fast NCO switching enabled through GPIO pins.
+-  Flexible SPI interface controls various product features and functions to meet specific system requirements.
+-  Programmable fast over range detection and signal monitoring.
+-  On-chip temperature diode for system thermal management.
+
+Helpful Documents
+=================
+
+-  :adi:`AD6688` Data Sheet
+-  :adi:`ADS7-V2EBZ <eval-ads7-v2>` Data Sheet
+-  `ACE Software <https://swdownloads.analog.com/ACE/ACE_User_Manual_rev3.pdf>`_, // ACE Software User Manual//
+-  :adi:`AN-905 Application Note <an-905>`, *VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*
+-  `ADI SPI Application Note </>resources/technical-guides/adispi>>`__ // ADI Serial Control Interface Standard//
+-  :adi:`AN-835 Application Note <an-835>`, *Understanding ADC Testing and Evaluation*
+-  :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*
+-  :adi:`AN-877 Application Note <an-877>`, *Interfacing to High-Speed ADCs using SPI*
+
+Software Needed
+===============
+
+-  :adi:`ACE <en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html>`, *Analysis \| Control \| Evaluation (ACE) Software*
+
+Design and Integration Files
+============================
+
+-  `AD6688-3000EBZ Schematic, Gerber layout and BOM <https://wiki.analog.com/_media/resources/eval/ad9208_3000ebz_files.zip>`_
+
+   -  Note : The AD6688 is pin compatible with the AD9208. The same schematic and gerber layout will apply to both AD6688 and AD9208
+
+Equipment Needed
+================
+
+-  PC running Windows®
+-  USB 2.0 port and USB 2.0 High-speed A to B Cable
+-  :adi:`AD6688-3000EBZ <AD6688>` Evaluation Board
+-  :adi:`ADS7-V2EBZ <eval-ads7-v2>` FPGA-based Data Capture Kit
+-  12V, 6.5A switching power supply (such as the SL POWER CENB1080A1251F01 supplied with :adi:`ADS7-V2EBZ <eval-ads7-v2>`)
+-  Low phase noise analog input source and antialiasing filter
+-  Low phase noise sample clock source
+-  Reference clock source
+
+Getting Started
+===============
+
+This section provides quick start procedures for using the AD6688 evaluation board.
+
+Connector Layout
+----------------
+
+|image4|
+
+.. container:: centeralign
+
+   \ *Figure 4.* :adi:`ADS7-V2EBZ <eval-ads7-v2>` *Connector Layout*\
+
+
+   |image5|
+
+.. container:: centeralign
+
+   \ *Figure 5.* :adi:`AD6688-3000EBZ <AD6688>` *Connector Layout*\
+
+
+.. tip::
+
+   Tip: For more information on SYSREF and Global Clock (J3, J4, J200, J202), see the :adi:`JESD204B Survival Guide <media/en/technical-documentation/technical-articles/JESD204B-Survival-Guide.pdf>`.
+
+
+.. warning::
+
+   \ **Warning: The AD6688-3000EBZ is Electrostatic Discharge (ESD) sensitive. Handle the device with care, and employ conducting wrist straps or antistatic bags when handling the board.**\
+
+
+Configuring the Board
+---------------------
+
+|image6|
+
+.. container:: centeralign
+
+   \ *Figure 6. Jumper connections on* :adi:`AD6688-3000EBZ <AD6688>`\
+
+
+Before using the software for testing, configure the evaluation boards as follows:
+
+-  Before connecting the AD6688 to the ADS7-V2, jump the following pins: **P304, P305, P307, P308, P309, P311,** and **P312.** Do not jump **P7** (Temperature Sensor Enable) or **P100** (Power Down / Standby). Jump **P401** towards the inside of the board, to power the board via FMC. See Figure 6 for all jumper connections.
+-  Ensure that the data capture board is switched to “OFF.” (**S1** on the data capture board) Connect the evaluation board to the data capture board via the FMC connector found on the underside of the board, as shown in Figure 1. Connect the power supply and USB cable to the data capture board.
+-  Turn on the :adi:`ADS7-V2EBZ <eval-ads7-v2>`.
+-  The :adi:`ADS7-V2EBZ <eval-ads7-v2>` should appear in the Device Manager as shown in Figure 7.<WRAP>\ |image7|\ </WRAP>
+
+.. container:: centeralign
+
+   \ *Figure 7. Device Manager showing* :adi:`ADS7-V2EBZ <eval-ads7-v2>`\
+
+
+-  If the Device Manager does not show the :adi:`ADS7-V2EBZ <eval-ads7-v2>` listed as shown in Figure 7, unplug all USB devices from the PC, uninstall and re-install ACE and restart the hardware setup from step 1.
+-  On the AD6688 evaluation board, provide a clean, low jitter 3 GHz clock source to connector **J201** (preferably via a shielded RG-58 50 Ω coaxial cable) and set the amplitude to **10 dBm**. This is the ADC Sample Clock.
+-  On the ADS7-V2, provide a clean, low jitter clock source to connector **J3** and set the amplitude to **10 dBm**. This is the Reference Clock for the gigabit transceivers in the FPGA. The REFCLK frequency can be calculated using the following empirical formulae:
+
+.. container:: centeralign
+
+   :math:`\displaystyle LaneLineRate=M \times Nprime \times (\frac{10}{8}) \times f_{out}/L` bps/lane, where
+
+
+.. container:: centeralign
+
+   :math:`f_{out} = f_{ADC SAMPLE CLOCK}/DecimationRatio`
+
+
+.. container:: centeralign
+
+   :math:`Nprime=8 or 16`
+
+
+.. container:: centeralign
+
+   :math:`REFCLK = LaneLineRate/20`
+
+
+.. container:: centeralign
+
+   :sub:`(Default Nprime = 16; DCM = Chip Decimation Ratio (DCM = 1 for Full Bandwidth Mode); M = Virtual Converters; L = Lanes)`
+
+
+-  On the AD6688 evaluation board, connect a clean signal generator with low phase noise to **J101** or **J104** via coaxial cable for channels A and B respectively. It is recommended to use a narrow-band, band-pass filter with 50 Ω terminations and an appropriate center frequency.
+
+ACE Setup
+---------
+
+-  Download and install :adi:`ACE <en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html>` if it is not already installed.
+-  The AD6688 ACE plug-in can be found under the :adi:`AD6688 Evaluation Board Software Section <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD6688.html#eb-relatedsoftware>` or through ACE's Plug-In Manager **(Tools -> Manage Plug-Ins)**.<WRAP>
+
+.. tip::
+
+   Tip: Some browsers (Such as Internet Explorer) may save the file as a .zip file instead of an .acezip file. If this happens, simply download and rename the file with an .acezip file extension.
+
+
+</WRAP>
+
+-  Once the .acezip file has been downloaded from the Analog Devices website, right click on it and install the plug-in, or double click to install.
+-  Click **Start** -> **All Programs** -> **Analog Devices** -> **ACE** -> **ACE**.
+-  The AD6688 plug-in should appear as in Figure 8. If the AD6688 plug-in does not appear, or no board is detected, make sure the :adi:`ADS7-V2 <eval-ads7-v2>` is powered on and the evaluation board is properly connected. Make sure that ACE has been updated to the most recent version and the necessary plug-ins have been installed.<WRAP>\ |image8|\ </WRAP>
+
+.. container:: centeralign
+
+   \ *Figure 8. ACE - AD6688 Plug-in*\
+
+
+<WRAP>
+
+.. note::
+
+   Note: Differences may occur between ACE plug-in versions, including the version number seen in Figure 8 above or components in any of the other images below - however, these will not affect the performance of the part nor the fundamental features described in this user guide.
+
+
+</WRAP>
+
+-  In the **Attached Hardware** section, double-click the evaluation board icon that will directed to the **Board View** as shown in Figure 9. <WRAP>\ |image9|\ </WRAP>
+
+.. container:: centeralign
+
+   \ *Figure 9. ACE - AD6688 Board View*\
+
+
+-  In the **Board View** section, double-click the **AD6688** icon and it will direct you to the **Chip View** that will automatically program the FPGA. <WRAP>\ |image10|\ </WRAP>
+
+.. container:: centeralign
+
+   \ *Figure 10. ACE - AD6688 Chip View*\
+
+
+<WRAP>
+
+.. warning::
+
+   \ **Warning: Programming the FPGA will power the AD6688 evaluation board via the FMC connector. Removing any of the board's power jumpers (as seen in Figure 6) while the board is on or in operation may cause damage to the board, board components, and/or the chip. Removing the board while it is being powered via the FMC connector may also cause damage to the board.**\
+
+
+</WRAP>
+
+| 
+| ==== Obtaining a Full Bandwidth Capture ====
+
+.. tip::
+
+   Tip: The AD6688-3000EBZ is the export-controlled version of the :adi:`AD9208-3000EBZ <AD9208>`. Because of this, the AD6688-3000EBZ is only able to operate in 7-bit mode for full bandwidth captures. To take full captures with the AD6688-3000EBZ, see `the section below on DDCs. <https://wiki.analog.com/ad6688-3000ebz>`_ To see the 14-bit full bandwidth operation, see `the page for the 9208 <https://wiki.analog.com/ad9208-3000ebz>`_.
+
+
+Obtaining a DDC Capture
+~~~~~~~~~~~~~~~~~~~~~~~
+
+-  This section explains the steps needed to setup the AD6688-3000EBZ in a **DDC (Decimal Down Converter)** setup as shown in Figure 11. <WRAP>\ |image11|\ </WRAP>
+
+.. container:: centeralign
+
+   \ *Figure 11. AD6688 DDC Setup Block Diagram*\
+
+
+-  Under Initial Configuration, set the Chip Operating Mode for **two DDCs**. The DDC settings will become available, and automatically set up for Decimate-by-4 mode. For the decimation, select **HB1_HB2_HB3 Complex - three half-band filters, i.e. Decimate-by-8**. Set the number of **lanes (L) to 4**, the number of **converters (M) to 4**, and the number of **Octets per Frame (F) to 2**. Click **Apply**. <WRAP>\ |image12|\ </WRAP>
+
+.. container:: centeralign
+
+   \ *Figure 12. AD6688 - Initial Configuration Settings*\
+
+
+-  The chip view will update to reflect the changes made to the board. If any changes are made, the chip can be read by clicking the **Read All** button. Then, the device view will be as shown in Figure 13.<WRAP>\ |image13|\ </WRAP>
+
+.. container:: centeralign
+
+   \ *Figure 13. AD6688 - Device View*\
+
+
+-  Issue a data path reset to the AD6688 by clicking its checkbox and clicking **Apply Changes**. The data path reset bit will automatically self clear. Note: Both the **PLL Locked** and **PLL Lock Lost** will turn green. Sequence is shown below.<WRAP>\ |image14|\ </WRAP>
+
+.. container:: centeralign
+
+   \ *Figure 14. AD6688 - Data Path Reset Sequence*\
+
+
+-   To reset the PLL Lock Lost, reset the JESD204B link by clicking the **Link Control** dropdown box and choose **JESD204Bx Serial Transmit Link Powered Down**. Click **Apply Changes**.<WRAP>\ |image15|\ </WRAP>
+
+.. container:: centeralign
+
+   \ *Figure 15. AD6688 - JESD204B Serial Link Power Down Sequence*\
+
+
+-  To enable the JESD204B link again, click the **Link Control** dropdown box and choose **JESD204x Serial Transmit Link Enabled**. Click **Apply Changes**. Note: PLL Lock Lost indicator should be unlit after the applied changes.<WRAP>\ |image16|\ </WRAP>
+
+.. container:: centeralign
+
+   \ *Figure 16. AD6688 - JESD204B Serial Link Enable Sequence*\
+
+
+-  Set to **DDC 0 Block** and click the **NCO block** to change the NCO frequency to **455 MHz**, DDC mixer to **Real Mixer**, and DDC gain to **6dB** from the dropdown menu. Click **Apply Changes**.<WRAP>\ |image17|\ </WRAP>
+
+.. container:: centeralign
+
+   \ *Figure 17. AD6688 - NCO Frequency and DDC Gain Setting for DDC 0 Block*\
+
+
+-  Navigate to the **second DDC (DDC1)** and make the same changes.<WRAP>\ |image18|\ </WRAP>
+
+.. container:: centeralign
+
+   \ *Figure 18. AD6688 - DDC Block Selection*\
+
+
+-  After setting the changes for DDC0 and DDC1, and for JESD204B Link, on the Device View, click **Proceed to Analysis**. <WRAP>\ |image19|\ </WRAP>
+
+.. container:: centeralign
+
+   \ *Figure 19. AD6688 - Proceed to Analysis*\
+
+
+-  On the **Analysis** section, uncheck the **Waveform** and check the **FFT** box.<WRAP>\ |image20|\ </WRAP>
+
+.. container:: centeralign
+
+   \ *Figure 20. AD6688 - Analysis Section*\
+
+
+<WRAP>
+
+.. important::
+
+   Tip: Capturing data using another program (e.g. VisualAnalog, proprietary code, etc.) while using ACE concurrently may cause errors in ACE's data capture. If this occurs, the best solution is to restart the evaluation boards and work solely via ACE, or to setup the part in ACE then capture solely in the other program.
+
+
+</WRAP>
+
+-  Click the **Run Once**. A successful capture is shown below, with a filtered 400 MHz at -2 dBFS signal inputted on Channel A/DDC0.<WRAP>\ |image21|\ </WRAP>
+
+.. container:: centeralign
+
+   \ *Figure 21. AD6688 - FFT Results of 400MHz Input in Channel A.*\
+
+
+Troubleshooting Tips
+====================
+
+EVALUATION BOARD ISN'T FUNCTIONING PROPERLY
+-------------------------------------------
+
+-  It is possible that a board component has been rendered inoperable by ESD, removing a jumper during powered operation, accidental shorting while probing, etc. Try checking the supply domain voltages of the board while it is powered. They should be as follows:
+
+=========== ====== ========== ===============
+Domain      Jumper Test Point Approx. Voltage
+=========== ====== ========== ===============
+**AVDD_1**  P307   TP303      0.975 V
+**AVDD_2**  P308   TP304      1.90 V
+**AVDD_3**  P309   TP305      2.50 V
+**DRVDD_1** P304   TP301      0.975 V
+**DRVDD_2** P311   TP306      1.90 V
+**DVDD**    P305   TP302      0.975 V
+**SPI_VDD** P312   TP307      1.90 V
+=========== ====== ========== ===============
+
+-  If a short is detected between any of the supply domains and ground, or an open is detected across fuse chip F401 (next to P401), a component may have been damaged. This may have occurred from jumper or board removal while being actively powered (See the warning in the :doc:`ACE Setup section </wiki-migration/resources/eval/ad6688-3000ebz>`). See the :doc:`Design Integration Files section </wiki-migration/resources/eval/ad6688-3000ebz>` for the schematic and/or bill of materials for the relevant components to test and/or replace.
+
+EVALUATION BOARD IS NOT COMMUNICATING WITH THE ADS7-V2 / NO SPI COMMUNICATION
+-----------------------------------------------------------------------------
+
+-  Make sure that the FPGA on the :adi:`ADS7-V2 <eval-ads7-v2>` has been programmed - a lit LED **DS15 (FPGA_DONE)** on the top of the :adi:`ADS7-V2 <eval-ads7-v2>` and a powered fan are good indicators of the FPGA being programmed.
+-  Check the common mode voltage on the JESD204B traces. On the evaluation board, the common mode voltage should be roughly two-thirds of DRVDD_1. On the :adi:`ADS7-V2 <eval-ads7-v2>`, the common mode voltage should be around 1.2 volts.
+-  Check **Test Point 307** - test point for the SPI_VDD supply domain, jumper P312 - and make sure it is around 1.9 volts.
+-  To test SPI operation, attempt to both read and write to **register 0x000A** using ACE's Register Debugger (see Figure 23). This register is an open register available for testing memory reads and writes. If the value written to this register does not reset after writing it, SPI is operational.
+-  All registers reading back as either all ones or all zeros (i.e., 0xFF or 0x00) may indicate no SPI communication.
+-  Register 0x0000 (SPI Configuration A) reading back 0x81 in ACE may indicate no SPI communication as a result of the FPGA on the ADS7-V2 not being programmed.
+
+EVALUATION BOARD FAILS TO CAPTURE DATA
+--------------------------------------
+
+-  Ensure that the board is functioning properly, and that SPI communication is successful - see previous troubleshooting tips.
+-  Check the **Clock Detect register 0x011B** to see if the inputted clock is being detected. 0x01 indicates detection, 0x00 indicates no clock detected. Check the signal generator inputting on connector J201. Try checking the common mode voltage on the clock pins, which should be roughly two-thirds of AVDD_1. Try placing a differential oscilloscope probe on the clock pins to see if the clock signal is reaching the chip.
+-  Check the **PLL Locked indicator** (see Figure 16) or **register 0x056F (PLL Status)**. If the light is green / if the register reads back 0x80, the PLL is locked. If it is not locked:
+
+   -  Check the clock being inputted to connector J201 (in this guide, 3 GHz).
+   -  Check the JESD settings under the Initial Configuration. Reference the AD6688 datasheet for supported lane options.
+   -  Check the reference clock and make sure it matches your JESD settings.
+   -  Make sure **P100** (Power Down / Standby Jumper, see Figure 6) is not jumped.
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/ce02b_fpga_connnections.png
+   :width: 620px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/topofboard.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/bottomofboard.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/fpgapinlabeling.png
+   :width: 300px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/pinlabeling.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/topofboardjumpers.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9208/stepbystep/0.png
+   :width: 300px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/ad6688_ace_attached_hw.png
+   :width: 800px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/ad6688_ace_board_view.png
+   :width: 800px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/ad6688_ace_chip_view.png
+   :width: 800px
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/lmfs_4421_generic.png
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/ad6688_ace_int_config.png
+   :width: 800px
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/ad6688_ace_ddc_device_view.png
+   :width: 800px
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/ad6688_ace_datapath_reset_seq.png
+   :width: 800px
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/ad6688_ace_jesd_power_down.png
+   :width: 800px
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/ad6688_ace_jesd_power_enable.png
+   :width: 800px
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/ad6688_ace_ddc_nco_gain_2.png
+   :width: 600px
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/ad6688_ddc_selection.png
+   :width: 600px
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/ad6688_ace_proceed_analysis.png
+   :width: 800px
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/ad6688_ace_analysis_2.png
+   :width: 400px
+.. |image21| image:: https://wiki.analog.com/_media/resources/eval/ad6688_ace_fft_result_400mhz.png
+   :width: 800px

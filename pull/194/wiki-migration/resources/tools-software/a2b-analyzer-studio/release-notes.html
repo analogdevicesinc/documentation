@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Click here to return to A2B Analyzer Studio Homepage." name="description" />
+
+    <title>A2B Analyzer Studio Release Notes v1.1.0 (December 2025) &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">A2B Analyzer Studio Release Notes v1.1.0 (December 2025)</a><ul>
+<li><a class="reference internal" href="#new-and-noteworthy">New and Noteworthy</a><ul>
+<li><a class="reference internal" href="#ethernet-connectivity-for-a2b-analyzer-hp">Ethernet Connectivity for A²B Analyzer HP</a><ul>
+<li><a class="reference internal" href="#connecting-to-the-same-device-from-two-ethernet-instances">Connecting to the Same Device from Two Ethernet Instances</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#node-name-changes-and-json-support-for-a2b-analyzer-hp">Node Name Changes and JSON Support for A²B Analyzer HP</a></li>
+<li><a class="reference internal" href="#usb-resolution-configuration-for-a2b-analyzer-hp">USB Resolution Configuration for A²B Analyzer HP</a></li>
+<li><a class="reference internal" href="#monitor-spi-events-and-redesigned-monitor-page">Monitor SPI Events and Redesigned Monitor Page</a></li>
+<li><a class="reference internal" href="#firmware-behavior-change-in-5-1-x-versions">Firmware Behavior Change in 5.1.x Versions</a></li>
+<li><a class="reference internal" href="#changes-to-user-guides-and-release-notes-format">Changes to User Guides and Release Notes Format</a></li>
+<li><a class="reference internal" href="#removed-support-for-python-3-9">Removed support for python 3.9</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#resolved-issues">Resolved Issues</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#a2b-analyzer-studio-1-0-1-release-notes">A2B Analyzer Studio 1.0.1 Release Notes</a></li>
+<li><a class="reference internal" href="#a2b-analyzer-studio-1-0-0-release-notes">A2B Analyzer Studio 1.0.0 Release Notes</a><ul>
+<li><a class="reference internal" href="#system-hardware-requirements">System Hardware Requirements</a></li>
+<li><a class="reference internal" href="#a2b-analyzer-studio-installation">A2B Analyzer Studio Installation</a><ul>
+<li><a class="reference internal" href="#installation-instructions">Installation Instructions</a><ul>
+<li><a class="reference internal" href="#windows">Windows</a></li>
+<li><a class="reference internal" href="#linux">Linux</a></li>
+<li><a class="reference internal" href="#macos">macOS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#new-and-noteworthy-1">New and Noteworthy</a><ul>
+<li><a class="reference internal" href="#installed-alongside-a2b-bus-analyzer-software">Installed alongside A2B Bus Analyzer Software</a></li>
+<li><a class="reference internal" href="#support-for-both-a2b-bus-analyzer-for-a2b1-0-networks-and-a2b-analyzer-hp-for-a2b2-0-networks">Support for both A2B Bus Analyzer for A2B1.0 networks and A2B Analyzer HP for A2B2.0 networks</a></li>
+<li><a class="reference internal" href="#sdk-updates">SDK Updates</a><ul>
+<li><a class="reference internal" href="#new-sdk-api-format">New SDK API format</a></li>
+<li><a class="reference internal" href="#unique-sdk-python-wheel">Unique SDK python wheel</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#removal-of-licensing-restrictions">Removal of licensing restrictions</a></li>
+<li><a class="reference internal" href="#user-interface-updates">User Interface Updates</a><ul>
+<li><a class="reference internal" href="#new-feature-saving-restoring-audio-interfaces">New Feature: Saving/Restoring Audio Interfaces</a></li>
+<li><a class="reference internal" href="#user-interface-enhancements">User Interface enhancements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#quick-start-guide">Quick Start Guide</a></li>
+<li><a class="reference internal" href="#support">Support</a></li>
+<li><a class="reference internal" href="#known-issues">Known Issues</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <p><a class="reference internal" href="../a2b-analyzer-studio.html"><span class="doc">Click here to return to A2B Analyzer Studio Homepage.</span></a></p>
+<section id="a2b-analyzer-studio-release-notes-v1-1-0-december-2025">
+<h1>A2B Analyzer Studio Release Notes v1.1.0 (December 2025)<a class="headerlink" href="#a2b-analyzer-studio-release-notes-v1-1-0-december-2025" title="Link to this heading"></a></h1>
+<section id="new-and-noteworthy">
+<h2>New and Noteworthy<a class="headerlink" href="#new-and-noteworthy" title="Link to this heading"></a></h2>
+<section id="ethernet-connectivity-for-a2b-analyzer-hp">
+<h3>Ethernet Connectivity for A²B Analyzer HP<a class="headerlink" href="#ethernet-connectivity-for-a2b-analyzer-hp" title="Link to this heading"></a></h3>
+<p>You can now connect to your A²B Analyzer HP either via USB like before or via Ethernet to enable more flexible communication and remote access. Please follow the User Guide for details of the correct method.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/ethernet_connect.jpg"><img alt="a2b-analyzer-studio/ethernet_connect.jpg" src="https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/ethernet_connect.jpg" style="width: 500px;" />
+</a>
+<p>Network settings can be displayed in the device settings whether the board is connected via USB or Ethernet</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/network_props.jpg"><img alt="a2b-analyzer-studio/network_props.jpg" src="https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/network_props.jpg" style="width: 250px;" />
+</a>
+<p>Ethernet Audio is not supported, only Ethernet communication.</p>
+<section id="connecting-to-the-same-device-from-two-ethernet-instances">
+<h4>Connecting to the Same Device from Two Ethernet Instances<a class="headerlink" href="#connecting-to-the-same-device-from-two-ethernet-instances" title="Link to this heading"></a></h4>
+<blockquote>
+<div><p><strong>Note:</strong> Connecting to the same A²B Analyzer HP device from two separate instances simultaneously is not supported regardless of the type of connection. Only one Ethernet connection to the device can be active at a time. If a second instance attempts to connect, the first connection will be terminated. Please ensure only one session is active at a time.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="node-name-changes-and-json-support-for-a2b-analyzer-hp">
+<h3>Node Name Changes and JSON Support for A²B Analyzer HP<a class="headerlink" href="#node-name-changes-and-json-support-for-a2b-analyzer-hp" title="Link to this heading"></a></h3>
+<blockquote>
+<div><p>Node naming conventions have been updated for consistency. The new format is <code class="docutils literal notranslate"><span class="pre">&lt;node</span> <span class="pre">number&gt;:&lt;node</span> <span class="pre">name&gt;</span></code>.</p>
+</div></blockquote>
+<p>By default, names are similar to previous releases. For A²B Analyzer HP, you can use node names from the Sigma Studio+ project JSON file provided at monitor or emulator start. This improves clarity and traceability in network analysis. To use JSON node names, select the relevant option in project settings.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/proj-adv-settings.jpg"><img alt="a2b-analyzer-studio/proj-adv-settings.jpg" src="https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/proj-adv-settings.jpg" style="width: 250px;" />
+</a>
+<p>Node names from the JSON file are retrieved only at monitor or emulator start; project changes take effect at that point. If you change the setting while monitor or emulator is running, the change will not apply immediately.</p>
+<p>Stream names are not supported in this release but are planned for a future update.</p>
+</section>
+<section id="usb-resolution-configuration-for-a2b-analyzer-hp">
+<h3>USB Resolution Configuration for A²B Analyzer HP<a class="headerlink" href="#usb-resolution-configuration-for-a2b-analyzer-hp" title="Link to this heading"></a></h3>
+<p>You can now change the USB audio resolution for more precise control and compatibility with different audio setups.</p>
+<p>Access device audio and network properties from the device toolbar using the properties dropdown.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/audio_props.jpg"><img alt="a2b-analyzer-studio/audio_props.jpg" src="https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/audio_props.jpg" style="width: 300px;" />
+</a>
+<p>New SDK APIs support getting and changing device data.</p>
+<p><strong>Notes:</strong> Property settings only apply after you reset the device. Modifying the sample rate is not supported in this release</p>
+</section>
+<section id="monitor-spi-events-and-redesigned-monitor-page">
+<h3>Monitor SPI Events and Redesigned Monitor Page<a class="headerlink" href="#monitor-spi-events-and-redesigned-monitor-page" title="Link to this heading"></a></h3>
+<p>Monitor in A²B Analyzer Studio can now detect SPI data tunnel events. SPI tunnel events are grouped in a new table. To improve consistency, all events for all platforms are now separated onto a new “Events” page under monitor for all devices.</p>
+<p>You can filter both tables by a range of frame numbers to correlate standard and SPI events.</p>
+</section>
+<section id="firmware-behavior-change-in-5-1-x-versions">
+<h3>Firmware Behavior Change in 5.1.x Versions<a class="headerlink" href="#firmware-behavior-change-in-5-1-x-versions" title="Link to this heading"></a></h3>
+<p>Up to version 5.1.0, A²B Bus Analyzer and A²B Analyzer Studio would connect to a device even if it meant disconnecting an existing session. Customers did not need to manually disconnect before reconnecting.</p>
+<p>From version 5.1.0, connection is refused by default if another instance is connected, preventing multiple ethernet connections from interfering. If an existing connection is detected, the UI displays a pop-up to let you reset your hardware and therefore disconnect the other session.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/force_connect.jpg"><img alt="a2b-analyzer-studio/force_connect.jpg" src="https://wiki.analog.com/_media/resources/tools-software/a2b-analyzer-studio/force_connect.jpg" style="width: 300px;" />
+</a>
+<p>From the SDK, ensure you disconnect the device on exit, reset the device before connecting, or use the new API to force connection regardless of others.</p>
+<p><strong>Note:</strong> Multiple USB connections to the same COM port are not allowed by the operating system and are always rejected.</p>
+</section>
+<section id="changes-to-user-guides-and-release-notes-format">
+<h3>Changes to User Guides and Release Notes Format<a class="headerlink" href="#changes-to-user-guides-and-release-notes-format" title="Link to this heading"></a></h3>
+<p>All user guides included with the project are now HTML instead of PDF. Continue using the same links as previous releases to open the files.</p>
+</section>
+<section id="removed-support-for-python-3-9">
+<h3>Removed support for python 3.9<a class="headerlink" href="#removed-support-for-python-3-9" title="Link to this heading"></a></h3>
+<p>The user-accessible SDK no longer supports python 3.9. Python 3.9 reached its end of life in October 2025 so it is not expected to work with the SDK wheel.</p>
+</section>
+</section>
+<section id="resolved-issues">
+<h2>Resolved Issues<a class="headerlink" href="#resolved-issues" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>None listed for this release.</p></li>
+</ul>
+</section>
+</section>
+<section id="a2b-analyzer-studio-1-0-1-release-notes">
+<h1>A2B Analyzer Studio 1.0.1 Release Notes<a class="headerlink" href="#a2b-analyzer-studio-1-0-1-release-notes" title="Link to this heading"></a></h1>
+<p>This release is a small patch release to solve a race condition in the UI related to the restoring of audio interfaces from a file for monitor projects discovered with Sigma Studio/Sigma Studio+.</p>
+</section>
+<section id="a2b-analyzer-studio-1-0-0-release-notes">
+<h1>A2B Analyzer Studio 1.0.0 Release Notes<a class="headerlink" href="#a2b-analyzer-studio-1-0-0-release-notes" title="Link to this heading"></a></h1>
+<p>A<sup>2</sup>B Analyzer Studio is the next-generation continuation of A<sup>2</sup>B Bus Analyzer Software, introducing new features and support for the new A<sup>2</sup>B Analyzer HP. It is designed to maintain compatibility with existing software while providing extended functionality and scalability for future needs.</p>
+<p>This document describes new and noteworthy changes for A<sup>2</sup>B Analyzer Studio as well as known issues.</p>
+<p>This release supports monitor and emulator both in the A<sup>2</sup>B Analyzer HP with personality modules and the original A<sup>2</sup>B Bus Analyzer hardware. The only supported personality modules in A<sup>2</sup>B Analyzer HP are for ADAA245x networks.</p>
+<section id="system-hardware-requirements">
+<h2>System Hardware Requirements<a class="headerlink" href="#system-hardware-requirements" title="Link to this heading"></a></h2>
+<p>Verify that your PC meets the following minimum operating system version and requirements to install and run A<sup>2</sup>B Analyzer Studio.</p>
+<p>A<sup>2</sup>B Analyzer Studio runs on Windows, Linux, and macOS. The Operating Systems table describes the operating system versions supported in this release.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Platform</p></td>
+<td><p>Details</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png"><img alt="image4" src="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png" style="width: 20px;" /></a> Windows</p></td>
+<td><p>Windows 10 and 11 Home, Pro, Enterprise (64-bit)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image3.png"><img alt="image5" src="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image3.png" style="width: 20px;" /></a> Linux</p></td>
+<td><p>Ubuntu 22.04+ (64-bit)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png"><img alt="image6" src="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png" style="width: 20px;" /></a> macOS</p></td>
+<td><p>14.x (Sonoma or) later on ARM.
+<strong>Note</strong>: macOS x64 platforms are not supported. Only ARM-based macOS systems are supported</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="a2b-analyzer-studio-installation">
+<h2>A2B Analyzer Studio Installation<a class="headerlink" href="#a2b-analyzer-studio-installation" title="Link to this heading"></a></h2>
+<p>The A<sup>2</sup>B Analyzer Studio installer for each supported platform is described in the table below and can be downloaded from <a class="reference internal" href="software-downloads.html"><span class="doc">Software Downloads</span></a>.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png"><img alt="image7" src="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image2.png" style="width: 20px;" /></a></p></td>
+<td><p>a2b_analyzer_studio-X.Y.Z-channel-win-x64.exe</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image3.png"><img alt="image8" src="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image3.png" style="width: 20px;" /></a></p></td>
+<td><p>a2b_analyzer_studio-X.Y.Z-channel-linux-x86_64.AppImage</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png"><img alt="image9" src="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/image4.png" style="width: 20px;" /></a></p></td>
+<td><p>a2b_analyzer_studio-X.Y.Z-channel-macos-arm64.pkg</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="installation-instructions">
+<h3>Installation Instructions<a class="headerlink" href="#installation-instructions" title="Link to this heading"></a></h3>
+<p>The following sub-sections include installation information for supported platforms.</p>
+<section id="windows">
+<h4>Windows<a class="headerlink" href="#windows" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>To install A<sup>2</sup>B Analyzer Studio, double-click on a2b_analyzer_studio-X.Y.Z-channel-win-x64.exe</p></li>
+<li><p>A<sup>2</sup>B Analyzer Studio is installed in the following default location: C:\Analog Devices\A2B Analyzer Studio</p></li>
+<li><p>To uninstall A<sup>2</sup>B Analyzer Studio, go to the Programs and Features applet in the Control Panel</p></li>
+</ul>
+</section>
+<section id="linux">
+<h4>Linux<a class="headerlink" href="#linux" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>To install A<sup>2</sup>B Analyzer Studio, download the .AppImage. Copy the file into a directory such as ~/Applications</p></li>
+<li><p>If required, ensure the downloaded file has execute permissions by running chmod a+x a2b_analyzer_studio_*.AppImage</p></li>
+<li><p>Launch the A2B Analyzer Studio by running ./a2b_analyzer_studio-X.Y.Z-channel-x86_64_linux.AppImage</p></li>
+<li><p>Delete the .AppImage file to uninstall A<sup>2</sup>B Analyzer Studio.</p></li>
+</ul>
+</section>
+<section id="macos">
+<h4>macOS<a class="headerlink" href="#macos" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>To install A<sup>2</sup>B Analyzer Studio, double-click on a2b_analyzer_studio-X.Y.Z-channel-macos-arm64.pkg</p></li>
+<li><p>Follow the installation wizard to install the A<em>2</em>B Analyzer Studio. You may choose your desired install location</p></li>
+<li><p>To uninstall the A<em>2</em>B Analyzer Studio, find the application in your install location, right click it and click “Move to Bin”</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="new-and-noteworthy-1">
+<span id="id1"></span><h2>New and Noteworthy<a class="headerlink" href="#new-and-noteworthy-1" title="Link to this heading"></a></h2>
+<p>While A<sup>2</sup>B Analyzer Studio is a continuation of A<sup>2</sup>B Bus Analyzer, there are significant differences between the two products.</p>
+<section id="installed-alongside-a2b-bus-analyzer-software">
+<h3>Installed alongside A2B Bus Analyzer Software<a class="headerlink" href="#installed-alongside-a2b-bus-analyzer-software" title="Link to this heading"></a></h3>
+<p>A<sup>2</sup>B Analyzer Studio can be installed in the same machine as the A<sup>2</sup>B Bus Analyzer since their install locations are different. For example on Windows this product is installed in</p>
+<p>c:\Analog Devices\A2B Analyzer Studio</p>
+<p>You cannot do UI updates between the two products.</p>
+<p>To use A2B Analyzer Studio you must update the firmware to 5.0.x. If you need to go back to using the A2B Bus Analyzer Software you must downgrade to the version of firmware released with the specific version of the software.</p>
+</section>
+<section id="support-for-both-a2b-bus-analyzer-for-a2b1-0-networks-and-a2b-analyzer-hp-for-a2b2-0-networks">
+<h3>Support for both A2B Bus Analyzer for A2B1.0 networks and A2B Analyzer HP for A2B2.0 networks<a class="headerlink" href="#support-for-both-a2b-bus-analyzer-for-a2b1-0-networks-and-a2b-analyzer-hp-for-a2b2-0-networks" title="Link to this heading"></a></h3>
+<p>A<sup>2</sup>B Analyzer Studio supports both monitor and emulator for the A<sup>2</sup>B Bus Analyzer for A2B1.0 networks (AD243x, AD242x) and A<sup>2</sup>B Analyzer HP with replaceable personality modules for A2B2.0 networks (ADAA245x). In future A<sup>2</sup>B Analyzer HP may support A2B1.0 networks in their personality modules. At that point new releases of this software will add the support.</p>
+<p>In this version, the software supports emulator in personality module 1 and monitor in personality module 2. Other combinations are not supported.</p>
+<p>When creating a project now it is necessary to specify the type of hardware that the project applies to.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_project_creation.png"><img alt="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_project_creation.png" src="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_project_creation.png" style="width: 400px;" />
+</a>
+<p>Doing this ensures that the project settings match the hardware that will be used.</p>
+</section>
+<section id="sdk-updates">
+<h3>SDK Updates<a class="headerlink" href="#sdk-updates" title="Link to this heading"></a></h3>
+<section id="new-sdk-api-format">
+<h4>New SDK API format<a class="headerlink" href="#new-sdk-api-format" title="Link to this heading"></a></h4>
+<p>While the A<sup>2</sup>B Bus Analyzer Software SDK API is still supported for both python and C/C++ this API may be deprecated in future releases.</p>
+<p>To replace it, a new API has been introduced where one of the main changes is that all monitor/emulator APIs use a monitor/emulator handle instead of a device handle. To find documentation about this new API export the User-Accessible SDK in the SDK menu and open the C/Python documentation at</p>
+<ul class="simple">
+<li><p>C/C++: uasdk/C/docs/A2B_Analyzer_UASDK_help.html</p></li>
+<li><p>Python: uasdk/python/docs/a2ba_python_sdk_help.html</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_sdk_docs.png"><img alt="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_sdk_docs.png" src="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_sdk_docs.png" style="width: 400px;" />
+</a>
+<p>Example:</p>
+<ul class="simple">
+<li><p>Old API:  <code class="docutils literal notranslate"><span class="pre">a2ba_sdk_result_t</span> <span class="pre">a2ba_sdk_monitor_audio_level(</span> <span class="pre">a2ba_sdk_device_handle</span> <span class="pre">hAnalyzer, a2ba_sdk_monitor_audio_level_t</span> <span class="pre">*</span> <span class="pre">const</span> <span class="pre">pMonitorAudioLevel);</span></code></p></li>
+<li><p>New API:<code class="docutils literal notranslate"><span class="pre">a2ba2_sdk_result_t</span> <span class="pre">a2ba2_sdk_monitor_audio_level(a2ba2_sdk_monitor_handle</span> <span class="pre">hMonitor</span> <span class="pre">a2ba2_sdk_monitor_audio_level_t</span> <span class="pre">const</span> <span class="pre">pMonitorAudioLevel);</span></code></p></li>
+</ul>
+</section>
+<section id="unique-sdk-python-wheel">
+<h4>Unique SDK python wheel<a class="headerlink" href="#unique-sdk-python-wheel" title="Link to this heading"></a></h4>
+<p>The A<sup>2</sup>B Bus Analyzer Software SDK for python contained a different wheel per version of python. This made it difficult for customers who were not using any of the versions provided. A<sup>2</sup>B Analyzer Studio provides one single wheel that supports versions from python 3.9 to version 3.13.</p>
+<p>You can find the Python wheels in your exported SDK in the uasdk/python folder</p>
+<div class="line-block">
+<div class="line">a2ba_sdk-1.0.0-py3-none-linux_x86_64.whl</div>
+<div class="line">a2ba_sdk-1.0.0-py3-none-macosx_14_0_arm64.whl</div>
+<div class="line">a2ba_sdk-1.0.0-py3-none-win_amd64.whl</div>
+</div>
+<p>The wheels are still OS-specific since they internally use the C/C++ libraries which are OS-specific</p>
+</section>
+</section>
+<section id="removal-of-licensing-restrictions">
+<h3>Removal of licensing restrictions<a class="headerlink" href="#removal-of-licensing-restrictions" title="Link to this heading"></a></h3>
+<p>A<sup>2</sup>B Analyzer Studio no longer requires that your hardware is licensed. This means that there is no limitation in the software updates that you can use. We encourage users to move to the latest version of the software possible since it is where fixes/enhancements are developed. For this reason, the computer where A<sup>2</sup>B Analyzer Studio is used does not need to be connected to the internet.</p>
+</section>
+<section id="user-interface-updates">
+<h3>User Interface Updates<a class="headerlink" href="#user-interface-updates" title="Link to this heading"></a></h3>
+<section id="new-feature-saving-restoring-audio-interfaces">
+<h4>New Feature: Saving/Restoring Audio Interfaces<a class="headerlink" href="#new-feature-saving-restoring-audio-interfaces" title="Link to this heading"></a></h4>
+<p>To allow for a fast configuration of monitor and emulator audio A<sup>2</sup>B Analyzer Studio let you save the running audio interfaces state  (which streams are in USB out for example) onto a json file. This json file can at a later stage be applied to the project while monitor/emulator are running and the previous state can be restored.</p>
+<ul class="simple">
+<li><p>To save the current running state go to Audio Interfaces and click on the “Save” icon or choose “Save Audio file” as from the Options dropdown</p></li>
+<li><p>To apply an already saved json file first add it to your project by choosing “Add Audio Interfaces File”. This links the project with that file. After that, you can either click on the Audio Interfaces “Apply” button or select “Apply/Reapply Audio Interfaces” from the Options dropdown.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_audio_interfaces_menu.png"><img alt="image10" src="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_audio_interfaces_menu.png" style="width: 300px;" /></a></p>
+</section>
+<section id="user-interface-enhancements">
+<h4>User Interface enhancements<a class="headerlink" href="#user-interface-enhancements" title="Link to this heading"></a></h4>
+<p>As a result of carrying out interviews with customers to evaluate their experience, A<sup>2</sup>B Analyzer Studio has streamlined some of the operations. The supported functionality has not changed but the way of accessing it may be different.</p>
+<p>Some examples are:</p>
+<ul class="simple">
+<li><p>Easier to use monitor and emulator start toolbars. They include an intuitive way of detecting why monitor/emulator cannot be started by hovering over the error banner</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_start_toolbar.png"><img alt="image11" src="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_start_toolbar.png" style="width: 500px;" /></a></p>
+<ul class="simple">
+<li><p>The “i” symbol is now commonly used for tooltips that provide more clarity or information. Those tooltips can be seen by hovering over the symbol. For example, in the Audio Tables, hovering over the “i” on a stream row shows the Slot Size and other features of that stream including which interfaces it is being used on (line in/out, SPDIF in/out etc).</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_stream_info_tooltip.png"><img alt="image12" src="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_stream_info_tooltip.png" style="width: 150px;" /></a></p>
+<ul class="simple">
+<li><p>Enhanced filters on tables</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_stream_table_filter.png"><img alt="image13" src="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_stream_table_filter.png" style="width: 300px;" /></a></p>
+<ul class="simple">
+<li><p>A summary of the monitor events is now easily accessible</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_event_trace_summary.png"><img alt="image14" src="https://wiki.analog.com/_media/resources/tools-software/a2b-bus-analyzer/a2bas_event_trace_summary.png" style="width: 300px;" /></a></p>
+<p>For more information about the features available see the A<sup>2</sup>B Analyzer Studio User Guide which is included as PDF in the software and can be accessed from the Help Menu.</p>
+</section>
+</section>
+</section>
+<section id="quick-start-guide">
+<h2>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Link to this heading"></a></h2>
+<p>For further A<sup>2</sup>B Analyzer Studio documentation, please see the documentation in Help. There you will find the link to the <cite>Quick Start Guide &lt;:doc:</cite>/wiki-migration/resources/tools-software/a2b-analyzer-studio/quick-start-guide`&gt;`_ and the you can open the PDF <em>User Guide.</em></p>
+</section>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h2>
+<p>For technical support contact Analog Devices A<sup>2</sup>B Analyzer Studio and A<sup>2</sup>B Bus Analyzer Support at: <em>&lt;fc #4682b4&gt;a2b.analyzer.support&#64;analog.com&lt;/fc&gt;</em></p>
+</section>
+<section id="known-issues">
+<h2>Known Issues<a class="headerlink" href="#known-issues" title="Link to this heading"></a></h2>
+<p>An up-to-date list of issues for both the A<sup>2</sup>B Analyzer Studio and the A<sup>2</sup>B Bus Analyzer can be found at <a class="reference internal" href="../a2b-bus-analyzer/known-issues.html"><span class="doc">Functional Limitations</span></a></p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

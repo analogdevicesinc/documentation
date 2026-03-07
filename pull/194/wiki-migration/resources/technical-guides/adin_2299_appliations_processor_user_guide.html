@@ -1,0 +1,1847 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Interacts with RPG2 as the Applications Processor in a system." name="description" />
+
+    <title>ADIN 2299 Applications Processor User Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ADIN 2299 Applications Processor User Guide</a><ul>
+<li><a class="reference internal" href="#features">FEATURES</a></li>
+<li><a class="reference internal" href="#equipment-needed">EQUIPMENT NEEDED</a></li>
+<li><a class="reference internal" href="#documents-needed">DOCUMENTS NEEDED</a></li>
+<li><a class="reference internal" href="#software-needed">SOFTWARE NEEDED</a><ul>
+<li><a class="reference internal" href="#revision-history">Revision History</a></li>
+<li><a class="reference internal" href="#ni-example-app-general">NI-EXAMPLE-APP GENERAL</a></li>
+<li><a class="reference internal" href="#ni-example-app-evaluation-kit-rpg2-pin-positions">NI-EXAMPLE-APP EVALUATION KIT RPG2 PIN POSITIONS</a></li>
+<li><a class="reference internal" href="#ni-example-app-on-a-pc">NI-Example-App on a PC</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#connecting-the-evaluation-kit-to-the-pc">CONNECTING THE EVALUATION KIT TO THE PC.</a></li>
+<li><a class="reference internal" href="#building-the-ni-example-app-on-the-pc">BUILDING THE NI-EXAMPLE-APP ON THE PC</a></li>
+<li><a class="reference internal" href="#setting-the-command-arguments">Setting the Command Arguments</a></li>
+<li><a class="reference internal" href="#ethernet-as-application-processor-interface">Ethernet as Application Processor Interface</a></li>
+<li><a class="reference internal" href="#uart-as-application-processor-interface">UART as Application Processor Interface</a><ul>
+<li><a class="reference internal" href="#ni-example-app-stm32">NI-EXAMPLE-APP STM32</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#building-the-ni-example-app-for-the-stm32-cube">BUILDING THE NI-EXAMPLE-APP FOR THE STM32 CUBE</a></li>
+<li><a class="reference internal" href="#connecting-for-an-ethernet-link-type">Connecting for an Ethernet Link Type</a></li>
+<li><a class="reference internal" href="#connecting-for-a-uart-link-type">Connecting for a UART link type</a></li>
+<li><a class="reference internal" href="#connecting-for-a-spi-link-type">Connecting for a SPI link type</a></li>
+<li><a class="reference internal" href="#building-the-stm32-example-application">BUILDING THE STM32 EXAMPLE APPLICATION</a></li>
+<li><a class="reference internal" href="#running-the-ni-example-app-for-the-stm32-cube">RUNNING THE NI-EXAMPLE-APP FOR THE STM32 CUBE</a><ul>
+<li><a class="reference internal" href="#generic-use-case-vs-specific-use-cases">Generic Use Case Vs Specific Use Cases</a></li>
+<li><a class="reference internal" href="#using-ni-example-app-for-a-profinet-irt-based-evaluation">Using ni-example-app for a PROFINET IRT based Evaluation.</a></li>
+<li><a class="reference internal" href="#using-ni-example-app-for-a-semi-profile-based-ethercat-implementation">Using ni-example-app for a semi profile based EtherCAT implementation</a></li>
+<li><a class="reference internal" href="#a-simple-example-of-end-to-end-modifications-for-the-adin2299">A simple example of end to end modifications for the ADIN2299</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#determine-the-io-footprint-of-adin2299">Determine the IO Footprint of ADIN2299</a><ul>
+<li><a class="reference internal" href="#moving-on-from-ni-example-app">Moving on from ni-example-app</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="adin-2299-applications-processor-user-guide">
+<h1>ADIN 2299 Applications Processor User Guide<a class="headerlink" href="#adin-2299-applications-processor-user-guide" title="Link to this heading"></a></h1>
+<section id="features">
+<h2>FEATURES<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Interacts with RPG2 as the Applications Processor in a system.</p>
+<ul>
+<li><p>Handles Unified Interface communication between the applications(The user has a choice for this) and communications processor (ADSPCM-409)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="equipment-needed">
+<h2>EQUIPMENT NEEDED<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Ethernet cable</p></li>
+<li><p>UART cable</p></li>
+<li><p>SPI cable(for Embedded ST32 environment)</p></li>
+</ul>
+</section>
+<section id="documents-needed">
+<h2>DOCUMENTS NEEDED<a class="headerlink" href="#documents-needed" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>ADIN2299 User Guide</p></li>
+</ul>
+</section>
+<section id="software-needed">
+<h2>SOFTWARE NEEDED<a class="headerlink" href="#software-needed" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>ni-example-app Executable</p></li>
+<li><p>Visual Studio</p></li>
+<li><p>STM32 Cube IDE</p></li>
+<li><p>Access to GIT</p></li>
+</ul>
+<p>GENERAL DESCRIPTION With the RPG2 evaluation kit, there is a need to have a host processor initialize/interact with the evaluation kit.</p>
+<p>The ni-example-app source code does just this. It interacts with RPG2 as a sample host processor. This is literally a starting point for interacting with RPG2. The end user is by no means limited to just the PC acting as the host, or the STM32 acting as the host.</p>
+<p>The actual app can be run on any processor once the LPL has been created for the host processor with a given link type.</p>
+<p>What this guide is going to walk a user through is how to build and interact with the ni-example-app out of the box. Customizations are expected but those topics are covered in detail in other documents(the RPG2 Unified Interface User Guide and the RPG2 IO Configuration Tool User Guide).</p>
+<p>Once the ni-example-app has been built either for the PC , the app can be used from the PC as the host to do the corresponding quickstart guides for RPG2, as well as further customizations if necessary.</p>
+<section id="revision-history">
+<h3>Revision History<a class="headerlink" href="#revision-history" title="Link to this heading"></a></h3>
+<p>Initial Release</p>
+</section>
+<section id="ni-example-app-general">
+<h3>NI-EXAMPLE-APP GENERAL<a class="headerlink" href="#ni-example-app-general" title="Link to this heading"></a></h3>
+<p>Ni-example-app is distributed with both a version for a windows executable and an STM32 example. Any platform can work as the layers common to the Unified Interface are the same both for RPG2 and the host platform. Figure 1 shows the breakdown of layers in ni-example-app.</p>
+<img alt="https://wiki.analog.com/_media/resources/technical-guides/hpug_1.png" class="align-center" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_1.png" />
+<p>Figure 1:Network Applications IO Suite General Use Case</p>
+<p>The ni-example-app software suite basically constructs what is known as a host processor application with the following high level tasks being done for a given platform/system.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>•    Calls to ui-init
+o    This initializes the ui-stk on the host platform.
+•    Link type initialization
+o    This sets up the link type that shall be used.
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>•    Set the response timeout
+o    This sets up the link between the host and RPG2.
+o    This can vary from platform to platform.
+•    Wait for the signal SDONE to go high.
+o    This signal goes high when RPG2 is ready to receive commands.
+o    This one may or may not be needed but it is highly recommended to install between RPG2 and the host processor.
+•    Send out the NI-Discover message
+o    This expects an echo of the discover almost like a ping.
+•    Send out the NI-Init message
+o    This tells RPG2 to initialize and be ready for further communication.
+o    There is some warning in the ni-example-app for ui-stk compatibility.
+•    Resets RPG2 from the Host Processor side.
+o    This is done for the purposes of reprogramming RPG2. Finalized devices might be able to do well without this command.
+•    Enable profile
+o    This is usually for specific Industrial Ethernet Profile not discussed in this guide.
+•    Enter the Event Handler
+o    This is a while 1 loop where events are continuously processed.
+</pre></div>
+</div>
+<p>Inside of the Event handler, there are several different events that need to be handled.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>•    UI Synch State
+•    UI System Event
+•    UI Config Request
+•    UI Item out Data
+•    UI Item in Data Latch
+•    UI Http Tunnel Request
+•    UI Acyclic out Data
+•    UI IO mapping request
+•    UI Device State Change
+</pre></div>
+</div>
+<p>What all of this does is the following tasks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>•    Makes use of a Host Processor to initialize RPG2 regardless of the protocol in place.
+o    This allows for the QSG to be run.
+•    Once it is “network initialized” it will take the output data written to it from the PLC and echo it back on the input
+o    This is for the example application. The user’s actual application will operate differently.
+</pre></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Item Number</p></th>
+<th class="head"><p>Output size</p></th>
+<th class="head"><p>Input size</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>500</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>501</p></td>
+<td><p>4</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>502</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This allows for basic ladder logic construction and all of the QSGs essentially make an echo routine from host out to the network and back again.</p>
+</section>
+<section id="ni-example-app-evaluation-kit-rpg2-pin-positions">
+<h3>NI-EXAMPLE-APP EVALUATION KIT RPG2 PIN POSITIONS<a class="headerlink" href="#ni-example-app-evaluation-kit-rpg2-pin-positions" title="Link to this heading"></a></h3>
+<p>Table 1 shows a user how to hook up miscellaneous pins to use a given link type when having the PC act as the Applications Processor.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Signal</p></th>
+<th class="head"><p>Connector</p></th>
+<th class="head"><p>Pin Number</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>UART - RX</p></td>
+<td><p>604</p></td>
+<td><p>9</p></td>
+<td><p>Dual purpose. If UART is selected it will be UART-RX. If SPI is selected this will be the BUSY Signal.</p></td>
+</tr>
+<tr class="row-odd"><td><p>UART TX</p></td>
+<td><p>604</p></td>
+<td><p>10</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>SPI MOSI</p></td>
+<td><p>604</p></td>
+<td><p>1</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>SPI MISO</p></td>
+<td><p>604</p></td>
+<td><p>2</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>SPI CLK</p></td>
+<td><p>604</p></td>
+<td><p>3</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>SPI SS</p></td>
+<td><p>604</p></td>
+<td><p>4</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>SPI - RREQ</p></td>
+<td><p>604</p></td>
+<td><p>7</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>SPI-BUSY</p></td>
+<td><p>604</p></td>
+<td><p>9</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Ethernet</p></td>
+<td><p>302</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>This is an Ethernet Cable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>SDONE</p></td>
+<td><p>604</p></td>
+<td><p>12</p></td>
+<td><p>This signal goes high the moment RPG2 is ready to receive commands over the given link type.</p></td>
+</tr>
+<tr class="row-even"><td><p>Reset</p></td>
+<td><p>604</p></td>
+<td><p>13</p></td>
+<td><p>This is the reset in pin for the ADIN2299.</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.3 V</p></td>
+<td><p>603</p></td>
+<td><p>7</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>5 V</p></td>
+<td><p>603</p></td>
+<td><p>11</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>GND</p></td>
+<td><p>602</p></td>
+<td><p>14</p></td>
+<td><p>Not all grounds are needed.</p></td>
+</tr>
+<tr class="row-even"><td><p>GND</p></td>
+<td><p>602</p></td>
+<td><p>15</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>GND</p></td>
+<td><p>602</p></td>
+<td><p>16</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>GND</p></td>
+<td><p>603</p></td>
+<td><p>10</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>GND</p></td>
+<td><p>604</p></td>
+<td><p>11</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>GND</p></td>
+<td><p>605</p></td>
+<td><p>15</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>GND</p></td>
+<td><p>605</p></td>
+<td><p>16</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Link Type 0</p></td>
+<td><p>JP600</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>Link Types 0-2 are done to select which Link type is being used by RPG2. A user can also specify this with the Link Configuration File. The software will use the pins unless it is directed by means of an installed link configuration file. The default for the board is to use the Ethernet link type.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Link Type 1</p></td>
+<td><p>JP601</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Link Type 2</p></td>
+<td><p>JP602</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Table 1: Pins for using the PC as the Applications Processor</p>
+<p>For the purposes of running this example on the PC, the user will either use the UART or Ethernet link type.</p>
+</section>
+<section id="ni-example-app-on-a-pc">
+<h3>NI-Example-App on a PC<a class="headerlink" href="#ni-example-app-on-a-pc" title="Link to this heading"></a></h3>
+<p>The pre-distributed ni-example-app runs on a PC out of the box. There are many different options that can be done as part of the ni-example-app on a command line. This can be done by navigating on a command line to the location of ni-example-app and putting in the -h in order to get the options.</p>
+<p>Note that for the purposes of the protocol specific quickstart guides(EtherNet/IP, Profinet, etc) the simplest version of ni-example-app was used.</p>
+<p><img alt="image1" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_2.png" /> Figure 2: Navigating to location for ni-example-app</p>
+<p>Seeing the options shown by this command sends out the following configuration options.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntax</p></th>
+<th class="head"><p>Command</p></th>
+<th class="head"><p>Argument</p></th>
+<th class="head"><p>Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-l</p></td>
+<td><p>Link Type</p></td>
+<td><p>UART / ETH</p></td>
+<td><p>The link type will be either Ethernet or UART.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-c</p></td>
+<td><p>COM Port</p></td>
+<td><p>X where X is the com port number</p></td>
+<td><p>The UART is used on the given USB/UART.</p></td>
+</tr>
+<tr class="row-even"><td><p>-n</p></td>
+<td><p>devString</p></td>
+<td><p>The syntax for the Ethernet Host Interface</p></td>
+<td><p>The Ethernet traffic goes out on the given RJ-45 connection.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-h</p></td>
+<td><p>Help</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>Displays the help section.</p></td>
+</tr>
+<tr class="row-even"><td><p>-b</p></td>
+<td><p>Use the example Basket for configuration</p></td>
+<td><p>The Basket in place from the IO configuration Tool</p></td>
+<td><p>The Host will use the “add Basket” method to configure RPG2.(Note that this basket is 1000. If another basket is in place, make sure to use that number.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–no-reset</p></td>
+<td><p>There is no reset sent from the Host Processor</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>The Host will not send a reset to RPG2 during initialization.</p></td>
+</tr>
+<tr class="row-even"><td><p>–no-configure</p></td>
+<td><p>Don’t Configure RPG2</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>The Host will not do any configuration of RPG2 upon usage.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–file-save</p></td>
+<td><p>Update or create the file on the file system</p></td>
+<td><p>–file-save “Module path” “Local path”</p></td>
+<td><p>This basically allows the user to put files onto the file system from the host processor. There are many applications to this. More is discussed in the ADIN2299 User’s Guide</p></td>
+</tr>
+<tr class="row-even"><td><p>–file-get</p></td>
+<td><p>Get file system content.</p></td>
+<td><p>–file-get “Module path” “Local path”</p></td>
+<td><p>This allows the user to get content as it exists on the file system.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–file-delete</p></td>
+<td><p>Remove a file from the file system</p></td>
+<td><p>–file-delete “module path”</p></td>
+<td><p>Deletes a file from the file system.</p></td>
+</tr>
+<tr class="row-even"><td><p>–file-mark</p></td>
+<td><p>Mark a file for an update on the file system</p></td>
+<td><p>–file-mark “module path”</p></td>
+<td><p>Use this as a mark to update upon reset of RPG2.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–file-listing</p></td>
+<td><p>Get the contents of the file system</p></td>
+<td><p>–file-listing “”</p></td>
+<td><p>Gets the contents of the file system as they appear.</p></td>
+</tr>
+<tr class="row-even"><td><p>–tcp-server</p></td>
+<td><p>Opens a TCP Server on the ADIN2299</p></td>
+<td><p>Local Port</p></td>
+<td><p>Open’s a TCP Server on the local port.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–tcp-client</p></td>
+<td><p>Opens a TCP Client on the ADIN2299</p></td>
+<td><p>Local Port</p></td>
+<td><p>Open’s a TCP Client on the local port.</p></td>
+</tr>
+<tr class="row-even"><td><p>–udp-server</p></td>
+<td><p>Opens a UDP Server on the ADIN2299</p></td>
+<td><p>Local Port</p></td>
+<td><p>Open’s a UDP Server on the local port.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–udp-client</p></td>
+<td><p>Opens a UDP Client on the ADIN2299</p></td>
+<td><p>Local Port</p></td>
+<td><p>Open’s a UDP Client on the local port.</p></td>
+</tr>
+<tr class="row-even"><td><p>–enable-dhcp</p></td>
+<td><p>Enables DHCP</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>Makes the device use DHCP</p></td>
+</tr>
+<tr class="row-odd"><td><p>–static-ip</p></td>
+<td><p>Gives a static IP address</p></td>
+<td><p>IP Address, Subnet, Gateway, DNS1, DNS2, Domain</p></td>
+<td><p>The IP address is mandatory but the others are all optional.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Table 2: Command Line Help Display</p>
+</section>
+</section>
+<section id="connecting-the-evaluation-kit-to-the-pc">
+<h2>CONNECTING THE EVALUATION KIT TO THE PC.<a class="headerlink" href="#connecting-the-evaluation-kit-to-the-pc" title="Link to this heading"></a></h2>
+<p>There is more information associated with how to connect this device in the following Quickstart Guides.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>•    RPG2 EtherCAT Quickstart Guide
+•    RPG2 Profinet Quickstart Guide
+•    RPG2 Ethernet/IP Quickstart Guide
+•    RPG2 Modbus/TCP Quickstart Guide
+</pre></div>
+</div>
+<p>Please refer to these documents for how to use them from the network perspective.</p>
+<p>Shown below are two of the ways that this can be connected for evaluation.</p>
+<img alt="https://wiki.analog.com/_media/resources/technical-guides/hpug_3.png" class="align-center" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_3.png" />
+<p>Figure 3: Setup fora UART interface with ni-example-app.</p>
+<img alt="https://wiki.analog.com/_media/resources/technical-guides/hpug_4.png" class="align-center" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_4.png" />
+<p>Figure 4: Setup for an Ethernet interface with ni-example-app</p>
+</section>
+<section id="building-the-ni-example-app-on-the-pc">
+<h2>BUILDING THE NI-EXAMPLE-APP ON THE PC<a class="headerlink" href="#building-the-ni-example-app-on-the-pc" title="Link to this heading"></a></h2>
+<p>The example application for Windows is called ni-example-app. This application is an application processor simulator that contains the needed API calls to interact with the Communications Controller. The ni-example-app application can be downloaded from the Analog Devices, Inc., Chronous Developer Portal. Extract the zipped file to a local directory and navigate to ..\ni-example-app\project\vs\ni-example-app. Open ni-example-app.sln with Visual Studio 2015 or later. The Solution Explorer will show the following five projects:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>•    ni-api-srv
+•    ni-example-app
+•    ni-windows-support-srv
+•    ui-stk
+•    ui-windows-lpl-srv
+</pre></div>
+</div>
+<p>If not already selected, select ×86 as the Solution Platform. Specifying the Endianness To specify the endianness, take the following steps:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-    In the Solution Explorer, right-click ui-stk.
+-    Under Configuration Properties, expand C/C++.
+-    Select Preprocessor.
+-    Select Preprocessor Definitions (see Figure 4).
+-    Click the dropdown arrow and select &lt;Edit…&gt;.
+</pre></div>
+</div>
+<p>The default definition is UI_LITTLE_ENDIAN. A preprocessor definition is required either UI_LITTLE_ENDIAN or UI_BIG_ENDIAN. For a Windows platform, little endian is expected. For an embedded processor, endianness is something that varies depending on the application processor chosen.</p>
+<img alt="https://wiki.analog.com/_media/resources/technical-guides/hpug_5.png" class="align-center" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_5.png" />
+<p>Figure 5: Specifying the Endianness of the Applications processor</p>
+</section>
+<section id="setting-the-command-arguments">
+<h2>Setting the Command Arguments<a class="headerlink" href="#setting-the-command-arguments" title="Link to this heading"></a></h2>
+<p>To set the Command Arguments, take the following steps:</p>
+<ul class="simple">
+<li><p>In the Solution Explorer, right-click ni-example-app.</p></li>
+<li><p>Under Configuration Properties, select Debugging.</p></li>
+<li><p>Select Command Arguments.</p></li>
+</ul>
+<p>Click the dropdown arrow and select &lt;Edit…&gt;.</p>
+</section>
+<section id="ethernet-as-application-processor-interface">
+<h2>Ethernet as Application Processor Interface<a class="headerlink" href="#ethernet-as-application-processor-interface" title="Link to this heading"></a></h2>
+<p>To set the Ethernet as an application processor interface, take the following steps:</p>
+<ul class="simple">
+<li><p>To see all available network devices, enter -l ETH under Command Arguments (see Figure 5).</p></li>
+<li><p>Click Apply</p></li>
+<li><p>Click OK</p></li>
+<li><p>Press Ctrl + Shift + B to build the solution.</p></li>
+<li><p>Press Ctrl + F5 to start without debugging.</p></li>
+</ul>
+<p>Take the following steps to set the Ethernet Command Arguments:</p>
+<ul class="simple">
+<li><p>Select the appropriate network device and change the Command Arguments to -l ETH -n \Device\NPF_ {E26E29A0-5899-4925-B0EF-2499B98570C8}.</p></li>
+<li><p>Click Apply.</p></li>
+<li><p>Click OK.</p></li>
+</ul>
+<img alt="https://wiki.analog.com/_media/resources/technical-guides/hpug_6.png" class="align-center" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_6.png" />
+<p>Figure 6: Setting arguments for the Ethernet Application processor interface.</p>
+</section>
+<section id="uart-as-application-processor-interface">
+<h2>UART as Application Processor Interface<a class="headerlink" href="#uart-as-application-processor-interface" title="Link to this heading"></a></h2>
+<p>To set the UART as an application processor interface, take the following steps:</p>
+<ul class="simple">
+<li><p>Open the Device Manager and expand the Ports (COM &amp; LPT) section. A list of two Silicon Labs dual CP2105 USB to UART bridge: enhanced COM ports appears as follows:</p>
+<ul>
+<li><p>Silicon Labs Dual CP2105 USB to UART Bridge: Enhanced COM Port (COM6)</p>
+<ul>
+<li><p>Silicon Labs Dual CP2105 USB to UART Bridge: Standard COM Port (COM7)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Note the name of the enhanced COM port and enter -l UART -c COM6 under Command Arguments.</p></li>
+<li><p>Click Apply.</p></li>
+<li><p>Click OK.</p></li>
+</ul>
+<img alt="https://wiki.analog.com/_media/resources/technical-guides/hpug_7.png" class="align-center" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_7.png" />
+<p>Figure 7: UART Command Line Arguments</p>
+<p>The item and device constructs are the default values for the predistributed sample industrial Ethernet configuration database. For more information, see the ADIN2299 User Guide for more details on this.. While not in the Console display, once the user has called the configuration complete in the application processor code, the user then must make calls specific to the inputs and outputs as shown in Table 3 (NI_SetInputData and NI_GetOutputData). The program then continuously calls the NI_ProcessEvents() function to process events. Inside of NI_ProcessEvents() there is an input data subroutine and an output data subroutine.</p>
+<section id="ni-example-app-stm32">
+<h3>NI-EXAMPLE-APP STM32<a class="headerlink" href="#ni-example-app-stm32" title="Link to this heading"></a></h3>
+</section>
+</section>
+<section id="building-the-ni-example-app-for-the-stm32-cube">
+<h2>BUILDING THE NI-EXAMPLE-APP FOR THE STM32 CUBE<a class="headerlink" href="#building-the-ni-example-app-for-the-stm32-cube" title="Link to this heading"></a></h2>
+<p>The ni-example-app suite can be built for any particular host processor. This set of instructions walks a user through how to do this for the STM32 CUBE.</p>
+<p>The signals to connect when running the ni-example-app on the PC are shown in the table below.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>EVAL Signal</p></th>
+<th class="head"><p>EVAL Connector</p></th>
+<th class="head"><p>EVAL Pin No.</p></th>
+<th class="head"><p>STM32 Signal</p></th>
+<th class="head"><p>STM32 Connector</p></th>
+<th class="head"><p>STM32 Pin No.</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>UART-RX</p></td>
+<td><p>604</p></td>
+<td><p>9</p></td>
+<td><p>UART-RX</p></td>
+<td><p>C9</p></td>
+<td><p>25</p></td>
+</tr>
+<tr class="row-odd"><td><p>UART-TX</p></td>
+<td><p>604</p></td>
+<td><p>10</p></td>
+<td><p>UART-TX</p></td>
+<td><p>C9</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-even"><td><p>SPI-MOSI</p></td>
+<td><p>604</p></td>
+<td><p>1</p></td>
+<td><p>SPI-MOSI</p></td>
+<td><p>CN-7</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPI-MISO</p></td>
+<td><p>604</p></td>
+<td><p>2</p></td>
+<td><p>SPI-MISO</p></td>
+<td><p>CN-7</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p>SPI-CLK</p></td>
+<td><p>604</p></td>
+<td><p>3</p></td>
+<td><p>SPI-CLK</p></td>
+<td><p>CN-7</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPI-SS</p></td>
+<td><p>604</p></td>
+<td><p>4</p></td>
+<td><p>SPI-SS</p></td>
+<td><p>CN-7</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>SPI-RREQ</p></td>
+<td><p>604</p></td>
+<td><p>7</p></td>
+<td></td>
+<td><p>CN-9</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPI-BUSY</p></td>
+<td><p>604</p></td>
+<td><p>9</p></td>
+<td></td>
+<td><p>CN-9</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>Ethernet</p></td>
+<td><p>302</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>Ethernet</p></td>
+<td><p>CN-14</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>SDONE</p></td>
+<td><p>604</p></td>
+<td><p>12</p></td>
+<td><p>SDONE</p></td>
+<td><p>CN-8</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p>RESET</p></td>
+<td><p>604</p></td>
+<td><p>13</p></td>
+<td><p>RESET</p></td>
+<td><p>CN-9</p></td>
+<td><p>29</p></td>
+</tr>
+<tr class="row-odd"><td><p>LINK TYPE</p></td>
+<td><p>JP600</p></td>
+<td><p>0 or 1</p></td>
+<td></td>
+<td><p>CN-9</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>LINK TYPE</p></td>
+<td><p>JP601</p></td>
+<td><p>0 or 1</p></td>
+<td></td>
+<td><p>CN-9</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>LINK TYPE</p></td>
+<td><p>JP602</p></td>
+<td><p>0 or 1</p></td>
+<td></td>
+<td><p>CN-9</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-even"><td><p>Ground</p></td>
+<td><p>602</p></td>
+<td><p>14</p></td>
+<td><p>Ground</p></td>
+<td><p>CN-7</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ground</p></td>
+<td><p>602</p></td>
+<td><p>15</p></td>
+<td><p>Ground</p></td>
+<td><p>CN-8</p></td>
+<td><p>11</p></td>
+</tr>
+<tr class="row-even"><td><p>Ground</p></td>
+<td><p>602</p></td>
+<td><p>16</p></td>
+<td><p>Ground</p></td>
+<td><p>CN-8</p></td>
+<td><p>13</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ground</p></td>
+<td><p>603</p></td>
+<td><p>10</p></td>
+<td><p>Ground</p></td>
+<td><p>CN-9</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-even"><td><p>Ground</p></td>
+<td><p>604</p></td>
+<td><p>11</p></td>
+<td><p>Ground</p></td>
+<td><p>CN-9</p></td>
+<td><p>23</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ground</p></td>
+<td><p>605</p></td>
+<td><p>15</p></td>
+<td><p>Ground</p></td>
+<td><p>CN-10</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-even"><td><p>Ground</p></td>
+<td><p>605</p></td>
+<td><p>16</p></td>
+<td><p>Ground</p></td>
+<td><p>CN-10</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>Ground</p></td>
+<td><p>CN-10</p></td>
+<td><p>22</p></td>
+</tr>
+<tr class="row-even"><td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>Ground</p></td>
+<td><p>CN-10</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.3V</p></td>
+<td><p>603</p></td>
+<td><p>7</p></td>
+<td><p>3.3V</p></td>
+<td><p>CN-8</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>5V</p></td>
+<td><p>603</p></td>
+<td><p>11</p></td>
+<td><p>5V</p></td>
+<td><p>CN-8</p></td>
+<td><p>9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This version of ni-example-app can run for any link type between RPG2 and the STM32. Connections required for a given link type are shown (as an example) for three different types below.</p>
+</section>
+<section id="connecting-for-an-ethernet-link-type">
+<h2>Connecting for an Ethernet Link Type<a class="headerlink" href="#connecting-for-an-ethernet-link-type" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>EVAL Signal</p></th>
+<th class="head"><p>EVAL Connector</p></th>
+<th class="head"><p>EVAL Pin No.</p></th>
+<th class="head"><p>STM32 Signal</p></th>
+<th class="head"><p>STM32 Connector</p></th>
+<th class="head"><p>STM32 Pin No.</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ethernet</p></td>
+<td><p>302</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>Ethernet</p></td>
+<td><p>CN-14</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>SDONE</p></td>
+<td><p>604</p></td>
+<td><p>12</p></td>
+<td><p>SDONE</p></td>
+<td><p>CN-8</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p>RESET</p></td>
+<td><p>604</p></td>
+<td><p>13</p></td>
+<td><p>RESET</p></td>
+<td><p>CN-9</p></td>
+<td><p>29</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.3V</p></td>
+<td><p>603</p></td>
+<td><p>7</p></td>
+<td><p>3.3V</p></td>
+<td><p>CN-8</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>5V</p></td>
+<td><p>603</p></td>
+<td><p>11</p></td>
+<td><p>5V</p></td>
+<td><p>CN-8</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ground</p></td>
+<td><p>602</p></td>
+<td><p>14</p></td>
+<td><p>Ground</p></td>
+<td><p>CN-7</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-even"><td><p>Ground</p></td>
+<td><p>602</p></td>
+<td><p>15</p></td>
+<td><p>Ground</p></td>
+<td><p>CN-8</p></td>
+<td><p>11</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ground</p></td>
+<td><p>602</p></td>
+<td><p>16</p></td>
+<td><p>Ground</p></td>
+<td><p>CN-8</p></td>
+<td><p>13</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The link type is determined by setting the pins as shown in figure 8.</p>
+<img alt="https://wiki.analog.com/_media/resources/technical-guides/hpug_8.png" class="align-center" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_8.png" />
+<p>Figure 8: Pin Setting for the Ethernet Interface.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Link Type</p></td>
+<td><p>JP600</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Link Type</p></td>
+<td><p>JP601</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Link Type</p></td>
+<td><p>JP602</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="connecting-for-a-uart-link-type">
+<h2>Connecting for a UART link type<a class="headerlink" href="#connecting-for-a-uart-link-type" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>EVAL Signal</p></th>
+<th class="head"><p>EVAL Connector</p></th>
+<th class="head"><p>EVAL Pin No.</p></th>
+<th class="head"><p>STM32 Signal</p></th>
+<th class="head"><p>STM32 Connector</p></th>
+<th class="head"><p>STM32 Pin No.</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>UART-RX</p></td>
+<td><p>604</p></td>
+<td><p>9</p></td>
+<td><p>UART-RX</p></td>
+<td><p>C9</p></td>
+<td><p>25</p></td>
+</tr>
+<tr class="row-odd"><td><p>UART-TX</p></td>
+<td><p>604</p></td>
+<td><p>10</p></td>
+<td><p>UART-TX</p></td>
+<td><p>C9</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-even"><td><p>SDONE</p></td>
+<td><p>604</p></td>
+<td><p>12</p></td>
+<td><p>SDONE</p></td>
+<td><p>CN-8</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>RESET</p></td>
+<td><p>604</p></td>
+<td><p>13</p></td>
+<td><p>RESET</p></td>
+<td><p>CN-9</p></td>
+<td><p>29</p></td>
+</tr>
+<tr class="row-even"><td><p>3.3V</p></td>
+<td><p>603</p></td>
+<td><p>7</p></td>
+<td><p>3.3V</p></td>
+<td><p>CN-8</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>5V</p></td>
+<td><p>603</p></td>
+<td><p>11</p></td>
+<td><p>5V</p></td>
+<td><p>CN-8</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>Ground</p></td>
+<td><p>602</p></td>
+<td><p>14</p></td>
+<td><p>Ground</p></td>
+<td><p>CN-7</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ground</p></td>
+<td><p>602</p></td>
+<td><p>15</p></td>
+<td><p>Ground</p></td>
+<td><p>CN-8</p></td>
+<td><p>11</p></td>
+</tr>
+<tr class="row-even"><td><p>Ground</p></td>
+<td><p>602</p></td>
+<td><p>16</p></td>
+<td><p>Ground</p></td>
+<td><p>CN-8</p></td>
+<td><p>13</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The link type is determined by setting the pins as shown in figure 9.</p>
+<img alt="https://wiki.analog.com/_media/resources/technical-guides/hpug_9.png" class="align-center" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_9.png" />
+<p>Figure 9: Pin Setting for the UART Interface.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Link Type</p></td>
+<td><p>JP600</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Link Type</p></td>
+<td><p>JP601</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Link Type</p></td>
+<td><p>JP602</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="connecting-for-a-spi-link-type">
+<h2>Connecting for a SPI link type<a class="headerlink" href="#connecting-for-a-spi-link-type" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>EVAL Signal</p></th>
+<th class="head"><p>EVAL Connector</p></th>
+<th class="head"><p>EVAL Pin No.</p></th>
+<th class="head"><p>STM32 Signal</p></th>
+<th class="head"><p>STM32 Connector</p></th>
+<th class="head"><p>STM32 Pin No.</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SPI-MOSI</p></td>
+<td><p>604</p></td>
+<td><p>1</p></td>
+<td><p>SPI-MOSI</p></td>
+<td><p>CN-7</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPI-MISO</p></td>
+<td><p>604</p></td>
+<td><p>2</p></td>
+<td><p>SPI-MISO</p></td>
+<td><p>CN-7</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p>SPI-CLK</p></td>
+<td><p>604</p></td>
+<td><p>3</p></td>
+<td><p>SPI-CLK</p></td>
+<td><p>CN-7</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPI-SS</p></td>
+<td><p>604</p></td>
+<td><p>4</p></td>
+<td><p>SPI-SS</p></td>
+<td><p>CN-7</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>SPI-RREQ</p></td>
+<td><p>604</p></td>
+<td><p>7</p></td>
+<td></td>
+<td><p>CN-9</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPI-BUSY</p></td>
+<td><p>604</p></td>
+<td><p>9</p></td>
+<td></td>
+<td><p>CN-9</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>SDONE</p></td>
+<td><p>604</p></td>
+<td><p>12</p></td>
+<td><p>SDONE</p></td>
+<td><p>CN-8</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>RESET</p></td>
+<td><p>604</p></td>
+<td><p>13</p></td>
+<td><p>RESET</p></td>
+<td><p>CN-9</p></td>
+<td><p>29</p></td>
+</tr>
+<tr class="row-even"><td><p>3.3V</p></td>
+<td><p>603</p></td>
+<td><p>7</p></td>
+<td><p>3.3V</p></td>
+<td><p>CN-8</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>5V</p></td>
+<td><p>603</p></td>
+<td><p>11</p></td>
+<td><p>5V</p></td>
+<td><p>CN-8</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>Ground</p></td>
+<td><p>602</p></td>
+<td><p>14</p></td>
+<td><p>Ground</p></td>
+<td><p>CN-7</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ground</p></td>
+<td><p>602</p></td>
+<td><p>15</p></td>
+<td><p>Ground</p></td>
+<td><p>CN-8</p></td>
+<td><p>11</p></td>
+</tr>
+<tr class="row-even"><td><p>Ground</p></td>
+<td><p>602</p></td>
+<td><p>16</p></td>
+<td><p>Ground</p></td>
+<td><p>CN-8</p></td>
+<td><p>13</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The link type is determined by setting the pins as shown in figure 10.</p>
+<img alt="https://wiki.analog.com/_media/resources/technical-guides/hpug_10.png" class="align-center" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_10.png" />
+<p>Figure 10: SPI Pin Strapping</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Link Type</p></td>
+<td><p>JP600</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Link Type</p></td>
+<td><p>JP601</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Link Type</p></td>
+<td><p>JP602</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="building-the-stm32-example-application">
+<h2>BUILDING THE STM32 EXAMPLE APPLICATION<a class="headerlink" href="#building-the-stm32-example-application" title="Link to this heading"></a></h2>
+<p>When you have checked out the STM32 example application, the software needs to be built to run on the STM32 on the user’s environment. The first step is to checkout the ni-example-app and set up the environment.</p>
+</section>
+<section id="running-the-ni-example-app-for-the-stm32-cube">
+<h2>RUNNING THE NI-EXAMPLE-APP FOR THE STM32 CUBE<a class="headerlink" href="#running-the-ni-example-app-for-the-stm32-cube" title="Link to this heading"></a></h2>
+<p>From the main screen as shown below, the user will click on the debug symbol.</p>
+<img alt="https://wiki.analog.com/_media/resources/technical-guides/hpug_11.png" class="align-center" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_11.png" />
+<p>Figure 11: Host Processor root directory</p>
+<p>Open a Git Bash where the project is located.</p>
+<img alt="https://wiki.analog.com/_media/resources/technical-guides/hpug_12.png" class="align-center" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_12.png" />
+<p>Figure 12: Opening a Git Bash</p>
+<p>Type the following into the GIT Bash to checkout project files for the STM32. git clone -b v1.16.2 <a class="icon link reference external" href="https://github.com/STMicroelectronics/STM32CubeF7.git" target="_blank">https://github.com/STMicroelectronics/STM32CubeF7.git</a></p>
+<p><img alt="image2" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_13.png" /> Figure 13: Entering Commands into the Git Bash.</p>
+<p>This particular step takes a while, but once it is done you will see the project directory as shown.</p>
+<p><img alt="image3" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_14.png" /> Figure 14: Directory after running the git bash.</p>
+<p>Open the STMCUBE IDE. Navigate to “C:\Users\cstelmar\Desktop\Documentation\RapID_NI_Example_Applications_Software_Suite-Rel6.0.2\example-application\ni-example-app\project\cubeide\STM32F767ZI” Or equivalent depending on where you have decided to store the project.</p>
+<p><img alt="image4" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_15.png" /> Figure 15: Select Workspace Directory.</p>
+<p>Click “Select Folder”</p>
+<p><img alt="image5" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_16.png" /> Figure 16: Navigating to the Project.</p>
+<p>Click on “Launch”</p>
+<p><img alt="image6" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_17.png" /> Figure 17: STM Home Screen.</p>
+<p>Click on the “Information Center” tab at the top.</p>
+<p><img alt="image7" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_18.png" /> Figure 18: Selecting file import options.</p>
+<p>From this point go to “File/Import”. <img alt="image8" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_19.png" /> Figure 19: Import Wizard.</p>
+<p>From here click on “General\Existing Projects into Workspace” <img alt="image9" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_20.png" /> Figure 20: Import Projects Options.</p>
+<p>From here click on the “browse” method by the select root directory option. Then navigate to where the STMCubeF7 location with ni-example-app is located.</p>
+<p>This will then bring a large number of projects into the main screen. <img alt="image10" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_21.png" /> Figure 21: Projects to import.</p>
+<p>Click on the “Deselect All” and then add the following pages to the project and click Finish. <img alt="image11" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_22.png" /> Figure 22: Importing of Projects.</p>
+<p>ni-api-srv ni-example-app ni-stm32xx-support-srv ui-stk ui-stm32f7xx-lpl-srv Download them all into the project page. Then close the “Information Center” tab at the top to see your imported project.</p>
+<p><img alt="image12" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_23.png" /> Figure 23: Project view with all needed projects downloaded.</p>
+<p>Specify the Link Type in PLAT_Platform.c. It can be either SPI, UART or ETH from a hard coding standpoint.</p>
+<p><img alt="image13" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_24.png" /> Figure 24: Defining link parameters.</p>
+<p>Now save the file and the build process can begin.</p>
+<p>Start by building in the following way:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>• DBG ui-stk
+</pre></div>
+</div>
+<p><img alt="image14" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_25.png" /> Figure 25: Building the UI-stack.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>• DBG ui-stm32f7xx-lpl-srv
+</pre></div>
+</div>
+<p><img alt="image15" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_26.png" /> Figure 26: Building the lpl srv.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>• DBG – ni-stm32f7xx-support-srv
+</pre></div>
+</div>
+<p><img alt="image16" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_27.png" /> Figure 27: Building the STM32 support service.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>• DBG – ni-api-srv
+</pre></div>
+</div>
+<p><img alt="image17" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_28.png" /> Figure 28: Building the ni-api-srv</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>• DBG – ni-example-app
+</pre></div>
+</div>
+<p><img alt="image18" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_29.png" /> Figure 29: Building the ni-api-srv</p>
+<p>The example project is now built. The next step will be to build and then use the built project. To Build, first go to the debug symbol and select “Debug Configurations”. Then navigate as shown below to the ni-example-app-debug location.</p>
+<p><img alt="image19" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_30.png" /> Figure 30: Building the debug configuration.</p>
+<p>Then click on “Debug”. Ni-example-app is now running fully on the STM32F7 platform. It can be used to interract with networks the same way the ni-example-app on the PC does.</p>
+<section id="generic-use-case-vs-specific-use-cases">
+<h3>Generic Use Case Vs Specific Use Cases<a class="headerlink" href="#generic-use-case-vs-specific-use-cases" title="Link to this heading"></a></h3>
+<p>NI-Example-App is a good tool for evaluation on a PC, and then as a starting point for the Applications processor code in an embedded environment.</p>
+<p>There are two pound defines that will change the behavior of ni-example-app. Shown below is a chart of what the user can expect:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Use_IRT</p></td>
+<td><p>Enable Profile</p></td>
+<td><p>Behavior</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>Typical operation as shown above</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>This will make RPG2 conform and use the semi profile</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>This will make RPG2 conform and make use of the IRT based configuration</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>Not Applicable!!!!</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The next two sections will walk a user through how to modify the code base so it can run with either the Semi Profile for EtherCAT or for Profinet IRT.</p>
+</section>
+<section id="using-ni-example-app-for-a-profinet-irt-based-evaluation">
+<h3>Using ni-example-app for a PROFINET IRT based Evaluation.<a class="headerlink" href="#using-ni-example-app-for-a-profinet-irt-based-evaluation" title="Link to this heading"></a></h3>
+<p>NI-Example-App also has some capability built into it, that allow for the user to make use of an IRT based solution. As opposed to the previous configuration that has items 500, 501 and 502 built into it, when IRT is being used, there is a more complicated implementation in place from the perspective of the Unified Interface.</p>
+<p>Due to some stress testing limitations, some users might find the 3 items in place are not enough for a real IRT based device. Therefore, there is a way of handling this from ni-example-app. There is a #define in the “ni-example-app” portion of the project(both for the STM32 and for the windows based application).</p>
+<p><img alt="image20" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_31.png" /> Figure 32: ni-example-app IRT #define</p>
+<p>Before running ni-example-app(on either platform or even your own custom platform), make sure to change the 1 for the #define, then build the application and it will run using the IRT based configuration.</p>
+<p>The IRT application will add 8 items of 8 bytes each to the IO-Configuration of the ADIN2299. Please make sure to have uploaded the proper IO-Config.bin or else the configuration of the ADIN2299 will fail.</p>
+<p>NOTE: If the #define for IRT is based at 0, then operation will continue as expected for ni-example-app.</p>
+</section>
+<section id="using-ni-example-app-for-a-semi-profile-based-ethercat-implementation">
+<h3>Using ni-example-app for a semi profile based EtherCAT implementation<a class="headerlink" href="#using-ni-example-app-for-a-semi-profile-based-ethercat-implementation" title="Link to this heading"></a></h3>
+<p>When the user is going to make use of ni-example-app as the Applications Processor for an EtherCAT Semiprofile application, the actual work to be done is very simple for the initialization of the SemiProfile.</p>
+<p><img alt="image21" src="https://wiki.analog.com/_media/resources/technical-guides/hpug_32.png" /> Figure 33: ni-example-app #defines being set for SEMI-PROFILE</p>
+</section>
+<section id="a-simple-example-of-end-to-end-modifications-for-the-adin2299">
+<h3>A simple example of end to end modifications for the ADIN2299<a class="headerlink" href="#a-simple-example-of-end-to-end-modifications-for-the-adin2299" title="Link to this heading"></a></h3>
+<p>Generically, a user needs to make use of the ADIN2299 as close to the evaluation kit as they can. In other words, the design has been through conformance from both the hardware and software perspective. This particular section will walk through an example of how to make the NI-Example-App make use of other IO footprints as opposed to the 6 bytes in 8 bytes out IO footprint that is used throughout our example configuration.</p>
+<p>Note that this section applies to customization of RPG2 as an example. There are many other examples that could be done, but this walks a user through a theoretical example.</p>
+</section>
+</section>
+<section id="determine-the-io-footprint-of-adin2299">
+<h2>Determine the IO Footprint of ADIN2299<a class="headerlink" href="#determine-the-io-footprint-of-adin2299" title="Link to this heading"></a></h2>
+<p>The ADIN2299 is given out with an IO configuration data size of 6 bytes of input data and 8 bytes of output data.</p>
+<p>Once a user determines their IO footprint, they can either make use of the API to create items and devices, or they can use the IO configuration tool to create their own IO footprint.</p>
+<p>Either one of these options is acceptable.</p>
+<section id="moving-on-from-ni-example-app">
+<h3>Moving on from ni-example-app<a class="headerlink" href="#moving-on-from-ni-example-app" title="Link to this heading"></a></h3>
+<p>Following the completion of this document, there are other places a user can go to use ni-example-app in more real world PLC conditions.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>• RPG2 EtherCAT Quickstart Guide – Walks through the EtherCAT protocol and how to make PDO data be reflected between the host and RPG2.
+• RPG2 Profinet Quickstart Guide – Walks through the EtherCAT protocol and how to make inputs and output data be reflected by the PLC.
+• RPG2 EtherNet/IP Quickstart Guide – Walks through the Ethernet/IP protocol and how to make class1 data be reflected between the host and RPG2.
+• RPG2 EtherCAT Semi Profile User Guide – Walks a user through how EtherCAT can be used for the Semi Profile with minor application changes.
+• RPG2 Unified Interface User Guide – This walks a user through the API in detail for the Unified Interface on RPG2.
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

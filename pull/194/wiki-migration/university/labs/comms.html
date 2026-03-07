@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The laboratory activities provided on this wiki are considered open source and available for free use in non-commercial educational and academic settings. The only requirement is that they continue to retain the attribution to Analog Devices Inc. Supplying them on the ADI wiki allows registered users to contribute to the materials posted here improving the content and keeping them up to date." name="description" />
+
+    <title>Communications Based Lab Activity Material &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Communications Based Lab Activity Material</a><ul>
+<li><a class="reference internal" href="#lab-preparation">Lab Preparation</a><ul>
+<li><a class="reference internal" href="#circuit-simulation">Circuit Simulation</a></li>
+<li><a class="reference internal" href="#lab-hardware-and-software">Lab Hardware and Software</a></li>
+<li><a class="reference internal" href="#general-lab-materials">General Lab materials</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#main-lab-activities-and-exercise-list">Main Lab Activities and Exercise List</a><ul>
+<li><a class="reference internal" href="#power-electronics-lab-activities-and-exercises">Power Electronics Lab Activities and Exercises</a></li>
+<li><a class="reference internal" href="#embedded-systems-lab-activities-and-exercises-coming-soon">Embedded Systems Lab Activities and Exercises (Coming soon!)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#general-expected-background">General Expected Background</a></li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="communications-based-lab-activity-material">
+<h1>Communications Based Lab Activity Material<a class="headerlink" href="#communications-based-lab-activity-material" title="Link to this heading"></a></h1>
+<p>The laboratory activities provided on this wiki are considered open source and available for free use in non-commercial educational and academic settings. <strong>The only requirement is that they continue to retain the attribution to Analog Devices Inc.</strong> Supplying them on the ADI wiki allows registered users to contribute to the materials posted here improving the content and keeping them up to date.</p>
+<p>Laboratory guides provided on GitHub are available for modification as well, which can be done through the provided <strong>LaTeX</strong> source. As with the wiki <strong>the requirement is that they continue to retain the attribution to the original authors and you abide by the co-located licenses.</strong></p>
+<section id="lab-preparation">
+<h2>Lab Preparation<a class="headerlink" href="#lab-preparation" title="Link to this heading"></a></h2>
+<section id="circuit-simulation">
+<h3>Circuit Simulation<a class="headerlink" href="#circuit-simulation" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Basic information and material on <a class="reference internal" href="../courses/electronics/circuitsimulationnotes.html"><span class="doc">circuit simulation</span></a>, including tool links and usage information.</div>
+<div class="line">Most of the labs are populated with <a class="icon adi reference external" href="https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html" target="_blank">LTspice</a> resource files which contain the schematics of the circuits discussed at a specific topic. A file containing the ADALM2000 connections for the schematics can be found here: <a class="icon git reference external" href="https://github.com/analogdevicesinc/education_tools/tree/main/m2k/ltspice/m2k_conn_ltspice" target="_blank">m2k/ltspice/m2k_conn_ltspice</a>.</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Course</p></th>
+<th class="head"><p>ADALM1000 (M1K)</p></th>
+<th class="head"><p>ADALM2000 (M2K)</p></th>
+<th class="head"><p>ADALM-PLUTO (PlutoSDR)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Communications</p></td>
+<td><p><a class="icon link reference external" href="https://wiki.analog.com/_media/university/courses/electronics/electronics-lab-i.zip" target="_blank">schematic files</a></p></td>
+<td><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/education_tools/tree/main/m2k/adisimpe/electronics-lab-i" target="_blank">schematic files</a></p></td>
+<td><p><a class="icon link reference external" href="https://www.mathworks.com/matlabcentral/fileexchange/46626-rf-blockset-models-for-analog-devices-rf-transceivers" target="_blank">transceiver simulation</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="lab-hardware-and-software">
+<h3>Lab Hardware and Software<a class="headerlink" href="#lab-hardware-and-software" title="Link to this heading"></a></h3>
+<p>These labs can be performed using the <a class="reference internal" href="../tools/m2k.html"><span class="doc">ADALM2000</span></a> (M2K) Active Learning Module , or the <a class="reference internal" href="../tools/m1k.html"><span class="doc">ADALM1000</span></a> (M1K) entry level design instrumentation.</p>
+<p>For labs using the <a class="reference internal" href="../tools/pluto.html"><span class="doc">ADALM-PLUTO</span></a> (PlutoSDR), a MATLAB license will be required with the Communications Toolbox. If you do not have MATLAB, you can get a temporary trial from <a class="icon link reference external" href="https://www.mathworks.com//campaigns/products/trials.html?prodcode=CM" target="_blank">this link</a> and then install the <a class="icon link reference external" href="https://www.mathworks.com//hardware-support/adalm-pluto-radio.html" target="_blank">support package</a> for PlutoSDR.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>ADALM1000 (M1K)</p></th>
+<th class="head"><p>ADALM2000 (M2K)</p></th>
+<th class="head"><p>ADALM-PLUTO (PlutoSDR)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PC Software</p></td>
+<td><p><a class="reference internal" href="../tools/m1k/alice/desk-top-users-guide.html"><span class="doc">ALICE</span></a></p></td>
+<td><p><a class="reference internal" href="../tools/m2k/scopy.html"><span class="doc">Scopy</span></a></p></td>
+<td><p><a class="icon link reference external" href="https://www.mathworks.com//campaigns/products/trials.html?prodcode=CM" target="_blank">Matlab(Trial)</a>
+<a class="icon link reference external" href="https://www.mathworks.com//hardware-support/adalm-pluto-radio.html" target="_blank">PlutoSDR Support Package</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Some of the labs are written to be performed using just the components provided in the Analog Parts Kit, <a class="reference internal" href="../tools/adalp2000/parts-index.html"><span class="doc">ADALP2000</span></a>, supplied through ADI and our authorized distribution channels, however additional devices are provided.</p>
+</section>
+<section id="general-lab-materials">
+<h3>General Lab materials<a class="headerlink" href="#general-lab-materials" title="Link to this heading"></a></h3>
+<p>M1K and M2K based material:</p>
+<ul class="simple">
+<li><p>Background Lab Notes: <a class="reference internal" href="../courses/electronics/electronics-lab-breadboards.html"><span class="doc">Solder-less Breadboards</span></a></p></li>
+<li><p>Background Lab Activity: <a class="reference internal" href="../courses/electronics/electronics-lab-breadboard-coupling.html"><span class="doc">Solder-less Breadboard Parasitic Capacitance</span></a></p></li>
+<li><p>Background Lab Notes: <a class="reference internal" href="../courses/electronics/electronics-lab-resistors.html"><span class="doc">Resistors</span></a> (including color code)</p></li>
+<li><p>Background Lab Notes: <a class="reference internal" href="../courses/electronics/electronics-lab-capacitors.html"><span class="doc">Capacitors</span></a> (including color code)</p></li>
+<li><p>Review Activity: <a class="reference internal" href="../courses/electronics/electronics-lab-0.html"><span class="doc">Real voltage sources</span></a></p></li>
+</ul>
+<p>PlutoSDR based material:</p>
+<ul class="simple">
+<li><p>Textbook (PDF): <a class="icon adi reference external" href="https://www.analog.com/sdrforengineers" target="_blank">Software-Defined Radio For Engineers</a></p></li>
+<li><p><a class="icon link reference external" href="https://github.com/sdrforengineers/code" target="_blank">Textbook MATLAB code</a></p></li>
+<li><p><a class="icon link reference external" href="https://github.com/sdrforengineers/LabGuides/tree/master/textbook/matlab" target="_blank">Lab MATLAB code</a></p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="main-lab-activities-and-exercise-list">
+<h1>Main Lab Activities and Exercise List<a class="headerlink" href="#main-lab-activities-and-exercise-list" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This is currently the main list of all the labs we have. The goal here is to use this list and either include the sub-table for a topic-specific page, or copy individual labs over the labs you desire for the course you need.</p>
+<div class="line-block">
+<div class="line">Please remember to <strong>ADD</strong> any new labs you may have created to keep this list as current as possible</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line">===== Electronics I Lab Activities and Exercises =====</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Topic</p></th>
+<th class="head"><p>ADALM1000 (M1K)</p></th>
+<th class="head"><p>ADALM2000 (M2K)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Amplifiers</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-1.html"><span class="doc">Basic OP Amp Configurations</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-olg.html"><span class="doc">Op-Amp Open-Loop Gain</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-gbw.html"><span class="doc">Op-Amp Gain Bandwidth Product</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-1.html"><span class="doc">Simple Op Amps</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-opamp-comparator.html"><span class="doc">Op Amp as Comparator</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-1st.html"><span class="doc">Op Amp Settling Time</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-loop-gain.html"><span class="doc">Measuring Loop Gain</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-12sg.html"><span class="doc">Differential pair triangle to sine converter</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>PN Junction</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-2pnj.html"><span class="doc">The voltage dependent capacitance of the PN junction</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-pn-junction-cap.html"><span class="doc">Voltage dependent capacitance of the PN junction</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Diodes</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-2.html"><span class="doc">PN Diode I/V curves</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-zener-diode.html"><span class="doc">Zener Diode I/V curves</span></a>
+<a class="reference internal" href="../courses/alm1k/circuits1/alm-cir-diode-rectifier.html"><span class="doc">Diode Rectifiers</span></a>
+<a class="reference internal" href="../courses/alm1k/circuits1/alm-cir-precision-rectifier.html"><span class="doc">Precision Rectifiers, Absolute value circuits</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-3.html"><span class="doc">BJT as a diode</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-3m.html"><span class="doc">MOS as a diode</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-2.html"><span class="doc">PN Diode I/V curves</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-26.html"><span class="doc">Zener diode regulator</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-3.html"><span class="doc">BJT as a diode</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-3m.html"><span class="doc">MOS as a diode</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-25.html"><span class="doc">Differential Temperature Sensor using Diodes</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bipolar Junction Transistors (BJT)</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-4.html"><span class="doc">BJT Device I/V curves</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-4s.html"><span class="doc">BJT as a switch</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-5.html"><span class="doc">Common Emitter Amplifier</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-ce-freq-resp.html"><span class="doc">Frequency Response of CE amplifier</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-cb.html"><span class="doc">Common Base Amplifier</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-fca.html"><span class="doc">Folded Cascode Amplifier</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-6.html"><span class="doc">BJT Current Mirror</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-7.html"><span class="doc">BJT Zero Gain Amplifier</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-8.html"><span class="doc">BJT Stabilized current source</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-11.html"><span class="doc">BJT Emitter Follower</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-phase-split.html"><span class="doc">Phase Splitter Amplifier</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-12.html"><span class="doc">BJT Differential Pair</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-mstageamp.html"><span class="doc">Multi Stage Amplifier</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-13.html"><span class="doc">Making a full Amplifier from circuit blocks</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-13a.html"><span class="doc">Output Stages</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-4.html"><span class="doc">BJT Device I/V curves</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-5.html"><span class="doc">Common emitter amplifier</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-5fr.html"><span class="doc">Amplifier Frequency Response</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-ce-loop-gain.html"><span class="doc">CE amplifier loop gain</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-6.html"><span class="doc">BJT Current Mirror</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-7.html"><span class="doc">BJT Zero gain amplifier</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-8.html"><span class="doc">BJT Stabilized current source</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-8a.html"><span class="doc">Floating (two terminal) Current Source / Sink</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-11.html"><span class="doc">BJT Emitter follower</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-12.html"><span class="doc">BJT Differential Pair</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-12a.html"><span class="doc">Transresistance input stage</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-13.html"><span class="doc">Making a full Amplifier from circuit blocks</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-13a.html"><span class="doc">Output Stages</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Metal Oxide Transistors (MOS)</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-4m.html"><span class="doc">MOS Device I/V curves</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-4ms.html"><span class="doc">MOS as a switch</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-5m.html"><span class="doc">Common Source Amplifier</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-cg.html"><span class="doc">Common Gate Amplifier</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-6m.html"><span class="doc">MOS Current Mirror</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-7m.html"><span class="doc">MOS Zero Gain Amplifier</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-8m.html"><span class="doc">MOS Stabilized current source</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-11m.html"><span class="doc">MOS Source Follower</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-12m.html"><span class="doc">MOS Differential Pair</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-4m.html"><span class="doc">MOS Device I/V curves</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-5m.html"><span class="doc">Common source amplifier</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-6m.html"><span class="doc">MOS Current Mirror</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-7m.html"><span class="doc">MOS Zero gain amplifier</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-8m.html"><span class="doc">MOS Stabilized current source</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-11m.html"><span class="doc">MOS source follower</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-12m.html"><span class="doc">MOS Differential Pair</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">===== Electronics II Lab Activities and Exercises =====</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Topic</p></th>
+<th class="head"><p>ADALM1000 (M1K)</p></th>
+<th class="head"><p>ADALM2000 (M2K)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CMOS</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-20.html"><span class="doc">CMOS Amplifier</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-ota.html"><span class="doc">Two stage CMOS OTA</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-18.html"><span class="doc">CMOS Analog Switches</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-20.html"><span class="doc">CMOS Amplifier</span></a> (with chopping / auto zero)
+<a class="reference internal" href="../courses/electronics/electronics-lab-18.html"><span class="doc">CMOS Analog Switches</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Pulse Width Modulation (PWM)</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-pwm.html"><span class="doc">Pulse Width Modulator</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Triggering</p></td>
+<td></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-external-trigger.html"><span class="doc">Adjustable External Triggering Circuit</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Voltage Reference</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-9.html"><span class="doc">Regulated Voltage Reference</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-10.html"><span class="doc">Shunt Voltage Regulator</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-9.html"><span class="doc">Regulated Voltage Reference</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-10.html"><span class="doc">Shunt voltage regulator</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Digital to Analog Converters</p></td>
+<td></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-14.html"><span class="doc">Digital to Analog</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Analog to Digital Converters</p></td>
+<td></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-adc.html"><span class="doc">Analog to Digital</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-17.html"><span class="doc">Delta – Sigma Modulator</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Oscillators</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-21.html"><span class="doc">CMOS LC Oscillator</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-lco.html"><span class="doc">Light Controlled RC Oscillator</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-vco.html"><span class="doc">Voltage Controlled RC Oscillator</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-21.html"><span class="doc">CMOS LC Oscillator</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-lco.html"><span class="doc">Light Controlled RC Oscillator</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Rectifiers</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-scr.html"><span class="doc">Silicon Controlled Rectifiers</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-active-rectifiers.html"><span class="doc">Active Rectifiers</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-scr.html"><span class="doc">Silicon Controlled Rectifiers</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-32.html"><span class="doc">Active Rectifiers</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Optocouplers</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-22.html"><span class="doc">Optocouplers</span></a> (analog isolation amplifier)</p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-22.html"><span class="doc">Optocouplers</span></a> (analog isolation amplifier)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sensor Circuits</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-led-sensor.html"><span class="doc">LED as light sensor</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-pv.html"><span class="doc">Photo Voltaic Solar Cells</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-s1.html"><span class="doc">Electret microphone preamplifier</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-heart-rate-mon.html"><span class="doc">Heart Rate Monitor Circuit</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-led-sensor.html"><span class="doc">LED as light sensor</span></a>
+<a class="reference internal" href="../courses/eps/photovoltaic.html"><span class="doc">Characteristics of Photovoltaic Solar Cells</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-nr.html"><span class="doc">Negative voltage reference from positive reference</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-speaker.html"><span class="doc">Measuring a Loudspeaker Impedance Profile</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-heartbeat.html"><span class="doc">Heartbeat Measurement Circuit</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-window-comp-tmp01.html"><span class="doc">Temperature Control using Window Comparator</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">===== Digital Electronics Lab Activities and Exercises =====</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Topic</p></th>
+<th class="head"><p>ADALM1000 (M1K)</p></th>
+<th class="head"><p>ADALM2000 (M2K)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TTL Logic</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-27.html"><span class="doc">TTL inverter and NAND gate</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-27.html"><span class="doc">TTL inverter and NAND gate</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>CMOS Logic</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-28.html"><span class="doc">Build CMOS Logic Functions Using CD4007 Array</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-30.html"><span class="doc">CMOS Logic Circuits, Transmission Gate XOR</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-29.html"><span class="doc">CMOS Logic Circuits, D Type Latch</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-28.html"><span class="doc">Build CMOS Logic Functions Using CD4007 Array</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-30.html"><span class="doc">CMOS Logic Circuits, Transmission Gate XOR</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-29.html"><span class="doc">CMOS Logic Circuits, D Type Latch</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Voltage Shifting</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-voltage-level-shifter.html"><span class="doc">Logic Voltage Level Shifting</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-voltage-level-shifter.html"><span class="doc">Logic Voltage Level Shifting</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Multivibrators</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-24.html"><span class="doc">NPN</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-24m.html"><span class="doc">NMOS</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-24.html"><span class="doc">NPN</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-24m.html"><span class="doc">NMOS</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Ring Oscillators</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-ring-osc.html"><span class="doc">CMOS Ring Oscillator</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-ring-3x.html"><span class="doc">CMOS Ring Oscillator Frequency Multiplier</span></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">===== Communications Lab Activities and Exercises =====</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Course</p></th>
+<th class="head"><p>Function</p></th>
+<th class="head"><p>ADALM1000 (M1K)</p></th>
+<th class="head"><p>ADALM2000 (M2K)</p></th>
+<th class="head"><p>ADLAM-PLUTO (PlutoSDR)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Communications</p></td>
+<td><p>Transformers</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-transformers.html"><span class="doc">Transformers</span></a></p></td>
+<td><p><a class="reference internal" href="comms_lab_isr_adalm2000.html"><span class="doc">Inductor Self Resonance</span></a>
+<a class="reference internal" href="comms_lab_transformers_adalm2000.html"><span class="doc">Transformers</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Communications</p></td>
+<td><p>Transmission Lines</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lc-atline.html"><span class="doc">Artificial Transmission Lines</span></a></p></td>
+<td><p><a class="reference internal" href="tlines_standing_waves_adalm2000.html"><span class="doc">Transmission Lines and Standing Waves</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Communications</p></td>
+<td><p>Tuned Amplifiers</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-trans-coupled-amp.html"><span class="doc">Transformer Coupled Amplifier</span></a></p></td>
+<td><p><a class="reference internal" href="comms_lab_tuned_amplifiers_1_adalm2000.html"><span class="doc">Tuned Amplifiers,part I</span></a>
+<a class="reference internal" href="comms_lab_tuned_amplifiers_2_adalm2000.html"><span class="doc">Tuned Amplifiers,part II</span></a>
+<a class="reference internal" href="electronics_lab_transformer_coupled_amp_adalm2000.html"><span class="doc">Transformer Coupled Amplifier</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Communications</p></td>
+<td><p>Filters</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-signals-labs/alm-band-pass-step-response-lab.html"><span class="doc">Band Pass Filter step-response</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-signals-labs/alm-poly-phase-filter-lab.html"><span class="doc">Polyphase Filters</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-active-filter.html"><span class="doc">Active Filters</span></a>
+<a class="reference internal" href="../courses/electronics/comms-lab-polyphase-filter.html"><span class="doc">Polyphase Filters</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Communications</p></td>
+<td><p>Detectors</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/circuits1/alm-cir-envelope-detector.html"><span class="doc">AM modulation and Envelop Detectors</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-envelope-detector.html"><span class="doc">Envelope Detectors</span></a>
+<a class="reference internal" href="../courses/electronics/electronics_lab_fm_detectors.html"><span class="doc">FM Detectors</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Communications</p></td>
+<td><p>Variable Amplifiers</p></td>
+<td></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-variable-gain-amplifier.html"><span class="doc">Variable Gain Amplifiers</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Communications</p></td>
+<td><p>Frequency Synthesizers</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-hartley-osc.html"><span class="doc">Hartley oscillator</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/comms-lab-hartley-osc.html"><span class="doc">Hartley oscillator</span></a>
+<a class="reference internal" href="../courses/electronics/comms-lab-colpitts-osc.html"><span class="doc">Colpitts oscillator</span></a>
+<a class="reference internal" href="../courses/electronics/comms-lab-clapp-osc.html"><span class="doc">Clapp oscillator</span></a>
+<a class="reference internal" href="../courses/electronics/comms-lab-peltz-osc.html"><span class="doc">Peltz Oscillator</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Communications</p></td>
+<td><p>Modulation</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-pwm.html"><span class="doc">Pulse Width Modulation</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-pulse-width-modulation.html"><span class="doc">Pulse Width Modulation</span></a>
+<a class="reference internal" href="../courses/electronics/electronics_lab_diode_ring_modulator.html"><span class="doc">Diode Ring Modulators</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Communications</p></td>
+<td><p>Pulsed Oscillators</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-pulsed-osc.html"><span class="doc">Pulsed Oscillators</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/comms-lab-pulse-osc.html"><span class="doc">Pulsed Oscillators</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Communications</p></td>
+<td><p>Phase Locked Loop</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-signals-labs/alm-phase-locked-loop-lab.html"><span class="doc">Phase Locked Loops</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-31.html"><span class="doc">Phase Locked Loops</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Communications</p></td>
+<td><p>Mixers</p></td>
+<td></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-active-mixer.html"><span class="doc">Active Mixers</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Communications</p></td>
+<td><p>Generators</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-signals-labs/alm-lfsr-lab.html"><span class="doc">Pseudo-Random Sequence Generators</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/comms-lab-lfsr.html"><span class="doc">Pseudo-Random Sequence Generators</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Digital Communications</p></td>
+<td><p>SDR Basics and Probability</p></td>
+<td></td>
+<td></td>
+<td><p><a class="icon link reference external" href="https://github.com/sdrforengineers/LabGuides/blob/master/textbook/ece4305_lab0.pdf" target="_blank">Introduction To SDR (PDF)</a> <a class="icon link reference external" href="https://github.com/sdrforengineers/LabGuides/tree/master/textbook/lab0" target="_blank">Introduction To SDR (LaTeX)</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Digital Communications</p></td>
+<td><p>Timing Recovery</p></td>
+<td></td>
+<td></td>
+<td><p><a class="icon link reference external" href="https://github.com/sdrforengineers/LabGuides/blob/master/textbook/ece4305_lab1.pdf" target="_blank">Symbol Synchronization (PDF)</a> <a class="icon link reference external" href="https://github.com/sdrforengineers/LabGuides/tree/master/textbook/lab1" target="_blank">Symbol Synchronization (LaTeX)</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Digital Communications</p></td>
+<td><p>Frequency Recovery</p></td>
+<td></td>
+<td></td>
+<td><p><a class="icon link reference external" href="https://github.com/sdrforengineers/LabGuides/blob/master/textbook/ece4305_lab2.pdf" target="_blank">Carrier Synchronization (PDF)</a> <a class="icon link reference external" href="https://github.com/sdrforengineers/LabGuides/tree/master/textbook/lab2" target="_blank">Carrier Synchronization (LaTeX)</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Digital Communications</p></td>
+<td><p>Frame Synchronization</p></td>
+<td></td>
+<td></td>
+<td><p><a class="icon link reference external" href="https://github.com/sdrforengineers/LabGuides/blob/master/textbook/ece4305_lab3.pdf" target="_blank">Frame Synchronization (PDF)</a> <a class="icon link reference external" href="https://github.com/sdrforengineers/LabGuides/tree/master/textbook/lab3" target="_blank">Frame Synchronization (LaTeX)</a></p></td>
+</tr>
+<tr class="row-even"><td><p>tvelliott/charon
+(3rd party/ external)</p></td>
+<td><p>OFDM Transceiver</p></td>
+<td></td>
+<td></td>
+<td><p><a class="icon link reference external" href="https://github.com/tvelliott/charon" target="_blank">Charon: stand-alone OFDM transceiver using Pluto SDR</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>PySDR
+(3rd party/ external)</p></td>
+<td><p>PySDR: A Guide to SDR and DSP using Python</p></td>
+<td></td>
+<td></td>
+<td><p><a class="icon link reference external" href="https://pysdr.org/content/pluto.html" target="_blank">Pluto SDR in Python</a></p></td>
+</tr>
+<tr class="row-even"><td><p>PlutoSDR/dump1090
+(3rd party/ external)</p></td>
+<td><p>ADSB decoder</p></td>
+<td></td>
+<td></td>
+<td><p><a class="icon link reference external" href="https://github.com/PlutoSDR/dump1090" target="_blank">Dump 1090 ADSB decoder</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="power-electronics-lab-activities-and-exercises">
+<h2>Power Electronics Lab Activities and Exercises<a class="headerlink" href="#power-electronics-lab-activities-and-exercises" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Topic</p></th>
+<th class="head"><p>ADALM1000 (M1K)</p></th>
+<th class="head"><p>ADALM2000 (M2K)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Diodes</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-2.html"><span class="doc">PN Diode I/V curves</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-zener-diode.html"><span class="doc">Zener Diode I/V curves</span></a>
+<a class="reference internal" href="../courses/alm1k/circuits1/alm-cir-diode-rectifier.html"><span class="doc">Diode Rectifiers</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-3.html"><span class="doc">BJT as a diode</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-3m.html"><span class="doc">MOS as a diode</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-2.html"><span class="doc">PN Diode I/V curves</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-26.html"><span class="doc">Zener diode regulator</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-3.html"><span class="doc">BJT as a diode</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-3m.html"><span class="doc">MOS as a diode</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Active Rectifiers</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-active-rectifiers.html"><span class="doc">Active Rectifiers</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Bipolar Junction Transistors (BJT)</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-4.html"><span class="doc">BJT Device I/V curves</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-4s.html"><span class="doc">BJT as a switch</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-4.html"><span class="doc">BJT Device I/V curves</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Metal Oxide Transistors (MOS)</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-4m.html"><span class="doc">MOS Device I/V curves</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-4ms.html"><span class="doc">MOS as a switch</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-4m.html"><span class="doc">MOS Device I/V curves</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Voltage Reference</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-9.html"><span class="doc">Regulated Voltage Reference</span></a>
+<a class="reference internal" href="../courses/alm1k/alm-lab-10.html"><span class="doc">Shunt Voltage Regulator</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-9.html"><span class="doc">Regulated Voltage Reference</span></a>
+<a class="reference internal" href="../courses/electronics/electronics-lab-10.html"><span class="doc">Shunt voltage regulator</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Power Basics</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-power-efficiency.html"><span class="doc">Efficiency, Power Loss, and Thermal Management</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/efficiency_power_loss.html"><span class="doc">Efficiency, Power Loss, and Thermal Management</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Current Sensing</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-current-transformer.html"><span class="doc">The Current Transformer</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Switched Capacitor Design</p></td>
+<td></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-19.html"><span class="doc">Switched Capacitor circuits</span></a>
+<a class="reference internal" href="../courses/electronics/switched-cap-power-supplies.html"><span class="doc">Switched Capacitor Power Supplies</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>DC-DC Converters</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-lab-15.html"><span class="doc">DC-DC Converters I</span></a> (inductors)
+<a class="reference internal" href="../courses/alm1k/alm-lab-16.html"><span class="doc">DC-DC Converters II</span></a> (capacitors)
+<a class="reference internal" href="../courses/alm1k/circuits1/alm-joule-thief.html"><span class="doc">Simple “Joule Thief” DC/DC Converter</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/electronics-lab-15.html"><span class="doc">DC-DC Converters I</span></a> (inductors)
+<a class="reference internal" href="../courses/electronics/electronics-lab-16.html"><span class="doc">DC-DC Converters II</span></a> (capacitors)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Regulators</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-ldo-lab.html"><span class="doc">Low Drop out Linear Voltage Regulators</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Buck &amp; Boost Converters</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/circuits1/alm-cir-15a.html"><span class="doc">DC-DC Boost Converters</span></a>
+<a class="reference internal" href="../courses/alm1k/circuits1/alm-bipolar-step-up-dc-dc.html"><span class="doc">Forward DC-DC Converters</span></a></p></td>
+<td><p><a class="reference internal" href="../courses/electronics/buck_converter_basics.html"><span class="doc">Buck Converter Basics</span></a>
+<a class="reference internal" href="open_loop_boost_and_buck_adalm2000.html"><span class="doc">Boost and Buck converter open-loop operation</span></a>
+<a class="reference internal" href="closed_loop_buck_adalm2000.html"><span class="doc">Buck converter closed-loop operation</span></a>
+<a class="reference internal" href="closed_loop_boost_adalm2000.html"><span class="doc">Boost converter closed-loop operation</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Electronic Circuit Breakers</p></td>
+<td><p><a class="reference internal" href="../courses/alm1k/alm-circuit-breaker.html"><span class="doc">Electronic Circuit Breakers</span></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="embedded-systems-lab-activities-and-exercises-coming-soon">
+<h2>Embedded Systems Lab Activities and Exercises (Coming soon!)<a class="headerlink" href="#embedded-systems-lab-activities-and-exercises-coming-soon" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Topic</p></th>
+<th class="head"><p>MAX78000FTHR</p></th>
+<th class="head"><p>Arduino Uno</p></th>
+<th class="head"><p>ChibiOS</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Finding Technical Info</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>Basic I/O</p></td>
+<td><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/msdk//USERGUIDE/#getting-started-with-visual-studio-code" target="_blank">Blink (MSDK User Guide)</a>
+<a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/GPIO" target="_blank">Button (MSDK GPIO example)</a></p></td>
+<td><p><a class="icon link reference external" href="https://docs.arduino.cc/built-in-examples/basics/Blink/" target="_blank">Blink</a>
+<a class="icon link reference external" href="https://www.arduino.cc/en/Tutorial/BuiltInExamples/Button" target="_blank">Button</a></p></td>
+<td><p><a class="icon link reference external" href="https://www.playembedded.org/blog/simplest-project-chibios/" target="_blank">Simplest ChibiOS Progect Ever (Blink)</a>
+<a class="icon link reference external" href="https://www.playembedded.org/blog/mastering-push-buttons-chibios-pal/" target="_blank">Mastering Push Buttons with ChibiOS</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Interrupt Service Routines</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p><a class="icon link reference external" href="https://www.playembedded.org/blog/mastering-exti-chibios-pal/" target="_blank">External Interrupts with ChibiOS PAL: From Polling to Events</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Analog to Digital (ADC)</p></td>
+<td><p><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/ADC" target="_blank">Voltmeter</a>
+Temperature Measurement</p></td>
+<td><p>Voltmeter
+Temperature Measurement</p></td>
+<td><p>Voltmeter
+Temperature Measurement</p></td>
+</tr>
+<tr class="row-even"><td><p>Timers</p></td>
+<td><p><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/TMR" target="_blank">Timer Examples</a></p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>Serial Communication: UART</p></td>
+<td><p><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/UART" target="_blank">UART Example</a></p></td>
+<td><p>Lab</p></td>
+<td><p><a class="icon link reference external" href="https://www.playembedded.org/blog/stm32-usart-chibios-serial/" target="_blank">Using STM32 USART with ChibiOS</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Serial Communication: I2C</p></td>
+<td><p><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/I2C_SCAN" target="_blank">I2C Bus Scanner</a>
+<a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/I2C_ADXL343" target="_blank">I2C Accelerometer (ADXL343)</a></p></td>
+<td><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/Linduino/tree/main/LTSketchbook/Utilities/I2C_Address_Scan/I2C_Address_Scan.ino" target="_blank">I2C Bus Scanner</a></p></td>
+<td><p><a class="icon link reference external" href="https://www.playembedded.org/blog/stm32-i2c-chibios/" target="_blank">Using STM32 I2C with ChibiOS</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Serial Communication: SPI</p></td>
+<td><p><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/SPI" target="_blank">SPI loopback</a></p></td>
+<td><p>X</p></td>
+<td><p><a class="icon link reference external" href="https://www.playembedded.org/blog/hands-on-exercise-with-the-adxl355-and-chibios-spi/" target="_blank">ADXL355 and ChibiOS SPI</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Direct Memory Access (DMA)</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>Camera</p></td>
+<td><p><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/ImgCapture" target="_blank">Image Capture</a></p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-even"><td><p>TFT Display</p></td>
+<td><p><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/TFT_Demo" target="_blank">TFT Featherwing Example</a></p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>Serial Communication: I2S/TDM Audio</p></td>
+<td><p><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/I2S" target="_blank">Simple I2S Receiver</a></p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-even"><td><p>Random Numbers</p></td>
+<td><p><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/TRNG" target="_blank">True Random Number Generator</a></p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>Secure Authentication Algorithms</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-even"><td><p>Pulse Train Engine</p></td>
+<td><p><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/Pulse_Train" target="_blank">Pulse Train Example</a></p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>Examining a Memory Map</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-even"><td><p>Linkers &amp; Linkerscript</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>RTOS Basics</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-even"><td><p>Convolutional Neural Networks</p></td>
+<td><p><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/CNN/mnist" target="_blank">MNIST Handwriting Recognition</a>
+<a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/CNN/cats-dogs_demo" target="_blank">Cat or Dog?</a>
+<a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/CNN/facial_recognition" target="_blank">Facial Recognition</a>
+<a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/CNN/kws20_demo" target="_blank">Keyword Spotting</a></p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="general-expected-background">
+<h1>General Expected Background<a class="headerlink" href="#general-expected-background" title="Link to this heading"></a></h1>
+<p>The communications labs and topics are split into two main categories: analog communications and digital communications. The analog communications sections require a basic background in certain analysis, as well as some introduction to continuous-time signal analysis. The digital communications topics are targeted at those with a solid background in digital signal processing and the fundamentals of modulation/demodulation. A basic understanding of probability tools is useful as well. Labs are performed in MATLAB, therefore knowledge of writing MATLAB code is essential.</p>
+<p>Related reference manuals are recommended:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.amazon.com/Software-Receiver-Design-Digital-Communication/dp/0521189446" target="_blank">Software Receiver Design: Build your Own Digital Communication System in Five Easy Steps</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.amazon.com/Digital-Communications-Discrete-Time-Michael-Rice/dp/0130304972" target="_blank">Digital Communications: A Discrete-Time Approach</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.amazon.com/Linear-Systems-Signals-2nd-Lathi/dp/0195158334" target="_blank">Linear Systems and Signals</a></p></li>
+</ul>
+<p><strong>Return to Communications Course Material</strong> <a class="reference internal" href="../courses/comms.html"><span class="doc">Table of Contents</span></a></p>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

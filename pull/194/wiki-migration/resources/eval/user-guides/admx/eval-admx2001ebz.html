@@ -1,0 +1,2123 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This page applies to hardware revision B and C, and firmware versions 1.3.1, 1.3.2, and 1.3.3. It may not apply to past or future versions. For firmware update instructions, see Firmware Updates." name="description" />
+
+    <title>EVAL-ADMX2001 LCR Meter Demo/Evaluation Setup &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">EVAL-ADMX2001 LCR Meter Demo/Evaluation Setup</a><ul>
+<li><a class="reference internal" href="#eval-admx2001ebz-evaluation-kit-contents">EVAL-ADMX2001EBZ Evaluation Kit Contents</a></li>
+<li><a class="reference internal" href="#optional-equipment">Optional Equipment</a></li>
+<li><a class="reference internal" href="#driver-installation">1. Driver Installation</a></li>
+<li><a class="reference internal" href="#terminal-emulator-installation">2. Terminal Emulator Installation</a></li>
+<li><a class="reference internal" href="#basic-hardware-setup">3. Basic Hardware Setup</a><ul>
+<li><a class="reference internal" href="#self-test-functionality">Self-Test Functionality</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#opening-a-session-via-teraterm">4. Opening a Session via TeraTerm</a></li>
+<li><a class="reference internal" href="#performing-basic-measurements">5. Performing Basic Measurements</a><ul>
+<li><a class="reference internal" href="#example">Example</a><ul>
+<li><a class="reference internal" href="#using-the-help-functionality-in-the-command-line-interface">Using the Help Functionality in the Command-Line Interface</a></li>
+<li><a class="reference internal" href="#useful-hints">Useful Hints</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#measurement-display-modes">Measurement Display Modes</a></li>
+<li><a class="reference internal" href="#id1">Selecting a Measurement Range</a></li>
+<li><a class="reference internal" href="#estimating-the-impedance-and-admittance-of-capacitive-and-inductive-devices">Estimating the Impedance and Admittance of Capacitive and Inductive Devices</a></li>
+<li><a class="reference internal" href="#reducing-measurement-noise">Reducing Measurement Noise</a></li>
+<li><a class="reference internal" href="#performing-parametric-sweeps">Performing Parametric Sweeps</a><ul>
+<li><a class="reference internal" href="#example-1">Example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#performing-dc-resistance-measurements">Performing DC Resistance Measurements</a></li>
+<li><a class="reference internal" href="#plotting-measurement-data">Plotting Measurement Data</a></li>
+<li><a class="reference internal" href="#optimizing-measurement-timing">Optimizing Measurement Timing</a><ul>
+<li><a class="reference internal" href="#delay-usage-and-measurement-sequencing">Delay Usage and Measurement Sequencing</a></li>
+<li><a class="reference internal" href="#optimizing-single-point-measurements">Optimizing Single Point Measurements</a><ul>
+<li><a class="reference internal" href="#id4">Calibration Procedure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#calibration-steps">Calibration Steps</a></li>
+<li><a class="reference internal" href="#calibration-example">Calibration Example</a></li>
+<li><a class="reference internal" href="#reading-and-writing-calibration-coefficients">Reading and Writing Calibration Coefficients</a></li>
+<li><a class="reference internal" href="#id9">Calibration Over Frequency</a></li>
+<li><a class="reference internal" href="#preloaded-calibration-sets">Preloaded Calibration Sets</a></li>
+<li><a class="reference internal" href="#compensation-procedure">Compensation Procedure</a><ul>
+<li><a class="reference internal" href="#eval-admx2001ebz-terminal-description">EVAL-ADMX2001EBZ Terminal Description</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#spi-interface">SPI Interface</a></li>
+<li><a class="reference internal" href="#id12">Trigger Input / Output Ports</a></li>
+<li><a class="reference internal" href="#pmod-headers">PMOD Headers</a></li>
+<li><a class="reference internal" href="#digital-output-pins">Digital Output Pins</a><ul>
+<li><a class="reference internal" href="#admx2001b-pin-configuration-and-function-descriptions">ADMX2001B Pin Configuration and Function Descriptions</a></li>
+<li><a class="reference internal" href="#id13">Firmware Updates</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#update-using-installation-script">Update Using Installation Script</a></li>
+<li><a class="reference internal" href="#update-using-manual-programmer">Update Using Manual Programmer</a></li>
+<li><a class="reference internal" href="#firmware-release-highlights">Firmware Release Highlights</a><ul>
+<li><a class="reference internal" href="#python-scripting">Python Scripting</a></li>
+<li><a class="reference internal" href="#python-graphical-user-interface">Python Graphical User Interface</a></li>
+<li><a class="reference internal" href="#support">Support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="eval-admx2001-lcr-meter-demo-evaluation-setup">
+<h1>EVAL-ADMX2001 LCR Meter Demo/Evaluation Setup<a class="headerlink" href="#eval-admx2001-lcr-meter-demo-evaluation-setup" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This page applies to hardware revision B and C, and firmware versions 1.3.1, 1.3.2, and 1.3.3. It may not apply to past or future versions. For firmware update instructions, see <a class="icon link reference external" href="https://wiki.analog.com/eval-admx2001ebz" target="_blank">Firmware Updates.</a></p>
+</div>
+<p>The EVAL-ADMX2001 LCR Meter Demo is an evaluation system that is comprised of both the ADMX2001B and the EVAL-ADMX2001EBZ boards.</p>
+<p>The <strong>ADMX2001B</strong> is a high-performance, precision impedance analyzer module.</p>
+<ul class="simple">
+<li><p>Highly compact, 1.5 inch by 2.5 inch System-on-Module (SOM)</p></li>
+<li><p>Resistance measurements at DC or impedance measurements from 0.2 Hz to 10 MHz</p></li>
+<li><p>18-bit acquisition channels</p></li>
+<li><p>Operates from a single 3.3V supply</p></li>
+<li><p>Flexible UART and SPI interfaces</p></li>
+<li><p>18 display mode formats in SI units</p></li>
+</ul>
+<p>The <strong>EVAL-ADMX2001EBZ</strong> is an easy-to-use evaluation and development breakout board that enables convenient access to the functionality of the ADMX2001B Precision Impedance Analyzer Measurement Module.</p>
+<ul class="simple">
+<li><p>BNC connectors can interface to common LCR meter test probes and fixtures</p></li>
+<li><p>UART interface can be used with USB-to-UART cables to interface to host PC</p></li>
+<li><p>Trigger and clock synchronization signals are available through SMA connectors that simplify the connection to standard test equipment</p></li>
+<li><p>Arduino-style headers allow the user to develop embedded code with boards like the SDP-K1</p></li>
+<li><p>Power jack accepts various input voltages from ac/dc power adapters that can supply +5V to +12V</p></li>
+</ul>
+<section id="eval-admx2001ebz-evaluation-kit-contents">
+<h2>EVAL-ADMX2001EBZ Evaluation Kit Contents<a class="headerlink" href="#eval-admx2001ebz-evaluation-kit-contents" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>EVAL-ADMX2001EBZ</strong> board</p></li>
+<li><p>UART to USB cable (TTL-232R-RPI)</p></li>
+<li><p>Universal power adapter with 9VDC output</p></li>
+<li><p>LCR meter test clips</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Additional Equipment Required ====</div>
+</div>
+<ul class="simple">
+<li><p><strong>ADMX2001B</strong> High-Performance Precision Impedance Analyzer Measurement Module</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>It is critical to purchase <strong>both</strong> the <strong>ADMX2001B</strong> High-Performance Precision Impedance Analyzer Measurement Module and the <strong>EVAL-ADMX2001EBZ</strong> LCR Meter Demonstration Board. These are sold separately.</p>
+</div>
+</section>
+<section id="optional-equipment">
+<h2>Optional Equipment<a class="headerlink" href="#optional-equipment" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>LCR meter accessories. Available from various test and measurement manufacturers, for example:</p>
+<ul>
+<li><p><a class="icon link reference external" href="https://www.keysight.com/en/pc-1000002552%3Aepsg%3Apgr/lcr-meter-impedance-measurement-product-accessories" target="_blank">Keysight’s Impedance Measurement Accessories</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.digikey.com/en/products/detail/b-k-precision/TL89S1/7915183" target="_blank">B+K Precision TL89S1 SMD Test Fixture</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.digikey.com/en/products/detail/b-k-precision/TL89F2/6618989" target="_blank">B+K Precision TL89F1 4-Terminal Test Fixture for leaded components</a></p></li>
+</ul>
+</li>
+<li><p>Calibration Standards and Accessories</p>
+<ul>
+<li><p><a class="icon link reference external" href="https://www.ietlabs.com/" target="_blank">IET Labs</a> (former General Radio products)</p></li>
+<li><p><a class="icon link reference external" href="https://www.keysight.com/en/pd-1000003831%3Aepsg%3Apro-pn-42090A/open-termination-4-terminal-pair" target="_blank">Keysight 42090A Open Termination</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.keysight.com/en/pd-1000003830%3Aepsg%3Apro-pn-42091A/short-termination-4-terminal-pair" target="_blank">Keysight 42091A Short Termination</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.keysight.com/en/pd-1000003832%3Aepsg%3Apro-pn-42030A/four-terminal-pair-standard-resistor-set" target="_blank">Keysight 42030A Four Terminal Pair Standard Resistor Set</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.keysight.com/en/pd-1000003834%3Aepsg%3Apro-pn-16380A/standard-air-capacitor-set-1pf-to-1000pf" target="_blank">Keysight 16380A Standard Air Capacitor Set (1pF to 1000pF)</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.keysight.com/en/pd-1000003833%3Aepsg%3Apro-pn-16380C/capacitance-standard-set-001uf-to-10uf" target="_blank">Keysight 16380C Capacitance Standard Set (0.01uF to 10uF)</a></p></li>
+</ul>
+</li>
+<li><p>LCR Meter for verification and calibration transfer</p>
+<ul>
+<li><p><a class="icon link reference external" href="https://www.keysight.com/en/pd-715495-pn-E4980A/precision-lcr-meter-20-hz-to-2-mhz" target="_blank">Keysight E4980A Precision LCR Meter</a></p></li>
+</ul>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">===== Quick Start ===== There are five simple steps to start evaluating the ADMX2001:</div>
+</div>
+<ul class="simple">
+<li><p>Driver Installation</p></li>
+<li><p>Terminal Emulator Installation</p></li>
+<li><p>Basic hardware setup</p></li>
+<li><p>Open a session through the terminal emulator (e.g. TeraTerm)</p></li>
+<li><p>Perform basic measurements</p></li>
+</ul>
+<p>These steps are explained in detail in the following sections.</p>
+</section>
+<hr class="docutils" />
+<section id="driver-installation">
+<h2>1. Driver Installation<a class="headerlink" href="#driver-installation" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default communication interface to the EVAL-ADMX2001EBZ is via its UART port. When using the UART to USB cable included with the evaluation board (TTL-232R-RPI), FTDI’s Virtual COM Port (VCP) drivers must be downloaded from their website located at <a class="icon link reference external" href="https://www.ftdichip.com/Drivers/VCP.htm" target="_blank">https://www.ftdichip.com/Drivers/VCP.htm</a></p>
+</div>
+<p><strong>Installation steps:</strong></p>
+<ul class="simple">
+<li><p>Download the driver <strong>setup executable</strong> for the host OS version from <a class="icon link reference external" href="https://www.ftdichip.com/Drivers/VCP.htm" target="_blank">https://www.ftdichip.com/Drivers/VCP.htm</a></p>
+<ul>
+<li><p>Note: for detailed instructions, visit <a class="icon link reference external" href="https://www.ftdichip.com/Support/Documents/InstallGuides.htm" target="_blank">https://www.ftdichip.com/Support/Documents/InstallGuides.htm</a></p></li>
+</ul>
+</li>
+<li><p>Unzip the file and run the setup executable</p></li>
+<li><p><strong>Connect the USB to UART cable to the PC</strong></p></li>
+<li><p>Open the Device Manager</p></li>
+<li><p>In the Device Manager window, verify that the USB Serial Port is displayed under “Ports (COM &amp; LPT)” and that a serial port identifier has been assigned as shown below:</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/dev_mgr_vcp_installed.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/admx/dev_mgr_vcp_installed.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/dev_mgr_vcp_installed.png" style="width: 600px;" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="terminal-emulator-installation">
+<h2>2. Terminal Emulator Installation<a class="headerlink" href="#terminal-emulator-installation" title="Link to this heading"></a></h2>
+<p>To communicate with ADMX2001B via its command-line interface and UART, a terminal emulator like TeraTerm is recommended. Download TeraTerm from the official Github Releases page:</p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon link reference external" href="https://github.com/TeraTermProject/teraterm/releases" target="_blank">https://github.com/TeraTermProject/teraterm/releases</a></p>
+</div>
+<p>Download and run the latest stable release. Follow the on-screen instructions.</p>
+<div class="line-block">
+<div class="line">Alternatives like PuTTY can also be used, but some users have had issues with PuTTY where the terminal window does not open. Additionally, some terminals do not support the ANSI Escape Codes which manipulate the cursor position and text color. If the ANSI Escape Codes are not supported, the terminal will render them as boxes. TeraTerm supports these characters.</div>
+<div class="line">—-</div>
+</div>
+</section>
+<section id="basic-hardware-setup">
+<h2>3. Basic Hardware Setup<a class="headerlink" href="#basic-hardware-setup" title="Link to this heading"></a></h2>
+<p>The following figure shows the basic connections required for evaluating the EVAL-ADMX2001. &lt;WRAP&gt;<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/eval-admx2001ebz_basic_connections_labeled.png"><img alt="image1" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/eval-admx2001ebz_basic_connections_labeled.png" style="width: 600px;" /></a>&lt;/WRAP&gt;</p>
+<ul class="simple">
+<li><p>Insert the ADMX2001B module into the EVAL-ADMX2001EBZ board in the location shown above. The connectors are keyed, so they can only be inserted in the orientation shown</p></li>
+<li><p>Set the load select switches to OPEN and GND, as shown below. This is required for the self-test to pass, indicated by the red/green LED on the underside of the ADMX2001B module&lt;WRAP&gt;<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/open_load.png"><img alt="image2" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/open_load.png" style="width: 450px;" /></a>&lt;/WRAP&gt;</p></li>
+<li><p>Connect the power adapter to the power jack and to the AC outlet</p></li>
+<li><p>Verify that the self-test light is green (light is on the bottom of the board, but is visible if viewed from the side where the oscillator and FPGA are mounted)</p></li>
+<li><p>Connect the UART to USB cable to the UART terminals TX (orange)–&gt;TX, RX (yellow)–&gt;RX and GND (black)–&gt;GND:&lt;WRAP&gt;<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/img_0937.jpg"><img alt="image3" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/img_0937.jpg" style="width: 450px;" /></a>&lt;/WRAP&gt;</p></li>
+<li><p>Ensure that the CLK_SEL jumper cap (located under the UART header) is set to INT (internal clock)</p></li>
+<li><p>Set the load select switches to DUT and GND, as shown below:&lt;WRAP&gt;<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/bnc_load.png"><img alt="image4" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/bnc_load.png" style="width: 450px;" /></a>&lt;/WRAP&gt;</p></li>
+<li><p>Use the test leads to connect to the device under test (DUT):</p></li>
+</ul>
+<p>&lt;WRAP&gt;<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/photo_setup_labeled.jpg"><img alt="image5" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/photo_setup_labeled.jpg" style="width: 600px;" /></a>&lt;/WRAP&gt;</p>
+<p>The two BNC connectors from the red leads go to the HCUR/HPOT ports, the two BNC connectors from the black leads go to the LPOT/LCUR ports.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Inspect the BNC connectors on the test clips. The housing can become partially unscrewed, allowing the conductor to be pushed back inside and preventing it from making good contact. Additionally, when using the clips in the “open” configuration, each clip should clamp on its own small wire scrap to ensure both sides of the clip are electrically connected.</p>
+</div>
+<p>An example of an unscrewed housing of a test clip: &lt;WRAP&gt;<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/cal_connections_5.jpg"><img alt="image6" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/cal_connections_5.jpg" style="width: 600px;" /></a>&lt;/WRAP&gt;</p>
+<p>An example of how to use the wire scrap in each of the test clips, when using them in the open configuration: &lt;WRAP&gt;<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/open_config_test_clips_2.png"><img alt="image7" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/open_config_test_clips_2.png" style="width: 600px;" /></a>&lt;/WRAP&gt;</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="self-test-functionality">
+<h3>Self-Test Functionality<a class="headerlink" href="#self-test-functionality" title="Link to this heading"></a></h3>
+<p>When the ADMX2001B powers on, it automatically performs a self-test. The bi-color LED on the underside of the board will turn green if the board boots and passes the self-test, or half-green half-red if the self-test fails. It will turn red if there is a major issue preventing it from booting such as a power issue, missing encryption key, missing firmware or something else. In order to pass the analog component of the self-test, the switches S1 and S2 must be set to OPEN and GND. Alternatively, if S1 and S2 are in the DUT and GND position, the test leads must be connected in the ‘open’ configuration to pass the self-test. The board will still attempt to function without passing the self-test.</p>
+<p>The status of the last self-test can be seen by running the command <code class="docutils literal notranslate"><span class="pre">selftest</span></code>. Using <code class="docutils literal notranslate"><span class="pre">selftest</span> <span class="pre">run</span></code> will rerun the self-test. By default, the self-test only runs on boot.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="opening-a-session-via-teraterm">
+<h2>4. Opening a Session via TeraTerm<a class="headerlink" href="#opening-a-session-via-teraterm" title="Link to this heading"></a></h2>
+<p>After installing TeraTerm, open the program and choose Serial connection. Select the COM port identified earlier in Device Manager. Click OK. Then choose the dropdown labeled Setup, click Serial port, and ensure that the COM port is set, Speed=115200, Data=8 bits, Parity=none, Stop bits=1 bits, Flow control=none. Click New setting. Optionally, choose Setup-&gt;Save setup. Save the file to the default directory. Now, when launching TeraTerm, it will automatically try to connect with the saved settings.</p>
+<p>Make sure the hardware is properly installed and that power is available to the board via the 12V power adapter. TeraTerm should now be connected to the board. To check:</p>
+<ul class="simple">
+<li><p>Press ENTER to display the ADMX2001&gt; prompt</p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">*idn</span></code> and press ENTER to display the firmware version</p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">help</span></code> and press ENTER to see a list of commands supported by ADMX2001B.</p></li>
+</ul>
+<div class="line-block">
+<div class="line">Please note that closing the TeraTerm window does not reset the ADMX2001B settings from the last session.</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="performing-basic-measurements">
+<h2>5. Performing Basic Measurements<a class="headerlink" href="#performing-basic-measurements" title="Link to this heading"></a></h2>
+<p>Upon opening a session with TeraTerm, the ADMX2001B is ready to perform impedance measurements.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The measurements reported by the module will not be accurate unless it has been calibrated. For detailed instructions on how to calibrate the module, please refer to the <a class="icon link reference external" href="https://wiki.analog.com/eval-admx2001ebz" target="_blank">Calibration Procedure</a> section in this user guide.</p>
+</div>
+<p>By default, the module is set to perform single-point impedance measurements in rectangular coordinates with a 1V pk signal (magnitude = 1) at 1kHz, and no DC offset. To initiate a measurement type the <code class="docutils literal notranslate"><span class="pre">z</span></code> command at the prompt and press ENTER.</p>
+<p>Measurement settings are not always in their base SI form. Frequency is in kHz, delays are in milliseconds. The signal magnitude sets the Vpk value. The peak-to-peak value is twice the signal magnitude, centered around the offset voltage. The DC offset is in volts.</p>
+<p>The AC magnitude can be configured anywhere between 0.15V pk and 2.25V pk, but the actual magnitude across the DUT will be be dependent on the DUT impedance, due to the 100Ω source resistance; see <a class="icon link reference external" href="https://wiki.analog.com/eval-admx2001ebz" target="_blank">Selecting a Measurement Range</a> for details.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The order in which the settings commands are entered is not important.</p>
+</div>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h3>
+<p>Perform a capacitance measurement in parallel with an equivalent resistor (Cp-Rp) at 100kHz with a 1V amplitude (2V pk-pk) sine. Return 5 readings, where each is an average of 10 samples.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">frequency</span> <span class="mi">100</span>
+<span class="n">frequency</span> <span class="o">=</span> <span class="mf">100.0000</span><span class="n">kHz</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">display</span> <span class="mi">9</span>
+<span class="n">Measurement</span> <span class="n">model</span><span class="p">:</span> <span class="mi">9</span> <span class="o">-</span> <span class="n">Capacitance</span> <span class="ow">and</span> <span class="n">equivalent</span> <span class="n">parallel</span> <span class="n">resistance</span> <span class="p">(</span><span class="n">Cp</span><span class="p">,</span><span class="n">Rp</span><span class="p">)</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">magnitude</span> <span class="mi">1</span>
+<span class="n">magnitude</span> <span class="o">=</span> <span class="mf">1.0000</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">average</span> <span class="mi">10</span>
+<span class="n">average</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">count</span> <span class="mi">5</span>
+<span class="n">sampleCount</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">z</span>
+<span class="mi">0</span><span class="p">,</span><span class="mf">5.677640e-13</span><span class="p">,</span><span class="mf">8.062763e+07</span>
+<span class="mi">1</span><span class="p">,</span><span class="mf">5.668012e-13</span><span class="p">,</span><span class="mf">8.305672e+07</span>
+<span class="mi">2</span><span class="p">,</span><span class="mf">5.675237e-13</span><span class="p">,</span><span class="mf">8.208995e+07</span>
+<span class="mi">3</span><span class="p">,</span><span class="mf">5.673763e-13</span><span class="p">,</span><span class="mf">8.276912e+07</span>
+<span class="mi">4</span><span class="p">,</span><span class="mf">5.683635e-13</span><span class="p">,</span><span class="mf">8.463327e+07</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, auto-range is selected. To disable the auto-ranging function, use the <code class="docutils literal notranslate"><span class="pre">setgain</span> <span class="pre">&lt;ch&gt;</span> <span class="pre">&lt;setting&gt;</span></code> command to select a specific measurement range for the voltage (ch0) or current (ch1) measurement channels.</p>
+</div>
+<hr class="docutils" />
+<section id="using-the-help-functionality-in-the-command-line-interface">
+<h4>Using the Help Functionality in the Command-Line Interface<a class="headerlink" href="#using-the-help-functionality-in-the-command-line-interface" title="Link to this heading"></a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">help</span></code> command will display all the commands available to the user from the command-line interface (CLI). <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/help_command_printout_teraterm.png"><img alt="image8" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/help_command_printout_teraterm.png" style="width: 1000px;" /></a> To get help for any command, simply type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ADMX2001</span><span class="o">&gt;</span><span class="n">help</span> <span class="o">&lt;</span><span class="n">command</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>For example, to get help with how to select different measurement display formats, type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ADMX2001</span><span class="o">&gt;</span><span class="n">help</span> <span class="n">display</span>
+</pre></div>
+</div>
+<p>Which should show a similar screen to the picture shown below</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/help_display_teraterm.png"><img alt="image9" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/help_display_teraterm.png" style="width: 1000px;" /></a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="useful-hints">
+<h4>Useful Hints<a class="headerlink" href="#useful-hints" title="Link to this heading"></a></h4>
+</section>
+</section>
+</section>
+<section id="measurement-display-modes">
+<h2>Measurement Display Modes<a class="headerlink" href="#measurement-display-modes" title="Link to this heading"></a></h2>
+<p>The ADMX2001B returns a result in one of 18 different display modes, shown below. The result is always reported in the base SI unit. For instance, <code class="docutils literal notranslate"><span class="pre">display</span> <span class="pre">mode</span> <span class="pre">0</span></code> (Cs, Rs) returns the series capacitance in Farads, and the series resistance in Ohms.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Display Mode Number</p></th>
+<th class="head"><p>Mode Name</p></th>
+<th class="head"><p>Form</p></th>
+<th class="head"><p>SI Unit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>Equivalent series capacitance and resistance</p></td>
+<td><p>Cs, Rs</p></td>
+<td><p>Farads, Ohms</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Equivalent series capacitance and dissipation factor</p></td>
+<td><p>Cs, D</p></td>
+<td><p>Farads, Dimensionless</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Equivalent series capacitance and quality factor</p></td>
+<td><p>Cs, Q</p></td>
+<td><p>Farads, Dimensionless</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Inductance and equivalent series resistance</p></td>
+<td><p>Ls, Rs</p></td>
+<td><p>Henries, Ohms</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>Equivalent series inductance and dissipation factor</p></td>
+<td><p>Ls, D</p></td>
+<td><p>Henries, Dimensionless</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>Equivalent series inductance and quality factor</p></td>
+<td><p>Ls, Q</p></td>
+<td><p>Henries, Dimensionless</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>Impedance in rectangular coordinates (default)</p></td>
+<td><p>R, X</p></td>
+<td><p>Ohms, Ohms</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>Impedance in magnitude and phase in degrees</p></td>
+<td><p>Z, deg</p></td>
+<td><p>Ohms, Degrees</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>Impedance in magnitude and phase in radians</p></td>
+<td><p>Z, rad</p></td>
+<td><p>Ohms, Radians</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p>Capacitance and equivalent parallel resistance</p></td>
+<td><p>Cp, Rp</p></td>
+<td><p>Farads, Ohms</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>Equivalent parallel capacitance and dissipation factor</p></td>
+<td><p>Cp, D</p></td>
+<td><p>Farads, Dimensionless</p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p>Equivalent parallel capacitance and quality factor</p></td>
+<td><p>Cp, Q</p></td>
+<td><p>Farads, Dimensionless</p></td>
+</tr>
+<tr class="row-even"><td><p>12</p></td>
+<td><p>Inductance and equivalent parallel resistance</p></td>
+<td><p>Lp, Rp</p></td>
+<td><p>Henries, Ohms</p></td>
+</tr>
+<tr class="row-odd"><td><p>13</p></td>
+<td><p>Equivalent parallel inductance and dissipation factor</p></td>
+<td><p>Lp, D</p></td>
+<td><p>Henries, Dimensionless</p></td>
+</tr>
+<tr class="row-even"><td><p>14</p></td>
+<td><p>Equivalent parallel inductance and quality factor</p></td>
+<td><p>Lp, Q</p></td>
+<td><p>Henries, Dimensionless</p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p>Admittance in rectangular coordinates</p></td>
+<td><p>G, B</p></td>
+<td><p>Siemens, Siemens</p></td>
+</tr>
+<tr class="row-even"><td><p>16</p></td>
+<td><p>Admittance in magnitude and phase in degrees</p></td>
+<td><p>Y, deg</p></td>
+<td><p>Siemens, Degrees</p></td>
+</tr>
+<tr class="row-odd"><td><p>17</p></td>
+<td><p>Admittance in magnitude and phase in radians</p></td>
+<td><p>Y, rad</p></td>
+<td><p>Siemens, Radians</p></td>
+</tr>
+<tr class="row-even"><td><p>18</p></td>
+<td><p>Off</p></td>
+<td><p>None</p></td>
+<td><p>None</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id1">
+<h2>Selecting a Measurement Range<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>By default, the ADMX2001B is in auto-ranging mode, which will optimize the measurement gain of the voltage and current measurement channels, depending on the frequency and magnitude of the test signal.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The auto-ranging algorithm will only be applied to the conditions of the first measurement. When performing frequency sweeps, the impedance of the device under test will change and could fall outside of the measurement range selected by the initial measurement conditions.</p>
+<p>Additionally, the DC offset control is disabled when using the autorange. Manual gain setting must be employed when using the DC offset. The DC offset will be automatically set to -0.25V to allow the saturation detection to perform as expected when autoranging.</p>
+</div>
+<p>In some cases, the user may want to select a specific measurement range. The measurement range is mostly affected by the transimpedance of channel 1 and the test signal magnitude. It is recommended to select the transimpedance value that is smaller than the expected value of the impedance under test, but larger than the next transimpedance selection.</p>
+<p>For example, if the DUT’s expected impedance value is 2kΩ, enter the following in the command line prompt:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">setgain</span> <span class="n">ch0</span> <span class="mi">0</span>
+  <span class="n">voltGain</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">setgain</span> <span class="n">ch1</span> <span class="mi">1</span>
+  <span class="n">currGain</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>The command <code class="docutils literal notranslate"><span class="pre">setgain</span> <span class="pre">ch1</span></code> modifies the current measurement range of L_CUR (channel 1). This is done by setting different values for (R<sub>TIA</sub>) in the feedback loop of the transimpedance amplifier A2. The command <code class="docutils literal notranslate"><span class="pre">setgain</span> <span class="pre">ch1</span> <span class="pre">1</span></code> sets the transimpedance to 499Ω, appropriate for the 1kΩ-10kΩ range. It is not recommended to use the 10kΩ-100kΩ range for a 2kΩ load since this could exceed the current input channel measurement capabilities and return incorrect readings.</p>
+<p>The ADMX2001B uses a balancing bridge architecture. A 100 ohm series resistor Rs protects the source channel. When calculating the current through a DUT or the actual AC magnitude across that DUT, this resistor must be factored in. A transimpedance amplifier is used in measuring the current, and has a 10 ohm input protection resistor R<sub>IN</sub>. A simplified diagram is shown below. In the diagram, Z<sub>X</sub> is the DUT (unknown impedance). The transimpedance amplifier holds the connection point to R<sub>IN</sub> (inverting terminal of the TIA) at 0V. Since R<sub>S</sub>, Z<sub>X</sub> and R<sub>IN</sub> are in series, the DUT current is equal to (magnitude setting Vpk)/(|Z<sub>X</sub>| + 100Ω + 10Ω).</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/Source_and_measurement_channels_v3_renumbered.png"><img alt="image10" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/Source_and_measurement_channels_v3_renumbered.png" style="width: 600px;" /></a></p>
+<p>Available current gain settings and the transimpedance values associated with them are listed below.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Ch1 Gain</p></th>
+<th class="head"><p>Max Input Current</p></th>
+<th class="head"><p>Transimpedance</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>25mA</p></td>
+<td><p>49.9Ω</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>2.5mA</p></td>
+<td><p>499Ω</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>250uA</p></td>
+<td><p>4.99kΩ</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>25uA</p></td>
+<td><p>49.9kΩ</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Continuing from the previous example, when the DUT is 2kΩ and the magnitude is set to the maximum setting of 2.25Vpk, the current through the DUT (and into the TIA) is 2.25Vpk/(2kΩ + 110Ω) = 1.06mA. Then selecting ch1 gain to be 1 makes the measurement fit well within the max input current range of 2.5mA.</p>
+<p>The command <code class="docutils literal notranslate"><span class="pre">setgain</span> <span class="pre">ch0</span></code> modifies the input voltage range of channel 0 (between terminals H_POT and L_POT). This is less common, but it can be used to improve measurement sensitivity if the impedance under test is smaller than the lead impedance or less than 100Ω. It can also be used if the magnitude of the test signal is small. This can be the case with sensitive loads, or when the test frequency is high.</p>
+<p>Available voltage gain values for channel 0 are listed below.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Ch0 Gain</p></th>
+<th class="head"><p>Max Input Voltage Range</p></th>
+<th class="head"><p>Gain Factor</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>±2.5V</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>±1.25V</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>±625mV</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>±312.5mV</p></td>
+<td><p>8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The DUT voltage is determined by the set magnitude and the two series protection resistors. The DUT voltage is equal to (magnitude setting Vpk)*(|Z<sub>X</sub>|)/(|Z<sub>X</sub>| + 110Ω). For example, to measure a 25Ω DUT with the magnitude set to the maximum setting of 2.25Vpk, the DUT voltage is 2.25Vpk*(25Ω)/(25Ω + 110Ω) = 416.7mVpk, a little under the 625mVpk limit. To utilize the full range, set the ch0 gain = 2.</p>
+<p>Voltages across and currents through the DUT that exceed these maximum values for each gain range may result in the ADC saturating, causing the measurement to fail.</p>
+<p>Typing the command <code class="docutils literal notranslate"><span class="pre">setgain</span></code> will display the gain of both input channels and whether or not autoranging is enabled.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">setgain</span>
+<span class="n">Autorange</span> <span class="n">enabled</span>
+<span class="n">voltGain</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">currGain</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>To turn autoranging back on after setting a manual range type <code class="docutils literal notranslate"><span class="pre">setgain</span> <span class="pre">auto</span></code></p>
+<p>Even though 16 gain combinations are possible, most measurements can be performed with the 7 combinations shown in the table below.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Ch0 Gain</p></th>
+<th class="head"><p>Ch1 Gain</p></th>
+<th class="head"><p>Impedance Measurement Range</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>0</p></td>
+<td><p>&lt; 10Ω</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>0</p></td>
+<td><p>&lt; 25Ω</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>&lt; 50Ω</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>100Ω to 1kΩ</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1kΩ to 10kΩ</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>10kΩ to 100kΩ</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>3</p></td>
+<td><p>&gt; 100kΩ</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These are the same ranges that the autoranging algorithm uses. The previously mentioned procedures can be used to calculate the DUT current and voltage. The following section shows how to estimate the impedance value of the DUT to determine the measurement range. Note that these measurement ranges apply for <code class="docutils literal notranslate"><span class="pre">magnitude</span> <span class="pre">=</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">offset</span> <span class="pre">=</span> <span class="pre">0</span></code>. They may not apply for other settings. To calculate whether the ADC will saturate, use the balancing bridge diagram above. Using the sum of the signal magnitude and offset, calculate what the current through the 110Ω resistors + DUT will be, and choose a gain from the Ch1 gain table. Then, calculate the voltage across the DUT due to this current through it, and choose a voltage gain from the Ch0 gain table.</p>
+<p>For a 2kΩ DUT where the sum of the magnitude and offset is 1Vpk, using the two equations we find:</p>
+<ul class="simple">
+<li><p>DUT current = 1Vpk/(2kΩ + 110Ω) = 0.47mA, select Ch1 Gain = 1.</p></li>
+<li><p>DUT voltage = 1Vpk*2kΩ/(2kΩ + 110Ω) = 948mV, select Ch0 Gain = 0 or 1.</p></li>
+<li><p>The above selection matches the suggested gain combination (0,1) with a given impedance measurement range from 1kΩ to 10kΩ.</p></li>
+</ul>
+</section>
+<section id="estimating-the-impedance-and-admittance-of-capacitive-and-inductive-devices">
+<h2>Estimating the Impedance and Admittance of Capacitive and Inductive Devices<a class="headerlink" href="#estimating-the-impedance-and-admittance-of-capacitive-and-inductive-devices" title="Link to this heading"></a></h2>
+<p>Impedance is defined as the opposition to the flow of alternating current. Admittance is the reciprocal of impedance, or how easy is for alternating current to flow. Electrical components such as resistors, capacitors and inductors have a direct relationship between their value and the expected impedance (Z):</p>
+<div class="line-block">
+<div class="line">Z = X = -1/(2πfC) for capacitors</div>
+<div class="line">Z = X = 2πfL for inductors</div>
+<div class="line">Z = R for resistors</div>
+<div class="line">Where f is the frequency of the signal; C, L, and R are the component values in Farads, Henries and Ohms respectively. R represents resistance and X reactance.</div>
+</div>
+<p>For admittance (Y):</p>
+<div class="line-block">
+<div class="line">Y = B = 2πfC for capacitors</div>
+<div class="line">Y = B = -1/(2πfL) for inductors</div>
+<div class="line">Y = G = 1/R for resistors</div>
+<div class="line">Where f is the frequency of the signal; C, L, and R are the component values in Farads, Henries and Ohms respectively. G represents conductivity and B susceptance.</div>
+</div>
+<p>All components, regardless of their construction, will show a combination of resistive (conductive) and reactive (susceptive) properties. These properties can be expressed in the form of ideal electrical components combined either in series or parallel. At any given frequency, impedance/admittance can be expressed as a combination of the reactive element (capacitor or inductor) and a resistive element. The total impedance or admittance magnitude can be obtained by calculating the square-root of the sum of squares (RSS) of the two components or</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">%% |Z| = sqrt(R*R + X*X)%%</div>
+<div class="line">%% |Y| = sqrt(G*G + B*B)%%</div>
+<div class="line">To determine the best measurement range for measurement, it is necessary to estimate the impedance or admittance of the device under test at the frequency of measurement using the equations above. A simpler method to obtain an approximate value based on the expected capacitance or inductance value is through the reactance chart shown below.</div>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/reactance_chart_labeled.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/admx/reactance_chart_labeled.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/reactance_chart_labeled.jpg" style="width: 600px;" />
+</a>
+<p>To find the approximate impedance or admittance value for a capacitor or inductor, find the closest expected value assigned to the diagonal lines and find its equivalent impedance/admittance value on the vertical axis at the frequency of interest (on the horizontal axis). For example, the impedance of a 159fF capacitor, which is represented by the red solid diagonal line in the reactance chart, exhibits |Z|=1MΩ at 1MHz, indicated by the “1M” tick on the vertical axis. This matches the estimated value using equation Z = X = -1/(2πfC). Similarly, for a 15.9nF capacitor, which is shown as blue solid diagonal line in the chart, |Z|=10KΩ at 1kHz.</p>
+</section>
+<section id="reducing-measurement-noise">
+<h2>Reducing Measurement Noise<a class="headerlink" href="#reducing-measurement-noise" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The <code class="docutils literal notranslate"><span class="pre">average</span></code> command determines how many samples are averaged for each reading returned. Averaging reduces noise and is helpful in applications that require to detect small changes in a value or when the impedance component of interest is small in comparison to the total impedance magnitude (e.g. ESR of capacitors). The default is set to 1, which means that no averaging is done.</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Averaging increases the time required to return a reading. Values greater than 256 have been observed to have little effect in reducing measurement noise and have a significant impact on measurement speed.</p>
+</div>
+<div class="line-block">
+<div class="line">==== Improving Measurement Precision ==== To ensure precise and accurate measurements, impedance measurements should be performed with appropriate test fixtures. Measurement leads can introduce additional errors due to parasitic impedances that will vary depending on mechanical configuration.</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The test leads included with the EVAL-ADMX2001EBZ kit can introduce fluctuations of a few picofarads depending on their position. This effect becomes more noticeable with test frequencies higher than 100kHz.</p>
+</div>
+<p>To ensure repeatable and stable measurements, custom-made fixtures that minimize impedance fluctuations due to mechanical configuration are recommended. For example, to test surface-mount components, fixtures like the <a class="icon link reference external" href="https://www.digikey.com/en/products/detail/b-k-precision/TL89S1/7915183" target="_blank">B+K Precision TL89S1</a> or the <a class="icon link reference external" href="https://www.keysight.com/en/pd-1000000474%3Aepsg%3Apro-pn-16034G/smd-test-fixture" target="_blank">Keysight 16034G</a> are recommended. For a full list of recommended accessories, please refer to the Recommended Accessories Section at the beginning of this user guide.</p>
+</section>
+<section id="performing-parametric-sweeps">
+<h2>Performing Parametric Sweeps<a class="headerlink" href="#performing-parametric-sweeps" title="Link to this heading"></a></h2>
+<p>The ADMX2001B can automatically perform measurements that sweep different measurement parameters such as</p>
+<ul class="simple">
+<li><p>Frequency, common in EIS applications (Electrical Impedance Spectroscopy). The frequency increments can be linear or logarithmic.</p></li>
+<li><p>DC bias, common in C-V measurements for semiconductor devices</p></li>
+<li><p>Magnitude</p></li>
+</ul>
+<p>By default, the sweep function is off. To enable parametric sweeps, use the <code class="docutils literal notranslate"><span class="pre">sweep_type</span></code> command and specify the sweep type. The command also requires the user to enter the start and end points of the sweep. The number of points is determined by the <code class="docutils literal notranslate"><span class="pre">count</span></code> command.</p>
+<section id="example-1">
+<span id="id2"></span><h3>Example<a class="headerlink" href="#example-1" title="Link to this heading"></a></h3>
+<p>Perform an 11-point logarithmic frequency sweep from 100kHz to 1MHz.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">count</span> <span class="mi">11</span>
+<span class="n">sampleCount</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">sweep_type</span> <span class="n">frequency</span> <span class="mi">100</span> <span class="mi">1000</span>
+<span class="n">Frequency</span>
+<span class="n">sweepStart</span> <span class="o">=</span> <span class="o">+</span><span class="mf">100.0000</span><span class="n">KHz</span>
+<span class="n">sweepEnd</span> <span class="o">=</span> <span class="o">+</span><span class="mf">1000.0000</span><span class="n">KHz</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">sweep_scale</span> <span class="n">log</span>
+<span class="n">Sweep</span> <span class="n">scale</span> <span class="ow">is</span> <span class="n">log</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">z</span>
+<span class="mf">1.000000e+05</span><span class="p">,</span><span class="mf">5.683433e-13</span><span class="p">,</span><span class="mf">8.149236e+07</span>
+<span class="mf">1.258925e+05</span><span class="p">,</span><span class="mf">5.704062e-13</span><span class="p">,</span><span class="mf">4.727518e+07</span>
+<span class="mf">1.584893e+05</span><span class="p">,</span><span class="mf">5.674423e-13</span><span class="p">,</span><span class="mf">2.989029e+07</span>
+<span class="mf">1.995262e+05</span><span class="p">,</span><span class="mf">5.652225e-13</span><span class="p">,</span><span class="mf">1.917354e+07</span>
+<span class="mf">2.511886e+05</span><span class="p">,</span><span class="mf">5.622380e-13</span><span class="p">,</span><span class="mf">1.233886e+07</span>
+<span class="mf">3.162278e+05</span><span class="p">,</span><span class="mf">5.577508e-13</span><span class="p">,</span><span class="mf">8.082886e+06</span>
+<span class="mf">3.981072e+05</span><span class="p">,</span><span class="mf">5.490229e-13</span><span class="p">,</span><span class="mf">5.611289e+06</span>
+<span class="mf">5.011872e+05</span><span class="p">,</span><span class="mf">5.421543e-13</span><span class="p">,</span><span class="mf">3.547964e+06</span>
+<span class="mf">6.309573e+05</span><span class="p">,</span><span class="mf">5.299540e-13</span><span class="p">,</span><span class="mf">2.360688e+06</span>
+<span class="mf">7.943282e+05</span><span class="p">,</span><span class="mf">5.136760e-13</span><span class="p">,</span><span class="mf">1.624230e+06</span>
+<span class="mf">1.000000e+06</span><span class="p">,</span><span class="mf">4.798023e-13</span><span class="p">,</span><span class="mf">1.411488e+06</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When sweeping parameters, the first value printed will be the swept parameter, followed by the measurement in the display format selected.</p>
+</div>
+</section>
+</section>
+<section id="performing-dc-resistance-measurements">
+<h2>Performing DC Resistance Measurements<a class="headerlink" href="#performing-dc-resistance-measurements" title="Link to this heading"></a></h2>
+<p>The DC resistance measurement function can be easily selected by setting the test frequency to zero. In DC mode, since the AC test signal is disabled, the DC offset must be used to generate the test signal. Due to the hardware design, saturation may not be detected if the DC offset is positive; set the DC offset to a negative value to prevent this. DC resistance mode only works in display mode 6, so the display mode must be configured as such.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">frequency</span> <span class="mi">0</span>
+<span class="n">DC</span> <span class="n">Resistance</span> <span class="n">mode</span> <span class="n">enabled</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">display</span> <span class="mi">6</span>
+<span class="n">Measurement</span> <span class="n">model</span><span class="p">:</span> <span class="mi">6</span> <span class="o">-</span> <span class="n">Impedance</span> <span class="ow">in</span> <span class="n">rectangular</span> <span class="n">coordinates</span> <span class="p">(</span><span class="n">default</span><span class="p">)</span> <span class="p">(</span><span class="n">Rs</span><span class="p">,</span><span class="n">Xs</span><span class="p">)</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">offset</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">Offset</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0000</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">z</span>
+<span class="mi">0</span><span class="p">,</span><span class="mf">4.995231e+01</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>In the DC resistance mode, only the DC resistance value is returned.</p>
+</section>
+<section id="plotting-measurement-data">
+<h2>Plotting Measurement Data<a class="headerlink" href="#plotting-measurement-data" title="Link to this heading"></a></h2>
+<p>When acquiring multiple measurements or performing sweeps, it is useful to plot the results to observe trends or characteristics of the device under test. TeraTerm allows the user to save a log by going to File-&gt;Log, which can then be copy and pasted into a *.csv file that can be opened by spreadsheet applications such as Microsoft Excel®. The log file must be saved BEFORE taking any measurements.</p>
+<p>To plot the acquired data in Microsoft Excel, follow the steps below:</p>
+<ul class="simple">
+<li><p>In TeraTerm, click File, in the dropdown list select Log, and save the log file with any name but make sure to change the default extension from *.log to *.csv</p></li>
+<li><p>Configure the ADMX2001B and run the <code class="docutils literal notranslate"><span class="pre">z</span></code> command to acquire the desired measurements</p></li>
+<li><p>In a separate TeraTerm window named “TeraTerm:Log”, click close to stop logging data</p></li>
+<li><p>Open the file with Excel</p></li>
+<li><p>Select the data to plot and insert a scatter plot to visualize the data</p></li>
+</ul>
+</section>
+<section id="optimizing-measurement-timing">
+<h2>Optimizing Measurement Timing<a class="headerlink" href="#optimizing-measurement-timing" title="Link to this heading"></a></h2>
+<p>This section describes what settings impact the measurement time and how. It also discusses ways to reduce the measurement time down to ~10-12 ms for single measurements (firmware version 1.3.2 only). The measurement time is dependent on a number of factors. Command transmission time, configured delays, source setup time, ADC acquisition time, count setting, averages, etc. Some factors, like the ADC acquisition time, are dependent on the frequency since the ADC needs to capture a minimum of three cycles of the waveform.</p>
+<section id="delay-usage-and-measurement-sequencing">
+<h3>Delay Usage and Measurement Sequencing<a class="headerlink" href="#delay-usage-and-measurement-sequencing" title="Link to this heading"></a></h3>
+<p>The commands <code class="docutils literal notranslate"><span class="pre">mdelay</span></code> (measurement delay) and <code class="docutils literal notranslate"><span class="pre">tdelay</span></code> (trigger delay) can be used to control the settling time between measurements.</p>
+<ul class="simple">
+<li><p>The measurement delay or <code class="docutils literal notranslate"><span class="pre">mdelay</span></code> is observed before each measurement, but not between samples when averaging. The delay is also applied during sweeps and between multiple counts. Both the DC offset and AC test signal are enabled during the delay, but the ADCs do not capture data for the measurement until the delay has elapsed.</p></li>
+<li><p>The ideal measurement delay suitable for different DUTs may vary. When measuring a large capacitor, consider the settling time it requires to charge the DUT; a longer mdelay is preferred to prevent accuracy loss.</p></li>
+<li><p>Trigger delay is only observed after trigger events controlled by the <code class="docutils literal notranslate"><span class="pre">tcount</span></code> command. This is useful when using the ADMX2001B with external scanning cards or multiplexers, to allow proper debounce and settling time. If configured, the DC offset will be enabled during the trigger delay, but the AC source will only start for the data capture.</p></li>
+</ul>
+<p>To setup <code class="docutils literal notranslate"><span class="pre">mdelay</span></code> and <code class="docutils literal notranslate"><span class="pre">tdelay</span></code>, simply enter the command followed by a value in milliseconds.</p>
+<p>Below is a demonstration on how each measurement time parameter fits in the measurement sequence. Note that the sinusoidal excitation is turned on during periods marked with blocks in light/dark green. If enabled, the DC offset will turn on during the tdelay blocks. The example measurement uses a 15.8 Ohm resistor as the DUT.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/command_timing_diagram.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/admx/command_timing_diagram.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/command_timing_diagram.png" style="width: 1000px;" />
+</a>
+<ol class="arabic simple">
+<li><p>Single sample measurement. When measuring one count sample, an <code class="docutils literal notranslate"><span class="pre">mdelay</span></code> is observed before each measurement where the single sample is captured.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">count</span> <span class="mi">1</span>
+<span class="n">sampleCount</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">average</span> <span class="mi">1</span>
+<span class="n">average</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">z</span>
+<span class="mi">0</span><span class="p">,</span><span class="mf">1.589015e+01</span><span class="p">,</span><span class="mf">5.979061e-03</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Multiple samples averaging. When measuring with <code class="docutils literal notranslate"><span class="pre">average</span></code> &gt; 1, <code class="docutils literal notranslate"><span class="pre">mdelay</span></code> is observed only before the first sample, but not between samples.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">count</span> <span class="mi">1</span>
+<span class="n">sampleCount</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">average</span> <span class="mi">10</span>
+<span class="n">average</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">z</span>
+<span class="mi">0</span><span class="p">,</span><span class="mf">1.588981e+01</span><span class="p">,</span><span class="mf">5.922471e-03</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Multiple counts measurement. When doing multiple counts of single sample measurement, <code class="docutils literal notranslate"><span class="pre">mdelay</span></code> is observed before each measurement in their individual count.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">count</span> <span class="mi">3</span>
+<span class="n">sampleCount</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">average</span> <span class="mi">1</span>
+<span class="n">average</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">z</span>
+<span class="mi">0</span><span class="p">,</span><span class="mf">1.588983e+01</span><span class="p">,</span><span class="mf">6.072280e-03</span>
+<span class="mi">1</span><span class="p">,</span><span class="mf">1.589017e+01</span><span class="p">,</span><span class="mf">6.406131e-03</span>
+<span class="mi">2</span><span class="p">,</span><span class="mf">1.588982e+01</span><span class="p">,</span><span class="mf">6.175226e-03</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Multiple triggers measurement. When <code class="docutils literal notranslate"><span class="pre">tcount</span></code> &gt;1, multiple measurement triggers are enabled. Based on single measurement cycle setting (say <code class="docutils literal notranslate"><span class="pre">count</span></code> = 3, <code class="docutils literal notranslate"><span class="pre">average</span></code> = 1), multiple measurement events are triggered. The <code class="docutils literal notranslate"><span class="pre">tdelay</span></code> defines the delay time between these trigger events.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">count</span> <span class="mi">3</span>
+<span class="n">sampleCount</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">average</span> <span class="mi">1</span>
+<span class="n">average</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">tdelay</span> <span class="mi">10</span>
+<span class="n">triggerDelay</span> <span class="o">=</span> <span class="mf">10.0000</span><span class="n">msec</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">tcount</span> <span class="mi">3</span>
+<span class="n">triggerCount</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">z</span>
+<span class="mi">0</span><span class="p">,</span><span class="mf">1.588982e+01</span><span class="p">,</span><span class="mf">6.526160e-03</span>
+<span class="mi">1</span><span class="p">,</span><span class="mf">1.589041e+01</span><span class="p">,</span><span class="mf">5.718554e-03</span>
+<span class="mi">2</span><span class="p">,</span><span class="mf">1.589056e+01</span><span class="p">,</span><span class="mf">6.170146e-03</span>
+<span class="mi">0</span><span class="p">,</span><span class="mf">1.588994e+01</span><span class="p">,</span><span class="mf">6.373706e-03</span>
+<span class="mi">1</span><span class="p">,</span><span class="mf">1.589030e+01</span><span class="p">,</span><span class="mf">5.733064e-03</span>
+<span class="mi">2</span><span class="p">,</span><span class="mf">1.589026e+01</span><span class="p">,</span><span class="mf">5.668341e-03</span>
+<span class="mi">0</span><span class="p">,</span><span class="mf">1.589055e+01</span><span class="p">,</span><span class="mf">5.907189e-03</span>
+<span class="mi">1</span><span class="p">,</span><span class="mf">1.588984e+01</span><span class="p">,</span><span class="mf">5.669621e-03</span>
+<span class="mi">2</span><span class="p">,</span><span class="mf">1.588993e+01</span><span class="p">,</span><span class="mf">6.286668e-03</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="optimizing-single-point-measurements">
+<h3>Optimizing Single Point Measurements<a class="headerlink" href="#optimizing-single-point-measurements" title="Link to this heading"></a></h3>
+<p>In version 1.3.2, many optimizations were added to reduce the measurement time.</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">initiate</span></code> and <code class="docutils literal notranslate"><span class="pre">trigger</span></code> mode (trigger mode), previously used only for external triggers, is now optimized for faster measurements. See <a class="icon link reference external" href="https://wiki.analog.com/eval-admx2001ebz" target="_blank">Trigger Input/Output Ports</a> for details on how to use trigger mode (also referred to as the WAIT_FOR_TRIGGER state).</p></li>
+<li><p>When in trigger mode, most commands are disabled. This is because measurement attributes like frequency, gain, magnitude, offset, delays, and others are locked. Locking them means that for each measurement, setup and initialization tasks for those attributes can be skipped because they will always be unchanged. This saves a significant amount of time on each measurement, especially reducing the time between a trigger being received and the measurement acquisition starting.</p>
+<ul>
+<li><p>Sweeps do not benefit from this optimization, because the sweep attribute cannot be updated in trigger mode.</p></li>
+<li><p>If enabled, the DC offset is always on in trigger mode. The autorange must be off to enable the DC offset. Keeping the DC offset enabled constantly can be useful when testing with DUTs that need a long DC settling time, as that delay does not need to be repeated for every measurement.</p></li>
+</ul>
+</li>
+<li><p>The measurement is only reported over the active interface (UART commmand line interface or SPI). The active interface is set based on the most recently sent command. For instance, if the command <code class="docutils literal notranslate"><span class="pre">initiate</span></code> is sent over UART, and then the command TRIGGER (0x18) is sent over SPI, the result will be readable in the SPI FIFO and not accessible on UART. If INITIATE (0x17) is sent over SPI, and then <code class="docutils literal notranslate"><span class="pre">trigger</span></code> is sent over UART, the result will print immediately to UART and not be accessible in the SPI FIFO. See <cite>ADMX2001B SPI Interface &lt;:doc:</cite>/wiki-migration/resources/eval/user-guides/admx/eval-admx2001ebz/spi-interface`&gt;`_ for details on how to operate the SPI interface.</p>
+<ul>
+<li><p>The SPI interface is the fastest and can save multiple milliseconds over using the UART (command line) interface.</p></li>
+</ul>
+</li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/trigger_mode.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/admx/trigger_mode.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/trigger_mode.png" style="width: 800px;" />
+</a>
+<hr class="docutils" />
+<p>To achieve the fastest single-point measurement time, there are a few points to consider.</p>
+<ul class="simple">
+<li><p>Interface: The SPI interface should be used to receive the measurement data. Either interface can be used to configure measurement settings, this will not impact the speed of each measurement. The active interface is updated every time a command is sent, to whichever interface sent that command.</p></li>
+<li><p>Trigger source: In trigger mode, there are three options for the trigger source.</p>
+<ul>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">trigger</span></code> command can be sent over the UART (CLI). This is the slowest method, and since <code class="docutils literal notranslate"><span class="pre">trigger</span></code> will be the most recent command, it will always report the result over the UART (CLI).</p></li>
+<li><p>The TRIGGER (0x18) command can be sent over SPI. This is the preferred method as it is fast, and easy to set up. It also guarantees that the active interface will be set to SPI.</p></li>
+<li><p>A pulse can be applied to the TRIG_IN pin. For this pulse to be registered, external trigger mode must be enabled; see <a class="icon link reference external" href="https://wiki.analog.com/eval-admx2001ebz" target="_blank">Trigger Input/Output Ports</a>. Measurements initiated with the external trigger can report data over either the UART or SPI interfaces, dependent on where the most recent command was received. For instance, this could be the <code class="docutils literal notranslate"><span class="pre">initiate</span></code> command in CLI, or INITIATE (0x17) over SPI.</p></li>
+</ul>
+</li>
+<li><p>Trigger count: when using trigger mode, the trigger count (tcount) sets a condition for automatically exiting trigger mode. It will receive <code class="docutils literal notranslate"><span class="pre">tcount</span></code>*triggers before returning to the normal operating mode. To continue measuring in trigger mode, the <code class="docutils literal notranslate"><span class="pre">initiate</span></code> command is needed to re-enter the mode. To exit trigger mode before completing <code class="docutils literal notranslate"><span class="pre">tcount</span></code>*triggers, the <code class="docutils literal notranslate"><span class="pre">abort</span></code> command can be used (0x1A) in SPI.</p>
+<ul>
+<li><p>There is also support for an “infinite” trigger mode. Run <code class="docutils literal notranslate"><span class="pre">tcount</span> <span class="pre">65536</span></code> to enter this mode; the only way to exit trigger mode in this case is with the <code class="docutils literal notranslate"><span class="pre">abort</span></code> command. Normal <code class="docutils literal notranslate"><span class="pre">z</span></code> measurements are disabled when <code class="docutils literal notranslate"><span class="pre">tcount</span></code> is set to 65536.</p></li>
+</ul>
+</li>
+<li><p>Autorange: The autorange should be disabled for the fastest measurements. The autorange tests the ideal gain by taking multiple measurements with different gain settings, and checking for ADC saturation. Therefore, it can significantly increase the measurement time.</p>
+<ul>
+<li><p>When using the autorange with trigger mode, the autorange test is performed when the <code class="docutils literal notranslate"><span class="pre">initiate</span></code> command runs. See the flow chart above. Leaving and re-entering trigger mode will update the selected gain.</p></li>
+</ul>
+</li>
+<li><p>Delays: The trigger delay (tdelay) and measurement delay (mdelay) directly impact the measurement time. In trigger mode, the tdelay is applied once per supplied trigger, and the mdelay is supplied once per count (not tcount). Therefore, a typical single measurement will have tdelay+mdelay added on. The default tdelay is 4 ms; this can typically be set to 0 ms with no negative impacts; this is recommended to optimize the measurement time. The default mdelay is 1 ms; at frequencies above 10 kHz, setting this to 0 ms will cause the ADC to capture some data before the AC source has fully turned on. This typically has no impact on the measurement result, allowing 1 ms to be saved per measurement, but it should be tested with each setup.</p></li>
+<li><p>Frequency: the measurement time is highly dependent on the test frequency below ~3 kHz. This is because the system tries to capture a minimum of 3 cycles of the excitation waveform. See the log plot below for the measurement time across frequency.</p></li>
+<li><p>Display mode: the measurement time is also dependent on the display mode. Rectangular formats like display mode 6 (R, X) and 15 (G, B) are the fastest, as they require the least processing. Modes with angle in degrees or radians (polar form) can take 2-3 extra milliseconds; see the chart below.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/measurement_time.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/admx/measurement_time.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/measurement_time.png" style="width: 1200px;" />
+</a>
+<p>*Typical measurement times above are based on the following settings:</p>
+<ul class="simple">
+<li><p>Interface = SPI, SPI trigger source</p></li>
+<li><p>Mode = trigger mode</p></li>
+<li><p>mdelay = 0</p></li>
+<li><p>tdelay = 0</p></li>
+<li><p>average = 1</p></li>
+<li><p>calibration = on (can save 1-2 ms turning calibration off)</p></li>
+<li><p>autorange = off</p></li>
+</ul>
+<p>Note that measurements taken over the UART will be slower.</p>
+<hr class="docutils" />
+<section id="id4">
+<h4>Calibration Procedure<a class="headerlink" href="#id4" title="Link to this heading"></a></h4>
+<p>A few milliseconds after power up, the ADMX2001B is ready to perform measurements. However, any readings and their units are scaled and assigned using nominal circuit parameters. Measurement accuracy can only be evaluated after performing calibration on the module with an external calibration source with certified traceability. For example, the <a class="icon link reference external" href="https://www.keysight.com/us/en/product/E4980A/precision-lcr-meter-20-hz-2-mhz.html" target="_blank">Keysight E4980A</a> can be used.</p>
+<p>There are three basic calibration steps involved in calibrating the module: open calibration, short calibration, and load calibration. The first two correct the module and test lead parasitics. The latter provides traceability to an external source. The calibration steps must be performed in the order open-&gt;short-&gt;load. Open and load calibration are the most important. Short calibration may need to be skipped in certain gain ranges where the current ADC would saturate. Open calibration may need to be skipped in gain ranges that the voltage ADC would saturate.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/open_short_load_config.png"><img alt="image11" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/open_short_load_config.png" style="width: 800px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/open_short_load_config_photo.png"><img alt="image12" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/open_short_load_config_photo.png" style="width: 800px;" /></a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When performing load calibration for a given gain setting and frequency, the optimal load device (usually a resistor) is one with an impedance magnitude close to that of the eventual DUT. The best accuracy at a certain gain and frequency will be with DUTs of a similar impedance to the one used in calibration.</p>
+<p>Resistors, capacitors or inductors can be used for calibration. High-quality resistors (e.g. thin film or metal film), air capacitors, and gas-filled capacitors tend to provide the best results. Alternatively, C0G/NP0 type ceramic capacitors can be used as well. The true value of these components must be determined with traceable measurements from another meter, such as the Keysight E4980A.</p>
+</div>
+<p>Each measurement front-end configuration (ch0 and ch1 gain combination) needs to be calibrated separately. If calibration is performed for only one gain combination, calibration needs to be carried out again if the front-end configuration changes. There are a total of 16 possible gain combinations based on the 4 gain and transimpedance ranges for channel 0 and channel 1 respectively.</p>
+<p>The autorange will only choose between the 7 gain combinations that have a zero in at least one position. These are shown in the impedance measurement range table within the section <a class="icon link reference external" href="https://wiki.analog.com/eval-admx2001ebz" target="_blank">Selecting a Measurement Range</a>. If all measurements will be done with the autorange or with these gains, then the other gain settings do not need to be calibrated. In versions 1.2.0 and older, if the user calibrates at a specific gain and frequency, then changes the frequency and calibrates again, the user will overwrite the result of the first calibration. In version 1.2.2, support for calibration over frequency was added. See <a class="icon link reference external" href="https://wiki.analog.com/eval-admx2001ebz" target="_blank">Calibration Over Frequency</a> for more details.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Each calibration point is for a specific frequency. Measurements taken at a different frequency may be out of tolerance. Always calibrate as near as possible to the intended test frequency.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="calibration-steps">
+<h2>Calibration Steps<a class="headerlink" href="#calibration-steps" title="Link to this heading"></a></h2>
+<p>To calibrate the module in a specific gain combination, follow the steps below:</p>
+<ul class="simple">
+<li><p>Select the desired measurement configuration (gain, frequency, magnitude and offset)</p>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Autorange must be disabled during calibration.</p>
+</div>
+<ul class="simple">
+<li><p>Set the averaging to at least 200 samples.</p></li>
+<li><p>Ensure the load select switches are in the DUT and GND positions, described in <a class="icon link reference external" href="https://wiki.analog.com/eval-admx2001ebz" target="_blank">Basic Hardware Setup</a></p></li>
+<li><p>Connect the H_POT and H_CUR terminal together and the L_POT and L_CUR terminals together to form two separate connection pairs</p>
+<ul>
+<li><p>If using the test clips, place them so the alligator clips are separated by the same distance as they will be when the DUT is connected. Each clip should be clipped to a very short scrap of uninsulated wire, which serves to improve the connection between each half of the clip</p></li>
+<li><p>An alternative is to use BNC cables to connect the H_POT/H_CUR pairs and the L_POT/L_CUR pairs.</p></li>
+<li><p>Open calibration at high frequencies and in higher impedance measurement ranges is especially susceptible to error, due to the increased opportunity for coupling into the current measurement path. The test setup is especially important under these conditions</p></li>
+<li><p>For better results, use <a class="icon link reference external" href="https://www.keysight.com/en/pd-1000003831%3Aepsg%3Apro-pn-42090A/open-termination-4-terminal-pair" target="_blank">Keysight 42090A Open Termination</a></p></li>
+</ul>
+</li>
+<li><p>Run the <code class="docutils literal notranslate"><span class="pre">calibrate</span> <span class="pre">open</span></code> command</p></li>
+<li><p>Connect all the measurement terminals together</p>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Short calibration can be performed only when gain channel 1 is set to 0 or 1. When channel 1 is in gain 1, the magnitude of the source must be less than 0.2Vpk.</p>
+</div>
+<ul class="simple">
+<li><p>When measuring extremely tiny impedances (&lt;100mΩ), short calibration becomes extremely important. Many fixtures have a low repeatability under these conditions. Optimizing the repeatability of the fixture is critical to getting a meaningful result, for both calibration and measurement
+-  For better results, use <a class="icon link reference external" href="https://www.keysight.com/en/pd-1000003830%3Aepsg%3Apro-pn-42091A/short-termination-4-terminal-pair" target="_blank">Keysight 42091A Short Termination</a></p></li>
+<li><p>Run the <code class="docutils literal notranslate"><span class="pre">calibrate</span> <span class="pre">short</span></code> command, if possible</p></li>
+<li><p>Connect a known impedance between the measurement leads</p></li>
+<li><p>Run the <code class="docutils literal notranslate"><span class="pre">calibrate</span> <span class="pre">rt</span> <span class="pre">&lt;value1&gt;</span> <span class="pre">xt</span> <span class="pre">&lt;value2&gt;</span></code> command where <code class="docutils literal notranslate"><span class="pre">&lt;value1&gt;</span></code> is the true value of the resistive component (Ohms) of the calibration impedance and <code class="docutils literal notranslate"><span class="pre">&lt;value</span> <span class="pre">2&gt;</span></code> is the true value of the reactive component (Ohms)</p>
+<ul>
+<li><p>To obtain true values of resistive and reactive components beforehand, use an LCR meter and select Rs and X for the display mode.</p></li>
+<li><p>Scientific notation can be used when entering the rt and xt values</p></li>
+<li><p>For best results, a standard resistor set like the <a class="icon link reference external" href="https://www.keysight.com/en/pd-1000003832%3Aepsg%3Apro-pn-42030A/four-terminal-pair-standard-resistor-set" target="_blank">Keysight 42030A</a> can be used</p></li>
+</ul>
+</li>
+</ul>
+<p>After completing the steps above, calibration coefficients are generated and stored in RAM. These coefficients will be applied to any subsequent measurements, but will be lost after a power cycle or reset of the module. To store the coefficients in non-volatile memory (flash) the command <code class="docutils literal notranslate"><span class="pre">calibration</span> <span class="pre">commit</span> <span class="pre">&lt;timestamp&gt;</span></code> must be executed. The timestamp parameter is optional. If supplied, the unix timestamp is the number of seconds elapsed since 01/01/1970. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ADMX2001</span><span class="o">&gt;</span><span class="n">calibrate</span> <span class="n">commit</span> <span class="mi">1689959855</span>
+</pre></div>
+</div>
+<p>This will store the calibration coefficients in the RAM to the flash, and set the date and time stamp of the calibration to 07/21/23 at 05:17 UTC.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To help ensure calibration integrity, the calibration coefficients stored in flash are password protected. The default password is <code class="docutils literal notranslate"><span class="pre">Analog123</span></code> and must be entered after running <code class="docutils literal notranslate"><span class="pre">calibrate</span> <span class="pre">commit</span></code> to save the coefficients. The password can be changed with the <code class="docutils literal notranslate"><span class="pre">calibrate</span> <span class="pre">password</span></code> command. Maximum password length is 12 characters.</p>
+</div>
+</section>
+<section id="calibration-example">
+<h2>Calibration Example<a class="headerlink" href="#calibration-example" title="Link to this heading"></a></h2>
+<p>Calibrate the gain setting (0, 1) at 100kHz with a resistor of value 1k Ohms. The true resistance Rt from the E4980A at 100kHz was measured as 1000.019 Ohms, and the true reactance Xt was 0.822 Ohms.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">setgain</span> <span class="n">ch0</span> <span class="mi">0</span>
+<span class="n">voltGain</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">setgain</span> <span class="n">ch1</span> <span class="mi">1</span>
+<span class="n">currGain</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">frequency</span> <span class="mi">100</span>
+<span class="n">frequency</span> <span class="o">=</span> <span class="mf">100.0000</span><span class="n">kHz</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">magnitude</span> <span class="mi">1</span>         <span class="o">&lt;---</span> <span class="mi">1</span> <span class="n">Vpk</span><span class="p">,</span> <span class="mi">2</span> <span class="n">Vpp</span>
+<span class="n">magnitude</span> <span class="o">=</span> <span class="mf">1.0000</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">offset</span> <span class="mi">0</span>
+<span class="n">Offset</span> <span class="o">=</span> <span class="mf">0.0000</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">average</span> <span class="mi">200</span>
+<span class="n">average</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">tdelay</span> <span class="mi">200</span>
+<span class="n">triggerDelay</span> <span class="o">=</span> <span class="mf">200.0000</span><span class="n">msec</span>
+                              <span class="o">&lt;---</span> <span class="n">Connect</span> <span class="nb">open</span> <span class="n">load</span> <span class="n">now</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">calibrate</span> <span class="nb">open</span>
+<span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.117998e-09</span><span class="p">,</span><span class="mf">1.162904e-06</span>
+<span class="n">Frequency</span> <span class="o">=</span> <span class="mf">100.0000</span><span class="n">kHz</span>
+<span class="n">Cal</span> <span class="n">Temp</span><span class="p">:</span> <span class="mf">41.4</span> <span class="n">deg</span> <span class="n">C</span>
+<span class="nb">open</span><span class="p">:</span><span class="n">Done</span>
+<span class="n">short</span><span class="p">:</span><span class="n">Not</span> <span class="n">Done</span>
+<span class="n">load</span><span class="p">:</span><span class="n">Not</span> <span class="n">Done</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">magnitude</span> <span class="mf">0.2</span>       <span class="o">&lt;---</span> <span class="n">Need</span> <span class="n">to</span> <span class="n">reduce</span> <span class="n">the</span> <span class="n">magnitude</span> <span class="n">to</span> <span class="n">avoid</span> <span class="n">saturating</span> <span class="n">the</span> <span class="n">current</span> <span class="n">ADC</span> <span class="n">when</span> <span class="n">measuring</span> <span class="n">a</span> <span class="n">short</span>
+<span class="n">magnitude</span> <span class="o">=</span> <span class="mf">0.2000</span>
+                              <span class="o">&lt;---</span> <span class="n">Connect</span> <span class="n">short</span> <span class="n">load</span> <span class="n">now</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">calibrate</span> <span class="n">short</span>
+<span class="mi">0</span><span class="p">,</span><span class="mf">2.075835e-02</span><span class="p">,</span><span class="mf">1.224807e-02</span>
+<span class="n">Frequency</span> <span class="o">=</span> <span class="mf">100.0000</span><span class="n">kHz</span>
+<span class="n">Cal</span> <span class="n">Temp</span><span class="p">:</span> <span class="mf">41.4</span> <span class="n">deg</span> <span class="n">C</span>
+<span class="nb">open</span><span class="p">:</span><span class="n">Done</span>
+<span class="n">short</span><span class="p">:</span><span class="n">Done</span>
+<span class="n">load</span><span class="p">:</span><span class="n">Not</span> <span class="n">Done</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">magnitude</span> <span class="mi">1</span>         <span class="o">&lt;---</span> <span class="n">Magnitude</span> <span class="n">can</span> <span class="n">be</span> <span class="nb">set</span> <span class="n">back</span> <span class="n">to</span> <span class="mi">1</span> <span class="n">now</span>
+<span class="n">magnitude</span> <span class="o">=</span> <span class="mf">1.0000</span>
+                              <span class="o">&lt;---</span> <span class="n">Connect</span> <span class="n">calibration</span> <span class="n">load</span> <span class="n">now</span> <span class="p">(</span><span class="ow">in</span> <span class="n">this</span> <span class="n">case</span><span class="p">,</span> <span class="n">a</span> <span class="mi">1</span><span class="n">kΩ</span> <span class="n">resistor</span><span class="p">)</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">calibrate</span> <span class="n">rt</span> <span class="mf">1e+3</span> <span class="n">xt</span> <span class="mf">0.822</span>
+<span class="mi">0</span><span class="p">,</span><span class="mf">1.010381e+03</span><span class="p">,</span><span class="o">-</span><span class="mf">1.254483e+01</span>
+<span class="n">Frequency</span> <span class="o">=</span> <span class="mf">100.0000</span><span class="n">kHz</span>
+<span class="n">Cal</span> <span class="n">Temp</span><span class="p">:</span> <span class="mf">41.5</span> <span class="n">deg</span> <span class="n">C</span>
+<span class="nb">open</span><span class="p">:</span><span class="n">Done</span>
+<span class="n">short</span><span class="p">:</span><span class="n">Done</span>
+<span class="n">load</span><span class="p">:</span><span class="n">Done</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">calibrate</span> <span class="n">commit</span> <span class="mi">1689959855</span>   <span class="o">&lt;---</span> <span class="n">The</span> <span class="n">timestamp</span> <span class="n">can</span> <span class="n">be</span> <span class="n">omitted</span> <span class="n">here</span>
+<span class="n">PASSWORD</span><span class="o">&gt;</span> <span class="o">*********</span>
+<span class="n">commit</span> <span class="p">:</span> <span class="n">success</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">display</span> <span class="mi">6</span>
+<span class="n">Measurement</span> <span class="n">model</span><span class="p">:</span> <span class="mi">6</span> <span class="o">-</span> <span class="n">Impedance</span> <span class="ow">in</span> <span class="n">rectangular</span> <span class="n">coordinates</span> <span class="p">(</span><span class="n">default</span><span class="p">)</span> <span class="p">(</span><span class="n">Rs</span><span class="p">,</span><span class="n">Xs</span><span class="p">)</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">z</span>
+<span class="mi">0</span><span class="p">,</span><span class="mf">1.000021e+03</span><span class="p">,</span><span class="mf">8.220137e-01</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="reading-and-writing-calibration-coefficients">
+<h2>Reading and Writing Calibration Coefficients<a class="headerlink" href="#reading-and-writing-calibration-coefficients" title="Link to this heading"></a></h2>
+<p>Calibration coefficients for each gain can be read to the terminal, and written back to the device. This allows the user to save coefficients for multiple different test setups, conditions, or frequencies. To read the currently loaded coefficients for a certain gain setting, run the command <code class="docutils literal notranslate"><span class="pre">rdcal</span> <span class="pre">&lt;vgain&gt;</span> <span class="pre">&lt;igain&gt;</span></code>. This prints the 12 AC and and 2 DC coefficients to the terminal, where they could be saved by an external device. To write coefficients to the device, use the command <code class="docutils literal notranslate"><span class="pre">storecal</span> <span class="pre">&lt;vgain&gt;</span> <span class="pre">&lt;igain&gt;</span> <span class="pre">&lt;coefficient_name&gt;</span> <span class="pre">&lt;value&gt;</span></code>, where <code class="docutils literal notranslate"><span class="pre">coefficient_name</span></code> is one of the 12 AC or 2 DC coefficients. For example, set Ro to 1e+6 for the gain vgain=0, igain=1:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">storecal</span> <span class="mi">0</span> <span class="mi">1</span> <span class="n">Ro</span> <span class="mf">1e+6</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span> <span class="n">rdcal</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="n">Ro</span> <span class="o">=</span> <span class="mf">1.0000000e+06</span>
+<span class="n">Xo</span> <span class="o">=</span> <span class="o">-</span><span class="mf">8.5991553e+05</span>
+<span class="n">Go</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.1179984e-09</span>
+<span class="n">Bo</span> <span class="o">=</span> <span class="mf">1.1629038e-06</span>
+<span class="n">Rs</span> <span class="o">=</span> <span class="mf">2.0758350e-02</span>
+<span class="n">Xs</span> <span class="o">=</span> <span class="mf">1.2248066e-02</span>
+<span class="n">Gs</span> <span class="o">=</span> <span class="mf">3.5733319e+01</span>
+<span class="n">Bs</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.1083758e+01</span>
+<span class="n">Rg</span> <span class="o">=</span> <span class="o">-</span><span class="mf">9.4387458e+03</span>
+<span class="n">Xg</span> <span class="o">=</span> <span class="mf">8.5097009e+05</span>
+<span class="n">Gg</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.5847357e+01</span>
+<span class="n">Bg</span> <span class="o">=</span> <span class="mf">2.1737716e+01</span>
+<span class="n">No</span> <span class="n">calibration</span> <span class="n">coefficients</span> <span class="n">found</span> <span class="k">for</span> <span class="n">the</span> <span class="n">given</span> <span class="n">arguments</span><span class="o">.</span> <span class="n">The</span> <span class="n">defaults</span> <span class="n">coefficients</span> <span class="n">are</span> <span class="o">...</span>
+<span class="n">Rdg</span> <span class="o">=</span> <span class="mf">1.0000000e+00</span>
+<span class="n">Rdo</span> <span class="o">=</span> <span class="mf">0.0000000e+00</span>
+<span class="n">ADMX2001</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>This process should be repeated for all coefficients for a given gain to be valid. If using other gains, the coefficients will need to be stored for them too. Then, they must be saved using <code class="docutils literal notranslate"><span class="pre">calibrate</span> <span class="pre">commit</span></code>; otherwise, they will be lost if the system reboots.</p>
+</section>
+<hr class="docutils" />
+<section id="id9">
+<h2>Calibration Over Frequency<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<p>Starting in firmware version 1.2.2, calibration over frequency support is implemented. This means that all 16 gain settings can be fully calibrated at multiple frequency points. The process for calibrating over frequency is the same as single point calibration, except after running <code class="docutils literal notranslate"><span class="pre">calibrate</span> <span class="pre">commit</span></code> for the final gain setting at a given frequency, the user can then change the frequency and repeat the process.</p>
+<p>When calibration is enabled, taking a measurement with <code class="docutils literal notranslate"><span class="pre">z</span></code> will automatically load the calibration coefficients with the nearest frequency from memory. After taking the measurement, running the command <code class="docutils literal notranslate"><span class="pre">calibrate</span></code> with no arguments will report the frequency of the coefficients that were used. For instance, if calibration was performed at 1 kHz and at 100 kHz, a measurement at 55 kHz would use the coefficients saved for 100 kHz.</p>
+<p>There are no restrictions on what frequencies the user can calibrate at. However, there are two hardware revisions of the ADMX2001B module; one has EEPROM for the nonvolatile memory (older) and the other has flash memory. Modules with the EEPROM can store 25 calibration sets at different frequency points before new sets start to overwrite the oldest ones. Modules with the flash can store up to 450 calibration sets. The command <code class="docutils literal notranslate"><span class="pre">selftest</span> <span class="pre">run</span></code> will report whether the module has EEPROM or flash installed.</p>
+<div class="line-block">
+<div class="line">New commands have been added to facilitate calibration over frequency:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">resetcal</span></code> (unchanged) will erase only the currently loaded calibration set from RAM.</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">calibrate</span> <span class="pre">reload</span></code> will load the nearest frequency calibration coefficients from the nonvolatile memory and store them in the RAM (taking a measurement implicitly runs <code class="docutils literal notranslate"><span class="pre">calibrate</span> <span class="pre">reload</span></code>).</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">calibrate</span> <span class="pre">erase</span></code> will permanently delete all saved calibration sets from memory, restoring to the default configuration. This requires the password (default is Analog123) and cannot be undone!</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">calibrate</span> <span class="pre">list</span></code> will report all frequencies that have any calibration data saved (at least one gain setting).</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">calibrate</span> <span class="pre">list</span> <span class="pre">&lt;freq&gt;</span></code> will report what gain settings at a given frequency have been calibrated.</div>
+<div class="line">The commands for reading and writing calibration coefficients detailed in <a class="icon link reference external" href="https://wiki.analog.com/eval-admx2001ebz" target="_blank">Reading and Writing Calibration Coefficients</a> apply to the currently selected frequency.</div>
+</div>
+</section>
+<section id="preloaded-calibration-sets">
+<h2>Preloaded Calibration Sets<a class="headerlink" href="#preloaded-calibration-sets" title="Link to this heading"></a></h2>
+<p>Version 1.2.2 also adds support for ADMX2001B modules to ship with a set of calibration coefficients intended to help with evaluating the board. Although the firmware supports it, boards that are currently shipping will not have calibration coefficients preloaded. This will be a future development.</p>
+<div class="line-block">
+<div class="line">Preloaded coefficients may not apply to a given test setup and their accuracy is not guaranteed. If the board came with them pre-loaded, then the below new commands apply:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">calibrate</span> <span class="pre">switch</span> <span class="pre">&lt;evalkit/default&gt;</span></code> choosing evalkit will apply the preloaded coefficients. Choosing default will apply user generated coefficients. Generating calibration coefficients will automatically change the active set to default.</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">calibrate</span></code> with no arguments will report the active set.</div>
+<div class="line">The evalkit set cannot be modified or erased. Only the default (user) set should be modified or erased.</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="compensation-procedure">
+<h2>Compensation Procedure<a class="headerlink" href="#compensation-procedure" title="Link to this heading"></a></h2>
+<p>Compensation is an additional measurement adjustment function designed to account for changes in the test fixture or leads that were not present during calibration. This feature is in development; currently, it is recommended to recalibrate for each fixture, and use the commands detailed in <a class="icon link reference external" href="https://wiki.analog.com/eval-admx2001ebz" target="_blank">Reading and Writing Calibration Coefficients</a> to save and load calibration data from a host device.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/calibration_compensation_boundary_2.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/admx/calibration_compensation_boundary_2.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/calibration_compensation_boundary_2.png" style="width: 600px;" />
+</a>
+<hr class="docutils" />
+<section id="eval-admx2001ebz-terminal-description">
+<h3>EVAL-ADMX2001EBZ Terminal Description<a class="headerlink" href="#eval-admx2001ebz-terminal-description" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/eval-admx2001ebz_diagram_3.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/admx/eval-admx2001ebz_diagram_3.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/eval-admx2001ebz_diagram_3.png" style="width: 600px;" />
+</a>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Terminal Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>H_CUR</p></td>
+<td><p>Signal source terminal. It generates the excitation required for measurement. This terminal can source up to +/-5V &#64; 50mA</p></td>
+</tr>
+<tr class="row-odd"><td><p>H_POT</p></td>
+<td><p>Voltage sense terminal. Connect to H_CUR at the device under test (DUT)</p></td>
+</tr>
+<tr class="row-even"><td><p>L_POT</p></td>
+<td><p>Voltage sense terminal. Connect to L_CUR at the device under test (DUT)</p></td>
+</tr>
+<tr class="row-odd"><td><p>L_CUR</p></td>
+<td><p>Current sense terminal. Return path for the excitation signal. Connect to the opposite end of the DUT as H_CUR</p></td>
+</tr>
+<tr class="row-even"><td><p>UART TX</p></td>
+<td><p>UART transmitter pin. Connect to TX pin on the UART to USB cable. Uses 3.3V logic</p></td>
+</tr>
+<tr class="row-odd"><td><p>UART RX</p></td>
+<td><p>UART receiver pin. Connect to RX pin on the UART to USB cable. Uses 3.3V logic</p></td>
+</tr>
+<tr class="row-even"><td><p>UART GND</p></td>
+<td><p>UART ground. Connect to ground pin on the UART to USB cable</p></td>
+</tr>
+<tr class="row-odd"><td><p>CLK_SEL</p></td>
+<td><p>Jumper selection of internal or external clock. Set to internal for default operation</p></td>
+</tr>
+<tr class="row-even"><td><p>TRIG_IN</p></td>
+<td><p>Trigger input. Use for hardware-timed acquisition only, otherwise leave disconnected</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRIG_OUT</p></td>
+<td><p>Measurement complete trigger out</p></td>
+</tr>
+<tr class="row-even"><td><p>CLK_IN</p></td>
+<td><p>External clock input. Use a LVCMOS 50MHz clock signal and set CLK_SEL to EXT position</p></td>
+</tr>
+<tr class="row-odd"><td><p>CLK_OUT</p></td>
+<td><p>Clock output. These two terminals have a buffered replica of the 50MHz main clock</p></td>
+</tr>
+<tr class="row-even"><td><p>PMOD</p></td>
+<td><p>Controller and Peripheral PMOD terminals for SPI port</p></td>
+</tr>
+<tr class="row-odd"><td><p>Header P6 pins [9-10]</p></td>
+<td><p>Digital output 0-1</p></td>
+</tr>
+<tr class="row-even"><td><p>Header P7 pins [1-6]</p></td>
+<td><p>Digital output 2-7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="spi-interface">
+<h2>SPI Interface<a class="headerlink" href="#spi-interface" title="Link to this heading"></a></h2>
+<p>The ADMX2001B supports a SPI interface in addition to the UART CLI interface. The SPI bus can be accessed on Header P6 and both PMOD headers of EVAL-ADMX2001EBZ, or pins B14-B17 of the ADMX2001B module. A full command reference for the SPI interface can be found at <cite>ADMX2001B SPI Interface. &lt;:doc:</cite>/wiki-migration/resources/eval/user-guides/admx/eval-admx2001ebz/spi-interface`&gt;`_</p>
+</section>
+<section id="id12">
+<h2>Trigger Input / Output Ports<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
+<p>The EVAL-ADMX2001EBZ has SMA terminals for the trigger input and output ports. These can be used to synchronize multiple modules or control measurement timing with an external instrument. To use the trigger input, the module must be configured to external <code class="docutils literal notranslate"><span class="pre">trig_mode</span></code> using the command <code class="docutils literal notranslate"><span class="pre">trig_mode</span> <span class="pre">&lt;internal/external&gt;</span></code>. By default, the board is in internal <code class="docutils literal notranslate"><span class="pre">trig_mode</span></code>, and ignores pulses on the TRIG_IN port. Next, set the trigger count with <code class="docutils literal notranslate"><span class="pre">tcount</span> <span class="pre">&lt;count&gt;</span></code>. This controls how many external triggers the module will respond to before exiting the WAIT_FOR_TRIGGER state. There is also an “infinite” trigger setting; if the tcount is set to 65536, then it will respond to unlimited triggers and never exit the WAIT_FOR_TRIGGER state automatically. Now, type the command <code class="docutils literal notranslate"><span class="pre">initiate</span></code>. The module will enter the WAIT_FOR_TRIGGER state. Most commands are disabled in this state. The module will automatically return to the IDLE state after receiving <code class="docutils literal notranslate"><span class="pre">tcount</span></code> triggers, or immediately if it receives the <code class="docutils literal notranslate"><span class="pre">abort</span></code> command. While in the WAIT_FOR_TRIGGER state, a software trigger can be provided with the command <code class="docutils literal notranslate"><span class="pre">trigger</span></code>, in both internal or external <code class="docutils literal notranslate"><span class="pre">trig_mode</span></code>. If the <code class="docutils literal notranslate"><span class="pre">trig_mode</span></code> is external, then a 3.3V 15μs pulse (min) to the TRIG_IN port will be registered as a trigger.</p>
+<p>When a measurement is initiated from the WAIT_FOR_TRIGGER state, either by an external trigger or software trigger, it will generate a 3.3V 15μs pulse on the TRIG_OUT port.</p>
+<p>Immediately after running <code class="docutils literal notranslate"><span class="pre">initiate</span></code>, the autorange algorithm will run (if the autorange is enabled). The gain chosen by this instance of the autorange will be locked in for subsequent measurements in trigger mode. If the DC offset is enabled, then the DC offset will be applied as soon as the <code class="docutils literal notranslate"><span class="pre">initiate</span></code> command runs. The DC offset and autorange cannot be used at the same time.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Warning: when the <code class="docutils literal notranslate"><span class="pre">initiate</span></code> command is run, the board will reload the calibration data automatically from the flash. Any coefficients that were not committed (saved to the flash) will be lost. This process is the same as running the command <code class="docutils literal notranslate"><span class="pre">calibrate</span> <span class="pre">reload</span></code>. Verify that any calibration data that should be applied during trigger mode measurements is saved for it to be applied, and not lost.</p>
+</div>
+</section>
+<section id="pmod-headers">
+<h2>PMOD Headers<a class="headerlink" href="#pmod-headers" title="Link to this heading"></a></h2>
+<p>The EVAL-ADMX2001EBZ features PMOD_IN and PMOD_OUT headers for interfacing with a host over SPI.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin Number</p></th>
+<th class="head"><p>Pinout</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>No Connect</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>SDI</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>SDO</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>SCLK</p></td>
+<td><p>20 MHz max</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>GND</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">5          | GND        |                                                                       |</div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>VCC current not limited</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>No Connect</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>No Connect</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p>CS</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>No Connect</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p>GND</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">11         | GND        |                                                                       |</div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>VCC current not limited</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<p>Pins 6 and 12 are No Connect on PMOD_IN (P12). On PMOD_OUT (P11), they connect to the 3.3V supply, and there is no current limiting on the board.</p>
+</section>
+<section id="digital-output-pins">
+<h2>Digital Output Pins<a class="headerlink" href="#digital-output-pins" title="Link to this heading"></a></h2>
+<p>The ADMX2001B features eight general purpose digital output pins, intended for controlling external MUXes or other peripherals. Support was added in version 1.2.2. The outputs are broken out on EVAL-ADMX2001EBZ, and can be accessed on pins 9-10 of P6, and pins 1-6 of P7. They can be set with the command <code class="docutils literal notranslate"><span class="pre">gpio_ctrl</span> <span class="pre">&lt;N&gt;</span></code> where N is a decimal from 0-255, and each of the 8 inputs are controlled by the respective bit for that position. Digital output 0 corresponds to the LSB. For instance, configuring <code class="docutils literal notranslate"><span class="pre">gpio_ctrl</span> <span class="pre">133</span></code> (1000 0101 in binary) will set high P6 pin 9, and P7 pins 1 and 6.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Header : Pin Number</p></th>
+<th class="head"><p>Bit Number</p></th>
+<th class="head"><p>N Setting</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>P6 : 9</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>P6 : 10</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>P7 : 1</p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>P7 : 2</p></td>
+<td><p>3</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-even"><td><p>P7 : 3</p></td>
+<td><p>4</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-odd"><td><p>P7 : 4</p></td>
+<td><p>5</p></td>
+<td><p>32</p></td>
+</tr>
+<tr class="row-even"><td><p>P7 : 5</p></td>
+<td><p>6</p></td>
+<td><p>64</p></td>
+</tr>
+<tr class="row-odd"><td><p>P7 : 6</p></td>
+<td><p>7</p></td>
+<td><p>128</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<section id="admx2001b-pin-configuration-and-function-descriptions">
+<h3>ADMX2001B Pin Configuration and Function Descriptions<a class="headerlink" href="#admx2001b-pin-configuration-and-function-descriptions" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx2001b_pinout_top.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx2001b_pinout_top.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx2001b_pinout_top.png" style="width: 600px;" />
+</a>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin Number</p></th>
+<th class="head"><p>Mnemonic</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Center Pad</p></td>
+<td><p>GND</p></td>
+<td><p>Ground</p></td>
+</tr>
+<tr class="row-odd"><td><p>A1-4, B1-4</p></td>
+<td><p>VDD</p></td>
+<td><p>Power supply terminals. Apply +3.3V nominal</p></td>
+</tr>
+<tr class="row-even"><td><p>A11</p></td>
+<td><p>VCC</p></td>
+<td><p>5V rail, not current limited. Leave unconnected.</p></td>
+</tr>
+<tr class="row-odd"><td><p>A18</p></td>
+<td><p>VEE</p></td>
+<td><p>-5V rail, not current limited. Leave unconnected.</p></td>
+</tr>
+<tr class="row-even"><td><p>A23</p></td>
+<td><p>CLKIN</p></td>
+<td><p>External clock input. Must connect to 50MHz source or CLKOUT terminal</p></td>
+</tr>
+<tr class="row-odd"><td><p>A25</p></td>
+<td><p>CLKOUT</p></td>
+<td><p>Clock output. If using external clock on CLKIN, leave unconnected. Otherwise connect to CLKIN</p></td>
+</tr>
+<tr class="row-even"><td><p>A22, A24, A26</p></td>
+<td><p>GND</p></td>
+<td><p>Ground</p></td>
+</tr>
+<tr class="row-odd"><td><p>B5, B7, B9, B11, B13, B18, B21</p></td>
+<td><p>GND</p></td>
+<td><p>Ground</p></td>
+</tr>
+<tr class="row-even"><td><p>B10</p></td>
+<td><p>TRIGIN</p></td>
+<td><p>Measurement trigger input. If unused, leave unconnected</p></td>
+</tr>
+<tr class="row-odd"><td><p>B12</p></td>
+<td><p>TRIGOUT</p></td>
+<td><p>Measurement trigger output. If unused, leave unconnected</p></td>
+</tr>
+<tr class="row-even"><td><p>B14</p></td>
+<td><p>SCK</p></td>
+<td><p>Serial data clock input</p></td>
+</tr>
+<tr class="row-odd"><td><p>B15</p></td>
+<td><p>SDI</p></td>
+<td><p>Serial data input</p></td>
+</tr>
+<tr class="row-even"><td><p>B16</p></td>
+<td><p>SDO</p></td>
+<td><p>Serial data output</p></td>
+</tr>
+<tr class="row-odd"><td><p>B17</p></td>
+<td><p>CS</p></td>
+<td><p>Serial interface port chip select input</p></td>
+</tr>
+<tr class="row-even"><td><p>B19</p></td>
+<td><p>TX</p></td>
+<td><p>UART transmit output. Connect to host’s receiver</p></td>
+</tr>
+<tr class="row-odd"><td><p>B20</p></td>
+<td><p>RX</p></td>
+<td><p>UART receive input. Connect to host’s transmitter</p></td>
+</tr>
+<tr class="row-even"><td><p>B22</p></td>
+<td><p>JTAG_VCC</p></td>
+<td><p>JTAG power out.</p></td>
+</tr>
+<tr class="row-odd"><td><p>B23</p></td>
+<td><p>TCK</p></td>
+<td><p>JTAG test clock.</p></td>
+</tr>
+<tr class="row-even"><td><p>B24</p></td>
+<td><p>TDO</p></td>
+<td><p>JTAG test data out.</p></td>
+</tr>
+<tr class="row-odd"><td><p>B25</p></td>
+<td><p>TMS</p></td>
+<td><p>JTAG test mode select.</p></td>
+</tr>
+<tr class="row-even"><td><p>B26</p></td>
+<td><p>TDI</p></td>
+<td><p>JTAG test data in.</p></td>
+</tr>
+<tr class="row-odd"><td><p>C18-C25</p></td>
+<td><p>GPIO0-GPIO7</p></td>
+<td><p>General-purpose digital output terminals</p></td>
+</tr>
+<tr class="row-even"><td><p>C1, C3, C4, C6, C7, C9, C10, C12-C17, C26</p></td>
+<td><p>GND</p></td>
+<td><p>Ground</p></td>
+</tr>
+<tr class="row-odd"><td><p>D1, D3, D4, D6, D7, D9, D10, D12</p></td>
+<td><p>GND</p></td>
+<td><p>Ground</p></td>
+</tr>
+<tr class="row-even"><td><p>C2, D2</p></td>
+<td><p>HCUR</p></td>
+<td><p>Source terminal</p></td>
+</tr>
+<tr class="row-odd"><td><p>C5, D5</p></td>
+<td><p>HPOT</p></td>
+<td><p>Voltage measurement high terminal. Tie to HCUR at the device under test</p></td>
+</tr>
+<tr class="row-even"><td><p>C8, D8</p></td>
+<td><p>LPOT</p></td>
+<td><p>Voltage measurement low terminal. Tie to LCUR at the device under test</p></td>
+</tr>
+<tr class="row-odd"><td><p>C11, D11</p></td>
+<td><p>LCUR</p></td>
+<td><p>Current measurement input</p></td>
+</tr>
+<tr class="row-even"><td><p>All other pins</p></td>
+<td><p>NC</p></td>
+<td><p>Do not connect</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">—-</div>
+</div>
+</section>
+<section id="id13">
+<h3>Firmware Updates<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
+<p>The ADMX2001B module firmware is user-updatable. Programming files must be requested by contacting <a class="reference external" href="mailto:admx-support&#37;&#52;&#48;analog&#46;com">admx-support<span>&#64;</span>analog<span>&#46;</span>com</a>. Make a myAnalog account on <a class="icon adi reference external" href="https://www.analog.com/en/index.html" target="_blank">(analog.com)</a>, by clicking in the top right. Then, email <a class="reference external" href="mailto:admx-support&#37;&#52;&#48;analog&#46;com">admx-support<span>&#64;</span>analog<span>&#46;</span>com</a>, and mention the email associated with the myAnalog account.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Warning: updating between certain firmware versions can cause saved calibration coefficients to be lost.</p>
+</div>
+<p><strong>Equipment List:</strong></p>
+<ul class="simple">
+<li><p>EVAL-ADMX2001EBZ board</p></li>
+<li><p>ADMX2001B Impedance Analyzer Measurement Module</p></li>
+<li><p>Intel Altera USB Blaster <a class="icon link reference external" href="https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&amp;No=46" target="_blank">(Terasic)</a></p></li>
+<li><p>Universal power adapter with 9VDC output</p></li>
+</ul>
+<p><strong>Software Prerequisites:</strong></p>
+<ul class="simple">
+<li><p>Python 3.7 or greater</p></li>
+<li><p>Latest Intel Quartus Prime Programmer And Tools</p>
+<ul>
+<li><p>Navigate to the downloads page for the latest Quartus Prime Lite Edition, and click the “Additional Software” tab. Alternatively, the full Quartus Prime Lite Edition can be used. Both are free, but the programmer is a smaller download</p></li>
+</ul>
+</li>
+<li><p>Drivers installed for the Altera USB Blaster</p></li>
+<li><p>Firmware programming folder containing *.pof file (downloaded from Analog.com, request from <a class="reference external" href="mailto:admx-support&#37;&#52;&#48;analog&#46;com">admx-support<span>&#64;</span>analog<span>&#46;</span>com</a>)</p></li>
+</ul>
+<p><strong>Board Programming Setup</strong></p>
+<ul class="simple">
+<li><p>Connect the USB Blaster to the computer over USB and verify the driver installation</p></li>
+<li><p>Plug the ADMX2001B module into EVAL-ADMX2001EBZ board</p></li>
+<li><p>Connect the USB blaster to the port labeled “P8 JTAG” on the EVAL-ADMX2001EBZ</p></li>
+<li><p>Connect the EVAL-ADMX2001EBZ to a 9V DC supply</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="update-using-installation-script">
+<h2>Update Using Installation Script<a class="headerlink" href="#update-using-installation-script" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">Versions 1.2.4+ comes bundled with an installation script to simplify the firmware installation process.</div>
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This script is the preferred installation method.</p>
+<div class="line-block">
+<div class="line">* Follow the steps under <strong>Board Programming Setup</strong></div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Ensure that Quartus Prime 18.1 or newer is installed in the following path: <code class="docutils literal notranslate"><span class="pre">C:\intelFPGA_lite\&lt;version_number&gt;\quartus</span></code></p></li>
+<li><p>Open a command prompt window</p></li>
+<li><p>Navigate to the Tools folder present in the installation directory of <code class="docutils literal notranslate"><span class="pre">Admx2001Firmware-Relx.y.z</span></code>, <code class="docutils literal notranslate"><span class="pre">C:\Analog</span> <span class="pre">Devices\Admx2001Firmware-Relx.y.z\Tools</span></code></p>
+<ul>
+<li><p>Here, x, y, &amp; z represents the release number (1.2.4 for example)</p></li>
+</ul>
+</li>
+<li><p>Run the following command: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">admx2001_flash_pof.py</span> <span class="pre">--pof</span> <span class="pre">&quot;C:\Analog</span> <span class="pre">Devices\Admx2001Firmware-Relx.y.z\Firmware\admx_lcr_encrypted.pof&quot;</span></code></p>
+<ul>
+<li><p>Ensure that x.y.z is replaced with the appropriate release number (1.2.4 for example)</p></li>
+</ul>
+</li>
+<li><p>Wait until the message “Programming POF completed successfully” is displayed in the terminal. It may take around 20 to 30 seconds for the process to complete.</p>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Do not unplug the board or otherwise interrupt the programming process.</p>
+</div>
+<ul class="simple">
+<li><p>When the programming is completed (message displayed and prompt appears) close the terminal and unplug the USB blaster. The firmware update is complete.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line">—-</div>
+</div>
+</section>
+<section id="update-using-manual-programmer">
+<h2>Update Using Manual Programmer<a class="headerlink" href="#update-using-manual-programmer" title="Link to this heading"></a></h2>
+<p>Versions 1.2.2 and older do not come bundled with an installation script. The Quartus Prime Programmer interface can be used to perform the update. The installation script is the preferred method, as selecting the wrong settings in the manual programming tool can cause the board to no longer boot. It will need to be returned/swapped.</p>
+<p>If there are issues preventing the installation script from working to program the board, the manual programmer method can be used. In this case, contact <a class="reference external" href="mailto:admx-support&#37;&#52;&#48;analog&#46;com">admx-support<span>&#64;</span>analog<span>&#46;</span>com</a> for assistance using the manual programmer.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">—-</div>
+</div>
+</section>
+<section id="firmware-release-highlights">
+<h2>Firmware Release Highlights<a class="headerlink" href="#firmware-release-highlights" title="Link to this heading"></a></h2>
+<p>Currently available firmare versions and release highlights:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Status</p></th>
+<th class="head"><p>Release Highlights</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1.3.2</p></td>
+<td><p>Stable</p></td>
+<td><p>Measurement time optimizations, minor bug fixes</p></td>
+</tr>
+<tr class="row-odd"><td><p>1.3.1</p></td>
+<td><p>Stable</p></td>
+<td><p>Substantial measurement noise improvements, bug fixes and more</p></td>
+</tr>
+<tr class="row-even"><td><p>1.2.4</p></td>
+<td><p>Stable</p></td>
+<td><p>Same firmware as 1.2.2. Installation script added to release package</p></td>
+</tr>
+<tr class="row-odd"><td><p>1.2.2</p></td>
+<td><p>Stable</p></td>
+<td><p>Adds calibration over frequency, configurable digital outputs, external trigger support, bug fixes and more</p></td>
+</tr>
+<tr class="row-even"><td><p>1.2.0</p></td>
+<td><p>Stable</p></td>
+<td><p>Bug fixes, noise and repeatability improvements. Calibration with complex loads now supported</p></td>
+</tr>
+<tr class="row-odd"><td><p>1.1.1</p></td>
+<td><p>Legacy</p></td>
+<td><p>Same fixes as 1.2.0, but not compatible with boards using the flash memory.</p></td>
+</tr>
+<tr class="row-even"><td><p>1.1.0</p></td>
+<td><p>Legacy</p></td>
+<td><p>Added SPI interface and built in self test</p></td>
+</tr>
+<tr class="row-odd"><td><p>1.0.1</p></td>
+<td><p>Legacy</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>1.0.0</p></td>
+<td><p>Legacy</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The full release notes are included with each firmware download.</p>
+<hr class="docutils" />
+<section id="python-scripting">
+<h3>Python Scripting<a class="headerlink" href="#python-scripting" title="Link to this heading"></a></h3>
+<p>To facilitate easier measurement optimization on a PC, there is a library of Python functions which make it easy to operate the command-line interface from a Python script. Instead of typing commands over TeraTerm, the library accesses the Serial port directly, and calling the library functions will execute the same commands that are normally typed into the terminal emulator.</p>
+<p>These Python libraries are currently accessible by request. First, make a myAnalog account on <a class="icon adi reference external" href="https://www.analog.com/en/index.html" target="_blank">(analog.com)</a> by clicking in the top right. Then, email <a class="reference external" href="mailto:admx-support&#37;&#52;&#48;analog&#46;com">admx-support<span>&#64;</span>analog<span>&#46;</span>com</a>, and mention the email associated with the myAnalog account.</p>
+<p>The Python script download includes an example measurement sweep script, which shows how to set up the Serial port, configure measurements and begin collecting data. More example scripts are coming in the future. Nearly all functions found in the command-line interface have corresponding Python functions in the library. These functions also perform a certain degree of error checking. This library is for evaluation purposes only.</p>
+<p>Version 1.1.0 includes a graphical user interface.</p>
+</section>
+<hr class="docutils" />
+<section id="python-graphical-user-interface">
+<h3>Python Graphical User Interface<a class="headerlink" href="#python-graphical-user-interface" title="Link to this heading"></a></h3>
+<p>Since Python Evaluation Script version 1.1.0, the download package includes a Python based graphical user interface (GUI). The GUI does not yet support all features of the ADMX2001B, but it provides an quicker start and easier experimentation compared to using the UART command-line interface (CLI). The GUI communicates with the board over the UART CLI in the background, so any open terminals connected to the board need to be closed prior to using the GUI.</p>
+<p>The GUI requires some 3rd-party Python libraries. The download includes a README.txt file (in the /GUI/ folder) with instructions on how to download these libraries and run the GUI.</p>
+<p>Currently, the GUI supports:</p>
+<ul class="simple">
+<li><p>Continuous or singular measurements</p></li>
+<li><p>Plotting of multiple measurements or sweeps</p></li>
+<li><p>Saving of measurement data</p></li>
+<li><p>18 display modes in SI units</p></li>
+<li><p>Automatic and manual gain selection</p></li>
+<li><p>Frequency, offset, magnitude and average settings</p></li>
+<li><p>Calibrated measurements (but not the process of calibrating the board)</p></li>
+<li><p>And more!</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/updated_admx2001b_python_gui_example.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/admx/updated_admx2001b_python_gui_example.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/updated_admx2001b_python_gui_example.png" style="width: 400px;" />
+</a>
+<p>The Python GUI is bundled with the latest firmware downloads and available by request. First, make a myAnalog account on <a class="icon adi reference external" href="https://www.analog.com/en/index.html" target="_blank">(analog.com)</a> by clicking in the top right. Then, email <a class="reference external" href="mailto:admx-support&#37;&#52;&#48;analog&#46;com">admx-support<span>&#64;</span>analog<span>&#46;</span>com</a>, and mention the email associated with the myAnalog account.</p>
+</section>
+<hr class="docutils" />
+<section id="support">
+<h3>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h3>
+<p>For support, general questions, or firmware update help, reach out to <a class="reference external" href="mailto:admx-support&#37;&#52;&#48;analog&#46;com">admx-support<span>&#64;</span>analog<span>&#46;</span>com</a>. <a class="icon link reference external" href="http://example.com" target="_blank">External Link</a></p>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,275 @@
+AD4170 24-Bit Sigma-Delta ADC with Integrated PGA Linux Driver
+==============================================================
+
+Supported Devices
+-----------------
+
+This driver supports the
+
+-  :adi:`AD4170`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD4170`
+
+Description
+-----------
+
+This is a Linux industrial I/O (:doc:`IIO </wiki-migration/software/linux/docs/iio/iio>`) subsystem driver, targeting single channel serial interface ADCs. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See :doc:`IIO </wiki-migration/software/linux/docs/iio/iio>` for more information.
+
+Status
+------
+
++--------------------------------------------------------------------------------------------+
+
+
+| Source                                                                                     |
+
++============================================================================================+
+
+| `repo>linux/tree/dev_ad4170 <https://wiki.analog.com/[https/github.com/analogdevicesinc/linux/tree/dev_ad4170>`_ |
+
++--------------------------------------------------------------------------------------------+
+
+Files
+-----
+
++----------+---------------------------------------------------------------------+
+| Function | File                                                                |
++==========+=====================================================================+
+| driver   | `ad4170.c </repo/linux/tree/dev_ad4170>drivers/iio/adc/ad4170.c>`__ |
++----------+---------------------------------------------------------------------+
+
+Driver testing
+==============
+
+Each and every IIO device, typically a hardware chip, has a device folder under /sys/bus/iio/devices/iio:deviceX. Where X is the IIO index of the device. Under every of these directory folders reside a set of files, depending on the characteristics and features of the hardware device in question. These files are consistently generalized and documented in the IIO ABI documentation. In order to determine which IIO deviceX corresponds to which hardware device, the user can read the name file /sys/bus/iio/devices/iio:deviceX/name. In case the sequence in which the iio device drivers are loaded/registered is constant, the numbering is constant and may be known in advance.
+
+
+.. tip::
+
+   \ **TIP:** An example program which uses the interface can be found here:
+
+   
+   -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+
+
+   
+   |
+
+
+|
+
+<WRAP box bggreen>
+
+.. note::
+
+   This specifies any shell prompt running on the target
+
+
+::
+
+   root@analog:~# **cd /sys/bus/iio/devices/**
+
+   root@analog:/sys/bus/iio/devices# **ls**
+
+   iio:device0  trigger0
+
+   root@analog:/sys/bus/iio/devices# **cd iio\:device0**
+
+   root@analog:/sys/bus/iio/devices/iio:device0#** ls -l**
+
+   total 0
+
+   drwxr-xr-x 2 root root    0 Sep 13 08:09 buffer
+   -r--r--r-- 1 root root 4096 Sep 13 08:09 dev
+   -rw-r--r-- 1 root root 4096 Sep 13 08:09 in_voltage0-voltage24_calibbias
+   -rw-r--r-- 1 root root 4096 Sep 13 08:09 in_voltage0-voltage24_calibscale
+   -rw-r--r-- 1 root root 4096 Sep 13 08:09 in_voltage0-voltage24_filter_type
+   -rw-r--r-- 1 root root 4096 Sep 13 08:09 in_voltage0-voltage24_offset
+   -rw-r--r-- 1 root root 4096 Sep 13 08:09 in_voltage0-voltage24_raw
+   -rw-r--r-- 1 root root 4096 Sep 13 08:09 in_voltage0-voltage24_sampling_frequency
+   -r--r--r-- 1 root root 4096 Sep 13 08:09 in_voltage0-voltage24_sampling_frequency_available
+   -rw-r--r-- 1 root root 4096 Sep 13 08:09 in_voltage0-voltage24_scale
+   -r--r--r-- 1 root root 4096 Sep 13 08:09 in_voltage0-voltage24_scale_available
+   -rw-r--r-- 1 root root 4096 Sep 13 08:09 in_voltage29-voltage24_calibbias
+   -rw-r--r-- 1 root root 4096 Sep 13 08:09 in_voltage29-voltage24_calibscale
+   -rw-r--r-- 1 root root 4096 Sep 13 08:09 in_voltage29-voltage24_filter_type
+   -rw-r--r-- 1 root root 4096 Sep 13 08:09 in_voltage29-voltage24_offset
+   -rw-r--r-- 1 root root 4096 Sep 13 08:09 in_voltage29-voltage24_raw
+   -rw-r--r-- 1 root root 4096 Sep 13 08:09 in_voltage29-voltage24_sampling_frequency
+   -r--r--r-- 1 root root 4096 Sep 13 08:09 in_voltage29-voltage24_sampling_frequency_available
+   -rw-r--r-- 1 root root 4096 Sep 13 08:09 in_voltage29-voltage24_scale
+   -r--r--r-- 1 root root 4096 Sep 13 08:09 in_voltage29-voltage24_scale_available
+   -rw-r--r-- 1 root root 4096 Sep 13 08:09 in_voltage3-voltage4_calibbias
+   -rw-r--r-- 1 root root 4096 Sep 13 08:09 in_voltage3-voltage4_calibscale
+   -rw-r--r-- 1 root root 4096 Sep 13 08:09 in_voltage3-voltage4_filter_type
+   -rw-r--r-- 1 root root 4096 Sep 13 08:09 in_voltage3-voltage4_offset
+   -rw-r--r-- 1 root root 4096 Sep 13 08:09 in_voltage3-voltage4_raw
+   -rw-r--r-- 1 root root 4096 Sep 13 08:09 in_voltage3-voltage4_sampling_frequency
+   -r--r--r-- 1 root root 4096 Sep 13 08:09 in_voltage3-voltage4_sampling_frequency_available
+   -rw-r--r-- 1 root root 4096 Sep 13 08:09 in_voltage3-voltage4_scale
+   -r--r--r-- 1 root root 4096 Sep 13 08:09 in_voltage3-voltage4_scale_available
+   -r--r--r-- 1 root root 4096 Sep 13 08:09 in_voltage-voltage_filter_type_available
+   -r--r--r-- 1 root root 4096 Sep 13 08:09 name
+   lrwxrwxrwx 1 root root    0 Sep 13 08:09 of_node -> ../../../../../../../../firmware/devicetree/base/soc/spi@7e204000/ad4170@0
+   drwxr-xr-x 2 root root    0 Sep 13 08:09 power
+   drwxr-xr-x 2 root root    0 Sep 13 08:09 scan_elements
+   lrwxrwxrwx 1 root root    0 Sep 13 08:09 subsystem -> ../../../../../../../../bus/iio
+   drwxr-xr-x 2 root root    0 Sep 13 08:09 trigger
+   -rw-r--r-- 1 root root 4096 Sep 13 08:09 uevent
+
+Show device name
+----------------
+
+<WRAP box bggreen>
+
+.. note::
+
+   This specifies any shell prompt running on the target
+
+
+::
+
+   root:/sys/bus/iio/devices/iio:device0> **cat name**
+   ad4170
+
+Show channel scale, offset, sampling_frequency, calibbias, calibscale
+---------------------------------------------------------------------
+
+::
+
+   **Description:**
+   Scale, offset, calibbias, calibscale, sampling frequency for the in_voltagex_voltagey channel
+
+<WRAP box bggreen>
+
+.. note::
+
+   This specifies any shell prompt running on the target
+
+
+root:/sys/bus/iio/devices/iio:device0> **cat in_voltage29-voltage24_scale **
+   0.000149011
+   root:/sys/bus/iio/devices/iio:device0> **cat in_voltage29-voltage24_offset **
+   0
+   root:/sys/bus/iio/devices/iio:device0> **cat in_voltage29-voltage24_raw **
+   16777216
+   root:/sys/bus/iio/devices/iio:device0> **cat in_voltage29-voltage24_calibbias **
+   0
+   root:/sys/bus/iio/devices/iio:device0> **cat in_voltage29-voltage24_calibscale **
+   0
+   root:/sys/bus/iio/devices/iio:device0> **cat in_voltage29-voltage24_sampling_frequency**
+   125000.000000000
+
+| **Description:** Channel Ainp29-Ainm24 is configured as unipolar, with a gain of 1
+| **U** = //in_voltage29-voltage24_raw \* in_voltage29-voltage24_scale - in_voltage29-voltage24_offset // = 16777216\* 0.000149011 - 0 = **2499.98 mV**
+
+Show channel scale_available and sampling_frequency_available
+-------------------------------------------------------------
+
+::
+
+   **Description:**
+   Scales and sampling rates to be applied to the channel.
+
+<WRAP box bggreen>
+
+.. note::
+
+   This specifies any shell prompt running on the target
+
+
+<code>
+   root:/sys/bus/iio/devices/iio:device0> **cat in_voltage29-voltage24_scale_available** 
+   0.000149011 0.000074505 0.000037252 0.000018626 0.000009313 0.000004656 0.000002328 0.000001164 0.000298023 0.000149011
+   root:/sys/bus/iio/devices/iio:device0>** cat in_voltage29-voltage24_sampling_frequency_available **
+   [7.629860220 15.259720441 125000.000000000]
+
+Show filter_type_available
+--------------------------
+
+::
+
+   root:/sys/bus/iio/devices/iio:device0> **cat in_voltage-voltage_filter_type_available** 
+   sinc5+avg sinc5 sinc3
+
+Device Tree
+-----------
+
+::
+
+
+   ad4170@0 {
+               compatible = "adi,ad4170";
+               reg = <0>;
+               avdd-supply = <&avdd>;
+               #address-cells = <1>;
+               #size-cells = <0>;
+
+               spi-max-frequency = <5000000>;
+               interrupts = <25 IRQ_TYPE_EDGE_FALLING>;
+               interrupt-parent = <&gpio>;
+               interrupt-names = "adc_rdy";
+               adi,dig-aux1-function = "rdy"; 
+
+               //adi,gpio0-power-down-switch;
+               //adi,gpio1-power-down-switch;
+
+               channel@0 {
+                   reg = <0>;
+
+                   adi,reference-select = <AD4170_REFIN_REFOUT>;
+
+                   /* REFOUT, DGND */
+                   diff-channels = <29 24>;
+                   adi,chop-iexc = <AD4170_CHOP_IEXC_OFF>;
+                   adi,chop-adc = <AD4170_CHOP_ACX_2PIN>;
+               };
+
+               channel@1 {
+                   reg = <1>;
+
+                   adi,reference-select = <2>;
+
+                   /* AIN0, DGND  */
+                   diff-channels = <0 24>;
+                   bipolar;
+               };
+
+               channel@2 {
+                   reg = <2>;
+
+                   adi,reference-select = <2>;
+
+                   /* AIN3+, AIN4-  */
+                   diff-channels = <3 4>;
+                   bipolar;
+               };
+   }
+
+| The **adi,gpio0-power-down-switch** and **adi,gpio1-power-down-switch** properties enable the power down switches on GPIO0 and GPIO1 repectively.
+| AC excitation is controlled via **adi,chop_iexc** and **adi,chop_adc** properties and can use 2 or 4 gpio pins.
+
+More Information
+================
+
+-  IIO mailing list: linux-iio@vger.kernel.org
+-  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
+-  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
+-  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+-  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
+-  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
+-  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
+-  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+-
+
+|libiio introduction|
+
+.. image:: https://wiki.analog.com/_media/page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+   :alt: page>resources/tools-software/linux-drivers/need_help#need help&noheader&firstseconly&noeditbtn
+
+.. |libiio introduction| image:: https://wiki.analog.com/_media/youtube>p_VntEwUe24
+

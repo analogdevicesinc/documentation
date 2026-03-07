@@ -1,0 +1,178 @@
+CN0209 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7193`
+-  :adi:`ADT7310`
+
+Reference Circuits
+------------------
+
+-  :adi:`CN0209`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-CN0209-SDPZ` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-CN0209-SDPZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cn0209.jpg
+   :alt: cn0209.jpg
+   :align: center
+   :width: 400px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`_
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-CN0209-SDPZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0209_sdp1z.jpg
+   :alt: cn0209_sdp1z.jpg
+   :align: center
+   :width: 400px
+
+The **EVAL-CN0209-SDPZ** evaluation board is a member of a growing number of boards available for the **SDP**. It provides a fully programmable universal analog front end (AFE) for process control applications. The following inputs are supported: 2-, 3-, and 4- wire RTD configurations, thermocouple inputs with cold junction compensation, unipolar and bipolar input voltages, and 4 mA-to-20 mA inputs. When using this evaluation board with the SDP board or BeMicro SDK board, apply +15 V, -15 V, and GND to Connector J3.
+
+The :adi:`AD7193` is a low noise, complete analog front end for high precision measurement applications. It contains a low noise, 24-bit sigma-delta (S-?) analog-to-digital converter (ADC). The on-chip low noise gain stage means that signals of small amplitude can interface directly to the ADC.
+
+The device can be configured to have four differential inputs or eight pseudo differential inputs. The on-chip channel sequencer allows several channels to be enabled simultaneously, and the AD7193 sequentially converts on each enabled channel, simplifying communication with the part. The on-chip 4.92 MHz clock can be used as the clock source to the ADC or, alternatively, an external clock or crystal can be used. The output data rate from the part can be varied from 4.7 Hz to 4.8 kHz.
+
+The device has a very flexible digital filter, including a fast settling option. Variables such as output data rate and settling time are dependent on the option selected. The AD7193 also includes a zero latency option.
+
+The :adi:`ADT7310` is a high accuracy digital temperature sensor in a narrow SOIC package. It contains a band gap temperature reference and a 13-bit ADC to monitor and digitize the temperature to a 0.0625°C resolution. The ADC resolution, by default, is set to 13 bits (0.0625 °C). This can be changed to 16 bits (0.0078 °C) by setting Bit 7 in the configuration register (Register Address 0x01).
+
+The ADT7310 is guaranteed to operate over supply voltages from 2.7 V to 5.5 V. Operating at 3.3 V, the average supply current is typically 210 µA. The ADT7310 has a shutdown mode that powers down the device and offers a shutdown current of typically 2 µA. The ADT7310 is rated for operation over the -55°C to +150°C temperature range.
+
+The CT pin is an open-drain output that becomes active when the temperature exceeds a programmable critical temperature limit. The default critical temperature limit is 147°C. The INT pin is also an open-drain output that becomes active when the temperature exceeds a programmable limit. The INT and CT pins can operate in either comparator or interrupt mode.
+
+More information
+----------------
+
+-  :adi:`CN0209 Product Info <CN0209>` - pricing, samples, datasheet
+-  :adi:`AD7193 Product Info <AD7193>` - pricing, samples, datasheet
+-  :adi:`ADT7310 Product Info <ADT7310>` - pricing, samples, datasheet
+-  :adi:`EVAL-CN0209-SDPZ evaluation board user guide <CN0209>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+-  FMC-SDP adapter board
+-  **EVAL-CN0209-SDPZ** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+-  The EVAL-CN0209 reference project for Xilinx KC705 FPGA.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **CN0209 Driver:** :git-no-OS:`device_drivers/CN0209`
+   
+   -  **CN0209 Commands:** :git-no-OS:`device_commands/CN0209`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Run the Demonstration Project
+=============================
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+   | Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-CN0209 reference project for Xilinx KC705 FPGA board.
+
++-------------------+--------------------------------------------------------------------------------------+
+| Command           | Description                                                                          |
++===================+======================================================================================+
+| **help?**         | Displays all available commands.                                                     |
++-------------------+--------------------------------------------------------------------------------------+
+| **ad7193Temp?**   | Displays the temperature from AD7193 device.                                         |
++-------------------+--------------------------------------------------------------------------------------+
+| **ad7193id?**     | Displays the AD7193 device ID.                                                       |
++-------------------+--------------------------------------------------------------------------------------+
+| **ad7193Reset!**  | Reset the serial interface with the AD7193.                                          |
++-------------------+--------------------------------------------------------------------------------------+
+| **adt7310Temp?**  | Displays the temperature from ADT7310 device.                                        |
++-------------------+--------------------------------------------------------------------------------------+
+| **adt7310id?**    | Displays the ADT7310 device ID.                                                      |
++-------------------+--------------------------------------------------------------------------------------+
+| **adt7310Reset!** | Resets the serial interface with the ADT7310.                                        |
++-------------------+--------------------------------------------------------------------------------------+
+| **voltage?**      | Displays the input voltage on selected channel. Accepted values:                     |
+|                   | 1 - channel 1.                                                                       |
+|                   | 2 - channel 2.                                                                       |
++-------------------+--------------------------------------------------------------------------------------+
+| **current?**      | Displays the input current on selected channel. Accepted values:                     |
+|                   | 1 - channel 1.                                                                       |
+|                   | 2 - channel 2.                                                                       |
++-------------------+--------------------------------------------------------------------------------------+
+| **tempTC?**       | Displays the temperature detected by the thermocouple connected on selected channel. |
+|                   | Accepted values:                                                                     |
+|                   | 1 - channel 1.                                                                       |
+|                   | 2 - channel 2.                                                                       |
++-------------------+--------------------------------------------------------------------------------------+
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`_
+
+
+.. _more-information-1:
+
+More information
+================
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`_
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

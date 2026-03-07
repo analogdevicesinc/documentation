@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The objective of this lab activity is to examine active filtering using different active filter circuit configurations." name="description" />
+
+    <title>Activity: Active Filtering &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Activity: Active Filtering</a><ul>
+<li><a class="reference internal" href="#objective">Objective</a></li>
+<li><a class="reference internal" href="#materials">Materials</a></li>
+<li><a class="reference internal" href="#active-low-pass-filter-with-gain-control">Active Low Pass Filter with Gain Control</a><ul>
+<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
+<li><a class="reference internal" href="#procedure">Procedure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#inverting-amplifier-low-pass-filter-circuit">Inverting Amplifier Low Pass Filter Circuit</a><ul>
+<li><a class="reference internal" href="#hardware-setup-1">Hardware Setup</a></li>
+<li><a class="reference internal" href="#procedure-1">Procedure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#active-high-pass-filter-with-gain-control">Active High Pass Filter with Gain Control</a><ul>
+<li><a class="reference internal" href="#hardware-setup-2">Hardware Setup</a></li>
+<li><a class="reference internal" href="#procedure-2">Procedure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#active-bandpass-filter">Active Bandpass Filter</a><ul>
+<li><a class="reference internal" href="#hardware-setup-3">Hardware Setup</a></li>
+<li><a class="reference internal" href="#procedure-3">Procedure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#active-band-stop-filter-circuit">Active Band Stop Filter Circuit</a><ul>
+<li><a class="reference internal" href="#hardware-setup-4">Hardware Setup</a></li>
+<li><a class="reference internal" href="#procedure-4">Procedure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#second-order-active-filters">Second Order Active Filters</a></li>
+<li><a class="reference internal" href="#sallen-key-second-order-low-pass-filter">Sallen Key Second Order Low Pass Filter</a><ul>
+<li><a class="reference internal" href="#hardware-setup-5">Hardware Setup</a></li>
+<li><a class="reference internal" href="#procedure-5">Procedure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sallen-key-second-order-high-pass-filter">Sallen Key Second Order High Pass Filter</a><ul>
+<li><a class="reference internal" href="#hardware-setup-6">Hardware Setup</a></li>
+<li><a class="reference internal" href="#procedure-6">Procedure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sallen-key-bandpass-filter">Sallen Key Bandpass Filter</a><ul>
+<li><a class="reference internal" href="#hardware-setup-7">Hardware Setup</a></li>
+<li><a class="reference internal" href="#procedure-7">Procedure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#other-filter-configurations">Other Filter Configurations</a></li>
+<li><a class="reference internal" href="#state-variable-filters">State Variable Filters</a><ul>
+<li><a class="reference internal" href="#hardware-setup-8">Hardware Setup</a></li>
+<li><a class="reference internal" href="#procedure-8">Procedure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tow-thomas-filter">Tow-Thomas Filter</a><ul>
+<li><a class="reference internal" href="#hardware-setup-9">Hardware Setup</a></li>
+<li><a class="reference internal" href="#procedure-9">Procedure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#twin-t-notch-filter">Twin-T Notch Filter</a><ul>
+<li><a class="reference internal" href="#hardware-setup-10">Hardware Setup</a></li>
+<li><a class="reference internal" href="#procedure-10">Procedure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#questions">Questions</a></li>
+<li><a class="reference internal" href="#further-reading">Further Reading</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="activity-active-filtering">
+<h1>Activity: Active Filtering<a class="headerlink" href="#activity-active-filtering" title="Link to this heading"></a></h1>
+<section id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Link to this heading"></a></h2>
+<p>The objective of this lab activity is to examine active filtering using different active filter circuit configurations.</p>
+<p>The notion of “filter” is one of the most common terms found in circuit theory, used to configure signal characteristics like phase or amplitude. Besides passive components (i.e. resistors, capacitors, inductors), active filters involve one or more active components, usually amplifiers, that can significantly improve the performance, cost, and predictability of the filter. Another advantage that active filters present is that the load impedance of the next circuit stages will not affect the filter characteristics and the high input impedance of the amplifier prevents excessive loading on the filter’s output.</p>
+<p>The usage of filters covers a wide area of applications including:</p>
+<ul class="simple">
+<li><p>Cut DC offset of high gain amplifiers</p></li>
+<li><p>Separate signals, passing only those which are of interest (i.e. radio receiver, where the signal of interest, required for processing, is passed through while the rest of the signals are attenuated)</p></li>
+<li><p>Eliminate aliases in Analog to Digital systems</p></li>
+<li><p>Reconstruction of the signal at the output of a Digital to Analog system, eliminating higher frequency components (harmonics, sampling frequency)</p></li>
+</ul>
+<p>An ideal filter has an amplitude response that is unity (or gain dependent) for the frequencies that are of interest and zero for other frequencies. The frequency at which the response changes from the fixed gain to zero is called cutoff frequency.</p>
+<p>Figure 1 shows the idealized responses of the main type of filters:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/ideal_filters.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/ideal_filters.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/ideal_filters.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 1. Idealized filter responses</p>
+</div>
+</section>
+<section id="materials">
+<h2>Materials<a class="headerlink" href="#materials" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">ADALM2000 Active Learning Module</div>
+<div class="line">Solder-less breadboard</div>
+<div class="line">4 - 1KΩ Resistor</div>
+<div class="line">3 – 10KΩ Resistor</div>
+<div class="line">1 - 470Ω Resistor</div>
+<div class="line">1 – 9kΩ Resistor (series 6.8kΩ and 2.2kΩ)</div>
+<div class="line">1 – 2kΩ Resistor (series two 1kΩ)</div>
+<div class="line">2 – 1nF Capacitor</div>
+<div class="line">2 – 10nF Capacitor</div>
+<div class="line">1 – 1uF Capacitor</div>
+<div class="line">5 – precision op amp (OP37, OP27)</div>
+</div>
+</section>
+<section id="active-low-pass-filter-with-gain-control">
+<h2>Active Low Pass Filter with Gain Control<a class="headerlink" href="#active-low-pass-filter-with-gain-control" title="Link to this heading"></a></h2>
+<p>Consider the circuit presented in Figure 2.</p>
+<p>The frequency response of the filter is the same as for the simple passive low pass filter with the addition of the op-amp for gain control and amplification. The basic RC low pass filter provides a low-frequency path by connecting it at the non-inverting input of the operational amplifier.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/alpf_gain.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/alpf_gain.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/alpf_gain.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 2. Active Low Pass Filter with Gain Control circuit</p>
+</div>
+<p>The amplitude of the output signal is increased in the pass-band with gain A which is given as a function dependent on the input resistor (R1) and feedback resistor (R2).</p>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(A = (1 + R2/R1)\)</span></p>
+</div>
+<p>Therefore, gain of the first-order low pass filter as a function of frequency will be:</p>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(\displaystyle V_gain = V_out/V_input = A/sqrt\frac{1 + (f}{f_c)^2}\)</span></p>
+</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p>A = voltage gain</p></li>
+<li><p>f = frequency of the input signal</p></li>
+<li><p>f<sub>c</sub> = cut-off frequency</p></li>
+</ul>
+<div class="centeralign docutils container">
+<p>$f_c = 1/(2piRC)$</p>
+</div>
+<p>Following the above formula we can observe that the frequency dependent gain of the circuit provides an output close to A when frequencies are below the cut-off frequency, a value of A/sqrt(2) when frequency of the signal is equal to the cut-off frequency, and for frequencies larger than the cut-off frequency the output voltage is decreasing proportionally to the increase of the signal frequency.</p>
+<section id="hardware-setup">
+<h3>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h3>
+<p>On your solder-less breadboard, construct the active low pass filter shown in Figure 2. Use the positive and negative power supply from the ADALM2000, set +5V for the positive supply and -5V for the negative supply.</p>
+<p><img alt="image1" src="https://wiki.analog.com/_media/university/courses/electronics/alpf_gain_bb.png" /></p>
+<div class="centeralign docutils container">
+<p>Figure 3. Active Low Pass Filter with Gain Control breadboard connection</p>
+</div>
+</section>
+<section id="procedure">
+<h3>Procedure<a class="headerlink" href="#procedure" title="Link to this heading"></a></h3>
+<p>Open Scopy Network Analyzer and set Channel 1 as the reference. Configure the sweep to start at 10 Hz and stop at 1 MHz. Set the Amplitude to 200 mV and the Offset to 0 V. Under the display settings, set the max. magnitude to 30 dB and min. magnitude to -30 dB. Set the phase top to 90º and bottom to -270º. Set the sample count to 100. Turn on the power supplies and run a single frequency sweep. You should see amplitude and phase vs. frequency plots that look very similar to your simulation results.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/alpf_gain_result.png"><img alt="image2" src="https://wiki.analog.com/_media/university/courses/electronics/alpf_gain_result.png" style="width: 500px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 4. Active Low Pass Filter with Gain Control Frequency Response</p>
+</div>
+</section>
+</section>
+<section id="inverting-amplifier-low-pass-filter-circuit">
+<h2>Inverting Amplifier Low Pass Filter Circuit<a class="headerlink" href="#inverting-amplifier-low-pass-filter-circuit" title="Link to this heading"></a></h2>
+<p>The circuit present in Figure 5 is an inverting active low pass filter. Unlike the previous filter configuration, the low-frequency input is fed at the inverting input of the operational amplifier.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/inv_alpf_gain.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/inv_alpf_gain.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/inv_alpf_gain.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 5. Inverting Amplifier Low Pass Filter circuit</p>
+</div>
+<p>The filter acts as an inverting amplifier in the pass-band with gain A which is a function equal to the negative quotient of the feedback resistor (R2) and the input resistor (R1).</p>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(A = -R2/R1\)</span></p>
+</div>
+<p>Calculating for the cut-off frequency for this circuit is the same with the non-inverting active low pass filter circuit.</p>
+<section id="hardware-setup-1">
+<span id="id1"></span><h3>Hardware Setup<a class="headerlink" href="#hardware-setup-1" title="Link to this heading"></a></h3>
+<p>Build the breadboard circuit presented in Figure 6. Set +5V for the positive supply and -5V for the negative supply.</p>
+<img alt="https://wiki.analog.com/_media/university/courses/electronics/inv_alpf_gain_bb.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/inv_alpf_gain_bb.png" />
+<div class="centeralign docutils container">
+<p>Figure 6. Inverting Amplifier Low Pass Circuit breadboard connection</p>
+</div>
+</section>
+<section id="procedure-1">
+<span id="id2"></span><h3>Procedure<a class="headerlink" href="#procedure-1" title="Link to this heading"></a></h3>
+<p>Open the Network Analyzer and set Channel 1 as the reference. Configure the sweep to start at 1 kHz and stop at 500 kHz and set the sample count to 100. Set the amplitude to 200 mV and the offset to zero volts. Under the display settings, set the max. magnitude top to 30 dB and min. magnitude to -30 dB. Set the max. phase to 180º and min. phase to 0º. Turn on the power supplies and run a single frequency sweep. You should see amplitude and phase vs. frequency plots that look very similar to your simulation results.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/inv_alpf_gain_result.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/inv_alpf_gain_result.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/inv_alpf_gain_result.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 7. Inverting Amplifier Low Pass Circuit Frequency Response</p>
+</div>
+</section>
+</section>
+<section id="active-high-pass-filter-with-gain-control">
+<h2>Active High Pass Filter with Gain Control<a class="headerlink" href="#active-high-pass-filter-with-gain-control" title="Link to this heading"></a></h2>
+<p>Now consider the next circuit in figure 8.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/ahpf_gain.png"><img alt="image3" src="https://wiki.analog.com/_media/university/courses/electronics/ahpf_gain.png" style="width: 500px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 8. Active High Pass Filter with Gain Control circuit</p>
+</div>
+<p>The filter circuit is an Active High Pass Filter which basically passes and amplifies high frequency. The circuit is composed of RC high pass filter providing a high-frequency pass with the addition of the op-amp for gain control and amplification. The frequency response of the filter is the same compared to a passive high pass filter. The gain, A, of the output signal is dependent on the input resistor (R3) and feedback resistor (R2), the same as that in non-inverting active low pass filter.</p>
+<p>The gain of the first-order high pass filter as a function of frequency will be:</p>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(\displaystyle V_gain = V_out/V_input = A \times \frac{f/f_c}{sqrt}\frac{1 + (f}{f_c)^2}\)</span></p>
+</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p>A = voltage gain</p></li>
+<li><p>f = frequency of the input signal</p></li>
+<li><p>f<sub>c</sub> = cut-off frequency</p></li>
+</ul>
+<section id="hardware-setup-2">
+<span id="id3"></span><h3>Hardware Setup<a class="headerlink" href="#hardware-setup-2" title="Link to this heading"></a></h3>
+<p>Construct the active high pass filter circuit shown in figure 8. Use the positive and negative positive supply from the ADALM2000.</p>
+<p><img alt="image4" src="https://wiki.analog.com/_media/university/courses/electronics/ahpf_gain_bb.png" /></p>
+<div class="centeralign docutils container">
+<p>Figure 9. Active High Pass Filter with Gain Control circuit</p>
+</div>
+</section>
+<section id="procedure-2">
+<span id="id4"></span><h3>Procedure<a class="headerlink" href="#procedure-2" title="Link to this heading"></a></h3>
+<p>On Scopy Network Analyzer, set Channel 1 as the reference. Set the Amplitude to 200mV, 0V offset. Under the display settings, set the max. magnitude to 30 dB and min. magnitude to –25 dB. Set phase from -180 º to +180 º. Set sample count to 100.</p>
+<p>Turn on the power supplies and run a single frequency sweep from 500Hz to 1MHz.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/ahpf_gain_result.png"><img alt="image5" src="https://wiki.analog.com/_media/university/courses/electronics/ahpf_gain_result.png" style="width: 500px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 10. Active High Pass Filter with Gain Control circuit</p>
+</div>
+<p>Comparing the result to an ideal frequency response of a passive high pass filter, the frequency response of an active high pass filter is limited to the op-amp’s bandwidth or open loop characteristics. There comes a point on the spectrum that the gain decreases as the frequency increases making the whole response look like a bandpass filter.</p>
+</section>
+</section>
+<section id="active-bandpass-filter">
+<h2>Active Bandpass Filter<a class="headerlink" href="#active-bandpass-filter" title="Link to this heading"></a></h2>
+<p>Unlike the previous filter configurations shown above in which the pass band is determined only by one cut-off frequency, DC up to the cut-off frequency for the low pass filter and cut-off frequency onward for the high pass filter, the active band pass filter has two cut-off frequencies that define the selected frequency range. A simple configuration of the active band pass filter is shown in figure 11.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/abpf_gain.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/abpf_gain.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/abpf_gain.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11. Active Band Pass Filter</p>
+</div>
+<p>The circuit is composed of 3 stages. The first stage is the RC high pass filter which defines the lower cut-off frequency, f<sub>L</sub>, and attenuates signals below this defined frequency. Then the next stage is the Amplification Stage which basically is the op-amp amplifying the signals passed by the high pass filter stage. And lastly, the RC low pass filter stage which defines the higher cut-off frequency, f<sub>H</sub>, and attenuates signals falling above this defined frequency. The difference between the higher cut-off frequency and lower cut-off frequency determines the bandwidth of the band pass filter.</p>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(BW = f_H-f_L\)</span></p>
+</div>
+<p>The voltage gain of this filter is given by the expression,</p>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(\displaystyle V_gain = V_out/V_input = A_max \times \frac{f/f_L}{sqrt}[1 + (f/f_L)^2][1 + (f/f_H)^2]\)</span></p>
+</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p>A<sub>max</sub> = total voltage gain, can be determined by multiplying the gain of the high pass stage to the gain of the low pass stage</p></li>
+<li><p>f = frequency of the input signal</p></li>
+<li><p>f<sub>L</sub> = lower cut-off frequency</p></li>
+<li><p>f<sub>H</sub> = higher cut-off frequency</p></li>
+</ul>
+<p>Taking a closer look at the circuit, the presented active band pass filter is basically a second order system. By cascading one low pass filter and one high pass filter gives us a second-order band pass filter. Having two reactive components, capacitors, the filter will have a peak response, Resonant Frequency, f<sub>r</sub>, which is the geometric mean of the two cut-off frequencies. The resonant frequency is also called the Center frequency, but in this activity let’s use the term resonant frequency.</p>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(f_r= sqrtf_L \times f_H\)</span></p>
+</div>
+<p>Aside from the cut-off frequencies defining the resonant frequency, it also determines the quality factor of the filter. This Quality Factor, Q, is a measure of selectivity of the filter and is defined as the quotient of the resonant frequency with regards to the bandwidth. The Q factor, along with the gain and resonant frequency characterizes the frequency response of the second order filter.</p>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(Q = f_r/BW\)</span></p>
+</div>
+<p>When Q is greater than 1, the band-pass filter has a much narrower pass band whereas when Q is lesser than 1, a wider pass band.</p>
+<section id="hardware-setup-3">
+<span id="id5"></span><h3>Hardware Setup<a class="headerlink" href="#hardware-setup-3" title="Link to this heading"></a></h3>
+<p>Build the breadboard circuit presented in figure 12. Use the positive and negative power supply from the ADALM2000.</p>
+<p><img alt="image6" src="https://wiki.analog.com/_media/university/courses/electronics/abpf_gain_bb.png" /></p>
+<div class="centeralign docutils container">
+<p>Figure 12. Active Band Pass Filter breadboard connection</p>
+</div>
+</section>
+<section id="procedure-3">
+<span id="id6"></span><h3>Procedure<a class="headerlink" href="#procedure-3" title="Link to this heading"></a></h3>
+<p>On Scopy Network Analyzer, set Channel 1 as the reference. Set the Amplitude to 200 mV, 0 V offset. Under display settings, set magnitude from -10 dB to 25 dB and phase from -150º to 100º. Set sample count to 100.</p>
+<p>Turn on the power supplies and run a frequency sweep from 100Hz to 500kHz.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/abpf_gain_result.png"><img alt="image7" src="https://wiki.analog.com/_media/university/courses/electronics/abpf_gain_result.png" style="width: 500px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 13. Active High Pass Filter Frequency Response</p>
+</div>
+</section>
+</section>
+<section id="active-band-stop-filter-circuit">
+<h2>Active Band Stop Filter Circuit<a class="headerlink" href="#active-band-stop-filter-circuit" title="Link to this heading"></a></h2>
+<p>Another type of filter can be made from combining a low pass filter and a high pass filter. Such filter configuration is a Band Stop Filter.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/absf_gain.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/absf_gain.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/absf_gain.png" style="width: 700px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 14. Active Band Stop Filter circuit</p>
+</div>
+<p>The filter circuit shown in Figure 14 is an Active Band Stop or Active Band reject Filter circuit. It operates exactly the opposite of the Active Band pass Filter. This filter blocks and attenuates the frequencies between the lower and higher cut-off frequencies but passes signals from DC to the lower cut-off frequency and all the frequencies above the higher cut-off frequency.</p>
+<p>The circuit is composed of a combined high pass and low pass filters. The input signal is simultaneously fed to both the inputs of the high pass and low pass filters. The output of each filter then becomes the input to the summing amplifier and are amplified. By summing the low pass and the high pass filters, their frequency responses do not overlap. Similarly, like the band-pass filter, the band stop filter is a second order system.</p>
+<p>Bandstop filter’s definition for bandwidth, quality factor, and the resonant frequency is the same as the band-pass filter.</p>
+<p>Like the band-pass filter, the band stop filter has a wider stop band when Q is less than 1 and a much narrower stop band when Q is greater than 1. A narrow-band band stop filter is referred to as a Notch Filter. The band stop filter in Figure 14 is an example of a notch filter.</p>
+<section id="hardware-setup-4">
+<span id="id7"></span><h3>Hardware Setup<a class="headerlink" href="#hardware-setup-4" title="Link to this heading"></a></h3>
+<p>On your breadboard, build the circuit shown in Figure 15. Set +5V for the positive supply and -5V for the negative supply.</p>
+<img alt="https://wiki.analog.com/_media/university/courses/electronics/absf_gain_bb2.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/absf_gain_bb2.png" />
+<div class="centeralign docutils container">
+<p>Figure 15. Active Band Stop Filter Circuit breadboard connection</p>
+</div>
+</section>
+<section id="procedure-4">
+<span id="id8"></span><h3>Procedure<a class="headerlink" href="#procedure-4" title="Link to this heading"></a></h3>
+<p>On the Network Analyzer instrument, set Channel 1 as a reference and set the sweep logarithmic from 10Hz to 500 kHz with a sample count of 250. Under the waveform settings, set the amplitude to 200 mV and 0 V offset. Set the display from -30 dB to 30 dB and -180º to +180º. Turn on the power supplies and observe the waveform.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/absf_gain_res2.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/absf_gain_res2.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/absf_gain_res2.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 16. Active Band Stop Filter Circuit Frequency Response</p>
+</div>
+</section>
+</section>
+<section id="second-order-active-filters">
+<h2>Second Order Active Filters<a class="headerlink" href="#second-order-active-filters" title="Link to this heading"></a></h2>
+<p>Given the previous circuits above, you might have observed the difference between the active low/high pass filters to the active band pass/band stop filters. What makes the band pass and band stop filter a second order filter system? Second Order Filters would have two reactive components in the circuit which affects the frequency response of the filter. Added reactive components to the circuit configuration, such as cascading two first order filter, would double the gain roll-off rate to -40dB/roll-off.</p>
+<p>Second Order Filters are another important type of active filter design because along with the active first order RC filters, they are used as building blocks to design higher order filter circuits. Second Order Filters are also referred to as VCVS filters because the op-amp is used as a Voltage Controlled Voltage Source amplifier.</p>
+<p>There are plenty of second order filter configurations available such as Butterworth, Chebyshev, Bessel, and Sallen-Key. The Sallen-Key filter design is one of the most popular second order filter design because of its simplicity. It requires only four passive RC components for frequency tuning and a single op-amp for the gain control.</p>
+</section>
+<section id="sallen-key-second-order-low-pass-filter">
+<h2>Sallen Key Second Order Low Pass Filter<a class="headerlink" href="#sallen-key-second-order-low-pass-filter" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/sk_lpf.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/sk_lpf.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/sk_lpf.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 17. Sallen Key Second Order Low Pass Filter</p>
+</div>
+<p>Shown in Figure 17 is the basic configuration of a Sallen Key second order low pass filter. The filter circuit has two RC networks which give the filter the frequency response properties. R1-C1 and R2-C2 networks define the cut-off frequency of the filter which can be computed with the following equation,</p>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(f_c = 1/(2pisqrtR_1C_1R_2C_2)\)</span></p>
+</div>
+<p>The gain of the amplifier, A, is of a non-inverting amplifier. Thus, we make use of the formula we had used earlier,</p>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(A = (1 + R3/R4)\)</span></p>
+</div>
+<p>One other concept we’ve encountered earlier is the quality factor, just like the band pass and band stop filter which are second-order systems. The Sallen Key quality factor can be computed with the following equation,</p>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(Q = 1/(3-A)\)</span></p>
+</div>
+<p>The value of Q can also be related to the dampness of the system. The relationship of dampness to Q can be summarized to the following conditions,</p>
+<ul class="simple">
+<li><p>When Q &gt; ½, the filter is underdamped. Filters, where the Q factor is only just over a half, may oscillate once or twice, just like the active low pass we have in Figure 17 where Q = 1.</p></li>
+<li><p>When Q &lt; ½, the filter is overdamped. These filters frequency response has no overshoot and is long flat.</p></li>
+<li><p>When Q = ½, the filter is critically damped. The response approached steady state without overshoot.</p></li>
+</ul>
+<p>The relationship between Q and A is critical in Sallen Key configuration which makes it its limitation. Q must be greater than ½ since A must be greater than 1.</p>
+<section id="hardware-setup-5">
+<span id="id9"></span><h3>Hardware Setup<a class="headerlink" href="#hardware-setup-5" title="Link to this heading"></a></h3>
+<p>Build the breadboard circuit presented in Figure 18. Use the positive and negative power supply from the ADALM2000.</p>
+<p><img alt="image8" src="https://wiki.analog.com/_media/university/courses/electronics/sk_lpf_bb.png" /></p>
+<div class="centeralign docutils container">
+<p>Figure 18. Sallen Key Second Order Low Pass Filter breadboard connection</p>
+</div>
+</section>
+<section id="procedure-5">
+<span id="id10"></span><h3>Procedure<a class="headerlink" href="#procedure-5" title="Link to this heading"></a></h3>
+<p>Set Channel 1 as the reference. Set the Amplitude to 200 mV, 0 V offset. Under display settings, set magnitude from -20 dB to 15 dB and phase from -270º to 90º. Set sample count to 100. Turn on the power supplies and run a frequency sweep from 100Hz to 500kHz.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/sk_lpf_result.png"><img alt="image9" src="https://wiki.analog.com/_media/university/courses/electronics/sk_lpf_result.png" style="width: 500px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 19. Sallen Key Second Order Low Pass Filter Frequency Response</p>
+</div>
+</section>
+</section>
+<section id="sallen-key-second-order-high-pass-filter">
+<h2>Sallen Key Second Order High Pass Filter<a class="headerlink" href="#sallen-key-second-order-high-pass-filter" title="Link to this heading"></a></h2>
+<p>Now consider the Sallen Key configuration of a high pass filter presented in Figure 20.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/sk_hpf.png"><img alt="image10" src="https://wiki.analog.com/_media/university/courses/electronics/sk_hpf.png" style="width: 500px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 20. Sallen Key Second Order High Pass Filter</p>
+</div>
+<p>The configuration is like the low pass configuration except that the positions of the resistors and capacitors are interchanged. 2nd order Sallen-Key filters are also referred to as positive feedback filters since the output feeds back into the positive terminal of the op-amp.</p>
+<section id="hardware-setup-6">
+<span id="id11"></span><h3>Hardware Setup<a class="headerlink" href="#hardware-setup-6" title="Link to this heading"></a></h3>
+<p>Build the breadboard circuit presented in Figure 21. Use the positive and negative power supply from the ADALM2000.</p>
+<p><img alt="image11" src="https://wiki.analog.com/_media/university/courses/electronics/sk_hpf_bb.png" /></p>
+<div class="centeralign docutils container">
+<p>Figure 21. Sallen Key Second Order High Pass Filter breadboard connection</p>
+</div>
+</section>
+<section id="procedure-6">
+<span id="id12"></span><h3>Procedure<a class="headerlink" href="#procedure-6" title="Link to this heading"></a></h3>
+<p>Set Channel 1 as the reference. Set the Amplitude to 200 mV, 0 V offset. Under display settings, set magnitude from -35 dB to 15 dB and phase from -90º to 180º. Set sample count to 100. Turn on the power supplies and run a frequency sweep from 7.5kHz to 1MHz.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/sk_hpf_result.png"><img alt="image12" src="https://wiki.analog.com/_media/university/courses/electronics/sk_hpf_result.png" style="width: 500px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 22. Sallen Key Second Order High Pass Filter Frequency Response</p>
+</div>
+</section>
+</section>
+<section id="sallen-key-bandpass-filter">
+<h2>Sallen Key Bandpass Filter<a class="headerlink" href="#sallen-key-bandpass-filter" title="Link to this heading"></a></h2>
+<p>The band-pass configuration of the Sallen-Key filter has a severe limitation. The Q value determines the gain of the filter, that is, it cannot be set independently, as it can with the low pass or high-pass cases. The voltage gain can be computed using the following equation,</p>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(Av = AQ\)</span></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/sk_bpf.png"><img alt="image13" src="https://wiki.analog.com/_media/university/courses/electronics/sk_bpf.png" style="width: 500px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p>Figure 23. Sallen Key Second Order Band pass Filter</p>
+</div>
+<p>Shown in Figure 23 is the Sallen Key second-order band pass filter configuration.</p>
+<section id="hardware-setup-7">
+<span id="id13"></span><h3>Hardware Setup<a class="headerlink" href="#hardware-setup-7" title="Link to this heading"></a></h3>
+<p>Build the breadboard circuit presented in Figure 24. Use the positive and negative power supply from the ADALM2000.</p>
+<p><img alt="image14" src="https://wiki.analog.com/_media/university/courses/electronics/sk_bpf_bb.png" /></p>
+<div class="centeralign docutils container">
+<p>Figure 24. Sallen Key Second Order Band pass Filter breadboard connection</p>
+</div>
+</section>
+<section id="procedure-7">
+<span id="id14"></span><h3>Procedure<a class="headerlink" href="#procedure-7" title="Link to this heading"></a></h3>
+<p>Set Channel 1 as the reference. Set the Amplitude to 200 mV, 0 V offset. Under display settings, set magnitude from -35 dB to 5 dB and phase from -180º to 180º. Set sample count to 100. Turn on the power supplies and run a frequency sweep from 7.5kHz to 1MHz.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/sk_bpf_result.png"><img alt="image15" src="https://wiki.analog.com/_media/university/courses/electronics/sk_bpf_result.png" style="width: 500px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 25. Sallen Key Second Order Bandpass Filter Frequency Response</p>
+</div>
+<p>It is also possible to design Sallen Key notch filter but it has undesirable characteristics. The resonant frequency, or the notch frequency, cannot be adjusted easily due to component interaction. Thus, it is not included in this lab activity. Although you can try simulating the Sallen Key notch filter circuit in LTSpice, the schematic can be found on the link at the bottom of this page.</p>
+</section>
+</section>
+<section id="other-filter-configurations">
+<h2>Other Filter Configurations<a class="headerlink" href="#other-filter-configurations" title="Link to this heading"></a></h2>
+</section>
+<section id="state-variable-filters">
+<h2>State Variable Filters<a class="headerlink" href="#state-variable-filters" title="Link to this heading"></a></h2>
+<p>State Variable Filter configuration offers the most precise implementation of the filter function, at the expense of many more circuit elements. All three major parameters (gain, Q, and f<sub>r</sub>) can be adjusted independently, and low-pass, high-pass, and band-pass outputs are available simultaneously. A notch and all pass filter are also possible to configure using the state variable filter. With an added amplifier section summing the low-pass and high-pass sections, the notch function can also be synthesized. An all pass filter may also be built with the four-amplifier configuration by subtracting the band-pass output from the input. Shown in Figure 26 is the state variable filter configuration that output and low-pass, high-pass, and band-pass frequency response.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/svf_khn.png"><img alt="image16" src="https://wiki.analog.com/_media/university/courses/electronics/svf_khn.png" style="width: 700px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 26. State Variable Filter</p>
+</div>
+<p>Tuning the resonant frequency of a state variable filter is accomplished by varying R4 and R5. While you do not have to tune both, it is generally preferable if you are varying over a wide range. Holding R1 constant, tuning R7 sets the low-pass gain and tuning R2 sets the high-pass gain. Band-pass gain and Q are set by the ratio of R3 and R7. Note that the low-pass and high-pass outputs are inverted in phase while the band-pass output maintains the phase.</p>
+<section id="hardware-setup-8">
+<span id="id15"></span><h3>Hardware Setup<a class="headerlink" href="#hardware-setup-8" title="Link to this heading"></a></h3>
+<p>Build the breadboard circuit presented in Figure 27.</p>
+<p><img alt="image17" src="https://wiki.analog.com/_media/university/courses/electronics/svf_khn_bb.png" /></p>
+<div class="centeralign docutils container">
+<p>Figure 27. State Variable Filter breadboard connection</p>
+</div>
+</section>
+<section id="procedure-8">
+<span id="id16"></span><h3>Procedure<a class="headerlink" href="#procedure-8" title="Link to this heading"></a></h3>
+<p>Connect Channel 2 to the Low Pass filter output. Set Channel 1 as the reference. Set the Amplitude to 200 mV, 0 V offset. Under display settings, set magnitude from -40 dB to 30 dB and phase from -45º to 180º. Set sample count to 100. Turn on the power supplies and run a frequency sweep from 100Hz to 250kHz.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/svf_khn_res_lp.png"><img alt="image18" src="https://wiki.analog.com/_media/university/courses/electronics/svf_khn_res_lp.png" style="width: 500px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 28. State Variable Filter, Low Pass Frequency Response</p>
+</div>
+<p>Now, try connecting channel 2 to either band pass or low pass output and run a sweep.</p>
+</section>
+</section>
+<section id="tow-thomas-filter">
+<h2>Tow-Thomas Filter<a class="headerlink" href="#tow-thomas-filter" title="Link to this heading"></a></h2>
+<p>Another example of a Second Order Active Filter is the Tow-Thomas Filter, sometimes referred to as Biquadratic (Biquad) Filter. Figure 29 shows an example of the Tow-Thomas (Biquad) Filter.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/tt_biquad.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/tt_biquad.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/tt_biquad.png" style="width: 700px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 29. Tow-Thomas Filter circuit</p>
+</div>
+<p>The Tow-Thomas Filter is tunable like the state variable (KHN) filter: Adjust R3 to change the Q-factor, R4 to change the resonant frequency, and R1 to set the gain. To minimize the effects of component value interaction, adjust the resonant frequency first followed by the Q and finally the gain. The bandwidth of the Tow-Thomas filter is defined as:</p>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(BW = 1/(2piR3C)\)</span></p>
+</div>
+<p>Upon closer look, the Tow-Thomas Filter configuration is a minor rearrangement of the state variable filter. It has no separate high-pass output, but it generates two low-pass outputs, one in phase and the out of phase, and a band-pass output that inverts the phase. Connections of each output are seen in Figure 29. However, adding a fourth amplifier to the current filter configuration allows the filter to generate either high-pass, notch, or all-pass filters. An all-pass filter adds a phase shift response to the circuit while leaving the amplitude of the signal untouched. It has a unity gain for all frequencies.</p>
+<section id="hardware-setup-9">
+<span id="id17"></span><h3>Hardware Setup<a class="headerlink" href="#hardware-setup-9" title="Link to this heading"></a></h3>
+<p>Build the breadboard circuit presented in Figure 30 on your breadboard. Set the positive supply to +5 V and the negative supply to -5 V.</p>
+<img alt="https://wiki.analog.com/_media/university/courses/electronics/tt_biquad_bb.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/tt_biquad_bb.png" />
+<div class="centeralign docutils container">
+<p>Figure 30. Tow-Thomas Filter Circuit breadboard connection</p>
+</div>
+</section>
+<section id="procedure-9">
+<span id="id18"></span><h3>Procedure<a class="headerlink" href="#procedure-9" title="Link to this heading"></a></h3>
+<p>Set sweep as logarithmic with Channel 1 as the reference, the amplitude to 200 mV with 0 V offset, and the samples count to 75. Set the display from -60 dB to 30 dB and from -30º to 210º. Turn on the power supplies and run a single frequency sweep from 100 Hz to 500 kHz.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/tt_biquad_result.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/tt_biquad_result.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/tt_biquad_result.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 31. Tow-Thomas Filter Circuit Frequency Response</p>
+</div>
+</section>
+</section>
+<section id="twin-t-notch-filter">
+<h2>Twin-T Notch Filter<a class="headerlink" href="#twin-t-notch-filter" title="Link to this heading"></a></h2>
+<p>The circuit shown in Figure 32 is a Twin-T Notch Filter. It is used as a general-purpose notch (narrow band stop) circuit. Recall that a band stop filter attenuates and blocks frequencies between its lower and higher cut-off frequencies.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/twint_notch.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/twint_notch.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/twint_notch.png" style="width: 650px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 32. Twin-T Notch Filter circuit</p>
+</div>
+<p>The Twin-T Notch filter circuit is composed of two T-shaped networks: An RCR T-network and a CRC T-network. Resistors R1 and R2 with capacitor C3 form the RCR T-network while capacitors C1 and C2 alongside with resistor R3 form the CRC T-network. The design configurations are shown below:</p>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(R = R1 = R2 = 2R3\)</span></p>
+</div>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(C = C1 = C2 = C3/2\)</span></p>
+</div>
+<p>Take note of the values of R and C. These two determines the center notch frequency f<sub>o</sub> of the filter which is defined by the expression:</p>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(f_o = 1/(2piRC)\)</span></p>
+</div>
+<p>In its passive implementation, the Twin-T notch filter has its Q fixed at 0.25. Implementing positive feedback to the reference node can fix the problem. This is done by setting up a voltage divider using R4 and R5 at the output of the filter and connect it to a voltage follower. Then, the output of the voltage follower is supplied back to the junction of R3 and C3.</p>
+<p>The signal feedback is given by the resistors R4 and R5 determine the Q of the filter as well as the notch depth. The quality factor is defined as:</p>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(\displaystyle Q =\frac{1+R5/R4}{4}\)</span></p>
+</div>
+<p>To achieve the maximum notch depth, eliminate resistors R4 and R5 alongside the op-amp connected to them and connect the junction between R3 and C3 junction directly to the output.</p>
+<section id="hardware-setup-10">
+<span id="id19"></span><h3>Hardware Setup<a class="headerlink" href="#hardware-setup-10" title="Link to this heading"></a></h3>
+<p>On your breadboard, build the circuit in Figure 33. Use the positive and negative supplies of the ADALM2000. Figure 34 replaces R4 and R5 with a potentiometer allowing more control for the Q of the circuit.</p>
+<img alt="https://wiki.analog.com/_media/university/courses/electronics/twint_notch_bb.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/twint_notch_bb.png" />
+<div class="centeralign docutils container">
+<p>Figure 33. Twin-T Notch Filter Circuit breadboard connection</p>
+</div>
+<img alt="https://wiki.analog.com/_media/university/courses/electronics/twint_notch_bb2.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/twint_notch_bb2.png" />
+<div class="centeralign docutils container">
+<p>Figure 34. Twin-T Notch Filter Circuit with Potentiometer breadboard connection</p>
+</div>
+</section>
+<section id="procedure-10">
+<span id="id20"></span><h3>Procedure<a class="headerlink" href="#procedure-10" title="Link to this heading"></a></h3>
+<p>Set sweep as logarithmic with Channel 1 as the reference, the amplitude to 200 mV with 0 V offset, and the samples count to 100. Set the display from -25 dB to 5 dB and -140º to 80º. Turn on the +5 V and -5 V power supplies and sweep from 30 kHz to 300 kHz.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/twint_notch_result.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/twint_notch_result.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/twint_notch_result.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 35. Twin-T Notch Filter Circuit Frequency Response</p>
+</div>
+<p>Your circuit’s frequency response should be similar to your simulation result.</p>
+</section>
+</section>
+<section id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Considering the circuit in Figure 17, change the gain of the amplifier by replacing values of R<sub>3</sub> and R<sub>4</sub>. What do you observe with the frequency response? Do the same in Figure 20 and 23.</p></li>
+</ol>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p><strong>Lab Resources:</strong></p>
+<ul class="simple">
+<li><p>Fritzing files: <a class="icon git reference external" href="https://github.com/analogdevicesinc/education_tools/tree/main/m2k/fritzing/active_filters_bb" target="_blank">m2k/fritzing/active_filters_bb</a></p></li>
+<li><p>LTspice files: <a class="icon git reference external" href="https://github.com/analogdevicesinc/education_tools/tree/main/m2k/ltspice/active_filters_ltspice" target="_blank">m2k/ltspice/active_filters_ltspice</a></p></li>
+</ul>
+</div>
+</section>
+<section id="further-reading">
+<h2>Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading"></a></h2>
+<p>Some additional resources:</p>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/media/en/training-seminars/design-handbooks/Basic-Linear-Design/Chapter8.pdf" target="_blank">Analog Filters</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/media/en/training-seminars/tutorials/MT-210.pdf" target="_blank">Fo and Q in Filters</a></p></li>
+</ul>
+<p><strong>Return to Lab Activity</strong> <a class="reference internal" href="labs.html"><span class="doc">Table of Contents</span></a></p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

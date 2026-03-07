@@ -1,0 +1,246 @@
+MAX31855 Driver
+===============
+
+Supported devices
+-----------------
+
+`MAX31855 <https://www.maximintegrated.com/en/products/interface/sensor-interface/MAX31855.html>`_
+
+Overview
+--------
+
+The `MAX31855 <https://www.maximintegrated.com/en/products/interface/sensor-interface/MAX31855.html>`_ performs cold-junction compensation and digitizes the signal from a K-, J-, N-, T-, S-, R-, or E-type thermocouple. The data is output in a signed 14-bit, SPI-compatible, read-only format. This converter resolves temperatures to 0.25°C, allows readings as high as +1800°C and as low as -270°C, and exhibits thermocouple accuracy of ±2°C for temperatures ranging from -200°C to +700°C for K-type thermocouples.
+
+The `MAX31855 <https://www.maximintegrated.com/en/products/interface/sensor-interface/MAX31855.html>`_ interfaces to most microcontrollers, by using a SPI interface.
+
+Applications
+~~~~~~~~~~~~
+
+-  Industrial
+-  Appliances
+-  HVAC
+
+ADI No-OS
+---------
+
+The goal of ADI Microcontroller No-OS is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. ADI No-OS offers **generic drivers** which can be used as a base for any microcontroller platform and also **example projects** which are using these drivers on various microcontroller platforms.
+
+For more information about ADI No-OS and supported microcontroller platforms see: :doc:`no-OS </wiki-migration/resources/no-os>`
+
+MAX31855 ADI No-OS Driver
+-------------------------
+
+The source code for the MAX31855 driver can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of MAX31855 Driver|
+
+   -
+
+   |Implementation of MAX31855 Driver|
+
+The driver also uses the ADI util library, so make sure you also add the necessary files in your project. The source code for the util library can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of ADI util library|
+
+   -
+
+   |Implementation file of ADI util library|
+
+In order to be able to use this driver you will have to provide the specific implementation for the communication APIs and the specific types they use. If the SPI communication is chosen, there are three functions which are called by the MAX31855 driver and have to be implemented:
+
+-  no_os_spi_init() – initializes the communication peripheral.
+-  no_os_spi_write_and_read() – writes and reads data to/from the device.
+-  no_os_spi_remove() – free the communication peripheral descriptor.
+
+And there are two data types that have to be defined:
+
+-  no_os_spi_desc - structure holding the SPI descriptor
+-  no_os_spi_init_param - structure holding the parameters for SPI initialization
+
+An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using can be found below:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Generic header file for SPI Communication APIs|
+
+MAX31855 Code Driver Documentation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and it is available below:
+
+-  `MAX31855 Header file <http://analogdevicesinc.github.io/no-OS/max31855_8h.html>`_
+-  `MAX31855 Source file <http://analogdevicesinc.github.io/no-OS/max31855_8c.html>`_
+
+MAX31855 Device Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Driver initialization
+^^^^^^^^^^^^^^^^^^^^^
+
+The first step before using the driver is to call the **max31855_init** function, which, in this case, will only initialize the SPI interface. After that (if the init function returns 0), the driver is fully configured, and you will be able to read samples from the device.
+
+The MAX31855 doesn't support any additional configuration. The device only has 1 read-only register.
+
+MAX31855 Device Measurements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Temperature reading
+^^^^^^^^^^^^^^^^^^^
+
+The MAX31855 continuously performs temperature readings as long as it's powered on. To read a temperature sample, the CS pin must be pulled low, which will result in a register update and read.
+
+The API function used for reading a temperature sample is **max31855_read_temp**, which will provide a value for both cold (the chip's temperature) and hot (the probe's temperature) junctions. These are represented in a integer/decimal form. The unit for the integer part is degrees Celsius. The decimal part will have to be divided by either **MAX31855_THERMOCOUPLE_TEMP_DEC_DIV** or **MAX31855_INTERNAL_TEMP_DEC_DIV** to obtain the value in degrees Celsius. The cold junction compensation is already applied.
+
+The raw values can be obtained by using the **max31855_read_raw** function, and then applying the **MAX31855_GET_INTERNAL_TEMP** or **MAX31855_GET_THERMOCOUPLE_TEMP** macros on the **val** parameter (the register's raw value).
+
+These functions will return an error if any fault bit is set.
+
+MAX31855 Driver Usage Example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+   int ret;
+   struct max31855_decimal internal;
+   struct max31855_decimal thermocouple;
+
+   struct max31855_dev *dev;
+   struct max31855_init_param max31855_param = {
+       .spi_init = spi_param
+   };
+
+   ret = max31855_init(&dev, &max31855_param);
+   if (ret)
+           return ret;
+   ret = max31855_read_temp(dev, &thermocouple, &internal);
+   if (ret)
+           return ret;
+
+ADI IIO No-OS
+-------------
+
+MAX31855 IIO No-OS driver
+-------------------------
+
+The MAX31855 IIO driver comes on top of MAX31855 driver and offers support for interfacing IIO clients through IIO lib.
+
+MAX31855 IIO Driver Source Code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The source code for MAX31855 driver can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of MAX31855 IIO Driver|
+
+   -
+
+   |Implementation of MAX31855 IIO Driver|
+
+MAX31855 IIO Device Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Device Attributes
+^^^^^^^^^^^^^^^^^
+
+The MAX31855 IIO device does not have any device specific attributes.
+
+Device Channels
+^^^^^^^^^^^^^^^
+
+The MAX IIO device has 0 input channels and 2 output temperature channels.
+
+Temperature channels
+""""""""""""""""""""
+
+The temperature channels are:
+
+-  Channel 0: temp_t
+-  Channel 1: temp_i
+
+Each channel has 2 attributes:
+
+-  raw - is the raw temperature value read from the device.
+-  scale - is the scale that has to be applied to the raw value in order to obtain the converted real value in degrees Celsius. It has a value of **0.25** for temp_t and **0.0625** for temp_i.
+
+::
+
+   converted_temp [degrees Celsius] = raw * scale
+
+MAX31855 IIO Driver Initialization Example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+   #define DATA_BUFFER_SIZE 400
+
+   struct no_os_spi_init_param spi_param = {
+       .max_speed_hz = 100000,
+       .mode = NO_OS_SPI_MODE_0,
+   };
+
+   struct max31855_dev *dev;
+   struct max31855_init_param max31855_param = {
+       .spi_init = spi_param
+   };
+   struct no_os_spi_desc *spi;
+
+   struct max31855_iio_dev *max31855_iio;
+   struct max31855_iio_dev_init_param max31855_iio_param;
+   struct iio_data_buffer temp_buffer = {
+       .buff = iio_data_buffer,
+       .size = DATA_BUFFER_SIZE * 2 * sizeof(int)
+   };
+
+   max31855_iio_param.max31855_dev_init = &max31855_param;
+   ret = max31855_iio_init(&max31855_iio, &max31855_iio_param);
+   if (ret)
+           return ret;
+   struct iio_app_device iio_devices[] = {
+       {
+           .name = "max31855",
+           .dev = max31855_iio,
+           .dev_descriptor = max31855_iio->iio_dev,
+           .read_buff = &temp_buffer,
+       }
+   };
+
+   return iio_app_run(iio_devices, NO_OS_ARRAY_SIZE(iio_devices));
+
+For now there is no MAX31855 no-OS demo project.
+
+.. |Header file of MAX31855 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/temperature/max31855/max31855`.h
+.. |Implementation of MAX31855 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/temperature/max31855/max31855`.c
+.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
+.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
+.. |Generic header file for SPI Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_spi`.h
+.. |Header file of MAX31855 IIO Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/temperature/max31855/iio_max31855`.h
+.. |Implementation of MAX31855 IIO Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/temperature/max31855/iio_max31855`.c

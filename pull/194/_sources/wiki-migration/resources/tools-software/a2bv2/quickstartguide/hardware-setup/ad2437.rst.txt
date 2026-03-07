@@ -1,0 +1,137 @@
+:doc:`Click here to return to the Hardware Setup page </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup>`
+
+:doc:`Click here to return to the Running sample Demo list </wiki-migration/resources/tools-software/a2bv2/quickstartguide/running-sample-demo/demo-list>`
+
+AD2437
+======
+
+Evaluation boards
+=================
+
+The Evaluation boards used in the AD2437 demos are explained in the following subsections.
+
+EVAL-AD2437A1NZ
+---------------
+
+:doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` shows an :doc:`EVAL-AD2437A1NZ </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` board which can be used as either an A2B main or local powered sub node. The board has following components.
+
+-  AD2437 A2B transceiver
+-  ADAU1452 SigmaDSP Audio Processor
+-  512K Self-Boot Memory (EEPROM)
+-  S/PDIF Coaxial connectors
+-  Codec AD1937
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval-ad2437a1nz_new.png
+   :align: center
+   :width: 600px
+
+.. container:: centeralign
+
+   \ **Figure:** A2B EVAL-AD2437A1NZ board
+
+
+EVAL-AD2437B1NZ
+---------------
+
+The :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` shows an :doc:`EVAL-AD2437B1NZ </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` board which can be used as an A2B sub node. The board has following peripherals
+
+-  AD2437 A2B transceiver
+-  4 PDM Microphones
+-  Class D Amplifier BD28623MUV
+-  Codec ADAU1701
+-  512K Self-Boot Memory (EEPROM)
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval-ad2437b1nz_new.png
+   :align: center
+   :width: 1000px
+
+.. container:: centeralign
+
+   \ **Figure:** A2B EVAL-AD2437B1NZ board
+
+
+EVAL-AD2437A1MZ
+---------------
+
+:doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` shows an :doc:`EVAL-AD2437A1MZ </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` board which can be used as either an A2B main or local powered sub node. The board has following components.
+
+-  AD2437 A2B transceiver
+-  ADAU1452 SigmaDSP Audio Processor
+-  512K Self-Boot Memory (EEPROM)
+-  S/PDIF Coaxial connectors
+-  Codec AD1937
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval-ad2437a1mz_new.png
+   :align: center
+
+.. container:: centeralign
+
+   \ **Figure:** A2B EVAL-AD2437A1MZ board
+
+
+EVAL-AD2437B1MZ
+---------------
+
+The :doc:`Figure </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` shows an :doc:`EVAL-AD2437B1MZ </wiki-migration/resources/tools-software/a2bv2/quickstartguide/hardware-setup/ad2437>` board which can be used as an A2B sub node. The board has following peripherals
+
+-  AD2437 A2B transceiver
+-  4 PDM Microphones
+-  Class D Amplifier BD28623MUV
+-  Codec ADAU1701
+-  512K Self-Boot Memory (EEPROM)
+
+|image1|
+
+.. container:: centeralign
+
+   \ **Figure:** A2B EVAL-AD2437B1MZ board
+
+
+XLR Platform Jumper settings
+----------------------------
+
+.. container:: centeralign
+
+   \ **Table:** AD2437 XLR Platform Jumper Settings
+
+
++------------+--------------------------------+----------+---+------------+--------------------------------+-----------+-----------+
+| **Jumper** | **Purpose in EVAL-AD2437A1NZ** | **Main** |   | **Jumper** | **Purpose in EVAL AD2437B1NZ** | **Sub 0** | **Sub 1** |
++============+================================+==========+===+============+================================+===========+===========+
+| JP1        | Self Discovery Mode            | 1-2      |   | JP1        | AD2437 SIO0 select             | 1-2       | 2-3       |
++------------+--------------------------------+----------+---+------------+--------------------------------+-----------+-----------+
+| JP5        | Boot Disable                   | 1-2      |   | P9         | BOOT DISABLE                   | 1-2       | 1-2       |
++------------+--------------------------------+----------+---+------------+--------------------------------+-----------+-----------+
+| JP6        | Clock Select                   | 1-2      |   | JP2        | GAIN                           | 1-2       | 1-2       |
++------------+--------------------------------+----------+---+------------+--------------------------------+-----------+-----------+
+| P6         | AD1937 Clock Sel               | 1-2      |   | JP3        | MUTE                           | 1-2       | 1-2       |
++------------+--------------------------------+----------+---+------------+--------------------------------+-----------+-----------+
+| X          | All Others                     | Open     |   | S1         | I2C BUS SEL                    | ALL ON    | ALL ON    |
++------------+--------------------------------+----------+---+------------+--------------------------------+-----------+-----------+
+
+RJ45 Platform Jumper settings
+-----------------------------
+
+.. container:: centeralign
+
+   \ **Table:** AD2437 RJ45 Platform Jumper Settings
+
+
++------------+--------------------------------+----------+---+------------+--------------------------------+-----------+-----------+
+| **Jumper** | **Purpose in EVAL-AD2437A1MZ** | **Main** |   | **Jumper** | **Purpose in EVAL AD2437B1MZ** | **Sub 0** | **Sub 1** |
++============+================================+==========+===+============+================================+===========+===========+
+| JP1        | PDM Clock Source               | 1-2, 3-4 |   | P4         | SIO0 source select             | 1-2       | 2-3       |
++------------+--------------------------------+----------+---+------------+--------------------------------+-----------+-----------+
+| JP4        | WAKE UP                        | 1-2      |   | P16        | PDM CLK                        | 1-2       | 1-2       |
++------------+--------------------------------+----------+---+------------+--------------------------------+-----------+-----------+
+| JP6        | IRQ                            | 1-2      |   | P18        | WP                             | 1-2       | 1-2       |
++------------+--------------------------------+----------+---+------------+--------------------------------+-----------+-----------+
+| JP9        | SIO2                           | 1-2      |   | P23        | MUTE                           | 2-3       | 2-3       |
++------------+--------------------------------+----------+---+------------+--------------------------------+-----------+-----------+
+| JP38       | Clock Select                   | 1-2      |   |            |                                |           |           |
++------------+--------------------------------+----------+---+------------+--------------------------------+-----------+-----------+
+| X          | All Others                     | Open     |   |            |                                |           |           |
++------------+--------------------------------+----------+---+------------+--------------------------------+-----------+-----------+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/a2bv2/quickstartguide/hardware-setup/eval-ad2437b1mz_new.png
+   :width: 800px

@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Understanding the differences between available resistor types and how to select the right one." name="description" />
+
+    <title>Resistors &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Resistors</a><ul>
+<li><a class="reference internal" href="#high-frequency-effects">High Frequency Effects:</a></li>
+<li><a class="reference internal" href="#temperature-effects-should-you-always-use-resistors-with-the-lowest-temperature-coefficient-tcrs">Temperature effects: Should you always use resistors with the lowest temperature coefficient (TCRs)?</a></li>
+<li><a class="reference internal" href="#thermocouple-effects">Thermocouple Effects:</a></li>
+<li><a class="reference internal" href="#resistor-networks">Resistor Networks</a></li>
+<li><a class="reference internal" href="#the-differences-between-thin-film-and-thick-film-networks">The differences between “thin-film” and “thick-film” networks</a><ul>
+<li><a class="reference internal" href="#a-brief-history-of-the-resistor-color-code">A brief history of the resistor color code:</a></li>
+<li><a class="reference internal" href="#for-more-info-on-passive-components-see">For more info on passive components see:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="resistors">
+<h1>Resistors<a class="headerlink" href="#resistors" title="Link to this heading"></a></h1>
+<p><strong>Understanding the differences between available resistor types and how to select the right one.</strong></p>
+<p>First we will discuss the familiar “discrete” or axial-lead type resistors we are used to working with in the lab; then we will compare cost and performance tradeoffs of the discrete versions and thin- or thick-film networks.</p>
+<p><strong>Axial Lead Types:</strong></p>
+<p>The three most common types of axial-lead resistors are carbon composition, or carbon film, metal film and wire-wound:</p>
+<ul class="simple">
+<li><p>Carbon composition or carbon film-type resistors are used in general-purpose circuits where initial accuracy and stability with variations of temperature are not considered critical. Typical applications include their use as a collector or emitter load, in transistor/FET biasing networks, as a discharge path for charged capacitors, and as pull-up and/or pull-down elements in digital logic circuits.</p></li>
+</ul>
+<p>Carbon-type resistors are assigned a series of standard values (Table 1) in a quasi-logarithmic sequence, from 1 ohm to 22 megohms, with tolerances from 2% (carbon film) to 5% up to 20% (carbon composition). Power dissipation ratings range from 1/8 watt up to 2 watts. The 1/4-watt and 1/2-watt, 5% and 10% types tend to be the most common. Carbon-type resistors have a poor temperature coefficient (typically 5,000 ppm/°C); so they are not well suited for precision applications requiring little resistance change over temperature, but they are inexpensive-as little as 3 cents [USD 0.03] each in quantities of 100 or more.</p>
+<p>Table 1 lists a decade (10:1 range) of standard resistance values for 2% and 5% tolerances, spaced 10% apart. The smaller subset in lightface denote the only values available with 10% or 20% tolerances; they are spaced 20% apart.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p><strong>16</strong></p></td>
+<td><p>27</p></td>
+<td><p><strong>43</strong></p></td>
+<td><p>68</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>11</strong></p></td>
+<td><p>18</p></td>
+<td><p><strong>30</strong></p></td>
+<td><p>47</p></td>
+<td><p><strong>75</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p><strong>20</strong></p></td>
+<td><p>33</p></td>
+<td><p><strong>51</strong></p></td>
+<td><p>82</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>13</strong></p></td>
+<td><p>22</p></td>
+<td><p><strong>36</strong></p></td>
+<td><p>56</p></td>
+<td><p><strong>91</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p><strong>24</strong></p></td>
+<td><p>39</p></td>
+<td><p><strong>62</strong></p></td>
+<td><p>100</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Table 1. Standard resistor values: 2%, 5% and 10%</p>
+<p>Carbon-type resistors use color-coded bands to identify the resistor’s ohmic value and tolerance: (For more on the resistor color code see the section below “A brief history of the resistor color code”)</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/arn_f1.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/arn_f1.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/arn_f1.jpg" style="width: 300px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 1 Carbon-type resistors</p>
+</div>
+<p>EXAMPLE: Red-Violet-Green-Gold would have a resistance of 2.7 megohm with 5% tolerance</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/arn_f2.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/arn_f2.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/arn_f2.png" style="width: 550px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Table 2. Resistor Color code</p>
+</div>
+<ul class="simple">
+<li><p>Metal film resistors are chosen for precision applications where initial accuracy, low temperature coefficient, and lower noise are required. Metal film resistors are generally composed of Nichrome, tin oxide or tantalum nitride, and are available in either a hermetically sealed or molded phenolic body. Typical applications include bridge circuits, RC oscillators and active filters. Initial accuracies range from 0.1 to 1.0 %, with temperature coefficients ranging between 10 and 100 ppm/°C. Standard values range from 10.0 Ω to 301 kΩ in discrete increments of 2% (for 0.5% and 1% rated tolerances).</p></li>
+</ul>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>1.00</p></td>
+<td><p>1.29</p></td>
+<td><p>1.68</p></td>
+<td><p>2.17</p></td>
+<td><p>2.81</p></td>
+<td><p>3.64</p></td>
+<td><p>4.70</p></td>
+<td><p>6.08</p></td>
+<td><p>7.87</p></td>
+</tr>
+<tr class="row-even"><td><p>1.02</p></td>
+<td><p>1.32</p></td>
+<td><p>1.71</p></td>
+<td><p>2.22</p></td>
+<td><p>2.87</p></td>
+<td><p>3.71</p></td>
+<td><p>4.80</p></td>
+<td><p>6.21</p></td>
+<td><p>8.03</p></td>
+</tr>
+<tr class="row-odd"><td><p>1.04</p></td>
+<td><p>1.35</p></td>
+<td><p>1.74</p></td>
+<td><p>2.26</p></td>
+<td><p>2.92</p></td>
+<td><p>3.78</p></td>
+<td><p>4.89</p></td>
+<td><p>6.33</p></td>
+<td><p>8.19</p></td>
+</tr>
+<tr class="row-even"><td><p>1.06</p></td>
+<td><p>1.37</p></td>
+<td><p>1.78</p></td>
+<td><p>2.31</p></td>
+<td><p>2.98</p></td>
+<td><p>3.86</p></td>
+<td><p>4.99</p></td>
+<td><p>6.46</p></td>
+<td><p>8.35</p></td>
+</tr>
+<tr class="row-odd"><td><p>1.08</p></td>
+<td><p>1.40</p></td>
+<td><p>1.82</p></td>
+<td><p>2.35</p></td>
+<td><p>3.04</p></td>
+<td><p>3.94</p></td>
+<td><p>5.09</p></td>
+<td><p>6.59</p></td>
+<td><p>8.52</p></td>
+</tr>
+<tr class="row-even"><td><p>1.10</p></td>
+<td><p>1.43</p></td>
+<td><p>1.85</p></td>
+<td><p>2.40</p></td>
+<td><p>3.10</p></td>
+<td><p>4.01</p></td>
+<td><p>5.19</p></td>
+<td><p>6.72</p></td>
+<td><p>8.69</p></td>
+</tr>
+<tr class="row-odd"><td><p>1.13</p></td>
+<td><p>1.46</p></td>
+<td><p>1.89</p></td>
+<td><p>2.45</p></td>
+<td><p>3.17</p></td>
+<td><p>4.09</p></td>
+<td><p>5.30</p></td>
+<td><p>6.85</p></td>
+<td><p>8.86</p></td>
+</tr>
+<tr class="row-even"><td><p>1.15</p></td>
+<td><p>1.49</p></td>
+<td><p>1.93</p></td>
+<td><p>2.50</p></td>
+<td><p>3.23</p></td>
+<td><p>4.18</p></td>
+<td><p>5.40</p></td>
+<td><p>6.99</p></td>
+<td><p>9.04</p></td>
+</tr>
+<tr class="row-odd"><td><p>1.17</p></td>
+<td><p>1.52</p></td>
+<td><p>1.96</p></td>
+<td><p>2.55</p></td>
+<td><p>3.29</p></td>
+<td><p>4.26</p></td>
+<td><p>5.51</p></td>
+<td><p>7.13</p></td>
+<td><p>9.22</p></td>
+</tr>
+<tr class="row-even"><td><p>1.20</p></td>
+<td><p>1.55</p></td>
+<td><p>2.00</p></td>
+<td><p>2.60</p></td>
+<td><p>3.36</p></td>
+<td><p>4.34</p></td>
+<td><p>5.62</p></td>
+<td><p>7.27</p></td>
+<td><p>9.41</p></td>
+</tr>
+<tr class="row-odd"><td><p>1.22</p></td>
+<td><p>1.58</p></td>
+<td><p>2.04</p></td>
+<td><p>2.65</p></td>
+<td><p>3.43</p></td>
+<td><p>4.43</p></td>
+<td><p>5.73</p></td>
+<td><p>7.42</p></td>
+<td><p>9.59</p></td>
+</tr>
+<tr class="row-even"><td><p>1.24</p></td>
+<td><p>1.61</p></td>
+<td><p>2.09</p></td>
+<td><p>2.70</p></td>
+<td><p>3.49</p></td>
+<td><p>4.52</p></td>
+<td><p>5.85</p></td>
+<td><p>7.56</p></td>
+<td><p>9.79</p></td>
+</tr>
+<tr class="row-odd"><td><p>1.27</p></td>
+<td><p>1.64</p></td>
+<td><p>2.13</p></td>
+<td><p>2.76</p></td>
+<td><p>3.56</p></td>
+<td><p>4.61</p></td>
+<td><p>5.96</p></td>
+<td><p>7.72</p></td>
+<td><p>9.98</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Table 3. Standard values for film-type resistors</p>
+<p>Metal film resistors use a 4 digit numbering sequence to identify the resistor value instead of the color band scheme used for carbon types:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/arn_f3.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/arn_f3.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/arn_f3.png" style="width: 300px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 2 Metal film resistors</p>
+</div>
+<p>The indicated resistance here is 4990?. For values less than 100, an “R” indicates a decimal point, e.g., 49R9 = 49.9?</p>
+<ul class="simple">
+<li><p>Wire-wound precision resistors are extremely accurate and stable (0.05%, &lt;10 ppm/°C); they are used in demanding applications, such as tuning networks and precision attenuator circuits. Typical resistance values run from 0.1 ? to 1.2 M?.</p></li>
+</ul>
+<section id="high-frequency-effects">
+<h2>High Frequency Effects:<a class="headerlink" href="#high-frequency-effects" title="Link to this heading"></a></h2>
+<p>Unlike its “ideal” counterpart, a “real” resistor, like a real capacitor (Analog Dialogue 30-2), suffers from parasitics. (Actually, any two-terminal element may look like a resistor, capacitor, inductor, or damped resonant circuit, depending on the frequency it’s tested at.)</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/arn_f4.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/arn_f4.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/arn_f4.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 3 High frequency resistor model</p>
+</div>
+<p>Factors such as resistor base material and the ratio of length to cross-sectional area determine the extent to which the parasitic L and C affect the constancy of a resistor’s effective dc resistance at high frequencies. Film type resistors generally have excellent high-frequency response; the best maintain their accuracy to about 100 MHz. Carbon types are useful to about 1 MHz. Wire-wound resistors have the highest inductance, and the poorest frequency response. Even if they are non-inductively wound, they tend to have high capacitance and are likely to be unsuitable for use above 50 kHz.</p>
+</section>
+<section id="temperature-effects-should-you-always-use-resistors-with-the-lowest-temperature-coefficient-tcrs">
+<h2>Temperature effects: Should you always use resistors with the lowest temperature coefficient (TCRs)?<a class="headerlink" href="#temperature-effects-should-you-always-use-resistors-with-the-lowest-temperature-coefficient-tcrs" title="Link to this heading"></a></h2>
+<p>Not necessarily. A lot depends on the application. For the single resistor shown in figure 4, measuring current in a loop, the current produces a voltage across the resistor equal to I × R. In this application, the absolute accuracy of resistance at any temperature would be critical to the accuracy of the current measurement, so a resistor with a very low TC would be used.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/arn_f5.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/arn_f5.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/arn_f5.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 4 Measuring current</p>
+</div>
+<p>A different example is the behavior of gain-setting resistors in a gain-of-100 op amp circuit, shown in figure 5. In this type of application, where gain accuracy depends on the ratio of resistances (a ratiometric configuration), resistance matching, and the tracking of the resistance temperature coefficients (TCRs), is more critical than absolute accuracy.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/arn_f6.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/arn_f6.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/arn_f6.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 5 Gain Stage</p>
+</div>
+<p>Here are a couple of examples that make the point.</p>
+<ol class="arabic simple">
+<li><p>Assume both resistors have an actual TC of 100 ppm/°C (i.e., 0.01%/°C). The resistance following a temperature change, ΔT, is:</p></li>
+</ol>
+<div class="centeralign docutils container">
+<p>R = R<sub>0</sub>(1+ TC ΔT)</p>
+</div>
+<p>For a 10°C temperature rise, both R<sub>F</sub> and R<sub>I</sub> increase by 0.01%/°C × 10°C = 0.1%. Op amp gains are [to a very good approximation] 1 + R<sub>F</sub>/R<sub>I</sub>. Since both resistance values, though quite different (99:1), have increased by the same percentage, their ratio and the gain is unchanged. Note that the gain accuracy depends just on the resistance ratio, independently of the absolute values.</p>
+<ol class="arabic simple" start="2">
+<li><p>Assume that R<sub>I</sub> has a TC of 100 ppm/°C, but R<sub>F</sub>’s TC is only 75 ppm/°C. For a 10°C change, R<sub>I</sub> increases by 0.1% to 1.001 times its initial value, and R<sub>F</sub> increases by 0.075% to 1.00075 times its initial value. The new value of gain is</p></li>
+</ol>
+<div class="centeralign docutils container">
+<p>(1.00075 R<sub>F</sub>)/(1.001 R<sub>I</sub>) = 0.99975 R<sub>F</sub>/R<sub>I</sub></p>
+</div>
+<p>For an ambient temperature change of 10°C, the amplifier circuit’s gain has decreased by 0.025% (equivalent to 1 LSB in a 12-bit system).</p>
+<p>Another parameter that’s not often understood is the self-heating effect in a resistor.</p>
+<p>Self-heating causes a change in resistance because of the increase in temperature when the dissipated power increases. Most manufacturers’ data sheets will include a specification called “thermal resistance” or “thermal derating”, expressed in degrees C per watt (°C/W). For a 1/4-watt resistor of typical size, the thermal resistance is about 125°C/W. Let’s apply this to the example of the above op amp circuit for full-scale input:</p>
+<p>Power dissipated by R<sub>I</sub> is V<sup>2</sup>/R = (100 mV)2/100 W = 100 µW, leading to a temperature change of 100 µW × 125°C/W = 0.0125°C, and a negligible 1-ppm resistance change (0.00012%).</p>
+<p>Power dissipated by R<sub>F</sub> is V<sup>2</sup>/R = (9.9 V)2/9900 W = 9.9 mW, leading to a temperature change of 0.0099 W × 125°C/W = 1.24°C, and a resistance change of 0.0124%, which translates directly into a 0.012% gain change.</p>
+</section>
+<section id="thermocouple-effects">
+<h2>Thermocouple Effects:<a class="headerlink" href="#thermocouple-effects" title="Link to this heading"></a></h2>
+<p>Wire-wound precision resistors have another problem. The junction of the resistance wire and the resistor lead forms a thermocouple which has a thermoelectric EMF of 42 µV/°C for the standard “Alloy 180”/Nichrome junction of an ordinary wire-wound resistor. If a resistor is chosen with the [more expensive] copper/nichrome junction, the value is 2.5 µV/°C. (“Alloy 180” is the standard component lead alloy of 77% copper and 23% nickel.) Such thermocouple effects are unimportant in ac applications, and they cancel out when both ends of the resistor are at the same temperature; however if one end is warmer than the other, either because of the power being dissipated in the resistor, or its location with respect to heat sources, the net thermoelectric EMF will introduce an erroneous dc voltage into the circuit. With an ordinary wire-wound resistor, a temperature differential of only 4°C will introduce a dc error of 168 µV-which is greater than 1 LSB in a 10-V/16-bit system! This problem can be fixed by mounting wire-wound resistors so as to insure that temperature differentials are minimized.</p>
+<p>This may be done by keeping both leads of equal length, to equalize thermal conduction through them, by insuring that any airflow (whether forced or natural convection) is normal to the resistor body, and by taking care that both ends of the resistor are at the same thermal distance (i.e., receive equal heat flow) from any heat source on the PC board.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/arn_f7.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/arn_f7.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/arn_f7.png" style="width: 450px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 6 PC board layout</p>
+</div>
+</section>
+<section id="resistor-networks">
+<h2>Resistor Networks<a class="headerlink" href="#resistor-networks" title="Link to this heading"></a></h2>
+<p>A resistor network is a single package that contains two or more resistors. The package will include multiple leads by which the network can be made part of a larger circuit. Figure 7 shows typical packages used for resistor networks. There are commonly two ways the resistors are connected in the array, isolated and bussed where one end of all the resistors share a common connection as shown in figure 8. The bussed arrangement is commonly used for pull up, pull down or bus termination on logic signals.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/arn_f8.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/arn_f8.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/arn_f8.png" style="width: 350px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 7 SIP and DIP resistor network packages</p>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/arn_f9.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/arn_f9.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/arn_f9.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 8 SIP and DIP resistor network schematics</p>
+</div>
+</section>
+<section id="the-differences-between-thin-film-and-thick-film-networks">
+<h2>The differences between “thin-film” and “thick-film” networks<a class="headerlink" href="#the-differences-between-thin-film-and-thick-film-networks" title="Link to this heading"></a></h2>
+<p>Besides the obvious advantage of taking up considerably less real estate, resistor networks-whether as a separate entity, or part of a monolithic IC-offer the advantages of high accuracy via laser trimming, tight TC matching, and good temperature tracking. Typical applications for discrete networks are in precision attenuators and gain setting stages. Thin film networks are also used in the design of monolithic (IC) and hybrid instrumentation amplifiers, and in CMOS D/A and A/D converters that employ an R-2R Ladder network topology.</p>
+<p>Thick film resistors are the lowest-cost type-they have fair matching (&lt;0.1%), but poor TC performance (&gt;100 ppm/°C) and tracking (&gt;10 ppm/°C).They are produced by screening or electroplating the resistive element onto a substrate material, such as glass or ceramic.</p>
+<p>Thin film networks are moderately priced and offer good matching (0.01%), plus good TC (&lt;100 ppm/°C) and tracking (&lt;10 ppm/°C). All are laser trimmable. Thin film networks are manufactured using vapor deposition.</p>
+<p>Tables 4 compares the advantages/disadvantages of a thick film and several types of thin-film resistor networks. Table 5 compares substrate materials.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Type</strong></p></th>
+<th class="head"><p><strong>Advantages</strong></p></th>
+<th class="head"><p><strong>Disadvantages</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Thick film</p></td>
+<td><p>Low cost, High power, Laser-trimmable, Readily available, Fair matching (0.1%)</p></td>
+<td><p>Poor TC (&gt;100 ppm/°C), Poor tracking TC(10 ppm/°C)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Thin film on glass</p></td>
+<td><p>Good matching (&lt;0.01%), Good TC (&lt;100 ppm/°C), Good tracking TC (2 ppm/°C), Moderate cost Laser-trimmable, Low capacitance</p></td>
+<td><p>Delicate, Often large geometry, Low power</p></td>
+</tr>
+<tr class="row-even"><td><p>Thin film on ceramic</p></td>
+<td><p>Good matching (&lt;0.01%), Good TC (&lt;100 ppm/°C), Good tracking TC (2 ppm/°C), Moderate cost, Laser-trimmable, Low capacitance, Suitable for hybrid IC substrate</p></td>
+<td><p>Often large geometry</p></td>
+</tr>
+<tr class="row-odd"><td><p>Thin film on silicon</p></td>
+<td><p>Good matching (&lt;0.01%), Good TC (&lt;100 ppm/°C), Good tracking TC (2 ppm/°C), Moderate cost, Laser-trimmable, Low capacitance, Suitable for hybrid IC substrate</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Table 4. Resistor Networks</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Substrate</strong></p></th>
+<th class="head"><p><strong>Advantages</strong></p></th>
+<th class="head"><p><strong>Disadvantages</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Glass</p></td>
+<td><p>Low capacitance</p></td>
+<td><p>Delicate, Low power, Large geometry</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ceramic</p></td>
+<td><p>Low capacitance, Suitable for hybrid IC substrate</p></td>
+<td><p>Large geometry</p></td>
+</tr>
+<tr class="row-even"><td><p>Silicon</p></td>
+<td><p>Suitable for monolithic construction</p></td>
+<td><p>Low power, Capacitance to substrate</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sapphire</p></td>
+<td><p>Low capacitance</p></td>
+<td><p>Low power, Higher cost</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Table 5. Substrate Materials</p>
+<p>In the example of the IC instrumentation amplifier shown figure 9, tight matching between resistors R<sub>1</sub>-R<sub>1</sub>’, R<sub>2</sub>-R<sub>2</sub>’, R<sub>3</sub>- R<sub>3</sub>’ insures high common-mode rejection (as much as 120 dB, dc to 60 Hz). While it is possible to achieve higher common mode rejection using discrete op amps and resistors, the arduous task of matching the resistor elements is undesirable in a production environment.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/arn_f10.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/arn_f10.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/arn_f10.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9 IC Instrumentation Amplifier</p>
+</div>
+<p>Matching, rather than absolute accuracy, is also important in R-2R ladder networks (including the feedback resistor) of the type used in CMOS D/A converters. To achieve n-bit performance, the resistors have to be matched to within 1/2n, which is easily achieved through laser trimming. Absolute accuracy error, however, can be as much as ±20%. Shown in figure 10 is a typical R-2R ladder network used in a CMOS digital to analog converter.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/arn_f11.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/arn_f11.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/arn_f11.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 10 R/2R resistor ladder</p>
+</div>
+<section id="a-brief-history-of-the-resistor-color-code">
+<h3>A brief history of the resistor color code:<a class="headerlink" href="#a-brief-history-of-the-resistor-color-code" title="Link to this heading"></a></h3>
+<p>The following is excerpted from a mixture of:</p>
+<div class="line-block">
+<div class="line">https:<em>en.wikipedia.org/wiki/Electronic_Industries_Alliance#History
+https:</em>en.wikipedia.org/wiki/Electronic_color_code#History</div>
+<div class="line">https:<em>hsm.stackexchange.com/questions/7096/resistor-color-code
+*https://hackaday.com/2020/01/13/why-do-resistors-have-a-color-code/*
+https:</em>www.dailybreak.com/break/cabinet-of-curiosities-why-indigo-is-in-the-rainbow</div>
+<div class="line"><a class="icon link reference external" href="https://en.wikipedia.org/wiki/Isaac_Newton's_occult_studies" target="_blank">https://en.wikipedia.org/wiki/Isaac_Newton’s_occult_studies</a></div>
+</div>
+<p>Before industry standards were established (1925), each manufacturer used their own unique system for color coding or marking their components.</p>
+<p>Then in 1924, 50 radio manufacturers in Chicago formed a trade group. The idea was to share patents among the members. Almost immediately the name changed from “Associated Radio Manufacturers” to the “Radio Manufacturer’s Association” or RMA.</p>
+<p>The standard color code was developed by the Radio Manufacturers Association (RMA) in the 20’s as a three band code for resistor values. The three bands were more compact than the number value because the third band represented the number of zeroes. Initially the three colors were not three separate bands, and there was no neutral background color. Instead, they were the body color, the tip color and the dot color.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/resistor-colors.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/resistor-colors.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/resistor-colors.png" style="width: 600px;" />
+</a>
+<p>Identical adjacent colors were allowed.</p>
+<p>For example, 250 000 Ω was reduced to three bands. In addition, color bands remained visible in whatever position a resistor was soldered, whereas a stamped number value could be out of sight. The fourth band, representing the tolerance, was added later.</p>
+<p><a class="icon link reference external" href="https://books.google.nl/books?id=VJALAQAAIAAJ&amp;q=%22The%20code%20identifies%20resistors%20by%20means%20of%203%20colors,%20known%20as%20%22body,%22%20%22tip%22%20and%20%22dot%22%20colors%22&amp;dq=%22The%20code%20identifies%20resistors%20by%20means%20of%203%20colors,%20known%20as%20%22body,%22%20%22tip%22%20and%20%22dot%22%20colors%22&amp;hl=en&amp;sa=X&amp;ved=0ahUKEwiGoq-m5cjZAhWCjqQKHQmgBi8Q6AEILTAB" target="_blank">Radio Physics Course, Ghirardi, 1931</a></p>
+<p>In 1952, it was standardized in IEC 62:1952 by the International Electrotechnical Commission (IEC) and since 1963 also published as EIA RS-279.</p>
+<p>The sequence of the central group of colors, ROYGBV, was chosen to match the rainbow mnemonic: red-orange-yellow-green-blue-violet, “ROYGBIV”, without indigo because most people do not (can not) distinguish, with their eyes, a separate color between blue and violet, plus it’s a little silly color; and is only there because Newton was a little bit of a kook. (Of the rainbow’s widely accepted seven colors, three are primary (red, yellow and blue); three are secondary (green, orange and violet) and just one is tertiary (indigo) – When Newton in 1665 named the colors in the rainbow after passing them through a prism – he wanted to the colors in the rainbow to match the 7 notes in a Dorian scale (a scale with no sharps or flats that starts on D), and Newton had a history of dabbling in the occult, and seven is considered a sacred number in the secretive paranormal sciences). The rainbow group is preceded by two low brightness colors, black and brown, representing the lowest digits 0 and 1, and succeeded by two bright colors, grey and white, representing the highest digits 8 and 9.</p>
+<p><a class="icon link reference external" href="https://books.google.nl/books?id=4tkiAAAAMAAJ&amp;redir_esc=y" target="_blank">Electrical Engineering Science, Preston, 1960, p.115</a></p>
+<p>Color bands were used because they were easily and cheaply printed on tiny components. However, there were drawbacks, especially for color blind people. Overheating of a component or dirt accumulation may make it impossible to distinguish brown from red or orange. Advances in printing technology have now made printed numbers more practical on small components. The values of components in surface mount packages are marked with printed alphanumeric codes instead of a color code.</p>
+</section>
+<section id="for-more-info-on-passive-components-see">
+<h3>For more info on passive components see:<a class="headerlink" href="#for-more-info-on-passive-components-see" title="Link to this heading"></a></h3>
+<p><a class="icon adi reference external" href="https://www.analog.com/static/imported-files/application_notes/500824934643930414583807523874018494695982855668424783486554001060AN348.pdf" target="_blank">AN-348: Avoiding Passive-Component Pitfalls</a></p>
+<p>** Return to Lab Activity <a class="reference internal" href="labs.html"><span class="doc">Table of Contents</span></a> **</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

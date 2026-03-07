@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Dual-path, low noise design for broad coverage from DC to 5GHz" name="description" />
+
+    <title>ADMX6001-EBZ: DC-Coupled 10GSPS Digitizer Evaluation Board &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ADMX6001-EBZ: DC-Coupled 10GSPS Digitizer Evaluation Board</a><ul>
+<li><a class="reference internal" href="#features">FEATURES</a></li>
+<li><a class="reference internal" href="#package-content">PACKAGE CONTENT</a></li>
+<li><a class="reference internal" href="#additional-equipment-needed">ADDITIONAL EQUIPMENT NEEDED</a></li>
+<li><a class="reference internal" href="#application-tools-and-driver-needed">APPLICATION TOOLS AND DRIVER NEEDED</a></li>
+<li><a class="reference internal" href="#general-description">GENERAL DESCRIPTION</a></li>
+<li><a class="reference internal" href="#hardware-setup">HARDWARE SETUP</a></li>
+<li><a class="reference internal" href="#software-setup">SOFTWARE SETUP</a></li>
+<li><a class="reference internal" href="#program-the-xilinx-vcu118-board">PROGRAM THE XILINX VCU118 BOARD</a></li>
+<li><a class="reference internal" href="#program-the-xilinx-vcu118-board-1">PROGRAM THE XILINX VCU118 BOARD</a></li>
+<li><a class="reference internal" href="#configure-and-control-the-admx6001-ebz-with-iio-oscilloscope">CONFIGURE AND CONTROL THE ADMX6001-EBZ WITH IIO OSCILLOSCOPE</a><ul>
+<li><a class="reference internal" href="#connect-to-xilinx-vcu118-admx6001-ebz">CONNECT TO XILINX VCU118 + ADMX6001-EBZ</a></li>
+<li><a class="reference internal" href="#configure-the-ad9213-high-speed-path">CONFIGURE THE AD9213 HIGH-SPEED PATH</a></li>
+<li><a class="reference internal" href="#configure-the-ad4080-precision-path">CONFIGURE THE AD4080 PRECISION PATH</a></li>
+<li><a class="reference internal" href="#ad4080-data-interface-configuration-registers">AD4080 DATA INTERFACE CONFIGURATION REGISTERS</a></li>
+<li><a class="reference internal" href="#iio-oscilloscope-plot-window">IIO-OSCILLOSCOPE PLOT WINDOW</a></li>
+<li><a class="reference internal" href="#input-signal-offset-shift-for-ad9213">INPUT SIGNAL OFFSET SHIFT FOR AD9213</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configure-and-control-admx6001-ebz-with-python-scripts">CONFIGURE AND CONTROL ADMX6001-EBZ WITH PYTHON SCRIPTS</a><ul>
+<li><a class="reference internal" href="#install-python-and-git-for-windows">INSTALL PYTHON AND GIT FOR WINDOWS</a></li>
+<li><a class="reference internal" href="#download-the-pyadi-iio-library">DOWNLOAD THE PYADI-IIO LIBRARY</a></li>
+<li><a class="reference internal" href="#create-and-configure-python-venv-for-the-admx6001-ebz">CREATE AND CONFIGURE PYTHON VENV FOR THE ADMX6001-EBZ</a></li>
+<li><a class="reference internal" href="#install-additional-python-libraries">INSTALL ADDITIONAL PYTHON LIBRARIES</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#run-example-python-scripts-for-the-admx6001-ebz">RUN EXAMPLE PYTHON SCRIPTS FOR THE ADMX6001-EBZ</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="admx6001-ebz-dc-coupled-10gsps-digitizer-evaluation-board">
+<h1>ADMX6001-EBZ: DC-Coupled 10GSPS Digitizer Evaluation Board<a class="headerlink" href="#admx6001-ebz-dc-coupled-10gsps-digitizer-evaluation-board" title="Link to this heading"></a></h1>
+<section id="features">
+<h2>FEATURES<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
+<p>Dual-path, low noise design for broad coverage from DC to 5GHz</p>
+<ul class="simple">
+<li><p>High-speed path with AD9213, a low noise 12-bit ADC running at 10GSPS</p>
+<ul>
+<li><p>ADL5580, a fully differential 10GHz ADC driver</p></li>
+</ul>
+</li>
+<li><p>Precision path with AD4080, a 20-bit, 40MSPS, differential SAR ADC reduces 1/f noise</p></li>
+</ul>
+<p>ADC driver input, biased with DAC output voltage, adjusts DC offset of unipolar signal</p>
+<ul class="simple">
+<li><p>Single-ended unipolar signal with DC offset to differential signal conversion by ADL5580</p></li>
+<li><p>ADL5580 biased by DAC LTC2664 output for maximizing AD9213 input dynamic range</p></li>
+</ul>
+<p>FMC+ HSPC connector for interface with Xilinx VCU118 FPGA board</p>
+</section>
+<section id="package-content">
+<h2>PACKAGE CONTENT<a class="headerlink" href="#package-content" title="Link to this heading"></a></h2>
+<p>ADMX6001-EBZ board</p>
+<p>AC-DC power supply, SDI65-12-UC-P6 (12V/65W)</p>
+</section>
+<section id="additional-equipment-needed">
+<h2>ADDITIONAL EQUIPMENT NEEDED<a class="headerlink" href="#additional-equipment-needed" title="Link to this heading"></a></h2>
+<p>Xilinx VCU118 FPGA evaluation board</p>
+<p>A benchtop function generator</p>
+</section>
+<section id="application-tools-and-driver-needed">
+<h2>APPLICATION TOOLS AND DRIVER NEEDED<a class="headerlink" href="#application-tools-and-driver-needed" title="Link to this heading"></a></h2>
+<p>Vivado Lab Edition, 2024.2 or newer (Xilinx Vivado Lab Edition downloads)</p>
+<p>Silicon Labs USB to UART Virtual COM Port Driver (Silicon Labs VCP Windows Driver)</p>
+<p>Terminal Emulator (Tera Term 5.4.0)</p>
+<p>IIO Oscilloscope (optional)</p>
+<p>Python 3.11 or newer and the Python for ADI I/O devices (PyADI-IIO) library (optional)</p>
+<p>Xilinx VCU118 programming files (admx6001_v1_boot.zip)</p>
+</section>
+<section id="general-description">
+<h2>GENERAL DESCRIPTION<a class="headerlink" href="#general-description" title="Link to this heading"></a></h2>
+<p>The ADMX6001-EBZ is a reference design of a DC-coupled single channel 10GSPS digitizer featuring the AD9213, a low noise, 12-bit high-speed analog-to-digital converter (ADC) <a class="icon adi reference external" href="https://www.analog.com/AD9213" target="_blank">AD9213</a> and the AD4080, a 20-bit precision ADC <a class="icon adi reference external" href="https://www.analog.com/AD4080" target="_blank">AD4080</a>. The dual-path design achieves true low noise digitization in the broad band from DC to 5GHz. By biasing the ADC driver ADL5580 <a class="icon adi reference external" href="https://www.analog.com/en/products/adl5580" target="_blank">en/products/adl5580</a>.html with the precision digital-to-analog converter (DAC) LTC2664 <a class="icon adi reference external" href="https://www.analog.com/en/products/ltc2664" target="_blank">en/products/ltc2664</a>.html, it is capable of handling unipolar and bipolar signals at various DC levels, maximizing utility of the input dynamic range of AD9213. This design is ideal for high performance time-domain instruments such as time-of-flight mass spectrometry (TOF MS), distributed fiber optic sensing (DFOS), and digital oscilloscope.</p>
+<p>This document guides the setup and evaluation of the ADMX6001-EBZ board in conjunction with the Xilinx VCU118 field programmable gate array (FPGA) board.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure1_admx6001.png"><img alt="image1" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure1_admx6001.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 1. ADMX6001-EBZ board</em></p>
+</div>
+</section>
+<section id="hardware-setup">
+<h2>HARDWARE SETUP<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
+<p>The ADMX6001-EBZ board operates with Xilinx VCU118 FPGA board that serves as the controller for configuring the ADMX6001-EBZ board and streams captured data to a PC for post processing.</p>
+<p>The hardware setup includes the following components:</p>
+<ul class="simple">
+<li><p>ADMX6001-EBZ board (the power adapter is included in the ADMX6001-EBZ package)</p></li>
+<li><p>Xilinx VCU118 FPGA board (the power adapter is included in the Xilinx VCU118 package)</p></li>
+<li><p>2x Micro-USB cables</p></li>
+<li><p>Ethernet cable</p></li>
+<li><p>Signal generator</p></li>
+<li><p>PC running Windows 10 or 11</p></li>
+</ul>
+<p>The 12V power adapters for the ADMX6001-EBZ board and the Xilinx VCU118 FPGA board must be unplugged from the wall outlets before inserting into the barrel connector (P4) on the ADMX6001-EBZ board and the power connector on the Xilinx VCU118 FPGA board with the VCU118 power switch in the OFF position.</p>
+<p>Figure 2 shows the connection of the ADMX6001-EBZ board to the Xilinx VCU118 FPGA board via a FMC+ connector and other cables for the connection of power supplies, USB, Ethernet, and the test signal from the signal generator. The Micro-USB cables and Ethernet cable are connected to the PC via a USB adapter if needed. An example of the complete setup is shown in Figure 3. A small bench-top fan is required for heat dissipation of the ADMX6001-EBZ board (refer to Figure 3).</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure2_boards.png"><img alt="image2" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure2_boards.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 2. ADMX6001-EBZ board with VCU118 FPGA board</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure3_completesetup.png"><img alt="image3" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure3_completesetup.png" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 3. Example of complete setup for ADMX6001-EBZ evaluation</em></p>
+</div>
+</section>
+<section id="software-setup">
+<h2>SOFTWARE SETUP<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
+<p>Download and install the following software to configure and evaluate the ADMX6001-EBZ board:</p>
+<ul class="simple">
+<li><p>Xilinx Vivado or Vivado Lab Edition, <a class="icon link reference external" href="https://www.xilinx.com/support/download.html" target="_blank">https://www.xilinx.com/support/download.html</a></p></li>
+<li><p>UART Terminal Tera Term, <a class="icon link reference external" href="https://github.com/TeraTermProject/teraterm/releases" target="_blank">https://github.com/TeraTermProject/teraterm/releases</a></p></li>
+<li><p>IIO Oscilloscope Download (see Note), <a class="icon git reference external" href="https://github.com/analogdevicesinc/iio-oscilloscope/tree/main/releases" target="_blank">releases</a></p></li>
+</ul>
+<p>Unless Xilinx Vivado has already been installed on your computer, it is recommended that you install the Vivado Lab Edition. Click Downloads and scroll down to the Vivado Lab Edition as highlighted in Figure 4 to download and install the Vivado Lab Edition. The default installation path for the Vivado Lab Edition is ** C:\Xilinx\Vivado_Lab\2024.2\bin ** where ** 2024.2 ** indicates the version. The path name needs to be revised accordingly if a different version of the Vivado Lab Edition is installed. The UART Terminal Tera Term is for monitoring the booting process and then logging in to the Xilinx VCU118 system.</p>
+<p>Note: IIO Oscilloscope is optional for configuring the ADMX6001-EBZ board and visualizing/saving the captured data. Alternately, you can use Python scripts to configure the ADMX6001-EBZ board and plot/save the captured data.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure4_downloadvivado.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure4_downloadvivado.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure4_downloadvivado.jpg" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p><em>Figure 4. Download the Vivado Lab Edition for Windows</em></p>
+</div>
+</section>
+<section id="program-the-xilinx-vcu118-board">
+<h2>PROGRAM THE XILINX VCU118 BOARD<a class="headerlink" href="#program-the-xilinx-vcu118-board" title="Link to this heading"></a></h2>
+<p>The programming files for Xilinx VCU118 FPGA are provided as a .zip file. Unzip the files to a working folder for all of the required files.</p>
+<p>Refer to the Hardware Setup section. The 12V power adapters to both the ADMX6001-EBZ board and the Xilinx VCU118 FPGA board must be unplugged from the wall outlets before turning on the boards.</p>
+<p>** Turn on the boards sequentially. ** First, make sure that the connection of the 12V power adapter output to the barrel connector (P4) on the ADMX6001-EBZ board is securely in place, then turn on the ADMX6001-EBZ board by plugging in the 12V power supply to the wall outlet. The DS10 and DS11 on the same edge as the barrel connector on the ADMX6001-EBZ board must be lit. Otherwise, unplug the 12V power adapter from the wall outlet and wait for about 10 seconds before plugging the 12V power supply back to the wall outlet. Second, make sure that the power switch on the Xilinx VCU118 board is in the OFF position and the output of the 12V power supply is securely in place. Plug in the 12V power adapter for the Xilinx VCU118 board to the wall outlet, then turn on the Xilinx board by turning the power switch to the ON position. Refer to Figure 2 for the Xilinx VCU118 board power supply connector and switch.</p>
+<p>Before programming the Xilinx VCU118 board, it is important to configure Ethernet to an IP 192.168.2.xx where xx can be any number between 2 and 255. If a USB adapter with Ethernet port is used, plug in the USB adapter before reviewing and/or configuring the IP address.</p>
+<p>Follow these steps to configure the Ethernet IP address:</p>
+<ul class="simple">
+<li><p>Control Panel &gt; Network and Sharing Center &gt; click Ethernet to open the Ethernet Status window, as shown in Figure 5.</p></li>
+<li><p>Click Properties to open the Ethernet Properties window, as shown in Figure 6.</p></li>
+<li><p>Select Internet Protocol Version 4 (TCP/IP), as shown in Figure 7.</p></li>
+<li><p>Click Properties to open the Internet Protocol Version 4 (TCP/IPv4) Properties window, as shown in Figure 7.</p></li>
+<li><p>Review/change IP address, as shown in Figure 8.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure5_ip_network.png"><img alt="image4" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure5_ip_network.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 5. Review and Change Ethernet IP Address—Network and Sharing Center</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure6_ip_properties.png"><img alt="image5" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure6_ip_properties.png" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 6. Review and Change Ethernet IP Address—Ethernet Properties</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure7_ip_tcpip.png"><img alt="image6" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure7_ip_tcpip.png" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 7. Review and Change Ethernet IP Address—TCP/IPv4</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure8_ip_ipreview.png"><img alt="image7" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure8_ip_ipreview.png" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 8. Review and Change Ethernet IP Address—Internet Protocol Version 4 (TCP/IPv4) Properties</em></p>
+</div>
+<p>Find the UART COM port of the Xilinx VCU118 board by opening Device Manager and expanding Ports (COM &amp; LPT). Locate Silicon Labs Dual CP2105 USB to UART Bridge Standard COM Port (COMx) to get the COM port number for the Tera Term serial terminal connection, as shown in Figure 9. The user may need to update the CP210x USB to UART Bridge VCP drivers.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure9_uart.jpg"><img alt="image8" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure9_uart.jpg" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 9. Find UART COM Port Number</em></p>
+</div>
+</section>
+<section id="program-the-xilinx-vcu118-board-1">
+<span id="id1"></span><h2>PROGRAM THE XILINX VCU118 BOARD<a class="headerlink" href="#program-the-xilinx-vcu118-board-1" title="Link to this heading"></a></h2>
+<p>Program the board using Vivado Lab tool with xsdb, as shown in Figure 10, by completing the following:</p>
+<ol class="arabic simple">
+<li><p>Open a Command Prompt window and go to the working folder where the programming files for Xilinx VCU118 FPGA are located.</p></li>
+<li><p>Start xsdb.bat (for Vivado Lab Edition). The prompt should change to ** xsdb% ** .</p></li>
+</ol>
+<p><strong>C:\Xilinx\Vivado_Lab\2024.2\bin\xsdb.bat</strong></p>
+<ol class="arabic simple" start="3">
+<li><p>Program the VCU118 FPGA board.</p></li>
+</ol>
+<p><strong>xsdb% source run.tcl</strong></p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure10.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure10.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure10.jpg" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p><em>Figure 10. Xilinx VCU118 Programming with Vivado Lab</em></p>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure11.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure11.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure11.jpg" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p><em>Figure 11. Xilinx VCU118 Programming with Vivado Lab: xsdb%</em></p>
+</div>
+<p>While programming the Xilinx VCU118 is in progress, open and start the serial terminal Tera Term session to observe the boot process and log in to the Xilinx VCU118 as shown in Figure 12 through Figure 14.</p>
+<ol class="arabic simple">
+<li><p>Start and connect the serial terminal Tera Term session using the COM port found previously.</p></li>
+<li><p>In Tera Term, click Setup &gt; Serial port … to set the speed to 115200.</p></li>
+<li><p>Continue monitoring the Xilinx VCU118 boot process. Once the process is complete, log in with the following information:</p></li>
+</ol>
+<p>Login: <strong>root</strong></p>
+<p>Password: <strong>analog</strong></p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure12.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure12.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure12.jpg" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p><em>Figure 12. Serial Terminal Tera Term Session for Monitoring Xilinx VCU118 Booting and Login—Tera Term: New Connection</em></p>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure13.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure13.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure13.jpg" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p><em>Figure 13. Serial Terminal Tera Term Session for Monitoring Xilinx VCU118 Booting and Login—Tera Term: Change Speed</em></p>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure14.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure14.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure14.jpg" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p><em>Figure 14. Xilinx VCU118 Booting and Login—Tera Term: Login</em></p>
+</div>
+<p><strong>Note the following:</strong></p>
+<p>♦ For the Xilinx Vivado Lab version, only xsdb.bat is available (C:\Xilinx\Vivado_Lab\2024\bin\xsdb.bat).</p>
+<p>♦ It is required to program the Xilinx VCU118 board twice in the Vivado Lab window.</p>
+<ol class="arabic simple">
+<li><p>Run <strong>source run.tcl</strong> and wait for the login message to appear in the Tera Term window.</p></li>
+<li><p>Run <strong>source run.tcl</strong> a second time. Observe the boot process in the Tera Term window and log in.</p></li>
+</ol>
+<p>If using Python scripts is preferred, skip the Configure and Control the ADMX6001-EBZ With IIO Oscilloscope section and the ADMX6001-EBZ Data Acquisition With IIO Oscilloscope section, and go directly to the Configure and Control ADMX6001-EBZ With Python Scripts section.</p>
+</section>
+<section id="configure-and-control-the-admx6001-ebz-with-iio-oscilloscope">
+<h2>CONFIGURE AND CONTROL THE ADMX6001-EBZ WITH IIO OSCILLOSCOPE<a class="headerlink" href="#configure-and-control-the-admx6001-ebz-with-iio-oscilloscope" title="Link to this heading"></a></h2>
+<p>Refer to the IIO Oscilloscope wiki page (<a class="reference internal" href="../../../../../../../tools-software/linux-software/iio_oscilloscope.html"><span class="doc">IIO Oscilloscope</span></a>) for guidance.</p>
+<section id="connect-to-xilinx-vcu118-admx6001-ebz">
+<h3>CONNECT TO XILINX VCU118 + ADMX6001-EBZ<a class="headerlink" href="#connect-to-xilinx-vcu118-admx6001-ebz" title="Link to this heading"></a></h3>
+<p>The Xilinx VCU118 board uses a static IP address, <strong>192.168.2.1</strong>. Launch the IIO-Oscilloscope application and go to Settings &gt; Connect. In the popup window, connect to Xilinx VCU118 with manual URI <strong>ip:192.168.2.1</strong>, as shown in Figure 15.</p>
+<p>Once the IIO device is connected, the user can read/write registers and view the plot of captured data, as shown in Figure 16 and Figure 17.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure15.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure15.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure15.jpg" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p><em>Figure 15. Launch IIO Oscilloscope and Connect to Xilinx VCU118</em></p>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure16.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure16.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure16.jpg" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p><em>Figure 16. IIO Oscilloscope Window for Register Write/Read</em></p>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure17.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure17.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure17.jpg" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p><em>Figure 17. IIO Oscilloscope Plot Window</em></p>
+</div>
+</section>
+<section id="configure-the-ad9213-high-speed-path">
+<h3>CONFIGURE THE AD9213 HIGH-SPEED PATH<a class="headerlink" href="#configure-the-ad9213-high-speed-path" title="Link to this heading"></a></h3>
+<p>Set the following registers for the AD9213 high-speed path, as shown in Figure 18 through Figure 21.</p>
+<ul class="simple">
+<li><p>ad9213 Register 0x1617 set to 0x01, as shown in Figure 18.</p></li>
+<li><p>ad9213 Register 0x1601 set to 0x01, as shown in Figure 19.</p></li>
+<li><p>ltc2664_clr set to 1, as shown in Figure 20.</p></li>
+<li><p>adl5580_en set to 1, as shown in Figure 21.</p></li>
+</ul>
+<p>The AD9213 high-speed path is ready for capturing data.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure18.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure18.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure18.jpg" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p><em>Figure 18. Register Settings for the AD9213 High-Speed Path Register 0x1617</em></p>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure19.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure19.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure19.jpg" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p><em>Figure 19. Register Settings for the AD9213 High-Speed Path Register 0x1601</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure20.jpg"><img alt="image9" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure20.jpg" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 20. Register Settings for the AD9213 High-Speed Path ltc2664_clr</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/ajaxperflookupdelay/figure21_added.jpg"><img alt="image10" src="https://wiki.analog.com/_media/ajaxperflookupdelay/figure21_added.jpg" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 21. Register Settings for the AD9213 High-Speed Path adl5580_en</em></p>
+</div>
+</section>
+<section id="configure-the-ad4080-precision-path">
+<h3>CONFIGURE THE AD4080 PRECISION PATH<a class="headerlink" href="#configure-the-ad4080-precision-path" title="Link to this heading"></a></h3>
+<p>Before capturing the AD4080 precision path data with the IIO Oscilloscope, a few registers need to be set, as shown in Figure 22 through Figure 25.</p>
+<ul class="simple">
+<li><p>ltc2664_clr set to 1 (also required for the AD9213 high-speed path)</p></li>
+<li><p>ltc2664 output_voltage1 raw value set to 49152</p></li>
+<li><p>ltc2664 output_voltage2 raw value set to 36045</p></li>
+<li><p>ada4945_disable (one-bit-adc-dac -&gt; output_voltage3) set to 1</p></li>
+<li><p>adg5419_ctrl (one-bit-adc-dac -&gt; output_voltage4) set to 1</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure21.jpg"><img alt="image11" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure21.jpg" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>FFigure 22. Register Settings for the AD4080 Precision Path: ltc2664_output_voltage1</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure22.jpg"><img alt="image12" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure22.jpg" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 23. Register Settings for the AD4080 Precision Path: ltc2664_output_voltage2</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure23.jpg"><img alt="image13" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure23.jpg" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 24. Register Settings for the AD4080 Precision Path: ada4945_disable</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure24.jpg"><img alt="image14" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure24.jpg" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 25. Register Settings for the AD4080 Precision Path: adg5419_ctrl</em></p>
+</div>
+</section>
+<section id="ad4080-data-interface-configuration-registers">
+<h3>AD4080 DATA INTERFACE CONFIGURATION REGISTERS<a class="headerlink" href="#ad4080-data-interface-configuration-registers" title="Link to this heading"></a></h3>
+<p>The AD4080 low voltage differential signaling (LVDS) data interface is highly configurable. In the ADMX6001-EBZ design, the AD4080 is configured to output the result data on single data lane. The AD4080 data interface configuration Register 0x15 and Register 0x16 need to be configured so that the Xilinx VCU118 controls are aligned with AD4080 conversion data for correct data output.</p>
+<p>Complete the following steps for setting the AD4080 data interface configuration registers:</p>
+<ul class="simple">
+<li><p>AD4080 Register 0x15 set to 0x50 to enable the fixed pattern test, as shown in Figure 26. This step sets AD4080 in test mode.</p></li>
+<li><p>In test mode, the 20-bit AD4080 data is expected to be binary 1010 1100 0101 1101 0110, decimal −342570, or hexadecimal 0xAC5D6. Save the AD4080 data to a .csv file in IIO Oscilloscope and check the value. Refer to the ADMX6001-EBZ Data Acquisition With IIO Oscilloscope section for saving data in IIO Oscilloscope.</p></li>
+<li><p>If the AD4080 data is different from the expected decimal −342570, set the AD4080 Register 0x15 to one of the following values: 0x51, 0x61, 0x71, 0x81, 0x91, 0x01, 0x11, 0x21, 0x31, or 0x41, as shown in Figure 27. Save the data to a .csv file and check the value. Repeat this step with a value in the list until the AD4080 data is exactly −342570. The AD4080 register setting is completed.</p></li>
+<li><p>Set AD4080 Register 0x15 back to 0x40 to disable the fixed pattern test and enable AD4080 normal mode.</p></li>
+</ul>
+<p>The AD4080 data interface configuration registers are set and the AD4080 is ready for data acquisition.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure25.jpg"><img alt="image15" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure25.jpg" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 26. AD4080 Register 0x15 Setting—Value 0x50 for Fixed Test Pattern and 0x40 for Normal Data Acquisition Mode</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure26.jpg"><img alt="image16" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure26.jpg" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 27. AD4080 Register 0x16 Setting</em></p>
+</div>
+</section>
+<section id="iio-oscilloscope-plot-window">
+<h3>IIO-OSCILLOSCOPE PLOT WINDOW<a class="headerlink" href="#iio-oscilloscope-plot-window" title="Link to this heading"></a></h3>
+<p>Data captured by the the AD9213 high-speed path and the AD4080 precision path can be visualized and saved to a .csv file in the IIO Oscilloscope plot window, as shown in Figure 28 and Figure 29.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure27.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure27.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure27.jpg" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p><em>Figure 28. IIO Oscilloscope Plot Window—Time Domain: axi-adrv9213-rx-hpc</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure28.jpg"><img alt="image17" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure28.jpg" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 29. IIO Oscilloscope Plot Window—Time Domain: ad4080</em></p>
+</div>
+<p>The two data paths are listed in the top-left corner. Check one or both and then click the Capture/Stop button to view the data stream. For the IIO Oscilloscope to work smoothly, it is recommended that the number of samples is set to power of 2, such as 2<sup>10</sup> (1024) or 2<sup>16</sup> (65536). The IIO Oscilloscope supports only one scale for each axis so that it is not practical to view the AD9213 high-speed path and the AD4080 precision path simultaneously because the AD9213 (10GSPS) high-speed path is 320 times faster than the AD4080 (31.25MSPS) precision path for the horizontal axis and AD4080 (20-bit) has higher bit resolution than AD9213 (12-bit) for the vertical axis in the ADMX6001-EBZ design.</p>
+<p>The IIO Oscilloscope plot window can also view the captured data in the frequency domain. An example of a 2MHz sinewave captured by AD4080 is shown in Figure 30.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure29.jpg"><img alt="image18" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure29.jpg" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 30. IIO Oscilloscope Plot Window—Frequency Domain</em></p>
+</div>
+<p>The data can be saved in a .csv file for post processing and analysis, as shown in Figure 31. From the File menu, select Save As to open the Save As window. Make sure to select the path from the dropdown list and select the correct checkbox before clicking the Save button on bottom-right.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure30.jpg"><img alt="image19" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure30.jpg" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 31. Save Data as a .CSV File in the IIO Oscilloscope Plot Window</em></p>
+</div>
+</section>
+<section id="input-signal-offset-shift-for-ad9213">
+<h3>INPUT SIGNAL OFFSET SHIFT FOR AD9213<a class="headerlink" href="#input-signal-offset-shift-for-ad9213" title="Link to this heading"></a></h3>
+<p>The input signal is often from transducers or sensors as a unipolar signal with DC offset, whereas the AD9213 works best with differential input. By biasing the ADL5580 input terminal with the output of the precision DAC LTC2664, the ADL5580 converts the unipolar signal to a differential signal with an adjustable DC offset to maximize the utility of the AD9213 input dynamic range. The actual use case may vary depending on the specific application.</p>
+<p>The DAC value of 32768 corresponds to 0V and is used as the default biasing to ADL5580. To achieve a targeted DC offset shift <strong>x</strong> mV, the DAC value can be calculated as</p>
+<p>DAC value = 32768×(1 + <strong>x</strong> /5000)</p>
+<p>where <strong>x</strong> is the DC offset in mV.</p>
+<p>Round the DAC value to the nearest integer as the DAC LTC2664 input. The DAC output range is −5V to +5V.</p>
+<p>To change the LTC2664 DAC value for ADL5580 biasing, write the DAC value as raw data to output_voltage0, as shown in Figure 32. To illustrate the effect of offset shift, clear the Auto scale checkbox, set the Y max to 2048, and set the Y min to −2048. Figure 33 through Figure 35 show the AD9213 high-speed path data with the same sinewave input but different DAC settings for offset shift.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure31.jpg"><img alt="image20" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure31.jpg" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 32. Write DAC Value of Targeted Voltage to LTC2664</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure32.jpg"><img alt="image21" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure32.jpg" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 33. AD9213 Data with DC Offset at 0mV (32768 LSBs)</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure33.jpg"><img alt="image22" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure33.jpg" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 34. AD9213 Data with DC Offset at +100mV (33423 LSBs)</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure34.jpg"><img alt="image23" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure34.jpg" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 35. AD9213 Data with DC Offset at −100mv (32112 LSBs)</em></p>
+</div>
+</section>
+</section>
+<section id="configure-and-control-admx6001-ebz-with-python-scripts">
+<h2>CONFIGURE AND CONTROL ADMX6001-EBZ WITH PYTHON SCRIPTS<a class="headerlink" href="#configure-and-control-admx6001-ebz-with-python-scripts" title="Link to this heading"></a></h2>
+<p>Utilizing Python scripts offers advantages for configuring and controlling the ADMX6001-EBZ board and enables data visualization and processing. Python scripts are more efficient than the manual register read and write with IIO Oscilloscope. The Python virtual environment (venv) for running ADMX6001-EBZ Python scripts can be set with or without an IDE such as PyCharm. It is required that the user installs Python 3.11.5 or a newer version and downloads the PyADI-IIO library before proceeding to the venv setting in the following section.</p>
+<section id="install-python-and-git-for-windows">
+<h3>INSTALL PYTHON AND GIT FOR WINDOWS<a class="headerlink" href="#install-python-and-git-for-windows" title="Link to this heading"></a></h3>
+<p>► Download Windows Installer (64-bit), as shown in Figure 36.</p>
+<p>Install Python 3.11.5. It is recommended to install Python 3.11.5 as an administrator by right clicking on the installer, as shown in Figure 37.</p>
+<p>► Download the 64-bit Git for Windows Setup as shown in Figure 38 and install Git.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure35.jpg"><img alt="image24" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure35.jpg" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 36. Download Python Windows Installer</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure36.jpg"><img alt="image25" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure36.jpg" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 37. Install Python 3.11.5 as an Administrator</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure37.jpg"><img alt="image26" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure37.jpg" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 38. Download 64-bit Git for Windows Setup</em></p>
+</div>
+</section>
+<section id="download-the-pyadi-iio-library">
+<h3>DOWNLOAD THE PYADI-IIO LIBRARY<a class="headerlink" href="#download-the-pyadi-iio-library" title="Link to this heading"></a></h3>
+<p>Start a Command Prompt window and clone the PyADI-IIO library for ADMX6001-EBZ, as shown in Figure 39.</p>
+<p>► Create and navigate to the folder for saving the PyADI-IIO library,</p>
+<p><strong>mkdir temp1 &gt; cd temp1 &gt; mkdir pyadi &gt; cd pyadi</strong></p>
+<p>► Clone the required PyADI-IIO library from the GitHub website,</p>
+<p><strong>git clone</strong> <a class="icon git reference external" href="https://github.com/analogdevicesinc/pyadi-iio/tree/main/tree/admx6001_v1" target="_blank">tree/admx6001_v1</a></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure38.jpg"><img alt="image27" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure38.jpg" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 39. Clone PyADI-IIO Library for the ADMX6001-EBZ Evaluation Board</em></p>
+</div>
+</section>
+<section id="create-and-configure-python-venv-for-the-admx6001-ebz">
+<h3>CREATE AND CONFIGURE PYTHON VENV FOR THE ADMX6001-EBZ<a class="headerlink" href="#create-and-configure-python-venv-for-the-admx6001-ebz" title="Link to this heading"></a></h3>
+<p>The venv module supports creating lightweight virtual environments, each with their own independent set of Python packages installed in the site directories of the virtual environments. The venv contains a specific Python interpreter, software libraries, and binaries that are needed to support a project (library or application).</p>
+<p>Complete the following steps to create and activate the venv for ADMX6001-EBZ and install the libraries:</p>
+<ul class="simple">
+<li><p>Create a folder and copy the Python scripts to this folder, in the example that follows C:\ADMX6001_PythonScripts.</p></li>
+<li><p>Open a Command Prompt window and go to the Python 3.11 folder ( C:\Python311 in the following example).</p></li>
+<li><p>To create the venv in the Command Prompt window run the following script: python -m venv c:\ADMX6001_Python-Scripts\myenv.</p></li>
+<li><p>Activate the venv. Go to C:\ADMX6001_PythonScripts\myenv\Scripts&gt;activate. Notice the prompt changes to (myenv), indicating the venv is activated.</p></li>
+<li><p>In the (myenv) command window, install the PyADI-IIO library. Go to the PyADI-IIO library folder (C:\temp1\pyadi\pyadi-iio in the example) and install pyadi-iio library: pip install.</p></li>
+</ul>
+<p>The venv is now created and activated, and the PyADI-IIO library is installed, as shown in Figure 40.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure39.jpg"><img alt="image28" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure39.jpg" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 40. Create and Activate the Venv and Install the PyADI-IIO library for the ADMX6001-EBZ Evaluation Board</em></p>
+</div>
+<p>The user can also setup the venv for ADMX6001-EBZ with an integrated development environment (IDE) such as PyCharm. To create and activate the venv, complete the following:</p>
+<ul class="simple">
+<li><p>Launch PyCharm and open the ADMX6001_Pythonscripts project, as shown in Figure 41.</p></li>
+<li><p>Navigate to File &gt; Settings &gt; Project &gt; Python interpreter,click Add Interpreter &gt; Add Local Interpreter to create the venv, as shown in Figure 42 through Figure 44.</p></li>
+<li><p>The user can add additional Python libraries in a Command Prompt window (see the Install Additional Python Libraries section) or in PyCharm, as shown in Figure 45 and Figure 46.</p></li>
+<li><p>Launch a Command Prompt window to activate venv and install the PyADI-IIO, as shown in Figure 47.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure40.jpg"><img alt="image29" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure40.jpg" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 41. Launch PyCharm and Open the Python Scripts Project</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure41.jpg"><img alt="image30" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure41.jpg" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 42. Open File or Project</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure42.jpg"><img alt="image31" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure42.jpg" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 43. ADMX6001-EBZ Python Scripts</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure43.jpg"><img alt="image32" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure43.jpg" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 44. Create Venv by Adding a Local Interpreter</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure44.jpg"><img alt="image33" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure44.jpg" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 45. Install Additional Python Libraries in PyCharm</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure45.jpg"><img alt="image34" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure45.jpg" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 46. Python Interpreter Settings</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure46.jpg"><img alt="image35" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure46.jpg" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 47. Activate Venv and Install PyADI-IIO</em></p>
+</div>
+<p>This completes the Python venv for running Python scripts for the ADMX6001-EBZ board.</p>
+</section>
+<section id="install-additional-python-libraries">
+<h3>INSTALL ADDITIONAL PYTHON LIBRARIES<a class="headerlink" href="#install-additional-python-libraries" title="Link to this heading"></a></h3>
+<p>The Python scripts for the ADMX6001-EBZ board utilize modules from various libraries. Install these libraries, such as scipy and matplotlib, using pip install &lt;library name&gt; within venv before running the Python scripts, as shown in Figure 48.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure47.jpg"><img alt="image36" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure47.jpg" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 48. Install Additional Libraries and Run Python Scripts for ADMX6001-EBZ Evaluation Board</em></p>
+</div>
+<p>The Python scripts call modules in the PyADI-IIO library to initialize the ADMX6001-EBZ board by setting required registers, JSED and LVDS data lanes, and other control signals. Examples of Python scripts can be found at the product page for the ADMX6001-EBZ.</p>
+</section>
+</section>
+<section id="run-example-python-scripts-for-the-admx6001-ebz">
+<h2>RUN EXAMPLE PYTHON SCRIPTS FOR THE ADMX6001-EBZ<a class="headerlink" href="#run-example-python-scripts-for-the-admx6001-ebz" title="Link to this heading"></a></h2>
+<p>Examples of Python scripts are provided on the ADMX6001-EBZ board product page for board evaluation. These Python scripts call modules in the PyADI-IIO library to initialize the ADMX6001-EBZ board by setting required registers, JSED and LVDS data lanes, and other control signals. The user is encouraged to check the product page of the ADMX6001-EBZ board for updated and/or additional examples of Python scripts.</p>
+<p>The example script <strong>ADMX6001_MultiClass_pCal.py</strong> defines the classes to setup, initiate, configure, and operate the ADMX6001-EBZ for data acquisition and visualization. A list of useful methods defined in this script for operating the setup of the ADMX6001-EBZ board and the Xilinx VCU118 board follows.</p>
+<ul class="simple">
+<li><p>AD4080_CAl(self): configure the AD4080 LVDS data interface, Register 0x15 and Register 0x16, for correct data output.</p></li>
+<li><p>set_dac_offset(self, voltage): set the DC offset in mV for the AD9213 path. By setting the appropriate DC offset, the signal can be moved up or down for maximizing the dynamic range of the AD9213.</p></li>
+<li><p>capture_data_ad9213(self, nsamples): the AD9213 captures data of nsamples at 10GSPS.</p></li>
+<li><p>capture_data_ad4080(self, nsamples): the AD4080 captures data of nsamples at 31.25MSPS.</p></li>
+<li><p>plot_data_ad9213(self, data): plot data captured by the AD9213.</p></li>
+<li><p>plot_data_ad4080(self, data): plot data captured by by AD4080.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure48.jpg"><img alt="image37" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure48.jpg" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 49. Run the Python Script ADMX6001_acquisition.py to Acquire and Visualize Data</em></p>
+</div>
+<p>The example script <strong>ADMX6001_acquisitionl.py</strong> creates instance of classes defined in ADMX6001_multiClass_pCal.py and calls the methods to initialize the ADMX6001-EBZ board, calibrate the AD4080 LVDS data interface, and perform data acquisition. Figure 50 through Figure 52 show the plots that the Python script <strong>ADMX6001_acquisition.py</strong> generated.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure49.jpg"><img alt="image38" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure49.jpg" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 50. Plots Generated by Python Script ADMX6001_acquisition.py</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure50.jpg"><img alt="image39" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure50.jpg" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 51. AD9213 Data with Different DC Offsets</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure51.jpg"><img alt="image40" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx6001resources/eval/user-guides/admx/figure51.jpg" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 52. AD4080: Data and AD4080: Spectrum</em></p>
+</div>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

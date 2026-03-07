@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The majority of ADI’s products are peripherals to a non-ADI digital engine (FPGA, microprocessor, or microcontroller). While there is major work underway on FPGAs (Xilinx and Altera) and microprocessors (running an operating system like Linux), the efforts on microcontrollers are fragmented due to the diverse nature of the microcontroller market. The goal of these projects (microcontroller/no-OS) is to be able to provide reference projects for lower end processors, which can’t run Linux or aren’t running a specific operating system, to help customers using microcontrollers with ADI parts." name="description" />
+
+    <title>Microcontroller no-OS Drivers &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Microcontroller no-OS Drivers</a><ul>
+<li><a class="reference internal" href="#drivers-list">Drivers List</a><ul>
+<li><a class="reference internal" href="#accelerometers">Accelerometers</a></li>
+<li><a class="reference internal" href="#a-d-d-a-converter-combinations">A/D &amp; D/A Converter Combinations</a></li>
+<li><a class="reference internal" href="#analog-to-digital-converters">Analog to Digital Converters</a></li>
+<li><a class="reference internal" href="#analog-front-end">Analog Front End</a></li>
+<li><a class="reference internal" href="#capacitive-to-digital-touch-screen-controllers">Capacitive to Digital &amp; Touch Screen Controllers</a></li>
+<li><a class="reference internal" href="#d-a-converters-dac">D/A Converters (DAC)</a></li>
+<li><a class="reference internal" href="#digital-input-output-dio-devices">Digital Input/Output (DIO) Devices</a></li>
+<li><a class="reference internal" href="#clock-generation-devices">Clock Generation Devices</a></li>
+<li><a class="reference internal" href="#filter-devices">Filter Devices</a></li>
+<li><a class="reference internal" href="#gyroscopes">Gyroscopes</a></li>
+<li><a class="reference internal" href="#imus-inertial-measurement-units">IMUs (Inertial Measurement Units)</a></li>
+<li><a class="reference internal" href="#impedance-analyzer">Impedance Analyzer</a></li>
+<li><a class="reference internal" href="#mobile-i-o-expander-keypad-controller">Mobile I/O Expander &amp; Keypad Controller</a></li>
+<li><a class="reference internal" href="#multiplexers">Multiplexers</a></li>
+<li><a class="reference internal" href="#optical">Optical</a></li>
+<li><a class="reference internal" href="#digital-potentiometers">Digital Potentiometers</a></li>
+<li><a class="reference internal" href="#rf-transceivers">RF Transceivers</a></li>
+<li><a class="reference internal" href="#digital-temperature-sensors">Digital Temperature Sensors</a></li>
+<li><a class="reference internal" href="#power">Power</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="microcontroller-no-os-drivers">
+<h1>Microcontroller no-OS Drivers<a class="headerlink" href="#microcontroller-no-os-drivers" title="Link to this heading"></a></h1>
+<p>The majority of ADI’s products are peripherals to a non-ADI digital engine (FPGA, microprocessor, or microcontroller). While there is major work underway on FPGAs (Xilinx and Altera) and microprocessors (running an operating system like Linux), the efforts on microcontrollers are fragmented due to the diverse nature of the microcontroller market. The goal of these projects (microcontroller/no-OS) is to be able to provide reference projects for lower end processors, which can’t run Linux or aren’t running a specific operating system, to help customers using microcontrollers with ADI parts.</p>
+<section id="drivers-list">
+<h2>Drivers List<a class="headerlink" href="#drivers-list" title="Link to this heading"></a></h2>
+<section id="accelerometers">
+<h3>Accelerometers<a class="headerlink" href="#accelerometers" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adxl313" target="_blank">ADXL312: ±1.5 g/±3 g/±6 g/±12 g range, 13-bit resolution, 3-axis Digital Accelerometer</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adxl313" target="_blank">ADXL313: ±0.5 g/±1 g/±2 g/±4 g range, 13-bit resolution, 3-axis Digital Accelerometer</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adxl313" target="_blank">ADXL314: ±200 g range, 13-bit resolution, 3-axis Digital Accelerometer</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adxl345" target="_blank">ADXL345: 3-Axis, ±2 g/±4 g/±8 g/±16 g Digital Accelerometer</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adxl355" target="_blank">ADXL355: Low Noise, Low Drift, Low Power, 3-Axis MEMS Accelerometer</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adxl362" target="_blank">ADXL362: Micropower, 3-Axis, ±2 g/±4 g/±8 g Digital Output MEMS Accelerometer</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adxl367" target="_blank">ADXL367: Micropower, 3-Axis, ±2 g/±4 g/±8 g Digital Output MEMS</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adxl372" target="_blank">ADXL372: Micropower, 3-Axis, ±200 g Digital Output, MEMS</a></p></li>
+</ul>
+</section>
+<section id="a-d-d-a-converter-combinations">
+<h3>A/D &amp; D/A Converter Combinations<a class="headerlink" href="#a-d-d-a-converter-combinations" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5592r" target="_blank">AD5592R: 8 Channel, 12-Bit, Configurable ADC/DAC with on-chip Reference, SPI interface</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5592r" target="_blank">AD5593R: 8-Channel, 12-Bit, Configurable ADC/DAC with On-Chip Reference, I2C Interface</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad74413r" target="_blank">AD74413R: 4 Channel, 16-Bit ADC 13-bit DAC, Configurable ADC/DAC with on-chip Reference, SPI interface</a></p></li>
+</ul>
+</section>
+<section id="analog-to-digital-converters">
+<h3>Analog to Digital Converters<a class="headerlink" href="#analog-to-digital-converters" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad463x" target="_blank">AD4030-24: 24-Bit, 2 MSPS, Single Channel, Precision Differential SAR ADC</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad717x" target="_blank">AD4111: Single Supply, 24-Bit, Sigma-Delta ADC with ±10 V and 0 mA to 20 mA Inputs, Open Wire Detection</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad717x" target="_blank">AD4112: Single Supply, 24-Bit, Sigma-Delta ADC with ±10 V and 0 mA to 20 mA Inputs</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad463x" target="_blank">AD4630-16: 16-Bit, 2 MSPS, Dual Channel, Precision Differential SAR ADC</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad463x" target="_blank">AD4630-24: 24-Bit, 2 MSPS, Dual Channel, Precision Differential SAR ADC</a></p></li>
+<li><p>AD6673: 80 MHz Bandwidth, Dual IF Receiver</p></li>
+<li><p>AD6676: Wideband IF Receiver Subsystem</p></li>
+<li><p>AD7091: 1 MSPS, Ultralow Power 12-Bit ADC in 8-Lead LFCSP</p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7091r" target="_blank">AD7091R: 1 MSPS, Ultralow Power, 12-Bit ADC in 10-Lead LFCSP and MSOP</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7091r8" target="_blank">AD7091R-2: 2-Channel, 1 MSPS, Ultralow Power, 12-Bit SAR ADC</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7091r8" target="_blank">AD7091R-4: 4-Channel, 1 MSPS, Ultralow Power, 12-Bit SAR ADC</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7091r8" target="_blank">AD7091R-8: 8-Channel, 1 MSPS, Ultralow Power, 12-Bit SAR ADC</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7124" target="_blank">AD7124-4: 4-Channel, Low Noise, Low Power, 24-Bit, Sigma-Delta ADC with PGA and Reference</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7124" target="_blank">AD7124-8: 8-Channel, Low Noise, Low Power, 24-Bit, Sigma-Delta ADC with PGA and Reference</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad717x" target="_blank">AD7172-2: Low Power, 24-Bit, 31.25 kSPS, Sigma-Delta ADC with True Rail-to-Rail Buffers</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad717x" target="_blank">AD7172-4: Low Power, with 4- or 8-channel, 24-bit, 31.25 kSPS, Sigma-Delta ADC with True Rail-to-Rail Buffers</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad717x" target="_blank">AD7173-8: Low Power, 8-/16-Channel, 31.25 kSPS, 24-Bit, Highly Integrated Sigma-Delta ADC</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad717x" target="_blank">AD7175-2: 24-Bit, 250 kSPS, Sigma-Delta ADC with 20 µs Settling and True Rail-to-Rail Buffers</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad717x" target="_blank">AD7175-8: 24-Bit, 8-/16-Channel, 250 kSPS, Sigma-Delta ADC with True Rail-to-Rail Buffers</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad717x" target="_blank">AD7176-2: 24-Bit, 250 kSPS Sigma Delta ADC with 20 µs Settling</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad717x" target="_blank">AD7177-2: 32-Bit, 10 kSPS, Sigma-Delta ADC with 100 µs Settling and True Rail-to-Rail Buffers</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7193" target="_blank">AD7190: 2-Channel, 4.8 kHz, Ultralow Noise, 24-Bit Sigma-Delta ADC with PGA</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7193" target="_blank">AD7192: 2-Channel, 4.8 kHz, Ultralow Noise, 24-Bit Sigma-Delta ADC with PGA</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7193" target="_blank">AD7193: 4-Channel, 4.8 kHz, Ultralow Noise, 24-Bit Sigma-Delta ADC with PGA</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7193" target="_blank">AD7194: 8-Channel, 4.8 kHz, Ultralow Noise, 24-Bit Sigma-Delta ADC with PGA</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7193" target="_blank">AD7195: 2-Channel, 4.8 kHz, Ultralow Noise, 24-Bit Sigma-Delta ADC with PGA and AC Excitation</a></p></li>
+<li><p>AD7280A: Lithium Ion Battery Monitoring System]]</p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7476" target="_blank">AD7466: 1.6 V Micro-Power 12-Bit ADC</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7476" target="_blank">AD7467: 1.6 V Micro-Power 10-Bit ADC</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7476" target="_blank">AD7468: 1.6 V Micro-Power 8-Bit ADC</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7476" target="_blank">AD7475: 1 MSPS, 12-Bit A/D Converter in MSOP-8 or SOIC-8</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7476" target="_blank">AD7476: 1MSPS, 12-Bit ADC in 6 Lead SOT-23</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7476" target="_blank">AD7476A: 12-Bit, 1 MSPS, Low-Power A/D Converter in SC70 and MSOP Packages</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7476" target="_blank">AD7477: 1MSPS, 10-Bit ADC in 6 Lead SOT-23</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7476" target="_blank">AD7477A: 10-Bit, 1 MSPS, Low-Power A/D Converter in SC70 and MSOP Packages</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7476" target="_blank">AD7478: 8-Bit, 1 MSPS, Low Power Successive Approximation ADC Which Operates From A Single 2.35 V to 5.25 V Power Supply</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7476" target="_blank">AD7478A: 8-Bit, 1 MSPS, Low-Power A/D Converter in SC70 and MSOP Packages</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7476" target="_blank">AD7495: 1 MSPS, 12-Bit A/D Converter in MSOP-8 or SOIC-8</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7606" target="_blank">AD7606: 8-Channel DAS with 16-Bit, Bipolar, Simultaneous Sampling ADC</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7689" target="_blank">AD7682: 16-Bit, 4-Channel, 250 kSPS PulSAR ADC</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7689" target="_blank">AD7689: 16-Bit, 8-Channel, 250 kSPS PulSAR ADC</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7689" target="_blank">AD7699: 16-Bit, 8-Channel, 500 kSPS PulSAR ADC</a></p></li>
+<li><p>AD7768: 8-Channel, 24-Bit, Simultaneous Sampling ADC, Power Scaling, 110.8 kHz BW</p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7779" target="_blank">AD7770: 8-Channel, 24-Bit Simultaneous Sampling ADC</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7779" target="_blank">AD7771: 8-Channel, 24-Bit, Simultaneous Sampling ADC</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7779" target="_blank">AD7779: 8-Channel, 24-Bit, Simultaneous Sampling ADC</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7780" target="_blank">AD7780: 24-Bit Pin-Programmable Low Power Σ−Δ ADC</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7799" target="_blank">AD7799: 3-Channel, Low Noise, Low Power, 16/24-Bit, Sigma Delta ADC with On-Chip In-Amp</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7689" target="_blank">AD7949: 14-Bit, 8-Channel, 250 kSPS PulSAR ADC</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7980" target="_blank">AD7980: 16-Bit, 1 MSPS, PulSAR ADC in MSOP/LFCSP</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7991" target="_blank">AD7991: 4-Channel, 12-Bit ADC with I2C Compatible Interface in 8-Lead SOT-23</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7991" target="_blank">AD7995: 4-Channel, 10-Bit ADC with I2C Compatible Interface in 8-Lead SOT-23</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7991" target="_blank">AD7999: 4-Channel, 8-Bit ADC with I2C Compatible Interface in 8-Lead SOT-23</a></p></li>
+<li><p>AD9250: 14-Bit, 170 MSPS/250 MSPS, JESD204B, Dual Analog-to-Digital Converter</p></li>
+<li><p>AD9265: 16-Bit, 125 MSPS/105 MSPS/80 MSPS, 1.8 V Analog-to-Digital Converter</p></li>
+<li><p>AD9434: 12-Bit, 370 MSPS/500 MSPS, 1.8 V Analog-to-Digital Converter</p></li>
+<li><p>AD9467: 16-Bit, 200 MSPS/250 MSPS Analog-to-Digital Converter</p></li>
+<li><p>AD9625: 12-Bit, 2.6 GSPS/2.5 GSPS/2.0 GSPS, 1.3 V/2.5 V Analog-to-Digital Converter</p></li>
+<li><p>AD9680: 14-Bit, 1.25 GSPS/1 GSPS/820 MSPS/500 MSPS JESD204B, Dual Analog-to-Digital Converter</p></li>
+<li><p>LTC2312-12: 12-Bit, 500ksps Serial Sampling ADC in TSOT</p></li>
+<li><p>LTC2312-14: 14-Bit, 500ksps Serial Sampling ADC in TSOT</p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/max9611" target="_blank">MAX9611: High-Side, Current-Sense Amplifiers with 12-Bit ADC and Op Amp/Comparator</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/max11205" target="_blank">MAX11205: 16-Bit, Single-Channel, Ultra-Low Power, Delta-Sigma ADC with 2-Wire Serial Interface</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/max14001" target="_blank">MAX14001:Configurable, Isolated 10-bit ADCs for Multi-Range Binary Inputs</a></p></li>
+</ul>
+</section>
+<section id="analog-front-end">
+<h3>Analog Front End<a class="headerlink" href="#analog-front-end" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad4110" target="_blank">AD4110: Complete, single-channel, universal input analog-to-digital front end</a></p></li>
+</ul>
+</section>
+<section id="capacitive-to-digital-touch-screen-controllers">
+<h3>Capacitive to Digital &amp; Touch Screen Controllers<a class="headerlink" href="#capacitive-to-digital-touch-screen-controllers" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tools-software/uc-drivers/ad7746.html"><span class="doc">AD7745: 24-bit, 1 Channel Capacitance to Digital Converter</span></a></p></li>
+<li><p><a class="reference internal" href="../tools-software/uc-drivers/ad7746.html"><span class="doc">AD7746: 24-bit, 2 Channel Capacitance to Digital Converter</span></a></p></li>
+<li><p><a class="reference internal" href="../tools-software/uc-drivers/ad7746.html"><span class="doc">AD7747: 24-Bit Capacitance-to-Digital Converter with Temperature Sensor</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7156" target="_blank">AD7156: Ultralow Power, 1.8 V, 3 mm × 3 mm, 2-Channel Capacitance Converter</a></p></li>
+</ul>
+</section>
+<section id="d-a-converters-dac">
+<h3>D/A Converters (DAC)<a class="headerlink" href="#d-a-converters-dac" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5421" target="_blank">AD5421: 16-Bit, Serial Input, Loop-Powered, 4mA to 20mA DAC</a></p></li>
+<li><p>AD5446: 14-Bit High Bandwidth Multiplying DAC with Serial Interface including a Serial Data Output line</p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5449" target="_blank">AD5449: Dual 12-Bit, High Bandwidth Multiplying DAC with Serial Interface</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5628" target="_blank">AD5628: Octal, 12-Bit, SPI Voltage Output denseDAC With 5 ppm/°C On-Chip Reference</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5629r" target="_blank">AD5629R: Octal, 12-bit, I2C Voltage Output denseDAC with 5 ppm/°C On-Chip Reference</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5671R: Octal, 12-Bit nanoDAC+ with 2 ppm/°C Reference, I2 Interface</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5672R: Octal, 12-Bit nanoDAC+ with 2 ppm/°C Reference, SPI Interface</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5674R: 16-channel, 12-Bit buffered voltage output digital-to-analog converters, SPI Interface</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5675: Octal, 16-Bit nanoDAC+ with I2C Interface</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5675R: Octal, 16-Bit nanoDAC+ with 2 ppm/°C Reference, I2C Interface</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5676: Octal, 16-Bit nanoDAC+ with SPI Interface</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5676R: Octal, 16-Bit nanoDAC+ with 2 ppm/°C Reference, SPI Interface</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5679R: 16-channel, 16-Bit buffered voltage output digital-to-analog converters, SPI Interface</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5684: Quad, 12-Bit nanoDAC+ with SPI Interface</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5684R: Quad, 12-Bit nanoDAC+ with 2 ppm/°C On-Chip Reference and SPI Interface</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5685R: Quad, 14-Bit nanoDAC+ with 2 ppm/°C On-Chip Reference and SPI Interface</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5686: Quad, 16-Bit nanoDAC+ with SPI Interface</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5686R: Quad, 16-Bit nanoDAC+™ with 2 ppm/°C On-Chip Reference and SPI Interface</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5694: Quad, 12-Bit nanoDAC+™ with I2C Interface</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5694R: Quad, 12-Bit nanoDAC+ with 2 ppm/°C Reference, I2C Interface</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5695R: Quad 14-Bit nanoDAC+ with 2 ppm/°C Reference, I2C Interface</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5696: Quad, 16-Bit nanoDAC+™ with I2C Interface</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5681R: Tiny 12-Bit SPI nanoDAC+, with ±1 LSB INL and 2 ppm/°C Reference</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5682R: Tiny 14-Bit SPI nanoDAC+, with ±2 LSB INL and 2 ppm/°C Reference</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5683: Tiny 16-Bit SPI nanoDAC+, with ±2 (16-Bit) LSB INL and 2 ppm/°C External Reference</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5683R: Tiny 16-Bit SPI nanoDAC+, with ±2 (16-Bit) LSB INL and 2 ppm/°C Reference</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5691R: Tiny 12-Bit I2C nanoDAC+, with ±1 LSB INL and 2 ppm/°C Reference</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5692R: Tiny 14-Bit I2C nanoDAC+, with ±4 LSB INL and 5 ppm/°C Reference</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5693: Tiny 16-Bit I2C nanoDAC+, with ±2 (16-Bit) LSB INL</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5676" target="_blank">AD5693R: Tiny 16-Bit I2C nanoDAC+, with ±2 (16-Bit) LSB INL and 2 ppm/°C Reference</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5761r" target="_blank">AD5721R: Multiple Range, 12-Bit, Unipolar Voltage Output DACs with 2 PPM/⁰C Reference</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5755" target="_blank">AD5755: Quad Channel, 16-Bit, Serial Input, 4 mA to 20 mA and Voltage Output DAC, Dynamic Power Control</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5755" target="_blank">AD5755-1: Quad Channel, 16-Bit, Serial Input, 4 mA to 20 mA and Voltage Output DAC, Dynamic Power Control, HART Connectivity</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5755" target="_blank">AD5757: Quad Channel, 16-Bit, Serial Input, 4-20mA Output DAC, Dynamic Power Control, HART Connectivity</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5758" target="_blank">AD5758: Single Channel, 16-Bit Current and Voltage Output DAC with Dynamic Power Control and HART Connectivity</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5761r" target="_blank">AD5761R: Multiple Range, 16-Bit, Bipolar Voltage Output DACs with 2 PPM/⁰C Reference</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5766" target="_blank">AD5766: 16-Channel, 16-Bit Voltage Output denseDAC</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5766" target="_blank">AD5767: 16-Channel, 12-Bit Voltage Output denseDAC</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5770r" target="_blank">AD5770R: 6-Channel, 14-Bit, Current Output DAC with On-Chip Reference, SPI Interface</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5791" target="_blank">AD5791: 1 ppm 20-Bit, ±1 LSB INL, Voltage Output DAC</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7293" target="_blank">AD7293: 12-Bit Power Amplifier Current Controller with ADC, DACs, and Temperature and Current Sensors</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad7303" target="_blank">AD7303: +2.7 V to +5.5 V, Serial Input, Dual Voltage Output 8-Bit DAC</a></p></li>
+<li><p>AD9144: Quad, 16-Bit, 2.8 GSPS, TxDAC+® Digital-to-Analog Converter</p></li>
+<li><p>AD9152: Dual, 16-Bit, 2.25 GSPS, TxDAC+ Digital-to-Analog Converter</p></li>
+<li><p>AD9739A: 14-Bit, 2.5 GSPS, RF Digital-to-Analog Converter</p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ltc2672" target="_blank">LTC2672: Five-Channel, Low Dropout, 300 mA, Current Source Output, 12-/16-Bit SoftSpan DAC</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/max5380" target="_blank">MAX5380: Low-Cost, Low-Power, 8-Bit DACs with 2-Wire Serial Interface in SOT23</a></p></li>
+</ul>
+</section>
+<section id="digital-input-output-dio-devices">
+<h3>Digital Input/Output (DIO) Devices<a class="headerlink" href="#digital-input-output-dio-devices" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/max22196" target="_blank">MAX22196: Octal Industrial Sink/Source Digital Input</a></p></li>
+</ul>
+</section>
+<section id="clock-generation-devices">
+<h3>Clock Generation Devices<a class="headerlink" href="#clock-generation-devices" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>AD9517-1: 12-Output Clock Generator with Integrated 2.5 GHz VCO</p></li>
+<li><p>AD9523: 14-Output, Low Jitter Clock generator</p></li>
+<li><p>AD9528: JESD204B Clock Generator with 14 LVDS/HSTL Outputs</p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad9833" target="_blank">AD9833: Low Power, 12.65 mW, 2.3 V to +5.5 V, Programmable Waveform Generator</a></p></li>
+<li><p>ADF4106: 6 GHz integer-N PLL</p></li>
+<li><p>ADF4153: Fractional-N Frequency Synthesizer</p></li>
+<li><p>ADF4156: 6.2 GHz Fractional-N Frequency Synthesizer</p></li>
+<li><p>ADF4157: High Resolution 6 GHz Fractional-N Frequency Synthesizer</p></li>
+<li><p>ADF4350: Wideband Synthesizer with Integrated VCO</p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adf4377" target="_blank">ADF4377: 12.8 GHz Wideband Integer-N Synthesizer and RF Sampling Clock</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adf5355" target="_blank">ADF5355: Microwave Wideband Synthesizer with Integrated VCO</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/hmc7044" target="_blank">HMC7044: High Performance, 3.2 GHz, 14-Output Jitter Attenuator with JESD204B</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adrf6780" target="_blank">ADRF6780: 5.9 GHz to 23.6 GHz, Wideband, Microwave Upconverter</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/admv1013" target="_blank">ADMV1013: 24 GHz to 44 GHz, Wideband, Microwave Upconverter</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/admv1014" target="_blank">ADMV1014: 24 GHz to 44 GHz, Wideband, Microwave Downconverter</a></p></li>
+</ul>
+</section>
+<section id="filter-devices">
+<h3>Filter Devices<a class="headerlink" href="#filter-devices" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/admv8818" target="_blank">ADMV8818: 2 GHz to 18 GHz, Digitally Tunable, High-Pass and Low-Pass Filter</a></p></li>
+</ul>
+</section>
+<section id="gyroscopes">
+<h3>Gyroscopes<a class="headerlink" href="#gyroscopes" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adxrs453" target="_blank">ADXRS453: High Performance, Digital Output Gyroscope</a></p></li>
+</ul>
+</section>
+<section id="imus-inertial-measurement-units">
+<h3>IMUs (Inertial Measurement Units)<a class="headerlink" href="#imus-inertial-measurement-units" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>ADIS16505: Precision, Miniature MEMS IMU</p></li>
+<li><p>ADIS1657x: Precision, Miniature MEMS IMU</p></li>
+</ul>
+</section>
+<section id="impedance-analyzer">
+<h3>Impedance Analyzer<a class="headerlink" href="#impedance-analyzer" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5933" target="_blank">AD5933: 1 MSPS, 12-Bit Impedance Converter, Network Analyzer</a></p></li>
+</ul>
+</section>
+<section id="mobile-i-o-expander-keypad-controller">
+<h3>Mobile I/O Expander &amp; Keypad Controller<a class="headerlink" href="#mobile-i-o-expander-keypad-controller" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adp5589" target="_blank">ADP5589: Keypad Decoder and I/O Expansion</a></p></li>
+</ul>
+</section>
+<section id="multiplexers">
+<h3>Multiplexers<a class="headerlink" href="#multiplexers" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adgs1408" target="_blank">ADGS1408: SPI Interface, 4 Ω RON, ±15 V/+12 V/±5 V, 1.8 V Logic Control, 8:1 Muxes</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adgs1408" target="_blank">ADGS1409: SPI Interface, 4 Ω RON, ±15 V/+12 V/±5 V, 1.8 V Logic Control, Dual 4:1 Muxes</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adgs5412" target="_blank">ADGS1208: SPI-Interface, Low CON &amp; QINJ, ±15V/+12V, 1.8V Logic Control, 8:1 Mux</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adgs5412" target="_blank">ADGS1209: SPI-Interface, Low CON &amp; QINJ, ±15V/+12V, 1.8V Logic Control, Dual 4:1 Muxes</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adgs5412" target="_blank">ADGS1212: SPI Interface, Quad SPST Switch, Low QINJ, Low CON, ±15 V/+12 V, Mux Configurable</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adgs5412" target="_blank">ADGS1408: SPI Interface, 4 Ω RON, ±15 V/+12 V/±5 V, 1.8 V Logic Control, 8:1 Muxes</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adgs5412" target="_blank">ADGS1409: SPI Interface, 4 Ω RON, ±15 V/+12 V/±5 V, 1.8 V Logic Control, Dual 4:1 Muxes</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adgs5412" target="_blank">ADGS1412: SPI Interface, 1.5 Ω RON, ±15 V/+12 V, Quad SPST Switch, Mux Configurable</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adgs5412" target="_blank">ADGS5412: SPI Interface, 4× SPST Switches, 9.8 Ω RON, ±20 V/+36 V, Mux Configurable</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adgs5412" target="_blank">ADGS1612: SPI Interface, 1 Ω RON, ±5 V, 12 V, 5 V, 3.3 V, Mux Configurable, Quad SPST Switch</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adgs5412" target="_blank">ADGS5414: SPI Interface, Octal SPST Switches, 13.5 Ω RON, ±20 V/+36 V, Mux</a></p></li>
+</ul>
+</section>
+<section id="optical">
+<h3>Optical<a class="headerlink" href="#optical" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adpd188" target="_blank">ADPD188: Integrated Optical Module with Ambient Light Rejection and Two LEDs</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adpd1080" target="_blank">ADPD1080: Photometric Front Ends</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adpd1080" target="_blank">ADPD1081: Photometric Front Ends</a></p></li>
+</ul>
+</section>
+<section id="digital-potentiometers">
+<h3>Digital Potentiometers<a class="headerlink" href="#digital-potentiometers" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5110" target="_blank">AD5110: Single Channel, 128-Position, I2C, ±8% Resistor Tolerance, Nonvolatile Digital Potentiometer</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5110" target="_blank">AD5112: Single Channel, 64-Position, I2C, ±8% Resistor Tolerance, Nonvolatile Digital Potentiometer</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ad5110" target="_blank">AD5114: Single Channel, 32-Position, I2C, ±8% Resistor Tolerance, Nonvolatile Digital Potentiometer</a></p></li>
+<li><p>AD5232: Nonvolatile Memory, Dual, 256-Position Digital Potentiometer</p></li>
+<li><p>AD5235: Nonvolatile Memory, Dual 1024-Position Digital Potentiometer</p></li>
+<li><p>AD5251: I2C, Nonvolatile Memory, Dual 64-Position Digital Potentiometer</p></li>
+<li><p>AD5252: I2C, Nonvolatile Memory, Dual 256-Position Digital Potentiometer</p></li>
+<li><p>AD5253: Quad 64-Position I2C Nonvolatile Memory Digital Potentiometer</p></li>
+<li><p>AD5254: Quad 256-Position I2C Nonvolatile Memory, Digital Potentiometer</p></li>
+<li><p>ADN2850: Nonvolatile Memory, Dual 1024-Position Digital Resistor</p></li>
+</ul>
+</section>
+<section id="rf-transceivers">
+<h3>RF Transceivers<a class="headerlink" href="#rf-transceivers" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adf7023" target="_blank">ADF7023: High Performance, Low Power, ISM Band FSK/GFSK/OOK/MSK/GMSK Transceiver IC</a></p></li>
+<li><p><a class="reference internal" href="../tools-software/uc-drivers/adf5902.html"><span class="doc">ADF5902: 24 GHz, ISM Band, Multichannel FMCW Radar Transmitter</span></a></p></li>
+</ul>
+</section>
+<section id="digital-temperature-sensors">
+<h3>Digital Temperature Sensors<a class="headerlink" href="#digital-temperature-sensors" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adt7420" target="_blank">ADT7420: ±0.25°C Accurate, 16-Bit Digital I2C Temperature Sensor</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/max31865" target="_blank">MAX31865: RTD-to-Digital Converter Temperature Sensor</a></p></li>
+</ul>
+</section>
+<section id="power">
+<h3>Power<a class="headerlink" href="#power" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/ltc3337" target="_blank">LTC3337: Primary Battery SOH Monitor with Precision Coulomb Counter</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/../tools-software/uc-drivers/adp1050" target="_blank">ADP1050: Digital Controller for Isolated Power Supply with PMBus Interface</a></p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

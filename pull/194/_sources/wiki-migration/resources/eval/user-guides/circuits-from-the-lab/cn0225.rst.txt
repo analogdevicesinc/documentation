@@ -1,0 +1,272 @@
+CN0225 Evaluation Board Guide
+=============================
+
+Overview
+--------
+
+:adi:`CN0225` is a complete analog front end for digitizing ±10 V industrial level signals with a 16-bit differential input PulSAR® ADC. The circuit provides a high impedance instrumentation amplifier input with high CMR, level shifting, attenuation, and differential conversion, with only two analog components.The two active components which drive an AD7687 differential input 16-bit PulSAR ADC are the AD8295 precision instrumentation amplifier and the AD8275 level translator/ADC driver. An ADR431 low noise 2.5V XFET® reference supplies the voltage reference for the ADC.
+
+The AD8295 has two uncommited on-chip signal procesing amplifiers and two precisely matched 20 kΩ resistors in a small 4 mm X 4 mm package.
+
+The AD8275 is a G = 0.2 difference amplifier that can be used to attenuate ±10 V industrial signals, and the attenuated signal can be easily interfaced to a single supply low voltage ADC. The AD8275 performs the attenuation and level shifting function in the circuit, maintaining good CMR without any need for external components.
+
+The :adi:`CN0225` needs +15 V, -15 V and +6 V power supply inputs and thus, needs a triple output DC power supply. The board also connects to ADI's System Demonstration Platform (**\*SDP**\ \*).
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/cn0225-hw-1024.jpg
+   :align: center
+   :width: 600px
+
+--------------
+
+Required Equipment
+------------------
+
+-  :adi:`EVAL-CN0225-SDPZ Evaluation Board <CN0225>`
+-  :adi:`EVAL-SDP-CB1Z Controller Board (SDP-B Board) <EVAL-SDP-CB1Z>`
+-  `CN0225 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0225/cn0225%20sdp%20eval%20software.zip>`_
+-  ±25 V/1 A Triple Output DC Power Supply (**Agilent E3631A**)
+-  Low distortion single-ended or differential signal source (**Agilent 81150A or Audio Precision System Two 2322**)
+-  PC with USB interface
+
+   -  Windows 7 or higher
+
+--------------
+
+General Setup
+-------------
+
+Block Assignments
+~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/cn0225-hw-1024-edited.jpg
+   :width: 600px
+
+-  The :adi:`EVAL-CN0225-SDPZ <CN0225>` **(CN0225 Board)** connects to the :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** via the 120-Pin Connector **(SDP Conn)**
+-  The :adi:`EVAL-SDP-CB1Z` **(SDP-B Board)** connects to the PC via the USB cable
+-  Terminal block **J1** is the +/- analog signal input
+-  Terminal block **J2** is the +6 V power supply input
+-  Terminal block **J3** is the +/- 15 V power supply input
+-  Terminal block **J4** contains the test points for the SPI signals
+
+.. important::
+
+   Connect the **(EVAL-CN0225-SDPZ)** and the **(SDP-B Board)**, then power the **(EVAL-CN0225-SDPZ)** through the triple output power supply before connecting the **(SDP-B Board)** to the PC
+
+
+Setup Block Diagram
+~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/cn0225-03-1024.png
+   :width: 600px
+
+Jumper Settings
+~~~~~~~~~~~~~~~
+
+See the table in the image below for the jumper settings. Values in red are the default settings for the :adi:`EVAL-CN0225-SDPZ <CN0225>`
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-45-44_pm.png
+   :width: 600px
+
+--------------
+
+Installing the Evaluation Software
+----------------------------------
+
+-  Extract the file `CN0225 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0225/cn0225%20sdp%20eval%20software.zip>`_ and open **setup.exe**
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you install the `CN0203 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0203/cn0203%20sdp%20eval%20software.zip>`_ to the default directory path **C:\\Program Files (x86)\\Analog Devices\\** and all National Instruments products to **C:\\Program Files\\National Instruments\\**\
+
+
+   |image1|
+
+-  Press **Next** to view the National Instruments Software License Agreement
+
+|image2|
+
+-  Select the option which **accepts** the License Agreement and press **Next** to view the installation review page
+
+|image3|
+
+-  Press **Next** to start the installation
+
+|image4|
+
+-  Upon completion of the installation of the **CN0225 Evaluation Software**, the installer for the ADI SDP Drivers will execute
+
+.. tip::
+
+   \ **NOTE:** It is recommended that you close all other applications before clicking **“Next”**. This will make it possible to update relevant system files without having to reboot your computer.
+
+
+|image5| |image6|
+-  Press **“Next”** to set the installation location for the **SDP Drivers**
+
+.. tip::
+
+   It is recommended that you install the drivers to the default directory path
+
+   **C:\\Program Files\\Analog Devices\\SDP\\Drivers**\
+
+
+   |image7|
+
+-  Press **“Next”** to install the **SDP Drivers**. When prompted by Windows Security, just press **Install**
+
+|image8|
+
+-  Press **Finish** to complete the installation
+
+|image9|
+
+-  **(Optional)** Restart the PC when prompted by the installer
+
+|image10|
+
+--------------
+
+Using the Evaluation Software
+-----------------------------
+
+Main Window
+~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-3-2017_3-29-38_pm_-_edited.png
+   :align: center
+   :width: 600px
+
+-  **Board Connection Control Section**
+
+   -  **Connect Button**
+
+      -  Starts the connection with the :adi:`CN0225 Evaluation Board <CN0225>`
+      -  **Disconnect Button**
+
+         -  Ends the connection with the :adi:`CN0225 Evaluation Board <CN0225>`
+
+      -  **STOP APP Button**
+
+         -  Exits the software application
+
+-  **Data Acquisition Control Section**
+
+   -  **connector Select**
+
+      -  Selects which 120-pin connection of the **SDP-B Board** to use
+      -  **Fs (Hz) Field**
+
+         -  Sets the sampling frequency of the CN0225 ADC
+
+      -  **Samples Field**
+
+         -  Sets the number of samples the CN0225 ADC takes
+
+      -  **SCLK (Hz) Field**
+
+         -  Sets the SPI clock frequency used by the evaluation board
+
+      -  **Acquire Samples Button**
+
+         -  Commands the **CN0225** ADC to sample at the set sampling frequency and read the set number of samples
+
+      -  **Save Data to File Button**
+
+         -  Saves the current sample readings to an output file
+
+-  **Activity Frame**
+
+   -  **Time Domain Tab**
+
+      -  Displays the measured ADC sample values vs time plot
+      -  **Frequency Domain Tab**
+
+         -  Plots the FFT of the the ADC samples with the amplitudse in dB of the full scale ADC value
+
+::
+
+             {{ :resources:eval:user-guides:circuits-from-the-lab:cn0225:11-3-2017_3-30-08_pm_-_edited.png?nolink&600 |}}
+   * **Histogram**
+     * Plots the number of occurrences of ADC sample values
+             {{ :resources:eval:user-guides:circuits-from-the-lab:cn0225:11-3-2017_3-30-27_pm_-_edited.png?nolink&600 |}}
+   * **S/W Version Info**
+     * Shows the software and hardware versions, vendor and product IDs
+       * **Flash LED Button** tests the SDP communication to the **CN0225**
+       * **Read Firmware Button** reads the current SDP firmware for debugging
+             {{ :resources:eval:user-guides:circuits-from-the-lab:cn0225:11-3-2017_3-30-38_pm_-_edited.png?nolink&600 |}}
+
+Running the System
+~~~~~~~~~~~~~~~~~~
+
+-  Open the **CN0225.exe** application from the default installation location.
+-  Set the correct connector and SCLK settings for the board in the **Data Acquisition Control**
+-  Click the **Connect Button**
+-  Set the desired sampling frequency in Hz and the number of samples to read
+-  Click **Acquire Samples Button**
+-  Click the **Time Domain Tab** to view the ADC sample values vs time plot
+-  Click the **Frequency Domain Tab** to view the FFT plot of the sample values
+-  Click the **Histogram Tab** to view the number of occurrences of ADC sample values
+-  Click the **S/W Version Info Tab** to view the hardware and software versions
+-  Click **Save Data to File Button** if you want to save the current sample readings
+-  Click the **Disconnect Button** if finished
+-  Click the **STOP APP Button** to exit the software
+
+--------------
+
+More Information and Useful Links
+---------------------------------
+
+-  `CN0225 Evaluation Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/cn0225/cn0225%20sdp%20eval%20software.zip>`_
+-  :adi:`CN0225 Circuit Note Page <CN0225>`
+-  :adi:`CN0225 Design Support Package <CN0225 -DesignSupport>`
+-  :adi:`AD7687 Product Page <AD7687>`
+-  :adi:`AD8275 Product Page <AD8275>`
+-  :adi:`AD8295 Product Page <AD8295>`
+-  :adi:`ADR431 Product Page <ADR431>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   :adi:`EVAL-CN0225-SDPZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/CN02225-DesignSupport.zip>`
+
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  PADS project
+   
+
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0225-SDPZ?&v=Rev B>`_ to receive all these great benefits and more!
+
+
+*End of Document*
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-51-12_pm.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-52-02_pm.png
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-52-35_pm.png
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-53-43_pm.png
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-55-25_pm.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-55-36_pm.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-54-25_pm.png
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-55-25_pm.png
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-55-36_pm.png
+   :width: 600px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0225/11-2-2017_3-56-02_pm.png
+   :width: 600px

@@ -1,0 +1,161 @@
+AD7176 - Microcontroller No-OS Driver
+=====================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7176-2`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7176-2SDZ`
+
+Overview
+--------
+
+The AD7176-2 is a fast settling, highly accurate, high resolution, multiplexed Σ-Δ analog-to-digital converter (ADC) for low bandwidth input signals. Its inputs can be configured as two fully differential or four pseudo differential inputs via the integrated crosspoint multiplexer. An integrated precision, 2.5 V, low drift (2ppm/°C), band gap internal reference (with an output reference buffer) adds functionality and reduces the external component count.
+
+The maximum channel scan data rate is 50 kSPS (with a settling time of 20 μs), resulting in fully settled data of 17 noise free bits. User-selectable output data rates range from 5 SPS to 250 kSPS. The resolution increases at lower speeds.
+
+The AD7176-2 offers three key digital filters. The fast settling filter maximizes the channel scan rate. The Sinc3 filter maximizes the resolution for single-channel, low speed applications. For 50 Hz and 60 Hz environments, the AD7176-2 specific filter minimizes the settling times or maximizes the rejection of the line frequency. These enhanced filters enable simultaneous 50 Hz and 60 Hz rejection with a 27 SPS output data rate (with a settling time of 36 ms).
+
+System offset and gain errors can be corrected on a per channel basis. This per channel configurability extends to the type of filter and output data rate used for each channel. All switching of the crosspoint multiplexer is controlled by the ADC and can be configured to automatically control an external multiplexer via the GPIO pins.
+
+The specified operating temperature range is −40°C to +105°C. The AD7176-2 is housed in a 24-lead TSSOP package.
+
+Applications
+~~~~~~~~~~~~
+
+-  Process control : PLC/DCS modules
+-  Temperature and pressure measurement
+-  Medical and scientific multichannel instrumentation
+-  Chromatography
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad7176_eval_sdz.jpg
+   :align: center
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for different microcontroller platforms.
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the AD7176 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD7176 driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD7176 driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   SPI driver architecture
+
+
+The following functions are implemented in this version of AD7176 driver:
+
++--------------------------------------------------------------+---------------------------------------------------+
+| Function                                                     | Description                                       |
++==============================================================+===================================================+
+| int32_t AD7176_ReadRegister(st_reg\* pReg)                   | Reads the value of the specified register.        |
++--------------------------------------------------------------+---------------------------------------------------+
+| int32_t AD7176_WriteRegister(st_reg reg)                     | Writes the value of the specified register.       |
++--------------------------------------------------------------+---------------------------------------------------+
+| int32_t AD7176_Reset(void)                                   | Resets the device.                                |
++--------------------------------------------------------------+---------------------------------------------------+
+| int32_t AD7176_WaitForReady(uint32_t timeout)                | Waits until a new conversion result is available. |
++--------------------------------------------------------------+---------------------------------------------------+
+| int32_t AD7176_ReadData(int32_t\* pData)                     | Reads the conversion result from the device.      |
++--------------------------------------------------------------+---------------------------------------------------+
+| uint8_t AD7176_ComputeCRC8(uint8_t\* pBuf, uint8_t bufSize)  | Computes the CRC checksum for a data buffer.      |
++--------------------------------------------------------------+---------------------------------------------------+
+| uint8_t AD7176_ComputeXOR8(uint8_t \* pBuf, uint8_t bufSize) | Computes the XOR checksum for a data buffer.      |
++--------------------------------------------------------------+---------------------------------------------------+
+| void AD7176_UpdateCRCSetting(void)                           | Updates the CRC settings.                         |
++--------------------------------------------------------------+---------------------------------------------------+
+| int32_t AD7176_Setup(void)                                   | Initializes the AD7176.                           |
++--------------------------------------------------------------+---------------------------------------------------+
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `AD7176 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7176_generic.zip>`_
+   -  `AD7176 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7176_rl78g13.zip>`_
+   
+
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD7176 demonstration project on a Renesas RL78G13 platform.
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+-  :adi:`EVAL-AD7176-2SDZ`
+
+Required Software
+-----------------
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`_
+
+Hardware Setup
+--------------
+
+An EVAL-AD7176-2SDZ board has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+
+::
+
+     EVAL-AD7176-2SDZ Pin T\CS   ->  YRDKRL78G13 J11 connector Pin 1
+     EVAL-AD7176-2SDZ Pin TDIN   ->  YRDKRL78G13 J11 connector Pin 2
+     EVAL-AD7176-2SDZ Pin TDOUT  ->  YRDKRL78G13 J11 connector Pin 3
+     EVAL-AD7176-2SDZ Pin TSCLK  ->  YRDKRL78G13 J11 connector Pin 4
+     EVAL-AD7176-2SDZ Pin GND1   ->  YRDKRL78G13 J11 connector Pin 5
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7176_rl78g13.jpg
+   :align: center
+
+Reference Project Overview
+--------------------------
+
+The reference project reads data from the AD7176 part and displays it on the LCD.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7176_rl78g13_screen.jpg
+   :align: center
+
+Software Project Tutorial
+-------------------------
+
+
+.. note::
+
+   See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
+
+
+More information
+================
+
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`_
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png

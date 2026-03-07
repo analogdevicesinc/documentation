@@ -1,0 +1,185 @@
+AD5766 - No-OS Driver
+=====================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5766`
+-  :adi:`AD5767`
+
+Overview
+--------
+
+The :adi:`AD5766`/:adi:`AD5767` are 16-channel, 16-/12-bit, voltage output Digital-to-Analog Converters (DAC). The DAC generates output voltage ranges from an external 2.5 V reference. Depending on the span selected, the mid-point of the output span can be adjusted allowing for a minimum output voltage as low as −20 V or a maximum output voltage of up to +14 V.
+
+The :adi:`AD5766`/:adi:`AD5767` have integrated output buffers which can sink or source up to 20 mA. This makes the :adi:`AD5766`/:adi:`AD5767` suitable for Indium Phosphide Mach Zehnder Modulator (InP-MZM) biasing applications.
+
+The part incorporates a power-on reset circuit that ensures that the DAC outputs power up to 0V and remain at this level until the output range of the DAC is configured. The outputs of all DACs are updated through register configuration, with the added functionality of user-selectable DAC channels to be simultaneously updated.
+
+The :adi:`AD5766`/:adi:`AD5767` require four power supplies. AVCC is the analog supply for the low voltage DAC circuitry. AVDD and AVSS are the positive and negative high voltage power supplies for the output amplifiers. A VLOGIC supply pin is provided to set the logic levels for the digital interface pins.
+
+The :adi:`AD5766`/:adi:`AD5767` utilize a versatile 4-wire serial interface that operates at clock rates of up to 50 MHz for write mode and up to 10MHz for readback and daisy-chain mode, and is compatible with SPIR, QSPI., MICROWIRE. and DSP interface standards.
+
+The :adi:`AD5766`/:adi:`AD5767` are available in a 4mm x 4mm WLCSP package and operates at the range of -40C to +105C.
+
+Applications:
+
+-  Mach Zehnder Modulator Bias Control
+-  Analog Output Modules
+-  Process Control
+
+Driver Description
+------------------
+
+Functions Declarations
+~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------------------------+--------------------------------------------------------+
+| Function                                                                              | Description                                            |
++=======================================================================================+========================================================+
+| ``int32_t ad5766_spi_cmd_write(ad5766_dev *dev, uint8_t cmd, uint16_t data);``        | SPI command write to device.                           |
++---------------------------------------------------------------------------------------+--------------------------------------------------------+
+| ``int32_t ad5766_spi_readback_reg(ad5766_dev *dev, ad5766_dac dac, uint32_t *data);`` | SPI readback register from device.                     |
++---------------------------------------------------------------------------------------+--------------------------------------------------------+
+| ``int32_t ad5766_set_sw_ldac(ad5766_dev *dev, uint16_t setting);``                    | Set software LDAC for the selected channels.           |
++---------------------------------------------------------------------------------------+--------------------------------------------------------+
+| ``int32_t ad5766_set_clr_span(ad5766_dev *dev, ad5766_clr clr, ad5766_span span);``   | Set clear code and span settings.                      |
++---------------------------------------------------------------------------------------+--------------------------------------------------------+
+| ``int32_t ad5766_set_pwr_dac(ad5766_dev *dev, uint16_t setting);``                    | Power down the selected channels.                      |
++---------------------------------------------------------------------------------------+--------------------------------------------------------+
+| ``int32_t ad5766_set_pwr_dither(ad5766_dev *dev, uint16_t setting);``                 | Power down the dither block for the selected channels. |
++---------------------------------------------------------------------------------------+--------------------------------------------------------+
+| ``int32_t ad5766_set_dither_signal(ad5766_dev *dev, uint32_t setting);``              | Enable the dither signal for the selected channels.    |
++---------------------------------------------------------------------------------------+--------------------------------------------------------+
+| ``int32_t ad5766_set_inv_dither(ad5766_dev *dev, uint16_t setting);``                 | Invert the dither signal for the selected channels.    |
++---------------------------------------------------------------------------------------+--------------------------------------------------------+
+| ``int32_t ad5766_set_dither_scale(ad5766_dev *dev, uint32_t setting);``               | Enable the dither scaling for the selected channels.   |
++---------------------------------------------------------------------------------------+--------------------------------------------------------+
+| ``int32_t ad5766_do_soft_reset(ad5766_dev *dev);``                                    | Do a software reset.                                   |
++---------------------------------------------------------------------------------------+--------------------------------------------------------+
+| ``int32_t ad5766_set_in_reg(ad5766_dev *dev, ad5766_dac dac, uint16_t data);``        | Set the input register for the selected channel.       |
++---------------------------------------------------------------------------------------+--------------------------------------------------------+
+| ``int32_t ad5766_set_dac_reg(ad5766_dev *dev, ad5766_dac dac, uint16_t data);``       | Set the DAC register for the selected channel.         |
++---------------------------------------------------------------------------------------+--------------------------------------------------------+
+| ``int32_t ad5766_set_dac_reg_all(ad5766_dev *dev, ad5766_dac dac, uint16_t data);``   | Set the DAC register for all channels.                 |
++---------------------------------------------------------------------------------------+--------------------------------------------------------+
+| ``int32_t ad5766_setup(ad5766_dev **device, ad5766_init_param init_param);``          | Initialize the device.                                 |
++---------------------------------------------------------------------------------------+--------------------------------------------------------+
+
+Types Declarations
+~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------+
+
+
+| ``typedef enum {                           |
+
+|     AD5766_ENABLE,                         |
+|     AD5766_DISABLE,                        |
+| } ad5766_state;                            |
+|                                            |
+| typedef enum {                             |
+|     AD5766_DAC_0,                          |
+|     AD5766_DAC_1,                          |
+|     AD5766_DAC_2,                          |
+|     AD5766_DAC_3,                          |
+|     AD5766_DAC_4,                          |
+|     AD5766_DAC_5,                          |
+|     AD5766_DAC_6,                          |
+|     AD5766_DAC_7,                          |
+|     AD5766_DAC_8,                          |
+|     AD5766_DAC_9,                          |
+|     AD5766_DAC_10,                         |
+|     AD5766_DAC_11,                         |
+|     AD5766_DAC_12,                         |
+|     AD5766_DAC_13,                         |
+|     AD5766_DAC_14,                         |
+|     AD5766_DAC_15,                         |
+| } ad5766_dac;                              |
+|                                            |
+| typedef enum {                             |
+|     AD5766_M_20V_TO_0V,                    |
+|     AD5766_M_16V_TO_0V,                    |
+|     AD5766_M_10V_TO_0V,                    |
+|     AD5766_M_12V_TO_P_14V,                 |
+|     AD5766_M_16V_TO_P_10V,                 |
+|     AD5766_M_5V_TO_P_6V,                   |
+|     AD5766_M_10V_TO_P_10V,                 |
+| } ad5766_span;                             |
+|                                            |
+| typedef enum {                             |
+|     AD5766_ZERO,                           |
+|     AD5766_MID,                            |
+|     AD5766_FULL,                           |
+| } ad5766_clr;                              |
+|                                            |
+| typedef struct {                           |
+|     /* SPI */                              |
+|     spi_device      spi_dev;               |
+|     /* GPIO */                             |
+|     gpio_device     gpio_dev;              |
+|     int8_t      gpio_reset;                |
+|     /* Device Settings */                  |
+|     ad5766_state    daisy_chain_en;        |
+| } ad5766_dev;                              |
+|                                            |
+| typedef struct {                           |
+|     /* SPI */                              |
+|     uint8_t     spi_chip_select;           |
+|     spi_mode        spi_mode;              |
+|     spi_type        spi_type;              |
+|     uint32_t        spi_device_id;         |
+|     /* GPIO */                             |
+|     gpio_type       gpio_type;             |
+|     uint32_t        gpio_device_id;        |
+|     int8_t      gpio_reset;                |
+|     /* Device Settings */                  |
+|     ad5766_state    daisy_chain_en;        |
+|     ad5766_clr      clr;                   |
+|     ad5766_span     span;                  |
+|     uint16_t        pwr_dac_setting;       |
+|     uint16_t        pwr_dither_setting;    |
+|     uint32_t        dither_signal_setting; |
+|     uint16_t        inv_dither_setting;    |
+|     uint32_t        dither_scale_setting;  |
+| } ad5766_init_param;``                     |
++--------------------------------------------+
+
+Reference Design
+----------------
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad5766_sdz_analog.png
+   :width: 800px
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad5766_sdz_logic.png
+   :width: 800px
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Implementation of AD5766 Driver.|
+
+   -
+
+   |Header file of AD5766 Driver.|
+
+   -
+
+   |HDL Reference Design.|
+
+   -
+
+   |No-OS Reference Design.|
+
+.. |Implementation of AD5766 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad5766/ad5766`.c
+.. |Header file of AD5766 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ad5766/ad5766`.h
+.. |HDL Reference Design.| image:: https://wiki.analog.com/_media/:git-hdl:`projects/ad5766_sdz`
+.. |No-OS Reference Design.| image:: https://wiki.analog.com/_media/:git-no-OS:`projects/ad5766-sdz`

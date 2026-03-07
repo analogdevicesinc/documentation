@@ -1,0 +1,243 @@
+AD5790 - Microcontroller No-OS Driver
+=====================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD5790`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD5790SDZ`
+
+Reference Circuits
+------------------
+
+-  :adi:`CN0257`
+
+Overview
+--------
+
+The :adi:`AD5790` is a single 20-bit, voltage out Dac that operates from a bipolar supply up to 33V. Reference buffers are also provided on-chip The AD5790 accepts a positive reference input in the range of 5V to VDD – 2.5V and a negative reference input in the range of VSS + 2.5v to 0V. The AD5790 offers a relative accuracy of +/-2 LSB's max and operation is guaranteed monotonic with a -1 LSB to +3 LSB's DNL specification. The part uses a versatile 3-wire serial interface that operates at clock rates up to 35 MHz and is compatible with standard SPI®, QSPI™, MICROWIRE™, and DSP interface standards. The part incorporates a power-on reset circuit that ensures the DAC output powers up to 0V and in a known output impedance state and remains in this state until a valid write to the device takes place. The part provides a disable feature that places the output in a defined load state.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/eval_ad5790_sdz.jpg
+   :align: center
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the AD5790 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD5790 driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD5790 driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   SPI driver architecture
+
+
+The following functions are implemented in this version of AD5790 driver:
+
++---------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| Function                                                                                                            | Description                                                               |
++=====================================================================================================================+===========================================================================+
+| unsigned char AD5790_Init(void)                                                                                     | Initialize the communication with the device.                             |
++---------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| void AD5790_EnableOutput(unsigned char state)                                                                       | The part is placed in normal mode or its output is clamped to the ground. |
++---------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| void AD5790_SetRegisterValue(unsigned char registerAddress, unsigned long registerValue, unsigned char bytesNumber) | Writes data into a register.                                              |
++---------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| unsigned long AD5790_GetRegisterValue(unsigned char registerAddress, unsigned char bytesNumber)                     | Reads the value of a register.                                            |
++---------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| void AD5790_SetDacValue(unsigned long value)                                                                        | Writes to the DAC register.                                               |
++---------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| void AD5790_SoftInstruction(unsigned char instructionBit)                                                           | Asserts RESET, CLR and LDAC in a software manner.                         |
++---------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| void AD5790_Setup(unsigned long setupWord)                                                                          | Writes to Control Register.                                               |
++---------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+
+Downloads
+---------
+
+-  `AD5790 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5790_generic.zip>`_
+-  `AD5790 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5790_rl78g13.zip>`_
+-  `AD5790 RX62N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5790_rx62n.zip>`_
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD5790 demonstration project on a Renesas RL78G13 platform.
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+-  :adi:`EVAL-AD5790SDZ(ADI) <AD5790>`
+
+Required Software
+-----------------
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`_
+-  `Applilet4 for RL78G13 <https://www.renesas.com/us/en/software-tool/ap4-applilet>`_
+
+Hardware Setup
+--------------
+
+An EVAL-AD5790SDZ has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+
+::
+
+     EVAL-AD5790SDZ J3 connector Pin SYNC  (CS)     → YRDKRL78G13 J11 connector Pin 1
+     EVAL-AD5790SDZ J3 connector Pin SDIN  (MOSI)   → YRDKRL78G13 J11 connector Pin 2
+     EVAL-AD5790SDZ J3 connector Pin SDO   (MISO)   → YRDKRL78G13 J11 connector Pin 3
+     EVAL-AD5790SDZ J3 connector Pin SCLK  (SCLK)   → YRDKRL78G13 J11 connector Pin 4
+     EVAL-AD5790SDZ J3 connector Pin DGND  (DGND)   → YRDKRL78G13 J11 connector Pin 5
+     EVAL-AD5790SDZ J3 connector Pin LDAC  (LDAC)   → YRDKRL78G13 J11 connector Pin 9  
+     EVAL-AD5790SDZ J3 connector Pin CLR   (CLR)    → YRDKRL78G13 J11 connector Pin 10
+     EVAL-AD5790SDZ J3 connector Pin RESET (Reset)  → YRDKRL78G13 J18 connector Pin 30  
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5790_rl78g13.jpg
+   :align: center
+
+Software Setup
+--------------
+
+With the **Applilet3 for RL78G13** tool the following peripherals have to be configured:
+
+CSI10 (Clocked Serial Interface 10) – For the AD5790 part and the ST7579 LCD
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Choose to generate the Transmit/receive function for the CSI10 and configure the interface with the following settings:
+
+-  Transfer mode setting: **Single transfer mode**
+-  Data length setting : **8 bits**
+-  Transfer direction setting: **MSB**
+-  Specification of data timing: **Type 3**
+-  Transfer rate setting – Clock mode: **Internal clock (master)**
+-  Transfer rate setting – Baudrate: **1000000** (bps)
+-  Interrupt setting – Transfer interrupt priority (INTCSI10): **Low**
+-  Uncheck the callback functions.
+
+TM00 (Timer 00) – For the DelayMs() function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Configure TM00 as an interval timer:
+
+-  Interval timer setting - Interval value(16 bits): **1** ms
+-  Interval timer setting - Uncheck *Generates INTM00 when counting is started*
+-  Interrupt setting - Uncheck // End of timer channel 0 count, generate an interrupt (INTM00)//
+
+Watchdog Timer
+~~~~~~~~~~~~~~
+
+Disable the watchdog timer:
+
+-  Choose for the Watchdog timer operation setting: **Unused** option.
+
+Reference Project Overview
+--------------------------
+
+The reference project initializes the device, reads the parts internal registers, displays them and then generates a triangle signal.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5790_rl78g13_screen.jpg
+   :align: center
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `rl78g13_software_tutorial <https://wiki.analog.com/rl78g13_software_tutorial>`_
+
+
+Renesas RX62N Quick Start Guide
+===============================
+
+This section contains a description of the steps required to run the AD5790 demonstration project on a Renesas RX62N platform.
+
+.. _required-hardware-1:
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`_
+-  :adi:`EVAL-AD5790EBZ (ADI) <EVAL-AD5790>`
+
+.. _required-software-1:
+
+Required Software
+-----------------
+
+-  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`_
+
+.. _hardware-setup-1:
+
+Hardware Setup
+--------------
+
+An EVAL-AD5790EBZ board has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+
+::
+
+     EVAL-AD5790SDZ J3 connector Pin SYNC  (CS)     →  YRDKRX62N J8 connector Pin 15
+     EVAL-AD5790SDZ J3 connector Pin SDIN  (MOSI)   →  YRDKRX62N J8 connector Pin 19
+     EVAL-AD5790SDZ J3 connector Pin SDO   (MISO)   →  YRDKRX62N J8 connector Pin 22
+     EVAL-AD5790SDZ J3 connector Pin SCLK  (SCLK)   →  YRDKRX62N J8 connector Pin 20
+     EVAL-AD5790SDZ J3 connector Pin DGND  (DGND)   →  YRDKRX62N J8 connector Pin 4
+     EVAL-AD5790SDZ J3 connector Pin LDAC  (LDAC)   →  YRDKRX62N J8 connector Pin 17
+     EVAL-AD5790SDZ J3 connector Pin CLR   (CLR)    →  YRDKRX62N J8 connector Pin 25
+     EVAL-AD5790SDZ J3 connector Pin RESET (Reset)  →  YRDKRX62N J8 connector Pin 26
+     
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5790_rx62n.jpg
+   :align: center
+
+.. _reference-project-overview-1:
+
+Reference Project Overview
+--------------------------
+
+The reference project: The reference project initializes the device, reads the parts internal registers, displays them and then generates a triangle signal.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad5790_rx62n_screen.jpg
+   :align: center
+
+.. _software-project-setup-1:
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
+
+
+More information
+================
+
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`_
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png

@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The term amplifier as used in this chapter means a circuit (or stage) using a single active device rather than a complete system such as an integrated circuit operational amplifier. An amplifier is a device for increasing the power of a signal. This is accomplished by taking energy from a power supply and controlling the output to duplicate the shape of the input signal but with a larger (voltage or current) amplitude. In this sense, an amplifier may be thought of as modulating the voltage or current of the power supply to produce its output." name="description" />
+
+    <title>Chapter 9: Single Transistor Amplifier Stages: &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Chapter 9: Single Transistor Amplifier Stages:</a><ul>
+<li><a class="reference internal" href="#basic-amplifiers">9.1 Basic Amplifiers</a></li>
+<li><a class="reference internal" href="#the-inverting-voltage-amplifier-or-common-emitter-source">9.2 The inverting voltage amplifier or Common emitter/source</a><ul>
+<li><a class="reference internal" href="#dc-bias-techniques-common-emitter-source">9.2.1 DC Bias techniques, common emitter/source</a></li>
+<li><a class="reference internal" href="#small-signal-voltage-gain-common-emitter-or-source">9.2.2 Small signal voltage gain, common emitter or source</a></li>
+<li><a class="reference internal" href="#small-signal-input-impedance-common-emitter-or-source">9.2.3 Small signal input impedance, common emitter or source</a></li>
+<li><a class="reference internal" href="#small-signal-output-impedance-common-emitter-or-source">9.2.4 Small signal output impedance, common emitter or source</a></li>
+<li><a class="reference internal" href="#common-emitter-and-source-lab-activities">9.2.5 common emitter and source Lab Activities</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-current-follower-also-known-as-common-base-or-gate-amplifier">9.3 The Current Follower also known as Common base or gate amplifier</a><ul>
+<li><a class="reference internal" href="#dc-biasing-techniques-current-follower-or-common-base-gate-amplifier">9.3.1 DC Biasing techniques, current follower or common base/gate amplifier</a></li>
+<li><a class="reference internal" href="#small-signal-voltage-gain-current-follower-or-common-base-gate-amplifier">9.3.2 Small signal voltage gain, current follower or common base/gate amplifier</a></li>
+<li><a class="reference internal" href="#input-impedance-current-follower-or-common-base-gate-amplifier">9.3.3 Input impedance, current follower or common base/gate amplifier</a></li>
+<li><a class="reference internal" href="#output-impedance-current-follower-or-common-base-gate-amplifier">9.3.4 Output impedance, current follower or common base/gate amplifier</a></li>
+<li><a class="reference internal" href="#voltage-followers-also-called-emitter-or-source-follower-or-common-collector-or-drain-amplifiers">9.4 Voltage followers (also called Emitter or Source follower or Common collector or drain amplifiers)</a></li>
+<li><a class="reference internal" href="#dc-biasing-techniques-voltage-follower-or-common-collector-drain-amplifier">9.4.1 DC Biasing techniques, Voltage Follower or common collector/drain amplifier</a></li>
+<li><a class="reference internal" href="#voltage-gain-common-collector-or-drain-amplifier">9.4.2 Voltage gain, common collector or drain amplifier</a></li>
+<li><a class="reference internal" href="#example-9-4-2-calculating-the-voltage-gain">Example 9.4.2 Calculating the Voltage Gain</a></li>
+<li><a class="reference internal" href="#input-impedance-voltage-follower-common-collector-or-drain">9.4.3 Input impedance, Voltage Follower (common collector or drain)</a></li>
+<li><a class="reference internal" href="#output-impedance-voltage-follower-common-collector-or-drain">9.4.4 Output impedance, Voltage Follower (common collector or drain)</a></li>
+<li><a class="reference internal" href="#voltage-follower-common-collector-or-drain-lab-activities">9.4.5 Voltage Follower (common collector or drain) Lab Activities</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#series-feedback-emitter-source-degeneration">9.5 Series Feedback: emitter/source degeneration</a><ul>
+<li><a class="reference internal" href="#small-signal-voltage-gain-with-emitter-source-degeneration">9.5.1 Small signal voltage gain with emitter/source degeneration</a></li>
+<li><a class="reference internal" href="#small-signal-input-impedance-with-emitter-source-degeneration">9.5.2 Small signal input impedance with emitter/source degeneration</a></li>
+<li><a class="reference internal" href="#small-signal-output-impedance-with-emitter-source-degeneration">9.5.3 Small signal output impedance with emitter/source degeneration</a></li>
+<li><a class="reference internal" href="#dc-biasing-techniques-with-emitter-source-degeneration">9.5.4 DC Biasing techniques with emitter/source degeneration</a></li>
+<li><a class="reference internal" href="#summary-performing-small-signal-analyses">9.5.5 Summary - performing small-signal analyses:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#millers-theorem">9.6 Miller’s Theorem</a></li>
+<li><a class="reference internal" href="#shunt-feedback">9.7 Shunt feedback:</a><ul>
+<li><a class="reference internal" href="#mos-version">9.7.1 MOS version</a></li>
+<li><a class="reference internal" href="#bjt-version-dc-biasing-techniques">9.7.2 BJT Version DC Biasing techniques</a></li>
+<li><a class="reference internal" href="#example-9-7-2-using-millers-theorem">Example 9.7.2 Using Miller’s Theorem</a></li>
+<li><a class="reference internal" href="#exercise-9-7">Exercise 9.7</a></li>
+<li><a class="reference internal" href="#the-miller-effect">9.7.5 The Miller Effect</a></li>
+<li><a class="reference internal" href="#example-9-7-3-miller-capacitance-example">Example 9.7.3 Miller Capacitance Example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#chapter-summary">Chapter Summary:</a><ul>
+<li><a class="reference internal" href="#appendix-source-absorption-theorem">Appendix: Source absorption theorem</a></li>
+<li><a class="reference internal" href="#example-a1-finding-the-emitter-resistance-using-source-absorption-theorem">Example A1: Finding the Emitter Resistance using Source absorption theorem</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#advanced-topics">Advanced Topics:</a><ul>
+<li><a class="reference internal" href="#at1-diode-bias-generation">AT1 Diode bias generation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="chapter-9-single-transistor-amplifier-stages">
+<h1>Chapter 9: Single Transistor Amplifier Stages:<a class="headerlink" href="#chapter-9-single-transistor-amplifier-stages" title="Link to this heading"></a></h1>
+<section id="basic-amplifiers">
+<h2>9.1 Basic Amplifiers<a class="headerlink" href="#basic-amplifiers" title="Link to this heading"></a></h2>
+<p>The term amplifier as used in this chapter means a circuit (or stage) using a single active device rather than a complete system such as an integrated circuit operational amplifier. An amplifier is a device for increasing the power of a signal. This is accomplished by taking energy from a power supply and controlling the output to duplicate the shape of the input signal but with a larger (voltage or current) amplitude. In this sense, an amplifier may be thought of as modulating the voltage or current of the power supply to produce its output.</p>
+<p>The basic amplifier, figure 9.1, has two ports and is characterized by its gain, input impedance and output impedance. An ideal amplifier has infinite input impedance (R<sub>in</sub> = ∞), zero output impedance (R<sub>out</sub> = 0) and infinite gain (A<sub>vo</sub> = ∞) and infinite bandwidth if desired.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f1.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f1.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f1.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.1 Basic Amplifier Model</p>
+</div>
+<p>The transistor, as we have seen in the previous chapter, is a three-terminal device. Representing the basic amplifier as a two port network as in figure 9.1, there would need to be two input and two output terminals for a total of four. This means one of the transistor terminals must be common to both the input and output circuits. This leads to the names common emitter, etc. for the three basic types of amplifiers. The easiest way to determine if a device is connected as common emitter/source, common collector/drain, or common base/gate is to examine where the input signal enters and the output signal leaves. The remaining terminal is what is thus common to both input and output. In this chapter we will primarily be using n-type transistors (NPN, NMOS) in the example circuits. The same basic amplifier stages can just as easily be implemented using p-type transistors (PNP, PMOS). When larger multi-stage amplifiers are assembled, both types of transistors are often interspersed with each other.</p>
+<p>Building-block amplifier stages:</p>
+<ul class="simple">
+<li><p>Inverting voltage amplifier (also called Common emitter or Common source amplifier)</p></li>
+</ul>
+<blockquote>
+<div><p>* Current Follower (also called Common base or Common gate or cascode)
+* Voltage Follower (also called Common collector or Common drain amplifier)
+* Series feedback (more commonly: emitter/source degeneration)
+* Shunt feedback</p>
+</div></blockquote>
+</section>
+<section id="the-inverting-voltage-amplifier-or-common-emitter-source">
+<h2>9.2 The inverting voltage amplifier or Common emitter/source<a class="headerlink" href="#the-inverting-voltage-amplifier-or-common-emitter-source" title="Link to this heading"></a></h2>
+<p>The common emitter/source amplifier is one of three basic single-stage amplifier topologies. The BJT and MOS versions function as an inverting voltage amplifier and are shown in figure 9.2. The base or gate terminal of the transistor serves as the input, the collector or drain is the output, and the emitter or source is common to both input and output (it may be tied to the ground reference or the power supply rail), which gives rise to its common name.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f2.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f2.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f2.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.2: Basic n-type inverting voltage amplifier circuit (neglecting biasing details)</p>
+</div>
+<p>The common emitter or source amplifier may be viewed as a transconductance amplifier (i.e. voltage in, current out) or as a voltage amplifier (voltage in, voltage out). As a transconductance amplifier, the small signal input voltage, v<sub>be</sub> for a BJT or v<sub>gs</sub> for a FET, times the device transconductance g<sub>m</sub>, modulates the amount of current flowing through the transistor, i<sub>c</sub> or i<sub>d</sub>. By passing this varying current through the output load resistance, R<sub>L</sub> it will be converted back into a voltage V<sub>out</sub>. However, the transistor’s small signal output resistance, r<sub>o</sub>, is not typically high enough for a reasonable transconductance amplifier (ideally infinite). Nor is the output load, R<sub>L</sub>, low enough for a decent voltage amplifier (ideally zero). Another major drawback is the amplifier’s limited high-frequency response due in part to the built in collector base or drain gate capacitance inherent to the transistor. More on how this capacitance effects the frequency response in a later section of this chapter. Therefore, in practice the output often is routed through either a voltage follower (common collector or drain stage), or a current follower (common base or gate stage), to obtain more favorable output and frequency characteristics. This latter combination is called a cascode amplifier as we will see later in the chapter on multi-stage amplifiers.</p>
+<p>In comparison to the BJT common emitter amplifier, the FET common source amplifier has higher input impedance. The generally lower g<sub>m</sub>of the FET vs. the BJT at equal current levels leads to lower voltage gain for the MOS version.</p>
+<section id="dc-bias-techniques-common-emitter-source">
+<h3>9.2.1 DC Bias techniques, common emitter/source<a class="headerlink" href="#dc-bias-techniques-common-emitter-source" title="Link to this heading"></a></h3>
+<p>In order for the common emitter or source amplifier to provide the largest output voltage swing, the voltage at the Base or Gate terminal of the transistor is offset in such a way that the transistor is nominally operating halfway between its cut-off and saturation points. Note the NMOS (a) and NPN (b) characteristic curves in figure 9.2.1. This allows the amplifier stage to more accurately reproduce the positive and negative halves of the input signal superimposed upon the DC Bias voltage. Without this offsetting Bias Voltage only the positive half of the input waveform would be amplified.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f3.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f3.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f3.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<ol class="loweralpha simple">
+<li><p>NMOS</p></li>
+</ol>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f4.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f4.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f4.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<ol class="loweralpha simple" start="2">
+<li><p>NPN</p></li>
+</ol>
+</div>
+<div class="centeralign docutils container">
+<p>Figure 9.2.1 (a) I<sub>D</sub> vs. V<sub>DS</sub>curves and (b) I<sub>C</sub> vs. V<sub>CE</sub> curves</p>
+</div>
+<p>The red line superimposed on the two sets of curves represents the DC load line of a 400 ohm R<sub>L</sub>. To maximize the output swing it is desirable to set the operating point of the transistor, with a zero input signal, at a drain or collector voltage of one half the supply voltage, which would be 4 volts in this case. Finding the corresponding drain or collector current along the load line gives us the target current level. This is around 10mA for R<sub>L</sub> equal to 400 ohms. The next step is to determine the corresponding V<sub>GS</sub> or I<sub>B</sub> for a 10mA I<sub>D</sub> or I<sub>C</sub>. In the NMOS example each curve represents a different V<sub>GS</sub> from 0.9 volts to 1.5 volts in 0.1 volt steps. The NMOS device used in this example has a transconductance of about 40mA/V. The I<sub>D</sub> equal to 10mA point on the load line falls between the 1.4V and 1.3V curves or a V<sub>GS</sub> of 1.32V. In the NPN example each curve represents a different I<sub>B</sub> from 10uA to 100uA in 10uA steps. The 50uA curve happens to cross the load line at I<sub>C</sub> =10mA. The β of the transistor must therefore be about 200. The task now is to somehow provide this DC offset or bias at the Gate or Base of the transistor.</p>
+<p>The first bias technique we will explore is called voltage divider bias and is shown in figure 9.2.2. If we choose the correct resistor values for R<sub>1</sub> and R<sub>2</sub> that will result in a collector or drain current such that one half of the supply voltage, V+ appears across R<sub>L</sub> we should have our desired value of V<sub>GS</sub> or V<sub>BE</sub> (I<sub>B</sub>) for biasing with no signal input. For the MOS case we know that no current flows into the gate so the simple voltage divider ratio can be used to pick R<sub>1</sub> and R<sub>2</sub>. If V+ = 8V and we want V<sub>GS</sub> to equal 1.32 V then:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e1.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e1.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e1.png" style="width: 180px;" />
+</a>
+<p>The actual values of R<sub>1</sub> and R<sub>2</sub> are not so important just their ratio. However, the divider ratio we choose will be correct for only one set of conditions of power supply voltage, transistor threshold voltage and transconductance, and temperature. Actual designs often use more involved bias schemes.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f5.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f5.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f5.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.2.2 Voltage divider bias</p>
+</div>
+<p>For the NPN case the calculation is somewhat more involved. We know we want I<sub>B</sub> to be equal to 50uA. The current that flows in R<sub>1</sub> is the sum of the current in R<sub>2</sub> and I<sub>B</sub> which puts an upper bound on R<sub>1</sub> when R<sub>2</sub> is infinite and no current flows in R<sub>2</sub>. If we assume a nominal V<sub>BE</sub> of 0.65 volts then R<sub>1</sub> must be no larger than 7.35V/50uA or 147KΩ. The purpose of the voltage divider is to attenuate the variations in V+ and thus make the DC operating point of the transistor less sensitive to V+. To that end we need to make the current in R<sub>2</sub> many times larger than I<sub>B</sub>. If we, for example, choose to make I<sub>R2</sub> 9 times I<sub>B</sub> then the current in R<sub>1</sub> will be 10*I<sub>B</sub> or 500uA. R<sub>1</sub> will be 1/10 what we just calculated as the upper bound or 14.7KΩ. R<sub>2</sub> will be V<sub>BE</sub> divided by 450uA or 1.444KΩ which is a divider ratio of 0.8921. If we had simply used 8V-V<sub>BE</sub>/8V as the ratio (assume V<sub>BE</sub> = 0.65V) the divider ratio would have been 0.8125. Taking I<sub>B</sub> into account shifted the required ratio. These values would need to be adjusted slightly if the actual V<sub>BE</sub> was not the 0.65 volts (or β was not 200) we used in this calculation. This points out a major limitation of this bias scheme as we pointed out in the MOS example above. That is the sensitivity to device specific characteristics like V<sub>BE</sub> and β as well as supply voltage and temperature.</p>
+<p>A consequence of including this bias scheme is a lowering of the input impedance. The input now includes the parallel combination of R<sub>1</sub> and R<sub>2</sub> across the input. For the MOS case this now sets the input resistance. For the BJT case we now have R<sub>1</sub>||R<sub>2</sub>||r<sub>π</sub> as the effective input resistance.</p>
+<p>There is another minor inconvenient problem with this bias scheme when it is connected to a prior stage in the signal path. This bias configuration places the AC input signal source directly in parallel with R<sub>2</sub> of the voltage divider. This may not be acceptable, as the input source may tend to add or subtract from the DC voltage dropped across R<sub>2</sub>.</p>
+<p>One way to make this scheme work, although it may not be obvious why it will work, is to place a coupling capacitor between the input voltage source and the voltage divider as in figure 9.2.3 below.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f6.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f6.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f6.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.2.3 Coupling capacitor C<sub>C</sub> prevents voltage divider bias current from flowing into the input signal source.</p>
+</div>
+<p>The capacitor forms a high-pass filter between the input source and the DC voltage divider, passing almost the entire AC portion of the input signal on to the transistor while blocking all the DC bias voltage from being shorted through the input signal source. This makes much more sense if you understand the superposition theorem and how it works. According to superposition, any linear, bilateral circuit can be analyzed in a piecemeal fashion by only considering one power source at a time, then algebraically adding the effects of all power sources to find the final result. If we were to separate the capacitor and the R<sub>1</sub>/R<sub>2</sub>voltage divider circuit from the rest of the amplifier, it might be easier to understand how this superposition of AC and DC would work.</p>
+<p>With only the AC signal source in effect, and a capacitor with an arbitrarily low impedance at the input signal frequency, almost all the AC voltage appears across R<sub>2</sub>.</p>
+</section>
+<section id="small-signal-voltage-gain-common-emitter-or-source">
+<h3>9.2.2 Small signal voltage gain, common emitter or source<a class="headerlink" href="#small-signal-voltage-gain-common-emitter-or-source" title="Link to this heading"></a></h3>
+<p>To calculate the small signal voltage gain of the common emitter or source amplifier we need to insert a small signal model of the transistor into the circuit. The small signal models of the BJT and MOS FET are actually very similar so the gain calculation for either version is much the same. The small signal hybrid-π models for the BJT and MOS amplifiers are shown in figure 9.2.4.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f7.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f7.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f7.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.2.4 Common emitter or source small signal models.</p>
+</div>
+<p>The following are some of the key model equations we will need to calculate the amplifier stage voltage gain. These equations are used for the other amplifier configurations that we will discuss in following sections as well.</p>
+<p>(BJT)<a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e2.png"><img alt="image1" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e2.png" style="width: 100px;" /></a> (MOS)</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e3.png"><img alt="image2" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e3.png" style="width: 100px;" /></a></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e4.png"><img alt="image3" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e4.png" style="width: 100px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e5.png"><img alt="image4" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e5.png" style="width: 150px;" /></a></p>
+<p>The small signal voltage gain A<sub>v</sub> is the ratio of the input voltage to the output voltage:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e6.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e6.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e6.png" style="width: 100px;" />
+</a>
+<p>The input voltage V<sub>in</sub> (v<sub>be</sub> for the BJT and v<sub>gs</sub> for the MOS) times the transconductance g<sub>m</sub> is equal to the small signal output current, i<sub>o</sub> in the collector or drain. V<sub>out</sub> will be simply this current times the load resistance R<sub>L,</sub>neglecting the small signal output resistance r<sub>o</sub> for the moment. Notice the minus sign because of the direction of the current i<sub>o</sub>.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e7.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e7.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e7.png" style="width: 250px;" />
+</a>
+<p>Rearranging for the gain we get:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e8.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e8.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e8.png" style="width: 200px;" />
+</a>
+<p>Substituting the BJT and MOS g<sub>m</sub> equations we get:</p>
+<p>(BJT)<a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e9.png"><img alt="image5" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e9.png" style="width: 200px;" /></a> (MOS)</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e10.png"><img alt="image6" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e10.png" style="width: 200px;" /></a></p>
+<p>Comparing these two gain equations we see that they both depend on the DC collector or drain currents. The BJT gain is inversely proportional to V<sub>T</sub> (the Thermal Voltage) which is approximately 26mV at room temperature. The Thermal Voltage, V<sub>T</sub> increases with increasing temperature so from the equation we see that the gain will actually decrease with increasing temperature. The MOS gain is inversely proportional to the over drive voltage, V<sub>ov</sub> (V<sub>GS</sub> – V<sub>th</sub>) which is often much larger than V<sub>T</sub> at similar drain currents leading to the lower gain for the MOS stage vs. the BJT stage for approximately equal bias currents.</p>
+<p>If R<sub>L</sub> is relatively large when compared to the small signal output resistance then the gain will be reduced because the actual output load is the parallel combination of R<sub>L</sub> and r<sub>o</sub>. In fact r<sub>o</sub> puts an upper bound on the possible gain that can be achieved with a single transistor amplifier stage.</p>
+</section>
+<section id="small-signal-input-impedance-common-emitter-or-source">
+<h3>9.2.3 Small signal input impedance, common emitter or source<a class="headerlink" href="#small-signal-input-impedance-common-emitter-or-source" title="Link to this heading"></a></h3>
+<p>Again looking at the small signal models in figure 9.2.4 we see that for the BJT case the input V<sub>in</sub> will see r<sub>π</sub> as a load. For the MOS case V<sub>in</sub> will see basically an open circuit (for low frequencies anyway). This will of course be the case absent any Gate or Base bias circuitry.</p>
+</section>
+<section id="small-signal-output-impedance-common-emitter-or-source">
+<h3>9.2.4 Small signal output impedance, common emitter or source<a class="headerlink" href="#small-signal-output-impedance-common-emitter-or-source" title="Link to this heading"></a></h3>
+<p>Again looking at the small signal models in figure 9.2.4 we see that for both the BJT case and the MOS case the output impedance is the parallel combination of R<sub>L</sub> and r<sub>o</sub>. For most practical applications we can ignore r<sub>o</sub> because it is very often much larger than R<sub>L</sub>. Below are the BJT and MOS r<sub>o</sub> equations.</p>
+<p>(BJT)<a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e11.png"><img alt="image7" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e11.png" style="width: 200px;" /></a> (MOS)</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e12.png"><img alt="image8" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e12.png" style="width: 200px;" /></a></p>
+</section>
+<section id="common-emitter-and-source-lab-activities">
+<h3>9.2.5 common emitter and source Lab Activities<a class="headerlink" href="#common-emitter-and-source-lab-activities" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line"><strong>ADALM1000 Lab Activity 5,</strong> <a class="reference internal" href="../../alm1k/alm-lab-5.html"><span class="doc">Common emitter amplifier</span></a></div>
+<div class="line"><strong>ADALM1000 Lab Activity 5M,</strong> <a class="reference internal" href="../../alm1k/alm-lab-5m.html"><span class="doc">Common source amplifier</span></a></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>ADALM2000 Lab Activity 5,</strong> <a class="reference internal" href="../electronics-lab-5.html"><span class="doc">Common emitter amplifier</span></a></div>
+<div class="line"><strong>ADALM2000 Lab Activity 5M,</strong> <a class="reference internal" href="../electronics-lab-5m.html"><span class="doc">Common source amplifier</span></a></div>
+<div class="line"><strong>ADALM2000 Lab Activity 5FR,</strong> <a class="reference internal" href="../electronics-lab-5fr.html"><span class="doc">Amplifier Frequency Response</span></a></div>
+</div>
+</section>
+</section>
+<section id="the-current-follower-also-known-as-common-base-or-gate-amplifier">
+<h2>9.3 The Current Follower also known as Common base or gate amplifier<a class="headerlink" href="#the-current-follower-also-known-as-common-base-or-gate-amplifier" title="Link to this heading"></a></h2>
+<p>The Current Follower or Common base/gate amplifier has a high voltage gain, relatively low input impedance and high output impedance compared to the voltage follower or common collector/drain amplifier. The BJT and MOS versions are shown in figure 9.3</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f8.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f8.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f8.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.3: Basic n-type current follower or common base/gate circuit (neglecting biasing details)</p>
+</div>
+<section id="dc-biasing-techniques-current-follower-or-common-base-gate-amplifier">
+<h3>9.3.1 DC Biasing techniques, current follower or common base/gate amplifier<a class="headerlink" href="#dc-biasing-techniques-current-follower-or-common-base-gate-amplifier" title="Link to this heading"></a></h3>
+<p>In applications where only a positive power supply voltage is provided some means of providing the necessary DC voltage level for the common gate or base terminal is required. This might be as simple as a voltage divider between ground and the supply. In applications where both positive and negative supply voltages are available, ground is a convenient node to use for the common gate or base terminal.</p>
+<p>The common gate or base stage is most often used in combination with the common emitter or source amplifier in what is known as the cascode configuration. The cascode will be covered in the next chapter on multi stage amplifiers in greater detail.</p>
+</section>
+<section id="small-signal-voltage-gain-current-follower-or-common-base-gate-amplifier">
+<h3>9.3.2 Small signal voltage gain, current follower or common base/gate amplifier<a class="headerlink" href="#small-signal-voltage-gain-current-follower-or-common-base-gate-amplifier" title="Link to this heading"></a></h3>
+<p>To calculate the small signal voltage gain of the common base or gate amplifier we insert the small signal model of the transistor into the circuit. The small signal models for the BJT and MOS amplifiers are shown in figure 9.3.1.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f9.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f9.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f9.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.3.1 Current follower or Common base/gate small signal models.</p>
+</div>
+<p>Much like in the common emitter/source amplifier stage the small signal input voltage, V<sub>in</sub> (v<sub>be</sub> for the BJT and v<sub>gs</sub> for the MOS) times the transconductance g<sub>m</sub> is equal to the small signal output current, i<sub>o</sub> in the collector or drain. V<sub>out</sub> will be simply this current times the load resistance R<sub>L,</sub>neglecting the small signal output resistance r<sub>o</sub> for the moment.</p>
+<p>It is perhaps more useful to consider the current gain of the current follower stage rather than its voltage gain. In the case of the MOS version we know that I<sub>S</sub> = I<sub>D</sub>because I<sub>G</sub>= 0. Thus the MOS stage current gain is exactly 1. In the case of the BJT version we know that the ratio of I<sub>C</sub> to I<sub>E</sub>is equal to α and thus will be slightly less than 1.</p>
+</section>
+<section id="input-impedance-current-follower-or-common-base-gate-amplifier">
+<h3>9.3.3 Input impedance, current follower or common base/gate amplifier<a class="headerlink" href="#input-impedance-current-follower-or-common-base-gate-amplifier" title="Link to this heading"></a></h3>
+<p>Again looking at the small signal models in figure 9.3.1 we see that for the BJT case the input V<sub>in</sub> will see r<sub>π</sub>in parallel with the series combination of g<sub>m</sub> and R<sub>L</sub> as a load. For the MOS case V<sub>in</sub> will see basically just the series combination of g<sub>m</sub> and R<sub>L</sub>. The equation below (from the BJT small signal T model) relates g<sub>m</sub> and the resistance seen at the emitter r<sub>E</sub>. We can also use this relationship to give us the resistance seen at the source r<sub>S</sub>.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e13.png"><img alt="image9" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e13.png" style="width: 200px;" /></a> (also r<sub>S</sub> for MOS)</p>
+<p>It is also important to note here that 100% (neglecting I<sub>B</sub> in the BJT case) of the current from the input source flows through the transistor and becomes the output current. Thus the name current follower.</p>
+</section>
+<section id="output-impedance-current-follower-or-common-base-gate-amplifier">
+<h3>9.3.4 Output impedance, current follower or common base/gate amplifier<a class="headerlink" href="#output-impedance-current-follower-or-common-base-gate-amplifier" title="Link to this heading"></a></h3>
+<p>Again looking at the small signal models in figure 9.3.1 we see that for both the BJT case and the MOS case the output impedance is the parallel combination of R<sub>L</sub> and r<sub>o</sub>. We can generally assume this is true if we consider that V<sub>in</sub> is driven from a low impedance (nearly ideal) voltage source. If this is not the case then the finite output impedance must be added in series with r<sub>o</sub>. If the input of the current follower is driven by the relatively high output impedance of a transconductance amplifier such as the common emitter or source amplifier from earlier then the output impedance for the combined amplifier can be very high. For most practical applications we can ignore r<sub>o</sub> because it is very often much larger than R<sub>L</sub>.</p>
+<div class="line-block">
+<div class="line"><strong>ADALM1000 Lab Activity,</strong> <a class="reference internal" href="../../alm1k/alm-lab-cb.html"><span class="doc">BJT Common Base Amplifier</span></a></div>
+<div class="line"><strong>ADALM1000 Lab Activity,</strong> <a class="reference internal" href="../../alm1k/alm-lab-cg.html"><span class="doc">BJT Common Gate Amplifier</span></a></div>
+<div class="line"><strong>ADALM1000 Lab Activity,</strong> <a class="reference internal" href="../../alm1k/alm-lab-fca.html"><span class="doc">Folded Cascode Amplifier</span></a></div>
+</div>
+</section>
+<section id="voltage-followers-also-called-emitter-or-source-follower-or-common-collector-or-drain-amplifiers">
+<h3>9.4 Voltage followers (also called Emitter or Source follower or Common collector or drain amplifiers)<a class="headerlink" href="#voltage-followers-also-called-emitter-or-source-follower-or-common-collector-or-drain-amplifiers" title="Link to this heading"></a></h3>
+<p>The Emitter or Source follower is often called a common Collector or Drain amplifier because the collector or drain is common to both the input and the output. This amplifier configuration, figure 9.4, has its output taken from the emitter/source resistor and is useful as an impedance matching device since its input impedance is much higher than its output impedance. The voltage follower is also termed a “buffer” for this reason.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f10.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f10.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f10.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.4:Basic n-type Voltage follower or common collector/drain circuit (neglecting biasing details)</p>
+</div>
+<p>The gain of the voltage follower is always less than one since r<sub>E</sub>and R<sub>L</sub>or r<sub>S</sub> and R<sub>L</sub> form a voltage divider. The input to output offset is set by the V<sub>BE</sub> drop of about 0.65 volts below the base for the BJT and V<sub>GS</sub> below the gate for the MOS. This configuration’s function is not voltage gain but current or power gain and impedance matching. The input impedance is much higher than its output impedance so that a signal source does not have to supply as much power to the input. This can be seen from the fact that the base current is on the order of 100 times (β) less than the emitter current. The low output impedance of the emitter follower matches a low impedance load and buffers the signal source from that low impedance.</p>
+</section>
+<section id="dc-biasing-techniques-voltage-follower-or-common-collector-drain-amplifier">
+<h3>9.4.1 DC Biasing techniques, Voltage Follower or common collector/drain amplifier<a class="headerlink" href="#dc-biasing-techniques-voltage-follower-or-common-collector-drain-amplifier" title="Link to this heading"></a></h3>
+<p>The collector/source current is basically determined by the emitter/source resistor so the main design variables in this case is simply R<sub>L</sub> and the power supply voltage.</p>
+</section>
+<section id="voltage-gain-common-collector-or-drain-amplifier">
+<h3>9.4.2 Voltage gain, common collector or drain amplifier<a class="headerlink" href="#voltage-gain-common-collector-or-drain-amplifier" title="Link to this heading"></a></h3>
+<p>To calculate the small signal voltage gain of the voltage follower configuration we insert the small signal model of the transistor into the circuit. The small signal models for the BJT and MOS amplifiers are shown in figure 9.4.1.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f11.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f11.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f11.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.4.1 Voltage Follower small signal models.</p>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e14.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e14.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e14.png" style="width: 300px;" />
+</a>
+</section>
+<section id="example-9-4-2-calculating-the-voltage-gain">
+<h3>Example 9.4.2 Calculating the Voltage Gain<a class="headerlink" href="#example-9-4-2-calculating-the-voltage-gain" title="Link to this heading"></a></h3>
+<p>For the circuit in figure 9.4.2 calculate the voltage gain A<sub>V</sub> = V<sub>out</sub>/V<sub>in</sub>.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f12.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f12.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f12.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.4.2 BJT Voltage gain example</p>
+</div>
+<p>To use the voltage gain formula we just obtained using the small signal models we need to first calculate r<sub>E</sub>. From section 9.3.3 we are given the equation for r<sub>E</sub>:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e13.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e13.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e13.png" style="width: 150px;" />
+</a>
+<p>To use this formula we need to know I<sub>E</sub>. We know that the voltage across R<sub>L</sub> is V<sub>out</sub>. We also know that V<sub>out</sub> = V<sub>in</sub> - V<sub>BE</sub>. If we use an estimate of V<sub>BE</sub> to be 0.6 volts, we get V<sub>out</sub> = 5.6 - 0.6 or 5 volts. If R<sub>L</sub> is 1KΩ then I<sub>E</sub> is 5mA. Using a room temperature value for V<sub>T</sub> = 25mV, we get r<sub>E</sub> is equal to 5Ω. Substituting these values into our gain equation we get:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e15.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e15.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e15.png" style="width: 400px;" />
+</a>
+</section>
+<section id="input-impedance-voltage-follower-common-collector-or-drain">
+<h3>9.4.3 Input impedance, Voltage Follower (common collector or drain)<a class="headerlink" href="#input-impedance-voltage-follower-common-collector-or-drain" title="Link to this heading"></a></h3>
+<p>(BJT)</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e16.png"><img alt="image10" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e16.png" style="width: 400px;" /></a></p>
+</section>
+<section id="output-impedance-voltage-follower-common-collector-or-drain">
+<h3>9.4.4 Output impedance, Voltage Follower (common collector or drain)<a class="headerlink" href="#output-impedance-voltage-follower-common-collector-or-drain" title="Link to this heading"></a></h3>
+<p>The output impedance is simple the parallel combination of the Emitter (Source) resistor R<sub>L</sub> and the small signal emitter (source) resistance of the transistor r<sub>E</sub>. Again from section 9.3.3, the equation for r<sub>E</sub> is as follows:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e13.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e13.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e13.png" style="width: 150px;" />
+</a>
+<p>Similarly, the small signal source resistance, r<sub>S</sub>, for a MOS FET is 1/g<sub>m</sub>.</p>
+<p>Referring back to our gain example in figure 9.4.2, we can also calculate the output resistance, which will be the parallel combination of the 1KΩ R<sub>L</sub> and the 3Ω r<sub>E</sub> or 2.99Ω.</p>
+</section>
+<section id="voltage-follower-common-collector-or-drain-lab-activities">
+<h3>9.4.5 Voltage Follower (common collector or drain) Lab Activities<a class="headerlink" href="#voltage-follower-common-collector-or-drain-lab-activities" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line"><strong>ADALM1000 Lab Activity 11,</strong> <a class="reference internal" href="../../alm1k/alm-lab-11.html"><span class="doc">BJT Emitter follower</span></a></div>
+<div class="line"><strong>ADALM1000 Lab Activity 11M,</strong> <a class="reference internal" href="../../alm1k/alm-lab-11m.html"><span class="doc">MOS Source follower</span></a></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>ADALM2000 Lab Activity 11,</strong> <a class="reference internal" href="../electronics-lab-11.html"><span class="doc">BJT Emitter follower</span></a></div>
+<div class="line"><strong>ADALM2000 Lab Activity 11m,</strong> <a class="reference internal" href="../electronics-lab-11m.html"><span class="doc">MOS Source follower</span></a></div>
+</div>
+</section>
+</section>
+<section id="series-feedback-emitter-source-degeneration">
+<h2>9.5 Series Feedback: emitter/source degeneration<a class="headerlink" href="#series-feedback-emitter-source-degeneration" title="Link to this heading"></a></h2>
+<p>Common emitter/source amplifiers give the amplifier an inverted output and can have a very high gain and can vary widely from one transistor to the next. The gain is a strong function of both temperature and bias current, and so the actual gain is somewhat unpredictable. Stability is another problem associated with such high gain circuits due to any unintentional positive feedback that may be present. Other problems associated with the circuit are the low input dynamic range imposed by the small-signal limit; there is high distortion if this limit is exceeded and the transistor ceases to behave like its small-signal model. When negative feedback is introduced, many of these problems are reduced, resulting in improved performance. There are several ways to introduce feedback in this simple amplifier stage, the easiest and most reliable of which is accomplished by introducing a small value resistor in the emitter circuit (R<sub>E</sub>). This is also referred to as series feedback. The amount of feedback is dependent on the relative signal level dropped across this resistor. The signal seen across R<sub>E</sub> is out of phase with the signal seen at V<sub>out</sub> and thus subtracts from V<sub>out</sub> reducing its amplitude. When the emitter resistor value approaches that of the collector load resistor (R<sub>L</sub>), the gain will approach unity (A<sub>v</sub> ~ 1).</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f16.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f16.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f16.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.5: Adding an emitter/source resistor decreases gain. However, with increased linearity and stability</p>
+</div>
+<p>It is much less common to include a degeneration resistor in MOS designs. This is because, in microelectronic integrated circuits, the gain (g<sub>m</sub>) of the device can be adjusted by changing the W/L ratio. This degree of design freedom is not generally available in Bipolar (BJT) processes.</p>
+<p><strong>DC Biasing example with emitter degeneration</strong></p>
+<p>There are some BJT biasing rules of thumb:</p>
+<div class="line-block">
+<div class="line">1. Set I<sub>E</sub> not I<sub>B</sub> or V<sub>BE</sub> : less dependence on β and temperature (V<sub>T</sub>)</div>
+<div class="line">2. Allow 1/3V<sub>CC</sub> across R<sub>C</sub>, V<sub>CE</sub> and R<sub>B2</sub></div>
+<div class="line">3. Save power by allowing only 10% of I<sub>E</sub> in R<sub>B</sub></div>
+</div>
+<p>We are given the following for circuit in figure 9.5.1, V<sub>CC</sub> = 20V ; I<sub>E</sub> = 2mA ; β = 100. From our rules of thumb we set V<sub>B</sub> = 1/3*V<sub>CC</sub> = 6.7 V.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f17.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f17.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f17.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.5.1 DC Biasing example</p>
+</div>
+<p>V<sub>B</sub> = (R<sub>B2</sub>/(R<sub>B1</sub>+R<sub>B2</sub>))*V<sub>CC</sub> =&gt; 6.7V = (R<sub>B2</sub>/(R<sub>B1</sub>+R<sub>B2</sub>))*20 (1)</p>
+<p>V<sub>CC</sub> /(R<sub>B1</sub> + R<sub>B2</sub> ) = 0.1*I<sub>E</sub> =&gt; 20/(R<sub>B1</sub> + R<sub>B2</sub>) = 200 μA (2)</p>
+<p>Solving equations (1) and (2) we get:</p>
+<p>R<sub>B1</sub>=2R<sub>B2</sub> then from (2)</p>
+<p>3R<sub>B2</sub> = 20/200 μA = 100kΩ</p>
+<p>So, R<sub>B2</sub> = 33kΩ and R<sub>B1</sub> = 66kΩ</p>
+<p>Now we have V<sub>E</sub> = V<sub>B</sub> – V<sub>BE</sub> = 6.7 – 0.7 = 6 V and I<sub>E</sub> is 2 mA: R<sub>E</sub> = V<sub>E</sub>/I<sub>E</sub> = 6/2mA = 3kΩ.</p>
+<p>I<sub>C</sub> = (β/(β+1))*I<sub>E</sub> = (100/101)*2mA = 1.98 mA and I<sub>B</sub> = I<sub>C</sub>/β = 1.98mA/100 = 19.8μA.</p>
+<p>From our rules of thumb we know that V<sub>C</sub> = 2/3*20V = 13.3 V</p>
+<p>So to find R<sub>L</sub> we have: R<sub>L</sub> = (V<sub>CC</sub> – V<sub>C</sub>)/I<sub>C</sub> = (20 – 13.3)/1.98mA = 3.4kΩ</p>
+<section id="small-signal-voltage-gain-with-emitter-source-degeneration">
+<h3>9.5.1 Small signal voltage gain with emitter/source degeneration<a class="headerlink" href="#small-signal-voltage-gain-with-emitter-source-degeneration" title="Link to this heading"></a></h3>
+<p>To calculate the small signal voltage gain of the common emitter/source amplifier with the addition of emitter/source degeneration we again insert the small signal model of the transistor into the circuit. The small signal models for the BJT and MOS amplifiers are shown in figure 9.5.1.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f18.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f18.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f18.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.5.1 Common emitter/source with degeneration</p>
+</div>
+<p>The impedance R<sub>E</sub> reduces the overall transconductance g<sub>m</sub> of the circuit by a factor of g<sub>m</sub>R<sub>E</sub> + 1, which makes the voltage gain:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e17.png"><img alt="image11" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e17.png" style="width: 290px;" /></a> (when g<sub>m</sub>R<sub>E</sub> &gt;&gt; 1)</p>
+<p>So the voltage gain depends almost exclusively on the ratio of the resistors R<sub>L</sub> / R<sub>E</sub> rather than the transistor’s intrinsic and unpredictable characteristics. The distortion and stability characteristics of the circuit are thus improved at the expense of a reduction in gain.</p>
+<p>Going back to our earlier biasing example, figure 9.5.1, values for I<sub>C</sub> = 2mA, R<sub>L</sub> = 3.4KΩ and R<sub>E</sub> = 3KΩ to calculate the small signal gain we first find g<sub>m</sub> = I<sub>C</sub>/V<sub>T</sub> = 2mA/25mV = 0.08. Using our formula for A<sub>V</sub>:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e18.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e18.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e18.png" style="width: 300px;" />
+</a>
+</section>
+<section id="small-signal-input-impedance-with-emitter-source-degeneration">
+<h3>9.5.2 Small signal input impedance with emitter/source degeneration<a class="headerlink" href="#small-signal-input-impedance-with-emitter-source-degeneration" title="Link to this heading"></a></h3>
+<p>Again looking at the small signal models in figure 9.4.1 we see that for the BJT case the input V<sub>in</sub> see r<sub></sub>in series with degeneration resistor R<sub>E</sub> as a load. For the MOS case V<sub>in</sub> see basically an open circuit.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e19.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e19.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e19.png" style="width: 200px;" />
+</a>
+</section>
+<section id="small-signal-output-impedance-with-emitter-source-degeneration">
+<h3>9.5.3 Small signal output impedance with emitter/source degeneration<a class="headerlink" href="#small-signal-output-impedance-with-emitter-source-degeneration" title="Link to this heading"></a></h3>
+<p>Again looking at the small signal models in figure 9.5.1 we see that for both the BJT case and the MOS case, much like in the earlier common emitter/source stage, the output impedance is the parallel combination of R<sub>L</sub> and r<sub>o</sub> but now degeneration resistor R<sub>E</sub> is in series with r<sub>o</sub>. For most practical applications we can ignore r<sub>o</sub> because it is very often much larger than R<sub>L</sub>.</p>
+</section>
+<section id="dc-biasing-techniques-with-emitter-source-degeneration">
+<h3>9.5.4 DC Biasing techniques with emitter/source degeneration<a class="headerlink" href="#dc-biasing-techniques-with-emitter-source-degeneration" title="Link to this heading"></a></h3>
+<p>Basically the same techniques used in the simple common emitter/source amplifier stage, which were discussed in section 9.2.1, can be used when the emitter degeneration resistor is added. The added voltage across the R<sub>E</sub> (R<sub>E</sub>*I<sub>E</sub>) must be added to the bias level. This added voltage drop actually make the operating point (I<sub>C</sub>) much less sensitive to the bias level.</p>
+<p>The small signal voltage gain of the common emitter amplifier with the emitter resistance is approximately R<sub>L</sub> / R<sub>E</sub>. For cases when a gain larger than 5-10 is needed, R<sub>E</sub> may be become so small that the necessary good biasing condition, V<sub>E</sub> = R<sub>E</sub>*I<sub>E</sub> &gt; 10* V<sub>T</sub> cannot be achieved. A way to restore the small signal voltage gain while maintaining the desired DC operating bias is to use a by-pass capacitor as is figure 9.5.4. The small AC signal sees an emitter resistance of just R<sub>E1</sub> while for DC bias the emitter resistance is the series combination of R<sub>E</sub> = R<sub>E1</sub>+R<sub>E2</sub>. Calculations for the common emitter amplifier with emitter degeneration can be applied here by replacing R<sub>E</sub> with R<sub>E1</sub> when deriving the amplifier gain, and input and output impedances, because a sufficiently large bypass capacitor in effects shorts R<sub>E2</sub>and is effectively removed from the circuit for sufficiently high frequency inputs.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f19.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f19.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f19.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.5.4 addition of emitter by-pass capacitor</p>
+</div>
+<p>Using our earlier biasing exercise in figure 9.5.1 as an example but splitting the 3KΩ R<sub>E</sub> into two resistors as in figure 9.5.4 with R<sub>E1</sub>= 1KΩ and R<sub>E2</sub> = 2KΩ with C<sub>1</sub> = 1uF we can recalculate the small signal gain for high frequencies, where C<sub>1</sub> effectively shorts out R<sub>E2</sub>, to be:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e20.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e20.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-e20.png" style="width: 300px;" />
+</a>
+<p>The addition of by-pass capacitor C<sub>1</sub>, however, modifies the low frequency response of the circuit. We know from our two gain calculations that the DC gain of the circuit is -1.13 and the gain increases to -3.36 for high frequencies. We can therefore assume that the frequency response consists of a relatively low frequency zero followed by a somewhat higher frequency pole. The formulas for the zero and pole are as follows:</p>
+<p><span class="math notranslate nohighlight">\(F_Z = 1/(2 \pi R_E2 C_1)\)</span></p>
+<p><span class="math notranslate nohighlight">\(F_P = 1/(2R prime _E C_1)\)</span></p>
+<p>where R’<sub>E</sub>= R<sub>E2</sub> || (R<sub>E1</sub> + r<sub>e</sub>)</p>
+<p>For our example problem with R<sub>E1</sub> = 1K , R<sub>E2</sub> = 2K and C<sub>1</sub> = 1uF we get the frequency for the zero equal to 80 Hz and the frequency for the pole equal to 237 Hz. The simulated frequency response from 1 Hz to 100 KHz for the example circuit is shown in figure 9.5.5.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f20.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f20.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f20.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.5.5 simulated frequency response</p>
+</div>
+</section>
+<section id="summary-performing-small-signal-analyses">
+<h3>9.5.5 Summary - performing small-signal analyses:<a class="headerlink" href="#summary-performing-small-signal-analyses" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">1. Find DC operating point.</div>
+<div class="line">2. Calculate small-signal parameters: g<sub>m</sub>, r<sub></sub>, r<sub>e</sub> etc.</div>
+<div class="line">3. Replace DC voltage sources with AC grounds and DC current sources with open circuits.</div>
+<div class="line">4. Replace transistor with small-signal model (hybrid-π model or T model)</div>
+</div>
+</section>
+</section>
+<section id="millers-theorem">
+<h2>9.6 Miller’s Theorem<a class="headerlink" href="#millers-theorem" title="Link to this heading"></a></h2>
+<p>At this point we are going to take a diversion to discuss Miller’s Theorem. While the methods we have been using up to this point are completely general, there are certain configurations that lend themselves to be analyzed more simply by Miller’s Theorem. Miller’s theorem states that in a linear circuit, if there is a branch where an impedance Z, connects two nodes with node voltages V<sub>1</sub>and V<sub>2</sub>, this branch can be replaced by two other branches connecting the corresponding nodes to ground by impedances respectively Z / (1-K) and KZ / (K-1), where the gain from node 1 to node 2 is K = V<sub>2</sub> / V<sub>1</sub>.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f21.png"><img alt="image12" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f21.png" style="width: 350px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f22.png"><img alt="image13" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f22.png" style="width: 350px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 9.6.1 Miller’s Theorem</p>
+</div>
+<p>At this point we will go through the steps that show how the Miller impedances are arrived at. We can use the equivalent two-port network technique to replace the two-port represented in figure 9.6.1(a) to its equivalent in figure 9.6.2.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f23.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f23.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f23.png" style="width: 350px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.6.2</p>
+</div>
+<p>Replacing the voltage sources in figure 9.6.2 with their Norton equivalent current sources we get figure 9.6.3.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f24.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f24.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f24.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.6.3</p>
+</div>
+<p>Using the source absorption theorem (see the Appendix at the end of this chapter), we get figure 9.6.4.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f25.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f25.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f25.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.6.4</p>
+</div>
+<p>Which gives us figure 9.6.5 (which is figure 9.6.1(b) ) when we parallel combine the two impedances.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f26.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f26.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f26.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.6.5</p>
+</div>
+</section>
+<section id="shunt-feedback">
+<h2>9.7 Shunt feedback:<a class="headerlink" href="#shunt-feedback" title="Link to this heading"></a></h2>
+<p>Another biasing technique for the common emitter or source amplifier, called shunt feedback, is accomplished by the introduction of some fraction of the collector or drain signal back to the input at the base or gate. This is done via the biasing resistor (R<sub>F</sub>), as shown in figure 9.7.1. Resistor R<sub>F</sub> connects between two nodes that have gain, A<sub>V</sub> (K), between them and thus the application of Miller’s theorem is the best way analyze the small signal characteristics of this circuit.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f27.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f27.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f27.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.7.1 Drain-to-Gate (a) and Collector-to-Base (b) shunt feedback</p>
+</div>
+<section id="mos-version">
+<h3>9.7.1 MOS version<a class="headerlink" href="#mos-version" title="Link to this heading"></a></h3>
+<p>Figure 9.7.1(a) shows a common source NMOS amplifier using drain feedback biasing. This type of biasing is often used with enhancement mode MOSFETS and can be useful when operating with a low voltage power supply (V<sub>+</sub>). If Vin is AC coupled, the voltage on the gate is equal to the voltage on the drain (V<sub>GS</sub> = V<sub>DS</sub>) since no gate current flows through R<sub>F</sub>. If Vin is DC coupled then a voltage divider is formed by R<sub>F</sub> and R<sub>S</sub> and V<sub>GS</sub> will be less than V<sub>DS</sub>. It is useful to note that the transistor is always in saturation when V<sub>GS</sub> = V<sub>DS</sub>. If the drain current increases for some reason, such as a change in V<sub>+</sub>, the gate voltage drops. The decreased gate voltage in turn causes the drain current to decreases which causes the gate voltage to increase. The negative feedback loop reaches an equilibrium that is the bias point for the circuit.</p>
+<p>Some data sheets for enhancement MOSFETS give a value for I<sub>D</sub>(on), where V<sub>GS</sub> = V<sub>DS</sub> lf I<sub>D</sub>(on) is known, the circuit component can be easily calculated as shown in Example 9.3. The input impedance of a circuit using drain feedback biasing is equal to the value of R<sub>F</sub> divided by the voltage gain plus one.</p>
+</section>
+<section id="bjt-version-dc-biasing-techniques">
+<h3>9.7.2 BJT Version DC Biasing techniques<a class="headerlink" href="#bjt-version-dc-biasing-techniques" title="Link to this heading"></a></h3>
+<p>This configuration employs negative feedback to stabilize the operating point. In this form of biasing, the base feedback resistor R<sub>F</sub> is connected to the collector instead of connecting it to the DC source V<sub>+</sub>. So any large increase in the collector current will induce a voltage drop across the R<sub>L</sub> resistor that will in turn reduce the transistor’s base current.</p>
+<p>If we assume that the input source Vin is AC coupled and no DC bias current flows in R<sub>S</sub>, from Kirchhoff’s voltage law, the voltage V<sub>RF</sub>across the base resistor R<sub>F</sub> is:</p>
+<p><span class="math notranslate nohighlight">\(V_RF = V_+ - (I_c + I_b )R_L - V_BE\)</span></p>
+<p>By the Ebers–Moll model, I<sub>c</sub> = βI<sub>b</sub>, and so:</p>
+<p><span class="math notranslate nohighlight">\(V_RF = V_+ - (βI_b + I_b )R_L - V_BE = V_+ - I_b (β + 1 )R_L - V_BE\)</span></p>
+<p>From Ohm’s law, the base current I<sub>b</sub>=V<sub>RF</sub>/R<sub>F</sub>, and so:</p>
+<p><span class="math notranslate nohighlight">\(I_b R_F = V_+ - I_b (β + 1 )R_L - V_BE\)</span></p>
+<p>Hence, the base current I<sub>b</sub> is:</p>
+<p><span class="math notranslate nohighlight">\(I_b = (V_+ - V_BE ) / (R_F + (β + 1 )R_L )\)</span></p>
+<p>If V<sub>BE</sub> is held constant and temperature increases, then the collector current I<sub>c</sub> increases. However, a larger I<sub>c</sub> causes the voltage drop across resistor R<sub>L</sub> to increase, which in turn reduces the voltage V<sub>RF</sub> across the base resistor R<sub>F</sub>. A lower base-resistor voltage drop reduces the base current I<sub>b</sub>, which results in less collector current I<sub>c</sub>. Because an increase in collector current with temperature is opposed, the operating point is kept more stable.</p>
+<p><strong>Pros:</strong></p>
+<ul class="simple">
+<li><p>Circuit stabilizes the operating point against variations in temperature and β (ie. Transistor process variations)</p></li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul class="simple">
+<li><p>In this circuit, to keep I<sub>c</sub> independent of β, the following condition must be met:</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\displaystyle I_c = βI_b = (βV_+ - βB_BE ) / (R_F +(β+1)R_L) approx \frac{V_+ - V_BE}{R_L}\)</span></p>
+<p>which is the case when:</p>
+<p><span class="math notranslate nohighlight">\(βR_L &gt;&gt; R_F\)</span></p>
+<ul class="simple">
+<li><p>As β is fixed (and generally not known precisely) for a given transistor, this relation can be satisfied either by keeping R<sub>L</sub> fairly large or making R<sub>F</sub> very low.</p></li>
+</ul>
+<blockquote>
+<div><p>* If R<sub>L</sub> is large, a high V<sub>+</sub> is necessary, which increases cost as well as precautions necessary while handling.
+* If R<sub>F</sub> is low, the reverse bias of the collector–base region is small, which limits the range of collector voltage swing that leaves the transistor in active mode.
+* The resistor R<sub>F</sub> causes an AC feedback, reducing the voltage gain of the amplifier. This undesirable effect is a trade-off for greater quiescent operating point stability.</p>
+</div></blockquote>
+<p><strong>Usage:</strong> The feedback also decreases the input impedance of the amplifier as seen from the base, which can be advantageous. Due to the gain reduction from feedback, this biasing form is used only when the trade-off for stability is warranted.</p>
+</section>
+<section id="example-9-7-2-using-millers-theorem">
+<h3>Example 9.7.2 Using Miller’s Theorem<a class="headerlink" href="#example-9-7-2-using-millers-theorem" title="Link to this heading"></a></h3>
+<p>For the amplifier shown in figure 9.7.2(a) with a DC coupled input source V<sub>in</sub> calculate the input and output resistance and voltage gain A<sub>V</sub>. We first need to start with some preliminary DC analysis to determine the operating point of Q<sub>1</sub>. For this we set V<sub>in</sub> to zero volts, i.e. short it out. If we assume a V<sub>BE</sub> of 0.65 volts we will have 65 uA flowing in the 10K resistor R<sub>S</sub>. Given that V<sub>+</sub> is 10V, we would like V<sub>out</sub> to be 5 volts. The current in R<sub>L</sub> is equal to 500uA and will split between the collector of Q<sub>1</sub> and the feedback resistor R<sub>F</sub>. The voltage across the 62.7KΩ feedback resistor is 5-0.65 or 4.35 volts. The current in R<sub>F</sub> splits between the current in R<sub>S</sub> and I<sub>B</sub>. The base current I<sub>B</sub> is equal to 4.35/62.7KΩ – 65uA or 4.3 uA. We should get a collector current of 500uA - 69.3uA or 430.3uA with a β of about 100.</p>
+<p>If we use Miller’s theorem to replace the feedback resistor R<sub>F</sub> with its two equivalent impedances we get figure 9.7.2(b). Assuming that the voltage gain from base to collector A<sub>V</sub> is significantly greater than 1 we can make the simplification that A<sub>V</sub>/(A<sub>V</sub>-1) is close to 1. The effective load resistance, R<sub>Leq</sub> we will use to calculate the gain will be 10KΩ||62.7KΩ or 8.62KΩ. Now we can use the same common emitter or source small signal gain equations we used in section 9.2.2. The 430uA collector currents gives us a g<sub>m</sub> of 430uA/25mV or 0.0172. We know that A<sub>V</sub> = -g<sub>m</sub>R<sub>Leq</sub> or A<sub>V</sub> = -0.0172*8.62K = -148 which is &gt;&gt; 1. The input resistance seen at the base of Q<sub>1</sub> will be the r<sub>π</sub>of Q<sub>1</sub>, which is equal to β/g<sub>m</sub> or 100/0.0172 = 5.814KΩ, in parallel with the Miller resistance 62.7KΩ/149 = 421Ω thus the effective input resistance, R<sub>base</sub> will be about 392.5Ω.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f28.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f28.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f28.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.7.2 Example using Miller’s theorem</p>
+</div>
+<p>The input source resistance R<sub>S</sub> and the equivalent resistance at the base, R<sub>base</sub> form a voltage divider. To calculate the overall voltage gain from voltage source V<sub>in</sub> to V<sub>out</sub> we multiply this divider ratio times the base to collector gain, A<sub>V</sub> we just calculated.</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle R_base / (R_S + R_base ) A_V = (392.\frac{5}{10392}.5) \times 148 = 5.6\)</span></p>
+<p>From our investigation of the inverting op amp configuration in Chapter 3 we learned that for amplifiers with less than infinite gain the actual gain will be less than the ideal gain equation, Gain = -R<sub>F</sub>/R<sub>S</sub> predicts. If our single transistor amplifier had infinite gain the gain from V<sub>in</sub> to V<sub>out</sub> would be 62.7KΩ/10KΩ or 6.27. In Chapter 3 we got an estimation of the percentage error, ε, due to finite gain A<sub>V</sub> (remember β in this equation is the feedback factor not the current gain of the transistor):</p>
+<p><span class="math notranslate nohighlight">\(\epsilon(%) approx 100/(A_V \beta ) = 100/(148 \times 6.2) = 10.7%\)</span></p>
+<p>The actual gain of 5.6 is about 10% smaller than the ideal gain of 6.27.</p>
+</section>
+<section id="exercise-9-7">
+<h3>Exercise 9.7<a class="headerlink" href="#exercise-9-7" title="Link to this heading"></a></h3>
+<p>Part 1 DC operating point:</p>
+<p>For the circuit in figure 9.7.3 calculate the required R<sub>F</sub> to bias the DC operating point such that V<sub>out</sub> is equal to ½ the supply voltage or +5V when Vin = 0. Assume V<sub>BE</sub> = 0.65V and β = 200.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f29.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f29.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f29.png" style="width: 350px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.7.3</p>
+</div>
+<p>Part 2 Small signal gain and impedance:</p>
+<p>Given the value for R<sub>F</sub> calculated in part 1 calculate the voltage gain A<sub>V</sub>, the input resistance R<sub>base</sub> and the output resistance R<sub>out</sub>. Also calculate the overall voltage gain V<sub>out</sub>/V<sub>in</sub> and explain why this is different than the ideal value of –R<sub>F</sub>/R<sub>S</sub>.</p>
+</section>
+<section id="the-miller-effect">
+<h3>9.7.5 The Miller Effect<a class="headerlink" href="#the-miller-effect" title="Link to this heading"></a></h3>
+<p>The Miller effect is key to predicting the frequency response of an inverting amplifier stage where capacitive feedback is included. Typically there’s a low-pass pole in the voltage gain stage created by R<sub>S</sub> of the signal source and a feedback capacitor C<sub>C</sub>. But, the low pass cutoff is not simply determined by R<sub>S</sub> and C<sub>C</sub>. The Miller effect creates an effective capacitance at the base/gate of the transistor that appears as C<sub>C</sub> scaled by the amplifier’s voltage gain.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f30.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f30.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f30.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.7.3 Miller feedback capacitor</p>
+</div>
+<p>The Miller effect is especially useful when you’re trying to produce a low-pass filter on an IC op amp with a relatively low frequency cut-off. The difficulty is that large capacitors are difficult to make because they take up so much space on the IC. The solution is to make a small capacitor and then scale up its behavior using the Miller effect.</p>
+<p>Equivalent Circuit</p>
+<p>Here’s a simplified version of the circuit above.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f31.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f31.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f31.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.7.4 Miller feedback equivalent circuit</p>
+</div>
+<p>Miller said that you can approximate the input capacitance by replacing C<sub>C</sub> with a different capacitance C<sub>M</sub> across the R<sub>IN</sub>. How much bigger is C<sub>M</sub>? C<sub>C</sub> is multiplied by the voltage gain (A<sub>V</sub> = g<sub>m</sub>R<sub>L</sub>) of the amplifier. Miller’s theorem also states there will be a capacitor C’<sub>C</sub> across R<sub>L</sub> that is equal to C<sub>C</sub> times (A<sub>V</sub>+1)/A<sub>V</sub> which for large values of A<sub>V</sub> we assume to be 1.</p>
+<p><span class="math notranslate nohighlight">\(C_M = C_C · (1+A_V) , C’_C ~ C_C\)</span></p>
+<p>How does this work? Well, we know that forcing a voltage across a capacitor causes a current to flow. How much current depends on the capacitance: I = C<sub>C</sub> · ΔV/Δt. However, in this circuit, the voltage gain at R<sub>L</sub> causes a much larger ΔV across C<sub>C</sub> - causing an even larger current to flow through C<sub>C</sub>. Therefore, it looks like a much larger capacitance from the point of view of V<sub>IN</sub>.</p>
+</section>
+<section id="example-9-7-3-miller-capacitance-example">
+<h3>Example 9.7.3 Miller Capacitance Example<a class="headerlink" href="#example-9-7-3-miller-capacitance-example" title="Link to this heading"></a></h3>
+<p>In this example we will use the circuit shown in figure 9.7.5 to illustrate the Miller multiplication of the feedback capacitor C<sub>C</sub>. Bias resistors R<sub>1</sub> and R<sub>S</sub> are chosen to set the DC operating point such that V<sub>out</sub> is at a DC value of approximately V+/2 or 5V. With the given R<sub>L</sub> of 10KΩ the low frequency small signal voltage gain A<sub>V</sub> is approximately 80.</p>
+<p>We can now calculate the -3 dB frequency and unity gain (0dB) frequency for a feedback capacitor, C<sub>C</sub>, of 0.001 uF. The frequency where the gain from V<sub>in</sub> to V<sub>out</sub> falls by -3 dB from its DC values is approximately equal to:</p>
+<p>The unity gain frequency is approximately equal to :</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f32.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f32.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f32.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.7.5 Miller Capacitance Example</p>
+</div>
+<p>The circuit in figure 9.7.5 was simulated and the AC frequency response from 1 Hz to 1 MHz is plotted in figure 9.7.6. The gain from V<sub>in</sub> to V<sub>out</sub> in dB is 20Log(A<sub>V</sub>) or about 38 dB. The -3 dB frequency in this case would be where the gain curve crosses 35 dB (~263 Hz) and the unit gain frequency would be where the gain curve crosses the 0 dB line (~21.7 KHz ). The simulation results are in reasonably close agreement with our approximate hand calculations. For our hand calculations we assumed that R<sub>1</sub> was sufficiently larger than R<sub>S</sub> so it could be ignored and likewise the r<sub>π</sub> of Q<sub>1</sub> was large enough to not materially affect R<sub>S</sub>.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f33.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f33.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f33.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9.7.6 Frequency sweep simulation</p>
+</div>
+</section>
+</section>
+<section id="chapter-summary">
+<h2>Chapter Summary:<a class="headerlink" href="#chapter-summary" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>The Common Emitter stage has high gain but low input and high output impedance.</p></li>
+</ul>
+<blockquote>
+<div><p>* R<sub>E</sub> emitter degeneration improves input impedance and provides negative feedback to stabilize DC operating point but with some loss in gain.
+* The Common Base stage has low input, high output impedance but is good at high frequencies. Good current buffer sometimes called the current follower.
+* The Common Collector or Emitter follower can be biased with large input impedance, low output impedance but has approximately unity gain. Good voltage buffer.</p>
+</div></blockquote>
+<section id="appendix-source-absorption-theorem">
+<h3>Appendix: Source absorption theorem<a class="headerlink" href="#appendix-source-absorption-theorem" title="Link to this heading"></a></h3>
+<p>The source absorption theorem has two dual forms: the voltage source absorption and the current source absorption theorems.</p>
+<p>The voltage source absorption theorem states that if, in one branch of the circuit with current I, there is a voltage source controlled by I, the source can be replaced by a simple impedance with value equal to the source controlling factor.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f34.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f34.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f34.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9A.1</p>
+</div>
+<p>The proof is trivial. An impedance Z where a current I flows has the same voltage drop the I controlled source generates at its terminals.</p>
+<p>The current source absorption theorem states that if, in one branch of the circuit there is a current source controlled by a voltage V, the source can be replaced by a simple admittance with value equal to the source controlling factor.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f35.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f35.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f35.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9A.2</p>
+</div>
+<p>The proof is again trivial. An admittance Y submitted to a voltage V imposes the same current that the source Y V provides.</p>
+</section>
+<section id="example-a1-finding-the-emitter-resistance-using-source-absorption-theorem">
+<h3>Example A1: Finding the Emitter Resistance using Source absorption theorem<a class="headerlink" href="#example-a1-finding-the-emitter-resistance-using-source-absorption-theorem" title="Link to this heading"></a></h3>
+<p>Figure A9.3 shows the small signal equivalent circuit model of a transistor. Find the resistance Rin looking into the emitter (with base and collector at small signal AC grounds).</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f36.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f36.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f36.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9A.3</p>
+</div>
+<p>Using what we just learned about the source absorption theorem for current sources we know we can replace the controlled source with a resistance equal to 1/g<sub>m</sub>its transconductance.</p>
+</section>
+</section>
+<section id="advanced-topics">
+<h2>Advanced Topics:<a class="headerlink" href="#advanced-topics" title="Link to this heading"></a></h2>
+<section id="at1-diode-bias-generation">
+<h3>AT1 Diode bias generation<a class="headerlink" href="#at1-diode-bias-generation" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f37.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f37.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f37.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure AT1.1 Inserting a Diode connected device in the bias divider</p>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f38.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f38.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr9-f38.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure AT1.2 Inserting R<sub>2</sub>increases the input resistance</p>
+</div>
+<p><strong>Return to</strong> <a class="reference internal" href="chapter-8.html"><span class="doc">Previous Chapter</span></a></p>
+<p><strong>Go to</strong> <a class="reference internal" href="chapter-10.html"><span class="doc">Next Chapter</span></a></p>
+<p><strong>Return to</strong> <a class="reference internal" href="electronics-toc.html"><span class="doc">Table of Contents</span></a></p>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

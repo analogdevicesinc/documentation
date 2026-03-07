@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The ADAR2001-EVALZ evaluation board is designed for testing the performance of the adar2001. The adar2001 is a 4-channel 4x Frequency Multiplier/Filter designed for mmWave security imaging applications. All RF input/outputs are brought out to 2.92mm (K) coaxial connectors. On-board logic level translators convert between the external logic level and the on-chip level of 1.8V." name="description" />
+
+    <title>EVALUATING THE ADAR2001 4-CHANNEL 4x FREQUENCY MULTIPLIER/FILTER &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">EVALUATING THE ADAR2001 4-CHANNEL 4x FREQUENCY MULTIPLIER/FILTER</a></li>
+<li><a class="reference internal" href="#general-description">GENERAL DESCRIPTION</a></li>
+<li><a class="reference internal" href="#related-parts">RELATED PARTS</a><ul>
+<li><a class="reference internal" href="#adar2004-10ghz-to-40ghz-4-channel-rx-mixer-with-4x-lo">ADAR2004: 10GHz to 40GHz 4-Channel Rx Mixer With 4x LO</a></li>
+<li><a class="reference internal" href="#ad9083-16-channel-100mhz-bandwidth-jesd204b-analog-to-digital-converter">AD9083: 16-Channel, 100MHz Bandwidth, JESD204B Analog-to-Digital Converter</a></li>
+<li><a class="reference internal" href="#adf5610-microwave-wideband-synthesizer-with-integrated-vco">ADF5610: Microwave Wideband Synthesizer with Integrated VCO</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#requirements">REQUIREMENTS</a><ul>
+<li><a class="reference internal" href="#equipment">Equipment</a></li>
+<li><a class="reference internal" href="#documents">Documents</a></li>
+<li><a class="reference internal" href="#software">Software</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#evaluation-board-hardware">EVALUATION BOARD HARDWARE</a><ul>
+<li><a class="reference internal" href="#power-supply-requirements">Power Supply Requirements</a></li>
+<li><a class="reference internal" href="#rf-input-and-output-signals">RF Input and Output Signals</a></li>
+<li><a class="reference internal" href="#digital-signals">Digital Signals</a><ul>
+<li><a class="reference internal" href="#spi-control">SPI Control</a></li>
+<li><a class="reference internal" href="#state-machine-control">State Machine Control</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#evaluation-and-test-procedures">EVALUATION AND TEST PROCEDURES</a><ul>
+<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
+<li><a class="reference internal" href="#test-setup-loss-calibration">Test Setup Loss Calibration</a></li>
+<li><a class="reference internal" href="#software-initialization">Software Initialization</a></li>
+<li><a class="reference internal" href="#mutliplier-block-setup">Mutliplier Block Setup</a></li>
+<li><a class="reference internal" href="#transmitter-block-setup">Transmitter Block Setup</a></li>
+<li><a class="reference internal" href="#sequencer-programming">Sequencer Programming</a><ul>
+<li><a class="reference internal" href="#multiplier-filter-mode-settings">Multiplier/Filter Mode Settings</a></li>
+<li><a class="reference internal" href="#multiplier-filter-state-order">Multiplier/Filter State Order</a></li>
+<li><a class="reference internal" href="#transmitter-mode-settings">Transmitter Mode Settings</a></li>
+<li><a class="reference internal" href="#transmitter-state-order">Transmitter State Order</a></li>
+<li><a class="reference internal" href="#sequencer-control">Sequencer Control</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#adc-block">ADC Block</a><ul>
+<li><a class="reference internal" href="#channel-power-detection">Channel Power Detection</a></li>
+<li><a class="reference internal" href="#temperature-sensor">Temperature Sensor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="evaluating-the-adar2001-4-channel-4x-frequency-multiplier-filter">
+<h1>EVALUATING THE ADAR2001 4-CHANNEL 4x FREQUENCY MULTIPLIER/FILTER<a class="headerlink" href="#evaluating-the-adar2001-4-channel-4x-frequency-multiplier-filter" title="Link to this heading"></a></h1>
+</section>
+<section id="general-description">
+<h1>GENERAL DESCRIPTION<a class="headerlink" href="#general-description" title="Link to this heading"></a></h1>
+<p>The ADAR2001-EVALZ evaluation board is designed for testing the performance of the <a class="icon adi reference external" href="https://www.analog.com/adar2001" target="_blank">adar2001</a>. The <a class="icon adi reference external" href="https://www.analog.com/adar2001" target="_blank">adar2001</a> is a 4-channel 4x Frequency Multiplier/Filter designed for mmWave security imaging applications. All RF input/outputs are brought out to 2.92mm (K) coaxial connectors. On-board logic level translators convert between the external logic level and the on-chip level of 1.8V.</p>
+<p>There is an <a class="icon adi reference external" href="https://www.analog.com/SDP" target="_blank">Analog Devices System Demonstration Platform (SDP)</a> connector which can be used in conjunction with an <a class="icon adi reference external" href="https://www.analog.com/SDP" target="_blank">SDP</a> controller board to manipulate the internal registers as well as cycle through the programmed modes of the two internal state machines.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/adar2001" target="_blank">adar2001</a> has two integrated state machines, one for the Multiplier section and another for the Transmitter section. The sequencers are configured through the SPI, and can be used to quickly cycle through pre-programmed states. These sequencers can be exercised in one of two ways:</p>
+<ul class="simple">
+<li><p>External Advance and Reset Pins:</p>
+<ul>
+<li><p>TxADV - Transmitter Advance (Pin 8)</p></li>
+<li><p>TxRST - Transmitter Reset (Pin 9)</p></li>
+<li><p>MADV - Multiplier Advance (Pin 10)</p></li>
+<li><p>MRST - Multiplier Reset (Pin 11)</p></li>
+</ul>
+</li>
+<li><p>SPI writes to the SEQUENCER_CTRL_SPI register (0x44)</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/1_adar2001_board.png"><img alt="ADAR2001-EVALZ Board" src="https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/1_adar2001_board.png" style="width: 500px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 1: ADAR2001-EVALZ Board</strong></p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="related-parts">
+<h1>RELATED PARTS<a class="headerlink" href="#related-parts" title="Link to this heading"></a></h1>
+<section id="adar2004-10ghz-to-40ghz-4-channel-rx-mixer-with-4x-lo">
+<h2>ADAR2004: 10GHz to 40GHz 4-Channel Rx Mixer With 4x LO<a class="headerlink" href="#adar2004-10ghz-to-40ghz-4-channel-rx-mixer-with-4x-lo" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/adar2004" target="_blank">ADAR2004 Product page</a></p></li>
+<li><p><a class="reference internal" href="adar2004-evalz.html"><span class="doc">ADAR2004-EVALZ Wiki</span></a></p></li>
+</ul>
+</section>
+<section id="ad9083-16-channel-100mhz-bandwidth-jesd204b-analog-to-digital-converter">
+<h2>AD9083: 16-Channel, 100MHz Bandwidth, JESD204B Analog-to-Digital Converter<a class="headerlink" href="#ad9083-16-channel-100mhz-bandwidth-jesd204b-analog-to-digital-converter" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ad9083" target="_blank">AD9083 Product page</a></p></li>
+</ul>
+</section>
+<section id="adf5610-microwave-wideband-synthesizer-with-integrated-vco">
+<h2>ADF5610: Microwave Wideband Synthesizer with Integrated VCO<a class="headerlink" href="#adf5610-microwave-wideband-synthesizer-with-integrated-vco" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/adf5610" target="_blank">ADF5610 Product page</a></p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="requirements">
+<h1>REQUIREMENTS<a class="headerlink" href="#requirements" title="Link to this heading"></a></h1>
+<section id="equipment">
+<h2>Equipment<a class="headerlink" href="#equipment" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>ADAR2001-EVALZ Evaluation Board</p></li>
+<li><p>PC running Windows XP or higher</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/SDP-S" target="_blank">SDP-S</a> USB interface board</p></li>
+<li><p>Network Analyzer ≥ 40GHz</p></li>
+<li><p>Spectrum Analyzer ≥ 40GHz</p></li>
+<li><p>Signal Generator ≥ 10GHz</p></li>
+<li><p>Power Supply: 2.5V, ≥ 1A</p></li>
+</ul>
+</section>
+<section id="documents">
+<h2>Documents<a class="headerlink" href="#documents" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/data-sheets/ADAR2001.pdf" target="_blank">ADAR2001 Datasheet</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/02_048668d_top.pdf" target="_blank">ADAR2001-EVALZ Schematic</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/08_048668d.zip" target="_blank">ADAR2001-EVALZ Layout File</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/adar2001_fab.zip" target="_blank">ADAR2001-EVALZ Gerbers</a></p></li>
+</ul>
+</section>
+<section id="software">
+<h2>Software<a class="headerlink" href="#software" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ace" target="_blank">Analog Devices, Inc., Analysis | Control | Evaluation (ACE)</a></p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="evaluation-board-hardware">
+<h1>EVALUATION BOARD HARDWARE<a class="headerlink" href="#evaluation-board-hardware" title="Link to this heading"></a></h1>
+<p><a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Figure 1</a> shows the ADAR2001-EVALZ evaluation board, with 8 RF connectors for the four transmitter outputs and 1 RF connector for the multiplier input. A single BNC connector is provided to apply the required 2.5V power supply. An <a class="icon adi reference external" href="https://www.analog.com/SDP" target="_blank">SDP</a> connector is also included to interface with a USB port on a Windows based PC. The ADAR2001-EVALZ board requires the use of an <a class="icon adi reference external" href="https://www.analog.com/SDP-S" target="_blank">SDP-S</a> or <a class="icon adi reference external" href="https://www.analog.com/SDP-B" target="_blank">SDP-B</a> board along with the ACE software to program the device. <a class="icon adi reference external" href="https://www.analog.com/ace" target="_blank">ace</a> is available for download at <a class="icon adi reference external" href="https://www.analog.com/ace" target="_blank">www.analog.com/ace</a> The <a class="icon adi reference external" href="https://www.analog.com/SDP" target="_blank">SDP</a> control boards are not included with the evaluation board and must be purchased separately. These boards can be ordered through local Analog Devices distributors as well as from <a class="icon adi reference external" href="https://www.analog.com/sdp" target="_blank">www.analog.com/sdp</a>. The RF and digital interfaces for the ADAR2001-EVALZ are shown in <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Figure 2</a>.</p>
+<section id="power-supply-requirements">
+<h2>Power Supply Requirements<a class="headerlink" href="#power-supply-requirements" title="Link to this heading"></a></h2>
+<p>The ADAR2001-EVALZ board must be powered from an external power supply with a voltage level of 2.5V. This power supply must have a current capability of at least 1A.</p>
+<p>There is an on-board LDO (U105) which generates the 1.8V required to safely drive the digital pins of the <a class="icon adi reference external" href="https://www.analog.com/adar2001" target="_blank">adar2001</a>. This supply has an associated jumper, JP1, which can be used to enable and disable the 1.8V supply.</p>
+</section>
+<section id="rf-input-and-output-signals">
+<h2>RF Input and Output Signals<a class="headerlink" href="#rf-input-and-output-signals" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The ADAR2001-EVALZ board has 11 edge-mounted and 2 vertical RF connectors which are described in Table 1.</div>
+<div class="line"><strong>Table 1: RF Connectors</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Connector(s)</p></th>
+<th class="head"><p>Name(s)</p></th>
+<th class="head"><p>Orientation</p></th>
+<th class="head"><p>Series</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>J1, J2</p></td>
+<td><p>RFOUT1+, RFOUT1-</p></td>
+<td><p>Edge-launch</p></td>
+<td><p>2.92mm (K)</p></td>
+<td><p>Channel 1 Differential RF Output</p></td>
+</tr>
+<tr class="row-odd"><td><p>J3, J4</p></td>
+<td><p>RFOUT2+, RFOUT2-</p></td>
+<td><p>Edge-launch</p></td>
+<td><p>2.92mm (K)</p></td>
+<td><p>Channel 2 Differential RF Output</p></td>
+</tr>
+<tr class="row-even"><td><p>J5, J6</p></td>
+<td><p>RFOUT3-, RFOUT3+</p></td>
+<td><p>Edge-launch</p></td>
+<td><p>2.92mm (K)</p></td>
+<td><p>Channel 3 Differential RF Output</p></td>
+</tr>
+<tr class="row-odd"><td><p>J7, J8</p></td>
+<td><p>RFOUT4-, RFOUT4+</p></td>
+<td><p>Edge-launch</p></td>
+<td><p>2.92mm (K)</p></td>
+<td><p>Channel 4 Differential RF Output</p></td>
+</tr>
+<tr class="row-even"><td><p>J9</p></td>
+<td><p>RFIN</p></td>
+<td><p>Edge-launch</p></td>
+<td><p>2.92mm (K)</p></td>
+<td><p>Single-ended RF Input</p></td>
+</tr>
+<tr class="row-odd"><td><p>J11</p></td>
+<td><p>MADV</p></td>
+<td><p>Vertical</p></td>
+<td><p>SMA</p></td>
+<td><p>Multiplier Advance</p></td>
+</tr>
+<tr class="row-even"><td><p>J12</p></td>
+<td><p>TxADV</p></td>
+<td><p>Vertical</p></td>
+<td><p>SMA</p></td>
+<td><p>Transmitter Advance</p></td>
+</tr>
+<tr class="row-odd"><td><p>J13, J14</p></td>
+<td><p>RF THRU-CAL</p></td>
+<td><p>Edge-launch</p></td>
+<td><p>2.92mm (K)</p></td>
+<td><p>Thru-cal</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img alt="image1" src="https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/2_adar2001_connections.png" /> **</p>
+<div class="centeralign docutils container">
+<p>Figure 2: ADAR2001-EVALZ Connections</p>
+</div>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a></p>
+</section>
+<section id="digital-signals">
+<h2>Digital Signals<a class="headerlink" href="#digital-signals" title="Link to this heading"></a></h2>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/sdp" target="_blank">sdp</a> board operates with logic levels of 3.3V, while the <a class="icon adi reference external" href="https://www.analog.com/adar2001" target="_blank">adar2001</a> requires logic levels of 1.8V. To protect the <a class="icon adi reference external" href="https://www.analog.com/adar2001" target="_blank">adar2001</a>, level translators (U102, U103, U104) have been included between the <a class="icon adi reference external" href="https://www.analog.com/sdp" target="_blank">sdp</a> connector and the rest of the board. If digital signals are applied using any method below other than the <a class="icon adi reference external" href="https://www.analog.com/sdp" target="_blank">sdp</a> connector, the applied logic levels must be set to 1.8V. Violating this could stress the <a class="icon adi reference external" href="https://www.analog.com/adar2001" target="_blank">adar2001</a> beyond it’s designed limits and could result in permanent damage to the part. The level translator ICs have two separate supply voltages, one per side, which are used to set the logic level for that side of the translator. The <a class="icon adi reference external" href="https://www.analog.com/sdp" target="_blank">sdp</a> side voltage level is 3.3V and is taken directly from the <a class="icon adi reference external" href="https://www.analog.com/sdp" target="_blank">sdp</a> interface board. The <a class="icon adi reference external" href="https://www.analog.com/adar2001" target="_blank">adar2001</a> side voltage level is 1.8V and is taken from the on-board LDO, U105. To use this <a class="icon adi reference external" href="https://www.analog.com/sdp" target="_blank">sdp</a> interface, the 1.8V rail must be enabled using jumper JP1.</p>
+<section id="spi-control">
+<h3>SPI Control<a class="headerlink" href="#spi-control" title="Link to this heading"></a></h3>
+<p>The ADAR2001-EVALZ board SPI interface is meant to be driven using the <a class="icon adi reference external" href="https://www.analog.com/sdp" target="_blank">sdp</a> connector, P101, however, test points are also provided as an alternative. The test points are labelled with the SPI signal names (SCLK, SDIO, CSB, SDO).</p>
+<p>The test point signals are not routed through level translators to protect the <a class="icon adi reference external" href="https://www.analog.com/adar2001" target="_blank">adar2001</a> in case of an overvoltage scenario. Therefore, if these test points are used to drive the SPI, the input logic level must be set to 1.8V. This was done to provide a simple interface which isn’t limited in speed by the translator devices.</p>
+</section>
+<section id="state-machine-control">
+<h3>State Machine Control<a class="headerlink" href="#state-machine-control" title="Link to this heading"></a></h3>
+<p>The ADAR2001-EVALZ board has multiple interfaces for driving the <a class="icon adi reference external" href="https://www.analog.com/adar2001" target="_blank">adar2001</a>’s internal state machines. The <a class="icon adi reference external" href="https://www.analog.com/sdp" target="_blank">sdp</a> controller board can activate these lines both through the SPI interface, or through the GPIO pins on the <a class="icon adi reference external" href="https://www.analog.com/sdp" target="_blank">sdp</a> connector, P101. Test points are also provided as an alternative and are labelled with the signal names (MRST, TxRST, MADV, TxADV). The reset lines (MRST, TxRST) also have pushbuttons (S1, S2) that can be used to reset the sequencers by hand. The advance lines (MADV, TxADV) also have surface mount SMA connectors (J11, J12) to provide the highest speed interface for cycling through the sequencer states.</p>
+<p>Only the signals in/out of the <a class="icon adi reference external" href="https://www.analog.com/sdp" target="_blank">sdp</a> connector are routed through the level translation circuitry. Therefore, if either the test points or SMA connectors are used to drive the sequencer control lines, the input logic level must be set to 1.8V.</p>
+<div class="line-block">
+<div class="line">Also, if the SMA connectors are used to drive the sequencers at high speed, it’s best practice to terminate the signal lines in 50Ω using resistors R114 and R115. By default, these resistors are not installed.</div>
+</div>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="evaluation-and-test-procedures">
+<h1>EVALUATION AND TEST PROCEDURES<a class="headerlink" href="#evaluation-and-test-procedures" title="Link to this heading"></a></h1>
+<section id="hardware-setup">
+<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
+<p><img alt="image2" src="https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/3_adar2001_setup.png" /> **</p>
+<div class="centeralign docutils container">
+<p>Figure 3: Typical ADAR2001-EVALZ setup for RF measurements</p>
+</div>
+<p><a href="#id3"><span class="problematic" id="id4">**</span></a></p>
+<p><a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Figure 3</a> shows a typical test setup for RF measurements using a spectrum analyzer. Note that any loss in the test setup needs to be calibrated out for the most accurate measurements. The procedure for building this test setup is outlined below:</p>
+<ul class="simple">
+<li><p>Connect the power supply to J10. Leave the supply disabled.</p></li>
+<li><p>Connect the RF signal generator to J9. Leave the generator output disabled.</p></li>
+<li><p>Connect the spectrum analyzer to any RF output connector (J1-J8). Note that it is best practice to differentially test the <a class="icon adi reference external" href="https://www.analog.com/adar2001" target="_blank">adar2001</a> using a balun or hybrid coupler, but it isn’t required. If testing single-ended, be sure to terminate the unused output in 50Ω.</p></li>
+<li><p>Set the power supply to deliver a 2.5V rail with a current limit of 500mA.</p></li>
+<li><p>Check that JP1 is in position to enable the 1.8V digital supply voltage.</p></li>
+<li><p>Set the RF signal generator to provide an input signal at 4.75GHz with a power level of -20dBm.</p></li>
+<li><p>Turn on the power supply and RF signal generator.</p></li>
+</ul>
+</section>
+<section id="test-setup-loss-calibration">
+<h2>Test Setup Loss Calibration<a class="headerlink" href="#test-setup-loss-calibration" title="Link to this heading"></a></h2>
+<p>The loss of the test setup must be removed for accurate data to be taken. The included thru-cal has a trace that is twice the length of the RF output traces and includes two RF connectors. Therefore, the approximate loss of the evaluation board’s RF output traces can be removed by measuring the thru-cal and dividing the loss by two.</p>
+<p>Any external components (balun, combiner, RF cabling, attenuator pads, etc.) should also be calibrated out of the system.</p>
+</section>
+<section id="software-initialization">
+<h2>Software Initialization<a class="headerlink" href="#software-initialization" title="Link to this heading"></a></h2>
+<p><img alt="image3" src="https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/4_adar2001_access_ace_plugin.png" /> **</p>
+<div class="centeralign docutils container">
+<p>Figure 4: Access the** <a class="icon adi reference external" href="https://www.analog.com/adar2001" target="_blank">adar2001</a> <a href="#id5"><span class="problematic" id="id6">**</span></a>Plugin from ACE</p>
+</div>
+<p><a href="#id7"><span class="problematic" id="id8">**</span></a></p>
+<ul class="simple">
+<li><p>Download and install <a class="icon adi reference external" href="https://www.analog.com/ace" target="_blank">ace</a> by following the instructions in the <a class="icon link reference external" href="http://swdownloads.analog.com/ACE/ACE_User_Manual_rev3.pdf" target="_blank">ACE user manual</a>.</p></li>
+<li><p>Connect the <a class="icon adi reference external" href="https://www.analog.com/sdp" target="_blank">sdp</a> controller board to both the PC and the ADAR2001-EVALZ.</p></li>
+<li><p>Open <a class="icon adi reference external" href="https://www.analog.com/ace" target="_blank">ace</a> and connect to the board by double-clicking on the “<a class="icon adi reference external" href="https://www.analog.com/adar2001" target="_blank">adar2001</a> Board” plugin in the “Attached Hardware” section of the Start page. See <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Figure 4</a>.</p></li>
+</ul>
+<p><img alt="image4" src="https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/5_adar2001_main_gui_overview.png" /> **</p>
+<div class="centeralign docutils container">
+<p>Figure 5:** <a class="icon adi reference external" href="https://www.analog.com/adar2001" target="_blank">adar2001</a> <a href="#id9"><span class="problematic" id="id10">**</span></a>Main GUI Overview</p>
+</div>
+<p><a href="#id11"><span class="problematic" id="id12">**</span></a></p>
+</section>
+<section id="mutliplier-block-setup">
+<h2>Mutliplier Block Setup<a class="headerlink" href="#mutliplier-block-setup" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The Multiplier block is designed to take a CW input between 2.5GHz to 10GHz, multiply the frequency by 4, and set the power level. This block also contains bandpass filters with a programmable corner frequency before the Transmitter block and lowpass/notch filters after the Transmitter block. To accomplish this, the Multiplier block has 3 parallel signal paths, each of which is designed to handle a portion of the total frequency band. To ensure that the highest quality signal is fed to the Transmitter block, the correct multiplier band must be selected for the frequency of interest and the bandpass filter must be set to the appropriate corner for the frequency range of interest. See Table 2 for a breakdown of the multiplier bands with respect to frequency.</div>
+<div class="line"><strong>Table 2: Multiplier/Filter settings for optimal harmonic rejection</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Input (GHz)</p></th>
+<th class="head"><p>Output (GHz)</p></th>
+<th class="head"><p>Multiplier Band</p></th>
+<th class="head"><p>BPF</p></th>
+<th class="head"><p>ATTN</p></th>
+<th class="head"><p>LPF/Notch</p></th>
+<th class="head"><p>MULT_EN_x Register Value</p></th>
+<th class="head"><p>MULT_PASS_x Register Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2.50 to 3.00</p></td>
+<td><p>10 to 12</p></td>
+<td><p>Low Band Active <em>(Mid and High Bands Ready)</em></p></td>
+<td><p>LOW</p></td>
+<td><p>0x13</p></td>
+<td><p>ON</p></td>
+<td><p>0x7A</p></td>
+<td><p>0xD3</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.00 to 3.50</p></td>
+<td><p>12 to 14</p></td>
+<td><p>Low Band Active <em>(Mid and High Bands Ready)</em></p></td>
+<td><p>HIGH</p></td>
+<td><p>0x07</p></td>
+<td><p>ON</p></td>
+<td><p>0x7A</p></td>
+<td><p>0x47</p></td>
+</tr>
+<tr class="row-even"><td><p>3.50 to 4.00</p></td>
+<td><p>14 to 16</p></td>
+<td><p>Low Band Active <em>(Mid and High Bands Ready)</em></p></td>
+<td><p>HIGH</p></td>
+<td><p>0x13</p></td>
+<td><p>ON</p></td>
+<td><p>0x7A</p></td>
+<td><p>0x53</p></td>
+</tr>
+<tr class="row-odd"><td><p>4.00 to 5.00</p></td>
+<td><p>16 to 20</p></td>
+<td><p>Mid Band Active <em>(Low and High Bands Ready)</em></p></td>
+<td><p>LOW</p></td>
+<td><p>0x1F</p></td>
+<td><p>OFF</p></td>
+<td><p>0x6E</p></td>
+<td><p>0x9F</p></td>
+</tr>
+<tr class="row-even"><td><p>5.00 to 6.25</p></td>
+<td><p>20 to 25</p></td>
+<td><p>Mid Band Active <em>(Low and High Bands Ready)</em></p></td>
+<td><p>HIGH</p></td>
+<td><p>0x1F</p></td>
+<td><p>OFF</p></td>
+<td><p>0x6E</p></td>
+<td><p>0x1F</p></td>
+</tr>
+<tr class="row-odd"><td><p>6.25 to 8.00</p></td>
+<td><p>25 to 32</p></td>
+<td><p>High Band Active <em>(Low and Mid Bands Ready)</em></p></td>
+<td><p>LOW</p></td>
+<td><p>0x1F</p></td>
+<td><p>OFF</p></td>
+<td><p>0x6B</p></td>
+<td><p>0x9F</p></td>
+</tr>
+<tr class="row-even"><td><p>8.00 to 10.00</p></td>
+<td><p>32 to 40</p></td>
+<td><p>High Band Active <em>(Low and Mid Bands Ready)</em></p></td>
+<td><p>HIGH</p></td>
+<td><p>0x1F</p></td>
+<td><p>OFF</p></td>
+<td><p>0x6B</p></td>
+<td><p>0x1F</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Follow the below steps to configure the Multiplier block for an input signal of 4.75GHz (Tx signal of 19GHz):</p>
+<ul class="simple">
+<li><p>If the recommended bias conditions aren’t sufficient, choose bias points from the dropdowns for the RF input buffer stages. Click on the amplifier itself to enable the buffer. The buffer will change from grey to blue.</p></li>
+<li><p>If the recommended bias condition isn’t sufficient, choose a bias point from the dropdown for the Mid-Band multiplier/amplifier. Check the “Active” box next to the multiplier/amplifier. This will enable the circuit and change the input/output switches to the middle setting. The “Ready” checkbox should automatically be checked as well. The Mid-Band amplifier will change from grey to blue.</p></li>
+<li><p>Be sure that the box setting the bandpass filters to their low corners is <strong>not</strong> checked.</p></li>
+<li><p>Check the box enabling the notch filters after the Tx Power Amplifiers.</p></li>
+<li><p>Choose the desired attenuation setting from the dropdown.</p></li>
+<li><p>Click “Apply Changes” at the top-left of the page to write all the new settings to the part.</p></li>
+</ul>
+</section>
+<section id="transmitter-block-setup">
+<h2>Transmitter Block Setup<a class="headerlink" href="#transmitter-block-setup" title="Link to this heading"></a></h2>
+<p>The Transmitter block is designed to take a CW signal from the Multiplier block, split it to one of 4 channels, and amplify the signal to a power level appropriate for transmission towards a target. To accomplish this, the Transmitter block contains 2 stages of active splitters and 4 Power Amplifiers (PAs). It should be noted that only one channel is intended to be operating at any one time.</p>
+<p>Follow the below steps to configure the Transmitter block to output the 19GHz signal from the Multiplier block on Channel 3:</p>
+<ul class="simple">
+<li><p>If the recommended bias condition isn’t sufficient, choose a bias point for the first active splitter. Click on the splitter to enable it. The splitter will change from grey to blue.</p></li>
+<li><p>If the recommended bias condition isn’t sufficient, choose a bias point for the second set of active splitters. Click on the splitter leading to Channels 3 and 4 to enable it. The splitter will change from grey to blue.</p></li>
+<li><p>If the recommended bias condition isn’t sufficient, choose a bias point for the PAs. Check the “Active” box next to Channel 3. This PA will change from grey to blue and the “Ready” checkbox will be enabled as well.</p></li>
+<li><p>Click “Apply Changes” at the top-left of the page to send the new settings to the chip.</p></li>
+</ul>
+</section>
+<section id="sequencer-programming">
+<h2>Sequencer Programming<a class="headerlink" href="#sequencer-programming" title="Link to this heading"></a></h2>
+<p>The two built-in state machines can be used to quickly change the operating state of the <a class="icon adi reference external" href="https://www.analog.com/adar2001" target="_blank">adar2001</a> without having to perform multiple fast SPI writes.</p>
+<p>There are default modes already written to the control registers to facilitate easy testing of the <a class="icon adi reference external" href="https://www.analog.com/adar2001" target="_blank">adar2001</a>’s functions, but the modes and states are fully configurable to allow for any valid conditions to be tested.</p>
+<p>“Modes” refer to the configuration of the <a class="icon adi reference external" href="https://www.analog.com/adar2001" target="_blank">adar2001</a>, while “States” refer to the order in which the modes will be cycled through when using the two state machines.</p>
+<p>To view the current Mode or State settings, first go to a sequencer programming tab at the top of the screen the two sub-blocks are labelled “Multiplier Block” and “Tx Block”. Choose a view type from the “Current View” box. The top checkbox will show the settings for the Modes. The middle checkbox will show the settings for the States. The bottom checkbox will show the settings from the current configuration. With the sequencer disabled, the “manual” settings will be shown. These are loaded from the SPI mode registers (0x45-0x48) With the sequencer enabled, the settings from the current index in the state machine will be shown. See “VIEW TYPE” in <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Figure 6</a> and <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Figure 8</a>.</p>
+<section id="multiplier-filter-mode-settings">
+<h3>Multiplier/Filter Mode Settings<a class="headerlink" href="#multiplier-filter-mode-settings" title="Link to this heading"></a></h3>
+<p><img alt="image5" src="https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/6_multiplier_sequencer_configuration.png" /> **</p>
+<div class="centeralign docutils container">
+<p>Figure 6: Multiplier/Filter sequencer configuration page</p>
+</div>
+<p><a href="#id13"><span class="problematic" id="id14">**</span></a></p>
+<p>To change any of the pre-programmed Multiplier/Filter Sequencer modes, follow the below steps:</p>
+<ul class="simple">
+<li><p>Switch the view to the tab named “Multiplier Block.”</p></li>
+<li><p>Change the various settings in the block diagram to configure the mode as desired. This block operates in the same manner as the settings on the main page. The only difference is that there aren’t any available settings for the bias points of the various parts of the chip. The bias settings are globally set on the main page and cannot be changed using the state machine.</p></li>
+<li><p>Once the configuration is satisfactory, choose which mode to apply the settings to using the left-hand dropdown, and click “Apply Visible Settings to Mode”. See “RECONFIGURE MODE” in <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Figure 6</a>.</p></li>
+<li><p>Repeat this process to configure all the modes of interest.</p></li>
+<li><p>Click “Apply Changes” at the top-left of the page to send the new settings to the chip.</p></li>
+</ul>
+</section>
+<section id="multiplier-filter-state-order">
+<h3>Multiplier/Filter State Order<a class="headerlink" href="#multiplier-filter-state-order" title="Link to this heading"></a></h3>
+<p>Once the modes have been configured, they must be linked to the states for the sequencer to cycle through.</p>
+<p>To change the order and/or depth of the state machine, follow the below steps:</p>
+<ul class="simple">
+<li><p>Change the depth of the state machine by using the labelled dropdown. See “STATE MACHINE DEPTH” in <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Figure 6</a>. Note that this number indicates the total number of states in use, n. The reset state isn’t included, which is why Mode 0 is always linked to the reset state. <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Figure 7</a> shows how the state machine pointer moves with Advance and Reset pulses.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/num_mult_states.png"><img alt="num_mult_states.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/num_mult_states.png" style="width: 600px;" /></a></p>
+<blockquote>
+<div><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/7_state_machine_loop.png"><img alt="image6" src="https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/7_state_machine_loop.png" style="width: 400px;" /></a></p>
+</div></blockquote>
+<p><a href="#id17"><span class="problematic" id="id18">**</span></a></p>
+<div class="centeralign docutils container">
+<p>Figure 7: Multiplier/Filter State machine pointer diagram</p>
+</div>
+<p><a href="#id19"><span class="problematic" id="id20">**</span></a></p>
+<ul class="simple">
+<li><p>To set the order of the states, choose a mode from the middle Mode dropdown to apply to a state. Choose a state from the middle State dropdown. The current setting of that state will appear in the text on the right. Click the button labelled “Apply Selected Mode to State”, and the readout will update to reflect the change. See “RECONFIGURE STATE” in <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Figure 6</a>.</p></li>
+<li><p>Repeat the process until all the desired states are set.</p></li>
+<li><p>Click “Apply Changes” at the top-left of the page to send the new settings to the chip.</p></li>
+</ul>
+</section>
+<section id="transmitter-mode-settings">
+<h3>Transmitter Mode Settings<a class="headerlink" href="#transmitter-mode-settings" title="Link to this heading"></a></h3>
+<p><img alt="image7" src="https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/8_transmitter_sequencer_configuration.png" /> **</p>
+<div class="centeralign docutils container">
+<p>Figure 8: Transmitter sequencer configuration page</p>
+</div>
+<p><a href="#id22"><span class="problematic" id="id23">**</span></a></p>
+<p>To change any of the pre-programmed Transmitter Sequencer modes, follow the below steps:</p>
+<ul class="simple">
+<li><p>Switch the view to the tab names “Tx Block.”</p></li>
+<li><p>Change the various settings in the block diagram to configure the mode as desired. This block operates in the same manner as the settings on the main page. The only difference is that there aren’t any available settings for the bias points of the various parts of the chip. The bias settings are globally set on the main page and cannot be changed using the state machine.</p></li>
+<li><p>Once the configuration is satisfactory, choose which mode to apply the settings to using the left-hand dropdown, and click “Apply Visible Settings to Mode”. See “RECONFIGURE MODE” in <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Figure 8</a>.</p></li>
+<li><p>Repeat this process to configure all the modes of interest.</p></li>
+<li><p>Click “Apply Changes” at the top-left of the page to send the new settings to the chip.</p></li>
+</ul>
+</section>
+<section id="transmitter-state-order">
+<h3>Transmitter State Order<a class="headerlink" href="#transmitter-state-order" title="Link to this heading"></a></h3>
+<p>Once the modes have been configured, they must be linked to the states for the sequencer to cycle through.</p>
+<p>To change the order and/or depth of the state machine, follow the below steps:</p>
+<ul class="simple">
+<li><p>Change the depth of the state machine by using the labelled dropdown. See “STATE MACHINE DEPTH” in <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Figure 8</a>. Note that this number indicates the total number of states in use, n, not including the reset state which is always linked to Mode 0. See <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Figure 9</a> for a diagram of the state machine indexing.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/num_tx_states.png"><img alt="num_tx_states.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/num_tx_states.png" style="width: 600px;" /></a></p>
+<blockquote>
+<div><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/7_state_machine_loop.png"><img alt="image8" src="https://wiki.analog.com/_media/resources/eval/user-guides/adar2001/7_state_machine_loop.png" style="width: 400px;" /></a></p>
+</div></blockquote>
+<p><a href="#id26"><span class="problematic" id="id27">**</span></a></p>
+<div class="centeralign docutils container">
+<p>Figure 9: Transmitter State machine pointer diagram</p>
+</div>
+<p><a href="#id28"><span class="problematic" id="id29">**</span></a></p>
+<ul class="simple">
+<li><p>To set the order of the states, choose a mode from the middle Mode dropdown to apply to a state. Choose a state from the middle State dropdown. The current setting of that state will appear in the text on the right. Click the button labelled “Apply Selected Mode to State”, and the readout will update to reflect the change. See “RECONFIGURE STATE” in <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Figure 8</a>.</p></li>
+<li><p>Repeat the process until all the desired states are set.</p></li>
+<li><p>Click “Apply Changes” at the top-left of the page to send the new settings to the chip.</p></li>
+</ul>
+</section>
+<section id="sequencer-control">
+<h3>Sequencer Control<a class="headerlink" href="#sequencer-control" title="Link to this heading"></a></h3>
+<p>The Multiplier/Filter and Transmitter sequencers must be enabled before they can control the configuration of the associated <a class="icon adi reference external" href="https://www.analog.com/adar2001" target="_blank">adar2001</a> blocks. To enable the state machines, the checkboxes in the “STATE MACHINE CONTROL” section of the main page must be checked. See <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Figure 5</a>. These checkboxes are also available in the “STATE MACHINE CONTROL” sections of the individual sequencer tabs. See <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Figure 6</a> and <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Figure 8</a>.</p>
+<p>When the state machines are enabled, the lights at the top of the control box will show in green. Also, the top-left section of each sequencer block on the main page will change to show that the state machine is controlling the block, rather than the SPI.</p>
+<p>Once the state machines are enabled, the latching style must be selected. By default, when a pin is pulsed, the upcoming state is loaded into memory on the rising edge of the pulse and is latched out to the individual blocks as quickly as possible. This is necessary to allow direct SPI control of the blocks, but may require special consideration for timing. See the datasheet for details. If latching is enabled, the commands aren’t sent out to the blocks until the falling edge of the pulse. This helps to align all the chip changes so that they happen at once.</p>
+<p>Because the latch is the last check before the data is sent to the various internal blocks, when using the <a class="icon adi reference external" href="https://www.analog.com/adar2001" target="_blank">adar2001</a> in “manual” or SPI mode, the latching must be disabled for both sequencers. If this isn’t done, the blocks will never receive the new instructions unless the external sequencer pins are pulsed. This would be uncommon since the sequencers are disabled in this mode of operation.</p>
+<p>When the sequencers are enabled, the state machine pointers can be moved using the buttons at the bottom of the State Machine Control section. The labelled MADV, MRST, TxADV, TxRST will directly pulse the associated pin on the <a class="icon adi reference external" href="https://www.analog.com/adar2001" target="_blank">adar2001</a>. If necessary, it’s possible to advance or reset both sequencers simultaneously by using the respectively labelled buttons.</p>
+<p>When enabled, the State Machine Control section will also reflect the current State and Mode for each sequencer.</p>
+</section>
+</section>
+<section id="adc-block">
+<h2>ADC Block<a class="headerlink" href="#adc-block" title="Link to this heading"></a></h2>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/adar2001" target="_blank">adar2001</a> has an 8 bit on-chip ADC with a 5-position multiplexer at the input. The multiplexer is used to direct the desired signal to the ADC for measurement. The multiplexer connects to the output of 4 power detectors (one for each RF output channel) as well as a temperature diode. Follow the below steps to enable the ADC for reading:</p>
+<ul class="simple">
+<li><p>Be sure that the chip’s power bit is enabled at the top left of the main page.</p></li>
+<li><p>Turn on the ADC’s power bit by clicking it. The ADC will change color from grey to blue.</p></li>
+<li><p>Enable the internal ADC clock by clicking it. The clock will change from grey to blue.</p></li>
+<li><p>Choose a clock frequency from the dropdown menu.</p></li>
+<li><p>Click “Apply Changes” at the top-left of the page to send the new settings to the chip.</p></li>
+</ul>
+<section id="channel-power-detection">
+<h3>Channel Power Detection<a class="headerlink" href="#channel-power-detection" title="Link to this heading"></a></h3>
+<p>Once the ADC section has been enabled and configured, the on-chip power detectors can be used to determine the output power for each channel. Follow the below steps:</p>
+<ul class="simple">
+<li><p>Enable the desired detector by clicking it. The diode symbol will change from grey to blue.</p></li>
+<li><p>Click the switch to change the selected input to the detector of choice (positions 1 – 4).</p></li>
+<li><p>Click “Apply Changes” at the top-left of the page to send the new settings to the chip.</p></li>
+<li><p>Click the “Measure ADC” button. A power reading will appear in the box below the button.</p></li>
+</ul>
+</section>
+<section id="temperature-sensor">
+<h3>Temperature Sensor<a class="headerlink" href="#temperature-sensor" title="Link to this heading"></a></h3>
+<p>Once the ADC section has been enabled and configured, the on-chip temperature sensor can be used to determine the junction temperature of the <a class="icon adi reference external" href="https://www.analog.com/adar2001" target="_blank">adar2001</a>. Follow the below steps:</p>
+<ul class="simple">
+<li><p>Click the switch to change the selected input to the temperature sensor (position 0).</p></li>
+<li><p>Click “Apply Changes” at the top-left of the page to send the new settings to the chip.</p></li>
+<li><p>Click the “Measure ADC” button. A temperature reading will appear in the box below the button.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

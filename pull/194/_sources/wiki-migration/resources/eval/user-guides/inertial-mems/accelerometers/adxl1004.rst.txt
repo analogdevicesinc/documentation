@@ -1,0 +1,21 @@
+ADXL1001/2/3/4/5 Breakout Board documentation:
+==============================================
+
+| 
+| --- ADXL1001/2/3/4/5 Breakout board files ---
+| NOTE: Evaluation boards for the ADXL1001/2/3/4/5 share a common PCB, differences in BOM are highlighted in the schematic file.
+| // `ADXL1004 Breakout Board Layout <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/301-884_adxl100xz_evaluation_board_-_layout.pdf>`_
+| // `ADXL1004 Breakout Board Gerber Files <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/301-884_adxl100xz_evaluation_board_-_gerbers.zip>`_
+| // `ADXL1004 Breakout Board Schematic <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/301-884_adxl100xz_evaluation_board_-_schematic.pdf>`_
+| IMPORTANT APPLICATION NOTE ABOUT PROPER EVALUATION TECHNIQUES FOR ADXL100x DEVICES
+| // `Application Note for ADXL1001 and ADXL1002 <https://wiki.analog.com/_media/mems/Reference document on achieving best noise performance with ADXL1002.pdf>`_
+| GENERAL DESCRIPTION
+
+The EVAL-ADXL100xZ are simple evaluation boards that allows users to quickly evaluate the performance of the ADXL1001/2/3/4/5 vibration sensors. The EVAL-ADXL100xZ is designed to mount on to a mechanical shaker and are constructed of an extra thick PCB, measuring 0.8 square inches. Screw holes are supplied for rigid mounting to the shaker block. This design allows users to evaluate the full performance range of the ADXL1001/2/3/4/5 vibration sensor without needing to solder the device to a separate test board. A simple RC low-pass filter is provided at the output with a −3 dB bandwidth determined by the selected device under test. Components can be replaced to allow users to implement their own application specific low-pass filter on the output of the device. Full details on the microelectromechanical systems (MEMS) ADXL1001/2/3/4/5 accelerometers are provided in the respective data sheets.
+
+CIRCUIT DESCRIPTION
+
+| The schematic for the EVAL-ADXL100xZ is provided in the link above. This circuit is designed to allow a user configurable, low-pass filter on the device output. When no low-pass filter is needed, short the R1 solder pads together. It is recommended that a bypass capacitor of 22 nF be placed on C2 for improved electromagnetic interference (EMI) rejection. The board layout of the EVAL-ADXL100xZ is provided in the link above as well as the bill of materials list for the respective boards. As delivered, the bandwidth limit of the evaluation board is set by the external RC filter on the board, the filter cut-off and component varies depending on the device being tested. This information is listed in the schematic file. It is recommended that additional filtering, such as a <75 kHz low-pass filter, be added to mitigate high frequency noise outside of the vibration band of interest.
+| NOTES ON HANDLING
+
+The EVAL-ADXL100xZ evaluation boards are not reverse polarity protected. Reversing the power supply or applying inappropriate voltages to any pin may damage the board or the devices on the board.

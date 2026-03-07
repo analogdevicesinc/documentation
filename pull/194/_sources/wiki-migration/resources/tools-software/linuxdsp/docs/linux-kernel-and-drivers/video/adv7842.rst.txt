@@ -1,0 +1,167 @@
+Video Decoder EI3 Extender Example
+==================================
+
+The Video Decoder EI3 Extender Board is a separately daughter board that plugs onto the EI3 of an EZ-KIT LITE/EZ-Board, it extends the capabilities of the EZ-KIT LITE/EZ-Board by providing a connection between the enhanced parallel peripheral interface (EPPI) of the processor and the **ADV7842** video decoder. For more information about the ADV7842 or Video Decoder EI3 Extender Board, go to www.analog.com and search for ADV7842 or Video Decoder EI3 Extender Board.
+
+Hardware Connection
+-------------------
+
+Connect the Video Decoder EI3 Extender Board board to the **P1A** connector on the ADSP-SC5XX EZ-Board.
+
+The following formats are supported:
+
+-  720p60 (HD)
+-  NTSC (480i60)
+-  PAL (576i50)
+
+When using 720p60, connect an HDMI cable from your source (e.g. a video player) to the HDMI A port and ensure the video source's resolution is set to 720p.
+
+For SD video, connect video cables to CVBS, S-Video or Component port.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/video/decoder.jpg
+   :width: 600px
+
+| 
+| ===== Software Configuration ===== The following configuration should be done on top of the sc589-ezkit/sc573-ezkit default configuration.
+
+| 
+| ==== Package Configuration ==== Add the v4l2-video-test package in the filesystem, it's enabled in adsp-sc5xx-full image by default.
+
+::
+
+   vim build/conf/local.conf
+   IMAGE_INSTALL_append = "v4l2-video-test"
+
+| 
+| ==== Kernel Configuration ==== Run "**bitbake linux-adi -c menuconfig**" to configure the linux kernel. Due to the conflicts with audio module, users should disable the audio driver before enable video drivers.
+
+-  **Disable audio driver**
+
+::
+
+   Device Drivers  --->
+       < > Sound card support  ----
+
+-  **Enable I2C support**
+
+::
+
+   Device Drivers  --->
+       I2C support  --->
+           I2C Hardware Bus support  --->
+                   <*> ADI TWI I2C support
+                   (50) ADI TWI I2C clock (kHz) 
+
+-  **Enable Microchip MCP23xxx I/O expander support**
+
+::
+
+   Device Drivers  --->
+       -*- Pin controllers  --->
+            <*> Microchip MCP23xxx I/O expander
+
+-  \*\* Enable V4L2 capture platform driver and ADV7842 video decoder driver \*\*
+
+::
+
+   Device Drivers  --->
+       <*> Multimedia support  --->
+           [*]   Cameras/video grabbers support
+           [*]   Media Controller API
+           [*]   V4L2 sub-device userspace API
+           [*]   V4L platform devices  --->
+                 <*>   ADI SC5XX  Video Capture Driver
+           [N]   Autoselect ancillary drivers (tuners, sensors, i2c, spi, frontends)
+           I2C Encoders, decoders, sensors and other helper chips  --->
+                 <*> Analog Devices ADV7842 decoder
+                 [*]   Enable Analog Devices ADV7842 CEC support 
+
+-  **Disable SPI driver**
+
+As the PPI hardware pin conflicts with SPI on the **ADSP-SC573 EZ-Board**, you should disable SPI before using ppi, otherwise you will get a pin request error message from pinctrl. So extra configuration only for ADSP-SC573 EZ-Board:
+
+::
+
+   Device Drivers  --->
+       [*] SPI support  --->
+           <>   SPI controller v3 for ADI
+
+| 
+| ==== Device Tree ==== Run "**bitbake linux-adi -c devshell**" to enter into the kernel source code and then change the device tree files.
+
+-  \*\* Device node for soft switch on Video Decoder EI3 Extender Board \*\*
+
+Please add following child node ssw2 to i2c0 master node in the device tree(sc589-ezkit.dts/sc573-ezkit.dts). We need to setup soft switch before we start capture streaming.
+
+::
+
+   $ vim arch/arm/boot/dts/sc589-ezkit.dts
+   i2c0: twi@31001400 {
+   ...
+   ssw1: gpio@0x22 {
+        compatible = "microchip,mcp23017";
+        gpio-controller;
+        #gpio-cells = <2>;
+        reg = <0x22>;
+   };
+   +ssw2: gpio@0x26 {
+   +     compatible = "microchip,mcp23017";
+   +     gpio-controller;
+   +     #gpio-cells = <2>;
+   +     reg = <0x26>;
+   +};
+   adau1979@0x11 {
+        compatible = "adi,adau1977";
+        reg = <0x11>;
+   };
+
+Run "**bitbake linux-adi -C compile**" to compile the linux kernel to generate the zImage and dtb file.
+
+| 
+| ===== ADV7842 video decoder Test ===== The state of pins from IO expander is "uncertain" after we enable Soft Switch on the ADSP-SC573 EZ-Board, some pins are also the OE pins (active low) of modules, as the PPI signal pins are reused by many modules, you should disable related modules by setting Soft Switch first, otherwise the signals from ppi will be interfered. So extra configuration only for **ADSP-SC573 EZ-Board**:
+
+::
+
+   Only for ADSP-SC573 EZ-Board:
+   # echo 482 > /sys/class/gpio/export
+   # echo high > /sys/class/gpio/gpio482/direction
+   # echo 485 > /sys/class/gpio/export
+   # echo high > /sys/class/gpio/gpio485/direction
+   # echo 505 > /sys/class/gpio/export
+   # echo high > /sys/class/gpio/gpio505/direction
+
+Setup Soft Switch
+~~~~~~~~~~~~~~~~~
+
+::
+
+   # echo 464 > /sys/class/gpio/export
+   # echo low > /sys/class/gpio/gpio464/direction
+   # echo 466 > /sys/class/gpio/export
+   # echo low > /sys/class/gpio/gpio466/direction
+
+Capture Video Stream
+~~~~~~~~~~~~~~~~~~~~
+
+You can use "v4l2_video_capture" provided by Buildroot to test video capture function for ADV7842, it shows the decoding of HD signal input and YCbCr pixel output in this example:
+
+::
+
+   # v4l2_video_capture -I 4 -F adv7842.yuv
+
+The 720p yuv file can be played by a raw video sequence player, for example pYUV. Or it can be saved as the input of the ADV7511. PYUV must be configured as below:
+
+::
+
+   Resolution -> HD720
+   Color space -> YCbCr
+   Subsampling -> 4:2:2
+   Ordering -> UYVY
+
+And select Interleaved option.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/video/lkad-linux_video_driver-capture_video_stream.jpg
+   :width: 600px
+
+| 
+| ---- **Back to** :doc:`Linux Video Driver </wiki-migration/resources/tools-software/linuxdsp/docs/linux-kernel-and-drivers/video/linux_video_driver>`

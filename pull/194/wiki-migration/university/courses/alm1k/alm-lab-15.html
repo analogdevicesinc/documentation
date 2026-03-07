@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The object of this activity is to explore an inductor based circuit which can produce an output voltage which is higher than the supplied voltage. This class of circuits are referred to as DC to DC converters or boost regulators." name="description" />
+
+    <title>Activity: DC-DC Converters I - ADALM1000 &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Activity: DC-DC Converters I - ADALM1000</a><ul>
+<li><a class="reference internal" href="#objective">Objective:</a></li>
+<li><a class="reference internal" href="#notes">Notes:</a></li>
+<li><a class="reference internal" href="#background-basics">Background Basics:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#activity-boost-and-buck-converter-elements-and-open-loop-operation">Activity: Boost and Buck converter elements and open-loop operation</a><ul>
+<li><a class="reference internal" href="#id1">Objective:</a></li>
+<li><a class="reference internal" href="#materials">Materials</a></li>
+<li><a class="reference internal" href="#background">Background</a></li>
+<li><a class="reference internal" href="#activity-1-an-ideal-open-loop-boost-converter-simulation">Activity 1: An Ideal* Open-Loop Boost Converter Simulation</a><ul>
+<li><a class="reference internal" href="#load-regulation">Load Regulation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#activity-2-a-real-open-loop-boost-converter">Activity 2: A real Open-Loop Boost Converter</a><ul>
+<li><a class="reference internal" href="#going-further">Going Further</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#activity-3-synchronous-vs-non-synchronous-circuits">Activity 3: Synchronous vs. Non-Synchronous Circuits</a></li>
+<li><a class="reference internal" href="#activity-4-discontinuous-conduction-mode">Activity 4: Discontinuous Conduction Mode</a></li>
+<li><a class="reference internal" href="#activity-5-an-open-loop-buck-converter">Activity 5: An Open-Loop Buck Converter</a></li>
+<li><a class="reference internal" href="#activity-6-peak-current-control">Activity 6: Peak Current Control</a></li>
+<li><a class="reference internal" href="#conclusion">Conclusion</a></li>
+<li><a class="reference internal" href="#appendix-extreme-boosting">Appendix: Extreme Boosting</a></li>
+<li><a class="reference internal" href="#appendix-current-sense-techniques">Appendix: Current Sense Techniques</a></li>
+<li><a class="reference internal" href="#appendix-gate-divers">Appendix: Gate Divers</a></li>
+<li><a class="reference internal" href="#appendix-timing-generation">Appendix: Timing Generation</a></li>
+<li><a class="reference internal" href="#appendix-engineer-proofing">Appendix: “Engineer Proofing”</a></li>
+<li><a class="reference internal" href="#slide-deck">Slide Deck</a><ul>
+<li><a class="reference internal" href="#id2">Materials:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#simple-inductor-and-switch-dc-dc-converter">Simple inductor and switch DC/DC Converter:</a></li>
+<li><a class="reference internal" href="#gated-oscillator-integrated-circuit">Gated Oscillator Integrated Circuit</a></li>
+<li><a class="reference internal" href="#adding-active-regulation">Adding active regulation:</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="activity-dc-dc-converters-i-adalm1000">
+<h1>Activity: DC-DC Converters I - ADALM1000<a class="headerlink" href="#activity-dc-dc-converters-i-adalm1000" title="Link to this heading"></a></h1>
+<section id="objective">
+<h2>Objective:<a class="headerlink" href="#objective" title="Link to this heading"></a></h2>
+<p>The object of this activity is to explore an inductor based circuit which can produce an output voltage which is higher than the supplied voltage. This class of circuits are referred to as DC to DC converters or boost regulators.</p>
+</section>
+<section id="notes">
+<h2>Notes:<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
+<p>As in all the ALM labs we use the following terminology when referring to the connections to the M1000 connector and configuring the hardware. The green shaded rectangles indicate connections to the M1000 analog I/O connector. The analog I/O channel pins are referred to as CA and CB. When configured to force voltage / measure current -V is added as in CA-V or when configured to force current / measure voltage -I is added as in CA-I. When a channel is configured in the high impedance mode to only measure voltage -H is added as CA-H.</p>
+<p>Scope traces are similarly referred to by channel and voltage / current. Such as CA-V , CB-V for the voltage waveforms and CA-I , CB-I for the current waveforms.</p>
+<p>The circuits used in this Lab activity while generally low current can produce voltages beyond the 0 to 5 V analog input range of the ALM1000. <a class="reference internal" href="circuits1/alm-measure-outside-0-5-range.html"><span class="doc">Input voltage divider techniques</span></a> as discussed in the document on ALM1000 analog inputs will be required. Refer to the document and construct and use input dividers before preforming any of these experiments with the ALM1000.</p>
+</section>
+<section id="background-basics">
+<h2>Background Basics:<a class="headerlink" href="#background-basics" title="Link to this heading"></a></h2>
+<p>When the current flowing in an inductor is quickly interrupted a large voltage spike is observed across the inductor. This large voltage spike can in fact be useful in some cases. One example is the DC to DC boost converter, which is a circuit that can create a larger DC voltage from a smaller one with very high efficiency. The basic idea is to combine an inductive spike generator with a rectifier circuit, as shown in figure 1. Whenever the transistor is abruptly turned off the voltage at the drain spikes up, the diode D<sub>1</sub> is forward biased and current will flow from the inductor to charge up the high capacitance storage capacitor C<sub>2</sub>. When the drain voltage subsequently drops below the voltage on the capacitor, the diode is reverse biased and the output voltage remains constant. Just as in the chapter on AC power supplies, the output capacitor must be sized appropriately to minimize the ripple relating to the current flowing in the load. We will just use a small capacitor here and therefore the circuit will not be able to source a large output current. The following simulation activity will provide more insight into how a Boost configuration operates:</p>
+</section>
+</section>
+<section id="activity-boost-and-buck-converter-elements-and-open-loop-operation">
+<h1>Activity: Boost and Buck converter elements and open-loop operation<a class="headerlink" href="#activity-boost-and-buck-converter-elements-and-open-loop-operation" title="Link to this heading"></a></h1>
+<section id="id1">
+<h2>Objective:<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>The objective of this activity is to explore some of the basic circuit blocks typically used in buck and boost converters. We’ll operate these blocks to the point where they are “bucking” a high voltage to a low voltage and “boosting” a low voltage to a high voltage, and examine the open-loop properties of these modes of operation. We will also discuss the difference between synchronous and non-synchronous circuits, and continuous conduction mode versus discontinuous conduction modes. We’ll start out by controlling these circuits by directly controlling the duty cycle of the switches, and then introduce the idea of peak current control, in which the switch that “charges” the inductor is turned on by a clock signal, and turned off when the inductor current reaches a certain level. Subsequent exercises will actively control these circuits in order to produce an accurate, stable output voltage that is insensitive to changes in input and output conditions.</p>
+</section>
+<section id="materials">
+<h2>Materials<a class="headerlink" href="#materials" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>ADALM2000 (M2K) Active Learning module OR:</p>
+<ul>
+<li><p>Two-channel oscilloscope with external trigger input</p></li>
+</ul>
+</li>
+<li><p>Two digital multimeters OR:</p>
+<ul>
+<li><p>additional ADALM2000</p></li>
+</ul>
+</li>
+<li><p>ADALM-SR1 Switching Regulator Active Learning Module</p>
+<ul>
+<li><p>User Guide: <a class="reference internal" href="../../tools/lab_hw/adalm-sr1.html"><span class="doc">ADALM-SR1 hardware</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="../../../resources/eval/user-guides/circuits-from-the-lab/cn0508.html"><span class="doc">EVAL-CN0508-RPIZ</span></a> power supply OR:</p>
+<ul>
+<li><p>0-12V, 3A Adjustable benchtop power supply</p></li>
+</ul>
+</li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/education_tools/tree/main/m2k/ltspice/ol_boost_and_buck" target="_blank">LTspice files for this exercise</a></p></li>
+</ul>
+</section>
+<section id="background">
+<h2>Background<a class="headerlink" href="#background" title="Link to this heading"></a></h2>
+<p>The <a class="reference internal" href="../electronics/buck_converter_basics.html"><span class="doc">Activity: Buck Converter Basics</span></a> lab activity was a first look into the operation of a very simple (and not very high performance) buck converter. The exercise details the operation of the ideal buck converter shown in Figure 1.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/buck_basics/ideal_buck_charge.png"><img alt="image1" src="https://wiki.analog.com/_media/university/courses/electronics/buck_basics/ideal_buck_charge.png" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 1. Ideal Buck Converter</p>
+</div>
+<p>A simple expression for output voltage as a function of input voltage and the duty cycle, is then derived:</p>
+<div class="line-block">
+<div class="line"><span class="math notranslate nohighlight">\(V_OUT = V_IN \times Duty Cycle\)</span></div>
+<div class="line">This is followed by circuit construction, measurements of the open-loop properties of the circuit, and finally, “closing the loop” so that the output voltage remains constant, at the desired voltage, regardless of changes in loading.</div>
+</div>
+<p>This exercise will expand on those concepts, deriving a converter that “boosts” a low voltage to a high voltage. We will also design a more practical open-loop buck converter, and introduce a circuit that controls peak inductor current, rather than duty cycle. Subsequent exercises will close the loop around these circuits and examine loop stability and time-domain response. An appendix covers practical aspects of switching converter design such as current sensing, timing generation, selection of MOSFETs and diodes, and gate drive circuitry.</p>
+</section>
+<section id="activity-1-an-ideal-open-loop-boost-converter-simulation">
+<h2>Activity 1: An Ideal* Open-Loop Boost Converter Simulation<a class="headerlink" href="#activity-1-an-ideal-open-loop-boost-converter-simulation" title="Link to this heading"></a></h2>
+<p>* (This exercise will use the term “ideal” extensively. A more accurate term would be “almost ideal” - LTspice requires finite numbers in certain locations - switch on and off resistances can’t be zero or infinity, so we’re using values small enough and large enough to have negligible impact on the results.)</p>
+<p>Open the OL_Boost_concept_ideal_sw.asc LTSpice file. Notice the differences between this circuit and the buck converter:</p>
+<ul class="simple">
+<li><p>One side of the inductor is connected directly to the input supply.</p></li>
+<li><p>The switches are rearranged, with S1 allowing the input supply to be connected directly across the inductor, and S2 allowing the inductor to be connected or disconnected from the output.</p></li>
+</ul>
+<p>As with the buck basics lab, let’s keep two things in mind at all times:</p>
+<ul class="simple">
+<li><p>Current through an inductor can’t change instantaneously</p></li>
+<li><p>The DC voltage across an inductor is zero</p></li>
+</ul>
+<p>The figure below shows the “charge” state of the circuit’s operation, where S1 is closed and S2 is open.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ideal_boost_charge.png"><img alt="image2" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ideal_boost_charge.png" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 2. Boost Converter Charge</p>
+</div>
+<p>When S1 closes, the left-hand side of the inductor is connected to the 5V supply, and the right-hand side is connected to ground. This means the voltage across the inductor is simply the 5V supply. This “charges” the inductor with a current that ramps up with a positive slope of:</p>
+<div class="line-block">
+<div class="line"><span class="math notranslate nohighlight">\(di/dt = V_IN/L = 5V/L\)</span></div>
+<div class="line">Note: The polarity of the voltage across the inductor is arbitrary, we’re using the convention that a <strong>positive</strong> voltage is one that causes an <strong>increase</strong> in energy stored in the inductor.</div>
+</div>
+<p>The next figure shows the other state, with S1 open and S2 closed.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ideal_boost_discharge.png"><img alt="image3" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ideal_boost_discharge.png" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 3. Boost Converter Discharge</p>
+</div>
+<div class="line-block">
+<div class="line">When S2 closes, the left-hand side of inductor L1 is still connected to Vin, while the right-hand side is now connected to Vout. The current through L1 is now flowing to the output, and decreasing with a negative slope of: <span class="math notranslate nohighlight">\(\displaystyle di/dt = \frac{V_IN-V_OUT}{L} = \frac{5V-V_OUT}{L}\)</span></div>
+<div class="line">Similar to the buck converter basics activity 1 the “freq” and “duty” parameters set the frequency of the switching to 25kHz and the duty cycle of the voltages imposed on this switch node (sw_node) to 50%. That is, the righthand side of the inductor spends half of the time connected to ground (charging phase), and half of the time connected to the output (discharging phase). Run the simulation, and probe sw_node, Vout, and the current through inductor L1. Zoom in toward the end of the run after the startup transient damps out (after 8ms). (You can right-click, Auto range y-axis to line up the two waveforms.)</div>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_concept_ideal_sw_dc50_load_none_sim.png"><img alt="image4" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_concept_ideal_sw_dc50_load_none_sim.png" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 4. Boost Converter Switch Node, inductor current, and Output</p>
+</div>
+<p>Observe the peak and valley of the waveform I(L1) (green waveform), noting the current ripple. Using the cursors from peak to peak, we can observe that the inductor is charging and discharging linearly (with the period of 1/25kHz, or 40us, with a duty cycle of 50% making ts1 and ts2 20us each).</p>
+<p>The output voltage is almost exactly 10V - double the input voltage - with a small ripple imposed. Verify that the previously solved equations are true, using the cursors to measure the inductor current waveforms.</p>
+<div class="line-block">
+<div class="line">For the “charge” phase: <span class="math notranslate nohighlight">\(di/dt=5V/100 \mu H\)</span></div>
+<div class="line">And for the “discharge” phase: <span class="math notranslate nohighlight">\(\displaystyle di/dt=\frac{5V-10V}{100} \mu H\)</span></div>
+<div class="line">Revisiting the concept of zero DC across an inductor, how can we find the output voltage of a boost converter knowing the input voltage, frequency, and duty cycle? “Zero DC across an inductor” means that over a long period of time, the average volt-second product is zero. Thus:</div>
+</div>
+<div class="line-block">
+<div class="line"><span class="math notranslate nohighlight">\((V_IN-0) \times ts1+(V_IN-V_OUT) \times ts2=0\)</span></div>
+<div class="line">Where tS1 is the time that S1 is closed, tS2 is the time that S2 is closed. Rearranging, we see that: <span class="math notranslate nohighlight">\(\displaystyle V_OUT=V _IN \times \frac{ts1+ts2}{ts2}\)</span></div>
+<div class="line">Note that <span class="math notranslate nohighlight">\(ts1/(ts1+ts2)\)</span></div>
+<div class="line">is the duty cycle of the switch node, we can rewrite the expression for V<sub>OUT</sub> as a function of duty cycle: <span class="math notranslate nohighlight">\(V_OUT=V_IN \times 1/(1-Duty Cycle)\)</span></div>
+<div class="line">Since our duty cycle is based off ts1 and ts2, and the duty cycle is always between 0% and 100%, the above equation demonstrates that the average output voltage is always equal or larger than the input voltage, a basic property of a boost converter, and at a 50% duty cycle, the output voltage is double the input voltage.</div>
+</div>
+<p>Now change the duty cycle in the simulation and re-run. The following are screenshots show the output voltage at 20% duty cycle(expected output of 6.25V) and 80% duty cycle(expected output of 25V).</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_ideal_5vin_20dc_sim.png"><img alt="image5" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_ideal_5vin_20dc_sim.png" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 5. Boost converter output with a duty cycle of 20%</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_ideal_5vin_80dc_sim.png"><img alt="image6" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_ideal_5vin_80dc_sim.png" style="width: 400px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p>Figure 6. Boost converter output with a duty cycle of 80%</p>
+</div>
+<p>Can you boost to an arbitrarily high voltage? See Appendix: “Extreme Boosting” to find out.</p>
+<section id="load-regulation">
+<h3>Load Regulation<a class="headerlink" href="#load-regulation" title="Link to this heading"></a></h3>
+<p>So far we’ve operated the boost circuit unloaded. In this condition, the duty cycle to boost factor relationships held true, but what happens if you start to draw current from the output (as you would in a practical circuit - after all, a power supply exists to power stuff!) Furthermore, consider the boost converter’s output switch (S2). If we look at the current waveform and the voltage waveform of the unloaded circuit, we see that for part of the cycle, the inductor current goes negative, and when this occurs, the output voltage is ramping DOWN! This seems counterproductive for a boost converter, doesn’t it? This mode of operation has a name - “Forced Continuous Conduction Mode”. It is forced because the switches always impose a voltage across the inductor, so its current is always either ramping up or down.</p>
+<p>Next, connect the 25 ohm load resistor to the output node (drawing an average current of 0.4 amps from the 10V output). Note that the impact on the output voltage is minimal, and the inductor current is still ramping up and down with the same peak-to-peak ripple, however the current is now always positive (flowing from input to output, according to our convention.)</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_concept_ideal_sw_dc50_load_25_ohm_sim.png"><img alt="image7" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_concept_ideal_sw_dc50_load_25_ohm_sim.png" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 7. Ideal Boost Converter with 25Ω load</p>
+</div>
+<p>But are we still FORCING this circuit to conduct continuously? We’ll find out shortly…</p>
+</section>
+</section>
+<section id="activity-2-a-real-open-loop-boost-converter">
+<h2>Activity 2: A real Open-Loop Boost Converter<a class="headerlink" href="#activity-2-a-real-open-loop-boost-converter" title="Link to this heading"></a></h2>
+<p>Open OL_Boost_concept_actual.asc in LTspice (see Figure 8). This simulation is a close approximation of the ADALM-SR1 configured for this mode.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_25dc_25ohm_sch.png"><img alt="image8" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_25dc_25ohm_sch.png" style="width: 800px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 8. Open-Loop Boost LTspice Schematic</p>
+</div>
+<p>Note that the simulation includes some of the non-ideal aspects of the real-world circuit:</p>
+<ul class="simple">
+<li><p>Replace the ideal diode with a real diode, a MBRS340 (which is a close variant of the MBRA340 on the SR1)</p></li>
+<li><p>Add the series resistance of three windings of the Wurth ‘141 inductor.</p></li>
+<li><p>Replace the switch with an IRF7468 (close to the IRF7470 on the SR1)</p></li>
+<li><p>Add the 0.1Ω current sense resistors</p></li>
+<li><p>Add output capacitors, with ESR</p></li>
+</ul>
+<div class="line-block">
+<div class="line">Note that this schematic still contains many simplifications - the gate driver is not shown, nor are the current sense amplifiers. And since the circuit is powered from an ideal voltage source (zero impedance), input capacitors can be eliminated. This will be a recurring theme, deciding what to simulate and what to assume is close enough to ideal that it can be eliminated from the simulation in the interest of speed, or in some cases, converging at all. The most obvious substitution is the replacement of the top switch with a diode. This will be discussed in more detail shortly, but for now, note that a diode is in fact a switch that conducts when the voltage at the anode is higher than the voltage at the cathode, and does not conduct when the polarity of the voltages are reversed.</div>
+<div class="line">BEFORE APPLYING POWER… Configure the ADALM-SR1 board as shown in Figure 9 below:</div>
+</div>
+<ul class="simple">
+<li><p>Duty Cycle: Manual</p></li>
+<li><p>Mode: Duty Cycle</p></li>
+<li><p>FET Sel: Boost</p></li>
+<li><p>Current Sense: High</p></li>
+<li><p>Current Threshold: Manual</p></li>
+<li><p>Inductance: 4 Taps</p></li>
+<li><p>Load Resistors: enable 2x200Ω, 100Ω, 50Ω (25Ω total)</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/sr1_config_ol_dc_boost.png"><img alt="image9" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/sr1_config_ol_dc_boost.png" style="width: 1000px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 9. ADALM-SR1 configuration for Open-Loop Boost, Duty Cycle Control</p>
+</div>
+<p>Set potentiometers to the following approximate settings:</p>
+<p>Frequency: 3:00 Duty Cycle: 9:00 Current Threshold: 3:00 Voltage Feedback: 12:00 Load Control: 7:00 (fully counterclockwise)</p>
+<p>Set potentiometers to the following approximate settings:</p>
+<ul class="simple">
+<li><p>Frequency: 3:00</p></li>
+<li><p>Duty Cycle: 9:00</p></li>
+<li><p>Current Threshold: 3:00</p></li>
+<li><p>Voltage Feedback: 12:00</p></li>
+<li><p>Load Control: 7:00 (fully counterclockwise)</p></li>
+</ul>
+<div class="line-block">
+<div class="line">Connect a 5V, 1A USB power supply to the Auxiliary Power micro USB jack. At this point, the frequency and duty cycle can be fine-tuned by looking at the D0 signal in Scopy’s logic analyzer. Set the frequency to 20kHz (50μs period) and duty cycle to 25% (high time of 12.5μs)</div>
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Add Logic Analyzer Plot</p>
+</div>
+<p>Ramp the Power Input to 5V and observe the current sense and switch node waveforms. Note that Scopy’s vertical scale can be entered arbitrarily - enter a value of 350mV/Div, which corresponds to 500mA/Div. Figures 10 and 11 show simulated vs. measured results, respectively, at 25% duty cycle. Note that the output voltages match quite well, both are very close to 6V. This is less than the predicted 6.66V of an ideal boost converter, however, note that this circuit starts off with about a 0.4V drop due to to the output diode. Output current is about 240mA (6V/25Ω), which will cause another 275mV drop due to the two 0.1Ω sense resistors and the 0.95Ω resistance of the inductor. This is a total drop of about 0.676V, almost exactly the difference between the ideal case and reality!</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_25dc_25ohm_sim.png"><img alt="image10" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_25dc_25ohm_sim.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 10. Open-Loop Boost Simulation, 20kHz, 25% Duty Cycle, 25Ω Load</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_25dc_25ohm_scopy.png"><img alt="image11" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_25dc_25ohm_scopy.png" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p>Figure 11. Open-Loop Boost Operation, 20kHz, 25% Duty Cycle, 25Ω Load</p>
+</div>
+<p>Next, increase the duty cycle to 50%. Figures 12 and 13 show simulated vs. measured results, respectively, at 50% duty cycle.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_50dc_25ohm_sim.png"><img alt="image12" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_50dc_25ohm_sim.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 12. Open-Loop Boost Simulation, 20kHz, 50% Duty Cycle, 25Ω Load</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_50dc_25ohm_scopy.png"><img alt="image13" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_50dc_25ohm_scopy.png" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p>Figure 13. Open-Loop Boost Operation, 20kHz, 50% Duty Cycle, 25Ω Load</p>
+</div>
+<section id="going-further">
+<h3>Going Further<a class="headerlink" href="#going-further" title="Link to this heading"></a></h3>
+<p>Try experimenting with the various load resistors and duty cycle potentiometer. The ADALM-SR1 does have a level of protection from stressful operating conditions: load and inductor overheating, output overvoltage, etc., but in this configuration please observe the following precautions:</p>
+<ul class="simple">
+<li><p>Keep duty cycle under 50%</p></li>
+<li><p>Keep the input voltage at or below 5V</p></li>
+<li><p>Leave the frequency at 20kHz</p></li>
+</ul>
+</section>
+</section>
+<section id="activity-3-synchronous-vs-non-synchronous-circuits">
+<h2>Activity 3: Synchronous vs. Non-Synchronous Circuits<a class="headerlink" href="#activity-3-synchronous-vs-non-synchronous-circuits" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Describe in more detail why we replaced the top switch with a diode, simulation with an ideal diode, and show that it’s equivalent to the synchronous circuit when operating in CCM.</p>
+</div>
+</section>
+<section id="activity-4-discontinuous-conduction-mode">
+<h2>Activity 4: Discontinuous Conduction Mode<a class="headerlink" href="#activity-4-discontinuous-conduction-mode" title="Link to this heading"></a></h2>
+<p>With the circuit still configured as in Activity 2, reduce, or “lighten”, the output load by <strong>removing</strong> the 50Ω and 100Ω load resistor jumpers, leaving the two 200Ω jumpers in place for a total load resistance of 100Ω. You should notice the switch node and inductor current take on a drastically different shape. Figure X shows the switch node and inductor current at a 25% duty cycle. The output voltage jumps to 7.74V, HIGHER than the 6.67V predicted by the output voltage equation above (even with the drop of the boost diode and the IxR drop of the sense resistors and inductors.)</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_25dc_100ohm_scopy.png"><img alt="image14" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_25dc_100ohm_scopy.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure x. DCM, 20kHz, 50% Duty Cycle, 100Ω Load</p>
+</div>
+<p>Figure X shows the switch node and inductor current at a 50% duty cycle. The output voltage is measured at 11.6V, again, higher than predicted.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_50dc_100ohm_scopy.png"><img alt="image15" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/ol_boost_5vin_20khz_50dc_100ohm_scopy.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure x. DCM, 20kHz, 50% Duty Cycle, 100Ω Load</p>
+</div>
+<p>This is a second mode of operation called “Discontinuous Conduction Mode”, and clearly it needs some additional equations to describe the relationship between input voltage, duty cycle, and now, output loading…</p>
+</section>
+<section id="activity-5-an-open-loop-buck-converter">
+<h2>Activity 5: An Open-Loop Buck Converter<a class="headerlink" href="#activity-5-an-open-loop-buck-converter" title="Link to this heading"></a></h2>
+<p>(Simulation and ADALM-SR1, no need to separate, buck basics lab handles the ideal case.)</p>
+</section>
+<section id="activity-6-peak-current-control">
+<h2>Activity 6: Peak Current Control<a class="headerlink" href="#activity-6-peak-current-control" title="Link to this heading"></a></h2>
+<p>Controlling a switch’s duty cycle in order to adjust the output voltage of a switching regulator seems like a straightforward method, and we’ll set up the circuit to automatically adjust the duty cycle to maintain a constant output voltage in the next exercises. But it turns out that there are advantages to not directly controlling the duty cycle, but rather, to control the maximum, or peak, inductor current at each and every clock cycle. This mode of operation (“current mode”) has dynamic advantages in closed-loop operation that will be explained in the next exercise. But since this exercise is focusing on open-loop operation, we’ll just describe and demonstrate the circuits operation, and point out one very important advantage of peak current control - the overall circuit is inherently short-circuit proof!</p>
+<p>Open OL_boost_peak_current_control.asc, shown in Figure X.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_boost_peak_current_control_sch.PNG"><img alt="image16" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_boost_peak_current_control_sch.PNG" style="width: 800px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure X. Peak Current Control Circuit, Boost Mode</p>
+</div>
+<p>The implemenation of the ADALM-SR1 peak current control circuit differs from that of a typical boost converter, such as the LT1930 shown in Figure X, however the end result is similar.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/LT1930_block_diagram.PNG"><img alt="image17" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/LT1930_block_diagram.PNG" style="width: 800px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure X. LT1930 Boost Converter Block Diagram</p>
+</div>
+<div class="line-block">
+<div class="line">In both circuits, a master oscillator sets the operating frequency. The rising edge of the clock is shaped into a narrow “set” pulse (or “sliver”). A narrow pulse is necessary as it sets the “minimum on-time” of the switch, and hence, the minimum boost factor. So in theory, the output of an unloaded asynchronous boost converter would rise without bound! In practice, there is always some limiting factor, shuch as the feedback resistance, parasitic capacitances, or other losses that limti the upper bound. Furthermore, converters designed to operate at very light loads will incorporate additional methods - such as blanking the clock entirely.</div>
+<div class="line">Assume that both the LT1930 and ADALM-SR1 start out with zero inductor current (right after applicaiton of power), and the current control signal (usually called ITH) is nonzero. Also assume the LT1930’s R-S flip-flop is reset, and the ADALM-SR1’s LT1671 comparator’s Q output is low, Q# is high, such that the LT1671 is latched OFF, even though its IN+ input (ITH) is higher than its IN- input (Ihigh current sense signal).</div>
+<div class="line">When the set pulse occurs, the LT1930’s R-S flip flop is… set, the output switch is turned on, and inductor current starts to ramp up. Similarly, the ADALM-SR1’s set pulse momentarily pulls the LT1671’s LE pin low, unlatching the comaprator, which in turn turns on the switch (M1), and inductor current starts to ramp up.</div>
+<div class="line">Both the LT1930 and ADALM-SR1 current signals also begin to ramp up as inductor current increases. When the current sense signal reaches the same voltage as ITH, the comparators trip, shutting off the respective switches, and the process begins again at the next set pulse.</div>
+<div class="line">That is quite a lot of text to describe a rather strange (for those who’ve never seen it before), so the best thing to do is start out running the LTspice simulation, which is configured to modulate ITH with a 2kHz sinusoid. Results are shown in Figure X. Note that we can “trick” LTspice into displaying the ITH and Ihigh signals as the current they represent by adding some arithmetic to the traces - right-click the label (V(ith), for example), then add “ *(1A/0.7V) “, which is the gain of the current sense circuit.</div>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_boost_peak_current_control_sim.PNG"><img alt="image18" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_boost_peak_current_control_sim.PNG" style="width: 800px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure X. Peak Current Control Waveforms</p>
+</div>
+<p>Next, configure the ADALM-SR1 for open-loop boost, peak current control as shown in Figure X.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/SR1_config_OL_peak_curr_boost.png"><img alt="image19" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/SR1_config_OL_peak_curr_boost.png" style="width: 1000px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure X. ADALM-SR1 configuration for Open-Loop Buck, Peak Current Control</p>
+</div>
+<p>There is indeed provision on the ADALM-SR1 to modulate the ITH signal exactly as shown in the simulation, and that technique will be used in a future exercise to characterize the frequency response of the circuit. In this exercise, we’ll just focus on steady-state behavior. Set the clock frequency to 20kHz, duty cycle to 50% (midscale, can be approximate). Set channel 2 vertical scale to 340mV/division, corresponiding to 500mA per division. Set the current threshold potentiometer such that the current peaks are at about to about 1.5 divisions (750mA). In this configuration, vary the input voltage from 5V to 10V, and vary the output load from 50Ω to 100Ω. These conditions are shown in Figure X. Note the changes in rising slope (which will be steeper with higher input voltage), falling slope (which will be shallower when the output voltage is higher), and that the circuit transitions between continuous and discontinuous modes. But in all cases, the peak current stays fixed.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_peak_current_animated.gif"><img alt="image20" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_peak_current_animated.gif" style="width: 800px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure X. Switch Node and Inductor Current, Various Conditions</p>
+</div>
+<div class="centeralign docutils container">
+<p>(Click to open in same window if animation doesn’t play)</p>
+</div>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading"></a></h2>
+<p>This lab exercise detailed the “power path” for non-synchronous boost and buck converters, illustrating duty-cycle control and peak current control. These circuits would be practical by themselves in a well-controlled environment, where input voltage and output loading conditions are well-known and stable. But real-world applications rarely fall into this category, so it is necessary to add a means of sensing the output voltage and adjusting the operating parameters (duty cycle or peak current) to maintain regulation as conditions change. This will be covered in the next exercises.</p>
+</section>
+<section id="appendix-extreme-boosting">
+<h2>Appendix: Extreme Boosting<a class="headerlink" href="#appendix-extreme-boosting" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Simulations at 99% duty cycle, and why high boost factors are almost never practical in real life.</p>
+</div>
+</section>
+<section id="appendix-current-sense-techniques">
+<h2>Appendix: Current Sense Techniques<a class="headerlink" href="#appendix-current-sense-techniques" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">There are several methods of measuring current in a circuit. Like any electrical measurement, the act of measuring the current will have some effect on the circuit’s operation. One of the least obtrusive when a convenient measuring point is physically accessible is a current probe. A wideband current probe that sensitive to DC (a steady-state current) uses a combination of a current transformer that is sensitive at high frequencies and a Hall-effect sensor that is sensitive to DC. Fine tuning the frequency responses of these curcuits such that the combined response is “flat” over all frequencies is a delicate task, and is one reason current probes tend to be very expensive. Also, current probes require that the curent flow through the probe’s head, so an extra wire may need to be introduced into the circuit. If the added inductance of the extra wire is significant compared to other inductances in the cirucit, then circuit operation may be significantly impacted. Figure X shows a current probe being used to measure the ADALM-SR1 inductor current. The inductance selection jumper is replaced with a short jumper wire that is looped through the current probe twice to double the sensitivity (twice the current effectively flows through the probe.)</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/adalm-sr1_current_probe.jpg"><img alt="image21" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/adalm-sr1_current_probe.jpg" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p>Figure x. Probing ADALM-SR1 Inductor Current W/ Tektronix P6042 Probe</p>
+</div>
+<p>But of course chip manufacturers can’t ship a current probe with every device, so other smaller, lower cost, and lower (but adequate) performance methods must be used. Some of these include:</p>
+<p>* Sensing the voltage across an external sense resistor, with an amplifier that is optimized for the common-mode voltage range (accurate, but lossy) * Sensing the voltage across the R<sub>DS</sub>(on) of the switching MOSFET (not accurate, but not lossy) * Sensing the voltage across the inductor’s ESR (not accurate, not lossy, but requires filtering)</p>
+<p>While some of these methods are not very accurate in absolute terms, this is typically not a concern as the current measurement (and current control) is enclosed in an outer voltage control loop that IS accurate. Also, these methods do not always measure the entire current waveform; depending on the sense amplifier topology and position within the circuit, they may only “catch” the rising slope of the current waveform, and they may not be able to sense reverse currents (even if they are small, as during the “ringing” portion of a discontinuous switch node waveform”. This is fine if that is what is important (as it is in an actual switchign regulator), but for a complete analysis, a complete picture of both rising and falling waveforms, including negative currents.</p>
+<p>The ADALM-SR1 includes two sense resistors and two LT1995, 30MHz difference amplifiers in a differential gain of 7. This provides a simple, high-bandiwdth, DC-coupled picture of inductor current. While either amplifier could be used for either boost or buck operation, the “high side” amplifier is used for boost topology, and the “low side” amplifier is used for the buck topology. In both of these cases, the amplifier is at the “non-switching” side of the inductor such that its common-mode voltage is costant, and the complete inductor waveform is visible.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>LT1995 simple situations</p>
+</div>
+</section>
+<section id="appendix-gate-divers">
+<h2>Appendix: Gate Divers<a class="headerlink" href="#appendix-gate-divers" title="Link to this heading"></a></h2>
+<p>The MOSFETs in the LTspice simulations in this exercise are all either directly driven from a pulse voltage source, or by a VCVS (voltage-controlled voltage source) that “level shifts” a ground-referred signal. But what is used in the actual ADALM-SR1 circuit, and why aren’t we using its LTspice model?</p>
+<div class="line-block">
+<div class="line">Driving the gate of the low-side (boost) MOSFET seems like such a simple job - Ground the gate, and the MOSFET is off. If you measure the resistance from the gate to ground, the resistance is so high that it is likely that your meter will overrange (assuming the board is clean from flux or other contamination.) And the low threshold voltage of the IRF7470 makes it compatible with 5V logic-level signals. But there are subtleties to driving a MOSFET: Even the boost MOSFET can be tricky to drive - as the MOSFET is turning on, the gate-drain capacitance will draw significant current. And if for some reason the gate drive voltage is too low, due to a collapsing housekeeping supply for example, the MOSFET may not be driven fully on, resulting in excessive power dissipation. The high side (buck) MOSFET is much trickier - the ground-referred gate control signal needs to be “level-shifted” and referred to the MOSFET’s source, which toggles back and forth between about -0.4V and the input voltage - quite a challenge. For these reasons, LTC7001s were used. The LTC7001 is specifically designed to drive N-channel MOSFETS, addressing all of these issues.</div>
+<div class="line">Figure X shows LTspice simulations of both the LTC7001 gate driver, as well as its VCVS “equivalent”.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_gate_drivers.png"><img alt="image22" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_gate_drivers.png" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p>Figure X. LTC7001 vs. VCVS Gate Drivers</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>An important aspect of the LTC7001 is that it has an internal charge pump that will keep the BST capacitor charged even if the cirucit isn’t switching. This allows the ADALM-SR1 to function at arbitrarily low frequencies, even zero. In fact, the top MOSFET, which is the switching element in buck configurations, is held continuously ON when the board is configured as a boost converter. Other gate drivers may REQUIRE that the source pin be periodically driven to ground, as would occur in normal buck converter operation.</p>
+</div>
+<p>With that in mind, run the OL_gate_drivers.asc simulation, the results of which are shown in Figure X.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_gate_drivers_sim.png"><img alt="image23" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/OL_gate_drivers_sim.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure X. LTC7001 vs. VCVS Gate Drivers</p>
+</div>
+<p>Note that in both cases, the gate drive signal is a nice, “strong” or “sharp” square wave imposed between the MOSFET’s source and gate.</p>
+</section>
+<section id="appendix-timing-generation">
+<h2>Appendix: Timing Generation<a class="headerlink" href="#appendix-timing-generation" title="Link to this heading"></a></h2>
+<p>Timing on the Switching Regulator Active Learning Module is generated by an LTC6992-3 pulse-width modulator and variable frequency oscillator. The frequency range is XX to YY, and the PWM duty cycle of the -3 variant extends from zero to 95%, never reaching 100%. This is a great device for generating timing signals for this board because it can be used both as pulse-width modulator and a clock. As a PWM generator, a simple 0-1V control signal to set the duty-cycle to 0-100% (clipped at 95% for the -3). To use the devices as a clock generator, simply set the duty cycle to 50% by setting the MOD pin to 0.5V.</p>
+<p>The -3 variant is used for two reasons: First, it limits the maximum boost factor, providing some redundancy to the overvoltage shutdown circuits. Second, the peak-current control circuit is still active in direct-duty-cycle control mode. This circuit requires clock edges in order to reset, and limiting the duty cycle to 95% ensures that edges occur. (A duty cycle of 100% is a signal that is always high, so there are no edges to reset the current limit.)</p>
+<p>Another point about the LTC6992 - the “classic” method of generating a PWM signal is to compare a sawtooth or triangular reference ramp to the modulation signal as shown in the circuit below:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/classic_pwm_generation.png"><img alt="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/classic_pwm_generation.png" class="align-center" src="https://wiki.analog.com/_media/university/labs/open_loop_boost_and_buck_adalm2000/classic_pwm_generation.png" style="width: 800px;" />
+</a>
+<p>Where V2 is the modulation signal. The upper trace shows the PWM output; note that the duty cycle is high when the modulation signal is high, and vice-versa. The LTC6992 is functionally very similar, with the exception that the response is not immediate - the modulation bandwidth is approximately 10kHz, roughly equivalent to placing a 10kHz, 1-pole filter at the output of V2 in the figure above. As long as the loop bandwidth of the switching regulator is significantly lower than 10kHz (a safe assumption in most of our use cases), the impact is minimal.</p>
+</section>
+<section id="appendix-engineer-proofing">
+<h2>Appendix: “Engineer Proofing”<a class="headerlink" href="#appendix-engineer-proofing" title="Link to this heading"></a></h2>
+<p>Given the fact that bad things sometimes happen to good people, and even the best engineers make mistakes, The ADALM-SR1 includes numerous protection features:</p>
+<p>* Input Overvoltage (to +40V) * Input Undervoltage (between 0V and 3.3V) * Input Reverse Voltage (to -40V) * Inductor overheating (above 50C) * Load resistor overheating (above 50C) * Output Overvoltage (above 22V)</p>
+<p>These are described in comments in the OL_engineer_proofing.asc schematic. Students are strongly encouraged to open and run this simulation, as it represents some “real world” design decisions that were wrapped around an otherwise “purely instructional” circuit.</p>
+</section>
+<section id="slide-deck">
+<h2>Slide Deck<a class="headerlink" href="#slide-deck" title="Link to this heading"></a></h2>
+<p>A slide deck is provided as a companion to this exercise, and can be used to help in presenting this material in classroom, lab setting, or in hands-on workshops.</p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p>(Insert slide deck here)</p>
+</div>
+<div class="line-block">
+<div class="line"><strong>Return to</strong> <a class="reference internal" href="../../labs/power.html"><span class="doc">Power Based Lab Activity Material</span></a></div>
+<div class="line"><strong>Return to</strong> <a class="reference internal" href="../../../university.html"><span class="doc">Engineering University Program Home</span></a></div>
+</div>
+<section id="id2">
+<h3>Materials:<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">ADALM1000 hardware module</div>
+<div class="line">Solder-less breadboard and jumper wire kit</div>
+<div class="line">1 - 2N3904 small signal NPN transistor</div>
+<div class="line">1 - ZVN2110A NMOS FET (2N7000 or power FET device such as IRF510)</div>
+<div class="line">Various resistors</div>
+<div class="line">1 - 1mH inductor</div>
+<div class="line">Various capacitors</div>
+<div class="line">1 - HPH1-1400L (Coilcraft Hexapath inductor)</div>
+<div class="line">2 - rectifier diodes (1N4001, 1N3064)</div>
+</div>
+<p><em>Additional Equipment:</em></p>
+<div class="line-block">
+<div class="line">Small handheld DMM</div>
+<div class="line">battery holder for 2 AA cells to provide 3V</div>
+</div>
+</section>
+</section>
+<section id="simple-inductor-and-switch-dc-dc-converter">
+<h2>Simple inductor and switch DC/DC Converter:<a class="headerlink" href="#simple-inductor-and-switch-dc-dc-converter" title="Link to this heading"></a></h2>
+<p>Build the circuit in figure 1 on your solder-less breadboard. Note that in this inductor based DC to DC converter the spikes of current needed may exceed the limits of the onboard +5V supply causing it to shut down. You should use a standalone wall powered bench supply or batteries. You can use a 1N4001 or a 1N3064 for the rectifier diode. Start with a load resistance of 100 kΩ and a switching frequency of 2 kHz which can be supplied by the channel A voltage generator CA-V. What is the DC voltage of the “boosted” output? Record the value for your lab report.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f1.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f1.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f1.png" style="width: 650px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 1 Simple DC to DC converter</p>
+</div>
+<p>Now increase the frequency to 4, 6 and 8 KHz. Measure and record the output voltage again. Explain why it has changed? One advantage we have here is that we can control the time period between the peaks of the signal going into the rectifier; in the power supply lab, we were stuck with a 60 Hz source.</p>
+<p>Next decrease the load resistance to 10 kΩ and again measure and record the output voltage.</p>
+<p>Clearly what is needed if we want a constant output voltage is some active regulation to keep the voltage constant when the load resistance changes. A larger output capacitance to filter out the ripple would be a good addition as well. There are a few simple ways to implement the active regulation, and indeed there are a number of other interesting design considerations for DC to DC boost converters that you can read about if you are interested, but our goal here is really just to illustrate the concept, so the circuit shown in figure 1 is not optimal in any practical sense. With more careful design, boost converters can drive a much larger output current at very high conversion efficiency (very little wasted power).</p>
+</section>
+<section id="gated-oscillator-integrated-circuit">
+<h2>Gated Oscillator Integrated Circuit<a class="headerlink" href="#gated-oscillator-integrated-circuit" title="Link to this heading"></a></h2>
+<p>Note that the DC to DC converter in figure 1 requires a square-wave generator to drive it. Ordinarily this square-wave generator is part of the circuit and also powered by the input supply, so that the conversion circuit is self-contained. A place to perhaps obtain a gated oscillator integrated circuit with a built in NMOS FET switch is a <a class="icon ez reference external" href="https://ez.analog.com/community/university-program/blog/2014/11/14/hacking-an-led-solar-garden-light" target="_blank">solar powered garden stake light</a> such as shown in figure 2:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-e2_a4.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-e2_a4.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-e2_a4.png" style="width: 250px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 2, Solar powered garden light</p>
+</div>
+<p>Inside these lights is a DC-DC boost LED diver integrated circuit which increases the voltage of a 1.2 V rechargeable AAA battery to the approximately 3 V needed to dive the white LED. Many versions contain a four pin voltage boosting integrated circuit marked YX8018. Some other versions contain a functionally equivalent 4 pin IC mounted under black epoxy directly on the PC board. Either version can be used in this Lab. The complete circuit is shown in figure 3.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f3.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f3.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f3.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 3, solar garden light circuit</p>
+</div>
+<p>The YX8018 comes in a 4 pin transistor style TO-94 package and the pin configuration and block diagram is shown in figure 4. A low voltage near the negative battery voltage (GND) on the CE input of the YX8018 gates off the oscillator. A high voltage near the positive battery voltage (V<sub>DD</sub>) conversely gates the oscillator on. Other versions of these LED drivers may work opposite so be sure to check your particular IC to confirm how the CE control input operates.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f4.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f4.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f4.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 4 YX8018 package pinout</p>
+</div>
+<p>The gated oscillator in the YX8018 runs at approximately 200 KHz driving an open drain NMOS switch ( output on LX pin1 ). The circuit pulses the inductor to step up the voltage to drive the LED.</p>
+<p>To reduce the component count the application of the YX8108 chip is rather ingenious. They use the internal ESD diode between the CE ( chip enable ) input and ground for charging the NiCd cell from the solar panel, but also use the voltage ( or lack thereof ) from the solar panel to detect when it is dark enough to turn the LED on. The CE input includes a small pull-up current (30 uA with 1.25 volts on V<sub>DD</sub>). This small current will pull pin 3 high gating on the oscillator if the solar panel is not generating more than 30 uA of current.</p>
+<p>We can learn more about inductor based DC-DC Converters by building various configurations around the YX8018 chip. Some of the following circuits are from the figures in the datasheet of the YX8018, others are extensions based on conventional DC-DC converter techniques. Note that in most of these examples we leave the CE pin floating for continuous operation.</p>
+<p>In figure 2 the current pulses from the inductor return to the battery through the LED to the ground side of the battery. We can also connect the LED across the inductor so that the inductor current returns directly to the inductor as shown in figure 5.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f5.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f5.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f5.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 5 Alternate way to connect the LED</p>
+</div>
+<p>The basic configurations in figures 3 and 5 drive the LED with pulses of current at the oscillator frequency. This is fine because the frequency is way above anything the eye can perceive as flicker. These pulses can be rectified and filtered into a DC voltage to drive the LED as shown in figure 6. Rectifying diode D<sub>1</sub> can be a standard diode such as a 1N914 but a more efficient choice for these low voltages would be a Schottky diode. At these high frequencies, filter capacitor C<sub>1</sub> does not need to be very large, a 0.1uF or 1.0uF value will work well.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f6.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f6.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f6.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 6 Adding DC rectifier to the boosted output.</p>
+</div>
+<p>Applying a pulse width modulated square wave using one of the generator output channels from the ALM1000 to drive the CE input could serve as a way to change the brightness of the LED.</p>
+<p>By adding another diode and capacitor, negative output voltages can be generated as shown in figure 7. A negative voltage is not necessarily needed to drive the LED. This is more a demonstration of how DC-DC converters can also generate negative voltages from positive voltages. Capacitor C<sub>1</sub> and diode D<sub>1</sub> level shift the positive peaks of the voltage waveform at pin 1 and clamp the voltage seen at the junction of D<sub>1</sub> and D<sub>2</sub> to a diode above ground. This now negative going waveform is rectified by D<sub>2</sub> and filtered by C<sub>2</sub>. Again a more efficient design would be to use Schottky diodes.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f7.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f7.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f7.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 7 Negative voltage generator.</p>
+</div>
+<p>The YX8018 datasheet includes a table listing the output current at a V<sub>DD</sub> of 1.25 V for different inductor values, reproduced here.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>L<sub>1</sub> Inductor value</p></th>
+<th class="head"><p>Output Current</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>560uH</p></td>
+<td><p>3.0mA</p></td>
+</tr>
+<tr class="row-odd"><td><p>220uH</p></td>
+<td><p>7.0mA</p></td>
+</tr>
+<tr class="row-even"><td><p>150uH</p></td>
+<td><p>10mA</p></td>
+</tr>
+<tr class="row-odd"><td><p>82uH</p></td>
+<td><p>15mA</p></td>
+</tr>
+<tr class="row-even"><td><p>68uH</p></td>
+<td><p>21mA</p></td>
+</tr>
+<tr class="row-odd"><td><p>47uH</p></td>
+<td><p>30mA</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Another option is to replace the simple inductor with a transformer. The Coilcraft Hexapath 6 winding HPH1-1400L has a winding inductance of 200 uH so it falls in the range of values listed in the table. In figure 6 the HPH1-1400L is configured as a 1:5 step up transformer and the circuit can deliver 1 mA of current to a 15 KΩ load resistor ( or 15 V DC ).</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f8.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f8.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f8.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 8 Transformer DC-DC booster delivers 1 mA at 15 V.</p>
+</div>
+</section>
+<section id="adding-active-regulation">
+<h2>Adding active regulation:<a class="headerlink" href="#adding-active-regulation" title="Link to this heading"></a></h2>
+<p>Adding a voltage comparator to drive the CE input with feedback from the boosted output adds regulation to the circuit. A regulation scheme which includes a fixed voltage reference and an error amplifier is more complex but a simpler version can be made by adding just a couple of resistors and an NPN transistor to figure 6 which demonstrates the concept. Figure 9 shows the additional circuitry.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f9.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f9.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab15_f9.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9 Adding negative feedback regulates the output voltage.</p>
+</div>
+<p>The regulated output voltage will be N times the V<sub>BE</sub> of Q<sub>1</sub> (a 2N3904 works well). The multiplication factor N is set by the resistor divider ratio. Using the 10 KΩ potentiometer and the resistor values shown the output should be adjustable to a range of voltages around +5 V. The load regulation is fairly good up to the maximum current based on the chosen value for L<sub>1</sub> however, the temperature stability will be rather poor because of the strong negative TC of V<sub>BE</sub>.</p>
+<p><strong>For Further Reading:</strong></p>
+<p><a class="icon link reference external" href="http://en.wikipedia.org/wiki/Boost_converter" target="_blank">http://en.wikipedia.org/wiki/Boost_converter</a></p>
+<p><strong>Return to Lab Activity</strong> <a class="reference internal" href="alm-labs-list.html"><span class="doc">Table of Contents</span></a></p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

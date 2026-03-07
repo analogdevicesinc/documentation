@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The timer driver initializes and offers APIs for hardware timers. No-OS platform uses hardware in two contexts:" name="description" />
+
+    <title>No-OS Timer API &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">No-OS Timer API</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
+<li><a class="reference internal" href="#timer-initial-parameters">Timer Initial Parameters</a><ul>
+<li><a class="reference internal" href="#structure-definition">Structure Definition</a></li>
+<li><a class="reference internal" href="#parameters-description">Parameters Description</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#timer-descriptor">Timer Descriptor</a><ul>
+<li><a class="reference internal" href="#structure-definition-1">Structure Definition</a></li>
+<li><a class="reference internal" href="#parameters-description-1">Parameters Description</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#timer-apis">Timer APIs</a><ul>
+<li><a class="reference internal" href="#structure-definition-2">Structure Definition</a></li>
+<li><a class="reference internal" href="#apis-description">APIs description</a><ul>
+<li><a class="reference internal" href="#init-api">Init API</a></li>
+<li><a class="reference internal" href="#start-api">Start API</a></li>
+<li><a class="reference internal" href="#stop-api">Stop API</a></li>
+<li><a class="reference internal" href="#get-counter-api">Get counter API</a></li>
+<li><a class="reference internal" href="#set-counter-api">Set counter API</a></li>
+<li><a class="reference internal" href="#get-counter-clock-api">Get counter clock API</a></li>
+<li><a class="reference internal" href="#set-counter-clock-api">Set counter clock API</a></li>
+<li><a class="reference internal" href="#get-elapsed-time-in-nanoseconds-api">Get elapsed time in nanoseconds API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#timer-supported-platforms">Timer Supported Platforms</a><ul>
+<li><a class="reference internal" href="#aducm3029-platform">ADUCM3029 Platform</a></li>
+<li><a class="reference internal" href="#maxim-platform">MAXIM Platform</a></li>
+<li><a class="reference internal" href="#mbed-platform">MBED Platform</a></li>
+<li><a class="reference internal" href="#pico-platform">Pico Platform</a></li>
+<li><a class="reference internal" href="#stm32-platform">STM32 Platform</a></li>
+<li><a class="reference internal" href="#xilinx-platform">Xilinx Platform</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#timer-examples">Timer Examples</a><ul>
+<li><a class="reference internal" href="#delays-with-hardware-timers">Delays with hardware timers</a><ul>
+<li><a class="reference internal" href="#aducm3029-platform-1">Aducm3029 platform</a></li>
+<li><a class="reference internal" href="#maxim-platform-1">Maxim platform</a></li>
+<li><a class="reference internal" href="#mbed-platform-1">MBED Platform</a></li>
+<li><a class="reference internal" href="#pico-platform-1">Pico Platform</a></li>
+<li><a class="reference internal" href="#stm32-platform-1">STM32 platform</a></li>
+<li><a class="reference internal" href="#xilinx-platform-1">Xilinx Platform</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#time-triggered-interrupts-with-hardware-timers">Time triggered interrupts with hardware timers</a><ul>
+<li><a class="reference internal" href="#time-triggered-interrupts-generic-example">Time triggered interrupts generic example</a><ul>
+<li><a class="reference internal" href="#aducm3029-platform-2">Aducm3029 platform</a></li>
+<li><a class="reference internal" href="#maxim-platform-2">Maxim platform</a></li>
+<li><a class="reference internal" href="#mbed-platform-2">MBED Platform</a></li>
+<li><a class="reference internal" href="#pico-platform-2">Pico Platform</a></li>
+<li><a class="reference internal" href="#stm32-platform-2">STM32 platform</a></li>
+<li><a class="reference internal" href="#xilinx-platform-2">Xilinx Platform</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#time-triggered-interrupt-with-iio-triggers">Time triggered interrupt with IIO triggers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="no-os-timer-api">
+<h1>No-OS Timer API<a class="headerlink" href="#no-os-timer-api" title="Link to this heading"></a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>The timer driver initializes and offers APIs for hardware timers. No-OS platform uses hardware in two contexts:</p>
+<ul class="simple">
+<li><p>to measure time intervals in order to perform time delays</p></li>
+<li><p>to measure time intervals in order to perform time triggered interrupts.</p></li>
+</ul>
+</section>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading"></a></h2>
+<p>The timer generic driver documentation is generated using the Doxygen tool and it is available at:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="http://analogdevicesinc.github.io/no-OS/doxygen/no__os__timer_8h.html" target="_blank">No-OS Timer Generic Driver</a></p></li>
+</ul>
+</section>
+<section id="timer-initial-parameters">
+<h2>Timer Initial Parameters<a class="headerlink" href="#timer-initial-parameters" title="Link to this heading"></a></h2>
+<p><strong>struct no_os_timer_init_param</strong> structure has to be filled in by the application and has to be given as a parameter when calling the initialization API.</p>
+<section id="structure-definition">
+<h3>Structure Definition<a class="headerlink" href="#structure-definition" title="Link to this heading"></a></h3>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">no_os_timer_init_param</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/** timer ID */</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** timer count frequency (Hz) */</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">freq_hz</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** the number of ticks the timer counts until it resets */</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ticks_count</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** Timer platform operations */</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">no_os_timer_platform_ops</span><span class="w"> </span><span class="o">*</span><span class="n">platform_ops</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** timer extra parameters (device specific) */</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">extra</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="parameters-description">
+<h3>Parameters Description<a class="headerlink" href="#parameters-description" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>id</strong> - represents the unique identifier for a hardware timer to be used. the value is hardware dependent</p></li>
+<li><p><strong>freq_hz</strong> - represents the timer count frequency</p></li>
+<li><p><strong>ticks_count</strong> - represents the number of ticks the timer counts until it resets</p></li>
+<li><p><strong>*platform_ops</strong> - is a pointer to timer APIs. the value is MCU platform specific</p></li>
+<li><p><strong>*extra</strong> - is a pointer to extra timer initialization parameters, which are specific the the used MCU platform. The definition of the extra timer initialization parameters can be found under the name <em>platform</em>_timer_init_param, where platform can be <em>aducm, max, pico, stm32, xil</em>.</p></li>
+</ul>
+</section>
+</section>
+<section id="timer-descriptor">
+<h2>Timer Descriptor<a class="headerlink" href="#timer-descriptor" title="Link to this heading"></a></h2>
+<p><strong>struct no_os_timer_desc</strong> structure is filled by the initialization API based on the given initialization parameters. It describes the initialized timer instance which has to be given as a parameter when using the other APIs.</p>
+<section id="structure-definition-1">
+<span id="id1"></span><h3>Structure Definition<a class="headerlink" href="#structure-definition-1" title="Link to this heading"></a></h3>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">no_os_timer_desc</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/** timer ID */</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** timer count frequency (Hz) */</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">freq_hz</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** the number of ticks the timer counts until it resets */</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ticks_count</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** Timer platform operations */</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">no_os_timer_platform_ops</span><span class="w"> </span><span class="o">*</span><span class="n">platform_ops</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** timer extra parameters (device specific) */</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">extra</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="parameters-description-1">
+<span id="id2"></span><h3>Parameters Description<a class="headerlink" href="#parameters-description-1" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>id</strong> - represents the unique identifier given to the timer - equal to the id given in the initialization structure</p></li>
+<li><p><strong>freq_hz</strong> - represents the timer count frequency - equal to the freq_hz given in the initialization structure</p></li>
+<li><p><strong>ticks_count</strong> - represents the number of ticks the timer counts until it resets - equal to the ticks_count given in the initialization structure</p></li>
+<li><p><strong>*platform_ops</strong> - is a pointer to timer APIs - equal to the platform_ops given in the initialization structure</p></li>
+<li><p><strong>*extra</strong> - is a pointer to extra timer description parameters, which are specific the the used MCU platform. The definition of the extra timer descriptor can be found under the name <em>platform</em>_timer_desc, where platform can be <em>aducm, max, pico, stm32, xil</em>.</p></li>
+</ul>
+</section>
+</section>
+<section id="timer-apis">
+<h2>Timer APIs<a class="headerlink" href="#timer-apis" title="Link to this heading"></a></h2>
+<p>The structure no_os_timer_platform_ops consists of pointers to timer APIs that point to platform specific functions. Each platform shall contain a specific implementation for each of these functions.</p>
+<section id="structure-definition-2">
+<span id="id3"></span><h3>Structure Definition<a class="headerlink" href="#structure-definition-2" title="Link to this heading"></a></h3>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">no_os_timer_platform_ops</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/** timer initialization function pointer */</span>
+<span class="w">    </span><span class="kt">int32_t</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">init</span><span class="p">)(</span><span class="k">struct</span><span class="w"> </span><span class="nc">no_os_timer_desc</span><span class="w"> </span><span class="o">**</span><span class="p">,</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">no_os_timer_init_param</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="w">    </span><span class="cm">/** timer start function pointer */</span>
+<span class="w">    </span><span class="kt">int32_t</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">start</span><span class="p">)(</span><span class="k">struct</span><span class="w"> </span><span class="nc">no_os_timer_desc</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="w">    </span><span class="cm">/** timer stop function pointer */</span>
+<span class="w">    </span><span class="kt">int32_t</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">stop</span><span class="p">)(</span><span class="k">struct</span><span class="w"> </span><span class="nc">no_os_timer_desc</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="w">    </span><span class="cm">/** timer get counter function pointer */</span>
+<span class="w">    </span><span class="kt">int32_t</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">counter_get</span><span class="p">)(</span><span class="k">struct</span><span class="w"> </span><span class="nc">no_os_timer_desc</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="o">*</span><span class="n">counter</span><span class="p">);</span>
+<span class="w">    </span><span class="cm">/** timer set counter function pointer */</span>
+<span class="w">    </span><span class="kt">int32_t</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">counter_set</span><span class="p">)(</span><span class="k">struct</span><span class="w"> </span><span class="nc">no_os_timer_desc</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">new_val</span><span class="p">);</span>
+<span class="w">    </span><span class="cm">/** timer get clock frequency function pointer */</span>
+<span class="w">    </span><span class="kt">int32_t</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">count_clk_get</span><span class="p">)(</span><span class="k">struct</span><span class="w"> </span><span class="nc">no_os_timer_desc</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="o">*</span><span class="n">freq_hz</span><span class="p">);</span>
+<span class="w">    </span><span class="cm">/** timer set clock frequency function pointer */</span>
+<span class="w">    </span><span class="kt">int32_t</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">count_clk_set</span><span class="p">)(</span><span class="k">struct</span><span class="w"> </span><span class="nc">no_os_timer_desc</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">freq_hz</span><span class="p">);</span>
+<span class="w">    </span><span class="cm">/** timer get elapsed time in nsec */</span>
+<span class="w">    </span><span class="kt">int32_t</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">get_elapsed_time_nsec</span><span class="p">)(</span><span class="k">struct</span><span class="w"> </span><span class="nc">no_os_timer_desc</span><span class="w"> </span><span class="o">*</span><span class="p">,</span>
+<span class="w">                     </span><span class="kt">uint64_t</span><span class="w"> </span><span class="o">*</span><span class="n">elapsed_time</span><span class="p">);</span>
+<span class="w">    </span><span class="cm">/** timer remove function pointer */</span>
+<span class="w">    </span><span class="kt">int32_t</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">remove</span><span class="p">)(</span><span class="k">struct</span><span class="w"> </span><span class="nc">no_os_timer_desc</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="apis-description">
+<h3>APIs description<a class="headerlink" href="#apis-description" title="Link to this heading"></a></h3>
+<section id="init-api">
+<h4>Init API<a class="headerlink" href="#init-api" title="Link to this heading"></a></h4>
+<p>Initializes the hardware timer peripheral, taking the initialization parameters and stores data in the timer descriptor.</p>
+</section>
+<section id="start-api">
+<h4>Start API<a class="headerlink" href="#start-api" title="Link to this heading"></a></h4>
+<p>Starts the hardware timer - at this point the timer shall begin counting with the given frequency either up to the ticks count value, starting from 0, either down to 0, starting from the given ticks count value. The descriptor of the timer is given as parameter. The timer has to be initialized before calling this API.</p>
+</section>
+<section id="stop-api">
+<h4>Stop API<a class="headerlink" href="#stop-api" title="Link to this heading"></a></h4>
+<p>Stops the hardware timer which was previously started using the start API - at this point the timer shall stop counting. The descriptor of the timer is given as parameter. The timer has to be initialized before calling this API.</p>
+</section>
+<section id="get-counter-api">
+<h4>Get counter API<a class="headerlink" href="#get-counter-api" title="Link to this heading"></a></h4>
+<p>Reads the value of the count register of the hardware timer. The descriptor of the timer is given as parameter. The value of the count register will be stored at the address given by the counter pointer parameter. The timer has to be initialized before calling this API.</p>
+</section>
+<section id="set-counter-api">
+<h4>Set counter API<a class="headerlink" href="#set-counter-api" title="Link to this heading"></a></h4>
+<p>Sets the value of the count register of the hardware timer equal to the value given in the counter parameter. The descriptor of the timer is given as parameter. The timer has to be initialized before calling this API. This value has to be smaller than the ticks count value given in the initialization.</p>
+</section>
+<section id="get-counter-clock-api">
+<h4>Get counter clock API<a class="headerlink" href="#get-counter-clock-api" title="Link to this heading"></a></h4>
+<p>Reads the source clock frequency of the hardware timer. The descriptor of the timer is given as parameter. The value of the frequency (in Hertz) will be stored at the address given by the freq_hz pointer parameter. The timer has to be initialized before calling this API.</p>
+</section>
+<section id="set-counter-clock-api">
+<h4>Set counter clock API<a class="headerlink" href="#set-counter-clock-api" title="Link to this heading"></a></h4>
+<p>Sets the source clock frequency of the hardware timer equal to the value given in the freq_hz parameter (given in Hertz). The descriptor of the timer is given as parameter. The timer has to be initialized before calling this API.</p>
+</section>
+<section id="get-elapsed-time-in-nanoseconds-api">
+<h4>Get elapsed time in nanoseconds API<a class="headerlink" href="#get-elapsed-time-in-nanoseconds-api" title="Link to this heading"></a></h4>
+<p>Reads the elapsed time in nanoseconds measured with the hardware timer. The descriptor of the timer is given as parameter. The value of elapsed time (in nanoseconds) will be stored at the address given by the elapsed_time pointer parameter. The timer has to be initialized before calling this API.</p>
+</section>
+</section>
+</section>
+<section id="timer-supported-platforms">
+<h2>Timer Supported Platforms<a class="headerlink" href="#timer-supported-platforms" title="Link to this heading"></a></h2>
+<section id="aducm3029-platform">
+<h3>ADUCM3029 Platform<a class="headerlink" href="#aducm3029-platform" title="Link to this heading"></a></h3>
+<p>The timer driver documentation for ADUCM3029 platform can be found here:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="http://analogdevicesinc.github.io/no-OS/doxygen/aducm3029__timer_8h.html" target="_blank">Header file for ADUCM3029 timer driver</a></p></li>
+<li><p><a class="icon link reference external" href="http://analogdevicesinc.github.io/no-OS/doxygen/aducm3029__timer_8c.html" target="_blank">Source file for ADUCM3029 timer driver</a></p></li>
+</ul>
+<p>The definition of the extra timer initialization parameters:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">aducm_timer_init_param</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/** Selected frequency for timer clock source */</span>
+<span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="n">avail_freqs</span><span class="w"> </span><span class="n">source_freq</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>The definition of the extra timer description parameters:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">aducm_timer_desc</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/** Used to compare with the driver internal count */</span>
+<span class="w">    </span><span class="kt">uint64_t</span><span class="w">    </span><span class="n">old_time</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** 1 if the instance is counting, 0 otherwise */</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w">        </span><span class="n">started</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** Timer configuration for aducm3029 */</span>
+<span class="w">    </span><span class="n">ADI_TMR_CONFIG</span><span class="w">  </span><span class="n">tmr_conf</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="maxim-platform">
+<h3>MAXIM Platform<a class="headerlink" href="#maxim-platform" title="Link to this heading"></a></h3>
+<p>The timer driver documentation for each MAXIM family can be found here:</p>
+<ul class="simple">
+<li><p>MAX32650:</p>
+<ul>
+<li><p><a class="icon link reference external" href="http://analogdevicesinc.github.io/no-OS/doxygen/max32650_2maxim__timer_8h.html" target="_blank">Header file for MAX32650 timer driver</a></p>
+<ul>
+<li><p><a class="icon link reference external" href="http://analogdevicesinc.github.io/no-OS/doxygen/max32650_2maxim__timer_8c.html" target="_blank">Source file for MAX32650 timer driver</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>MAX32655:</p>
+<ul>
+<li><p><a class="icon link reference external" href="http://analogdevicesinc.github.io/no-OS/doxygen/max32655_2maxim__timer_8h.html" target="_blank">Header file for MAX32655 timer driver</a></p>
+<ul>
+<li><p><a class="icon link reference external" href="http://analogdevicesinc.github.io/no-OS/doxygen/max32655_2maxim__timer_8c.html" target="_blank">Source file for MAX32655 timer driver</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>MAX32660:</p>
+<ul>
+<li><p><a class="icon link reference external" href="http://analogdevicesinc.github.io/no-OS/doxygen/max32660_2maxim__timer_8h.html" target="_blank">Header file for MAX32660 timer driver</a></p>
+<ul>
+<li><p><a class="icon link reference external" href="http://analogdevicesinc.github.io/no-OS/doxygen/max32660_2maxim__timer_8c.html" target="_blank">Source file for MAX32660 timer driver</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>MAX32665:</p>
+<ul>
+<li><p><a class="icon link reference external" href="http://analogdevicesinc.github.io/no-OS/doxygen/max32665_2maxim__timer_8h.html" target="_blank">Header file for MAX32665 timer driver</a></p>
+<ul>
+<li><p><a class="icon link reference external" href="http://analogdevicesinc.github.io/no-OS/doxygen/max32665_2maxim__timer_8c.html" target="_blank">Source file for MAX32665 timer driver</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>MAX78000:</p>
+<ul>
+<li><p><a class="icon link reference external" href="http://analogdevicesinc.github.io/no-OS/doxygen/max78000_2maxim__timer_8h.html" target="_blank">Header file for MAX78000 timer driver</a></p>
+<ul>
+<li><p><a class="icon link reference external" href="http://analogdevicesinc.github.io/no-OS/doxygen/max78000_2maxim__timer_8c.html" target="_blank">Source file for MAX7800 timer driver</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>There are no extra parameters needed for MAXIM platform.</p>
+</section>
+<section id="mbed-platform">
+<h3>MBED Platform<a class="headerlink" href="#mbed-platform" title="Link to this heading"></a></h3>
+<p>The timer driver documentation for MBED platform can be found here:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="http://analogdevicesinc.github.io/no-OS/doxygen/mbed__timer_8h.html" target="_blank">Header file for MBED timer driver</a></p></li>
+</ul>
+<p>The definition of the extra timer description parameters:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">mbed_timer_desc</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">timer</span><span class="p">;</span><span class="w">        </span><span class="c1">// Object to the mbed Timer class</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="pico-platform">
+<h3>Pico Platform<a class="headerlink" href="#pico-platform" title="Link to this heading"></a></h3>
+<p>The timer driver documentation for Pico platform can be found here:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="http://analogdevicesinc.github.io/no-OS/doxygen/pico__timer_8h.html" target="_blank">Header file for Pico timer driver</a></p></li>
+<li><p><a class="icon link reference external" href="http://analogdevicesinc.github.io/no-OS/doxygen/pico__timer_8c.html" target="_blank">Source file for Pico timer driver</a></p></li>
+</ul>
+</section>
+<section id="stm32-platform">
+<h3>STM32 Platform<a class="headerlink" href="#stm32-platform" title="Link to this heading"></a></h3>
+<p>The timer driver documentation for STM32 platform can be found here:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="http://analogdevicesinc.github.io/no-OS/doxygen/stm32__timer_8h.html" target="_blank">Header file for STM32 timer driver</a></p></li>
+<li><p><a class="icon link reference external" href="http://analogdevicesinc.github.io/no-OS/doxygen/stm32__timer_8c.html" target="_blank">Source file for STM32 timer driver</a></p></li>
+</ul>
+<p>The definition of the extra timer initialization parameters:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">stm32_timer_init_param</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">TIM_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">htimer</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">stm32_timer_init_param</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The definition of the extra timer description parameters:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">stm32_timer_desc</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">TIM_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">htimer</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">stm32_timer_desc</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Where htimer parameter is a pointer to the address holding the hardware timer handle data, specific to STM32 HAL.</p>
+</section>
+<section id="xilinx-platform">
+<h3>Xilinx Platform<a class="headerlink" href="#xilinx-platform" title="Link to this heading"></a></h3>
+<p>The timer driver documentation for Xilinx platform can be found here:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="http://analogdevicesinc.github.io/no-OS/doxygen/xilinx_2timer__extra_8h.html" target="_blank">Header file for Xilinx timer driver</a></p></li>
+<li><p><a class="icon link reference external" href="http://analogdevicesinc.github.io/no-OS/doxygen/platform_2xilinx_2no__os__timer_8c.html" target="_blank">Source file for Xilinx timer driver</a></p></li>
+</ul>
+<p>The definition of the extra timer initialization parameters:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">xil_timer_init_param</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/** Timer used from the PL 3-timer core */</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">active_tmr</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** Platform selection parameter */</span>
+<span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="n">xil_timer_type</span><span class="w"> </span><span class="n">type</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>The definition of the extra timer description parameters:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">xil_timer_desc</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/** Pointer to the BSP driver handler */</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">instance</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** Pointer to the BSP driver configuration handler */</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">config</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** Timer used from the PL 3-timer core */</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">active_tmr</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** Platform selection parameter */</span>
+<span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="n">xil_timer_type</span><span class="w"> </span><span class="n">type</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="timer-examples">
+<h2>Timer Examples<a class="headerlink" href="#timer-examples" title="Link to this heading"></a></h2>
+<section id="delays-with-hardware-timers">
+<h3>Delays with hardware timers<a class="headerlink" href="#delays-with-hardware-timers" title="Link to this heading"></a></h3>
+<p>You may obtain delays using a hardware timer. Below you may find an example.</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;no_os_timer.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;no_os_irq.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;parameters.h&quot;</span>
+
+<span class="cm">/* Each tick takes 1/10000 seconds = 0.1 ms)</span>
+<span class="cm">#define TIMER_FREQ_HZ 10000</span>
+<span class="cm">/* The counter of the timer will reset when it reached value 1000 */</span>
+<span class="cp">#define TIMER_TICKS_COUNT 1000</span>
+
+<span class="cm">/* We need 100 ticks in order to obtain a 10ms period */</span>
+<span class="cp">#define TIMER_DELAY_10MS 100</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">count</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Timer initialization parameter */</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">no_os_timer_init_param</span><span class="w"> </span><span class="n">timer_ip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIMER_DEVICE_ID</span><span class="p">,</span><span class="w"> </span><span class="c1">// platform specific</span>
+<span class="w">        </span><span class="p">.</span><span class="n">freq_hz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIMER_FREQ_HZ</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">ticks_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIMER_TICKS_COUNT</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">platform_ops</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIMER_OPS</span><span class="p">,</span><span class="w"> </span><span class="c1">// platform specific</span>
+<span class="w">        </span><span class="p">.</span><span class="n">extra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIMER_EXTRA</span><span class="p">,</span><span class="w"> </span><span class="c1">// platform specific</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">        </span><span class="cm">/* Timer descriptor. */</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">no_os_timer_desc</span><span class="w"> </span><span class="o">*</span><span class="n">timer_desc</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Initialize timer */</span>
+<span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no_os_timer_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timer_desc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">timer_irq_ip</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Set counter to 0 */</span>
+<span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no_os_timer_counter_set</span><span class="p">(</span><span class="n">timer_desc</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Start timer */</span>
+<span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no_os_timer_start</span><span class="p">(</span><span class="n">timer_desc</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Wait until the timer counter is equal to the desired value */</span>
+<span class="w">    </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no_os_timer_counter_get</span><span class="p">(</span><span class="n">timer_desc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">count</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">count</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">TIMER_DELAY_10MS</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* Stop the timer */</span>
+<span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no_os_timer_stop</span><span class="p">(</span><span class="n">timer_desc</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+
+<span class="w">    </span><span class="p">...</span>
+</pre></div>
+</div>
+<p>Below you may find the platform specific definitions for each platform:</p>
+<section id="aducm3029-platform-1">
+<span id="id4"></span><h4>Aducm3029 platform<a class="headerlink" href="#aducm3029-platform-1" title="Link to this heading"></a></h4>
+<p>Aducm3029 parameters.h:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;aducm3029_timer.h&quot;</span>
+
+<span class="cp">#define TIMER_DEVICE_ID 1 </span><span class="c1">// only 1 allowed, instace 0 is used for time delays</span>
+<span class="cp">#define TIMER_OPS &amp;aducm3029_timer_ops</span>
+<span class="k">extern</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">aducm_timer_init_param</span><span class="w"> </span><span class="n">timer_extra_ip</span><span class="p">;</span>
+<span class="cp">#define TIMER_EXTRA &amp;timer_extra_ip</span>
+</pre></div>
+</div>
+<p>Aducm3029 parameters.c:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;parameters.h&quot;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">aducm_timer_init_param</span><span class="w"> </span><span class="n">timer_extra_ip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">.</span><span class="n">source_freq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PCLK_DIV256</span><span class="p">,</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>For Aducm3029 platform TIMER_FREQ_HZ value is not used (initialization parameter freq_hz) because it cannot be set freely. The value of the source clock frequency is given in the extra parameter in the source_freq field. In this example the clock source frequency for the timer will be equal to the PCLK frequency divided by 256.</p>
+</div>
+</section>
+<section id="maxim-platform-1">
+<span id="id5"></span><h4>Maxim platform<a class="headerlink" href="#maxim-platform-1" title="Link to this heading"></a></h4>
+<p>Maxim parameters.h:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;timer_extra.h&quot;</span>
+
+<span class="cp">#define TIMER_DEVICE_ID 0</span>
+<span class="cp">#define TIMER_OPS &amp;max_timer_ops</span>
+<span class="cp">#define TIMER_EXTRA NULL </span><span class="c1">// Not used for Maxim platform</span>
+</pre></div>
+</div>
+</section>
+<section id="mbed-platform-1">
+<span id="id6"></span><h4>MBED Platform<a class="headerlink" href="#mbed-platform-1" title="Link to this heading"></a></h4>
+<p>MBED parameters.h:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;mbed_timer.h&quot;</span>
+
+<span class="cp">#define TIMER_DEVICE_ID 0 </span><span class="c1">// Not used for MBED platform</span>
+<span class="cp">#define TIMER_OPS NULL </span><span class="c1">// Not used for MBED platform</span>
+<span class="cp">#define TIMER_EXTRA NULL </span><span class="c1">// Not used for MBED platform</span>
+</pre></div>
+</div>
+</section>
+<section id="pico-platform-1">
+<span id="id7"></span><h4>Pico Platform<a class="headerlink" href="#pico-platform-1" title="Link to this heading"></a></h4>
+<p>Pico parameters.h:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pico_timer.h&quot;</span>
+
+<span class="cp">#define TIMER_DEVICE_ID 0 </span><span class="c1">// For alarm0 instance</span>
+<span class="cp">#define TIMER_OPS &amp;pico_timer_ops</span>
+<span class="cp">#define TIMER_EXTRA NULL </span><span class="c1">// Not used for pico platform</span>
+</pre></div>
+</div>
+</section>
+<section id="stm32-platform-1">
+<span id="id8"></span><h4>STM32 platform<a class="headerlink" href="#stm32-platform-1" title="Link to this heading"></a></h4>
+<p>STM32 parameters.h:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stm32_timer.h&quot;</span>
+
+<span class="cp">#define TIMER_DEVICE_ID 0</span>
+<span class="cp">#define TIMER_OPS &amp;stm32_timer_ops</span>
+<span class="k">extern</span><span class="w"> </span><span class="n">stm32_timer_init_param</span><span class="w"> </span><span class="n">timer_xtip</span><span class="p">;</span>
+<span class="cp">#define TIMER_EXTRA &amp;timer_xtip</span>
+</pre></div>
+</div>
+<p>STM32 parameters.c:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;parameters.h&quot;</span>
+<span class="cm">/* htim13 is defined in the STM32 generated code after selecting the timer in the STMCubeMx application */</span>
+<span class="k">extern</span><span class="w"> </span><span class="n">TIM_HandleTypeDef</span><span class="w"> </span><span class="n">htim13</span><span class="p">;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">stm32_timer_init_param</span><span class="w"> </span><span class="n">timer_xtip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">.</span><span class="n">htimer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">htim13</span><span class="p">,</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>For HAL configuration the .ioc file is used. Make sure your .ioc file contains the timer instantiation.</p>
+<p>Some settings used in STMCubeMx will be overwritten by No-OS code such that the period of the timer meets the settings given in the initialization parameters */</p>
+</div>
+<p>The image below show that TIM13 is activated in STMCubeMx:</p>
+<p><img alt="STMCubeMx TIM13 activated" src="https://wiki.analog.com/_media/resources/no-os/drivers/parameters_timer_stm32.png" /></p>
+</section>
+<section id="xilinx-platform-1">
+<span id="id9"></span><h4>Xilinx Platform<a class="headerlink" href="#xilinx-platform-1" title="Link to this heading"></a></h4>
+<p>Xilinx parameters.h:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;timer_extra.h&quot;</span>
+
+<span class="cp">#define TIMER_DEVICE_ID 0 </span><span class="c1">// Not used for Xilinx platform</span>
+<span class="cp">#define TIMER_OPS NULL </span><span class="c1">// Not used for Xilinx platform</span>
+<span class="k">extern</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">xil_timer_init_param</span><span class="w"> </span><span class="n">timer_xtip</span><span class="p">;</span>
+<span class="cp">#define TIMER_EXTRA &amp;timer_xtip</span>
+</pre></div>
+</div>
+<p>Xilinx parameters.c:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;parameters.h&quot;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">xil_timer_init_param</span><span class="w"> </span><span class="n">timer_xtip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">.</span><span class="n">active_tmr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIMER_PS</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Although you may use the hardware timers to perform delays, with No-OS platform we advise you to use the already implemented APIs from no_os_delay.h: no_os_udelay(uint32_t usecs) to perform a delay in microseconds and no_os_mdelay(uint32_t msecs) to perform a delay in milliseconds. Using the no_os_delay APIs you will have one extra hardware timer resource available, to be used in the application as deemed fit.</p>
+</section>
+</section>
+<section id="time-triggered-interrupts-with-hardware-timers">
+<h3>Time triggered interrupts with hardware timers<a class="headerlink" href="#time-triggered-interrupts-with-hardware-timers" title="Link to this heading"></a></h3>
+<p>On No-OS platform, the time triggered interrupts are primarily used for IIO hardware triggers, but they can be used by the application as seen fit.</p>
+<section id="time-triggered-interrupts-generic-example">
+<h4>Time triggered interrupts generic example<a class="headerlink" href="#time-triggered-interrupts-generic-example" title="Link to this heading"></a></h4>
+<p>In order to be able to used time triggered interrupts you will have two perform initialization for the timer peripheral (with no_os_timer_init API) and for the interrupt controller (with no_os_irq_ctrl_init API). Additionally you may specify the the interrupt priority (with no_os_irq_set_priority API). If the initialization is successful, now you may register your callback function (with no_os_irq_register_callback API) which is going to be called from the interrupt context. Finally, you should enable the timer interrupt (with no_os_irq_enable API) and you should start the timer (with no_os_timer_start API).</p>
+<p>Below you may find a code snippet, containing the needed steps to be able to use time triggered interrupts:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;no_os_timer.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;no_os_irq.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;parameters.h&quot;</span>
+
+<span class="cm">/* Values for 100 ms interrupt period */</span>
+<span class="cp">#define TIMER_FREQ_HZ 10000</span>
+<span class="cp">#define TIMER_TICKS_COUNT 1000</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">timer_callback</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">context</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Application specific implementation */</span>
+<span class="p">}</span>
+
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Timer initialization parameter */</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">no_os_timer_init_param</span><span class="w"> </span><span class="n">timer_ip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIMER_DEVICE_ID</span><span class="p">,</span><span class="w"> </span><span class="c1">// platform specific</span>
+<span class="w">        </span><span class="p">.</span><span class="n">freq_hz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIMER_FREQ_HZ</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">ticks_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIMER_TICKS_COUNT</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">platform_ops</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIMER_OPS</span><span class="p">,</span><span class="w"> </span><span class="c1">// platform specific</span>
+<span class="w">        </span><span class="p">.</span><span class="n">extra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIMER_EXTRA</span><span class="p">,</span><span class="w"> </span><span class="c1">// platform specific</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="cm">/* Timer irq initialization parameter */</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">no_os_irq_init_param</span><span class="w"> </span><span class="n">timer_irq_ip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">.</span><span class="n">irq_ctrl_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// specific to NVIC IRQ controller</span>
+<span class="w">        </span><span class="p">.</span><span class="n">platform_ops</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIMER_IRQ_OPS</span><span class="p">,</span><span class="w"> </span><span class="c1">// platform specific</span>
+<span class="w">        </span><span class="p">.</span><span class="n">extra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIMER_IRQ_EXTRA</span><span class="p">,</span><span class="w"> </span><span class="c1">// platform specific</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">no_os_callback_desc</span><span class="w"> </span><span class="n">irq_cb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">.</span><span class="n">callback</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">timer_callback</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CALLBACK_PARAMETERS</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NO_OS_EVT_TIM_ELAPSED</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">peripheral</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NO_OS_TIM_IRQ</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">handle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIMER_CB_HANDLE</span><span class="p">,</span><span class="w"> </span><span class="c1">// platform specific</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="cm">/* Timer descriptor. */</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">no_os_timer_desc</span><span class="w"> </span><span class="o">*</span><span class="n">timer_desc</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Irq descriptor */</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">no_os_irq_ctrl_desc</span><span class="w"> </span><span class="o">*</span><span class="n">irq_desc</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Initialize timer */</span>
+<span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no_os_timer_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timer_desc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">timer_irq_ip</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Initialize timer IRQ controller */</span>
+<span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no_os_irq_ctrl_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">irq_desc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">timer_irq_ip</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Set timer IRQ priority */</span>
+<span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no_os_irq_set_priority</span><span class="p">(</span><span class="n">irq_desc</span><span class="p">,</span><span class="w"> </span><span class="n">TIMER_IRQ_ID</span><span class="p">,</span><span class="w"> </span><span class="n">TIMER_IRQ_PRIORITY</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Register callback for timer IRQ */</span>
+<span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no_os_irq_register_callback</span><span class="p">(</span><span class="n">irq_desc</span><span class="p">,</span><span class="w"> </span><span class="n">TIMER_IRQ_ID</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">irq_cb</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Enable timer IRQ */</span>
+<span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no_os_irq_enable</span><span class="p">(</span><span class="n">irq_desc</span><span class="p">,</span><span class="w"> </span><span class="n">TIMER_IRQ_ID</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/* Start timer */</span>
+<span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no_os_timer_start</span><span class="p">(</span><span class="n">timer_desc</span><span class="p">);</span><span class="err">​</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Below you may find the platform specific definitions for each platform:</p>
+<section id="aducm3029-platform-2">
+<span id="id10"></span><h5>Aducm3029 platform<a class="headerlink" href="#aducm3029-platform-2" title="Link to this heading"></a></h5>
+<p>Aducm3029 parameters.h:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;aducm3029_timer.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;aducm3029_irq.h&quot;</span>
+
+<span class="cp">#define TIMER_DEVICE_ID 1 </span><span class="c1">// only 1 allowed, instace 0 is used for time delays</span>
+<span class="cp">#define TIMER_OPS &amp;aducm3029_timer_ops</span>
+<span class="k">extern</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">aducm_timer_init_param</span><span class="w"> </span><span class="n">timer_extra_ip</span><span class="p">;</span>
+<span class="cp">#define TIMER_EXTRA &amp;timer_extra_ip</span>
+
+<span class="cp">#define TIMER_IRQ_ID 0 </span><span class="c1">// not used for Aducm3029 platform</span>
+<span class="cp">#define TIMER_IRQ_OPS &amp;aducm3029_irq_ops</span>
+<span class="cp">#define TIMER_IRQ_EXTRA NULL </span><span class="c1">// not used for Aducm3029 platform</span>
+
+<span class="cp">#define CALLBACK_PARAMETERS NULL </span><span class="c1">//application specific - can track the context from which the callback was registered</span>
+<span class="cp">#define TIMER_CB_HANDLE NULL </span><span class="c1">// not used for Aducm3029 platform</span>
+</pre></div>
+</div>
+<p>Aducm3029 parameters.c:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;parameters.h&quot;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">aducm_timer_init_param</span><span class="w"> </span><span class="n">timer_extra_ip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">.</span><span class="n">source_freq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PCLK_DIV256</span><span class="p">,</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>For Aducm3029 platform TIMER_FREQ_HZ value is not used (initialization parameter freq_hz) because it cannot be set freely. The value of the source clock frequency is given in the extra parameter in the source_freq field. In this example the clock source frequency for the timer will be equal to the PCLK frequency divided by 256.</p>
+</div>
+</section>
+<section id="maxim-platform-2">
+<span id="id11"></span><h5>Maxim platform<a class="headerlink" href="#maxim-platform-2" title="Link to this heading"></a></h5>
+<p>Maxim parameters.h:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;maxim_timer.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;maxim_irq.h&quot;</span>
+
+<span class="cp">#define TIMER_DEVICE_ID 0</span>
+<span class="cp">#define TIMER_OPS &amp;max_timer_ops</span>
+<span class="cp">#define TIMER_EXTRA NULL </span><span class="c1">// Not used for Maxim platform</span>
+
+<span class="cp">#define TIMER_IRQ_ID TMR0_IRQn</span>
+<span class="cp">#define TIMER_IRQ_OPS &amp;max_irq_ops</span>
+<span class="cp">#define TIMER_IRQ_EXTRA NULL </span><span class="c1">// Not used for Maxim platform</span>
+
+<span class="cp">#define CALLBACK_PARAMETERS NULL </span><span class="c1">//application specific - can track the context from which the callback was registered</span>
+<span class="cp">#define TIMER_CB_HANDLE MXC_TMR0</span>
+</pre></div>
+</div>
+</section>
+<section id="mbed-platform-2">
+<span id="id12"></span><h5>MBED Platform<a class="headerlink" href="#mbed-platform-2" title="Link to this heading"></a></h5>
+<p>MBED platform does not offer timer interrupts support currently.</p>
+</section>
+<section id="pico-platform-2">
+<span id="id13"></span><h5>Pico Platform<a class="headerlink" href="#pico-platform-2" title="Link to this heading"></a></h5>
+<p>Pico parameters.h:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pico_timer.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pico_irq.h&quot;</span>
+
+<span class="cp">#define TIMER_DEVICE_ID 0 </span><span class="c1">// For alarm0 instance</span>
+<span class="cp">#define TIMER_OPS &amp;pico_timer_ops</span>
+<span class="cp">#define TIMER_EXTRA NULL </span><span class="c1">// Not used for pico platform</span>
+
+<span class="cp">#define TIMER_IRQ_ID 0 </span><span class="c1">// For alarm0 IRQ</span>
+<span class="cp">#define TIMER_IRQ_OPS &amp;pico_irq_ops</span>
+<span class="cp">#define TIMER_IRQ_EXTRA NULL </span><span class="c1">// not used for pico platform</span>
+
+<span class="cp">#define CALLBACK_PARAMETERS NULL </span><span class="c1">//application specific - can track the context from which the callback was registered</span>
+<span class="k">extern</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">timer_cb_handle</span><span class="p">;</span>
+<span class="cp">#define TIMER_CB_HANDLE &amp;timer_cb_handle</span>
+</pre></div>
+</div>
+<p>Pico parameters.c:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;parameters.h&quot;</span>
+<span class="kt">uint8_t</span><span class="w"> </span><span class="n">timer_cb_handle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// for alarm0</span>
+</pre></div>
+</div>
+</section>
+<section id="stm32-platform-2">
+<span id="id14"></span><h5>STM32 platform<a class="headerlink" href="#stm32-platform-2" title="Link to this heading"></a></h5>
+<p>STM32 parameters.h:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stm32_timer.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stm32_irq.h&quot;</span>
+
+<span class="cp">#define TIMER_DEVICE_ID 0</span>
+<span class="cp">#define TIMER_OPS &amp;stm32_timer_ops</span>
+<span class="k">extern</span><span class="w"> </span><span class="n">stm32_timer_init_param</span><span class="w"> </span><span class="n">timer_xtip</span><span class="p">;</span>
+<span class="cp">#define TIMER_EXTRA &amp;timer_xtip</span>
+
+<span class="cp">#define TIMER_IRQ_ID TIM8_UP_TIM13_IRQn</span>
+<span class="cp">#define TIMER_IRQ_OPS &amp;stm32_irq_ops</span>
+<span class="cp">#define TIMER_IRQ_EXTRA NULL </span><span class="c1">// not used in STM32 platform</span>
+
+<span class="cp">#define CALLBACK_PARAMETERS NULL </span><span class="c1">//application specific - can track the context from which the callback was registered</span>
+<span class="cp">#define TIMER_CB_HANDLE &amp;htim13</span>
+</pre></div>
+</div>
+<p>STM32 parameters.c:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;parameters.h&quot;</span>
+<span class="cm">/* htim13 is defined in the STM32 generated code after selecting the timer in the STMCubeMx application */</span>
+<span class="k">extern</span><span class="w"> </span><span class="n">TIM_HandleTypeDef</span><span class="w"> </span><span class="n">htim13</span><span class="p">;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">stm32_timer_init_param</span><span class="w"> </span><span class="n">timer_xtip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">.</span><span class="n">htimer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">htim13</span><span class="p">,</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>For HAL configuration the .ioc file is used. Make sure your .ioc file contains the timer instantiation and make sure you are enabling interrupts for the selected timer.</p>
+<p>Some settings used in STMCubeMx will be overwritten by No-OS code such that the period of the timer meets the settings given in the initialization parameters */</p>
+</div>
+<p>The images below show that TIM13 is activated and that the according interrupts are enabled in STMCubeMx:</p>
+<p><img alt="STMCubeMx TIM13 activated" src="https://wiki.analog.com/_media/resources/no-os/drivers/parameters_timer_stm32.png" /></p>
+<img alt="STMCubeMx TIMER13 IRQ activated" class="align-center" src="https://wiki.analog.com/_media/resources/no-os/drivers/nvic_timer_stm32.png" />
+</section>
+<section id="xilinx-platform-2">
+<span id="id15"></span><h5>Xilinx Platform<a class="headerlink" href="#xilinx-platform-2" title="Link to this heading"></a></h5>
+<p>Xilinx platform does not offer timer interrupts support currently.</p>
+</section>
+</section>
+<section id="time-triggered-interrupt-with-iio-triggers">
+<h4>Time triggered interrupt with IIO triggers<a class="headerlink" href="#time-triggered-interrupt-with-iio-triggers" title="Link to this heading"></a></h4>
+<p>As mentioned previously, on No-OS platform, the time triggered interrupts are primarily used for IIO hardware triggers.</p>
+<p>When an interrupt takes place, a trigger callback will be activated, which will lead to performing a reading or a writing from/to the IIO device. The interrupt callback is registered in iio_trigger.c file in iio_hw_trig_init API. The context is the trigger descriptor, which is needed for handling the correct IIO device.</p>
+<p>In <a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/iio_demo" target="_blank">projects/iio_demo</a> project you may find a timer interrupt example with IIO triggers for STM32 platform.</p>
+<p>In <a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/adxrs290-pmdz" target="_blank">projects/adxrs290-pmdz</a> project you may find timer interrupt examples with IIO triggers for Aducm3029 and Pico platform.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

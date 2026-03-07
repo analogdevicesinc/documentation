@@ -1,0 +1,7 @@
+:doc:`Click here to return back </wiki-migration/resources/tools-software/sigmastudiov2/supportedplatforms>`
+
+ADSP-21591 Processor
+====================
+
+| 
+| Find more details online - :adi:`ADSP-21591 <en/products/adsp-21591.html>`

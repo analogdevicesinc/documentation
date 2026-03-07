@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="ADF7242" name="description" />
+
+    <title>ADF7242 Network MAC802154 Linux Driver &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ADF7242 Network MAC802154 Linux Driver</a><ul>
+<li><a class="reference internal" href="#supported-devices">Supported Devices</a></li>
+<li><a class="reference internal" href="#evaluation-boards">Evaluation Boards</a></li>
+<li><a class="reference internal" href="#description">Description</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ghz-wireless-transceiver-pmod">2.4 GHz Wireless Transceiver PMOD</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a><ul>
+<li><a class="reference internal" href="#applications">Applications</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#specifications">Specifications</a></li>
+<li><a class="reference internal" href="#interface-connector-signal-description">Interface Connector Signal Description</a></li>
+<li><a class="reference internal" href="#interface-connector-signal-description-1">Interface Connector Signal Description</a></li>
+<li><a class="reference internal" href="#functional-block-diagram">Functional Block Diagram</a></li>
+<li><a class="reference internal" href="#registration">Registration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#source-code">Source Code</a><ul>
+<li><a class="reference internal" href="#status">Status</a></li>
+<li><a class="reference internal" href="#files">Files</a></li>
+<li><a class="reference internal" href="#firmware-for-automatic-ieee-802-15-4-operating-modes-an-1082">Firmware for Automatic IEEE 802.15.4 Operating Modes (AN-1082)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#example-platform-device-initialization">Example platform device initialization</a></li>
+<li><a class="reference internal" href="#platform-data">Platform Data</a></li>
+<li><a class="reference internal" href="#platform-data-example">Platform Data Example</a></li>
+<li><a class="reference internal" href="#platform-and-bus-model">Platform and Bus Model</a></li>
+<li><a class="reference internal" href="#declaring-i2c-devices">Declaring I2C devices</a></li>
+<li><a class="reference internal" href="#example-declaring-i2c-devices">Example Declaring I2C Devices</a></li>
+<li><a class="reference internal" href="#declaring-spi-slave-devices">Declaring SPI slave devices</a></li>
+<li><a class="reference internal" href="#example-declaring-spi-slave-devices">Example Declaring SPI Slave Devices</a><ul>
+<li><a class="reference internal" href="#example-platform-board-file">Example Platform / Board file</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id2">Platform Data</a></li>
+<li><a class="reference internal" href="#id3">Platform Data Example</a></li>
+<li><a class="reference internal" href="#id4">Platform and Bus Model</a></li>
+<li><a class="reference internal" href="#id5">Declaring I2C devices</a></li>
+<li><a class="reference internal" href="#id7">Example Declaring I2C Devices</a></li>
+<li><a class="reference internal" href="#id8">Declaring SPI slave devices</a></li>
+<li><a class="reference internal" href="#id10">Example Declaring SPI Slave Devices</a></li>
+<li><a class="reference internal" href="#adding-linux-driver-support">Adding Linux driver support</a></li>
+<li><a class="reference internal" href="#hardware-configuration">Hardware configuration</a></li>
+<li><a class="reference internal" href="#id11">2.4 GHz Wireless Transceiver PMOD</a><ul>
+<li><a class="reference internal" href="#id12">Overview</a><ul>
+<li><a class="reference internal" href="#id13">Applications</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id14">Specifications</a></li>
+<li><a class="reference internal" href="#id15">Interface Connector Signal Description</a></li>
+<li><a class="reference internal" href="#id16">Interface Connector Signal Description</a></li>
+<li><a class="reference internal" href="#id18">Functional Block Diagram</a></li>
+<li><a class="reference internal" href="#id19">Registration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#driver-testing">Driver testing</a><ul>
+<li><a class="reference internal" href="#userspace-tools-for-linux-ieee-802-15-4-stack">Userspace tools for Linux IEEE 802.15.4 stack</a></li>
+<li><a class="reference internal" href="#configuration-of-the-ieee-802-15-4-layer">Configuration of the IEEE 802.15.4 layer</a><ul>
+<li><a class="reference internal" href="#configuration-for-the-first-node-zedboard">Configuration for the first node (ZedBoard)</a></li>
+<li><a class="reference internal" href="#configuration-for-the-second-node-raspberry-pi">Configuration for the second node (Raspberry Pi)</a></li>
+<li><a class="reference internal" href="#chat-application">Chat application</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuration-of-the-6lowpan-layer">Configuration of the 6loWPAN layer</a><ul>
+<li><a class="reference internal" href="#configuration-for-the-first-node-zedboard-1">Configuration for the first node (ZedBoard)</a></li>
+<li><a class="reference internal" href="#configuration-for-the-second-node-raspberry-pi-1">Configuration for the second node (Raspberry Pi)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#testing-the-communication">Testing the communication</a><ul>
+<li><a class="reference internal" href="#ping">Ping!</a></li>
+<li><a class="reference internal" href="#standard-tools">Standard tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="adf7242-network-mac802154-linux-driver">
+<h1>ADF7242 Network MAC802154 Linux Driver<a class="headerlink" href="#adf7242-network-mac802154-linux-driver" title="Link to this heading"></a></h1>
+<section id="supported-devices">
+<h2>Supported Devices<a class="headerlink" href="#supported-devices" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADF7242" target="_blank">ADF7242</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADF7241" target="_blank">ADF7241</a></p></li>
+</ul>
+</section>
+<section id="evaluation-boards">
+<h2>Evaluation Boards<a class="headerlink" href="#evaluation-boards" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADF7242-PMDZ" target="_blank">EVAL-ADF7242-PMDZ</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADF7242DB1Z" target="_blank">EVAL-ADF7242DB1Z</a></p></li>
+</ul>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+</section>
+</section>
+<section id="ghz-wireless-transceiver-pmod">
+<h1>2.4 GHz Wireless Transceiver PMOD<a class="headerlink" href="#ghz-wireless-transceiver-pmod" title="Link to this heading"></a></h1>
+<p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADF7242-PMDZ" target="_blank">EVAL-ADF7242-PMDZ (Product Page)</a></p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>The low cost and small profile RF solution 2.4 GHz, 802.15.4/Proprietary Wireless Transceiver PMOD board (<a class="icon adi reference external" href="https://www.analog.com/EVAL-ADF7242-PMDZ" target="_blank">EVAL-ADF7242-PMDZ</a>) is designed to support RF to FPGA or processor applications system that utilizes PMOD-compatible expansion ports configurable for SPI communication (PACKET MODE). For applications that require data streaming, a synchronous bidirectional serial port (SPORT) interface is also available. The Wireless Transceiver PMOD board can be selectively configured to operate on the 2400 MHz to 2483.5 MHz ISM band. This uses single chip <a class="icon adi reference external" href="https://www.analog.com/ADF7242" target="_blank">ADF7242</a> 2.4Ghz transceiver, with most of the system blocks embedded on chip, and minimizing eternal RF components.</p>
+<p>This wireless transceiver PMOD board uses mini 2.4 GHz chip antennas. In conjunction with the impedance-matched (complex differential impedance value) filter balun, reduces the RF front end count. This PMOD board supports polarization diversity that uses two chip antennas which can greatly improve performance under multipath fading conditions.</p>
+<p>Refer to the <a class="icon adi reference external" href="https://www.analog.com/ADF7242" target="_blank">ADF7242</a> data sheet for detailed information regarding operation of the device.</p>
+<section id="applications">
+<h3>Applications<a class="headerlink" href="#applications" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Zigbee</p></li>
+<li><p>Home automation</p></li>
+<li><p>Consumer electronics</p></li>
+<li><p>Monitoring</p></li>
+<li><p>Remote control</p></li>
+<li><p>Wireless sensor networks</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="specifications">
+<h2>Specifications<a class="headerlink" href="#specifications" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_2_n.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_2_n.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_2_n.png" style="width: 600px;" />
+</a>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="interface-connector-signal-description">
+<h2>Interface Connector Signal Description<a class="headerlink" href="#interface-connector-signal-description" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/raspi_adf7242.jpg"><img alt="image1" src="https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/raspi_adf7242.jpg" style="width: 400px;" /></a></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="interface-connector-signal-description-1">
+<span id="id1"></span><h2>Interface Connector Signal Description<a class="headerlink" href="#interface-connector-signal-description-1" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_3.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_3.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_3.png" style="width: 400px;" />
+</a>
+</section>
+<hr class="docutils" />
+<section id="functional-block-diagram">
+<h2>Functional Block Diagram<a class="headerlink" href="#functional-block-diagram" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/zedboard_adf7242.jpg"><img alt="image2" src="https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/zedboard_adf7242.jpg" style="width: 400px;" /></a></div>
+<div class="line">===== Schematic, PCB Layout, Bill of Materials =====</div>
+</div>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon adi reference external" href="https://www.analog.com/media/en/evaluation-documentation/evaluation-design-files/eval-adf7242-pmdz-designsupport.zip" target="_blank">EVAL-ADF7242-PMDZ Design &amp; Integration Files</a></p>
+<ul class="simple">
+<li><p>Schematic</p></li>
+<li><p>PCB Layout</p></li>
+<li><p>Bill of Materials</p></li>
+<li><p>Allegro Project</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line">===== Additional Information and Useful Links =====</div>
+</div>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADF7242" target="_blank">ADF7242 Product Page</a></p></li>
+<li><p><a class="reference internal" href="#"><span class="doc">ADF7242 Linux driver</span></a></p></li>
+<li><p><a class="reference internal" href="../../../eval/user-guides/circuits-from-the-lab/contiki-os.html"><span class="doc">Using ADF7242 with Contiki Operating System</span></a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/static/imported-files/application_notes/AN-1151.pdf" target="_blank">AN-1151 Using a Johanson 2450BM14E0007 Impedance-Matched, Integrated Filter Balun with the ADF7241 and ADF7242</a></p></li>
+</ul>
+</section>
+<section id="registration">
+<h2>Registration<a class="headerlink" href="#registration" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. <a class="icon link reference external" href="https://form.analog.com/Form_Pages/FeedBack/EVAL-ADF7242-PMDZ?&amp;v=RevA" target="_blank">Register</a> to receive all these great benefits and more!</p>
+</div>
+<div class="line-block">
+<div class="line">// End of Document</div>
+</div>
+</section>
+</section>
+<section id="source-code">
+<h1>Source Code<a class="headerlink" href="#source-code" title="Link to this heading"></a></h1>
+<section id="status">
+<h2>Status<a class="headerlink" href="#status" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Source</p></th>
+<th class="head"><p>Mainlined?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/drivers/net/ieee802154/adf7242.c" target="_blank">git</a></p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="files">
+<h2>Files<a class="headerlink" href="#files" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>File</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>driver</p></td>
+<td><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/drivers/net/ieee802154/adf7242.c" target="_blank">drivers/net/ieee802154/adf7242.c</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>include</p></td>
+<td><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/include/linux/spi/adf7242.h" target="_blank">include/linux/spi/adf7242.h</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="firmware-for-automatic-ieee-802-15-4-operating-modes-an-1082">
+<h2>Firmware for Automatic IEEE 802.15.4 Operating Modes (AN-1082)<a class="headerlink" href="#firmware-for-automatic-ieee-802-15-4-operating-modes-an-1082" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/ram_lab_7242_2_0_ieee15dot4_full_r5.zip" target="_blank">ram_lab_7242_2_0_ieee15dot4_full_r5.zip</a>
+* <a class="icon link reference external" href="https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/ram_lab_7242_2_0_ieee15dot4_full_r6.zip" target="_blank">ram_lab_7242_2_0_ieee15dot4_full_r6.zip</a></p></li>
+</ul>
+<p>Below you can find a simple command line tool that was used to convert the original firmware HEX file into binary format consumed by the ADF7242 Linux device driver.</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/adf7242_do_firmware.zip" target="_blank">Hex2Bin Firmware Tool</a></p></li>
+</ul>
+</section>
+</section>
+<section id="example-platform-device-initialization">
+<h1>Example platform device initialization<a class="headerlink" href="#example-platform-device-initialization" title="Link to this heading"></a></h1>
+</section>
+<section id="platform-data">
+<h1>Platform Data<a class="headerlink" href="#platform-data" title="Link to this heading"></a></h1>
+<p>For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.</p>
+<p>For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.</p>
+</section>
+<section id="platform-data-example">
+<h1>Platform Data Example<a class="headerlink" href="#platform-data-example" title="Link to this heading"></a></h1>
+<p>The following example shows a set of these configuration options. These variables are fully documented in adxl34x header file (include/linux/input/adxl34x.h).</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;linux/input/adxl34x.h&gt;</span>
+<span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">adxl34x_platform_data</span><span class="w"> </span><span class="n">adxl34x_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">.</span><span class="n">x_axis_offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">y_axis_offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">z_axis_offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">tap_threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x31</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">tap_duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x10</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">tap_latency</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x60</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">tap_window</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xF0</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">tap_axis_control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ADXL_TAP_X_EN</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ADXL_TAP_Y_EN</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ADXL_TAP_Z_EN</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">act_axis_control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xFF</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">activity_threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">inactivity_threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">inactivity_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">free_fall_threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x7</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">free_fall_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x20</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">data_rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x8</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">data_range</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ADXL_FULL_RES</span><span class="p">,</span>
+
+<span class="w">    </span><span class="p">.</span><span class="n">ev_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EV_ABS</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">ev_code_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ABS_X</span><span class="p">,</span><span class="w">     </span><span class="cm">/* EV_REL */</span>
+<span class="w">    </span><span class="p">.</span><span class="n">ev_code_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ABS_Y</span><span class="p">,</span><span class="w">     </span><span class="cm">/* EV_REL */</span>
+<span class="w">    </span><span class="p">.</span><span class="n">ev_code_z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ABS_Z</span><span class="p">,</span><span class="w">     </span><span class="cm">/* EV_REL */</span>
+
+<span class="w">    </span><span class="p">.</span><span class="n">ev_code_tap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">BTN_TOUCH</span><span class="p">,</span><span class="w"> </span><span class="n">BTN_TOUCH</span><span class="p">,</span><span class="w"> </span><span class="n">BTN_TOUCH</span><span class="p">},</span><span class="w"> </span><span class="cm">/* EV_KEY x,y,z */</span>
+
+<span class="p">.</span><span class="n">ev_code_ff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KEY_F</span><span class="p">,</span><span class="w">        </span><span class="cm">/* EV_KEY */</span>
+<span class="p">.</span><span class="n">ev_code_act_inactivity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KEY_A</span><span class="p">,</span><span class="w">    </span><span class="cm">/* EV_KEY */</span>
+<span class="w">    </span><span class="p">.</span><span class="n">power_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ADXL_AUTO_SLEEP</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ADXL_LINK</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">fifo_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ADXL_FIFO_STREAM</span><span class="p">,</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="platform-and-bus-model">
+<h1>Platform and Bus Model<a class="headerlink" href="#platform-and-bus-model" title="Link to this heading"></a></h1>
+<p>To attach devices to drivers, the platform and bus model eliminates the need for device drivers to contain hard coded physical addresses or bus IDs of the devices they control. The platform and bus model also prevents resource conflicts, greatly improves portability, and cleanly interfaces with the kernel’s power-management features.</p>
+<p>With the platform and bus model, device drivers know how to control a device once informed of its physical location and interrupt lines. This information is provided as a data structure passed to the driver during probing.</p>
+</section>
+<section id="declaring-i2c-devices">
+<h1>Declaring I2C devices<a class="headerlink" href="#declaring-i2c-devices" title="Link to this heading"></a></h1>
+<p>Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.</p>
+<p>This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().</p>
+<p>So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.</p>
+<p>For more information see: <a class="icon link reference external" href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst" target="_blank">instantiating-devices.rst</a></p>
+</section>
+<section id="example-declaring-i2c-devices">
+<h1>Example Declaring I2C Devices<a class="headerlink" href="#example-declaring-i2c-devices" title="Link to this heading"></a></h1>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">i2c_board_info</span><span class="w"> </span><span class="n">__initdata</span><span class="w"> </span><span class="n">bfin_i2c_board_info</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="cp">#if defined(CONFIG_TOUCHSCREEN_AD7879_I2C) || defined(CONFIG_TOUCHSCREEN_AD7879_I2C_MODULE)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">I2C_BOARD_INFO</span><span class="p">(</span><span class="s">&quot;ad7879&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x2F</span><span class="p">),</span>
+<span class="w">        </span><span class="p">.</span><span class="n">irq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IRQ_PG5</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">platform_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">bfin_ad7879_ts_info</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="cp">#endif</span>
+<span class="cp">#if defined(CONFIG_KEYBOARD_ADP5588) || defined(CONFIG_KEYBOARD_ADP5588_MODULE)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">I2C_BOARD_INFO</span><span class="p">(</span><span class="s">&quot;adp5588-keys&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x34</span><span class="p">),</span>
+<span class="w">        </span><span class="p">.</span><span class="n">irq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IRQ_PG0</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">platform_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">adp5588_kpad_data</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="cp">#endif</span>
+<span class="cp">#if defined(CONFIG_PMIC_ADP5520) || defined(CONFIG_PMIC_ADP5520_MODULE)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">I2C_BOARD_INFO</span><span class="p">(</span><span class="s">&quot;pmic-adp5520&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x32</span><span class="p">),</span>
+<span class="w">        </span><span class="p">.</span><span class="n">irq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IRQ_PG0</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">platform_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">adp5520_pdev_data</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="cp">#endif</span>
+<span class="cp">#if defined(CONFIG_INPUT_ADXL34X_I2C) || defined(CONFIG_INPUT_ADXL34X_I2C_MODULE)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">I2C_BOARD_INFO</span><span class="p">(</span><span class="s">&quot;adxl34x&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x53</span><span class="p">),</span>
+<span class="w">        </span><span class="p">.</span><span class="n">irq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IRQ_PG0</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">platform_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">adxl34x_info</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="cp">#endif</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">__init</span><span class="w"> </span><span class="nf">blackfin_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">(...)</span>
+<span class="w">    </span><span class="n">i2c_register_board_info</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">bfin_i2c_board_info</span><span class="p">,</span><span class="w"> </span><span class="n">ARRAY_SIZE</span><span class="p">(</span><span class="n">bfin_i2c_board_info</span><span class="p">));</span>
+<span class="w">    </span><span class="p">(...)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="declaring-spi-slave-devices">
+<h1>Declaring SPI slave devices<a class="headerlink" href="#declaring-spi-slave-devices" title="Link to this heading"></a></h1>
+<p>Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.</p>
+<p>This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().</p>
+<p>For more information see: <a class="icon link reference external" href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst" target="_blank">spi-summary.rst</a></p>
+</section>
+<section id="example-declaring-spi-slave-devices">
+<h1>Example Declaring SPI Slave Devices<a class="headerlink" href="#example-declaring-spi-slave-devices" title="Link to this heading"></a></h1>
+<p>So, to enable such a driver one need only edit the board support file by adding an appropriate entry to spi_board_info.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">spi_board_info</span><span class="w"> </span><span class="n">bfin_spi_board_info</span><span class="p">[]</span><span class="w"> </span><span class="n">__initdata</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="cp">#if defined(CONFIG_TOUCHSCREEN_AD7877) || defined(CONFIG_TOUCHSCREEN_AD7877_MODULE)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="p">.</span><span class="n">modalias</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ad7877&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">platform_data</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">bfin_ad7877_ts_info</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">irq</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="n">IRQ_PF6</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">max_speed_hz</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">12500000</span><span class="p">,</span><span class="w">     </span><span class="cm">/* max spi clock (SCK) speed in HZ */</span>
+<span class="w">        </span><span class="p">.</span><span class="n">bus_num</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">chip_select</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">controller_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">spi_ad7877_chip_info</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="cp">#endif</span>
+<span class="cp">#if defined(CONFIG_TOUCHSCREEN_AD7879_SPI) || defined(CONFIG_TOUCHSCREEN_AD7879_SPI_MODULE)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="p">.</span><span class="n">modalias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ad7879&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">platform_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">bfin_ad7879_ts_info</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">irq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IRQ_PF7</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">max_speed_hz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5000000</span><span class="p">,</span><span class="w">     </span><span class="cm">/* max spi clock (SCK) speed in HZ */</span>
+<span class="w">        </span><span class="p">.</span><span class="n">bus_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">chip_select</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">controller_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">spi_ad7879_chip_info</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SPI_CPHA</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">SPI_CPOL</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="cp">#endif</span>
+<span class="cp">#if defined(CONFIG_INPUT_ADXL34X_SPI) || defined(CONFIG_INPUT_ADXL34X_SPI_MODULE)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="p">.</span><span class="n">modalias</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;adxl34x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">platform_data</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">adxl34x_info</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">irq</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">IRQ_PF6</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">max_speed_hz</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">5000000</span><span class="p">,</span><span class="w">    </span><span class="cm">/* max spi clock (SCK) speed in HZ */</span>
+<span class="w">        </span><span class="p">.</span><span class="n">bus_num</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">chip_select</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">controller_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">spi_adxl34x_chip_info</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SPI_MODE_3</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="cp">#endif</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">__init</span><span class="w"> </span><span class="nf">blackfin_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">(...)</span>
+<span class="w">    </span><span class="n">spi_register_board_info</span><span class="p">(</span><span class="n">bfin_spi_board_info</span><span class="p">,</span><span class="w"> </span><span class="n">ARRAY_SIZE</span><span class="p">(</span><span class="n">bfin_spi_board_info</span><span class="p">));</span>
+<span class="w">    </span><span class="p">(...)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="example-platform-board-file">
+<h2>Example Platform / Board file<a class="headerlink" href="#example-platform-board-file" title="Link to this heading"></a></h2>
+</section>
+</section>
+<section id="id2">
+<h1>Platform Data<a class="headerlink" href="#id2" title="Link to this heading"></a></h1>
+<p>For compile time configuration, it’s common Linux practice to keep board- and application-specific configuration out of the main driver file, instead putting it into the board support file.</p>
+<p>For devices on custom boards, as typical of embedded and SoC-(system-on-chip) based hardware, Linux uses platform_data to point to board-specific structures describing devices and how they are connected to the SoC. This can include available ports, chip variants, preferred modes, default initialization, additional pin roles, and so on. This shrinks the board-support packages (BSPs) and minimizes board and application specific #ifdefs in drivers.</p>
+</section>
+<section id="id3">
+<h1>Platform Data Example<a class="headerlink" href="#id3" title="Link to this heading"></a></h1>
+<p>The following example shows a set of these configuration options. These variables are fully documented in adxl34x header file (include/linux/input/adxl34x.h).</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;linux/input/adxl34x.h&gt;</span>
+<span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">adxl34x_platform_data</span><span class="w"> </span><span class="n">adxl34x_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">.</span><span class="n">x_axis_offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">y_axis_offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">z_axis_offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">tap_threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x31</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">tap_duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x10</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">tap_latency</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x60</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">tap_window</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xF0</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">tap_axis_control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ADXL_TAP_X_EN</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ADXL_TAP_Y_EN</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ADXL_TAP_Z_EN</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">act_axis_control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xFF</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">activity_threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">inactivity_threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">inactivity_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">free_fall_threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x7</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">free_fall_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x20</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">data_rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x8</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">data_range</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ADXL_FULL_RES</span><span class="p">,</span>
+
+<span class="w">    </span><span class="p">.</span><span class="n">ev_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EV_ABS</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">ev_code_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ABS_X</span><span class="p">,</span><span class="w">     </span><span class="cm">/* EV_REL */</span>
+<span class="w">    </span><span class="p">.</span><span class="n">ev_code_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ABS_Y</span><span class="p">,</span><span class="w">     </span><span class="cm">/* EV_REL */</span>
+<span class="w">    </span><span class="p">.</span><span class="n">ev_code_z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ABS_Z</span><span class="p">,</span><span class="w">     </span><span class="cm">/* EV_REL */</span>
+
+<span class="w">    </span><span class="p">.</span><span class="n">ev_code_tap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">BTN_TOUCH</span><span class="p">,</span><span class="w"> </span><span class="n">BTN_TOUCH</span><span class="p">,</span><span class="w"> </span><span class="n">BTN_TOUCH</span><span class="p">},</span><span class="w"> </span><span class="cm">/* EV_KEY x,y,z */</span>
+
+<span class="p">.</span><span class="n">ev_code_ff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KEY_F</span><span class="p">,</span><span class="w">        </span><span class="cm">/* EV_KEY */</span>
+<span class="p">.</span><span class="n">ev_code_act_inactivity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KEY_A</span><span class="p">,</span><span class="w">    </span><span class="cm">/* EV_KEY */</span>
+<span class="w">    </span><span class="p">.</span><span class="n">power_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ADXL_AUTO_SLEEP</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ADXL_LINK</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">fifo_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ADXL_FIFO_STREAM</span><span class="p">,</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h1>Platform and Bus Model<a class="headerlink" href="#id4" title="Link to this heading"></a></h1>
+<p>To attach devices to drivers, the platform and bus model eliminates the need for device drivers to contain hard coded physical addresses or bus IDs of the devices they control. The platform and bus model also prevents resource conflicts, greatly improves portability, and cleanly interfaces with the kernel’s power-management features.</p>
+<p>With the platform and bus model, device drivers know how to control a device once informed of its physical location and interrupt lines. This information is provided as a data structure passed to the driver during probing.</p>
+</section>
+<section id="id5">
+<h1>Declaring I2C devices<a class="headerlink" href="#id5" title="Link to this heading"></a></h1>
+<p>Unlike PCI or USB devices, I2C devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each I2C bus segment, and what address these devices are using. For this reason, the kernel code must instantiate I2C devices explicitly. There are different ways to achieve this, depending on the context and requirements. However the most common method is to declare the I2C devices by bus number.</p>
+<p>This method is appropriate when the I2C bus is a system bus, as in many embedded systems, wherein each I2C bus has a number which is known in advance. It is thus possible to pre-declare the I2C devices that inhabit this bus. This is done with an array of struct i2c_board_info, which is registered by calling i2c_register_board_info().</p>
+<p>So, to enable such a driver one need only edit the board support file by adding an appropriate entry to i2c_board_info.</p>
+<p>For more information see: <a class="icon link reference external" href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/i2c/instantiating-devices.rst" target="_blank">instantiating-devices.rst</a></p>
+</section>
+<section id="id7">
+<h1>Example Declaring I2C Devices<a class="headerlink" href="#id7" title="Link to this heading"></a></h1>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">i2c_board_info</span><span class="w"> </span><span class="n">__initdata</span><span class="w"> </span><span class="n">bfin_i2c_board_info</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="cp">#if defined(CONFIG_TOUCHSCREEN_AD7879_I2C) || defined(CONFIG_TOUCHSCREEN_AD7879_I2C_MODULE)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">I2C_BOARD_INFO</span><span class="p">(</span><span class="s">&quot;ad7879&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x2F</span><span class="p">),</span>
+<span class="w">        </span><span class="p">.</span><span class="n">irq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IRQ_PG5</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">platform_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">bfin_ad7879_ts_info</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="cp">#endif</span>
+<span class="cp">#if defined(CONFIG_KEYBOARD_ADP5588) || defined(CONFIG_KEYBOARD_ADP5588_MODULE)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">I2C_BOARD_INFO</span><span class="p">(</span><span class="s">&quot;adp5588-keys&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x34</span><span class="p">),</span>
+<span class="w">        </span><span class="p">.</span><span class="n">irq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IRQ_PG0</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">platform_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">adp5588_kpad_data</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="cp">#endif</span>
+<span class="cp">#if defined(CONFIG_PMIC_ADP5520) || defined(CONFIG_PMIC_ADP5520_MODULE)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">I2C_BOARD_INFO</span><span class="p">(</span><span class="s">&quot;pmic-adp5520&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x32</span><span class="p">),</span>
+<span class="w">        </span><span class="p">.</span><span class="n">irq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IRQ_PG0</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">platform_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">adp5520_pdev_data</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="cp">#endif</span>
+<span class="cp">#if defined(CONFIG_INPUT_ADXL34X_I2C) || defined(CONFIG_INPUT_ADXL34X_I2C_MODULE)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">I2C_BOARD_INFO</span><span class="p">(</span><span class="s">&quot;adxl34x&quot;</span><span class="p">,</span><span class="w"> </span><span class="mh">0x53</span><span class="p">),</span>
+<span class="w">        </span><span class="p">.</span><span class="n">irq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IRQ_PG0</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">platform_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">adxl34x_info</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="cp">#endif</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">__init</span><span class="w"> </span><span class="nf">blackfin_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">(...)</span>
+<span class="w">    </span><span class="n">i2c_register_board_info</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">bfin_i2c_board_info</span><span class="p">,</span><span class="w"> </span><span class="n">ARRAY_SIZE</span><span class="p">(</span><span class="n">bfin_i2c_board_info</span><span class="p">));</span>
+<span class="w">    </span><span class="p">(...)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h1>Declaring SPI slave devices<a class="headerlink" href="#id8" title="Link to this heading"></a></h1>
+<p>Unlike PCI or USB devices, SPI devices are not enumerated at the hardware level. Instead, the software must know which devices are connected on each SPI bus segment, and what slave selects these devices are using. For this reason, the kernel code must instantiate SPI devices explicitly. The most common method is to declare the SPI devices by bus number.</p>
+<p>This method is appropriate when the SPI bus is a system bus, as in many embedded systems, wherein each SPI bus has a number which is known in advance. It is thus possible to pre-declare the SPI devices that inhabit this bus. This is done with an array of struct spi_board_info, which is registered by calling spi_register_board_info().</p>
+<p>For more information see: <a class="icon link reference external" href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/spi/spi-summary.rst" target="_blank">spi-summary.rst</a></p>
+</section>
+<section id="id10">
+<h1>Example Declaring SPI Slave Devices<a class="headerlink" href="#id10" title="Link to this heading"></a></h1>
+<p>So, to enable such a driver one need only edit the board support file by adding an appropriate entry to spi_board_info.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">spi_board_info</span><span class="w"> </span><span class="n">bfin_spi_board_info</span><span class="p">[]</span><span class="w"> </span><span class="n">__initdata</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="cp">#if defined(CONFIG_TOUCHSCREEN_AD7877) || defined(CONFIG_TOUCHSCREEN_AD7877_MODULE)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="p">.</span><span class="n">modalias</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ad7877&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">platform_data</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">bfin_ad7877_ts_info</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">irq</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="n">IRQ_PF6</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">max_speed_hz</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">12500000</span><span class="p">,</span><span class="w">     </span><span class="cm">/* max spi clock (SCK) speed in HZ */</span>
+<span class="w">        </span><span class="p">.</span><span class="n">bus_num</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">chip_select</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">controller_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">spi_ad7877_chip_info</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="cp">#endif</span>
+<span class="cp">#if defined(CONFIG_TOUCHSCREEN_AD7879_SPI) || defined(CONFIG_TOUCHSCREEN_AD7879_SPI_MODULE)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="p">.</span><span class="n">modalias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ad7879&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">platform_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">bfin_ad7879_ts_info</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">irq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IRQ_PF7</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">max_speed_hz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5000000</span><span class="p">,</span><span class="w">     </span><span class="cm">/* max spi clock (SCK) speed in HZ */</span>
+<span class="w">        </span><span class="p">.</span><span class="n">bus_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">chip_select</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">controller_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">spi_ad7879_chip_info</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SPI_CPHA</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">SPI_CPOL</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="cp">#endif</span>
+<span class="cp">#if defined(CONFIG_INPUT_ADXL34X_SPI) || defined(CONFIG_INPUT_ADXL34X_SPI_MODULE)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="p">.</span><span class="n">modalias</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;adxl34x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">platform_data</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">adxl34x_info</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">irq</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">IRQ_PF6</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">max_speed_hz</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">5000000</span><span class="p">,</span><span class="w">    </span><span class="cm">/* max spi clock (SCK) speed in HZ */</span>
+<span class="w">        </span><span class="p">.</span><span class="n">bus_num</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">chip_select</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">controller_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">spi_adxl34x_chip_info</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SPI_MODE_3</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="cp">#endif</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">__init</span><span class="w"> </span><span class="nf">blackfin_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">(...)</span>
+<span class="w">    </span><span class="n">spi_register_board_info</span><span class="p">(</span><span class="n">bfin_spi_board_info</span><span class="p">,</span><span class="w"> </span><span class="n">ARRAY_SIZE</span><span class="p">(</span><span class="n">bfin_spi_board_info</span><span class="p">));</span>
+<span class="w">    </span><span class="p">(...)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;linux/spi/adf7242.h&gt;</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">adf7242_platform_data</span><span class="w"> </span><span class="n">adf7242_pdata</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="p">.</span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ADF_IEEE802154_AUTO_CSMA_CA</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ADF_IEEE802154_HW_AACK</span><span class="p">,</span>
+<span class="cm">/*</span>
+<span class="cm">  * Specifies number of attempts to</span>
+<span class="cm">  * retransmit unacknowledged</span>
+<span class="cm">  * frames while in automatic CSMA-CA</span>
+<span class="cm">  * Tx mode.</span>
+<span class="cm"> */</span>
+<span class="w">    </span><span class="p">.</span><span class="n">max_frame_retries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="cm">/*</span>
+<span class="cm">  * Specifies number of attempts to</span>
+<span class="cm">  * repeat CSMA-CA algorithm prior to</span>
+<span class="cm">  * cancellation of RC_TX command.</span>
+<span class="cm">  * Valid range is 0 to 5;</span>
+<span class="cm">  * 7: CSMA-CA algorithm is off</span>
+<span class="cm"> */</span>
+<span class="w">    </span><span class="p">.</span><span class="n">max_cca_retries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="cm">/*</span>
+<span class="cm">  * Specifies the maximum back-off</span>
+<span class="cm">  * exponent used in the CSMA-CA</span>
+<span class="cm">  * algorithm; valid range is 4 to 8</span>
+<span class="cm">  *</span>
+<span class="cm"> */</span>
+<span class="w">    </span><span class="p">.</span><span class="n">max_csma_be</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<span class="cm">/*</span>
+<span class="cm">  * Specifies the minimum back-off</span>
+<span class="cm">  * exponent used in the CSMA-CA</span>
+<span class="cm">  * algorithm; valid range is 0 to</span>
+<span class="cm">  * csma_max_be</span>
+<span class="cm"> */</span>
+<span class="w">    </span><span class="p">.</span><span class="n">min_csma_be</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">spi_board_info</span><span class="w"> </span><span class="n">bfin_spi_board_info</span><span class="p">[]</span><span class="w"> </span><span class="n">__initdata</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="cp">#if defined(CONFIG_IEEE802154_ADF7242) || defined(CONFIG_IEEE802154_ADF7242_MODULE)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="p">.</span><span class="n">modalias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;adf7242&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">max_speed_hz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10000000</span><span class="p">,</span><span class="w">     </span><span class="cm">/* max spi clock (SCK) speed in HZ */</span>
+<span class="w">        </span><span class="p">.</span><span class="n">irq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IRQ_PF6</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">bus_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">chip_select</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">   </span><span class="cm">/* GPIO controlled SSEL */</span>
+<span class="w">        </span><span class="p">.</span><span class="n">controller_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">adf7242_spi_chip_info</span><span class="p">,</span><span class="w"> </span><span class="cm">/* Blackfin only */</span>
+<span class="w">        </span><span class="p">.</span><span class="n">platform_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">adf7242_pdata</span><span class="p">,</span>
+<span class="w">        </span><span class="p">.</span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SPI_MODE_0</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="cp">#endif</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Alternatively, it is possible to declare the SPI devices from a DeviceTree file.</div>
+<div class="line">Read the <a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/main/Documentation/devicetree/bindings/net/ieee802154/adf7242.txt" target="_blank">documentation</a> for more details.</div>
+</div>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adf7242</span><span class="o">@</span><span class="mi">0</span> <span class="p">{</span>
+    <span class="n">compatible</span> <span class="o">=</span> <span class="s2">&quot;adi,adf7242&quot;</span><span class="p">;</span>
+    <span class="n">reg</span> <span class="o">=</span> <span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="n">spi</span><span class="o">-</span><span class="nb">max</span><span class="o">-</span><span class="n">frequency</span> <span class="o">=</span> <span class="o">&lt;</span><span class="mi">10000000</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="n">interrupts</span> <span class="o">=</span> <span class="o">&lt;</span><span class="mh">0x62</span> <span class="n">IRQ_TYPE_LEVEL_HIGH</span><span class="o">&gt;</span><span class="p">;</span>
+
+    <span class="n">adi</span><span class="p">,</span><span class="n">hw</span><span class="o">-</span><span class="n">aack</span><span class="o">-</span><span class="n">mode</span><span class="o">-</span><span class="n">enable</span><span class="p">;</span>
+    <span class="n">adi</span><span class="p">,</span><span class="n">auto</span><span class="o">-</span><span class="n">csma</span><span class="o">-</span><span class="n">ca</span><span class="o">-</span><span class="n">mode</span><span class="o">-</span><span class="n">enable</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="adding-linux-driver-support">
+<h1>Adding Linux driver support<a class="headerlink" href="#adding-linux-driver-support" title="Link to this heading"></a></h1>
+<p>Configure kernel with “make menuconfig” (alternatively use “make xconfig” or “make qconfig”)</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The ADF7242 Driver depends on <strong>CONFIG_SPI</strong> and <strong>CONFIG_IEEE802154</strong></p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-------------------</span> <span class="n">Linux</span> <span class="n">Kernel</span> <span class="n">Configuration</span> <span class="o">----------------------</span>
+
+  <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Networking</span> <span class="n">support</span>  <span class="o">---&gt;</span>
+       <span class="n">Networking</span> <span class="n">options</span>  <span class="o">---&gt;</span>
+         <span class="o">&lt;*&gt;</span> <span class="n">IEEE</span> <span class="n">Std</span> <span class="mf">802.15.4</span> <span class="n">Low</span><span class="o">-</span><span class="n">Rate</span> <span class="n">Wireless</span> <span class="n">Personal</span> <span class="n">Area</span> <span class="n">Networks</span> <span class="n">support</span>
+            <span class="o">&lt;*&gt;</span>   <span class="n">Generic</span> <span class="n">IEEE</span> <span class="mf">802.15.4</span> <span class="n">Soft</span> <span class="n">Networking</span> <span class="n">Stack</span> <span class="p">(</span><span class="n">mac802154</span><span class="p">)</span>
+
+  <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Device</span> <span class="n">drivers</span>  <span class="o">---&gt;</span>
+       <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="n">Network</span> <span class="n">device</span> <span class="n">support</span>  <span class="o">---&gt;</span>
+          <span class="o">---</span> <span class="n">Network</span> <span class="n">device</span> <span class="n">support</span>
+          <span class="p">[</span><span class="o">*</span><span class="p">]</span>   <span class="n">Ethernet</span> <span class="p">(</span><span class="mi">10</span> <span class="ow">or</span> <span class="mi">100</span><span class="n">Mbit</span><span class="p">)</span>  <span class="o">---&gt;</span>
+          <span class="o">&lt;*&gt;</span>   <span class="n">IEEE</span> <span class="mf">802.15.4</span> <span class="n">drivers</span>  <span class="o">---&gt;</span>
+              <span class="o">---</span> <span class="n">IEEE</span> <span class="mf">802.15.4</span> <span class="n">drivers</span>
+               <span class="o">&lt;</span><span class="n">M</span><span class="o">&gt;</span>   <span class="n">ADF7242</span> <span class="n">transceiver</span> <span class="n">driver</span>
+</pre></div>
+</div>
+</section>
+<section id="hardware-configuration">
+<h1>Hardware configuration<a class="headerlink" href="#hardware-configuration" title="Link to this heading"></a></h1>
+</section>
+<section id="id11">
+<h1>2.4 GHz Wireless Transceiver PMOD<a class="headerlink" href="#id11" title="Link to this heading"></a></h1>
+<p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADF7242-PMDZ" target="_blank">EVAL-ADF7242-PMDZ (Product Page)</a></p>
+<section id="id12">
+<h2>Overview<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
+<p>The low cost and small profile RF solution 2.4 GHz, 802.15.4/Proprietary Wireless Transceiver PMOD board (<a class="icon adi reference external" href="https://www.analog.com/EVAL-ADF7242-PMDZ" target="_blank">EVAL-ADF7242-PMDZ</a>) is designed to support RF to FPGA or processor applications system that utilizes PMOD-compatible expansion ports configurable for SPI communication (PACKET MODE). For applications that require data streaming, a synchronous bidirectional serial port (SPORT) interface is also available. The Wireless Transceiver PMOD board can be selectively configured to operate on the 2400 MHz to 2483.5 MHz ISM band. This uses single chip <a class="icon adi reference external" href="https://www.analog.com/ADF7242" target="_blank">ADF7242</a> 2.4Ghz transceiver, with most of the system blocks embedded on chip, and minimizing eternal RF components.</p>
+<p>This wireless transceiver PMOD board uses mini 2.4 GHz chip antennas. In conjunction with the impedance-matched (complex differential impedance value) filter balun, reduces the RF front end count. This PMOD board supports polarization diversity that uses two chip antennas which can greatly improve performance under multipath fading conditions.</p>
+<p>Refer to the <a class="icon adi reference external" href="https://www.analog.com/ADF7242" target="_blank">ADF7242</a> data sheet for detailed information regarding operation of the device.</p>
+<section id="id13">
+<h3>Applications<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Zigbee</p></li>
+<li><p>Home automation</p></li>
+<li><p>Consumer electronics</p></li>
+<li><p>Monitoring</p></li>
+<li><p>Remote control</p></li>
+<li><p>Wireless sensor networks</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id14">
+<h2>Specifications<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_2_n.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_2_n.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_2_n.png" style="width: 600px;" />
+</a>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="id15">
+<h2>Interface Connector Signal Description<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/raspi_adf7242.jpg"><img alt="image1" src="https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/raspi_adf7242.jpg" style="width: 400px;" /></a></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="id16">
+<span id="id17"></span><h2>Interface Connector Signal Description<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_3.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_3.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/adf7242_pmod/table_3.png" style="width: 400px;" />
+</a>
+</section>
+<hr class="docutils" />
+<section id="id18">
+<h2>Functional Block Diagram<a class="headerlink" href="#id18" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/zedboard_adf7242.jpg"><img alt="image2" src="https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/zedboard_adf7242.jpg" style="width: 400px;" /></a></div>
+<div class="line">===== Schematic, PCB Layout, Bill of Materials =====</div>
+</div>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon adi reference external" href="https://www.analog.com/media/en/evaluation-documentation/evaluation-design-files/eval-adf7242-pmdz-designsupport.zip" target="_blank">EVAL-ADF7242-PMDZ Design &amp; Integration Files</a></p>
+<ul class="simple">
+<li><p>Schematic</p></li>
+<li><p>PCB Layout</p></li>
+<li><p>Bill of Materials</p></li>
+<li><p>Allegro Project</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line">===== Additional Information and Useful Links =====</div>
+</div>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADF7242" target="_blank">ADF7242 Product Page</a></p></li>
+<li><p><a class="reference internal" href="#"><span class="doc">ADF7242 Linux driver</span></a></p></li>
+<li><p><a class="reference internal" href="../../../eval/user-guides/circuits-from-the-lab/contiki-os.html"><span class="doc">Using ADF7242 with Contiki Operating System</span></a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/static/imported-files/application_notes/AN-1151.pdf" target="_blank">AN-1151 Using a Johanson 2450BM14E0007 Impedance-Matched, Integrated Filter Balun with the ADF7241 and ADF7242</a></p></li>
+</ul>
+</section>
+<section id="id19">
+<h2>Registration<a class="headerlink" href="#id19" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. <a class="icon link reference external" href="https://form.analog.com/Form_Pages/FeedBack/EVAL-ADF7242-PMDZ?&amp;v=RevA" target="_blank">Register</a> to receive all these great benefits and more!</p>
+</div>
+<div class="line-block">
+<div class="line">// End of Document</div>
+</div>
+</section>
+</section>
+<section id="driver-testing">
+<h1>Driver testing<a class="headerlink" href="#driver-testing" title="Link to this heading"></a></h1>
+<p>On this demo network, we will have two different boards communicating with each other using ADF7242 modules: a Raspberry Pi and a ZedBoard.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/raspi_adf7242.jpg"><img alt="image1" src="https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/raspi_adf7242.jpg" style="width: 400px;" /></a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/zedboard_adf7242.jpg"><img alt="image2" src="https://wiki.analog.com/_media/resources/tools-software/linux-drivers/networking-mac802154/zedboard_adf7242.jpg" style="width: 400px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="userspace-tools-for-linux-ieee-802-15-4-stack">
+<h2>Userspace tools for Linux IEEE 802.15.4 stack<a class="headerlink" href="#userspace-tools-for-linux-ieee-802-15-4-stack" title="Link to this heading"></a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>lowpan-tools are deprecated please use linux-wpan tools available here: <a class="icon link reference external" href="https://github.com/linux-wpan/wpan-tools" target="_blank">linux-wpan</a></p>
+</div>
+<div class="line-block">
+<div class="line">Example using lowpan-tools</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">iwpan</span> <span class="pre">dev</span> <span class="pre">wpan0</span> <span class="pre">set</span> <span class="pre">pan_id</span> <span class="pre">0x777</span>
+<span class="pre">iwpan</span> <span class="pre">phy</span> <span class="pre">phy0</span> <span class="pre">set</span> <span class="pre">channel</span> <span class="pre">0</span> <span class="pre">11</span>
+<span class="pre">iwpan</span> <span class="pre">dev</span> <span class="pre">wpan0</span> <span class="pre">set</span> <span class="pre">ackreq_default</span> <span class="pre">1</span>
+<span class="pre">ifconfig</span> <span class="pre">wpan0</span> <span class="pre">up</span>
+<span class="pre">ip</span> <span class="pre">link</span> <span class="pre">add</span> <span class="pre">link</span> <span class="pre">wpan0</span> <span class="pre">name</span> <span class="pre">lowpan0</span> <span class="pre">type</span> <span class="pre">lowpan</span>
+<span class="pre">ip</span> <span class="pre">route</span> <span class="pre">add</span> <span class="pre">2001::/64</span> <span class="pre">dev</span> <span class="pre">lowpan0</span>
+<span class="pre">ip</span> <span class="pre">addr</span> <span class="pre">add</span>&#160; <span class="pre">2001::4/128</span> <span class="pre">dev</span> <span class="pre">lowpan0</span>
+<span class="pre">ifconfig</span> <span class="pre">lowpan0</span> <span class="pre">up</span></code></div>
+</div>
+</section>
+<section id="configuration-of-the-ieee-802-15-4-layer">
+<h2>Configuration of the IEEE 802.15.4 layer<a class="headerlink" href="#configuration-of-the-ieee-802-15-4-layer" title="Link to this heading"></a></h2>
+<p>We will configure the two devices to use the PAN ID 0x0777, the hardware addresses a0::1 and a0::2, and the short addresses 0x8001 and 0x8002.</p>
+<p>Then, we will give them IPv6 addresses and test 6loWPAN communication with standard GNU tools.</p>
+<section id="configuration-for-the-first-node-zedboard">
+<h3>Configuration for the first node (ZedBoard)<a class="headerlink" href="#configuration-for-the-first-node-zedboard" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>root:/&gt; HW_ADDR=&quot;a0:0:0:0:0:0:0:1&quot;
+root:/&gt; DEVICE_ADDR=8001 # hexadecimal
+root:/&gt; PAN_ID=777 # hexadecimal
+root:/&gt; CHANNEL=11
+root:/&gt;
+root:/&gt; iz add wpan-phy0
+Registered new device (&#39;wpan0&#39;) on phy wpan-phy0
+
+root:/&gt; ip link set wpan0 address ${HW_ADDR}
+root:/&gt; ifconfig wpan0 up
+
+root:/&gt; iz set wpan0 ${PAN_ID} ${DEVICE_ADDR} ${CHANNEL}
+</pre></div>
+</div>
+</section>
+<section id="configuration-for-the-second-node-raspberry-pi">
+<h3>Configuration for the second node (Raspberry Pi)<a class="headerlink" href="#configuration-for-the-second-node-raspberry-pi" title="Link to this heading"></a></h3>
+<p>We only need to change the first two lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>root:/&gt; HW_ADDR=&quot;a0:0:0:0:0:0:0:2&quot;
+root:/&gt; DEVICE_ADDR=8002 # hexadecimal
+root:/&gt; PAN_ID=777 # hexadecimal
+root:/&gt; CHANNEL=11
+root:/&gt;
+root:/&gt; iz add wpan-phy0
+Registered new device (&#39;wpan0&#39;) on phy wpan-phy0
+
+root:/&gt; ip link set wpan0 address ${HW_ADDR}
+root:/&gt; ifconfig wpan0 up
+
+root:/&gt; iz set wpan0 ${PAN_ID} ${DEVICE_ADDR} ${CHANNEL}
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Some GNU/Linux distributions offered on the Raspberry Pi, like Raspbian, will auto-enable the wpan0 interface as soon as it is created. We can disable this behaviour with the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="p">:</span><span class="o">/&gt;</span> <span class="n">ifplugd</span> <span class="o">-</span><span class="n">S</span> <span class="o">-</span><span class="n">i</span> <span class="n">wpan0</span> <span class="o">&amp;&amp;</span> <span class="n">ifconfig</span> <span class="n">wpan0</span> <span class="n">down</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="chat-application">
+<h3>Chat application<a class="headerlink" href="#chat-application" title="Link to this heading"></a></h3>
+<p>Now that our two devices are correctly configured, we can verify that the two devices can communicate using the “izchat” application:</p>
+<p><strong>ZedBoard:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>root:/&gt; izchat 0x0777 0x8001 0x8002
+Hello World!
+&gt;Thanks
+</pre></div>
+</div>
+<p><strong>Raspberry Pi:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>root:/&gt; izchat 0x0777 0x8002 0x8001
+&gt;Hello World!
+Thanks
+</pre></div>
+</div>
+<p>This is a pretty simple two way communication. The ASCII strings are encapsulated in IEEE802.15.4 DATA frames.</p>
+</section>
+</section>
+<section id="configuration-of-the-6lowpan-layer">
+<h2>Configuration of the 6loWPAN layer<a class="headerlink" href="#configuration-of-the-6lowpan-layer" title="Link to this heading"></a></h2>
+<p>The previous example shows that communication is working, but it is not very useful. By using the 6loWPAN protocol on top (the low-power equivalent of the IPv6 protocol), we can allow standard Linux network applications to communicate over the IEEE 802.15.4 link with standard sockets.</p>
+<section id="configuration-for-the-first-node-zedboard-1">
+<span id="id21"></span><h3>Configuration for the first node (ZedBoard)<a class="headerlink" href="#configuration-for-the-first-node-zedboard-1" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>root:/&gt; HW_ADDR=&quot;a0:0:0:0:0:0:0:1&quot; # Same as before
+root:/&gt; IPV6_ADDR=&quot;2001::1/128&quot;
+root:/&gt;
+root:/&gt; ip link add link wpan0 name lowpan0 type lowpan
+root:/&gt; ip link set lowpan0 address ${HW_ADDR}
+root:/&gt;
+root:/&gt; ip addr add ${IPV6_ADDR} dev lowpan0
+root:/&gt; ip route add 2001::/64 dev lowpan0
+</pre></div>
+</div>
+</section>
+<section id="configuration-for-the-second-node-raspberry-pi-1">
+<span id="id22"></span><h3>Configuration for the second node (Raspberry Pi)<a class="headerlink" href="#configuration-for-the-second-node-raspberry-pi-1" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>root:/&gt; HW_ADDR=&quot;a0:0:0:0:0:0:0:2&quot; # Same as before
+root:/&gt; IPV6_ADDR=&quot;2001::2/128&quot;
+root:/&gt;
+root:/&gt; ip link add link wpan0 name lowpan0 type lowpan
+root:/&gt; ip link set lowpan0 address ${HW_ADDR}
+root:/&gt;
+root:/&gt; ip addr add ${IPV6_ADDR} dev lowpan0
+root:/&gt; ip route add 2001::/64 dev lowpan0
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Some GNU/Linux distributions offered on the Raspberry Pi, like Raspbian, will auto-enable the lowpan0 interface as soon as it is created. We can disable this behaviour with the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="p">:</span><span class="o">/&gt;</span> <span class="n">ifplugd</span> <span class="o">-</span><span class="n">S</span> <span class="o">-</span><span class="n">i</span> <span class="n">lowpan0</span> <span class="o">&amp;&amp;</span> <span class="n">ifconfig</span> <span class="n">lowpan0</span> <span class="n">down</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="testing-the-communication">
+<h2>Testing the communication<a class="headerlink" href="#testing-the-communication" title="Link to this heading"></a></h2>
+<section id="ping">
+<h3>Ping!<a class="headerlink" href="#ping" title="Link to this heading"></a></h3>
+<p>From the Raspberry Pi, we can now ping the ZedBoard at the address <strong>fe80::a200:0:0:1%lowpan0</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@analog</span><span class="p">:</span><span class="o">~</span><span class="c1"># ping6 -i0.1 2001::3</span>
+<span class="n">PING</span> <span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">(</span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">)</span> <span class="mi">56</span> <span class="n">data</span> <span class="nb">bytes</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">1</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">44.8</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">2</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">39.9</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">3</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">44.0</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">4</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">36.5</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">5</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">45.6</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">6</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">49.1</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">7</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">42.1</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">8</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">34.2</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">9</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">35.0</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">10</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">33.1</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">11</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">46.6</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">12</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">28.8</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">13</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">43.0</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">14</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">38.6</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">15</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">41.1</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">16</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">40.3</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">17</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">45.6</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">18</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">53.3</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">19</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">51.6</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">20</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">26.6</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">21</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">42.3</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">22</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">32.7</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="mi">2001</span><span class="p">::</span><span class="mi">3</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">23</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">50.0</span> <span class="n">ms</span>
+<span class="o">^</span><span class="n">C</span>
+<span class="o">---</span> <span class="mi">2001</span><span class="p">::</span><span class="mi">3</span> <span class="n">ping</span> <span class="n">statistics</span> <span class="o">---</span>
+<span class="mi">23</span> <span class="n">packets</span> <span class="n">transmitted</span><span class="p">,</span> <span class="mi">23</span> <span class="n">received</span><span class="p">,</span> <span class="mi">0</span><span class="o">%</span> <span class="n">packet</span> <span class="n">loss</span><span class="p">,</span> <span class="n">time</span> <span class="mi">2210</span><span class="n">ms</span>
+<span class="n">rtt</span> <span class="nb">min</span><span class="o">/</span><span class="n">avg</span><span class="o">/</span><span class="nb">max</span><span class="o">/</span><span class="n">mdev</span> <span class="o">=</span> <span class="mf">26.622</span><span class="o">/</span><span class="mf">41.122</span><span class="o">/</span><span class="mf">53.348</span><span class="o">/</span><span class="mf">6.945</span> <span class="n">ms</span>
+<span class="n">root</span><span class="nd">@analog</span><span class="p">:</span><span class="o">~</span><span class="c1">#</span>
+</pre></div>
+</div>
+<p>We can as well ping the Raspberry Pi from the Zedboard using the address <strong>fe80::a200:0:0:2%lowpan0</strong>.</p>
+</section>
+<section id="standard-tools">
+<h3>Standard tools<a class="headerlink" href="#standard-tools" title="Link to this heading"></a></h3>
+<p>The following is just to demonstrate that any Linux program can, using standard sockets, communicate over the IEEE 802.15.4 link with 6loWPAN:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@raspberrypi</span><span class="p">:</span><span class="o">/&gt;</span> <span class="n">ssh</span> <span class="o">-</span><span class="mi">6</span> <span class="n">analog</span><span class="nd">@fe80</span><span class="p">::</span><span class="n">a200</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="o">%</span><span class="n">lowpan0</span>
+<span class="n">analog</span><span class="nd">@fe80</span><span class="p">::</span><span class="n">a200</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="o">%</span><span class="n">lowpan0</span><span class="s1">&#39;s password:</span>
+<span class="n">Welcome</span> <span class="n">to</span> <span class="n">Linaro</span> <span class="mf">14.04</span> <span class="p">(</span><span class="n">GNU</span><span class="o">/</span><span class="n">Linux</span> <span class="mf">3.18.0</span><span class="o">-</span><span class="mi">33199</span><span class="o">-</span><span class="n">g62cfd65</span><span class="o">-</span><span class="n">dirty</span> <span class="n">armv7l</span><span class="p">)</span>
+
+<span class="n">Last</span> <span class="n">login</span><span class="p">:</span> <span class="n">Thu</span> <span class="n">Jan</span>  <span class="mi">1</span> <span class="mi">00</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="mi">21</span> <span class="mi">1970</span> <span class="kn">from</span><span class="w"> </span><span class="nn">fe80</span><span class="p">::</span><span class="n">a200</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="o">%</span><span class="n">lowpan0</span>
+
+<span class="n">root</span><span class="nd">@analog</span><span class="p">:</span><span class="o">/&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

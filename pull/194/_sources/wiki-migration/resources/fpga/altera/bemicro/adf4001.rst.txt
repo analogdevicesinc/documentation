@@ -1,0 +1,223 @@
+BeMicro FPGA Project for ADF4001 with Nios driver
+=================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADF4001`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-ADF4001SD1Z <EVAL-ADF4001>`
+
+Overview
+========
+
+This lab presents the steps to setup an environment for using the :adi:`EVAL-ADF4001SD1Z <ADF4001>` evaluation board together with the `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`_ USB stick, the Nios II Embedded Development Suite (EDS) and the `Micrium µC-Probe <http://micrium.com/tools/ucprobe/overview/>`_ run-time monitoring tool. Below is presented a picture of the EVAL-ADF4001SD1Z Evaluation Board with the BeMicro SDK Platform.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/adf4001_bemicro.png
+   :alt: adf4001_bemicro.png
+   :align: center
+   :width: 400px
+
+For component evaluation and performance purposes, as opposed to quick prototyping, the user is directed to Analog Devices :doc:`System Demonstration Platform </wiki-migration/resources/eval/sdp>` (**SDP**). The **SDP** consists of a:
+
+-  a controller board, like the `EVAL-SDP-CS1Z <https://wiki.analog.com/resources/eval/sdp/sdp-s>`_ **(SDP-S)**
+-  an compatible Analog Devices SDP :adi:`product evaluation board <sdp#exallist>`
+-  corresponding PC software
+
+The **EVAL-SDP-CS1Z** controller board is Serial Interfaces Only, low cost, reduced functionality controller board. It has a USB to Serial Engine at its core. It connects to the PC through a USB 2.0 high speed port. The SDP-S has a single 120 pin connector and exposes SPI, I2C and GPIO interfaces to connected SDP daughter boards.
+
+The **EVAL-ADF4001SD1Z** is designed to allow the user to evaluate the perfor-mance of the ADF4001 frequency synthesizer for phase-locked loops (PLLs). Figure 1 shows the board, which contains the ADF4001 synthesizer, an SMA connector for the reference input, power supplies, and an RF output. There is also a footprint for a loop filter and a VCO on board.
+
+The :adi:`ADF4001` frequency synthesizer can be used to implement clock sources for PLLs that require very low noise, stable reference signals. It consists of a low-noise digital PFD (Phase Frequency Detector), a precision charge pump, a programmable reference divider, and a programmable 13-bit N counter. In addition, the 14-bit reference counter (R Counter), allows selectable REFIN frequencies at the PFD input. A complete PLL (Phase-Locked Loop) can be implemented if the synthesizer is used with an external loop filter and VCO (Voltage Controlled Oscillator) or VCXO (Voltage Controlled Crystal Oscillator). The N min value of 1 allows flexibility in clock generation.
+
+More information
+----------------
+
+-  :adi:`ADF4001 Product Info <ADF4001>` - pricing, samples, datasheet
+-  :adi:`EVAL-ADF4001SD1Z evaluation board user guide </static/imported-files/user_guides/UG-092.pdf>`
+-  `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`_
+-  `Nios II Embedded Development Suite (EDS) <http://www.altera.com/devices/processor/nios2>`_
+-  `Micrium uC-Probe <http://micrium.com/tools/ucprobe/overview/>`_
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Hardware Items
+--------------
+
+Below is presented the list of required hardware items:
+
+-  Arrow Electronics `BeMicro SDK <https://www.intel.com/content/www/us/en/programmable/b/bemicro-sdk.html>`_ FPGA-based MCU Evaluation Board
+-  :adi:`BeMicro SDK/SDP Interposer <sdp-bemicro>` adapter board
+-  **EVAL-ADF4001SD1Z** evaluation board
+-  Intel Pentium III or compatible Windows PC, running at 866MHz or faster, with a minimum of 512MB of system memory
+
+Software Tools
+--------------
+
+Below is presented the list of required software tools:
+
+-  `Quartus II Web Edition <http://www.altera.com/products/software/quartus-ii/web-edition/qts-we-index.html>`_ design software v11.0
+-  `Nios II EDS <https://www.altera.com/download/software/nios-ii>`_ v11.0
+-  `uC-Probe <http://micrium.com/tools/ucprobe/trial/>`_ run-time monitoring tool, version 2.5
+
+The **Quartus II** design software and the **Nios II EDS** is available via the Altera Complete Design Suite DVD or by downloading from the web.
+
+The **Micrium uC/Probe Trial** version 2.5 is available via download from the web at http://micrium.com/tools/ucprobe/trial/. After installation add to the “Path” system variable the entry "*%QUARTUS_ROOTDIR%\\bin\\*\ “ on the third position in the list.
+
+Downloads
+---------
+
+-  `Lab Design Files <https://wiki.analog.com/_media/resources/fpga/altera/bemicro/adf4001_evalboardlab.zip>`_
+
+Extract the Lab Files
+---------------------
+
+Create a folder called “\ **ADIEvalBoardLab**\ ” on your PC and extract the **ADF4001_EvalBoardLab.zip** archive to this folder. Make sure that there are **NO SPACES** in the directory path. After extracting the archive the following folders should be present in the **ADIEvalBoardLab** folder: **FPGA**, **Software**, **ucProbeInterface**, **NiosCpu**.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/labfolders.png
+   :alt: labfolders.png
+   :align: center
+   :width: 500px
+
+
+.. note::
+
+   See `common_usb <https://wiki.analog.com/common_usb>`_
+
+
+Quick Evaluation
+================
+
+
+.. note::
+
+   See `common_quick_eval <https://wiki.analog.com/common_quick_eval>`_
+
+
+FPGA Design
+===========
+
+
+.. note::
+
+   See `common_spi_i2c <https://wiki.analog.com/common_spi_i2c>`_
+
+
+NIOS II Software Design
+=======================
+
+
+.. note::
+
+   See `common <https://wiki.analog.com/common>`_
+
+
+uC-Probe Interface
+==================
+
+A notable challenge in embedded systems development is to overcome the lack of feedback that such systems typically provide. Many developers resort to blinking LEDs or instrumenting their code with *printf()* in order to determine whether or not their systems are running as expected. **Micrium** provides a unique tool named **µC-Probe** to assist these developers. With this tool, developers can effortlessly read and write the variables on a running embedded system. This section presents the steps required to install the **Micrium uC-Probe** software tool and to run the demonstration project for the ADI evaluation board. A description of the **uC-Probe** demonstration interface is provided.
+
+Configure uC-Probe
+------------------
+
+Launch **uC-Probe** from the **Start -> All Programs -> Micrium -> uC-Probe**.
+
+Select **uC-Probe** options.
+
+-  Click on the **uC-Probe** icon on the top left portion of the screen.
+-  Click on the **Options** button to open the dialog box.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucprobeoptionsbtn.png
+   :alt: ucprobeoptionsbtn.png
+   :align: center
+   :width: 300px
+
+Set target board communication protocol as **JTAG UART**
+
+-  Click on the **Communication** tab icon on the top left portion of the dialog box
+-  Select the **JTAG UART** option.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image067.png
+   :alt: image067.png
+   :align: center
+   :width: 400px
+
+Setup **JTAG UART** communication settings
+
+-  Select the **JTAG-UART** option from the **Communication** tab.
+-  Press the **Open File** button to select the JTAG Debug Information file (**.jdi**)
+-  Navigate to the **ADIEvalBoardLab/FPGA** folder and select the BeMicroSDK.jdi file. Press Open.
+-  Type the value **1** in the the **Device Id** window.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucprobeoptionsjtag.png
+   :alt: ucprobeoptionsjtag.png
+   :align: center
+   :width: 400px
+
+-  Select **uCProbe_uart(0)** from the **Instance Id** pulldown menu.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image073.png
+   :alt: image073.png
+   :align: center
+   :width: 400px
+
+-  Press **Apply** and **OK** to exit the options menu. The embedded target has two UARTs. **uC-Probe** will be communicating with the **uCProbe_uart**.
+
+Load and Run the Demonstration Project
+--------------------------------------
+
+-  Click the **Open** option from the **uC-Probe** menu and select the file **ADIEvalBoardLab/ucProbeInterface/ADF4001_Interface.wsp**.
+
+|ucprobeopenfile.png|\ |adf4001interfaceopen.png|
+
+-  Before opening the interface **uC-Probe** will ask for a symbols file that must be associated with the interface. If the lab was done according to the steps provided in the **Quick Evaluation** section, select the file **ADIEvalBoardLab/ucProbeInterface/ADIEvalBoard.elf** to be loaded as a symbol file, otherwise select the file **ADIEvalBoardLab/FPGA/software/ADIEvalBoard/ADIEvalBoard.elf** to be loaded as a symbol file.
+
+|ucprobeopenelfquickeval.png|\ |ucprobeopenelfnormal.png|
+
+-  Run the demonstration project by pressing the **Play** button.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image081.png
+   :alt: image081.png
+   :align: center
+   :width: 400px
+
+Demonstration Project User Interface
+====================================
+
+The following figure presents the **uC-Probe** interface that can be used for monitoring and controlling the operation of the **EVAL-ADF4001SD1Z** evaluation board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/adf4001interface.png
+   :alt: adf4001interface.png
+   :align: center
+   :width: 700px
+
+**Section A** allows for the communication with the board to be activated / deactivated by toggling the *ON/OFF* switch. The *Activity* LED turns green when the communication is active. Before pressing the *ON/OFF* switch, make sure you select the desired *Device Initialization Procedure*. If the *ON/OFF* switch is set to ON and the *Activity* LED is BLACK it means that there is a communication problem with the board. See the **Troubleshooting** section for indications on how to fix the communication problems. The *Error* LED will indicate that the data received on the SDO pin is different than data sent. If the *Function Latch* or *Initialization Latch* is written, with a different *MUXOUT* value than 6, this LED will be activated. To reset the LED, the board must be deactivated and reactivated, case in which the *Initialization procedure* will set *MUXOUT* to 6.
+
+**Sections B to E** allow for configuration of each latch on the **ADF4001**.
+
+**Section B** allows for the configuration of the *Reference Counter Latch*. The *LDP* switch will toggle on or off the *Lock Detect Precision* bits. The *TBS* and *ABW* sliders will configure the *Test Mode Bits* and *Anti Backlash Width* bits respectively. The *14 Bit Reference Counter* allows for the configuration of the counter. The last numerical display will display the resulting value in a decimal format. By toggling the *Write* switch in this section, a single write will be performed on the *Reference Counter Latch* with the programmed value.
+
+**Section C** allows for the configuration of the *N Counter Latch*. The *CPG* switch toggles the *CP Gain* bit. The *13 Bit N Counter* allows for the configuration of the N counter. The last numerical display in the row will display the resulting value in a decimal format. By toggling the *Write* switch, a single write will be performed on the *N Counter Latch*, with the value displayed.
+
+**Sections D and E** have the same structure. The difference between these two latches is that when the *Initialization Latch* is programmed, there is an additional internal reset pulse applied to the *R* and *N* counters. This pulse ensures that the *N counter* is at a load point when the *N counter* data is latched, and the device will begin counting in close phase alignment. *PD2* switch toggles the *Power Down 2* pin. The *CS2* and *CS1* sliders will configure the *Current Setting 2* and *Current Setting 1* bits respectively. The *Timer Counter Control* can be configured through the *TCC* slider. Next, the switches configure the *Fastlock Mode*, *Fastlock Enable*, *CP Three-State* and *Phase Detector Polarity* bits. The *MUX* slider allows to select what is to be available on the *MUXOUT* pin. By default, at initialization, this has the value 6 set, in order to be able to use this pin as SDO. *PD1* switch allows for setting the *Power Down 1* bits. Lastly, the *CR* switch allows for resetting the *R* and *N* counters.
+
+
+.. note::
+
+   See `troubleshooting <https://wiki.analog.com/troubleshooting>`_
+
+
+.. |ucprobeopenfile.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucprobeopenfile.png
+   :width: 400px
+.. |adf4001interfaceopen.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/adf4001interfaceopen.png
+   :width: 400px
+.. |ucprobeopenelfquickeval.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucprobeopenelfquickeval.png
+   :width: 300px
+.. |ucprobeopenelfnormal.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucprobeopenelfnormal.png
+   :width: 300px

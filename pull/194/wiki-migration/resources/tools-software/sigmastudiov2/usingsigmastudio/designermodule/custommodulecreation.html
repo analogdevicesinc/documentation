@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Return to previous page" name="description" />
+
+    <title>1. DLL based Custom Module Creation &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">1. DLL based Custom Module Creation</a><ul>
+<li><a class="reference internal" href="#source-and-libraries-tab">1.1.2 Source and Libraries Tab</a></li>
+<li><a class="reference internal" href="#parameter-definition-tab">1.1.3 Parameter Definition Tab</a></li>
+<li><a class="reference internal" href="#i-o-pins-tab">1.1.4 I/O Pins Tab</a></li>
+<li><a class="reference internal" href="#variables-tab">1.1.5 Variables Tab</a></li>
+<li><a class="reference internal" href="#memory-size-tab">1.1.6 Memory Size Tab</a></li>
+<li><a class="reference internal" href="#parameter-assignment-tab">1.1.7 Parameter Assignment Tab</a></li>
+<li><a class="reference internal" href="#ui-designer-tab">1.1.8 UI Designer Tab</a></li>
+<li><a class="reference internal" href="#settings-tab">1.1.9 Settings Tab</a></li>
+<li><a class="reference internal" href="#configuring-plugin-dll-and-its-generation">1.1.10 Configuring Plugin DLL and its Generation</a></li>
+<li><a class="reference internal" href="#including-generated-dll-to-sigmastudioplus-add-ins">1.1.11 Including generated DLL to SigmaStudioPlus Add-ins</a></li>
+<li><a class="reference internal" href="#source-and-libraries-tab-1">1.2.1 Source and Libraries Tab</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <p><a class="reference internal" href="../designermodule.html"><span class="doc">Return to previous page</span></a></p>
+<section id="dll-based-custom-module-creation">
+<h1>1. DLL based Custom Module Creation<a class="headerlink" href="#dll-based-custom-module-creation" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line">Algorithm Designer can be launched by selecting <strong>Tools➔ Algorithm Designer</strong> from the menu bar as shown in the below <a class="reference internal" href="#"><span class="doc">figure</span></a>.</div>
+<div class="line"><img alt="image1" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/algodesigner.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure:</strong> Algorithm Designer Launcher</p>
+</div>
+<div class="line-block">
+<div class="line">The upcoming sections demonstrates how a developer can create custom modules using DLB library file and also by providing source code directly in SigmaStudioPlus Algorithm Designer.</div>
+<div class="line">Here, we are creating a <em>Mute (No Slew)</em> module as an example to show DLB method (Both the example project MuteNoSlew and the .dlb file (MuteNoSlew.dlb) generated from CCES are built in Release mode) and <em>Simple Adder</em> module to show source code method.</div>
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The example projects mentioned, Mute (No Slew) and Simple Adder, follow the same procedures in most steps. Therefore, this page will primarily focus on one example, namely Mute (No Slew), to guide developers in creating a custom module using SigmaStudioPlus Algorithm Designer. Any differences in procedure between the Mute (No Slew) and Simple Adder module creation will be noted separately.</p>
+</div>
+<div class="line-block">
+<div class="line">Once the Algorithm Designer window opens, if the developer requires guidance in creating a custom module, there is an ‘open book’ icon, as shown in the figure below. <img alt="image2" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/algdesigner_help.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure:</strong> Algorithm Designer <strong>Help</strong> Link</p>
+</div>
+<p>Clicking on this icon will direct the user to the Algorithm Designer Help Wiki page, where the necessary information and step-by-step guidance are provided.
+| ===== 1.1. Mute (No Slew) Module =====
+| ==== 1.1.1 Configuration Tab ====
+| This section defines the basic configuration of the module to be developed.
+| This tab helps the developer to mention the Name of the module, version, processing type etc.
+| Make sure that the developer provide the same name as mentioned in the ‘.c’ file containing module algorithm/logic.
+| For eg: if the name of API is <strong>BPROCESS_MuteNoSlew</strong> (as per <a class="reference internal" href="../algorithm_designer_coding_conventions.html"><span class="doc">Coding convention for Block Process based modules</span></a>), the name to be mentioned in the Name section of Configuration tab must be <strong>MuteNoSlew</strong> as shown in the below <a class="reference internal" href="#"><span class="doc">figure</span></a>.</p>
+<img alt="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/configuration_1.png" class="align-center" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/configuration_1.png" />
+<div class="centeralign docutils container">
+<p><strong>Figure:</strong> Algorithm Designer Module Configuration Tab for Mute No Slew module.</p>
+</div>
+<div class="line-block">
+<div class="line">Below are the said configurable parameters:</div>
+<div class="line">^ <strong>Parameters</strong> ^ <strong>Description</strong> ^</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>Name of the module</p></td>
+</tr>
+<tr class="row-even"><td><p>Version</p></td>
+<td><p>Version number in a.b.c.d format</p></td>
+</tr>
+<tr class="row-odd"><td><p>Processor</p></td>
+<td><p>Target processor (ADSP-SC5xx / ADSP-214xx)</p></td>
+</tr>
+<tr class="row-even"><td><p>Processing Type</p></td>
+<td><p>Block or Sample processing</p></td>
+</tr>
+<tr class="row-odd"><td><p>Configuration Properties (Primary/Secondary)</p></td>
+<td><p>Optional properties (like channels, stages etc.) for end user to configure the behavior of the module (like pins, UI replication etc.). Up to two properties can be enabled. Secondary property can only be enabled when primary property is enabled.</p></td>
+</tr>
+<tr class="row-even"><td><p>Enable</p></td>
+<td><p>Whether property is enabled</p></td>
+</tr>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>Name of the property (Predefined properties are FS, NumChannels etc)</p></td>
+</tr>
+<tr class="row-even"><td><p>Min</p></td>
+<td><p>Minimum value of the property</p></td>
+</tr>
+<tr class="row-odd"><td><p>Max</p></td>
+<td><p>Maximum value of the property</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>Advanced Customization</strong> (Custom UI &amp; Custom Code) options are advanced configuration settings and not be used in the regular designer flow. Developers can contact the support team for more information regarding this configuration.</p>
+</div>
+<div class="line-block">
+<div class="line">Click Next button.</div>
+</div>
+<section id="source-and-libraries-tab">
+<h2>1.1.2 Source and Libraries Tab<a class="headerlink" href="#source-and-libraries-tab" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">This section is used to define the algorithm source.</div>
+<div class="line">Algorithm source can be in the form of CCES libraries (MuteNoSlew module) and/or C source with headers (SimpleAdder module).</div>
+<div class="line">For MuteNoSlew, we are inserting the CCES library (.dlb file) directly into the Algorithm Designer editor under the “Libraries” tab, as shown in the two figures below. The DLB files to be added can be selected using ‘Browse’ button and added using the ‘+’ button. Use the ‘-’ button to remove the selected file from the list.</div>
+</div>
+<p>When a DLB is added as Embedded Library, the contents of the DLB is embedded into the module DLL generated by Algorithm Designer. The DLB is then no longer required to be present while using the module generated by Algorithm Designer in SigmaStudioPlus.</p>
+<p><img alt="image3" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/srclib_embdlib.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure:</strong> Algorithm Designer Module Source and Libraries Tab, Libraries window (Embedded DLB) for Mute No Slew module.</p>
+</div>
+<p>On the other hand, when the DLB is added as Referenced Library, the DLB file should be present along with the DLL, as a reference to the DLB present in the DLL.</p>
+<p><img alt="image4" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/srclib_reflib.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure:</strong> Algorithm Designer Module Source and Libraries Tab, Libraries window (Referenced DLB) for Mute No Slew module.</p>
+</div>
+<div class="line-block">
+<div class="line">Click Next button.</div>
+</div>
+</section>
+<section id="parameter-definition-tab">
+<h2>1.1.3 Parameter Definition Tab<a class="headerlink" href="#parameter-definition-tab" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The user can define the module (target) parameters that are required for this particular module.</div>
+<div class="line">Please refer the below <a class="reference internal" href="#"><span class="doc">figure</span></a>.</div>
+</div>
+<p><img alt="image5" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/paramdef.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure:</strong> Algorithm Designer Module Parameter Definition Tab for Mute No Slew module.</p>
+</div>
+<div class="line-block">
+<div class="line">Mention the parameter name under Name, the data format of this particular parameter can be selected from drop down option under Format. If the parameter is a buffer check the Buffer option.</div>
+<div class="line">^ <strong>Parameters</strong> ^ <strong>Description</strong> ^</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>Parameter name is mentioned here</p></td>
+</tr>
+<tr class="row-even"><td><p>Format</p></td>
+<td><p>Data format of parameter (Float / Integer / Fixed 8.24 / Fixed 5.27 / Fixed 2.30)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Buffer</p></td>
+<td><p>Enable, when the parameter is a buffer. Disable, when the parameter is a variable.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Once done, click the + symbol. Repeat the steps for adding next parameter details.</div>
+<div class="line">Click Next button.</div>
+</div>
+</section>
+<section id="i-o-pins-tab">
+<h2>1.1.4 I/O Pins Tab<a class="headerlink" href="#i-o-pins-tab" title="Link to this heading"></a></h2>
+<p>This section is to define the number of input and output pins this module has. Please refer the below <a class="reference internal" href="#"><span class="doc">figure</span></a>.</p>
+<div class="line-block">
+<div class="line"><img alt="image6" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/io_init.png" /></div>
+<div class="line">Upon entering the name of the input pin, developer have the option to choose the <em>“direction of data”</em> via this particular pin, the <em>“type of data”</em> its handling, whether the pin has <em>“dynamic”</em> capability, i.e. whether this pin supports pin growth during designing phase etc.</div>
+</div>
+<div class="line-block">
+<div class="line">For our particular example, Mute No Slew, we are configuring this pin to be Dynamic as shown in above <a class="reference internal" href="#"><span class="doc">figure</span></a>. Upon clicking the ‘+’ button, that configuration will be added to list and developer can follow the same procedure for output pin as well.</div>
+<div class="line"><img alt="image7" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/io_final.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure:</strong> Algorithm Designer Module I/O Pins Tab for Mute No Slew module</p>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Parameters</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>Name of the pin (ex: input0, output0 etc)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Direction</p></td>
+<td><p>Indicates whether Input or Output</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Type</p></td>
+<td><p>Indicates the type of the pin (ex: Audio, Control, PCMx).
+Use Audio pins for audio processing (input and output).
+Use PCMx pins if you are handling digital audio streams or interfacing with PCM devices</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dynamic</p></td>
+<td><p>Indicates whether the pin is Dynamic. If the developer wishes to vary the pin count based on a configurable property, enable this option. Else, leave it disabled and the pin count remains static</p></td>
+</tr>
+<tr class="row-even"><td><p>Property</p></td>
+<td><p>Enabled only when Dynamic is enabled. Indicates the configurable property upon which the pin changes dynamically</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Use ‘+’ button to add pins. Use ‘-’ button to remove selected pin from the list.</div>
+<div class="line">Click Next button.</div>
+</div>
+</section>
+<section id="variables-tab">
+<h2>1.1.5 Variables Tab<a class="headerlink" href="#variables-tab" title="Link to this heading"></a></h2>
+<p>In Variables tab, the variables that will used during run-time to process the module parameters mentioned in Parameter Definition tab of Designer. Please refer the below <a class="reference internal" href="#"><span class="doc">figure</span></a>.</p>
+<p><img alt="image8" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/variablestab.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure:</strong> Algorithm Designer Module Variables Tab for Mute No Slew module</p>
+</div>
+<p>Mention name of variable under Name, the type of the variable (Boolean, Numeric, Numeric array or List). ‘Boolean’ type can be given to variables, which support either 1 or 0 as its value. ‘Numeric’ type can be given to variables that support integer values. ‘Numeric array’ and ‘List’ type can be given to variables which supports a set of numeric values, especially used when designing filter modules. Click ‘+’ to add the variable details. Repeat the steps for other variables. Since, for this particular example, we are creating a Mute No Slew module, we require only one variable of Boolean type to control the module’s ON/OFF functionality.</p>
+<div class="line-block">
+<div class="line">Click Next button.</div>
+</div>
+</section>
+<section id="memory-size-tab">
+<h2>1.1.6 Memory Size Tab<a class="headerlink" href="#memory-size-tab" title="Link to this heading"></a></h2>
+<p>In Memory Size tab, we can mention the memory allocated for the module. Based on your module’s memory requirement, developer has to allocate memory in this section. Please refer the below <a class="reference internal" href="#"><span class="doc">figure</span></a>.</p>
+<p>The user can assign a static value to the memory size or assign a formula which is a function of one or more runtime variables and size of runtime buffers. ‘FS’, ‘NumChannels’ and ‘BlockSize’ are predefined variables and can be used in the formula to represent the ‘Schematic Sampling Rate’, ‘Growth Count’ and ‘Schematic Block Size’ (for block processing Modules) respectively. Ternary operators can also be used to define the size. For example; “1024 + (NumChannels&gt;256?20:10)”. But, for our particular example Mute No Slew, no memory location needs to be allocated in State memory as we have only one runtime parameter (Enable/Disable option).</p>
+<p>Click Validate All to validate the memory size configured. The validate icon will turn green if the size definition is valid. If invalid, the icon will turn red.</p>
+<p><img alt="image9" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/memtab.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure:</strong> Algorithm Designer Module Memory Size Tab for Mute No Slew module</p>
+</div>
+<div class="line-block">
+<div class="line">Click Next.</div>
+</div>
+</section>
+<section id="parameter-assignment-tab">
+<h2>1.1.7 Parameter Assignment Tab<a class="headerlink" href="#parameter-assignment-tab" title="Link to this heading"></a></h2>
+<p>The Parameter Assignment tab is where we can map the run-time variables mentioned previously in <a class="reference internal" href="#"><span class="doc">1.1.5 Variables Tab</span></a> with the parameters of the module mentioned in the <a class="reference internal" href="#"><span class="doc">1.1.3 Parameter Definition Tab</span></a>.</p>
+<p><img alt="image10" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/paramassign.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure:</strong> Algorithm Designer Module Parameter Assignment Tab for Mute No Slew module</p>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Parameters</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>Name of the parameter</p></td>
+</tr>
+<tr class="row-odd"><td><p>Equation</p></td>
+<td><p>This is the field where the values are assigned to the parameters. Refer to below section for more details</p></td>
+</tr>
+<tr class="row-even"><td><p>Value</p></td>
+<td><p>Current value of the parameter</p></td>
+</tr>
+<tr class="row-odd"><td><p>Format</p></td>
+<td><p>Parameter data format</p></td>
+</tr>
+<tr class="row-even"><td><p>Safeload</p></td>
+<td><p>Indicates whether the parameter to be safeloaded. Explained below.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Group</p></td>
+<td><p>Safeload group name. Valid only for safeload parameters. Explained below.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">The Equation field is different for individual parameters and tables.</div>
+<div class="line">• Individual Parameter - The user can either set a static value to the parameter or assign a formula which is a function of one or more runtime variables and size of runtime buffers. To set a formula, the user needs to define one or more runtime variables or runtime buffers. ‘FS’, ‘NumChannels’ and ‘BlockSize’ are predefined variables and can be used in the formula to represent the ‘Schematic Sampling Rate’, ‘Growth Count’ and ‘Schematic Block Size’ (for block processing Modules) respectively. Configuration properties defined in “Configuration” window are also available as variables to be used in the equation. In Legacy SigmaStudio, “NumChannels” is the same as “RepCount”.</div>
+<div class="line">• Tables - The user can set a runtime buffer to the table. Formula or constants are not supported and should not be assigned to Table parameters.</div>
+<div class="line">When it comes to ‘Safeload’ and ‘Safeload Group’, some Algorithms require a set of parameters be updated at once and the update in the parameter memory happens while the Algorithm is not being executed. For example, in a Bi-quad filter, five filter coefficients form the parameter set. To update the parameters of the Bi-quad filter, it is mandatory to satisfy the following conditions:</div>
+<div class="line">• Coefficients are updated while the filter is not being executed.</div>
+<div class="line">• All the five coefficients are updated at once.</div>
+<div class="line">This is to ensure that the filter executes with a set of stable coefficients. If either of the above two conditions are not met, the resultant parameter set used in the Bi-quad filter can be a mix of coefficients from two different parameter sets and this can lead to filter instability. If the ‘Safeload’ checkbox is selected, the Algorithm Designer ensures that the first condition mentioned above is met, i.e. corresponding parameter is updated in the parameter memory while the Algorithm is not being executed.</div>
+<div class="line">“Safeload Group” maps two or more parameters to the same group and ensure that the parameters belonging to the same group are updated at once. Thus, safeload group ensures that the second condition is also met.</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">Validate the configuration by clicking Validate All.</div>
+<div class="line">Click Next.</div>
+</div>
+</section>
+<section id="ui-designer-tab">
+<h2>1.1.8 UI Designer Tab<a class="headerlink" href="#ui-designer-tab" title="Link to this heading"></a></h2>
+<p>UI Designer is used to design and configure the user interface for the module. The developer has the option to create a graphical representation of their custom module by using different options from Toolbox window. Each button has their on specific properties, which we have the privilege to alter under Properties tab. Please refer the below <a class="reference internal" href="#"><span class="doc">figure</span></a>.</p>
+<p><img alt="image11" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/ui_1.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure:</strong> Algorithm Designer Module UI Designer Tab, Properties window for Mute No Slew module</p>
+</div>
+<div class="line-block">
+<div class="line">For this particular example, since mute module requires only an Enable/Disable option from UI, a Checkbox and Label was selected from Toolbox menu. Select the checkbox and the properties of that checkbox can be seen on right hand side under Properties window. Adjusting the size of checkbox adjusts the Width, Height etc. fields in Properties window. Once done with properties, there is an Assignments tab next to it where the run-time variables mentioned previously in <a class="reference internal" href="#"><span class="doc">1.1.5 Variables Tab</span></a> section, can be assigned to this checkbox as shown in the below figure.</div>
+<div class="line"><img alt="image12" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/ui_2.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure:</strong> Algorithm Designer Module UI Designer Tab, Assignments window for Mute No Slew module</p>
+</div>
+<p>Assignments window could be used to assign the runtime variables and buffers to the controls such that assigned runtime variable or buffer could be controlled using the graphical control.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Parameters</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Control</p></td>
+<td><p>Name of the selected control. Name is assigned by Algorithm Designer and is non-editable by user</p></td>
+</tr>
+<tr class="row-odd"><td><p>Control Property</p></td>
+<td><p>Indicates the property on the control, which could be assigned with a runtime variable</p></td>
+</tr>
+<tr class="row-even"><td><p>Variable</p></td>
+<td><p>Indicates the selected runtime variable. The drop down will list only unassigned variables and variables of the same type as the selected control (Numeric, Boolean etc.). For this particular example, that variable is ‘uservar1’ as per definition done in section <a class="reference internal" href="#"><span class="doc">1.1.5 Variables Tab</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Assign</p></td>
+<td><p>Can be used to assign a variable to the control. Will be active only when there is no active assignment on the control</p></td>
+</tr>
+<tr class="row-even"><td><p>Unassign</p></td>
+<td><p>Can be used to remove an assignment. Will be active only when there is an active assignment on the control</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Click Next.</div>
+</div>
+</section>
+<section id="settings-tab">
+<h2>1.1.9 Settings Tab<a class="headerlink" href="#settings-tab" title="Link to this heading"></a></h2>
+<p>In Settings tab, miscellaneous settings are assigned to the module.</p>
+<p>Once the module(s) to be used as SigmaStudioPlus plugins are configured using the Algorithm Designer, it can be converted into a DLL for redistribution and reuse.</p>
+<p>Before proceeding, save the designer project as shown in below <a class="reference internal" href="#"><span class="doc">figure</span></a>.</p>
+<img alt="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/settings_1.png" class="align-center" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/settings_1.png" />
+<p>The developer can mention the name with which it should appear in the SigmaStudioPlus application under ToolBox Caption. Please refer the below <a class="reference internal" href="#"><span class="doc">figure</span></a> to understand the settings mentioned for this example.</p>
+<p><img alt="image13" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/settings_2.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure:</strong> Algorithm Designer Module Settings Tab for Mute No Slew module</p>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Parameters</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Toolbox Caption</p></td>
+<td><p>Indicates the caption to be used in the toolbox</p></td>
+</tr>
+<tr class="row-odd"><td><p>Toolbox Hierarchy</p></td>
+<td><p>Indicates the toolbox hierarchy. Hierarchy levels should be separated using ‘.’</p></td>
+</tr>
+<tr class="row-even"><td><p>UI Caption</p></td>
+<td><p>Indicates the caption to be displayed on SigmaStudioPlus UI</p></td>
+</tr>
+<tr class="row-odd"><td><p>Description</p></td>
+<td><p>Description of the module</p></td>
+</tr>
+<tr class="row-even"><td><p>Documentation URL</p></td>
+<td><p>Any documentation URL to be mentioned here while displaying the help contents of that particular module</p></td>
+</tr>
+<tr class="row-odd"><td><p>Restrict Addins-Window</p></td>
+<td><p>By enabling this option, after DLL generation and providing path to that DLL in SigmaStudioPlus, the created module will not be listed under SigmaStudioPlus Toolbox during audio system’s schematic design phase</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Click the ‘Build Plugin’ button on bottom right corner of Algorithm Designer window as shown in the figure. The build window will open up and list all the modules in the current Algorithm Designer Project.</div>
+</div>
+</section>
+<section id="configuring-plugin-dll-and-its-generation">
+<h2>1.1.10 Configuring Plugin DLL and its Generation<a class="headerlink" href="#configuring-plugin-dll-and-its-generation" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">As final stage of custom module creation, developer can choose to include one or more modules in the DLL. For each of the module, the user may choose whether to include the Algorithm, Parameter Computation and UI. Whenever UI or Parameter Computation is not selected, the plugin name of the external UI or Parameter computation plugin to be referenced should be mentioned.</div>
+<div class="line"><img alt="image14" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/dll_generation.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure:</strong> Algorithm Designer Module Configure Plugin DLL Tab for Mute No Slew module</p>
+</div>
+<div class="line-block">
+<div class="line">The assembly information of this particular module can be mentioned under Assembly Information. At the bottom right corner of this tab, there is an option to Generate the DLL file for this particular module. Choose the path where the DLL needs to be saved as per the developer’s requirement and click save.</div>
+</div>
+</section>
+<section id="including-generated-dll-to-sigmastudioplus-add-ins">
+<h2>1.1.11 Including generated DLL to SigmaStudioPlus Add-ins<a class="headerlink" href="#including-generated-dll-to-sigmastudioplus-add-ins" title="Link to this heading"></a></h2>
+<p>Open Tools-&gt; Add-ins Browser.</p>
+<p><img alt="image15" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/addinbrowser.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure:</strong> SigmaStudioPlus Add-ins Browser</p>
+</div>
+<p>In Add-ins Browser, click the ‘+’ to add the path of the recently created ‘.dll’ files as shown in below <a class="reference internal" href="#"><span class="doc">figure</span></a>.</p>
+<p><img alt="image16" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/addinbrowser_2.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure:</strong> Adding DLL file</p>
+</div>
+<div class="line-block">
+<div class="line">Upon creating a new project, when it comes to adding audio processing modules from Toolbox tree, a separate section called <strong>Custom Modules</strong> can be seen, under which the recently created Mute No Slew module will be present.</div>
+<div class="line"><img alt="image17" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/muteinschema.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure:</strong> SigmaStudioPlus Schematic Design with Custom created Mute (No Slew) module</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">===== 1.2 Simple Adder Module ===== Please refer section <a class="reference internal" href="#"><span class="doc">1.1.1 Configuration Tab</span></a>, the procedure is same.</div>
+<div class="line"><img alt="image18" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/simpleadderconfig.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure:</strong> Algorithm Designer Module Configuration Tab for Simple Adder</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>Advanced Customization</strong> (Custom UI &amp; Custom Code) options are advanced configuration settings and not be used in the regular designer flow. Developers can contact the support team for more information regarding this configuration.</p>
+</div>
+</section>
+<section id="source-and-libraries-tab-1">
+<span id="id1"></span><h2>1.2.1 Source and Libraries Tab<a class="headerlink" href="#source-and-libraries-tab-1" title="Link to this heading"></a></h2>
+<p>For SimpleAdder, we are giving the C source code directly in Algorithm Designer’s editor under “Source Code” tab as shown in below <a class="reference internal" href="#"><span class="doc">figure</span></a>.</p>
+<p><img alt="image19" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/simpleaddersource.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure:</strong> Algorithm Designer Module Source and Libraries Tab, Source Code window for Simple Adder</p>
+</div>
+<p>The ‘Header Files’ tab is used to load the header files included in the source code. Header files to be added can be selected using ‘Browse’ button and added using the ‘+’ button as shown below.</p>
+<p><img alt="image20" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/designermodule/simpleadderheader.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure:</strong> Algorithm Designer Module Source and Libraries Tab, Header Files window for Simple Adder</p>
+</div>
+<div class="line-block">
+<div class="line">Use the ‘-’ button to remove the selected header file from the list.</div>
+<div class="line">The header file added in this Simple Adder module can be found in <strong>C:\Analog Devices\SigmaStudioPlus-Rel2.x.x\Target\Include</strong> path. The source entered in the editor and header files selected will get saved in the Algorithm Designer project. Source code entered in the Algorithm Designer Module’s source editor is not supported for sample processing schematics.</div>
+</div>
+<div class="line-block">
+<div class="line">Rest of the procedure is same. Hence please refer the following sections to create the module as per your module’s logic and generate DLL:</div>
+<div class="line"><a class="reference internal" href="#"><span class="doc">1.1.3 Parameter Definition Tab</span></a></div>
+<div class="line"><a class="reference internal" href="#"><span class="doc">1.1.4 I/O Pins Tab</span></a></div>
+<div class="line"><a class="reference internal" href="#"><span class="doc">1.1.5 Variables Tab</span></a></div>
+<div class="line"><a class="reference internal" href="#"><span class="doc">1.1.6 Memory Size Tab</span></a></div>
+<div class="line"><a class="reference internal" href="#"><span class="doc">1.1.7 Parameter Assignment Tab</span></a></div>
+<div class="line"><a class="reference internal" href="#"><span class="doc">1.1.8 UI Designer Tab</span></a></div>
+<div class="line"><a class="reference internal" href="#"><span class="doc">1.1.9 Settings Tab</span></a></div>
+<div class="line"><a class="reference internal" href="#"><span class="doc">1.1.10 Configuring Plugin DLL and its Generation</span></a></div>
+<div class="line"><a class="reference internal" href="#"><span class="doc">1.1.11 Including generated DLL to SigmaStudioPlus Add-ins</span></a></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

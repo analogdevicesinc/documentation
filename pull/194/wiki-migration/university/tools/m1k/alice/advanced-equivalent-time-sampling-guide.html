@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This document serves as the advanced User’s Guide for using Equivalent Time Sampling (ETS) in the ALICE 1.3 Desktop software interface written for use with the ADALM1000 active learning kit hardware." name="description" />
+
+    <title>ALICE User’s Guide for using Equivalent Time Sampling (ETS) &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ALICE User’s Guide for using Equivalent Time Sampling (ETS)</a><ul>
+<li><a class="reference internal" href="#objective">Objective:</a></li>
+<li><a class="reference internal" href="#background">Background</a><ul>
+<li><a class="reference internal" href="#bandwidth-vs-sample-rate-and-the-adalm1000">Bandwidth vs Sample Rate and the ADALM1000</a></li>
+<li><a class="reference internal" href="#periodic-waveforms">Periodic waveforms</a></li>
+<li><a class="reference internal" href="#sub-sampled-waveform-capture">Sub-sampled waveform capture</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#using-equivalent-time-sampling-with-the-adalm1000">Using Equivalent Time Sampling with the ADALM1000</a><ul>
+<li><a class="reference internal" href="#periodic-waveforms-1">Periodic waveforms</a></li>
+<li><a class="reference internal" href="#sub-sampled-waveform-capture-1">Sub-sampled waveform capture</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-ets-controls-in-alice-1-3">The ETS controls in ALICE 1.3</a></li>
+<li><a class="reference internal" href="#advanced-signal-processing-techniques">Advanced Signal Processing Techniques</a><ul>
+<li><a class="reference internal" href="#input-frequency-compensation">Input Frequency Compensation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#example-use-case">Example Use Case</a><ul>
+<li><a class="reference internal" href="#another-example">Another Example</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="alice-users-guide-for-using-equivalent-time-sampling-ets">
+<h1>ALICE User’s Guide for using Equivalent Time Sampling (ETS)<a class="headerlink" href="#alice-users-guide-for-using-equivalent-time-sampling-ets" title="Link to this heading"></a></h1>
+<section id="objective">
+<h2>Objective:<a class="headerlink" href="#objective" title="Link to this heading"></a></h2>
+<p>This document serves as the advanced User’s Guide for using Equivalent Time Sampling (ETS) in the ALICE 1.3 Desktop software interface written for use with the ADALM1000 active learning kit hardware.</p>
+</section>
+<section id="background">
+<h2>Background<a class="headerlink" href="#background" title="Link to this heading"></a></h2>
+<section id="bandwidth-vs-sample-rate-and-the-adalm1000">
+<h3>Bandwidth vs Sample Rate and the ADALM1000<a class="headerlink" href="#bandwidth-vs-sample-rate-and-the-adalm1000" title="Link to this heading"></a></h3>
+<p>The meaning of “bandwidth vs sample rate”, especially in relation to a low cost USB based digital oscilloscope like the ADALM1000 is something that can cause a lot of confusion at times. For those familiar with the Nyquist-Shannon Sampling Theorem, it seems strange that an analog to digital convertor (ADC) that has a maximum sample rate of 100 KSPS is able to measure signals beyond the Nyquist limit of one half the sample rate let alone see waveforms that are at even higher frequencies. However, given the right circumstances it is possible to do this and much more. The 1.3 version of the ALICE desktop software suite for ADALM1000 includes an optional user interface that implements a form of equivalent time sampling or ETS.</p>
+</section>
+<section id="periodic-waveforms">
+<h3>Periodic waveforms<a class="headerlink" href="#periodic-waveforms" title="Link to this heading"></a></h3>
+<p>The key to understanding how this “magic” works is to realize that many of the kinds of signals that an oscilloscope user might like to measure are periodic. That is, they have a fixed pattern or shape that repeats periodically. Indeed it is almost impossible to see any other type of signal with an ordinary (non-sampling) analog oscilloscope. A digital oscilloscope like ALM1000 can of course capture and store any non-periodic waveform at the base real time sample rate. If we are interested in measuring waveforms with frequency content higher than half the sample rate, as the specification of many ADCs suggest we can, then we will be limited to periodic waveforms. The successive approximation ADC used in the ALM1000 is designed to exploit this ability by sampling the analog input for a much shorter period of time than a full sample period. That is, it has a very short acquisition time (i.e. time to capture the input signal) but it requires additional time to convert the sampled analog value to its encoded digital value. This short time aperture is what enables the ADC to see frequencies much higher than the sample rate alone might suggest, but there is some work to be done first in order to properly display the waveform.</p>
+</section>
+<section id="sub-sampled-waveform-capture">
+<h3>Sub-sampled waveform capture<a class="headerlink" href="#sub-sampled-waveform-capture" title="Link to this heading"></a></h3>
+<p>If you display a buffer of raw data captured from a signal with a higher frequency than even one tenth the sample rate (10 samples per cycle), you will still see a waveform; just not much detail. The following screen shot, in figure1, is taken with the ALM1000 sampling a 20.10 KHz square wave. As we can see there are only five sample points per cycle and the waveform does not look much like a square wave. The sampled data is drawn two different ways. The light green trace is drawn with lines connecting the sampled values. The dark green trace is drawn with horizontal and vertical lines or stair-steps connecting the sampled values. This is sometimes a better way to visualize the sampling process.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f1.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f1.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f1.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 1, Real time sampling 20.1 KHz square wave at 100 KSPS</p>
+</div>
+<p>The 2.17 version of the ALM1000 board firmware allows it to be reconfigured from sampling the four measurement channels (2 voltage and 2 current) at 100 KSPS to sampling two measurement channels (2 voltage, 2 current or 1 voltage / 1 current) at 200 KSPS. This mode offers better time resolution but still often not enough. The following screen shot, figure 2, is taken with the ALM1000 sampling the same square wave at 200 KSPS.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f2.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f2.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f2.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 2, Real time sampling 20.1 KHz square wave at 200 KSPS</p>
+</div>
+<p>Looking closely at these traces we can see that the sampled values are slightly different for each subsequent cycle. This happens because the time between samples, or sample rate is not an exact integer multiple (or fraction) of the input signal’s frequency. In this example the sample rate is100/200 KSPS vs the 20.1 KHz of the input signal.</p>
+<p>If there are less than 2 samples per cycle you will see an “alias”, or frequency shifted version of the waveform.</p>
+<p>If certain conditions are met where the samples fall at different points in each cycle of the input signal, the alias is unique, meaning you can “unwrap” or re-sequence the raw data to reveal the true waveform. This process is known as sub-sampling or equivalent time sampling and is a technique used by many digital oscilloscopes to display high frequency signals. It is similar to a radio receiver where two frequencies are “mixed” to produce the “sum and difference” frequencies to shift from a high frequency to a lower one. Indeed, many ADCs (and DACs) in the Analog Devices catalog are often used to perform this frequency translation function in systems like cell phone towers and WiFi networks. The next screen shot, figure 3, is taken again with a 20.10 KHz as the input but now using ETS techniques. The approximately 20.1 KHz input frequency is now down converted or shifted to a much lower frequency around 333 Hz or a factor of 60:1. This multiplies the 100 KSPS to an effective sample rate of about 6 MSPS. So there are now 60 X 5 or 300 samples per cycle (or you can think of it as the new lower frequency signal has been sampled at 100 KSPS). The software scales the horizontal time scale based on the new effective sample rate. The time per Div is the same 20 uSec/Div as in the previous two screens but now we can see much more detail in the waveform including the single pole response of the analog inputs.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f3.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f3.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f3.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 3, Equivalent time sampling 20.1 KHz square wave at 6 MSPS</p>
+</div>
+<p><strong>What’s the catch?</strong></p>
+<p>A minor digression at this point is in order. Why 20.1 KHz and not exactly 20.000 KHz? 20.000 KHz is a rational fraction of the fixed 100 KSPS sample rate and the sample points will fall at exactly the same point in each cycle so no additional waveform details would be obtained. With a fixed real time sample rate there are certain frequencies that fall in nulls or no-go zones and can’t be used with the ETS as implemented for the ALM1000. This limitation is not so great for a general purpose piece of test equipment but is perfectly acceptable for using the ALM1000 in a teaching situation where the experiments can be tailored to the fixed frequencies allowed due to the fixed real time sample rate.</p>
+<p>Another point to note here is that the scheme used in ALICE will down convert the input frequency to the frequency “offset” (or integer multiple of the offset) chosen in the software. These screen shots were taken with the input frequency offset adjusted to about but not exactly 100 Hz thus the signal displayed is the actual offset.</p>
+<p>So, when you read a specification that says “Oscilloscope Y has a 100 MHz bandwidth but a 20 MHz sample rate” you know it means that it is using sub-sampling and the scope can display a periodic waveform with frequency components up to 100 MHz.</p>
+<p>In the case of ALM1000, it has an analog bandwidth of slightly more than 100 KHz and a real time sample rate of up to 100 KHz (200 KHz for 2 channels). Using ETS the apparent sample rate could be much higher even into the 10’s of MHz depending on how small the frequency offset is.</p>
+<p>Sub-Sampling does not free you from the constraints of the Nyquist theorem: the bandwidth of the signal must still be less than half the sample rate to avoid destructive aliasing. However, the signal may appear anywhere in the analog bandwidth of the ADC so long as the bandwidth of the signal remains less than half the sample rate.</p>
+<p>For example, if you have a 125 KHz analog capture bandwidth and a up to 100 KSPS sample rate you can measure a signal with a fundamental frequency of 65 KHz and bandwidth of 50 KHz (i.e. you can see any frequencies between 65 KHz and 115 KHz) which might be especially useful if the software has a build-in spectrum analyzer like ALICE. If the signal is not sufficiently band limited, it must be filtered to prevent aliased components in the result. The ALM1000 has a single pole RC filter ahead of the ADC input with a cut-off frequency a little more than 100 KHz.</p>
+<p>There is one important exception that frees you from this constraint: if the signal is harmonic (i.e. there are no frequency components that are not integer related to the fundamental frequency) and the sample rate is different to and unrelated to the fundamental, it is possible to unwrap all signal harmonics up to the physical analog bandwidth of the analog input signal chain.</p>
+<p>This is how ALICE, and any other digital scope software that can perform equivalent-time sampling, can see waveforms at frequencies much higher than the Nyquist-Shannon Sampling Theorem would otherwise imply.</p>
+</section>
+</section>
+<section id="using-equivalent-time-sampling-with-the-adalm1000">
+<h2>Using Equivalent Time Sampling with the ADALM1000<a class="headerlink" href="#using-equivalent-time-sampling-with-the-adalm1000" title="Link to this heading"></a></h2>
+<p>The ALICE 1.3 desktop software suite for ADALM1000 includes an option that implements a form of equivalent time sampling or ETS.</p>
+<section id="periodic-waveforms-1">
+<span id="id1"></span><h3>Periodic waveforms<a class="headerlink" href="#periodic-waveforms-1" title="Link to this heading"></a></h3>
+<p>Many of the kinds of signals that an oscilloscope user might like to measure are periodic. That is, they have a fixed pattern or shape that repeats periodically. Indeed it is almost impossible to see any other type of signal with an ordinary (non-sampling) analog oscilloscope. A digital oscilloscope like ALM1000 can of course capture and store any non-periodic waveform at the base real time sample rate. Often the analog signal chain and the ADC used in a scope like the ALM1000 have more usable bandwidth than some fraction of the sample rate.</p>
+</section>
+<section id="sub-sampled-waveform-capture-1">
+<span id="id2"></span><h3>Sub-sampled waveform capture<a class="headerlink" href="#sub-sampled-waveform-capture-1" title="Link to this heading"></a></h3>
+<p>If you display a buffer of raw data captured from a signal with a higher frequency than even one tenth the sample rate (10 samples per cycle), you will still see a waveform; just not much detail. If the sampling frequency is not exactly an integer fraction (or multiple) of the input frequency each sample represents a unique point somewhere along the repeating waveform. For example if we look at figure 4 we see a case where the sample frequency is slightly slower than the input frequency, by a factor of 19/20. So from the top graph we see that 20 unique points are obtained from 20 different cycles of the input signal. If these sample points are then assembled in the proper order we get the graph on the bottom.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f4.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f4.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f4.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 4, Sub-sampling with a ratio of 19/20.</p>
+</div>
+<p>In this simple example the points are just plotted in the order they are taken. If, on the other hand, the ratio of the input frequency and the sample rate were the other way around, 20/19, then each sample would come earlier in each cycle and it would look like time was going backward if the points were plotted in the same order. To make time increase the order of the points would need to be reversed. This sub-sampling has the same effect as a down conversion mixer shifting the input to a lower frequency, even DC for certain ratios like 1, or 2 or 3 etc. This technique assumes that either the sample rate or the input frequency or both are adjustable such that a known ratio can be achieved. In the case of the ALM1000 we have only certain fixed sample rates, to work with. The maximum base sample rate is 100 KSPS for 4 channel measurements and 200 KSPS for 2 channels measurements. Other lower sample rates are possible but are limited to certain fractions of the sampling timer clock in the microcontroller. To calculate the actual sample rate we need to know the minimum number of clock cycles per sample, which is 240. The ALM1000 sample timer clock is 48 MHz. We know that the time per sample is 1 over the requested new Sample Rate.</p>
+<p>m_sam_per = round(48 MHz / (2.0 * Sample Rate))</p>
+<p>To convert this back to the actual sample time:</p>
+<p>sample_time = m_sam_per / 48 MHz</p>
+<p>To convert back to the actual sample rate:</p>
+<p>Actual Sample Rate = int(round( (1.0/sample_time)/2.0) )</p>
+<p>The first possible sample rate lower than the 100 KSPS maximum is 99585. The next below that is 99174, and below that is 98765, 98361 etc. These values are doubled of course when sampling just 2 channels. These are small but still finite steps in the available sample rates.</p>
+<p>Fortunately it is possible to use a different approach. Instead of trying to set the exact ratio, the fixed sampling rate is used and if we know the frequency of the input signal an actual ratio is then calculated. With this known ratio it is very easy to find out which sample within the record has what delay (or its position) within the input waveform period.</p>
+<p>As an example we can use a simple ratio where the input frequency is 39/20 times the sample rate or there are 1.95 cycles per sample. It means than every following sample is delayed by 1 full cycle and 0.95*T, where T is the time index in the record, relative to the current one. If we do the calculations shown in the following table where we multiply the cycles per sample by the time index and then take just the fraction part in the last column. If we multiple this fraction of a cycle by the length of the record we have the position to place that sample in a new re-sorted sample record.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-t1.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-t1.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-t1.png" style="width: 500px;" />
+</a>
+<p>To implement this technique in ALICE we use two variables. One is the dividend of the fraction of the sample rate we are targeting. For example if we want to observe input frequencies just above (or below) 1/6 of the sample rate (multiples of 16,666.67 Hz), we use 6. Another is what is called an offset for lack of a better term. A number of possible values can be used for this, ALICE starts at -25 and adjusts this factor to get a record length based on the time/Div setting. But never using a record length larger than a 95,000 sample limit (0.95 seconds at 100 KSPS).</p>
+<p>First we need to calculate how many samples (length of the record) will be needed to capture the right number of input waveform cycles. As we have already pointed out there are only certain fractions of the fixed sample rate that we can use.</p>
+<p>Record Length = (Dividend * Sample Rate) / (10,000 * Offset)</p>
+<p>For example for a divide factor of 6 and an Offset of -25 we get a record length of 24,000 samples or 240 mSec. This means that the lowest frequency we can shift an input waveform to and see one complete cycle would be 1/240 mSec or slightly more than 4 Hz. The idea is to shift the input to somewhere between 100 Hz and 5 KHz for optimal display, the lower the frequency the higher the effective sample rate will be.</p>
+<p>Now we need to calculate the factor we need to multiply the fractions of a cycle or each time index (right hand column in the table) by.</p>
+<p>Index multiplier = int(Record Length * (Sample Rate + Offset ) / (Sample Rate))</p>
+<p>This may seem all very complicated and it is. That is why the software does all the calculations and plots the results for you.</p>
+<p>Divide factors from 1 to 75 are allowed in the program.</p>
+</section>
+</section>
+<section id="the-ets-controls-in-alice-1-3">
+<h2>The ETS controls in ALICE 1.3<a class="headerlink" href="#the-ets-controls-in-alice-1-3" title="Link to this heading"></a></h2>
+<p>Unlike in a bench digital oscilloscope with an equivalent time sampling mode feature, the ETS mode controls in ALICE 1.3 require some manual settings by the user. By default access to the ETS feature is disabled. To enable access to the ETS controls add the following lines to your alice_init.ini file:</p>
+<div class="line-block">
+<div class="line">global EnableETSScreen; EnableETSScreen = 1</div>
+<div class="line">global EnableHSsampling; EnableHSsampling = 1</div>
+</div>
+<p>Three new control widgets will now appear in the main ALICE scope window, figure 5. Two will appear along the top next to the Time per division entry. The one on the right is where the User will enter the target minimum input frequency that is to be displayed. More later in this guide on how to determine this frequency. Next to that is where the time (horizontal X) multiplication factor will appear. The program will attempt to calculate this vale based on the target minimum input frequency entered and the chosen sample rate. This “guess” can be very off from the actual multiplication factor based on how accurate the User guessed at the entered target minimum input frequency. Either the Fmin or MulX values can be adjusted to more accurately “calibrate” the horizontal time scale. More on doing that adjustment later in the guide as well. The third button added will appear along the right hand column of buttons below the other instrument enable buttons. Where in the list it appears will depend on what other optional feature controls are enabled in the alice_init.ini file.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f5.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f5.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f5.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 5, New widgets on main oscilloscope window</p>
+</div>
+<p>To control all this ALICE 1.3 has the ETS Controls window, figure 6. The current real time sample rate (starting default is 100000) is shown at the top as a reminder. The calculated equivalent time sample rate is displayed based on the time multiplier factor. Next there is a check box to turn on and off ETS. Next is an entry space to enter the Divide factor, in the case below 5 was used. From the divide factor entered ALICE picks an offset and record length to best display the input signal (values are only displayed when in Debug mode). The base or minimum frequency is shown, 1/5 of the sample rate or 20,000 Hz. This is the frequency that will be shifted to DC. The user can enter a frequency multiplier. Multiply factors from 1 to 75 are allowed in the program. The multiplied value is displayed. This does not really change anything in how ALICE displays the signal. It is handy to use this value when setting or selecting the sample rate with respect to frequency of the input signal.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f6.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f6.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f6.png" style="width: 450px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 6, ETS controls</p>
+</div>
+<p>As was pointed out earlier if the input frequency is above or below the Base frequency (the frequency that will be shifted to DC), in other words the frequency offset is positive or negative, the order of the samples will be either forward or reversed in time. This is generally set correctly based on the Frequency value entered as the “guess” for Fmin. Control buttons allow the user to select which way to order the data displayed if the waveform looks backward.</p>
+<p>There is a major complication in the case of the ALM1000 and how the A and B channels are sampled. The A channel samples first every 10 uSec (at 100KSPS) and channel B samples second, 5 uSec later, between the channel A samples. This is not so big a deal in real time sample mode and ALICE handles this when drawing the traces. But in ETS mode this 5 uSec difference causes the channel B data to shift all over with respect to channel A depending on the frequency of the input and to what frequency it is down shifted to. Think of this 5 uSec difference with respect to the equivalent time sampling rate which might be many MHz. If the time scale multiplication factor, Mul X is set properly such that the horizontal time scale is “calibrated” to the shifted input frequency then the CHB Time Shift should be set correctly automatically by the software.</p>
+<p>A good way to adjust or “calibrate” the Mul X horizontal time scale factor is to connect both Channel A and B inputs to the same signal and adjust Mul X (or Fmin) until both traces are aligned on top of each other. You can then move channel B to the other signal you wish to observe.</p>
+<p>There is a place to manually enter a shift factor for channel B but the software generally changes the value based on the entered Mul X value automatically. This shift factor is in sample points. A positive number shifts the trace to the right and a negative one shifts it to the left. Either might be necessary depending on the Forward or Reverse data order.</p>
+<p>This time shift is only required when the ALM1000 is set to sample all four measurement channels simultaneously. If the Double Sample Rate button in the Set Sample Rate controls is checked, see figure 7, the channel B time shift factor will always be 0.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f7.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f7.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f7.png" style="width: 300px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 7, Base Sample Rate controls</p>
+</div>
+</section>
+<section id="advanced-signal-processing-techniques">
+<h2>Advanced Signal Processing Techniques<a class="headerlink" href="#advanced-signal-processing-techniques" title="Link to this heading"></a></h2>
+<section id="input-frequency-compensation">
+<h3>Input Frequency Compensation<a class="headerlink" href="#input-frequency-compensation" title="Link to this heading"></a></h3>
+<p>The software frequency compensation for each channel consists of a cascade of two adjustable <a class="icon link reference external" href="https://en.wikipedia.org/wiki/High-pass_filter#Algorithmic_implementation" target="_blank">first order high pass filters</a>. The time constant and the gain of each stage can be adjusted. Normal first order high pass filters do not pass DC so a DC gain of 1 path is added to the overall second order high pass software compensation filter. This structure is often called a shelving filter because of the shape of its frequency response.</p>
+<p>This functionality is generally used to compensate for a low pass response that might be introduced when using external resistor dividers and the internal input capacitance of the ALM1000 AIN and BIN pins. These software frequency compensation filters can also be used to compensate for the internal 100 KHz anti-alias filter in the ETS mode. Based on the time scale multiplication factor appropriate time constant and gain factors can be calculated from fixed values for any given multiplier.</p>
+<p>In figure 8 we show the controls for the input compensation when the ETS feature is enabled. To turn on and off the compensation for Channels A and B there are check boxes under the Curves drop down menu. Turning on compensation applies to both the Scope and Spectrum tools (time and frequency measurements). The filter time constant and gain settings can be set using entry slots in the Settings Controls screen. The DC gain and offset adjust controls are unchanged.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f8.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f8.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f8.png" style="width: 450px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 8, Settings controls with ETS turned on</p>
+</div>
+<p>The software also includes the option to process the waveform buffers with digital filters. For completeness the digital filter controls are shown in figure 9.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f9.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f9.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f9.png" style="width: 300px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9, Digital Filter controls</p>
+</div>
+</section>
+</section>
+</section>
+<section id="example-use-case">
+<h1>Example Use Case<a class="headerlink" href="#example-use-case" title="Link to this heading"></a></h1>
+<p>As an example of how to apply the ETS functionality to measure high frequency signals we will use the ADALM-BUCK-ARDZ switch mode buck regulator experiment Arduino shield board plugged into an Arduino running the script from the lab exercise. The photo of the board in figure 10 shows the connection points we will be using.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f10.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f10.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f10.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 10, ADALM-BUCK-ARDZ test board</p>
+</div>
+<p>The first signal that will be measured will be the Arduino PWM output signal. Both channels will be connected to the same node. Any of the ground connection points will serve as the common ground reference for the ADALM1000. The PWM output signal will be a 0 to 5 V digital square wave signal. We will be using a resistor input divider to attenuate the signals before applying them to the AIN and BIN pins on the ALM1000 as shown in figure 11. The nominal gain factor for the resistors shown is 19.5/1.5 or 13. This is done to reduce the 5 V PWM signal to an amplitude that is low enough such that the limited large signal slew rate of the ADA4661 buffer does not affect the high speed digital edges as much. The wide dynamic range of the 16 bit ADC allows us to do this and still have at least 12 bits of resolution. Higher value resistors could be used but eventually the R2, C1 time constant becomes an issue that limits the frequency response. In this case the 19.5 K ohm total resistance does not present too large of a load on the Arduino digital output.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f11.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f11.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f11.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11, AIN and BIN Input voltage dividers</p>
+</div>
+<p>The first thing to do in the ALICE software is to “calibrate” the A and B channel DC gain and offset adjustment values. Connect the input end of the 18 K resistors (R1) for channels A and B both to ground (GND). It is best to enter the approximate Gain value, 13 in this example, first. Now adjust the CA-V and CB-V Offset Adjust values, as shown in figure 12, so that the CHA AvgV and CHB AvgV measure as close to 0 volts as possible (+/- a few mV is good enough). Now connect the divider inputs to the fixed +5.0V output pin. Adjust the Gain values so that the CHA AvgV and CHB AvgV measure as close to 5 volts as possible. (For better accuracy you can measure the fixed 5 V output directly without the voltage divider first and use that value as your target measurement when using the dividers).</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f12.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f12.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f12.png" style="width: 450px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 12, A and B Input voltage divider Adjustments</p>
+</div>
+<p>Now go back and connect the input dividers to ground and recheck the Offset values. Changes to the Gain values can have small effects on the Offset so it is a good idea to iterate back and forth a couple of times between measuring +5 and GND until you have the values dialed in. Notice that the actual values for the gain in this example were slightly different than the calculated value due to the tolerance in the actual resistor values. Now we are ready to measure the Arduino PWM output signal. With both the channel A and B input dividers connected to the ADALM-BUCK-ARDZ test board PWM signal, jumper in upper left corner of the board and the ADALM1000 ground connected to the ADALM-BUCK-ARDZ ground, set the channel input ranges and positons along with the Time/Div such that you get a display something like shown in figure 13. The Fmin and Mul X entries could be anything at this point. Select the CA Freq value to be displayed. To get the best measurement of the input frequency the Real Time sample rate should be 200000. This should happen automatically when the time scale is set to 0.1 mS/Div.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f13.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f13.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f13.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 13, PWM signal Real Time Sampling display</p>
+</div>
+<p>The Arduino PWM frequency should be 31.250 KHz. The measured value (to one decimal place) is 31.3 KHz. This is very close to the expected value and any small difference is likely due to the frequency tolerance of the crystal oscillator on the Arduino board and the master crystal oscillator on the ALM1000 board. This value for the PWM input frequency will be the target Fmin value. You can transfer the CA Freq reading (to 3 decimal places) to the Fmin entry spot by clicking on Fmin (raised button), Figure 14. You can of course always manually enter the Fmin value. This may be needed in cases where the input signal is not a nice neat square wave and the software can’t get a correct reading of its frequency.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f14.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f14.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f14.png" style="width: 300px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 14, Transfer CA Freq reading to Fmin entry</p>
+</div>
+<p>The frequency that Fmin was set to is 31.338 KHz, which is just a 0.2784 % difference from the expected 31.250 KHz from the Arduino PWM timer output.</p>
+<p>Now that we know the target input frequency we can choose a real time sample rate and divider factor that is close but just below this frequency. If we select the allowed RT sample rate value of 93385 and divide by 3 we get 31128.33 Hz. So the Frequency Offset will be 31338 – 31128 or 210 Hz. Which is a good frequency range to convert down to. Another way to pick a RT sample rate is to manually enter a value in the Base Sample Rate spin box that you calculate by multiplying Fmin by some integer factor that is less than the 100000 max limit. When you hit return on the entered value the software will automatically pick the closest allowed rate.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f15.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f15.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f15.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 15, Select Real Time Sample rate and Divide Factor</p>
+</div>
+<p>Now we can Enable the ETS and after adjusting the horizontal time scale you should see something like what is shown in figure 16. To check that the proper MulX value is being used you can enable the Gated Measurement cursors. Clicking the left mouse button on the first rising edge and a second left click on the next rising edge will display the delta time (period) and frequency of the waveform. Note that the ET Sample rate is calculated and displayed in the EST controls. In this example the ET sample rate is 4.575865 MSPS, or 50 times (Mul X) the 93.385 KSPS RT sample rate.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f16.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f16.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f16.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 16, Traces with EST enabled</p>
+</div>
+<p>Since both input channels are connected to the same signal, both channels should be aligned exactly on top of each other as they are in the screen shot. If they are not then the Mul X factor is not adjusted correctly, i.e. the Fmin value was incorrect. To properly align the B channel to the A channel you can either adjust Fmin or Mul X.</p>
+<p>Now we can set up the software input frequency compensation to correct for the 100 KHz low pass anti-alias filter. Open the Change Settings controls, figure 17. Make sure the Auto Set ETS Comp box is checked. The built in default Time constant and gain values should be correct for the 100 KHz filter in most boards but can be tweaked as necessary. The CHA and CHB values are automatically scaled by the ETS multiplication factor as it changes so the correct compensation should be applied for whatever the real time sample rate, Fmin and Mul X are set to.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f17.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f17.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f17.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 17, EST frequency compensation settings</p>
+</div>
+<p>From the Curves Drop down Menu we turn on the Frequency compensation. Now as we see in this next screen shot, figure 18, the RC setting of the 100 KHz anti-alias filter is compensated.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f18.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f18.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f18.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 18, Traces with EST and Frequency compensation enabled</p>
+</div>
+<p>We can now move channel B to look at other nodes on the ADALM-BUCK-ARDZ test board. In the next screen shot, figure 19, we show the waveforms for the PWM signal on channel A and the Inductor Switch node on channel B.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f19.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f19.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f19.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 19, PWM signal and Switch node traces</p>
+</div>
+<section id="another-example">
+<h2>Another Example<a class="headerlink" href="#another-example" title="Link to this heading"></a></h2>
+<p>Signal sources generated from crystal oscillators are prime candidates for using ETS. Direct Digital Synthesizers (DDS) such as the AD983x class function generators are good examples. Below in figure 20 are two examples of AD983x DDS boards. The one on the left is the SparkFun MiniGen, and the one on the right is one of the commonly available variants from multiple sources in China.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f20.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f20.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f20.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 20, AD983x DDS Function Generators</p>
+</div>
+<p>ALICE has a simple set of controls to program the registers in the AD983x shown in figure 21. To enable access to the AD983X DDS function generator controls add the following line to your alice_init.ini file:</p>
+<p>global EnableMinigenMode; EnableMinigenMode = 1</p>
+<p>The board on the right was used in this example. There is no output buffer amplifier so the analog output signal for sine and triangle waveforms is only about 600 mV p-p. For this small signal amplitude no input resistor dividers are needed. The serial interface pins on the board need to be mapped to the appropriate digital I/O pins on the ALM1000.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f21.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f21.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f21.png" style="width: 450px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 21, AD983X DDS function generator controls</p>
+</div>
+<p>As in the first example we need to select a RT sample rate that along with the Divide factor results in a base frequency just below the frequency we set the DDS function generator to.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f22.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f22.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f22.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 22, Select Real Time Sample rate and Divide Factor</p>
+</div>
+<p>For the 97959 RT sample rate, with Fmin set to 32.768 KHz, Mul X is 94, the ET Sample rate will be 9.208146 MSPS. The screen shot below in figure 23 shows the output of the DDS function generator with the software frequency compensation turned on connected directly to both the AIN and BIN input pins.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f23.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f23.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/alice-ets-guide-f23.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 23, DDS function generator triangle waveform output</p>
+</div>
+<p>As the ETS part of the ALICE project progresses, the controls may become more automatic.</p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

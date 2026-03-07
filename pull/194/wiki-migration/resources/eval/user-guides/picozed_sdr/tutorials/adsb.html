@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This model is considered deprecated. See updated model here HW/SW Co-Design Implementation of ADS-B Receiver Using Analog Devices AD9361/AD9364" name="description" />
+
+    <title>ADS-B Airplane Tracking Tutorial &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ADS-B Airplane Tracking Tutorial</a></li>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#software-and-hardware-requirements">Software and Hardware Requirements</a><ul>
+<li><a class="reference internal" href="#software-requirements">Software Requirements</a></li>
+<li><a class="reference internal" href="#hardware-requirements">Hardware Requirements</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#from-simulation-to-production-workflow">From Simulation to Production Workflow</a><ul>
+<li><a class="reference internal" href="#component-evaluation">Component Evaluation</a></li>
+<li><a class="reference internal" href="#behavioral-simulation">Behavioral Simulation</a><ul>
+<li><a class="reference internal" href="#transmit-model">Transmit Model</a></li>
+<li><a class="reference internal" href="#receive-model">Receive Model</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#radio-i-o">Radio I/O</a><ul>
+<li><a class="reference internal" href="#id3">MATLAB</a><ul>
+<li><a class="reference internal" href="#pre-captured-data">Pre-captured Data</a></li>
+<li><a class="reference internal" href="#live-data">Live Data</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">Simulink</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#prototype-and-production">Prototype and Production</a><ul>
+<li><a class="reference internal" href="#intermediate-model">Intermediate Model</a></li>
+<li><a class="reference internal" href="#mathworks-hw-sw-co-design">MathWorks HW/SW Co-Design</a><ul>
+<li><a class="reference internal" href="#steps-to-follow">Steps to Follow</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#adi-board-support-package-for-the-hdl-workflow-advisor">ADI Board Support Package for the HDL Workflow Advisor</a><ul>
+<li><a class="reference internal" href="#use-pre-captured-data-to-verify">Use pre-captured data to verify</a></li>
+<li><a class="reference internal" href="#observe-live-data">Observe live data</a></li>
+<li><a class="reference internal" href="#use-external-mode">Use External Mode</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#reference">Reference</a></li>
+<li><a class="reference internal" href="#support">Support</a></li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="ads-b-airplane-tracking-tutorial">
+<h1>ADS-B Airplane Tracking Tutorial<a class="headerlink" href="#ads-b-airplane-tracking-tutorial" title="Link to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This model is considered deprecated. See updated model here <a class="icon link reference external" href="https://www.mathworks.com/help/supportpkg/xilinxzynqbasedradio/ug/hw-sw-co-design-implementation-of-ads-b-transmitter-receiver-using-analog-devices-ad9361-ad9364.html" target="_blank">HW/SW Co-Design Implementation of ADS-B Receiver Using Analog Devices AD9361/AD9364</a></p>
+</div>
+</section>
+<section id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h1>
+<p>Due to the complexity of the SDR systems nowadays, there is a significant gap between the concept of a SDR system and the realization of that working design. Bridging this gap typically involves teams of engineers with a variety of different skill sets (RF, DSP, FPGA, software, system integration and etc.), and in many cases projects get de-railed early in the development stage because of difficulty in coordinating the efforts of these varied design entities.</p>
+<p>In this tutorial, we will present how model based design provides a collaborative solution for SDR, which allows developers of different backgrounds (RF, DSP, FPGA, software, system integration and etc.) to work together in a single environment, and quickly build and prototype SDR systems while establishing and maintaining a deployable path to production. As a real-world and interesting example of the process, we will actually build a wireless SDR platform that receives and decodes <a class="icon link reference external" href="https://en.wikipedia.org/wiki/Automatic_dependent_surveillance_–_broadcast" target="_blank">Automatic Dependent Surveillance-Broadcast (ADS-B)</a> signals to allow us to detect and report the position, altitude, and velocity of the commercial aircraft flying in our vicinity.</p>
+<p>The signal processing requirements of ADS-B are quite trivial, and most would agree that this type of development methodology is overkill for something of this scope. However, the focus of this tutorial is the model based design flow, not the algorithmic complexity of what is actually being implemented. Rather than show a complex signal processing example at the same time as introducing modern development methodology, we will focus on the development tools used, and showcase things, while still using a real world example.</p>
+<p>From simulation to production, the following tasks will be performed in this tutorial:</p>
+<ul class="simple">
+<li><p>Design of signal processing algorithms used to decode ADS-B messages</p></li>
+<li><p>Simulation of the RF transceiver receiving ADS-B signals</p></li>
+<li><p>Generation of C and HDL code</p></li>
+<li><p>Verification of the HDL code with recorded and live data on the target transceiver and FPGA</p></li>
+</ul>
+</section>
+<section id="software-and-hardware-requirements">
+<h1>Software and Hardware Requirements<a class="headerlink" href="#software-and-hardware-requirements" title="Link to this heading"></a></h1>
+<section id="software-requirements">
+<h2>Software Requirements<a class="headerlink" href="#software-requirements" title="Link to this heading"></a></h2>
+<p><a class="icon link reference external" href="https://www.mathworks.com/products/matlab/" target="_blank">MATLAB</a> is the simulation tool used in this tutorial. Your <a class="icon link reference external" href="https://www.mathworks.com/products/matlab/" target="_blank">MATLAB</a> version should be <em>2016a</em> or later, and your license needs to include the following components:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.mathworks.com/products/communications/" target="_blank">Communications System Toolbox</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.mathworks.com/products/dsp-system/" target="_blank">DSP System Toolbox</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.mathworks.com/products/signal/" target="_blank">Signal Processing Toolbox</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.mathworks.com/products/simulink/" target="_blank">Simulink</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.mathworks.com/products/stateflow/" target="_blank">Stateflow</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.mathworks.com/products/embedded-coder/" target="_blank">Embedded Coder</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.mathworks.com/products/hdl-coder/" target="_blank">HDL Coder</a></p></li>
+<li><p>You can find what toolboxes you have by running the <a class="icon link reference external" href="https://www.mathworks.com/help/matlab/ref/ver.html" target="_blank">ver</a> command</p></li>
+</ul>
+<p>Besides, the following items are required in prototype and production stages:</p>
+<ul class="simple">
+<li><p>Radio I/O: <a class="reference internal" href="../../../../tools-software/linux-software/libiio/clients/fmcomms2_3_simulink.html"><span class="doc">LibIIO client for MATLAB &amp; Simulink</span></a></p></li>
+<li><p>Hardware targeting:</p>
+<ul>
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/support/download.html" target="_blank">Xilinx Vivado</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.mathworks.com/matlabcentral/fileexchange/40448-embedded-coder-support-package-for-xilinx-zynq-7000-platform" target="_blank">Embedded Coder Support Package for Xilinx Zynq-7000 Platform</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.mathworks.com/matlabcentral/fileexchange/40447-hdl-coder-support-package-for-xilinx-zynq-7000-platform" target="_blank">HDL Coder Support Package for Xilinx Zynq-7000 Platform</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="hardware-requirements">
+<h2>Hardware Requirements<a class="headerlink" href="#hardware-requirements" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../picozed_sdr.html"><span class="doc">PicoZed SDR board</span></a> is the RF receiver used in this tutorial. To make this board work properly, you will need:</p>
+<ul>
+<li><p>The latest <a class="reference internal" href="../../../../tools-software/linux-software/kuiper-linux.html"><span class="doc">Zynq image</span></a> for the PicoZed SDR board.</p></li>
+<li><p><a class="reference internal" href="../../ad-fmcomms2-ebz/software/filters.html"><span class="doc">MATLAB Filter Design Wizard for AD9361</span></a> to configure the digital filters on <a class="icon adi reference external" href="https://www.analog.com/AD9361" target="_blank">AD9361</a>.</p></li>
+<li><p>A good understanding of how the <a class="icon adi reference external" href="https://www.analog.com/AD9361" target="_blank">AD9361</a> works. At a minimum, you should read over a basic intro for the <a class="reference internal" href="../../ad-fmcomms2-ebz/ad9361.html"><span class="doc">AD9361</span></a>.</p></li>
+</ul>
+</li>
+<li><p>In order to capture the real world ADS-B signals, a proper antenna is required on the Rx side, which is capable of covering the 1090 MHz band, such as an <a class="icon link reference external" href="http://www.dpdproductions.com/page_vhf_air.html#adsmobilehalf" target="_blank">ADS-B Double 1/2 Wave Mobile Antenna</a>.</p></li>
+</ul>
+</section>
+</section>
+<section id="from-simulation-to-production-workflow">
+<h1>From Simulation to Production Workflow<a class="headerlink" href="#from-simulation-to-production-workflow" title="Link to this heading"></a></h1>
+<p>The following sections will follow the workflow shown in the figure below:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/flow.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/flow.png" style="width: 700px;" />
+</a>
+<ul class="simple">
+<li><p>The first step of <strong>component evaluation</strong> is to understand if the AD9361 will meet your requirements (the component evaluation stage). Since the AD9361 can tune to 1090MHz (the broadcast frequency for ADS-B), and receive a 2MHz bandwidth signal (the channel bandwidth of ADS-B), the AD9361 is suitable.</p></li>
+<li><p>The next step of <strong>behavioral simulation</strong> is to model and simulate the SDR system in Simulink. At this stage the communication algorithm is partitioned into blocks that will be implemented in software and blocks that will be implemented into the programmable logic or embedded software.</p></li>
+<li><p>After verified in pure simulation environment, this model can be run with “<strong>Radio I/O</strong>”, where we are capturing signals off the air, and ensuring that our model works with real world impairments.</p></li>
+<li><p>Once the partitioning and the simulation are complete, in the <strong>prototype</strong> stage, the SDR model is converted into C code and HDL using Embedded Coder and HDL Coder. A Zynq-based prototyping system is used to verify the performance of the communication algorithm and to help further tune the SDR model before moving to the actual production stage.</p></li>
+<li><p>Finally, in the <strong>production</strong> stage the automatically generated C code and HDL are integrated into the complex production system framework. This workflow ensures that once the communication algorithm reaches the production stage it is fully verified and tested and provides a lot of confidence in the system’s robustness.</p></li>
+<li><p>In each step of this process, we need to test the models with a pre-defined <strong>test suite</strong>, to make sure we get consistent results throughout the process.</p></li>
+</ul>
+<section id="component-evaluation">
+<h2>Component Evaluation<a class="headerlink" href="#component-evaluation" title="Link to this heading"></a></h2>
+<p>Wireless signals that can be detected and decoded are everywhere, and they are easily accessible with today’s Software Defined Radio (SDR) hardware like the Analog Devices AD9361 integrated RF agile transceivers. The Automatic Dependent Surveillance Broadcast (ADS-B) transmissions from commercial aircraft provide a readily available wireless signal that can be used to demonstrate the Zynq and AD9361 rapid prototyping flow. Commercial aircraft use ADS-B transmitters to report their position, velocity, altitude and aircraft ID to air traffic controllers. The flight data format is defined in the International Civil Aviation Organization’s (ICAO) Mode S Extended Squitter specification. ADS-B is being introduced throughout the world to modernize air traffic control and collision avoidance systems. It has already been adopted in Europe and is being gradually introduced in the United States.</p>
+<p>The Mode S Extended Squitter standard provides details of the RF transmission format and encoded data fields. The transponder transmission has the following properties:</p>
+<ul class="simple">
+<li><p>Transmit Frequency: 1090 MHz</p></li>
+<li><p>Modulation: Pulse Position Modulation (PPM)</p></li>
+<li><p>Data Rate: 1 Mbit/s</p></li>
+<li><p>Message Length: 56 μsec or 112 μsec</p></li>
+<li><p>24-bit CRC checksum</p></li>
+</ul>
+<p>The tuning frequency and bandwidth are well within the capabilities of the AD9361 RF transceiver, such as the PicoZed SDR board.</p>
+<p>The Mode S waveform is fairly simple, as shown below, but there are still several challenges involved in receiving and decoding the transmitted messages.</p>
+<img alt="fig1.png" src="https://wiki.analog.com/_media/fig1.png" />
+<ul class="simple">
+<li><p>The receive environment typically contains very short messages interspersed with long idle periods. The signals being received can be very weak when the transmitting aircraft is a long distance from the receiver. Legacy waveforms are also transmitted at 1090 MHz. The receiver needs to use the preamble to identify both high and low amplitude Mode S transmissions in a congested frequency band.</p></li>
+<li><p>Bits have one of two possible patterns within the 1 usec bit interval. A logical 1 is ON for the first ½ usec and OFF for the second ½ usec. A logical 0 is OFF for the first ½ usec and ON for the second ½ usec. Since the bit decisions are made based on time-based patterns, the receiver needs to use the preamble to accurately find the IQ sample where the message bits start.</p></li>
+<li><p>The Mode S message is composed of 88 information bits and 24 checksum bits. The receiver needs to be able to clear registers, make bit decisions, compute the checksum and read the checksum registers at the correct times. Timing control is required for the receiver to function properly.</p></li>
+<li><p>For an embedded design, the decoding process has to work on a sample by sample basis. Storing large amounts of data for batch processing is not a realistic receiver design for an embedded system.</p></li>
+</ul>
+<p>The combination of a powerful RF front end like the AD9361 and a technical computing language like MATLAB greatly simplifies the problems associated with detecting and decoding these transmissions. Functions for the math and signal processing libraries can be used to identify the sync pattern, calculate the noise floor, make bit decisions and calculate the checksum. The conditional and execution control functions in MATLAB simplify the control logic. Accessing test data is easy, both from binary or text files or streamed directly into MATLAB using the AD9361 SDR platforms.</p>
+</section>
+<section id="behavioral-simulation">
+<h2>Behavioral Simulation<a class="headerlink" href="#behavioral-simulation" title="Link to this heading"></a></h2>
+<section id="transmit-model">
+<h3>Transmit Model<a class="headerlink" href="#transmit-model" title="Link to this heading"></a></h3>
+<p>In order to verify the receiver model works properly, especially the detect and decoding algorithm, we construct a tranmist model from some known ADS-B message as a test suite.</p>
+<p>The transmit model <strong>adsbTxGen.m</strong> can be found on the Analog Devices GitHub repository:</p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon git reference external" href="https://github.com/analogdevicesinc/MathWorks_tools/tree/main/hil_models/legacy/ADSB_transmitter/adsbTxGen.m" target="_blank">Transmit Model</a></p>
+</div>
+<p>The input to this function is the known ADS-B message you would like to transmit, and the output is the baseband ADS-B waveform that the receiver can handle. In the MATLAB command window, run the following line:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">txData</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">adsbTxGen</span><span class="p">(</span><span class="s">&#39;8D86D5E058135037C0A9112B72B7&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>It will generate the waveform for the message ‘8D86D5E058135037C0A9112B72B7’. The waveform is saved in the variable <em>txData</em>. You can either leave this variable in the workspace if you will try out the receiver model right away, or save it in a mat file for future reference.</p>
+</section>
+<section id="receive-model">
+<h3>Receive Model<a class="headerlink" href="#receive-model" title="Link to this heading"></a></h3>
+<p>The receiver model <strong>ModeS_Simulink_Decode.mdl</strong> and its associated files can be found on the Analog Devices GitHub repository:</p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon git reference external" href="https://github.com/analogdevicesinc/MathWorks_tools/tree/main/hil_models/legacy/ADSB_Simulink" target="_blank">Receive Model</a></p>
+</div>
+<p>The model itself is quite straightforward. It takes the pre-recorded ADS-B data, saved in <em>data_Yb.mat</em> as input, and then decode the message. The subsystem of decoding algorithm is shown in the figure below:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/fig9.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/fig9.png" style="width: 700px;" />
+</a>
+<p>The first step in the decoding is to calculate the noise floor and the correlation to the preamble. Digital filter blocks are used for these calculations. The <em>TimingControl</em> is implemented using <a class="icon link reference external" href="https://www.mathworks.com/products/stateflow/" target="_blank">Stateflow</a>, which is a state machine tool that is used to generate the timing, reset and control signals for the rest of the decoding algorithm. Stateflow is very useful for models where you want to separate the control logic from the data flow. Once the timing and triggers are activated the block named <em>Bit Process</em> takes the input IQ samples and calculates the data bits, and the <em>CRC_Check</em> block computes the checksum. The message parsing takes place in a MATLAB script named <em>DecodeBits.m</em> driven by this Simulink model.</p>
+<p>After you run the model, the figure below from the MATLAB command window shows the two messages that were successfully decoded from the one million sample data set. The hex characters that make up the 88-bit message and 24-bit checksum are displayed, and the results of the decoding process show the aircraft ID, message type, and aircraft velocity, altitude, and position.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/fig8.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/fig8.png" style="width: 700px;" /></a></p>
+<p>In order to verify the detect and decoding algorithm works properly, double click on the Signal From Workspace block, and use the synthetic data <em>txData</em> we just created as the signal source:</p>
+<img alt="txdata.png" src="https://wiki.analog.com/_media/txdata.png" />
+<p>Click play button to run the model. In the command window, you will see the following results:</p>
+<img alt="txresult.png" src="https://wiki.analog.com/_media/txresult.png" />
+<p>Since we select the cyclic repetition mode for <em>txData</em>, the decoded result will repeat until the simulation ends. As you can see, the decoded result matches what we have transmitted, so it verifies the receiver model, including the detect and decoding algorithm, works properly.</p>
+</section>
+</section>
+<section id="radio-i-o">
+<h2>Radio I/O<a class="headerlink" href="#radio-i-o" title="Link to this heading"></a></h2>
+<p>After implementing any signal processing algorithm in MATLAB or Simulink, the next natural step is to verify the algorithm’s functionality using real data acquired from the actual SDR hardware system that it is going to run on. In the previous step, the verification of the algorithm is done using different sets of input data captured from the system. This helps validate the algorithm’s functionality, but does not guarantee that the algorithm will perform as expected in environmental conditions other than the ones used to make the data captures, or what the behavior and performance will be for different settings of the analog frontend and digital blocks of the SDR system. In order to verify all of these aspects, it is very beneficial if the algorithm can be run online, receiving live data as input, and tuning the settings of the SDR system for optimal performance.</p>
+<p>In this section, we will describe and showcase how to use IIO System Object to capture signals with the target transceiver, but still do the signal processing on the host in MATLAB and Simulink to decode the messages, as shown below:</p>
+<img alt="System architecture" src="https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/sys_obj.png" />
+<p>The algorithm will be designed with the ultimate goal of deploying the solution onto a Zynq SoC platform, such as PicoZed SDR board. Readers who are interested in following along with the radio I/O models can find the files on the Analog Devices GitHub repository:</p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<ul class="simple">
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/MathWorks_tools/tree/main/hil_models/legacy/ADSB_MATLAB" target="_blank">Radio I/O in MATLAB</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/MathWorks_tools/tree/main/hil_models/legacy/ADSB_Simulink_libiio" target="_blank">Radio I/O in Simulink</a></p></li>
+</ul>
+</div>
+<p>To better understand these models, an introduction to IIO System Object provided by ADI can be found <a class="reference internal" href="../../../../tools-software/linux-software/libiio/clients/fmcomms2_3_simulink.html"><span class="doc">here</span></a>.</p>
+<section id="id3">
+<h3>MATLAB<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<p>To validate the MATLAB ADS-B decoding algorithm operation with real time data acquired from the PicoZed SDR platform, a MATLAB script <a class="icon git reference external" href="https://github.com/analogdevicesinc/MathWorks_tools/tree/main/hil_models/legacy/ADSB_MATLAB/ad9361_ModeS.m" target="_blank">hil_models/legacy/ADSB_MATLAB/ad9361_ModeS.m</a> has been developed to perform the following operations:</p>
+<ul class="simple">
+<li><p>Calculate the earth zone according to user input</p></li>
+<li><p>Create and configure the IIO System object</p></li>
+<li><p>Configure the PicoZed analog frontend and digital blocks through the IIO System object</p></li>
+<li><p>Receive data frames from the SDR platform using the IIO System object</p></li>
+<li><p>Detect and decode the ADS-B data</p></li>
+<li><p>Display the decoded ADS-B information</p></li>
+</ul>
+<p>After an IIO System object is constructed, it must be configured with the IP address of the SDR system, the target device name and input/output channels sizes and numbers. The following piece of code presents an example on how to create and configure the MATLAB IIO System object.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% System Object Configuration</span>
+<span class="n">s</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">iio_sys_obj_matlab</span><span class="p">;</span><span class="w"> </span><span class="c">% MATLAB libiio Constructor</span>
+<span class="n">s</span><span class="p">.</span><span class="n">ip_address</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ip</span><span class="p">;</span>
+<span class="n">s</span><span class="p">.</span><span class="n">dev_name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;ad9361&#39;</span><span class="p">;</span>
+<span class="n">s</span><span class="p">.</span><span class="n">in_ch_no</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="n">s</span><span class="p">.</span><span class="n">out_ch_no</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="n">s</span><span class="p">.</span><span class="n">in_ch_size</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="n">s</span><span class="p">.</span><span class="n">out_ch_size</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The IIO System object is then used to set the attributes of AD9361, and to receive the ADS-B signals.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Set the attributes of AD9361</span>
+<span class="k">if</span><span class="w"> </span><span class="nb">strcmp</span><span class="p">(</span><span class="n">source</span><span class="p">,</span><span class="s">&#39;pre-captured&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">input_content</span><span class="p">{</span><span class="n">s</span><span class="p">.</span><span class="n">getInChannel</span><span class="p">(</span><span class="s">&#39;RX_LO_FREQ&#39;</span><span class="p">)}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">6e9</span><span class="p">;</span>
+<span class="k">elseif</span><span class="w"> </span><span class="nb">strcmp</span><span class="p">(</span><span class="n">source</span><span class="p">,</span><span class="s">&#39;live&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">input_content</span><span class="p">{</span><span class="n">s</span><span class="p">.</span><span class="n">getInChannel</span><span class="p">(</span><span class="s">&#39;RX_LO_FREQ&#39;</span><span class="p">)}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">1.09e9</span><span class="p">;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">error</span><span class="p">(</span><span class="s">&#39;Please select a data source: pre-captured or live.&#39;</span><span class="p">);</span>
+<span class="k">end</span>
+<span class="n">input_content</span><span class="p">{</span><span class="n">s</span><span class="p">.</span><span class="n">getInChannel</span><span class="p">(</span><span class="s">&#39;RX_SAMPLING_FREQ&#39;</span><span class="p">)}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">2.5e6</span><span class="p">;</span>
+<span class="n">input_content</span><span class="p">{</span><span class="n">s</span><span class="p">.</span><span class="n">getInChannel</span><span class="p">(</span><span class="s">&#39;RX_RF_BANDWIDTH&#39;</span><span class="p">)}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">10e6</span><span class="p">;</span>
+<span class="n">input_content</span><span class="p">{</span><span class="n">s</span><span class="p">.</span><span class="n">getInChannel</span><span class="p">(</span><span class="s">&#39;RX1_GAIN_MODE&#39;</span><span class="p">)}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;fast_attack&#39;</span><span class="p">;</span>
+<span class="n">input_content</span><span class="p">{</span><span class="n">s</span><span class="p">.</span><span class="n">getInChannel</span><span class="p">(</span><span class="s">&#39;RX1_GAIN&#39;</span><span class="p">)}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">input_content</span><span class="p">{</span><span class="n">s</span><span class="p">.</span><span class="n">getInChannel</span><span class="p">(</span><span class="s">&#39;RX2_GAIN_MODE&#39;</span><span class="p">)}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;fast_attack&#39;</span><span class="p">;</span>
+<span class="n">input_content</span><span class="p">{</span><span class="n">s</span><span class="p">.</span><span class="n">getInChannel</span><span class="p">(</span><span class="s">&#39;RX2_GAIN&#39;</span><span class="p">)}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">input_content</span><span class="p">{</span><span class="n">s</span><span class="p">.</span><span class="n">getInChannel</span><span class="p">(</span><span class="s">&#39;TX_LO_FREQ&#39;</span><span class="p">)}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">6e9</span><span class="p">;</span>
+<span class="n">input_content</span><span class="p">{</span><span class="n">s</span><span class="p">.</span><span class="n">getInChannel</span><span class="p">(</span><span class="s">&#39;TX_SAMPLING_FREQ&#39;</span><span class="p">)}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">2.5e6</span><span class="p">;</span>
+<span class="n">input_content</span><span class="p">{</span><span class="n">s</span><span class="p">.</span><span class="n">getInChannel</span><span class="p">(</span><span class="s">&#39;TX_RF_BANDWIDTH&#39;</span><span class="p">)}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">10e6</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The attributes of AD9361 is set up based upon the following considerations:</p>
+<p>Sampling rate is quite straightforward with the AD9361 based platforms. Transmit date rate normally equals Rx date rate, and ultimately depends on the baseband algorithm. In this example, since the decoding algorithm is designed to work with the sampling rate of 2.5 MSPS, the date rate of AD9361 is set accordingly. By doing this, the received samples can be applied directly to the decoding algorithm, without any additional decimation or interpolation operations.</p>
+<p>The RF bandwidth control sets the AD9361’s Rx analog baseband low pass filters’ bandwidth to provide anti-aliasing and out-of-band signal rejection. In order to correctly demodulate the received signals, the system must maximize signal-to-noise ratio (SNR). In order to do this, RF bandwidth needs to be set as narrow as possible while meeting flatness and out-of-band rejection specification to minimize in band noise and spurious signal levels. Therefore, setting the RF bandwidth at an optimal value is critical to receive desired in-band signals and reject out-of-band signals. By observing the spectrum of received signals, we find 10 MHz is a proper value for the RF bandwidth.</p>
+<p>Besides setting up the analog filters of AD9361 via RF bandwidth attribute, we can also improve the decoding performance by enabling the digital FIR filters on AD9361 via the IIO System object. According to the spectrum characteristics of the ADS-B signal, we design an FIR filter with data rate of 2.5 MSPS, pass band frequency of 3.25 MHz and stop band frequency of 4 MHz. In this way, we can further focus on the bandwidth of interest.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">.</span><span class="n">writeFirData</span><span class="p">(</span><span class="s">&#39;adsb.ftr&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><em>adsb.ftr</em> is a file containing the coefficients of an FIR filter designed using the <a class="reference internal" href="../../ad-fmcomms2-ebz/software/filters.html"><span class="doc">Analog Devices AD9361 Filter Design Wizard</span></a>. This tool provides not only a general purpose low pass filter designer, but also magnitude and phase equalization for other stages in the signal path.</p>
+<p>The versatile and highly configurable AD9361 transceiver has several gain control modes that enable its use in a variety of applications. The Gain Mode parameter of the IIO System object selects one of the available modes: manual, slow_attack, hybrid and fast_attack. In the case of ADS-B, the fast attack gain mode provides the best results due to the bursty nature of these signals. In addition, fast attack mode is required for this waveform since there is preamble, the AGC needs to react fast enough so that the first bit is captured.</p>
+<p>In the end, depending on how you set up the <em>TX_LO_FREQ</em> and <em>RX_LO_FREQ</em>, there are two ways of using this model: using pre-captured data (RF loopback) and using live data off the air.</p>
+<section id="pre-captured-data">
+<h4>Pre-captured Data<a class="headerlink" href="#pre-captured-data" title="Link to this heading"></a></h4>
+<p>In this case, we are transmitting and receiving some pre-captured ADS-B signals using PicoZed. These signals are saved in a variable called <em>newModeS</em>.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">input_content</span><span class="p">{</span><span class="mi">1</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="mi">13</span><span class="p">)</span><span class="o">.*</span><span class="n">newModeS</span><span class="o">./</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">input_content</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="mi">13</span><span class="p">)</span><span class="o">.*</span><span class="n">newModeS</span><span class="o">./</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">input_content</span><span class="p">{</span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="mi">13</span><span class="p">)</span><span class="o">.*</span><span class="n">newModeS</span><span class="o">./</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">input_content</span><span class="p">{</span><span class="mi">4</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="mi">13</span><span class="p">)</span><span class="o">.*</span><span class="n">newModeS</span><span class="o">./</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The requirement for this case is to make <em>TX_LO_FREQ</em> = <em>RX_LO_FREQ</em>, and it can be any LO frequency value that PicoZed supports. Due to the nature of pre-captured data, there is plenty of ADS-B valid data in there, so it is a good way to verify whether the hardware setup is appropriate.</p>
+</section>
+<section id="live-data">
+<h4>Live Data<a class="headerlink" href="#live-data" title="Link to this heading"></a></h4>
+<p>In this case, we are receiving the real-time ADS-B signals over the air, instead of the signals transmitted by PicoZed. According to ADS-B specification, it is transmitted at the center frequency of 1090 MHz, so the requirements for this case is:</p>
+<ul class="simple">
+<li><p><em>RX_LO_FREQ</em>=1090 MHz, <em>TX_LO_FREQ</em> far away from 1090 MHz in order to avoid interference</p></li>
+<li><p>Use a proper antenna on the Rx side, which is capable of covering the 1090 MHz band. Using a poorly tuned or poorly made antenna will result in a lack of range for your air radar.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/setup.jpg"><img alt="Block diagram" src="https://wiki.analog.com/_media/setup.jpg" style="width: 700px;" />
+</a>
+<p>With everything set up properly, in order to run the MATLAB model, simply use the following command:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">rssi1</span><span class="p">,</span><span class="n">rssi2</span><span class="p">]=</span><span class="n">ad9361_ModeS</span><span class="p">(</span><span class="s">&#39;ip&#39;</span><span class="p">,</span><span class="s">&#39;data source&#39;</span><span class="p">,</span><span class="n">channel</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>where <em>ip</em> is the IP address of the SDR board, and <em>data source</em> specifies the data source of the received signal. Currently, this model supports data sources of ‘pre-captured’ and ‘live’. <em>channel</em> specifies whether signals are received using Channel 1 or Channel 2 of the PicoZed.</p>
+<p>For example, the following command receives the pre-captured data on Channel 2:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">rssi1</span><span class="p">,</span><span class="n">rssi2</span><span class="p">]=</span><span class="n">ad9361_ModeS</span><span class="p">(</span><span class="s">&#39;192.168.10.2&#39;</span><span class="p">,</span><span class="s">&#39;pre-captured&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>At the end of the simulation, you will get the RSSI values on both channels in your command window, as well as the result tables shown below:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/table.png"><img alt="image1" src="https://wiki.analog.com/_media/table.png" style="width: 700px;" /></a></p>
+<p>This result table shows the information of aircrafts appearing during the simulation. With a proper antenna, this model is able to capture and decode the aircraft signals in an 80 miles range with PicoZed. Since there are two types of Mode S messages (56 usec or 112 usec), some messages contain more information than the other.</p>
+<p>When trying out this model with the real-world ADS-B signals, the signal strength is very important for successful decoding, so make sure to put the antenna in a good line of sight location with the aircraft. The received signal strength can be seen by looking at the RSSI values on both channels. For example, if receiving the signals on channel 2, the RSSI of channel 2 should be significantly higher than that of channel 1. You can tell whether there is any useful data by looking at the spectrum analyzer.</p>
+</section>
+</section>
+<section id="id4">
+<h3>Simulink<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<p>The Simulink model shown below is based upon the model introduced in the behavioral simulation section. The detector and decoding piece comes directly from that model, and we add the Simulink IIO System object to conduct the signal reception and radio I/O simulation.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/fig11.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/fig11.png" style="width: 700px;" />
+</a>
+<p>The original model works with sample time = 1 and frame size = 1. However, the Simulink IIO System object works in a buffer mode - it accumulates a number of samples and then processes them. In order to make the original model works with the System object, we added two blocks between them: <em>unbuffer</em> to make frame size = 1 and <em>rate transition</em> to make sample time = 1. By doing this, we can keep the original model intact.</p>
+<p>The Simulink IIO System object is set up as below. Similar to the MATLAB one, it creates a System object, and then defines the IP address, device name, and input/output channels number and sizes related to this System object.</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/fig12.png" />
+<p>The input and output ports of this Simulink block corresponding to an IIO System object are defined through the properties dialog of the object’s block as well as through a configuration file that is specific to the targeted ADI SDR platform. The input and output ports are categorized as data and control ports. The data ports are used to receive/transmit buffers of continuous data from/to the target system in a frame based processing mode, while the control ports are used to configure and monitor different target system parameters. The number and size of the data ports are configured from the block’s configuration dialog while the control ports are defined in the configuration file. The attributes of AD9361 is set up according to the same factors as introduced in MATLAB model. The only difference is the Tx/Rx sampling frequency. We use 12.5 MSPS in the Simulink model, instead of 2.5 MSPS used in the MATLAB model, since here, we do not up sample by 5 on the receiver side, as we did in the MATLAB example. All the other theories and methods employed in the MATLAB model can be applied here.</p>
+<p>Depending on how you set up the <em>TX_LO_FREQ</em> and <em>RX_LO_FREQ</em>, this Simulink model can be run in two modes: using pre-captured data and using live data.</p>
+<p>In order to verify this model works properly, we run it in pre-captured mode, and use the <em>txData</em> generated by the transmitter model as the signal source, as shown below:</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/simulinklibiio.png" />
+<p>In the command window, we get the same decoded message as the one we transmit, which means the Simulink model using libiio also works properly.</p>
+</section>
+</section>
+<section id="prototype-and-production">
+<h2>Prototype and Production<a class="headerlink" href="#prototype-and-production" title="Link to this heading"></a></h2>
+<p>In this section, we will show how to take the algorithm developed in behavioral simulation, verified in pure simulation and radio I/O, and use HDL Coder and Embedded Coder from MathWorks to generate code and deploy it in the production hardware. It enables rapid design iteration cycles and helps to detect and correct design and specification errors early.</p>
+<section id="intermediate-model">
+<h3>Intermediate Model<a class="headerlink" href="#intermediate-model" title="Link to this heading"></a></h3>
+<p>The following guide outlines recommended practices for creating a design that can be implemented in hardware efficiently, and for optimizing the generated HDL for your targeted device.</p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon link reference external" href="https://www.mathworks.com/matlabcentral/fileexchange/58941-hdl-coder-evaluation-reference-guide" target="_blank">HDL Coder Evaluation Reference Guide</a></p>
+</div>
+<p>According to the guidelines presented in the reference guide, the intermediate model <strong>ModeS_FixPt_Pipelined_ADI.slx</strong> and its associated files can be found on the Analog Devices GitHub repository:</p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon git reference external" href="https://github.com/analogdevicesinc/MathWorks_tools/tree/main/hil_models/legacy/ADSB_Simulink" target="_blank">Intermediate Model</a></p>
+</div>
+<p>In this model, we converted the data type from floating point to fixed point, and we added some pipeline registers as the first step for setting this model up for HDL code generation. It uses the same data set as the behavioral model, so you will get the same decoded messages.</p>
+<p>Following this, there are two workflows to follow, one is <strong>HW/SW Co-Design</strong> provided by MathWorks, and the other is the MathWorks <strong>HDL Workflow Advisor</strong> flow using the <strong>HDL Workflow Advisor Board Support Package</strong> provided by ADI. It is recommended to use the HW/SW Co-Design whenever the hardware platform of interest is supported by this workflow.</p>
+</section>
+<section id="mathworks-hw-sw-co-design">
+<h3>MathWorks HW/SW Co-Design<a class="headerlink" href="#mathworks-hw-sw-co-design" title="Link to this heading"></a></h3>
+<p>Hardware-Software Co-Design is a standard workflow provided by <a class="icon link reference external" href="https://www.mathworks.com/help/supportpkg/xilinxzynqbasedradio/index.html" target="_blank">MathWorks Communications System Toolbox Support Package for Xilinx Zynq-Based Radio</a>. Using this workflow, you can prototype an algorithm in Simulink and then deploy it on the ARM processor and FPGA fabric of the Zynq hardware. The hardware-software co-design workflow includes FPGA targeting, HDL IP core generation, and the generation of a software interface model for execution on the ARM processor. To get started, see <a class="icon link reference external" href="https://www.mathworks.com/help/supportpkg/xilinxzynqbasedradio/ug/installation-for-hardware-software-co-design.html" target="_blank">Hardware-Software Co-Design for Zynq SDR Applications</a>.</p>
+<p>The <a class="icon link reference external" href="https://www.mathworks.com/help/supportpkg/xilinxzynqbasedradio/examples/hw-sw-co-design-implementation-of-ads-b-transmitter-receiver-using-analog-devices-ad9361-ad9364.html" target="_blank">HW/SW Co-Design Implementation of ADS-B Transmitter/Receiver Using Analog Devices AD9361/AD9364</a> is a shipped example in MATLAB from <strong>R2016b</strong>. In this example, the stateflow block is removed and replaced with a MATLAB state machine, which means users without a stateflow license can use the model.</p>
+<p>Since MathWorks example comes with detailed documentation, we are not going to elaborate here. However, just a reminder - do not forget to set up SDK tools:</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>SDK Tools Set Up</strong></p>
+<ol class="arabic simple">
+<li><p>Within MATLAB®, use Add-Ons &gt; Get Hardware Support Packages to download Embedded Coder Support Package for Xilinx Zynq-7000 Platform.</p></li>
+<li><p>Follow the installer instructions for installing the support package software.</p></li>
+<li><p>You must then setup the SDK tools using the setup wizard. This will run automatically following installation. On the first pane, select Configure the Xilinx Design Tools. Click Next.</p></li>
+<li><p>On the next pane, provide a valid path to the Xilinx SDK development tools. The default install path fills in automatically. Update the path if you installed the SDK in a nondefault location.</p></li>
+<li><p>To complete the configuration, click Next.</p></li>
+</ol>
+<p>If you already have the Embedded Coder Support Package for Xilinx Zynq-7000 Platform installed, you can start the setup wizard manually. On the MATLAB Home tab, in the Environment section of the Toolstrip, click Add-Ons &gt; Manage Add-Ons. Locate Embedded Coder Support Package for Xilinx Zynq-7000 Platform and click Setup. Then follow the steps above.</p>
+</div>
+<section id="steps-to-follow">
+<h4>Steps to Follow<a class="headerlink" href="#steps-to-follow" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>In MATLAB 2016b, run the following two lines in command window:</p></li>
+</ol>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">hdlsetuptoolpath</span><span class="p">(</span><span class="s">&#39;ToolName&#39;</span><span class="p">,</span><span class="s">&#39;Xilinx Vivado&#39;</span><span class="p">,</span><span class="s">&#39;ToolPath&#39;</span><span class="p">,</span><span class="s">&#39;PATH_TO_YOUR_VIVADO.BAT_FOR_2015_4&#39;</span><span class="p">);</span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">setupzynqradioipcoregen</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Open <em>zynqRadioHWSWADSBAD9361AD9364SL.slx</em>.</p></li>
+<li><p>Right click <em>HDL_ADSB</em> subsystem and launch HDL workflow advisor from there. Please note if you install both MathWorks HW/SW Co-Design and ADI Board Support Package, there might be some issues in Step 4.2 of HDL Workflow Advisor when using the HW/SW Co-Design flow. The solution is to uninstall the ADI Board Support Package.</p></li>
+<li><p>Go through all the steps in HDL workflow advisor. In the end, program the Zynq hardware.</p></li>
+<li><p>Open the software interface model, run simulation in external mode and deploy to hardware.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In HDL workflow advisor Step 4.4, you can download the completed bitstream to the target and restart the board. You can also download the bitstream at the command line:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">devzynq</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">zynq</span><span class="p">();</span>
+<span class="c">% The following address should match the board address</span>
+<span class="n">devzynq</span><span class="p">.</span><span class="n">IPAddress</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;192.168.3.2&#39;</span><span class="p">;</span>
+<span class="c">% Path to the generated bitstream</span>
+<span class="n">devzynq</span><span class="p">.</span><span class="n">programFPGA</span><span class="p">(</span><span class="k">...</span>
+<span class="w">   </span><span class="s">&#39;hdl_prj\vivado_ip_prj\vivado_prj.runs\impl_1\system_wrapper.bit&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This bitstream is not persistent across power cycles. If you want the generated FPGA image to load each time you turn on the board, call the <em>downloadImage</em> method:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">radio</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sdrdev</span><span class="p">(</span><span class="s">&#39;PicoZed SDR&#39;</span><span class="p">);</span>
+<span class="n">downloadImage</span><span class="p">(</span><span class="n">radio</span><span class="p">,</span><span class="s">&#39;FPGAImage&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">   </span><span class="s">&#39;hdl_prj\vivado_ip_prj\vivado_prj.runs\impl_1\system_wrapper.bit&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This call renames the generated <em>system_wrapper.bit</em> file to <em>system.bin</em> and downloads the file over an Ethernet connection to the radio hardware.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul class="simple">
+<li><p>This example also works for receiving signals off the air, just comment out the transmitter block and adjust the receiver centre frequency.</p></li>
+<li><p>For accurate position calculations, you will need to edit lines 8 and 9 of the position calculation script to give your current location.</p></li>
+</ul>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="nb">edit</span><span class="w"> </span><span class="n">zynqRadioHWSWADSBPositionCalcSingle</span>
+</pre></div>
+</div>
+</div>
+<p><a class="icon link reference external" href="https://www.mathworks.com/help/supportpkg/usrpembeddedseriesradio/examples/target-an-ads-b-airplane-tracker-using-usrp-r-e310-and-hw-sw-co-design-workflow.html" target="_blank">Target an ADS-B Airplane Tracker Using HW/SW Co-Design Workflow</a> is also available on the Ettus E310 SDR platform.</p>
+</section>
+</section>
+<section id="adi-board-support-package-for-the-hdl-workflow-advisor">
+<h3>ADI Board Support Package for the HDL Workflow Advisor<a class="headerlink" href="#adi-board-support-package-for-the-hdl-workflow-advisor" title="Link to this heading"></a></h3>
+<p>The ADI Board Support Package (BSP) for the HDL Workflow Advisor, based upon the <a class="icon link reference external" href="https://www.mathworks.com/help/hdlcoder/ug/board-and-reference-design-system.html" target="_blank">MathWorks Board and Reference Design Registration System</a>, is a collection of board definitions and reference designs that provide to the MathWorks HDL Workflow Advisor, which is capable of:</p>
+<ul class="simple">
+<li><p>Generate IP blocks compatible with Analog Devices HDL reference designs for various Analog Devices platforms,</p></li>
+<li><p>Automatically insert the generated IPs into the Analog Devices Vivado HDL reference designs.</p></li>
+</ul>
+<p>A general introduction to the ADI Board Support Package can be found <a class="reference internal" href="../../ad-fmcomms2-ebz/software/matlab_bsp.html"><span class="doc">here</span></a>. In this section, we will go through the steps to apply board support package towards ADS-B model.</p>
+<p><strong>Step 1: Download and install BSP</strong></p>
+<p>The board support package can be found at Analog Devices GitHub:</p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<ul class="simple">
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/MathWorks_tools/tree/main/hdl_wa_bsp" target="_blank">Analog Devices Board Support Package</a></p></li>
+</ul>
+</div>
+<p>To install the Analog Devices BSP, set the MATLAB current folder to the <em>/vendor/AnalogDevices</em> folder found in the location where the BSP was downloaded and run</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">AnalogDevices</span><span class="p">.</span><span class="n">install</span>
+</pre></div>
+</div>
+<p>in the MATLAB command window. After the installation process is complete, run <em>ver</em> in the MATLAB command window to list all the installed packages. If the installation was successful, the <em>HDL Coder BSP Tools</em> and <em>HDL Coder BSP: Analog Devices Inc</em> should appear in the list, as shown below:</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/install.png" />
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To uninstall the Analog Devices BSP, run this in the MATLAB command window:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">AnalogDevices</span><span class="p">.</span><span class="n">uninstall</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Step 2: Setup Xilinx tools</strong></p>
+<p>Xilinx <em>Vivado 2015.2.1</em> is required in this process.</p>
+<p>In MATLAB, run the following line in command window:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">hdlsetuptoolpath</span><span class="p">(</span><span class="s">&#39;ToolName&#39;</span><span class="p">,</span><span class="s">&#39;Xilinx Vivado&#39;</span><span class="p">,</span><span class="s">&#39;ToolPath&#39;</span><span class="p">,</span><span class="s">&#39;PATH_TO_YOUR_VIVADO.BAT_FOR_2015_2_1&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Step 3: Download and open model</strong></p>
+<p>The ADS-B hardware targeting model can be found at Analog Devices GitHub:</p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<ul class="simple">
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/MathWorks_tools/tree/main/targeting_models/ADSB" target="_blank">ADS-B Hardware Targeting Model</a></p></li>
+</ul>
+</div>
+<p>Open model <em>ModeS_ADI_Codegen.slx</em> in MATLAB.</p>
+<p><strong>Step 4: Go through HDL Workflow Advisor</strong></p>
+<p>Right click on <em>Detector</em> subsystem, choose <em>HDL Code</em> from the menu, and click on <em>HDL Workflow Advisor</em> to launch this tool, as shown below:</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/hdlwa.png" />
+<p>In step 1.1, select <em>IP Core Generation</em> for Target Workflow:</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/step1.1.png" />
+<p>In step 1.2, set target interface as below, where all the signals we want to observe are set as AXI4-Lite:</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/external.png" />
+<p>In step 3.1.2, set reset asserted level to <em>Active-high</em>:</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/step3.1.png" />
+<p>Then, run each task including Step 4.2. In the end of Step 4.2, you will see a software interface model generated. The external mode runs in this model, which will be introduced later.</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/step4.2gm.png" />
+<p>In Step 4.3, select <strong>Custom</strong> for Tcl file for synthesis build, and use <em>adi_build.tcl</em> from <em>\ADSB\hdl_prj\vivado_ip_prj\projects\scripts\</em> folder:</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/step4.3.png" />
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><em>adi_build.tcl</em> is a generic file used to automate the build process for BOOT.BIN. You can use it in other ADI BSP projects.</p>
+</div>
+<p>For the other steps not mentioned above, use default settings from HDL Workflow Advisor.</p>
+<p>After Step 4.3 finishes running, you will find the newly generated <em>BOOT.BIN</em> inside <em>\ADSB\hdl_prj\vivado_ip_prj\boot\</em> folder:</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/bootbin.png" />
+<p><strong>Step 5: Copy and paste the generated BOOT.BIN onto SD card</strong></p>
+<p>Use the latest <a class="reference internal" href="../../../../tools-software/linux-software/kuiper-linux.html"><span class="doc">image</span></a> from ADI. Replace the BOOT.BIN on SD card with the newly generated BOOT.BIN from HDL Workflow Advisor.</p>
+<p><strong>Step 6: Use MATLAB Coder to generate C code</strong></p>
+<p>Open <em>DecodeBits_ADI.prj</em> from your ADSB model folder and fill in the settings as following:</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/prj.png" />
+<p>Then click the “Generate” button, and the code generation process will run automatically. In the end, you will find a new folder called <em>codegen</em> in your current MATLAB directory, which includes the files generated from MATLAB Coder.</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/codegen.png" />
+<p><strong>Step 7: Interface the C code with the data from FPGA</strong></p>
+<p>The generated C code contains the implementation of the ADS-B data decoding algorithm, but does not contain the functions needed to configure the radio and acquire the data from the ADS-B IP. The easiest way to achieve these two tasks is to use the libiio support for the AD9361 and create an application which uses the libiio functions to configure the radio and read the data from the ADS-B IP through the DMA and afterwards call the auto-generated ADS-B decoding C code. This application is provided together with the ADS-B model. It is called <em>adsb_decode.c</em> and can be found in the <em>linux_app</em> folder from your ADSB model folder, together with the auto-generated C code provided there for reference. The next step is to copy the auto-generated C code along with adsb_decode.c and the Makefile found in the <em>linux_app</em> folder to your SD card and build the application under Linux by running the <em>make all</em> command in the location where the files were copied. The resulting binary file is called <em>adsb_decode</em> and can be ran to verify the system’s functionality. This file is also provided for reference in the <em>linux_app</em> folder.</p>
+<p>To transfer the files to your Linux system. You can use tools such as <a class="icon link reference external" href="https://winscp.net/eng/docs/guide_install" target="_blank">WinSCP</a>:</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/winscp.png" />
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you want to run the <em>adsb_decode</em> binary file provided in the <em>linux_app</em> folder you must change the access permission of <em>adsb_decode</em> after you have had it transferred to your Linux system. You can do it by using the <em>chmod</em> command in a terminal:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">chmod</span><span class="w"> </span><span class="o">+</span><span class="n">x</span><span class="w"> </span><span class="n">adsb_decode</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Step 8: Observe the results</strong></p>
+<section id="use-pre-captured-data-to-verify">
+<h4>Use pre-captured data to verify<a class="headerlink" href="#use-pre-captured-data-to-verify" title="Link to this heading"></a></h4>
+<p>Before we use <em>adsb_decode</em> to decode real world ADS-B signals, we can verify this file, the new BOOT.BIN, as well as the hardware settings using some pre-captured data and the <a class="reference internal" href="../../../../tools-software/linux-software/iio_oscilloscope.html"><span class="doc">ADI IIO Oscilloscope</span></a>.</p>
+<p>In IIO scope, set the Receive Chain and Transmit Chain according to the specifications of ADS-B signals. Then, use <em>DAC Buffer Output</em> for DDS Mode. In the end, select file <a class="icon git reference external" href="https://github.com/analogdevicesinc/MathWorks_tools/tree/main/targeting_models/ADSB/data_noise.mat" target="_blank">targeting_models/ADSB/data_noise.mat</a>, which includes the pre-captured data and click Load. You will see the message saying “Waveform loaded successfully” if your file has been applied to the DAC channels you selected.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/oscverify.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/oscverify.png" style="width: 700px;" />
+</a>
+<p>On Linux side, open a terminal and run the following command:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span><span class="w"> </span><span class="o">./</span><span class="n">adsb_decode</span><span class="w"> </span><span class="mf">42.36</span><span class="w"> </span><span class="o">-</span><span class="mf">71.06</span>
+</pre></div>
+</div>
+<p>You will see the following results almost immediately after you execute the command:</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/oscverify_results.png" />
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use <em>Ctrl + c</em> to end the program.</p>
+</div>
+</section>
+<section id="observe-live-data">
+<h4>Observe live data<a class="headerlink" href="#observe-live-data" title="Link to this heading"></a></h4>
+<p>As soon as everything is verified by pre-captured data, we can move on to the live data. Connect the antenna to RX1A of the PicoZed. On Linux side, open a terminal and run the following command:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span><span class="w"> </span><span class="o">./</span><span class="n">adsb_decode</span><span class="w"> </span><span class="n">lat</span><span class="w"> </span><span class="n">lon</span>
+</pre></div>
+</div>
+<p>Note: lat and lon are latitude and longitude of your current location.</p>
+<p>Wait a few seconds to a few minutes, depending on your local air traffic, and you will observe the decoded ADSB messages in the terminal, such as following:</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/result.png" />
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For the actual field test, compare the ADS-B information decoded by the system with the data provided by airplane live tracking websites (such as flightradar24.com), and see whether the decoding algorithm displays the correct aircraft ID, altitude, speed, and latitude/longitude coordinates.</p>
+</div>
+</section>
+<section id="use-external-mode">
+<h4>Use External Mode<a class="headerlink" href="#use-external-mode" title="Link to this heading"></a></h4>
+<p>With <a class="icon link reference external" href="https://www.mathworks.com/help/supportpkg/xilinxzynq7000ec/ug/parameter-tuning-with-external-mode-simulation.html" target="_blank">external mode</a>, you can log signals and tune parameters while the model is running on the target hardware in real-time. When you change parameter values from within Simulink, the modified parameter values are communicated to the target hardware immediately.</p>
+<p>The Analog Devices BSP also allows external mode for the supported Analog Devices boards. This enables the Simulink models used for IP core generation to be run in external mode and talk to the target hardware running the Analog Devices Linux distribution.</p>
+<p>Before you run external mode, first set up the environment variable <em>‘ADI_ZYNQ_SDR_IPADDRESS’</em> to the IP address of your board. For example, run the following line in the MATLAB command window:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="nb">setenv</span><span class="p">(</span><span class="s">&#39;ADI_ZYNQ_SDR_IPADDRESS&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;192.168.3.2&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Open the software interface model generated in Step 4.2 of the HDL Workflow Advisor, as shown below:</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/softwareinterfacemdl.png" />
+<p>Before running the external mode, make sure that the “Hardware Implementation” options are set as below. Select <strong>Analog Devices Zynq SDR</strong> for Hardware board, and click <strong>Apply</strong>.</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/after.png" />
+<p>Go to “Code Generation” options, select <strong>Debug</strong> for Build Configuration, and click <strong>Apply</strong>:</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/buildconfig.png" />
+<p>Now you can open the software interface model and run it in external mode. Select <strong>External</strong> from the menu, and click <strong>Play</strong> button.</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/playbutton.png" />
+<p>You will see a new terminal open up and show the results on hardware:</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/externalresult.png" />
+<p>Besides, you can open each scope in the interface model and see how the signals behave on hardware. The following is a capture of the Correlators scope:</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/extresult.png" />
+</section>
+</section>
+</section>
+</section>
+<section id="reference">
+<h1>Reference<a class="headerlink" href="#reference" title="Link to this heading"></a></h1>
+<p>“<strong>Four Quick Steps to Production: Using Model-Based Design for Software-Defined Radio</strong>” Article Series</p>
+<ul class="simple">
+<li><p>Di Pu, Andrei Cozma, and Tom Hill. “Part 1 - the Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools”. <a class="icon adi reference external" href="https://www.analog.com//library/analogDialogue/archives/49-09/four-step-sdr-01.html" target="_blank">Analog Dialogue, Volume 49, Number 3</a>.</p></li>
+<li><p>Mike Donovan, Andrei Cozma, and Di Pu. “Part 2 - Mode-S Detection and Decoding Using MATLAB and Simulink”. <a class="icon adi reference external" href="https://www.analog.com/library/analogDialogue/archives/49-10/four-step-sdr-02.html" target="_blank">Analog Dialogue, Volume 49, Number 4</a>.</p></li>
+<li><p>Di Pu, and Andrei Cozma. “Part 3 - Mode-S Signals Decoding Algorithm Validation using Hardware in the Loop”. <a class="icon adi reference external" href="https://www.analog.com//library/analogDialogue/archives/49-11/four-step-sdr-03.html" target="_blank">Analog Dialogue, Volume 49, Number 4</a>.</p></li>
+<li><p>Mike Donovan, Andrei Cozma, and Di Pu. “Part 4 - Rapid Prototyping using the Zynq SDR Kit and Simulink Code Generation Workflow”. <a class="icon adi reference external" href="https://www.analog.com//library/analogDialogue/archives/49-12/four-step-sdr-04.html" target="_blank">Analog Dialogue, Volume 49, Number 4</a>.</p></li>
+</ul>
+</section>
+<section id="support">
+<h1>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h1>
+<p>If you have any questions about PicoZed / AD9361 or ADI BSP workflow, please ask on the EngineerZone.<a class="icon ez reference external" href="https://ez.analog.com/community/linux-device-drivers/microcontroller-no-os-drivers" target="_blank">ADI Support</a></p>
+<p>If you have any questions about ADS-B receiver algorithm or HW/SW Co-Design workflow, please contact MathWorks. <a class="icon link reference external" href="https://www.mathworks.com/support/" target="_blank">MathWorks Support</a></p>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

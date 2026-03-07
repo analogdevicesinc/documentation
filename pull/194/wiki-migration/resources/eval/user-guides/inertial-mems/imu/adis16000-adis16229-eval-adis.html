@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The ADIS16000 and ADIS16229 enable creation of a simple wireless vibration-sensing network for a wide variety of industrial-equipment applications. . The ADIS16000 provides the gateway function, which manages the network, while the ADIS16229 provides the remote sensing function. The ADIS16000 SPI interface provides simple connectivity with most embedded processor platforms and the SMA connector interface enables the use of many different antennas. This module supports up to six ADIS16229 devices at one time, using a proprietary wireless protocol. Once it has appropriate power on the VDD pin, the ADIS16000 will automatically begin a self-initialization process. Once this process is complete, the SPI interface activates and provides access to its register structure. The SPI interface supports connectivity with most embedded processor platforms, using the connection diagram below. The factory default configuration for DO1 provides a busy indicator signal that indicates when to avoid SPI communication requests." name="description" />
+
+    <title>ADIS16000/ADIS16229 Evaluation with EVAL-ADIS &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ADIS16000/ADIS16229 Evaluation with EVAL-ADIS</a><ul>
+<li><a class="reference internal" href="#overview">OVERVIEW</a></li>
+<li><a class="reference internal" href="#required-materials">REQUIRED MATERIALS</a></li>
+<li><a class="reference internal" href="#demo-system">DEMO SYSTEM</a></li>
+<li><a class="reference internal" href="#adis16000-installation-on-eval-adis">ADIS16000 INSTALLATION ON EVAL-ADIS</a><ul>
+<li><a class="reference internal" href="#step-1">Step #1</a></li>
+<li><a class="reference internal" href="#step-2">Step #2</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#adis16229-installation">ADIS16229 INSTALLATION</a><ul>
+<li><a class="reference internal" href="#step-1-1">Step #1</a></li>
+<li><a class="reference internal" href="#step-2-1">Step #2</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#vibration-software-installation">VIBRATION SOFTWARE INSTALLATION</a></li>
+<li><a class="reference internal" href="#usb-driver-installation">USB Driver Installation</a></li>
+<li><a class="reference internal" href="#vibration-software-guide">VIBRATION SOFTWARE GUIDE</a></li>
+<li><a class="reference internal" href="#main-menu-overview">Main Menu Overview</a></li>
+<li><a class="reference internal" href="#manual-trigger-mode">Manual Trigger Mode</a></li>
+<li><a class="reference internal" href="#automatic-period-mode">Automatic/Period Mode</a><ul>
+<li><a class="reference internal" href="#reconfiguring-the-sensor-nodes">Reconfiguring the Sensor Nodes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#connecting-to-adis16229-nodes">Connecting to ADIS16229 Nodes</a></li>
+<li><a class="reference internal" href="#alarm-configuration">Alarm Configuration</a></li>
+<li><a class="reference internal" href="#network-control">Network Control</a></li>
+<li><a class="reference internal" href="#quick-links-to-key-engineer-zone-content">QUICK LINKS TO KEY ENGINEER ZONE CONTENT</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="adis16000-adis16229-evaluation-with-eval-adis">
+<h1>ADIS16000/ADIS16229 Evaluation with EVAL-ADIS<a class="headerlink" href="#adis16000-adis16229-evaluation-with-eval-adis" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>OVERVIEW<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/ADIS16000" target="_blank">ADIS16000</a> and <a class="icon adi reference external" href="https://www.analog.com/ADIS16229" target="_blank">ADIS16229</a> enable creation of a simple wireless vibration-sensing network for a wide variety of industrial-equipment applications. . The ADIS16000 provides the gateway function, which manages the network, while the ADIS16229 provides the remote sensing function. The <a class="icon adi reference external" href="https://www.analog.com/ADIS16000" target="_blank">ADIS16000</a> SPI interface provides simple connectivity with most embedded processor platforms and the SMA connector interface enables the use of many different antennas. This module supports up to six <a class="icon adi reference external" href="https://www.analog.com/ADIS16229" target="_blank">ADIS16229</a> devices at one time, using a proprietary wireless protocol. Once it has appropriate power on the VDD pin, the ADIS16000 will automatically begin a self-initialization process. Once this process is complete, the SPI interface activates and provides access to its register structure. The SPI interface supports connectivity with most embedded processor platforms, using the connection diagram below. The factory default configuration for DO1 provides a busy indicator signal that indicates when to avoid SPI communication requests.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-hook-up.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-hook-up.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-hook-up.png" style="width: 600px;" />
+</a>
+</section>
+<section id="required-materials">
+<h2>REQUIRED MATERIALS<a class="headerlink" href="#required-materials" title="Link to this heading"></a></h2>
+<p><a class="icon adi reference external" href="https://www.analog.com/ADIS16000" target="_blank">ADIS16000AMLZ</a></p>
+<p>ADIS16COM1/PCBZ</p>
+<p><a class="icon adi reference external" href="https://www.analog.com/ADIS16229" target="_blank">ADIS16229AMLZ</a></p>
+<p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADIS" target="_blank">EVAL-ADIS</a></p>
+<p>Personal Computer</p>
+<p>* Windows</p>
+<p>* Net Framework 3.5</p>
+</section>
+<section id="demo-system">
+<h2>DEMO SYSTEM<a class="headerlink" href="#demo-system" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="vibrationdemo.html"><span class="doc">ADIS16229 Wireless Vibration Monitoring Demonstration System</span></a></p>
+<p>Click on the link above to visit a demo system developed around the ADIS16000/ADIS16229.</p>
+</section>
+<section id="adis16000-installation-on-eval-adis">
+<h2>ADIS16000 INSTALLATION ON EVAL-ADIS<a class="headerlink" href="#adis16000-installation-on-eval-adis" title="Link to this heading"></a></h2>
+<p>For those who would prefer to perform PC-based evaluation of the ADIS16000/ADIS16229, before developing their own embedded system, the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADIS" target="_blank">EVAL-ADIS</a> is the appropriate system to use. The remainder of this Wiki site will focus on PC-based evaluation with the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADIS" target="_blank">EVAL-ADIS</a> system. This section focuses on mounting the <a class="icon adi reference external" href="https://www.analog.com/ADIS16000" target="_blank">ADIS16000AMLZ</a>, ADIS16COM1/PCBZ and the <a class="icon adi reference external" href="https://www.analog.com/ADIS16229" target="_blank">ADIS16229AMLZ</a> to complete the system shown below.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-parts.png"><img alt="image1" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-parts.png" style="width: 400px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-system.png"><img alt="image2" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-system.png" style="width: 400px;" /></a></p>
+<div class="center round box docutils container">
+<p><strong>NOTE:</strong> Do not plug the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADIS" target="_blank">EVAL-ADIS</a> into the USB cable at this stage of the setup. Wait until after the software installation is complete.</p>
+</div>
+<section id="step-1">
+<h3>Step #1<a class="headerlink" href="#step-1" title="Link to this heading"></a></h3>
+<p>Use the 4 M2 x.4 x 6mm screws from the included bag and line up the ADIS16COM1/PCBZ board with the highlighted “A” holes on the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADIS" target="_blank">EVAL-ADIS</a>. The mounting location holes are marked as an example in the picture below.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-16000-gateway.png"><img alt="image3" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-16000-gateway.png" style="width: 480px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-16pin-cable.png"><img alt="image4" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-16pin-cable.png" style="width: 400px;" /></a></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>WARNING:</strong> Make sure that the connector cable going from J1 on the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADIS" target="_blank">EVAL-ADIS</a> is properly aligned to the J1 connector on the ADIS16COM1/PCBZ. The 16 pin cable is included with the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADIS" target="_blank">EVAL-ADIS</a> and proper mating is essential for correct operation.</p>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-interface-mnt.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-interface-mnt.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-interface-mnt.png" style="width: 900px;" />
+</a>
+</section>
+<section id="step-2">
+<h3>Step #2<a class="headerlink" href="#step-2" title="Link to this heading"></a></h3>
+<p>Carefully insert the <a class="icon adi reference external" href="https://www.analog.com/ADIS16000" target="_blank">ADIS16000AMLZ</a> into the mating connector J2 of the previously installed ADIS16COM1/PCBZ interface board. Secure the board using the provided M3x .5 x 12mm screws (M3 washers are optional) and the M3 hex nuts.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-interface-16000amlz-mnt.png"><img alt="image5" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-interface-16000amlz-mnt.png" style="width: 600px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16000amlz.png"><img alt="image6" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/adis16000amlz.png" style="width: 290px;" /></a></p>
+</section>
+</section>
+<section id="adis16229-installation">
+<h2>ADIS16229 INSTALLATION<a class="headerlink" href="#adis16229-installation" title="Link to this heading"></a></h2>
+<p>This section is a continuation and focuses on <a class="icon adi reference external" href="https://www.analog.com/ADIS16229" target="_blank">ADIS16229AMLZ</a> setup to complete the system. The ADIS16229AMLZ provides a lead structure that enables simple connection with standard batteries. The SMA connector interface enables the use of many different antennas.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-asy1.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-asy1.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-asy1.png" style="width: 800px;" />
+</a>
+<section id="step-1-1">
+<span id="id1"></span><h3>Step #1<a class="headerlink" href="#step-1-1" title="Link to this heading"></a></h3>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/ADIS16229" target="_blank">ADIS16229AMLZ</a> module is a 47.0x37.6x22.6mm PCB structure and provides 2 mounting holes. This example uses 2 M2 x .4 x 6mm screws to secure the <a class="icon adi reference external" href="https://www.analog.com/ADIS16229" target="_blank">ADIS16229AMLZ</a> to an aluminum block. The standard (3.6 volt 1/2 AA) battery has been inserted into the battery holder and ready to be plugged into the <a class="icon adi reference external" href="https://www.analog.com/ADIS16229" target="_blank">ADIS16229AMLZ</a> module. The battery connector should be inserted as shown in the picture with the keyed tabs sliding on and locking in the connector.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-block-mnt.png"><img alt="image7" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-block-mnt.png" style="width: 400px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-batt1.png"><img alt="image8" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-batt1.png" style="width: 450px;" /></a></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>WARNING:</strong> Make sure the connector cable and the battery are installed correctly or the <a class="icon adi reference external" href="https://www.analog.com/ADIS16229" target="_blank">ADIS16229AMLZ</a> may be damaged.</p>
+</div>
+</section>
+<section id="step-2-1">
+<span id="id2"></span><h3>Step #2<a class="headerlink" href="#step-2-1" title="Link to this heading"></a></h3>
+<p>The antenna connections to the SMA’s are simple screw on connectors. Start by inserting the antenna straight onto the the SMA then gently screw it in. This should require very little force.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-antenna-install.png"><img alt="image9" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-antenna-install.png" style="width: 460px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-blk-mnt-plugged-in.png"><img alt="image10" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-blk-mnt-plugged-in.png" style="width: 370px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-system-done.png"><img alt="image11" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-system-done.png" style="width: 850px;" /></a></p>
+<div class="center round box docutils container">
+<p><strong>NOTE:</strong> The antenna used in this <a class="icon adi reference external" href="https://www.analog.com/ADIS16229" target="_blank">ADIS16229AMLZ</a> demonstration is: Linx Technology part number ANT-916-CW-QW-SMA. The antenna for the <a class="icon adi reference external" href="https://www.analog.com/ADIS16000" target="_blank">ADIS16000AMLZ</a> is: Linx Technology part number ANT-916-CW-HWR-SMA. These are provided for the demonstration and may not suit all applications.</p>
+</div>
+</section>
+</section>
+<section id="vibration-software-installation">
+<h2>VIBRATION SOFTWARE INSTALLATION<a class="headerlink" href="#vibration-software-installation" title="Link to this heading"></a></h2>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/ADIS16229" target="_blank">ADIS16229</a> vibration software link will be available shortly for download to a personal computer, which enables PC-based evaluation of the <a class="icon adi reference external" href="https://www.analog.com/ADIS16229" target="_blank">ADIS16229</a> on an <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADIS" target="_blank">EVAL-ADIS</a> evaluation system. The download file will contain three separate files: The USB drivers (SDPDrivers.exe), the application file (Vibration_Evaluation.exe) and the compressed zip file. Copy these files to a convenient folder for running the application from.</p>
+</section>
+<section id="usb-driver-installation">
+<h2>USB Driver Installation<a class="headerlink" href="#usb-driver-installation" title="Link to this heading"></a></h2>
+<p>After downloading the EVAL-ADIS USB Driver file, extract the SDPDrivers.exe file from the zip file, into a convenient location and then double click on it to start the process.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-000.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-000.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-000.png" style="width: 500px;" />
+</a>
+<p>When the setup wizard opens, click on <strong>Next</strong> to start the installation process</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-001.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-001.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-001.png" style="width: 500px;" />
+</a>
+<p>Click on <strong>Next</strong> to accept the default driver location.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-002.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-002.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-002.png" style="width: 500px;" />
+</a>
+<p>The process will involve at least two progress bars that look like the following:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-003.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-003.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-003.png" style="width: 500px;" />
+</a>
+<p>If you encounter this type of message during the process, click on <strong>Install</strong> to continue with the installation.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-003a.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-003a.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-003a.png" style="width: 500px;" />
+</a>
+<p>Once the installation has completed, click on <strong>Finish</strong> to complete the process.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-004.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-004.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/USBDriver-Install-004.png" style="width: 500px;" />
+</a>
+</section>
+<section id="vibration-software-guide">
+<h2>VIBRATION SOFTWARE GUIDE<a class="headerlink" href="#vibration-software-guide" title="Link to this heading"></a></h2>
+<p>The user upon successful installation of the required Vibration Evaluation application and successful setup of Evaluation Hardware can proceed to power up ADIS16000 (Gateway Node) and one ADIS16229 (Sensor Node) at a time. The user can then proceed to start the Evaluation application.</p>
+</section>
+<section id="main-menu-overview">
+<h2>Main Menu Overview<a class="headerlink" href="#main-menu-overview" title="Link to this heading"></a></h2>
+<p>When the application is opened, SPI communication is setup between ADIS16000 (Gateway Node) and the Evaluation board. Upon successful SPI communication with ADIS16000, a command to add a sensor node to the network is issued. A User message briefly appears on the screen to let the user know that ADIS16000 is actively looking to add a sensor node to its network. When the sensor node is added to the network, the following message is displayed.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-sensor-added.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-sensor-added.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-sensor-added.png" style="width: 400px;" />
+</a>
+<p>When the user clicks on <strong>ok</strong> in the above message, the main window with an active tab ‘Sensor 1’ appears on the screen as shown below.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-main.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-main.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-main.png" style="width: 700px;" />
+</a>
+<div class="center round box docutils container">
+<p>&lt;fc #800000&gt;<strong>Error Messages:</strong> &lt;/fc&gt;</p>
+<p>The application would fail to start in the event of no USB connection to the Evaluation board. When the user sees the following error message, Ensure that ADIS16000 is connected to the Eval Board.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/error-16000-not-found.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/error-16000-not-found.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/error-16000-not-found.png" style="width: 300px;" />
+</a>
+<p>When the user sees the following error message, Ensure that ADIS16000 is selected in <strong>Devices</strong> drop-down menu.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/error-wrong-device.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/error-wrong-device.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/error-wrong-device.png" style="width: 300px;" />
+</a>
+<p>User is notified of an unsuccessful addition of a sensor node to the network as shown below.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/error-sensor1-nf.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/error-sensor1-nf.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/error-sensor1-nf.png" style="width: 300px;" />
+</a>
+<p>Unsuccessful addition of the sensor node can occur under the following circumstances..</p>
+<p><strong>Case 1:</strong> A new sensor node had not been powered on during the initial start of the application. If this is the case, User can turn on the sensor and follow <a class="icon link reference external" href="https://wiki.analog.com/adis16000-adis16229-eval-adis" target="_blank">connecting nodes</a> section for adding the new sensor.</p>
+<p><strong>Case 2:</strong> ADIS16000 had been reset and the sensor node is already part of the network with a sensor identifier flashed in it. As a result, the sensor node does not respond to the command for adding a new sensor to Gateway. In order to check this case, follow <a class="icon link reference external" href="https://wiki.analog.com/adis16000-adis16229-eval-adis" target="_blank">Scan Network section</a> for updating Gateway with already existing nodes.</p>
+<p><strong>Case 3:</strong> ADIS16000 or ADIS16229 is in an unknown state. Power cycle both the parts and restart the application.</p>
+</div>
+</section>
+<section id="manual-trigger-mode">
+<h2>Manual Trigger Mode<a class="headerlink" href="#manual-trigger-mode" title="Link to this heading"></a></h2>
+<p>A sensor was successfully added to the network. User can start a FFT capture from sensor 1 by clicking on <strong>Start</strong> button. Any user initiated command is issued to the sensor node whose tab is currently active. For example, if Sensor 1 tab is held active by clicking on it and then a start command is issued, FFT capture is obtained from Sensor Node 1.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-manual-fft.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-manual-fft.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-manual-fft.png" style="width: 700px;" />
+</a>
+</section>
+<section id="automatic-period-mode">
+<h2>Automatic/Period Mode<a class="headerlink" href="#automatic-period-mode" title="Link to this heading"></a></h2>
+<p>In order to change the mode from Manual to Periodic FFT, the drop down box needs to be clicked and appropriate mode can be selected as shown below. Automatic mode is started with a default update interval of 2 secs. The automatic or periodic mode can be stopped by double clicking <strong>&lt;fc #800000&gt;Esc key&lt;/fc&gt;</strong> twice by the user. The user is required to do this to take control of the application in Periodic mode.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-periodic-fft.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-periodic-fft.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-periodic-fft.png" style="width: 700px;" />
+</a>
+<section id="reconfiguring-the-sensor-nodes">
+<h3>Reconfiguring the Sensor Nodes<a class="headerlink" href="#reconfiguring-the-sensor-nodes" title="Link to this heading"></a></h3>
+<p>User can read the registers of the sensor by clicking on the menu <strong>Register access</strong> in the main window. A window with registers of Page 0 and Page X (x being the sensor node that is active) is displayed as shown below.</p>
+<p>Sensor node can be updated in a 4 step process..</p>
+<p><strong>Step 1:</strong> Hold the respective sensor node active by clicking on its tab in the main wondow and then Click on Register access menu.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-register-menu.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-register-menu.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-register-menu.png" style="width: 600px;" />
+</a>
+<p><strong>Step 2:</strong> In the register access menu, Scroll down to the registers of the respective sensor page indicated by Page column of the Table as shown below. Click on the register that needs to be modified</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-registers-defined.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-registers-defined.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-registers-defined.png" style="width: 600px;" />
+</a>
+<p><strong>Step 3:</strong> Enter the new value in the box and hit Write.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-update-reg.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-update-reg.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-update-reg.png" style="width: 600px;" />
+</a>
+<p><strong>Step 4:</strong> Scroll up to registers in Page 0 and then Select COMMAND_16K. Write the command 0x02 which is a command to update the sensor node. A wait of 400 ms will ensure that the sensor is updated with the new settings.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-glob-cmd-reg-update.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-glob-cmd-reg-update.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-glob-cmd-reg-update.png" style="width: 600px;" />
+</a>
+<p>&lt;fc #800000&gt;<strong>Sensor Reconfiguration in Periodic mode</strong>&lt;/fc&gt;</p>
+<p>The user can alternately use Register access to set up the periodic mode. When a remote sensor is set up in periodic mode using Register access and data collection is started, the sensor can be stopped only by writing <strong>0x800</strong> to the &lt;fc #800000&gt;<strong>COMMAND_S</strong>&lt;/fc&gt; register in the corresponding sensor page. <strong>Writing 0x02 to COMMAND_16K should not be issued</strong> to stop periodic mode. When the sensor is in periodic mode, it wakes up and updates the Gateway with the new data and also checks if any of its configuration had been changed by the user since its last update.</p>
+<p>&lt;blockquote&gt; <strong>If a stop command(0x800) is issued in COMMAND_S of the respective sensor page of Gateway, then the sensor reads the stop command and stops going further into sleep. The part puts itself in manual periodic mode and waits to get more commands for further action.</strong> &lt;/blockquote&gt;</p>
+<p>&lt;blockquote&gt; <strong>Instead of a stop command(0x800) if other the sensor registers are changed in its page, then the sensor reads those changes in its subsequenct update and reconfigures itself before going back to periodic mode.</strong> &lt;/blockquote&gt;</p>
+</section>
+</section>
+<section id="connecting-to-adis16229-nodes">
+<h2>Connecting to ADIS16229 Nodes<a class="headerlink" href="#connecting-to-adis16229-nodes" title="Link to this heading"></a></h2>
+<p>A user can add more sensors to the network by clicking on Network menu to invoke the Network control window followed by a 3 step process. The new sensors that need to be added to the network needs to be powered on one at a time during this process.</p>
+<p>Step 1:Turn on one new sensor node that needs to be added to the network. Sensors already in the network can remain powered on.</p>
+<p>Step 2:Click on the desired new sensor # in the network control window which is not active (not already assigned).</p>
+<p>Step 3: Click on ADD sensor button to add the new sensor.</p>
+<p>After a wait time of 5 seconds, the sensor should be successfully added to the network. Now the user could move on to the addition of the next new node if needed.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-network.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-network.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-network.png" style="width: 700px;" />
+</a>
+</section>
+<section id="alarm-configuration">
+<h2>Alarm Configuration<a class="headerlink" href="#alarm-configuration" title="Link to this heading"></a></h2>
+<p>User can configure alarm thresholds for various sample rate options and bands using the Alarm Settings window that is invoked by clicking on Alarms menu</p>
+<p>User can load a default setting for Alarms by first clicking on <strong>Read Default Values</strong> button and then clicking on <strong>Write to Dut</strong> button. After a wait time of 400 msecs, User can check if the operation was successful by clicking on <strong>Read from DUT</strong> button. Please note that <strong>Write to DUT</strong> command in the application flashes the settings on the part.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229_alarm_settings.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229_alarm_settings.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229_alarm_settings.jpg" style="width: 600px;" />
+</a>
+<p>After this step, User can enable Alarms using the steps detailed in section Reconfiguring the Sensor nodes by</p>
+<p><strong>Step 1 :</strong> Write 0x03 to ALM_CTRL register in the respective sensor page.</p>
+<p><strong>Step 2 :</strong> Write 0x02 to COMMAND_16K in page 0 to update the sensor node that was recently updated in the previous step.</p>
+<p>At this point, the Alarms are enabled in the sensor. Alarm status page can be opened to monitor alarms beyond this point.</p>
+<p>The user can initiate a capture in Manual FFT mode to check for the Alarms. At the end of the capture, the Alarm status should refresh indicating the status of Alarms in the capture.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-alarms-status.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-alarms-status.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-alarms-status.png" style="width: 700px;" />
+</a>
+<p>When an alarm is triggered, the alarm status window indicates it with a yellow shade or a red shade on the corresponding band and axis in the table. The yellow shade indicates a lower threshold alarm has been activated. The red shade indicates that the higher threshold has been activated in the corresponding band and axis.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-alarm-level.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-alarm-level.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-alarm-level.png" style="width: 700px;" />
+</a>
+</section>
+<section id="network-control">
+<h2>Network Control<a class="headerlink" href="#network-control" title="Link to this heading"></a></h2>
+<p>When the sensor nodes are already connected to the network and Gateway Node is reset using Software reset or a Power cycle, the sensor nodes can be retrieved by using the following steps.</p>
+<p><strong>Step 1:</strong> Click on the Network menu to invoke the Network control Window <strong>Step 2:</strong> Click on <strong>Scan Network</strong> button.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-scan-network.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-scan-network.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/229-scan-network.png" style="width: 700px;" />
+</a>
+<p>The Gateway node checks for every node in the network( Node 1 through 6) and updates its sensor map at the end of it.</p>
+</section>
+<section id="quick-links-to-key-engineer-zone-content">
+<h2>QUICK LINKS TO KEY ENGINEER ZONE CONTENT<a class="headerlink" href="#quick-links-to-key-engineer-zone-content" title="Link to this heading"></a></h2>
+<p>MARC: Think about title for best branding</p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

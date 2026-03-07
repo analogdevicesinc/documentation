@@ -1,0 +1,96 @@
+EVAL-CN0422-EBZ
+===============
+
+Overview
+--------
+
+| :adi:`CN0422` provides a completely isolated connection between a High-Definition Multimedia Interface (HMDI) source and HDMI sink device. Isolation in this circuit increases system safety and robustness by providing protection against electrical line surges and breaks the ground connection between bus and digital pins, thereby removing possible ground loops within the system. :adi:`ADP7104-3.3 <en/products/power-management/ldo-linear-regulators/positive-linear-regulators/ADP7104>` low dropout linear regulator together with :adi:`ADP5302 </en/products/power-management/switching-regulators/step-down-buck-regulators/internal-power-switch-buck/ADP5302>` high efficiency, ultralow quiescent current step-down regulator provides low noise supply voltage to the system with high power supply rejection. The :adi:`ADN4654 </en/products/interface-isolation/isolation/isolated-lvds/adn4650>` 1.1 Gbps Low Voltage Differential Signaling (LVDS) isolator is used to isolate the CML signals using the coupling and decoupling networks shown in Figure 1. The coupling and decoupling networks allow reliable translation between CML and LVDS voltage levels. The circuit shown in Figure 1 also provides bi-directional isolation of the Consumer Electronics Control (CEC), Hot Plug Detect (HPD) and Display Data Channel (DDC) signals using :adi:`ADuM1250 <en/products/interface-isolation/isolation/isolated-i2c-isolators/ADuM1250>` I2C isolators. Two :adi:`ADuM5020 <en/products/interface-isolation/isolation/isopower/ADuM5020>` low emission isolated DC-DC converters provide isolated power to the ADN4654 and ADuM1250 devices. The HDMI V1.3a standard requires that a compliant HDMI source provide 275 mW of power to a HDMI sink device. The ADuM5020 provides 275mW to the HDMI sink via the DDC +5V pin located on the HDMI receptacle.
+| The system can transparently isolate a HDMI interface that is configured for resolutions of up to 1280p × 720p (720p) at 60 Hz and is rated to a withstand voltage of 2500 V per UL 1577.
+| |Figure 1. EVAL-CN0422-EBZ iCoupler® Isolation for HDMI Simplified Circuit Diagram|
+| *Figure 1. EVAL-CN0422-EBZ iCoupler® Isolation for HDMI Simplified Circuit Diagram*
+
+Figure 2 shows a simplified block diagram of the power isolation and the isolation of the HDMI Version 1.3a signals. Number 1 through Number 5 show the start-up communication sequence through the ADN4654, ADuM1250, and ADuM5020 devices between the HDMI source and HDMI sink.
+
+| |Figure 2. Isolated HDMI Signal Flow Diagram|
+| *Figure 2. Isolated HDMI Signal Flow Diagram*
+
+Hardware Setup
+--------------
+
+To test the :adi:`EVAL-CN0422-EBZ <CN0422>` in your system, first connect a 5V / 1A power supply to the connector J5 on the :adi:`EVAL-CN0422-EBZ <CN0422>` circuit board using a Micro USB Type B cable. This provides power to the isolation circuitry. The HDMI input is located on the underside of the :adi:`EVAL-CN0422-EBZ <CN0422>` circuit. This should be connected to the HDMI source. The HDMI output connector (J4) is located on the top of the :adi:`EVAL-CN0422-EBZ <CN0422>` circuit. This should be connected to the HDMI sink. The device is plug and play, no programming is required to initialize the circuit board.
+
+| |Figure 3. EVAL-CN0422-EBZ iCoupler® isolation connections|
+| *Figure 3. EVAL-CN0422-EBZ iCoupler® isolation connections.*
+
+A system compatibility test can be performed to compare an isolated and non-isolated display. This test setup is described below.
+
+Required Equipment
+~~~~~~~~~~~~~~~~~~
+
+-  :adi:`EVAL-CN0422-EBZ <CN0422>` Circuit Evaluation Baord
+-  :adi:`EVAL-ADV7625-SMZ <en/products/audio-video/hdmidvi-receivers/adv7625>` Video Evaluation Board
+-  Power supply: 5V 3.6A DC power supply or 5 V wall wart
+-  HDMI audio and video source
+-  4x HDMI cables, length 1 meter each
+-  USB-MICRO-B power supply (5V, 1A)
+-  Bulk USB to RS-232 cable.
+-  Two Monitors/Displays with HDMI input
+
+Test Setup Functional Block Diagram
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| |Figure 3. EVAL-CN0422-EBZ iCoupler® Isolation for HDMI test setup.|
+| *Figure 3. EVAL-CN0422-EBZ iCoupler® isolation for HDMI test setup.*
+
+Getting Started
+~~~~~~~~~~~~~~~
+
+-  Power up EVAL-ADV7625-SMZ, EVAL-CN0422-EBZ, and the monitors.
+-  Configure EVAL-ADV7625-SMZ in 1:2 HDMI splitter mode by connecting the board to a pc/laptop using a bulk USB to RS-232 cable.
+-  A jumper must be installed across J15 on the EVAL-ADV7625-SMZ for programming.
+-  Open a serial terminal applciation such as PuTTY or Tera Term and configure the serial settings as 115,200 baud, eight data bits, no parity, one stop bit, and no flow control.
+-  Using a serial terminal applciation, type in the commands 'hdmia a' and 'hdmia b'. Typing help via RS-232 lists the commands that can be used to control the board and indicates the version of the firmware and the build date.
+   *Visit* :adi:`UG-603 <media/en/technical-documentation/user-guides/EVAL-ADV7625-SMZ_UG-603.pdf>` *for a detailed guide of EVAL-ADV7625-SMZ*
+-  Add a HDMI video and audio source to the EVAL-ADV7625-SMZ RxA input (J2).
+-  Connect EVAL-ADV7625-SMZ TxA output (J7) to EVAL-CN0422-EBZ input (J3).
+-  Connect EVAL-ADV7625-SMZ TxB output (J8) to the HDMI input of a monitor.
+-  Connect EVAL-CN0422-EBZ output (J4) to the HDMI input of a monitor.
+
+.. note::
+
+   The HDMI video/audio source appears on Display 1 and Display 2. Observing both displays confirms that the isolated HDMI is transparent. Both displays are visually identical
+
+
+Schematics, PCB Layout, Bill of Materials
+-----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   :adi:`CN0422 Design and Integration Files <cn0422-designsupport>`
+
+   
+   -  Schematics
+   -  Layout Files
+   -  Gerber Files
+   -  Assembly Drawing
+   
+
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0422-EBZ?&v=RevA>`_ to receive all these great benefits and more!
+
+
+// End of Document //
+
+.. |Figure 1. EVAL-CN0422-EBZ iCoupler® Isolation for HDMI Simplified Circuit Diagram| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0422/sch.jpg
+   :width: 1300px
+.. |Figure 2. Isolated HDMI Signal Flow Diagram| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0422/flow.png
+.. |Figure 3. EVAL-CN0422-EBZ iCoupler® isolation connections| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0422/setup_2.jpg
+   :width: 650px
+.. |Figure 3. EVAL-CN0422-EBZ iCoupler® Isolation for HDMI test setup.| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0422/setup_1.jpg
+   :width: 400px

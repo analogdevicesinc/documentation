@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="By James Bryant" name="description" />
+
+    <title>Photodiodes and other Light Sensors &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Photodiodes and other Light Sensors</a><ul>
+<li><a class="reference internal" href="#vacuum-photocells">Vacuum Photocells</a></li>
+<li><a class="reference internal" href="#photoresistors">Photoresistors</a></li>
+<li><a class="reference internal" href="#photodiodes-phototransistors">Photodiodes &amp; Phototransistors</a></li>
+<li><a class="reference internal" href="#photocell-applications">Photocell Applications</a><ul>
+<li><a class="reference internal" href="#appendix-a-semiconductor-diodes">APPENDIX A - Semiconductor Diodes</a></li>
+<li><a class="reference internal" href="#appendix-b-measuring-photodiodes">APPENDIX B - Measuring Photodiodes</a></li>
+<li><a class="reference internal" href="#foot-notes">Foot Notes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="photodiodes-and-other-light-sensors">
+<h1>Photodiodes and other Light Sensors<a class="headerlink" href="#photodiodes-and-other-light-sensors" title="Link to this heading"></a></h1>
+<p><strong>By James Bryant</strong></p>
+<p>This article has been written to answer a number of questions that the author has encountered, as an analog applications engineer, concerning the characteristics of photosensors and photosensor interface circuitry - both for AC and DC applications. Except inasmuch as they all use photosensors and their interface circuitry, it is not about digital photography, spectrophotometry, optical signalling, security systems, robotics or any other system depending on photosensors - it is just about the interface from an optical to an electronic signal. The main text discusses the way that most photocells work in not too demanding applications - the copious footnotes mention second- and third-order effects which may sometimes be important but can usually be checked and then ignored.</p>
+<p>For the purposes of this article light consists of electromagnetic radiation in the visible (wavelengths approximately 400-800 nm), near infrared<sup>[1]</sup> (IR-A: 800-1400 nm or perhaps a little beyond) and near ultra-violet<sup>[1]</sup> (UV-A: 320-400 nm or, again, perhaps a little beyond) regions. Not all light sensors respond to all wavelengths in this range and it is important, when choosing one, to be aware of how its sensitivity varies with wavelength.</p>
+<p>We shall mostly discuss photodiodes, as they are the cheapest light sensors, and generally the easiest to use, but there are several other light sensors of which analog engineers should be aware.</p>
+<section id="vacuum-photocells">
+<h2>Vacuum Photocells<a class="headerlink" href="#vacuum-photocells" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f1.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f1.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f1.jpg" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Fig 1A The Phototube - the first Photosensor</p>
+</div>
+<p>The first such sensor was the “phototube” or “photo-electric cell” (Fig 1A) which consists of a photo-sensitive cathode in a vacuum (or, sometimes, very low-pressure gas) tube which when illuminated emits electrons which move to a positively biased anode, allowing a current to flow which is proportional to the light intensity. Simple vacuum photocells are rarely used today, but photomulipliers, which use secondary emission from multiple electrodes (dynodes) at stepped potentials (Fig 1B) to multiply each electron from a photocathode by up to 160 dB, are essential photosensors in nuclear and particle physics, astronomy, medical imaging, motion picture film scanning, radar countermeasures, and the high-end image scanners known as drum scanners. Their combination of high gain, low noise, very fast response, and large light collection area cannot presently be matched by any solid-state circuitry and photomultipliers are an application of vacuum-tube technology which is still at the forefront of valuable electronic techniques. The technology is also used in night vision devices.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f2.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f2.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f2.jpg" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Fig 1B Photomultiplier - Simplified Diagram and an actual Device</p>
+</div>
+</section>
+<section id="photoresistors">
+<h2>Photoresistors<a class="headerlink" href="#photoresistors" title="Link to this heading"></a></h2>
+<p>Another type of light sensor uses the variation of electrical resistance with illumination exhibited by some materials (the most usual are Cadmium Sulphide [CdS]and Cadmium Selenide/Sulphide [Cd<sub>2</sub>SeS]) to make “photoresistors<sup>[2]</sup>”. Until recently such photoresistors were the commonest form of photosensor despite their slow response to changing light input, but the combined effects of lower photodiode prices and legal limitations on the use of cadmium because of its toxicity<sup>[3]</sup> have reduced their use in recent years.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f3.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f3.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f3.jpg" style="width: 250px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Fig 2 Inexpensive CdS Photoresistor</p>
+</div>
+<p>Photoresistors are still commonly used in combination with a variable light source (originally an incandescent bulb - now almost invariably an LED) as isolated variable resistors<sup>[4]</sup> - since they are resistors they are not polarized (they may be connected either way round) and will work with alternating current.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f4.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f4.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f4.jpg" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Fig 3 Photoresistor Gain Control</p>
+</div>
+<p>Photoresistors using more exotic materials (lead sulphide [PbS], indium antimonide [InSb] and copper doped germanium) are invaluable and at present unreplaceable as photodetectors in the mid- and far-infrared.</p>
+<p>The conductance<sup>[5]</sup> of a photoresistor is proportional to the intensity of the light falling on it. This means that the current in a photoresistor having a fixed voltage across it is proportional to the incident light (the constant of proportionality will vary with the wavelength and the device temperature - read the data sheet<sup>[6]</sup> of the device for details).</p>
+<p>In addition to their photoresistance there is also a very high (megohms or tens of megohms) “leakage” or “dark resistance” in parallel with it which allows a very small current to flow when the device is not illuminated. With some CdS devices this dark resistance can depend on whether or not the device has been illuminated within the last few hours, or even days, making such photoresistors unsuitable for very high precision measurement since their leakage depends on their recent illumination history.</p>
+</section>
+<section id="photodiodes-phototransistors">
+<h2>Photodiodes &amp; Phototransistors<a class="headerlink" href="#photodiodes-phototransistors" title="Link to this heading"></a></h2>
+<p>The majority of this article concerns photodiodes. A semiconductor diode is a crystalline piece of semiconductor material containing a p-n junction with connections to the P and N regions - its operation is discussed in Appendix A. All semiconductor diodes are, to some extent, photodiodes, but some are much more sensitive than others.</p>
+<p>For the purposes of simplified analysis we can model a photodiode as an ideal (non-photosensitive) diode in parallel with a light-dependent current source. This current source is quite linear - the current is more or less proportional to the incident light over a range of 1000:1 or better - but the range of wavelengths to which it is sensitive depends on the material of which the diode is made.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f5.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f5.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f5.jpg" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Fig 4 An Ideal Diode.</p>
+</div>
+<div class="centeralign docutils container">
+<p>(Its reverse leakage current is too small to be evident.)</p>
+</div>
+<p>An ideal diode with reverse bias (i.e. its anode is negative with respect to its cathode) acts as an insulator, but has a small temperature dependent leakage current, largely independent of the reverse bias voltage<sup>[7]</sup>, which doubles with every 10°C increase in the device temperature. There is also a small capacitance in parallel with the diode, which decreases as the reverse bias increases.</p>
+<p>With forward bias (anode positive) the diode current increases exponentially with voltage (see Appendix A for the equations), but from a practical point of view the current is too small to matter until a “threshold” or “knee” voltage is reached. This voltage depends on the diode material and can vary from 200 mV for silicon Schottky diodes to some 4 V for blue LEDs using gallium nitride - normal silicon diodes have a threshold around 700 mV. The threshold voltage decreases with increasing device temperature, and the parallel capacitance of a forward biased diode increases with the bias voltage.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f6.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f6.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f6.jpg" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Fig 5 Ideal Semiconductor Photodiode</p>
+</div>
+<p>An illuminated photodiode contains an ideal diode and a light dependent current source (and some voltage variable capacitance). The photocurrent is KL where K is a constant depending on the photodiode and the light wavelength(s) and L is the light intensity (note that K is a characteristic of the particular photodiode, it is not k, which is Boltzmann’s constant - 1.3806E-23 JK<sup>-1</sup>). If the photodiode is open-circuit or loaded only with a very high resistance the anode will be sufficiently positive for the photo current to flow in the diode and the voltage across the photodiode will be proportional to the logarithm of the light intensity. It is possible to measure this behaviour using an electrometer op-amp with very low bias current such as the AD549 (I<sub>b</sub> ˜ 40 fA) but photodiodes are rarely used in exactly this way.</p>
+<p>There are two practical modes of photodiode operation - photoconductive mode and photovoltaic mode.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f7.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f7.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f7.jpg" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Fig 6 Photodiode in Photoconductive Mode</p>
+</div>
+<p>If the photodiode is reverse biased its current will be the sum of its leakage and its photocurrent and its capacitance will be lower than when it is forward biased - which is convenient when measuring HF modulated light. The associated circuitry is designed to amplify this current. This is the photoconductive mode of operation. (It is possible to amplify the photocurrent of an unbiased photodiode by injecting it into an op-amp summing junction but its capacitance is slightly higher in this “photovoltaic current mode”.)</p>
+<p>Not only are diodes light sensitive - most transistors, which, after all, also contain P-N junctions, are photosensitive as well. Half a century ago it was well-known to amateur electronic experimenters that if the black paint was removed from the glass package of the Mullard<sup>[8]</sup> OC71 germanium transistor it became light sensitive - in fact it had almost exactly the same characteristics as the OCP71 phototransistor which cost five times as much! Few people bought the more expensive part until eventually Mullard redesigned the package of the OC71 so that removing the paint still did not allow light to reach the transistor structure.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f8.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f8.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f8.jpg" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Fig 7 Phototransistor</p>
+</div>
+<p>A phototransistor is a transistor with its base-collector junction deliberately made more strongly light sensitive. Often it has no external base connection. The photocurrent of the diode flows in the base-emitter circuit and is amplified by the transistor current gain, ß. The sensitivity of a phototransistor is therefore ß (~30-200) times greater than that of a similar diode. However the switching times of phototransistors with an unconnected base are slow (typical phototransistors have rise and fall times of the order of 10-20 µs, and the fastest only 500-1000 ns). They are always used in the photoconductive mode described above, and may be convenient when a single photosensing device is required to operate a relay. If the base connection is available, connecting a resistor from base to emitter reduces photosensitivity and increases the turn-on threshold, but does improve desaturation time and therefore speeds up the transistor turn-off.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f9.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f9.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f9.jpg" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Fig 8 Photodiode used in (Photovoltaic) Voltage Mode</p>
+</div>
+<p>If a photodiode is shunted with a resistor, chosen so that when the maximum expected<sup>[9]</sup> photocurrent flows in it the voltage is 20% below the threshold voltage of the diode, the circuit will have an output voltage proportional to the incident light and output impedance equal to the value of the resistor (shunted by the diode capacitance). With this photovoltaic configuration the associated circuitry is voltage driven.</p>
+<p>If we go to the websites of the major electronic component distributors we find that the cheapest photodiodes cost some 15¢ and are infra-red (IR) sensitive silicon with a threshold voltage of about 700 mV whereas the cheapest LEDs are under 4¢ and have a threshold 2-5 times larger. These inexpensive LEDs are sensitive to visible light, and are, in many cases, as sensitive as purpose-made photocells when used as such. Of course purpose-made photodiodes are characterised and tested for photodiode specifications and are likely to have faster response times than LEDs - but LEDs are not hard to characterise, can be selected for specific spectral characteristics, and can often serve a dual purpose in a system, acting both as an indicator light and an ambient light meter, or an optical transmitter and receiver. The ATMega328 microcontroller used in the Arduino (and Analog Devices’ ADuC7023 and many of their other analog microcontrollers including their latest<sup>[10]</sup> the ADuCM320) have some ports which can be configured both as digit input/outputs and very high impedance analog-digital converter (ADC) inputs. An LED and two resistors on such ports allows a single pin both to control an indicator lamp and to measure ambient illumination.</p>
+<p>LEDs used as photodiodes are insensitive to wavelengths longer than their own peak output wavelength. Of course if they are encapsulated in coloured plastic their response will be affected by this, but LEDs in clear plastic<sup>[11]</sup> often, but by no means always (check the device you intend to use), have quite a broad response to wavelengths shorter than their own<sup>[12]</sup>. Silicon photodiodes are more sensitive in the near IR down to 1000 nm and less sensitive to visible wavelengths<sup>[13]</sup>.</p>
+<p>Single coloured LEDs are simple diodes and have more or less monochromatic light output<sup>[14]</sup> and, of course, multi-coloured LEDs are simply arrays of two or more single coloured ones. White LEDs are made in several different ways and are quite complex. Most of them act as photodiodes, but their characteristics will probably be more complex too - this is not to say that they cannot be used as photodiodes, but a warning that their spectral sensitivities, and their electronic characteristics, may need to be checked carefully when doing so. It should go without saying that complex devices containing LEDs plus other circuits<sup>[15]</sup> are unsuitable for use as photodiodes.</p>
+<p>Appendix B contains a brief discussion of the photocell measurement techniques which allow simple characterization of an LED as a photodiode.</p>
+<p><strong>Lab Activity:</strong> <a class="reference internal" href="../electronics-lab-led-sensor.html"><span class="doc">LEDs as light sensors</span></a></p>
+</section>
+<section id="photocell-applications">
+<h2>Photocell Applications<a class="headerlink" href="#photocell-applications" title="Link to this heading"></a></h2>
+<p>In this section we shall discuss the interface between a photosensor and its associated electronics. There are really just two photocell applications - light measurement, and the reception of modulated light.</p>
+<p>When we measure light we may be measuring its intensity, or we may simply be detecting if it is present. We have seen that photodiodes have photocurrent and photoresistors have conductance proportional to the light falling on them (in this section we shall not discuss varying spectral sensitivity). If we measure the photocurrent (in the case of the photoresistor with a defined bias voltage) we can measure the incident light.</p>
+<p>For photometry (lux meters, exposure meters, closed-loop light control systems, etc.) we may wish to do this accurately, for many photocell applications we simply need to know if light is present or not - although, almost always, “present” really means present above some low ambient level. If the light that we are detecting is the output of an LED, and other light may be present, it is usually better to modulate the LED output and discriminate between the modulated light and background illumination. We shall discuss this later.</p>
+<p>The classical photodetector uses a photocell (photodiode in current mode or photoresistor), in series with a resistor, R<sub>s</sub> , and a transistor. The resistor is chosen such that when the light intensity is large enough the transistor is switched on or off.</p>
+<p>The transistor may be a bipolar junction transistor (BJT), a Darlington transistor, or a MOSFET. In the past BJTs were often used as being cheaper than MOSFETs but this no longer the case and the best choice actually is a MOSFET. Its output may be a relay, or a resistor with a logic output taken from the drain/collector, or an open-circuit drain/collector intended for “wired-OR” logic connection. It is possible to either use N-channel/NPN or P-channel/PNP devices, but since the circuitry involved is exactly the same for both, with the exception of polarity reversal, all the examples and calculations in this article assume the use of N-channel/NPN devices.</p>
+<p>It is quite difficult to write an algorithm to determine the value of R<sub>s</sub>, which is why it is often determined by experiment (or even adjusted with a potentiometer in each individual system!) This is because it is generally hard to predict the light intensity at the photocell in a given system, and in many cases it is also hard to determine the photocell’s sensitivity to the actual colour of light used.</p>
+<p>The threshold voltage, V<sub>th</sub>, of a transistor is the input voltage (gate-source or base-emitter) at which its output (drain or collector) starts to conduct. Different manufacturers use different symbols (V<sub>gs(th)</sub>, V<sub>gs0</sub>, etc.). Values of threshold current for “starts to conduct” will vary from device to device but since small changes of input voltage in this region produce large changes in output current it does not usually matter very much for our calculations what value of threshold current is chosen.</p>
+<p>A BJT turns on when its base-emitter voltage is about 700 mV, a bipolar Darlington transistor at around 1300 mV, and a small-signal MOSFET will usually have V<sub>th</sub> in the range 900-2400 mV (RTFDS<sup>6)</sup> High voltage MOSFETs may have higher values but are not often used in photocell circuitry.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f10.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f10.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f10.jpg" style="width: 500px;" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>Fig 9 Classical Photodetector - Transistor conducts when light is present</p>
+<div class="line-block">
+<div class="line">(Diagram shows the possible devices which might be used)</div>
+</div>
+</div>
+<p>The commoner arrangement has the transistor conduct in the presence of light, turning on a relay load or producing logic 0 on an N-channel/NPN drain/collector. The voltage drop across R<sub>s</sub> must be equal to V<sub>th</sub> when I<sub>t</sub> (the photocell current at the switching threshold) flows in it. With a photodiode I<sub>t</sub> is more or less independent of its bias voltage, so</p>
+<p><span class="math notranslate nohighlight">\(R_s = V_th / I_t\)</span> [1]</p>
+<p>but with a photoresistor</p>
+<p><span class="math notranslate nohighlight">\(I_t = ( V_s - V_th ) / R_t\)</span> [2]</p>
+<p>or</p>
+<p><span class="math notranslate nohighlight">\(I_t = ( V_s - V_th ) G_t\)</span> [3]</p>
+<p>where V<sub>s</sub> is the supply voltage and R<sub>t</sub> is the threshold resistance (or G<sub>t</sub> is the threshold conductance) of the photoresistor. This gives a value of R<sub>s</sub> defined by the equations</p>
+<p><span class="math notranslate nohighlight">\(R_s = V_th R_t / ( V_s - V_th )\)</span> [4]</p>
+<p>or</p>
+<p><span class="math notranslate nohighlight">\(R_s = V_th / G_t ( V_s - V_th )\)</span> [5]</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f11.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f11.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f11.jpg" style="width: 500px;" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>Fig 10 Classical Inverting Photodetector - Transistor conducts when light is not present</p>
+<div class="line-block">
+<div class="line">(Diagram shows the possible devices which might be used)</div>
+</div>
+</div>
+<p>The other arrangement (the inverting photodetector) has the transistor turned off in the presence of light, turning off a relay load or producing logic 1 on an N-channel/NPN drain/collector. In this case the voltage drop across R<sub>s</sub> must be equal to (V<sub>s</sub>-V<sub>th</sub>) when I<sub>t</sub> (the photocell current at the switching threshold) flows in it. Again the photodiode equation is simple</p>
+<p><span class="math notranslate nohighlight">\(R_s&lt; = ( V_s - V_th ) / I_t\)</span> [6]</p>
+<p>but with a photoresistor</p>
+<p><span class="math notranslate nohighlight">\(I_t = V_th / R_t\)</span> [7]</p>
+<p>or</p>
+<p><span class="math notranslate nohighlight">\(I_t = V_th G_t\)</span> [8]</p>
+<p>where V<sub>s</sub> is the supply voltage and R<sub>t</sub> is the threshold resistance (or G<sub>t</sub> is the threshold conductance) of the photoresistor. This gives a value of R<sub>s</sub> defined by the equations</p>
+<p><span class="math notranslate nohighlight">\(R_s = ( Vs - V_th ) R_t / V_th\)</span> [9]</p>
+<p>or</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle R_s = \frac{ Vs-V_th }{G_t} V_th\)</span> [10]</p>
+<p>A photodiode working in photovoltaic mode will also act as a photodetector. Its shunt resistor R<sub>s</sub> is selected so that when I<sub>t</sub> flows in it the voltage is the V<sub>th</sub> of the device it is driving.</p>
+<p><span class="math notranslate nohighlight">\(R_s = V_th /I_t\)</span> [11]</p>
+<p>Obviously the photodiode material selected for this application must have a conduction threshold voltage which is larger then V<sub>th</sub>. This usually means that a photodiode used in this way will not be a silicon device<sup>[16]</sup>.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f12.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f12.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f12.jpg" style="width: 500px;" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>Fig 11 Photodetector using a Photodiode in Photovoltaic Mode</p>
+<div class="line-block">
+<div class="line">V<sub>th(Photodiode)</sub> &gt; V<sub>th(Transistor)</sub></div>
+<div class="line">(Diagram shows the possible devices which might be used - it does not work with a photoresistor.)</div>
+</div>
+</div>
+<p>If a bipolar device - a BJT or even a Darlington - is used in any of the circuits in Figs 9-11 its minimum base current when the load is turned fully on should be no more than 20% of I<sub>t</sub>. If the collector load resistance (resistor or relay) is R<sub>L</sub> and the supply V<sub>s</sub> the collector current will be V<sub>s</sub>/R<sub>L</sub>, and the minimum base current, I<sub>b(min)</sub>, V<sub>s</sub>/ßR<sub>L</sub> where ß is the current gain of the bipolar device. So</p>
+<p><span class="math notranslate nohighlight">\(I_t = 5V_s /ßR_L\)</span> and therefore <span class="math notranslate nohighlight">\(R_L = 5V_s /ßI_t\)</span> [12]</p>
+<p>otherwise the base current required to switch the bipolar device may be too large for the network formed by the photocell and R<sub>s</sub> to supply. If the load is a relay and it is not possible to use a relay with a sufficiently large R<sub>L</sub> the bipolar device should be replaced with a MOSFET. (It is reasonable to assume that the worst case minimum ß of a simple BJT is 30, and that of a small-signal Darlington is 500.)</p>
+<p>The problem with all these circuits is that if the light value is close to the threshold the transistor acts as a (fairly) linear amplifier and produces small changes in output in response to electrical or optical noise. If the optical part of the system has a large light change and no delays close to the threshold this is unlikely to be a problem - but otherwise a different circuit is necessary.</p>
+<p>The simplest circuit uses a Schmitt trigger input logic gate. These are logic circuits with analog positive feedback on their input stages such that as the input voltage on a logic input increases from zero there is no change of logic output until the input is (very roughly) around 50-60% of the supply voltage when the output changes its logic state. Many logic gates have a linear region where they act as (poor quality) amplifiers but these devices switch very quickly from one state to the other when the input reaches a threshold value. If the input is now reduced the output does not change back until the input has reduced by approximately 30% of the supply voltage. (Note that these values vary quite widely with device types, the supply voltage used, and even from device to device - these devices have excellent hysteresis but are not precision level sensors.)</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f13.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f13.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f13.jpg" style="width: 500px;" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>Fig 12 Photodetectors with Hysteresis</p>
+<div class="line-block">
+<div class="line">(This diagram shows the possible input device configurations and an optional relay driver.)</div>
+</div>
+</div>
+<p>Such Schmitt input logic gates are available with supply ranges between 2 V and 18 V (no single part has this wide a range - but parts are available that may be used with any supply from 3 V to 18 V). They are available in traditional DIL and SOT packages with 4 or 6 gates in a package (the “4000 Series” 4093 and 40106 for example) or as single or dual buffers or inverters in a tiny SO-23 package for as little as 6 cents in large quantities (the Toshiba TC4S584F and many others).</p>
+<p>The range of threshold voltages for different supplies will be given on the data sheet and can be used in equations [1] [4] [5] [6] [9] [10] &amp; [11] to calculate suitable values of R<sub>s</sub>.</p>
+<p>These Schmitt gates are inexpensive, convenient and easy to use - but not very accurate. Nevertheless they are accurate enough for many light threshold sensing operations and are probably the ideal choice for the majority of non measuring light sensing applications. We could replace one with a Schmitt trigger built from discrete components but this would cost more, use more components and board area, and almost certainly consume more power. The output of these Schmitt input gates is a logic level (some of them are inverters, some are buffers - make sure you know which you are using - the one shown in Fig 12 is a non-inverting buffer). If relay operation is required drive it with a MOSFET connected to the Schmitt output. This is also shown as an option in Fig 12.</p>
+<p>Where we need greater accuracy a comparator (or an ADC - see below) is necessary. A comparator is a device with two inputs and a logic output<sup>[17]</sup>. The output indicates which of the two inputs is more positive than the other, so if we connect a photocell in series with a resistance across a voltage V<sub>s</sub> and the centre tap to one input of a comparator and a voltage reference (V<sub>ref</sub>) to the other the logic will indicate quite precisely whether or not the signal voltage in the photocell circuit is larger or smaller than the voltage reference. With suitable calibration this allows us to make accurate light comparisons. A comparator may also be driven by a photodiode working in the photovoltaic mode.</p>
+<p>Comparators sometimes have built-in hysteresis and can almost always have hysteresis added by simple additional circuitry. Fig 13 shows this done with two resistors (which may be omitted if hysteresis is not needed). The articles referred to in the footnote<sup>[17]</sup> discuss the correct resistor values and other issues concerning comparators in more detail.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f14.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f14.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f14.jpg" style="width: 500px;" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>Fig 13 Accurate Photodetector using a Comparator</p>
+<div class="line-block">
+<div class="line">(Diagram shows the possible configurations which might be used)</div>
+</div>
+</div>
+<p>The equations relating the photocell characteristics, V<sub>ref</sub>, and R<sub>s</sub> are very similar to Equations [1] - [10] except that V<sub>th</sub> becomes the reference voltage V<sub>ref</sub>.</p>
+<p>The best way to measure a range of photocell outputs accurately is with an analog interface circuit, either using an operational amplifier, or driving a suitable analog-digital converter (ADC) directly from a photocell.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f15.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f15.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f15.jpg" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Fig 14 Voltage Output Photodiode Circuits</p>
+</div>
+<p>The outputs of the photodiode circuits in Fig 14 are voltages, proportional to incident light, which may be amplified by an operational amplifier or sent directly to the input of an ADC with a large enough Z<sub>in</sub> that it does not load the circuit driving it.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f16.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f16.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f16.jpg" style="width: 400px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Fig 15 Voltage Output Photoresistor Circuits (non-linear)</p>
+</div>
+<p>The voltage outputs of the photoresistor circuits in Fig 15, while quite predictable, are not simply proportional to incident light and require linearization - which is one reason why it is better to use photodiodes than photoresistors.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f17.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f17.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f17.jpg" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Fig 16 Simplified Diagram of a Switched Capacitor ADC Input</p>
+</div>
+<p>The input of many, if not most, ADCs contains switched capacitors which draw high frequency (HF) currents. The input should therefore have a small capacitor to ground very close to the ADC to ensure that these HF currents flow to local ground and not to the photocell, buffer amplifier or elsewhere in the system<sup>[18]</sup>.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f18.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f18.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f18.jpg" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Fig 17 Decoupling an ADC’s Analog Inputs</p>
+</div>
+<p>Read the ADC data sheet and any application notes for discussion of suitable values and their effect on the performance of the ADC and of the system where it is used.</p>
+<p>The best interface between a photodiode and an op-amp is a current to voltage converter, which works with a photoresistor as well, provided the photoresistor bias voltage is maintained constant. This is shown in Fig 18.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f19.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f19.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f19.jpg" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Fig 18 Driving a Current-Voltage Converter from a Photocell</p>
+</div>
+<p>The current from the photocell flows into the summing junction at the op-amp’s inverting input. Negative feedback works to maintain the same voltage on the inverting and non-inverting inputs, so the output voltage on R<sub>fb</sub> causes the current in it to be equal to the photocell current. Obviously this circuit requires an op-amp with bias current much less than the photocurrent, which is why such circuits usually use FET input op-amps.</p>
+<p>If we wish to measure AC photocurrent but are not interested in the DC or randomly varying photocurrent due to ambient light there are two possible techniques. The simplest is to limit the gain of the amplifier in Fig 18 by reducing R<sub>fb</sub> so that the amplifier will not be overdriven by the largest possible AC + DC photocurrent the system is expected to encounter. The AC component of the signal is then capacitively coupled to a second amplifier with sufficient gain for the application.</p>
+<p>Or we can connect the photocell in series with a suitable inductor which will ground the DC component of its signal. We then connect the AC signal to an amplifier. If the signal bandwidth is narrow the inductor can be shunted with a capacitor to make a parallel-tuned LC circuit of suitable Q to give narrow bandwidth and high in-band gain. If a tuned circuit is used it should drive a voltage amplifier with high input impedance so as not to degrade the Q. This amplifier should not drive an inductive load or the interaction of the load and the feedback (“Miller”) capacitance may cause instability.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f20.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f20.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f20.jpg" style="width: 400px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Fig 19 Narrow Band Tuned Circuit Photocell Load with AC Amplifier</p>
+</div>
+<p>If an untuned inductor is used as a simple high AC/low DC impedance the variation of impedance with frequency can be avoided by using an AC current-voltage converter (transimpedance amplifier) rather than a voltage amplifier. This effectively short-circuits the inductor at AC (which is why it does not work with a tuned circuit) as the AC current from the photocell flows to the virtual ground of the amplifier inverting input.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f21.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f21.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f21.jpg" style="width: 400px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Fig 20 Inductive Photocell Load with AC Current-Voltage Converter</p>
+</div>
+<p>Inductors for the applications in Figs 19 &amp; 20 must be chosen so that they can carry the maximum expected photocurrent without saturation - this is unlikely to be a problem, but should not be overlooked.</p>
+<p>Photodetectors using a modulated signal source, which I mentioned earlier in this article, can detect the modulation using one of the above amplifier schemes and some sort of frequency detector. There is plenty of tone detection software available if the signal is digitized, but the simple NE567 PLL IC, first manufactured nearly forty years ago by Signetics and still available from a number of manufacturers, (prefixes vary, but the 567 is constant) is all that is needed for this application.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f022.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f022.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f022.jpg" style="width: 400px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Fig 21 Tone Detector for Modulated Beam Systems using a 567 PLL</p>
+</div>
+<p>The values of C1 and C2 in the above diagram depend on the tone frequency to be detected. For more detail consult the 567 data sheet, but with AC input = 200 mV rms the tone frequency F is determined by C1 and the detection bandwidth by C2. The equations are:</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle F = \frac{1}{2}.42 C1\)</span> [13]</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle BW = 1070sqrt(\frac{1}{5}FC) %\)</span> [14]</p>
+<p>(BW is calculated as a percentage of F.)</p>
+<p>There are innumerable other applications of photosensors, but this article is intended only to discuss their characteristics and how to use them, not to consider the systems where they are used.</p>
+<div class="line-block">
+<div class="line">James Bryant</div>
+<div class="line">Calshot - England</div>
+<div class="line">August 2014</div>
+</div>
+<p><strong>Return to</strong> <a class="reference internal" href="chapter-7.html"><span class="doc">Previous Chapter</span></a></p>
+<p><strong>Go to</strong> <a class="reference internal" href="chapter-8.html"><span class="doc">Next Chapter</span></a></p>
+<p><strong>Return to</strong> <a class="reference internal" href="electronics-toc.html"><span class="doc">Table of Contents</span></a></p>
+<section id="appendix-a-semiconductor-diodes">
+<h3>APPENDIX A - Semiconductor Diodes<a class="headerlink" href="#appendix-a-semiconductor-diodes" title="Link to this heading"></a></h3>
+<p>In a semiconductor P-N junction mobile electrons (conduction-band electrons) from the N region diffuse into the P region and “recombine” with the holes there, causing the region around the junction to be depleted of charge carriers and, effectively, an insulator. This process is limited because the positive donor ions in the N region (left behind by the diffusing electrons) and the negative acceptor ions in the P region (produced when the holes are filled) cause an electric field across the depletion zone which prevents further electron diffusion. At room temperature the potential caused by this mechanism is approximately 700 mV for simple silicon junctions, 300 mV for germanium diodes, 200 mV for silicon Schottky diodes, and between 1.8 V (IR &amp; red) and 4 V (blue &amp; UV) for LEDs of different colours.</p>
+<p>If a negative external bias voltage (often called <em>reverse bias</em>) is applied to the P region it reinforces the depletion zone, which remains an insulator, but a positive bias voltage (<em>forward bias</em>) allows recombination to continue and a current flows in the junction. The equation<sup>[19]</sup> relating this current (<em>I</em>) to the bias voltage (V) is</p>
+<p>$\displaystyle I = I_se^{-v/\frac{kT}{q}} - 1 $ [15]</p>
+<p>where <em>I</em><sub>s</sub> is the “scale current” or “reverse bias saturation current”, k is Boltzmann’s constant (1.3806E-23 JK<sup>-1</sup>), T is the absolute temperature, and q is the electron charge (-1.602E-19 C).</p>
+<p><span class="math notranslate nohighlight">\(kT/q\)</span> is not the only term in the equation which is temperature dependent - the scale current, <em>I</em><sub>s</sub>, doubles for every 10°C temperature increase as well.</p>
+<p>With negative (reverse) bias (i.e. -V is positive and the electron charge is negative, so the exponent is large and negative) the exponential term is very small and <span class="math notranslate nohighlight">\(I approx -I_s\)</span> . However the reverse current of most diodes is actually much larger than the scale current due to manufacturing imperfections in the P-N junction, so the equation is not very accurate with real diodes and reverse bias - nevertheless the total reverse current normally behaves in much the same way as the scale current in that it is substantially constant with bias voltage and doubles for every 10°C temperature increase. (Of course, if the reverse bias approaches or exceeds the diode’s breakdown voltage its behaviour becomes much more complex - we shall not discuss such behaviour in this article.)</p>
+<p>Since the exponent is so much larger than 1 the equation for the forward current can be simplified to</p>
+<p>$\displaystyle I = I_s e^{-v/\frac{kT}{q}} $ [16]</p>
+<p>The forward current is therefore exponentially related to the forward voltage - quite small voltage changes produce large current changes. In practice this means that the voltage drop across a normal small diode or LED at operating currents between 50 µA and 20 mA will increase with current but will remain reasonably close to the potential in the depletion zone as mentioned above, i.e. 700 mV for simple silicon junctions, 300 mV for germanium diodes, 200 mV for silicon schottky diodes, and between 1.8 V (IR &amp; red) and 4 V (blue &amp; UV) for LEDs of different colours. At high currents, of course, the ohmic resistance of the semiconductor and its connections increases the voltage expected for a given current above that predicted by the equation.</p>
+</section>
+<section id="appendix-b-measuring-photodiodes">
+<h3>APPENDIX B - Measuring Photodiodes<a class="headerlink" href="#appendix-b-measuring-photodiodes" title="Link to this heading"></a></h3>
+<p>The basic principle of measuring a photodiode’s characteristics is to expose it to a known light intensity at a number of different wavelengths, measure the photocurrent at each wavelength and plot a response curve. This is easily done if you have access to an expensive spectrophotometer, but otherwise it is quite hard to obtain an accurate tuneable light source.</p>
+<p>But some photocells are quite well characterized and it is possible to compare the response of an unknown photocell with the response of a well-characterized one to the same light sources. It is cheap and easy to obtain high intensity LEDs of a variety of colours from UV to IR and some manufacturers’ data sheets have very good characterization of their LEDs’ spectra. If we obtain a well-characterized (in terms of spectral variation of sensitivity, not necessarily of absolute sensitivity) photocell covering the range of wavelengths we are interested in, and choose six or seven 5mm LEDs with peak wavelengths reasonably evenly distributed across this range we can perform quite a good spectral and sensitivity analysis of the performance of an unknown photodiode by comparing its response to that of a photodiode of known characteristics under standard conditions.</p>
+<p>If the calibration and tested photocells are both in 5mm packages too this is easily done: drill a 5mm hole in a small piece of ebony, black ABS, carbon fibre block or other dark material. Insert the LEDs in turn at one end and the photocells at the other and make your comparisons. If your photodiode under test is some other diameter try and find a calibration photodiode of the same diameter and drill an appropriate diameter hole 10 mm deep into a co-axial 10 mm deep 5mm LED hole.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f28.jpg"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f28.jpg" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/cphotodio_f28.jpg" style="width: 400px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Fig 22 Test Jigs for using LEDs to make Photocell Measurements</p>
+</div>
+<p>In addition to measurement of spectral sensitivity it may be advisable to measure leakage current, threshold voltage and, possibly, switching speed. All can be done with a mid-range DVM, a fast pulse generator, an LED known to have fast switching time, and a 100 MHz oscilloscope. The procedures are left as an exercise for the student.</p>
+</section>
+<section id="foot-notes">
+<h3>Foot Notes<a class="headerlink" href="#foot-notes" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">[1]The International Commission on Illumination (CIE) recommends the division of infrared &amp; ultraviolet radiation into the following six bands:</div>
+<div class="line"><strong>Infrared</strong></div>
+<div class="line">• IR-A: 700 nm – 1400 nm (215 THz – 430 THz)</div>
+<div class="line">• IR-B: 1400 nm – 3000 nm (100 THz – 215 THz)</div>
+<div class="line">• IR-C: 3000 nm – 1 mm (300 GHz – 100 THz)</div>
+<div class="line"><strong>Ultraviolet</strong></div>
+<div class="line">• UV-A: 315 nm – 400 nm (750 THz – 950 THz)</div>
+<div class="line">(Subdivided into UV-A1 (315 nm – 340 nm) &amp; UV-A2 (340 nm – 400 nm)</div>
+<div class="line">• UV-B: 280 nm – 315 nm (950 THz – 1070 THz)</div>
+<div class="line">• UV-C: 100 nm – 280 nm (1070 THz – 3000 THz)</div>
+<div class="line">[2]The characteristics of photoresistors are discussed in some detail on the Selco Products website at</div>
+<div class="line"><a class="icon link reference external" href="http://www.selcoproducts.com/pdfs/CdS-Photocells%20Catalog.pdf" target="_blank">http://www.selcoproducts.com/pdfs/CdS-Photocells%20Catalog.pdf</a></div>
+</div>
+<p>[3]There are a number of ROHS compliant CdS &amp; Cd2SeS photocells but many older types are not compliant.</p>
+<p>[4]The same arrangement was once used for digital isolators as well, but today these almost always use photodiodes or phototransistors.</p>
+<div class="line-block">
+<div class="line">[5]The electrical conductance of a conductor is the ease with which an electric current passes through that conductor. The (commoner) inverse quantity is its resistance - the opposition to the passage of an electric current. The official SI unit of conductance is the Siemens (S) but the older name, “mho”, and symbol (Ʊ) are still quite widely used because the older symbol is less likely to be confused with the symbol for a second (s). The unit of resistance is the ohm (Ω). The relationships between voltage (V), current (I), resistance (R) and conductance (G) are:-</div>
+<div class="line"><span class="math notranslate nohighlight">\(R = V/I\)</span> <span class="math notranslate nohighlight">\(G = I/V\)</span> <span class="math notranslate nohighlight">\(G = 1/R\)</span></div>
+</div>
+<div class="line-block">
+<div class="line">[6] Read the Friendly Data Sheet (RTFDS). The RAQ on this topic can be found at</div>
+<div class="line">http:<em>www.analog.com/static/imported-files/rarely_asked_questions/RAQ_caveat.pdf
+and the longer discussions at
+http:</em>www.analog.com/static/imported-files/rarely_asked_questions/moreInfo_raq_datasheet.html</div>
+<div class="line">http:<em>www.analog.com/static/imported-files/rarely_asked_questions/moreInfo_raq_opAmpNoise.html
+http:</em>www.analog.com/static/imported-files/rarely_asked_questions/moreInfo_raq_opampbiasCurrents.html</div>
+<div class="line"><a class="icon link reference external" href="http://www.analog.com/static/imported-files/rarely_asked_questions/moreInfo_raq_dcSpecs.html" target="_blank">http://www.analog.com/static/imported-files/rarely_asked_questions/moreInfo_raq_dcSpecs.html</a></div>
+</div>
+<p>[7]Sometimes there is a very high resistance in parallel with the current sources so that there is a slight change of leakage with applied voltage, but the effect is generally negligible.</p>
+<p>[8]Mullard was a company manufacturing thermionic valves (“tubes”) in England in the 1920s. It became part of Philips in 1927 but continued to use the Mullard brand name for its valves and (from the 1950s) semiconductors until the 1980s.</p>
+<p>[9]Or, in some circumstances, maximum wanted – i.e. the maximum possible light may sometimes (quite often) be greater than we need to measure so diode conduction at high light levels is unimportant.</p>
+<p>[10]August 2014</p>
+<p>[11]Plastic that appears clear to the eye may not transmit wavelengths outside the visible spectrum (UV or IR). If this matters in your application read the data sheet (or, if necessary, perform a simple experiment or two) to discover if this is the case.</p>
+<p>[12]I have done some on-line research on this and obtained conflicting “facts”. There seems to be little doubt that some LEDs have quite wide spectral sensitivity as a photodiode, and that others are sensitive in quite a narrow band (not Gaussian - there’s a fairly abrupt transition at lower frequencies [longer wavelength] and more gradual roll off as the wavelength decreases). I suspect that modern high intensity LEDs have a wider bandwidth but have only a few home measurements to support this hypothesis.</p>
+<p>I intend to make more measurements and will modify this footnote when I have done so. Please email me [A] if you are getting tired of waiting, or, [B] if you have good spectral response measurements on one or more types of LED.</p>
+<p>[13]The RAQ 45”Glass Diodes May See the Light – and Hum” mentions the photosensitivity of small glass silicon diodes such as the 1N914/1N4148. In bright sunlight these have photocurrent of the order of 10 nA, but when illuminated by a nearby (30 cm/1 foot) 60W incandescent bulb the photocurrent is about 30 nA and there is, very roughly, about 2 nA rms 100 Hz ripple on it, thus demonstrating their greater sensitivity in the near infra-red - and the approximate 100 Hz light modulation of a 60W incandescent bulb.</p>
+<p>[14]The output spectrum of a simple LED is not a single narrow line like the spectral lines in a gas discharge but a rather wider (but still relatively narrow – bandwidth a few percent of the peak) band of wavelengths with a Gaussian distribution around the nominal peak wavelength.</p>
+<p>[15]A simple integral series resistor in an LED does not affect its use as a photodiode - but most other built-in circuitry does. This includes current limiters with active devices, diode bridges, integral dimmers and flashers.</p>
+<p>[16]A silicon photodiode with a threshold of 700 mV used in this way may be able to drive an exceptionally low threshold MOSFET or a Schmitt input gate using a very low supply voltage.</p>
+<div class="line-block">
+<div class="line">[17]A discussion of comparator characteristics is in the article accompanying RAQ 11 “Comparators &amp; Op Amps – May They Never Meet (or Good Advice from Mr. Punch)”</div>
+<div class="line"><a class="icon link reference external" href="http://www.analog.com/en/all-operational-amplifiers-op-amps/operational-amplifiers-op-amps/product/raq_jbryant_comparators_opamps_may_issue11/resources/faq.html?display=popup" target="_blank">http://www.analog.com/en/all-operational-amplifiers-op-amps/operational-amplifiers-op-amps/product/raq_jbryant_comparators_opamps_may_issue11/resources/faq.html?display=popup</a> .</div>
+<div class="line">The article is at</div>
+<div class="line"><a class="icon link reference external" href="http://www.analog.com/static/imported-files/rarely_asked_questions/op-AmpsAsComparatorsv1.ppt" target="_blank">http://www.analog.com/static/imported-files/rarely_asked_questions/op-AmpsAsComparatorsv1.ppt</a> .</div>
+<div class="line">It is possible to use an operational amplifier as a comparator but there are problems, which are also discussed in this article. Despite being written to discuss a particular application problem, it is a useful short background note on the properties and uses of comparators.</div>
+</div>
+<div class="line-block">
+<div class="line">[18]Read RAQ 22 on ADC inputs.</div>
+<div class="line"><a class="icon link reference external" href="http://www.analog.com/static/imported-files/rarely_asked_questions/RAQ_highfrequency.pdf" target="_blank">http://www.analog.com/static/imported-files/rarely_asked_questions/RAQ_highfrequency.pdf</a></div>
+</div>
+<p>[19]This equation is often written with respect to the bias being on the N region, in which case the polarity of V is reversed and the equation becomes <span class="math notranslate nohighlight">\(\displaystyle I = I_s e^{v/\frac{kT}{q}}-1\)</span></p>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

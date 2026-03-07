@@ -1,0 +1,2877 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="|===== Resource utilization =====" name="description" />
+
+    <title>ad40xx_zed &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ad40xx_zed</a></li>
+<li><a class="reference internal" href="#ad5758-sdz-zed">ad5758_sdz_zed</a></li>
+<li><a class="reference internal" href="#ad5766-sdz-zed">ad5766_sdz_zed</a></li>
+<li><a class="reference internal" href="#ad6676evb-vc707">ad6676evb_vc707</a></li>
+<li><a class="reference internal" href="#ad6676evb-zc706">ad6676evb_zc706</a></li>
+<li><a class="reference internal" href="#ad7134-fmc-zed">ad7134_fmc_zed</a></li>
+<li><a class="reference internal" href="#ad738x-fmc-zed">ad738x_fmc_zed</a></li>
+<li><a class="reference internal" href="#ad7405-fmc-zed">ad7405_fmc_zed</a></li>
+<li><a class="reference internal" href="#ad7616-sdz-zed">ad7616_sdz_zed</a></li>
+<li><a class="reference internal" href="#ad7616-sdz-zc706">ad7616_sdz_zc706</a></li>
+<li><a class="reference internal" href="#ad77681evb-cora7s">ad77681evb_cora7s</a></li>
+<li><a class="reference internal" href="#ad77681evb-zed">ad77681evb_zed</a></li>
+<li><a class="reference internal" href="#ad7768evb-zed">ad7768evb_zed</a></li>
+<li><a class="reference internal" href="#ad9208-dual-ebz-vcu118">ad9208_dual_ebz_vcu118</a></li>
+<li><a class="reference internal" href="#ad9265-fmc-zc706">ad9265_fmc_zc706</a></li>
+<li><a class="reference internal" href="#ad9434-fmc-zc706">ad9434_fmc_zc706</a></li>
+<li><a class="reference internal" href="#ad9467-fmc-kc705">ad9467_fmc_kc705</a></li>
+<li><a class="reference internal" href="#ad9467-fmc-zed">ad9467_fmc_zed</a></li>
+<li><a class="reference internal" href="#ad9739a-fmc-zc706">ad9739a_fmc_zc706</a></li>
+<li><a class="reference internal" href="#ad-fmclidar1-ebz-zc706">ad_fmclidar1_ebz_zc706</a></li>
+<li><a class="reference internal" href="#ad-fmclidar1-ebz-zcu102">ad_fmclidar1_ebz_zcu102</a></li>
+<li><a class="reference internal" href="#adaq7980-sdz-zed">adaq7980_sdz_zed</a></li>
+<li><a class="reference internal" href="#adrv9009-zc706">adrv9009_zc706</a></li>
+<li><a class="reference internal" href="#adrv9009-zcu102">adrv9009_zcu102</a></li>
+<li><a class="reference internal" href="#adrv9009zu11eg-adrv2crr-fmc">adrv9009zu11eg_adrv2crr_fmc</a></li>
+<li><a class="reference internal" href="#adrv9361z7035-ccbob-cmos">adrv9361z7035_ccbob_cmos</a></li>
+<li><a class="reference internal" href="#adrv9361z7035-ccbob-lvds">adrv9361z7035_ccbob_lvds</a></li>
+<li><a class="reference internal" href="#adrv9361z7035-ccpackrf-lvds">adrv9361z7035_ccpackrf_lvds</a></li>
+<li><a class="reference internal" href="#adrv9361z7035-ccfmc-lvds">adrv9361z7035_ccfmc_lvds</a></li>
+<li><a class="reference internal" href="#adrv9364z7020-ccbob-cmos">adrv9364z7020_ccbob_cmos</a></li>
+<li><a class="reference internal" href="#adrv9364z7020-ccbob-lvds">adrv9364z7020_ccbob_lvds</a></li>
+<li><a class="reference internal" href="#adrv9364z7020-ccpackrf-lvds">adrv9364z7020_ccpackrf_lvds</a></li>
+<li><a class="reference internal" href="#adrv9371x-kcu105">adrv9371x_kcu105</a></li>
+<li><a class="reference internal" href="#adrv9371x-zc706">adrv9371x_zc706</a></li>
+<li><a class="reference internal" href="#adrv9371x-zcu102">adrv9371x_zcu102</a></li>
+<li><a class="reference internal" href="#adv7511-zc702">adv7511_zc702</a></li>
+<li><a class="reference internal" href="#adv7511-zc706">adv7511_zc706</a></li>
+<li><a class="reference internal" href="#adv7511-zed">adv7511_zed</a></li>
+<li><a class="reference internal" href="#cn0363-zed">cn0363_zed</a></li>
+<li><a class="reference internal" href="#dac-fmc-ebz-zc706">dac_fmc_ebz_zc706</a></li>
+<li><a class="reference internal" href="#dac-fmc-ebz-zcu102">dac_fmc_ebz_zcu102</a></li>
+<li><a class="reference internal" href="#daq2-kc705">daq2_kc705</a></li>
+<li><a class="reference internal" href="#daq2-kcu105">daq2_kcu105</a></li>
+<li><a class="reference internal" href="#daq2-zc706">daq2_zc706</a></li>
+<li><a class="reference internal" href="#daq2-zcu102">daq2_zcu102</a></li>
+<li><a class="reference internal" href="#daq3-kcu105">daq3_kcu105</a></li>
+<li><a class="reference internal" href="#daq3-vcu118">daq3_vcu118</a></li>
+<li><a class="reference internal" href="#daq3-zc706">daq3_zc706</a></li>
+<li><a class="reference internal" href="#daq3-zcu102">daq3_zcu102</a></li>
+<li><a class="reference internal" href="#fmcadc2-vc707">fmcadc2_vc707</a></li>
+<li><a class="reference internal" href="#fmcadc2-zc706">fmcadc2_zc706</a></li>
+<li><a class="reference internal" href="#fmcadc5-vc707">fmcadc5_vc707</a></li>
+<li><a class="reference internal" href="#fmcjesdadc1-kc705">fmcjesdadc1_kc705</a></li>
+<li><a class="reference internal" href="#fmcjesdadc1-vc707">fmcjesdadc1_vc707</a></li>
+<li><a class="reference internal" href="#fmcjesdadc1-zc706">fmcjesdadc1_zc706</a></li>
+<li><a class="reference internal" href="#fmcomms11-zc706">fmcomms11_zc706</a></li>
+<li><a class="reference internal" href="#fmcomms2-kc705">fmcomms2_kc705</a></li>
+<li><a class="reference internal" href="#fmcomms2-kcu105">fmcomms2_kcu105</a></li>
+<li><a class="reference internal" href="#fmcomms2-vc707">fmcomms2_vc707</a></li>
+<li><a class="reference internal" href="#fmcomms2-zc702">fmcomms2_zc702</a></li>
+<li><a class="reference internal" href="#fmcomms2-zc706">fmcomms2_zc706</a></li>
+<li><a class="reference internal" href="#fmcomms2-zcu102">fmcomms2_zcu102</a></li>
+<li><a class="reference internal" href="#fmcomms2-zed">fmcomms2_zed</a></li>
+<li><a class="reference internal" href="#fmcomms5-zc702">fmcomms5_zc702</a></li>
+<li><a class="reference internal" href="#fmcomms5-zc706">fmcomms5_zc706</a></li>
+<li><a class="reference internal" href="#fmcomms5-zcu102">fmcomms5_zcu102</a></li>
+<li><a class="reference internal" href="#imageon-zed">imageon_zed</a></li>
+<li><a class="reference internal" href="#m2k">m2k</a></li>
+<li><a class="reference internal" href="#pluto">pluto</a></li>
+<li><a class="reference internal" href="#sidekiqz2">sidekiqz2</a></li>
+<li><a class="reference internal" href="#usrp31x">usrp31x</a></li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <p>|===== Resource utilization =====</p>
+<section id="ad40xx-zed">
+<h1>ad40xx_zed<a class="headerlink" href="#ad40xx-zed" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>5835 (10.97%)</p></td>
+<td><p>7907 (7.43%)</p></td>
+<td><p>9 (4.09%)</p></td>
+<td><p>6 (4.29%)</p></td>
+<td><p>0</p></td>
+<td><p>6</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="ad5758-sdz-zed">
+<h1>ad5758_sdz_zed<a class="headerlink" href="#ad5758-sdz-zed" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3978 (7.48%)</p></td>
+<td><p>5291 (4.97%)</p></td>
+<td><p>9 (4.09%)</p></td>
+<td><p>2 (1.43%)</p></td>
+<td><p>0</p></td>
+<td><p>5</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="ad5766-sdz-zed">
+<h1>ad5766_sdz_zed<a class="headerlink" href="#ad5766-sdz-zed" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>5837(10.97%%)</p></td>
+<td><p>8103 (7.62%)</p></td>
+<td><p>9 (4.09%)</p></td>
+<td><p>3 (2.14%)</p></td>
+<td><p>0</p></td>
+<td><p>5</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="ad6676evb-vc707">
+<h1>ad6676evb_vc707<a class="headerlink" href="#ad6676evb-vc707" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>42003 (13.83%)</p></td>
+<td><p>47152 (7.77%)</p></td>
+<td><p>4 (0.14%)</p></td>
+<td><p>150 (14.56%)</p></td>
+<td><p>0</p></td>
+<td><p>13</p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="ad6676evb-zc706">
+<h1>ad6676evb_zc706<a class="headerlink" href="#ad6676evb-zc706" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>8547 (3.91%)</p></td>
+<td><p>11833 (2.71%)</p></td>
+<td><p>9 (1%)</p></td>
+<td><p>4 (0.73%)</p></td>
+<td><p>0</p></td>
+<td><p>6</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="ad7134-fmc-zed">
+<h1>ad7134_fmc_zed<a class="headerlink" href="#ad7134-fmc-zed" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>6085 (11.44%)</p></td>
+<td><p>8421 (7.91%)</p></td>
+<td><p>9 (4.09%)</p></td>
+<td><p>6 (4.29%)</p></td>
+<td><p>0</p></td>
+<td><p>7</p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="ad738x-fmc-zed">
+<h1>ad738x_fmc_zed<a class="headerlink" href="#ad738x-fmc-zed" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>5715 (10.74%)</p></td>
+<td><p>7508 (7.06%)</p></td>
+<td><p>9 (3.12%)</p></td>
+<td><p>3 (2.14%)</p></td>
+<td><p>0</p></td>
+<td><p>5</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="ad7405-fmc-zed">
+<h1>ad7405_fmc_zed<a class="headerlink" href="#ad7405-fmc-zed" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>5798 (10.9%)</p></td>
+<td><p>7536 (7.08)</p></td>
+<td><p>9 (4.09%)</p></td>
+<td><p>3 (2.14%)</p></td>
+<td><p>0</p></td>
+<td><p>7</p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="ad7616-sdz-zed">
+<h1>ad7616_sdz_zed<a class="headerlink" href="#ad7616-sdz-zed" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>5743 (10.8%)</p></td>
+<td><p>7471 (7.02%)</p></td>
+<td><p>9 (3.12%)</p></td>
+<td><p>3 (2.14%)</p></td>
+<td><p>0</p></td>
+<td><p>5</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="ad7616-sdz-zc706">
+<h1>ad7616_sdz_zc706<a class="headerlink" href="#ad7616-sdz-zc706" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>5033 (2.3%)</p></td>
+<td><p>6759 (1.55%)</p></td>
+<td><p>9 (1%)</p></td>
+<td><p>3 (0.55%)</p></td>
+<td><p>0</p></td>
+<td><p>5</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="ad77681evb-cora7s">
+<h1>ad77681evb_cora7s<a class="headerlink" href="#ad77681evb-cora7s" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2495 (17.33%)</p></td>
+<td><p>3179 (11.04%)</p></td>
+<td><p>0</p></td>
+<td><p>1 (2%)</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="ad77681evb-zed">
+<h1>ad77681evb_zed<a class="headerlink" href="#ad77681evb-zed" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>5719 (10.75%)</p></td>
+<td><p>7485 (7.03%)</p></td>
+<td><p>9 (4.09%)</p></td>
+<td><p>3 (2.14%)</p></td>
+<td><p>0</p></td>
+<td><p>6</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="ad7768evb-zed">
+<h1>ad7768evb_zed<a class="headerlink" href="#ad7768evb-zed" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>5798 (10.9%)</p></td>
+<td><p>8818 (8.29%)</p></td>
+<td><p>9 (4.09%)</p></td>
+<td><p>3 (2.14%)</p></td>
+<td><p>0</p></td>
+<td><p>6</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="ad9208-dual-ebz-vcu118">
+<h1>ad9208_dual_ebz_vcu118<a class="headerlink" href="#ad9208-dual-ebz-vcu118" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>56686 (4.79%)</p></td>
+<td><p>82635 (3.49%)</p></td>
+<td><p>7 (0.1%)</p></td>
+<td><p>302 (13.98%)</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>1</p></td>
+<td><p>6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="ad9265-fmc-zc706">
+<h1>ad9265_fmc_zc706<a class="headerlink" href="#ad9265-fmc-zc706" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>5042 (2.31%)</p></td>
+<td><p>7340 (1.68%)</p></td>
+<td><p>1 (1.11%)</p></td>
+<td><p>3 (0.55%)</p></td>
+<td><p>0</p></td>
+<td><p>6</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="ad9434-fmc-zc706">
+<h1>ad9434_fmc_zc706<a class="headerlink" href="#ad9434-fmc-zc706" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>5032 (2.3%)</p></td>
+<td><p>7019 (1.61%)</p></td>
+<td><p>9 (1%)</p></td>
+<td><p>3 (0.55%)</p></td>
+<td><p>0</p></td>
+<td><p>8</p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="ad9467-fmc-kc705">
+<h1>ad9467_fmc_kc705<a class="headerlink" href="#ad9467-fmc-kc705" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>27636 (13.56%)</p></td>
+<td><p>29107 (7.14%)</p></td>
+<td><p>4 (0.48%)</p></td>
+<td><p>49 (11.01%)</p></td>
+<td><p>0</p></td>
+<td><p>10</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="ad9467-fmc-zed">
+<h1>ad9467_fmc_zed<a class="headerlink" href="#ad9467-fmc-zed" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>5701 (10.72%)</p></td>
+<td><p>7774 (7.31%)</p></td>
+<td><p>9 (4.09%)</p></td>
+<td><p>3 (2.14%)</p></td>
+<td><p>0</p></td>
+<td><p>6</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="ad9739a-fmc-zc706">
+<h1>ad9739a_fmc_zc706<a class="headerlink" href="#ad9739a-fmc-zc706" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>12140(5.55%)</p></td>
+<td><p>18343 (4.2%)</p></td>
+<td><p>169 (18.78%)</p></td>
+<td><p>6 (1.1%)</p></td>
+<td><p>0</p></td>
+<td><p>7</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="ad-fmclidar1-ebz-zc706">
+<h1>ad_fmclidar1_ebz_zc706<a class="headerlink" href="#ad-fmclidar1-ebz-zc706" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>12053 (5.51%)</p></td>
+<td><p>16111 (3.68%)</p></td>
+<td><p>9 (1%)</p></td>
+<td><p>8 (1.47%)</p></td>
+<td><p>0</p></td>
+<td><p>6</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="ad-fmclidar1-ebz-zcu102">
+<h1>ad_fmclidar1_ebz_zcu102<a class="headerlink" href="#ad-fmclidar1-ebz-zcu102" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>9550 (3.48%)</p></td>
+<td><p>13114 (2.39%)</p></td>
+<td><p>0</p></td>
+<td><p>6 (0.66%)</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="adaq7980-sdz-zed">
+<h1>adaq7980_sdz_zed<a class="headerlink" href="#adaq7980-sdz-zed" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>5617 (10.56%)</p></td>
+<td><p>7519 (7.07%)</p></td>
+<td><p>9 (4.09%)</p></td>
+<td><p>3 (2.14%)</p></td>
+<td><p>0</p></td>
+<td><p>5</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="adrv9009-zc706">
+<h1>adrv9009_zc706<a class="headerlink" href="#adrv9009-zc706" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>51182 (23.41%)</p></td>
+<td><p>67032 (15.33%)</p></td>
+<td><p>157 (17.44%)</p></td>
+<td><p>44 (7.98%)</p></td>
+<td><p>0</p></td>
+<td><p>18</p></td>
+<td><p>7</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="adrv9009-zcu102">
+<h1>adrv9009_zcu102<a class="headerlink" href="#adrv9009-zcu102" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>32089 (11.71%)</p></td>
+<td><p>48395 (8.83)</p></td>
+<td><p>144 (5.71%)</p></td>
+<td><p>522 (57.24%)</p></td>
+<td><p>0</p></td>
+<td><p>6</p></td>
+<td><p>3</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="adrv9009zu11eg-adrv2crr-fmc">
+<h1>adrv9009zu11eg_adrv2crr_fmc<a class="headerlink" href="#adrv9009zu11eg-adrv2crr-fmc" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>58408 (19.56%)</p></td>
+<td><p>73762 (12.35%)</p></td>
+<td><p>35 (1.2%)</p></td>
+<td><p>101 (16.83%)</p></td>
+<td><p>0</p></td>
+<td><p>8</p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="adrv9361z7035-ccbob-cmos">
+<h1>adrv9361z7035_ccbob_cmos<a class="headerlink" href="#adrv9361z7035-ccbob-cmos" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>12846 (7.47%)</p></td>
+<td><p>20956 (6.1%)</p></td>
+<td><p>28 (3.11%)</p></td>
+<td><p>4 (0.8%)</p></td>
+<td><p>0</p></td>
+<td><p>8</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="adrv9361z7035-ccbob-lvds">
+<h1>adrv9361z7035_ccbob_lvds<a class="headerlink" href="#adrv9361z7035-ccbob-lvds" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>12739 (7.41%)</p></td>
+<td><p>20916 (6.08%)</p></td>
+<td><p>28 (3.11%)</p></td>
+<td><p>4 (0.8 %)</p></td>
+<td><p>0</p></td>
+<td><p>8</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="adrv9361z7035-ccpackrf-lvds">
+<h1>adrv9361z7035_ccpackrf_lvds<a class="headerlink" href="#adrv9361z7035-ccpackrf-lvds" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>12222 (7.11%)</p></td>
+<td><p>19603 (5.7%)</p></td>
+<td><p>28 (1.96%)</p></td>
+<td><p>4 (0.8%)</p></td>
+<td><p>0</p></td>
+<td><p>5</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="adrv9361z7035-ccfmc-lvds">
+<h1>adrv9361z7035_ccfmc_lvds<a class="headerlink" href="#adrv9361z7035-ccfmc-lvds" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>15163 (8.82%)</p></td>
+<td><p>24480 (7.12%)</p></td>
+<td><p>37 (4.11%)</p></td>
+<td><p>6 (1.2%)</p></td>
+<td><p>0</p></td>
+<td><p>15</p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="adrv9364z7020-ccbob-cmos">
+<h1>adrv9364z7020_ccbob_cmos<a class="headerlink" href="#adrv9364z7020-ccbob-cmos" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>8783 (16.51%)</p></td>
+<td><p>14178 (13.33%)</p></td>
+<td><p>14 (6.36%)</p></td>
+<td><p>4 (2.86%)</p></td>
+<td><p>0</p></td>
+<td><p>4</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="adrv9364z7020-ccbob-lvds">
+<h1>adrv9364z7020_ccbob_lvds<a class="headerlink" href="#adrv9364z7020-ccbob-lvds" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>8742 (16.43%)</p></td>
+<td><p>14147 (13.35)</p></td>
+<td><p>14 (6.36%)</p></td>
+<td><p>4 (2.86%)</p></td>
+<td><p>0</p></td>
+<td><p>4</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="adrv9364z7020-ccpackrf-lvds">
+<h1>adrv9364z7020_ccpackrf_lvds<a class="headerlink" href="#adrv9364z7020-ccpackrf-lvds" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>8845 (16.63%)</p></td>
+<td><p>14120 (13.27)</p></td>
+<td><p>14 (6.36%)</p></td>
+<td><p>4 (2.86%)</p></td>
+<td><p>0</p></td>
+<td><p>5</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="adrv9371x-kcu105">
+<h1>adrv9371x_kcu105<a class="headerlink" href="#adrv9371x-kcu105" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>71151 (29.6%)</p></td>
+<td><p>98416 (20.47)</p></td>
+<td><p>151 (7.86%)</p></td>
+<td><p>313 (52.08%)</p></td>
+<td><p>0</p></td>
+<td><p>19</p></td>
+<td><p>5</p></td>
+<td><p>8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="adrv9371x-zc706">
+<h1>adrv9371x_zc706<a class="headerlink" href="#adrv9371x-zc706" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>51403 (23.51%)</p></td>
+<td><p>66585 (15.23%)</p></td>
+<td><p>157 (17.44%)</p></td>
+<td><p>44 (8%)</p></td>
+<td><p>0</p></td>
+<td><p>18</p></td>
+<td><p>7</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="adrv9371x-zcu102">
+<h1>adrv9371x_zcu102<a class="headerlink" href="#adrv9371x-zcu102" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>32942 (12.02%)</p></td>
+<td><p>47272 (8.62%)</p></td>
+<td><p>144 (5.71%)</p></td>
+<td><p>464 (50.88%)</p></td>
+<td><p>0</p></td>
+<td><p>6</p></td>
+<td><p>3</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="adv7511-zc702">
+<h1>adv7511_zc702<a class="headerlink" href="#adv7511-zc702" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3259 (6.13%)</p></td>
+<td><p>4658 (4.38%)</p></td>
+<td><p>9 (4.09%)</p></td>
+<td><p>2 (1.43%)</p></td>
+<td><p>0</p></td>
+<td><p>5</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="adv7511-zc706">
+<h1>adv7511_zc706<a class="headerlink" href="#adv7511-zc706" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3218 (1.47%)</p></td>
+<td><p>4526 (1.04%)</p></td>
+<td><p>9 (1%)</p></td>
+<td><p>2 (0.37%)</p></td>
+<td><p>0</p></td>
+<td><p>5</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="adv7511-zed">
+<h1>adv7511_zed<a class="headerlink" href="#adv7511-zed" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3985 (7.49%)</p></td>
+<td><p>5291 (4.97%)</p></td>
+<td><p>9 (4.09%)</p></td>
+<td><p>2 (1.43%)</p></td>
+<td><p>0</p></td>
+<td><p>5</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="cn0363-zed">
+<h1>cn0363_zed<a class="headerlink" href="#cn0363-zed" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>7559 (14.21%)</p></td>
+<td><p>10851 (10.2%)</p></td>
+<td><p>13 (5.91%)</p></td>
+<td><p>10 (6.79%)</p></td>
+<td><p>0</p></td>
+<td><p>5</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="dac-fmc-ebz-zc706">
+<h1>dac_fmc_ebz_zc706<a class="headerlink" href="#dac-fmc-ebz-zc706" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>19657 (8.99%)</p></td>
+<td><p>23584 (5.39%)</p></td>
+<td><p>25 (2.78%)</p></td>
+<td><p>70 (12.84%)</p></td>
+<td><p>0</p></td>
+<td><p>6</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="dac-fmc-ebz-zcu102">
+<h1>dac_fmc_ebz_zcu102<a class="headerlink" href="#dac-fmc-ebz-zcu102" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>17086(6.23%)</p></td>
+<td><p>20102 (3.67%)</p></td>
+<td><p>16 (0.63%)</p></td>
+<td><p>36 (3.95%)</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="daq2-kc705">
+<h1>daq2_kc705<a class="headerlink" href="#daq2-kc705" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>53829 (26.41%)</p></td>
+<td><p>59392 (14.57%)</p></td>
+<td><p>20 (2.38%)</p></td>
+<td><p>311 (69.89%)</p></td>
+<td><p>0</p></td>
+<td><p>11</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="daq2-kcu105">
+<h1>daq2_kcu105<a class="headerlink" href="#daq2-kcu105" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>65627 (27.07%)</p></td>
+<td><p>83877 (17.3%)</p></td>
+<td><p>23 (1.2%)</p></td>
+<td><p>340 (56.58%)</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>2</p></td>
+<td><p>5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="daq2-zc706">
+<h1>daq2_zc706<a class="headerlink" href="#daq2-zc706" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>46696 (21.36%)</p></td>
+<td><p>54866 (12.55%)</p></td>
+<td><p>25 (2.78%)</p></td>
+<td><p>281 (51.47%)</p></td>
+<td><p>0</p></td>
+<td><p>11</p></td>
+<td><p>4</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="daq2-zcu102">
+<h1>daq2_zcu102<a class="headerlink" href="#daq2-zcu102" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>27376 (9.99%)</p></td>
+<td><p>33742 (6.16%)</p></td>
+<td><p>16 (0.63%)</p></td>
+<td><p>519 (56.91%)</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="daq3-kcu105">
+<h1>daq3_kcu105<a class="headerlink" href="#daq3-kcu105" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>60912 (25.13%)</p></td>
+<td><p>80223 (16.55%)</p></td>
+<td><p>23 (1.2%)</p></td>
+<td><p>340(56.58%)</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>2</p></td>
+<td><p>5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="daq3-vcu118">
+<h1>daq3_vcu118<a class="headerlink" href="#daq3-vcu118" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>61368 (5.19%)</p></td>
+<td><p>80422(3.4%)</p></td>
+<td><p>23 (0.34%)</p></td>
+<td><p>434 (20.16%)</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>1</p></td>
+<td><p>6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="daq3-zc706">
+<h1>daq3_zc706<a class="headerlink" href="#daq3-zc706" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>42318 (19.36%)</p></td>
+<td><p>50632 (11.585)</p></td>
+<td><p>25 (2.78%)</p></td>
+<td><p>282 (51.65%)</p></td>
+<td><p>0</p></td>
+<td><p>11</p></td>
+<td><p>4</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="daq3-zcu102">
+<h1>daq3_zcu102<a class="headerlink" href="#daq3-zcu102" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>22637 (8.26%)</p></td>
+<td><p>28738 (5.24%)</p></td>
+<td><p>16 (0.63%)</p></td>
+<td><p>264 (28.95%)</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="fmcadc2-vc707">
+<h1>fmcadc2_vc707<a class="headerlink" href="#fmcadc2-vc707" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>46610 (15.35%)</p></td>
+<td><p>52634 (8.67%)</p></td>
+<td><p>4 (32.49%)</p></td>
+<td><p>668 (64.85%)</p></td>
+<td><p>0</p></td>
+<td><p>13</p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="fmcadc2-zc706">
+<h1>fmcadc2_zc706<a class="headerlink" href="#fmcadc2-zc706" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>28662 (13.11%)</p></td>
+<td><p>34662 (7.39%)</p></td>
+<td><p>9 (1%)</p></td>
+<td><p>27 (4.86%)</p></td>
+<td><p>0</p></td>
+<td><p>10</p></td>
+<td><p>4</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="fmcadc5-vc707">
+<h1>fmcadc5_vc707<a class="headerlink" href="#fmcadc5-vc707" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>58272 (19.19%)</p></td>
+<td><p>67842 (11.17%)</p></td>
+<td><p>36 (1.29%)</p></td>
+<td><p>683 (66.31%)</p></td>
+<td><p>0</p></td>
+<td><p>14</p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="fmcjesdadc1-kc705">
+<h1>fmcjesdadc1_kc705<a class="headerlink" href="#fmcjesdadc1-kc705" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>35009 (17.18%)</p></td>
+<td><p>39735 (9.75%)</p></td>
+<td><p>4 (0.48%)</p></td>
+<td><p>66 (14.83%)</p></td>
+<td><p>0</p></td>
+<td><p>10</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="fmcjesdadc1-vc707">
+<h1>fmcjesdadc1_vc707<a class="headerlink" href="#fmcjesdadc1-vc707" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>44817 (14.76%)</p></td>
+<td><p>51482 (8.48%)</p></td>
+<td><p>4 (0.14%)</p></td>
+<td><p>158 (15.34%)</p></td>
+<td><p>0</p></td>
+<td><p>13</p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="fmcjesdadc1-zc706">
+<h1>fmcjesdadc1_zc706<a class="headerlink" href="#fmcjesdadc1-zc706" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>11301 (5.17%)</p></td>
+<td><p>15463 (3.54%)</p></td>
+<td><p>9 (1%)</p></td>
+<td><p>6 (1.1%)</p></td>
+<td><p>0</p></td>
+<td><p>6</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="fmcomms11-zc706">
+<h1>fmcomms11_zc706<a class="headerlink" href="#fmcomms11-zc706" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>56873(26.02%)</p></td>
+<td><p>65949(15.08%)</p></td>
+<td><p>41 (4.56%)</p></td>
+<td><p>287 (52.57%)</p></td>
+<td><p>0</p></td>
+<td><p>11</p></td>
+<td><p>4</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="fmcomms2-kc705">
+<h1>fmcomms2_kc705<a class="headerlink" href="#fmcomms2-kc705" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>36828 (18.07%)</p></td>
+<td><p>44647 (10.95%)</p></td>
+<td><p>32 (3.81%)</p></td>
+<td><p>52 (11.69%)</p></td>
+<td><p>0</p></td>
+<td><p>11</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="fmcomms2-kcu105">
+<h1>fmcomms2_kcu105<a class="headerlink" href="#fmcomms2-kcu105" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO(%)</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>49014 (20.39%)</p></td>
+<td><p>69194 (14.39%)</p></td>
+<td><p>35 (1.82%)</p></td>
+<td><p>81 (13.42%)</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="fmcomms2-vc707">
+<h1>fmcomms2_vc707<a class="headerlink" href="#fmcomms2-vc707" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>47637 (15.69%)</p></td>
+<td><p>57891 (9.53%)</p></td>
+<td><p>32 (1.14%)</p></td>
+<td><p>152 (14.76%)</p></td>
+<td><p>0</p></td>
+<td><p>14</p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="fmcomms2-zc702">
+<h1>fmcomms2_zc702<a class="headerlink" href="#fmcomms2-zc702" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>13978 (26.17%)</p></td>
+<td><p>22537 (21.18%)</p></td>
+<td><p>37 (10.55%)</p></td>
+<td><p>6 (4.29%)</p></td>
+<td><p>0</p></td>
+<td><p>7</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="fmcomms2-zc706">
+<h1>fmcomms2_zc706<a class="headerlink" href="#fmcomms2-zc706" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>13927 (6.37%)</p></td>
+<td><p>22401 (5.12%)</p></td>
+<td><p>37 (4.11%)</p></td>
+<td><p>6 (1.1%)</p></td>
+<td><p>0</p></td>
+<td><p>7</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="fmcomms2-zcu102">
+<h1>fmcomms2_zcu102<a class="headerlink" href="#fmcomms2-zcu102" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>11189 (4.08%)</p></td>
+<td><p>19130 (3.49%)</p></td>
+<td><p>28 (1.11%)</p></td>
+<td><p>4 (0.44%)</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="fmcomms2-zed">
+<h1>fmcomms2_zed<a class="headerlink" href="#fmcomms2-zed" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>10037 (57%.03)</p></td>
+<td><p>14700 (41.76%)</p></td>
+<td><p>30 (37.5%)</p></td>
+<td><p>17 (28.33%)</p></td>
+<td><p>0</p></td>
+<td><p>5</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="fmcomms5-zc702">
+<h1>fmcomms5_zc702<a class="headerlink" href="#fmcomms5-zc702" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>22671 (42.61%)</p></td>
+<td><p>37768 (35.5%)</p></td>
+<td><p>65 (29.55%)</p></td>
+<td><p>10 (7.14%)</p></td>
+<td><p>0</p></td>
+<td><p>7</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="fmcomms5-zc706">
+<h1>fmcomms5_zc706<a class="headerlink" href="#fmcomms5-zc706" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>22576 (10.33%)</p></td>
+<td><p>37424 (8.56%)</p></td>
+<td><p>65 (7.22%)</p></td>
+<td><p>10 (1.83%)</p></td>
+<td><p>0</p></td>
+<td><p>7</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="fmcomms5-zcu102">
+<h1>fmcomms5_zcu102<a class="headerlink" href="#fmcomms5-zcu102" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>19706 (7.19%)</p></td>
+<td><p>34210 (6.24%)</p></td>
+<td><p>56 (2.22%)</p></td>
+<td><p>8 (0.88%)</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="imageon-zed">
+<h1>imageon_zed<a class="headerlink" href="#imageon-zed" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD(%)</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>6571 (12.35%)</p></td>
+<td><p>8754 (8.23%)</p></td>
+<td><p>17 (7.73%)</p></td>
+<td><p>3 (2.14%)</p></td>
+<td><p>0</p></td>
+<td><p>6</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="m2k">
+<h1>m2k<a class="headerlink" href="#m2k" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>10037 (57.03%)</p></td>
+<td><p>14700 (41.76%)</p></td>
+<td><p>30 (37.5%)</p></td>
+<td><p>17 (28.33%)</p></td>
+<td><p>0</p></td>
+<td><p>5</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="pluto">
+<h1>pluto<a class="headerlink" href="#pluto" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>7817 (44.41%)</p></td>
+<td><p>14142 (40.18%)</p></td>
+<td><p>56 (70%)</p></td>
+<td><p>2 (3.33%)</p></td>
+<td><p>0</p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="sidekiqz2">
+<h1>sidekiqz2<a class="headerlink" href="#sidekiqz2" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>7817 (44.41%)</p></td>
+<td><p>14142 (40.12%)</p></td>
+<td><p>56 (70%)</p></td>
+<td><p>2 (3.33%)</p></td>
+<td><p>0</p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="usrp31x">
+<h1>usrp31x<a class="headerlink" href="#usrp31x" title="Link to this heading"></a></h1>
+<div class="round docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LUT</p></th>
+<th class="head"><p>FD</p></th>
+<th class="head"><p>DSP48</p></th>
+<th class="head"><p>RAMB/FIFO</p></th>
+<th class="head"><p>URAM</p></th>
+<th class="head"><p>BUFG*</p></th>
+<th class="head"><p>MMCM</p></th>
+<th class="head"><p>PLL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>11420 (21.47%)</p></td>
+<td><p>18814 (17.68%)</p></td>
+<td><p>28 (12.73%)</p></td>
+<td><p>2 (1.43%)</p></td>
+<td><p>0</p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,3674 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The table below lists the common register map used by all the device pcores in the reference designs. All the registers are dword based and do not support byte addressing. That is, a read at byte address 0x01, 0x02 or 0x03 all return the register at byte address 0x00. The registers are grouped as per functionality, any exceptions may be noted on the specific pcore documentation." name="description" />
+
+    <title>FPGA Reference Designs: PCORE Register Map &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">FPGA Reference Designs: PCORE Register Map</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#register-map">Register Map</a><ul>
+<li><a class="reference internal" href="#general">General</a></li>
+<li><a class="reference internal" href="#adc-common">ADC Common</a></li>
+<li><a class="reference internal" href="#adc-channel">ADC Channel</a></li>
+<li><a class="reference internal" href="#dac-common">DAC Common</a></li>
+<li><a class="reference internal" href="#dac-channel">DAC Channel</a></li>
+<li><a class="reference internal" href="#jesd-receive">JESD Receive</a></li>
+<li><a class="reference internal" href="#ddr-controller">DDR Controller</a></li>
+<li><a class="reference internal" href="#hdmi-transmit">HDMI Transmit</a></li>
+<li><a class="reference internal" href="#clock-generator">Clock Generator</a></li>
+<li><a class="reference internal" href="#fft-common">FFT Common</a></li>
+<li><a class="reference internal" href="#axis-receive">AXIS Receive</a></li>
+<li><a class="reference internal" href="#axis-transmit">AXIS Transmit</a></li>
+<li><a class="reference internal" href="#axi-dmac">AXI DMAC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="fpga-reference-designs-pcore-register-map">
+<h1>FPGA Reference Designs: PCORE Register Map<a class="headerlink" href="#fpga-reference-designs-pcore-register-map" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>The table below lists the common register map used by all the device pcores in the reference designs. All the registers are dword based and do not support byte addressing. That is, a read at byte address 0x01, 0x02 or 0x03 all return the register at byte address 0x00. The registers are grouped as per functionality, any exceptions may be noted on the specific pcore documentation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>&lt;fc #FF0000&gt;**OBSOLETE: This register map is applicable only to the ISE/XPS older designs. The latest register map is here <a class="reference internal" href="../../docs/hdl/regmap.html"><span class="doc">Base (common to all cores)</span></a> **&lt;/fc&gt;</p>
+</div>
+</section>
+<section id="register-map">
+<h2>Register Map<a class="headerlink" href="#register-map" title="Link to this heading"></a></h2>
+<section id="general">
+<h3>General<a class="headerlink" href="#general" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Address</p></td>
+<td></td>
+<td><p>Bits</p></td>
+<td><p>Name</p></td>
+<td><p>Type</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>DWORD</p></td>
+<td><p>BYTE</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>0x0000</p></td>
+<td><p>0x0000</p></td>
+<td><p>REG_VERSION</p></td>
+<td></td>
+<td></td>
+<td><p>Version and Scratch Registers</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>VERSION[31:0]</p></td>
+<td><p>RO</p></td>
+<td><p>Version number.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0001</p></td>
+<td><p>0x0004</p></td>
+<td><p>REG_ID</p></td>
+<td></td>
+<td></td>
+<td><p>Version and Scratch Registers</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>ID[31:0]</p></td>
+<td><p>RO</p></td>
+<td><p>Instance identifier number.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0002</p></td>
+<td><p>0x0008</p></td>
+<td><p>REG_SCRATCH</p></td>
+<td></td>
+<td></td>
+<td><p>Version and Scratch Registers</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>SCRATCH[31:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Scratch register.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tue Nov 26 10:04:57 2013</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="adc-common">
+<h3>ADC Common<a class="headerlink" href="#adc-common" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Address</p></td>
+<td></td>
+<td><p>Bits</p></td>
+<td><p>Name</p></td>
+<td><p>Type</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>DWORD</p></td>
+<td><p>BYTE</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>0x0010</p></td>
+<td><p>0x0040</p></td>
+<td><p>REG_RSTN</p></td>
+<td></td>
+<td></td>
+<td><p>ADC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>MMCM_RSTN</p></td>
+<td><p>RW</p></td>
+<td><p>MMCM reset only (required for DRP access). Reset, default is IN-RESET (0x0), software must write 0x1 to bring up the core.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>RSTN</p></td>
+<td><p>RW</p></td>
+<td><p>Reset, default is IN-RESET (0x0), software must write 0x1 to bring up the core.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0011</p></td>
+<td><p>0x0044</p></td>
+<td><p>REG_CNTRL</p></td>
+<td></td>
+<td></td>
+<td><p>ADC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[2]</p></td>
+<td><p>R1_MODE</p></td>
+<td><p>RW</p></td>
+<td><p>Select number of RF channels 1 (0x1) or 2 (0x0).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>DDR_EDGESEL</p></td>
+<td><p>RW</p></td>
+<td><p>Select rising edge (0x0) or falling edge (0x1) for the first part of a sample (if applicable) followed by the successive edges for the remaining parts. This only controls how the sample is delineated from the incoming data post DDR registers.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>PIN_MODE</p></td>
+<td><p>RW</p></td>
+<td><p>Select interface pin mode to be clock multiplexed (0x1) or pin multiplexed (0x0). In clock multiplexed mode, samples are received on alternative clock edges. In pin multiplexed mode, samples are interleaved or grouped on the pins at the same clock edge.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0015</p></td>
+<td><p>0x0054</p></td>
+<td><p>REG_CLK_FREQ</p></td>
+<td></td>
+<td></td>
+<td><p>ADC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>CLK_FREQ[31:0]</p></td>
+<td><p>RO</p></td>
+<td><p>Interface clock frequency. This is relative to the processor clock and in many cases is 100MHz. The number is represented as unsigned 16.16 format. Assuming a 100MHz processor clock the minimum is 1.523kHz and maximum is 6.554THz. The actual interface clock is CLK_FREQ * CLK_RATIO (see below). Note that the actual sampling clock may not be the same as the interface clock- software must consider device specific implementation parameters to calculate the final sampling clock.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0016</p></td>
+<td><p>0x0058</p></td>
+<td><p>REG_CLK_RATIO</p></td>
+<td></td>
+<td></td>
+<td><p>ADC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>CLK_RATIO[31:0]</p></td>
+<td><p>RO</p></td>
+<td><p>Interface clock ratio - as a factor actual received clock. This is implementation specific and depends on any serial to parallel conversion and interface type (ddr/sdr/qdr).</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0017</p></td>
+<td><p>0x005c</p></td>
+<td><p>REG_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>ADC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[3]</p></td>
+<td><p>PN_ERR</p></td>
+<td><p>RO</p></td>
+<td><p>If set, indicates pn error in one or more channels.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[2]</p></td>
+<td><p>PN_OOS</p></td>
+<td><p>RO</p></td>
+<td><p>If set, indicates pn oos in one or more channels.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>OVER_RANGE</p></td>
+<td><p>RO</p></td>
+<td><p>If set, indicates over range in one or more channels.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>STATUS</p></td>
+<td><p>RO</p></td>
+<td><p>Interface status, if set indicates no errors. If not set, there are errors, software may try resetting the cores.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0018</p></td>
+<td><p>0x0060</p></td>
+<td><p>REG_DELAY_CNTRL</p></td>
+<td></td>
+<td></td>
+<td><p>ADC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[17]</p></td>
+<td><p>DELAY_SEL</p></td>
+<td><p>RW</p></td>
+<td><p>Delay select, a 0x0 to 0x1 transition in this register initiates a delay access controlled by the registers below.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[16]</p></td>
+<td><p>DELAY_RWN</p></td>
+<td><p>RW</p></td>
+<td><p>Delay read (0x1) or write (0x0), the delay is accessed directly (no increment or decrement) with an address corresponding to each pin, and data corresponding to the total delay.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[15:8]</p></td>
+<td><p>DELAY_ADDRESS[7:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Delay address, the range depends on the interface pins, data pins are usually at the lower range.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[4:0]</p></td>
+<td><p>DELAY_WDATA[4:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Delay write data, a value of 1 corresponds to (1/200)ns for most devices.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0019</p></td>
+<td><p>0x0064</p></td>
+<td><p>REG_DELAY_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>ADC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[9]</p></td>
+<td><p>DELAY_LOCKED</p></td>
+<td><p>RO</p></td>
+<td><p>Indicates delay locked (0x1) state. If this bit is read 0x0, delay control has failed to calibrate the elements.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[8]</p></td>
+<td><p>DELAY_STATUS</p></td>
+<td><p>RO</p></td>
+<td><p>If set, indicates busy status (access pending). The read data may not be valid if this bit is set.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[4:0]</p></td>
+<td><p>DELAY_RDATA[4:0]</p></td>
+<td><p>RO</p></td>
+<td><p>Delay read data, current delay value in the elements</p></td>
+</tr>
+<tr class="row-even"><td><p>0x001c</p></td>
+<td><p>0x0070</p></td>
+<td><p>REG_DRP_CNTRL</p></td>
+<td></td>
+<td></td>
+<td><p>ADC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[28]</p></td>
+<td><p>DRP_RWN</p></td>
+<td><p>RW</p></td>
+<td><p>DRP read (0x1) or write (0x0) select (does not include GTX lanes).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[27:16]</p></td>
+<td><p>DRP_ADDRESS[11:0]</p></td>
+<td><p>RW</p></td>
+<td><p>DRP address, designs that contain more than one DRP accessible primitives have selects based on the most significant bits (does not include GTX lanes).</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>DRP_WDATA[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>DRP write data (does not include GTX lanes).</p></td>
+</tr>
+<tr class="row-even"><td><p>0x001d</p></td>
+<td><p>0x0074</p></td>
+<td><p>REG_DRP_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>ADC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[16]</p></td>
+<td><p>DRP_STATUS</p></td>
+<td><p>RO</p></td>
+<td><p>If set indicates busy (access pending). The read data may not be valid if this bit is set (does not include GTX lanes).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>DRP_RDATA</p></td>
+<td><p>RO</p></td>
+<td><p>DRP read data (does not include GTX lanes).</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0022</p></td>
+<td><p>0x0088</p></td>
+<td><p>REG_UI_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>User Interface Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[2]</p></td>
+<td><p>UI_OVF</p></td>
+<td><p>RW1C</p></td>
+<td><p>User Interface overflow. If set, indicates an overflow occured during data transfer at the user interface (FIFO interface). Software must write a 0x1 to clear this register bit.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>UI_UNF</p></td>
+<td><p>RW1C</p></td>
+<td><p>User Interface underflow. If set, indicates an underflow occured during data transfer at the user interface (FIFO interface). Software must write a 0x1 to clear this register bit.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>UI_RESERVED</p></td>
+<td><p>RW1C</p></td>
+<td><p>Reserved for backward compatibility.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0028</p></td>
+<td><p>0x00a0</p></td>
+<td><p>REG_USR_CNTRL_1</p></td>
+<td></td>
+<td></td>
+<td><p>ADC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[7:0]</p></td>
+<td><p>USR_CHANMAX[7:0]</p></td>
+<td><p>RW</p></td>
+<td><p>This indicates the maximum number of inputs for the channel data multiplexers. User may add different processing modules post data capture as another input to this common multiplexer. NOT-APPLICABLE if ADC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0030</p></td>
+<td><p>0x00c0</p></td>
+<td><p>REG_USR_CNTRL_1</p></td>
+<td></td>
+<td></td>
+<td><p>ADC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>ADC_DP_DISABLE</p></td>
+<td><p>RO</p></td>
+<td><p>This indicates the data path disable setting of this pcore. If disabled, most of the HDL data path modules are disabled allowing an external core full access to the raw ADC data.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tue Nov 26 10:04:57 2013</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="adc-channel">
+<h3>ADC Channel<a class="headerlink" href="#adc-channel" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Address</p></td>
+<td></td>
+<td><p>Bits</p></td>
+<td><p>Name</p></td>
+<td><p>Type</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>DWORD</p></td>
+<td><p>BYTE</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>0x0100</p></td>
+<td><p>0x0400</p></td>
+<td><p>REG_CHAN_CNTRL</p></td>
+<td></td>
+<td></td>
+<td><p>ADC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[10]</p></td>
+<td><p>PN_SEL</p></td>
+<td><p>RW</p></td>
+<td><p>if set, enables an additional PN sequence monitor (shares same status signals).</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[9]</p></td>
+<td><p>IQCOR_ENB</p></td>
+<td><p>RW</p></td>
+<td><p>if set, enables IQ correction. NOT-APPLICABLE if ADC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[8]</p></td>
+<td><p>DCFILT_ENB</p></td>
+<td><p>RW</p></td>
+<td><p>if set, enables DC filter (to disable DC offset, set offset value to 0x0). NOT-APPLICABLE if ADC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[6]</p></td>
+<td><p>FORMAT_SIGNEXT</p></td>
+<td><p>RW</p></td>
+<td><p>if set, enables sign extension (applicable only in 2’s complement mode). The data is always sign extended to the nearest byte boundary. NOT-APPLICABLE if ADC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[5]</p></td>
+<td><p>FORMAT_TYPE</p></td>
+<td><p>RW</p></td>
+<td><p>Select offset binary (0x1) or 2’s complement (0x0) data type. This sets the incoming data type and is required by the post processing modules for any data conversion. NOT-APPLICABLE if ADC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[4]</p></td>
+<td><p>FORMAT_ENABLE</p></td>
+<td><p>RW</p></td>
+<td><p>Enable data format conversion (see register bits above). NOT-APPLICABLE if ADC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>PN_TYPE</p></td>
+<td><p>RW</p></td>
+<td><p>Selects PN type PN9 (0x0) or PN23 (0x1). If software is changing this bit, the OOS/ERR registers must be cleared before checking status again.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>ENABLE</p></td>
+<td><p>RW</p></td>
+<td><p>If set, enables channel. A 0x0 to 0x1 transition transfers all the control signals to the respective channel processing module. If a channel is part of a complex signal (I/Q), even channel is the master and the odd channel is the slave. Though a single control is used, both must be individually selected. NOT-APPLICABLE if ADC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0101</p></td>
+<td><p>0x0404</p></td>
+<td><p>REG_CHAN_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>ADC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[2]</p></td>
+<td><p>PN_ERR</p></td>
+<td><p>RW1C</p></td>
+<td><p>PN errors. If set, indicates spurious mismatches in sync state. This bit is cleared if OOS is set and is only indicates errors when OOS is cleared.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>PN_OOS</p></td>
+<td><p>RW1C</p></td>
+<td><p>PN Out Of Sync. If set, indicates an OOS status. OOS is set, if 64 consecutive patterns mismatch from the expected pattern. It is cleared, when 16 consecutive patterns match the expected pattern.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>OVER_RANGE</p></td>
+<td><p>RW1C</p></td>
+<td><p>If set, indicates over range. Note that over range is independent of the data path, it indicates an over range over a data transfer period. Software must first clear this bit before initiating a transfer and monitor afterwards.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0104</p></td>
+<td><p>0x0410</p></td>
+<td><p>REG_CHAN_CNTRL_1</p></td>
+<td></td>
+<td></td>
+<td><p>ADC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[31:16]</p></td>
+<td><p>DCFILT_OFFSET[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>DC removal (if equipped) offset. This is a 2’s complement number added to the incoming data to remove a known DC offset. NOT-APPLICABLE if ADC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>DCFILT_COEFF[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>DC removal filter (if equipped) coefficient. The format is 1.1.14 (sign, integer and fractional bits). NOT-APPLICABLE if ADC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0105</p></td>
+<td><p>0x0414</p></td>
+<td><p>REG_CHAN_CNTRL_2</p></td>
+<td></td>
+<td></td>
+<td><p>ADC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:16]</p></td>
+<td><p>IQCOR_COEFF_1[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>IQ correction (if equipped) coefficient. If scale &amp; offset is implemented, this is the scale value and the format is 1.1.14 (sign, integer and fractional bits). If matrix multiplication is used, this is the channel I coefficient and the format is 1.1.14 (sign, integer and fractional bits). NOT-APPLICABLE if ADC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>IQCOR_COEFF_2[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>IQ correction (if equipped) coefficient. If scale &amp; offset is implemented, this is the offset value and the format is 2’s complement. If matrix multiplication is used, this is the channel Q coefficient and the format is 1.1.14 (sign, integer and fractional bits). NOT-APPLICABLE if ADC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0108</p></td>
+<td><p>0x0420</p></td>
+<td><p>REG_CHAN_USR_CNTRL_1</p></td>
+<td></td>
+<td></td>
+<td><p>ADC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[25]</p></td>
+<td><p>USR_DATATYPE_BE</p></td>
+<td><p>RW</p></td>
+<td><p>The user data type format- if set, indicates big endian (default is little endian). NOT-APPLICABLE if ADC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[24]</p></td>
+<td><p>USR_DATATYPE_SIGNED</p></td>
+<td><p>RW</p></td>
+<td><p>The user data type format- if set, indicates signed (2’s complement) data (default is unsigned). NOT-APPLICABLE if ADC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[23:16]</p></td>
+<td><p>USR_DATATYPE_SHIFT[7:0]</p></td>
+<td><p>RW</p></td>
+<td><p>The user data type format- the amount of right shift for actual samples within the total number of bits. NOT-APPLICABLE if ADC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[15:8]</p></td>
+<td><p>USR_DATATYPE_TOTAL_BITS[7:0]</p></td>
+<td><p>RW</p></td>
+<td><p>The user data type format- number of total bits used for a sample. The total number of bits must be an integer multiple of 8 (byte aligned). NOT-APPLICABLE if ADC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[7:0]</p></td>
+<td><p>USR_DATATYPE_BITS[7:0]</p></td>
+<td><p>RW</p></td>
+<td><p>The user data type format- number of bits in a sample. This indicates the actual sample data bits. NOT-APPLICABLE if ADC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0109</p></td>
+<td><p>0x0424</p></td>
+<td><p>REG_CHAN_USR_CNTRL_2</p></td>
+<td></td>
+<td></td>
+<td><p>ADC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[31:16]</p></td>
+<td><p>USR_DECIMATION_M[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>This holds the user decimation M value of the channel that is currently being selected on the multiplexer above. The toal decimation factor is of the form M/N. NOT-APPLICABLE if ADC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>USR_DECIMATION_N[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>This holds the user decimation N value of the channel that is currently being selected on the multiplexer above. The toal decimation factor is of the form M/N. NOT-APPLICABLE if ADC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0110</p></td>
+<td><p>0x0440</p></td>
+<td><p>REG_*</p></td>
+<td></td>
+<td></td>
+<td><p>Channel 1, similar to register 0x100 to 0x10f.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0120</p></td>
+<td><p>0x0480</p></td>
+<td><p>REG_*</p></td>
+<td></td>
+<td></td>
+<td><p>Channel 2, similar to register 0x100 to 0x10f.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x01f0</p></td>
+<td><p>0x07c0</p></td>
+<td><p>REG_*</p></td>
+<td></td>
+<td></td>
+<td><p>Channel 15, similar to register 0x100 to 0x10f.</p></td>
+</tr>
+<tr class="row-even"><td><p>Tue Nov 26 10:04:57 2013</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="dac-common">
+<h3>DAC Common<a class="headerlink" href="#dac-common" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Address</p></td>
+<td></td>
+<td><p>Bits</p></td>
+<td><p>Name</p></td>
+<td><p>Type</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>DWORD</p></td>
+<td><p>BYTE</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>0x1010</p></td>
+<td><p>0x4040</p></td>
+<td><p>REG_RSTN</p></td>
+<td></td>
+<td></td>
+<td><p>DAC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>MMCM_RSTN</p></td>
+<td><p>RW</p></td>
+<td><p>MMCM reset only (required for DRP access). Reset, default is IN-RESET (0x0), software must write 0x1 to bring up the core.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>RSTN</p></td>
+<td><p>RW</p></td>
+<td><p>Reset, default is IN-RESET (0x0), software must write 0x1 to bring up the core.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x1011</p></td>
+<td><p>0x4044</p></td>
+<td><p>REG_CNTRL_1</p></td>
+<td></td>
+<td></td>
+<td><p>DAC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>ENABLE</p></td>
+<td><p>RW</p></td>
+<td><p>A 0 to 1 transition enables all the data channels.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x1012</p></td>
+<td><p>0x4048</p></td>
+<td><p>REG_CNTRL_2</p></td>
+<td></td>
+<td></td>
+<td><p>DAC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[7]</p></td>
+<td><p>PAR_TYPE</p></td>
+<td><p>RW</p></td>
+<td><p>Select parity even (0x0) or odd (0x1).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[6]</p></td>
+<td><p>PAR_ENB</p></td>
+<td><p>RW</p></td>
+<td><p>Select parity (0x1) or frame (0x0) mode.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[5]</p></td>
+<td><p>R1_MODE</p></td>
+<td><p>RW</p></td>
+<td><p>Select number of RF channels 1 (0x1) or 2 (0x0).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[4]</p></td>
+<td><p>DATA_FORMAT</p></td>
+<td><p>RW</p></td>
+<td><p>Select data format 2’s complement (0x0) or offset binary (0x1). NOT-APPLICABLE if DAC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[3:0]</p></td>
+<td><p>DATA_SEL[3:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Select dds (4’h0), sed (4’h01) or ddr (4’h02) as dac data.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x1013</p></td>
+<td><p>0x404c</p></td>
+<td><p>REG_RATECNTRL</p></td>
+<td></td>
+<td></td>
+<td><p>DAC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[7:0]</p></td>
+<td><p>RATE[7:0]</p></td>
+<td><p>RW</p></td>
+<td><p>The effective dac rate (the maximum possible rate is dependent on the interface clock). The samples are generated at 1/RATE of the interface clock.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x1014</p></td>
+<td><p>0x4050</p></td>
+<td><p>REG_FRAME</p></td>
+<td></td>
+<td></td>
+<td><p>DAC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>FRAME</p></td>
+<td><p>RW</p></td>
+<td><p>The use of frame is device specific. Usually a 0 -&gt; 1 transition generates a FRAME (1 DCI clock period) pulse on the interface.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x1015</p></td>
+<td><p>0x4054</p></td>
+<td><p>REG_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>DAC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>CLK_FREQ[31:0]</p></td>
+<td><p>RO</p></td>
+<td><p>Interface clock frequency. This is relative to the processor clock and in many cases is 100MHz. The number is represented as unsigned 16.16 format. Assuming a 100MHz processor clock the minimum is 1.523kHz and maximum is 6.554THz. The actual interface clock is CLK_FREQ * CLK_RATIO (see below). Note that the actual sampling clock may not be the same as the interface clock- software must consider device specific implementation parameters to calculate the final sampling clock.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x1016</p></td>
+<td><p>0x4058</p></td>
+<td><p>REG_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>DAC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>CLK_RATIO[31:0]</p></td>
+<td><p>RO</p></td>
+<td><p>Interface clock ratio - as a factor actual received clock. This is implementation specific and depends on any serial to parallel conversion and interface type (ddr/sdr/qdr).</p></td>
+</tr>
+<tr class="row-even"><td><p>0x1017</p></td>
+<td><p>0x405c</p></td>
+<td><p>REG_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>DAC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>STATUS</p></td>
+<td><p>RO</p></td>
+<td><p>Interface status, if set indicates no errors. If not set, there are errors, software may try resetting the cores.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x101c</p></td>
+<td><p>0x4070</p></td>
+<td><p>REG_DRP_CNTRL</p></td>
+<td></td>
+<td></td>
+<td><p>DRP Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[28]</p></td>
+<td><p>DRP_RWN</p></td>
+<td><p>RW</p></td>
+<td><p>DRP read (0x1) or write (0x0) select (does not include GTX lanes).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[27:16]</p></td>
+<td><p>DRP_ADDRESS[11:0]</p></td>
+<td><p>RW</p></td>
+<td><p>DRP address, designs that contain more than one DRP accessible primitives have selects based on the most significant bits (does not include GTX lanes).</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>DRP_WDATA[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>DRP write data (does not include GTX lanes).</p></td>
+</tr>
+<tr class="row-even"><td><p>0x101d</p></td>
+<td><p>0x4074</p></td>
+<td><p>REG_DRP_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>DAC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[16]</p></td>
+<td><p>DRP_STATUS</p></td>
+<td><p>RO</p></td>
+<td><p>If set indicates busy (access pending). The read data may not be valid if this bit is set (does not include GTX lanes).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>DRP_RDATA</p></td>
+<td><p>RO</p></td>
+<td><p>DRP read data (does not include GTX lanes).</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x1022</p></td>
+<td><p>0x4088</p></td>
+<td><p>REG_UI_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>User Interface Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>UI_OVF</p></td>
+<td><p>RW1C</p></td>
+<td><p>User Interface overflow. If set, indicates an overflow occured during data transfer at the user interface (FIFO interface). Software must write a 0x1 to clear this register bit.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>UI_UNF</p></td>
+<td><p>RW1C</p></td>
+<td><p>User Interface underflow. If set, indicates an underflow occured during data transfer at the user interface (FIFO interface). Software must write a 0x1 to clear this register bit.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x1028</p></td>
+<td><p>0x40a0</p></td>
+<td><p>REG_USR_CNTRL_1</p></td>
+<td></td>
+<td></td>
+<td><p>DAC User Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[7:0]</p></td>
+<td><p>USR_CHANMAX[7:0]</p></td>
+<td><p>RW</p></td>
+<td><p>This indicates the maximum number of inputs for the channel data multiplexers. User may add different processing modules as inputs to the dac. NOT-APPLICABLE if DAC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0030</p></td>
+<td><p>0x00c0</p></td>
+<td><p>REG_USR_CNTRL_1</p></td>
+<td></td>
+<td></td>
+<td><p>DAC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>DAC_DP_DISABLE</p></td>
+<td><p>RO</p></td>
+<td><p>This indicates the data path disable setting of this pcore. If disabled, most of the HDL data path modules are disabled allowing an external core full access to the raw DAC data.</p></td>
+</tr>
+<tr class="row-even"><td><p>Tue Nov 26 10:04:57 2013</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="dac-channel">
+<h3>DAC Channel<a class="headerlink" href="#dac-channel" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Address</p></td>
+<td></td>
+<td><p>Bits</p></td>
+<td><p>Name</p></td>
+<td><p>Type</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>DWORD</p></td>
+<td><p>BYTE</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>0x1100</p></td>
+<td><p>0x4400</p></td>
+<td><p>REG_CHAN_CNTRL_1</p></td>
+<td></td>
+<td></td>
+<td><p>DAC Channel Control &amp; Status (channel - 0)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[3:0]</p></td>
+<td><p>DDS_SCALE_1[3:0]</p></td>
+<td><p>RW</p></td>
+<td><p>The DDS scale for tone 1. The DDS for a channel consists of two tones. The final output is (channel_1 &lt;&lt; scale_1) + (channel_2 &lt;&lt; scale_2) NOT-APPLICABLE if DAC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x1101</p></td>
+<td><p>0x4404</p></td>
+<td><p>REG_CHAN_CNTRL_2</p></td>
+<td></td>
+<td></td>
+<td><p>DAC Channel Control &amp; Status (channel - 0)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:16]</p></td>
+<td><p>DDS_INIT_1[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>The DDS phase initialization for tone 1. The DDS for a channel consists of two tones. The final output is (channel_1 &lt;&lt; scale_1) + (channel_2 &lt;&lt; scale_2) NOT-APPLICABLE if DAC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>DDS_INCR_1[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>The DDS phase increment for tone 1. The DDS for a channel consists of two tones. The final output is (channel_1 &lt;&lt; scale_1) + (channel_2 &lt;&lt; scale_2) NOT-APPLICABLE if DAC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-even"><td><p>0x1102</p></td>
+<td><p>0x4408</p></td>
+<td><p>REG_CHAN_CNTRL_3</p></td>
+<td></td>
+<td></td>
+<td><p>DAC Channel Control &amp; Status (channel - 0)</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[3:0]</p></td>
+<td><p>DDS_SCALE_2[3:0]</p></td>
+<td><p>RW</p></td>
+<td><p>The DDS scale for tone 2. The DDS for a channel consists of two tones. The final output is (channel_1 &lt;&lt; scale_1) + (channel_2 &lt;&lt; scale_2) NOT-APPLICABLE if DAC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-even"><td><p>0x1103</p></td>
+<td><p>0x440c</p></td>
+<td><p>REG_CHAN_CNTRL_4</p></td>
+<td></td>
+<td></td>
+<td><p>DAC Channel Control &amp; Status (channel - 0)</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[31:16]</p></td>
+<td><p>DDS_INIT_2[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>The DDS phase initialization for tone 2. The DDS for a channel consists of two tones. The final output is (channel_1 &lt;&lt; scale_1) + (channel_2 &lt;&lt; scale_2) NOT-APPLICABLE if DAC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>DDS_INCR_2[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>The DDS phase increment for tone 2. The DDS for a channel consists of two tones. The final output is (channel_1 &lt;&lt; scale_1) + (channel_2 &lt;&lt; scale_2) NOT-APPLICABLE if DAC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x1104</p></td>
+<td><p>0x4410</p></td>
+<td><p>REG_CHAN_CNTRL_5</p></td>
+<td></td>
+<td></td>
+<td><p>DAC Channel Control &amp; Status (channel - 0)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:16]</p></td>
+<td><p>DDS_PATT_2[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>The DDS data pattern for this channel.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>DDS_PATT_1[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>The DDS data pattern for this channel.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x1105</p></td>
+<td><p>0x4414</p></td>
+<td><p>REG_CHAN_CNTRL_6</p></td>
+<td></td>
+<td></td>
+<td><p>DAC Channel Control &amp; Status (channel - 0)</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>DAC_LB_ENB</p></td>
+<td><p>RW</p></td>
+<td><p>If set enables loopback of receive data (applicable only on shared interface).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>DAC_PN_ENB</p></td>
+<td><p>RW</p></td>
+<td><p>If set enables PN sequence (DATA_SEL[3:0] must be set to 0x1).</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x1108</p></td>
+<td><p>0x4420</p></td>
+<td><p>REG_USR_CNTRL_3</p></td>
+<td></td>
+<td></td>
+<td><p>DAC Channel Control &amp; Status (channel - 0)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[25]</p></td>
+<td><p>USR_DATATYPE_BE</p></td>
+<td><p>RW</p></td>
+<td><p>The user data type format- if set, indicates big endian (default is little endian). NOT-APPLICABLE if DAC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[24]</p></td>
+<td><p>USR_DATATYPE_SIGNED</p></td>
+<td><p>RW</p></td>
+<td><p>The user data type format- if set, indicates signed (2’s complement) data (default is unsigned). NOT-APPLICABLE if DAC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[23:16]</p></td>
+<td><p>USR_DATATYPE_SHIFT[7:0]</p></td>
+<td><p>RW</p></td>
+<td><p>The user data type format- the amount of right shift for actual samples within the total number of bits. NOT-APPLICABLE if DAC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[15:8]</p></td>
+<td><p>USR_DATATYPE_TOTAL_BITS[7:0]</p></td>
+<td><p>RW</p></td>
+<td><p>The user data type format- number of total bits used for a sample. The total number of bits must be an integer multiple of 8 (byte aligned). NOT-APPLICABLE if DAC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[7:0]</p></td>
+<td><p>USR_DATATYPE_BITS[7:0]</p></td>
+<td><p>RW</p></td>
+<td><p>The user data type format- number of bits in a sample. This indicates the actual sample data bits. NOT-APPLICABLE if DAC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x1109</p></td>
+<td><p>0x4424</p></td>
+<td><p>REG_USR_CNTRL_4</p></td>
+<td></td>
+<td></td>
+<td><p>DAC Channel Control &amp; Status (channel - 0)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:16]</p></td>
+<td><p>USR_INTERPOLATION_M[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>This holds the user interpolation M value of the channel that is currently being selected on the multiplexer above. The toal interpolation factor is of the form M/N. NOT-APPLICABLE if DAC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>USR_INTERPOLATION_N[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>This holds the user interpolation N value of the channel that is currently being selected on the multiplexer above. The toal interpolation factor is of the form M/N. NOT-APPLICABLE if DAC_DP_DISABLE is set (0x1).</p></td>
+</tr>
+<tr class="row-even"><td><p>0x1110</p></td>
+<td><p>0x4440</p></td>
+<td><p>REG_*</p></td>
+<td></td>
+<td></td>
+<td><p>Channel 1, similar to registers 0x100 to 0x10f.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x1120</p></td>
+<td><p>0x4480</p></td>
+<td><p>REG_*</p></td>
+<td></td>
+<td></td>
+<td><p>Channel 2, similar to registers 0x100 to 0x10f.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x11f0</p></td>
+<td><p>0x47c0</p></td>
+<td><p>REG_*</p></td>
+<td></td>
+<td></td>
+<td><p>Channel 15, similar to registers 0x100 to 0x10f.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tue Nov 26 10:04:57 2013</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="jesd-receive">
+<h3>JESD Receive<a class="headerlink" href="#jesd-receive" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Address</p></td>
+<td></td>
+<td><p>Bits</p></td>
+<td><p>Name</p></td>
+<td><p>Type</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>DWORD</p></td>
+<td><p>BYTE</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>0x0010</p></td>
+<td><p>0x0040</p></td>
+<td><p>REG_RSTN</p></td>
+<td></td>
+<td></td>
+<td><p>JESD General Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[3]</p></td>
+<td><p>DRP_RSTN</p></td>
+<td><p>RW</p></td>
+<td><p>DRP Reset Only. Reset, default is IN-RESET (0x0), software must write a 0x1 to bring up the interface.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[2]</p></td>
+<td><p>IP_RSTN</p></td>
+<td><p>RW</p></td>
+<td><p>IP Reset Only. Reset, default is IN-RESET (0x0), software must write a 0x1 to bring up the interface.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>IP_RSTN</p></td>
+<td><p>RW</p></td>
+<td><p>Core Reset Only (non-IP). Reset, default is IN-RESET (0x0), software must write a 0x1 to bring up the interface.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>GT_RSTN</p></td>
+<td><p>RW</p></td>
+<td><p>GT Reset Only (PLL, PMA and PCS -within the GTX). Reset, default is IN-RESET (0x0), software must write a 0x1 to bring up the interface.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0011</p></td>
+<td><p>0x0044</p></td>
+<td><p>REG_SYSREF</p></td>
+<td></td>
+<td></td>
+<td><p>JESD General Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>IP_SYSREF</p></td>
+<td><p>RW</p></td>
+<td><p>A 0 to 1 transition generates a SYSREF pulse for the XIP.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>SYSREF</p></td>
+<td><p>RW</p></td>
+<td><p>A 0 to 1 transition generates a SYSREF pulse on the interface.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0012</p></td>
+<td><p>0x0048</p></td>
+<td><p>REG_SYNC</p></td>
+<td></td>
+<td></td>
+<td><p>JESD General Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>SYNC</p></td>
+<td><p>RW</p></td>
+<td><p>The SYNC output is deasserted if this bit and hardware are both set.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0014</p></td>
+<td><p>0x0050</p></td>
+<td><p>REG_RX_CNTRL_1</p></td>
+<td></td>
+<td></td>
+<td><p>JESD Receive Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[18]</p></td>
+<td><p>RX_LANESYNC_ENB</p></td>
+<td><p>RW</p></td>
+<td><p>Receive lane synchronization enable.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[17]</p></td>
+<td><p>RX_DESCR_ENB</p></td>
+<td><p>RW</p></td>
+<td><p>Receive descrambler enable.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[16]</p></td>
+<td><p>RX_SYSREF_ENB</p></td>
+<td><p>RW</p></td>
+<td><p>Receive SYESREF enable.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[15:8]</p></td>
+<td><p>RX_MFRM_FRMCNT[7:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Receive mult-frame frame count, set to one less than the number of frames in a multi-frame.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[7:0]</p></td>
+<td><p>RX_FRM_BYTECNT[7:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Receive frame byte count, set to one less than the number of bytes in a frame.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0015</p></td>
+<td><p>0x0054</p></td>
+<td><p>REG_RX_CNTRL_2</p></td>
+<td></td>
+<td></td>
+<td><p>JESD Receive Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[20]</p></td>
+<td><p>RX_ERRRPT_DISB</p></td>
+<td><p>RW</p></td>
+<td><p>Receive error reporting disable.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[19:16]</p></td>
+<td><p>RX_TESTMODE[3:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Receive test mode.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>RX_BUFDELAY[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Receive buffer delay.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0017</p></td>
+<td><p>0x005c</p></td>
+<td><p>REG_RX_LANESEL</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[7:0]</p></td>
+<td><p>RX_LANESEL[7:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Receive lane select, lane information, DRP access and eye scan are per lane and this register selects the lane.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0018</p></td>
+<td><p>0x0060</p></td>
+<td><p>REG_RX_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>RX_STATUS</p></td>
+<td><p>RO</p></td>
+<td><p>Interface status, if set indicates no errors. If not set, there are errors, software may try resetting the cores.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0019</p></td>
+<td><p>0x0064</p></td>
+<td><p>REG_RX_INIT_DATA_0</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>RX_INIT_DATA_0[31:0]</p></td>
+<td><p>RO</p></td>
+<td><p>Receive lane information (collected during ILAS phase).</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x001a</p></td>
+<td><p>0x0068</p></td>
+<td><p>REG_RX_INIT_DATA_1</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>RX_INIT_DATA_1[31:0]</p></td>
+<td><p>RO</p></td>
+<td><p>Receive lane information (collected during ILAS phase).</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x001b</p></td>
+<td><p>0x006c</p></td>
+<td><p>REG_RX_INIT_DATA_2</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>RX_INIT_DATA_2[31:0]</p></td>
+<td><p>RO</p></td>
+<td><p>Receive lane information (collected during ILAS phase).</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x001c</p></td>
+<td><p>0x0070</p></td>
+<td><p>REG_RX_INIT_DATA_2</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>RX_INIT_DATA_3[31:0]</p></td>
+<td><p>RO</p></td>
+<td><p>Receive lane information (collected during ILAS phase).</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x001d</p></td>
+<td><p>0x0074</p></td>
+<td><p>REG_RX_BUFCNT</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[7:0]</p></td>
+<td><p>RX_BUFCNT[7:0]</p></td>
+<td><p>RO</p></td>
+<td><p>Receive lane alignment buffer count.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x001e</p></td>
+<td><p>0x0078</p></td>
+<td><p>REG_RX_TEST_MFCNT</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>RX_TEST_MFCNT[31:0]</p></td>
+<td><p>RO</p></td>
+<td><p>Receive test multi-frame count.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x001f</p></td>
+<td><p>0x007c</p></td>
+<td><p>REG_RX_TEST_ILACNT</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>RX_TEST_ILACNT[31:0]</p></td>
+<td><p>RO</p></td>
+<td><p>Receive test ILAS count.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0020</p></td>
+<td><p>0x0080</p></td>
+<td><p>REG_RX_TEST_ERRCNT</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>RX_TEST_ERRCNT[31:0]</p></td>
+<td><p>RO</p></td>
+<td><p>Receive test error count.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0024</p></td>
+<td><p>0x0090</p></td>
+<td><p>REG_DRP_CNTRL</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, GT DRP Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[28]</p></td>
+<td><p>DRP_RWN</p></td>
+<td><p>RW</p></td>
+<td><p>DRP read (0x1) or write (0x0) select.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[27:16]</p></td>
+<td><p>DRP_ADDRESS[11:0]</p></td>
+<td><p>RW</p></td>
+<td><p>DRP address.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>DRP_WDATA[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>DRP write data.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0025</p></td>
+<td><p>0x0094</p></td>
+<td><p>REG_DRP_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[16]</p></td>
+<td><p>DRP_STATUS</p></td>
+<td><p>RO</p></td>
+<td><p>If set indicates busy (access pending). The read data may not be valid if this bit is set.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>DRP_RDATA</p></td>
+<td><p>RO</p></td>
+<td><p>DRP read data.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0028</p></td>
+<td><p>0x00a0</p></td>
+<td><p>REG_EYESCAN_CNTRL</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, GT Eye Scan Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[2]</p></td>
+<td><p>EYESCAN_INIT</p></td>
+<td><p>RW</p></td>
+<td><p>Eye scan init - if set, enables initialization of GT. It can be disabled on successive eye scan.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>EYESCAN_STOP</p></td>
+<td><p>RW</p></td>
+<td><p>Eye scan stop- a 0x0 to 0x1 transition terminates eye scan on the selected lane.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>EYESCAN_START</p></td>
+<td><p>RW</p></td>
+<td><p>Eye scan start- a 0x0 to 0x1 transition initiates eye scan on the selected lane. The scan might take a while, software must monitor the status.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0029</p></td>
+<td><p>0x00a4</p></td>
+<td><p>REG_EYESCAN_PRESCALE</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[4:0]</p></td>
+<td><p>EYESCAN_PRESCALE[4:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Eye scan prescale, refer to the Xilinx documentation for details - the counters are prescaled to 2<sup>(n+1)</sup>.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x002a</p></td>
+<td><p>0x00a8</p></td>
+<td><p>REG_EYESCAN_VOFFSET</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[23:16]</p></td>
+<td><p>EYESCAN_VOFFSET_STEP[7:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Eye scan vertical offset step. The value must be set in 2’s complement, refer to the Xilinx documentation for details.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[15:8]</p></td>
+<td><p>EYESCAN_VOFFSET_MAX[7:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Eye scan vertical offset maximum (+128). The value must be set in 2’s complement, refer to the Xilinx documentation for details.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[7:0]</p></td>
+<td><p>EYESCAN_VOFFSET_MIN[7:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Eye scan vertical offset minimum (-128). The value must be set in 2’s complement, refer to the Xilinx documentation for details.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x002b</p></td>
+<td><p>0x00ac</p></td>
+<td><p>REG_EYESCAN_HOFFSET_1</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[27:16]</p></td>
+<td><p>EYESCAN_HOFFSET_MAX[11:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Eye scan horizontal offset maximum. The value depends on the clock divider, as the eye scan is post CDR and comparison happens on parallel bus. The value must be set in 2’s complement, refer to the Xilinx documentation for details.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[11:0]</p></td>
+<td><p>EYESCAN_HOFFSET_MIN[11:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Eye scan horizontal offset minimum. The value depends on the clock divider, as the eye scan is post CDR and comparison happens on parallel bus. The value must be set in 2’s complement, refer to the Xilinx documentation for details.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x002c</p></td>
+<td><p>0x00b0</p></td>
+<td><p>REG_EYESCAN_HOFFSET_2</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[11:0]</p></td>
+<td><p>EYESCAN_HOFFSET_STEP[11:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Eye scan horizontal offset step. The value must be set in 2’s complement, refer to the Xilinx documentation for details.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x002d</p></td>
+<td><p>0x00b4</p></td>
+<td><p>REG_EYESCAN_DMA_STARTADDR</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>EYESCAN_DMA_STARTADDR[31:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Eye scan DMA start address. The AXI master interface writes eye scan data starting at this address. The first data written corresponds to the minimum of horizontal and vertical offsets (UT = 0).</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x002e</p></td>
+<td><p>0x00b8</p></td>
+<td><p>REG_EYESCAN_SDATA_1_0</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:16]</p></td>
+<td><p>EYESCAN_SDATA1[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Eye scan sample data mask word (1) (80bits = {4, 3, 2, 1, 0})</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>EYESCAN_SDATA0[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Eye scan sample data mask word (0) (80bits = {4, 3, 2, 1, 0})</p></td>
+</tr>
+<tr class="row-even"><td><p>0x002f</p></td>
+<td><p>0x00bc</p></td>
+<td><p>REG_EYESCAN_SDATA_3_2</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[31:16]</p></td>
+<td><p>EYESCAN_SDATA3[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Eye scan sample data mask word (3) (80bits = {4, 3, 2, 1, 0})</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>EYESCAN_SDATA2[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Eye scan sample data mask word (2) (80bits = {4, 3, 2, 1, 0})</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0030</p></td>
+<td><p>0x00c0</p></td>
+<td><p>REG_EYESCAN_SDATA_4</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>EYESCAN_SDATA4[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Eye scan sample data mask word (0) (80bits = {4, 3, 2, 1, 0})</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0031</p></td>
+<td><p>0x00c4</p></td>
+<td><p>REG_EYESCAN_QDATA_1_0</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:16]</p></td>
+<td><p>EYESCAN_QDATA1[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Eye scan qualifier data mask word (1) (80bits = {4, 3, 2, 1, 0})</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>EYESCAN_QDATA0[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Eye scan qualifier data mask word (0) (80bits = {4, 3, 2, 1, 0})</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0032</p></td>
+<td><p>0x00c8</p></td>
+<td><p>REG_EYESCAN_QDATA_3_2</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[31:16]</p></td>
+<td><p>EYESCAN_QDATA3[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Eye scan qualifier data mask word (3) (80bits = {4, 3, 2, 1, 0})</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>EYESCAN_QDATA2[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Eye scan qualifier data mask word (2) (80bits = {4, 3, 2, 1, 0})</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0033</p></td>
+<td><p>0x00cc</p></td>
+<td><p>REG_EYESCAN_QDATA_4</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>EYESCAN_QDATA4[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>Eye scan qualifier data mask word (0) (80bits = {4, 3, 2, 1, 0})</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0038</p></td>
+<td><p>0x00e0</p></td>
+<td><p>REG_EYESCAN_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>EYESCAN_DMAERR</p></td>
+<td><p>RW1C</p></td>
+<td><p>Eye scan DMA error. If set, indicates a target error on AXI bus.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>EYESCAN_STATUS</p></td>
+<td><p>RO</p></td>
+<td><p>Eye scan status. If set, indicates the eye scan is running. Software may still access the data at the destination, but it may not be complete until this bit is cleared by hardware.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0039</p></td>
+<td><p>0x00e4</p></td>
+<td><p>REG_EYESCAN_RATE</p></td>
+<td></td>
+<td></td>
+<td><p>JESD, Lane Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>EYESCAN_RATE</p></td>
+<td><p>RO</p></td>
+<td><p>Indicates eye scan rate - 0x1 (-32 to +32), 0x2 (-64 to +64), 0x4 (-128 to +128), 0x8 (-256 to +256), 0x10 (-512 to +512).</p></td>
+</tr>
+<tr class="row-even"><td><p>Tue Nov 26 10:04:57 2013</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="ddr-controller">
+<h3>DDR Controller<a class="headerlink" href="#ddr-controller" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Address</p></td>
+<td></td>
+<td><p>Bits</p></td>
+<td><p>Name</p></td>
+<td><p>Type</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>DWORD</p></td>
+<td><p>BYTE</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>0x0010</p></td>
+<td><p>0x0040</p></td>
+<td><p>REG_RSTN</p></td>
+<td></td>
+<td></td>
+<td><p>DDR Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>RSTN</p></td>
+<td><p>RW</p></td>
+<td><p>DDR controller reset, software must write 0x1 to bring up the core.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0017</p></td>
+<td><p>0x005c</p></td>
+<td><p>REG_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>DDR Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>STATUS</p></td>
+<td><p>RO</p></td>
+<td><p>Interface status, if set indicates no errors. If not set, there are errors, software may try resetting the cores.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0018</p></td>
+<td><p>0x0060</p></td>
+<td><p>REG_DDR_CNTRL</p></td>
+<td></td>
+<td></td>
+<td><p>DDR Write Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>DDR_STREAM</p></td>
+<td><p>RW</p></td>
+<td><p>If set, DDR write is in stream mode, data is continously passed to the DDR module,</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>DDR_START</p></td>
+<td><p>RW</p></td>
+<td><p>A 0x0 to 0x1 transition on this bit initiates DDR writes.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0019</p></td>
+<td><p>0x0064</p></td>
+<td><p>REG_DDR_COUNT</p></td>
+<td></td>
+<td></td>
+<td><p>DDR Write Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>DDR_COUNT[31:0]</p></td>
+<td><p>RW</p></td>
+<td><p>DDR data count, usually the final dma data count (see below) in number of bytes. The software could program the DDR controller with the same DMA settings. The count is based on bytes, however the value must be an integer multiple of the bus width. The value programmed is the actual number of bytes, hence zero is not valid.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x001a</p></td>
+<td><p>0x0068</p></td>
+<td><p>REG_DDR_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>DDR Write Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[2]</p></td>
+<td><p>DDR_OVF</p></td>
+<td><p>RW1C</p></td>
+<td><p>DDR write overflow. If set, indicates an overflow occured during data transfer. Software must write a 0x1 before starting another transfer to clear any left off status from a previous write.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>DDR_UNF</p></td>
+<td><p>RW1C</p></td>
+<td><p>DDR write underflow. If set, indicates an underflow occured during data transfer. Software must write a 0x1 before starting another transfer to clear any left off status from a previous write.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>DDR_STATUS</p></td>
+<td><p>RW1C</p></td>
+<td><p>DDR write status. If set, indicates access is pending and transfer is not complete.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x001b</p></td>
+<td><p>0x006c</p></td>
+<td><p>REG_DDR_BUSWIDTH</p></td>
+<td></td>
+<td></td>
+<td><p>DDR Write Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>DDR_BUSWIDTH</p></td>
+<td><p>RO</p></td>
+<td><p>DDR data bus width in number of bytes (the DDR count must be an integer multiple of this bus width).</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0020</p></td>
+<td><p>0x0080</p></td>
+<td><p>REG_DMA_CNTRL</p></td>
+<td></td>
+<td></td>
+<td><p>DDR Read Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>DMA_STREAM</p></td>
+<td><p>RW</p></td>
+<td><p>If set, DMA is in stream mode, data is continously passed to the DMA module, with TLAST asserted every DMA count cycles on the data bus. The ADC interface does not do the actual DMA, so the success of a stream mode (bandwidth effects) depends mainly on the DMA module.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>DMA_START</p></td>
+<td><p>RW</p></td>
+<td><p>A 0x0 to 0x1 transition on this bit initiates DMA.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0021</p></td>
+<td><p>0x0084</p></td>
+<td><p>REG_DMA_COUNT</p></td>
+<td></td>
+<td></td>
+<td><p>DDR Read Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>DMA_COUNT[31:0]</p></td>
+<td><p>RW</p></td>
+<td><p>DMA data count, mainly used to assert TLAST. Software must program the DMA controller with the same settings. The count is based on bytes (same as DMA setting), however the value must be an integer multiple of the bus width. In most cases the granularity is 4 bytes. The value programmed is the actual number of bytes, hence zero is not valid.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0022</p></td>
+<td><p>0x0088</p></td>
+<td><p>REG_DMA_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>DDR Read Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[2]</p></td>
+<td><p>DMA_OVF</p></td>
+<td><p>RW1C</p></td>
+<td><p>DMA overflow. If set, indicates an overflow occured during data transfer. Software must write a 0x1 before starting another transfer to clear any left off status from a previous DMA.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>DMA_UNF</p></td>
+<td><p>RW1C</p></td>
+<td><p>DMA underflow. If set, indicates an underflow occured during data transfer. Software must write a 0x1 before starting another transfer to clear any left off status from a previous DMA.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>DMA_STATUS</p></td>
+<td><p>RW1C</p></td>
+<td><p>DMA status. If set, indicates access is pending and transfer is not complete.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0023</p></td>
+<td><p>0x008c</p></td>
+<td><p>REG_DMA_BUSWIDTH</p></td>
+<td></td>
+<td></td>
+<td><p>DDR Read Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>DMA_BUSWIDTH</p></td>
+<td><p>RO</p></td>
+<td><p>DMA data bus width in number of bytes (the DMA count must be an integer multiple of this bus width).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tue Nov 26 10:04:57 2013</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="hdmi-transmit">
+<h3>HDMI Transmit<a class="headerlink" href="#hdmi-transmit" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Address</p></td>
+<td></td>
+<td><p>Bits</p></td>
+<td><p>Name</p></td>
+<td><p>Type</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>DWORD</p></td>
+<td><p>BYTE</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>0x0010</p></td>
+<td><p>0x0040</p></td>
+<td><p>REG_RSTN</p></td>
+<td></td>
+<td></td>
+<td><p>HDMI Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>RSTN</p></td>
+<td><p>RW</p></td>
+<td><p>Reset, a common reset is used for all the interface modules, The default is reset (0x0), software must write 0x1 to bring up the core.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0011</p></td>
+<td><p>0x0044</p></td>
+<td><p>REG_CNTRL</p></td>
+<td></td>
+<td></td>
+<td><p>HDMI Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>FULL_RANGE</p></td>
+<td><p>RW</p></td>
+<td><p>If clear (0x0), color data is limited between the values set in REG_CLIPP_MAX and REG_CLIPP_MIN registers.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>CSC_BYPASS</p></td>
+<td><p>RW</p></td>
+<td><p>If set (0x1) bypasses color space conversion (if equipped). And depending on its value, the default value of color space boundaries is set in the REG_CLIPP_MAX and REG_CLIPP_MIN registers.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0012</p></td>
+<td><p>0x0048</p></td>
+<td><p>REG_CNTRL</p></td>
+<td></td>
+<td></td>
+<td><p>HDMI Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[1:0]</p></td>
+<td><p>SOURCE_SEL</p></td>
+<td><p>RW</p></td>
+<td><p>Select the HDMI data source- register constant (0x3), incr-pattern (0x2), input (0x1) or disabled (0x0).</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0013</p></td>
+<td><p>0x004c</p></td>
+<td><p>REG_CNTRL</p></td>
+<td></td>
+<td></td>
+<td><p>HDMI Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[23:0]</p></td>
+<td><p>CONST_RGB[23:0]</p></td>
+<td><p>RW</p></td>
+<td><p>This is the RGB value transmitted, if the source is constant (see above).</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0015</p></td>
+<td><p>0x0054</p></td>
+<td><p>REG_CLK_FREQ</p></td>
+<td></td>
+<td></td>
+<td><p>HDMI Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>CLK_FREQ[31:0]</p></td>
+<td><p>RO</p></td>
+<td><p>Interface clock frequency. This is relative to the processor clock and in many cases is 100MHz. The number is represented as unsigned 16.16 format. Assuming a 100MHz processor clock the minimum is 1.523kHz and maximum is 6.554THz. The actual interface clock is CLK_FREQ * CLK_RATIO (see below). Note that the actual sampling clock may not be the same as the interface clock- software must consider device specific implementation parameters to calculate the final sampling clock.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0016</p></td>
+<td><p>0x0058</p></td>
+<td><p>REG_CLK_RATIO</p></td>
+<td></td>
+<td></td>
+<td><p>HDMI Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>CLK_RATIO[31:0]</p></td>
+<td><p>RO</p></td>
+<td><p>Interface clock ratio - as a factor actual received clock. This is implementation specific and depends on any serial to parallel conversion and interface type (ddr/sdr/qdr).</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0017</p></td>
+<td><p>0x005c</p></td>
+<td><p>REG_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>ADC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>STATUS</p></td>
+<td><p>RO</p></td>
+<td><p>Interface status, if set indicates no errors. If not set, there are errors, software may try resetting the cores.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0018</p></td>
+<td><p>0x0060</p></td>
+<td><p>REG_VDMA_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>HDMI Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>VDMA_OVF</p></td>
+<td><p>RW1C</p></td>
+<td><p>If set, indicates vdma overflow.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>VDMA_UNF</p></td>
+<td><p>RW1C</p></td>
+<td><p>If set, indicates vdma underflow.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0019</p></td>
+<td><p>0x0064</p></td>
+<td><p>REG_TPM_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>HDMI Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>HDMI_TPM_OOS</p></td>
+<td><p>RW1C</p></td>
+<td><p>If set, indicates TPM OOS at the HDMI interface.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>VDMA_TPM_OOS</p></td>
+<td><p>RW1C</p></td>
+<td><p>If set, indicates TPM OOS at the VDMA interface.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x001a</p></td>
+<td><p>0x0068</p></td>
+<td><p>REG_CLIPP_MAX</p></td>
+<td></td>
+<td></td>
+<td><p>HDMI Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[23:16]</p></td>
+<td><p>R_MAX/Cr_MAX</p></td>
+<td><p>RW</p></td>
+<td><p>Defines the maximum value for clipping the red or red-difference chroma component. Default value are 0xf0 for red-difference chroma and 0xfe for red.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[16:8]</p></td>
+<td><p>G_MAX/Y_MAX</p></td>
+<td><p>RW</p></td>
+<td><p>Defines the maximum value for clipping the green or luma component. Default values are 0xeb for luma and and 0xfe for green.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[7:0]</p></td>
+<td><p>B_MAX/Cb_MAX</p></td>
+<td><p>RW</p></td>
+<td><p>Defines the maximum value for clipping the blue or blue-difference chroma component. Default value are 0xf0 for blue-difference chroma and 0xfe for blue.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x001b</p></td>
+<td><p>0x006c</p></td>
+<td><p>REG_CLIPP_MIN</p></td>
+<td></td>
+<td></td>
+<td><p>HDMI Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[23:16]</p></td>
+<td><p>R_MIN/Cr_MIN</p></td>
+<td><p>RW</p></td>
+<td><p>Defines the minimum value for clipping the red or red-difference chroma component. Default value are 0x10 for red-difference chroma and 0x01 for red.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[16:8]</p></td>
+<td><p>G_MIN/Y_MIN</p></td>
+<td><p>RW</p></td>
+<td><p>Defines the minimum value for clipping the green or luma component. Default values are 0x10 for luma and and 0x01 for green.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[7:0]</p></td>
+<td><p>B_MIN/Cb_MIN</p></td>
+<td><p>RW</p></td>
+<td><p>Defines the minimum value for clipping the blue or blue-difference chroma component. Default value are 0x10 for blue-difference chroma and 0x01 for blue.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0100</p></td>
+<td><p>0x0400</p></td>
+<td><p>REG_HSYNC_1</p></td>
+<td></td>
+<td></td>
+<td><p>HDMI Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[31:16]</p></td>
+<td><p>H_LINE_ACTIVE[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>This is the horizontal line active pixel width (active resolution length). e.g. 1920 (1080p)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>H_LINE_WIDTH[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>This is the horizontal line width (no. of pixel clocks per line). e.g. 2200 (1080p)</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0101</p></td>
+<td><p>0x0404</p></td>
+<td><p>REG_HSYNC_2</p></td>
+<td></td>
+<td></td>
+<td><p>HDMI Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>H_SYNC_WIDTH[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>This is the horizontal sync width (no. of pixel clocks). e.g. 44 (1080p)</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0102</p></td>
+<td><p>0x0408</p></td>
+<td><p>REG_HSYNC_3</p></td>
+<td></td>
+<td></td>
+<td><p>HDMI Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:16]</p></td>
+<td><p>H_ENABLE_MAX[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>This is the horizontal data enable maximum. It is the sum of H_ENABLE_MIN and the active pixel width. e.g. 2112 (192 + 1920) (1080p)</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>H_ENABLE_MIN[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>This is the horizontal data enable minimum. It is the sum of horizontal back porch (number of clock cycles between the falling edge of HSYNC to the rising edge of DE) and the sync width. e.g. 192 (44 + 148) (1080p)</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0110</p></td>
+<td><p>0x0440</p></td>
+<td><p>REG_VSYNC_1</p></td>
+<td></td>
+<td></td>
+<td><p>HDMI Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[31:16]</p></td>
+<td><p>V_FRAME_ACTIVE[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>This is the vertical frame active line width (active resolution height). e.g. 1080 (1080p)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>V_FRAME_WIDTH[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>This is the vertical frame width (no. of lines per frame). e.g. 1125 (1080p)</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0111</p></td>
+<td><p>0x0444</p></td>
+<td><p>REG_VSYNC_2</p></td>
+<td></td>
+<td></td>
+<td><p>HDMI Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>V_SYNC_WIDTH[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>This is the vertical sync width (no. of lines). e.g. 5 (1080p)</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0112</p></td>
+<td><p>0x0448</p></td>
+<td><p>REG_VSYNC_3</p></td>
+<td></td>
+<td></td>
+<td><p>HDMI Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:16]</p></td>
+<td><p>V_ENABLE_MAX[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>This is the vertical data enable maximum. It is the sum of V_ENABLE_MIN and the active pixel height. e.g. 1121 (41 + 1080) (1080p)</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>V_ENABLE_MIN[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>This is the vertical data enable minimum. It is the sum of vertical back porch (number of lines between the falling edge of VSYNC to the rising edge of DE) and the sync width. e.g. 41 (36 + 5) (1080p)</p></td>
+</tr>
+<tr class="row-even"><td><p>Wed Apr 13 17:59:19 2016</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="clock-generator">
+<h3>Clock Generator<a class="headerlink" href="#clock-generator" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Address</p></td>
+<td></td>
+<td><p>Bits</p></td>
+<td><p>Name</p></td>
+<td><p>Type</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>DWORD</p></td>
+<td><p>BYTE</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>0x0010</p></td>
+<td><p>0x0040</p></td>
+<td><p>REG_RSTN</p></td>
+<td></td>
+<td></td>
+<td><p>Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>MMCM_RSTN</p></td>
+<td><p>RW</p></td>
+<td><p>MMCM reset (required for DRP access). Reset, default is IN-RESET (0x0), software must write 0x1 to bring up the core.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>RSTN</p></td>
+<td><p>RW</p></td>
+<td><p>Reset, default is IN-RESET (0x0), software must write 0x1 to bring up the core.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0017</p></td>
+<td><p>0x005c</p></td>
+<td><p>REG_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>ADC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>STATUS</p></td>
+<td><p>RO</p></td>
+<td><p>Interface status, if set indicates no errors. If not set, there are errors, software may try resetting the cores.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x001c</p></td>
+<td><p>0x0070</p></td>
+<td><p>REG_DRP_CNTRL</p></td>
+<td></td>
+<td></td>
+<td><p>ADC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[28]</p></td>
+<td><p>DRP_RWN</p></td>
+<td><p>RW</p></td>
+<td><p>DRP read (0x1) or write (0x0) select (does not include GTX lanes).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[27:16]</p></td>
+<td><p>DRP_ADDRESS[11:0]</p></td>
+<td><p>RW</p></td>
+<td><p>DRP address, designs that contain more than one DRP accessible primitives have selects based on the most significant bits (does not include GTX lanes).</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>DRP_WDATA[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>DRP write data (does not include GTX lanes).</p></td>
+</tr>
+<tr class="row-even"><td><p>0x001d</p></td>
+<td><p>0x0074</p></td>
+<td><p>REG_DRP_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>ADC Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[16]</p></td>
+<td><p>DRP_STATUS</p></td>
+<td><p>RO</p></td>
+<td><p>If set indicates busy (access pending). The read data may not be valid if this bit is set (does not include GTX lanes).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>DRP_RDATA</p></td>
+<td><p>RO</p></td>
+<td><p>DRP read data (does not include GTX lanes).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tue Nov 26 10:04:57 2013</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="fft-common">
+<h3>FFT Common<a class="headerlink" href="#fft-common" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Address</p></td>
+<td></td>
+<td><p>Bits</p></td>
+<td><p>Name</p></td>
+<td><p>Type</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>DWORD</p></td>
+<td><p>BYTE</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>0x0010</p></td>
+<td><p>0x0040</p></td>
+<td><p>REG_RSTN</p></td>
+<td></td>
+<td></td>
+<td><p>FFT Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>RSTN</p></td>
+<td><p>RW</p></td>
+<td><p>Reset, default is IN-RESET (0x0), software must write 0x1 to bring up the core.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0011</p></td>
+<td><p>0x0044</p></td>
+<td><p>REG_CNTRL</p></td>
+<td></td>
+<td></td>
+<td><p>FFT Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>CFG_DATA[31:0]</p></td>
+<td><p>RW</p></td>
+<td><p>The configuration data is passed as it is to the FFT core. The format is dependent on the Xilinx’s IP core.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0012</p></td>
+<td><p>0x0048</p></td>
+<td><p>REG_CNTRL</p></td>
+<td></td>
+<td></td>
+<td><p>FFT Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[16]</p></td>
+<td><p>ENABLE</p></td>
+<td><p>RW</p></td>
+<td><p>The H. window enable (requires 0-&gt;1 transition).</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[15:0]</p></td>
+<td><p>INCR[15:0]</p></td>
+<td><p>RW</p></td>
+<td><p>This is the window phase increment function - cos(phase).</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0017</p></td>
+<td><p>0x005c</p></td>
+<td><p>REG_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>FFT Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>STATUS</p></td>
+<td><p>RO</p></td>
+<td><p>Interface status, if set indicates no errors. If not set, there are errors, software may try resetting the cores.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0018</p></td>
+<td><p>0x0060</p></td>
+<td><p>REG_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>FFT Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[19:0]</p></td>
+<td><p>STATUS</p></td>
+<td><p>RW1C</p></td>
+<td><p>The FFT status is passed to the software through this register. The fields are controlled by the Xilinx’s IP core.</p></td>
+</tr>
+<tr class="row-even"><td><p>Tue Nov 26 10:04:57 2013</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="axis-receive">
+<h3>AXIS Receive<a class="headerlink" href="#axis-receive" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Address</p></td>
+<td></td>
+<td><p>Bits</p></td>
+<td><p>Name</p></td>
+<td><p>Type</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>DWORD</p></td>
+<td><p>BYTE</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>0x0010</p></td>
+<td><p>0x0040</p></td>
+<td><p>REG_RSTN</p></td>
+<td></td>
+<td></td>
+<td><p>AXIS Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>RSTN</p></td>
+<td><p>RW</p></td>
+<td><p>Reset, default is IN-RESET (0x0), software must write 0x1 to bring up the core.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0020</p></td>
+<td><p>0x0080</p></td>
+<td><p>REG_DMA_CNTRL</p></td>
+<td></td>
+<td></td>
+<td><p>AXIS Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>DMA_STREAM</p></td>
+<td><p>RW</p></td>
+<td><p>If set, DMA is in stream mode, data is continously passed to the DMA module, with TLAST asserted every DMA count cycles on the data bus. The ADC interface does not do the actual DMA, so the success of a stream mode (bandwidth effects) depends mainly on the DMA module.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>DMA_START</p></td>
+<td><p>RW</p></td>
+<td><p>A 0x0 to 0x1 transition on this bit initiates DMA.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0021</p></td>
+<td><p>0x0084</p></td>
+<td><p>REG_DMA_COUNT</p></td>
+<td></td>
+<td></td>
+<td><p>AXIS Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>DMA_COUNT[31:0]</p></td>
+<td><p>RW</p></td>
+<td><p>DMA data count, mainly used to assert TLAST. Software must program the DMA controller with the same settings. The count is based on bytes (same as DMA setting), however the value must be an integer multiple of the bus width. In most cases the granularity is 4 bytes. The value programmed is the actual number of bytes, hence zero is not valid.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x0022</p></td>
+<td><p>0x0088</p></td>
+<td><p>REG_DMA_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>AXIS Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[2]</p></td>
+<td><p>DMA_OVF</p></td>
+<td><p>RW1C</p></td>
+<td><p>DMA overflow. If set, indicates an overflow occured during data transfer. Software must write a 0x1 before starting another transfer to clear any left off status from a previous DMA.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>DMA_STATUS</p></td>
+<td><p>RO</p></td>
+<td><p>DMA status. If set, indicates access is pending and transfer is not complete. NOT-APPLICABLE (Moved to new AXIS pcore).</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x0023</p></td>
+<td><p>0x008c</p></td>
+<td><p>REG_DMA_BUSWIDTH</p></td>
+<td></td>
+<td></td>
+<td><p>AXIS Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>DMA_BUSWIDTH</p></td>
+<td><p>RO</p></td>
+<td><p>DMA data bus width in number of bytes (the DMA count must be an integer multiple of this bus width).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tue Nov 26 10:04:57 2013</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="axis-transmit">
+<h3>AXIS Transmit<a class="headerlink" href="#axis-transmit" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Address</p></td>
+<td></td>
+<td><p>Bits</p></td>
+<td><p>Name</p></td>
+<td><p>Type</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>DWORD</p></td>
+<td><p>BYTE</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>0x1010</p></td>
+<td><p>0x4040</p></td>
+<td><p>REG_RSTN</p></td>
+<td></td>
+<td></td>
+<td><p>AXIS Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>RSTN</p></td>
+<td><p>RW</p></td>
+<td><p>Reset, default is IN-RESET (0x0), software must write 0x1 to bring up the core.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x1021</p></td>
+<td><p>0x4084</p></td>
+<td><p>REG_VDMA_FRMCNT</p></td>
+<td></td>
+<td></td>
+<td><p>VDMA Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>VDMA_FRMCNT[31:0]</p></td>
+<td><p>RW</p></td>
+<td><p>This register controls the frame sync assertion to VDMA. This can be set to any count greater than the actual frame length (in bytes).</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x1022</p></td>
+<td><p>0x4088</p></td>
+<td><p>REG_VDMA_STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>VDMA Interface Control &amp; Status</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>VDMA_OVF</p></td>
+<td><p>RW1C</p></td>
+<td><p>VDMA overflow. If set, indicates an overflow occured during data transfer. Software must write a 0x1 before starting another transfer to clear any left off status from a previous VDMA.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>VDMA_UNF</p></td>
+<td><p>RW1C</p></td>
+<td><p>VDMA underflow. If set, indicates an underflow occured during data transfer. Software must write a 0x1 before starting another transfer to clear any left off status from a previous VDMA.</p></td>
+</tr>
+<tr class="row-even"><td><p>Tue Nov 26 10:04:57 2013</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="axi-dmac">
+<h3>AXI DMAC<a class="headerlink" href="#axi-dmac" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Address</p></td>
+<td></td>
+<td><p>Bits</p></td>
+<td><p>Name</p></td>
+<td><p>Type</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>DWORD</p></td>
+<td><p>BYTE</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>0x020</p></td>
+<td><p>0x0080</p></td>
+<td><p>IRQ_MASK</p></td>
+<td></td>
+<td></td>
+<td><p>AXI DMA Controller</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>END_OF_TRANSFER</p></td>
+<td><p>RW</p></td>
+<td><p>Masks the END_OF_TRANSFER IRQ.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>START_OF_TRANSFER</p></td>
+<td><p>RW</p></td>
+<td><p>Masks the START_OF_TRANSFER IRQ.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x021</p></td>
+<td><p>0x0084</p></td>
+<td><p>IRQ_PENDING</p></td>
+<td></td>
+<td></td>
+<td><p>AXI DMA Controller</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>END_OF_TRANSFER</p></td>
+<td><p>RW1C</p></td>
+<td><p>This bit will be asserted if a transfer has been completed and the END_OF_TRANSFER bit in the IRQ_MASK register is not set. Either if all bytes have been transferred or an error occurred during the transfer.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>START_OF_TRANSFER</p></td>
+<td><p>RW1C</p></td>
+<td><p>This bit will be asserted if a transfer has been successfully queued and it is possible to queue the next transfer and the START_OF_TRANSFER bit in the IRQ_MASK register is not set.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x022</p></td>
+<td><p>0x0088</p></td>
+<td><p>IRQ_SOURCE</p></td>
+<td></td>
+<td></td>
+<td><p>AXI DMA Controller</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>END_OF_TRANSFER</p></td>
+<td><p>RW1C</p></td>
+<td><p>This bit will be asserted if a transfer has been completed. Either if all bytes have been transferred or an error occurred during the transfer.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>START_OF_TRANSFER</p></td>
+<td><p>RW1C</p></td>
+<td><p>This bit will be asserted if a transfer has been successfully queued and it is possible to queue the next transfer.</p></td>
+</tr>
+<tr class="row-even"><td><p>0x100</p></td>
+<td><p>0x0400</p></td>
+<td><p>CONTROL</p></td>
+<td></td>
+<td></td>
+<td><p>AXI DMA Controller</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>PAUSE</p></td>
+<td><p>RW</p></td>
+<td><p>When set to 1 the currently active transfer is paused. It will be resumed once the bit is cleared again.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>ENABLE</p></td>
+<td><p>RW</p></td>
+<td><p>When set to 1 the DMA channel is enabled.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x101</p></td>
+<td><p>0x0404</p></td>
+<td><p>TRANSFER_ID</p></td>
+<td></td>
+<td></td>
+<td><p>AXI DMA Controller</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[4:0]</p></td>
+<td><p>TRANSFER_ID</p></td>
+<td><p>RO</p></td>
+<td><p>This register contains the ID of the next transfer. The ID is generated by the DMAC and after the transfer has been started can be used to check if the transfer has finished by checking the corresponding bit in the TRANSFER_DONE register. The contents of this register is only valid if TRANSFER_START is 0.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x102</p></td>
+<td><p>0x0408</p></td>
+<td><p>TRANSFER_START</p></td>
+<td></td>
+<td></td>
+<td><p>AXI DMA Controller</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>TRANSFER_START</p></td>
+<td><p>RW</p></td>
+<td><p>Writing a 1 to this register queues a new transfer. The bit transitions back to 0 once the transfer has been successfully queued or the DMA is channel is disabled. Writing a 0 to this register has no effect.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x103</p></td>
+<td><p>0x040c</p></td>
+<td><p>FLAGS</p></td>
+<td></td>
+<td></td>
+<td><p>AXI DMA Controller</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[0]</p></td>
+<td><p>CYCLIC</p></td>
+<td><p>RW</p></td>
+<td><p>Setting this field to 1 puts the DMA transfer into cyclic mode. In cyclic mode the controller will re-start a transfer again once it has finished. In cyclic mode no end-of-transfer interrupts will be generated.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x104</p></td>
+<td><p>0x0410</p></td>
+<td><p>DEST_ADDRESS</p></td>
+<td></td>
+<td></td>
+<td><p>AXI DMA Controller</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>DEST_ADDRESS</p></td>
+<td><p>RW</p></td>
+<td><p>This register contains the destination address of the transfer. The address needs to be aligned to the bus width. This register is only valid if the DMA channel has been configured for write to memory support.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x105</p></td>
+<td><p>0x0414</p></td>
+<td><p>SRC_ADDRESS</p></td>
+<td></td>
+<td></td>
+<td><p>AXI DMA Controller</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>SRC_ADDRESS</p></td>
+<td><p>RW</p></td>
+<td><p>This register contains the source address of the transfer. The address needs to be aligned to the bus width. This register is only valid if the DMA channel has been configured for read from memory support.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x106</p></td>
+<td><p>0x0418</p></td>
+<td><p>X_LENGTH</p></td>
+<td></td>
+<td></td>
+<td><p>AXI DMA Controller</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[23:0]</p></td>
+<td><p>X_LENGTH</p></td>
+<td><p>RW</p></td>
+<td><p>Number of bytes to transfer - 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x107</p></td>
+<td><p>0x041c</p></td>
+<td><p>Y_LENGTH</p></td>
+<td></td>
+<td></td>
+<td><p>AXI DMA Controller</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[23:0]</p></td>
+<td><p>Y_LENGTH</p></td>
+<td><p>RW</p></td>
+<td><p>Number of rows to transfer - 1. Note, this field is only valid if the DMA channel has been configured with 2D transfer support.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x108</p></td>
+<td><p>0x0420</p></td>
+<td><p>DEST_STRIDE</p></td>
+<td></td>
+<td></td>
+<td><p>AXI DMA Controller</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[23:0]</p></td>
+<td><p>DEST_STRIDE</p></td>
+<td><p>RW</p></td>
+<td><p>The number of bytes between the start of one row and the next row for the destination address. Needs to be aligned to the bus width. Note, this field is only valid if the DMA channel has been configured with 2D transfer support and write to memory support.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x109</p></td>
+<td><p>0x0424</p></td>
+<td><p>SRC_STRIDE</p></td>
+<td></td>
+<td></td>
+<td><p>AXI DMA Controller</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[23:0]</p></td>
+<td><p>SRC_STRIDE</p></td>
+<td><p>RW</p></td>
+<td><p>The number of bytes between the start of one row and the next row for the source address. Needs to be aligned to the bus width. Note, this field is only valid if the DMA channel has been configured with 2D transfer and read from memory support.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x10a</p></td>
+<td><p>0x0428</p></td>
+<td><p>TRANSFER_DONE</p></td>
+<td></td>
+<td></td>
+<td><p>AXI DMA Controller</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[X]</p></td>
+<td><p>TRANSFER_DONE</p></td>
+<td><p>RO</p></td>
+<td><p>If bit X is set in this register the transfer with ID X has been completed. The bit will automatically be cleared when a new transfer with this ID is queued and will be set when the transfer has been completed.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x10b</p></td>
+<td><p>0x042c</p></td>
+<td><p>ACTIVE_TRANSFER_ID</p></td>
+<td></td>
+<td></td>
+<td><p>AXI DMA Controller</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[4:0]</p></td>
+<td><p>ACTIVE_TRANSFER_ID</p></td>
+<td><p>RO</p></td>
+<td><p>ID of the currently active transfer. When no transfer is active this register will be equal to the TRANSFER_ID register.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x10c</p></td>
+<td><p>0x0430</p></td>
+<td><p>STATUS</p></td>
+<td></td>
+<td></td>
+<td><p>AXI DMA Controller</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>RESERVED</p></td>
+<td><p>RO</p></td>
+<td><p>This register is reserved for future usage. Reading it will always return 0.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x10d</p></td>
+<td><p>0x0434</p></td>
+<td><p>CURRENT_DEST_ADDRESS</p></td>
+<td></td>
+<td></td>
+<td><p>AXI DMA Controller</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>CURRENT_DEST_ADDRESS</p></td>
+<td><p>RO</p></td>
+<td><p>Address to which the next data word is written to. This register is only valid if the DMA channel has been configured for write to memory support.</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x10e</p></td>
+<td><p>0x0438</p></td>
+<td><p>CURRENT_SRC_ADDRESS</p></td>
+<td></td>
+<td></td>
+<td><p>AXI DMA Controller</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>[31:0]</p></td>
+<td><p>CURRENT_SRC_ADDRESS</p></td>
+<td><p>RO</p></td>
+<td><p>Address form which the next data word is read. This register is only valid if the DMA channel has been configured for read from memory support.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tue Aug 19 09:27:29 2014</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

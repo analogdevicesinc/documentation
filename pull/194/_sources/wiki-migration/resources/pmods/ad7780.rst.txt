@@ -1,0 +1,20 @@
+The :adi:`AD7780` is a complete low power front-end solution for bridge sensor products, including weigh scales, strain gages, and pressure sensors. It contains a precision, low power, 24-bit sigma-delta (Σ-Δ) ADC; an on-chip, low noise programmable gain amplifier (PGA); and an on-chip oscillator.
+
+Consuming only 330 μA, the :adi:`AD7780` is particularly suitable for portable or battery-operated products where very low power is required. The :adi:`AD7780` also has a power-down mode that allows the user to switch off the power to the bridge sensor and power down the :adi:`AD7780` when not converting, thus increasing the battery life of the product.
+
+For ease of use, all the features of the :adi:`AD7780` are controlled by dedicated pins. Each time a data read occurs, eight status bits are appended to the 24-bit conversion. These status bits contain a pattern sequence that can be used to confirm the validity of the serial transfer.
+
+The on-chip PGA has a gain of 1 or 128, supporting a full-scale differential input of ±5 V or ±39 mV. The device has two filter response options. The filter response at the 16.7 Hz update rate provides superior dynamic performance. The settling time is 120 ms at this update rate. At the 10 Hz update rate, the filter response provides greater than −45 dB of stop-band attenuation. In load cell applications, this stop-band rejection is useful to reject low frequency mechanical vibrations of the load cell. The settling time is 300 ms at this update rate. Simultaneous 50 Hz/60 Hz rejection occurs at both the 10 Hz and 16.7 Hz update rates.
+
+The :adi:`AD7780` operates with a power supply from 2.7 V to 5.25 V. It is available in a narrow body, 14-lead SOIC package and a 16-lead TSSOP package.
+
+Applications
+============
+
+-  Weigh scales
+-  Pressure Measurement
+-  Industrial Process Control
+-  Portable instrumentation
+
+.. image:: https://wiki.analog.com/_media/resources/pmods/ad7780_pmod_ad3.jpg
+   :align: center

@@ -1,0 +1,100 @@
+EVALUATING THE AD9625 ANALOG-TO-DIGITAL CONVERTER
+=================================================
+
+--------------
+
+INTRODUCTION
+============
+
+This user guide describes the AD9625 evaluation board, AD9625-2.5EBZ, which provides all of the support circuitry required to operate this part in the various modes and configurations. The application software used to interface with the device is also described.
+
+The AD9625 data sheet provides additional information and should be consulted when using the evaluation board. All documents and software tools are available at www.analog.com/hsadcevalboard. For additional information or questions, send an email to highspeed.converters@analog.com.
+
+The AD9625 is a 12-bit ADC with sampling speeds of up to 2500 MSPS. It is designed to support wideband applications where high sample rates, small size, wide bandwidth and versatility are desired. The ADC core features a multistage, differential pipelined architecture with integrated output error correction logic. This reference design includes the device data capture board via the JESD204B serial interface and the SPI interface. The samples are written to the internal memory on the FPGA capture board. It allows programming the device and monitoring its internal registers via SPI.
+
+FEATURES
+========
+
+-  Full featured evaluation board for the AD9625
+-  SPI interface for setup and control
+-  Balun input drive option
+-  On-board Power Supply options: Switcher only, Switcher + LC Filter, Switcher + LDO regulator
+-  VisualAnalog® and SPI controller software interfaces
+
+|image1|
+
+.. container:: centeralign
+
+   *Figure 1. AD9625 Evaluation Board Connection—*\ :adi:`AD9625-2.5EBZ <AD9625>` *(on Left) and* :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` *(on Right)*
+
+
+REQUIRED HARDWARE
+=================
+
+-  AC to 12V DC power supply
+-  Analog signal source, anti-aliasing filter and SMA cable.
+-  Analog Clock source and SMA cable.
+-  PC running Windows
+-  USB 2.0 cable
+-  AD9625 Evaluation Board
+-  HSC-ADC-EVALEZ FPGA Based Data Capture Board
+
+DESIGN AND INTEGRATION FILES
+============================
+
+-  Schematics:
+
+   -  RevA: `9625ce04c1_sch.pdf <https://wiki.analog.com/_media/resources/eval/9625ce04c1_sch.pdf>`_
+   -  RevB: `ad9625_demo_board_revb.pdf <https://wiki.analog.com/_media/resources/eval/user-guides/ad9625/ad9625_demo_board_revb.pdf>`_
+
+-  Board File:
+
+   -  RevA: `9625ce04c1-1-24.zip <https://wiki.analog.com/_media/resources/eval/9625ce04c1-1-24.zip>`_
+   -  RevB: `ad9625_board_layout_revb\_.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad9625/ad9625_board_layout_revb_.zip>`_
+
+-  BOM:
+
+   -  RevA: `9625CE04C1_BOM-NEW04222014.xls <https://wiki.analog.com/_media/resources/9625CE04C1_BOM-NEW04222014.xls>`_
+   -  RevB: `ad9625_board_bom_revb\_.xls <https://wiki.analog.com/_media/eval/ad9625_board_bom_revb_.xls>`_
+
+-  Analog Input S-Parameter Model, `AD9625_input_model.zip <https://wiki.analog.com/_media/resources/AD9625_input_model.zip>`_
+
+HELPFUL DOCUMENTS
+=================
+
+-  AD9625 data sheet http://www.analog.com/AD9625
+-  AD9625 Evaluation Board "Quick Start User Guide":
+
+   -  RevA: `quickstartguide_ad9625_2p5.docx <https://wiki.analog.com/_media/resources/quick-start/ quickstartguide_ad9625_2p5.docx>`_
+   -  RevB: `quickstartguide_ad9625_2p5_revb\_.docx <https://wiki.analog.com/_media/resources/eval/user-guides/ad9625/quickstartguide_ad9625_2p5_revb_.docx>`_
+
+-   \* High Speed ADC Capture Evaluation Kit Rev E (HSC-ADC-EVALEZ) :doc:`/wiki-migration/resources/eval/hsc-adc-evale`
+-  :adi:`AN-905 Application Note <an-905>`, *VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*
+-  :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*
+-  :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*
+-  :adi:`AN-835 Application Note <an-835>`, *Understanding ADC Testing and Evaluation*
+-  Power by Linear Journal: "Silent Switcher uModule Regulators Quietly Power GSPS Sampling ADC in Half the Space" :adi:`media/en/technical-documentation/lt-journal-article/PbLJournal-V1N3-2018-08-RevA`.pdf
+
+EASY START Steps
+================
+
+**Important Note**\ Administrative rights for the Windows operating systems are needed during the entire software installation procedure. Completion of every step before reverting to a normal user mode is recommended.
+
+1. Download and Install VisualAnalog. For the latest updates to the software, check the Analog Devices website at :adi:`High Speed ADC Eval Boards <hsadcevalboard>`.
+
+2. Connect the ADC evaluation board to the ADC capture board. Insert the 12V wallwart adapter to the ADC capture board. The ADC capture board will provide power to the ADC evaluation board through the FMC connector.
+
+3. Connect the provided USB cable to the ADC capture board and to an available USB port on the computer.
+
+4. The ADC capture board is supplied with a wall mount switching power supply. Connect the supply end to an ac wall outlet rated for 100 Vac to 240 Vac at 47 Hz to 63 Hz. The other end is terminated with a plug that connects to the PCB at P1301. The supply is fused and conditioned before connecting to the regulators that supply the proper bias to the entire HSC-ADC-EVALEZ capture board.
+
+5. Once the USB cable is connected to both the computer and the HSC-ADC-EVALEZ board, and power is applied, the USB driver starts to install. The Found New Hardware Wizard opens and prompts you through the automated install process.
+
+6. (Optional) Verify in the Windows device manager that Analog Devices HADV6-FMC is listed under the USB hardware.
+
+7. Make sure the evaluation boards are powered on before connecting the analog input and clock. Connect the appropriate analog input (which should be filtered with a band-pass filter) and low jitter clock signal.
+
+| 8. Refer to the VisualAnalog User Manual at :adi:`High Speed ADC Eval Boards <hsadcevalboard>` for detailed software operating instructions.
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9625/ad9625_board_with_capture_board.png
+   :width: 900px

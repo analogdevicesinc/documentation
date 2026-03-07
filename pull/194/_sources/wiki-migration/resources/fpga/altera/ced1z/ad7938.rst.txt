@@ -1,0 +1,668 @@
+CED1Z FPGA Project for AD7938 with Nios driver
+==============================================
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-AD7938CBZ <AD7938>` evaluation board together with the :adi:`EVAL-CED Converter Evaluation and Development (CED) Board <EVAL-CED>`, the Nios II Embedded Development Suite (EDS) and the `Micrium µC-Probe <https://www.micrium.com/ucprobe/about/>`_ run-time monitoring tool. Below is presented a picture of the EVAL-AD7938 Evaluation Board with the CED1 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/img_0024.png
+   :alt: img_0024.png
+   :align: center
+   :width: 500px
+
+The CED1Z board is intended for use in evaluation, demonstration and development of systems using Analog Devices precision converters. It provides the necessary communications between the converter and the PC, programming or controlling the device, transmitting or receiving data over a USB link.
+
+The :adi:`AD7938` is a 12-bit high speed, low power, successive approximation (SAR) analog-to-digital converter (ADC). The part operates from a single 2.7 V to 5.25 V power supply and feature throughput rates up to 1.5 MSPS. The part contains a low noise, wide bandwidth, differential track-and-hold amplifier that can handle input frequencies up to 50 MHz. The AD7938 features eight analog input channels with a channel sequencer that allows a preprogrammed selection of channels to be converted sequentially. The part can operatewith either single-ended, fully differential, or pseudodifferential analog inputs. The conversion process and data acquisition are controlled using standard control inputs that allow easy interfacing with microprocessors and DSPs. The input signal is sampled on the falling edge of CONVST and the conversion is also initiated at this point. The AD7938 has an accurate on-chip 2.5 V reference that can be used as the reference source for the analog-to-digital conversion. Alternatively, this pin can be overdriven to provide an external reference. This part uses advanced design techniques to achieve very low power dissipation at high throughput rates. It also features flexible power management options. An on-chip control register allows the user to set up different operating conditions, including analog input range and configuration, output coding, power management, and channel sequencing.
+
+The **EVAL-AD7938CBZ** is a fully featured evaluation kit for the AD7938. This board operates in stand alone mode or in conjunction with the Converter Evaluation and Development board, EVAL-CED1Z . When operated with the Converter Evaluation and Development board, software is provided enabling the user to perform detailed analysis of the ADC's performance.
+
+More information
+----------------
+
+-  :adi:`AD7938 Product Info <AD7938>` - pricing, samples, datasheet
+-  :adi:`EVAL-AD7938CBZ evaluation board user guide </static/imported-files/eval_boards/17099365EVAL_AD7938CB_AD7939CB_AD7938_6CB.pdf>`
+-  `Nios II Embedded Development Suite (EDS) <http://www.altera.com/devices/processor/nios2>`_
+-  `Micrium uC-Probe v2.5 <https://www.micrium.com/ucprobe/about/>`_
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Hardware Items
+--------------
+
+Below is presented the list of required hardware items:
+
+-  Analog Devices :adi:`EVAL-CED Converter Evaluation and Development (CED) Board <EVAL-CED>`
+-  `Terasic USB Blaster <http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=46>`_
+-  **EVAL-AD7938CBZ** evaluation board
+-  Intel Pentium III or compatible Windows PC, running at 866MHz or faster, with a minimum of 512MB of system memory
+
+Software Tools
+--------------
+
+Below is presented the list of required software tools:
+
+-  `Quartus II Web Edition <http://www.altera.com/products/software/quartus-ii/web-edition/qts-we-index.html>`_ design software v11.0
+-  `Nios II EDS <https://www.altera.com/download/software/nios-ii>`_ v11.0
+-  `uC-Probe v2.5 <https://www.micrium.com/ucprobe/about/>`_ run-time monitoring tool
+
+The **Quartus II** design software and the **Nios II EDS** is available via the Altera Complete Design Suite DVD or by downloading from the web.
+
+The **Micrium uC/Probe Trial** version is available via download from the web at http://micrium.com/download/Micrium-uC-Probe-Setup-Trial.exe. **Note:** After installation add to the “Path” system variable the entry "*%QUARTUS_ROOTDIR%\\bin\\*\ “ on the third position in the list.
+
+Downloads
+---------
+
+-  `Evaluation Project Files <https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ad7938_evalboard.zip>`_
+
+Extract the Lab Files
+---------------------
+
+Create a folder called “\ **ADIEvalBoard**\ ” on your PC and extract the **ad7938_evalboard.zip** archive to this folder. Make sure that there are **NO SPACES** in the directory path. After extracting the archive the following folders should be present in the **ADIEvalBoard** folder: **FPGA**, **Hdl**, **NiosCpu**, **Software**, **ucProbe**.
+
++------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Folder** | **Description**                                                                                                                                                                                                                                                       |
++============+=======================================================================================================================================================================================================================================================================+
+| FPGA       | Contains all the files necessary to program the CED1Z board in order to evaluate the ADC. By executing the script *program_fpga.bat* the FPGA with be programmed with the evaluation project. New Nios2 applications can be created using the files from this folder. |
+|            | The *ip* subfolder contains the HDL drivers in */hdl/src* , the software drivers for HAL in */hdl/src/HAL* and the AD7938 registers in */hdl/src/inc* .                                                                                                               |
++------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Hdl        | Contains the source files for the AD7938 HDL driver:                                                                                                                                                                                                                  |
+|            | - The *doc* subfolder contains a brief documentation for the driver.                                                                                                                                                                                                  |
+|            | - The *src* subfolder contains the HDL source files.                                                                                                                                                                                                                  |
+|            | - The *tb* folder contains the sources of the driver's testbench.                                                                                                                                                                                                     |
++------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| NiosCpu    | Contains the CED1Z Quartus evaluation project source files . The *ip* subfolder contains the AD7938 SOPC component.                                                                                                                                                   |
++------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Software   | Contains the source files of the uCProbe library and the main file of the Nios2 SBT evaluation project.                                                                                                                                                               |
++------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| uCProbe    | Contains the uCProbe interface and data capture script used to acquire data from the evaluation board and store it in a local .csv file.                                                                                                                              |
++------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Install the USB-Blaster Device Driver
+-------------------------------------
+
+The USB Blaster is used to program the FPGA on the CED1Z board and also for data exchange between the system and a PC. To install the driver plug the Terasic USB Blaster into one of the PCs USB ports. Your Windows PC will find the new hardware and try to install the driver.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image007.png
+   :alt: image007.png
+   :align: center
+   :width: 350px
+
+Since Windows cannot locate the driver for the device the automatic installation will fail and the driver has to be installed manually. In the *Device Manager* right click on the **USB-Blaster** device and select **Update Driver Software**.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image009.png
+   :alt: image009.png
+   :align: center
+   :width: 700px
+
+In the next dialog box select the option **Browse my computer for driver software**. A new dialog will open where it is possible to point to the driver’s location. Set the location to **altera\\11.0\\quartus\\drivers\\usb-blaster** and press **Next**.
+
+|image011.png|\ |image013.png|
+
+
+.. tip::
+
+   If Windows presents you with a message that the drivers have not passed Windows Logo testing, please click “\ **Install this driver software anyway**\ ”. Upon installation completion a message will be displayed to inform that the installation is finished.
+
+
+|image017.png|\ |image016.jpg|
+
+.. |image011.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image011.png
+   :width: 400px
+.. |image013.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image013.png
+   :width: 400px
+.. |image017.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image017.png
+   :width: 400px
+.. |image016.jpg| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image016.jpg
+   :width: 400px
+
+
+AD7938 Evaluation Project Overview
+==================================
+
+The evaluation project contains all the source files needed to build a system that can be used to configure the AD7938 and capture data from it. The system consists of a Nios II softcore processor that is implemented in the FPGA found on the CED1Z board and a PC application. The softcore controls the communication with the Device Under Test (DUT) and the data capture process. The captured data is saved into the SRAM of the CED1Z board and aftwerwards it is read by the PC application and saved into a comma separated values (.csv) file that can be used for further data analysis.
+
+FPGA Design
+-----------
+
+The following components are implemented in the FPGA design:
+
+============================= ========== ===
+Name                          Address    IRQ
+============================= ========== ===
+CPU                           0x00000800 -
+PLL                           0x00000000 -
+OnChip_mem                    0x00002000 -
+LEDS                          0x00000020 -
+SYSID                         0x00000010 -
+SRAM                          0x00200000 -
+TRISTATE_BRIDGE_0             -          -
+UCPROBE_UART                  0x00000018 0
+JTAG_UART_0                   0x00000040 1
+SYS_TIMER                     0x00000060 2
+AD7938_0                      0x00000050 -
+MM_CONSOLE_MASTER             -          -
+**Table 1 System components**            
+============================= ========== ===
+
+The Nios II processor contains a peripheral that implements the communication protocol with the DUT. The peripheral is divided into three logical modules: a module which implements the interface with the Avalon bus and the communication with the SRAM, a module which implements an Avalon master interface which is used to write data directly in the SRAM and a module which is the actual driver of the DUT. The driver can also be used as standalone in FPGA designs which do not contain a softcore. Following is presented a block diagram of the HDL driver and a description of the driver's interface signals.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ip_block_diagram.png
+   :alt: HDL driver block diagram
+   :align: center
+
+Table 2 describes the ports of the AD7938 driver.
+
++---------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Port                                        | Direction | Width | Description                                                                                                                                                                                                                                                                                                                                                                                                                  |
++=============================================+===========+=======+==============================================================================================================================================================================================================================================================================================================================================================================================================================+
+| **Clock and reset ports**                   |           |       |                                                                                                                                                                                                                                                                                                                                                                                                                              |
++---------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| FPGA_CLK_I                                  | IN        | 1     | Main clock input.                                                                                                                                                                                                                                                                                                                                                                                                            |
++---------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| RESET_I                                     | IN        | 1     | Active low reset signal.                                                                                                                                                                                                                                                                                                                                                                                                     |
++---------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_CLK_I                                   | IN        | 1     | Clock to be sent to the ADC during the conversion process.                                                                                                                                                                                                                                                                                                                                                                   |
++---------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **IP control and data ports**               |           |       |                                                                                                                                                                                                                                                                                                                                                                                                                              |
++---------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| WR_DATA_N_I                                 | IN        | 1     | Active low signal use to initiate a data write. The data to be written to the device must be active on the DATA_IO bus one clock cycle after this signal is set low and must be kept active until the DATA_WR_READY_O signal returns to high. If the ADC is performing a conversion while the WR_DATA_N_I signal is set low then the DATA_WR_READY_O will transition from high to low only when the conversion is complete.  |
++---------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| DATA_I                                      | IN        | 12    | Input bus used to receive the data to be written to the AD7938 internal registers.                                                                                                                                                                                                                                                                                                                                           |
++---------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| DATA_O                                      | OUT       | 16    | Outputs the data read from the ADC and the channel ID to which the read data corresponds. The channel ID is stored on the 4 most significant bits and the read data is stored on the 12 least significant bits. If the ADC is driven in word read mode then the channel ID will always be 0.                                                                                                                                 |
++---------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| DATA_RD_READY_O                             | OUT       | 1     | Active high signal to indicate the status of a read operation from the AD7938. The IP continuously reads the conversion results from the AD7938 and outputs them on the DATA_O bus. When this signal is high data can be read from the DATA_O bus.                                                                                                                                                                           |
++---------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| DATA_WR_READY_O                             | OUT       | 1     | Active high signal to indicate the status of a write operation to the IP. One clock cycle after the WR_DATA_N_I signal is set low the DATA_WR_READY_O is also set low and returns to high only after the write operation to the AD7938 is complete. During a write operation the data read operations are suspended.                                                                                                         |
++---------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **AD7938 control and data ports**           |           |       |                                                                                                                                                                                                                                                                                                                                                                                                                              |
++---------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_DB_IO                                   | IN/OUT    | 12    | ADC bidirectional data bus used to write/read data to/from the AD7938.                                                                                                                                                                                                                                                                                                                                                       |
++---------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_CS_N_O                                  | OUT       | 1     | ADC Chip Select. Active low logic input used in conjunction with RD and WR to read conversion data or to write data to the internal registers.                                                                                                                                                                                                                                                                               |
++---------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_RD_N_O                                  | OUT       | 1     | ADC read Input. Active low logic input used in conjunction with CS to access the conversion result. The conversion result is placed on the data bus following the falling edge of RD read while CS is low.                                                                                                                                                                                                                   |
++---------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_WR_N_O                                  | OUT       | 1     | ADC write Input. Active low logic input used in conjunction with CS to write data to the internal ADC registers.                                                                                                                                                                                                                                                                                                             |
++---------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_WB_N_O                                  | OUT       | 1     | ADC Word/Byte Input. When this input is logic high, data is transferred to and from the AD7938/AD7939 in 12-bit/10-bit words on the DB0/DB2 to DB11 pins. When this pin is logic low, byte transfer mode is enabled. Data and the channel ID are transferred on Pin DB0 to Pin DB7, and Pin DB8/HBEN assumes its HBEN functionality. Unused data lines when operating in byte transfer mode should be tied off to DGND.      |
++---------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_CLK_O                                   | OUT       | 1     | ADC Master Clock Input. The clock source for the conversion process is applied to this pin. Conversion time for the AD7938/AD7939 takes 13 clock cycles. The frequency of the master clock input therefore determines the conversion time and achievable throughput rate. The CLKIN signal may be a continuous or burst clock.                                                                                               |
++---------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_CONVST_N_O                              | OUT       | 1     | ADC conversion Start Input. A falling edge on CONVST is used to initiate a conversion. The track-and-hold goes from track mode to hold mode on the falling edge of CONVST and the conversion process is initiated at this point. Following power-down, when operating in auto-shutdown or auto-standby modes, a rising edge on CONVST is used to power up the device.                                                        |
++---------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_BUSY_I                                  | IN        | 1     | ADC Busy Output. Logic output that indicates the status of the conversion. The BUSY output goes high following the falling edge of CONVST and stays high for the duration of the conversion. Once the conversion is complete and the result is available in the output register, the BUSY output goes low. The track-and-hold returns to track mode just prior to the falling edge of BUSY on the 13th rising edge of CLKIN. |
++---------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Table 2 AD7938 driver ports description** |           |       |                                                                                                                                                                                                                                                                                                                                                                                                                              |
++---------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+The follwing figure presents the timing diagram for the read operations from the AD7938 driver.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/read_timing.png
+   :alt: Read operations time diagram
+   :align: center
+   :width: 500px
+
+The follwing figure presents the timing diagram for the write operations to the AD7938 driver.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/write_timing.png
+   :alt: Write operations time diagram
+   :align: center
+   :width: 500px
+
+Table 3 describes the ports of the Avalon peripheral:
+
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Port                                            | Direction | Width | Description                                                                                                                                                                                                                                                                                                                                                                                                                  |
++=================================================+===========+=======+==============================================================================================================================================================================================================================================================================================================================================================================================================================+
+| **Clock and reset ports**                       |           |       |                                                                                                                                                                                                                                                                                                                                                                                                                              |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| CLK_I                                           | IN        | 1     | Main clock input                                                                                                                                                                                                                                                                                                                                                                                                             |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| RESET_I                                         | IN        | 1     | System reset                                                                                                                                                                                                                                                                                                                                                                                                                 |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_CLK_I                                       | IN        | 1     | ADC clock                                                                                                                                                                                                                                                                                                                                                                                                                    |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Avalon Slave Interface**                      |           |       |                                                                                                                                                                                                                                                                                                                                                                                                                              |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_WRITEDATA_I                              | IN        | 32    | Slave write data bus                                                                                                                                                                                                                                                                                                                                                                                                         |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_WRITE_I                                  | IN        | 1     | Slave write data request                                                                                                                                                                                                                                                                                                                                                                                                     |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_READ_I                                   | IN        | 1     | Slave read data request                                                                                                                                                                                                                                                                                                                                                                                                      |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_ADDRESS_I                                | IN        | 2     | Slave address bus                                                                                                                                                                                                                                                                                                                                                                                                            |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_READDATA_O                               | OUT       | 32    | Slave read data bus                                                                                                                                                                                                                                                                                                                                                                                                          |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Avalon Master Interface**                     |           |       |                                                                                                                                                                                                                                                                                                                                                                                                                              |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_MASTER_WAITREQUEST                       | IN        | 1     | Master wait request signal                                                                                                                                                                                                                                                                                                                                                                                                   |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_MASTER_ADDRESS_O                         | OUT       | 32    | Master address bus                                                                                                                                                                                                                                                                                                                                                                                                           |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_MASTER_BYTEENABLE_O                      | OUT       | 4     | Master byte enable signals                                                                                                                                                                                                                                                                                                                                                                                                   |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AVALON_MASTER_WRITEDATA_O                       | OUT       | 32    | Master write data bus                                                                                                                                                                                                                                                                                                                                                                                                        |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **External connectors**                         |           |       |                                                                                                                                                                                                                                                                                                                                                                                                                              |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_DB_IO                                       | IN/OUT    | 12    | ADC bidirectional data bus used to write/read data to/from the AD7938.                                                                                                                                                                                                                                                                                                                                                       |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_CS_N_O                                      | OUT       | 1     | ADC Chip Select. Active low logic input used in conjunction with RD and WR to read conversion data or to write data to the internal registers.                                                                                                                                                                                                                                                                               |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_RD_N_O                                      | OUT       | 1     | ADC read Input. Active low logic input used in conjunction with CS to access the conversion result. The conversion result is placed on the data bus following the falling edge of RD read while CS is low.                                                                                                                                                                                                                   |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_WR_N_O                                      | OUT       | 1     | ADC write Input. Active low logic input used in conjunction with CS to write data to the internal ADC registers.                                                                                                                                                                                                                                                                                                             |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_WB_N_O                                      | OUT       | 1     | ADC Word/Byte Input. When this input is logic high, data is transferred to and from the AD7938/AD7939 in 12-bit/10-bit words on the DB0/DB2 to DB11 pins. When this pin is logic low, byte transfer mode is enabled. Data and the channel ID are transferred on Pin DB0 to Pin DB7, and Pin DB8/HBEN assumes its HBEN functionality. Unused data lines when operating in byte transfer mode should be tied off to DGND.      |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_CLK_O                                       | OUT       | 1     | ADC Master Clock Input. The clock source for the conversion process is applied to this pin. Conversion time for the AD7938/AD7939 takes 13 clock cycles. The frequency of the master clock input therefore determines the conversion time and achievable throughput rate. The CLKIN signal may be a continuous or burst clock.                                                                                               |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_CONVST_N_O                                  | OUT       | 1     | ADC conversion Start Input. A falling edge on CONVST is used to initiate a conversion. The track-and-hold goes from track mode to hold mode on the falling edge of CONVST and the conversion process is initiated at this point. Following power-down, when operating in auto-shutdown or auto-standby modes, a rising edge on CONVST is used to power up the device.                                                        |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ADC_BUSY_I                                      | IN        | 1     | ADC Busy Output. Logic output that indicates the status of the conversion. The BUSY output goes high following the falling edge of CONVST and stays high for the duration of the conversion. Once the conversion is complete and the result is available in the output register, the BUSY output goes low. The track-and-hold returns to track mode just prior to the falling edge of BUSY on the 13th rising edge of CLKIN. |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Table 3 Avalon peripheral ports description** |           |       |                                                                                                                                                                                                                                                                                                                                                                                                                              |
++-------------------------------------------------+-----------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Table 4 describes the registers of the Avalon peripheral:
+
++-----------------------------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------+
+| Name                                                | Offset | Width | Access | Description                                                                                                 |
++=====================================================+========+=======+========+=============================================================================================================+
+| CONTROL_REGISTER                                    | 0      | 32    | RW     | Bit 0 is used to start data acquisition                                                                     |
+|                                                     |        |       |        | Bit 1 is used to initiate software reset of the core                                                        |
+|                                                     |        |       |        | Bit 2 is used to configure the Avalon write master core to write data to the same location                  |
+|                                                     |        |       |        | Bit 3 is used to write data to the AD7938 evaluation board                                                  |
++-----------------------------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------+
+| ACQ_COUNT_REGISTER                                  | 1      | 32    | RW     | Register used to configure the number of samples to be acquired when acquisition is started                 |
++-----------------------------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------+
+| BASE_REGISTER                                       | 2      | 32    | RW     | Register used to configure the base address of the memory location where the acquired data is to be written |
++-----------------------------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------+
+| STATUS_REGISTER                                     | 3      | 32    | R      | Bit 0 is used to signal that the acquisition is complete                                                    |
+|                                                     |        |       |        | Bit 1 is used to signal that the internal memory buffer has been overflown                                  |
+|                                                     |        |       |        | Bit 2 is used to signal that the user has performed a read of an unavailable register                       |
++-----------------------------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------+
+| DUT_WR_REGISTER                                     | 2      | 32    | W      | Register used to transmit ot the peripheral the data to written into the ADCs internal registers.           |
++-----------------------------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------+
+| **Table 4 Avalon Peripheral registers description** |        |       |        |                                                                                                             |
++-----------------------------------------------------+--------+-------+--------+-------------------------------------------------------------------------------------------------------------+
+
+Quick Evaluation
+================
+
+The next sections of this document present all the steps needed to create a fully functional project that can be used for evaluating the operation of the ADI platform. It is possible to skip these steps and load into the FPGA an image that contains a fully functional system that can be used together with the uC-Probe interface for the ADI platform evalution. The first step of the quick evaluation process is to program the FPGA with the image provided in the lab files. Before the image can be loaded the **Quartus II Web Edition** tool or the `Quartus II Programmer <https://www.altera.com/download/programming/quartus2/pq2-index.jsp>`_ must be installed on your computer. To load the FPGA image you must first make sure that the USB cable is not connected to the CED1Z board. Connect the USB Blaster to the J6 connector of the CED1Z and power the board. Run the **program_fpga.bat** batch file located in the **ADIEvalBoard/FPGA** folder. Now the FPGA contains a fully functional system and it is possible to skip directly to the **Evaluation Project User Interface** section of this document
+
+
+NIOS II Software Design
+=======================
+
+This section presents the steps for developing a software application that will run on the **CED1Z** system and will be used for controlling and monitoring the operation of the ADI evaluation board.
+
+Create a new project using the NIOS II Software Build Tools for Eclipse
+-----------------------------------------------------------------------
+
+Launch the **Nios II SBT** from the **Start -> All Programs -> Altera -> Nios II EDS 11.0 -> Nios II 11.0 Software Build Tools for Eclipse (SBT)**.
+
+.. tip::
+
+   NOTE: Windows 7 users will need to right-click and select **Run as administrator**. Another method is to right-click and select **Properties** and click on the **Compatibility** tab and select the **Run This Program As An Administrator** checkbox, which will make this a permanent change.
+
+
+1. Initialize Eclipse workspace
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  When Eclipse first launches, a dialog box appears asking what directory it should use for its workspace. It is useful to have a separate Eclipse workspace associated with each hardware project that is created in SOPC Builder. Browse to the **ADIEvalBoard** directory and click **Make New Folder** to create a folder for the software project. Name the new folder “\ **eclipse_workspace**\ ”. After selecting the workspace directory, click **OK** and Eclipse will launch and the workbench will appear in the **Nios II** perspective.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipseworkspace.png
+   :alt: eclipseworkspace.png
+   :align: center
+   :width: 800px
+
+2. Create a new software project in the SBT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Select **File -> New -> Nios II Application and BSP from Template**.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image025.png
+   :alt: image025.png
+   :align: center
+   :width: 600px
+
+-  Click the **Browse** button in the **SOPC Information File Name** dialog box.
+-  Select the **uC.sopcinfo** file located in the **ADIEvalBoard/FPGA** directory.
+-  Set the name of the Application project to “\ **ADIEvalBoard**\ ”.
+-  Select the **Blank Project** template under **Project template**.
+-  Click the **Finish** button.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipseblankproject.png
+   :alt: eclipseblankproject.png
+   :align: center
+   :width: 600px
+
+The tool will create two new software project directories. Each Nios II application has 2 project directories in the Eclipse workspace.
+
+-  The application software project itself - this where the application lives.
+-  The second is the **Board Support Package (BSP)** project associated with the main application software project. This project will build the system library drivers for the specific SOPC system. This project inherits the name from the main software project and appends “\ **\_bsp**\ ” to that.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipseprojects.png
+   :alt: eclipseprojects.png
+   :align: center
+   :width: 300px
+
+Since you chose the blank project template, there are no source files in the application project directory at this time. The BSP contains a directory of software drivers as well as a system.h header file, system initialization source code and other software infrastructure.
+
+Configure the Board Support Package
+-----------------------------------
+
+-  Configure the board support package to specify the properties of this software system by using the **BSP Editor** tool. These properties include what interface should be used for *stdio* and *stderr* messages, the memory in which stack and heap should be allocated and whether an operating system or network stack should be included with this BSP.
+-  Right click on the **ADIEvalBoard_bsp** project and select **Nios II -> BSP Editor…** from the right-click menu.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebspmenu.png
+   :alt: eclipsebspmenu.png
+   :align: center
+   :width: 600px
+
+The software project provided in this lab does not make use of an operating system. All *stdout*, *stdin* and *stderr* messages will be directed to the *jtag_uart*.
+
+-  Select the **Common** settings view. In the **Common** settings view, change the following settings:
+
+   -  Select the **jtag_uart_0** for *stdin*, *stdout* and *stderr* messages. Note that you have more than one choice.
+   -  Select **none** for the *sys_clk_timer* and *timestamp_timer*.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/cedz/cedzmainsettings.png
+   :alt: cedzmainsettings.png
+   :align: center
+   :width: 800px
+
+The memory used by the design is should be changed from OnChip ram to SRAM.
+
+-  Select **Linker Script** tab.
+-  Change all possible **Linker Region Name** from **onchip_mem** to **sram**.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ced1zlinkersettings8bit.png
+   :alt: ced1zlinkersettings8bit.png
+   :align: center
+   :width: 800px
+
+-  Select **File -> Save** to save the board support package configuration to the *settings.bsp* file.
+-  Click the **Generate** button to update the BSP.
+-  When the generate has completed, select **File -> Exit** to close the BSP Editor.
+
+Add source code to the project
+------------------------------
+
+In Windows Explorer locate the project directory which contains a directory called **Software**. In Windows Explorer select all the files and directories from the **Software** folder and drag and drop them into the Eclipse software project **ADIEvalBoard**.
+
+-  Select all the files and folders and drag them over the **ADIEvalBoard** project in the SBT window and drop the files onto the project folder.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipsecopyfiles.png
+   :alt: eclipsecopyfiles.png
+   :align: center
+   :width: 800px
+
+-  A dialog box will appear to select the desired operation. Select the option **Copy files and folders** and press **OK**.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image039.png
+   :alt: image039.png
+   :align: center
+
+-  This should cause the source files to be physically copied into the file system location of the software project directory and register these source files within the Eclipse workspace so that they appear in the Project Explorer file listing.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipseprojectfiles.png
+   :alt: eclipseprojectfiles.png
+   :align: center
+
+Define Application Include Directories
+--------------------------------------
+
+Application code can be conveniently organized in a directory structure. This section shows how to define these paths in the makefile.
+
+-  In the Eclipse environment double click on **my_include_paths.in** to open the file.
+-  Click the **Ctrl** and **A** keys to select all the text. Click the **Ctrl** and **C** keys to copy all the text.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/eclipsemyinclude.png
+   :alt: eclipsemyinclude.png
+   :align: center
+   :width: 500px
+
+-  Double click on **Makefile** to open the file.
+-  If you see the message shown here about resources being out of sync, right click on the **Makefile** and select **Refresh**.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsemakefileoutofdate.png
+   :alt: eclipsemakefileoutofdate.png
+   :align: center
+
+-  Select the line **APP_INCLUDE_DIRS :=**
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image049.png
+   :alt: image049.png
+   :align: center
+
+-  Click the **Ctrl** and **V** keys to replace the selected line with the include paths.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/image051.png
+   :alt: image051.png
+   :align: center
+
+-  Click the **Ctrl** and **S** keys to save the **Makefile**.
+
+Compile, Download and Run the Software Project
+----------------------------------------------
+
+1. Build the Application and BSP Projects
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Right click the **ADIEvalBoard_bsp** software project and choose **Build Project** to build the board support package.
+-  When that build completes, right click the **ADIEvalBoard** application software project and choose **Build Project** to build the Nios II application.
+
+These 2 steps will compile and build the associated board support package, then the actual application software project itself. The result of the compilation process will be an *Executable and Linked Format (.elf)* file for the application, the **ADIEvalBoard.elf** file.
+
+|eclipsebuildbsp.png| |eclipsebuildproj.png|
+
+2. Verify the Board Connection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The **CED1Z** hardware is designed with a *System ID* peripheral. This peripheral is assigned a unique value based on when the hardware design was last modified in the SOPC Builder tool. SOPC Builder also places this information in the *.sopcinfo* hardware description file. The BSP is built based on the information in the *.sopcinfo* file.
+
+-  Select the **ADIEvalBoard** application software project.
+-  Select **Run -> Run Configurations…**
+-  Select the **Nios II Hardware** configuration type.
+-  Press the **New** button to create a new configuration.
+-  Change the configuration name to **CED1Z** and click **Apply**.
+-  On the **Target Connection** tab, press the **Refresh Connections** button. You may need to expand the window or scroll to the right to see this button.
+-  Select the **jtag_uart_0** as the **Byte Stream Device** for *stdio*.
+-  Check the **Ignore mismatched system ID option**.
+-  Check the **Ignore mismatched system timestamp option**.
+
+|eclipserunconfig.png| |image059.png|
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/cedz/ignoreid.png
+   :alt: ignoreid.png
+   :align: center
+   :width: 800px
+
+3. Run the Software Project on the Target
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To run the software project on the Nios II processor:
+
+-  Before running the the software project, the FPGA located on the CED1Z must be programmed with the Nios II system image. To program the FPGA run the **ADIEvalBoard/FPGA/program_fpga.bat** script.
+-  Press the **Run** button in the **Run Configurations** window. This will re-build the software project to create an up–to-date executable and then download the code into memory on the **CED1Z** hardware. The debugger resets the Nios II processor, and it executes the downloaded code. Note that the code is verified in memory before it is executed
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/cedz/image063.png
+   :alt: image063.png
+   :align: center
+   :width: 500px
+
+.. hint::
+
+   The code size and start address might be different than the ones displayed in the above screenshot.
+
+
+uC-Probe Interface
+==================
+
+A notable challenge in embedded systems development is to overcome the lack of feedback that such systems typically provide. Many developers resort to blinking LEDs or instrumenting their code with *printf()* in order to determine whether or not their systems are running as expected. **Micrium** provides a unique tool named **µC-Probe** to assist these developers. With this tool, developers can effortlessly read and write the variables on a running embedded system. This section presents the steps required to run the demonstration project for the ADI evaluation board. A description of the **uC-Probe** demonstration interface is provided.
+
+Configure uC-Probe
+------------------
+
+Launch **uC-Probe** from the **Start -> All Programs -> Micrium -> uC-Probe**.
+
+Select **uC-Probe** options.
+
+-  Click on the **uC-Probe** icon on the top left portion of the screen.
+-  Click on the **Options** button to open the dialog box.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ucprobeoptionsbtn.png
+   :alt: ucprobeoptionsbtn.png
+   :align: center
+   :width: 300px
+
+Set target board communication protocol as **JTAG UART**
+
+-  Click on the **Communication** tab icon on the top left portion of the dialog box
+-  Select the **JTAG UART** option.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image067.png
+   :alt: image067.png
+   :align: center
+   :width: 400px
+
+Setup **JTAG UART** communication settings
+
+-  Select the **JTAG-UART** option from the **Communication** tab.
+-  Press the **Open File** button to select the JTAG Debug Information file (**.jdi**)
+-  Navigate to the **ADIEvalBoard/FPGA** folder and select the ced1z.jdi file. Press Open.
+-  Type the value **1** in the the **Device Id** window.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ucprobeoptionsjtag.png
+   :alt: ucprobeoptionsjtag.png
+   :align: center
+   :width: 600px
+
+-  Select **uCProbe_uart(0)** from the **Instance Id** pulldown menu.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ucprobeinstanceid.png
+   :alt: ucprobeinstanceid.png
+   :align: center
+   :width: 400px
+
+-  Press **Apply** and **OK** to exit the options menu. The embedded target has two UARTs. **uC-Probe** will be communicating with the **uCProbe_uart**.
+
+
+Load and Run the Demonstration Project
+--------------------------------------
+
+-  Click the **Open** option from the **uC-Probe** menu and select the file **ADIEvalBoard/ucProbe/AD7938_Interface.wsp**.
+
+|ucprobeopen.png|\ |ad7938interfaceopen.png|
+
+-  Before opening the interface **uC-Probe** will ask for a symbols file that must be associated with the interface. If the lab was done according to the steps provided in the **Quick Evaluation** section, select the file **ADIEvalBoard/ucProbe/ADIEvalBoard.elf** to be loaded as a symbol file, otherwise select the file **ADIEvalBoard/FPGA/software/ADIEvalBoard/ADIEvalBoard.elf** to be loaded as a symbol file.
+
+|loadelfucprobe.png|\ |loadelfsoftware.png|
+
+-  Run the demonstration project by pressing the **Play** button.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image081.png
+   :alt: image081.png
+   :align: center
+   :width: 300px
+
+-  Run the **ADIEvalBoard/uCProbe/data_capture.bat** script. A DOS command prompt window will open. This window must be closed only when the uCProbe demonstration project will be closed.
+
+Evaluation Project User Interface
+=================================
+
+The following figure presents the uC-Probe interface that can be used for monitoring and controlling the operation of the EVAL-AD7938CBZ evaluation board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ucprobe_interface.png
+   :alt: Demonstration Project User Interface
+   :align: center
+   :width: 600px
+
+In order to capture data from the ADC using the uCProbe demonstration project the following steps must be performed:
+
+-  Make sure that the **CED1Z FPGA** is properly programmed and the USB Blaster is connected to the CED1Z board.
+-  Start **uc/Probe** application.
+-  Depending on how the AD7938 part is configured set the data format to either **Binary Offset** or **2's Complement**.
+-  Set the states of the bits from the **Control** and **Shadow** registers.
+-  Press **Acquisition** button. At this point 1 Mbyte of data will be acquired from the ADC and saved into the CED1Z SRAM memory. The **Acquisition In Progress** LED is lit to signal that the data is acquired from the ADC. When the data acquisition is complete the **Acquisition Complete** LED turns green.
+-  The data stored in the CED1Z SRAM memory is transfered to the PC through the JTAG-UART link provided by the USB Blaster. The **Transfer In Progress** LED is lit as long as the data is transferred from the CED1Z to the PC. Whe the data transfer is complete the **Transfer Complete** LED turns green.
+-  After the data is transferred to the PC it is converted to either Binary offset or 2's Complement 16 bit values. The **Processing Data In Progress** LED is lit as long as the data conversion is performed. When the conversion is complete the **Processing Data Complete** LED turns green.
+-  The data captured from the ADC is saved into a comma separated values (.csv) file named **Acquisition.csv**, located in the same folder as the **data_capture.bat** file. While the data is saved the **Writing File In Progress** LED is lit. When the data write process is complete the **Writing in File Complete** LED turns green.
+-  The data capture status is also displayed in the opened command window as shown in the figure below.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/cedz/cmd_interface.png
+   :alt: Demonstration Project Command Interface
+   :align: center
+   :width: 500px
+
+-  A new acquisition can be started by reactivating the **Acquisition** button.
+-  After all the needed data is acquired the uCProbe program and the command window can be closed.
+
+**Note:** If several consecutive data acquisitions are performed the captured data is appended to the **Acquisition.csv** file.
+
+Troubleshooting
+===============
+
+In case there is a communication problem with the board the follwing actions can be perfomed in order to try to fix the issues:
+
+-  Check that the evaluation board is powered.
+-  Make sure the USB cable is not connected to the CED1Z. In case it is, disconnect it and reset the board.
+-  Check that the USB Blaster cable is properly connected to the device and to the computer and that the **USB Blaster Device Driver** driver is installed correctly. If the driver is not correctly installed perform the steps described in the **Getting Started -> Install te USB-Blaster Device Driver** section.
+-  In uC-Probe right-click on the **System Browser** window select **Remove Symbols**. A dialog box will open to select the symbols to remove. Press OK to remove the symbols.
+
+|ucproberemovesymbols.png|\ |ucproberemovesymbolsdlg.png|
+
+-  After removing the symbols a new set of symbols must be added in order for the interface to be functional. In uC-Probe right-click on the **System Browser** window select **Add Symbols**. A dialog box will open to select the symbols to be added. If the lab was done according to the steps provided in the Quick Evaluation section, select the file **ADIEvalBoard/ucProbeInterface/ADIEvalBoard.elf** to be loaded as a symbol file, otherwise select the file **ADIEvalBoard/FPGA/software/ADIEvalBoard/ADIEvalBoard.elf** to be loaded as a symbol file.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucprobeaddsymbols.png
+   :alt: ucprobeaddsymbols.png
+   :align: center
+   :width: 400px
+
+-  If the communication problem persists even after performing the previous steps, restart the uC-Probe application and try to run the interface again.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image081.png
+   :alt: image081.png
+   :align: center
+   :width: 300px
+
+More information
+================
+
+-  :ez:`ask questions about the FPGA reference design <community/fpga>`
+-  Example questions:
+
+|//ez.analog.com/community/feeds/allcontent/atom|
+
+.. |ucproberemovesymbols.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/ucproberemovesymbols.png
+   :width: 400px
+.. |ucproberemovesymbolsdlg.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ucproberemovesymbolsdlg.png
+   :width: 400px
+.. |//ez.analog.com/community/feeds/allcontent/atom| image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
+
+
+.. |eclipsebuildbsp.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebuildbsp.png
+   :width: 400px
+.. |eclipsebuildproj.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipsebuildproj.png
+   :width: 400px
+.. |eclipserunconfig.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/eclipserunconfig.png
+   :width: 400px
+.. |image059.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/image059.png
+   :width: 400px
+.. |ucprobeopen.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ucprobeopen.png
+   :width: 400px
+.. |ad7938interfaceopen.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/ad7938interfaceopen.png
+   :width: 400px
+.. |loadelfucprobe.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/loadelfucprobe.png
+   :width: 400px
+.. |loadelfsoftware.png| image:: https://wiki.analog.com/_media/resources/fpga/altera/ced1z/loadelfsoftware.png
+   :width: 400px

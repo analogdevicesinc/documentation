@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="These are the assembly instructions for the radio." name="description" />
+
+    <title>Portable Radio Reference Design - Assembly Instructions &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Portable Radio Reference Design - Assembly Instructions</a><ul>
+<li><a class="reference internal" href="#stage-1-partial-assembly">Stage 1 - Partial Assembly</a><ul>
+<li><a class="reference internal" href="#belly-plate">Belly Plate</a><ul>
+<li><a class="reference internal" href="#oled-installation">OLED Installation</a></li>
+<li><a class="reference internal" href="#nav-switch-installation">Nav Switch Installation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#preparing-the-adrv936x-pcb">Preparing the ADRV936x PCB</a></li>
+<li><a class="reference internal" href="#connecting-the-pcb-s">Connecting the PCB’s</a></li>
+<li><a class="reference internal" href="#connecting-the-rf-cables">Connecting the RF cables</a></li>
+<li><a class="reference internal" href="#securing-the-rf-cables">Securing the RF Cables</a></li>
+<li><a class="reference internal" href="#securing-the-pcb-s">Securing the PCB’s</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stage-2-full-assembly">Stage 2 - Full Assembly</a><ul>
+<li><a class="reference internal" href="#body-plate">Body Plate</a></li>
+<li><a class="reference internal" href="#cutting-a-slot-for-the-jtag-adapter-cable">Cutting a Slot for the JTAG Adapter Cable</a></li>
+<li><a class="reference internal" href="#inserting-the-pcb-s">Inserting the PCB’s</a></li>
+<li><a class="reference internal" href="#inserting-the-belly-plate">Inserting the Belly Plate</a></li>
+<li><a class="reference internal" href="#connecting-the-imu">Connecting the IMU</a></li>
+<li><a class="reference internal" href="#face-plate">Face Plate</a></li>
+<li><a class="reference internal" href="#connecting-the-power-switch-and-navigation-switch">Connecting the Power Switch and Navigation Switch</a></li>
+<li><a class="reference internal" href="#adding-the-plastic-frames">Adding the plastic frames</a></li>
+<li><a class="reference internal" href="#securing-the-face-plates">Securing the face plates</a></li>
+<li><a class="reference internal" href="#adding-face-plate-labels">Adding Face Plate Labels</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#packrf-assembly-instructions">PackRF - Assembly Instructions</a></li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="portable-radio-reference-design-assembly-instructions">
+<h1>Portable Radio Reference Design - Assembly Instructions<a class="headerlink" href="#portable-radio-reference-design-assembly-instructions" title="Link to this heading"></a></h1>
+<p>These are the assembly instructions for the radio.</p>
+<section id="stage-1-partial-assembly">
+<h2>Stage 1 - Partial Assembly<a class="headerlink" href="#stage-1-partial-assembly" title="Link to this heading"></a></h2>
+<section id="belly-plate">
+<h3>Belly Plate<a class="headerlink" href="#belly-plate" title="Link to this heading"></a></h3>
+<section id="oled-installation">
+<h4>OLED Installation<a class="headerlink" href="#oled-installation" title="Link to this heading"></a></h4>
+<ul>
+<li><p>Cut a strip of electric tape to place over the exposed vias found on the OLED PCB.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/oled_with_tape.jpg"><img alt="image1" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/oled_with_tape.jpg" style="width: 300px;" /></a></p>
+</li>
+<li><p>Place the OLED into the rectangular opening.</p></li>
+<li><p>Place 4 pcs of M2.5 X 4mm screws through the belly plate and OLED.</p>
+<ul class="simple">
+<li><p>Apply loctite.</p></li>
+</ul>
+</li>
+<li><p>Attach 4 pcs of M2.5 nuts and tighten.</p>
+<ul class="simple">
+<li><p>Cut off the ends of the screw if it extends beyond the nut.</p></li>
+</ul>
+</li>
+<li><p>Insert 1x <a class="icon link reference external" href="https://www.digikey.com/WM11498-ND" target="_blank">20 Position FMC Cable</a> into OLED connector, with the exposed copper of the cable, facing away from the PCB.</p></li>
+<li><p>Close the black bracket to secure the cable.</p></li>
+<li><p>Apply some hot glue to the connector and part of the cable so it cannot be accidentally removed.</p>
+<ul class="simple">
+<li><p>Be careful here… if you have to remove this glue for any reason, you have to be gentle so as not to damage the OLED connector. It happens… I’ve done it…</p></li>
+</ul>
+</li>
+<li><p>Bend the cable backwards so it sticks out past the end of the belly plate.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/oled_connected_to_belly_plate.jpg"><img alt="image2" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/oled_connected_to_belly_plate.jpg" style="width: 600px;" /></a></p>
+</li>
+</ul>
+</section>
+<section id="nav-switch-installation">
+<h4>Nav Switch Installation<a class="headerlink" href="#nav-switch-installation" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  * Place 4 pcs of M2.5 X 8mm screws through the belly plate.
+    * Apply loctite 242.
+  * Place 4 pcs of [[https://www.digikey.com/908-135-ND|908-135]] onto the screws, to act as spacers.
+  * Place the Nav Switch PCB into the circular opening, with the connector closer to the middle of the belly plate.
+  * Attach 4 pcs of M2.5 nuts and tighten
+    * {{:resources:eval:user-guides:pzsdr:carriers:packrf:nav_close.jpg?400|}}
+    * {{:resources:eval:user-guides:pzsdr:carriers:packrf:nav_switch.jpg?400|}}
+  * Insert the ribbon cable into the connector on the Nav Switch so the ribbon cable extends towards the battery.
+  * Now bend the cable towards the red line and pull it out to the left side.
+  * Apply some hot glue to the connector and a fraction of the cable to secure everything.
+    * There is a clearance constraint between this cable header and a component on the bottom of the PCB.  As a result, any glue applied must be restricted to below the top of the cable header, when it is plugged into the Nav Switch PCB.
+    * {{ :resources:eval:user-guides:pzsdr:carriers:adrv1cc-box:belly_plate_with_battery_on_side.jpg?600 |}}
+* [[https://www.batteryspace.com/Custom-Polymer-Li-Ion-battery-3.7V-3200mAh-11.8-Wh-with-Thermistor.aspx|Battery CU-J479-V6: Molex 51065-0300]] Installation.
+  * Clean the area between the two PCB&#39;s of dust or debris with a dry cloth.
+  * Cut a 1-inch to 1.25-inch piece of double sided tape.  Peel off the cover and place the tape firmly between the PCBs.
+  * Place the battery firmly onto the tape, with the yellow and white labels facing away from the belly plate.
+    * {{ :resources:eval:user-guides:pzsdr:carriers:adrv1cc-box:belly_plate_inside.jpg?600 |}}
+    * This image doesn&#39;t have the ribbon cable oriented properly (pull it out to the right, not the left).
+</pre></div>
+</div>
+</section>
+</section>
+<section id="preparing-the-adrv936x-pcb">
+<h3>Preparing the ADRV936x PCB<a class="headerlink" href="#preparing-the-adrv936x-pcb" title="Link to this heading"></a></h3>
+<ul>
+<li><p><a class="icon link reference external" href="https://www.digikey.com/345-1146-ND" target="_blank">Heatsink</a> Installation.</p>
+<ul>
+<li><p>Apply a circle of thermal grease to the protruding portion of the Xilinx FPGA.</p></li>
+<li><p>Spread the paste around.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/grease_fpga.jpg"><img alt="Initial Placement of Thermal Grease, Spreading of Grease." src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/grease_fpga.jpg" style="width: 400px;" /></a></p>
+</li>
+<li><p>Carefully place the heat sink making sure the plastic frame snaps into place.</p>
+<ul>
+<li><p>Be careful of C108. The plastic of the heat sink frame can catch on this component and possibly damage it if too much force is applied.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/c108.jpg"><img alt="image3" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/c108.jpg" style="width: 400px;" /></a></p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/heatsink_image.jpg"><img alt="image4" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/heatsink_image.jpg" style="width: 400px;" /></a></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Boot Switch Configuration</p>
+<ul>
+<li><p>We want the PCB to boot using the micro SD card connector found on the carrier board.</p></li>
+<li><p>Using a pair of tweezers or small screw driver, move the switch ‘S1’ into the ‘SDC’ position. There is text located on either side of the switch to aide in selecting the correct orientation.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/microsd_card_position.jpg"><img alt="image5" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/microsd_card_position.jpg" style="width: 400px;" /></a></p>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="connecting-the-pcb-s">
+<h3>Connecting the PCB’s<a class="headerlink" href="#connecting-the-pcb-s" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Line up the ADRV936x PCB connectors with those found on the carrier card.</p>
+<ul>
+<li><p>The boards will only mate in one orientation so rotate the PCB by 180 degrees if it does not fit.</p></li>
+<li><p>Do not force the connection. If properly aligned, little force is required to secure the PCB.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/aligning_the_cards.jpg"><img alt="image6" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/aligning_the_cards.jpg" style="width: 400px;" /></a></p>
+</li>
+<li><p>The image below shows the cards before being pressed together. Notice the gaps at the edges of the connectors.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/card_aligned_not_connected.jpg"><img alt="image7" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/card_aligned_not_connected.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>The following image shows the cards properly mated.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/card_aligned_connected.jpg"><img alt="image8" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/card_aligned_connected.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>Make sure to press all four corners to ensure a solid connection.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="connecting-the-rf-cables">
+<h3>Connecting the RF cables<a class="headerlink" href="#connecting-the-rf-cables" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Connecting 12 U.FL to SMA cables to the pair of PCB’s and face plate of the box is a challenging but critical step. Take care to make the correct connections, and to route the cables carefully and gently.</p>
+<ul>
+<li><p>Fasten all the cables to the face plate THEN connect them to the PCB’s. Make sure you hold the connector in place when you tighten the nut so you don’t damage the face plate.</p></li>
+<li><p>This is a bit of a tedious process. Each cable connects to a specific connector on the PCB. I recommend firmly connecting one cable before moving on to the next.</p></li>
+<li><p>Be sure to make the correct connections otherwise, dis-assembling the unit later will frustrate you.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/u.fl_cables_connected_to_face_plate.jpg"><img alt="image9" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/u.fl_cables_connected_to_face_plate.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>All TX cables go through the hole in the PCB closest to them.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/feeding_tx_cables_through_holes_2_.jpg"><img alt="image10" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/feeding_tx_cables_through_holes_2_.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>None of the RX cables go through the PCB holes.</p></li>
+<li><p>GPS cables go through both holes.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="securing-the-rf-cables">
+<h3>Securing the RF Cables<a class="headerlink" href="#securing-the-rf-cables" title="Link to this heading"></a></h3>
+<ul>
+<li><p>The connections of the U.FL connectors are delicate. Too much movement by the wires, or heavy hands by the assembler can cause permanent damage. As a result, a piece of plastic was designed (3D printed) to hold all the connectors and cables in place.</p>
+<ul>
+<li><p>Make sure each U.FL connector is perpendicular to the edge of the board. It must be oriented correctly or the brace will not slide into place properly.</p></li>
+<li><p>Gently place the brace down on top of the cables and PCB making sure to align the holes of the brace with the holes of the PCB.</p>
+<ul>
+<li><p>3D Model of the bottom of the cable brace showing detailed design for holding the U.FL connector in place.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/cable_brace_-_bottom.png"><img alt="image11" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/cable_brace_-_bottom.png" style="width: 600px;" /></a></p>
+</li>
+<li><p>Picture of the bottom of the cable brace.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/cable_brace_final.jpg"><img alt="image12" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/cable_brace_final.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>Cable brace fitted on the PCB</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/secure_rf_cable.jpg"><img alt="image13" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/secure_rf_cable.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>cable holder 3D file.</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/u.fl_cable_holder.zip" target="_blank">u.fl_cable_holder.zip</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="securing-the-pcb-s">
+<h3>Securing the PCB’s<a class="headerlink" href="#securing-the-pcb-s" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Place 4x <a class="icon link reference external" href="https://www.digikey.com/R40-6710594" target="_blank">5mm nylon spacers</a> between the PCB’s.</p>
+<ul class="simple">
+<li><p>Align the spacers with the corner holes of the SOM PCB.</p></li>
+</ul>
+</li>
+<li><p>Insert 2x <a class="icon link reference external" href="https://www.digikey.com/PMS6320075PH" target="_blank">#6-32 metal screws</a> on the cable brace side.</p>
+<ul class="simple">
+<li><p>Apply loctite 242 to screw.</p></li>
+<li><p>Secure these 2 screws using <a class="icon link reference external" href="https://www.digikey.com/HNSS632" target="_blank">metal hex nuts</a>.</p></li>
+<li><p>Don’t over-tighten the nuts.</p></li>
+</ul>
+</li>
+<li><p>Insert 2x <a class="icon link reference external" href="https://www.digikey.com/NYPMS6320050PH" target="_blank">#6-32 nylon screw</a> in the other two mounting holes.</p>
+<ul class="simple">
+<li><p>Apply loctite 242 to screw.</p></li>
+<li><p>Secure this screw using a <a class="icon link reference external" href="https://www.digikey.com/H620-ND" target="_blank">nylon hex nut</a>.</p></li>
+<li><p>Don’t over-tighten the nuts.</p></li>
+</ul>
+</li>
+<li><p>This is what the set up should look like at this point.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/som_carrier.jpg"><img alt="image14" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/som_carrier.jpg" style="width: 600px;" /></a></p>
+</li>
+</ul>
+<p>Once these steps are complete, you can being the radio <a class="reference internal" href="../packrf/testing.html"><span class="doc">Partial Assembly Test</span></a>.</p>
+</section>
+</section>
+<section id="stage-2-full-assembly">
+<h2>Stage 2 - Full Assembly<a class="headerlink" href="#stage-2-full-assembly" title="Link to this heading"></a></h2>
+<section id="body-plate">
+<h3>Body Plate<a class="headerlink" href="#body-plate" title="Link to this heading"></a></h3>
+<ul>
+<li><p>IMU Assembly</p>
+<ul>
+<li><p>Connect IMU to adapter PCB.</p>
+<ul class="simple">
+<li><p>Be sure to properly align the header with the receptacle.</p></li>
+</ul>
+</li>
+<li><p>Plug ribbon cable into adapter PCB.</p></li>
+<li><p>Insert Screws into the body plate.</p></li>
+<li><p>Place IMU into the screws, with the adapter PCB away from the case.</p></li>
+<li><p>Add loctite to the screws.</p></li>
+<li><p>Add nuts to the screws and tighten.</p>
+<ul>
+<li><p>Tighten the screws according to the <a class="reference internal" href="../../../inertial-mems/imu/adis16imu4-pcb.html"><span class="doc">ADIS16460 instructions</span></a>. A torque wrench is required so as not to damage the unit.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/case_and_imu.jpg"><img alt="image15" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/adrv1cc-box/case_and_imu.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>Apply hot glue to connector.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="cutting-a-slot-for-the-jtag-adapter-cable">
+<h3>Cutting a Slot for the JTAG Adapter Cable<a class="headerlink" href="#cutting-a-slot-for-the-jtag-adapter-cable" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>The following procedure needs to be performed on only half of the boxes.</p></li>
+<li><p>Using a table saw, cut a 1.25” opening down the second shelf.</p>
+<ul>
+<li><p>This allows JTAG Adapter cable to protrude from the case.</p></li>
+<li><p>The JTAG adapter cable (same PN as the IMU cable and Nav switch cable) will be added AFTER the PCB’s are inserted into the case.</p></li>
+</ul>
+</li>
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/portable-radio-reference-design/case_saw_cut_for_jtag.jpg"><img alt="image16" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/portable-radio-reference-design/case_saw_cut_for_jtag.jpg" style="width: 600px;" /></a></p>
+</section>
+<section id="inserting-the-pcb-s">
+<h3>Inserting the PCB’s<a class="headerlink" href="#inserting-the-pcb-s" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Now to slide the PCB’s into the case. Lay both units on the table as below.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/inserting_pcb_s_1.jpg"><img alt="image17" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/inserting_pcb_s_1.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>Gently pull the face plate and cables above the PCB.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/inserting_pcb_s_2.jpg"><img alt="image18" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/inserting_pcb_s_2.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>All the cables must protrude past the edge of the PCB so they do not get stuck between the PCB and the case.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/inserting_pcb_s_3.jpg"><img alt="image19" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/inserting_pcb_s_3.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>There should be 4 empty rows on the side of the case. The PCB slotting into the 5th row from the bottom.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/shelf_position.jpg"><img alt="image20" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/shelf_position.jpg" style="width: 400px;" /></a></p>
+</li>
+<li><p>Keep the cables and face plate from being caught between the side of the box and the PCB.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/inserting_pcb_s_4.jpg"><img alt="image21" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/inserting_pcb_s_4.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>The FPGA is intended to make contact with the metal case. Be careful when inserting the PCB’s, you might have to flex the case slightly for the FPGA to fit.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/inserting_pcb_s_5.jpg"><img alt="image22" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/inserting_pcb_s_5.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>Make sure none of the U.FL to SMA cables are caught between the plastic and the IMU adapter PCB. This can cause damage to the cables and seriously impact the RF performance.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/inserting_pcb_s_6.jpg"><img alt="image23" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/inserting_pcb_s_6.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>Now, using a pair of tweezers, connect the JTAG Adapter Cable so it protrudes from the opening cut into the box previously.</p>
+<ul class="simple">
+<li><p>Apply hot glue to the cable so it does not come loose.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="inserting-the-belly-plate">
+<h3>Inserting the Belly Plate<a class="headerlink" href="#inserting-the-belly-plate" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Flip the unit over so the flat surface is down. The belly plate slides into the outer most slot as seen below.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/inserting_belly_plate_1.jpg"><img alt="image24" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/inserting_belly_plate_1.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>Keep the OLED cable, battery cable and navigation switch cable from catching on anything. If the cables catch on something and are pulled too hard… they can break or they can break things off.</p>
+<ul class="simple">
+<li><p>Sometimes the battery needs to be pressed towards the belly plate so it fits just right.</p></li>
+<li><p>A small screwdriver, tweezers or dentist like tool will come in handy for manipulating the cables.</p></li>
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/handy_tools.jpg"><img alt="image25" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/handy_tools.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>Make sure the OLED connector found on the carrier card is open. The plastic frame should be pulled gently AWAY from the connector itself.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/oled_connector_open.jpg"><img alt="image26" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/oled_connector_open.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>From here the cable should be inserted into the connector, and the black plastic closed so as to secure the cable</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/oled_cable_secured.jpg"><img alt="image27" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/oled_cable_secured.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>Add some hot glue to the connector and the cable so any force is applied to the glue and not the connector itself.</p></li>
+<li><p>Connect the battery cable to the battery plug.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/battery_and_oled_connected_2.jpg"><img alt="image28" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/battery_and_oled_connected_2.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>Slide the belly plate so it is flush with either end of the box.</p></li>
+</ul>
+</section>
+<section id="connecting-the-imu">
+<h3>Connecting the IMU<a class="headerlink" href="#connecting-the-imu" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Using tweezers, pliers or other tool… grab the IMU cable and gently push it into the connector.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/imu_cable_connected.jpg"><img alt="image29" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/imu_cable_connected.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>Once the connector is firmly in place, use the hot glue gun to apply glue to the cable and connector so it cannot be disconnected unintentionally. This doesn’t take a lot of glue.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/glueing_imu.jpg"><img alt="image30" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/glueing_imu.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>Let the glue dry for a minute.</p></li>
+</ul>
+</section>
+<section id="face-plate">
+<h3>Face Plate<a class="headerlink" href="#face-plate" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Make sure the button is facing the same direction as the beveled screw holes on the face plate</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/face_plate_with_power_switch.jpg"><img alt="image31" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/face_plate_with_power_switch.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>Add hex nut and tighten slightly.</p></li>
+<li><p>Add the male pin header to the Power Switch Adapter PCB, protruding TOWARD the face plate.</p>
+<ul class="simple">
+<li><p>Solder the pins to the PCB.</p></li>
+</ul>
+</li>
+<li><p>Add the Power Switch Adapter PCB to the power switch, as seen below.</p></li>
+<li><p>Solder the four pins.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/pcb_buton.jpg"><img alt="image32" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/pcb_buton.jpg" style="width: 400px;" /></a></p>
+</li>
+<li><p>Attach the Power Switch Cable to the header (orientation to follow the picture above).</p></li>
+<li><p>We need the Power Switch Adapter PCB to be parallel to the bottom of the face plate.</p></li>
+<li><p>We need the hex nut to be parallel to the bottom of the face plate.</p>
+<ul class="simple">
+<li><p>These can both be tricky tasks but the end result is the P.S.A PCB, the face plate bottom edge, and the hex nut all being parallel.</p></li>
+<li><p>This is also results in the hex nut being tightened and some loctite applied.</p></li>
+</ul>
+</li>
+<li><p>Add hot glue to the connector on the Adapter PCB so the cable cannot be disconnected.</p></li>
+<li><p>Let the glue dry for a minute.</p></li>
+</ul>
+</section>
+<section id="connecting-the-power-switch-and-navigation-switch">
+<h3>Connecting the Power Switch and Navigation Switch<a class="headerlink" href="#connecting-the-power-switch-and-navigation-switch" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Slide the belly plate away, so there is access to the Power Switch Connector (P9) and Navigation Switch Connector (P11).</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/connecting_power_switch_cable_and_navigation_switch_cable.jpg"><img alt="image33" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/connecting_power_switch_cable_and_navigation_switch_cable.jpg" style="width: 400px;" /></a></p>
+</li>
+<li><p>Connect the power switch cable to P9.</p>
+<ul class="simple">
+<li><p>Let the cable hang to the side.</p></li>
+</ul>
+</li>
+<li><p>Apply some hot glue to the connector so it cannot be easily removed.</p>
+<ul class="simple">
+<li><p>Make sure no glue goes outside the white line in the silkscreen, this will make the PCB difficult to slide in and out.</p></li>
+</ul>
+</li>
+<li><p>Connect the navigation cable to P11.</p></li>
+<li><p>Slide the case back to its starting position.</p></li>
+<li><p>Apply some hot glue to the connector so it cannot be easily removed.</p></li>
+</ul>
+</section>
+<section id="adding-the-plastic-frames">
+<h3>Adding the plastic frames<a class="headerlink" href="#adding-the-plastic-frames" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Be careful when placing the black plastic frame over the faceplates. It requires a little maneuvering but can be done with placing any tension on the cables.</p></li>
+<li><p>The first step is to position the plastic frame so one of the short sides of the face plate goes through the opening.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/first_step_in_applying_plastic_frame.jpg"><img alt="image34" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/first_step_in_applying_plastic_frame.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>The second step is to gently push the face plate through the plastic frame.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/second_step_in_applying_plastic_frame.jpg"><img alt="image35" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/second_step_in_applying_plastic_frame.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>The last step is to push the plastic frame flush to the case.</p></li>
+</ul>
+</section>
+<section id="securing-the-face-plates">
+<h3>Securing the face plates<a class="headerlink" href="#securing-the-face-plates" title="Link to this heading"></a></h3>
+<ul>
+<li><p>SMA Face Plate</p>
+<ul class="simple">
+<li><p>Ensure the U.FL cables do not get pinched or are resting in any damaging condition.</p></li>
+<li><p>For example, make sure none of the U.FL cables are caught between the edge of the PCB and the face plate as you press the face plate flush to the end of the case.</p></li>
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/closing_the_face_plate.jpg"><img alt="image36" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/closing_the_face_plate.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>Insert screws and secure using a screwdriver (or power tool if you have one).</p>
+<ul class="simple">
+<li><p>Be careful when using power tools for screws and nuts. If you over tighten anything, you risk stripping the threads and damage.</p></li>
+</ul>
+</li>
+<li><p>Ethernet Face Plate</p>
+<ul>
+<li><p>Make sure the connectors fit properly into the holes. They should be flush and the face plate should not require force to align.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/ethernet_face_plate.jpg"><img alt="image37" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/ethernet_face_plate.jpg" style="width: 600px;" /></a></p>
+</li>
+<li><p>Insert screws and secure using a screwdriver (or power tool if you have one).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="adding-face-plate-labels">
+<h3>Adding Face Plate Labels<a class="headerlink" href="#adding-face-plate-labels" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Because the silkscreen was not included on the first set of boxes, two labels need to be added to the SMA’s to match the text in the image below</p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/portable-radio-reference-design/labels_for_face_plate.jpg"><img alt="image38" src="https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/portable-radio-reference-design/labels_for_face_plate.jpg" style="width: 400px;" /></a></p>
+</li>
+<li><p>In future builds, the silkscreen will be etched with the correct labels and this will not be a necessary step</p></li>
+</ul>
+<p>Once these steps are complete, you can being the radio <a class="reference internal" href="../packrf/testing.html"><span class="doc">Full Assembly Test</span></a>.</p>
+</section>
+</section>
+</section>
+<section id="packrf-assembly-instructions">
+<h1>PackRF - Assembly Instructions<a class="headerlink" href="#packrf-assembly-instructions" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Place one finished radio in each slot.</p>
+<ul>
+<li><p>Only one of the radios should have the JTAG adapter cable hanging out of the side.</p></li>
+</ul>
+</li>
+<li><p>Place one TPE-115GI POE injector in each slot.</p></li>
+<li><p>Place 20 RF antennas in the slot.</p></li>
+<li><p>The rest of the items are placed into the large open rectangle on the left. Some of the items should be folded and the air pressed out of the plastic so everything fits.</p>
+<ul>
+<li><p>2x Micro SD card’s</p></li>
+<li><p>2x USB OTG Cable</p></li>
+<li><p>2x GPS Antenna</p></li>
+<li><p>2x Ethernet Cable</p></li>
+<li><p>2x Car Adapter</p></li>
+<li><p>2x DC Wallwart</p></li>
+<li><p>2x Webcam (De-boxed)</p></li>
+<li><p>1x JTAG Adapter</p></li>
+<li><p>2x USB Cables</p></li>
+</ul>
+</li>
+</ul>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,325 @@
+LTC2672 - No-OS Driver
+======================
+
+Supported Devices
+-----------------
+
+-  :adi:`LTC2672`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`DC2903A`
+
+| 
+| ===== Overview ===== The :adi:`LTC2672` is a family of five-channel, 12-/16-bit current source, digital-to-analog converters (DACs) that provide five high compliance, current source outputs with guaranteed 0.6 V dropout at 200 mA. There are eight current ranges that are programmable per channel with full-scale outputs of up to 300 mA.
+
+The channels of :adi:`LTC2672` can be paralleled to allow either ultrafine adjustments of large currents or combined outputs of up to 1.5 A. A dedicated supply pin is provided for each output channel. Each channel can be operated from 2.1 V to VCC, and internal switches allow any output to be pulled to the optional negative supply.
+
+The :adi:`LTC2672` includes a precision integrated 1.25 V reference (10 ppm/°C maximum), with the option to use an external reference. The serial peripheral interface (SPI)-compatible, 3‑wire serial interface operates on logic levels as low as 1.71 V and at clock rates as high as 50 MHz.
+
+Applications
+------------
+
+-  Tunable lasers
+-  Semiconductor optical amplifier biasing
+-  Resistive heaters
+-  Current-mode biasing
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/dc2903_ltc2672_eval.png
+   :align: center
+   :width: 300px
+
+ADI No-OS
+~~~~~~~~~
+
+The goal of ADI Microcontroller No-OS is to provide reference projects for lower end processors, which can't run Linux or aren't running a specific operating system, and to help those customers using microcontrollers with ADI parts. ADI No-OS offers **generic drivers**, which can be used as a base for any microcontroller platform and also **example projects**, which are using these drivers on various microcontroller platforms.
+
+| For more information about ADI No-OS and supported microcontroller platforms, visit the :doc:`No-OS User Guide </wiki-migration/resources/no-os>`.
+| ===== LTC2672 ADI No-OS driver =====
+
+Driver Source Code
+------------------
+
+The source code for LTC2672 driver can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of LTC2672 Driver|
+
+   -
+
+   |Implementation of LTC2672 Driver|
+
+This driver also uses the ADI utility library, so make sure you also add the necessary files to your project. The source code for the util library can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of ADI util library|
+
+   -
+
+   |Implementation file of ADI util library|
+
+To use the LTC2672 No-OS Driver, you need to provide the specific implementation for the communication APIs and the specific types they use. If the SPI communication is chosen, there are three functions which are called by the LTC2672 driver and have to be implemented:
+
+.. container:: center box
+
+   
+   +--------------------------------+---------------------------------------------+
+   | **no_os_spi_init()**           | initializes the communication peripheral.   |
+   +--------------------------------+---------------------------------------------+
+   | **no_os_spi_write_and_read()** | writes and reads data to/from the device.   |
+   +--------------------------------+---------------------------------------------+
+   | **no_os_spi_remove()**         | deinitializes the communication peripheral. |
+   +--------------------------------+---------------------------------------------+
+   
+
+
+And there are two data types that have to be defined:
+
+.. container:: center box
+
+   
+   +--------------------------+---------------------------------------------------------+
+   | **no_os_spi_desc**       | structure holding the SPI descriptor                    |
+   +--------------------------+---------------------------------------------------------+
+   | **no_os_spi_init_param** | structure holding the parameters for SPI initialization |
+   +--------------------------+---------------------------------------------------------+
+   
+
+
+An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using, can be found below:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Generic header file for SPI Communication APIs|
+
+Code Documentation
+------------------
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and can be accessed in these links:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `LTC2672 Header file <http://analogdevicesinc.github.io/no-OS/ltc2672_8h.html>`_
+   -  `LTC2672 Source file <http://analogdevicesinc.github.io/no-OS/ltc2672_8c.html>`_
+   
+
+
+Device Configuration
+--------------------
+
+Driver Initialization
+~~~~~~~~~~~~~~~~~~~~~
+
+| To use the device, you need to provide the support for the communication protocol (SPI) as mentioned above.
+| The first API function to be called is **ltc2672_init**. Make sure that it returns 0. This indicates a successful driver initialization.
+| === Output Span Configuration === Use either of the following functions to configure the channel output span:
+
+.. container:: center box
+
+   
+   +-----------------------------------+-----------------------------------------------------------------+
+   | **ltc2672_set_span_channel**      | allows each channel's output span to be configured individually |
+   +-----------------------------------+-----------------------------------------------------------------+
+   | **ltc2672_set_span_all_channels** | sets same output span across all channels                       |
+   +-----------------------------------+-----------------------------------------------------------------+
+   
+
+
+.. important::
+
+   The current driver and evaluation hardware only supports the default VREF and FSADJ settings of the :adi:`LTC2672`. For settings other than the default, appropriate scaling of the output span and desired current must be performed. For reference, refer to Table 9 of :adi:`LTC2672` data sheet.
+
+
+Monitor Multiplexer Output Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| The :adi:`LTC2672` contains a multiplexer pin output, which allows an external controller or analog-to-digital converter (ADC) to monitor certain chip measurements. To enable this functionality, use the **ltc2672_monitor_mux** function and specify the property from the valid list of properties in the header implementation.
+| **Current Measurement using Multiplexer Output**
+| The output current from any one channel can be measured by configuring the multiplexer using the **ltc2672_monitor_mux** function. Once configured, the voltage at the multiplexer output pin can be measured, and the current from the selected channel can be estimated using the equation below:
+
+::
+
+   I_OUTx = I_FS(mA) * V_MUX / V_REF
+
+| where:
+| **V_REF** is the measurement from the VREF pin (~1.25V).
+| **I_FS(mA)** is the output span setting in mA.
+| The current isn't directly measured, but instead estimated from the DAC settings of the specified channel. This means that the measurement using the above equation is only valid when the output is properly terminated (not open/dropping out) and the output span is configured to a valid value (refer to header implementation).
+| **Die Temperature Measurement using Multiplexer Output**
+| Similar with the output current, the die temperature of the :adi:`LTC2672` can also be measured through the **ltc2672_monitor_mux** function. The voltage at the multiplexer output pin varies directly with the temperature with a temperature coefficient of -3.7 mV/°C. The die temperature can be estimated using this equation:
+
+::
+
+   T = T0 + (V0 − V_MUX) / (3.7 mV/°C).
+
+| where:
+| **T0 = 25°C** (initial temperature).
+| **V0 = 1.4 V** (initial voltage).
+| For calibration or more accurate measurements, the actual initial temperature and voltage can be measured and replaced on the equation above.
+| === Output Current Configuration === Once the channel output spans have been set, you may now configure the output current using the following functions:
+
++--------------------------------------+---------------------------------------------------------------------------------------------+
+| **ltc2672_set_current_channel**      | allows output current to be individually set per channel                                    |
++--------------------------------------+---------------------------------------------------------------------------------------------+
+| **ltc2672_set_current_all_channels** | sets similar output current across all channels (given that they have the same output span) |
++--------------------------------------+---------------------------------------------------------------------------------------------+
+
+|
+
+.. note::
+
+   When the output span of a channel/s is configured to connect to the negative supply (V-), the output current is fixed at -80 mA regardless of the current set!
+
+
+| **Load Termination and Combining Multiple Channels**
+| Each output channel of the :adi:`LTC2672` can output a maximum of 300 mA. In instances where current greater than 300 mA is needed, multiple channels can be tied together to produce the desired level. Channels tied together must operate in the same span category, which can be set using the **ltc2672_set_span_all_channels** function.
+
+Once the desired channels have been set to have similar output span, the target current can then be set by configuring the same channels via **ltc2672_set_current_channel** function. For example, Channels 0 and 1 can be combined to produce 350 mA of current by configuring one channel to have 300 mA output, while the other channel to have 50 mA (assuming they're operating in the same span - i.e., 300 mA span).
+
+.. note::
+
+   All output pins must be terminated to GND. Unused pins must remain unconnected or floating for proper operation.
+
+
+Power Down Options
+~~~~~~~~~~~~~~~~~~
+
+To save power, you may use the following functions:
+
++-------------------------------------+---------------------------------------------------------------------------------------------------+
+| **ltc2672_power_down_channel**      | used to power down single or multiple channels                                                    |
++-------------------------------------+---------------------------------------------------------------------------------------------------+
+| **ltc2672_power_down_all_channels** | used to power down all channels                                                                   |
++-------------------------------------+---------------------------------------------------------------------------------------------------+
+| **ltc2672_chip_power_down**         | used to power down the entire chip, shutting down all other blocks such as the internal reference |
++-------------------------------------+---------------------------------------------------------------------------------------------------+
+
+| 
+| === Output Current Toggle Configuration === For instances requiring the DAC outputs to toggle between two levels, the :adi:`LTC2672` offers a toggle function which allows two current values to be stored in a channel's DAC register A and B. Once the two current levels and desired channel/s have been identified, the following functions can be used to set the toggle operation:
+
+.. container:: center box
+
+   **ltc2672_setup_toggle**
+
+   | **ltc2672_enable_channel**
+
+
+Once set up, perform the toggle by repeatedly using the **ltc2672_global_toggle** function as needed. The output levels can be verified by connecting an ammeter on the output of the desired channel and measuring the current levels during state changes.
+| === Fault Register Bits === The first 8 bits of an SPI transaction response serve as fault indicators. Whenever a fault is detected, the corresponding Fault Register bit is set and is outputted on the next SPI transaction. If an SPI transaction fixes any of the existing faults, the cleared fault register bit is reflected on the next SPI transaction response. The faults that are detected include open circuit detection for any of the output channels, overtemperature detection (> 175°C) with thermal protection, and invalid SPI transaction length (valid lengths are 24, 32, and multiple of 32 bits).
+| == Configuration Command ==
+
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **ltc2672_config_command** | allows disabling of any of the active fault detection mechanisms. This function can also disable the open circuit detection and thermal protection mechanism, as well as provide means to configure the external reference operation. |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+| For the valid corresponding mask or values, refer to the device data sheet.
+| ==== Driver Initialization Example ====
+
+Example Initialization Using Maxim SDK as Platform
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+       int ret;
+
+       struct ltc2672_dev *ltc2672_desc;
+       
+       struct max_spi_init_param spi_extra = {
+               .numSlaves = 1,
+           .polarity = SPI_SS_POL_LOW,
+       };
+
+       struct ltc2672_init_param ltc2672_init_params = {
+               .spi_init.device_id = 1, 
+           .spi_init.max_speed_hz = 2000000,
+           .spi_init.chip_select = 0,
+           .spi_init.mode = NO_OS_SPI_MODE_0, 
+           .spi_init.bit_order = NO_OS_SPI_BIT_ORDER_MSB_FIRST,
+           .spi_init.platform_ops = &SPI_OPS,
+           .spi_init.extra = &spi_extra,
+           .active_device = LTC2672_12,
+       };
+
+       ret = ltc2672_init(&ltc2672_desc, &ltc2672_init_params);
+       if (ret)
+           return ret;
+
+       bool toggle_flag = false;
+       float current_set = (float)3.125 / (float)1;
+       uint32_t command;
+
+       /* Set all channels for 6.25mA output span */
+       ret = ltc2672_set_span_all_channels(ltc2672_desc, LTC2672_100VREF);
+       if (ret)
+           return ret;
+
+       /* Set current of all channels to 3.125mA */
+       ret = ltc2672_set_current_all_channels(ltc2672_desc, current_set);
+       if (ret)
+           return ret;
+
+       /* Monitor the Voltage Reference Level via Multiplexer Output */
+       ret = ltc2672_monitor_mux(ltc2672_desc, LTC2672_MUX_VREF);
+       if (ret)
+           return ret;
+
+       /* Power Down All channels and Voltage Reference */
+       ret = ltc2672_chip_power_down(ltc2672_desc);
+       if (ret)
+           return ret;
+
+       /* Setup Channel 3 to toggle bet. 1.5mA and 1.9mA */
+       ret = ltc2672_setup_toggle_channel(ltc2672_desc, LTC2672_DAC3, 1.5, 1.9);
+       if (ret)
+           return ret;
+
+       /* Enable CH3 for toggling */
+       ret = ltc2672_enable_toggle_channel(ltc2672_desc, 8);
+       if (ret)
+       return ret;
+
+       /* Repeated Toggle of CH3 DAC output */
+       for(int i = 0; i < 4; i++){
+       toggle_flag ^= true;
+
+       ret = ltc2672_global_toggle(ltc2672_desc, toggle_flag);
+       if (ret)
+           return ret;
+        }
+
+| 
+| ==== Driver Application Example ====
+
+.. tip::
+
+   You can find application example projects for LTC2672 driver here: :doc:`Evaluating the LTC2672 </wiki-migration/resources/eval/user-guides/dc2903a/no-os-setup>`
+
+
+.. |Header file of LTC2672 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ltc2672/ltc2672`.h
+.. |Implementation of LTC2672 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/dac/ltc2672/ltc2672`.c
+.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
+.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
+.. |Generic header file for SPI Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_spi`.h

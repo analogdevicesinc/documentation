@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The implementation of the current mirror circuit may seem simple but there is a lot going on. The simple two transistor implementation of the current mirror is based on the fundamental relationship that two equal size transistors at the same temperature with the same VGS for a MOS or VBE for a BJT have the same drain or collector current. To best understand this important circuit building block and how it makes use of this relationship we need to deconstruct the circuit into input and output sections and examine each in turn." name="description" />
+
+    <title>Chapter 11: The Current Mirror &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Chapter 11: The Current Mirror</a><ul>
+<li><a class="reference internal" href="#basic-principles">11.1 Basic principles</a></li>
+<li><a class="reference internal" href="#an-input-stage-to-convert-current-to-voltage">11.2 An input stage to convert current to voltage</a></li>
+<li><a class="reference internal" href="#an-output-stage-to-convert-voltage-to-current">11.3 An output stage to convert voltage to current</a></li>
+<li><a class="reference internal" href="#assembling-the-complete-circuit">11.4 Assembling the complete circuit</a><ul>
+<li><a class="reference internal" href="#mirror-gain-other-than-1">11.4.1 Mirror Gain other than 1</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#imperfections-of-the-simple-mirror">11.5 Imperfections of the simple mirror</a><ul>
+<li><a class="reference internal" href="#gain-errors">11.5.1 Gain Errors</a></li>
+<li><a class="reference internal" href="#compliance-voltage">11.5.2 Compliance voltage</a></li>
+<li><a class="reference internal" href="#output-resistance">11.5.3 Output resistance</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#basic-mosfet-current-mirror">11.6 Basic MOSFET current mirror</a></li>
+<li><a class="reference internal" href="#improved-current-mirrors">11.7 Improved current mirrors</a><ul>
+<li><a class="reference internal" href="#buffered-feedback-current-mirror">11.7.1 Buffered Feedback current mirror</a></li>
+<li><a class="reference internal" href="#the-wilson-current-mirror">11.7.2 The Wilson current mirror</a></li>
+<li><a class="reference internal" href="#further-improvement-full-wilson-mirror">11.7.3 Further improvement (full Wilson Mirror)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#widlar-current-source">11.8 Widlar current source</a><ul>
+<li><a class="reference internal" href="#analysis">11.8.1 Analysis</a></li>
+<li><a class="reference internal" href="#output-impedance">11.8.2 Output impedance</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-zero-gain-amplifier">11.9. The Zero Gain Amplifier</a></li>
+<li><a class="reference internal" href="#stabilized-current-source">11.10 Stabilized Current Source</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="chapter-11-the-current-mirror">
+<h1>Chapter 11: The Current Mirror<a class="headerlink" href="#chapter-11-the-current-mirror" title="Link to this heading"></a></h1>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f4.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f4.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f4.png" style="width: 500px;" />
+</a>
+<section id="basic-principles">
+<h2>11.1 Basic principles<a class="headerlink" href="#basic-principles" title="Link to this heading"></a></h2>
+<p>The implementation of the current mirror circuit may seem simple but there is a lot going on. The simple two transistor implementation of the current mirror is based on the fundamental relationship that two equal size transistors at the same temperature with the same V<sub>GS</sub> for a MOS or V<sub>BE</sub> for a BJT have the same drain or collector current. To best understand this important circuit building block and how it makes use of this relationship we need to deconstruct the circuit into input and output sections and examine each in turn.</p>
+<p>A current mirror is a circuit block which functions to produce a copy of the current flowing into or out of an input terminal by replicating the current in an output terminal. An important feature of the current mirror is a relatively high output resistance which helps to keep the output current constant regardless of load conditions. Another feature of the current mirror is a relatively low input resistance which helps to keep the input current constant regardless of drive conditions. The current being ‘copied’ can be, and often is, a varying signal current. The current mirror is often used to provide bias currents and active loads in amplifier stages.</p>
+<p>The ideal block level concept of the current mirror is shown in figure 11.1. Given a current source as the input, the input section of the current mirror looks like a virtual short circuit and reflects (swaps the direction of flow) this current to produce a current sink (the current exiting the mirror); as a result, we obtain a current sink (figure 11.1a). Conversely, given a current sink as the input, the current mirror reflects this current to control current source (figure 11.1b); as a result, now we obtain a current source. We can generalize this basic current mirror structure with this first observation: A current mirror consists of a low impedance input stage connected to a high impedance output current stage.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f1.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f1.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f1.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.1, Current Mirror (a) Sink (b) Source</p>
+</div>
+<p>Conceptually, an ideal current mirror is simply an ideal current amplifier with a gain of -1. In Chapter 8 we explored the transistor and you should recall that the BJT device is a current amplifier of sorts (current controlled current source) in that the collector current is β times the base current. The problem with using this feature directly is that β is not a well controlled value from device to device and can vary with changes in temperature. Accurate current amplifiers are difficult to directly implement using conventional transistor amplifier configurations which are typically voltage amplifiers. For example the MOS transistor is generally modeled as a voltage controlled current source and can not be used directly as a current amplifier. The use of feedback and the current to voltage relationship of two terminal elements such as a resistor are most often used when manipulating currents as signals. Because in a current mirror the input and output are currents, it is easier to convert the input to a voltage first and then convert a voltage back to a current at the output.</p>
+<p>It should be noted that these two stages of the current mirror may have a linear relationship (for example where V<sub>OUT</sub> = I<sub>IN</sub>R and I<sub>OUT</sub> = V<sub>IN</sub>/R) like a resistor. In figure 11.1.1 we see the classic operational amplifier implementation of the current to voltage converter explored back in Chapter 4 section 2. The virtual ground at the negative input of the op-amp provides a very low input resistance. These circuits use the linear relationship between the current in resistor R1 and the voltage across the resistor. However, this linear relationship is not necessarily required. Any element or combination of elements could be used such as the V<sub>BE</sub> or V<sub>GS</sub> of a transistor as in (b) if the output voltage was taken at the gate of M1 (output of the op-amp).</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f3.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f3.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f3.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.1.1 Linear Current to Voltage converter (from Chapter 4)</p>
+</div>
+<p>Similarly, as an output stage we have the operational amplifier implementation of the voltage to current converter from section 1 of Chapter 4 in figure 1.1.2. Here the input voltage is forced across resistor R1 such that the resulting current in R1 flows through transistor M1.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f1.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f1.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr4-f1.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.1.2 Linear Voltage to Current converter (from Chapter 4)</p>
+</div>
+<p>Implementing the block diagram of the current mirror shown in figure 11.1 follows directly from these voltage / current converter stages from Chapter 4, if we connect the output of the I to V converter in figure 11.1.1(b) to the input of the V to I converter in figure 11.1.2. With the two resistors being equal, I<sub>OUT</sub> would be the mirror image of I<sub>IN</sub>. Note that the second op-amp is not actually necessary because the gates of the two NMOS transistors can be tied directly to each other with the same result. Remember that two equal size transistors at the same temperature with the same V<sub>GS</sub> (or V<sub>BE</sub> for a BJT) have the same drain current. This is an important simplification of the current mirror concept.</p>
+<p>The converters might consist of non-linear devices having whatever I to V characteristics that may include another physical quantity (such as temperature); the only requirement is that the characteristics be the inverse of each other. For example, if the input I to V stage implements a function v = f(i) and the output stage implements the inverse function i = f -1(v) the total input to output transfer function is v = f(i) = f(f -1(v)) . We can make a second observation: A current mirror consists of two connected stages with inverse transfer functions of each other.</p>
+<p>The converter circuits in figures 11.1.1 and 11.1.2 are rather complicated and require as many as two operational amplifiers. A much simpler implementation would be better.</p>
+</section>
+<section id="an-input-stage-to-convert-current-to-voltage">
+<h2>11.2 An input stage to convert current to voltage<a class="headerlink" href="#an-input-stage-to-convert-current-to-voltage" title="Link to this heading"></a></h2>
+<p>We would like a simple configuration where the active element, a single transistor, serves as the desired current-to-voltage converter. However, the transistor is a unidirectional device, where for the BJT the base emitter voltage controls the collector current or for the FET the gate source voltage controls the drain current. Producing the opposite where the collector current controls the V<sub>BE</sub> is not possible in the conventional use of the device as a common emitter amplifier. Referring back to Figure 11.1.1, the solution is to incorporate negative feedback. In this case that means making the transistor adjust its base emitter or gate source voltage, V<sub>BE</sub> or V<sub>GS</sub>, so that the collector or drain current is I<sub>IN</sub> = (V<sub>1</sub>-V<sub>BE</sub>)/R. For this purpose, we simply connect the collector to the base or gate to drain or “diode connect” the transistor. This classic “diode” connection results in 100% parallel negative feedback (figure 11.2). As a result, with this diode connected transistor, the collector current serves as the input quantity while the base-emitter voltage V<sub>BE</sub> serves as the output quantity with the logarithmic transfer function of the base emitter junction. Similarly, a diode connected enhancement mode MOS FET (gate tied to drain) will serve as a similar current to voltage converter with V<sub>GS</sub> as the output quantity rather than V<sub>BE</sub>.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f2.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f2.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f2.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.2, Current to Voltage Converter</p>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="../../alm1k/alm-lab-3.html"><span class="doc">ADALM1000 BJT as a diode lab activity</span></a></div>
+<div class="line"><a class="reference internal" href="../../alm1k/alm-lab-3m.html"><span class="doc">ADALM1000 MOS as a diode lab activity</span></a></div>
+<div class="line"><a class="reference internal" href="../electronics-lab-3.html"><span class="doc">ADALM2000 BJT as a diode lab activity</span></a></div>
+<div class="line"><a class="reference internal" href="../electronics-lab-3m.html"><span class="doc">ADALM2000 MOS as a diode lab activity</span></a></div>
+</div>
+</section>
+<section id="an-output-stage-to-convert-voltage-to-current">
+<h2>11.3 An output stage to convert voltage to current<a class="headerlink" href="#an-output-stage-to-convert-voltage-to-current" title="Link to this heading"></a></h2>
+<p>A bipolar transistor can be driven by a voltage or by a current. If we consider the base emitter voltage, V<sub>BE</sub>, as the input and the collector current, I<sub>C</sub>, as the output (figure 11.3), we can think of a transistor as a non-linear voltage-to-current converter having an exponential characteristic. The base can be directly driven by the voltage output of the I-to-V converter we just discussed. The collector provides the output terminal of our simple current mirror: The output V to I converter stage of the simple current mirror is just a transistor acting as a non-linear (exponential for BJT) voltage-to-current converter. Again if a MOS transistor were used for the input stage the output stage would be a MOS transistor with the gate serving as the voltage input and the drain as the current output.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f3.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f3.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f3.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.3, Voltage to Current Converter</p>
+</div>
+</section>
+<section id="assembling-the-complete-circuit">
+<h2>11.4 Assembling the complete circuit<a class="headerlink" href="#assembling-the-complete-circuit" title="Link to this heading"></a></h2>
+<p>The final step is to connect the output of the input stage (the base emitter junction of Q<sub>1</sub>) to the input of the output stage (the base emitter junction of Q<sub>2</sub>) to build the basic BJT current mirror circuit (figure 11.4). At this point we will concentrate on the issues involved with the BJT current mirror and pick back up with the MOS current mirror in section 11.6.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f4.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f4.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f4.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.4, BJT Current Mirror</p>
+</div>
+<section id="mirror-gain-other-than-1">
+<h3>11.4.1 Mirror Gain other than 1<a class="headerlink" href="#mirror-gain-other-than-1" title="Link to this heading"></a></h3>
+<p>If transistors Q<sub>1</sub> and Q<sub>2</sub> in figure 11.4 are identical (that is have the same size emitter and thus equal I<sub>S</sub>) the input current to output current ratio or gain is ideally 1. There are often occasions when a gain other than one is required. When building circuits from discrete devices only simple integer ratios are possible while in microelectronic integrated circuits it is possible to make transistors with arbitrary emitter areas, A. However, even in integrated circuits the best design practice is to use identical unit size transistors when making current mirrors.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f5.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f5.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f5.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.4.1, Current Mirror with non-unary gain ratio</p>
+</div>
+<p>If on the input side of the mirror we connect N identical devices in parallel and connect M devices in parallel on the output side, the gain of the mirror will be M/N. In figure 11.4.1 we see an example where 2 (N=2) devices are connected together on the input and 3 (M=3) devices are connected together on the output. The mirror gain will thus be 3/2 or 1.5. Since all five transistors share the same V<sub>BE</sub>voltage, their collector currents, I<sub>C</sub>, will all be equal. The input current I<sub>IN</sub> splits equally in Q<sub>1</sub> and Q<sub>2</sub> such that:</p>
+<p><span class="math notranslate nohighlight">\(I_C = I_IN/2\)</span> , <span class="math notranslate nohighlight">\(I_OUT = 3I_C\)</span> or <span class="math notranslate nohighlight">\(\displaystyle (\frac{3}{2})I_IN\)</span></p>
+</section>
+</section>
+<section id="imperfections-of-the-simple-mirror">
+<h2>11.5 Imperfections of the simple mirror<a class="headerlink" href="#imperfections-of-the-simple-mirror" title="Link to this heading"></a></h2>
+<p>There are three primary error sources that make the simple 2 transistor mirror less than ideal. The first is the mirror gain. Ideally I<sub>OUT</sub> should exactly equal I<sub>IN</sub>. There are systematic and random factors that make this not the case. The second is the incremental output resistance, which determines how much the output current varies with the voltage seen at the mirror output. The third limitation is the minimum voltage drop across the output leg of the mirror necessary to maintain the desired output current. This minimum voltage, called output compliance, is determined by the need to keep the output transistor of the mirror in the active region. There are also a number of secondary performance issues with mirrors, for example, temperature stability and frequency response.</p>
+<section id="gain-errors">
+<h3>11.5.1 Gain Errors<a class="headerlink" href="#gain-errors" title="Link to this heading"></a></h3>
+<p>An error source in this simple BJT based current mirror is that the transistors Q<sub>1</sub> and Q<sub>2</sub> (figure 11.4) each remove a base current I<sub>B</sub> from the input current I<sub>IN</sub>. As a result, the output current is smaller than the input current:</p>
+<p><span class="math notranslate nohighlight">\(I_OUT = I_IN - 2I_B\)</span></p>
+<p>As was already discussed, current mirrors can just as easily be made from MOS FET transistors. The I-to-V and V-to-I functions are different but of course are still the inverse of each other. A significant advantage of the MOS current mirror is the lack of base current induced error that BJT current mirrors suffer. There are methods to correct or compensate for the base current in BJT current mirrors which will be discussed in detail in later sections of this chapter.</p>
+</section>
+<section id="compliance-voltage">
+<h3>11.5.2 Compliance voltage<a class="headerlink" href="#compliance-voltage" title="Link to this heading"></a></h3>
+<p>It is necessary to keep the output (BJT) transistor out of saturation, V<sub>CB</sub> = 0 V. Or from another perspective, not allow the collector base junction to forward bias. That means the lowest output voltage that results in the correct output current, the compliance voltage, is V<sub>OUT</sub> = V<sub>CV</sub> = V<sub>BE</sub> under bias conditions with the output transistor at the output current level I<sub>C</sub> and with V<sub>CB</sub> = 0 V or, restating the V<sub>BE</sub>relation from earlier:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e1.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e1.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e1.png" style="width: 150px;" />
+</a>
+<p>Where V<sub>T</sub> is the thermal voltage and I<sub>S</sub> is the reverse saturation current.</p>
+</section>
+<section id="output-resistance">
+<h3>11.5.3 Output resistance<a class="headerlink" href="#output-resistance" title="Link to this heading"></a></h3>
+<p>The V<sub>CB</sub> of Q<sub>1</sub> in the mirror is zero. If V<sub>CB</sub> is greater than zero in the output transistor Q<sub>2</sub>, the collector current in Q<sub>2</sub> will be somewhat larger than Q<sub>1</sub> due to the Early effect. In other words, the mirror has a finite output resistance given by the r<sub>O</sub> of the output transistor, namely:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e2.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e2.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e2.png" style="width: 200px;" />
+</a>
+<div class="line-block">
+<div class="line">Where:</div>
+<div class="line">V<sub>A</sub> is the Early voltage</div>
+<div class="line">V<sub>CB</sub> is the collector-to-base voltage</div>
+</div>
+<p>As we learned in an earlier chapter, the inclusion of emitter degeneration resistors (R<sub>E1</sub> and R<sub>E2</sub> in figure 11.5) can increase the effective collector impedance seen at the mirror output. In order for the mirror gain to remain equal to 1, R<sub>E1</sub> must of course equal R<sub>E2</sub>. The added voltage drop across the emitter resistor R<sub>E2</sub> (I<sub>OUT</sub> x R<sub>E2</sub>) adds to the minimum allowable output voltage (see section 11.5.2).</p>
+<p>While resistors could also be added to the sources in an MOS based mirror, it is often more effective to simple increase the channel length, L, of the transistors. The longer the channel the less it is affected by the channel length modulation due to the increasing drain voltage.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f6.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f6.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f6.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.5, Emitter degeneration included to boot output resistance.</p>
+</div>
+<p>It is important to note that the inclusion of emitter resistors does not reduce the reduction in the output current I<sub>OUT</sub> caused by the finite beta of Q<sub>1</sub> and Q<sub>2</sub>. A compensating voltage can be inserted by including resistor R<sub>B</sub>, of the correct value, as shown in figure 11.6.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f7.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f7.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f7.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.6, Adding a resistor in the base of Q<sub>1</sub> tends to compensate for the finite beta of Q<sub>2</sub></p>
+</div>
+<p>For V<sub>CB</sub> close to zero (that is, neglecting base-width modulation errors) the necessary value for R<sub>B</sub> is:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e3.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e3.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e3.png" style="width: 300px;" />
+</a>
+<p>For example, using A = 2 ( a mirror gain of 2 ), I<sub>IN</sub> = 1mA, so r<sub>E</sub> = 26Ω and R<sub>E1</sub> = 500Ω (introducing about 500mV of degeneration) R<sub>B</sub> should be 1578Ω if β is enough larger than A so that factor can be ignored, or 1626Ω if it is included and beta is 100. Clearly, this compensation method becomes unpredictable when β is small and is comparable to A and will never be precise because β<sub>1</sub> and β<sub>2</sub> are not in general equal. However, this technique can be of practical utility in many cases.</p>
+</section>
+</section>
+<section id="basic-mosfet-current-mirror">
+<h2>11.6 Basic MOSFET current mirror<a class="headerlink" href="#basic-mosfet-current-mirror" title="Link to this heading"></a></h2>
+<p>The simple current mirror can, obviously, also be implemented using MOSFET transistors, as shown in figure 11.7. We know that transistor M<sub>1</sub> is operating in the saturation region because V<sub>DS</sub> is greater than or equal to V<sub>GS</sub>. Transistor M<sub>2</sub>will also be in saturation so long as the output voltage is larger than its saturation voltage. In this simple configuration, the output current I<sub>OUT</sub> is directly related to I<sub>IN</sub>.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f8.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f8.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f8.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.7 Simple MOS current mirror</p>
+</div>
+<p>The drain current of a MOSFET I<sub>D</sub> is a function of both the gate to source voltage and the drain to gate voltage of the MOSFET given by I<sub>D</sub> = f (V<sub>GS</sub>, V<sub>DG</sub>), a relationship derived from the functionality of the MOSFET device. In the case of transistor M<sub>1</sub> of the mirror, I<sub>D</sub> = I<sub>IN</sub>. Input current I<sub>IN</sub> is a known current, and can be provided by a resistor as shown in the figure, or by a threshold-referenced or self-biased current source to ensure that it is constant, independent of voltage supply variations.</p>
+<p>Using V<sub>DG</sub>=0 for transistor M<sub>1</sub>, the drain current in M<sub>1</sub> is I<sub>D</sub> = f (V<sub>GS</sub>,V<sub>DG</sub>=0), so we find: f (V<sub>GS</sub>, 0) = I<sub>IN</sub>, implicitly determining the value of V<sub>GS</sub>. Thus I<sub>IN</sub> sets the value of V<sub>GS</sub>. The circuit in the diagram forces the same V<sub>GS</sub> to apply to transistor M<sub>2</sub>. If M<sub>2</sub> also is biased with zero V<sub>DG</sub> and provided transistors M<sub>1</sub> and M<sub>2</sub> have good matching of their properties, such as channel length, width, threshold voltage etc., the relationship I<sub>OUT</sub> = f (V<sub>GS</sub>,V<sub>DG</sub>=0 ) applies, thus setting I<sub>OUT</sub> = I<sub>IN</sub>; that is, the output current is the same as the input current when V<sub>DG</sub>=0 for the output transistor, and both transistors are matched.</p>
+<p>The drain-to-source voltage can be expressed as V<sub>DS</sub>=V<sub>DG</sub> + V<sub>GS</sub>. With this substitution, the Shichman-Hodges model provides an approximate form for function f(V<sub>GS</sub>,V<sub>DG</sub>):</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle I_D = f(V_GS,V_DG ) = \frac{1}{2} K_p (W/L) (V_GS-V_th )^2 (1+λV_DS )\)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle I_D = \frac{1}{2} K_p (W/L) (V_GS-V_th )^2 (1+λ(V_DG+V_GS ))\)</span></p>
+<div class="line-block">
+<div class="line">Where:</div>
+<div class="line">Kp is a technology related constant associated with the transistor,</div>
+<div class="line">W/L is the width to length ratio of the transistor,</div>
+<div class="line">V<sub>GS</sub> is the gate-source voltage, V<sub>th</sub> is the threshold voltage, V<sub>DS</sub> is the drain-source voltage</div>
+<div class="line">λ is the channel length modulation constant</div>
+<div class="line"><strong>Output resistance</strong></div>
+</div>
+<p>Because of channel-length modulation, the mirror has a finite output resistance given by the <em>ro</em> of the output transistor, namely:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e04.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e04.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e04.png" style="width: 200px;" />
+</a>
+<div class="line-block">
+<div class="line">Where:</div>
+<div class="line">λ = channel-length modulation parameter</div>
+<div class="line">V<sub>DS</sub> = drain-to-source bias.</div>
+</div>
+<p><strong>Compliance voltage</strong></p>
+<p>To keep the output transistor resistance high, V<sub>DG</sub> = 0 V. That means the lowest output voltage that results in correct mirror behavior, the compliance voltage, is V<sub>OUT</sub> = V<sub>CV</sub> = V<sub>GS</sub> for the output transistor at the output current level with V<sub>DG</sub> = 0 V, or using the inverse of the f- function, f<sup>-1</sup>:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e6.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e6.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e6.png" style="width: 500px;" />
+</a>
+<p>For the Shichman-Hodges model, f<sup>-1</sup> is approximately a square-root function.</p>
+</section>
+<section id="improved-current-mirrors">
+<h2>11.7 Improved current mirrors<a class="headerlink" href="#improved-current-mirrors" title="Link to this heading"></a></h2>
+<section id="buffered-feedback-current-mirror">
+<h3>11.7.1 Buffered Feedback current mirror<a class="headerlink" href="#buffered-feedback-current-mirror" title="Link to this heading"></a></h3>
+<p>Figure 11.8 shows a mirror where the simple wire connecting the collector of Q<sub>1</sub> to its base is replaced by an emitter follower buffer. This improvement to the simple current mirror is referred to as an emitter follower augmented mirror. The current gain (ß<sub>Q3</sub>) of the emitter follower buffer stage (Q<sub>3</sub>) greatly reduces the gain error caused by the finite base currents of Q<sub>1</sub> and Q<sub>2</sub>.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f9.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f9.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f9.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.8 Buffered Feedback current mirror.</p>
+</div>
+<p>One thing to note that is different in this mirror configuration vs. the simple two transistor mirror is that the Collector-Base voltage, V<sub>CB</sub>, of Q<sub>1</sub> is no longer zero. It is equal to the V<sub>BE</sub> of Q<sub>3</sub>. Given the effect of the finite output resistance (Early effect ) the output current I<sub>OUT</sub> in Q<sub>2</sub> will most closely match I<sub>IN</sub> when the collector voltage of Q<sub>2</sub> is the same as that of Q<sub>1</sub> which is 2XV<sub>BE</sub> above the common voltage. Also note that when driven by a resistor, like R<sub>1</sub>, I<sub>IN</sub> will now be (V<sub>1</sub>-V<sub>BE1</sub>-V<sub>BE2</sub>)/R<sub>1</sub>.</p>
+<p>Another consequence of adding the emitter follower buffer is, in general, a loss in the frequency response of the mirror. Transistor Q<sub>3</sub> is potentially operating at a very small current of 2I<sub>B</sub>. If there were to be a significant capacitance to ground at the base connection common to Q<sub>1</sub> and Q<sub>2</sub> the current available to discharge this current will also be small equal to 2I<sub>B</sub>. But the current available to charge this node is potentially equal to ß<sub>Q3</sub>I<sub>IN</sub> which is very much larger than 2I<sub>B</sub>. This asymmetry in the charging vs. discharging current available for this node in the current mirror can lead to very undesirable response to fast changes to I<sub>IN</sub>.</p>
+</section>
+<section id="the-wilson-current-mirror">
+<h3>11.7.2 The Wilson current mirror<a class="headerlink" href="#the-wilson-current-mirror" title="Link to this heading"></a></h3>
+<p>A Wilson current mirror or Wilson current source, named after George Wilson, is an improved mirror circuit configuration designed to provide a more constant current source or sink. It provides a much more accurate input to output current gain. The structure is shown in figure 11.9.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f10.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f10.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f10.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.9 The Wilson Current Mirror</p>
+</div>
+<p>We will be making the following two assumptions. First, all transistors have the same current gain ß. Second, Q<sub>1</sub> and Q<sub>2</sub>are matched, so their collector currents are equal. Therefore, I<sub>C1</sub> = I<sub>C2</sub> (= I<sub>C</sub>) and I<sub>B1</sub> = I<sub>B2</sub> (= I<sub>B</sub>) .</p>
+<p>The base current of Q<sub>3</sub> is given by,</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e7.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e7.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e7.png" style="width: 150px;" />
+</a>
+<p>The emitter of Q<sub>3</sub> current by,</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e8.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e8.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e8.png" style="width: 200px;" />
+</a>
+<p>Looking at figure 11.9, it can be seen that <sub>IE3</sub> = I<sub>C2</sub> + I<sub>B1</sub> + I<sub>B2</sub> Substituting for I<sub>C2</sub>, I<sub>B1</sub> and I<sub>B2</sub>, I<sub>E3</sub> = I<sub>C</sub> + 2I<sub>B</sub></p>
+<p>so,</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e9.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e9.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e9.png" style="width: 200px;" />
+</a>
+<p>Substituting for I<sub>E3</sub></p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e10.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e10.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e10.png" style="width: 250px;" />
+</a>
+<p>rearranging,</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e11.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e11.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e11.png" style="width: 200px;" />
+</a>
+<p>The current through R<sub>1</sub> is given by, I<sub>R1</sub> = I<sub>C1</sub> + I<sub>B3</sub></p>
+<p>But, I<sub>C1</sub> = I<sub>C2</sub> = I<sub>C</sub></p>
+<p>Substituting for I<sub>C</sub> and since <a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e7.png"><img alt="image1" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e7.png" style="width: 100px;" /></a> we get,</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e12.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e12.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e12.png" style="width: 250px;" />
+</a>
+<p>Therefore,</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e13.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e13.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e13.png" style="width: 250px;" />
+</a>
+<p>And finally,</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e14.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e14.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e14.png" style="width: 200px;" />
+</a>
+<p>From the above equation we can see that if</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e15.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e15.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e15.png" style="width: 300px;" />
+</a>
+<p>And the output current (assuming the base-emitter voltage of all transistors to be 0.7 V) is calculated as,</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e16.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e16.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e16.png" style="width: 300px;" />
+</a>
+<p>Note that the output current is equal to the input current I<sub>R1</sub> which in turn is dependent on V<sub>1</sub> and R<sub>1</sub>. If V<sub>1</sub> is not stable, the output current will not be stable. Thus the circuit does not act as a regulated constant current source.</p>
+<p>In order for it to work as a constant current source, R<sub>1</sub> must be replaced with a constant current source.</p>
+<p><strong>Advantages over other configurations</strong></p>
+<p>This circuit has the advantage of virtually eliminating the base current mismatch of the conventional BJT current mirror thereby ensuring that the output current I<sub>C3</sub> is almost equal to the reference or input current I<sub>R1</sub>. It also has a very high output impedance due to the negative feedback through Q<sub>1</sub> back to the base of Q<sub>3</sub>.</p>
+</section>
+<section id="further-improvement-full-wilson-mirror">
+<h3>11.7.3 Further improvement (full Wilson Mirror)<a class="headerlink" href="#further-improvement-full-wilson-mirror" title="Link to this heading"></a></h3>
+<p>Adding a fourth transistor to the simple Wilson current mirror in figure 11.10, we have the modified or improved Wilson mirror. The improved input to output current accuracy is accomplished by equalizing the collector voltages of Q<sub>1</sub> and Q<sub>2</sub> at 1 V<sub>BE</sub>. This leaves the finite ß and voltage differences of each of Q<sub>1</sub> and Q<sub>2</sub> as the remaining unbalancing influences in the mirror.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f11.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f11.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f11.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.10 The improved Wilson Current Mirror</p>
+</div>
+</section>
+</section>
+<section id="widlar-current-source">
+<h2>11.8 Widlar current source<a class="headerlink" href="#widlar-current-source" title="Link to this heading"></a></h2>
+<p>A Widlar current source is a modification of the basic two-transistor current mirror that incorporates an emitter degeneration resistor for only the output transistor, enabling the current source to generate low currents using only moderate resistor values. This circuit is named for its inventor, Robert Widlar, and was patented in 1967.</p>
+<p>The Widlar circuit may be used with bipolar transistors or MOS transistors. An example application is in the now famous uA741 operational amplifier, and Widlar used the circuit in many of his designs.</p>
+<section id="analysis">
+<h3>11.8.1 Analysis<a class="headerlink" href="#analysis" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f12.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f12.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f12.png" style="width: 550px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.11 A version of the Widlar current source using bipolar transistors.</p>
+</div>
+<p>Figure 11.11 is an example Widlar current source using bipolar transistors, where the emitter resistor R<sub>2</sub> is connected in series with the emitter of output transistor Q<sub>2</sub>, and has the effect of reducing the current in Q<sub>2</sub> relative to Q<sub>1</sub>. The key to this circuit is that the voltage drop across the resistor R<sub>2</sub> subtracts from the base-emitter voltage of transistor Q<sub>2</sub>, thereby reducing the collector current compared to transistor Q<sub>1</sub>. A simulation plot showing this reduction in I<sub>C2</sub> is presented in figure 11.12.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f13.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f13.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f13.png" style="width: 550px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.12 Plot of the collector current of Q<sub>1</sub> and Q<sub>2</sub> R<sub>1</sub> = 15KΩ, R<sub>2</sub> = 300</p>
+</div>
+<p>This observation is expressed by using KVL around the base emitter loop of the circuit in Figure 11.11 as:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e17.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e17.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e17.png" style="width: 400px;" />
+</a>
+<p>Where ß<sub>2</sub> is the beta of the output transistor, which may not be the same as that of the input transistor, in part because the currents in the two transistors are very different. The variable I<sub>B2</sub> is the base current of the output transistor, V<sub>BE</sub> refers to base-emitter voltage. If we neglect the effect of finite ß and use the V<sub>BE</sub> equation we can obtain a useful formula for the output current:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e18.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e18.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e18.png" style="width: 220px;" />
+</a>
+<p>where V<sub>T</sub> is the thermal voltage, I<sub>IN</sub> = I<sub>C1</sub> and I<sub>OUT</sub> = I<sub>C2</sub>.</p>
+<p>Suppose we want to create a 100uA output current from a 300uA input current as in the simulation plot of figure 11.12. V<sub>T</sub> is 26mV times ln(3) is 28.5mV. 28.5mV divided by 100uA is 285 ohms. This equation makes the approximation that the currents are both much larger than the saturation currents I<sub>S1</sub>, I<sub>S2</sub>, an approximation valid except for very low current levels. In the following the distinction between the two scale currents is dropped, although the difference can be important, for example, if the two transistors are designed with different emitter areas.</p>
+</section>
+<section id="output-impedance">
+<h3>11.8.2 Output impedance<a class="headerlink" href="#output-impedance" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f14.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f14.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f14.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.13 Small-signal circuit for finding output resistance of the Widlar source shown in figure 11.11.</p>
+</div>
+<p>A test current I/<sub>x</sub> is applied at the output, and the output resistance is then R<sub>O</sub> = V<sub>x</sub> / I<sub>x</sub>.</p>
+<p>An important property of a current source is its small signal incremental output impedance, which should ideally be infinite. The emitter degeneration resistance introduces local current feedback for transistor Q<sub>2</sub>. Any increase in the current in Q<sub>2</sub> increases the voltage drop across R<sub>2</sub>, reducing the V<sub>BE</sub> for Q<sub>2</sub>, thereby countering the increase in current. This feedback means the output impedance of the circuit is increased, because the feedback involving R<sub>2</sub> forces use of a larger voltage to drive a given current.</p>
+<p>Output resistance is found using a small-signal model for the circuit, shown in Figure 11.13. The transistor Q<sub>1</sub> is replaced by its small-signal emitter resistance r<sub>E</sub> because it is diode connected. In a diode-connected transistor the collector is short-circuited to the base, so the transistor collector-base junction has no time-varying voltage across it. As a result, the transistor behaves like the base-emitter diode, which at low frequencies has a small-signal circuit that is simply the resistor r<sub>E</sub> = V<sub>T</sub> / I<sub>E</sub>, with I<sub>E</sub> the DC Q-point emitter current. The transistor Q<sub>2</sub> is replaced with its hybrid-pi model. A test current I<sub>x</sub> is attached at the output.</p>
+<p>Using the figure, the output resistance is determined using Kirchhoff’s laws. Using Kirchhoff’s voltage law from the ground on the left to the ground connection of R<sub>2</sub>:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e19.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e19.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e19.png" style="width: 300px;" />
+</a>
+<p>Rearranging:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e20.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e20.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e20.png" style="width: 300px;" />
+</a>
+<p>Using Kirchhoff’s voltage law from the ground connection of R<sub>2</sub> to the ground of the test current:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e21.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e21.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e21.png" style="width: 300px;" />
+</a>
+<p>or, substituting for I<sub>b</sub>:</p>
+<p>Eq. 4</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e22.png"><img alt="image2" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e22.png" style="width: 340px;" /></a><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e23.png"><img alt="image3" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-e23.png" style="width: 260px;" /></a></p>
+<p>According to Eq. 4, the output resistance of the Widlar current source is increased over that of the output transistor itself (which is r<sub>O</sub>) so long as R<sub>2</sub> is large enough compared to the r<sub>p</sub> of the output transistor. (Large resistances R<sub>2</sub> make the factor multiplying r<sub>O</sub> approach the value (ß +1).) The output transistor carries a low current, making r<sub>p</sub> large, and increase in R<sub>2</sub> tends to reduce this current further, causing a correlated increase in r<sub>p</sub>. Therefore, a goal of R<sub>2</sub> &gt;&gt; r<sub>p</sub> can be unrealistic, and further discussion is provided below. The resistance R<sub>1</sub> / r<sub>E</sub> usually is small because the emitter resistance r<sub>E</sub> usually is only a few ohms.</p>
+<p>**ADALM1000 Lab Activity 6, <a class="reference internal" href="../../alm1k/alm-lab-6.html"><span class="doc">BJT Current Mirror</span></a> **
+<a href="#id1"><span class="problematic" id="id2">**</span></a>ADALM1000 Lab Activity 6M, <a class="reference internal" href="../../alm1k/alm-lab-6m.html"><span class="doc">MOS Current Mirror</span></a> **</p>
+<p>**ADALM2000 Lab Activity 6, <a class="reference internal" href="../electronics-lab-6.html"><span class="doc">BJT Current Mirror</span></a> **
+<a href="#id3"><span class="problematic" id="id4">**</span></a>ADALM2000 Lab Activity 6M, <a class="reference internal" href="../electronics-lab-6m.html"><span class="doc">MOS Current Mirror</span></a> **</p>
+</section>
+</section>
+<section id="the-zero-gain-amplifier">
+<h2>11.9. The Zero Gain Amplifier<a class="headerlink" href="#the-zero-gain-amplifier" title="Link to this heading"></a></h2>
+<p>When designing a circuit it is important to take into account the wide variation in certain device values from one to another. A central objective of the designer is to desensitize the circuit to these variations to produce a circuit which meets the specifications across all possible conditions. One aspect of design which is common to nearly all circuits is the establishment of stable bias or operating point levels. This seemingly minor portion of a design can provide the most challenging and interesting circuit problems. Many bias generators are centered around the generation of currents to operate the core of the circuit. Current generated from simple resistors and diodes or diode connected transistors connected across the power supply will vary approximately proportional to the variation of the supply voltage. This variation in the resulting bias current is frequently undesirable.</p>
+<p>This is to introduce another kind of current mirror, actually a stabilized current source, which has an output which had been desensitized to variation in input current. To understand this configuration, it is helpful to examine the behavior of a zero gain amplifier. A NMOS version is shown in figure 11.14 but PMOS, NPN or PNP transistors will just as well function in this configuration</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f15.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f15.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f15.png" style="width: 550px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.14 NMOS Zero Gain Amplifier</p>
+</div>
+<p>Remembering back to the previous explanation of the common emitter/source amplifier (figure 11.14(a)), the gain is a function of the drain (or collector) current and the load resistor. For a given drain current, if the drain resistor R<sub>L</sub> is set equal to r<sub>s</sub> then the gain A will be minus 1.</p>
+<p>Alternatively. if the gate is held fixed at the same DC bias level which produces an identical drain current as in (a) and an input signal is applied to the top of load resistor R<sub>L</sub> (figure 11.14(b)), then the gain will be plus 1. That is if the drain/source output impedance of the transistor is neglected. If we now connect the gate to the top of resistor R<sub>L</sub> as in figure 11.14(c), the net gain superimposing both paths will be 1 - 1 = 0.</p>
+<p>In figure 11.15 we have an NPN transistor biased into conduction with a collector voltage V<sub>C</sub> which is less than the base voltage V<sub>BE</sub> by the thermal voltage V<sub>T</sub>= kT/q, (equal to Ic times R<sub>L</sub>) and is essentially constant with input voltage changes applied from V<sub>IN</sub>. The voltages seen at V<sub>BE</sub> and V<sub>C</sub> are plotted vs. the applied voltage at V<sub>IN</sub> in figure 11.14. As we can see while V<sub>BE</sub> continues to rise, V<sub>C</sub> remains much more constant and actually decreases above a certain level of V<sub>IN</sub>.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f16.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f16.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f16.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.15 NPN Zero Gain Amplifier</p>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f17.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f17.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f17.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.16 Plot of V<sub>BE</sub> and V<sub>C</sub> vs V<sub>IN</sub> for R1 = 10KΩ and R<sub>L</sub>=75Ω</p>
+</div>
+<p>A zero gain amplifier made using an enhancement mode NMOS 2N7000 transistor was simulated where the small signal AC gain and phase was calculated as the drain current was swept. As can be seen in figure 11.17 there is a sharp null or dip in the gain curve at around 345uA. This also occurs at the point where the phase makes a sharp transition from 0 degrees to 180 degrees.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f18.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f18.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f18.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.17 Small signal gain/phase plot of zero gain amplifier vs. I<sub>D</sub></p>
+</div>
+<p>**ADALM1000 Lab Activity 7, <a class="reference internal" href="../../alm1k/alm-lab-7.html"><span class="doc">BJT Zero Gain Amplifier</span></a> **
+<a href="#id5"><span class="problematic" id="id6">**</span></a>ADALM1000 Lab Activity 7m, <a class="reference internal" href="../../alm1k/alm-lab-7m.html"><span class="doc">NMOS Zero Gain Amplifier</span></a> **</p>
+<p>**ADALM2000 Lab Activity 7, <a class="reference internal" href="../electronics-lab-7.html"><span class="doc">BJT Zero Gain Amplifier</span></a> **
+<a href="#id7"><span class="problematic" id="id8">**</span></a>ADALM2000 Lab Activity 7m, <a class="reference internal" href="../electronics-lab-7m.html"><span class="doc">NMOS Zero Gain Amplifier</span></a> **</p>
+</section>
+<section id="stabilized-current-source">
+<h2>11.10 Stabilized Current Source<a class="headerlink" href="#stabilized-current-source" title="Link to this heading"></a></h2>
+<p>Now that we understand the concept of the zero gain amplifier, the objective is to investigate its use to produce an output current which is stabilized (less sensitive) to variations of the input current level. This current source configuration, figure 11.17, is also sometimes called a Peaking Current Source or g<sub>m</sub>-compensated mirror. Because the collector voltage V<sub>C</sub> of transistor Q<sub>1</sub> is now more constant with changes in the input supply voltage as represented by V<sub>IN</sub>, it can be used as the base voltage of Q<sub>2</sub> to produce a much more constant collector current in transistor Q<sub>2</sub>.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f19.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f19.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f19.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.18 Stabilized (Peaking) current source (g<sub>m</sub>-compensated mirror)</p>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f20.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f20.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f20.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.19 Plot of the collector current of Q<sub>1</sub> and Q<sub>2</sub> R<sub>1</sub> = R<sub>2</sub> = 10KΩ, R<sub>L</sub> = 75Ω</p>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f21.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f21.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f21.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.20 PTAT current plot of Peaking Current Source</p>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f22.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f22.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f22.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.21 A combination of the Widlar mirror and peaking current source provides further improvement in the regulation of a variable input current.</p>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f23.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f23.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f23.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.22 Simulation of circuit in figures 11.18 and 11.21 with R<sub>1</sub> = 20KΩ, R<sub>L</sub>= 250Ω and R<sub>2</sub>= 1.2KΩ</p>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f24.png"><img alt="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f24.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/electronics/text/chptr11-f24.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11.23 cascade of NPN and PNP peaking current sources</p>
+</div>
+<div class="line-block">
+<div class="line"><strong>ADALM1000 Lab Activity 8,</strong> <a class="reference internal" href="../../alm1k/alm-lab-8.html"><span class="doc">BJT Stabilized current source</span></a></div>
+<div class="line"><strong>ADALM1000 Lab Activity 8m,</strong> <a class="reference internal" href="../../alm1k/alm-lab-8m.html"><span class="doc">NMOS Stabilized current source</span></a></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>ADALM2000 Lab Activity 8,</strong> <a class="reference internal" href="../electronics-lab-8.html"><span class="doc">BJT Stabilized current source</span></a></div>
+<div class="line"><strong>ADALM2000 Lab Activity 8m,</strong> <a class="reference internal" href="../electronics-lab-8m.html"><span class="doc">MOS Stabilized current source</span></a></div>
+</div>
+<hr class="docutils" />
+<p>More background on current mirrors can be found in this <a class="icon link reference external" href="https://en.wikipedia.org/wiki/Current_mirror" target="_blank">Wikipedia page</a></p>
+<p><strong>Return to</strong> <a class="reference internal" href="chapter-10.html"><span class="doc">Previous Chapter</span></a></p>
+<p><strong>Go to</strong> <a class="reference internal" href="chapter-12.html"><span class="doc">Next Chapter</span></a></p>
+<p><strong>Return to</strong> <a class="reference internal" href="electronics-toc.html"><span class="doc">Table of Contents</span></a></p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

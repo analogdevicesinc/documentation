@@ -1,0 +1,212 @@
+ADN2850 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+=============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADN2850`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-ADN2850SDZ`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-ADN2850SDZ <ADN2850>` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-ADN2850SDZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/img_adn2850.jpg
+   :alt: img_adn2850.jpg
+   :align: center
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`_
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-ADN2850SDZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/adn2850_sdp1z.png
+   :alt: adn2850_sdp1z.png
+   :align: center
+   :width: 400px
+
+The :adi:`ADN2850` is a dual-channel, nonvolatile memory, digitally controlled resistors with 1024-step resolution, offering guaranteed maximum low resistor tolerance error of ±8%. The device performs the same electronic adjustment function as a mechanical rheostat with enhanced resolution, solid state reliability, and superior low temperature coefficient performance. The versatile programming of the ADN2850 via an SPI®-compatible serial interface allows 16 modes of operation and adjustment including scratchpad programming, memory storing and restoring, increment/decrement, ±6 dB/step log taper adjustment, wiper setting readback, and extra EEMEM for user-defined information such as memory data for other components, look-up table, or system identification information.
+
+The **EVAL-ADN2850SDZ** evaluation board is a member of a growing number of boards available for the SDP. Designed to help customers evaluate performance or quickly prototype new ADN2850 circuits and reduce design time, the EVAL-ADN2850SDZ evaluation board can operate in single-supply and dual-supply mode and incorporates an internal power supply powered from the USB.
+
+More information
+----------------
+
+-  :adi:`ADN2850 Product Info <ADN2850>` - pricing, samples, datasheet
+-  :adi:`EVAL-ADN2850SDZ evaluation board user guide </static/imported-files/user_guides/UG-276.pdf>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+-  FMC-SDP adapter board
+-  **EVAL-ADN2850** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **ADN2850 Driver:** :git-no-OS:`drivers/potentiometer/ad525x`
+   
+   -  **ADN2850 Commands:** :git-no-OS:`device_commands/AD525x`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+   | Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-ADN2850 reference project for Xilinx KC705 FPGA board.
+
++-------------------+-------------------------------------------------------------------------------+
+| Command           | Description                                                                   |
++===================+===============================================================================+
+| **help?**         | Displays all available commands.                                              |
++-------------------+-------------------------------------------------------------------------------+
+| **rdac=**         | Load the wiper register with a give value. Accepted values:                   |
+|                   | channel:                                                                      |
+|                   | 0 - select RDAC 1 wiper register.                                             |
+|                   | 1 - select RDAC 2 wiper register.                                             |
+|                   | value:                                                                        |
+|                   | 0 .. 1023 - value to be written in register.                                  |
++-------------------+-------------------------------------------------------------------------------+
+| **rdac?**         | Read back the value of the wiper register. Accepted values:                   |
+|                   | channel:                                                                      |
+|                   | 0 - select RDAC 1 wiper register.                                             |
+|                   | 1 - select RDAC 2 wiper register.                                             |
++-------------------+-------------------------------------------------------------------------------+
+| **reset!**        | Reset all wiper register to its stored values                                 |
++-------------------+-------------------------------------------------------------------------------+
+| **restore=**      | Restore the specified wiper register setting form the memory. Accepted value: |
+|                   | channel:                                                                      |
+|                   | 0 - select RDAC 1 wiper register.                                             |
+|                   | 1 - select RDAC 2 wiper register.                                             |
++-------------------+-------------------------------------------------------------------------------+
+| **save=**         | Save the given wiper register settings to the memory. Accepted value:         |
+|                   | channel:                                                                      |
+|                   | 0 - select RDAC 1 wiper register.                                             |
+|                   | 1 - select RDAC 2 wiper register.                                             |
++-------------------+-------------------------------------------------------------------------------+
+| **writemem=**     | Write to one of the user memory address. Accepted value:                      |
+|                   | address: a value between 0x2 and 0xE.                                         |
+|                   | data: a value between 0 and 1023.                                             |
++-------------------+-------------------------------------------------------------------------------+
+| **readmem=**      | Read data from the EEMEM memory. Accepted value:                              |
+|                   | address: a value between 0x2 and 0xE.                                         |
++-------------------+-------------------------------------------------------------------------------+
+| **decrdacdb=**    | Decrement a given wiper register by 6dB. Accepted value:                      |
+|                   | channel:                                                                      |
+|                   | 0 - select RDAC 1 wiper register.                                             |
+|                   | 1 - select RDAC 2 wiper register.                                             |
++-------------------+-------------------------------------------------------------------------------+
+| **decrdacdball!** | Decrement all wiper register by 6dB.                                          |
++-------------------+-------------------------------------------------------------------------------+
+| **decrdac=**      | Decrement a given wiper register by one. Accepted value:                      |
+|                   | channel:                                                                      |
+|                   | 0 - select RDAC 1 wiper register.                                             |
+|                   | 1 - select RDAC 2 wiper register.                                             |
++-------------------+-------------------------------------------------------------------------------+
+| **decrdacall!**   | Decrement all wiper register by one.                                          |
++-------------------+-------------------------------------------------------------------------------+
+| **incrdacdb=**    | Increment a given wiper register by 6dB. Accepted value:                      |
+|                   | channel:                                                                      |
+|                   | 0 - select RDAC 1 wiper register.                                             |
+|                   | 1 - select RDAC 2 wiper register.                                             |
++-------------------+-------------------------------------------------------------------------------+
+| **incrdacdball!** | Increment all wiper register by 6dB.                                          |
++-------------------+-------------------------------------------------------------------------------+
+| **incrdac=**      | Increment a given wiper register by one. Accepted value:                      |
+|                   | channel:                                                                      |
+|                   | 0 - select RDAC 1 wiper register.                                             |
+|                   | 1 - select RDAC 2 wiper register.                                             |
++-------------------+-------------------------------------------------------------------------------+
+| **incrdacall!**   | Increment all wiper register by one.                                          |
++-------------------+-------------------------------------------------------------------------------+
+| **setwp=**        | Set the state of the Write Protect (WP) pin. Accepted value:                  |
+|                   | desired state:                                                                |
+|                   | 0 - inactive                                                                  |
+|                   | 1 - active                                                                    |
++-------------------+-------------------------------------------------------------------------------+
+| **getwp?**        | Return the current value of the Write Protect (WP) pin                        |
++-------------------+-------------------------------------------------------------------------------+
+| **sethwreset=**   | Set the state of the Hardware Override Preset (PR) pin. Accepted value:       |
+|                   | 0 - inactive                                                                  |
+|                   | 1 - active                                                                    |
++-------------------+-------------------------------------------------------------------------------+
+| **gethwreset?**   | Return the current value of the Hardware Override Preset (PR) pin             |
++-------------------+-------------------------------------------------------------------------------+
+| **tolerance=**    | Read one of the Tolerance register. Accepted value:                           |
+|                   | 0x0 - this device has one tolerance register                                  |
++-------------------+-------------------------------------------------------------------------------+
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`_
+
+
+.. _more-information-1:
+
+More information
+================
+
+-  :doc:`ADN2850 Digital Potentiometer Linux Driver </wiki-migration/resources/tools-software/linux-drivers/misc/dpot>`
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`_
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

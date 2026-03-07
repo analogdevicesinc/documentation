@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="digilent.png Digilent Inc. is a leader in the design, manufacture, and world wide distribution of FPGA and microcontroller technologies. Since its founding in 2000, Digilent has grown to the point where our products can now be found in over 1000 universities in more than 70 countries throughout the world. As a multinational company with offices in the US, Taiwan, China and Romania, Digilent is able to provide low-cost, expert quality solutions for a variety of customer needs." name="description" />
+
+    <title>Digilent Inc. &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Digilent Inc.</a></li>
+<li><a class="reference internal" href="#hardware">Hardware</a><ul>
+<li><a class="reference internal" href="#id1">Pmods</a></li>
+<li><a class="reference internal" href="#pmod-compatible-boards">Pmod Compatible Boards</a></li>
+<li><a class="reference internal" href="#id46">FMC</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="digilent-inc">
+<h1>Digilent Inc.<a class="headerlink" href="#digilent-inc" title="Link to this heading"></a></h1>
+<div class="column docutils container">
+<p><a class="icon link reference external" href="http://www.digilentinc.com" target="_blank"><img alt="digilent.png" src="https://wiki.analog.com/_media/resources/digilent.png" style="width: 100px;" /></a> Digilent Inc. is a leader in the design, manufacture, and world wide distribution of FPGA and microcontroller technologies. Since its founding in 2000, Digilent has grown to the point where our products can now be found in over 1000 universities in more than 70 countries throughout the world. As a multinational company with offices in the US, Taiwan, China and Romania, Digilent is able to provide low-cost, expert quality solutions for a variety of customer needs.</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://store.digilentinc.com/digilent-system-boards-and-components/" target="_blank">FPGA Boards</a></p></li>
+<li><p><a class="icon link reference external" href="https://store.digilentinc.com/boards-and-components/expansion-modules/pmods/" target="_blank">Pmods</a></p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="column docutils container">
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="column docutils container">
+<p><a class="icon link reference external" href="http://www.analog.com" target="_blank"><img alt="http://www.analog.com/static/homepage/images/analog_devices_logo.gif" src="http://www.analog.com/static/homepage/images/analog_devices_logo.gif" style="width: 100px;" /></a> Acknowledged industry-wide as the world leader in data conversion and signal conditioning technology, Analog Devices, offers a broad product portfolio to provide solutions for Digilent products. ADI provides <a class="icon adi reference external" href="https://www.analog.com/en/power-management/products/index.html" target="_blank">power</a>, <a class="icon adi reference external" href="https://www.analog.com/en/amplifiers-linear/products/index.html" target="_blank">analog signal conditioning</a>, <a class="icon adi reference external" href="https://www.analog.com/en/data-converters/products/index.html" target="_blank">data converters</a>, <a class="icon adi reference external" href="https://www.analog.com/en/audiovideo-products/products/index.html" target="_blank">Audio/Video</a> and <a class="icon adi reference external" href="https://www.analog.com/en/interface/products/index.html" target="_blank">serial data-transfer</a> solutions to meet the needs of technically demanding applications such as:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="http://mil-aero.analog.com/en/segment/ma.html" target="_blank">Aerospace &amp; Defense</a>,</p></li>
+<li><p><a class="icon link reference external" href="http://automotive.analog.com/en/segment/am.html" target="_blank">Automotive</a>,</p></li>
+<li><p><a class="icon link reference external" href="http://communications.analog.com/en/segment/cmmn.html" target="_blank">Communications</a>,</p></li>
+<li><p><a class="icon link reference external" href="http://consumer.analog.com/en/segment/cm.html" target="_blank">Consumer</a>,</p></li>
+<li><p><a class="icon link reference external" href="http://energy.analog.com/en/segment/nrg.html" target="_blank">Energy</a>,</p></li>
+<li><p><a class="icon link reference external" href="http://healthcare.analog.com/en/segment/health.html" target="_blank">Heathcare</a>,</p></li>
+<li><p><a class="icon link reference external" href="http://motorcontrol.analog.com/en/segment/mc.html" target="_blank">Motor Control</a>,</p></li>
+<li><p><a class="icon link reference external" href="http://processcontrol.analog.com/en/segment/pcia.html" target="_blank">Process Control &amp; Industrial Automation</a>.</p></li>
+</ul>
+<p>More information can be found by looking at the <a class="icon adi reference external" href="https://www.analog.com/en/allProducts.html" target="_blank">all ADI products</a> or <a class="icon adi reference external" href="https://www.analog.com/en/allApplications.html" target="_blank">application specific solutions</a> section of the main web site.</p>
+</div>
+</section>
+<section id="hardware">
+<h1>Hardware<a class="headerlink" href="#hardware" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See <a class="icon link reference external" href="https://wiki.analog.com/thirdparty" target="_blank">thirdparty</a></p>
+</div>
+<section id="id1">
+<h2>Pmods<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>ADI products can be found on many boards which use industry standard connectors, such as Pmods and <a class="icon link reference external" href="http://www.vita.com/fmc" target="_blank">FMC</a>.</p>
+<p>Pmods are small I/O interface boards that offer an ideal way to extend the capabilities of FPGA/CPLD boards. Pmods communicate with system boards using 6 or 12-pin connectors. Pmods include sensors, I/O, data acquisition &amp; conversion, connectors, and more. Popular systems with Pmod connectors can be found at <a class="icon link reference external" href="http://www.digilentinc.com/Products/Catalog.cfm?Cat=10&amp;FPGA" target="_blank">Digilent</a> or <a class="icon link reference external" href="https://www.xilinx.com/products/boards-and-kits/AES-S6MB-LX9.htm" target="_blank">Avnet</a>.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Part Number / Purchase</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>ADI Parts</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PmodACL <a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-ACL" target="_blank">Digilent</a> <a class="icon link reference external" href="http://www.em.avnet.com/pmodacl" target="_blank">Avnet</a> <a class="icon link reference external" href="http://www.silica.com/pmodacl" target="_blank">Silica</a></p></td>
+<td><p><a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-ACL" target="_blank"><img alt="http://www.digilentinc.com/Data/Products/PMOD-ACL/TILE_PmodACL_150.jpg" src="http://www.digilentinc.com/Data/Products/PMOD-ACL/TILE_PmodACL_150.jpg" /></a> <strong>Reference Design:</strong> <a class="icon link reference external" href="https://wiki.analog.com/../fpga/xilinx/pmod/adxl345" target="_blank">Analog Devices</a>
+<strong>Reference Design:</strong> <a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-ACL#table1" target="_blank">Digilent</a>
+<strong>Reference Design:</strong> <a class="icon link reference external" href="http://www.em.avnet.com/adipmods" target="_blank">Avnet</a>
+<strong>Reference Design:</strong> <a class="icon link reference external" href="http://www.silica.com/adipmod" target="_blank">Silica</a>
+The Digilent PmodACL is a 3-axis digital accelerometer module powered by the Analog Devices ADXL345. It uses a standard 12-pin Pmod connector and can communicate via SPI or I2C.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/adxl345" target="_blank">adxl345</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>PmodACL2</p></td>
+<td><p><a class="reference external" href="/"><img alt="pmodacl2icon.jpg" src="https://wiki.analog.com/_media/resources/alliances/pmodacl2icon.jpg" style="width: 148px;" /></a> <strong>Reference Design:</strong> <a class="icon link reference external" href="https://wiki.analog.com/../fpga/xilinx/pmod/adxl362" target="_blank">Analog Devices</a>
+The Digilent Pmod-ACL2 is an ultralow power, 3-axis MEMS accelerometer that consumes less than 2 µA at a 100 Hz output data rate and 270 nA when in motion triggered wake-up mode. Unlike accelerometers that use power duty cycling to achieve low power consumption, the ADXL362 does not alias input signals by undersampling; it samples the full bandwidth of the sensor at all data rates. The ADXL362 always provides 12-bit output resolution; 8-bit formatted data is also provided for more efficient single-byte transfers when a lower resolution is sufficient. Measurement ranges of ±2 g, ±4 g, and ±8 g are available, with a resolution of 1 mg/LSB on the ±2 g range.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/adxl362" target="_blank">adxl362</a></p></td>
+</tr>
+<tr class="row-even"><td><p>PmodAD1 <a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD1" target="_blank">Digilent</a> <a class="icon link reference external" href="http://www.em.avnet.com/pmodad1" target="_blank">Avnet</a> <a class="icon link reference external" href="http://www.silica.com/pmodad1" target="_blank">Silica</a></p></td>
+<td><p><a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD1" target="_blank"><img alt="http://www.digilentinc.com/Data/Products/PMOD-AD1/TILE_PmodAD1_150.jpg" src="http://www.digilentinc.com/Data/Products/PMOD-AD1/TILE_PmodAD1_150.jpg" /></a> <strong>Reference Design:</strong> <a class="icon link reference external" href="https://wiki.analog.com/../fpga/xilinx/pmod/ad7476a" target="_blank">Analog Devices</a>
+<strong>Reference Design:</strong> <a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD1#table1" target="_blank">Digilent</a>
+<strong>Reference Design:</strong> <a class="icon link reference external" href="http://www.em.avnet.com/adipmods" target="_blank">Avnet</a>
+<strong>Reference Design:</strong> <a class="icon link reference external" href="http://www.silica.com/adipmod" target="_blank">Silica</a>
+The Digilent Analog to Digital Module Converter Board (the AD1) converts signals at a maximum sampling rate of one million samples per second, fast enough for the most demanding audio applications. The AD1 uses a 6-pin header connector, and at less than one square inch is small enough to be located at the signal source.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/AD7476" target="_blank">AD7476</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>PmodAD2 <a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD2" target="_blank">Digilent</a></p></td>
+<td><p><a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD2" target="_blank"><img alt="http://www.digilentinc.com/Data/Products/PMOD-AD2/TILE_PmodAD2_150.jpg" src="http://www.digilentinc.com/Data/Products/PMOD-AD2/TILE_PmodAD2_150.jpg" /></a> <strong>Reference Design:</strong> <a class="icon link reference external" href="https://wiki.analog.com/../fpga/xilinx/pmod/ad7991" target="_blank">Analog Devices</a>
+<strong>Reference Design:</strong> <a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD2#table1" target="_blank">Digilent</a>
+The Digilent PmodAD2 is an analog to digital converter module with up to 4 channels at 12-bit resolution powered by the Analog Devices AD7991. It uses an 8-pin connector that allows communication via I2C. The PmodAD2 also has a 6-pin connector that allows up to 4 analog inputs or up to 3 analog inputs and a voltage reference.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/AD7991" target="_blank">AD7991</a></p></td>
+</tr>
+<tr class="row-even"><td><p>PmodAD3</p></td>
+<td><p><a class="reference external" href="/"><img alt="pmodad3_icon.jpg" src="https://wiki.analog.com/_media/resources/alliances/pmodad3_icon.jpg" style="width: 148px;" /></a> <strong>Reference Design:</strong> <a class="icon link reference external" href="https://wiki.analog.com/../fpga/xilinx/pmod/ad7780" target="_blank">Analog Devices</a>
+The Digilent Pmod-AD3 is a complete low power front-end solution for bridge sensor products, including weigh scales, strain gages, and pressure sensors. It contains a precision, low power, 24-bit sigma-delta (S-?) ADC; an on-chip, low noise programmable gain amplifier (PGA); and an on-chip oscillator.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad7780" target="_blank">ad7780</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>PmodAD4</p></td>
+<td><p><a class="reference external" href="/"><img alt="pmodad4icon.jpg" src="https://wiki.analog.com/_media/resources/alliances/pmodad4icon.jpg" style="width: 148px;" /></a> <strong>Reference Design:</strong> <a class="icon link reference external" href="https://wiki.analog.com/../fpga/xilinx/pmod/ad7980" target="_blank">Analog Devices</a>
+The Digilent Pmod-AD4 is a 16-bit, successive approximation, analog-to-digital converter (ADC) that operates from a single power supply, VDD.It contains a low power, high speed, 16-bit sampling ADC and a versatile serial interface port. On the CNV rising edge, it samples an analog input IN+ between 0V to REF with respect to ground sense IN-. The reference voltage, REF, is applied externally and can be set independent of the supply voltage, VDD. Its power scales linearely with throughput.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad7980" target="_blank">ad7980</a></p></td>
+</tr>
+<tr class="row-even"><td><p>PmodAD5</p></td>
+<td><p><a class="reference external" href="/"><img alt="pmodad5icon.jpg" src="https://wiki.analog.com/_media/resources/alliances/pmodad5icon.jpg" style="width: 148px;" /></a> <strong>Reference Design:</strong> <a class="icon link reference external" href="https://wiki.analog.com/../fpga/xilinx/pmod/ad7193" target="_blank">Analog Devices</a>
+The Digilent Pmod-AD5 is powered by the Analog Devices AD7193, a low noise, complete analog front end for high precision measurement applications. It contains a low noise, 24-bit sigma-delta (S-?) analog-to-digital converter (ADC).</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad7193" target="_blank">ad7193</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>PmodAD6</p></td>
+<td><p><a class="reference external" href="/"><img alt="pmodad6icon.jpg" src="https://wiki.analog.com/_media/resources/alliances/pmodad6icon.jpg" style="width: 148px;" /></a> <strong>Reference Design:</strong> <a class="icon link reference external" href="https://wiki.analog.com/../fpga/xilinx/pmod/ad7091r" target="_blank">Analog Devices</a>
+The Digilent Pmod-AD6 is powered by the Analog Devices AD7091R, a a 12-bit successive approximation analog-to-digital converter (ADC) that offers ultralow power consumption (typically 349 µA at 3 V and 1 MSPS) while achieving fast throughput rates (1 MSPS with a 50 MHz SCLK).</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad7091r" target="_blank">ad7091r</a></p></td>
+</tr>
+<tr class="row-even"><td><p>PmodAMP3</p></td>
+<td><p><a class="reference external" href="/"><img alt="pmodamp3_icon.jpg" src="https://wiki.analog.com/_media/resources/alliances/pmodamp3_icon.jpg" style="width: 148px;" /></a> <strong>Reference Design:</strong> <a class="icon link reference external" href="https://wiki.analog.com/../fpga/xilinx/pmod/ssm2518" target="_blank">Analog Devices</a>
+The Digilent Pmod-AMP3 is powered by the Analog Devices SSM2518, a digital input, Class-D power amplifier that com-bines a digital-to-analog converter (DAC) and a sigma-delta (Σ-Δ) Class-D modulator. This unique architecture enables extremely low real-world power consumption from digital audio sources with excellent audio performance. The SSM2518 is ideal for power sensitive applications, such as mobile phones and portable media players, where system noise can corrupt small analog signals such as those sent to an analog input audio amplifier.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ssm2518" target="_blank">ssm2518</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>PmodCDC1 <a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-CDC1" target="_blank">Digilent</a></p></td>
+<td><p><a class="reference external" href="/"><img alt="pmodcdc1icon.jpg" src="https://wiki.analog.com/_media/resources/alliances/pmodcdc1icon.jpg" style="width: 148px;" /></a> <strong>Reference Design:</strong> <a class="icon link reference external" href="https://wiki.analog.com/../fpga/xilinx/pmod/ad7156" target="_blank">Analog Devices</a>
+The Digilent PmodCDC1 delivers a complete signal processing solution for capacitive sensors, featuring an ultralow power converter with fast response time. The AD7156 uses an Analog Devices, Inc., capacitance-to-digital converter (CDC) technology, which combines features important for interfacing to real sensors, such as high input sensitivity and high tolerance of both input parasitic ground capacitance and leakage current. The integrated adaptive threshold algorithm compensates for any variations in the sensor capacitance due to environmental factors like humidity and temperature or due to changes in the dielectric material over time.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/AD7156" target="_blank">AD7156</a></p></td>
+</tr>
+<tr class="row-even"><td><p>PmodDA1 <a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-DA1" target="_blank">Digilent</a> <a class="icon link reference external" href="http://www.em.avnet.com/pmodad1" target="_blank">Avnet</a> <a class="icon link reference external" href="http://www.silica.com/pmodad1" target="_blank">Silica</a></p></td>
+<td><p><a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-DA1" target="_blank"><img alt="http://www.digilentinc.com/Data/Products/PMOD-DA1/TILE_PmodDA1_150.jpg" src="http://www.digilentinc.com/Data/Products/PMOD-DA1/TILE_PmodDA1_150.jpg" /></a> <strong>Reference Design:</strong> <a class="icon link reference external" href="https://wiki.analog.com/../fpga/xilinx/pmod/ad7303" target="_blank">Analog Devices</a>
+<strong>Reference Design:</strong> <a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-DA1#table1" target="_blank">Digilent</a>
+<strong>Reference Design:</strong> <a class="icon link reference external" href="http://www.em.avnet.com/adipmods" target="_blank">Avnet</a>
+<strong>Reference Design:</strong> <a class="icon link reference external" href="http://www.silica.com/adipmod" target="_blank">Silica</a>
+The Digilent PmodDA1 Digital To Analog Module Converter Board (the DA1) converts signals from digital to analog at up to one MSa per second. The DA1 uses a 6-pin header connector and at less than one square inch is small enough to be located where the signal is needed. The DA1 has four simultaneous D/A conversion channels, each with an 8-bit converter that can process a separate digital signal. It is possible to send a single signal, such as a reset signal, to all four channels simultaneously, but multiple unique signals cannot be sent simultaneously.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/AD7303" target="_blank">AD7303</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>PmodDA3</p></td>
+<td><p><a class="reference external" href="/"><img alt="pmodda3icon.jpg" src="https://wiki.analog.com/_media/resources/alliances/pmodda3icon.jpg" style="width: 148px;" /></a> <strong>Reference Design:</strong> <a class="icon link reference external" href="https://wiki.analog.com/../fpga/xilinx/pmod/ad5541a" target="_blank">Analog Devices</a>
+The Digilent Pmod-DA3 is a single, 16-bit, serial input, unbuffered voltage output digital-to-analog converter (DAC) that operates from a single 2.7V to 5.5V supply. The DAC output range extends from 0V to Vref and is guaranteed monotonic, providing +- 1 LSB INL accuracy at 16 bits without adjustment.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad5541a" target="_blank">ad5541a</a></p></td>
+</tr>
+<tr class="row-even"><td><p>PmodDA4</p></td>
+<td><p><a class="reference external" href="/"><img alt="pmodda4icon.jpg" src="https://wiki.analog.com/_media/resources/alliances/pmodda4icon.jpg" style="width: 148px;" /></a> <strong>Reference Design:</strong> <a class="icon link reference external" href="https://wiki.analog.com/../fpga/xilinx/pmod/ad5628" target="_blank">Analog Devices</a>
+The Digilent Pmod-DA4 is a low power, octal, 12 bit, buffered voltage-output DAC. The device operates from a single 2.7 V to 5.5 V supply and is guaranteed monotonic by design. The AD5628 is available in both a 4 mm × 4 mm LFCSP and a 16-lead TSSOP. The AD5628 has an on-chip reference with an internal gain of 2. The AD5628 has a 1.25 V 5 ppm/°C reference, giving a full-scale output range of 2.5 V; the AD5628-2 has a 2.5 V 5 ppm/°C reference, giving a full-scale output range of 5 V.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad5628" target="_blank">ad5628</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>PmodDA5</p></td>
+<td><p><a class="reference external" href="/"><img alt="pmodda5icon.jpg" src="https://wiki.analog.com/_media/resources/alliances/pmodda5icon.jpg" style="width: 148px;" /></a> <strong>Reference Design:</strong> <a class="icon link reference external" href="https://wiki.analog.com/../fpga/xilinx/pmod/ad5781" target="_blank">Analog Devices</a>
+The Digilent Pmod-DA5 is a single 18-bit, unbuffered voltage output DAC that operates from a bipolar supply of up to 33 V. The AD5781 accepts a positive reference input range of 5 V to VDD − 2.5 V and a negative reference input range of VSS + 2.5 V to 0 V. The AD5781 offers a relative accuracy specification of ±0.5 LSB maximum, and operation is guaranteed monotonic with a ±0.5 LSB DNL maximum specification.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad5781" target="_blank">ad5781</a></p></td>
+</tr>
+<tr class="row-even"><td><p>PmodDPOT</p></td>
+<td><p><a class="reference external" href="/"><img alt="pmoddpoticon.jpg" src="https://wiki.analog.com/_media/resources/alliances/pmoddpoticon.jpg" style="width: 148px;" /></a> <strong>Reference Design:</strong> <a class="icon link reference external" href="https://wiki.analog.com/../fpga/xilinx/pmod/ad5160" target="_blank">Analog Devices</a>
+The Digilent Pmod-DPOT is powered by the Analog Devices AD5160, a 256 Position SPI Compatible Digital Potentiometer</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad5160" target="_blank">ad5160</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>PmodGYRO2 <a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-GYRO2" target="_blank">Digilent</a></p></td>
+<td><p><a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-GYRO2" target="_blank"><img alt="http://www.digilentinc.com/Data/Products/PMOD-GYRO2/TILE_PmodGYRO2_150.jpg" src="http://www.digilentinc.com/Data/Products/PMOD-GYRO2/TILE_PmodGYRO2_150.jpg" /></a> <strong>Reference Design:</strong> <a class="icon link reference external" href="https://wiki.analog.com/../fpga/xilinx/pmod/adxrs453" target="_blank">Analog Devices</a>
+The Digilent PmodGYRO2 is powered by the Analog Devices ADXRS453, an angular rate sensor (gyroscope) intended for industrial, instrumentation and stabilization applications in high vibration environments.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/adxrs453" target="_blank">adxrs453</a></p></td>
+</tr>
+<tr class="row-even"><td><p>PmodIA</p></td>
+<td><p><a class="reference external" href="/"><img alt="pmod_ia.jpg" src="https://wiki.analog.com/_media/resources/alliances/pmod_ia.jpg" style="width: 148px;" /></a> <strong>Reference Design:</strong> <a class="icon link reference external" href="https://wiki.analog.com/../fpga/xilinx/pmod/ad5933" target="_blank">Analog Devices</a>
+The Digilent PmodIA is powered by the Analog Devices AD5933, a high precision impedance converter system solution that combines an on-board frequency generator with a 12-bit, 1 MSPS, analog-to-digital converter (ADC).</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad5933" target="_blank">ad5933</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>PmodIOXP <a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,401,960&amp;Prod=PMOD-IOXP" target="_blank">Digilent</a></p></td>
+<td><p><a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,401,960&amp;Prod=PMOD-IOXP" target="_blank"><img alt="http://www.digilentinc.com/Data/Products/PMOD-IOXP/TILE_PmodIOXP_150.jpg" src="http://www.digilentinc.com/Data/Products/PMOD-IOXP/TILE_PmodIOXP_150.jpg" /></a> <strong>Reference Design:</strong> <a class="icon link reference external" href="https://wiki.analog.com/../fpga/xilinx/pmod/adp5589" target="_blank">Analog Devices</a>
+The Digilent PmodIOXP is an I/O expansion module powered by the Analog Devices ADP5589. It functions as an I/O port expander and keypad matrix decoder, and uses a standard 8-pin I2C connector allowing it to communicate with a system board via I2C.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/adp5589" target="_blank">adp5589</a></p></td>
+</tr>
+<tr class="row-even"><td><p>PmodMIC2 <a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,401,960&amp;Prod=PMOD-MIC2" target="_blank">Digilent</a></p></td>
+<td><p><a class="reference external" href="/"><img alt="pmodmic2icon.jpg" src="https://wiki.analog.com/_media/resources/alliances/pmodmic2icon.jpg" style="width: 148px;" /></a> <strong>Reference Design:</strong> <a class="icon link reference external" href="https://wiki.analog.com/../fpga/xilinx/pmod/admp441" target="_blank">Analog Devices</a>
+The Digilent PmodMIC2 is powered by the Analog Devices ADMP441, a high performance, low power, digital output, omnidirectional MEMS microphone with a bottom port. The complete ADMP441 solution consists of a MEMS sensor, signal conditioning, an analog-to-digital converter, antialiasing filters, power management, and an industry standard 24-bit I²S interfface.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/admp441" target="_blank">admp441</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>PmodRS232 <a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,401,463&amp;Prod=PMOD-RS232" target="_blank">Digilent</a></p></td>
+<td><p><a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,401,463&amp;Prod=PMOD-RS232" target="_blank"><img alt="http://www.digilentinc.com/Data/Products/PMOD-RS232/TILE_PmodRS232_150.jpg" src="http://www.digilentinc.com/Data/Products/PMOD-RS232/TILE_PmodRS232_150.jpg" /></a> The PmodRS232 Converter Module Board (the RS232 module) translates voltage from the logic levels used by Digilent system boards to the RS232 voltage used for serial communications.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/adm3232e" target="_blank">adm3232e</a></p></td>
+</tr>
+<tr class="row-even"><td><p>PmodTMP2 <a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,401,960&amp;Prod=PMOD-TMP2" target="_blank">Digilent</a></p></td>
+<td><p><a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,401,960&amp;Prod=PMOD-TMP2" target="_blank"><img alt="http://www.digilentinc.com/Data/Products/PMOD-TMP2/TILE_PmodTMP2_150.jpg" src="http://www.digilentinc.com/Data/Products/PMOD-TMP2/TILE_PmodTMP2_150.jpg" /></a> <strong>Reference Design:</strong> <a class="icon link reference external" href="https://wiki.analog.com/../fpga/xilinx/pmod/adt7420" target="_blank">Analog Devices</a>
+The Digilent PmodTMP2 is a high accuracy digital temperature sensor offering breakthrough performance over a wide industrial range, housed in a 4 mm × 4 mm LFCSP package. It contains an internal band gap reference, a temperature sensor, and a 16-bit ADC to monitor and digitize the temperature to 0.0078°C resolution. The ADC resolution, by default, is set to 13 bits (0.0625°C). The ADC resolution is a user programmable mode that can be changed through the serial interface.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/adt7420" target="_blank">adt7420</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="pmod-compatible-boards">
+<h2>Pmod Compatible Boards<a class="headerlink" href="#pmod-compatible-boards" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Part Number / Purchase</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>ADI Parts</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/cn0179" target="_blank">EVAL-CN0179-PMDZ</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/alliances/cn0179_hw_375.jpg"><img alt="image9" src="https://wiki.analog.com/_media/resources/alliances/cn0179_hw_375.jpg" style="width: 200px;" /></a>
+CN0179 is a zero drift weigh scale application sensing circuit which can be connected up to any Pmod compatible host controller board.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad5621" target="_blank">ad5621</a>
+<a class="icon adi reference external" href="https://www.analog.com/ad8657" target="_blank">ad8657</a>
+<a class="icon adi reference external" href="https://www.analog.com/adr125" target="_blank">adr125</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/cn0216" target="_blank">EVAL-CN0216-PMDZ</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/alliances/cn0216_pmod_375.jpg"><img alt="image10" src="https://wiki.analog.com/_media/resources/alliances/cn0216_pmod_375.jpg" style="width: 200px;" /></a>
+CN0216 is a zero drift weigh scale application sensing circuit which can be connected up to any Pmod compatible host controller board.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad7791" target="_blank">ad7791</a>
+<a class="icon adi reference external" href="https://www.analog.com/ada4528-1" target="_blank">ada4528-1</a>
+<a class="icon adi reference external" href="https://www.analog.com/adp3301" target="_blank">adp3301</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/cn0326" target="_blank">EVAL-CN0326-PMDZ</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/alliances/cn0326_hw_375.jpg"><img alt="image11" src="https://wiki.analog.com/_media/resources/alliances/cn0326_hw_375.jpg" style="width: 200px;" /></a>
+CN0326 is a pH measurement sensing circuit which can be connected up to any Pmod compatible host controller board. This is designed for a portable application and always for temperature calibration.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad7793" target="_blank">ad7793</a>
+<a class="icon adi reference external" href="https://www.analog.com/ad8603" target="_blank">ad8603</a>
+<a class="icon adi reference external" href="https://www.analog.com/adum5401" target="_blank">adum5401</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/cn0332" target="_blank">EVAL-CN0332-PMDZ</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/alliances/cn0332_hw_375.jpg"><img alt="image12" src="https://wiki.analog.com/_media/resources/alliances/cn0332_hw_375.jpg" style="width: 200px;" /></a>
+CN0332 is a pH measurement sensing circuit which can be connected up to any Pmod compatible host controller board. This is designed for a portable application and always for temperature calibration.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/adcmp601" target="_blank">adcmp601</a>
+<a class="icon adi reference external" href="https://www.analog.com/ad8027" target="_blank">ad8027</a>
+<a class="icon adi reference external" href="https://www.analog.com/ada4897-2" target="_blank">ada4897-2</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/cn0335" target="_blank">EVAL-CN0335-PMDZ</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/alliances/cn0335_hw_375.jpg"><img alt="image13" src="https://wiki.analog.com/_media/resources/alliances/cn0335_hw_375.jpg" style="width: 200px;" /></a>
+CN0335 is a pH measurement sensing circuit which can be connected up to any Pmod compatible host controller board. This is designed for a portable application and always for temperature calibration.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad7091r" target="_blank">ad7091r</a>
+<a class="icon adi reference external" href="https://www.analog.com/ad8606" target="_blank">ad8606</a>
+<a class="icon adi reference external" href="https://www.analog.com/adum5401" target="_blank">adum5401</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/cn0336" target="_blank">EVAL-CN0336-PMDZ</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/alliances/cn0336_hw_375.jpg"><img alt="image14" src="https://wiki.analog.com/_media/resources/alliances/cn0336_hw_375.jpg" style="width: 200px;" /></a>
+CN0336 is a pH measurement sensing circuit which can be connected up to any Pmod compatible host controller board. This is designed for a portable application and always for temperature calibration.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad7091r" target="_blank">ad7091r</a>
+<a class="icon adi reference external" href="https://www.analog.com/ad8606" target="_blank">ad8606</a>
+<a class="icon adi reference external" href="https://www.analog.com/adum5401" target="_blank">adum5401</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/cn0337" target="_blank">EVAL-CN0337-PMDZ</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/alliances/cn0337_hw_375.jpg"><img alt="image15" src="https://wiki.analog.com/_media/resources/alliances/cn0337_hw_375.jpg" style="width: 200px;" /></a>
+CN0337 is a pH measurement sensing circuit which can be connected up to any Pmod compatible host controller board. This is designed for a portable application and always for temperature calibration.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad7091r" target="_blank">ad7091r</a>
+<a class="icon adi reference external" href="https://www.analog.com/ad8606" target="_blank">ad8606</a>
+<a class="icon adi reference external" href="https://www.analog.com/adum5401" target="_blank">adum5401</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/cn0346" target="_blank">EVAL-CN0346-PMDZ</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/alliances/cn0346_hw_375.jpg"><img alt="image16" src="https://wiki.analog.com/_media/resources/alliances/cn0346_hw_375.jpg" style="width: 200px;" /></a>
+CN0346 is a pH measurement sensing circuit which can be connected up to any Pmod compatible host controller board. This is designed for a portable application and always for temperature calibration.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ad7156" target="_blank">ad7156</a>
+<a class="icon adi reference external" href="https://www.analog.com/ad8615" target="_blank">ad8615</a>
+<a class="icon adi reference external" href="https://www.analog.com/adp125" target="_blank">adp125</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id46">
+<h2>FMC<a class="headerlink" href="#id46" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Part Number / Purchase</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>ADI Parts</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7960" target="_blank">EVAL-AD7960FMCZ</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/alliances/eval_ad7960_fmc.jpg"><img alt="image19" src="https://wiki.analog.com/_media/resources/alliances/eval_ad7960_fmc.jpg" style="width: 150px;" /></a> <strong>Reference Design:</strong> <a class="reference internal" href="../fpga/xilinx/fmc/ad7960.html"><span class="doc">View Reference Design</span></a>
+The EVAL-AD7960FMCZ board is based on the AD7960, which is an 18-bit, 5 MSPS charge redistribution successive approximation (SAR), analog-to-digital converter (ADC). The SAR architecture allows unmatched performance both in noise and in linearity. The AD7960 contains a low power, high speed, 18-bit sampling ADC, an internal conversion clock and an internal reference buffer. On the CNV± edge, the AD7960 samples the voltage difference between the IN+ and IN- pins. The voltages on these pins swing in opposite phase between 0 V and 4.096 V/5 V. The reference voltage is applied to the part externally. All conversion results are available on a single LVDS self-clocked or echo-clocked serial interface.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/AD7960" target="_blank">AD7960</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7961" target="_blank">EVAL-AD7961FMCZ</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/alliances/eval_ad7960_fmc.jpg"><img alt="image20" src="https://wiki.analog.com/_media/resources/alliances/eval_ad7960_fmc.jpg" style="width: 150px;" /></a> <strong>Reference Design:</strong> <a class="reference internal" href="../fpga/xilinx/fmc/ad7961.html"><span class="doc">View Reference Design</span></a>
+The EVAL-AD7961FMCZ board is based on the AD7961, which is an 16-bit, 5 MSPS charge redistribution successive approximation (SAR), analog-to-digital converter (ADC). The SAR architecture allows unmatched performance both in noise and in linearity. The AD7961 contains a low power, high speed, 16-bit sampling ADC, an internal conversion clock and an internal reference buffer. On the CNV± edge, the AD7961 samples the voltage difference between the IN+ and IN- pins. The voltages on these pins swing in opposite phase between 0 V and 4.096 V/5 V. The reference voltage is applied to the part externally. All conversion results are available on a single LVDS self-clocked or echo-clocked serial interface.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/AD7961" target="_blank">AD7961</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9434" target="_blank">AD9434-FMC-500EBZ</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/alliances/cf_ad9434_board.jpg"><img alt="cf_ad9434_board.jpg" src="https://wiki.analog.com/_media/resources/alliances/cf_ad9434_board.jpg" style="width: 150px;" /></a> <strong>Reference Design:</strong> <a class="reference internal" href="../fpga/xilinx/fmc/ad9434.html"><span class="doc">View Reference Design</span></a>
+The AD9434-FMC-500EBZ board is based on the AD9434, which is a 12-Bit monolithic sampling analog-to-digital converter (ADC) optimized for high performance, low power, and ease of use. The part operates at up to a 500 MSPS conversion rate and is optimized for outstanding dynamic performance in wideband carrier and broadband systems.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/AD9434" target="_blank">AD9434</a> <a class="icon adi reference external" href="https://www.analog.com/AD9517-4" target="_blank">AD9517-4</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9467" target="_blank">AD9467-FMC-250EBZ</a></p></td>
+<td><p><a class="icon link reference external" href="http://www.digilentinc.com/Products/Detail.cfm?Prod=AD9467-FMC" target="_blank"><img alt="http://www.digilentinc.com/Data/Products/AD9467-FMC/TILE_AD9467_150.jpg" src="http://www.digilentinc.com/Data/Products/AD9467-FMC/TILE_AD9467_150.jpg" /></a> <strong>Reference Design:</strong> <a class="reference internal" href="../fpga/xilinx/fmc/ad9467.html"><span class="doc">View Reference Design</span></a>
+The AD9467-FMC-250EBZ board is based on the AD9467, which is a 16-Bit, 250 MSPS analog-to-digital converter that. The AD9467 provides a new level of signal processing performance for test and measurement instrumentation, defense electronics, and communications applications where high resolution over a wide bandwidth is needed.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/AD9467" target="_blank">AD9467</a> <a class="icon adi reference external" href="https://www.analog.com/AD9517-4" target="_blank">AD9517-4</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9265" target="_blank">AD9265-FMC-125EBZ</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/alliances/cf_ad9265_board.jpg"><img alt="cf_ad9265_board.jpg" src="https://wiki.analog.com/_media/resources/alliances/cf_ad9265_board.jpg" style="width: 150px;" /></a> <strong>Reference Design:</strong> <a class="reference internal" href="../fpga/xilinx/fmc/ad9265.html"><span class="doc">View Reference Design</span></a>
+The AD9265-FMC-125EBZ board is based on the AD9265, which is a 16-Bit, 125 MSPS analog-to-digital converter (ADC) featuring a wide bandwidth differential sample-and-hold analog input amplifier supporting a variety of user-selectable input ranges.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/AD9265" target="_blank">AD9265</a> <a class="icon adi reference external" href="https://www.analog.com/AD9517-4" target="_blank">AD9517-4</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9739A" target="_blank">AD9739A-FMC-EBZ</a></p></td>
+<td><p><a class="icon link reference external" href="https://reference.digilentinc.com/ad9739a_fmc/ad9739a_fmc" target="_blank"><img alt="http://www.digilentinc.com/Data/Products/AD9739A-FMC/TILE_AD9739A_150.jpg" src="http://www.digilentinc.com/Data/Products/AD9739A-FMC/TILE_AD9739A_150.jpg" /></a> <strong>Reference Design:</strong> <a class="reference internal" href="../fpga/xilinx/fmc/ad9739a.html"><span class="doc">View Reference Design</span></a>
+The new AD9739A-FMC-EBZ board is based on the AD9739A is a 14-bit, 2.5 GSPS high performance RF DAC capable of synthesizing wideband signals from dc up to 3 GHz.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/AD9739A" target="_blank">AD9739A</a> <a class="icon adi reference external" href="https://www.analog.com/ADF4350" target="_blank">ADF4350</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/ad-fmcomms1-ebz" target="_blank">ad-fmcomms1-ebz</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/alliances/cf_xcomm_board.jpg"><img alt="cf_xcomm_board.jpg" src="https://wiki.analog.com/_media/resources/alliances/cf_xcomm_board.jpg" style="width: 150px;" /></a> <strong>Reference Design:</strong> <a class="reference internal" href="../eval/user-guides/ad-fmcomms1-ebz.html"><span class="doc">View Reference Design</span></a>
+The AD-FMCOMMS1-EBZ is an analog front end hardware platform that addresses a broad range of research, academic, industrial and defense applications. The AD-FMCOMMS1-EBZ enables RF applications from 400MHz to 4 GHz. The module is customizable to a wide range of frequencies by software without any hardware changes, providing options for GPS or IEEE 1588 Synchronization, and MIMO configurations.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/AD9122" target="_blank">AD9122</a> <a class="icon adi reference external" href="https://www.analog.com/ADL5375" target="_blank">ADL5375</a> <a class="icon adi reference external" href="https://www.analog.com/ADF4351" target="_blank">ADF4351</a> <a class="icon adi reference external" href="https://www.analog.com/ADL5602" target="_blank">ADL5602</a> <a class="icon adi reference external" href="https://www.analog.com/ADL5380" target="_blank">ADL5380</a> <a class="icon adi reference external" href="https://www.analog.com/AD8366" target="_blank">AD8366</a> <a class="icon adi reference external" href="https://www.analog.com/AD9643" target="_blank">AD9643</a> <a class="icon adi reference external" href="https://www.analog.com/ADF4351" target="_blank">ADF4351</a> <a class="icon adi reference external" href="https://www.analog.com/AD9548" target="_blank">AD9548</a> <a class="icon adi reference external" href="https://www.analog.com/AD9523-1" target="_blank">AD9523-1</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/eval-ad-fmcomms2" target="_blank">AD-FMCOMMS2-EBZ</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/alliances/ad_fmcomms2_ebz.jpg"><img alt="ad_fmcomms2_ebz.jpg" src="https://wiki.analog.com/_media/resources/alliances/ad_fmcomms2_ebz.jpg" style="width: 150px;" /></a> <strong>Reference Design:</strong> <a class="reference internal" href="../eval/user-guides/ad-fmcomms2-ebz.html"><span class="doc">View Reference Design</span></a>
+The AD-FMCOMMS2-EBZ is a high-speed analog module designed to showcase the AD9361, a high performance, highly integrated RF agile transceiver intended for use in RF applications, such as 3G and 4G base station applications and software defined radios. The AD-FMCOMMS2-EBZ provides RF engineers the ability to connect the AD9361 to a RF testbench (Vector Signal Analyzer, Signal generator, etc) and measure performance. The external components (which can easily be swapped) on the AD-FMCOMMS2-EBZ have a narrower RF tuning range 2400 – 2500 MHz. It is expected that most engineers will change these external components (pin for pin replacements from various vendors are available) for their specific application/ frequency of interest. Anyone interested in a wider tuning range board should look at the AD-FMCOMMS3-EBZ.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/AD9361" target="_blank">AD9361</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/eval-ad-fmcomms3-ebz" target="_blank">AD-FMCOMMS3-EBZ</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/alliances/ad_fmcomms3_ebz.jpg"><img alt="ad_fmcomms3_ebz.jpg" src="https://wiki.analog.com/_media/resources/alliances/ad_fmcomms3_ebz.jpg" style="width: 150px;" /></a> <strong>Reference Design:</strong> <a class="reference internal" href="../eval/user-guides/ad-fmcomms3-ebz.html"><span class="doc">View Reference Design</span></a>
+The AD-FMCOMMS3-EBZ is a high-speed analog module designed to showcase the AD9361, a high performance, highly integrated RF agile transceiver intended for use in RF applications, such as 3G and 4G base station applications and software defined radios. The purpose of the AD-FMCOMMS3-EBZ is to provide an RF platform to software developers, system architects, etc, who want a single platform that operates over a much wider tuning range (70 MHz – 6 GHz) than the AD-FMCOMMS2-EBZ.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/AD9361" target="_blank">AD9361</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/eval-ad-fmcomms4-ebz" target="_blank">AD-FMCOMMS4-EBZ</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/alliances/ad_fmcomms4_ebz.jpg"><img alt="ad_fmcomms4_ebz.jpg" src="https://wiki.analog.com/_media/resources/alliances/ad_fmcomms4_ebz.jpg" style="width: 150px;" /></a> <strong>Reference Design:</strong> <a class="reference internal" href="../eval/user-guides/ad-fmcomms4-ebz.html"><span class="doc">View Reference Design</span></a>
+The AD-FMCOMMS4-EBZ is a high-speed analog module designed to showcase the AD9364, a high performance, highly integrated RF agile transceiver intended for use in RF applications, such as 3G and 4G base station applications and software defined radios. The purpose of the AD-FMCOMMS4-EBZ is to provide an RF platform to software developers, system architects, etc, who want a single platform that operates over a much wider tuning range (70 MHz – 6 GHz) than the AD-FMCOMMS2-EBZ.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/AD9364" target="_blank">AD9364</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/eval-ad-fmcomms5-ebz" target="_blank">AD-FMCOMMS5-EBZ</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/alliances/ad_fmcomms5_ebz.jpg"><img alt="ad_fmcomms5_ebz.jpg" src="https://wiki.analog.com/_media/resources/alliances/ad_fmcomms5_ebz.jpg" style="width: 150px;" /></a> <strong>Reference Design:</strong> <a class="reference internal" href="../eval/user-guides/ad-fmcomms5-ebz.html"><span class="doc">View Reference Design</span></a>
+The AD-FMCOMMS5-EBZ is a high-speed analog module designed to showcase the AD9361, a high performance, highly integrated RF agile transceiver intended for use in RF applications, such as 3G and 4G base station applications and software defined radios. The board includes two AD9361s in a 4 x 4 RF configuration, which demonstrates how to synchronize multiple devices together.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/AD9361" target="_blank">AD9361</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/eval-ad-fmcomms6-ebz" target="_blank">AD-FMCOMMS6-EBZ</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/fmcomms6/top_view_main_page.png"><img alt="top_view_main_page.png" src="https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/fmcomms6/top_view_main_page.png" style="width: 150px;" /></a> <strong>Reference Design:</strong> <a class="reference internal" href="../eval/user-guides/ad-fmcomms6-ebz.html"><span class="doc">View Reference Design</span></a>
+The AD-FMCOMMS6-EBZ evaluation board is a 400 MHz to 4.4 GHz receiver based on the AD9652 dual 16-bit ADC, the ADL5566 High Dynamic Range RF/IF Dual Differential Amplifier and the ADL5380 quadrature demodulator. The AD-FMCOMMS6-EBZ is a discrete hardware receiver platform that addresses L and S band radar applications and enables RF applications from 400 MHz to 4 GHz. The module is configurable to a wide range of frequencies small filter hardware changes, providing options for RF up to 4 GHz and IF up to 155 MHz.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/AD9652" target="_blank">AD9652</a> <a class="icon adi reference external" href="https://www.analog.com/ADF4351" target="_blank">ADF4351</a> <a class="icon adi reference external" href="https://www.analog.com/ADL5380" target="_blank">ADL5380</a> <a class="icon adi reference external" href="https://www.analog.com/ADL5566" target="_blank">ADL5566</a> <a class="icon adi reference external" href="https://www.analog.com/AD9517" target="_blank">AD9517</a> <a class="icon adi reference external" href="https://www.analog.com/ADCLK925" target="_blank">ADCLK925</a> <a class="icon adi reference external" href="https://www.analog.com/ADP2370" target="_blank">ADP2370</a> <a class="icon adi reference external" href="https://www.analog.com/ADM7150" target="_blank">ADM7150</a> <a class="icon adi reference external" href="https://www.analog.com/ADP1740" target="_blank">ADP1740</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD-FMCADC2-EBZ" target="_blank">AD-FMCADC2-EBZ</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/alliances/ad_fmcadc2_ebz.jpg"><img alt="ad_fmcadc2_ebz.jpg" src="https://wiki.analog.com/_media/resources/alliances/ad_fmcadc2_ebz.jpg" style="width: 150px;" /></a> <strong>Reference Design:</strong> <a class="reference internal" href="../eval/user-guides/ad-fmcadc2-ebz.html"><span class="doc">View Reference Design</span></a>
+The AD-FMCADC2-EBZ is a data acquisition and signal processing platform that contains a complete signal chain for digitizing wideband RF signals for a variety of high-performance applications. The board has operating software and drivers for seamless connectivity within the Xilinx FPGA development platform ecosystem. This board is comprised of the AD9625-2.5 12-bit, 2.5 GSPS JESD204B ADC, input balun, clock oscillator, and critical power management components.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/AD9625" target="_blank">AD9625</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD-FMCDAQ2-EBZ" target="_blank">AD-FMCDAQ2-EBZ</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/alliances/ad_fmcdaq2_ebz.jpg"><img alt="ad_fmcdaq2_ebz.jpg" src="https://wiki.analog.com/_media/resources/alliances/ad_fmcdaq2_ebz.jpg" style="width: 150px;" /></a> <strong>Reference Design:</strong> <a class="reference internal" href="../eval/user-guides/ad-fmcdaq2-ebz.html"><span class="doc">View Reference Design</span></a>
+The AD-FMCDAQ2-EBZ module is comprised of the AD9680 dual, 14-bit, 1.0 GSPS, JESD204B ADC, the AD9144 quad, 16-bit, 2.8 GSPS, JESD204B DAC, the AD9523-1 14-output, 1 GHz clock generator, and power management components. It is clocked by an internally generated carrier platform via the FMC connector, comprising a completely self-contained data acquisition and signal synthesis prototyping platform. The module’s combination of wideband data conversion, clocking, and power closely approximates real-world hardware and software for system prototyping and design, with no compromise in signal chain performance.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/AD9680" target="_blank">AD9680</a> <a class="icon adi reference external" href="https://www.analog.com/AD9144" target="_blank">AD9144</a> <a class="icon adi reference external" href="https://www.analog.com/AD9523-1" target="_blank">AD9523-1</a> <a class="icon adi reference external" href="https://www.analog.com/ADN4661" target="_blank">ADN4661</a> <a class="icon adi reference external" href="https://www.analog.com/ADP1740" target="_blank">ADP1740</a> <a class="icon adi reference external" href="https://www.analog.com/ADP150" target="_blank">ADP150</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD-FMCJESDADC1-EBZ" target="_blank">AD-FMCJESDADC1-EBZ</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/alliances/ad_fmcjesdadc1_ebz.jpg"><img alt="ad_fmcjesdadc1_ebz.jpg" src="https://wiki.analog.com/_media/resources/alliances/ad_fmcjesdadc1_ebz.jpg" style="width: 150px;" /></a> <strong>Reference Design:</strong> <a class="reference internal" href="../fpga/xilinx/fmc/ad-fmcjesdadc1-ebz.html"><span class="doc">View Reference Design</span></a>
+The AD-FMCJESDADC1-EBZ board features two <a class="icon adi reference external" href="https://www.analog.com/AD9250" target="_blank">AD9250</a>, which is a 14-Bit, 250MSPS analog-to-digital converter (ADC). This board shares the <a class="icon link reference external" href="http://www.4dsp.com/fmc176" target="_blank">4DSP FMC-176</a> PCB, which in addition to the ADC, has two AD9129, which is a 14-Bit, 2.8GSPS digital-to-analog converter (DAC).</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/AD9250" target="_blank">AD9250</a> <a class="icon adi reference external" href="https://www.analog.com/AD9129" target="_blank">AD9129</a> <a class="icon adi reference external" href="https://www.analog.com/AD9517-1" target="_blank">AD9517-1</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/eval-fmcmotcon2" target="_blank">AD-FMCMOTCON2</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/alliances/eval-fmcmotcon2-system.jpg"><img alt="eval-fmcmotcon2-system.jpg" src="https://wiki.analog.com/_media/resources/alliances/eval-fmcmotcon2-system.jpg" style="width: 200px;" /></a> <strong>Reference Design:</strong> <a class="reference internal" href="../eval/user-guides/ad-fmcmotcon2-ebz.html"><span class="doc">View Reference Design</span></a>
+The AD-FMCMOTCON2-EBZ is a complete high performance servo system on an FPGA Mezzanine Card (FMC) board. Information on the FMC board, and how to use it, the design package that surrounds it, and the software which can make it work, can be found by clicking the documentation link. The purpose of the AD-FMCMOTCON2-EBZ is to provide a complete motor drive system demonstrating efficient and high dynamic control of three phase PMSM and induction motors. The kit consists of two boards: a controller board and a drive board. The system incorporates high quality power sources; reliable power, control, and feedback signals isolation; accurate measurement of motor current &amp; voltage signals; high speed interfaces for control signals to allow fast controller response; industrial Ethernet high speed interfaces; flexible control with a FPGA/SoC interface. An optional AD-DYNO2-EBZ dynamometer can be purchased through Avnet and is intended to be an extension of the drive system.</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/ADUM7640" target="_blank">ADUM7640</a> <a class="icon adi reference external" href="https://www.analog.com/ADUM7641" target="_blank">ADUM7641</a> <a class="icon adi reference external" href="https://www.analog.com/ADM2486" target="_blank">ADM2486</a> <a class="icon adi reference external" href="https://www.analog.com/ADUM1400" target="_blank">ADUM1400</a> <a class="icon adi reference external" href="https://www.analog.com/ADUM1402" target="_blank">ADUM1402</a> <a class="icon adi reference external" href="https://www.analog.com/ADG3308" target="_blank">ADG3308</a> <a class="icon adi reference external" href="https://www.analog.com/AD8646" target="_blank">AD8646</a> <a class="icon adi reference external" href="https://www.analog.com/AD8137" target="_blank">AD8137</a> <a class="icon adi reference external" href="https://www.analog.com/ADUM5000" target="_blank">ADUM5000</a> <a class="icon adi reference external" href="https://www.analog.com/AD2S1210" target="_blank">AD2S1210</a> <a class="icon adi reference external" href="https://www.analog.com/ADN4662" target="_blank">ADN4662</a> <a class="icon adi reference external" href="https://www.analog.com/ADG759" target="_blank">ADG759</a> <a class="icon adi reference external" href="https://www.analog.com/ADUM1250" target="_blank">ADUM1250</a> <a class="icon adi reference external" href="https://www.analog.com/CMP04" target="_blank">CMP04</a> <a class="icon adi reference external" href="https://www.analog.com/ADP2301" target="_blank">ADP2301</a> <a class="icon adi reference external" href="https://www.analog.com/ADP1621" target="_blank">ADP1621</a> <a class="icon adi reference external" href="https://www.analog.com/ADUM7223" target="_blank">ADUM7223</a> <a class="icon adi reference external" href="https://www.analog.com/ADUM5230" target="_blank">ADUM5230</a> <a class="icon adi reference external" href="https://www.analog.com/AD8207" target="_blank">AD8207</a> <a class="icon adi reference external" href="https://www.analog.com/AD7403" target="_blank">AD7403</a> <a class="icon adi reference external" href="https://www.analog.com/AD7402" target="_blank">AD7402</a> <a class="icon adi reference external" href="https://www.analog.com/AD7405" target="_blank">AD7405</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

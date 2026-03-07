@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="SPI and ATE Communication" name="description" />
+
+    <title>ADMX1001 and ADMX1002, Ultra-low Distortion, Low Noise Signal Generator and Acquisition Evaluation Modules &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ADMX1001 and ADMX1002, Ultra-low Distortion, Low Noise Signal Generator and Acquisition Evaluation Modules</a><ul>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#package-contents">Package Contents</a></li>
+<li><a class="reference internal" href="#additional-equipment-needed">Additional Equipment Needed</a></li>
+<li><a class="reference internal" href="#software-needed">Software Needed</a></li>
+<li><a class="reference internal" href="#general-description">General Description</a></li>
+<li><a class="reference internal" href="#quick-start-guide">Quick Start Guide</a><ul>
+<li><a class="reference internal" href="#equipment">Equipment</a></li>
+<li><a class="reference internal" href="#setup">Setup</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#using-the-sdp-s-or-sdp-b-with-the-sdp-i-pmod-controller-boards">Using the SDP-S or SDP-B with the SDP-I-PMOD Controller Boards</a><ul>
+<li><a class="reference internal" href="#quick-start-with-the-sdp-s-sdp-b-and-sdp-i-pmod">Quick Start with the SDP_S/SDP_B and SDP_I_PMOD</a></li>
+<li><a class="reference internal" href="#equipment-1">Equipment</a></li>
+<li><a class="reference internal" href="#setup-1">Setup</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#admx100x-general-description">ADMX100X General Description</a><ul>
+<li><a class="reference internal" href="#source-channel">Source Channel</a></li>
+<li><a class="reference internal" href="#acquisition-channel">Acquisition Channel</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#operation-modes">Operation Modes</a><ul>
+<li><a class="reference internal" href="#single-tone-generation">Single Tone Generation</a><ul>
+<li><a class="reference internal" href="#default-mode-without-dpd">Default Mode (without DPD)</a></li>
+<li><a class="reference internal" href="#with-dpd-mode">With DPD Mode</a></li>
+<li><a class="reference internal" href="#sense-connection">Sense Connection</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dc-generation">DC Generation</a></li>
+<li><a class="reference internal" href="#dual-tone-waveform-generation">Dual-tone Waveform Generation</a></li>
+<li><a class="reference internal" href="#arbitrary-waveform-generation">Arbitrary Waveform Generation</a></li>
+<li><a class="reference internal" href="#acquisition-channel-1">Acquisition Channel</a></li>
+<li><a class="reference internal" href="#spi-control">SPI Control</a></li>
+<li><a class="reference internal" href="#additional-features">Additional Features</a><ul>
+<li><a class="reference internal" href="#burst-continuous-mode">Burst/Continuous Mode</a></li>
+<li><a class="reference internal" href="#profiles">Profiles</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#admx100x-limitations">ADMX100X Limitations</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-installation">Software Installation</a><ul>
+<li><a class="reference internal" href="#installing-the-system-demonstration-platform-drivers">Installing the System Demonstration Platform Drivers</a></li>
+<li><a class="reference internal" href="#installing-the-admx100x-gui">Installing the ADMX100X GUI</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-operation">Software Operation</a><ul>
+<li><a class="reference internal" href="#admx100x-gui">ADMX100X GUI</a></li>
+<li><a class="reference internal" href="#admx100x-gui-message-panel">ADMX100X GUI Message Panel</a></li>
+<li><a class="reference internal" href="#admx100x-gui-analog-output-panel">ADMX100X GUI Analog Output Panel</a></li>
+<li><a class="reference internal" href="#admx100x-gui-analog-input-panel">ADMX100X GUI Analog Input Panel</a></li>
+<li><a class="reference internal" href="#admx100x-gui-waveform-plot-options-captured-and-spectrum">ADMX100X GUI Waveform Plot Options (Captured and Spectrum)</a></li>
+<li><a class="reference internal" href="#admx1001-gui-spectrum-settings">ADMX1001 GUI Spectrum Settings</a></li>
+<li><a class="reference internal" href="#admx1001-gui-spectrum-and-waveform-measurements">ADMX1001 GUI Spectrum and Waveform Measurements</a></li>
+<li><a class="reference internal" href="#generate-a-single-tone-without-digital-pre-distortion-dpd">Generate a Single-tone without Digital Pre-Distortion (DPD)</a></li>
+<li><a class="reference internal" href="#generate-a-single-tone-with-digital-pre-distortion-dpd">Generate a Single-tone with Digital Pre-Distortion (DPD)</a></li>
+<li><a class="reference internal" href="#generate-a-dual-tone-signal">Generate a Dual-tone Signal</a></li>
+<li><a class="reference internal" href="#generate-dc-level">Generate DC Level</a></li>
+<li><a class="reference internal" href="#generate-a-triangle-ramp-or-pulse-waveform">Generate a Triangle, Ramp, or Pulse Waveform</a></li>
+<li><a class="reference internal" href="#generate-arbitrary-waveform">Generate Arbitrary Waveform</a></li>
+<li><a class="reference internal" href="#storing-profiles">Storing Profiles</a></li>
+<li><a class="reference internal" href="#load-and-enable-profiles-without-sequencing">Load and Enable Profiles Without Sequencing</a></li>
+<li><a class="reference internal" href="#load-and-enable-profiles-with-sequencing">Load and Enable Profiles With Sequencing</a></li>
+<li><a class="reference internal" href="#acquisition">Acquisition</a><ul>
+<li><a class="reference internal" href="#custom-bin-selection">Custom Bin Selection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#applications-information">Applications Information</a><ul>
+<li><a class="reference internal" href="#ate-control-interface">ATE Control Interface</a></li>
+<li><a class="reference internal" href="#test-sequence">Test Sequence</a></li>
+<li><a class="reference internal" href="#signal-generation">Signal Generation</a></li>
+<li><a class="reference internal" href="#calibration">Calibration</a></li>
+<li><a class="reference internal" href="#coherent-sampling">Coherent Sampling</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#admx100x-typical-performance-characteristics">ADMX100X TYPICAL PERFORMANCE CHARACTERISTICS</a><ul>
+<li><a class="reference internal" href="#table-3-dc-output-characteristics">Table 3. DC OUTPUT CHARACTERISTICS</a></li>
+<li><a class="reference internal" href="#table-4-ac-output-characteristics">Table 4. AC OUTPUT CHARACTERISTICS</a></li>
+<li><a class="reference internal" href="#table-5-arbitrary-waveform-generator-characteristics">Table 5. ARBITRARY WAVEFORM GENERATOR CHARACTERISTICS</a></li>
+<li><a class="reference internal" href="#table-6-power-supply-requirements">Table 6. POWER SUPPLY REQUIREMENTS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="admx1001-and-admx1002-ultra-low-distortion-low-noise-signal-generator-and-acquisition-evaluation-modules">
+<h1>ADMX1001 and ADMX1002, Ultra-low Distortion, Low Noise Signal Generator and Acquisition Evaluation Modules<a class="headerlink" href="#admx1001-and-admx1002-ultra-low-distortion-low-noise-signal-generator-and-acquisition-evaluation-modules" title="Link to this heading"></a></h1>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>SPI and ATE Communication</p></li>
+<li><p>On-board supply</p></li>
+<li><p>External common mode voltage option</p></li>
+<li><p>Sync In &amp; Sync Out for Coherent Sampling</p></li>
+<li><p>External output clamp voltage option</p></li>
+<li><p>Differential to Single-Ended Conversion</p></li>
+</ul>
+</section>
+<section id="package-contents">
+<h2>Package Contents<a class="headerlink" href="#package-contents" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>ADMX1001 or ADMX1002 Module</p></li>
+<li><p>EVAL-ADMX100X-FMCZ evaluation board</p></li>
+<li><p>12V wall adapter Power Supply</p></li>
+</ul>
+</section>
+<section id="additional-equipment-needed">
+<h2>Additional Equipment Needed<a class="headerlink" href="#additional-equipment-needed" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Controller Board Option 1 (Use with ADMX1002 only)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    *[[:adi:`sdp-s|SDP-S]]` or [[:adi:`sdp-b|SDP-B]]`
+* USB-A to mini-USB cable
+    *[[:adi:`eval_sdp-pmod|SDP-I-PMOD]]` interposer board
+* 6V Power Adapter
+    *6-Pin PMOD Cable
+* Controller Board Option 2 (Use with ADMX1001 or ADMX1002)
+    *[[:adi:`sdp-h1|SDP-H1]]` controller board
+  * USB-A to mini USB cable
+    * 12V Power Adapter
+*  SMA cables for output connection
+* Oscilloscope/Audio analyzer
+</pre></div>
+</div>
+</section>
+<section id="software-needed">
+<h2>Software Needed<a class="headerlink" href="#software-needed" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/media/en/evaluation-boards-kits/evaluation-software/admx100x-evaluation-software.zip" target="_blank">ADMX100X GUI</a></p></li>
+</ul>
+</section>
+<section id="general-description">
+<h2>General Description<a class="headerlink" href="#general-description" title="Link to this heading"></a></h2>
+<p>The ADMX1001 and ADMX1002 modules are ultra-low distortion and low-noise signal generators. They have a frequency range of up to 40 kHz when not using the digital pre-distortion (DPD) algorithm. If the DPD algorithm is enabled for signal generation, they can generate tones up to 20 kHz with -130dB typical of total harmonic distortion (THD) at 1 kHz. In addition to signal generation, the ADMX1001 includes a differential input acquisition channel to measure a signal of choice.</p>
+<p>These modules can be evaluated with a single GUI to generate different signals. The PC GUI connects to an SDP controller board via USB that has established SPI communication to the module. The recommended controller board is the <a class="icon adi reference external" href="https://www.analog.com/sdp-h1" target="_blank">SDP_H1</a> which connects to the EVAL-ADMX100X-FMCZ’s FMC connector.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/eval-admx100x-fmczkit-angle-web.png"><img alt="image1" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/eval-admx100x-fmczkit-angle-web.png" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 1. ADMX100X module plugged-in to EVAL-ADMX100X-FMCZ</em></p>
+</div>
+</section>
+<section id="quick-start-guide">
+<h2>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Link to this heading"></a></h2>
+<p>The EVAL-ADMX100X-FMCZ evaluation board is shown in Figure 2. The following tables include the connectors, inputs, and outputs related to this evaluation board:</p>
+<ul class="simple">
+<li><p>ADMX100X Module connector: The ADMX1001 or ADMX1002 module is connected to the EVAL-ADMX100X-FMCZ evaluation board via (P5) module connector.</p></li>
+<li><p>FMC connector: The SDP-H1 will connect to the FMC connector that is on the bottom of the board.</p></li>
+<li><p>Power Supply: The EVAL-ADMX100X-FMCZ evaluation board is powered from a 12V wall adaptor via P14. The evaluation board provides on-board supply regulators to generate the +3.3V and ±9V required to power the module.</p></li>
+<li><p>SMA connector descriptions are summarized in Table 1.</p></li>
+<li><p>Jumpers and Switch Setup are summarized in Table 2.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><strong>Table 1. SMA Connector</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Connector</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>OUTP</p></td>
+<td><p>Source Positive Output</p></td>
+</tr>
+<tr class="row-odd"><td><p>OUTN</p></td>
+<td><p>Source Negative Output</p></td>
+</tr>
+<tr class="row-even"><td><p>SINGLE ENDED OUTPUT</p></td>
+<td><p>Source Single-Ended Output</p></td>
+</tr>
+<tr class="row-odd"><td><p>INN (ADMX1001 only)</p></td>
+<td><p>Acquisition Channel Negative Input</p></td>
+</tr>
+<tr class="row-even"><td><p>INP (ADMX1001 only)</p></td>
+<td><p>Acquisition Channel Positive Input</p></td>
+</tr>
+<tr class="row-odd"><td><p>ACQ_SYNC_IN (ADMX1001 only)</p></td>
+<td><p>Acquisition Channel Sync Input</p></td>
+</tr>
+<tr class="row-even"><td><p>SYNC_IN</p></td>
+<td><p>Source Input Sync Clock</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><strong>Table 2. Jumper and Switch Setup</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Function</p></th>
+<th class="head"><p>Position</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>P4</p></td>
+<td><p>VCM from DAC or EXT</p></td>
+<td><p>2-1 (VCM_DAC)</p></td>
+</tr>
+<tr class="row-odd"><td><p>::</p></td>
+<td><p>::</p></td>
+<td><p>2-3 (VCM_EXT)  <a class="footnote-reference brackets" href="#id8" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>P6</p></td>
+<td><p>EN</p></td>
+<td><p>Removed</p></td>
+</tr>
+<tr class="row-odd"><td><p>P8</p></td>
+<td><p>Sense Input Clamp to +5V</p></td>
+<td><p>Inserted</p></td>
+</tr>
+<tr class="row-even"><td><p>P9</p></td>
+<td><p>Sense Input Clamp to -5V</p></td>
+<td><p>Inserted</p></td>
+</tr>
+<tr class="row-odd"><td><p>P10</p></td>
+<td><p>JTAG_BOOT</p></td>
+<td><p>Removed</p></td>
+</tr>
+<tr class="row-even"><td><p>P11</p></td>
+<td><p>ACQ_SYNC_IN</p></td>
+<td><p>Removed</p></td>
+</tr>
+<tr class="row-odd"><td><p>P12</p></td>
+<td><p>SYNC_MODE</p></td>
+<td><p>2-1 (+3V3)</p></td>
+</tr>
+<tr class="row-even"><td><p>P13</p></td>
+<td><p>SYNC_IN</p></td>
+<td><p>Removed</p></td>
+</tr>
+<tr class="row-odd"><td><p>S1</p></td>
+<td><p>Signal Loopback Enable</p></td>
+<td><p>Loopback Off <a class="footnote-reference brackets" href="#id9" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img alt="image2" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/eval-admx100x-fmcz_evaluation_board.png" /></p>
+<div class="centeralign docutils container">
+<p><em>Figure 2. EVAL-ADMX100X-FMCZ Evaluation Board</em></p>
+</div>
+<section id="equipment">
+<h3>Equipment<a class="headerlink" href="#equipment" title="Link to this heading"></a></h3>
+<p>Figure 3 illustrates the required setup to evaluate the ADMX1001 and ADMX1002 module. The following pieces of equipment are required to perform a full evaluation:</p>
+<ul class="simple">
+<li><p>ADMX1001 or ADMX1002 module</p></li>
+<li><p>EVAL-ADMX100X-FMCZ kit that contains:</p>
+<ul>
+<li><p>EVAL-ADMX100X-FMCZ evaluation board</p></li>
+<li><p>Power adaptor</p></li>
+</ul>
+</li>
+<li><p>SDP controller board</p>
+<ul>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/sdp-h1" target="_blank">SDP_H1</a> controller board</p></li>
+</ul>
+</li>
+<li><p>ADMX100X GUI software that will run on Windows 10</p></li>
+<li><p>SMA cables for connection from EVAL-ADMX100X-FMCZ evaluation board to analyzer or oscilloscope</p></li>
+</ul>
+<p><img alt="image3" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/sdp-h1_setup.png" /></p>
+<div class="centeralign docutils container">
+<p><em>Figure 3. Evaluation Board Connection Using the SDP-H1 Controller Board</em></p>
+</div>
+</section>
+<section id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Link to this heading"></a></h3>
+<p>Follow the steps below to set up the full evaluation board.</p>
+<ul class="simple">
+<li><p>Check that the Jumper &amp; Switch settings match the desired configuration in Table 2.</p></li>
+<li><p>Connect the ADMX1001 or ADM1002 module to the module connector (P5) on the EVAL-ADMX100X-FMCZ evaluation board.</p></li>
+<li><p>Connect the SDP_H1 controller board to the EVAL-ADMX100X-FMCZ evaluation board’s FMC connector (P1).</p></li>
+<li><p>Connect the SDP controller USB to the computer.</p></li>
+<li><p>Apply the SDP-H1 board power.</p></li>
+<li><p>Apply the EVAL-ADMX100X-FMCZ power.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  *After the power is applied, the “READY” LED turns on and then turns off. Then the “DONE” LED turns on and the “READY” LED turns on again.
+  * &lt;fc #ff0000&gt;**Caution**&lt;/fc&gt;: If both LEDs do not turn on, power cycle the EVAL-ADMX100X-FMCZ evaluation board.
+* Configure the LOOPBACK switch (S1).
+  * If using the ADMX1002 or there is a need to view the source outputs via the OUTP and OUTN SMAs when using the ADMX1001, slide S1 on the EVAL-ADMX100X-FMCZ to the “LOOPBACK OFF” position.
+  * If using the ADMX1001, the signal generator outputs can be looped back into the acquisition channel inputs by sliding S1 on the EVAL-ADMX100X-FMCZ to the “LOOPBACK ON” position The SMA outputs (OUTP and OUTN) and inputs (INP and INN) connectors are disengaged in this mode.
+* Start the ADMX100X GUI.
+  * The GUI will display &quot;Connected&quot; in green text at the bottom left corner if the connection was successful.
+  * &lt;fc #ff0000&gt;**Caution**&lt;/fc&gt;: If the GUI does not connect at this step, disconnect the GUI and power off and on the EVAL-ADMX100X-FMCZ evaluation board by removing and then reinserting the power adapter. Then start the GUI again.
+
+  |image4|
+</pre></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 4. Complete Evaluation Setup with SDP-H1</em></p>
+</div>
+</section>
+</section>
+<section id="using-the-sdp-s-or-sdp-b-with-the-sdp-i-pmod-controller-boards">
+<h2>Using the SDP-S or SDP-B with the SDP-I-PMOD Controller Boards<a class="headerlink" href="#using-the-sdp-s-or-sdp-b-with-the-sdp-i-pmod-controller-boards" title="Link to this heading"></a></h2>
+<p>The recommended controller board to use with the EVAL-ADMX100X evaluation system is the <a class="icon adi reference external" href="https://www.analog.com/sdp-h1" target="_blank">SDP_H1</a>. However, it is possible to use the <a class="icon adi reference external" href="https://www.analog.com/sdp-s" target="_blank">SDP_S</a> or <a class="icon adi reference external" href="https://www.analog.com/sdp-b" target="_blank">SDP_B</a> with the <a class="icon adi reference external" href="https://www.analog.com/sdp-pmd-ib1z" target="_blank">SDP-I-PMD</a> interposer board to connect to the ADMX1002B module.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The SDP-I-PMD is used in conjunction with either the SDP-S or the SDP-B boards to establish SPI communication to the ADMX1002 using only the SPI PMOD connector. The SDP-H1 performs the same function and can be plugged into the FMC connector on the EVAL-ADMX100X-FMCZ.</p>
+<div class="line-block">
+<div class="line">There are additional connections to the FMC connector that are required for some features, including the ability to shift the VCM of the generated output using the GUI, as well as access an additional SPI bus to control the acquisition module on the ADMX1001.</div>
+<div class="line">Therefore, we recommend using the SDP-H1 controller board in most cases to access all features and both module boards (ADMX1001B and ADMX1002B). However, if the user is evaluating the ADMX1002 and can shift the VCM of the output manually, the SDP-S/SDP-B and SDP-I-PMD boards can be used. This setup cannot be used to evaluate the ADMX1001B.</div>
+</div>
+</div>
+<section id="quick-start-with-the-sdp-s-sdp-b-and-sdp-i-pmod">
+<h3>Quick Start with the SDP_S/SDP_B and SDP_I_PMOD<a class="headerlink" href="#quick-start-with-the-sdp-s-sdp-b-and-sdp-i-pmod" title="Link to this heading"></a></h3>
+<p>Refer to Figure 2 for the EVAL-ADMX100X-FMCZ Connector layout.</p>
+<ul class="simple">
+<li><p>Source/DAC SPI PMOD header: The SDP-S or SDP-B will communicate to the module via SPI through the Source/DAC SPI PMOD header (P2). The P2 bottom row pins 1-6 are “SS_MOSI_MISO_SCLK_GND_+3.3V”</p></li>
+<li><p>When using these controller boards, the output common-mode voltage can only be adjusted by providing external VCM at pin 9 of P7. The P4 jumper should also be inserted at 2-3 position as indicated in Table 2.</p></li>
+</ul>
+</section>
+<section id="equipment-1">
+<span id="id3"></span><h3>Equipment<a class="headerlink" href="#equipment-1" title="Link to this heading"></a></h3>
+<p>Figure 5 illustrates the required setup to evaluate the ADMX1002 module. The following pieces of equipment are required for this controller board setup:</p>
+<ul class="simple">
+<li><p>ADMX1001 or ADMX1002 module</p></li>
+<li><p>EVAL-ADMX100X-FMCZ kit that contains:</p>
+<ul>
+<li><p>EVAL-ADMX100X-FMCZ evaluation board</p></li>
+<li><p>Power adaptor</p></li>
+</ul>
+</li>
+<li><p>SDP controller board</p>
+<ul>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/sdp-s" target="_blank">SDP_S</a> or <a class="icon adi reference external" href="https://www.analog.com/sdp-b" target="_blank">SDP_B</a> controller board</p>
+<ul>
+<li><p>USB-A to mini USB cable</p></li>
+</ul>
+</li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/sdp-pmd-ib1z" target="_blank">SDP-I-PMD</a> interposer board</p>
+<ul>
+<li><p>6V Power Adapter</p></li>
+</ul>
+</li>
+<li><p>6-Pin PMOD Cable</p></li>
+</ul>
+</li>
+<li><p>ADMX100X GUI software that will run on Windows 10</p></li>
+<li><p>SMA cables for connection from EVAL-ADMX100X-FMCZ evaluation board to analyzer or oscilloscope</p></li>
+</ul>
+<p><img alt="image5" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/sdp-s_setup.png" /></p>
+<div class="centeralign docutils container">
+<p><em>Figure 5. Evaluation Board Connection Using the SDP-I-PMD with Either the SDP-S or SDP-B Controller Boards</em></p>
+</div>
+</section>
+<section id="setup-1">
+<span id="id4"></span><h3>Setup<a class="headerlink" href="#setup-1" title="Link to this heading"></a></h3>
+<p>Follow the steps below to set up the full evaluation board.</p>
+<ul class="simple">
+<li><p>Check that the Jumper &amp; Switch settings match the desired configuration in Table 2.</p></li>
+<li><p>Connect the ADM1002 module to the module connector (P5) on the EVAL-ADMX100X-FMCZ evaluation board.</p></li>
+<li><p>Connect the SDP-S or SDP-B controller boards to the SDP-I-PMD interposer board.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  *Put jumper JP1 into the SPI position
+  *&lt;fc #ff0000&gt;**Caution**&lt;/fc&gt;: Remove jumper JP2
+* Connect the SDP-I-PMD interposer board to the “SOURCE/DAC SPI” header (P2) on the EVAL-ADMX100X-FMCZ evaluation board through the 6-pin PMOD cable.
+  *Connect the 6-pin male-to-male header to one end of the 6-pin PMOD cable.
+  *&lt;fc #ff0000&gt;**Caution**&lt;/fc&gt;: Connect the male pins to the top row (pin 1-6) of the SDP-I-PMD PMOD connector (P4). Be careful to match pin number 1 of the PMOD cable with pin number 1 of the PMOD connector (P4) on the SDP-I-PMD board.
+  *&lt;fc #ff0000&gt;**Caution**&lt;/fc&gt;: Connect the female side of the PMOD cable to the bottom row of the “SOURCE/DAC SPI” header (P2) on the EVAL-ADMX100X-FMCZ. Be careful to connect pin number 1 of the PMOD cable to pin number 1 of the “SOURCE/DAC SPI” header (P2).
+* Connect the SDP controller USB to the computer.
+* Apply the SDP-I-PMD board power. Wait 10 seconds after applying power before moving to the next step.
+* Apply the EVAL-ADMX100X-FMCZ power.
+  *After the power is applied, the “READY” LED turns on and then turns off. Then the “DONE” LED turns on and the “READY” LED turns on again.
+  * &lt;fc #ff0000&gt;**Caution**&lt;/fc&gt;: If both LEDs do not turn on, power cycle the EVAL-ADMX100X-FMCZ evaluation board.
+* Configure the LOOPBACK switch (S1).
+  * Slide S1 on the EVAL-ADMX100X-FMCZ to the “LOOPBACK OFF” position.
+* Start the ADMX100X GUI.
+  * The GUI will display &quot;Connected&quot; in green text at the bottom left corner if the connection was successful.
+  * &lt;fc #ff0000&gt;**Caution**&lt;/fc&gt;: If the GUI does not connect at this step, disconnect the GUI and power off and on the EVAL-ADMX100X-FMCZ evaluation board by removing and then reinserting the power adapter. Then start the GUI again.
+
+  |image6|
+</pre></div>
+</div>
+<div class="centeralign docutils container">
+<p>Figure 6. SDP-I-PMD Interposer Board Jumper Connections</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx1002_4.jpg"><img alt="image7" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx1002_4.jpg" style="width: 600px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 7. Complete Evaluation Setup with SDP-S and SDP-I-PMD</em></p>
+</div>
+</section>
+</section>
+<section id="admx100x-general-description">
+<h2>ADMX100X General Description<a class="headerlink" href="#admx100x-general-description" title="Link to this heading"></a></h2>
+<p>The ADMX100X module shown in Figure 8 is an ultra-low distortion and low noise autonomous digitally controller sinewave signal generator, generating the purest sinusoidal differential signals in its class by exploiting a digital pre-distortion (DPD) algorithm, which is a patented method for sensing and correcting its own output. The difference between ADMX1001 and ADMX1002 is that ADMX1001 has the added capability of acquiring signal as shown on the simplified block diagram in Figure 9.</p>
+<section id="source-channel">
+<h3>Source Channel<a class="headerlink" href="#source-channel" title="Link to this heading"></a></h3>
+<p>Both the ADMX1001 and ADMX1002 offer a multi-tone frequency range of up to 40 kHz. The ADMX100X can perform the digital pre-distortion (DPD) algorithm to provide an ultra-low distortion and low noise signal from 30Hz to 20kHz. The module generates an ultra-low distortion performance up to −130dB at 1 kHz with DPD, and −118dB at 1 kHz without DPD. The ADMX100X module has the capability to perform in DC, dual tone, and arbitrary waveform generation mode.</p>
+<p>For applications that require different voltage and current levels, the sense lines can be connected to an external buffer or level-shifting circuitry to permit the entire forward signal chain to be corrected.</p>
+<p>The module is configurable through a flexible digital interface allows for easy integration into any system. In addition, ATE control bus lines are available for maximum control of the signal in timing-critical applications.</p>
+</section>
+<section id="acquisition-channel">
+<h3>Acquisition Channel<a class="headerlink" href="#acquisition-channel" title="Link to this heading"></a></h3>
+<p>The ADMX1001 module offers an acquisition channel input, which can be accessed using the secondary ADC interface to read the conversion data directly.</p>
+<p>ADMX1001 can act as master or slave when supporting coherent test signal generation and offers an auxiliary ADC input, operating at 256 ksps.</p>
+<p>The highly integrated data acquisition solution provides 7 programmable gain options with a maximum input range of ±7.5V differential and a maximum input common mode range of ±7V. A 4th order anti-aliasing filter provides rejection up to −130dB. The total dynamic range of the acquisition channel is up to 128dB with a −115dB typical THD with a 1kHz input tone at full scale.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx100x_module.png"><img alt="image8" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx100x_module.png" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 8. ADMX100X Module</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx100x_simplified_block_diagram.png"><img alt="image9" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx100x_simplified_block_diagram.png" style="width: 800px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 9. ADMX100X Simplified Block Diagram</em></p>
+</div>
+</section>
+</section>
+<section id="operation-modes">
+<h2>Operation Modes<a class="headerlink" href="#operation-modes" title="Link to this heading"></a></h2>
+<section id="single-tone-generation">
+<h3>Single Tone Generation<a class="headerlink" href="#single-tone-generation" title="Link to this heading"></a></h3>
+<p>ADMX100X module is specially designed to generate an ultra-high purity sine waveform from 30 Hz up to 20 kHz by a patented digital pre-distortion (DPD) algorithm method. In addition, the module can generate high-purity signals up to 40kHz without DPD.</p>
+<section id="default-mode-without-dpd">
+<h4>Default Mode (without DPD)<a class="headerlink" href="#default-mode-without-dpd" title="Link to this heading"></a></h4>
+<p>This is the default mode when a new frequency and/or amplitude is loaded into the register, and the generate register or trigger pin is toggled. The ADMX100X module performance exceeds the native performance of the components due to its architecture. This is the operation mode for arbitrary waveform generation as well.</p>
+</section>
+<section id="with-dpd-mode">
+<h4>With DPD Mode<a class="headerlink" href="#with-dpd-mode" title="Link to this heading"></a></h4>
+<p>If ultra-high performance is needed the digital pre-distortion (DPD) algorithm can be enabled by software or hardware. The DPD process requires no external reference inputs and exploits a patented differential temporal and amplitude sensing method. When combined with our novel DSP algorithm, this eliminates the electrical measurement errors that would normally limit the performance. The DPD algorithm range frequency goes from 30Hz up to 20kHz, with an amplitude range of up to 3.62VRMS. Figure 4 shows the ADMX100X module THD before and after DPD. Moreover, Figure 5 and Figure 6 show the FFT of an ADMX100X module at 1kHz with 2Vrms before and after DPD.</p>
+</section>
+<section id="sense-connection">
+<h4>Sense Connection<a class="headerlink" href="#sense-connection" title="Link to this heading"></a></h4>
+<p>The DPD algorithm of ADMX100X requires the sense inputs to be connected to the output of ADMX1001 and ADMX1002 which will be used in the process routine of ADMX1001 and ADMX1002 to generate an ultra-high purity sine waveform. The sense connection can be used to combine a user buffer circuit as part of the signal generation in the DPD process by connecting the sense input to the output of the user’s buffer stage.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/dpd_before_and_after.png"><img alt="image10" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/dpd_before_and_after.png" style="width: 500px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 10. Typical Performance at 2Vrms</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/before_dpd.png"><img alt="image11" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/before_dpd.png" style="width: 500px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 11. FFT spectrum with 2Vrms at 1kHz before DPD</em></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/after_dpd.png"><img alt="image12" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/after_dpd.png" style="width: 500px;" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 12. FFT spectrum with 2Vrms at 1kHz after DPD</em></p>
+</div>
+</section>
+</section>
+<section id="dc-generation">
+<h3>DC Generation<a class="headerlink" href="#dc-generation" title="Link to this heading"></a></h3>
+<p>ADMX100X is capable of generating differential DC output signals up to 11.3V DC between Vp and Vn. The output level can be adjusted in 1µV resolution steps, and the software will verify if the entered parameters are valid by using the valid register. The DC output will be continuously generated after the run command is received and can be stopped by sending a stop command.</p>
+</section>
+<section id="dual-tone-waveform-generation">
+<h3>Dual-tone Waveform Generation<a class="headerlink" href="#dual-tone-waveform-generation" title="Link to this heading"></a></h3>
+<p>Two sine wave tones can be generated from 30Hz to 20kHz. The dual-tone waveform generation can be performed in burst mode or continuous mode. The dual-tone waveform frequency resolution can be programmed with 1 µHz resolution while the amplitudes can be programmed with 1 µV resolution.</p>
+</section>
+<section id="arbitrary-waveform-generation">
+<h3>Arbitrary Waveform Generation<a class="headerlink" href="#arbitrary-waveform-generation" title="Link to this heading"></a></h3>
+<p>An arbitrary waveform can be programmed by the user. The AWG signal can be programmed up to 20s long and will be stored in volatile memory. Continuous AWG generation can be performed by looping back the waveform stored in memory. ADMX100X contains a 27kHz low pass filter on its output allowing AWG waveforms to be generated within this band. Signals generated in the band will be within a 5% tolerance.</p>
+</section>
+<section id="acquisition-channel-1">
+<span id="id5"></span><h3>Acquisition Channel<a class="headerlink" href="#acquisition-channel-1" title="Link to this heading"></a></h3>
+<p>The highly integrated data acquisition solution provides 7 programmable gain options with a maximum input range of ±7.5V differential and a maximum input common mode range of ±7V. A 4th order anti-aliasing filter provides rejection up to −130dB. The total dynamic range of the acquisition channel is up to 128dB with a −115dB typical THD with a 1kHz input tone at full scale.</p>
+</section>
+<section id="spi-control">
+<h3>SPI Control<a class="headerlink" href="#spi-control" title="Link to this heading"></a></h3>
+<p>An overview of the SPI control mode features is as follows:</p>
+<ul class="simple">
+<li><p>Standard SPI Mode 3 interface for register access, where the ADC always behaves as an SPI slave.</p></li>
+<li><p>Indication of a new conversion via the DRDY pin output.</p></li>
+<li><p>A second method allows the user to merge the ready signal within the DOUT output stream, which allows a reduction in the number of lines across an isolation barrier.</p></li>
+<li><p>Reading back conversions can be performed by writing 8 bits to address the ADC register and reading back the result from the register.</p></li>
+<li><p>Continuous readback mode, which is enabled via an SPI write. There is no need to supply the 8 bits to address the ADC_DATA register (Register 0x2C). Data readback occurs on the application of SCLK. The DRDY pin indicates that a conversion result is complete and can be used to trigger a readback of the conversion result.</p></li>
+<li><p>In continuous read-back mode, there is the option to append either the 8-bit status header or an 8-bit CRC check, or both.</p></li>
+</ul>
+</section>
+<section id="additional-features">
+<h3>Additional Features<a class="headerlink" href="#additional-features" title="Link to this heading"></a></h3>
+<section id="burst-continuous-mode">
+<h4>Burst/Continuous Mode<a class="headerlink" href="#burst-continuous-mode" title="Link to this heading"></a></h4>
+<p>In burst mode, the tone will only be generated for a defined length of time while in continuous mode the waveforms will be generated continuously until the STOP command is sent.</p>
+</section>
+<section id="profiles">
+<h4>Profiles<a class="headerlink" href="#profiles" title="Link to this heading"></a></h4>
+<p>Once a digital pre-distortion (DPD) algorithm is used for a given frequency or amplitude, the DPD parameters can be saved into the non-volatile profile memory. If you change the parameters of your signal without storing the previous DPD parameters, these parameters will be lost once a new frequency or amplitude is loaded into the module. When generating a new combination of frequency and amplitude (also known as a profile) DPD algorithm can be performed to generate a high-purity signal and can be stored to be later recalled. Up to 16 such signals can be stored and can be recalled easily by hardware or software. This allows fast-high purity frequency switching. Profiles 1 through 15 can store any signal type (single tone, single tone with DPD, DC, dual tone, etc.), but profile 16 is reserved for an AWG signal type only.</p>
+</section>
+</section>
+<section id="admx100x-limitations">
+<h3>ADMX100X Limitations<a class="headerlink" href="#admx100x-limitations" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>The DPD algorithm cannot be used for frequencies above 20 kHz.</p></li>
+<li><p>The DPD algorithm does not work with signals lower than 100mVrms.</p></li>
+<li><p>Frequencies above 40 kHz cannot be selected.</p></li>
+<li><p>Amplitude above 3.5Vrms cannot be set.</p></li>
+<li><p>Only voltages below 3.5Vrms can be set for frequencies less than 10.5 kHz.</p></li>
+<li><p>Voltages above 2.5Vrms cannot be set for frequencies greater than 15.5 kHz.</p></li>
+<li><p>Voltages above 2Vrms cannot be set for frequencies greater than 20.5 kHz.</p></li>
+<li><p>Only voltages below 1Vrms can be set for frequencies greater than 20.5 kHz</p></li>
+</ul>
+</section>
+</section>
+<section id="software-installation">
+<h2>Software Installation<a class="headerlink" href="#software-installation" title="Link to this heading"></a></h2>
+<section id="installing-the-system-demonstration-platform-drivers">
+<h3>Installing the System Demonstration Platform Drivers<a class="headerlink" href="#installing-the-system-demonstration-platform-drivers" title="Link to this heading"></a></h3>
+<p>If you have not installed the System Demonstration Platform (SDP) drivers already, you need to download and install it first before installing the ADMX100X GUI. Below you can find the SDP USB driver installer and the installation instructions.</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://swdownloads.analog.com/ACE/SDP/SDPDrivers.exe" target="_blank">SDP USB Driver Installer</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/sdp_drivers_installation_instruction.pdf" target="_blank">sdp_drivers_installation_instruction.pdf</a></p></li>
+</ul>
+</section>
+<section id="installing-the-admx100x-gui">
+<h3>Installing the ADMX100X GUI<a class="headerlink" href="#installing-the-admx100x-gui" title="Link to this heading"></a></h3>
+<p>To install the ADMX100X GUI, take the following steps:</p>
+<ul class="simple">
+<li><p>Download the executable available in the Software section of the product page or click on the link: <a class="icon adi reference external" href="https://www.analog.com/media/en/evaluation-boards-kits/evaluation-software/admx100x-evaluation-software.zip" target="_blank">ADMX100x GUI Download</a></p></li>
+<li><p>Double-click on the Admx100xEvaluationSoftware-Relx.x.x_EVAL.exe file from the downloads folder to begin the installation.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The installer may require the user to have administrator privileges for the machine</p>
+</div>
+<ul class="simple">
+<li><p>The installer will begin to load, with the progress window visible on the desktop.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/extractingcomponents.png"><img alt="image13" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/extractingcomponents.png" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 13. Loading Progress Window</em></p>
+</div>
+<ul class="simple">
+<li><p>Once the Installer has loaded, the welcome screen will appear. Click Next &gt;</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_welcome.png"><img alt="image14" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_welcome.png" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 14. Welcome Window</em></p>
+</div>
+<ul class="simple">
+<li><p>Accept the license agreement on the following screen with the radio button and click Next &gt;</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_licenseagreement.png"><img alt="image15" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_licenseagreement.png" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 15. License Agreement Window</em></p>
+</div>
+<ul class="simple">
+<li><p>The default installation location is C:\Analog Devices\. If another location is desired, click the Change… button on the following screen and navigate to the desired location. Click Next &gt; once the installation location is finalized.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_installerlocation.png"><img alt="image16" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_installerlocation.png" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 16. Installer Location Window</em></p>
+</div>
+<ul class="simple">
+<li><p>The installation can now begin. Click Install to proceed.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_begininstallation.png"><img alt="image17" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_begininstallation.png" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 17. Begin Installation Window</em></p>
+</div>
+<ul class="simple">
+<li><p>Once the installation has finished, a window will appear confirming it is completed and give an option to view the Release Notes (opted-in by default). Click Finish to close the installer.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_complete.png"><img alt="image18" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/installation_wizard_complete.png" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 18. Installation Complete Window</em></p>
+</div>
+</section>
+</section>
+<section id="software-operation">
+<h2>Software Operation<a class="headerlink" href="#software-operation" title="Link to this heading"></a></h2>
+<p><img alt="image19" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx100x_gui_overview.png" /></p>
+<div class="centeralign docutils container">
+<p><em>Figure 19. ADMX100X GUI Overview</em></p>
+</div>
+<section id="admx100x-gui">
+<h3>ADMX100X GUI<a class="headerlink" href="#admx100x-gui" title="Link to this heading"></a></h3>
+<p>The ADMX100X GUI in Figure 19 contains the following components:</p>
+<ul class="simple">
+<li><p>Connect/Disconnect button: Click to connect the eval board to the PC.</p></li>
+<li><p>Status Bar: Displays certain relevant errors/statuses.</p></li>
+<li><p>Bell icon: Button to show/hide the message panel. Continue to ADMX100X GUI Message Panel for additional details.</p></li>
+<li><p>Analog Output Panel: Configure parameters and control the source waveform.</p></li>
+<li><p>Analog Input Panel: Configure parameters and control the acquisition channel (ADMX1001 only).</p></li>
+<li><p>Spectrum Settings: Configure parameters for the Spectral Waveform displayed (ADMX1001 only).</p></li>
+<li><p>Captured Waveform: Time domain plot of the samples captured by the acquisition channel (ADMX1001 only).</p></li>
+<li><p>Spectrum Waveform: Frequency domain plot of the FFT of the samples captured by the acquisition channel (ADMX1001 only).</p></li>
+<li><p>Waveform Measurements: Time domain measurements are calculated using the samples captured by the acquisition channel (ADMX1001 only).</p></li>
+<li><p>Spectral Measurements: Frequency domain measurements calculated using the FFT of the samples captured by the acquisition channel (ADMX1001 only).</p></li>
+</ul>
+</section>
+<section id="admx100x-gui-message-panel">
+<h3>ADMX100X GUI Message Panel<a class="headerlink" href="#admx100x-gui-message-panel" title="Link to this heading"></a></h3>
+<p>After clicking on the Bell icon in the bottom right of the ADMX100X GUI Status Panel, several message windows can be viewed. These windows, shown in Figure 20, contain the following components:</p>
+<ol class="arabic simple" start="11">
+<li><p>Analog Output Commands: Contains a comprehensive list of SPI commands sent to the source registers of the ADMX100X module.</p></li>
+<li><p>Analog Input Commands: Contains a comprehensive list of SPI commands sent to the acquisition registers of the ADMX1001 module. This is not used when evaluating the ADMX1002 module.</p></li>
+<li><p>Board Status: Periodically updated list of the current condition of the board.</p></li>
+<li><p>Errors: List of errors thrown during operation of the GUI. Generated parameters will then be displayed in the Generated Parameters Panel.</p></li>
+<li><p>Status: List of statuses updated during operation.</p></li>
+</ol>
+<p><img alt="image20" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/admx100x_gui_status_panel.png" /></p>
+<div class="centeralign docutils container">
+<p><em>Figure 20. ADMX100X GUI Status Panel (Expanded)</em></p>
+</div>
+</section>
+<section id="admx100x-gui-analog-output-panel">
+<h3>ADMX100X GUI Analog Output Panel<a class="headerlink" href="#admx100x-gui-analog-output-panel" title="Link to this heading"></a></h3>
+<p>The UI elements present in the Analog Output Panel, show in Figure 21, are as follows:</p>
+<ul class="simple">
+<li><p>Enable/Disable: This button starts/stops the signal.</p></li>
+<li><p>Run DPD: This button runs the digital pre-distortion(DPD), or calibration, algorithm.</p></li>
+<li><p>Cycles: Use this to change the selection to either “Continuous” (Cycles = 0) or “Single-shot” (1 to 1000000 cycles).</p></li>
+<li><p>Waveform Type: Use this to change the selection to either “Single-Tone”, “DualTone”, “LowDistortion”, “DC”, “Pulse”, “Ramp”, “Triangle”, “AWG” or “Pulse”.</p></li>
+<li><p>Common Mode  <a class="footnote-reference brackets" href="#id10" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>: This field is used to set the common mode offset voltage of the signal to be generated.</p></li>
+<li><p>Save Waveform as Profile: Saves current waveform in the profile table.</p></li>
+<li><p>Profile Table: Displays all the saved profiles and their parameters.</p></li>
+<li><p>Enable Sequencing  <a class="footnote-reference brackets" href="#id11" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>: Enables running a set of profiles in a user-selected sequence.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_analog_output.png"><img alt="image21" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_analog_output.png" style="width: 300px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 21. ADMX100X GUI Analog Output Panel</em></p>
+</div>
+</section>
+<section id="admx100x-gui-analog-input-panel">
+<h3>ADMX100X GUI Analog Input Panel<a class="headerlink" href="#admx100x-gui-analog-input-panel" title="Link to this heading"></a></h3>
+<p>The UI elements present in the Analog Input Panel, shown in Figure 22, are as follows:</p>
+<ul class="simple">
+<li><p>Input Range: Provides a drop-down menu to set the range of the input ADC by varying its gain. The input range of the ADC can be changed from 8.912 Vrms to 0.139 Vrms.</p></li>
+<li><p>Filter: A dropdown menu provides the user a choice between the filter to be used by the acquisition IC to process the ADC samples. The options include “Sinc5”, “Sinc3” and “Wideband”.</p></li>
+<li><p>DataRate(KS/s): The rate at which the acquisition data is acquired, in kilo-Samples per second.</p></li>
+<li><p>Acquisition Length: Number of continuous samples to be acquired from the ADC during acquisition.</p></li>
+<li><p>Acquisition Delay: Amount of delay before acquisition starts.</p></li>
+<li><p>Continuous Acquisition: This button enables continuous acquisition of the signal. The GUI will keep acquiring newer samples until the STOP button is pressed.</p></li>
+<li><p>Triggered Acquisition: This button enables triggered acquisition of the signal. The acquisition will start from a positive zero-crossing for each set of samples.</p></li>
+<li><p>Start/Stop – Starts/Stops the sample acquisition.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_analog_input.png"><img alt="image22" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_analog_input.png" style="width: 200px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 22. ADMX1001 GUI Analog Input Panel</em></p>
+</div>
+</section>
+<section id="admx100x-gui-waveform-plot-options-captured-and-spectrum">
+<h3>ADMX100X GUI Waveform Plot Options (Captured and Spectrum)<a class="headerlink" href="#admx100x-gui-waveform-plot-options-captured-and-spectrum" title="Link to this heading"></a></h3>
+<p>The plots to display the acquired data, shown in Figure 23, have the following elements:</p>
+<ul class="simple">
+<li><p>Captured waveform Graph: Displays the captured samples vs. time to show the captured waveform to the user.</p></li>
+<li><p>Spectrum waveform graph: Displays the frequency-domain plot of the acquired samples using signal-to-spectrum domain transforms.</p></li>
+<li><p>Waveform Graph control panel: This control panel can be used to scale the graph as needed.</p></li>
+<li><p>Waveform Graph Axes: The Axes dropdown has two options “Auto” and “Fixed”. If we use “Fixed” axes we can manually set the limits of the graph by clicking on the numbers at the edge of the graph and typing in the required value of the axis limit. The “Auto” setting will automatically scale the axes to fit the waveform in the window.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_captured_waveform.png"><img alt="image23" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_captured_waveform.png" style="width: 300px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 23. ADMX100X WAVEFORMS (CAPTURED AND SPECTRUM)</em></p>
+</div>
+</section>
+<section id="admx1001-gui-spectrum-settings">
+<h3>ADMX1001 GUI Spectrum Settings<a class="headerlink" href="#admx1001-gui-spectrum-settings" title="Link to this heading"></a></h3>
+<p>The settings available, shown in Figure 24, for the Spectrum waveform are as follows:</p>
+<ul class="simple">
+<li><p>Magnitude Units: Dropdown menu to decide the magnitude units of the spectral magnitude on the y-axis of the spectrum waveform.</p></li>
+<li><p>Window: Specifies the type of windowing to be used on the input time-domain signal before transforming it to the frequency-domain using FFT.</p></li>
+<li><p>Samples to average: Specifies the number of sets of samples to average for the spectrum calculation. Only applicable when the “Continuous acquisition” checkbox in the Analog Input Panel is checked, or else the value in this textbox is ignored.</p></li>
+<li><p>Log frequency scale: The checkbox determines the scale of the Frequency axis (X-Axis). If the checkbox is checked the frequency scale is logarithmic, if the box is kept unchecked the frequency scale is linear.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_spectrum_settings.png"><img alt="image24" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_spectrum_settings.png" style="width: 200px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 24. ADMX1001 GUI Spectrum Settings</em></p>
+</div>
+</section>
+<section id="admx1001-gui-spectrum-and-waveform-measurements">
+<h3>ADMX1001 GUI Spectrum and Waveform Measurements<a class="headerlink" href="#admx1001-gui-spectrum-and-waveform-measurements" title="Link to this heading"></a></h3>
+<p>The measurements calculated for the time domain (waveform) and frequency domain (spectral) plots shown in Figure 25 are as follows:</p>
+<ul class="simple">
+<li><p>Amplitude: Amplitude of the acquired signal.</p></li>
+<li><p>Max Value: Maximum value in the acquired signal.</p></li>
+<li><p>Min Value: Minimum value of the acquired signal.</p></li>
+<li><p>Average Value: Average value of the acquired signal.</p></li>
+<li><p>Fundamental Frequency: Fundamental frequency of the input signal.</p></li>
+<li><p>SNR: Sound to Noise Ratio of the signal.</p></li>
+<li><p>THD: Total harmonic distortion of the signal.</p></li>
+<li><p>THDPlusN: Total harmonic distortion and noise of the input signal.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_waveform_and_spectrum_measurements.png"><img alt="image25" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_waveform_and_spectrum_measurements.png" style="width: 200px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 25. ADMX1001 GUI Spectrum and Waveform Measurements</em></p>
+</div>
+</section>
+<section id="generate-a-single-tone-without-digital-pre-distortion-dpd">
+<h3>Generate a Single-tone without Digital Pre-Distortion (DPD)<a class="headerlink" href="#generate-a-single-tone-without-digital-pre-distortion-dpd" title="Link to this heading"></a></h3>
+<p>To generate a single-tone signal without the DPD algorithm set the “Waveform Type” field to “SingleTone” as shown in Figure 26.</p>
+<ul class="simple">
+<li><p>Set the parameters of the waveform according to your requirements. For additional detail on each parameter hover over the input field to see the tooltip.</p></li>
+<li><p>The cycles parameter can be used to shift the signal generation between “Single-Shot” and “Continuous” (cycles = 0) mode.</p></li>
+<li><p>Click on the “ENABLE” button to generate the signal. If the signal is in “Single-Shot” mode, the enable button should be clickable right after signal generation is completed. For a signal generation in “Continuous” mode, press the “DISABLE” button, which will appear once the board is ready to start generating the signal, to disable the waveform.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_singletone.png"><img alt="image26" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_singletone.png" style="width: 300px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 26. Generate Single-Tone Without DPD</em></p>
+</div>
+</section>
+<section id="generate-a-single-tone-with-digital-pre-distortion-dpd">
+<h3>Generate a Single-tone with Digital Pre-Distortion (DPD)<a class="headerlink" href="#generate-a-single-tone-with-digital-pre-distortion-dpd" title="Link to this heading"></a></h3>
+<p>To generate a single-tone waveform calibrated with the DPD algorithm, set the “Waveform Type” field to “LowDistortion” as shown in Figure 27.</p>
+<ul class="simple">
+<li><p>Set the parameters of the waveform according to your requirements. For additional detail on each parameter hover over the input field to see the tooltip.</p></li>
+<li><p>Click on the ‘Run DPD’ button, the status bar should show the message ‘Calibration is running’ and the ‘Run DPD’ button will appear greyed out.</p></li>
+<li><p>Wait for the “ENABLE” button to become clickable after the message “Calibration successful” displays in the status bar. This process may take up to 2 minutes. If the “Run DPD” button becomes clickable again and the status message shows “Calibration failed”, try to run the calibration again by clicking on “Run DPD”.</p></li>
+<li><p>Click on the “ENABLE” button to enable the calibrated signal generation.</p></li>
+<li><p>Note that any change in parameters would require running calibration again. Calibrated signals can be stored in a profile to eliminate having to run calibration in the future for the same set of parameters, see the Storing Profiles section for instructions.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_lowdistortion.png"><img alt="image27" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_lowdistortion.png" style="width: 300px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 27. Generate Single-Tone With DPD</em></p>
+</div>
+</section>
+<section id="generate-a-dual-tone-signal">
+<h3>Generate a Dual-tone Signal<a class="headerlink" href="#generate-a-dual-tone-signal" title="Link to this heading"></a></h3>
+<p>The following sequence shall produce a two-tone signal, as shown in Figure 28:</p>
+<ul class="simple">
+<li><p>Change the “Waveform Type” to DualTone.</p></li>
+<li><p>Set the appropriate parameters and click the “ENABLE” button.</p></li>
+<li><p>Click on the “DISABLE” button to disable the generation if needed.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_dualtone.png"><img alt="image28" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_dualtone.png" style="width: 300px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 28. Generate Two-Tone Signal</em></p>
+</div>
+</section>
+<section id="generate-dc-level">
+<h3>Generate DC Level<a class="headerlink" href="#generate-dc-level" title="Link to this heading"></a></h3>
+<p>The following sequence shall produce a DC signal, as shown in Figure 29:</p>
+<ul class="simple">
+<li><p>Select the “Waveform Type” DC Level from the drop-down menu.</p></li>
+<li><p>Set the appropriate parameters for the signal.</p></li>
+<li><p>Start the signal generation by clicking on the “ENABLE” button.</p></li>
+<li><p>Click on the “DISABLE” button to disable the generation.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_dc.png"><img alt="image29" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_dc.png" style="width: 300px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 29. Generate DC Signal</em></p>
+</div>
+</section>
+<section id="generate-a-triangle-ramp-or-pulse-waveform">
+<h3>Generate a Triangle, Ramp, or Pulse Waveform<a class="headerlink" href="#generate-a-triangle-ramp-or-pulse-waveform" title="Link to this heading"></a></h3>
+<p>The ADMX100X GUI comes with 3 built-in AWG waveform options for signal generation - a Triangle, a Ramp, or a Pulse signal, as shown in Figure 30. Any of these can be generated by performing the following sequence:</p>
+<ul class="simple">
+<li><p>Select “Triangle”, “Ramp”, or “Pulse” from the “Waveform Type” drop-down menu.</p></li>
+<li><p>Set the appropriate parameters for the signal.</p></li>
+<li><p>Start the signal generation by clicking on the “ENABLE” button.</p></li>
+<li><p>Click on the ‘DISABLE’ button to disable the generation.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/generate_awg.png"><img alt="image30" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/generate_awg.png" style="width: 300px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 30. Generate a Triangle, Ramp or Pulse Waveform</em></p>
+</div>
+</section>
+<section id="generate-arbitrary-waveform">
+<h3>Generate Arbitrary Waveform<a class="headerlink" href="#generate-arbitrary-waveform" title="Link to this heading"></a></h3>
+<p>The following sequence shall produce an arbitrary waveform, as shown in Figure 31:</p>
+<ul class="simple">
+<li><p>Select the “AbitraryWaveform” from the Waveform Type dropdown menu.</p></li>
+<li><p>Select an input file using the browse option or add the path to an input file in the text box labeled “Load waveform from file”. The format of the input file expected is a list of voltage values with each value on a new line.</p></li>
+<li><p>Start the signal generation by clicking on the “ENABLE” button.</p></li>
+<li><p>Click on the ‘DISABLE’ button to disable the generation if needed.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_awg.png"><img alt="image31" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_awg.png" style="width: 300px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 31. Generate an Arbitrary Waveform</em></p>
+</div>
+</section>
+<section id="storing-profiles">
+<h3>Storing Profiles<a class="headerlink" href="#storing-profiles" title="Link to this heading"></a></h3>
+<p>Perform the following sequence to save a waveform to a profile, as shown in Figure 32:</p>
+<ul class="simple">
+<li><p>Select a waveform profile to save by using the “Waveform Type” drop-down menu and selecting any waveform type, except “Profile”.</p></li>
+<li><p>Set the appropriate parameters of the selected waveform type.</p></li>
+<li><p>Click on any empty or non-empty profile in the profile table to select it. If selecting a non-empty profile, the previously saved profile table will be overwritten by the new profile.</p></li>
+<li><p>After selecting the profile ID and the waveform parameters, click on the “Save Waveform as profile” button. This might take up to 2 minutes for a “LowDistortion” waveform.</p></li>
+<li><p>If the profile is saved successfully, you will be able to see it in the profile table at the selected location.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_storingprofile.png"><img alt="image32" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_storingprofile.png" style="width: 300px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 32. Storing Profiles</em></p>
+</div>
+</section>
+<section id="load-and-enable-profiles-without-sequencing">
+<h3>Load and Enable Profiles Without Sequencing<a class="headerlink" href="#load-and-enable-profiles-without-sequencing" title="Link to this heading"></a></h3>
+<p>The following sequence shall load the previously saved profile, as shown in Figure 33:</p>
+<ul class="simple">
+<li><p>Disable any running signal and use the “Waveform Type” dropdown menu to select “Profile” as the waveform type.</p></li>
+<li><p>Ensure that the “Enable Sequence” button is unchecked.</p></li>
+<li><p>Click on any profile in the profile table you want to load that is currently not “None”.</p></li>
+<li><p>The profile selected should show up and populate the “Profile ID”, “Profile Type”, “Param1” and “Param2” fields.</p></li>
+<li><p>To load and enable the selected profile, click on the “ENABLE” button.</p></li>
+<li><p>To stop the profile signal generation, click on “DISABLE”.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_loadingprofile.png"><img alt="image33" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_loadingprofile.png" style="width: 300px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 33. Load and Enable Profiles Without Sequencing</em></p>
+</div>
+</section>
+<section id="load-and-enable-profiles-with-sequencing">
+<h3>Load and Enable Profiles With Sequencing<a class="headerlink" href="#load-and-enable-profiles-with-sequencing" title="Link to this heading"></a></h3>
+<p>The following sequence shall load the previously saved profile with sequencing, as shown in Figure 34:</p>
+<ul class="simple">
+<li><p>Disable any running signal and use the “Waveform Type” dropdown menu to select “Profile” as the waveform type.</p></li>
+<li><p>Ensure that the “Enable Sequence” button is checked.</p></li>
+<li><p>Click on any profile in the profile table you want to add to the sequence that is currently not “None” and is not saved in the “Continuous” mode (has Cycles not equal to 0).</p></li>
+<li><p>Alternately, you can type the sequence you want to run in the “Profiles to Run” field. If the “Enable” button is not greyed out the sequenced profiles are valid.</p></li>
+<li><p>Click on the “Enable” button to run the selected sequence.</p></li>
+<li><p>To stop the profile signal generation, click on “Disable”.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/load_and_enable_profile_with_sequencing.png"><img alt="image34" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/load_and_enable_profile_with_sequencing.png" style="width: 300px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 34. Load and Enable Profiles With Sequencing</em></p>
+</div>
+</section>
+<section id="acquisition">
+<h3>Acquisition<a class="headerlink" href="#acquisition" title="Link to this heading"></a></h3>
+<p>The “Analog Input” panel is used to set the parameters for acquisition. Refer to Figure 34 and complete the following sequence to acquire a single set of samples:</p>
+<ul class="simple">
+<li><p>Set the parameters in the Analog input window, for the description of each parameter, hover over the text field or the drop-down menu to see the tooltip.</p></li>
+<li><p>The “Triggered Acquisition” checkbox can be checked to enable triggered acquisition.</p></li>
+<li><p>The “Continuous Acquisition” checkbox can be checked to enable continuous acquisition.</p></li>
+<li><p>Click the “START” button in the Analog input panel. This will start the acquisition.</p></li>
+<li><p>Use the “Spectrum Settings” panel to change the scale of the axes of the spectrum graph.</p></li>
+<li><p>Click on the “Stop” button to stop the acquisition.</p></li>
+</ul>
+<p><img alt="image35" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/gui_acquisition.png" /></p>
+<div class="centeralign docutils container">
+<p><em>Figure 34. Acquisition</em></p>
+</div>
+<section id="custom-bin-selection">
+<h4>Custom Bin Selection<a class="headerlink" href="#custom-bin-selection" title="Link to this heading"></a></h4>
+<p>The number of bins used for the fundamental, harmonics, and other components in AC performance calculations, such as SNR, THD, and THD+N, can be adjusted. This flexibility of bin selection can help reduce the effect of spectral leakage, improving AC performance accuracy, particularly when analyzing noise and harmonic distortion.</p>
+<p>To do this, go to the GUI folder (C:\Analog Devices\Admx100xEvaluationSoftware-Rel2.3.0\GUI), open <strong>SpectrumSettings.json</strong>, and adjust the number of bins as necessary.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/admx/spectrumsettings.png"><img alt="image36" src="https://wiki.analog.com/_media/resources/eval/user-guides/admx/spectrumsettings.png" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 35. Acquisition</em></p>
+</div>
+<p>After saving the spectrum settings, run the Acquisition channel to apply the changes, and it should reflect to the updated AC performance.</p>
+</section>
+</section>
+</section>
+<section id="applications-information">
+<h2>Applications Information<a class="headerlink" href="#applications-information" title="Link to this heading"></a></h2>
+<section id="ate-control-interface">
+<h3>ATE Control Interface<a class="headerlink" href="#ate-control-interface" title="Link to this heading"></a></h3>
+<p>The Automatic Test Equipment (ATE) control interface can be used to provide a simple protocol for initiating an instruction to perform a DPD calibration or signal generation by driving and monitoring pins on the module. The test parameters, like the amplitude and frequency of the signal, must still be loaded through SPI.</p>
+<div class="line-block">
+<div class="line"><strong>Table 3. ATE Pin Assignment and Function</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Connector</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>EN</p></td>
+<td><p>Input</p></td>
+</tr>
+<tr class="row-odd"><td><p>READY</p></td>
+<td><p>Output</p></td>
+</tr>
+<tr class="row-even"><td><p>TRIG</p></td>
+<td><p>Input</p></td>
+</tr>
+<tr class="row-odd"><td><p>VALID</p></td>
+<td><p>Output</p></td>
+</tr>
+<tr class="row-even"><td><p>CAL</p></td>
+<td><p>Input</p></td>
+</tr>
+<tr class="row-odd"><td><p>OT</p></td>
+<td><p>Output</p></td>
+</tr>
+<tr class="row-even"><td><p>SYNC_MODE</p></td>
+<td><p>Input</p></td>
+</tr>
+<tr class="row-odd"><td><p>::</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>SYNC_IN</p></td>
+<td><p>Input</p></td>
+</tr>
+<tr class="row-odd"><td><p>SYNC_OUT</p></td>
+<td><p>Output</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="test-sequence">
+<h3>Test Sequence<a class="headerlink" href="#test-sequence" title="Link to this heading"></a></h3>
+<p>There are two possible test sequences: Signal Generation &amp; DPD Calibration. It is not necessary to run a DPD calibration phase before every signal generation sequence. The following examples use all the module’s ATE control pins. However, the user can choose to use none, only the TRIG line, or more depending on the level of control required.</p>
+</section>
+<section id="signal-generation">
+<h3>Signal Generation<a class="headerlink" href="#signal-generation" title="Link to this heading"></a></h3>
+<p>The procedure below should be followed for stimulus generation:</p>
+<ul class="simple">
+<li><p>Turn-on power supplies to modules (+3.3V &amp; +/-9V).</p></li>
+<li><p>Set Enable (EN) High - Enables internal supplies within the module.</p></li>
+<li><p>Wait until module initialization has completed (READY=1).</p></li>
+<li><p>Load serial test configuration data.</p></li>
+<li><p>Low to high TRIG transition initiates the test sequence.</p></li>
+<li><p>Module outputs synchronization (SYNC_OUT) pulses over the period the VALID signal is held high.</p></li>
+<li><p>Low to High transition of the VALID signal indicates the start of the stimulus.</p></li>
+<li><p>High to Low transition of the VALID signal indicates the end of the stimulus.</p></li>
+</ul>
+<p>The same test can be run multiple times without reloading the configuration by repeating steps 5 through 8. Once new test configuration data has been reloaded via SPI, the new configuration will need to be revalidated before signal generation can resume without error.</p>
+</section>
+<section id="calibration">
+<h3>Calibration<a class="headerlink" href="#calibration" title="Link to this heading"></a></h3>
+<p>To achieve the highest signal purity, a DPD calibration phase must be run at least once before generating an output signal. The DPD calibration data is normally stored in volatile memory and therefore must be re-run after every power supply sequence or once there is a change in the amplitude, frequency, and common-mode voltage settings.</p>
+<p>The procedure below should be followed for calibration:</p>
+<ul class="simple">
+<li><p>Enable power supplies to modules (+3.3V &amp; +/-9V).</p></li>
+<li><p>Set Enable (EN) High - Enables internal supplies within the module.</p></li>
+<li><p>Wait until module initialization has completed (READY=1).</p></li>
+<li><p>Load serial test configuration data.</p></li>
+<li><p>Set CAL signal High to start module DPD Calibration procedure.</p></li>
+<li><p>Monitor the high to low transition of the VALID signal to indicate the end of calibration.</p></li>
+<li><p>Start generating an output signal.</p></li>
+</ul>
+</section>
+<section id="coherent-sampling">
+<h3>Coherent Sampling<a class="headerlink" href="#coherent-sampling" title="Link to this heading"></a></h3>
+<p>Coherent sampling describes the sampling of a periodic signal, where an integer number of its cycles fit into a predefined sampling window. This technique is very useful to get the best achievable results when evaluating the dynamic performance of analog-to-digital converters (ADCs). To facilitate coherent sampling, the module can synchronize its signal generation to an external clock by doing the following:</p>
+<ul class="simple">
+<li><p>Connect the SYNC_Mode pin to GND by inserting a jumper in the 2-3 position of P12.</p></li>
+<li><p>Connect the SYNC_IN pin to the SMA input by inserting a jumper in the 2-3 position of P13.</p></li>
+<li><p>Apply a 100 MHz external clock to J7 to synchronize the generated signal to the external clock.</p></li>
+</ul>
+<p>Notes:</p>
+<ul class="simple">
+<li><p>The external clock must be turned on first before applying power to the EVAL-ADMX100X-FMCZ.</p></li>
+<li><p>Take note of the logic level limits below for the SYNC_IN and SYNC_OUT pins.</p></li>
+<li><p>Trigger needs to be set high to start generating the signal.</p></li>
+<li><p>During Coherent Sampling, SYNC_IN must have a 100 MHz clock frequency with a 50% duty cycle.</p></li>
+<li><p>Although less common, coherent sampling may also be performed by synchronizing the analyzer from the clock generated from the module (SYNC_OUT).</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><strong>Table 4. SYNC_MODE Configuration Options</strong></div>
+<div class="line">^SYNC_Mode ^Function ^Position^</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>P12</p></td>
+<td><p>Non-Coherent Sampling (Internal Clock)</p></td>
+<td><p>1-2 (3.3 V)</p></td>
+</tr>
+<tr class="row-even"><td><p>::</p></td>
+<td><p>Coherent Sampling (External Clock)</p></td>
+<td><p>2-3 (GND)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><strong>Table 5. SYNC_IN Configuration Options</strong></div>
+<div class="line">^SYNC_IN ^Function ^Position^</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>P13</p></td>
+<td><p>SMA Input for external clock</p></td>
+<td><p>2-3 (SMA input)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="admx100x-typical-performance-characteristics">
+<h2>ADMX100X TYPICAL PERFORMANCE CHARACTERISTICS<a class="headerlink" href="#admx100x-typical-performance-characteristics" title="Link to this heading"></a></h2>
+<section id="table-3-dc-output-characteristics">
+<h3>Table 3. DC OUTPUT CHARACTERISTICS<a class="headerlink" href="#table-3-dc-output-characteristics" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Typ.</p></th>
+<th class="head"><p>Unit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Output Voltage Range</p></td>
+<td><p>±4</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>VCM Output Range</p></td>
+<td><p>±2.5</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>DC Output Current</p></td>
+<td><p>±40</p></td>
+<td><p>mA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Differential Offset</p></td>
+<td><p>±100</p></td>
+<td><p>uV</p></td>
+</tr>
+<tr class="row-even"><td><p>Common-Mode Offset</p></td>
+<td><p>±10</p></td>
+<td><p>mV</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="table-4-ac-output-characteristics">
+<h3>Table 4. AC OUTPUT CHARACTERISTICS<a class="headerlink" href="#table-4-ac-output-characteristics" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Typ.</p></th>
+<th class="head"><p>Unit</p></th>
+<th class="head"><p>Conditions</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Differential Voltage Range</p></td>
+<td><p>3.5</p></td>
+<td><p>VRMS</p></td>
+<td><p>VCM = 0V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Min. Output Frequency</p></td>
+<td><p>30</p></td>
+<td><p>Hz</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Max. Output Frequency</p></td>
+<td><p>40</p></td>
+<td><p>kHz</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Max. Output Frequency, DPD</p></td>
+<td><p>20</p></td>
+<td><p>kHz</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Frequency Resolution</p></td>
+<td><p>1</p></td>
+<td><p>uHz</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Total Harmonic Distortion</p></td>
+<td><p>-130</p></td>
+<td><p>dBc</p></td>
+<td><p>2VRMS, 1KHz, DPD</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>-120</p></td>
+<td><p>dBc</p></td>
+<td><p>1VRMS, 20kHz, DPD</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>-119</p></td>
+<td><p>dBc</p></td>
+<td><p>2VRMS, 20kHz, DPD</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>-105</p></td>
+<td><p>dBc</p></td>
+<td><p>1VRMS, 40kHz</p></td>
+</tr>
+<tr class="row-odd"><td><p>Signal-to-Noise Ratio</p></td>
+<td><p>112</p></td>
+<td><p>dB</p></td>
+<td><p>22kHz BW</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="table-5-arbitrary-waveform-generator-characteristics">
+<h3>Table 5. ARBITRARY WAVEFORM GENERATOR CHARACTERISTICS<a class="headerlink" href="#table-5-arbitrary-waveform-generator-characteristics" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Typ.</p></th>
+<th class="head"><p>Unit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Total Pattern Memory</p></td>
+<td><p>173</p></td>
+<td><p>MB</p></td>
+</tr>
+<tr class="row-odd"><td><p>Max. Pattern Storage</p></td>
+<td><p>15</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Resolution</p></td>
+<td><p>20</p></td>
+<td><p>Bit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Update Rate</p></td>
+<td><p>1</p></td>
+<td><p>MSPS</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="table-6-power-supply-requirements">
+<h3>Table 6. POWER SUPPLY REQUIREMENTS<a class="headerlink" href="#table-6-power-supply-requirements" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Typ.</p></th>
+<th class="head"><p>Unit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AVCC</p></td>
+<td><p>+9</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>AVCC Current</p></td>
+<td><p>65</p></td>
+<td><p>mA</p></td>
+</tr>
+<tr class="row-even"><td><p>AVSS</p></td>
+<td><p>-9</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>AVSS Current</p></td>
+<td><p>65</p></td>
+<td><p>mA</p></td>
+</tr>
+<tr class="row-even"><td><p>DVDD</p></td>
+<td><p>+3.3</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>DVDD Current</p></td>
+<td><p>0.4</p></td>
+<td><p>A</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id8" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>By default, the EVAL-ADMX100X-FMCZ ships with this header P4 in position 2-1. If it is set to 2-3, make sure to drive the VCM_EXT to the desired voltage on P7 Pin 9.</p>
+</aside>
+<aside class="footnote brackets" id="id9" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>When using the ADMX1001, S1 can be switched to the Loopback on position to route the OUTP and OUTN source outputs to the INP and INN acquisition channel inputs to be visible in the PC GUI</p>
+</aside>
+<aside class="footnote brackets" id="id10" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">3</a><span class="fn-bracket">]</span></span>
+<p>This feature will only work when using the SDP-H1 as the controller board.</p>
+</aside>
+<aside class="footnote brackets" id="id11" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">4</a><span class="fn-bracket">]</span></span>
+<p>This feature will only work when the signals saved to a profile have a specific number of cycles. A continuous signal is invalid.</p>
+</aside>
+</aside>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

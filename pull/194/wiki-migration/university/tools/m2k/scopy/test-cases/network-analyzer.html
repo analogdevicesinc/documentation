@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="In order to proceed through the test case, first of all delete the Scopy *.ini file (saves previous settings made in Scopy tool) from the following path on Windows: C:\Users\your_username\AppData\Roaming\ADI ." name="description" />
+
+    <title>Initial Setup &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Initial Setup</a></li>
+<li><a class="reference internal" href="#test-case">Test Case</a><ul>
+<li><a class="reference internal" href="#high-pass-filter-test">High Pass Filter Test</a></li>
+<li><a class="reference internal" href="#band-pass-filter-test">Band Pass Filter Test</a></li>
+<li><a class="reference internal" href="#band-stop-filter-test">Band Stop Filter Test</a></li>
+<li><a class="reference internal" href="#other-features">Other Features</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <div class="line-block">
+<div class="line"><br /></div>
+<div class="line">====== Network Analyzer - Test Case ======</div>
+</div>
+<section id="initial-setup">
+<h1>Initial Setup<a class="headerlink" href="#initial-setup" title="Link to this heading"></a></h1>
+<p>In order to proceed through the test case, first of all delete the Scopy *.ini file (saves previous settings made in Scopy tool) from the following path on Windows: C:\Users\your_username\AppData\Roaming\ADI .</p>
+<p>Open the Network Analyzer instrument. The interface should look like the picture below:</p>
+<img alt="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_network-analyzer.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/scopy_1v3_network-analyzer.png" />
+<p>Press multiple times on the “Run” button to check if the instrument works.</p>
+</section>
+<section id="test-case">
+<h1>Test Case<a class="headerlink" href="#test-case" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Low Pass Filter Test====</div>
+</div>
+<details><summary>Click to expand</summary><div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Test Steps</p></th>
+<th class="head"><p>Steps Resources</p></th>
+<th class="head"><p>Expected Results</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Low Pass Filter: fc = 340Hz</strong></p></td>
+<td><p>1.1 Create a first-order low pass RC filter with the following components: R = 470 Ohms, C = 1uF. This will have a cut-off frequency of approximately 340 Hz.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.01.png"><img alt="image24" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.01.png" style="width: 100px;" /></a></p></td>
+<td><p>The set up must look like the image in the Steps Resources picture on the left.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference: CH1</p></td>
+<td><p>1.2 Set these configurations on the Network Analyzer:</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.2.png"><img alt="image25" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.2.png" style="width: 100px;" /></a></p></td>
+<td><p>Check the frequency response in the Bode plot. It must look like the image in the Steps Resources picture on the left.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="loweralpha simple">
+<li><p>Reference: Channel 1, 1V Amplitude, 0V Offset</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="loweralpha simple" start="2">
+<li><p>Sweep: Logarithmic, Start – 10Hz, Stop – 500kHz, Sample Count – 100</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="loweralpha simple" start="3">
+<li><p>Display: Min. Magnitude – -90dB, Max. Magnitude – 10dB, Min. Phase – -150°, Max. Phase – 60°</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="loweralpha simple" start="4">
+<li><p>Run the Network Analyzer.</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Cursor</p></td>
+<td><p>1.3 Enable the “Cursor” by clicking the box at the lower right corner of the interface.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-Cur1.png"><img alt="image26" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-Cur1.png" style="width: 100px;" /></a></p></td>
+<td><p>The interface must look like the image in the Steps Resources picture.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>1.4 Move the cursor from left to right.</p></td>
+<td></td>
+<td><p>The values displayed on the screen must follow accordingly.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>1.5 Move the cursor to find the -3dB point on the trace.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-Cur2.png"><img alt="image27" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-Cur2.png" style="width: 100px;" /></a></p></td>
+<td><p>The magnitude must indicate -3dB at approximately 340 Hz. The phase corresponding to the same frequency must also be indicated.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>1.6 Disable the cursor by clicking the box again.</p></td>
+<td></td>
+<td><p>The cursor controls must disappear from the interface.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>1.7 Change the “Display” settings’ parameters to view the plot effectively by clicking ± button or by entering these values:</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.3.png"><img alt="image28" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.3.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must change accordingly as you change the values by either using the buttons or by entering the values. The plot must now look like the image in the Steps Resources.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Display: Min. Magnitude – -70dB, Max. Magnitude – 50dB, Min. Phase – -120°, Max. Phase – 60°</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>1.8 View the Nyquist and Nichols plots by going to the General Settings and choose the type of plot by clicking the dropdown box: “Nyquist” or “Nichols” (aside from “Bode”).</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.4a.png"><img alt="image29" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.4a.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must look like the images from the Steps Resources.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.4b.png"><img alt="image30" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.4b.png" style="width: 100px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>1.9 Change the plot back to Bode plot and switch to “Linear” frequency scale by selecting Linear under frequency sweep settings.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.05.png"><img alt="image31" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.05.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must look like the image in the Steps Resources. Enable the “Cursor” and move it to find the -3dB point of your trace. It must be around 340 Hz.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference: CH2</p></td>
+<td><p>1.10 Change the placement of the scope channels (please see the picture on the left for the setup). Switch the reference channel to Channel 2 and then repeat the test steps done with CH1.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.5.png"><img alt="image32" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.5.png" style="width: 100px;" /></a></p></td>
+<td><p>The results must be the same with CH1’s.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Low Pass Filter: fc = 15.9kHz</strong></p></td>
+<td><p>2.1 Create a first-order low pass RC filter with the following components: R = 100 Ohms, C = 0.1uF. This will have a cut-off frequency of approximately 15.9kHz.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.1.png"><img alt="image33" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.1.png" style="width: 100px;" /></a></p></td>
+<td><p>The set up must look like the image in the Steps Resources picture on the left. The frequency response may change due to the type of components used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference: CH1</p></td>
+<td><p>1.2 Set these configurations on the Network Analyzer:</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.2.png"><img alt="image34" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.2.png" style="width: 100px;" /></a></p></td>
+<td><p>Check the frequency response in the Bode plot. It must look like the image in the Steps Resources picture on the left. Enable and move your cursor to find the -3dB point of your trace. It must be around 15.9 kHz.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="loweralpha simple">
+<li><p>Reference: Channel 1, 1V Amplitude, 0V Offset</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="loweralpha simple" start="2">
+<li><p>Sweep: Logarithmic, Start – 10Hz, Stop – 1MHz, Sample Count – 100</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="loweralpha simple" start="3">
+<li><p>Display: Min. Magnitude – -70dB, Max. Magnitude – 5dB, Min. Phase – -120°, Max. Phase – 60°</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="loweralpha simple" start="4">
+<li><p>Run the Network Analyzer.</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>2.3 Change the “Display” settings’ parameters to view the plot effectively by clicking ± button or by entering these values:</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.3.png"><img alt="image35" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.3.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must now look like image in the Steps Resources. The plot must change accordingly as you change the values.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Display: Min. Magnitude – -45dB, Max. Magnitude – 10dB, Min. Phase – -100°, Max. Phase – 20°</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>2.4 View the Nyquist and Nichols plots by going to the General Settings and choose the type of plot by clicking the dropdown box: “Nyquist” or “Nichols” (aside from “Bode”).</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.4a.png"><img alt="image36" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.4a.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must look like the images from the Steps Resources.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.4b.png"><img alt="image37" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.4b.png" style="width: 100px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>2.5 Change the plot back to Bode plot and switch to “Linear” frequency scale by selecting Linear under frequency sweep settings.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.05.png"><img alt="image38" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.05.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must look like the image in the Steps Resources. Enable the “Cursor” and move it to find the -3dB point of your trace. It must be around 15.9 kHz.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference: CH2</p></td>
+<td><p>2.6 Change the placement of the scope channels (please see the picture on the left for the setup). Switch the reference channel to Channel 2. Set these sweep values: 10Hz to 1MHz. Repeat the test steps done with CH1.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.5.png"><img alt="image39" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A2.5.png" style="width: 100px;" /></a></p></td>
+<td><p>The results must be the same with CH1’s.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Low Pass Filter: fc = 1.59MHz</strong></p></td>
+<td><p>3.1 Create a first-order low pass RC filter with the following components: R = 1 kOhms, C = 100 pF. This will have a cut-off frequency of approximately 1.59MHz.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.1.png"><img alt="image40" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.1.png" style="width: 100px;" /></a></p></td>
+<td><p>The set up must look like the image in the Steps Resources picture on the left. The frequency response may change due to the type of components used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference: CH1</p></td>
+<td><p>3.2 Set these configurations on the Network Analyzer:</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.2.png"><img alt="image41" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.2.png" style="width: 100px;" /></a></p></td>
+<td><p>Check the frequency response in the Bode plot. It must look like the image in the Steps Resources picture on the left. Enable and move your cursor to find the -3dB point of your trace. It must be around 1.59MHz.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="loweralpha simple">
+<li><p>Reference: Channel 1, 1V Amplitude, 0V Offset</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="loweralpha simple" start="2">
+<li><p>Sweep: Logarithmic, Start – 50Hz, Stop – 30MHz, Sample Count – 100</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="loweralpha simple" start="3">
+<li><p>Display: Min. Magnitude – -45dB, Max. Magnitude – 10dB, Min. Phase – -100°, Max. Phase – 20°</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="loweralpha simple" start="4">
+<li><p>Run the Network Analyzer.</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>3.3 Change the “Display” settings’ parameters to view the plot effectively by clicking ± button or by entering these values:</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.3.png"><img alt="image42" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.3.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must change accordingly as you change the values.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Display: Min. Magnitude – -35dB, Max. Magnitude – 5dB, Min. Phase – -100°, Max. Phase – 35°</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>3.4 View the Nyquist and Nichols plots by going to the General Settings and choose the type of plot by clicking the dropdown box: “Nyquist” or “Nichols” (aside from “Bode”).</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.4a.png"><img alt="image43" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.4a.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must look like the image in the Steps Resources.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.4b.png"><img alt="image44" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.4b.png" style="width: 100px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>3.5 Change the plot back to Bode plot and switch to “Linear” frequency scale by selecting Linear under frequency sweep settings.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.05.png"><img alt="image45" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.05.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must look like the image in the Steps Resources. Enable the “Cursor” and move it to find the -3dB point of your trace. It must be around 1.59 MHz.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference: CH2</p></td>
+<td><p>3.6 Change the placement of the scope channels (please see the picture on the left for the setup). Switch the reference channel to Channel 2. Set these sweep values: 50Hz to 30MHz. Repeat the test steps done with CH1.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.5.png"><img alt="image46" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A3.5.png" style="width: 100px;" /></a></p></td>
+<td><p>The results must be the same with CH1’s.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details><section id="high-pass-filter-test">
+<h2>High Pass Filter Test<a class="headerlink" href="#high-pass-filter-test" title="Link to this heading"></a></h2>
+<details><summary>Click to expand</summary><div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Test Steps</p></th>
+<th class="head"><p>Steps Resources</p></th>
+<th class="head"><p>Expected Results</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>High Pass Filter: fc = 340 Hz</strong></p></td>
+<td><p>1.1 Create a first-order high pass RC filter with the following components: R = 470 Ohms, C = 1uF. This will have a cut-off frequency of approximately 340 Hz.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.1.png"><img alt="image68" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.1.png" style="width: 100px;" /></a></p></td>
+<td><p>The set up must look like the image in the Steps Resources picture on the left.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference: CH1</p></td>
+<td><p>1.2 Set these configurations on the Network Analyzer:</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.2.png"><img alt="image69" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.2.png" style="width: 100px;" /></a></p></td>
+<td><p>Check the frequency response in the Bode plot. It must look like the image in the Steps Resources picture on the left. Enable the “Cursor” and move it to find the -3dB point of your trace. It must be around 340 Hz.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="loweralpha simple">
+<li><p>Reference: Channel 1, 1V Amplitude, 0V Offset</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="loweralpha simple" start="2">
+<li><p>Sweep: Logarithmic, Start – 1Hz, Stop – 1MHz, Sample Count – 100</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="loweralpha simple" start="3">
+<li><p>Display: Min. Magnitude – -90dB, Max. Magnitude – 10dB, Min. Phase – -180°, Max. Phase – 180°</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="loweralpha simple" start="4">
+<li><p>Run the Network Analyzer.</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>1.3 Change the “Display” settings’ parameters to view the plot effectively by clicking ± button or by entering these values:</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.3.png"><img alt="image70" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.3.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must change accordingly as you change the values by either using the buttons or by entering the values. The plot must now look like the image in the Steps Resources.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Display: Min. Magnitude – -40dB, Max. Magnitude – 5dB, Min. Phase – -100°, Max. Phase – 150°</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>1.4 View the Nyquist and Nichols plots by going to the General Settings and choose the type of plot by clicking the dropdown box: “Nyquist” or “Nichols” (aside from “Bode”).</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.4a.png"><img alt="image71" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.4a.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must look like the images in the Steps Resources.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.4b.png"><img alt="image72" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.4b.png" style="width: 100px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>1.5 Change the plot back to Bode plot and switch to “Linear” frequency scale by selecting Linear under frequency sweep settings.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.05.png"><img alt="image73" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.05.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must look like the image in the Steps Resources. Enable the “Cursor” and move it to find the -3dB point of your trace. It must be around 340 Hz.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference: CH2</p></td>
+<td><p>1.6 Change the placement of the scope channels (please see the picture on the left for the setup). Switch the reference channel to Channel 2 and then repeat the test steps done with CH1.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.5.png"><img alt="image74" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.5.png" style="width: 100px;" /></a></p></td>
+<td><p>The results must be the same with CH1’s.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>High Pass Filter: fc = 15.9kHz</strong></p></td>
+<td><p>2.1 Create a first-order high pass RC filter with the following components: R = 100 Ohms, C = 0.1uF. approximately 15.9kHz.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.1.png"><img alt="image75" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.1.png" style="width: 100px;" /></a></p></td>
+<td><p>The set up must look like the image in the Steps Resources picture on the left. The frequency response may change due to the type of components used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference: CH1</p></td>
+<td><p>2.2 Set these configurations on the Network Analyzer:</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.2.png"><img alt="image76" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.2.png" style="width: 100px;" /></a></p></td>
+<td><p>Check frequency response in Bode plot, the plot must look like in steps resources picture. Enable and move your cursor to find the -3dB point of your trace. It must be around 15.9 kHz.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="loweralpha simple">
+<li><p>Reference: Channel 1, 1V Amplitude, 0V Offset</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="loweralpha simple" start="2">
+<li><p>Sweep: Logarithmic, Start – 100Hz, Stop – 10MHz, Sample Count – 100</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="loweralpha simple" start="3">
+<li><p>Display: Min. Magnitude – -70dB, Max. Magnitude – 5dB, Min. Phase – -100°, Max. Phase – 150°</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="loweralpha simple" start="4">
+<li><p>Run the Network Analyzer.</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>2.3 Change the “Display” settings’ parameters to view the plot effectively by clicking ± button or by entering these values:</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.3.png"><img alt="image77" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.3.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must change accordingly as you change the values by either using the buttons or by entering the values. The plot must now look like the image in the Steps Resources.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Display: Min. Magnitude – -50dB, Max. Magnitude – 5dB, Min. Phase – -180°, Max. Phase – 150°</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>2.4 View the Nyquist and Nichols plots by going to the General Settings and choose the type of plot by clicking the dropdown box: “Nyquist” or “Nichols” (aside from “Bode”).</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.4a.png"><img alt="image78" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.4a.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must look like the images in the Steps Resources.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.4b.png"><img alt="image79" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.4b.png" style="width: 100px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>2.5 Change the plot back to Bode plot and switch to “Linear” frequency scale by selecting Linear under frequency sweep settings.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.05.png"><img alt="image80" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.05.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must look like the image in the Steps Resources. Enable the “Cursor” and move it to find the -3dB point of your trace. It must be around 15.9 kHz.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference: CH2</p></td>
+<td><p>2.6 Change the placement of the scope channels (please see the picture on the left for the setup). Switch the reference channel to Channel 2 and then repeat the test steps done with CH1.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.5.png"><img alt="image81" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B2.5.png" style="width: 100px;" /></a></p></td>
+<td><p>The results must be the same with CH1’s.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>High Pass Filter: fc = 1.6MHz</strong></p></td>
+<td><p>3.1 Create a first-order high pass RC filter with the following components: R = 1 kOhms, C = 100pF. This will have a cut-off frequency of approximately 1.6MHz.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.1.png"><img alt="image82" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.1.png" style="width: 100px;" /></a></p></td>
+<td><p>The set up must look like the image in the Steps Resources picture on the left. The frequency response may change due to the type of components used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference: CH1</p></td>
+<td><p>3.2 Set these configurations on the Network Analyzer:</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.2.png"><img alt="image83" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.2.png" style="width: 100px;" /></a></p></td>
+<td><p>Check the frequency response in the Bode plot. It must look like the image in the Steps Resources picture on the left. Enable and move your cursor to find the -3dB point of your trace. It must be around 1.6MHz.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="loweralpha simple">
+<li><p>Reference: Channel 1, 1V Amplitude, 0V Offset</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="loweralpha simple" start="2">
+<li><p>Sweep: Logarithmic, Start – 10Hz, Stop – 30MHz, Sample Count – 100</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="loweralpha simple" start="3">
+<li><p>Display: Min. Magnitude – -70dB, Max. Magnitude – 5dB, Min. Phase – -120°, Max. Phase – 60°</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="loweralpha simple" start="4">
+<li><p>Run the Network Analyzer.</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>3.3 Change the “Display” settings’ parameters to view the plot effectively by clicking ± button or by entering these values:</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.3.png"><img alt="image84" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.3.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must now look like image in the Steps Resources. The plot must change accordingly as you change the values.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Display: Min. Magnitude – -60dB, Max. Magnitude – 5dB, Min. Phase – -150°, Max. Phase – 180°</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>3.4 View the Nyquist and Nichols plots by going to the General Settings and choose the type of plot by clicking the dropdown box: “Nyquist” or “Nichols” (aside from “Bode”).</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.4a.png"><img alt="image85" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.4a.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must look like the image in the Steps Resources.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.4b.png"><img alt="image86" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.4b.png" style="width: 100px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>3.5 Change the plot back to Bode plot and switch to “Linear” frequency scale by selecting Linear under frequency sweep settings.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.05.png"><img alt="image87" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.05.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must look like the image in the Steps Resources. Enable the “Cursor” and move it to find the -3dB point of your trace. It must be around 1.6MHz.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference: CH2</p></td>
+<td><p>3.6 Change the placement of the scope channels (please see the picture on the left for the setup). Switch the reference channel to Channel 2. Set these sweep values: 10Hz to 1MHz. Repeat the test steps done with CH1.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.5.png"><img alt="image88" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B3.5.png" style="width: 100px;" /></a></p></td>
+<td><p>The results must be the same with CH1’s.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details></section>
+<section id="band-pass-filter-test">
+<h2>Band Pass Filter Test<a class="headerlink" href="#band-pass-filter-test" title="Link to this heading"></a></h2>
+<details><summary>Click to expand</summary><div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Test Steps</p></th>
+<th class="head"><p>Steps Resources</p></th>
+<th class="head"><p>Expected Results</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Band Pass Filter: fcl = 1.59kHz, fch = 15.9kHz</strong></p></td>
+<td><p>1.1 Create a first-order band pass RC filter with the following components: R1 = 100 Ohms, C 1= 1uF, R2 = 100 Ohms, C2= 0.1uF. This will have a low cut-off frequency at around 1.59kHz and a high cut-off frequency of approximately 15.9 kHz.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.1.png"><img alt="image103" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.1.png" style="width: 100px;" /></a></p></td>
+<td><p>The set up must look like the image in the Steps Resources picture on the left.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference: CH1</p></td>
+<td><p>1.2 Set these configurations on the Network Analyzer:</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.2.png"><img alt="image104" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.2.png" style="width: 100px;" /></a></p></td>
+<td><p>Check the frequency response in the Bode plot. It must look like the image in the Steps Resources picture on the left. Enable and move your cursor to find the -3dB points of your trace. It must be around 1.59 kHz and 15.9 kHz.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="loweralpha simple">
+<li><p>Reference: Channel 1, 1V Amplitude, 0V Offset</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="loweralpha simple" start="2">
+<li><p>Sweep: Logarithmic, Start – 50Hz, Stop – 5MHz, Sample Count – 100</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="loweralpha simple" start="3">
+<li><p>Display: Min. Magnitude – -90dB, Max. Magnitude – 10dB, Min. Phase – -180°, Max. Phase – 180°</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="loweralpha simple" start="4">
+<li><p>Run the Network Analyzer.</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>1.3 Change the “Display” settings’ parameters to view the plot effectively by clicking ± button or by entering these values:</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.3.png"><img alt="image105" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.3.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must now look like image in the Steps Resources. The plot must change accordingly as you change the values.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Display: Min. Magnitude – -50dB, Max. Magnitude – 5dB, Min. Phase – -180°, Max. Phase – 180°</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>1.4 View the Nyquist and Nichols plots by going to the General Settings and choose the type of plot by clicking the dropdown box: “Nyquist” or “Nichols” (aside from “Bode”).</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.4a.png"><img alt="image106" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.4a.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must look like the images from the Steps Resources.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.4b.png"><img alt="image107" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.4b.png" style="width: 100px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>1.5 Change the plot back to Bode plot and switch to “Linear” frequency scale by selecting Linear under frequency sweep settings.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.05.png"><img alt="image108" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.05.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must look like the image in the Steps Resources. Enable the “Cursor” and move them to find the -3dB points of your trace. They must be around 1.59kHz and 15.9kHz.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference: CH2</p></td>
+<td><p>1.6 6 Change the placement of the scope channels (please see the picture on the left for the setup). Switch the reference channel to Channel 2. Set these sweep values: 10Hz to 1MHz. Repeat the test steps done with CH1.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.5.png"><img alt="image109" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C1.5.png" style="width: 100px;" /></a></p></td>
+<td><p>The results must be the same with CH1’s.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Band Pass Filter: fcl = 3.4kHz, fch = 723kHz</strong></p></td>
+<td><p>2.1 Create a first-order band pass RC filter with the following components: R1 = 470 Ohms, C 1= 0.1uF, R2 = 2.2 kOhms, C2= 100pF. This will have a low cut-off frequency at around 3.4kHz and a high cut-off frequency of approximately 723kHz.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.1.png"><img alt="image110" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.1.png" style="width: 100px;" /></a></p></td>
+<td><p>The set up must look like the image in the Steps Resources picture on the left. The frequency response may change due to the type of components used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference: CH1</p></td>
+<td><p>2.2 Set these configurations on the Network Analyzer:</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.2.png"><img alt="image111" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.2.png" style="width: 100px;" /></a></p></td>
+<td><p>Check the frequency response in the Bode plot. It must look like the image in the Steps Resources picture on the left. Enable the “Cursor” and move them to find the -3dB points of your trace. They must be around 3.4 kHz and 723 kHz.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="loweralpha simple">
+<li><p>Reference: Channel 1, 1V Amplitude, 0V Offset</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="loweralpha simple" start="2">
+<li><p>Sweep: Logarithmic, Start – 50Hz, Stop – 10MHz, Sample Count – 100</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="loweralpha simple" start="3">
+<li><p>Display: Min. Magnitude – -50dB, Max. Magnitude – 5dB, Min. Phase – -180°, Max. Phase – 180°</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="loweralpha simple" start="4">
+<li><p>Run the Network Analyzer.</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>2.3 Change the “Display” settings’ parameters to view the plot effectively by clicking ± button or by entering these values:</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.3.png"><img alt="image112" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.3.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must change accordingly as you change the values by either using the buttons or by entering the values. The plot must now look like the image in the Steps Resources.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Display: Min. Magnitude – -40dB, Max. Magnitude – 5dB, Min. Phase – -150°, Max. Phase – 150°</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>2.4 View the Nyquist and Nichols plots by going to the General Settings and choose the type of plot by clicking the dropdown box: “Nyquist” or “Nichols” (aside from “Bode”).</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.4a.png"><img alt="image113" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.4a.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must look like the images from the Steps Resources.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.4b.png"><img alt="image114" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.4b.png" style="width: 100px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>2.5 Change the plot back to Bode plot and switch to “Linear” frequency scale by selecting Linear under frequency sweep settings.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.05.png"><img alt="image115" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.05.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must look like the image in the Steps Resources. Enable the “Cursor” and move them to find the -3dB points of your trace. They must be around 3.4 kHz and 723 kHz.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference: CH2</p></td>
+<td><p>2.6 Change the placement of the scope channels (please see the picture on the left for the setup). Switch the reference channel to Channel 2 and then repeat the test steps done with CH1.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.5.png"><img alt="image116" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-C2.5.png" style="width: 100px;" /></a></p></td>
+<td><p>The results must be the same with CH1’s.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details></section>
+<section id="band-stop-filter-test">
+<h2>Band Stop Filter Test<a class="headerlink" href="#band-stop-filter-test" title="Link to this heading"></a></h2>
+<details><summary>Click to expand</summary><div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Test Steps</p></th>
+<th class="head"><p>Steps Resources</p></th>
+<th class="head"><p>Expected Results</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Notch Filter: fN = 795Hz</strong></p></td>
+<td><p>1.1 Create a band stop notch filter with the following components: R1 =100 Ohms, 2xC1 = 1uF, 2xR2= 200 Ohms, C2= 2 uF. For C2, since it is not a standard value, you might use a capacitor box or connect two 1uF capacitors in parallel to achieve the value of the capacitance. This will have a notch frequency of approximately 795Hz. At this frequency, it will be highly attenuated.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.1.png"><img alt="image129" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.1.png" style="width: 100px;" /></a></p></td>
+<td><p>The set up must look like the image in the Steps Resources picture on the left.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference: CH1</p></td>
+<td><p>1.2 Set these configurations on the Network Analyzer:</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.2.png"><img alt="image130" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.2.png" style="width: 100px;" /></a></p></td>
+<td><p>Check the frequency response in the Bode plot. It must look like the image in the Steps Resources picture on the left. Enable the “Cursor” and move it to find the lowest point of your trace. It must be around 795Hz where the frequency is highly attenuated.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="loweralpha simple">
+<li><p>Reference: Channel 1, 1V Amplitude, 0V Offset</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="loweralpha simple" start="2">
+<li><p>Sweep: Logarithmic, Start – 20Hz, Stop – 10MHz, Sample Count – 100</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="loweralpha simple" start="3">
+<li><p>Display: Min. Magnitude – -50dB, Max. Magnitude – 5dB, Min. Phase – -180°, Max. Phase – 180°</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="loweralpha simple" start="4">
+<li><p>Run the Network Analyzer.</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>1.3 View the Nyquist and Nichols plots by going to the General Settings and choose the type of plot by clicking the dropdown box: “Nyquist” or “Nichols” (aside from “Bode”).</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.3a.png"><img alt="image131" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.3a.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must look like the images from the Steps Resources.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.3b.png"><img alt="image132" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.3b.png" style="width: 100px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>1.4 Change the plot back to Bode plot and switch to “Linear” frequency scale by selecting Linear under frequency sweep settings. Change the sweep’s stop frequency to 10kHz by using the ± button.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.4.png"><img alt="image133" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.4.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must look like the image in the Steps Resources.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference: CH2</p></td>
+<td><p>1.5 Change the placement of the scope channels (please see the picture on the left for the setup). Switch the reference channel to Channel 2. Set these sweep values: 10Hz to 1MHz. Repeat the test steps done with CH1.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.5.png"><img alt="image134" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D1.5.png" style="width: 100px;" /></a></p></td>
+<td><p>The results must be the same with CH1’s.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Notch Filter: fN = 16.9kHz</strong></p></td>
+<td><p>2.1 Create a band stop notch filter with the following components: R1 = 100 Ohms, 2xC1 = 0.047uF, 2xR2 = 200 Ohms, C2 = 0.094uF. For C2, since it is not a standard value, you might use a capacitor box or connect two 0.047uF capacitors in parallel to achieve the value of the capacitance. This will have a notch frequency of approximately 16.9kHz. At this frequency, it will be highly attenuated.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.1.png"><img alt="image135" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.1.png" style="width: 100px;" /></a></p></td>
+<td><p>The set up must look like the image in the Steps Resources picture on the left.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference: CH1</p></td>
+<td><p>2.2 Set these configurations on the Network Analyzer:</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.2.png"><img alt="image136" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.2.png" style="width: 100px;" /></a></p></td>
+<td><p>Check the frequency response in the Bode plot. It must look like the image in the Steps Resources picture on the left. Enable the “Cursor” and move it to find the lowest point of your trace. It must be around 16.9kHz where the frequency is highly attenuated.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="loweralpha simple">
+<li><p>Reference: Channel 1, 1V Amplitude, 0V Offset</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="loweralpha simple" start="2">
+<li><p>Sweep: Logarithmic, Start – 20Hz, Stop – 10MHz, Sample Count – 100</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="loweralpha simple" start="3">
+<li><p>Display: Min. Magnitude – -50dB, Max. Magnitude – 5dB, Min. Phase – -180°, Max. Phase – 180°</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="loweralpha simple" start="4">
+<li><p>Run the Network Analyzer.</p></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>2.3 View the Nyquist and Nichols plots by going to the General Settings and choose the type of plot by clicking the dropdown box: “Nyquist” or “Nichols” (aside from “Bode”).</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.3a.png"><img alt="image137" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.3a.png" style="width: 100px;" /></a> The plot must look like the images from the Steps Resources.</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.3b.png"><img alt="image138" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.3b.png" style="width: 100px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>2.4 View back to Bode plot. Switch to Linear frequency scale by selecting Linear under frequency sweep settings. Change the sweep’s stop frequency to 200kHz by using the ± button.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.4.png"><img alt="image139" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.4.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must look like in steps resources picture.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference: CH2</p></td>
+<td><p>2.5 Change the placement of the scope channels (please see the picture on the left for the setup). Switch the reference channel to Channel 2. Set these sweep values: 10Hz to 1MHz. Repeat the test steps done with CH1.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.5.png"><img alt="image140" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-D2.5.png" style="width: 100px;" /></a></p></td>
+<td><p>The results must be the same with CH1’s.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details></section>
+<section id="other-features">
+<h2>Other Features<a class="headerlink" href="#other-features" title="Link to this heading"></a></h2>
+<details><summary>Click to expand</summary><div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Test Steps</p></th>
+<th class="head"><p>Steps Resources</p></th>
+<th class="head"><p>Expected Results</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Print Plot</p></td>
+<td><p>1.1 Repeat the steps 1.1 and 1.2 from Section A - Low Pass Filter. Press the “Print” button and save the file.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.2.png"><img alt="image169" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-a1.2.png" style="width: 100px;" /></a></p></td>
+<td><p>The resulted file must correspond to the plot presented in the resources column.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Buffer Previewer</p></td>
+<td><p>2.1 Repeat Step 1.1 from Section A - Low Pass Filter and set the configurations from Step 1.2. Change the sweep’s start and stop frequencies to 10Hz and 5kHz respectively.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.01.png"><img alt="image170" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-A1.01.png" style="width: 100px;" /></a></p></td>
+<td><p>The set up must look like image from the Steps Resources picture on the left.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>2.2 Turn the Buffer Previewer “on” and click “Run.”</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-e2.2.png"><img alt="image171" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-e2.2.png" style="width: 100px;" /></a></p></td>
+<td><p>The waveform above the plot must portray the current frequency being read. The Sample Count, Current Frequency, and the instantaneous DC Voltage must all start simultaneously. Check frequency response in Bode plot, the plot must look like in steps resources picture.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>2.3 Slide the blue slider from the start to the end of the Bode Plot.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-e2.3.png"><img alt="image172" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-e2.3.png" style="width: 100px;" /></a></p></td>
+<td><p>The waveform changes with regards to the Bode Plot.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>2.4 Place the blue slider on the 1kHz mark. Run the Network Analyzer.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-e2.4.png"><img alt="image173" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-e2.4.png" style="width: 100px;" /></a></p></td>
+<td><p>The waveform will stop displaying the instantaneous frequency at 1kHz. The sample count, current frequency, and DC voltage will continue to display instantaneous readings.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gain Mode</p></td>
+<td><p>3.1 Under Response in the Settings, change the Gain Mode from “Automatic” to “High.” Run network analyzer and then “Print” and save plot as “high_lpf.”</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-1a.PNG"><img alt="image174" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-1a.PNG" style="width: 100px;" /></a></p></td>
+<td><p>Check the frequency response in the Bode plot and it must look like the images from the Steps Resources.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-1b.PNG"><img alt="image175" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-1b.PNG" style="width: 100px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/high_lpf.png"><img alt="image176" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/high_lpf.png" style="width: 100px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>3.2 Back in Settings, change the Gain Mode to “Low.” Run the Network Analyzer. “Print” and save the plot as “low_lpf.”</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-2a.PNG"><img alt="image177" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-2a.PNG" style="width: 100px;" /></a></p></td>
+<td><p>Check frequency response in Bode plot, the plot should look like in steps resources picture.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-2b.PNG"><img alt="image178" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-2b.PNG" style="width: 100px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/low_lpf.png"><img alt="image179" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/low_lpf.png" style="width: 100px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>3.3 Compare the two saved plots - the “high_lpf” plot and the “low_lpf” plot.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/high_lpf.png"><img alt="image180" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/high_lpf.png" style="width: 100px;" /></a></p></td>
+<td><p>The plots with gain mode set to Low have more spikes than that of the plots with gain mode set to High.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/low_lpf.png"><img alt="image181" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/low_lpf.png" style="width: 100px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>3.4 Change the Gain Mode from “Low” to “Automatic.” Run the Network Analyzer and observe the plot.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-4.PNG"><img alt="image182" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step3-4.PNG" style="width: 100px;" /></a></p></td>
+<td><p>Scopy would use the appropriate gain mode for the circuit. In this case, the plot must be similar to that of the High Gain Mode.</p></td>
+</tr>
+<tr class="row-even"><td><p>DC Filtering, Off</p></td>
+<td><p>4.1 Set the offset to 1V and the gain mode to High. Run the Network Analyzer.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-e4.1.png"><img alt="image183" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-e4.1.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must be similar to the image in the Step Resource.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>4.2 Set the sweep to “Linear.” Run the Network Analyzer.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-e4.2.png"><img alt="image184" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-e4.2.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must be similar to that of the Step Resource picture. It must have a jagged and noisy plot.</p></td>
+</tr>
+<tr class="row-even"><td><p>DC Filtering, On</p></td>
+<td><p>4.3 Turn DC Filtering “On” and set the sweep back to “Logarithmic.” Click Run.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-e4.3.png"><img alt="image185" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-e4.3.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must be similar to that of the Step Resource picture. It must be smoother than the plot in step 4.1.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>4.4 Set the sweep to “Linear.” Run the Network Analyzer.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-e4.4.png"><img alt="image186" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-e4.4.png" style="width: 100px;" /></a></p></td>
+<td><p>The plot must be similar to that of the Step Resource picture. It must be less spiky than its step 4.2 counterpart.</p></td>
+</tr>
+<tr class="row-even"><td><p>Reference: Export/Import</p></td>
+<td><p>5.1 Repeat Step 1.1 from Section B - High Pass Filter and set the configurations from Step 1.2. Turn the Buffer Previewer “On” and run “Single” on the Network Analyzer.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.1.png"><img alt="image187" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/NA-B1.1.png" style="width: 100px;" /></a></p></td>
+<td><p>The setup and plot must look like the images from the Steps Resources.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step5-1.PNG"><img alt="image188" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step5-1.PNG" style="width: 100px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>5.2 Click the General Settings button (the one that looks like a gear) and “Export” the plot. A dialog box will open, set “automatic_hpf” as its filename and click “Save.”</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step5-2a.PNG"><img alt="image189" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step5-2a.PNG" style="width: 100px;" /></a></p></td>
+<td><p>The plot must look identical to the Step Resource picture.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step5-2b.PNG"><img alt="image190" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step5-2b.PNG" style="width: 100px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>5.3 In Settings, change the Gain Mode from “Automatic” to “Low” and run the Network Analyzer.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step5-3.PNG"><img alt="image191" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step5-3.PNG" style="width: 100px;" /></a></p></td>
+<td><p>See the Step Resource picture for reference.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>5.4 Back in the General Settings, click “Import” and select the file you exported earlier.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step5-4.PNG"><img alt="image192" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step5-4.PNG" style="width: 100px;" /></a></p></td>
+<td><p>Waveforms in red will be superimposed on the Bode Plot both to the Magnitude and Phase. It will serve as a reference for future plots.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>5.5 To remove the imported reference waveform, click “Remove Reference.”</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step5-5.PNG"><img alt="image193" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step5-5.PNG" style="width: 100px;" /></a></p></td>
+<td><p>The waveforms in red will disappear. See step resource picture for reference.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference: Snapshot</p></td>
+<td><p>6.1 Repeat Step 1.1 from Section B - High Pass Filter and set the configurations from Step 1.2. Turn the Buffer Previewer “On” and run “Single” on the Network Analyzer.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step6-1.PNG"><img alt="image194" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step6-1.PNG" style="width: 100px;" /></a></p></td>
+<td><p>The plot must look similar to the step resource picture.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>6.2 On General Settings, click “Snapshot.”</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step6-2.PNG"><img alt="image195" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step6-2.PNG" style="width: 100px;" /></a></p></td>
+<td><p>Waveforms in red will be superimposed on the Bode Plot both to the Magnitude and Phase. It will serve as a reference for future plots.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>6.3 Go back to Settings and change the Gain Mode to “Low.” Run the Network Analyzer.</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step6-3.PNG"><img alt="image196" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/na-other-step6-3.PNG" style="width: 100px;" /></a></p></td>
+<td><p>The plot readings will be superimposed on the refence waveform from Snapshot. This will make it easier to compare waveforms.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details><p>Test Results will be recorded in the following document: <a class="icon link reference external" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/network_analyzer_-_test_case.xlsx" target="_blank">Network Analyzer Test Case</a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Return to Test Cases</strong> <a class="reference internal" href="../test-cases.html"><span class="doc">Table of Contents</span></a></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

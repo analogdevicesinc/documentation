@@ -1,0 +1,58 @@
+ADALM-PLUTO Regulatory Compliance
+=================================
+
+The ADALM-PLUTO module is intended for use for **Engineering Development, Testing, Demonstration, or evaluation purposes only**, and is not a end product fit for general consumer use. **Any other use, resale, or redistribution for any other purpose is strictly prohibited.** This learning module is not intended to be complete in terms of required design-, marketing- and/or manufacturing-related protective considerations, including product safety and environmental measures typically found in end products that incorporate such semiconductor components or circuit boards. As such, persons handing this learning module should have electronics training and observe good engineering practice standards. As a prototype not available for commercial reasons, this active learning module does not fall withing the scope of the European Union directives regarding electromagnetic compatibility, restricted substances (RoHS), recycling (WEEE), FCC, CE or UL, and therefore not meet the requirements of these directives or other related directives.
+
+FCC Statement
+-------------
+
+This equipment has been tested and found to comply with the limits for a Class B digital device, pursuant to part 15 of the FCC Rules. These limits are designed to provide reasonable protection against harmful interference in a residential installation. This equipment generates, uses and can radiate radio frequency energy and, if not installed and used in accordance with the instructions, may cause harmful interference to radio communications. However, there is no guarantee that interference will not occur in a particular installation. If this equipment does cause harmful interference to radio or television reception, which can be determined by turning the equipment off and on, the user is encouraged to try to correct the interference by one or more of the following measures:
+
+-  Reorient or relocate the receiving antenna.
+-  Increase the separation between the equipment and receiver.
+-  Connect the equipment into an outlet on a circuit different from that to which the receiver is connected.
+-  Consult the dealer or an experienced radio/TV technician for help.
+
+Any changes or modification not expressly approved by the party responsible for compliance could void the user's authority to operate the device. Where shielded interface cables have been provided with the product or specified additional components or accessories elsewhere defined to be used with the installation of the product, they must be used in order to ensure compliance with FCC regulations.
+
+IC Statement
+------------
+
+This device complies with Industry Canada licence exempt RSS standard(s). Operation is subject to the following two conditions:
+
+-  this device may not cause interference, and
+-  this device must accept any interference, including interference that may cause undesired operation of the device.
+
+This product meets the applicable Innovation, Science and Economic Development Canada technical specifications. CAN ICES-3(B)/NMB-3(B)
+
+IC RF Radiation Exposure Statement
+----------------------------------
+
+This equipment complies with IC RF radiation exposure limits set forth for an uncontrolled environment. This equipment should be installed and operated with a minimum distance of 20 centimeters between the radiator and your body.
+
+Declaration of Conformity
+-------------------------
+
+Signed version of this document is on file at ADI. If you would like an official copy, please contact us via robin.getz@analog.com `Declaration of Conformity for the ADALM-PLUTO <https://wiki.analog.com/_media/university/tools/pluto/common/declaration_of_conformity_with_rohs_2_-_analog_devices_-_adalm-pluto.pdf>`_ and `test results <https://wiki.analog.com/_media/analog_devices_adalm-pluto_emc_emissions_and_immunity_ce_mark_test_report_rev_1_0_-_7_feb_2017.pdf>`_.
+
+Unofficially
+------------
+
+While it is nice to have something clear and specific (above), it's also good to understand what is going on, and why disclaimers like that are needed. This section describes a bit of the background.
+
+The electromagnetic spectrum is a common resource that hundreds of thousands of businesses throughout the world all share. Maintaining harmony with these hundreds of thousands of businesses, and billions of users is no small task. Unfortunately, there is no single world wide entity that oversees this, and each country does things themselves.
+
+In the United States, the `Federal Communications Commission <https://www.fcc.gov/>`_ (FCC) regulates interstate and international communications by radio, television, wire, satellite and cable in all 50 states, the District of Columbia and U.S. territories. In Canada, it's the `Canadian Radio-television and Telecommunications Commission <http://www.crtc.gc.ca/eng/home-accueil.htm>`_ (CTRC). In Japan, it's the `Ministry of Internal Affairs and Communications <http://www.soumu.go.jp/english/>`_. China has the `China Telecom Equipment Certification Center <http://english.caict.ac/dept/201307/t20130710_941018.htm>`_. Each country maintains their own `certification authority <https://en.wikipedia.org/wiki/List_of_telecommunications_regulatory_bodies>`_.
+
+Being a device manufacture, wanting to ship devices world wide - can be alphabet soup. All rules and regulations are regional, and just because something is acceptable for the FCC (US), does not mean it is workable everywhere.
+
+There are many myths, misconceptions, and misunderstandings regarding compliance with these laws. While most of these things apply to the US, and point to the FCC, it may provide some insight into possibilities in your local jurisdiction.
+
+The ADALM-PLUTO includes a CE/FCC Declaration of Conformity (above), this means that the electromagnetic interference from the device is under limits approved by the European Economic Area and United States Federal Communications Commission and the ADALM-PLUTO functions in the presence of interference with other devices.
+
+.. note::
+
+   Operation is subject to the following two conditions: (1) these devices may not cause harmful interference, and (2) these devices must accept any interference received, including interference that may cause undesired operation.
+
+
+This Declaration of Conformity does not mean that it is type certified. Certification is normally for intentional transmitters, and includes a FCC Registration Number (`FRN <https://apps.fcc.gov/coresWeb/publicHome.do>`_). These would include specs like dwell time, power output, adjacent channel leakage, interoperability, and many others. The ADALM-PLUTO is not FCC Certified, and has none of these sorts of specifications.

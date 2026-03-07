@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Return to parent page" name="description" />
+
+    <title>SigmaStudio+ Host Controller Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">SigmaStudio+ Host Controller Guide</a></li>
+<li><a class="reference internal" href="#introduction">1. Introduction</a><ul>
+<li><a class="reference internal" href="#exporting-system-files">2.1 Exporting System Files</a><ul>
+<li><a class="reference internal" href="#exporting-system-files-manually">2.1.2 Exporting System files Manually</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#code">4.1 Code</a></li>
+<li><a class="reference internal" href="#initial-parameter">4.2 Initial Parameter</a></li>
+<li><a class="reference internal" href="#deriving-payload-contents">5.1 Deriving Payload Contents</a></li>
+<li><a class="reference internal" href="#parameter-reloading">5.3 Parameter Reloading</a></li>
+<li><a class="reference internal" href="#sending-parameter-for-tuning">5.4 Sending Parameter for Tuning</a></li>
+<li><a class="reference internal" href="#iir-filters">6.1 IIR Filters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sending-custom-commands">7 Sending Custom Commands</a><ul>
+<li><a class="reference internal" href="#get-properties-method">7.2 Get Properties Method</a><ul>
+<li><a class="reference internal" href="#reset-communication-instance-from-sigmastudio-plus-host">7.3.1 Reset Communication Instance from SigmaStudio Plus Host</a><ul>
+<li><a class="reference internal" href="#cmd-4-bit">8.1.2.2 CMD: (4-bit)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <p><a class="reference internal" href="../usingsigmastudio.html"><span class="doc">Return to parent page</span></a></p>
+<section id="sigmastudio-host-controller-guide">
+<h1>SigmaStudio+ Host Controller Guide<a class="headerlink" href="#sigmastudio-host-controller-guide" title="Link to this heading"></a></h1>
+</section>
+<section id="introduction">
+<h1>1. Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line">SigmaStudio®+ is a development environment from Analog Devices for graphically programming ADI’s DSPs. Sigma Studio Plus includes an extensive library of algorithms to perform audio processing such as filtering, mixing, and dynamics processing, as well as basic low-level DSP functions and control blocks. The environment also extends parameter export and filter coefficient generation support for a host microcontroller. Automation scripting API support is provided to connect with many other tools in SigmaStudioPlus using APACHE thrift, which supports many languages such as Python, .NET application, Perl, Java script etc. An easy-to-use graphical interface allows users to create custom filters, compressors and other audio-shaping algorithms to improve or change the characteristics of the audio. SigmaStudio Plus Algorithm Designer is provided to convert existing Software Modules or other SHARC libraries into SigmaStudio Plus Plug-Ins. The environment is integrated with CrossCore® Embedded Studio. The production environment for a SigmaStudio Plus system is shown in below <a class="reference internal" href="#"><span class="doc">figure</span></a>. <a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/ssplusuc_target_1.png"><img alt="image1" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/ssplusuc_target_1.png" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 1:</strong> Connecting SigmaStudio Plus uC Host with SHARC Target</p>
+</div>
+<p>As part of booting, the Target Application DXEs, which can initialize audio codec, set up required peripherals and communicate with the SigmaStudio Plus Host through SPI, is loaded in CCES Debug Configurations and run. After successful booting and initialization, the code corresponding to the Schematic and the parameters for the Modules are downloaded to the SHARC Target from the SigmaStudio Plus Host application through SPI. Once the code and parameters are available, the SHARC Target Application can call the API in SHARC’s Target Library to execute the received code. The code and parameters that are sent to the SHARC Target Application and the respective memory address offset can be exported from the SigmaStudio Plus development environment. The exported file can be used to program a micro-controller to send the code and parameter control information.
+| This document describes how to package and send the data from the SigmaStudio Plus Host application so that it can be interpreted by the SHARC Target. Information on how to customize the data for Tuning and specific use cases is given in this document.
+| ======2. SigmaStudio Plus Data Export====== The SigmaStudio Plus Host application can export the code and parameters that are to be sent to the SHARC Target once it is booted. This section describes how to export and use the system files.</p>
+<section id="exporting-system-files">
+<h2>2.1 Exporting System Files<a class="headerlink" href="#exporting-system-files" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The export related settings can be configured through the SigmaStudio Plus Settings window. The “Settings” window can be launched by selecting <strong>Tools -&gt; Settings</strong> as shown in the below <a class="reference internal" href="#"><span class="doc">figure</span></a>.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/toolssettingsoption.png"><img alt="image2" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/toolssettingsoption.png" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 2:</strong> Tools -&gt; Settings Option</p>
+</div>
+<div class="line-block">
+<div class="line">====2.1.1 Auto Export Mode====</div>
+</div>
+<div class="line-block">
+<div class="line">Export files can be automatically generated after a successful <strong>Link-Compile/Link-Compile-Download</strong> by enabling ‘Auto Export System Files’ in the SigmaStudio Plus settings window.</div>
+<div class="line">The files will be exported to a folder in the workspace where the particular SigmaStudioPlus schematic is saved.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/auto_export_system_files.png"><img alt="image3" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/auto_export_system_files.png" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 3:</strong> Auto Export option in Settings Window</p>
+</div>
+<div class="line-block">
+<div class="line">The Export Settings section mainly supports 3 types of naming conventions for the automatically exported files:</div>
+<div class="line">a) <strong>Processor Name:</strong></div>
+<div class="line">The <strong>Processor Name</strong> option can be selected from <strong>Tools -&gt; Settings</strong> as shown below. <a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/autoexport_processorname.png"><img alt="image4" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/autoexport_processorname.png" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 4:</strong> Auto Export option in Settings Window (Processor Name)</p>
+</div>
+<p>Upon Compilation, two folders with Schematic name will be generated in same workspace where the schematic is saved as shown below.</p>
+<p><img alt="image5" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/autoexport_processorname_exported2.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure 5:</strong> Auto generated export files (Processor Name)</p>
+</div>
+<p>Out of the two generated folders, the first folder with <strong>Name of the schematic</strong>, contains each SHARC Core DXE files of the schematic application.</p>
+<p><img alt="image6" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/autoexport_processorname_exported3.png" /></p>
+<div class="line-block">
+<div class="line">The second folder with <strong>Name of the schematic_Export</strong>, contains exported source files with naming format <strong>SigmaStudioPlus schematic name + Processor name + Core instance</strong>. For instance, if the name of the schematic was <strong>Example for ADSP-SC5xx Dual SH Processor Demo</strong>, the exported files will be as shown below. <img alt="image7" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/autoexport_processorname_exported1.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 6:</strong> Exported source files from SigmaStudioPlus with option <strong>Processor Name</strong></p>
+</div>
+<div class="line-block">
+<div class="line">b) <strong>Core Name:</strong></div>
+<div class="line">The <strong>Core Name</strong> option can be selected from <strong>Tools -&gt; Settings</strong> as shown below. <img alt="image8" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/autoexport_corename.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 7:</strong> Auto Export option in Settings Window (Core Name)</p>
+</div>
+<div class="line-block">
+<div class="line">The folder with <strong>Name of the schematic_Export</strong>, contains exported source files with naming format <strong>SigmaStudioPlus schematic name + Core name + Core instance</strong>. For instance, if the name of the schematic was <strong>Example for ADSP-SC5xx Dual SH Core Demo</strong>, the exported files will be as shown below. <img alt="image9" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/autoexport_corename_exported1.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 8:</strong> Exported source files from SigmaStudioPlus with option <strong>Core Name</strong></p>
+</div>
+<p>c) <strong>Schematic Name:</strong>
+| The <strong>Schematic Name</strong> option can be selected from <strong>Tools -&gt; Settings</strong> as shown below. <img alt="image10" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/autoexport_schematicname.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure 9:</strong> Auto Export option in Settings Window (Schematic Name)</p>
+</div>
+<div class="line-block">
+<div class="line">The folder with <strong>Name of the schematic_Export</strong>, contains exported source files with naming format <strong>SigmaStudioPlus schematic name + Core instance</strong>. For instance, if the name of the schematic was <strong>Example for ADSP-SC5xx Dual SH Schematic Demo</strong>, the exported files will be as shown below. <img alt="image11" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/autoexport_schematicname_exported1.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 10:</strong> Exported source files from SigmaStudioPlus with option <strong>Schematic Name</strong></p>
+</div>
+<div class="line-block">
+<div class="line">Apart from the above mentioned use cases, user can export schematic files with two options together as per their requirement.</div>
+<div class="line">Please refer the below figure to understand one such use-case. <img alt="image12" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/autoexport_processorcorename_exported1.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 11:</strong> Exported source files from SigmaStudioPlus with multiple naming convention options</p>
+</div>
+<section id="exporting-system-files-manually">
+<h3>2.1.2 Exporting System files Manually<a class="headerlink" href="#exporting-system-files-manually" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">The system files can be exported manually after a schematic is compiled. Once the <strong>Link-Compile/Link-Compile-Download</strong> action is complete, the system files can be exported by selecting <strong>Action -&gt; Export System Files</strong>.</div>
+<div class="line"><img alt="image13" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/usingsigmastudio/exportsystemfiles.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 12:</strong> Export System Files</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>Action -&gt; Export System Files</strong> menu item is inactive if the Schematic is not compiled after any modifications.</p>
+</div>
+<p>The name of system files and the folder to which it can be saved is to be decided by the user. The files contain code, parameter and version information to be sent to the SHARC Target. The files should be freshly generated every time the Schematic is modified.
+| =====2.2 System File Contents and Usage===== Examples of the content of the exported files and associated descriptions are given in this section. Files that are named by the user are named “xxx” for ease of representation. The file name also contains information on the core’s instance used (indicated by ‘y’; where ‘y’ can be 0,1,2 etc. based on the number of core’s instances in the schematic) and has a text of form “<strong>_DiffDXESchematic_y</strong>”. The name can be modified by the user. For ease of representation, this is indicated by “<strong>xxx_DiffDXESchematic_y</strong>” in the document.
+| ====2.2.1 xxx_PrcessorSeries_y.json==== The file is of JSON format which contains all the schematic information with details about each module, compile buffers, all the meta data required by the target to execute.
+| <strong>Example Contents</strong>
+| Only part of the output XML file is shown below in the example.
+| <img alt="image14" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/exportfiles_json.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure 13:</strong> Contents of <strong>xxx_PrcessorSeries_y</strong></p>
+</div>
+<div class="line-block">
+<div class="line">====2.2.2 xxx_PrcessorSeries_y_NetList==== Provides information about all the links present in the schematics and describes the source and destination of each link.</div>
+<div class="line"><strong>Example Contents</strong></div>
+<div class="line">Only part of the output XML file is shown below in the example.</div>
+<div class="line"><img alt="image15" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/exportfiles_netlist.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 14:</strong> Contents of <strong>xxx_PrcessorSeries_y_NetList</strong></p>
+</div>
+<div class="line-block">
+<div class="line">====2.2.3 xxx_PrcessorSeries_y_Target==== The exported XML file contains SMAP, Reset, Version, Program Data, Parameter Data and the information required for Tuning individual Cells. This file contains the exact target level packets sent from host to target.</div>
+<div class="line"><strong>Example Contents</strong></div>
+<div class="line">Only part of the output XML file is shown below in the example.</div>
+<div class="line"><img alt="image16" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/exportfiles_target.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 15:</strong> Contents of <strong>xxx_PrcessorSeries_y_Target</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <em>**xxx_PrcessorSeries_y_Target.xml **</em> files contain various chunks of host packets, detailing how they should be sent due to the block buffer size limitations of the communication library.</p>
+</div>
+<div class="line-block">
+<div class="line">====2.2.4 xxx_DiffDXESchematic_y_Defines.h==== The file contains definitions for the size of data in the system files. The macro <strong>BufferSize_DIFFDXESCHEMATIC_y</strong> gives the total size in bytes of SMAP, reset, version, code and parameter data packets. Related data can be found in the file DiffDXESchematic_y_TxBuffer.dat. The macro <strong>NumTransactions_DIFFDXESCHEMATIC_y</strong> contains the size of the data contained in DiffDXESchematic_y_NumBytes.dat. The “xxx_DiffDXESchematic_0.h” file also contains the packet data information.</div>
+<div class="line"><strong>Example Contents</strong></div>
+<div class="line"><img alt="image17" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/defines_h.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 16:</strong> Contents of <strong>xxx_DiffDXESchematic_y_Defines.h</strong></p>
+</div>
+<p>Please refer the <strong>2.2.3 xxx_DiffDXESchematic_y.h</strong> section for more information related to the exported Data.
+| ====2.2.5 xxx_DiffDXESchematic_y.param==== This file lists all parameters used by the individual Cells, Module Name, parameter name, Parameter address, parameter offset, Parameter value and 8-bit hexadecimal representation of the parameters. The entire parameter data in 8-bit hexadecimal and corresponding binary representation is also present in the file. This Address and Offset data can be used to monitor a particular parameter’s updates during runtime.
+| <strong>Example Contents</strong>
+| <img alt="image18" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/param.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure 17:</strong> Contents of <strong>xxx_DiffDXESchematic_y.param</strong></p>
+</div>
+<div class="line-block">
+<div class="line">====2.2.6 xxx_DiffDXESchematic_y.h==== This file lists the IC used, size and offset address for writing code and parameters. Two files are included by this file. <strong>SigmaStudioFW.h</strong> must be taken from the installation folder for SigmaStudio Plus (E.g. <em>“C:\Program Files\Analog Devices\SigmaStudioPlus”</em>). The <em>Program data</em> and <em>Param_Data</em> buffers declared in the file can be directly used in the Application to access program data and parameter data respectively.</div>
+<div class="line"><strong>Example Contents</strong></div>
+<div class="line"><img alt="image19" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/schematic_y.h.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 18:</strong> Contents of <strong>xxx_DiffDXESchematic_y.h</strong></p>
+</div>
+<div class="line-block">
+<div class="line">====2.2.7 xxx_DiffDXESchematic_y_PARAM.h==== This file gives all the details regarding parameter data for the individual Cells in the form of macros. The macros used in this header file are defined in the <strong>SigmaStudioFW.h</strong> file. The file also lists the parameters to be sent to the SHARC Target processor, in 32-bit hexadecimal representation of floating point or fixed point values.</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All the macros in <strong>SigmaStudioFW.h</strong> are not defined and therefore the user can customize and use the header file in the Application.</p>
+</div>
+<p><strong>Example Contents</strong>
+| <img alt="image20" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/param_h.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure 19:</strong> Contents of <strong>xxx_DiffDXESchematic_y_PARAM.h</strong></p>
+</div>
+<div class="line-block">
+<div class="line">====2.2.8 xxx_DiffDXESchematic_y_NumBytes.dat==== The file lists the number of bytes for reset, version information, SHARC Target code and parameters respectively in the file <strong>DiffDXESchematic_y_TxBuffer.dat</strong>. Here, ‘y’ is the core’s instance number (0, 1, 2 etc).</div>
+<div class="line"><strong>Example Contents</strong></div>
+<div class="line"><img alt="image21" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/numbytes.dat.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 20:</strong> Contents of <strong>xxx_DiffDXESchematic_y_NumBytes.dat</strong></p>
+</div>
+<div class="line-block">
+<div class="line">====2.2.9 xxx_DiffDXESchematic_y_TxBuffer.dat==== The file lists all the parameters to be sent to the SHARC Target in 8-bit hexadecimal format. Note that two zeros each of 1-byte size are added before each new parameter. These two zeros are not required while sending the parameters from a Micro Controller(uC) Host to the SHARC Target. Here, ‘y’ is the core’s instance number (0, 1, 2 etc).</div>
+<div class="line"><strong>Example Contents</strong></div>
+<div class="line"><img alt="image22" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/txbuffer_dat.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 21:</strong> Contents of <strong>xxx_DiffDXESchematic_y_TxBuffer.dat</strong></p>
+</div>
+<div class="line-block">
+<div class="line">====2.2.10 xxx_DiffDXESchematic_y_TxMetaBuffer.dat==== The format of the content can be represented as shown below:</div>
+<div class="line"><img alt="image23" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/txmetabuffer_dat.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 22:</strong> Contents of <strong>xxx_DiffDXESchematic_yTxMetaBuffer.dat</strong></p>
+</div>
+<p>The data in this file contain SMAP, Reset, Version, Program Data, Parameter Data and information required for Tuning Individual Cells. The data can be flashed or stored to a memory location and then accessed from there. The various fields in the header file are as follows:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Name</strong></p></th>
+<th class="head"><p><strong>Type</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SMAP_Data_Size</p></td>
+<td><p>4bytes, big endian unsigned integer</p></td>
+<td><p>Signifies the size of the SMAP data</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reset_Data_Size</p></td>
+<td><p>4bytes, big endian unsigned integer</p></td>
+<td><p>Signifies the size of the Reset data</p></td>
+</tr>
+<tr class="row-even"><td><p>Version_Data_Size</p></td>
+<td><p>4bytes, big endian unsigned integer</p></td>
+<td><p>Signifies the size of the Version data</p></td>
+</tr>
+<tr class="row-odd"><td><p>Program_Data_Size</p></td>
+<td><p>4bytes, big endian unsigned integer</p></td>
+<td><p>Signifies the size of the Program data</p></td>
+</tr>
+<tr class="row-even"><td><p>Parameter_Data_Size</p></td>
+<td><p>4bytes, big endian unsigned integer</p></td>
+<td><p>Signifies the size of the Parameter data</p></td>
+</tr>
+<tr class="row-odd"><td><p>Parameter_MetaData_Size</p></td>
+<td><p>4bytes, big endian unsigned integer</p></td>
+<td><p>Signifies the size of the Parameter meta data</p></td>
+</tr>
+<tr class="row-even"><td><p>SMAP_Data</p></td>
+<td><p>Byte array, big endian hexadecimal</p></td>
+<td><p>Data for SMAP information. Note that first two bytes need not be sent to SHARC Target</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reset_Data</p></td>
+<td><p>Byte array, big endian hexadecimal</p></td>
+<td><p>Data for Reset information. Note that first two bytes need not be sent to SHARC Target</p></td>
+</tr>
+<tr class="row-even"><td><p>Version_Data</p></td>
+<td><p>Byte array, big endian hexadecimal</p></td>
+<td><p>Data for Version information. Note that first two bytes need not be sent to SHARC Target</p></td>
+</tr>
+<tr class="row-odd"><td><p>Program_Data</p></td>
+<td><p>Byte array, big endian hexadecimal</p></td>
+<td><p>Data for Program information. Note that first two bytes need not be sent to SHARC Target</p></td>
+</tr>
+<tr class="row-even"><td><p>Parameter_Data</p></td>
+<td><p>Byte array, big endian hexadecimal</p></td>
+<td><p>Data for Parameter information. Note that first two bytes need not be sent to SHARC Target</p></td>
+</tr>
+<tr class="row-odd"><td><p>Name_AlgoNo_String_LengthN (where N = 1,2 etc)</p></td>
+<td><p>2bytes, big endian unsigned integer</p></td>
+<td><p>Number of bytes for string with Cell name and Algorithm number of “Nth” tuneable block in Schematic</p></td>
+</tr>
+<tr class="row-even"><td><p>Name_AlgoNo_StringN (where N = 1,2 etc)</p></td>
+<td><p>Character array</p></td>
+<td><p>Character string without null containing the Cell name and Algorithm number of “Nth” tuneable block in Schematic</p></td>
+</tr>
+<tr class="row-odd"><td><p>Parameter_Base_AddressN (where N = 1,2 etc)</p></td>
+<td><p>4bytes, big endian unsigned integer</p></td>
+<td><p>Offset address of the starting parameter of “Nth” tuneable block in the Schematic specified by the Cell name and Algorithm number string</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Here, ‘y’ is the core’s instance number (0,1,2 etc).</div>
+<div class="line"><strong>Example Contents</strong></div>
+<div class="line"><img alt="image24" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/txmeta_sh0.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 23:</strong> SHARC0 related TxMetaBuffer data</p>
+</div>
+<div class="line-block">
+<div class="line"><img alt="image25" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/txmeta_sh1.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 24:</strong> SHARC1 related TxMetaBuffer data</p>
+</div>
+<div class="line-block">
+<div class="line">====2.2.11 ADSPSC5xx.xml/ADSP215xx.xml==== The exported XML file contains SMAP (only in case of ADSP-SC5xx/ADSP-215xx/ADSP-214xx), Reset, Version, Program Data, Parameter Data and the information required for Tuning individual Cells. The information can be parsed using an xml parser. The XML file also includes the GUI parameter information of the Modules in the Schematic.</div>
+<div class="line">The schema of the XML is illustrated below: <img alt="image26" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/xml_schema_updated.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 25:</strong> XML Export File Schema Specification</p>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>IC</p></th>
+<th class="head"><p>Name of the Processor (ICs/DSPs) in the schematic. There can be more than one IC for a multiple SSn Schematic</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>Name of the SSn (sub Schematics). Same as the Name of the IC. Default IC name is “IC 1”</p></td>
+</tr>
+<tr class="row-odd"><td><p>PartNumber</p></td>
+<td><p>Name of the exact target processor used (Eg: ADSP-SC594 etc)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Core</p></th>
+<th class="head"><p>Name of the SHARC core</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>Name of the SHARC Core as per the schematic</p></td>
+</tr>
+<tr class="row-odd"><td><p>CoreID</p></td>
+<td><p>Exact Core number like 0 or 1 representing SHARC0 or SHARC1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Schematic</p></th>
+<th class="head"><p>DXE based schematic name as per core</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>DXE based schematic name as per each individual core (Eg: DiffDXESchematic_0 for SHARC0)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Meta</p></th>
+<th class="head"><p>Meta information can be any value from { Reset, Version Info, SchematicVersionTag}</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>Name of the Meta information</p></td>
+</tr>
+<tr class="row-odd"><td><p>AddrIncr</p></td>
+<td><p>Byte-wise Address Increment</p></td>
+</tr>
+<tr class="row-even"><td><p>Size</p></td>
+<td><p>Size in Bytes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data</p></td>
+<td><p>Data in Hexadecimal (Most significant byte comes first)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Program</p></th>
+<th class="head"><p>Program Memory</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>Name of the Program memory. This string can be from {Program Data, Program DataB}</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>Address offset to which the program has to be loaded. The start address is always the memory pointer pointed by Block 1/Block7 in ADI_SS_MEM_MAP respectively for Program Data/ Program DataB</p></td>
+</tr>
+<tr class="row-even"><td><p>AddrIncr</p></td>
+<td><p>Byte-wise Address Increment</p></td>
+</tr>
+<tr class="row-odd"><td><p>Size</p></td>
+<td><p>Size in Bytes (2 bytes less than the size reported in export file)</p></td>
+</tr>
+<tr class="row-even"><td><p>Data</p></td>
+<td><p>Data in Hexadecimal (Most significant byte comes first)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Parameter Memory</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>Name of the Parameter memory. This string can be from {Parameter Data}</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>Address offset to which the initial parameter has to be loaded. The start address is always the memory pointer pointed by Block 5 in ADI_SS_MEM_MAP. This is always 0.</p></td>
+</tr>
+<tr class="row-even"><td><p>AddrIncr</p></td>
+<td><p>Byte-wise Address Increment</p></td>
+</tr>
+<tr class="row-odd"><td><p>Size</p></td>
+<td><p>Size in Bytes (2 bytes less than the size reported in export file)</p></td>
+</tr>
+<tr class="row-even"><td><p>Data</p></td>
+<td><p>Data in Hexadecimal (Most significant byte comes first)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Module</p></th>
+<th class="head"><p>Details of individual Cells (A Cell is the basic graphical entity with one or more Algorithms)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>Name of the Module</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Algorithm</p></th>
+<th class="head"><p>Details of individual Algorithm (An Algorithm is the basic processing entity with one or more Parameters associated to it)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AlgoName</p></td>
+<td><p>Index of the Algorithm within the Cell. There can be multiple Algorithms within a Cell</p></td>
+</tr>
+<tr class="row-odd"><td><p>DetailedName</p></td>
+<td><p>Mentions detailed information of algorithm used like version, to which plugin it belongs to etc</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>Algorithm Description with Names of Algorithm and the GUI parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>Algorithm Starting address (offset from the beginning of the parameter memory)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Abstract parameter</p></th>
+<th class="head"><p>Brief Description of the Parameter</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>Name of Parameter</p></td>
+</tr>
+<tr class="row-odd"><td><p>Type</p></td>
+<td><p>Name of the exact target processor used (Eg: ADSP-SC594 etc)</p></td>
+</tr>
+<tr class="row-even"><td><p>Value</p></td>
+<td><p>Value of the data element</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>ModuleParameter</p></th>
+<th class="head"><p>Details of the individual parameter (Parameter is the basic Tuning entity with one or more data units)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>Name of the parameter</p></td>
+</tr>
+<tr class="row-odd"><td><p>Type</p></td>
+<td><p>Type of the parameter. Type can be {Int32, Float32, Hex}</p></td>
+</tr>
+<tr class="row-even"><td><p>Offset</p></td>
+<td><p>Offset from the Algorithm starting address</p></td>
+</tr>
+<tr class="row-odd"><td><p>DataType</p></td>
+<td><p>Data type of the parameter {Eg: Single Precision Float etc}</p></td>
+</tr>
+<tr class="row-even"><td><p>Value</p></td>
+<td><p>Value of the data element. Note: This is applicable only if the Parameter has a single data unit. In case of multiple data units, only the hexadecimal values are provided. <img alt="image28" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/xml_schema_part.png" /> In the above example, the first parameter ‘Taps’ is a single data unit with a “Value” equal to 5. Whereas, the second parameter ‘FIRFiltBlock1coeff’ has multiple data units and therefore, only hexadecimal values are provided</p></td>
+</tr>
+<tr class="row-odd"><td><p>Size</p></td>
+<td><p>Size in Bytes</p></td>
+</tr>
+<tr class="row-even"><td><p>Data</p></td>
+<td><p>Data in Hexadecimal (Most significant byte comes first)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Example Contents</strong></div>
+<div class="line">Only part of the output XML file is shown below in the example.</div>
+<div class="line"><img alt="image29" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/xml_sh0_v0.1.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 26:</strong> SHARC0 related schematic information in XML file</p>
+</div>
+<div class="line-block">
+<div class="line"><img alt="image30" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/xml_sh1_v0.1.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 27:</strong> SHARC1 related schematic information in XML file</p>
+</div>
+<div class="line-block">
+<div class="line">======3. Packetizing Data====== The data received while exporting the code and parameters has to be packetized properly before sending it to the SHARC Target board.</div>
+<div class="line">=====3.1 Communication Protocol===== All the communication between the SigmaStudio Plus Host PC/Micro Controller uC Host and the SHARC Target use the following protocol:</div>
+<div class="line"><img alt="image31" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/communicationprotocol.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 28:</strong> Communication Protocol</p>
+</div>
+<p>Each packet contains a begin command, size of the packet, payload data, CRC value, SHARC Target memory type and an end command. The individual contents of the packet are listed below.
+| ====3.1.1 SS_CMD_BEGIN: (32-bit word)==== This field indicates beginning of the packet. Refer to Table 2 for 32-bit hexadecimal value of this field. Bits 12-15 of “SS_CMD_BEGIN” is used for indicating the “Core Id” and “Instance Id” in SigmaStudio Plus (ADSP-SC5xx). The details of those bit fields are described in <a class="reference internal" href="#"><span class="doc">figure</span></a>. <img alt="image32" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/coreid_instanceid.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure 29:</strong> Core ID and Instance ID in SS_CMD_BEGIN</p>
+</div>
+<div class="line-block">
+<div class="line">The bit fields 15-14 (Y) is used to indicate the Core ID i.e., 00 – ARM Core0 (not used for Host communication), 01 – SHARC Core1 and 10 – SHARC Core2.</div>
+<div class="line">The bit fields 13-12 (X) is used to indicate the Instance ID. For a single instance schematic, this fields shall be always 00.</div>
+<div class="line"><img alt="image33" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/ss_cmd_begin.png" /></div>
+<div class="line">====3.1.2 CMD: (32-bit word)==== The CMD field indicates the nature of payload in the packet. The value of this field can vary from packet to packet. Refer to Table 2 for possible 32-bit hexadecimal values of this field.</div>
+<div class="line">====3.1.3 Payload==== This contains the data to be transferred from the SigmaStudio Plus Host to the SHARC Target. The contents of payload are given below.</div>
+<div class="line">====3.1.4 PL_LEN: (32-bit word)==== This field indicates the total length of the payload, including CRC. The maximum payload length should be 1024 words (4096 Bytes) or less.</div>
+<div class="line">===3.1.4.1 PAYLOAD_DATA:=== Actual payload in the packet appears in this portion. The payload can be data/code/parameter.</div>
+<div class="line">===3.1.4.2 CRC: (32-bit word)=== The CRC field is used for protection. The current version uses simple checksum. The code used to compute CRC data is given below. Here <strong>pData[ ]</strong> is the buffer of type <strong>unsigned int</strong>.</div>
+<div class="line"><img alt="image34" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/crc.png" /></div>
+<div class="line">The SHARC Target can compute the CRC of the received packet either only on the payload or on the entire packet based on the configuration parameter. The above example shows CRC checksum computed only on the payload. Alternatively, the CRC checksum can also be computed on the entire packet.</div>
+<div class="line">===3.1.4.3 MEM_ADDR: (32-bit word)=== This field indicates the memory address to which the code/parameter should be loaded. This field is used only when the command is either <strong>SS_CMD_BLOCK_SAFE</strong> or <strong>SS_CMD_PARAMETER_NO_SAFE</strong>.</div>
+<div class="line">====3.1.5 SS_CMD_END: (32-bit word)==== This 32-bit word indicates the end of a communication packet. Refer to Table 2 for 32-bit hexadecimal value of the field.</div>
+<div class="line">====3.1.6 Capturing Packet Information using SigmaStudioPlus Capture Window==== Enable the Capture Window using View -&gt; Capture Window option as shown below,</div>
+<div class="line"><img alt="image35" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/view_capture.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 30:</strong> SigmaStudioPlus Capture Window Selection</p>
+</div>
+<p>The capture window opens and there the user is provided with an option to select the type of Display they want to see during data transfer from SigmaStudioPlus. Please refer Figure: Packet Capture.
+| <img alt="image36" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/packet_capture.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure 31:</strong> Packet Capture</p>
+</div>
+<p>Option ‘RAW’ will only display the exact data content that is being passed from SigmaStudioPlus while the ‘Final’ option will display the entire packet data that was transferred.
+| <img alt="image37" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/completepacket_sh0.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure 32:</strong> Complete Packet capture from SigmaStudioPlus capture window for SHARC-0</p>
+</div>
+<div class="line-block">
+<div class="line"><img alt="image38" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/completepacket_sh1.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 33:</strong> Complete Packet capture from SigmaStudioPlus capture window for SHARC-1</p>
+</div>
+<div class="line-block">
+<div class="line">=====3.2 Commands for Communication===== All the commands and fields indicating begin/end with their 32-bit hexadecimal values are listed in Table 2.</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Command</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+<th class="head"><p><strong>Value</strong></p></th>
+<th class="head"><p><strong>Payload</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SS_CMD_BEGIN</p></td>
+<td><p>Signifies the beginning of packet</p></td>
+<td><p>0xF4190BE6</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>SS_CMD_PROGRAM_SSN</p></td>
+<td><p>Indicates that the packet contains code</p></td>
+<td><p>0xFAAD0552</p></td>
+<td><p>SigmaStudio Plus generated code</p></td>
+</tr>
+<tr class="row-even"><td><p>SS_CMD_PARAMETER_SAFE</p></td>
+<td><p>Indicates that the packet contains safe-load parameters</p></td>
+<td><p>0xA5015AFE</p></td>
+<td><p>Up to 5 sets of safe-load parameters and respective addresses</p></td>
+</tr>
+<tr class="row-odd"><td><p>SS_CMD_PARAMETER_NO_SAFE</p></td>
+<td><p>Indicates that the packet contains a block of parameters that can be directly loaded on to the parameter memory. Used for initial parameter set and block parameter update during Tuning.</p></td>
+<td><p>0xFFA1F05E</p></td>
+<td><p>Block of parameters</p></td>
+</tr>
+<tr class="row-even"><td><p>SS_CMD_BLOCK_SAFE</p></td>
+<td><p>Indicates that the packet contains a block of parameters to be safe-loaded. Used for block parameter update during Tuning.</p></td>
+<td><p>0x4EA5B15A</p></td>
+<td><p>Block parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p>SS_CMD_CMD1</p></td>
+<td><p>Predefined command 1. Used for sending Reset.</p></td>
+<td><p>0xF3F20C0D</p></td>
+<td><p>Word and Block DMA receive mode flag</p></td>
+</tr>
+<tr class="row-even"><td><p>SS_CMD_CMD2</p></td>
+<td><p>Predefined command 2. Used for sending version information.</p></td>
+<td><p>0xF3E20C1D</p></td>
+<td><p>Version information</p></td>
+</tr>
+<tr class="row-odd"><td><p>SS_CMD_CMD3</p></td>
+<td><p>Predefined command 3. Used for sending read request.</p></td>
+<td><p>0xF3D20C2D</p></td>
+<td><p>Read request</p></td>
+</tr>
+<tr class="row-even"><td><p>SS_CMD_CMD4</p></td>
+<td><p>Predefined command 4 that calls a call-back function with the payload as arguments.</p></td>
+<td><p>0xF3C20C3D</p></td>
+<td><p>User defined data that is interpreted by the call-back function</p></td>
+</tr>
+<tr class="row-odd"><td><p>SS_CMD_CMD5</p></td>
+<td><p>Payload containing custom command that can be obtained by calling adi_ss_comm_GetProperties() function</p></td>
+<td><p>0xF3B20C4D</p></td>
+<td><p>User defined command</p></td>
+</tr>
+<tr class="row-even"><td><p>SS_CMD_CMD6</p></td>
+<td><p>Predefined command 6. Used for sending Schematic bypass flag.</p></td>
+<td><p>0xF3A20C5D</p></td>
+<td><p>Bypass flag</p></td>
+</tr>
+<tr class="row-odd"><td><p>SS_CMD_CMD7</p></td>
+<td><p>Indicates that the packet contains SMAP data. This is applicable or used only when the IC is ADSP-SC5xx.</p></td>
+<td><p>0xF3920C6D</p></td>
+<td><p>SMAP</p></td>
+</tr>
+<tr class="row-even"><td><p>SS_CMD_PARTIAL_END</p></td>
+<td><p>Partial end of current packet</p></td>
+<td><p>0xE1D21E2D</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>SS_CMD_END</p></td>
+<td><p>End of current packet</p></td>
+<td><p>0xF1D20E2D</p></td>
+<td><p>None</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Table 2:</strong> Communication Commands</p>
+</div>
+<div class="line-block">
+<div class="line">=====3.3 Read Request Payload===== PAYLOAD_DATA inside read request packets are of length 3 or 4 words depending on the read request type and is described below.</div>
+<div class="line"><img alt="image39" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/readrequestpayload.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 34:</strong> Read Request Payload</p>
+</div>
+<div class="line-block">
+<div class="line">====3.3.1 NUMBER_OF_REQUESTS: (32-bit word)==== The field indicates the number of read requests in the current read request packet. This should always be set to 1.</div>
+<div class="line">====3.3.2 READBACK_TYPE: (32-bit word)==== The field indicates the type of read request. Refer to the table below for more details.</div>
+<div class="line">^ <strong>Command</strong> ^ <strong>Description</strong> ^ <strong>Value</strong> ^</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>SS_CMD_BK_MIPS_VALUE</p></td>
+<td><p>Indicates read request for MIPS</p></td>
+<td><p>0x00CE6319U</p></td>
+</tr>
+<tr class="row-even"><td><p>SS_CMD_BK_DC_MIPS_VALUE</p></td>
+<td><p>Indicates read request for Dual-Core MIPS</p></td>
+<td><p>0x00DC6239U</p></td>
+</tr>
+<tr class="row-odd"><td><p>SS_CMD_BK_VERSION_INFO</p></td>
+<td><p>Indicates read request for Version</p></td>
+<td><p>0x003EDC12U</p></td>
+</tr>
+<tr class="row-even"><td><p>SS_CMD_BK_READ_VALUE</p></td>
+<td><p>Indicates read request from Parameter memory, Read back, Level Detector etc. Modules use this command to read value from memory</p></td>
+<td><p>0x00BC543AU</p></td>
+</tr>
+<tr class="row-odd"><td><p>SS_CMD_BK_ERROR_CODE</p></td>
+<td><p>Indicates read request for code download status</p></td>
+<td><p>0x00F7E808U</p></td>
+</tr>
+<tr class="row-even"><td><p>SS_CMD_BK_ACKNOWLEDGE</p></td>
+<td><p>Indicates acknowledgement for successful read</p></td>
+<td><p>0x00000000</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Table 3:</strong> Read-back Type</p>
+</div>
+<div class="line-block">
+<div class="line">====3.3.3 NUMBER_OF_WORDS: (32-bit word)==== This field indicates the number of values to be read from the SHARC Target. This field is valid only when the read type is SS_CMD_BK_READ_VALUE. This field should be 0 for other read types. For memory read, the first 2 nibbles of the NUMBER_OF_WORDS field corresponding to read request payload must always be 0x30. Also, the last nibble must always be 0x0C. For parameter read, the first 2 nibbles of the NUMBER_OF_WORDS field corresponding to read request payload must be 0x00. The last 24-bits (remaining 6 nibbles) of the ‘NUMBER_OF_WORDS’ field indicate the number of words to be read from the parameter offset specified as part of the ‘ADDRESS’ field of the read request payload. The maximum number of words that can be requested to be read in a single read request is seven.</div>
+<div class="line">====3.3.4 ADDRESS: (32-bit word)==== This field indicates the offset, from the start of parameter memory to the memory location from where the value has to be read. This field is included in the payload only when the read type is SS_CMD_BK_READ_VALUE. Therefore, the payload size is 3 for other read types.</div>
+<div class="line">======4. Payload Types======</div>
+</div>
+</section>
+</section>
+<section id="code">
+<h2>4.1 Code<a class="headerlink" href="#code" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">‘Code’ refers to the compiled binary code of the entire Schematic. SS_CMD_PROGRAM_SSN command indicates that the packet contains code payload. MEM_ADDR field is not used.</div>
+<div class="line"><img alt="image40" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/ss_cmd_program_ssn_completed.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 35:</strong> SS_CMD_PROGRAM_SSN command packet capture</p>
+</div>
+</section>
+<section id="initial-parameter">
+<h2>4.2 Initial Parameter<a class="headerlink" href="#initial-parameter" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">‘Initial Parameter’ refers to the entire parameter set of the Schematic. SS_CMD_PARAMETER_NO_SAFE command indicates that the packet contains complete block parameter payload. MEM_ADDR field is not used.</div>
+<div class="line">=====4.3 Block Parameter===== ‘Block Parameter’ refers to a block of parameters sent to the SHARC Target as part of Tuning the Schematic. The SS_CMD_PARAMETER_NO_SAFE command indicates that the packet contains block parameter payload. The MEM_ADDR field indicates the offset of the block from the start of the parameter buffer. When the block parameter is received on the SHARC Target, it is immediately copied to the parameter buffer.</div>
+<div class="line"><img alt="image41" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/ss_cmd_parameter_no_safe_completed.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 36:</strong> SS_CMD_PARAMETER_NO_SAFE command packet capture</p>
+</div>
+<div class="line-block">
+<div class="line">=====4.4 Safeload Parameter===== ‘Safeload Parameter’ refers to payload of up to 5 sets of parameter and address combination sent to the SHARC Target as part of Tuning the Schematic. The SS_CMD_PARAMETER_SAFE command indicates that the packet contains safeload parameter payload. MEM_ADDR field is not used. When safeload parameters are received on the SHARC Target, it is not immediately copied to the parameter buffer. Parameters are updated just before the execution of the Schematic code. This ensures that the parameter updates are not performed during the execution of the Algorithm.</div>
+<div class="line"><img alt="image42" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/ss_cmd_parameter_safe_completed.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 37:</strong> SS_CMD_PARAMETER_SAFE command packet capture</p>
+</div>
+<div class="line-block">
+<div class="line">=====4.5 Block Safeload Parameter===== ‘Block Safeload Parameter’ refers to a block of parameters sent to the SHARC Target as part of Tuning the Schematic. SS_CMD_BLOCK_SAFE command indicates that the packet contains block safeload parameter payload. MEM_ADDR field indicates the offset of the block from the start of the parameter buffer. When block safeload parameter is received on the SHARC Target, it is not immediately copied to the parameter buffer. Parameters are updated only after ensuring that the SigmaStudio Plus Schematic code is not being executed. If the code is being executed, the update waits until the code execution completes.</div>
+<div class="line"><img alt="image43" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/ss_cmd_block_safe_completed.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 38:</strong> SS_CMD_BLOCK_SAFE command packet capture</p>
+</div>
+<div class="line-block">
+<div class="line">======5. Using Exported Data======</div>
+</div>
+</section>
+<section id="deriving-payload-contents">
+<h2>5.1 Deriving Payload Contents<a class="headerlink" href="#deriving-payload-contents" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The exported files <strong>DiffDXESchematic_y_NumBytes.dat</strong> and <strong>DiffDXESchematic_y_TxBuffer.dat</strong> need to be modified before directly including in the Application. A variable can be declared in such a manner that it contains all values in DiffDXESchematic_y_TxBuffer.dat. Thus, the content of DiffDXESchematic_y_TxBuffer.dat can be modified as given below.</div>
+<div class="line"><img alt="image44" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/declaringvarwithtxbuffdat.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 39:</strong> Declaring a variable which contains the contents of <strong>DiffDXESchematic_y_TxBuffer.dat</strong></p>
+</div>
+<div class="line-block">
+<div class="line">Similarly a variable of data type int can be used to modify <strong>DiffDXESchematic_y_NumBytes.dat</strong>. After the modifications are done, the files can be directly included in the Application source code.</div>
+<div class="line">The “.h” files generated during export can be directly included in the Application. In addition, these header files include SigmaStudioFW.h. This has to be taken from the installation folder for SigmaStudio Plus (E.g. “<strong>C:\Analog Devices\SigmaStudioPlus-Rel2.x.x</strong>”).</div>
+<div class="line">Note that every parameter in <strong>DiffDXESchematic_y_TxBuffer.dat</strong> has two preceding bytes with zero value. These are not part of the parameter value and should be skipped before using data for communication. In addition, the file xxx_DiffDXESchematic_y.h contains code, reset version etc. in header file format. Alternately, the file “<strong>DiffDXESchematic_y_TxMetaBuffer.dat</strong>” can be used to derive the start address of the parameter required by the SigmaStudio Plus Host for tuning the parameter based on its name. The parameter name can be obtained from the file “<strong>DiffDXESchematic_y_TxMetaBuffer.dat</strong>”. The parameter name is a combination of “Name” and “Algorithm Index” which are present in the file “xxx.params”. The parameter name is nothing but “Name” + “_” + “Algorithm Index” capitalized.</div>
+<div class="line">====5.1.1 SMAP==== Command: SS_CMD_CMD7</div>
+<div class="line">This is applicable only when the IC used is ADSP-214xx/ADSP-SC5xx.</div>
+<div class="line">The entire set of SMAP data is present in the file xxx_DiffDXESchematic_y.h in hexadecimal unsigned char format under the variable name SMAP_Data[]. The size of the SMAP structure can be taken from the macro SMAP_SIZE. Note that there are no dummy bytes when the data is taken from this header file.</div>
+<div class="line">Alternatively, the parameter data can be taken from _DiffDXESchematic_Y_TxBuffer.dat using the offset and size from DiffDXESchematic_y_NumBytes.dat file. Care should be taken to skip the initial two bytes in this case.</div>
+<div class="line"><img alt="image45" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/ss_cmd_cmd7_completed.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 40:</strong> SS_CMD_CMD7 command packet capture</p>
+</div>
+<div class="line-block">
+<div class="line">====5.1.2 Reset==== Command: SS_CMD_CMD1</div>
+<div class="line">The reset parameter consists of a 32-bit hexadecimal word with value 0 or 1. Sending this parameter with the associated command to the SHARC Target prepares the SHARC Target to receive new SSn code and parameter data. When the parameter is 0, the SHARC Target receives the data sent by SPI as single words and processes it. On sending a value of 1, the SHARC Target receives code and parameter as a block and processes the CRC check on the next call of <em>adi_ss_schematic_process()</em> function.</div>
+<div class="line"><img alt="image46" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/ss_cmd_cmd1_completed.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 41:</strong> SS_CMD_CMD1 command packet capture</p>
+</div>
+<div class="line-block">
+<div class="line">====5.1.3 Version Information==== Command: SS_CMD_CMD2</div>
+<div class="line">The version information is also a 32-bit hexadecimal value whose first 2 bytes give the version of the process API used in the Application. The version of the process API used in the Application for this release is latest 2.x.x. This data is present in _DiffDXESchematic_Y_TxBuffer.dat with the most significant byte coming first. The offset to access the version information and its size can be obtained from the DiffDXESchematic_y_NumBytes.dat file. Although the size of the version information is given as 6 bytes, the first two bytes are dummy values and must be omitted to obtain the real version information value.</div>
+<div class="line"><img alt="image47" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/ss_cmd_cmd2_completed.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 42:</strong> SS_CMD_CMD2 command packet capture</p>
+</div>
+<div class="line-block">
+<div class="line">====5.1.4 Read Command==== Command: SS_CMD_CMD3</div>
+<div class="line">The “Read Request” command is utilized in data communication to signal a host’s intent to retrieve specific parameters or data from a target device. When issued, this command prompts the target to provide the requested information, enabling the host to access essential data. This command has been captured in upcoming section A. Read-Back Communication, where the complete packet for read operation is described.</div>
+<div class="line">====5.1.5 Schematic Bypass Command==== Command: SS_CMD_CMD6</div>
+<div class="line">The schematic bypass command SS_CMD_CMD6 consists of a 32-bit hexadecimal value that can be sent from the host to the target processor to inform the target whether further data processing needs to be carried out by bypassing the designed audio processing schematic.</div>
+<div class="line"><img alt="image48" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/ss_cmd_cmd6_completed.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 43:</strong> SS_CMD_CMD6 command packet capture</p>
+</div>
+<div class="line-block">
+<div class="line">====5.1.6 Partial End Command==== Command: SS_CMD_PARTIAL_END</div>
+<div class="line">The SS_CMD_PARTIAL_END command is used in data transmission to indicate the conclusion of a segment of a larger packet when the overall packet size exceeds transmission limits. This command signals that the current section has been completed, allowing the remaining data to be sent in subsequent packets. By utilizing this command, systems can efficiently manage large data transfers, ensuring that information is divided into manageable sections while maintaining the integrity of the overall transmission.</div>
+<div class="line"><img alt="image49" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/ss_cmd_partial_end_completed.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 44:</strong> SS_CMD_PARTIAL_END command packet capture</p>
+</div>
+<div class="line-block">
+<div class="line">====5.1.7 Schematic Code==== Command: SS_CMD_PROGRAM_SSN</div>
+<div class="line">The code for Schematic is present in _DiffDXESchematic_Y_TxBuffer.dat as the third parameter. Its size and offset to access it can be obtained from _DiffDXESchematic_Y_NumBytes.dat file. The Schematic code also has 2 dummy bytes in the beginning, and these have to be skipped to access the code. The size of the code varies for each Schematic and should be updated when a Schematic is modified. The data present is such that the most significant byte comes first.</div>
+<div class="line"><img alt="image50" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/ss_cmd_program_ssn_completed.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 45:</strong> SS_CMD_PROGRAM_SSN command packet capture</p>
+</div>
+<div class="line-block">
+<div class="line">====5.1.8 Parameters==== Command: SS_CMD_PARAMETER_NO_SAFE / SS_CMD_PARAMETER_SAFE / SS_CMD_BLOCK_SAFE</div>
+<div class="line">The entire set of parameters is present in the file xxx_DiffDXESchematic_y.h in hexadecimal unsigned char format under the variable name Param_Data[]. The size of the parameter table can be taken from the macro PARAM_SIZE. Note that there are no dummy bytes when the data is taken from this header file.</div>
+<div class="line">Alternatively the parameter data can be taken from _DiffDXESchematic_Y_TxBuffer.dat using the offset and size from DiffDXESchematic_y_NumBytes.dat file. Care should be taken to skip the initial two bytes in this case.</div>
+<div class="line">The default command used during SigmaStudioPlus schematic download or parameter update is SS_CMD_PARAMETER_NO_SAFE command. SS_CMD_PARAMETER_SAFE command is used mainly with Filters or modules that requires multiple parameter (upto 5) updates at the same time without affecting the current processing cycle.</div>
+<div class="line">SS_CMD_PARAMETER_SAFE</div>
+<div class="line"><img alt="image51" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/ss_cmd_parameter_safe_completed.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 46:</strong> SS_CMD_PARAMETER_SAFE command packet capture</p>
+</div>
+<p>SS_CMD_PARAMETER_NO_SAFE
+| <img alt="image52" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/ss_cmd_parameter_no_safe_completed.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure 47:</strong> SS_CMD_PARAMETER_NO_SAFE command packet capture</p>
+</div>
+<p>SS_CMD_BLOCK_SAFE
+| <img alt="image53" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/ss_cmd_block_safe_completed.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure 48:</strong> SS_CMD_BLOCK_SAFE command packet capture</p>
+</div>
+<div class="line-block">
+<div class="line">=====5.2 Sending Schematic Code===== The Schematic code must be sent to the SHARC Target when a new Schematic is generated, or an existing Schematic is modified. In order to send the Schematic code to the SHARC Target, the following steps have to be executed.</div>
+<div class="line">1. Send SMAP for the schematic (applicable for ADSP-214xx/215xx/SC5xx). This reserves the necessary memory blocks in the Target.</div>
+<div class="line">2. Send Reset parameter: This prepares the SHARC Target for receiving the code.</div>
+<div class="line">3. Send Version Information: This ensures compliance between the SHARC Target and the SigmaStudio Plus Host.</div>
+<div class="line">4. Send Schematic Code: Algorithm code for the SHARC Target.</div>
+<div class="line">5. Send Parameters: Parameters for the code to work with.</div>
+<div class="line">Once the entire data is sent to the SHARC Target running SigmaStudio Plus, the SHARC Target can start processing the data.</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There should be some delay required between SMAP, Code and Parameter data when sending data from Microcontroller host. The SigmaStudio Plus host use 100 msec between SMAP, Code and Parameter data which is required for target framework initializations.</p>
+</div>
+</section>
+<section id="parameter-reloading">
+<h2>5.3 Parameter Reloading<a class="headerlink" href="#parameter-reloading" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">If the Schematic code and parameters are sent to the SHARC Target, then the block of parameters for the particular Schematic alone can be updated. A step-by-step procedure is given below.</div>
+<div class="line">1. Send Reset parameter: This prepares the SHARC Target for receiving the code.</div>
+<div class="line">2. Send Version Information: This ensures compliance between the SHARC Target and the SigmaStudio Plus Host.</div>
+<div class="line">3. Send Parameters: Parameters for the code to work with.</div>
+<div class="line">Once the entire data is sent to the SHARC Target running SigmaStudio Plus, the SHARC Target can start processing the data.</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The reload parameters should update before calling the schematic processing.</p>
+</div>
+</section>
+<section id="sending-parameter-for-tuning">
+<h2>5.4 Sending Parameter for Tuning<a class="headerlink" href="#sending-parameter-for-tuning" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">To send a parameter for Tuning, both the parameter and its address offset need to be sent to the SHARC Target. The parameter data sent should be the 32-bit hexadecimal equivalent of floating point or fixed point value, followed by the offset address location of the parameter.</div>
+<div class="line">Every single value to be written to the parameter memory during Tuning should be succeeded by the address location to which it is to be written. The values should then be packetized and sent to the SHARC Target. Hence the data to be packetized is of the form:</div>
+<div class="line">1. Parameter value in 32-bit hexadecimal</div>
+<div class="line">2. Offset address location in 32-bit hexadecimal.</div>
+<div class="line">Please refer the Parameters [PARAM_SAFE, PARAM_NO_SAFE etc commands] for a better understanding of how the offset address location and parameter values are placed in the packet.</div>
+<div class="line">====5.4.1 Flashing Data and Accessing it for Tuning==== The file DiffDXESchematic_y_TxMetaBuffer.dat has a tune table which contains parameter data, its address and a string to uniquely identify the Algorithm. The file can be directly flashed to the memory of a micro-controller and can be directly accessed from there. This approach has the advantage that once the Schematic is frozen and only the Tuning has to be performed, a Tuning engineer can do so without modifying the micro-controller code.</div>
+<div class="line">====5.4.2 Using Header Files==== The parameter data and its offset location can be found as a macro in the file xxx_DiffDXESchematic_y_PARAM.h. The file xxx_DiffDXESchematic_y.h contains a parameter data buffer named _DIFFDXESCHEMATIC_y_Data[] and a macro defining the size of the parameter data termed PARAM_SIZE. Since the data in the buffer _DIFFDXESCHEMATIC_y_Data[] is given in bytes, the offset address can be multiplied with 4 to derive the address of the parameter data. An example use case is given below.</div>
+<div class="line">Let the offset address of the Mute Algorithm in a Schematic be given by the macro MOD_MUTE_1_MUTE_ADDR, the value of parameter can be derived as</div>
+<div class="line"><img alt="image54" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/mutemodulederiveparamvalue.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 49:</strong> Mute module used as an example to show how to derive parameter value</p>
+</div>
+<div class="line-block">
+<div class="line">======6. Parameter Address Calculation======</div>
+</div>
+</section>
+<section id="iir-filters">
+<h2>6.1 IIR Filters<a class="headerlink" href="#iir-filters" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">Coefficient arrangement in SHARC memory of IIR fitters is different for Type 1 and Type 2 filters.</div>
+<div class="line">Type1 Cascaded 3 stage filter:</div>
+<div class="line"><img alt="image55" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/eq1.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Equation 1:</strong> Type 1 Cascaded 3 Stage IIR Filter</p>
+</div>
+<div class="line-block">
+<div class="line">Type 1 Filter, nth stage (where n is 1, 2 or 3 for 3 stage cascaded filter)</div>
+<div class="line">b2 -&gt; GenSecondOrder_1 (Stage0_B2) -&gt; c[n-1][0]</div>
+<div class="line">b1 -&gt; GenSecondOrder_1 (Stage0_B1) -&gt; c[n-1][1]</div>
+<div class="line">b0 -&gt; GenSecondOrder_1 (Stage0_B0) -&gt; c[n-1][2]</div>
+<div class="line">a2 -&gt; GenSecondOrder_1 (Stage0_A2) -&gt; c[n-1][3]</div>
+<div class="line">a1 -&gt; GenSecondOrder_1 (Stage0_A1) -&gt; c[n-1][4]</div>
+<div class="line">Type2 Cascaded 3 stage filter:</div>
+<div class="line"><img alt="image56" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/eq2.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Equation 2:</strong> Type 2 Cascaded 3 Stage IIR Filter</p>
+</div>
+<div class="line-block">
+<div class="line">Type 2 Filter, nth stage (where n is 1, 2 or 3 for 3 stage cascaded filter)</div>
+<div class="line">b’0 -&gt; GenSecondOrder_0 (Stage0_B0) -&gt; c[4*number of stages]</div>
+<div class="line">b’1 -&gt; GenSecondOrder_0 (Stage0_B1) -&gt; c[n-1][3]</div>
+<div class="line">b’2 -&gt; GenSecondOrder_0 (Stage0_B2) -&gt; c[n-1][2]</div>
+<div class="line">a’1 -&gt; GenSecondOrder_0 (Stage0_A1) -&gt; c[n-1][1]</div>
+<div class="line">a’2 -&gt; GenSecondOrder_0 (Stage0_A2) -&gt; c[n-1][0]</div>
+<div class="line">For Type2 IIR, b0 coefficient is same for all the stages. The offset values for b0 is the same for all the stages.</div>
+<div class="line">^ <strong>Implementation</strong> ^ <strong>0B</strong> ^ <strong>1B</strong> ^ <strong>2B</strong> ^ <strong>1A</strong> ^ <strong>2A</strong> ^</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Type 1</p></td>
+<td><p>b0</p></td>
+<td><p>b1</p></td>
+<td><p>b2</p></td>
+<td><p>-a1</p></td>
+<td><p>-a2</p></td>
+</tr>
+<tr class="row-even"><td><p>Type 2</p></td>
+<td><p>Product of b0 of all cascaded stages</p></td>
+<td><p>b1’ = b1/b0</p></td>
+<td><p>b2’ = b2/b0</p></td>
+<td><p>a1’ = a1</p></td>
+<td><p>a2’ = a2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Table 4:</strong> Filter Coefficient Computation</p>
+</div>
+<div class="line-block">
+<div class="line">Parameter arrangement of Type1 cascaded filters in memory</div>
+<div class="line"><img alt="image57" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/algo0.png" /></div>
+<div class="line">Parameter arrangement of Type2 cascaded filters in memory <img alt="image58" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/algo1.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 50:</strong> Parameter Arrangements</p>
+<p><img alt="image59" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/exportexampleschematic.png" /></p>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 51:</strong> Export Example Schematic</p>
+<p><img alt="image60" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/exportexamplecapture.png" /></p>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 52:</strong> Export Example Capture Window</p>
+</div>
+</section>
+</section>
+<section id="sending-custom-commands">
+<h1>7 Sending Custom Commands<a class="headerlink" href="#sending-custom-commands" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line">Custom commands can be sent from the SigmaStudio Plus Host to the SHARC Target in 2 different ways; using SS_CMD_CMD4 and SS_CMD_CMD5.</div>
+<div class="line">=====7.1 Call-back Method===== A packet sent to the SHARC Target with SS_CMD_CMD4 as the command executes a call-back function with the payload information as the function arguments. The call-back function to be executed can be assigned through the configuration parameter pfCommCallBack in the communication configuration structure ADI_SS_COMM_CONFIG passed to adi_ss_comm_init().</div>
+<div class="line"><img alt="image61" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/configcallbackcmd4.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 53:</strong> Configuring callback function of CMD4 command and function prototype</p>
+</div>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>pCommPayloadBuff</p></td>
+</tr>
+<tr class="row-even"><td><p>Type</p></td>
+<td><p>Int *</p></td>
+</tr>
+<tr class="row-odd"><td><p>Direction</p></td>
+<td><p>Input</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>Payload buffer pointer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>nPayloadCount</p></td>
+</tr>
+<tr class="row-even"><td><p>Type</p></td>
+<td><p>Int</p></td>
+</tr>
+<tr class="row-odd"><td><p>Direction</p></td>
+<td><p>Input</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>Size of the payload</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>hSSn</p></td>
+</tr>
+<tr class="row-even"><td><p>Type</p></td>
+<td><p>adi_ss_sample_t *</p></td>
+</tr>
+<tr class="row-odd"><td><p>Direction</p></td>
+<td><p>Input</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>Handle to the SigmaStudio Plus module instance which received the command</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="get-properties-method">
+<h2>7.2 Get Properties Method<a class="headerlink" href="#get-properties-method" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">For the purpose of discussion, let’s assume a generic use case where SS_CMD_CMD5 is used by the host to read the LED status of the target board. The Read request and response are shown in the figure below.</div>
+<div class="line"><img alt="image62" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/cmd5_led_status.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 54:</strong> SS_CMD_CMD5 LED status Read Request and Complete Response Packet</p>
+</div>
+<p>A packet sent to the SHARC Target with SS_CMD_CMD5 as the command is received by the SigmaStudio Plus instance on the SHARC Target. The received data/command is extracted by the Application from the SigmaStudio Plus instance using the adi_ss_comm_GetProperties() function. Data is available in oGetProperties.pSSnBuf, where oGetProperties is the properties structure of type ADI_SS_COMM_PROPERTIES passed to adi_ss_comm_GetProperties().
+| <img alt="image63" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/getpropertiescmd5.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure 55:</strong> Function adi_ss_comm_GetProperties() that handles data received through CMD5</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is just an example showing the packet format and data transfer of CMD5 command. It is up to the developer to implement their required logic inside adi_ss_comm_GetProperties()</p>
+</div>
+<p>Please refer Section <strong>8.1 Back Channel Protocol (SHARC Target to SigmaStudio Plus Host)</strong> to have better understanding of the format.
+| =====7.3 Custom Command Example=====</p>
+<section id="reset-communication-instance-from-sigmastudio-plus-host">
+<h3>7.3.1 Reset Communication Instance from SigmaStudio Plus Host<a class="headerlink" href="#reset-communication-instance-from-sigmastudio-plus-host" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">The custom command SS_CMD_CMD4 can be used to reset the communication instance from an error state. This is required to continue processing after encountering a communication error. The below code snippet shows how to trigger a communication reset from the SigmaStudio Plus Host with the help of a call-back function.</div>
+<div class="line"><img alt="image64" src="https://wiki.analog.com/_media/disablefetchtracking/cmd4_resetcommunicationerror.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 56:</strong> SS_CMD_CMD4 Reset Communication Instance Request</p>
+<p><img alt="image65" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/callbackresetcmd4.png" /></p>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 57:</strong> Contents of callback function app_ss_comm_callback_cmd4 () for CMD4 command</p>
+</div>
+<p>The default example demo application provided with the SigmaStudioPlus installer package already includes logic implemented in the app_ss_comm_callback_cmd4() function as a use case for CMD4, which reads the LED status of the ADI EVAL board.
+| Please refer to the figure below: “CMD4 LED Status Read Request and Complete Response Packet” for a better understanding.
+| <img alt="image66" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/cmd4_led_status.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure 58:</strong> SS_CMD_CMD4 LED status Read Request and Complete Response Packet</p>
+</div>
+<p>Please refer Section <strong>8.1 Back Channel Protocol (SHARC Target to SigmaStudio Plus Host)</strong> to have better understanding of the format.
+| ======8. Read-Back Communication====== The source code to packetize and send the read-back information is available with the released Application. Refer to the files backchannel.c and backchannel.h for source code and further details (ADSP-214xx processor series).
+| =====8.1 Back Channel Protocol (SHARC Target to SigmaStudio Plus Host)===== All communications from the SHARC Target to the SigmaStudio Plus Host PC application use a byte based protocol as shown below.
+| <img alt="image67" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/backchannelspipacket.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure 59:</strong> Back Channel Communication SPI Packet Format</p>
+</div>
+<p>The lower 4 bits of each word enumerate each word. The words in the packet are enumerated in ascending order. The figure given above is used as a reference for listing individual content of packet.
+| ====8.1.1 BEGIN: (32-bit)==== The BEGIN word of size 32-bit indicates the beginning of packet. This contains a BEGIN_CMD command, the size of sub packets in bytes, format of sub packet and word number.
+| ===8.1.1.1 BEGIN_CMD: (16-bit)=== This 16-bit word indicates the beginning of a communication packet.
+| ===8.1.1.2 SIZE: (8-bit)=== This indicates the total length of data in payload in bytes.
+| ===8.1.1.3 FORMAT: (4-bit)=== This field designates the format of the packet contents. The packet contents can be in 8-bit format or 24-bit format. When the content of the packet is in 8-bit format, the MSB of the field is 1, else 0.
+| ===8.1.1.4 NO: (4-bit)=== This field indicates the serial number of each 32-bit word.
+| ====8.1.2 PAYLOAD: (32-bit)==== Data to be transferred from the SHARC Target to the SigmaStudio Plus Host is available in the payload. Each word contains 16-bit data, 4-bit command and 4-bit word number.
+| ===8.1.2.1 DATA: (16-bit)=== The 16-bits in MSB of every payload contain actual payload data. Float values are split into two 32-bit payload words with each payload word containing 16-bits of data. When a 32-bit word is split into two 32-bit payload words, the LSB bits of the float word are put inside the first payload word. There is only one payload word in case of Version read and the 16 MSB of the version is inserted in the data field. nData element of the back channel information structure (pBkChnlInfo-&gt;nData) contains the Version and Code download status information. MIPS is computed by the Application. Other Read-back values are extracted from the memory using the offset and size.
+| <img alt="image68" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/readbackpayloaddatafield.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Table 5:</strong> Read-back Payload Data Field</p>
+</div>
+<section id="cmd-4-bit">
+<h4>8.1.2.2 CMD: (4-bit)<a class="headerlink" href="#cmd-4-bit" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line">This field identifies the type of read back data in the packet. This is the 4 LSB bits of the read back type given in Table 3 associated with current packet.</div>
+<div class="line">===8.1.2.3 NO: (4-bit)=== This field indicates the serial number of each 32-bit word.</div>
+<div class="line">====8.1.3 END: (32-bit)==== The END word consists of the END_CMD command, which indicates the end of packet, the CRC checksum value for the packet and word number.</div>
+<div class="line">===8.1.3.1 END_CMD: (16-bit)=== This 16-bit word indicates the end of a communication packet.</div>
+<div class="line">===8.1.3.2 CRC: (8-bit)=== CRC field is used for protection. The current version uses a simple checksum of individual bytes of payload contents.</div>
+<div class="line">For the read-back channel data, the CRC will be computed based on the payload data. This will be summed into an 8-bit value, and the two’s complement of this sum will be appended to the packet.</div>
+<div class="line">Example:</div>
+<div class="line">uint8_t compute_crc(uint32_t *data, uint32_t length) {</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uint32_t</span> <span class="n">nSum</span> <span class="o">=</span> <span class="mi">0</span><span class="n">U</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Sum</span> <span class="nb">all</span> <span class="mi">32</span><span class="o">-</span><span class="n">bit</span> <span class="n">words</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">data</span> <span class="n">array</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">uint32_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">nSum</span> <span class="o">+=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uint32_t</span> <span class="n">nFin</span> <span class="o">=</span> <span class="mi">0</span><span class="n">U</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Sum</span> <span class="nb">all</span> <span class="mi">4</span> <span class="nb">bytes</span> <span class="n">of</span> <span class="n">the</span> <span class="mi">32</span><span class="o">-</span><span class="n">bit</span> <span class="nb">sum</span>
+<span class="n">nFin</span> <span class="o">+=</span> <span class="p">(</span><span class="n">nSum</span> <span class="o">&gt;&gt;</span> <span class="mi">24</span><span class="n">U</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="n">U</span><span class="p">;</span>  <span class="o">//</span> <span class="n">Extract</span> <span class="n">most</span> <span class="n">significant</span> <span class="n">byte</span>
+<span class="n">nFin</span> <span class="o">+=</span> <span class="p">(</span><span class="n">nSum</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span><span class="n">U</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="n">U</span><span class="p">;</span>  <span class="o">//</span> <span class="n">Extract</span> <span class="mi">2</span><span class="n">nd</span> <span class="n">byte</span>
+<span class="n">nFin</span> <span class="o">+=</span> <span class="p">(</span><span class="n">nSum</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="n">U</span><span class="p">)</span>  <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="n">U</span><span class="p">;</span>  <span class="o">//</span> <span class="n">Extract</span> <span class="mi">3</span><span class="n">rd</span> <span class="n">byte</span>
+<span class="n">nFin</span> <span class="o">+=</span>  <span class="n">nSum</span>         <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="n">U</span><span class="p">;</span>  <span class="o">//</span> <span class="n">Extract</span> <span class="n">least</span> <span class="n">significant</span> <span class="n">byte</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Calculate</span> <span class="n">two</span><span class="s1">&#39;s complement of the byte sum</span>
+<span class="n">uint32_t</span> <span class="n">nCRC</span> <span class="o">=</span> <span class="p">(</span><span class="o">~</span><span class="n">nFin</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="n">U</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Return</span> <span class="n">only</span> <span class="n">the</span> <span class="n">least</span> <span class="n">significant</span> <span class="n">byte</span> <span class="k">as</span> <span class="n">the</span> <span class="n">checksum</span>
+<span class="k">return</span> <span class="p">(</span><span class="n">uint8_t</span><span class="p">)(</span><span class="n">nCRC</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="n">U</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">}</div>
+<div class="line">===8.1.3.3 RSVD: (4-bit)=== This field is reserved.</div>
+<div class="line">===8.1.3.4 NO: (4-bit)=== This field indicates the serial number of each 32-bit word.</div>
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The first 4 bytes of Read Request’s MOSI and Read Response’s MISO are done to synchronize the SigmaStudioPlus Host with target. Hence, when a user is trying to implement the same by sending the command packet from a host microcontroller rather than SigmaStudioPlus, those 4 bytes can be ignored</p>
+<p><img alt="image69" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/readmips_fullpackage.png" /></p>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 60:</strong> MIPS Read Request and Complete Response Packet</p>
+<p><img alt="image70" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/readdualcoremips.png" /></p>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 61:</strong> Dual Core MIPS Read Request and Complete Response Packet</p>
+<p><img alt="image71" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/readversion_fullpackage.jpg" /></p>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 62:</strong> Version Read Request and Complete Response Packet</p>
+<p><img alt="image72" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/readbackvalue_fullpackage.jpg" /></p>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 63:</strong> Read-back value Request and Complete Response Packet</p>
+<p><img alt="image73" src="https://wiki.analog.com/_media/resources/tools-software/sigmastudiov2/targetintegration/readerrorcode_fullpackage.png" /></p>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Figure 64:</strong> Error Code/ Code Download Status Request and Complete Response Packet</p>
+</div>
+<div class="line-block">
+<div class="line"><strong>Terminology</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Term</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ADI</p></td>
+<td><p>Analog Devices Inc.</p></td>
+</tr>
+<tr class="row-odd"><td><p>API</p></td>
+<td><p>Application Program Interface</p></td>
+</tr>
+<tr class="row-even"><td><p>OBJ</p></td>
+<td><p>Object file format in CrossCore Embedded Studio environment</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPI</p></td>
+<td><p>Serial Peripheral Interface</p></td>
+</tr>
+<tr class="row-even"><td><p>SSn</p></td>
+<td><p>SHARC machine code corresponds to SigmaStudio Plus Schematic</p></td>
+</tr>
+<tr class="row-odd"><td><p>USB</p></td>
+<td><p>Universal Serial Bus</p></td>
+</tr>
+<tr class="row-even"><td><p>XML</p></td>
+<td><p>Extensible Markup Language</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

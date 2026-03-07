@@ -1,0 +1,277 @@
+EVAL-CN0560-FMCZ User Guide
+===========================
+
+:adi:`CN0560` The EVAL-CN0560-FMCZ evaluation board (Figure 1) features high-accuracy measurement of three current ranges using a combination of shunt resistors and on-board amplifiers driving the 18-bit, 15MSPS :adi:`ADAQ23878` precision µModule® data acquisition solution.
+
+The :adi:`ADAQ23878` µModule combines multiple common signal processing and conditioning blocks into a single device that includes a low noise, fully differential analog-to-digital converter (ADC) driver, a stable reference buffer, a high resolution, 18-bit, 15 MSPS successive approximation register (SAR) ADC, and the critical passive components necessary for optimum performance. A full description of this product is available in the :adi:`ADAQ23878` data sheet, which must be consulted when using the evaluation board.
+
+The EVAL-CN0560-FMCZ evaluation board interfaces with high speed system demonstration platform SDP-H1 (EVAL-SDP-CH1Z) board via a 160-pin connector.
+
+| 
+| **FIGURE 1 EVALUATION BOARD PHOTOGRAPH**
+| |image1|
+
+EVALUATION SETUP
+----------------
+
+Equipment Required
+~~~~~~~~~~~~~~~~~~
+
+-  CN0560 Circuit Evaluation Board (EVAL-CN0560-FMCZ)
+-  System Demonstration Platform Board : SDP-H1 (EVAL-SDP-CH1Z)
+-  Current Source (ex. Keithley 2400)
+-  Standard USB A to USB mini-B
+-  DC Bench top Power Supply (ex. Keithley E3631A)
+
+Software Required
+~~~~~~~~~~~~~~~~~
+
+-  ACE
+-  EVAL-CN0560-FMCZ ACE Plug-in
+-  SDP-H1 Driver
+
+Hardware Connection
+~~~~~~~~~~~~~~~~~~~
+
+| 
+| **Figure 2 10uA Setup Connection**
+| |image2|
+| **Figure 3 10mA Setup Connection**
+| |image3|
+| **Figure 4 10A Setup Connection**
+| |image4|
+| ==LINK CONFIGURATION OPTIONS==
+| Multiple link options must be set correctly for the appropriate operating setup before applying the power and signal to the EVAL-CN0560-FMCZ. Table 1 shows the default positions of the links for the EVAL-CN0560-FMCZ.
+| |image5|
+| Table 2 shows the summary of the Input gain configuration and corresponding input ranges.
+| |image6|
+| ==== Hardware Description ====
+| **FIGURE 5 SIMPLFIED BLOCK DIAGRAM**
+| |image7|
+| Figure 5 shows the simplified evaluation board block diagram of the Eval-CN0560-FMC. The board consists of one µModule (U1, :adi:`ADAQ23878`), a choice of a 4.096 V reference (U5, :adi:`LTC6655`) or 2.048V reference (U3, :adi:`ADR4520`), on-board power supplies to derive the necessary supply rails using the two :adi:`LTM8049` (U6 and U2), the :adi:`ADP7118` (U4), the :adi:`ADP7183` (U7), the :adi:`LT3023` (U8), :adi:`LT3032` (U16), and a :adi:`AD9513` 800 MHz clock distribution IC (U13). Right after the :adi:`ADG5209` (U20) multiplexer for current range selection, the user also has an option to use the two frontend amplifier options :adi:`ADA4898-1` amplifiers (U9 and U10) and the :adi:`LT5400` (RN1) or a single :adi:`AD8421` when evaluating the EVAL-CN0560-FMCZ .
+
+| **SDP-H1 CONTROLLER BOARD**
+| The EVAL-CN0560-FMCZ evaluation board uses an SPI interface and is connected to the high speed controller board for the system demonstration platform (SDP-H1) controller board. The SDP-H1 board requires power from a 12 V wall adapter. The SDP-H1 has a Xilinx® Spartan 6 and an ADSP-BF527 processor with connectivity to the PC through a USB 2.0 high speed port. The controller boards allow the configuration and capture of data on the daughter boards from the PC via a USB. The SDP-H1 has an FMC low pin count (LPC) connector with full differential LVDS and singled-ended LVCMOS support. It also features the 160-pin connector, found on the SDP-B, which exposes the Blackfin® processor peripherals. This connector provides a configurable serial, parallel I2C and SPI, and general-purpose input/output (GPIO)
+| **POWER SUPPLIES**
+| The CN-0560 board requires the SDP-H1 controller board for high accuracy data capture. All the power rails on board can be generated from a 3.3 V rail coming from the SDP-H1 board or an optional external 3.3V bench supply using the JP9 solder link if desired (see Table 1). The simplified power tree used on the CN-0560 board is shown in the Figure 6.
+| The two :adi:`LTM8049` dual SEPIC or inverting μModule DC/DC converters generate +7V, - 2.5V, +15.5V, and -15.5V rails from a 3.3V rail. The :adi:`LT3023` dual low noise, micropower LDO generates +5V and +6.5V rails from a +7V, while the :adi:`ADP7183` ultralow noise LDO generates -2V rail from -2.5V.
+| The +6.5V and -2V rails are used for the integrated FDA of :adi:`ADAQ23878`, while the +5V rail is used for the LTC6655 to produce a 4.096V reference. Two rails of +15.5V and -15.5V from the second :adi:`LTM8049` are fed in to the :adi:`LT3032` dual LDO to produce +15V and -15V voltage rails for the :adi:`ADA4898-1` and the :adi:`ADG5209`. The :adi:`ADP7118` low noise LDO generates a +2.5V rail for the :adi:`ADR4520` to produce a 2.048V reference.
+| Each supply rail has necessary decoupling capacitors placed closed to the device. A single ground plane is used on this board to minimize the effect of high frequency noise interference.
+| **FIGURE 6 POWER TREE** {{ :resources:eval:user-guides:circuits-from-the-lab:cn0560:cn0560:power_tree.jpg?600 \|\ |image8|
+
+| **ANALOG INPUTS**
+| The Banana Jack connectors are used as pairs for the desired current range to use. The 10A and I_10A jacks runs through a 5-mΩ shunt resistor, the 10MA and I_10MA jacks runs through a 5-Ω shunt resistor, and the 10UA and I_10UA runs through a 5-kΩ shunt resistor. I_10A, I_10MA, and I_10UA can be connected to I_GND jack and ground if wanted using jumper options R15, R127, or R129 respectively. The maximum current that can pass through the shunt resistors will result to 50 mV across the shunt resistor.
+| The actual selection of the measurement range is controlled by the configuration of the :adi:`ADG5209` multiplexer. The multiplexer configuration is controlled by the position of the shunt connectors on the headers P13, P7, P14, and P8. The headers P13 and P14 are provisions for user to control the selected current range by software or to manually control it by headers P7 and P8. Refer to the Figure 7 to Figure 11 for the link header configuration for current range selection and the corresponding hardware connection on Figure 2 to Figure 4 for different input ranges.
+| **Figure 7 Software Controlled** |image9|
+| **Figure 8 10uA Input Range** |image10|
+| **Figure 9 10mA Input Range** |image11|
+| **Figure 10 10A Input Range** |image12|
+| **Figure 11 Grounded Inputs** |image13|
+
+| Following the multiplexer are two :adi:`ADA4898-1` High Voltage, Low Noise, Low Distortion, Unity Gain Stable, High Speed Operational Amplifiers. The two unity gain op amps use the :adi:`LT5400` Quad Matched Resistor Network for a precision ratiometric stability for CMRR better than independently matched resisitors. If the two :adi:`ADA4898-1` are not preferred, an optional :adi:`AD8421` 3 nV /√Hz, Low Power Instrumentation Amplifier is provided in the reference circuit. The In-Amp can be used by disconnecting the two unity gain op amps by modifying the connections of JP1, JP2, JP7, and JP8 to their alternate signal paths. The gain for the :adi:`ADAQ23878` FDA is configured by how the signal is applied on its input pins. For the CN-0560 Reference Design Board, the gain can be configured using the header connections on P4 and P6. The gain settings configuration using header connections are described in Figure 12 to Figure 15.
+| **Figure 12 Gain = 0.37** |image14|
+| **Figure 13 Gain = 0.73** |image15|
+| **Figure 14 Gain = 1.38** |image16|
+| **Figure 15 Gain = 2.25** |image17|
+| The EVAL-CN0560-FMCZ is a factory configured to provide the appropriate input signal type, single-ended or fully differential, and different gain/attenuation or input range scaling. Table 1 lists the necessary jumper positions and link options for different configurations. The default board configuration presents a 4.096 V on REFBUF pin and a buffered 2.048 V (midscale) at the FDA’s VCMO pin of the ADAQ23878.
+| To evaluate dynamic performance, fast Fourier transform (FFT), integral nonlinearity (INL), differential nonlinearity (DNL), or time domain (waveform, histogram) test can be performed by applying a very low distortion ac source (see figures for the Analysis Window for examples of dynamic performance results). For low input frequency testing below 100 kHz, it is recommended to use a low noise, audio precision signal source (such as the SYS-2700 series) with the outputs set to balanced floating. A different precision signal source can be used alternatively with additional band-pass filtering. The filter bandwidth depends on input bandwidth of interest.
+| To measure Dynamic performance of the CN0560, follow the steps below:
+| \* Remove the 5kΩ Rshunt (R29) on the 10uA input path
+
+-  Connect the Signal Source (AP2722) to the CN0560 board and SDP-H1 as shown on Figure 16.
+-  Set the output of the AP2722 to 50mV pk-pk.
+
+| 
+| **FIGURE 16 DYNAMIC PERFORMANCE SETUP**
+| |image18|
+| ===== Software GUI Setup =====
+| :doc:`ACE and Plug-in Installation Link </wiki-migration/resources/tools-software/ace>`
+| **LAUNCHING THE SOFTWARE**
+| When the EVAL-CN0560-FMCZ and SDP-H1 boards are properly connected to the PC, launch the ACE software. To launch the ACE software, take the following steps:
+| \* From the Start menu, select All Programs > Analog Devices > ACE> ACE.exe to open the main software.
+
+-  The ADAQ23878 icon appears in the Attached Hardware section.
+-  If the EVAL-CN0560-FMCZ is not connected to the USB port via the SDP-H1 board when the software is launched, the ADAQ23878 board icon does not appear in the Attached Hardware section. Connect the EVAL-CN0560-FMCZ and SDP-H1 board to the USB port of the PC and wait a few seconds, then continue following these instructions.
+-  Double-click the ADAQ23878 board icon to open the Board View Window .
+-  Click Software Defaults and then click Apply Changes.
+-  Click Proceed to Analysis to open the EVAL-CN0560-FMCZ analysis shown on Analysis Window .
+
+| 
+| **EXITING THE SOFTWARE**
+| To exit the software, click file icon on the upper right tab and then click Exit.
+
+Navigating the Evaluation Software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| Upon opening ACE, the ADAQ23878 Board should be detected as shown in Figure 17.
+| **Figure 17 Main Window**
+| |image19|
+| From the Main Window, double click on the ADAQ23878 board to open the Board View as shown in Figure 18.
+| **Figure 18 Board View**
+| The Board View shows an overview of the components on the evaluation board.
+| |image20|
+| From Board View, double click on the ADAQ23878 icon to open the Chip View as shown in Figure 19.
+| **Figure 19 Chip View**
+| The Chip View shows an overview of the internal block diagram of the ADAQ23878 uModule.
+| |image21|
+| From the Chip View window, click on the "**Proceed to Analysis**" button to perform measurements using the EVAL-CN0560-FMCZ board.
+| **Figure 20 Analysis Window**
+| |image22|
+| \* Capture Panel
+| Throughput. The default throughput (sampling frequency) is 15MSPS. The user can adjust throughput to a minimum of 20 kSPS. If the user enters a value larger than ability of the existing device, the software reverts to the maximum throughput. Refer to the ADAQ23878/ADAQ23876 data sheet to determine the maximum sampling frequency.
+| The Number of samples dropdown list in the Capture Settings section allows the user to select the number of samples per channel per capture. The maximum number of samples the software can support is 1048576.
+| Device Setting Digital Input that Enables Two-Lane Output Mode and One lane mode. When TWOLANES is connected high (two-lane output mode), the :adi:`ADAQ23878`/:adi:`ADAQ23876` outputs 2 bits at a time on DA−/DA+ and DB−/DB+. When TWOLANES is low (one-lane output mode), the :adi:`ADAQ23875` outputs 1 bit at a time on DA−/DA+, and DB−/DB+ are disabled. Logic levels are determined by VIO. Refer to Table 1 P1 to configure the board to different mode.
+| Software Oversampling Ratio box as shown in Figure 13 sets the oversampling ratio applied to the captured data. Oversampling refers to sampling faster than twice the signal bandwidth required for Nyquist criterion. After this control is set to any value other than "Off", the software sums up the consecutive conversion results together to increase the effective resolution. The number of conversions summed together is set by the Oversampling Ratio box. Oversampling by a factor of four provides one additional bit of resolution, or a 6 dB increase in dynamic range, or in other words, ΔDR = 10 × log10(OSR) in dB.
+| \* Analysis Pane
+| The General Settings section allows the user to set up the preferred configuration of the FFT analysis. This configuration sets how many tones are analyzed and if the fundamental is set manually.
+| The Windowing section allows the user to set up preferred windowing type to use in the FFT analysis and the number of harmonic bins and fundamental bins that must be included in the analysis.
+| The Single Tone Analysis and the Two-Tone Analysis sections set up the fundamental frequencies included in the FFT analysis. When one frequency is analyzed, use the Singe Tone Analysis section. When two frequencies are analyzed, use the Two-Tone Analysis section.
+| \* Results Pane
+| The Display Channels section allows the user to select which channels to capture. The data for a specific channel is only shown if that channel is selected before the capture.
+| The Waveform Results section displays amplitude, sample frequency, and noise analysis data for the selected channels.
+| Click Export to export captured data. The waveform, histogram, and FFT data is stored in .xml files along with the values of parameters at capture.
+| \* Figure 21 Waveform Tab
+| |image23|
+| The data waveform graph shows each successive sample of the µModule output. The user can zoom in on and pan across the waveform using the embedded waveform tools. The channels to display can be selected in the Display Channels section.
+| Click the display unit’s dropdown list (shown with the Codes option selected in the figure above) to select whether the data graph displays in units of hexadecimal, volts, or codes. The axis controls are dynamic.
+| When selecting either y-scale dynamic or x-scale dynamic, the corresponding axis width automatically adjusts to show the entire range of the µModule results after each batch of samples.
+| \* Figure 22 Histogram Tab
+| |image24|
+| The Histogram tab contains the histogram graph and the Results pane, as shown in the figure above.
+| The Results pane displays the information related to the dc performance.
+| The histogram graph displays the number of hits per code within the sampled data. This graph is useful for dc analysis and indicates the noise performance of the device.
+| \* Figure 23 FFT Tab
+| |image25|
+| The FFT tab displays FFT information for the last batch of samples gathered, as shown in the figure above . The FFT also allows the oversampling function with OSR up to 256×, as shown in the figure below. As a rule of thumb, oversampling by a factor of four provides one additional bit of resolution, or a 6 dB increase in dynamic range (DR) of the EVAL-CN0560-FMCZ. In other words,
+| ΔDR = 10 × log10 (OSR) (in dB)
+| Figure 24 Oversampling |image26|
+| \* INL & DNL Tab
+| Figure 25 |image27|
+| Figure 26 |image28|
+| The INL and DNL tab displays linearity analysis. INL is the deviation of each individual code from a line drawn from negative full scale through positive full scale. The point used as negative full scale occurs ½ LSB before the first code transition. Positive full scale is defined as a level 1½ LSB beyond the last code transition. The deviation is measured from the middle of each code to the true straight line.
+| In an ideal μModule, code transitions are 1 LSB apart. DNL is the maximum deviation from this ideal value. DNL is often specified in terms of resolution for which no missing codes are guaranteed.
+| To perform a linearity test, apply a sinusoidal signal with 0.5 dB above full scale to the EVAL-CN0560-FMCZ board at the VIN+ and VIN− Subminiature Version A (SMA) inputs. Set the number of hits per code and adjust to the desired accuracy. Using a large number of hits per code results in a significant test time. The figures above display captured data that includes the ±INL and ±DNL positions.
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   
+   :adi:`EVAL-CN0560-FMCZ Design & Integration Files <cn0560-designsupport>`
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  Allegro Project
+   
+   |
+
+
+| **BOARD LAYOUT GUIDELINES**
+| The PCB layout is critical for preserving signal integrity and achieving the expected performance from the EVAL-CN0560-FMCZ. A multilayer board with an internal, clean ground plane in the first layer beneath the EVAL-CN0560-FMCZ is recommended. Care must be taken with the placement of individual components and routing of various signals on the board. It is highly recommended to route input and output signals symmetrically. Solder the ground pins of the EVAL-CN0560-FMCZ directly to the ground plane of the PCB using multiple vias. Remove the ground and power planes under the analog input/output and digital input/output (including F1 and F2) pins of EVAL-CN0560-FMCZ to avoid undesired parasitic capacitance. Any undesired parasitic capacitance could impact the distortion and linearity performance of the EVAL-CN0560-FMCZ.
+| The pinout of the EVAL-CN0560-FMCZ eases the layout and allowing its analog signals on the left side and its digital signals on the right side. The sensitive analog and digital sections must be separated on the PCB while keeping the power supply circuitry away from the analog signal path. Fast switching signals, such as CNV± or CLK±, and digital outputs DA± and DB± must not run near or cross over analog signal paths to prevent noise coupling to the EVAL-CN0560-FMCZ.
+| Good quality ceramic bypass capacitors of at least 2.2 µF (0402, X5R) must be placed at the output of LDOs generating the μModule supply rails (VDD, VIO, VS+, and VS−) to GND to minimize electromagnetic interference (EMI) susceptibility and to reduce the effect of glitches on the power supply lines. All the other required bypass capacitors are laid out within the EVAL-CN0560-FMCZ, saving extra board space and cost. When the external decoupling capacitors on REFIN, VDD, and VIO pins near the µModule are removed, there is no significant performance impact.
+| \**MECHANICAL STRESS **
+  The mechanical stress of mounting a device to a board can cause subtle changes to the SNR and internal voltage reference. The best soldering method is to use IR reflow or convection soldering with a controlled temperature profile. Hand soldering with a heat gun or a soldering iron is not recommended.
+  ===== Troubleshooting =====
+  The SDP-H1 board is the communication link between the PC and the EVAL-CN0560-FMCZ.
+  To ensure that the evaluation system is correctly recognized when it is connected to the PC, install the ACE software and the SDP-H1 driver before connecting the EVAL-CN0560-FMCZ and the SDP-H1 board to the USB port of the PC.
+  When the software installation is complete, set up the EVAL-CN0560-FMCZ and the SDP-H1 board as described in the following sections.
+  **\ CONNECTING THE EVAL-CN0560-FMCZ AND THE SDP-H1 TO THE PC\ **
+  To connect the EVAL-CN0560-FMCZ and the SDP-H1 board to the PC, take the following steps:
+  \* Ensure that all configuration links are in the appropriate positions, as described in Table 1 \* Connect the EVAL-CN0560-FMCZ securely to the 160-way connector on the SDP-H1 board. The EVAL-CN0560-FMCZ does not require an external power supply adapter. \* Connect the SDP-H1 board to the PC via the USB cable enclosed in the SDP-H1 kit. Refer to hardware connection figures.
+  **\ VERIFYING THE BOARD CONNECTION\ **
+  To verify the board connection, take the following steps:
+  \* Allow the found new hardware wizard to run after the SDP-H1 board is plugged in to the PC. If using Windows XP®, search for the SDP-H1 drivers. Choose to automatically search for the drivers for the SDP-H1 board if prompted by the operating system. \* A dialog box may appear asking for permission to allow the program to make changes to the computer. In this case, click Yes. The Computer Management window opens. \* Under System Tools, click Device Manager and use the Device Manager window to ensure that the SDP-H1 is connected to the PC properly. \* If the SDP-H1 driver software is installed and the board is connected to the PC properly, Analog Devices SDP-H1 appears under ADI Development Tools in the Device Manager window, as shown in Figure 34.
+  **\ DISCONNECTING THE EVAL-CN0560-FMCZ \*\*
+| Always remove power from the SDP-H1 board or click the reset tact switch located along the mini USB port before disconnecting the EVAL-CN0560-FMCZ from the SDP-H1 board.
+| ===== Additional Information and Useful Links =====
+
+-  :adi:`CN0560 Circuit Note Page <CN0560>`
+-  :adi:`CN0560 Design Support Package <CN0560-DesignSupport>`
+-  :adi:`ADAQ23878 Product Page <ADAQ23878>`
+-  :adi:`ADA4898-1 Product Page <ADA4898-1>`
+-  :adi:`ADG5209 Product Page <ADG5209>`
+-  :adi:`AD9513 Product Page <AD9513>`
+-  :adi:`ADR4520 Product Page <ADR4520>`
+-  :adi:`LTC6655 Product Page <LTC6655>`
+-  :adi:`LT3032 Product Page <LT3032>`
+-  :adi:`ADP2300 Product Page <ADP2300>`
+-  :adi:`LTM8049 Product Page <LTM8049>`
+-  :adi:`ADP7118 Product Page <ADP7118>`
+-  :adi:`ADP7183 Product Page <ADP7183>`
+-  :adi:`LT3023 Product Page <LT3023>`
+
+Software Projects and Platforms
+-------------------------------
+
+-  N/A
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0535-FMCZ?&v=RevD>`_ to receive all these great benefits and more!
+
+
+*End of Document*
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/circuits-from-the-lab/cn0560/evb_photo.jpg
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/10ua_test_setup.jpg
+   :width: 600px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/10ma_test_setup.jpg
+   :width: 600px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/10a_test_setup.jpg
+   :width: 600px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/link_configuration.jpg
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/gain_configuration.jpg
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/block_diagram2.jpg
+   :width: 600px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/cn0560/power_tree.jpg
+   :width: 600px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/range_sw.jpg
+   :width: 300px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/range_10ua.jpg
+   :width: 300px
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/range_10ma.jpg
+   :width: 300px
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/range_10a.jpg
+   :width: 300px
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/range_gnd_in.jpg
+   :width: 300px
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/gain_0.37.jpg
+   :width: 300px
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/gain_0.73.jpg
+   :width: 300px
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/gain_1.38.jpg
+   :width: 300px
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/gain_2.25.jpg
+   :width: 300px
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/ap2722_dr_setup.jpg
+   :width: 600px
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/ace_main_window.jpg
+   :width: 600px
+.. |image20| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/board_view.jpg
+   :width: 600px
+.. |image21| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/chip_view.jpg
+   :width: 600px
+.. |image22| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/analysis.jpg
+   :width: 600px
+.. |image23| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/waveform.jpg
+   :width: 600px
+.. |image24| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/histogram.jpg
+   :width: 600px
+.. |image25| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/fft.jpg
+   :width: 600px
+.. |image26| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/oversampling.jpg
+   :width: 600px
+.. |image27| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/inl.jpg
+   :width: 600px
+.. |image28| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0560/dnl.jpg
+   :width: 600px

@@ -1,0 +1,209 @@
+ADIS16210 EVALUATION ON THE EVAL-ADIS
+=====================================
+
+OVERVIEW
+--------
+
+.. note::
+
+   UPDATE NOTICE: This Wiki Guide covers the use of evaluation tools (ADIS16210/PCBZ and EVAL-ADISZ) that are no longer available for purchase, but it remains online to support those who already have these tools. For all new :adi:`adis16210` users, please go to the :adi:`ADIS16210's product page <adis16210>`, then click on :adi:`Evaluation Kits <en/products/mems/accelerometers-special-purpose/adis16210.html#product-evaluationkit>` and then click on the **See All** tab to review a listing of the most current :adi:`adis16210` evaluation tools. Thank you!
+
+
+The :adi:`ADIS16210` iSensor® is a digital inclinometer system that provides precise measurements for both pitch and roll angles over a full orientation range of ±180°. It combines a MEMS tri-axial acceleration sensor with signal processing, addressable user registers for data collection/programming, and a SPI-compatible serial interface. The electrical connection typically only requires 5 I/O lines for synchronous data collection, as shown in the following figure:
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-elect-connection.png
+   :width: 500px
+
+ADIS16210/PCB BREAKOUT BOARD
+----------------------------
+
+For those who are on a tight timeline, connecting the :adi:`ADIS16210` to an embedded controller will provide the most flexibility in developing application firmware and will more closely reflect the final system design. The :adi:`ADIS16210/PCBZ <en/mems-sensors/mems-accelerometers/adis16210/products/EVAL-ADIS16210/eb.html>` is the breakout board for the :adi:`ADIS16210` and may provide assistance in the process of hooking it up to an existing embedded processor system.
+
+EVAL-ADIS: PC EVALUATION
+------------------------
+
+For those who would prefer to perform PC-based evaluation of the :adi:`ADIS16210`, before developing their own embedded system, the :adi:`EVAL-ADIS` is the appropriate system to use. The remainder of this Wiki site will focus on PC-based evaluation with the :adi:`EVAL-ADIS` system.
+
+EQUIPMENT LIST
+--------------
+
+:adi:`EVAL-ADIS`
+
+:adi:`ADIS16210/PCBZ <en/mems-sensors/mems-accelerometers/adis16210/products/EVAL-ADIS16210/eb.html>`
+
+SYSTEM REQUIREMENTS
+-------------------
+
+Windows XP, Vista, 7
+
+.NET Framework 3.5
+
+NOTE: Newer versions of the .NET framework do not currently support the IMU Evaluation software package.
+
+PHYSICAL SETUP
+--------------
+
+The :adi:`ADIS16210/PCBZ <en/mems-sensors/mems-accelerometers/adis16210/products/EVAL-ADIS16210/eb.html>` provides the :adi:`ADIS16210 <en/mems-sensors/mems-accelerometers/adis16210/products/product.html>` on a small printed circuit board (PCB) that simplifies the connection to an existing processor system. This PCB includes a silkscreen, for proper placement, and four mounting holes that have threads for M2 × 0.4 mm machine screws. The second set of mounting holes on the interface boards are in the four corners of the PCB and provide clearance for 4-40 machine screws. The third set of mounting holes provides a pattern that matches the EVAL-ADIS evaluation system, using M2 × 0.4mm × 4 mm machine screws. These boards are made of IS410 material and are 0.063 inches thick. J1 is a 16-pin connector, in a dual row, 2 mm geometry that enables simple connection to a 1 mm ribbon cable system. For example, use Molex P/N 87568-1663 for the mating connector and 3M P/N 3625/16 for the ribbon cable. For direct connection to the :adi:`EVAL-ADIS` evaluation system, use these parts to make a 16-pin cable or remove pins 13, 14, 15 and 16. The LEDs (D1 and D2) are not populated, but the pads are available to install to provide a visual representation of the DIO1 and DIO2 signals. The pads accommodate Chicago Miniature Lighting Part No. CMD28-21VRC/TR8/T1, which works well when resistors R1 and R2 are approximately 400 Ω (0603 pad sizes).The mating connector for the :adi:`ADIS16210 <en/mems-sensors/mems-accelerometers/adis16210/products/product.html>`, J2, is AVX P/N 04-6288-015-000-846. The picture below provides a close-up view of this connector, which clamps down on the flex cable to press its metal pads onto the metal pads inside the mating connector. The schematic is for the :adi:`ADIS16210/PCBZ <en/mems-sensors/mems-accelerometers/adis16210/products/EVAL-ADIS16210/eb.html>` board.
+
+|image1| |image2| |image3| |image4|
+
+NOTE: Do not plug the :adi:`EVAL-ADIS` into the USB cable at this stage of the setup. Wait until the software installation is complete.
+
+Step #1
+~~~~~~~
+
+Slide the :adi:`ADIS16210CMLZ <en/mems-sensors/mems-accelerometers/adis16210/products/product.html>` part into the mating J2 connector on the :adi:`ADIS16210/PCBZ <en/mems-sensors/mems-accelerometers/adis16210/products/EVAL-ADIS16210/eb.html>`. Press the J2 clamp down onto the flex connector to complete the :adi:`ADIS16210CMLZ <en/mems-sensors/mems-accelerometers/adis16210/products/product.html>` part connection to the :adi:`ADIS16210/PCBZ <en/mems-sensors/mems-accelerometers/adis16210/products/EVAL-ADIS16210/eb.html>`. Then secure the part using the M2 × 0.4mm × 4 mm machine screws provided with the :adi:`ADIS16210/PCBZ <en/mems-sensors/mems-accelerometers/adis16210/products/EVAL-ADIS16210/eb.html>`. The following pictures provide a visual reference for correct connection but are actually :adi:`ADIS16228CMLZ <en/mems-sensors/mems-accelerometers/adis16228/products/product.html>` parts that share the same mechanical body.
+
+|image5| |image6| |image7|
+
+WARNING: Make sure that the connector cable going from J1 on the :adi:`ADIS16210/PCBZ <en/mems-sensors/mems-accelerometers/adis16210/products/EVAL-ADIS16210/eb.html>` is properly aligned to the J1 connector on the :adi:`EVAL-ADIS`. The 16 pin cable is included with the :adi:`EVAL-ADIS`.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis-16pin-conn.png
+   :width: 600px
+
+Step #2
+~~~~~~~
+
+Mounting to the system frame is accomplished using 4 M2 x.4 x 6mm machine screws included with the :adi:`ADIS16210/PCBZ <en/mems-sensors/mems-accelerometers/adis16210/products/EVAL-ADIS16210/eb.html>`. The mounting location holes are marked as an example in the picture below. Use the 4 holes to secure the :adi:`ADIS16210/PCBZ <en/mems-sensors/mems-accelerometers/adis16210/products/EVAL-ADIS16210/eb.html>` to the :adi:`EVAL-ADIS`.
+
+|image8| |image9| |image10| |image11|
+
+Step #3
+~~~~~~~
+
+The following picture shows JP1 in the **+3.3V** position (factory-default). That is the correct JP1 jumper setting on the :adi:`EVAL-ADIS` required for the :adi:`ADIS16210CMLZ <en/mems-sensors/mems-accelerometers/adis16210/products/product.html>` operation.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis-3.3v.png
+   :width: 400px
+
+NOTE: If JP1 is left on **+5v** the software will look like the following picture. Move JP1 to the\ **+3.3V** setting to correct the problem.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/imu-eval-5v-error.png
+   :width: 800px
+
+IMU EVALUATION SOFTWARE INSTALLATION
+------------------------------------
+
+:adi:`Click here to download the IMU Evaluation software <static/imported-files/eval_boards/IMU-Evaluation-EVAL-ADIS.zip>` to a personal computer, which enables PC-based evaluation of the :adi:`ADIS16210` on an :adi:`EVAL-ADIS` evaluation system. The download file will contain three separate files: The USB drivers (SDPDrivers.exe), the application file (IMUEvaluation.exe) and the revision table. Copy these files to a convenient folder for running the application from.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/imu-eval-downloadfilecontents.png
+   :width: 600px
+
+USB Driver Installation
+~~~~~~~~~~~~~~~~~~~~~~~
+
+The SDPDrivers.exe file contains USB drivers that are compatible with both 32-bit and 64-bit Windows systems. Double-click on the SDPDrivers.exe file and follow the prompts to install the USB driver files onto the PC. When the following window appears, click on **Next** and then click on **Install** to continue with the installation.
+
+|image12| |image13|
+
+The following pictures show the progress bar and the final confirmation window. Click on **Finish** to complete the installation.
+
+|image14| |image15|
+
+IMU EVALUATION SOFTWARE GUIDE
+-----------------------------
+
+After the USB driver installation is complete, connect the :adi:`EVAL-ADIS` USB connector to the PC, using the USB Mini cable, from the :adi:`EVAL-ADIS` kit. LED2 will illuminate as soon as this connection is made. This indicates that the :adi:`EVAL-ADIS` has power and is going through its start-up/initialization process. After the :adi:`EVAL-ADIS` completes this process, LED1 will illuminate, indicating that it is time to launch the IMU Evaluation application. During the initialization process, several messages may appear on the screen. They are related to updating the :adi:`EVAL-ADIS` firmware and establishing communication between the PC and the :adi:`EVAL-ADIS`. Once LED1 lights up, double click on the IMU_Evaluation.exe file to launch the application.
+
+Main Window
+~~~~~~~~~~~
+
+Once the IMU Evaluation software starts-up, the Main Window will appear and look like the following picture. The second picture provides color-coded boxes to support further discussion of each function in this screen.
+
+|image16| |image17|
+
+The orange box identifies the drop-down menus, which provide a number of useful features. The **Devices** option provides a list of products. For :adi:`ADIS16210` Evaluation, click on **Devices** and then select **ADIS16210**. The green box shows the current device selection, which in this case, identifies the :adi:`ADIS16210` as the current selection.
+
+The **Register Access** option provides a listing of user-configurable registers in the :adi:`ADIS16210` and also provides read/write access to each one of these registers.
+
+The **Data Capture** option provides the core data collection function.
+
+The **Demos** option does not support the :adi:`ADIS16210`.
+
+The **Tools** option provides some diagnostic tools for the USB interface.
+
+The **About** option provides more detail software revision information.
+
+The purple box identifies the output registers, which update, real-time, after pressing the **Read** button (see the red box for the location of the **Read** button).
+
+The yellow box identifies the two waveform recorder windows. The top window contains the three gyroscope outputs. The bottom window contains the three accelerometer responses. Also, each waveform matches the color of its register (see register titles in the purple box).
+
+Register Access
+~~~~~~~~~~~~~~~
+
+The purpose of the **Register Access** window is to provide both read and write access to the user registers in the :adi:`ADIS16210`. The following picture shows the appearance of this window.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-imu-software-registers.png
+   :width: 800px
+
+The color coded boxes illustrate the different functions that this window provides.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-imu-software-registers-defined.png
+   :width: 800px
+
+The purple box identifies the register category. In addition to the Control/Status, this drop-down control offers access to **Output** and **Calibration** registers.
+
+The red box identifies all of the registers that are in the current category. Click on the register name to select a register for individual read/write access.
+
+The green box identifies the read/write control options for the current register selection. Use the hexadecimal format when writing commands to a particular register.
+
+The yellow box updates all the registers in the current category.
+
+APPLICATION TIP: The **Register Access** screen writes to user control registers, inside of the :adi:`ADIS16210`, two bytes at a time. So, when configuring a register, make sure to include the hexadecimal number for all 16-bits, before pressing the **Write Register** button. When using an embedded processor to write to user control registers, inside of the :adi:`ADIS16210`, each command (16-bits) writes to one byte at a time.
+
+Data Capture Menu
+~~~~~~~~~~~~~~~~~
+
+The Data Capture function supports synchronous data acquisition, based on the data-ready signal from the :adi:`ADIS16210`. The following picture represents the Data Capture window, right after opening it from the **Main Window** and the second picture provides color-coded boxes, in order to support further discussion of each function that is associated with this screen.
+
+|image18| |image19|
+
+The red box identifies all of the registers that are eligible for inclusion in the next acquisition process. Click on each box to include a register in the next data acquisition sequence. The box will have a check mark when it has been selected.
+
+The green box identifies the configuration box for the name and location of the data storage file.
+
+The yellow boxes identify a number of configuration options for the data acquisition process. The **Record Length** is a user input for the total number of samples in a data record. Note that all selected registers will have this number of samples in the data record file, after the acquisition process completes. After each update to the **Record Length** box, the software calculates the displays the total **Capture Time**. The **Add File Header** option allows the user to add or remove the header in the data storage file. The **Use Scaled Data** causes the software to convert the decimal, twos complement number into its representative value. The default setting for **Use Scaled Data**, option the gyroscope outputs will be in units of degrees/second.
+
+EXAMPLE EXERCISES
+~~~~~~~~~~~~~~~~~
+
+This section currently has no :adi:`ADIS16210`-specific content, but the :doc:`ADIS16448 Evaluation on the EVAL-ADIS Wiki Site </wiki-migration/resources/eval/user-guides/inertial-mems/imu/adis16448>` has some good examples to start with.
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228pcbz-mnt.png
+   :width: 300px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-part-dimensions.png
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-mating-connector.png
+   :width: 300px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228pcbz-schematic.png
+   :width: 400px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/228-pcbz-parts.png
+   :width: 600px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-pcbz-j2-slide1.png
+   :width: 400px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-pcbz-j2-slide2.png
+   :width: 400px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/eval-adis-210mnt-holes.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-eval-adis-unplugged-conn.png
+   :width: 500px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-mounted-to-eval-adis.png
+   :width: 500px
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-on-eval-adis-closeup.png
+   :width: 500px
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/sdp-driver-load1.png
+   :width: 400px
+.. |image13| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/sdp-driver-load2.png
+   :width: 400px
+.. |image14| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/sdp-driver-load3.png
+   :width: 400px
+.. |image15| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/sdp-driver-load4.png
+   :width: 400px
+.. |image16| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-imu-evaluation-main.png
+   :width: 800px
+.. |image17| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-imu-evaluation-main-defined.png
+   :width: 800px
+.. |image18| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-imu-software-data-capture.png
+   :width: 440px
+.. |image19| image:: https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/imu/210-imu-software-data-capture-defined.png
+   :width: 440px

@@ -1,0 +1,17 @@
+The :adi:`AD5781` is a single 18-bit, unbuffered voltage-output DAC that operates from a bipolar supply of up to 33 V. The :adi:`AD5781` accepts a positive reference input in the range 5V to VDD – 2.5 V and a negative reference input in the range VSS + 2.5 V to 0 V. The :adi:`AD5781` offers a relative accuracy specification of ±0.5 LSB max, and operation is guaranteed monotonic with a ±0.5 LSB DNL max specification.
+
+The part uses a versatile 3-wire serial interface that operates at clock rates up to 35 MHz and that is compatible with standard SPI®, QSPI™, MICROWIRE™, and DSP interface standards. The part incorporates a power-on reset circuit that ensures the DAC output powers up to 0 V and in a known output impedance state and remains in this state until a valid write to the device takes place. The part provides an output clamp feature that places the output in a defined load state.
+
+Applications
+============
+
+-  Medical Instrumentation
+-  Test and Measurement
+-  Industrial Control
+-  Scientific and Aerospace Instrumentation
+-  Data Acquisition Systems
+-  Digital Gain and Offset Adjustment
+-  Power Supply Control
+
+.. image:: https://wiki.analog.com/_media/resources/pmods/ad5781_pmod_da5.jpg
+   :align: center

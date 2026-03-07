@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Figure 1. ADIsim.dll Structure" name="description" />
+
+    <title>ADIsim Operational Simulator API &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ADIsim Operational Simulator API</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#structure">Structure</a></li>
+<li><a class="reference internal" href="#api">API</a><ul>
+<li><a class="reference internal" href="#physical-interface">Physical Interface</a><ul>
+<li><a class="reference internal" href="#concepts">Concepts</a></li>
+<li><a class="reference internal" href="#message-passing">Message Passing</a></li>
+<li><a class="reference internal" href="#modes">Modes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="adisim-operational-simulator-api">
+<h1>ADIsim Operational Simulator API<a class="headerlink" href="#adisim-operational-simulator-api" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The intent of this page is to document the API so that any client can interface with the ADIsim operational simulator.</div>
+<div class="line">The simulator supports the loading of product model files (PMF) to create product instances in memory. Any number of PMFs can be loaded (even duplicates) into memory concurrently. Upon loading a PMF, the client may set or retrieve information pertinent to that instance, such as setting a property value or querying the interface. The client may run a simulation of a model instance against some input vector. It is contingent upon the client to manage instances and to deallocate them upon completion of a simulation session (intermittent simulation calls of arbitrary length are permitted).</div>
+</div>
+</section>
+<section id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">Before the API can be documented, it is important to understand precisely what is loaded into memory and how the memory is structured. As stated in the Overview section, any number of PMFs may be loaded concurrently into memory. The client interface accesses instances through a unique identifier called a key.</div>
+<div class="line">Every model instance has at least one mode, but possibly more. A mode is used to encapsulate and describe unique product states of the device. Modes are typically high level (broad), full chip settings rather than the toggling of one particular setting. The client software can query the current mode setting, query other possible modes of operation, and set the desired mode.</div>
+<div class="line">For any given mode, the simulator model receives its behavior through a collection of processing blocks. Each block contains properties which, in turn, have access permissions (read, read/write, or hidden). Only those blocks which have pertinent properties to the software client (that is, read or read/write) are visible. If a block has only hidden properties then that block is hidden, as well. There is also a global block which contains settings for the simulation, such as input frequency or sampling rate.</div>
+<div class="line">See Figure 1 for a graphical representation.</div>
+<div class="line"><img alt="image1" src="https://wiki.analog.com/_media/resources/technical-guides/structure2.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 1. ADIsim.dll Structure</em></p>
+</div>
+</section>
+<section id="api">
+<h2>API<a class="headerlink" href="#api" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The API section is broken up into two subsections: DLL Interface and the Process Message Schema. The DLL Interface section documents how to interface physically to the ADIsim.dll. The Process Message Schema section documents how to interface logically to a model instance. The simulator was designed this way to preserve generitivity and provide extensibility.</div>
+</div>
+<section id="physical-interface">
+<h3>Physical Interface<a class="headerlink" href="#physical-interface" title="Link to this heading"></a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">ImportPMF</span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">filename</span><span class="p">);</span>
+
+
+<span class="o">|</span><span class="w"> </span><span class="o">*</span><span class="n">Description</span><span class="p">:</span><span class="o">*</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p>Takes the Product Model File (*.pmf) or ADC (*.adc) file addressed by filename to create a model instance into memory.</p>
+<div class="line-block">
+<div class="line"><em>Parameter(s):</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">filename</span></code> – string containing the PMF location.</p>
+<div class="line-block">
+<div class="line"><em>Returns:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">key</span></code> – reference to this model instance used in future functions.</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">Reset(int</span> <span class="pre">key);</span></code> <em>Description:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p>Resets the simulation conditions for this model instance.</p>
+<div class="line-block">
+<div class="line"><em>Parameter(s):</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">key</span></code> – instance index for PMF returned from <code class="docutils literal notranslate"><span class="pre">ImportPMF(…).</span></code></p>
+<div class="line-block">
+<div class="line"><em>Returns:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">success</span></code> – execution status of the function call.</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">RunSamples(double*</span> <span class="pre">in,</span> <span class="pre">double*</span> <span class="pre">out,</span> <span class="pre">long</span> <span class="pre">length,</span> <span class="pre">int</span> <span class="pre">key);</span></code> <em>Description:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p>Runs a multistep simulation on an array of input values for this model instance.</p>
+<div class="line-block">
+<div class="line"><em>Parameters:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">in</span></code> – pointer to the input value array.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p>If the input data type is real, <code class="docutils literal notranslate"><span class="pre">RunSamples(…)</span></code> expects an array of doubles, which captures the following relationship:</p>
+<div class="line-block">
+<div class="line">^ Value ^ Maps To ^</div>
+</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">in[0]</span></code></p></td>
+<td><p>real<sub>0</sub></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">in[1]</span></code></p></td>
+<td><p>real<sub>1</sub></p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">in[length-1]</span></code></p></td>
+<td><p>real:sub:<code class="docutils literal notranslate"><span class="pre">`length-1`</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p>If the input data type is complex, <code class="docutils literal notranslate"><span class="pre">RunSamples(…)</span></code> expects an array of interleaved doubles, which captures the following relationship:</p>
+<div class="line-block">
+<div class="line">^ Value ^ Maps To ^</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">out</span></code> – pointer to the output value array. It must be allocated by the client.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p>If the input data type is real, <code class="docutils literal notranslate"><span class="pre">RunSamples(…)</span></code> expects space for an array of doubles, which captures the following relationship:</p>
+<div class="line-block">
+<div class="line">^ Value ^ Maps To ^</div>
+</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>real<sub>0</sub></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">out[0]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>real<sub>1</sub></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">out[1]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-even"><td><p>real:sub:<code class="docutils literal notranslate"><span class="pre">`out_length-1`</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">out[out_length-1]</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p>If the input data type is complex, <code class="docutils literal notranslate"><span class="pre">RunSamples(…)</span></code> expects space for an array of interleaved doubles, which captures the following relationship:</p>
+<div class="line-block">
+<div class="line">^ Value ^ Maps To ^</div>
+</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>real<sub>0</sub></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">out[0]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>imag<sub>0</sub></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">out[1]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>real<sub>1</sub></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">out[2]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>imag<sub>1</sub></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">out[3]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-even"><td><p>real:sub:<code class="docutils literal notranslate"><span class="pre">`out_length-1`</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">out[2\*out_length-2]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>imag:sub:<code class="docutils literal notranslate"><span class="pre">`out_length-1`</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">out[2\*out_length-1]</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p>where:</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">out_length</span> <span class="pre">=</span> <span class="pre">ceil(length</span> <span class="pre">*</span> <span class="pre">(fout</span> <span class="pre">/</span> <span class="pre">fs)).</span></code></p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">fout</span></code> and <code class="docutils literal notranslate"><span class="pre">fs</span></code> are retrieved via <code class="docutils literal notranslate"><span class="pre">ProcessMessage(…)</span></code> and <code class="docutils literal notranslate"><span class="pre">ceil(…)</span></code> returns the next highest inclusive integer.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">length</span></code> – contains the number of simulation iterations to run.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">key</span></code> – instance index for PMF returned from <code class="docutils literal notranslate"><span class="pre">ImportPMF(…).</span></code></p>
+<div class="line-block">
+<div class="line"><em>Returns:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">success</span></code> – execution status of the function call.</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">RunSample(double*</span> <span class="pre">in,</span> <span class="pre">double*</span> <span class="pre">out,</span> <span class="pre">int</span> <span class="pre">key);</span></code> <em>Description:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p>Functionally equivalent to <code class="docutils literal notranslate"><span class="pre">RunSamples(in,</span> <span class="pre">out,</span> <span class="pre">1,</span> <span class="pre">key);</span></code></p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">GetPortCount(int*</span> <span class="pre">count,</span> <span class="pre">int</span> <span class="pre">port_direction,</span> <span class="pre">int</span> <span class="pre">key);</span></code> <em>Description:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p>Gets the number of inputs/outputs for this model instance.</p>
+<div class="line-block">
+<div class="line"><em>Parameter(s):</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">port_direction</span></code> – whether a port is an input or an output {0 : Input, 1: Output}.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">key</span></code> – instance index for PMF returned from <code class="docutils literal notranslate"><span class="pre">ImportPMF(…).</span></code></p>
+<div class="line-block">
+<div class="line"><em>Returns:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">count</span></code> – the port count.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">success</span></code> – execution status of the function call.</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">QueryPort(double*</span> <span class="pre">f,</span> <span class="pre">bool*</span> <span class="pre">is_complex,</span> <span class="pre">int*</span> <span class="pre">domain,</span> <span class="pre">char**</span> <span class="pre">unit,</span> <span class="pre">int</span> <span class="pre">port_direction,</span> <span class="pre">int</span> <span class="pre">port_index,</span> <span class="pre">int</span> <span class="pre">key);</span></code> <em>Description:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p>Gets information about the desired port for this model instance.</p>
+<div class="line-block">
+<div class="line"><em>Parameter(s):</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">port_direction</span></code> – whether a port is an input or an output {0 : Input, 1: Output}.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">port_index</span></code> – the port index.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">key</span></code> – instance index for PMF returned from <code class="docutils literal notranslate"><span class="pre">ImportPMF(…).</span></code></p>
+<div class="line-block">
+<div class="line"><em>Returns:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">f</span></code> – the port frequency.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">is_complex</span></code> – the port complexity.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">domain</span></code> – the port domain {0 : Unspecified, 1 : Analog, 2 : Digital}.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">unit</span></code> – the port unit (the string allocation is managed by MOTIF).</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">success</span></code> – execution status of the function call.</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">Destroy(int</span> <span class="pre">key);</span></code> <em>Description:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p>Deallocates model instance from memory.</p>
+<div class="line-block">
+<div class="line"><em>Parameter(s):</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">key</span></code> – instance index for PMF returned from <code class="docutils literal notranslate"><span class="pre">ImportPMF(…).</span></code></p>
+<div class="line-block">
+<div class="line"><em>Returns:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p>Nothing.</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">DestroyAll();</span></code> <em>Description:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p>Deallocates all model instances from memory.</p>
+<div class="line-block">
+<div class="line"><em>Parameter(s):</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p>None.</p>
+<div class="line-block">
+<div class="line"><em>Returns:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p>Nothing.</p>
+</div>
+<div class="line-block">
+<div class="line">==== Logical Interface ==== The generative design of the simulator requires a generic interface. Besides the above documented physical interface, there is a logical interface which is consistent across all models. The logical interface is further subdivided into two categories: concepts and message passing.</div>
+</div>
+<section id="concepts">
+<h4>Concepts<a class="headerlink" href="#concepts" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line">All models support a logical Rate Dependency interface. This means that every model will contain both a <code class="docutils literal notranslate"><span class="pre">fin</span></code> and <code class="docutils literal notranslate"><span class="pre">fout</span></code> property where:</div>
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">fin</span></code> – the rate of the incoming data</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">fout</span></code> – the rate of the outgoing data</p>
+</div>
+<div class="line-block">
+<div class="line">By computing the ratio <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">=</span> <span class="pre">fout</span> <span class="pre">/</span> <span class="pre">fin</span></code>, the user can determine the model’s total interpolation or decimation. This should be performed every time a logical property is changed to ensure that the external harness knows how to appropriately allocate memory. The exact mechanism for querying <code class="docutils literal notranslate"><span class="pre">fin</span></code> and <code class="docutils literal notranslate"><span class="pre">fout</span></code> is specified in the message passing section below.</div>
+<div class="line">Based on the model’s queried interface, there will be some domain associated with both the input and the output. Domains are restricted to either “analog” or “digital”.</div>
+<div class="line">If a model supports the “analog” domain, whether on the input, output, or both, it will always have a property <code class="docutils literal notranslate"><span class="pre">dt</span></code>.</div>
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">dt</span></code> – the delta time between sampled analog values</p>
+<div class="line-block">
+<div class="line">If a model supports the “digital” domain, whether on the input, output, or both, it will always have a property <code class="docutils literal notranslate"><span class="pre">fclk</span></code>.</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">fclk</span></code> – the frequency of the digital clock</p>
+<div class="line-block">
+<div class="line">If a model supports both “analog” and “digital” (and ADC or a DAC), it will always have a property <code class="docutils literal notranslate"><span class="pre">OSR</span></code>.</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">OSR</span></code> – the oversampling ratio from the digital to the analog domain</p>
+<div class="line-block">
+<div class="line">Some models support an additional parameter <code class="docutils literal notranslate"><span class="pre">tessitura</span></code>, which represents the expected mean frequency of the input data. This parameter is only necessary when a model is unable to infer the input frequency from context. The term is borrowed from music theory, where it refers to the center frequency at which a vocalist is most comfortable.</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">tessitura</span></code> - the expected mean frequency of the input data</p>
+</div>
+<div class="line-block">
+<div class="line">It is important to check the permission of the above property values for it may be that only one of them is mutable. This is determined when a model is loaded, or when a mode is changed.</div>
+<div class="line">A graphical representation of the logical model interface is shown in Figure 2 below:</div>
+<div class="line"><img alt="image2" src="https://wiki.analog.com/_media/resources/technical-guides/logical_model_concept.png" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 2: Logical Model Interface</em></p>
+</div>
+</section>
+<section id="message-passing">
+<h4>Message Passing<a class="headerlink" href="#message-passing" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line">A physical API command that enables logical message passing is provided through the following method:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">ProcessMessage(const</span> <span class="pre">char*</span> <span class="pre">msg,</span> <span class="pre">char**</span> <span class="pre">response,</span> <span class="pre">int</span> <span class="pre">key);</span></code> <em>Description:</em></div>
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p>Generic interface to inspect/modify model instance properties.</p>
+<div class="line-block">
+<div class="line"><em>Parameter(s):</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">msg</span></code> – message (in XML format) to send to the model instance.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">response</span></code> – Pointer to the internally allocated response message (in XML format).</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">key</span></code> – instance index for PMF returned from <code class="docutils literal notranslate"><span class="pre">ImportPMF(…).</span></code></p>
+<div class="line-block">
+<div class="line"><em>Returns:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">success</span></code> – execution status of the function call.</p>
+</div>
+<div class="line-block">
+<div class="line">All sent message content are children of the root element:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;adisim&gt;[command(s)]&lt;/adisim&gt;</span></code> All received message content are children of the root element:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;responses&gt;[answers(s)]&lt;/responses&gt;</span></code> Sent messages are composed of a series of atomic messages called commands. Commands perform a specific task understood by ADIsim.dll. Each sent message solicits a response that is called an answer.</div>
+</div>
+</section>
+<section id="modes">
+<h4>Modes<a class="headerlink" href="#modes" title="Link to this heading"></a></h4>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;setmode&gt;</span>[mode]<span class="nt">&lt;/setmode&gt;</span>
+
+
+|<span class="w"> </span>*Command<span class="w"> </span>element(s):*
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[mode]</span></code> – name of the mode you want to switch to.</p>
+<div class="line-block">
+<div class="line"><em>Answer:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">&lt;setmode</span> <span class="pre">s=”Success”</span> <span class="pre">/&gt;</span></code> – if <code class="docutils literal notranslate"><span class="pre">[mode]</span></code> is valid.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">&lt;setmode</span> <span class="pre">s=”Error”&gt;Cannot</span> <span class="pre">find</span> <span class="pre">mode:</span> <span class="pre">[mode]&lt;/setmode&gt;</span></code> – if <code class="docutils literal notranslate"><span class="pre">[mode]</span></code> is invalid.</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;getmode</span> <span class="pre">/&gt;</span></code> <em>Command element(s):</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p>None.</p>
+<div class="line-block">
+<div class="line"><em>Answer:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">&lt;getmode</span> <span class="pre">mdn=”[mode</span> <span class="pre">display</span> <span class="pre">name]”</span> <span class="pre">mn=”[mode</span> <span class="pre">name]”/&gt;</span></code></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="indent docutils container">
+<p>where:</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[mode</span> <span class="pre">display</span> <span class="pre">name]</span></code> – display name of the current mode.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[mode</span> <span class="pre">name]</span></code> – name of the current mode.</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;querymodes</span> <span class="pre">/&gt;</span></code> <em>Command element(s):</em></div>
+</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p>None.</p>
+<div class="line-block">
+<div class="line"><em>Answer:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">&lt;querymodes&gt;</span></code></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">&lt;mode</span> <span class="pre">mdn=”[mode</span> <span class="pre">display</span> <span class="pre">name1]”</span> <span class="pre">mn=”[mode</span> <span class="pre">name1]”/&gt;</span></code></p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">…</span></code></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">&lt;mode</span> <span class="pre">mdn=”[mode</span> <span class="pre">display</span> <span class="pre">nameN]”</span> <span class="pre">mn=”[mode</span> <span class="pre">nameN]”/&gt;</span></code></p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">&lt;/querymodes&gt;</span></code></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="indent docutils container">
+<p>where:</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[mode</span> <span class="pre">display</span> <span class="pre">name#]</span></code> – display name of this mode.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[mode</span> <span class="pre">name#]</span></code> – name of this mode.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line">=== Properties ===</div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;setprop</span><span class="w"> </span><span class="na">bn=</span><span class="s">”[block</span><span class="w"> </span><span class="err">name]”</span><span class="w"> </span><span class="na">pn=</span><span class="s">”[property</span><span class="w"> </span><span class="err">name]”</span><span class="nt">&gt;</span>[value]<span class="nt">&lt;/setprop&gt;</span>
+
+
+|<span class="w"> </span>*Command<span class="w"> </span>element(s):*
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[block</span> <span class="pre">name]</span></code> – name of the block to be indexed.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[property</span> <span class="pre">name]</span></code> – name of the property to set.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[value]</span></code> – value to assign to the property.</p>
+<div class="line-block">
+<div class="line"><em>Answer:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">&lt;setprop</span> <span class="pre">s=”Success”</span> <span class="pre">/&gt;</span></code> - if <code class="docutils literal notranslate"><span class="pre">[block</span> <span class="pre">name]</span></code> is found, <code class="docutils literal notranslate"><span class="pre">[property</span> <span class="pre">name]</span></code> is found.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">&lt;setprop</span> <span class="pre">s=”Error”&gt;Could</span> <span class="pre">not</span> <span class="pre">find</span> <span class="pre">block:</span> <span class="pre">[block</span> <span class="pre">name]&lt;/setprop&gt;</span></code> - if <code class="docutils literal notranslate"><span class="pre">[block</span> <span class="pre">name]</span></code> is not found.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">&lt;setprop</span> <span class="pre">s=”Error”&gt;Could</span> <span class="pre">not</span> <span class="pre">find</span> <span class="pre">property:</span> <span class="pre">[property</span> <span class="pre">name]&lt;/setprop&gt;</span></code> - if <code class="docutils literal notranslate"><span class="pre">[property</span> <span class="pre">name]</span></code> is not found.</p>
+</div>
+<div class="line-block">
+<div class="line">&lt;wrap&gt;Note: <code class="docutils literal notranslate"><span class="pre">ProcessMessage(…)</span></code> does not perform data validation through <code class="docutils literal notranslate"><span class="pre">&lt;setprop…&gt;</span></code>.&lt;/wrap&gt;</div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;getprop</span> <span class="pre">bn=”[block</span> <span class="pre">name]”</span> <span class="pre">pn=”[property</span> <span class="pre">name]”/&gt;</span></code> <em>Command element(s):</em></div>
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[block</span> <span class="pre">name]</span></code> – name of the block to be indexed.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[property</span> <span class="pre">name]</span></code> – name of the property to get.</p>
+<div class="line-block">
+<div class="line"><em>Answer:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">&lt;getprop</span> <span class="pre">pdn=”[property</span> <span class="pre">display</span> <span class="pre">name]”</span> <span class="pre">l=”[limits]”</span> <span class="pre">p=”[permissions]”</span> <span class="pre">t=”[type]”</span> <span class="pre">u=&quot;[unit]&quot;</span> <span class="pre">tt=&quot;[tooltip]&quot;&gt;[value]&lt;/getprop&gt;</span></code></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="indent docutils container">
+<p>if <code class="docutils literal notranslate"><span class="pre">[block</span> <span class="pre">name]</span></code> is found and <code class="docutils literal notranslate"><span class="pre">[property</span> <span class="pre">name]</span></code> is found:</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[property</span> <span class="pre">display</span> <span class="pre">name]</span></code> – display name of this property.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[property</span> <span class="pre">name]</span></code> – name of this property.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[limits]</span></code> – limits of valid values associated with this property.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><em>{elem0,elem1,…,elemM}</em> – set of valid values.</p>
+</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><em>[m,n]</em> – closed interval specifying a range of valid values.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><em>[m,n)</em> – half-open interval specifying a range of valid values.</p>
+</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[permissions]</span></code> – permission associated with this property.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><em>rw</em> – read/write.</p>
+</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><em>r</em> - read only.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[type]</span></code> – type associated with this property.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><em>int</em> – integer.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><em>double</em> – double.</p>
+</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><em>int*</em> - integer array.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><em>double*</em> - double array.</p>
+</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><em>string</em> – string.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><em>bool</em> – Boolean <em>{false, true}</em>.</p>
+</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[unit]</span></code> – unit associated with this property. Will be SI, descriptive (<em>e.g. “Codes”, “dB”, etc.</em>), or possibly blank.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[tooltip]</span></code> – tooltip associated with this property.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[value]</span></code> – value of this property.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<p>else:</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">&lt;getprop</span> <span class="pre">s=”Error”&gt;Could</span> <span class="pre">not</span> <span class="pre">find</span> <span class="pre">block:</span> <span class="pre">[block</span> <span class="pre">name]&lt;/getprop&gt;</span></code> - if <code class="docutils literal notranslate"><span class="pre">[block</span> <span class="pre">name]</span></code> is not found.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">&lt;getprop</span> <span class="pre">s=”Error”&gt;Could</span> <span class="pre">not</span> <span class="pre">find</span> <span class="pre">property:</span> <span class="pre">[property</span> <span class="pre">name]&lt;/getprop&gt;</span></code> - if <code class="docutils literal notranslate"><span class="pre">[property</span> <span class="pre">name]</span></code> is not found.</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;queryprops</span> <span class="pre">/&gt;</span></code> <em>Command element(s):</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p>None.</p>
+<div class="line-block">
+<div class="line"><em>Answer:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">&lt;queryprops&gt;</span></code></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">&lt;prop</span> <span class="pre">bdn=”[block</span> <span class="pre">display</span> <span class="pre">name1]”</span> <span class="pre">bn=”[block</span> <span class="pre">name1]”</span> <span class="pre">pdn=”[property</span> <span class="pre">display</span> <span class="pre">name1]”</span> <span class="pre">pn=”[property</span> <span class="pre">name1]”</span> <span class="pre">l=”[limits1]”</span> <span class="pre">p=”[permissions1]”</span> <span class="pre">t=”[type1]”</span> <span class="pre">u=&quot;[unit1]&quot;</span> <span class="pre">tt=&quot;[tooltip1]&quot;&gt;[value1]&lt;/prop&gt;</span></code></p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">…</span></code></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">&lt;prop</span> <span class="pre">bdn=”[block</span> <span class="pre">display</span> <span class="pre">nameN]”</span> <span class="pre">bn=”[block</span> <span class="pre">nameN]”</span> <span class="pre">pdn=”[property</span> <span class="pre">display</span> <span class="pre">nameN]”</span> <span class="pre">pn=”[property</span> <span class="pre">nameN]”</span> <span class="pre">l=”[limitsN]”</span> <span class="pre">p=”[permissionsN]”</span> <span class="pre">t=”[typeN]”</span> <span class="pre">u=&quot;[unitN]&quot;</span> <span class="pre">tt=&quot;[tooltipN]&quot;&gt;[valueN]&lt;/prop&gt;</span></code></p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">&lt;/queryprops&gt;</span></code></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="indent docutils container">
+<p>where:</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[block</span> <span class="pre">display</span> <span class="pre">name#]</span></code> – display name of this block.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[block</span> <span class="pre">name#]</span></code> – name of this block.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[property</span> <span class="pre">display</span> <span class="pre">name#]</span></code> – display name of this property.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[property</span> <span class="pre">name#]</span></code> – name of this property.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[limits#]</span></code> – limits of valid values associated with this property.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><em>{elem0,elem1,…,elemM}</em> – a set of valid values.</p>
+</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><em>[m,n]</em> – closed interval specifying a range of valid values.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><em>[m,n)</em> – half-open interval specifying a range of valid values.</p>
+</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[permissions#]</span></code> – permission associated with this property.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><em>rw</em> – read/write.</p>
+</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><em>r</em> - read only.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[type#]</span></code> – type associated with this property.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><em>int</em> – integer.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><em>double</em> – double.</p>
+</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><em>int*</em> - integer array.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><em>double*</em> - double array.</p>
+</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><em>string</em> – string.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><em>bool</em> – Boolean <em>{false,true}</em>.</p>
+</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[unit#]</span></code> – unit associated with this property. Will be SI, descriptive (<em>e.g. “Codes”, “dB”, etc.</em>), or possibly blank.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[tooltip#]</span></code> – tooltip associated with this property.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[value#]</span></code> – value of this property.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line">=== Other ===</div>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;queryinterface</span><span class="w"> </span><span class="nt">/&gt;</span>
+
+
+|<span class="w"> </span>*Command<span class="w"> </span>element(s):*
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p>None.</p>
+<div class="line-block">
+<div class="line"><em>Answer:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">&lt;queryinterface&gt;&lt;in</span> <span class="pre">domain=”[input</span> <span class="pre">domain]”</span> <span class="pre">fin=”[input</span> <span class="pre">frequency]”</span> <span class="pre">is_complex=”[is</span> <span class="pre">input</span> <span class="pre">complex]”</span> <span class="pre">unit=”[input</span> <span class="pre">unit]”/&gt;&lt;out</span> <span class="pre">domain=”[output</span> <span class="pre">domain]”</span> <span class="pre">fout=”[output</span> <span class="pre">frequency]”</span> <span class="pre">is_complex=”[is</span> <span class="pre">output</span> <span class="pre">complex]”</span> <span class="pre">unit=”[output</span> <span class="pre">unit]”/&gt;&lt;/queryinterface&gt;</span></code></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="indent docutils container">
+<p>where:</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[input</span> <span class="pre">(output)</span> <span class="pre">domain]</span></code> – <em>{analog, digital}</em> indicating the analog or digital nature of the input (output).</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[input</span> <span class="pre">(output)</span> <span class="pre">frequency]</span></code> – indicating the reciprocal of the time step between input (output) data points.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[is</span> <span class="pre">input</span> <span class="pre">(output)</span> <span class="pre">complex]</span></code> – <em>{false, true}</em> indicating whether input (output) data are complex or real numbers.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[input</span> <span class="pre">(output)</span> <span class="pre">unit]</span></code> – indicating the units associated with the input (output) data.</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;queryversion</span> <span class="pre">/&gt;</span></code> <em>Command element(s):</em></div>
+</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p>None.</p>
+<div class="line-block">
+<div class="line"><em>Answer:</em></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">&lt;queryversion</span> <span class="pre">dllversion=”[dll</span> <span class="pre">version]”</span> <span class="pre">pmfversion=”[pmf</span> <span class="pre">version]”/&gt;</span></code></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="indent docutils container">
+<p>where:</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[dll</span> <span class="pre">version]</span></code> – version of the ADIsim.dll.</p>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="indent docutils container">
+<div class="indent docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">[pmf</span> <span class="pre">version]</span></code> – version of the Product Model file (model).</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

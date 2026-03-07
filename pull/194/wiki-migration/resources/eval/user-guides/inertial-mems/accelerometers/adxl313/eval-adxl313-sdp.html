@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Flexible inertial sensor evaluation platform" name="description" />
+
+    <title>EVAL-ADXL313-SDP User Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">EVAL-ADXL313-SDP User Guide</a><ul>
+<li><a class="reference internal" href="#features">FEATURES</a></li>
+<li><a class="reference internal" href="#general-description">GENERAL DESCRIPTION</a></li>
+<li><a class="reference internal" href="#setting-up-the-evaluation-system">SETTING UP THE EVALUATION SYSTEM</a><ul>
+<li><a class="reference internal" href="#quick-start">QUICK START</a></li>
+<li><a class="reference internal" href="#software-startup">SOFTWARE STARTUP</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#adxl313-graphical-user-interface">ADXL313 GRAPHICAL USER INTERFACE</a><ul>
+<li><a class="reference internal" href="#getting-started">GETTING STARTED</a><ul>
+<li><a class="reference internal" href="#memory-register-map">Memory Register Map</a></li>
+<li><a class="reference internal" href="#software-reset">Software Reset</a></li>
+<li><a class="reference internal" href="#hardware-reset">Hardware Reset</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#device-overview-tab">DEVICE OVERVIEW TAB</a></li>
+<li><a class="reference internal" href="#data-record-tab">DATA RECORD TAB</a></li>
+<li><a class="reference internal" href="#fifo-analysis-tab">FIFO ANALYSIS TAB</a></li>
+<li><a class="reference internal" href="#auto-sleep-tab">AUTO-SLEEP TAB</a></li>
+<li><a class="reference internal" href="#tilt-measurement-tab">TILT MEASUREMENT TAB</a></li>
+<li><a class="reference internal" href="#self-test-tab">SELF-TEST TAB</a></li>
+<li><a class="reference internal" href="#power-cycle-tab">POWER CYCLE TAB</a></li>
+<li><a class="reference internal" href="#turn-on-analysis-tab">TURN-ON ANALYSIS TAB</a></li>
+<li><a class="reference internal" href="#mosi-command-generator-tab">MOSI COMMAND GENERATOR TAB</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="eval-adxl313-sdp-user-guide">
+<h1>EVAL-ADXL313-SDP User Guide<a class="headerlink" href="#eval-adxl313-sdp-user-guide" title="Link to this heading"></a></h1>
+<section id="features">
+<h2>FEATURES<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Flexible inertial sensor evaluation platform</p></li>
+<li><p>Controller board and interface board operate with interchangeable evaluation boards</p></li>
+<li><p>Separates device under test (DUT) from controller for accurate environmental testing</p></li>
+<li><p>Data capture at maximum device output data rate (ODR)</p></li>
+<li><p>Continuous stream to file data recording</p></li>
+<li><p>Standard USB cable for power and communications</p></li>
+<li><p>PC-based graphical user interface (GUI)</p></li>
+<li><p>Fast, easy installation</p></li>
+</ul>
+</section>
+<section id="general-description">
+<h2>GENERAL DESCRIPTION<a class="headerlink" href="#general-description" title="Link to this heading"></a></h2>
+<p>This user guide describes the evaluation software that interfaces with the ADXL313 accelerometer. For more information on performance details, see the ADXL313 datasheet. The EVAL-SDP-CB1Z is the serial system demonstration platform controller board from Analog Devices, Inc. The SDP-B is part of the Analog Devices system demonstration platform (SDP). SDP controller boards provide a means of communicating with the sensor from the PC. The EVAL-SDP-INTERZ is an SDP interface board. This board serves as an interposer between the SDP controller board and the evaluation board. The interface board is designed to be compatible with various Analog Devices inertial sensor evaluation boards. The EVAL-ADXL313-SDP is an evaluation board that is separate from the interface board to allow easier manipulation of the device for testing (that is, rotating the device around its sensitive axis). The evaluation board is connected to the interface board via a 10-pin cable connector. This user guide provides an overview of how to use the application software. The functionality of the software is described with examples provided where appropriate. Figure 1 shows the required hardware.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl31x-sdp-hw-inbox.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl31x-sdp-hw-inbox.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl31x-sdp-hw-inbox.jpg" style="width: 400px;" />
+</a>
+<div class="center lo docutils container">
+<p><strong>Figure 1:</strong> what is included in the kit? a) One EVAL-SDP-CB1Z, b) One EVAL-SDP-INTERZ board, c) One EVAL-ADXL313Z board, d) One Standard A to Mini B USB cable, e) Two 10-pin Harwin Datamate L-Tek cable to board connectors, f) One 10-pin Harwin Datamate L-Tek cable connector.</p>
+</div>
+</section>
+<section id="setting-up-the-evaluation-system">
+<h2>SETTING UP THE EVALUATION SYSTEM<a class="headerlink" href="#setting-up-the-evaluation-system" title="Link to this heading"></a></h2>
+<section id="quick-start">
+<h3>QUICK START<a class="headerlink" href="#quick-start" title="Link to this heading"></a></h3>
+<p>To configure the hardware, follow these steps:</p>
+<ul class="simple">
+<li><p>Install the application software provided (part of the component evaluation package).</p></li>
+<li><p>Connect the EVAL-ADXL313Z to the interface board (EVAL-SDP-INTERZ) using the 10-pin cable connector provided.</p></li>
+<li><p>Connect the SDP interface board to the SDP-B controller board by clipping the 120-pin connectors together (see Figure 2).</p></li>
+<li><p>Connect the Mini B USB cable to the SDP-B controller board and plug the opposite end of the USB cable into the PC. At this point, the set up should look like the one in Figure 3.</p></li>
+<li><p>Start the application software.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl31x-sdp_assembly1.png"><img alt="image1" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl31x-sdp_assembly1.png" style="width: 400px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 2:</strong> Correctly Connected Controller Board and Interface Board: Underside of Controller Board (Left) to Top of Interface Board (Right).</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl31x-sdp_assembly2.png"><img alt="image2" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl31x-sdp_assembly2.png" style="width: 400px;" /></a></p>
+</div>
+<div class="center lo docutils container">
+<p><strong>Figure 3:</strong> Fully Assembled Evaluation System.</p>
+</div>
+</section>
+<section id="software-startup">
+<h3>SOFTWARE STARTUP<a class="headerlink" href="#software-startup" title="Link to this heading"></a></h3>
+<p>When the software first starts, it will ask the user to specify which interface board is being used. There are three revisions of this board (Rev 1 and Rev 2). The user can determine which board you are using by looking at the label in the lower right corner. It will say “SDP Interface Board” (which is Rev 1) or “SDP Interface Board Rev. 2” (which is Rev 2). The user can also look at the 6 digits identifier to determine which revision board you have. 301-522 is the Rev 1 board, 301-621 is the Rev 2 board.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl31x-sdp_swstart1.png"><img alt="image3" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl31x-sdp_swstart1.png" style="width: 400px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 4:</strong> Software Startup - Hardware Select.</p>
+</div>
+</section>
+</section>
+<section id="adxl313-graphical-user-interface">
+<h2>ADXL313 GRAPHICAL USER INTERFACE<a class="headerlink" href="#adxl313-graphical-user-interface" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_main.png"><img alt="image4" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_main.png" style="width: 1000px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 5:</strong> ADXL313 Evaluation Software Startup.</p>
+</div>
+<section id="getting-started">
+<h3>GETTING STARTED<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h3>
+<p>The ADXL313 Customer Evaluation System provide an easy start evaluating the sensor performance. The graphic user interface is divided into separate tabs, each of which specializes in commonly performed measurements for accelerometer devices. In this way, the evaluation system offers users an immediate ability to capture data for a wide variety of tests without the need to develop a customized hardware and software solution.</p>
+<p>A brief description of the functionality contained within the evaluation environment is presented in Table 1.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl31x-sdp_gui_table_overview.png"><img alt="image5" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl31x-sdp_gui_table_overview.png" style="width: 700px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Table 1:</strong> Evaluation Environment Overview.</p>
+</div>
+<p>On each tab, the <strong>Start Data Acquisition</strong> and <strong>Stop Data Acquisition</strong> buttons are the primary ways the user acquires data from the device. Click <strong>QUIT PROGRAM</strong> located in the lower right of the start-up window to exit the software at any time. Other functionalities shared by all tabs are:</p>
+<section id="memory-register-map">
+<h4>Memory Register Map<a class="headerlink" href="#memory-register-map" title="Link to this heading"></a></h4>
+<p>Provides the ability to read the memory register or to take a snapshot of the current memory register values. Click the Read Register Map button for a snapshot of the current memory register values (see Figure 6). This also updates the serial number and device ID.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_regmap.png"><img alt="image6" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_regmap.png" style="width: 250px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 6:</strong> ADXL313 Memory Map and Identification Information.</p>
+</div>
+</section>
+<section id="software-reset">
+<h4>Software Reset<a class="headerlink" href="#software-reset" title="Link to this heading"></a></h4>
+<p>As described in the ADXL313 data sheet, a software reset command resets the ADXL313 and clears all user applied settings. This returns the part to its default configuration. For example, if the data rate was set to 3200Hz, a software reset will change the data rate to 100Hz (the default). Click the** RESTORE DEFAULT CONFIGURATION** button (see Figure 7) to perform a software reset of the ADXL313 device. The software reset command can be issued at any time when the software is not busy performing another action. It is important to note that a software reset will also return the part to standby mode. To read acceleration data from the part, it must be placed in measurement mode.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_swreset.png"><img alt="image7" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_swreset.png" style="width: 400px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 7:</strong> SOFTWARE RESET Control.</p>
+</div>
+</section>
+<section id="hardware-reset">
+<h4>Hardware Reset<a class="headerlink" href="#hardware-reset" title="Link to this heading"></a></h4>
+<p>To perform a hardware reset of the ADXL313, click the <strong>HARDWARE RESET</strong> button (see Figure 8). This turns off power to the device. Power off can be observed by monitoring the power LED to the left of the HARDWARE RESET button. If the LED is off, power to the device is off. After power has been off for 5 sec, power is restored. It is important to note that a hardware reset will also return the part to standby mode. To read acceleration data from the part, it must be placed in measurement mode.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_hwreset.png"><img alt="image8" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_hwreset.png" style="width: 400px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 8:</strong> HARDWARE RESET Control.</p>
+</div>
+<p>The following sections describe the purpose of each tab of the software.</p>
+</section>
+</section>
+<section id="device-overview-tab">
+<h3>DEVICE OVERVIEW TAB<a class="headerlink" href="#device-overview-tab" title="Link to this heading"></a></h3>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_deviceoverview1.png"><img alt="image9" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_deviceoverview1.png" style="width: 1000px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 9:</strong> Device Overview Tab.</p>
+</div>
+<p>The Device Overview tab is a good way to become familiar with how the device operates. This tab contains all of the controls to configure the part. For example, when the part first turns on, it powers up in standby mode. The ADXL313 powers up in standby mode to minimize power consumption. To exit standby mode, look at the Power Settings control. Change the mode from standby to measurement mode (see Figure 10 below).</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_deviceoverview_powermode.png"><img alt="image10" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_deviceoverview_powermode.png" style="width: 400px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 10:</strong> Standby to Measurement Mode.</p>
+</div>
+<p>It is recommended that the part be placed in Full resolution mode (see Figure 11).</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_deviceoverview_resolution.png"><img alt="image11" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_deviceoverview_resolution.png" style="width: 400px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 11:</strong> Data Format - Resolution.</p>
+</div>
+<p>The range should also be set to a value that allows a 1g field without clipping the signal (see Figure 12).</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_deviceoverview_range.png"><img alt="image12" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_deviceoverview_range.png" style="width: 400px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 12:</strong> Data Format - Range.</p>
+</div>
+<p>Once the part is in Measurement mode, click the Start Data Acquisition button to stream data from the device. The device then continuously streams data until the Stop Data Acquisition button is clicked. The user can experiment by moving the device around to observe the response. The ADXL313 contains a 3-axis accelerometer, meaning the device is sensitive to acceleration in any direction. See Figure 13 for reference.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl31x-sdp_xlaxesorientation.png"><img alt="image13" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl31x-sdp_xlaxesorientation.png" style="width: 200px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 13:</strong> Axes of Acceleration Sensitivity (Corresponding Output Increases When Accelerated Along the Sensitive Axis).</p>
+</div>
+<p>The ADXL313 has many user configurable settings to customize its operation for various applications. Configuring the ADXL313 is as simple as selecting the desired option from the drop-down menu.</p>
+<p>Table 2 shows a summary of the device controls and states for each control. Default settings are shown in bold.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_deviceoverview_outputsettingstable.png"><img alt="image14" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_deviceoverview_outputsettingstable.png" style="width: 600px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Table 2:</strong> Device Output Settings (default settings shown in bold).</p>
+</div>
+<p>Select the configuration option to dynamically update the ADXL313 device. For example, changing the sleep data rate from 8 Hz to 1 Hz, as shown in Figure 14, updates the ADXL313 register map immediately. This way, the ADXL313 Memory Map clearly shows how the bits correspond to the applied configuration. For more information on the register map, see the ADXL313 data sheet.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl314-sdp_gui_configs2reg.png"><img alt="image15" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl314-sdp_gui_configs2reg.png" style="width: 400px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 14:</strong> Changing Sleep Data Rate and its effect on the Registers.</p>
+</div>
+<p>There are five interrupts that can be present in the ADXL313 and each corresponds to a different event. These are the DATA_READY, Activity, Inactivity, Watermark, and Overrun interrupts. For a detailed definition of each of these interrupts, see the ADXL313 datasheet.</p>
+<p>Figure 15 shows the interrupt controls for INT_ENABLE and INT_MAP as well as the indicators for INT_SOURCE. The INT_ENABLE controls have two states, enabled and disabled. These are all disabled by default. The INT_ENABLE controls determine whether the interrupts can be generated. The INT_MAP controls determine whether the interrupt is mapped to the INT1 or INT2 pin (see device pinout in the ADXL313 datasheet). Each interrupt is mapped to INT1 by default. The INT_SOURCE indicators will each light up when its corresponding interrupt is present.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl31x-sdp_gui_intsettings.png"><img alt="image16" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl31x-sdp_gui_intsettings.png" style="width: 400px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 15:</strong> Interrupt Settings example. The rounded LEDs show the INT_SORCE register current status. The</p>
+</div>
+<p>For example, in Figure 15 the DATA_READY, Watermark, and Overrun interrupts are all present since each of their LEDs is on. However, only DATA_READY and Watermark interrupt are enabled. In this case with DATA_READY mapped to INT1 and Watermark mapped to INT2. Notice that even though the Overrun interrupt is present (since its LED indicator is on), it is not mapped to any pin because its INT_ENABLE control is disabled.</p>
+<p>The interrupt controls can be configured many different ways for various applications including the Auto-Sleep mode. There are two ways to place the ADXL313 into Auto-Sleep mode in the Overview Tab. The first is to enable the Auto-Sleep and Link dropdown menus. The Activity and Inactivity interrupts must also be enabled by clicking on them. The second way is to click on the Auto-Sleep Disabled button. The button will highlight and change to Auto-Sleep Enabled. Either method accomplishes the same thing: the part is now in auto-sleep mode. Figure 16 shows how the controls should look when Auto-Sleep is enabled. Note that the Activity and Inactivity thresholds still need to be set in order for Auto-Sleep mode to function correctly. The Figure 16 shows an example of the device fully configured on Auto-Sleep mode.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_deviceoverview_autosleep2.png"><img alt="image17" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_deviceoverview_autosleep2.png" style="width: 750px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 16:</strong> Interrupt Settings example. The rounded LEDs show the INT_SORCE register current status.</p>
+</div>
+</section>
+<section id="data-record-tab">
+<h3>DATA RECORD TAB<a class="headerlink" href="#data-record-tab" title="Link to this heading"></a></h3>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_datarec1.png"><img alt="image18" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_datarec1.png" style="width: 800px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 17:</strong> Data Record Tab.</p>
+</div>
+<p>The Data Record tab allows the user to measure and record acceleration data. The data is acquired at a user specified data rate and is shown on the plot (see Figure 17). The data is then saved to a text file with the date, time, and device ID recorded as a header. To specify the file path, click the small folder icon under Directory to Save File and browse to the desired folder. If an existing file is selected, data is appended to the end of the file. The user can choose a data rate from 6.25 Hz to 3200 Hz with the Data Rate Select control (see Figure 18).</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_datarec_rates.png"><img alt="image19" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_datarec_rates.png" style="width: 400px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 18:</strong> Data Rate Select Control.</p>
+</div>
+<p>Figure 19 shows the Match Data Rate control. This tab will acquire data at the rate specified in the Data Rate Select control (100 Hz in this case). When the Match Data Rate control is checked, this tab will match the data rate when the part is in in auto-sleep mode. In other words, when the part is in normal mode, the program will acquire data at 100 Hz. However, when the part is in sleep mode, the program will only acquire data at an 8 Hz data rate to reflect that the part is generating data at a much lower data rate.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_datarec_matchdr.png"><img alt="image20" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_datarec_matchdr.png" style="width: 400px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 19:</strong> Match Data Rate Control.</p>
+</div>
+<p>Each time the Start Data Acquisition button is clicked, the program starts recording the data to a text file. To select the Directory to Save File, click the folder icon and navigate to the desired folder (see Figure 20). If no directory is specified, the program uses the directory of the current applications as a default. The file name can be specified in the control (see Figure 20). If a file with that name already exists, the data is appended to the end of that file.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_datarec_filepath.png"><img alt="image21" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_datarec_filepath.png" style="width: 800px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 20:</strong> File Directory and File Name Controls.</p>
+</div>
+</section>
+<section id="fifo-analysis-tab">
+<h3>FIFO ANALYSIS TAB<a class="headerlink" href="#fifo-analysis-tab" title="Link to this heading"></a></h3>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_fifo1.png"><img alt="image22" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_fifo1.png" style="width: 800px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 21:</strong> FIFO Analysis Tab.</p>
+</div>
+<p>The FIFO Analysis tab demonstrates the various FIFO modes available to the ADXL313. FIFO (or First In, First Out) is a method for utilizing a data buffer to prevent loss of data. The user can understand how the different FIFO modes operate by experimenting with the FIFO Demo function. To do this:</p>
+<ul class="simple">
+<li><p>Ensure that the Enable FIFO Demo control is checked. Set the Data Sampling Rate control toward the Slower sampling side of the scroll bar. Make sure it looks similar to Figure 22 below.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_fifo_dsr1.png"><img alt="image23" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_fifo_dsr1.png" style="width: 300px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 22:</strong> FIFO Demo Controls.</p>
+</div>
+<ul class="simple">
+<li><p>Ensure that the part is in FIFO mode or Stream mode (not Bypass mode) using the FIFO settings control (Figure 23).</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_fifo_modecontrol.png"><img alt="image24" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_fifo_modecontrol.png" style="width: 300px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 23:</strong> FIFO Mode Control.</p>
+</div>
+<ul class="simple">
+<li><p>Set the FIFO Samples to 16 in FIFO Settings (see Figure 24). The FIFO samples indicator and the FIFO control register will automatically update to this value.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_fifo_samplecontrol.png"><img alt="image25" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_fifo_samplecontrol.png" style="width: 750px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 24:</strong> FIFO Samples Control – Updates FIFO Samples Indicator (left) and Memory Register, 0x38 FIFO_CTL (right).</p>
+</div>
+<p>The FIFO Entries indicator is a direct reading of the FIFO entries bits (Register FIFO_STATUS, Address 0x39, bits [5:0). This indicator reports how many data values are stored in the FIFO. The FIFO stores a maximum of 32 entries, which equates to a maximum of 33 entries available at a given time because an additional entry is available at the output filter of the device. Click Start Data Acquisition. The FIFO Entries indicator will be full, since the part is generating data much faster than the program is requesting data from the part. It should look similar to Figure 24.</p>
+<p>When the FIFO is full, the watermark and overrun interrupts will be set and their respective LED indicators will be on. The watermark bit is set when the number of samples in the FIFO equals the value stored in the samples bits (Register FIFO_CTL, Address 0x38, bits [4:0]) The overrun bit is set when new data replaces unread data. The overrun bit is automatically cleared when the contents of the FIFO are read.</p>
+<p>Next, increase the Data Sampling Rate by moving the scroll bar further toward the Faster sampling side as shown in Figure 25.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_fifo_dsr2.png"><img alt="image26" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_fifo_dsr2.png" style="width: 300px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 25:</strong> FIFO Demo - Controlling Data Sampling Rate.</p>
+</div>
+<p>The user will see the FIFO Entries value slowly start to decrease. The software is now requesting data slightly faster than the ADXL314 is generating new data. The program is now requesting data faster than the part is generating data. Watch as the FIFO Entries value approaches the FIFO Samples value. As long as the FIFO Entries value is greater than or equal to the FIFO Samples value, the watermark bit will be set. As soon as the FIFO Entries drops below the FIFO samples value, the watermark bit will be cleared (see Figure 26).</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl314-sdp_gui_fifotab_watermark2.png"><img alt="image27" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl314-sdp_gui_fifotab_watermark2.png" style="width: 500px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 26:</strong> FIFO Demo - Watermark Interrupt.</p>
+</div>
+<p>Now to actually record data from the part using FIFO, disable (uncheck) the Enable FIFO Demo control. This will disable the FIFO demo and will enable FIFO data recording. The software will now request data 5% faster than the set data rate. If the data rate is set to 100 Hz, data will be sampled from the part at a 105 Hz rate. This will ensure that no data is lost. Data can be recorded in FIFO or Stream mode. FIFO Trigger mode operates differently from the other FIFO modes. This mode collects data centered around an event. This event is triggered by a user defined interrupt.</p>
+<p>Complete the following steps to configure the ADXL313 to operate in FIFO Trigger mode as shown in Figure 27:</p>
+<ul class="simple">
+<li><p>Set the Activity Threshold to 0.3g. Note that it will auto-correct to 0.296875g since this value increments in 15.625mg steps.</p></li>
+<li><p>Set the Activity/Inactivity Threshold Coupling to AC coupling.</p></li>
+<li><p>Enable the x-axis Activity/Inactivity Interrupts.</p></li>
+<li><p>Enable the Activity Interrupt from the INT_ENABLE register.</p></li>
+<li><p>Set the interrupt to INT2 (INT_MAP register). When the trigger event occurs, it will send the interrupt to the INT2 pin.</p></li>
+<li><p>Set FIFO mode to Trigger.</p></li>
+<li><p>Set the Trigger source to INT2. When the event occurs, the ADXL313 will look for the trigger in the INT2 pin.</p></li>
+<li><p>Set the Samples control to 5. This will save 5 data points before the event occurs.</p></li>
+</ul>
+<p>Now that the ADXL313 is configured, click Start Data Acquisition. Data will be continuously streamed from the ADXL314 until the activity interrupt is triggered. Immediately following this, the ADXL314 will keep the last 5 samples (set in the Samples control) and will then enter FIFO mode. It will then collect another 27 data points immediately following the trigger event. In this way, the ADXL313 will record 5 data points before the event and 27 data points after the event (for a total of 32 data points).</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_fifo_triggermode.png"><img alt="image28" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_fifo_triggermode.png" style="width: 800px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 27:</strong> FIFO Trigger Mode Example.</p>
+</div>
+<p>Figure 28 shows example data while operating in FIFO Trigger mode. The software streams data from the part until an event is triggered. As soon as the x-axis output increases by more than 3.9g, an activity interrupt is generated and mapped to the INT2 pin. The FIFO settings are set to look at INT2 for the trigger event. As soon as the event occurs the FIFO saves the 5 most recent data points. It then collects another 27 data points to show the output of the part following the trigger event. Data is saved automatically while the test is running. The program creates a header with the date, time stamp, and device ID. The program then records x-, y-, and z-axis acceleration data, INT_SOURCE, FIFO Entries, and FIFO Trigger bit value. Specify the File Path and the file name in the controls at the bottom of the tab. If no directory is entered, the program defaults to the current application directory.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_fifo_triggerevent.png"><img alt="image29" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_fifo_triggerevent.png" style="width: 800px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 28:</strong> FIFO Trigger Mode - Event data.</p>
+</div>
+<p>Trigger must be reset after each trigger event, to do so press the Reset Trigger on FIFO settings Control.</p>
+</section>
+<section id="auto-sleep-tab">
+<h3>AUTO-SLEEP TAB<a class="headerlink" href="#auto-sleep-tab" title="Link to this heading"></a></h3>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_autosleep1.png"><img alt="image30" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_autosleep1.png" style="width: 800px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 29:</strong> Auto-Sleep Tab.</p>
+</div>
+<p>The Auto-Sleep tab demonstrates how the auto-sleep mode operates. This feature is very useful for low power consumption applications. The ADXL313 can enter a low power state when it is idle. It can be programmed to wake up when activity is detected (i.e. when the acceleration data changes). The user can configure the part a variety of ways to determine exactly when the part enters sleep mode and when it wakes up. There is a Status indicator in the bottom right corner of this panel (see Figure 29). This indicator will show whether the ADXL313 is operating in Normal Mode (LED is off) or Sleep Mode (LED is on).</p>
+<p>In order for the ADXL313 to know when to enter sleep mode and when to wake up, activity and inactivity thresholds must be set. These can be set in the <strong>Activity Thresholds</strong> Control in the bottom left corner of the panel (see Figure 29).</p>
+<p>The Activity Threshold determines how much acceleration the part must experience before waking up. If the part is operating in sleep mode, one of the axes must experience 0.3g’s of acceleration to wake up and enter normal operating mode. The Inactivity Threshold determines when the ADXL313 enters sleep mode. When the part experiences less than 0.3g’s of acceleration for 3 seconds (the Inactivity Time), the part enters sleep mode. The data output rate and current consumption decrease significantly. Once the activity/inactivity thresholds are set, the interrupts must still be enabled for each axis. For example, assume that only the x- and y-axes are important for the application. Click the X-Enabled and the Y-Enabled controls to enable these interrupts as shown in Figure 29. To operate correctly, both the Activity Interrupt and Inactivity Interrupt controls must be enabled. In this configuration, only acceleration data in the x- and y-axes is relevant for determining whether the part is in normal or sleep mode. The z-axis is completely irrelevant since its activity and inactivity interrupts are disabled.</p>
+<p>Note that the plot can get a little cluttered when too many axes are plotted. If desired, the user can change the plot visibility by right clicking on a plot in the legend. Click on the Plot Visible option to enable or disable that axis (see Figure 30).</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_autosleep_plotcontrol.png"><img alt="image31" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_autosleep_plotcontrol.png" style="width: 400px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 30:</strong> Control Plot Visibility.</p>
+</div>
+<p>Figure 31 shows the part with Auto-Sleep enabled. In this example, the x-axis and y-axis activity/inactivity interrupts are enabled. This means that only the x- and y-axis outputs will determine whether the part is in normal mode or sleep mode. The z-axis is irrelevant in determining the sleep state in this configuration. For this reason, the z-axis is not plotted to improve visibility of the plot (right click on the legend&gt;Plot visible). In this example the part is already in sleep mode. This can be seen by looking at the Status indicator which will say “Sleep mode” or “Normal Mode”. In addition the background of the plot will darken to indicate that the part is in sleep mode. The Activity and Inactivity thresholds are set to 0.3 g.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_autosleep_sleepmode.png"><img alt="image32" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_autosleep_sleepmode.png" style="width: 750px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 31:</strong> Auto-Sleep Enabled for Two Axes - Sleep Mode Example.</p>
+</div>
+<p>DC threshold coupling is used so the detection levels are at ±0.3g. This means that if either the x-axis or y-axis acceleration exceeds 0.3g magnitude, the part will wake up and exit sleep mode. This is shown in Figure 32 below. The y-axis acceleration exceeds 0.3 g’s and the activity interrupt is generated, waking the part up. Note that the Status indicator now shows “Normal Mode” and the plot background is white. In order to enter sleep mode again, both the x- and y-axis outputs must have magnitudes less than 0.3g.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_autosleep_wakeup.png"><img alt="image33" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_autosleep_wakeup.png" style="width: 750px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 32:</strong> Auto-Sleep Enabled for Two Axes - Wake-up Example.</p>
+</div>
+<p>Note that the black horizontal lines indicate DC thresholds. Blue, red, or green horizontal lines indicate AC thresholds. Figure 33 shows the part with Auto-Sleep enabled. In this example, only the x-axis activity/inactivity interrupts is enabled. This means that only the x-axis output will determine whether the part is in normal mode or sleep mode.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_autosleep_sleepmodeac.png"><img alt="image34" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_autosleep_sleepmodeac.png" style="width: 750px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 33:</strong> Auto-Sleep Enabled for Single Axis - Sleep Mode Example.</p>
+</div>
+<p>The y- and z-axis outputs are irrelevant in determining the sleep state in this configuration. For this reason, the y- and z-axis are not plotted to improve visibility of the plot (right click on the legend&gt;Plot visible). In this example the part is already in sleep mode. This can be seen by looking at the Status indicator which will say “Sleep mode” or “Normal Mode”. In addition the background of the plot will darken to indicate that the part is in sleep mode. The Activity and Inactivity thresholds are set to 0.3 g. AC threshold coupling is used so the detection levels are at ±0.3g. Unlike DC coupling, these thresholds are not centered around 0g. Instead they are centered around the output acceleration when the auto-sleep mode was activated. In this example the thresholds are set at 0.2g and 0.8g. Therefore when the auto-sleep was activated, the x-axis output was 0.56g. As long as the x-axis remains within ±0.3g’s of 0.5g, the part will remain in sleep mode. As soon as the x-axis exceeds either of the thresholds, the part will wake up and enter normal mode. It is easy to see the value of operating in AC coupling mode.</p>
+<p>Consider a car that has parked on a hill at an angle greater than 17.5o. The part can still remain in sleep mode even though it is parked on a slope (and therefore, has a output greater than 0.3g since sin(17.5o) = 0.3g). By using AC coupling, the part can still wake up and set off a car alarm if it is tampered with. This can include shock and vibrations or tilting of the vehicle. Figure 34 shows the part waking up when the x-axis output drops below the 0.26g threshold. Note that as soon as this happens, the part wakes up and the AC thresholds are reset around this new value. The part will then return to sleep mode when the x-axis output remains inside this new threshold level for the inactivity time (3 seconds in this example).</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_autosleep_wakeupac.png"><img alt="image35" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_autosleep_wakeupac.png" style="width: 750px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 34:</strong> Auto-Sleep Enabled for Single Axis - Wake up Example.</p>
+</div>
+<p>The new AC thresholds are -0.15g and 0.45g. This corresponds to ±0.3g centered around 0.15g (the value at the instant the ADXL313 wakes up). The thresholds will update any time the acceleration exceeds the AC thresholds. Note that the activity and inactivity thresholds need not be set to the same value. This was done here for simplicity. However, the inactivity threshold should always be less than or equal to the activity threshold for the auto-sleep to function properly.</p>
+</section>
+<section id="tilt-measurement-tab">
+<h3>TILT MEASUREMENT TAB<a class="headerlink" href="#tilt-measurement-tab" title="Link to this heading"></a></h3>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_tilt1.png"><img alt="image36" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_tilt1.png" style="width: 800px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 35:</strong> Tilt Measurement Tab.</p>
+</div>
+<p>The ADXL313 is a 3-axis accelerometer, and as such can provide inclination sensing. Data is acquired at the user specified data rate. The x-, y-, and z-axis acceleration data is plotted in real time on the main chart. The software acquires data for 250ms, averages the results, and plots the average value on the main chart. In other words, each data point is an average of 250ms of data from the part. In addition, the two images in the lower right corner show the front view and the side view of an example vehicle. This give a more visual representation of the inclination data. If more accurate results are desired, the software allows calibration of the ADXL313. Click the Calibrate XL button to begin. Following this, a series of 6 pop-up dialog boxes will appear. Follow the instructions in these dialog boxes. They will instruct you to hold the evaluation board in specific orientations such that each axis is exposed to a ±1g field. An offset and sensitivity calibration coefficient is then created for each axis. The following example provides clarity on the process.</p>
+<ul class="simple">
+<li><p>Place the x-axis in a +1g field. Hold the evaluation board vertically on a flat surface as shown on the left side of Figure 36.</p></li>
+<li><p>Click OK and hold the part still for 1 second.</p></li>
+<li><p>Reorient the part as shown in the next dialog box.</p></li>
+<li><p>Repeat until all 6 measurements have been completed.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl314-sdp_gui_tilttab_caliborientation.png"><img alt="image37" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl314-sdp_gui_tilttab_caliborientation.png" style="width: 300px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 36:</strong> Calibration Orientation. X-axis 1g field (left), Z-axis 1g field (right).</p>
+</div>
+<p>Using the y-axis as an example, the measured outputs when the y-axis was placed in a ±1g field were as follows:</p>
+<p><span class="math notranslate nohighlight">\(XL_{out+1g}=0.97956g\)</span></p>
+<p><span class="math notranslate nohighlight">\(XL_{out-1g}=-1.034g\)</span></p>
+<p>Therefore, the offset can be calculated according to the following formula:</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle Offset=XL_{out+1g}+XL_{out-1g}/2 = 0.97956+\frac{-1.034}{2} = -27.22 mg\)</span></p>
+<p>And the sensitivity can be calculated according to the following formula:</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle Sensitivity= XL_{out+1g}-XL_{out-1g}/2 = 0.97956-\frac{-1.034}{2} = 1.007 g/g\)</span></p>
+<p>This demonstrates how the values in Figure 37 were calculated.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_tilt_calibration.png"><img alt="image38" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_tilt_calibration.png" style="width: 400px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 37:</strong> Calibration Results.</p>
+</div>
+</section>
+<section id="self-test-tab">
+<h3>SELF-TEST TAB<a class="headerlink" href="#self-test-tab" title="Link to this heading"></a></h3>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_selftest.png"><img alt="image39" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_selftest.png" style="width: 800px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 38:</strong> Self-Test Tab.</p>
+</div>
+<p>The ADXL313 incorporates a self test feature that effectively tests its mechanical and electronic systems simultaneously. When the self test function is enabled, an electrostatic force is exerted on the mechanical sensor. This electrostatic force moves the mechanical sensing element in the same manner as acceleration, and it is additive to the acceleration experienced by the device. This added electrostatic force results in an output change in the x-, y-, and z-axes. This Self Test tab demonstrates how this function operates for each axis. Once the Start Data Acquisition button is clicked, the software acquires one second of data from the ADXL313 at the user specified data rate.</p>
+<ul class="simple">
+<li><p>For the first 250ms, the self test feature is disabled (default state).</p></li>
+<li><p>At 250ms the self test bit is asserted, and the self test function begins. An electrostatic force is applied to the beam. This causes the output to shift as shown in Figure 38.</p></li>
+<li><p>The self test bit is asserted for 500ms.</p></li>
+<li><p>At 750ms the self test bit is de-asserted and the device output return to normal.</p></li>
+</ul>
+<p>Acceptable values for self test output are shown in Table 3.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_selftest_table.png"><img alt="image40" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_selftest_table.png" style="width: 400px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Table 3:</strong> Self-Test Output in g’s (TA = 25°C, 2.0 ≤ VS ≤ 3.6).</p>
+</div>
+</section>
+<section id="power-cycle-tab">
+<h3>POWER CYCLE TAB<a class="headerlink" href="#power-cycle-tab" title="Link to this heading"></a></h3>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_powercycle.png"><img alt="image41" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_powercycle.png" style="width: 800px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 39:</strong> Power Cycle Tab.</p>
+</div>
+<p>Use the Power Cycle tab to determine the turn-on to turn-on variability of the ADXL313. The device undergoes a hardware reset followed by a series of internal diagnostic routines to ensure the integrity of its various signal chains. Following these procedures, acquisition of acceleration information from the MEMS sensors begins. This will continue until the software has completed the number of cycles specified by the user. Or if the Run Continuously box was checked, the software will run until the Stop Data Acquisition button is clicked.</p>
+<p>Using the Power Cycle Controls, specify the off time, the on time, and the number of power cycles. The off time sets the length of time that power to the device is turned off. Following this, power is restored and data is acquired for the specified length of time. The average value is then plotted on the graph. The output from each inertial channel is plotted after each power cycle.</p>
+<p>Figure 39 shows example settings for these controls. In this example, each cycle begins by turning power off for 250ms then turning power on and acquiring data for 500ms. This 500ms of data is then averaged together and plotted on the main chart as a single point.</p>
+<p>If the Run Continuously box is unchecked, the software will cycle the power 50 times and then stop. If the Run Continuously box is checked, the Set Number of Power Cycles control will be disabled and greyed out. The software will then continue cycling the power and acquiring data until the Stop Data Acquisition button is clicked.</p>
+<p>After each cycle, the current data is updated in the Current Data table to the left of the Power Cycle Controls (see Figure 39). This table includes information from the most recent cycle for each inertial channel.</p>
+</section>
+<section id="turn-on-analysis-tab">
+<h3>TURN-ON ANALYSIS TAB<a class="headerlink" href="#turn-on-analysis-tab" title="Link to this heading"></a></h3>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_turnonanalysis.png"><img alt="image42" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_turnonanalysis.png" style="width: 800px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 40:</strong> Turn-On Analysis Tab.</p>
+</div>
+<p>In addition to the bias stability from one power cycle to the next, it is important to understand the device behavior at the moment power is applied to the device. The Turn-on Analysis tab demonstrates the transient response when the device first powers up. The user can select two types of resets, hardware and software. A hardware reset turns power to the device off for 5 sec. Power is then restored and data is acquired at the user specified data rate. A software reset issues the appropriate command to reset the device without removing power.</p>
+<p>Following this, acquisition of acceleration information from the MEMS sensor begins. Figure 40 shows an example of the turn-on characteristics of the ADXL313 after a software reset. The Select Turn-on Method control selects whether a hardware or software reset is performed. In each case 500ms of data is acquired to demonstrate the turn-on behavior of the ADXL313.</p>
+</section>
+<section id="mosi-command-generator-tab">
+<h3>MOSI COMMAND GENERATOR TAB<a class="headerlink" href="#mosi-command-generator-tab" title="Link to this heading"></a></h3>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_mosi.png"><img alt="image43" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl313/eval-adxl313-sdp_gui_mosi.png" style="width: 800px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 41:</strong> MOSI Command Generator Tab.</p>
+</div>
+<p>The MOSI Command Generator tab is a useful tool for quickly generating any read or write command for the ADXL313 with the correct CRC. Click a choice from the Select Memory Register drop down menu to select the desired register to read or write to (see Figure 42).</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl314-sdp_gui_commandgentab_memoryreg.png"><img alt="image44" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl314-sdp_gui_commandgentab_memoryreg.png" style="width: 400px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 42:</strong> Select Memory Register Control.</p>
+</div>
+<p>Select READ or WRITE from the Command Type drop down menu (see Figure 43).</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl314-sdp_gui_commandgentab_cmdtype.png"><img alt="image45" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl314-sdp_gui_commandgentab_cmdtype.png" style="width: 400px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 43:</strong> Command Type Control.</p>
+</div>
+<p>Figure 44 shows an example of a MOSI write command to write a value of 0x1F to the x-axis offset register (OFSX, Register 0x1E). For this device, the value of 0x1F written to OFSX register, adds a +0.1209g offset to the x-axis. Thus, in a 0g field the x-axis will still output 0.1209g. Click the Calculate MOSI Command button to update the Full MOSI Command output shown on the right side of Figure 44 (0x00001E1F).</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl314-sdp_gui_commandgentab_writecmd.png"><img alt="image46" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl314-sdp_gui_commandgentab_writecmd.png" style="width: 400px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 44:</strong> Write Command to Control Register 0x1E (OFSX).</p>
+</div>
+<p>Press Start Acquisition data button if you wish to visualize the MOSI command created on the ADXL313 Register Map. The OFSX register will now display the offset added to the x-axis output as shown in the Figure 45.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl314-sdp_gui_commandgentab_regvalue.png"><img alt="image47" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl314-sdp_gui_commandgentab_regvalue.png" style="width: 400px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 45:</strong> Write Value of 0x1F to OFSX Register.</p>
+</div>
+<p>Figure 46 explains what each field of the MOSI command represents for a write command. A ‘0’ in the most significant digit (shown in green) indicates that this is a MOSI write command. The address field (shown in orange) is 6 bits long and indicates to which address the write command is addressed. The last 8 bits (shown in blue) contain the write data to be written to the register specified in the address field. The example in Figure 46 shows a write command to register 0x27 (ACT_INACT_CTL).</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl314-sdp_gui_commandgentab_cmdwrite.png"><img alt="image48" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl314-sdp_gui_commandgentab_cmdwrite.png" style="width: 400px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 46:</strong> Explanation of MOSI Write Command Fields.</p>
+</div>
+<p>Figure 47 explains what each field of the MOSI command represents for a read command. A ‘1’ in the most significant digit indicates that this is a MOSI read command. The next digit is the multi-byte read. If this digit is ‘0’, the command will read a single register specified by the address field. In the example in Figure 47, a multi-byte read starting with address 0x32 (DATA_X0). If 5 more bytes of 0’s are sent after this, the MISO response will contain read data of all the inertial data channels (DATA_X0 to DATA_Z1). In this way, acceleration data from x-, y-, and z-axis channels can be read with a single command.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl314-sdp_gui_commandgentab_cmdread.png"><img alt="image49" src="https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl314/eval-adxl314-sdp_gui_commandgentab_cmdread.png" style="width: 400px;" /></a></p>
+<div class="center lo docutils container">
+<p><strong>Figure 47:</strong> Explanation of MOSI Read Command and MISO Response.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

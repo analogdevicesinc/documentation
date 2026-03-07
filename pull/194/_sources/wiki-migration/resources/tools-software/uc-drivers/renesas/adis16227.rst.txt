@@ -1,0 +1,243 @@
+ADIS16227 - Microcontroller No-OS Driver
+========================================
+
+Supported Devices
+-----------------
+
+-  :adi:`ADIS16227`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`ADIS16227/PCBZ <EVAL-ADIS16227>`
+
+Overview
+--------
+
+The :adi:`ADIS16227` iSensor® is a complete vibration sensing system that combines wide bandwidth, triaxial acceleration sensing with advanced time domain and frequency domain signal processing. Time domain signal processing includes a programmable decimation filter and selectable windowing function. Frequency domain processing includes a 512 point, real-valued FFT for each axis, along with FFT averaging, which reduces the noise floor variation for finer resolution. The 16-record FFT storage system offers users the ability to track changes over time and to capture FFTs with multiple decimation filter settings.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adis16227_pcbz.jpg
+   :align: center
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`_
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the ADIS16227 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the ADIS16227 driver can be used exactly as it is provided. There are three functions which are called by the ADIS16227 driver:
+
+-  SPI_Init() – initializes the communication peripheral.
+-  SPI_Write() – writes data to the device.
+-  SPI_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   Driver architecture
+
+
+The implementation of these three functions depends on the used microcontroller.
+
+The following functions are implemented in this version of ADIS16227 driver:
+
++---------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| Function                                                                                                                                    | Description                                                             |
++=============================================================================================================================================+=========================================================================+
+| unsigned short ADIS16227_GetRegister16Value(unsigned char registerAddress)                                                                  | Reads the value of a register.                                          |
++---------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| void ADIS16227_SetRegister8Value(unsigned char registerAddress, unsigned char registerValue)                                                | Writes 1 byte into a register.                                          |
++---------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| void ADIS16227_SetRegister16Value(unsigned char registerAddress, unsigned short registerValue)                                              | Writes 2 bytes into a register.                                         |
++---------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| unsigned char ADIS16227_Init(void)                                                                                                          | Initializes the SPI and checks if the ADIS16227 part is present.        |
++---------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| void ADIS16227_ConfigCapture(unsigned char window, unsigned char sampleRate, unsigned char pwrDwn, unsigned char range, unsigned char mode) | Configures the ADIS16227_REC_CTRL register.                             |
++---------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| unsigned char ADIS16227_DataReady(void)                                                                                                     | Reads the value of the "Data ready/busy" bit (DIAG_STAT register).      |
++---------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| void ADIS16227_Capture(void)                                                                                                                | Initiates a manual data capture and wait until the process is finished. |
++---------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| void ADIS16227_GetBuffers(unsigned short\* x, unsigned short\* y, unsigned short\* z, unsigned short samplesNumber)                         | Reads "samplesNumber" samples from each axis's buffer.                  |
++---------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| unsigned short ADIS16227_GetPowerSupplyInfo(void)                                                                                           | Reads the power supply voltage and returns the data in mV.              |
++---------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| char ADIS16227_GetTemperatureInfo(void)                                                                                                     | Reads the internal temperature and returns the data in degrees Celsius. |
++---------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+
+Downloads
+---------
+
+-  `ADIS16227 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adis16227_generic.zip>`_
+-  `ADIS16227 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adis16227_rl78g13.zip>`_
+-  `ADIS16227 RX62N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adis16227_rx62n.zip>`_
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the ADIS16227 demonstration project on a Renesas RL78G13 platform.
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+-  :adi:`ADIS16227/PCBZ (Analog Devices) <ADIS16227>`
+
+Required Software
+-----------------
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`_
+-  `Applilet4 for RL78G13 <https://www.renesas.com/us/en/software-tool/ap4-applilet>`_
+
+Hardware Setup
+--------------
+
+An ADIS16227/PCBZ board has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+
+::
+
+     ADIS16227/PCBZ J1 connector Pin 3 (CS)   → YRDKRL78G13 PMOD1 connector Pin 1
+     ADIS16227/PCBZ J1 connector Pin 6 (MOSI) → YRDKRL78G13 PMOD1 connector Pin 2
+     ADIS16227/PCBZ J1 connector Pin 4 (MISO) → YRDKRL78G13 PMOD1 connector Pin 3
+     ADIS16227/PCBZ J1 connector Pin 2 (SCLK) → YRDKRL78G13 PMOD1 connector Pin 4
+     ADIS16227/PCBZ J1 connector Pin 1 (RST)  → YRDKRL78G13 PMOD1 connector Pin 8
+     ADIS16227/PCBZ J1 connector Pin 7 (GND)  → YRDKRL78G13 PMOD1 connector Pin 11
+     ADIS16227/PCBZ J1 connector Pin 10 (VCC) → YRDKRL78G13 PMOD1 connector Pin 12
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adis16227_pcbz_rl78g13.jpg
+   :align: center
+
+Software Setup
+--------------
+
+With the **Applilet3 for RL78G13** tool the following peripherals have to be configured:
+
+CSI10 (Clocked Serial Interface 10) – For the ADIS16227 part and the ST7579 LCD
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Choose to generate the Transmit/receive function for the CSI10 and configure the interface with the following settings:
+
+-  Transfer mode setting: **Single transfer mode**
+-  Data length setting : **8 bits**
+-  Transfer direction setting: **MSB**
+-  Specification of data timing: **Type 1**
+-  Transfer rate setting – Clock mode: **Internal clock (master)**
+-  Transfer rate setting – Baudrate: **1000000** (bps)
+-  Interrupt setting – Transfer interrupt priority (INTCSI10): **Low**
+-  Uncheck the callback functions.
+
+TM00 (Timer 00) – For the DelayMs() function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Configure TM00 as an interval timer:
+
+-  Interval timer setting - Interval value(16 bits): **1** ms
+-  Interval timer setting - Uncheck *Generates INTM00 when counting is started*
+-  Interrupt setting - Uncheck // End of timer channel 0 count, generate an interrupt (INTM00)//
+
+Watchdog Timer
+~~~~~~~~~~~~~~
+
+Disable the watchdog timer:
+
+-  Choose for the Watchdog timer operation setting: **Unused** option.
+
+Reference Project Overview
+--------------------------
+
+The reference project runs an offset correction operation, configures the REC_CTRL register and initiates a Manual Time recording. After the process is finished on the LCD are displayed the internal temperature, the power supply voltage and the first value of each axis's buffer.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adis16227_pcbz_rl78g13_screen.jpg
+   :align: center
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `rl78g13_software_tutorial <https://wiki.analog.com/rl78g13_software_tutorial>`_
+
+
+Renesas RX62N Quick Start Guide
+===============================
+
+This section contains a description of the steps required to run the ADIS16227 demonstration project on a Renesas RX62N platform.
+
+.. _required-hardware-1:
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RX62N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx62n-yrdkrx62n-demonstration-kit-rx62n>`_
+-  :adi:`ADIS16227/PCBZ (Analog Devices) <ADIS16227>`
+
+.. _required-software-1:
+
+Required Software
+-----------------
+
+-  `High-performance Embedded Workshop for RX62N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`_
+-  `Renesas Peripheral Driver Library for RX62N family <https://www.renesas.com/us/en/software-tool/renesas-peripheral-driver-library>`_
+
+.. _hardware-setup-1:
+
+Hardware Setup
+--------------
+
+An ADIS16227/PCBZ board has to be interfaced with the Renesas Demonstration Kit (RDK) for RX62N:
+
+::
+
+     ADIS16227/PCBZ J1 connector Pin 3 (CS)   → YRDKRX62N J8 connector Pin 15
+     ADIS16227/PCBZ J1 connector Pin 6 (MOSI) → YRDKRX62N J8 connector Pin 19
+     ADIS16227/PCBZ J1 connector Pin 4 (MISO) → YRDKRX62N J8 connector Pin 22
+     ADIS16227/PCBZ J1 connector Pin 2 (SCLK) → YRDKRX62N J8 connector Pin 20
+     ADIS16227/PCBZ J1 connector Pin 1 (RST)  → YRDKRX62N JN1 connector Pin 16
+     ADIS16227/PCBZ J1 connector Pin 7 (GND)  → YRDKRX62N J8 connector Pin 4
+     ADIS16227/PCBZ J1 connector Pin 10 (VCC) → YRDKRX62N J8 connector Pin 3
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adis16227_rx62n.jpg
+   :align: center
+
+.. _reference-project-overview-1:
+
+Reference Project Overview
+--------------------------
+
+The reference project runs an offset correction operation, configures the REC_CTRL register and initiates a Manual Time recording. After the process is finished on the LCD are displayed the internal temperature, the power supply voltage and the first value of each axis's buffer.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/adis16227_rx62n_screen.jpg
+   :align: center
+
+.. _software-project-setup-1:
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `rx62n_software_design <https://wiki.analog.com/rx62n_software_design>`_
+
+
+More information
+================
+
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`_
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png

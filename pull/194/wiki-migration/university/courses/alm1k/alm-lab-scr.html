@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The objective of this Lab activity is to examine the structure and operation of the Silicon Controlled Rectifier or SCR. SCRs are mainly used in devices where the control of high power, possibly at high voltage, is needed. The ability to switch large currents on and off makes the SCR suitable for use in medium to high-voltage AC power control applications, such as lamp dimming, regulators and motor control. In addition, unintentional SCRs can form in integrated circuits and when these SCRs get triggered circuit malfunction or even reliability problems and damage can result." name="description" />
+
+    <title>Activity: Silicon Controlled Rectifiers (SCR) - ADALM1000 &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Activity: Silicon Controlled Rectifiers (SCR) - ADALM1000</a><ul>
+<li><a class="reference internal" href="#objective">Objective:</a></li>
+<li><a class="reference internal" href="#notes">Notes:</a></li>
+<li><a class="reference internal" href="#background">Background:</a><ul>
+<li><a class="reference internal" href="#materials">Materials:</a></li>
+<li><a class="reference internal" href="#directions">Directions:</a></li>
+<li><a class="reference internal" href="#hardware-setup">Hardware Setup:</a></li>
+<li><a class="reference internal" href="#procedure">Procedure:</a></li>
+<li><a class="reference internal" href="#questions">Questions:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#unintentional-parasitic-scrs-in-integrated-circuits">Unintentional parasitic SCRs in Integrated circuits</a><ul>
+<li><a class="reference internal" href="#latch-up">LATCH-UP</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#programmable-ujt-put">Programmable UJT (PUT).</a><ul>
+<li><a class="reference internal" href="#put-characteristics">PUT characteristics.</a></li>
+<li><a class="reference internal" href="#directions-1">Directions:</a></li>
+<li><a class="reference internal" href="#procedure-1">Procedure:</a></li>
+<li><a class="reference internal" href="#put-relaxation-oscillator">PUT relaxation oscillator.</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ramp-generator">Ramp Generator:</a><ul>
+<li><a class="reference internal" href="#materials-1">Materials:</a></li>
+<li><a class="reference internal" href="#directions-2">Directions:</a></li>
+<li><a class="reference internal" href="#procedure-2">Procedure:</a></li>
+<li><a class="reference internal" href="#questions-1">Questions:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stair-step-waveform-generator">Stair Step Waveform Generator:</a><ul>
+<li><a class="reference internal" href="#procedure-3">Procedure:</a></li>
+<li><a class="reference internal" href="#questions-2">Questions:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="activity-silicon-controlled-rectifiers-scr-adalm1000">
+<h1>Activity: Silicon Controlled Rectifiers (SCR) - ADALM1000<a class="headerlink" href="#activity-silicon-controlled-rectifiers-scr-adalm1000" title="Link to this heading"></a></h1>
+<section id="objective">
+<h2>Objective:<a class="headerlink" href="#objective" title="Link to this heading"></a></h2>
+<p>The objective of this Lab activity is to examine the structure and operation of the Silicon Controlled Rectifier or SCR. SCRs are mainly used in devices where the control of high power, possibly at high voltage, is needed. The ability to switch large currents on and off makes the SCR suitable for use in medium to high-voltage AC power control applications, such as lamp dimming, regulators and motor control. In addition, unintentional SCRs can form in integrated circuits and when these SCRs get triggered circuit malfunction or even reliability problems and damage can result.</p>
+</section>
+<section id="notes">
+<h2>Notes:<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
+<p>As in all the ALM labs we use the following terminology when referring to the connections to the M1000 connector and configuring the hardware. The green shaded rectangles indicate connections to the M1000 analog I/O connector. The analog I/O channel pins are referred to as CA and CB. When configured to force voltage / measure current -V is added as in CA-V or when configured to force current / measure voltage -I is added as in CA-I. When a channel is configured in the high impedance mode to only measure voltage -H is added as CA-H. In this Lab you will be using one of the channels of the ALM1000 in the split Input / Output mode. CB-Out is used to denote the connection to the Output pin and CB-In is used to denote the Input pin on the (expanded) 8 pin connector.</p>
+<p>Scope traces are similarly referred to by channel and voltage / current. Such as CA-V , CB-V for the voltage waveforms and CA-I , CB-I for the current waveforms.</p>
+</section>
+<section id="background">
+<h2>Background:<a class="headerlink" href="#background" title="Link to this heading"></a></h2>
+<p>A silicon controlled rectifier (SCR) is a four-layer solid state current controlling device with 3 terminals. They have anode and cathode terminals like a conventional diode and a third control terminal, referred to as the Gate. SCRs are unidirectional devices, i.e. they conduct current only in one direction like a diode or rectifier. SCRs are triggered only by currents going into the gate. The SCR combines the rectifying features of diodes and the On - Off control features of transistors.</p>
+<p>SCRs are generally used in power switching applications. In the normal OFF state, the device restricts current flow to the leakage current. When the gate-to-cathode current exceeds a certain threshold, the device turns ON and conducts current. The SCR will remain in the ON state even after gate current is removed so long as the current through the device exceeds the holding current. Once the current falls below the holding current for a period of time, the device will switch OFF. If the gate is pulsed and the current through the device is below the latching current, the device will remain in the OFF state.</p>
+<p>Looking at figure 1(a), the four layer structure of the SCR, we see the three terminals, one from the outer p-type layer called the anode A, the second from the outer n-type layer called the cathode K and the third from the base of the lower NPN transistor section and is called gate G.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f1.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f1.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f1.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 1 SCR Equivalent Circuit</p>
+</div>
+<p>The SCR, as shown in figure 1(b), can be visualized as separated into two transistors. The equivalent circuit of an SCR is composed of a PNP transistor and an NPN transistor interconnected as shown in figure 1(c). We see that the collector of each transistor is connected to the base of the other, forming a positive feedback loop.</p>
+<p>The SCR has two stable states. The first is the non-conducting OFF state. With the Gate terminal open let us first assume that no current is flowing into the base terminal of NPN transistor Q<sub>2</sub>. Given zero base current the collector current of Q<sub>2</sub> will also be zero. Given zero collector for Q<sub>2</sub> we infer that there should be zero current flowing out of the base of PNP transistor Q<sub>1</sub>. Given zero base current in Q<sub>1</sub> we infer that there should be zero collector current in Q<sub>1</sub>. This is consistent with our original assumption of zero current in the base of Q<sub>2</sub>. With zero collector current ( and zero base current ) in both Q<sub>1</sub> and Q<sub>2</sub> we can infer that there should be no emitter current in either transistor as well. This zero current OFF state is stable so long as any leakage current through Q<sub>1</sub> or Q<sub>2</sub> from emitter to collector is very small.</p>
+<p>The second stable state is the conducting ON state. We can transition or switch the SCR from the OFF state to the ON state by injecting a small current into the Gate terminal. Going through the same procedure around the loop we just did for the off state we can see that as soon as a base current is supplied to Q<sub>2</sub>, a larger collector current ( ß<sub>NPN</sub> times the base current ) will start to flow. This Q<sub>2</sub> collector current becomes base current for Q<sub>1</sub>. This base current in Q<sub>1</sub> produces again a larger collector current ( ß<sub>PNP</sub> times the base current ) in Q<sub>1</sub>. The collector current of Q<sub>1</sub> feeds back into the base of Q<sub>2</sub> increasing its base current even more. Once this feedback loop of current is established the initial gate current can be removed and the SCR will remain in the conducting ON state for as long as the external circuit around the SCR supplies current through the SCR. The only way to turn off the SCR is for the current to drop below a critical “holding” current level.</p>
+<p>An observation to note about this positive feedback loop is that it will hold the SCR ON and remain in this latched state as long as the following is true:</p>
+<p><span class="math notranslate nohighlight">\(ß_PNP \times ß_NPN =&gt; 1\)</span></p>
+<p>The voltage drop across the SCR from terminal A to K when the SCR is conducting is the sum of Q<sub>1VBE</sub> and Q<sub>2VCESAT</sub> in parallel with the sum of Q<sub>2VBE</sub> and Q<sub>1VCESAT</sub> . We know that the ß of BJT devices falls as the collector base junction is forward biased into the saturation region i.e V<sub>CE</sub> less than V<sub>BE</sub>. The V<sub>CE</sub> of the two transistors will drop until the above positive feedback gain equation is satisfied and ß<sub>PNP</sub> * ß<sub>NPN</sub> is equal to 1.</p>
+<p>It is also important to note that the ß of BJT transistors is very low for very small values of collector current and from the above equation, the SCR will remain in the OFF state so long as the leakage current is so small that ß<sub>PNP</sub> * ß<sub>NPN</sub> is less than 1 at this low leakage current level.</p>
+<p>The Analog Parts Kit does not include an SCR but we can emulate one by building the equivalent circuit shown in figure 1(c) from discrete PNP and NPN transistors.</p>
+<section id="materials">
+<h3>Materials:<a class="headerlink" href="#materials" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">ADALM1000 hardware module</div>
+<div class="line">Solder-less Breadboard and jumper wire kit</div>
+<div class="line">1 - 1 KΩ Resistor</div>
+<div class="line">1 - 100 Ω Resistor</div>
+<div class="line">2 - 100 KΩ Resistors</div>
+<div class="line">1 - 0.1 uF capacitor (marked 104)</div>
+<div class="line">1 - small signal NPN transistor (2N3904)</div>
+<div class="line">1 - small signal PNP transistor (2N3906)</div>
+</div>
+</section>
+<section id="directions">
+<h3>Directions:<a class="headerlink" href="#directions" title="Link to this heading"></a></h3>
+<p>Build the model of the equivalent circuit of an SCR as shown in figure 2 on your solder-less breadboard.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f2.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f2.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f2.png" style="width: 550px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 2 Circuit to emulate an SCR</p>
+</div>
+<p>The two 100 K? resistors, R<sub>1</sub>, R<sub>2</sub>, are placed across the respective V<sub>BE</sub> of each transistor to insure that any small leakage currents do not self trigger the simulated SCR. Resistor R<sub>3</sub> converts the voltage pulse from channels B into a triggering current.</p>
+</section>
+<section id="hardware-setup">
+<h3>Hardware Setup:<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h3>
+<p>The channel A voltage generator should be configured as a sine wave with a 0 V Min value and a 5 V Max value. Set a frequency of 100 Hz. Channel B should be configured in the Split I/O mode with the termination set to 2.5V. Shape is set as a square wave with a 0 mA Min value and a 16 mA Max value. Also set to a frequency of 100 Hz and a duty cycle of 10%.</p>
+</section>
+<section id="procedure">
+<h3>Procedure:<a class="headerlink" href="#procedure" title="Link to this heading"></a></h3>
+<p>Select all four traces to be displayed, CA-V, CA-I, CB-V and CB-I. While observing the input sine wave on trace CA-V and the voltage across R<sub>L</sub> on trace CB-V, adjust the phase of the channel A sine wave in steps from 90º to 270º. Depending on the phase setting of the channel B square wave you should see something that looks similar to figure 3. The trigger pulse should happen at some time point when CV-A is above the 2.5 V level. You will notice that the voltage across R<sub>L</sub> is zero, SCR in OFF state, until the trigger pulse from the square wave occurs and the SCR remains in the ON state until the input sine wave voltage crosses zero (below the 2.5V level).</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f3.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f3.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f3.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 3 Example waveforms</p>
+</div>
+<p>Measure and report the voltage drop across the SCR when it is in the ON state and conducting current. How does this voltage compare to a conventional PN junction diode? Find the minimum pulse voltage ( amplitude ) above 2.5 V that will trigger the SCR by adjusting the Max value of the channel B square wave. Explain your result? Try larger ( 1 MΩ ) and smaller ( 10KΩ ) values for R<sub>1</sub> and R<sub>2</sub>. How does this change the minimum trigger voltage?</p>
+<p>Try reducing the width of the trigger pulse by changing the channel B duty cycle. What is the minimum pulse width that will trigger the SCR?</p>
+<p>Replace resistor R<sub>3</sub> with a 0.1uF capacitor. This coupling capacitor acts as a differentiator turning the square pulse of the trigger source output into narrow positive and negative spikes of current on the rising and falling edges of the square wave. How does this effect when and how the SCR is triggered?</p>
+</section>
+<section id="questions">
+<h3>Questions:<a class="headerlink" href="#questions" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>How does the SCR differ from an ordinary rectifier diode?</p></li>
+<li><p>Draw the V-I characteristics of an SCR. What can you infer from them?</p></li>
+<li><p>Why is an SCR always turned on by a current into the gate?</p></li>
+<li><p>Why can’t the SCR be used as a bidirectional current switch?</p></li>
+<li><p>How does an SCR control the power delivered to the load?</p></li>
+<li><p>Why are SCRs mostly used in AC circuits?</p></li>
+</ul>
+<p>If a source of small ( low current ) SCRs is available, you could repeat the experiment with an actual device rather than our equivalent circuit emulation.</p>
+</section>
+</section>
+<section id="unintentional-parasitic-scrs-in-integrated-circuits">
+<h2>Unintentional parasitic SCRs in Integrated circuits<a class="headerlink" href="#unintentional-parasitic-scrs-in-integrated-circuits" title="Link to this heading"></a></h2>
+<p>We have explored applications for the SCR that intentionally make use of its characteristics. Unfortunately, unintentional SCRs can form in integrated circuits and if these parasitic SCRs get triggered circuit malfunction can result or even reliability issues and damage to the integrated circuit.</p>
+<section id="latch-up">
+<h3>LATCH-UP<a class="headerlink" href="#latch-up" title="Link to this heading"></a></h3>
+<p>Latch-up is a potentially destructive situation in which a parasitic SCR is triggered, shorting the positive and negative supplies together. If current flow is not limited, electrical over-stress will occur. The classic case of latch-up occurs in CMOS output devices, in which the driver transistors and wells form a four layer PNPN SCR structure when one of the two parasitic base-emitter junctions is momentarily forward biased during an over-voltage upset event. The SCR turns on and essentially causes a short between the V<sub>DD</sub> power supply and ground.</p>
+<p>Since all these MOS devices are located close together on the monolithic die, with appropriate external excitation, the parasitic SCR devices may turn on, a behavior common with poorly designed CMOS circuits. Figure 4 illustrates a simplified cross section showing two transistors, one PMOS and one NMOS; these could be connected together as logic gates or as an analog amplifier or switch. The parasitic bipolar transistors responsible for latch-up behavior, Q<sub>1</sub> (vertical PNP) and Q<sub>2</sub> (lateral NPN) are as indicated.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f4.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f4.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f4.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 4 Cross-section of PMOS and NMOS devices, with parasitic transistors Q<sub>1</sub> and Q<sub>2</sub></p>
+</div>
+<p>Proper design methods to reduce the possibility of SCR formation include increasing the spacing between NMOS and PMOS devices and interposing highly doped regions between and around Nwells and Pwells. Both of these kinds of layout approaches attempt to lower the ß of either the vertical PNP or the lateral NPN parasitic bipolar transistors to less than 1. Some of these methods also tend to lower the resistance of R<sub>PWELL</sub> and R<sub>NWELL</sub> which increases the minimum trigger current needed to turn on the SCR.</p>
+</section>
+</section>
+<section id="programmable-ujt-put">
+<h2>Programmable UJT (PUT).<a class="headerlink" href="#programmable-ujt-put" title="Link to this heading"></a></h2>
+<p>Looking back at figure 1 we note that the triggering current is injected at the base of the NPN Q2. The ON state can just as eaisily be triggered by pulling a current out of the base of the PNP transistor Q1 as shown in figure 5.</p>
+<p>The Programmable unijunction transistor or PUT is a close relative of other four layer devices in the thyristor family. Its has a four layered construction just like the SCR and has three terminals named anode(A), cathode(K) and gate(G) again like the thyristors. It is often referred to as a programmable Uni-Junction Transistor because its characteristics and parameters are similar to those of the UJT. The programmability of typical UJT parameters like intrinsic standoff ratio (η), peak voltage(Vp) etc is made by connecting two external resistors. In a conventional UJT, the parameters like Vp, η etc are fixed by the device processing and cannot be changed by the user. The main application of programmable UJT are relaxation oscillators , thyristor triggering, pulse circuits and timing circuits. ON Semiconductor® is the only manufacturer of PUTs today. 2N6027 is the most common type number and it is available in a TO-92 plastic package. The internal block diagram and circuit symbol of PUT are shown below.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f5.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f5.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f5.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 5, PUT circuit symbol and Equivalent Circuit</p>
+</div>
+<p>From figure 5, we see that the PUT has a four layered construction. The top P-layer is called the anode (A). The N-layer next to the anode is called the gate (G). The P-layer next to the gate is left unconnected. The bottom most N-layer is called cathode (K). Ohmic contacts are made on the anode, cathode and gate layers for external connection.</p>
+<section id="put-characteristics">
+<h3>PUT characteristics.<a class="headerlink" href="#put-characteristics" title="Link to this heading"></a></h3>
+<p>PUT characteristics are best shown as a plot of the anode voltage Va and anode current Ia of the PUT. The typical biasing diagram and characteristics plot of a PUT is shown in figure 6.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f6.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f6.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f6.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 6, PUT test circuit and I\V diagram</p>
+</div>
+<p>Typically the anode of the PUT is connected to a positive voltage and the cathode is connected to the ground. The gate is connected to the junction of the two external resistor R1 and R2 which forms a voltage divider. The value ( ratio actually ) of these two resistors determines the intrinsic standoff ratio (η) and peak voltage (Vp) of the PUT.</p>
+<p>When the anode to cathode voltage (Va) is increased the anode current will also increase through the PN anode to gate junction and R2 to ground and the current behaves like a typical P-N junction. At a point where a sufficient number of charges are injected and the PNP part starts to turn on and inject current into the base of the NPN. Beyond this point the anode current (Ia) increases and the anode voltage (Va) decreases. This is a negative resistance region. This negative resistance region of the PUT characteristic is used in relaxation oscillators. When the anode voltage (Va) is reduced to a particular level called “Valley Point”, the device becomes fully saturated and no more decrease in Va is possible. There after the device behaves like a fully saturated P-N junction.</p>
+<p>Peak voltage (Vp): Is the anode to cathode voltage where the PUT jumps into the negative resistance region. The peak voltage Vp will be usually one diode drop (about 0.7V) plus the gate to cathode voltage (Vg). Peak voltage can be expressed using the equation:</p>
+<p>Vp = 0.7V + Vg = 0.7V + VR1 = 0.7V + ηVB</p>
+<p>Where η is the intrinsic standoff ratio and VB is the total voltage across the resistor divider network. Intrinsic standoff ratio ( η) : The Intrinsic standoff ratio of a PUT is the ratio of the external resistor R1 to the sum of R1 and R2. It allows us to predict how much voltage there will be across the gate to cathode for a given VB. The intrinsic standoff ratio can be expressed using the equation:</p>
+<p>η = R<sub>1</sub>/(R<sub>1</sub>+R<sub>2</sub>).</p>
+</section>
+<section id="directions-1">
+<span id="id1"></span><h3>Directions:<a class="headerlink" href="#directions-1" title="Link to this heading"></a></h3>
+<p>Modify your circuit from figure 2 to look like figure 7.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f7.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f7.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f7.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 7 PUT test circuit</p>
+</div>
+</section>
+<section id="procedure-1">
+<span id="id2"></span><h3>Procedure:<a class="headerlink" href="#procedure-1" title="Link to this heading"></a></h3>
+<p>Repeat the same measurements you did on the circuit in figure 2 adjusting the trigger pulse from CH-B output to be a negative pulse rather than a positive pulse.</p>
+</section>
+<section id="put-relaxation-oscillator">
+<h3>PUT relaxation oscillator.<a class="headerlink" href="#put-relaxation-oscillator" title="Link to this heading"></a></h3>
+<p>A relaxation oscillator is a common application of a programmable UJT. A PUT relaxation oscillator can be used for generating a wide range of saw tooth wave forms. It is called a relaxation oscillator because the timing interval is started by the gradual charging of a capacitor and the timing interval is terminated by the sudden discharge of the capacitor when the PUT is triggered. The circuit diagram of a PUT relaxation oscillator is shown below in figure 8.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f8.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f8.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f8.png" style="width: 400px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 8, PUT relaxation oscillator circuit</p>
+</div>
+<p>Resistors R<sub>1</sub> and R<sub>2</sub> set the peak voltage (Vp) and intrinsic standoff ratio (η) of the PUT. Resistor R<sub>k</sub> limits cathode current of the PUT. Resistor R<sub>T</sub> and capacitor C<sub>T</sub> set the frequency of the oscillator. When the supply voltage V<sub>CC</sub> is applied, the capacitor C<sub>T</sub> starts charging through resistor R<sub>T</sub>. When the voltage across the capacitor exceeds the peak voltage (Vp) the PUT is triggered and goes into negative resistance mode and this creates a low resistance path from anode(A) to cathode(K). The capacitor discharges through the PUT. When the voltage across the capacitor goes below valley point voltage (Vv) the PUT reverts to its OFF initial condition and the capacitor C<sub>T</sub> will stop discharging. The capacitor will start to charge again and the cycle is repeated. This series of charging and discharging results in a exponential sawtooth waveform across the capacitor as shown in the figure 9 below.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f9.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f9.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f9.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 9, PUT relaxation oscillator output waveform</p>
+</div>
+<p>The frequency of oscillation of a PUT relaxation oscillator can be expressed by the following equation:</p>
+<p><span class="math notranslate nohighlight">\(F=1/(R_T \times C_T \times ln(1/(1-\eta)))\)</span></p>
+<p>Where F is the frequency, η is the intrinsic standoff ratio, R<sub>T</sub> is the resistance and C<sub>T</sub> is the capacitance.</p>
+</section>
+</section>
+<section id="ramp-generator">
+<h2>Ramp Generator:<a class="headerlink" href="#ramp-generator" title="Link to this heading"></a></h2>
+<p>We can make a linear ramp generator by substituting a current source for R<sub>T</sub> so that the capacitor C<sub>T</sub> charges at a constant rate.</p>
+<section id="materials-1">
+<span id="id3"></span><h3>Materials:<a class="headerlink" href="#materials-1" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">2 – NPN transistors ( 2N3904 )</div>
+<div class="line">3 – PNP transistors ( 2N3906 )</div>
+<div class="line">2 – 4.7 KΩ resistors</div>
+<div class="line">3 – 10 KΩ resistors</div>
+<div class="line">1 – 200 KΩ resistor</div>
+<div class="line">1 – 68 KΩ resistor</div>
+<div class="line">1 – 10 KΩ potentiometer</div>
+<div class="line">1 – 10 nF capacitor</div>
+</div>
+</section>
+<section id="directions-2">
+<span id="id4"></span><h3>Directions:<a class="headerlink" href="#directions-2" title="Link to this heading"></a></h3>
+<p>Build the circuit of the ramp generator with PUT (SCR) trigger as shown in figure 10 on your solder-less breadboard. PNP transistors Q<sub>1</sub> and Q<sub>2</sub> form a current mirror current source. PNP Q<sub>3</sub> and NPN Q<sub>4</sub> simulate the operation of the PUT. Emitter follower, Q<sub>5</sub>, is added to provide a low impedance output for the ramp signal. The peak voltage where the simulated PUT triggers is set by potentiometer R<sub>6</sub>. The charging current is fixed ( set by R<sub>3</sub> ) so changing the trigger voltage not only changes the amplitude of the ramp but also the ramp time.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f10.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f10.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f10.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 10, Ramp generator</p>
+</div>
+<p>Resistor R<sub>4</sub> sets the minimum holding current when the “PUT” is in the ON state. This minimum current must be larger than the charging current from Q<sub>2</sub> in order for the circuit to return to the OFF state and oscillate. If R<sub>3</sub> is made smaller, increasing the charging current, R<sub>4</sub> will also need to be made smaller increasing the holding current by a similar amount. If your circuit fails to oscillate you may need to adjust R3 and/or R4 to satisfy this condition ( based on the betas of your particular Q<sub>3</sub> and Q<sub>4</sub> ).</p>
+</section>
+<section id="procedure-2">
+<span id="id5"></span><h3>Procedure:<a class="headerlink" href="#procedure-2" title="Link to this heading"></a></h3>
+<p>With both scope input channels in Hi-Z mode attach CH-A to the ramp output at the emitter of Q<sub>5</sub> and CH-B on the trigger voltage at the wiper of R<sub>6</sub>. Adjust the scope time base such that you see at least two cycles of the ramp on the screen. Now adjust R<sub>6</sub> and note the amplitude of the ramp as the trigger voltage is adjusted up and down. Does the slope of the ramp change? What about the frequency of the ramp? Try different values for C<sub>T</sub>.</p>
+<p>On channel B you should see the trigger voltage go up and down as R<sub>6</sub> is changed. You should also see a narrow negative pulse each time the circuit triggers and discharges the capacitor.</p>
+<p>Temporarily move CH-A to the emitter of PNP Q<sub>3</sub> and compare the ramp seen there to the trigger level seen at the wiper of R6. When does the “PUT” trigger?</p>
+</section>
+<section id="questions-1">
+<span id="id6"></span><h3>Questions:<a class="headerlink" href="#questions-1" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">What is the purpose for resistors R<sub>1</sub> and R<sub>2</sub> in the current mirror?</div>
+<div class="line">How linear is the ramp and what factors in the circuit would effect the linearity</div>
+</div>
+</section>
+</section>
+<section id="stair-step-waveform-generator">
+<h2>Stair Step Waveform Generator:<a class="headerlink" href="#stair-step-waveform-generator" title="Link to this heading"></a></h2>
+<p>As a further demonstration of the switching function of the PUT device configuration consider the LTspice simulation schematic shown in figure 11. To understand the operation of the circuit we first assume there is no charge on capacitor C5 and node Vcap is near the positive supply voltage. A square wave is applied at Vin and is capacitively coupled to the emitter of Q3. The falling edge of the input waveform induces a slug of charge equal to the change in voltage times the value of C4. The charge in voltage also drives the emitter of Q3 below ground turning it on until an equal amount of charge flows through Q3 discharging the voltage on node Vcap toward ground. The change is the voltage on C5 is proportional to the voltage swing of the input waveform and the ratio of C4/C5. The voltage on Vcap continues to discharge until the voltage reaches the trigger voltage of the (simulated) PUT formed by NPN Q4 and PNP Q6. Emitter follower Q1 buffers the Vcap waveform at Vout.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f11.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f11.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f11.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 11. PUT as a Stair Step waveform generator.</p>
+</div>
+<p>The LTspice simulation results are shown in figure 12. A 3.5 V step at the input produces approximately 0.8 V change in the output stair step waveform.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f12.png"><img alt="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f12.png" class="align-center" src="https://wiki.analog.com/_media/university/courses/alm1k/alm-lab-scr_f12.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 12, Simulated input and output waveforms.</p>
+</div>
+<section id="procedure-3">
+<span id="id7"></span><h3>Procedure:<a class="headerlink" href="#procedure-3" title="Link to this heading"></a></h3>
+<p>Build the circuit in figure 11 on your solder-less breadboard. Use AWG A to produce the input square wave. Change the amplitude of the waveform to see how it effects the step size in the output waveform. Try different values for capacitors C4 and C5 to see how their ratio changes the step size.</p>
+</section>
+<section id="questions-2">
+<span id="id8"></span><h3>Questions:<a class="headerlink" href="#questions-2" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">What other circuits could be used to generate the input waveform and does it have to be a square wave?</div>
+<div class="line">Will the ramp generator from figure 10, with it’s sharp falling edge, work as the input to the stair step generator? Would it need to be modified in anyway?</div>
+</div>
+<p><strong>For Further Reading:</strong></p>
+<div class="line-block">
+<div class="line"><a class="icon link reference external" href="http://en.wikipedia.org/wiki/Silicon-controlled_rectifier" target="_blank">http://en.wikipedia.org/wiki/Silicon-controlled_rectifier</a></div>
+<div class="line"><a class="icon adi reference external" href="https://www.analog.com/static/imported-files/application_notes/AN-397.pdf" target="_blank">Electrically Induced Damage to Standard Linear Integrated Circuits</a></div>
+<div class="line"><a class="icon adi reference external" href="https://www.analog.com/library/analogDialogue/archives/35-05/latchup/latchup.pdf" target="_blank">Winning the Battle Against Latch-up in CMOS Analog Switches</a></div>
+</div>
+<p><strong>Return to ALM Lab Activity</strong> <a class="reference internal" href="alm-labs-list.html"><span class="doc">Table of Contents</span></a></p>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

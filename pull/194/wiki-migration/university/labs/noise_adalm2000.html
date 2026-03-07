@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The objective of this lab activity is to develop an understanding of electrical noise and build two noise generators as a handy piece of test equipment. Audio noise is part of everyday experience - “This bar sure is noisy!”, or (for those old enough to remember), an A.M. radio almost always has audible noise in the background, as do cassette tapes. In both cases, the noise originates as electrical noise, which, along with the signal of interest (music, voice), is amplified and played back through a speaker where a human can then percieve it. Pure, “white” noise is defined as having a “flat” spectrum, with a continuous distribution across a frequency band of interest (20Hz to 20kHz in the case of an audio application. But what exactly is meant by a “continuous” distribution? Doesn’t continuous imply infinitely many tones? And if it does, wouldn’t the amplitude of each tone have to be zero in order to avoid an infinite noise power? Well, sort of. In this lab activity, we will make some noise, one tone at a time, squeezing them so close together in frequency that they start to look continuous. We won’t quite get to infinity tones, but let’s see if we can get close enough that it doesn’t matter." name="description" />
+
+    <title>Activity: Noise &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../_static/app.umd.js?v=fcf3088a"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Activity: Noise</a><ul>
+<li><a class="reference internal" href="#objective">Objective:</a></li>
+<li><a class="reference internal" href="#background">Background:</a></li>
+<li><a class="reference internal" href="#materials">Materials:</a></li>
+<li><a class="reference internal" href="#directions">Directions:</a></li>
+<li><a class="reference internal" href="#hardware-setup">Hardware Setup:</a></li>
+<li><a class="reference internal" href="#procedure">Procedure:</a></li>
+<li><a class="reference internal" href="#questions">Questions:</a><ul>
+<li><a class="reference internal" href="#other-uses-for-this-circuit">Other uses for this circuit:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id1">Using Python for Analysis and Verification of Mixed-mode Signal Chains</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#a-generic-mixed-signal-chain">A Generic Mixed Signal Chain</a></li>
+<li><a class="reference internal" href="#adc-noise-sources">ADC Noise Sources</a></li>
+<li><a class="reference internal" href="#modeling-and-measuring-adc-noise">Modeling and Measuring ADC noise</a></li>
+<li><a class="reference internal" href="#expressing-adc-noise-as-a-density">Expressing ADC Noise as a Density</a></li>
+<li><a class="reference internal" href="#measuring-adc-filter-response">Measuring ADC filter response</a></li>
+<li><a class="reference internal" href="#modeling-adc-filters">Modeling ADC filters</a></li>
+<li><a class="reference internal" href="#resistance-is-futile-a-fundamental-sensor-limitation">Resistance is Futile: A Fundamental Sensor Limitation</a></li>
+<li><a class="reference internal" href="#a-laboratory-noise-source">A Laboratory Noise Source</a></li>
+<li><a class="reference internal" href="#modeling-signal-chains-in-ltspice">Modeling Signal Chains in LTspice</a></li>
+<li><a class="reference internal" href="#generating-test-noise">Generating Test Noise</a></li>
+<li><a class="reference internal" href="#modeling-and-verifying-adc-noise-bandwidth">Modeling and verifying ADC Noise Bandwidth</a></li>
+<li><a class="reference internal" href="#conclusion">Conclusion</a></li>
+<li><a class="reference internal" href="#acknowledgements">Acknowledgements</a></li>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="activity-noise">
+<h1>Activity: Noise<a class="headerlink" href="#activity-noise" title="Link to this heading"></a></h1>
+<section id="objective">
+<h2>Objective:<a class="headerlink" href="#objective" title="Link to this heading"></a></h2>
+<p>The objective of this lab activity is to develop an understanding of electrical noise and build two noise generators as a handy piece of test equipment. Audio noise is part of everyday experience - “This bar sure is noisy!”, or (for those old enough to remember), an A.M. radio almost always has audible noise in the background, as do cassette tapes. In both cases, the noise originates as electrical noise, which, along with the signal of interest (music, voice), is amplified and played back through a speaker where a human can then percieve it. Pure, “white” noise is defined as having a “flat” spectrum, with a <strong>continuous</strong> distribution across a frequency band of interest (20Hz to 20kHz in the case of an audio application. But what exactly is meant by a “continuous” distribution? Doesn’t continuous imply infinitely many tones? And if it does, wouldn’t the amplitude of each tone have to be zero in order to avoid an infinite noise power? Well, sort of. In this lab activity, we will make some noise, one tone at a time, squeezing them so close together in frequency that they start to look continuous. We won’t quite get to infinity tones, but let’s see if we can get close enough that it doesn’t matter.</p>
+<p>This excercise borrows from <a class="icon link reference external" href="http://conference.scipy.org/proceedings/scipy2021/adi_sdg.html" target="_blank">Using Python for Analysis and Verification of Mixed-mode Signal Chains</a>, which first appeared in the proceedings of the 2021 Scientific Computing with Python conference under the title . DOI: 10.25080/majora-1b6fd038-001</p>
+</section>
+<section id="background">
+<h2>Background:<a class="headerlink" href="#background" title="Link to this heading"></a></h2>
+<p>You’ve seen the memes and T-shirts: “Resistance is Futile”, usually showing a resistor sapping power in a circuit, or an attempt to resist, which works fine in simulation but in reality the bypass trace will also have some resistance.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/noise_adalm2000/resistance_is_futile.png"><img alt="image1" src="https://wiki.analog.com/_media/university/labs/noise_adalm2000/resistance_is_futile.png" style="width: 300px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 1: What Resistance Is</p>
+</div>
+<p>Not only is it true that resistance contributes to loss in power delivery circuits, they also contribute noise in sensitive circuits. This is a resistor’s “thermal noise”, or Johnson noise, and is given by the expression</p>
+<p>ERMS = √(4*k*T*R*ΔF)</p>
+<div class="line-block">
+<div class="line">Where:</div>
+<div class="line">ERMS = total noise voltage in nVRMS</div>
+<div class="line">k = Boltzmann’s constant, 1.380649×10−23 J⋅K−1</div>
+<div class="line">T = Absolute temperature, Kelvin</div>
+<div class="line">R = Resistance in Ohms</div>
+<div class="line">ΔF = Bandwidth being considered, in Hertz</div>
+<div class="line">Noise is often specified normalized to a 1Hz bandwidth, and expressed as a noise “density” given by:</div>
+<div class="line">eRMS = √(4*k*T*R)</div>
+</div>
+<div class="line-block">
+<div class="line">where :</div>
+<div class="line">eRMS is the noise <strong>density</strong> in nV/√Hz.</div>
+</div>
+<p>Operational amplifiers also introduce noise, and will include one or more noise density specification under different conditions, and often at different frequencies.</p>
+<p>Reality Check: If you’re an undergrad EE student, or even a practicing EE in a field a step or two removed from analog electronics, this may seem a bit esoteric. But don’t worry - we’re going to peel this onion one layer a a time and build some intuition about the nature of noise.</p>
+</section>
+<section id="materials">
+<h2>Materials:<a class="headerlink" href="#materials" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">ADALM2000 Active Learning Module</div>
+<div class="line">Solder-less Breadboard</div>
+<div class="line">Jumper wires</div>
+<div class="line">1 - OP482 JFET op amp</div>
+<div class="line">2 - 4.7 uF capacitor</div>
+<div class="line">1 - 1kΩ resistor 1 - 22 KΩ resistor</div>
+<div class="line">1 - 100 KΩ resistor</div>
+<div class="line">1 - 1M Ω resistor</div>
+</div>
+</section>
+<section id="directions">
+<h2>Directions:<a class="headerlink" href="#directions" title="Link to this heading"></a></h2>
+<p>&lt;&lt;Build and measure analog noise source&gt;&gt;</p>
+<p>&lt;&lt;Run libm2k Python noise generator examples&gt;&gt;</p>
+</section>
+<section id="hardware-setup">
+<h2>Hardware Setup:<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
+</section>
+<section id="procedure">
+<h2>Procedure:<a class="headerlink" href="#procedure" title="Link to this heading"></a></h2>
+</section>
+<section id="questions">
+<h2>Questions:<a class="headerlink" href="#questions" title="Link to this heading"></a></h2>
+<section id="other-uses-for-this-circuit">
+<h3>Other uses for this circuit:<a class="headerlink" href="#other-uses-for-this-circuit" title="Link to this heading"></a></h3>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p><strong>Resources:</strong></p>
+<ul class="simple">
+<li><p>Fritzing files:</p></li>
+<li><p>LTspice files: <a class="icon git reference external" href="https://github.com/analogdevicesinc/education_tools/tree/main/m2k/ltspice/signal_chain_noise" target="_blank">LTspice Noise Exercise Files</a></p></li>
+<li><p>Python code: <a class="icon git reference external" href="https://github.com/analogdevicesinc/education_tools/tree/main/m2k/python/signal_chain_noise" target="_blank">Noise Exercise Python code</a></p></li>
+</ul>
+</div>
+<p><strong>For Further Reading:</strong></p>
+<div class="line-block">
+<div class="line"><a class="icon adi reference external" href="https://www.analog.com/en/technical-articles/11-myths-about-analog-noise-analysis.html" target="_blank">Technical Article: 11 Myths About Analog Noise Analysis</a></div>
+<div class="line"><a class="icon link reference external" href="https://en.wikipedia.org/wiki/Noise_(electronics)" target="_blank">Noise_(electronics)</a></div>
+</div>
+<p><strong>Return to Lab Activity</strong> <a class="reference internal" href="../courses/electronics/labs.html"><span class="doc">Table of Contents</span></a><strong>.</strong></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id1">
+<h2>Using Python for Analysis and Verification of Mixed-mode Signal Chains<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<hr class="docutils" />
+<p>Any application involving sensitive measurements of the physical world starts with accurate, precise, and low-noise signal chain. Modern, highly integrated data acquisition devices can often be directly connected to sensor outputs, performing analog signal conditioning, digitization, and digital filtering on a single silicon device, greatly simplifying system electronics. However, a complete understanding of the signal chain’s noise sources and noise limiting filters is still required to extract maximum performance from and debug these modern devices.</p>
+<section id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<p>Mixed-mode signal chains are everywhere. Simply put, any system that transforms a real-world signal to an electrical representation, which is then digitized can be classified as a mixed-mode signal chain. At every point along the chain the signal is degraded in various ways that can usually be characterized either as some form of distortion or additive noise. Once in the digital domain, the processing of the digitized data is not perfect either, but at least it is, for all practical purposes, immune to many of the offenders that affect analog signals - component tolerances, temperature drift, interference from adjacent signals or supply voltage variations.</p>
+<p>As the industry continues to push the physical limits, one thing that can be stated with certainty is this: there is always room for improvement in analog and mixed signal components for instrumentation. If an Analog to Digital Converter (ADC) or a Digital to Analog Converter (DAC) appears on the market that advances the state of the art in speed, noise, power, accuracy, or price, industry will happily apply it to existing problems, then ask for more improvement. However, in order to achieve the best acquisition system for your application, it is fundamental to be aware of the components’ limitations and choose these accordingly.</p>
+<p>This tutorial is in extension of Converter Connectivity Tutorial [1]_ and associated code and simulation files [2]_. A representative signal chain will be analyzed and tested, focusing on noise. Individual signal chain elements will first be modelled with the help of Python / SciPy [3]_ and LTspice [4]_, then verified using Python to drive low-cost instrumentation and evaluation boards via the Linux Industrial Input Output (IIO) framework. While primarily for the education space, these instruments have adequate performance for many industrial applications. Furthermore, these techniques can easily be adapted to other bench-top instruments.</p>
+</section>
+<section id="a-generic-mixed-signal-chain">
+<h3>A Generic Mixed Signal Chain<a class="headerlink" href="#a-generic-mixed-signal-chain" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<p>Figure :ref:`mixmode` shows a generic signal chain typical of a precision instrumentation application, with a physical input and digital output. There are numerous background references on analog to digital converters available [5]_, and most readers will have a sense that an analog to digital converter samples an input signal at some point in time (or measures the average of a signal over some observation time), and produces a numerical representation of that signal - most often as a binary number with some value between zero and <span class="math notranslate nohighlight">\(2^N - 1\)</span> where <span class="math notranslate nohighlight">\(N\)</span> is the number of bits in the output word.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/noise_adalm2000/mixed_mode_signal_chain.png"><img alt="image2" src="https://wiki.analog.com/_media/university/labs/noise_adalm2000/mixed_mode_signal_chain.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 1: A Generic Mixed-Mode Signal Chain</p>
+</div>
+<p><em>In a mixed-mode signal chain, some physical phenomenon such as temperature, light intensity, pH, force, or torque is converted to an electrical parameter (resistance, current, or directly to voltage). This signal is then amplified, low-pass filtered, and digitized by an ADC, which may include internal digital filtering.</em></p>
+</section>
+<section id="adc-noise-sources">
+<h3>ADC Noise Sources<a class="headerlink" href="#adc-noise-sources" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<p>While there are several noise sources in Figure :ref:`mixmode`, one that is often either ignored, or over-emphasized, is the number of bits in the ADC’s digital output. Historically, an ADC’s “number of bits” was considered the ultimate figure of merit, where a 16-bit converter was 4 times better than a 14-bit converter [6]_. But in the case of modern, high-resolution converters, the “number of bits” can be safely ignored. Note a general principle of signal chain design:</p>
+<p>“The input noise of one stage should be somewhat lower than the output noise of the preceding stage.”</p>
+<p>As with any signal chain, one noise source within an ADC often dominates. Thus, if a noiseless signal applied to an N-bit ADC:</p>
+<ul class="simple">
+<li><p>results in either a single output code, or two adjacent output codes, then <strong>quantization noise dominates</strong>. The Signal to Noise Ratio can be no greater than (6.02 N + 1.76) dB [7]_. - results in a gaussian distribution of “many” output codes, then <strong>thermal noise source dominates</strong>. The Signal to Noise Ratio is no greater than:</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\displaystyle 20\log(V_{in}\frac{p-p}{\\sigma/\sqrt8})\)</span> , where:</p>
+<p><span class="math notranslate nohighlight">\(V_{in}(p-p)\)</span> is the full-scale input signal</p>
+<p><span class="math notranslate nohighlight">\(\sigma\)</span> is the standard deviation of the output codes in units of voltage.</p>
+<p>Very high resolution converters, such as the AD7124-8 that will be used as an example shortly, are rarely limited by quantization noise; thermal noise dominates in all of the gain / bandwidth settings, and a shorted input will always produce a fairly Gaussian distribution of output codes. Figure :ref:`ad7124hist` , from Ref. [8]_ shows the grounded-input histogram of the AD712482, 24-bit sigma-delta ADC, with the internal Programmable Gain Amplifier (PGA) set to 1 and 128, respectively.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/noise_adalm2000/ad7124_histograms.png"><img alt="image3" src="https://wiki.analog.com/_media/university/labs/noise_adalm2000/ad7124_histograms.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure 2: AD7124 Input Noise</p>
+</div>
+<p><em>At a PGA gain of one (left), 13 codes are represented in the AD7124 output noise, and the standard deviation is about 2.5 codes. While quantization is visible, thermal noise is more significant. At a PGA gain of 128 (right), 187 codes are represented, quantization noise is insignificant. Truncating one or two least-significant bits (doubling or quadrupling quantization noise) would not result in a loss of information.</em></p>
+</section>
+<section id="modeling-and-measuring-adc-noise">
+<h3>Modeling and Measuring ADC noise<a class="headerlink" href="#modeling-and-measuring-adc-noise" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<p>Modeling the noise of a thermal-noise limited ADC’s is straightforward. If the noise is “well behaved” (Gaussian, as it is in Figure :ref:`ad7124hist`) and constant across the ADC’s input span, the ADC’s time-domain noise can be modelled using NumPy’s [9]_ :code:`random.normal` function , then verified by taking the standard deviation, as seen in the Model Gaussian Noise code block.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Model Gaussian Noise</span>
+<span class="c1"># See AD7124 datasheet for noise levels per mode</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">offset</span> <span class="o">=</span> <span class="mf">0.000</span>
+<span class="n">rmsnoise</span> <span class="o">=</span> <span class="mf">0.42e-6</span>  <span class="c1"># AD7124 noise</span>
+<span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">rmsnoise</span><span class="p">,</span>
+                         <span class="n">size</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
+<span class="n">measured_noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">noise</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Measured Noise: &quot;</span><span class="p">,</span> <span class="n">measured_noise</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Figure :ref:`hwsetup` shows the general setup for testing ADC noise and filter response [1]_.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/noise_adalm2000/full_setup_overview.png"><img alt="image4" src="https://wiki.analog.com/_media/university/labs/noise_adalm2000/full_setup_overview.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure N: Complete Test Setup</p>
+</div>
+<p><em>The ADALM2000 is a multifunction USB test instrument with two general-purpose analog inputs and two outputs, with sample rates of 100Msps and 150Msps, respectively. It can be used as a simple signal source for measuring ADC noise bandwidth and filter response. A Raspberry Pi 4 running a kernel with AD7124 device driver support acts as a simple bridge between the AD7124 and a host computer.</em></p>
+<p>The AD7124 device driver falls under the industry-standard IIO framework, which has a well-established software API (including Python bindings). Application code can run locally (on the Raspberry Pi) or on a remote machine via network, serial, or USB connection. Furthermore, the pyadi-iio [10]_ abstraction layer takes care of much of the boilerplate setup required for interfacing with IIO devices, greatly simplifying the software interface. The AD7124-8 Basic Data Capture code block illustrates how to open a connection to the AD7124-8, configure it, capture a block of data, then close the connection.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="c1"># AD7124-8 Basic Data Capture</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">adi</span>  <span class="c1"># pyadi-iio library</span>
+<span class="c1"># Connect to AD7124-8 via Raspberry Pi</span>
+<span class="n">my_ad7124</span> <span class="o">=</span> <span class="n">adi</span><span class="o">.</span><span class="n">ad7124</span><span class="p">(</span><span class="n">uri</span><span class="o">=</span><span class="s2">&quot;ip:analog.local&quot;</span><span class="p">)</span>
+<span class="n">ad_channel</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Set channel</span>
+<span class="c1"># Set PGA gain</span>
+<span class="n">my_ad7124</span><span class="o">.</span><span class="n">channel</span><span class="p">[</span><span class="n">ad_channel</span><span class="p">]</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="mf">0.0002983</span>
+<span class="n">my_ad7124</span><span class="o">.</span><span class="n">sample_rate</span> <span class="o">=</span> <span class="mi">128</span>  <span class="c1"># Set sample rate</span>
+<span class="c1"># Read a single &quot;raw&quot; value</span>
+<span class="n">v0</span> <span class="o">=</span> <span class="n">my_ad7124</span><span class="o">.</span><span class="n">channel</span><span class="p">[</span><span class="n">ad_channel</span><span class="p">]</span><span class="o">.</span><span class="n">raw</span>
+<span class="c1"># Buffered data capture</span>
+<span class="n">my_ad7124</span><span class="o">.</span><span class="n">rx_output_type</span> <span class="o">=</span> <span class="s2">&quot;SI&quot;</span>  <span class="c1"># Report in volts</span>
+<span class="c1"># Only one buffered channel supported for now</span>
+<span class="n">my_ad7124</span><span class="o">.</span><span class="n">rx_enabled_channels</span> <span class="o">=</span> <span class="p">[</span><span class="n">ad_channel</span><span class="p">]</span>
+<span class="n">my_ad7124</span><span class="o">.</span><span class="n">rx_buffer_size</span> <span class="o">=</span> <span class="mi">1024</span>
+<span class="n">my_ad7124</span><span class="o">.</span><span class="n">_ctx</span><span class="o">.</span><span class="n">set_timeout</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span>  <span class="c1"># Slow</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">my_ad7124</span><span class="o">.</span><span class="n">rx</span><span class="p">()</span>  <span class="c1"># Fetch buffer of samples</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A single raw reading: &quot;</span><span class="p">,</span> <span class="n">v0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A few buffered readings: &quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">[:</span><span class="mi">16</span><span class="p">])</span>
+<span class="k">del</span> <span class="n">my_ad7124</span>  <span class="c1"># Clean up</span>
+</pre></div>
+</div>
+<p>With communication to the AD7124-8 established, an extremely simple, yet extremely useful test can be performed: measuring input noise directly. Simply shorting the input to an ADC and looking at the resulting distribution of ADC codes is a valuable step in characterizing a signal chain design. The AD7124 input mode is set to unipolar, so only positive values are valid; the test circuit shown in Figure :ref:`ad7124bias` ensures that the input is always positive.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/noise_adalm2000/ad7124_noise_circuit.png"><img alt="image5" src="https://wiki.analog.com/_media/university/labs/noise_adalm2000/ad7124_noise_circuit.png" style="width: 300px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure : AD7124 Input Noise Measurement Circuit</p>
+</div>
+<p><em>A resistor divider is used to generate a 1.25mV bias across the AD7124-8’s input, overcoming the 15µV maximum offset voltage and ensuring that ADC readings are always positive.</em></p>
+<p>Figure :ref:`warmup` shows two, 1024-point measurements. The lower (blue) trace was taken immediately after initially applying power.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/noise_adalm2000/ad7124_warmup_new.png"><img alt="image6" src="https://wiki.analog.com/_media/university/labs/noise_adalm2000/ad7124_warmup_new.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure N: AD7124 Warmup Drift</p>
+</div>
+<p><em>Two AD7124-8 data captures are taken with a 1.25mV bias applied. The lower trace shows initial drift after power-up as the circuit warms up. The upper trace shows stable readings after a half-hour warmup time.</em></p>
+<p>The “wandering” can be due to a number of factors - the internal reference warming up, the external resistors warming up (and hence drifting), or parasitic thermocouples, where slightly dissimilar metals will produce a voltage in the presence of thermal gradients. Measured noise after warmup is approximately 565nVRMS - on par with the datasheet noise specification.</p>
+</section>
+<section id="expressing-adc-noise-as-a-density">
+<h3>Expressing ADC Noise as a Density<a class="headerlink" href="#expressing-adc-noise-as-a-density" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<p>The general principle of analog signal chain design (that the input noise of one stage should be somewhat lower than the output noise of the preceding stage) is an easy calculation if all elements include noise density specifications, as most well-specified sensors, and nearly all amplifiers do.</p>
+<p>Unlike amplifiers and sensors, ADC datasheets typically do not include a noise density specification. Expressing the ADC’s noise as a density allows it to be directly compared to the noise at the output of the last element in the analog signal chain, which may be an ADC driver stage, a gain stage, or the sensor itself.</p>
+<p>An ADC’s internal noise will necessarily appear somewhere between DC and half the sample rate. Ideally this noise is flat, or at least predictably shaped. In fact, since the ADC’s total noise is spread out across a known bandwidth, it can be converted to a noise density that can be directly compared to other elements in the signal chain. Precision converters typically have total noise given directly, in volts RMS: <span class="math notranslate nohighlight">\(e_{RMS} = \\sigma\)</span> , where <span class="math notranslate nohighlight">\(e_{RMS}\)</span> is the total RMS noise, calculated from the standard deviation of a grounded-input histogram of codes.</p>
+<p>Higher speed converters that are tested and characterized with sinusoidal signals will typically have a signal to noise (SNR) specification. If provided, the total RMS noise can be calculated as:</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle e_{RMS} = \frac{ADCp-p}{\sqrt{8} \times 10^\frac{SNR}{20}}\)</span></p>
+<p>Where <span class="math notranslate nohighlight">\(ADCp-p\)</span> is the peak-to-peak input range of the ADC.</p>
+<p>The equivalent noise density can then be calculated:</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle e_n = \frac{e_{RMS}}{\sqrt{\frac{fs}{2}}}\)</span></p>
+<p>Where <span class="math notranslate nohighlight">\(fs\)</span> is the ADC sample rate in samples/second.</p>
+<p>The total noise from Figure :ref:`warmup` after warmup was 565nV at a data rate of 128sps. The noise density is approximately:</p>
+<p><span class="math notranslate nohighlight">\(565nV/\sqrt64 Hz = 70nV/\sqrtHz\)</span></p>
+<p>The ADC can now be directly included in the signal chain noise analysis, and leads to a guideline for optimizing the signal chain’s gain:</p>
+<p>Increase the gain just to the point where the noise density of the last stage before the ADC is a bit higher than that of the ADC, then stop. Don’t bother increasing the signal chain gain any more - you’re just amplifying noise and decreasing the allowable range of inputs.</p>
+<p>This runs counter to the conventional wisdom of “filling” the ADC’s input range. There may be benefit to using more of an ADC’s input range if there are steps or discontinuities in the ADC’s transfer function, but for “well behaved” ADCs (most sigma delta ADCs and modern, high-resolution Successive Approximation Register (SAR) ADCs), optimizing by noise is the preferred approach.</p>
+</section>
+<section id="measuring-adc-filter-response">
+<h3>Measuring ADC filter response<a class="headerlink" href="#measuring-adc-filter-response" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<p>The AD7124-8 is a sigma-delta ADC, in which a modulator produces a high sample rate, but noisy (low resolution), representation of the analog input. This noisy data is then filtered by an internal digital filter, producing a lower rate, lower noise output. The type of filter varies from ADC to ADC, depending on the intended end application. The AD7124-8 is general-purpose, targeted at precision applications. As such, the digital filter response and output data rate are highly configurable. While the filter response is well-defined in the datasheet, there are occasions when one may want to measure the impact of the filter on a given signal. The AD7124-8 Filter Response code block measures the filter response by applying sinewaves to the ADC input and analyzing the output. This method can be easily adapted to measuring other waveforms - wavelets, simulated physical events. The ADALM2000 is connected to the AD7124-8 circuit as shown in Figure :ref:`ad7124m2k`.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/noise_adalm2000/ad7124_m2k_circuit.png"><img alt="image7" src="https://wiki.analog.com/_media/university/labs/noise_adalm2000/ad7124_m2k_circuit.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure N: ADALM2000 to AD7124 Connections</p>
+</div>
+<p><em>An ADALM2000 waveform generator is used to generate a range of sinewave frequencies, allowing the AD7124-8’s filer response to be measured directly. While the script sets the sinewave amplitude and offset to a safe level, a 1k resistor protects the AD7124-8 in the event of a malfunction. (The ADALM2000 output voltage range is -5V to +5V, while the AD7124-8 absolute maximum limits are -0.3V and +3.6V.)</em></p>
+<p>The AD7124-8 Filter Response code block will set the ADALM2000’s waveform generator to generate a sinewave at 10Hz, capture 1024 data points, calculate the RMS value, then append the result to a list. (The :code:`send_sinewave` and :code:`capture_data` are utility functions that send a sinewave to the ADALM2000 and receive a block of data from the AD7124, respectively [2]_.) It will then step through frequencies up to 250Hz, then plot the result as shown in Figure :ref:`measresp`.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># AD7124-8 Filter Response</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">freqs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">121</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">freq</span> <span class="ow">in</span> <span class="n">freqs</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;testing &quot;</span><span class="p">,</span> <span class="n">freq</span><span class="p">,</span> <span class="s2">&quot; Hz&quot;</span><span class="p">)</span>
+    <span class="n">send_sinewave</span><span class="p">(</span><span class="n">my_siggen</span><span class="p">,</span> <span class="n">freq</span><span class="p">)</span>  <span class="c1"># Set frequency</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">5.0</span><span class="p">)</span>                 <span class="c1"># Let settle</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">capture_data</span><span class="p">(</span><span class="n">my_ad7124</span><span class="p">)</span>  <span class="c1"># Grab data</span>
+    <span class="n">resp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>  <span class="c1"># Take RMS value</span>
+    <span class="k">if</span> <span class="n">plt_time_domain</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">capture_data</span><span class="p">(</span><span class="n">my_ad7124</span><span class="p">)</span>  <span class="c1"># Flush</span>
+<span class="c1"># Plot log magnitude of response.</span>
+<span class="n">response_dB</span> <span class="o">=</span> <span class="mf">20.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">resp</span><span class="o">/</span><span class="mf">0.5</span>\<span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Response [dB] </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response_dB</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span> <span class="n">response_dB</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;AD7124 filter response&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;attenuation&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;frequency&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="o">|</span><span class="n">image8</span><span class="o">|</span>
+</pre></div>
+</div>
+<div class="centeralign docutils container">
+<p>Figure N: Measured AD7124-8 Filter Response</p>
+</div>
+<p><em>A measurement of the AD7124 filter response in 64sps, SINC4 mode shows the filter’s passband, first lobe, and first two nulls.</em></p>
+<p>While measuring high attenuation values requires a quieter and lower distortion signal generator, the response of the first few major “lobes” is apparent with this setup.</p>
+</section>
+<section id="modeling-adc-filters">
+<h3>Modeling ADC filters<a class="headerlink" href="#modeling-adc-filters" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<p>The ability to measure an ADC’s filter response is a practical tool for bench verification. However, in order to fully simulate a signal chain, a model of the filter is needed. This isn’t explicitly provided for many converters (including the AD7124-8), but a workable model can be reverse engineered from the information provided in the datasheet.</p>
+<p>Note that what follows is only a model of the AD7124-8 filters, it is not a bit-accurate representation. Refer to the AD7124-8 datasheet for all guaranteed parameters.</p>
+<p>The AD7124’s filters all have frequency responses that are combinations of various SINC functions (with a frequency response proportional to <span class="math notranslate nohighlight">\(\displaystyle (sin\frac{f}{f})^N\)</span> ) . These filters are fairly easy to construct, and to reverse-engineer when nulls are known.</p>
+<p>Figure :ref:`10hznotch` from Ref. [8]_ shows the AD7124-8’s 10Hz notch filters. Various combinations of higher-order SINC3 and SINC4 filters are also available.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/noise_adalm2000/ad7124_filter_10.png"><img alt="image9" src="https://wiki.analog.com/_media/university/labs/noise_adalm2000/ad7124_filter_10.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure N: AD7124 10Hz Notch Filter Response</p>
+</div>
+<p><em>The AD7124-8 10Hz notch filter has a SINC1 magnitude response; the filter’s impulse response is simply an unweighted (rectangular) average of samples over a 100ms time interval.</em></p>
+<p>The simultaneous 50Hz/60Hz rejection filter shown in Figure :ref:`5060hzflt`, from Ref. [8]_ is a nontrivial example. This filter is intended to strongly reject noise from A.C. power lines, which is either 50Hz (as in Europe) or 60Hz (as in the United States).</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/noise_adalm2000/simult_50_60_reverse_eng.png"><img alt="image10" src="https://wiki.analog.com/_media/university/labs/noise_adalm2000/simult_50_60_reverse_eng.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure N: AD7124 50/60Hz Rejection Filter</p>
+</div>
+<p><em>The AD7124-8 50/60Hz rejection filter response is the combination of a 50Hz, SINC3 filter and a 60Hz, SINC1 filter.</em></p>
+<p>Higher order SINC filters can be generated by convolving SINC1 filters. For example, convolving two SINC1 filters (with a rectangular impulse response in time) will result in a triangular impulse response, and a corresponding SINC2 frequency response. The AD7124 Filters code block generates a SINC3 filter with a null at 50Hz, then adds a fourth filter with a null at 60Hz.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># AD7124 Filters</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">f0</span> <span class="o">=</span> <span class="mi">19200</span>
+<span class="c1"># Calculate SINC1 oversample ratios for 50, 60Hz</span>
+<span class="n">osr50</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f0</span><span class="o">/</span><span class="mi">50</span><span class="p">)</span>  <span class="c1"># 384</span>
+<span class="n">osr60</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f0</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span>  <span class="c1"># 320</span>
+
+<span class="c1"># Create &quot;boxcar&quot; SINC1 filters</span>
+<span class="n">sinc1_50</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">osr50</span><span class="p">)</span>
+<span class="n">sinc1_60</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">osr60</span><span class="p">)</span>
+
+<span class="c1"># Calculate higher order filters</span>
+<span class="n">sinc2_50</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">sinc1_50</span><span class="p">,</span> <span class="n">sinc1_50</span><span class="p">)</span>
+<span class="n">sinc3_50</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">sinc2_50</span><span class="p">,</span> <span class="n">sinc1_50</span><span class="p">)</span>
+<span class="n">sinc4_50</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">sinc2_50</span><span class="p">,</span> <span class="n">sinc2_50</span><span class="p">)</span>
+
+<span class="c1"># Here&#39;s the SINC4-ish filter from datasheet</span>
+<span class="c1"># Figure 91, with three zeros at 50Hz, one at 60Hz.</span>
+<span class="n">filt_50_60_rej</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">sinc3_50</span><span class="p">,</span> <span class="n">sinc1_60</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The resulting impulse (time domain) shapes of the filters are shown in Figure :ref:`fltimpluse`. Filter coefficient (tap) values are normalized for unity (0dB) gain at zero frequency.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/noise_adalm2000/rev_eng_filters_all_new.png"><img alt="image11" src="https://wiki.analog.com/_media/university/labs/noise_adalm2000/rev_eng_filters_all_new.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure N: SINC(N) filter Impulse Responses</p>
+</div>
+<p><em>Repeatedly convolving rectangular impulse responses produces triangular, then “Gaussian-like” impulse responses.</em></p>
+<p>And finally, the frequency response can be calculated using NumPy’s freqz function, as seen in the AD7124 Frequency Response code block. The response is shown in Figure :ref:`fltresp`.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/noise_adalm2000/ad7124_calculated_50_60_fresp_new.png"><img alt="image12" src="https://wiki.analog.com/_media/university/labs/noise_adalm2000/ad7124_calculated_50_60_fresp_new.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure N: SINC(N) filter Frequency Responses</p>
+</div>
+<p><em>Convolving a SINC3, 50Hz notch filter with a SINC1, 60Hz filter produces a composite response that strongly rejects both 50Hz and 60Hz.</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># AD7124 Frequency Response</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">signal</span>
+<span class="n">f0</span> <span class="o">=</span> <span class="mi">19200</span>
+<span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">freqz</span><span class="p">(</span><span class="n">filt_50_60_rej</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">worN</span><span class="o">=</span><span class="mi">16385</span><span class="p">,</span>
+                    <span class="n">whole</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">fs</span> <span class="o">=</span> <span class="n">f0</span><span class="p">)</span>
+<span class="n">freqs</span> <span class="o">=</span> <span class="n">w</span> <span class="o">*</span> <span class="n">f0</span><span class="o">/</span><span class="p">(</span><span class="mf">2.0</span>\<span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">hmax</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">h</span><span class="p">))</span>  <span class="c1"># Normalize to unity</span>
+<span class="n">response_dB</span> <span class="o">=</span> <span class="mf">20.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="o">/</span><span class="n">hmax</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="resistance-is-futile-a-fundamental-sensor-limitation">
+<h3>Resistance is Futile: A Fundamental Sensor Limitation<a class="headerlink" href="#resistance-is-futile-a-fundamental-sensor-limitation" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<p>All sensors, no matter how perfect, have some maximum input value (and a corresponding maximum output - which may be a voltage, current, resistance, or even dial position) and a finite noise floor - “wiggles” at the output that exist even if the input is perfectly still. At some point, a sensor with an electrical output will include an element with a finite resistance (or more generally, impedance) represented by Rsensor in Figure :ref:`genericsensor`. This represents one fundamental noise limit that cannot be improved upon - this resistance will produce, at a minimum:</p>
+<p><span class="math notranslate nohighlight">\(e_n(RMS) = \sqrt4 \times K \times T \times Rsensor \times (F2-F1)\)</span> Volts of noise, where:</p>
+<p><span class="math notranslate nohighlight">\(e_n(RMS)\)</span> is the total noise</p>
+<p><span class="math notranslate nohighlight">\(K\)</span> is Boltzmann’s constant (1.38e-23 J/K)</p>
+<p>T is the resistor’s absolute temperature (Kelvin)</p>
+<p>F2 and F1 are the upper and lower limits of the frequency band of interest.</p>
+<p>Normalizing the bandwidth to 1Hz expresses the noise density, in <span class="math notranslate nohighlight">\(\displaystyle \frac{V}{\sqrt{Hz}}\)</span> .</p>
+<p>A sensor’s datasheet may specify a low output impedance (often close to zero Ohms), but this is likely a buffer stage - which eases interfacing to downstream circuits, but does not eliminate noise due to impedances earlier in the signal chain.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/noise_adalm2000/generic_buffered_sensor.png"><img alt="image13" src="https://wiki.analog.com/_media/university/labs/noise_adalm2000/generic_buffered_sensor.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure N: Conceptual Buffered Sensor</p>
+</div>
+<p><em>Sensors often include an internal buffer to simplify connection to downstream circuits. While the output impedance is low (often approaching zero Ohms), noise from high impedance sensing elements is buffered along with the signal.</em></p>
+<p>There are numerous other sensor limitations - mechanical, chemical, optical, each with their own theoretical limits and whose effects can be modelled and compensated for later. But noise is the one imperfection that cannot.</p>
+</section>
+<section id="a-laboratory-noise-source">
+<h3>A Laboratory Noise Source<a class="headerlink" href="#a-laboratory-noise-source" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<p>A calibrated noise generator functions as a “world’s worst sensor”, that emulates the noise of a sensor without actually sensing anything. Such a generator allows a signal chain’s response to noise to be measured directly. The circuit shown in Figure :ref:`ananoisesrc` uses a 1M resistor as a 127nV/ <span class="math notranslate nohighlight">\(\sqrtHz\)</span> (at room temperature) noise source with “okay accuracy” and bandwidth. While the accuracy is only “okay”, this method has advantages:</p>
+<ul class="simple">
+<li><p>It is based on first principles, so in a sense can act as an uncalibrated standard. - It is truly random, with no repeating patterns.</p></li>
+</ul>
+<p>The OP482 is an ultralow bias current amplifier with correspondingly low current noise, and a voltage noise low enough that the noise due to a 1M input impedance is dominant. Configured with a gain of 2121, the output noise is 269 µV/ <span class="math notranslate nohighlight">\(\sqrtHz\)</span> .</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/noise_adalm2000/noise_source_schematic.png"><img alt="image14" src="https://wiki.analog.com/_media/university/labs/noise_adalm2000/noise_source_schematic.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure N: Analog Laboratory Noise Source</p>
+</div>
+<p><em>A 1M resistor serves as a predictable noise source, which is then amplified to a usable level by a low-noise operational amplifier.</em></p>
+<p>The noise source was verified with an ADALM2000 USB instrument, using the Scopy [11]_ GUI’s spectrum analyzer, shown in Figure :ref:`ngoutput`.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/noise_adalm2000/resistor_based_noise_source_nsd_scopy.png"><img alt="image15" src="https://wiki.analog.com/_media/university/labs/noise_adalm2000/resistor_based_noise_source_nsd_scopy.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure N: Measured Output Noise</p>
+</div>
+<p><em>The output of the resistor-based laboratory noise generator has a usable bandwidth of approximately 10kHz.</em></p>
+<p>Under the analyzer settings shown, the ADALM2000 noise floor is 40µV/ <span class="math notranslate nohighlight">\(\sqrtHz\)</span> , well below the 269 µV/ <span class="math notranslate nohighlight">\(\sqrtHz\)</span> of the noise source.</p>
+<p>While Scopy is useful for single, visual measurements, the functionality can be replicated easily with the SciPy periodogram function. Raw data is collected from an ADALM2000 using the libm2k [12]_ and Python bindings, minimally processed to remove DC content (that would otherwise “leak” into low frequency bins), and scaled to nV/ <span class="math notranslate nohighlight">\(\sqrtHz\)</span> . This method, shown in the Noise Source Measurement code block can be applied to any data acquisition module, so long as the sample rate is fixed and known, and data can be formatted as a vector of voltages.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Noise Source Measurement</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">navgs</span> <span class="o">=</span> <span class="mi">32</span>  <span class="c1"># Avg. 32 runs to smooth out data</span>
+<span class="n">ns</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">16</span>
+<span class="n">vsd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">ns</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># /2 for onesided</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">navgs</span><span class="p">):</span>
+  <span class="n">ch1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Extract ch 1 data</span>
+  <span class="n">ch1</span> <span class="o">-=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">ch1</span><span class="p">)</span>  <span class="c1"># Remove DC</span>
+  <span class="n">fs</span><span class="p">,</span> <span class="n">psd</span> <span class="o">=</span> <span class="n">periodogram</span><span class="p">(</span><span class="n">ch1</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">,</span>
+                        <span class="n">window</span><span class="o">=</span><span class="s2">&quot;blackman&quot;</span><span class="p">,</span>
+                        <span class="n">return_onesided</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+  <span class="n">vsd</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">psd</span><span class="p">)</span>
+<span class="n">vsd</span> <span class="o">/=</span> <span class="n">navgs</span>
+</pre></div>
+</div>
+<p>We are now armed with a known noise source and a method to measure said source, both of which can be used to validate signal chains.</p>
+</section>
+<section id="modeling-signal-chains-in-ltspice">
+<h3>Modeling Signal Chains in LTspice<a class="headerlink" href="#modeling-signal-chains-in-ltspice" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<p>LTspice is a freely available, general-purpose analog circuit simulator that can be applied to signal chain design. It can perform transient analysis, frequency-domain analysis (AC sweep), and noise analysis, the results of which can be exported and incorporated into mixed signal models using Python.</p>
+<p>Figure :ref:`ngltspice` shows a noise simulation of the analog noise generator, with close agreement to experimental results. An op-amp with similar properties to the OP482 was used for the simulation.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/noise_adalm2000/ltspice_noise_source.png"><img alt="image16" src="https://wiki.analog.com/_media/university/labs/noise_adalm2000/ltspice_noise_source.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure N: LTspice Simulation of Noise Source</p>
+</div>
+<p><em>An LTspice simulation of the laboratory noise source shows approximately the same usable bandwidth as the measured circuit.</em></p>
+<p>Figure :ref:`ngltspice` circuit’s noise is fairly trivial to model, given that it is constant for some bandwidth (in which a signal of interest would lie), above which it rolls off with approximately a first order lowpass response. Where this technique comes in handy is modeling non-flat noise floors, either due to higher order analog filtering, or active elements themselves. The classic example is the “noise mountain” that often exists in autozero amplifiers such as the LTC2057, as seen in Figure :ref:`ltc2057nsd` , from Ref. [13]_.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/noise_adalm2000/inputvoltage_noise_spectrum.png"><img alt="image17" src="https://wiki.analog.com/_media/university/labs/noise_adalm2000/inputvoltage_noise_spectrum.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure N: LTC2057 Input Noise</p>
+</div>
+<p><em>The LTC2057 noise density is flat at low frequencies, with a peak at 50kHz (half of the internal oscillator’s 100kHz frequency).</em></p>
+<p>Importing LTspice noise data for frequency domain analysis in Python is a matter of setting up the simulation command such that exact frequencies in the analysis vector are simulated. In this case, the noise simulation is set up for a simulation with a maximum frequency of 2.048MHz and resolution of 62.5Hz , corresponding to the first Nyquist zone at a sample rate of 4.096 MSPS. Figure :ref:`ltc2057ltspicensd` shows the simulation of the LT2057 in a non-inverting gain of 10, simulation output, and exported data format.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/noise_adalm2000/lt2057_g10_noise_simulation.png"><img alt="image18" src="https://wiki.analog.com/_media/university/labs/noise_adalm2000/lt2057_g10_noise_simulation.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure N: LTspice Simulation of LT2057 Input Noise</p>
+</div>
+<p><em>LTspice is used to simulate the output nosie of an LTC2057 in a noninverting gain of +10 configuration. LTspice provides simple tools for integrating noise, but results of any simulation can be exported and imported into Python for further analysis.</em></p>
+<p>In order to determine the impact of a given band of noise on a signal (signal to noise ratio) the noise is root-sum-square integrated across the bandwidth of interest. In LTspice, plotted parameters can be integrated by setting the plot limits, then control-clicking the parameter label. The total noise over the entire 2.048MHz simulation is 32µVRMS. A function to implement this operation in Python is shown in the Integrate Power Spectral Density code block.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">integrate_psd</span><span class="p">(</span><span class="n">psd</span><span class="p">,</span> <span class="n">bw</span><span class="p">):</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+    <span class="n">int_psd_sqd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">psd</span><span class="p">))</span>
+    <span class="n">integrated_psd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">psd</span><span class="p">))</span>
+    <span class="n">int_psd_sqd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">psd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mf">2.0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">psd</span><span class="p">)):</span>
+        <span class="n">int_psd_sqd</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">int_psd_sqd</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>\
+            <span class="o">+</span> <span class="n">psd</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="n">integrated_psd</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">int_psd_sqd</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mf">0.5</span>
+    <span class="n">integrated_psd</span> <span class="o">*=</span> <span class="n">bw</span><span class="o">**</span><span class="mf">0.5</span>
+    <span class="k">return</span> <span class="n">integrated_psd</span>
+</pre></div>
+</div>
+<p>Reading in the exported noise data and passing to the integrate_psd function results in a total noise of 3.21951e-05, very close to LTspice’s calculation.</p>
+</section>
+<section id="generating-test-noise">
+<h3>Generating Test Noise<a class="headerlink" href="#generating-test-noise" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<p>Expanding on the functionality of the purely analog noise generator above, it is very useful to be able to produce not only flat, but arbitrary noise profiles - flat “bands” of noise, “pink noise”, “noise mountains” emulating peaking in some amplifiers. The Generate Time-series From Half-spectrum code block starts with a desired noise spectral density (which can be generated manually, or taken from an LTspice simulation), the sample rate of the time series, and produces a time series of voltage values that can be sent to a DAC.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">time_points_from_freq</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">freq</span><span class="p">)</span>
+    <span class="n">rnd_ph_pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span><span class="o">*</span>
+                  <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span>\<span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span>
+                         <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span>\<span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
+    <span class="n">rnd_ph_neg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(</span><span class="n">rnd_ph_pos</span><span class="p">))</span>
+    <span class="n">rnd_ph_full</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(([</span><span class="mi">1</span><span class="p">],</span> <span class="n">rnd_ph_pos</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                                  <span class="n">rnd_ph_neg</span><span class="p">))</span>
+    <span class="n">r_s_full</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span>
+                               <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">freq</span><span class="p">),</span> <span class="mi">1</span><span class="p">)))</span>
+    <span class="n">r_spectrum_rnd_ph</span> <span class="o">=</span> <span class="n">r_s_full</span> <span class="o">*</span> <span class="n">rnd_ph_full</span>
+    <span class="n">r_time_full</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifft</span><span class="p">(</span><span class="n">r_spectrum_rnd_ph</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">density</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">):</span>
+        <span class="c1"># Note that this N is &quot;predivided&quot; by 2</span>
+        <span class="n">r_time_full</span> <span class="o">*=</span> <span class="n">N</span>\<span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">fs</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">r_time_full</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>This function can be verified by controlling one ADALM2000 through a libm2k script, and verifying the noise profile with a second ADALM2000 and the spectrum analyzer in the Scopy GUI. The Push Noise Time-series to ADALM2000 code snippet generates four “bands” of 1mV/ <span class="math notranslate nohighlight">\(\sqrtHz\)</span> noise on the ADALM2000 W2 output (with a sinewave on W1, for double-checking functionality.)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Push Noise Time-series to ADALM2000</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">8192</span>
+<span class="c1"># create some &quot;bands&quot; of  1mV/rootHz noise</span>
+<span class="n">bands</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">//</span><span class="mi">16</span><span class="p">),</span>
+                       <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="o">//</span><span class="mi">16</span><span class="p">),</span>
+                       <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">//</span><span class="mi">16</span><span class="p">),</span>
+                       <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="o">//</span><span class="mi">16</span><span class="p">),</span>
+                       <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">//</span><span class="mi">16</span><span class="p">),</span>
+                       <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="o">//</span><span class="mi">16</span><span class="p">),</span>
+                       <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">//</span><span class="mi">16</span><span class="p">),</span>
+                       <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="o">//</span><span class="mi">16</span><span class="p">)))</span><span class="o">*</span><span class="mf">1000e-6</span>
+<span class="n">bands</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># Set DC content to zero</span>
+<span class="n">buffer2</span> <span class="o">=</span> <span class="n">time_points_from_freq</span><span class="p">(</span><span class="n">bands</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="mi">75000</span><span class="p">,</span>
+                                <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">buffer</span> <span class="o">=</span> <span class="p">[</span><span class="n">buffer1</span><span class="p">,</span> <span class="n">buffer2</span><span class="p">]</span>
+<span class="n">aout</span><span class="o">.</span><span class="n">setCyclic</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">aout</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">buffer</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Figure :ref:`m2k-noise-bands` shows four bands of 1mV/ <span class="math notranslate nohighlight">\(\sqrtHz\)</span> noise being generated by one ADALM2000. The input vector is 8192 points long at a sample rate of 75ksps, for a bandwidth of 9.1Hz per point. Each “band” is 512 points, or 4687Hz wide. The rolloff above ~20kHz is the SINC rolloff of the DAC. If the DAC is capable of a higher sample rate, the time series data can be upsampled and filtered by an interpolating filter [14]_.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/noise_adalm2000/m2k_noise_bands_new.png"><img alt="image19" src="https://wiki.analog.com/_media/university/labs/noise_adalm2000/m2k_noise_bands_new.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure N: Arbitrary Noise Generator Test Spectrum</p>
+</div>
+<p><em>The Scopy spectrum analyzer is used to verify the arbitrary noise generator. Deep notches between noise bands expose the analyzer’s noise floor, showing that an arbitrary noise profile can be accurately generated.</em></p>
+<p>This noise generator can be used in conjunction with the pure analog generator for verifying the rejection properties of a signal chain.</p>
+</section>
+<section id="modeling-and-verifying-adc-noise-bandwidth">
+<h3>Modeling and verifying ADC Noise Bandwidth<a class="headerlink" href="#modeling-and-verifying-adc-noise-bandwidth" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<p>External noise sources and spurious tones above Fs/2 will fold back (alias) into the DC-Fs/2 region - and a converter may be sensitive to noise far beyond Fs/2 - the AD872A mentioned above has a sample rate of 10Msps, but an input bandwidth of 35MHz. While performance may not be the best at such high frequencies, this converter will happily digitize 7 Nyquist zones of noise and fold them back on top of your signal. This illustrates the importance of antialias filters for wideband ADCs. But converters for precision applications, which are typically sigma-delta (like the AD7124-8) or oversampling SAR architectures, in which the input bandwidth is limited by design.</p>
+<p>It is often useful to think of the “equivalent noise bandwidth” (ENBW) of a filter, including an ADC’s built-in filter. The ENBW is the bandwidth of a flat passband “brick wall” filter that lets through the same amount of noise as the non-flat filter. A common example is the ENBW of a first-order R-C filter, which is:</p>
+<p><span class="math notranslate nohighlight">\(ENBW = fc \times \\pi/2\)</span></p>
+<p>Where <span class="math notranslate nohighlight">\(fc\)</span> is the cutoff frequency of the filter. If broadband noise, from “DC to daylight”, is applied to the inputs of both a 1KHz, first-order lowpass filter and 1.57kHz brickwall lowpass filter, the total noise power at the outputs will be the same.</p>
+<p>The ENBW Example code block accepts a filter magnitude response, and returns the effective noise bandwidth. A single-pole filter’s magnitude response is calculated, and used to verify the ENBW = <span class="math notranslate nohighlight">\(fc \times \pi/2\)</span> relationship.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">arb_enbw</span><span class="p">(</span><span class="n">fresp</span><span class="p">,</span> <span class="n">bw</span><span class="p">):</span>
+    <span class="n">int_frsp_sqd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fresp</span><span class="p">))</span>
+    <span class="n">int_frsp_sqd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">fresp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mf">2.0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fresp</span><span class="p">)):</span>
+        <span class="n">int_frsp_sqd</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="p">(</span><span class="n">int_frsp_sqd</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span>
+                            <span class="n">fresp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">int_frsp_sqd</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">int_frsp_sqd</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">bw</span>
+
+<span class="n">fc</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Hz</span>
+<span class="n">bw_per_point</span> <span class="o">=</span> <span class="mi">200</span><span class="o">/</span><span class="mi">65536</span>  <span class="c1"># Hz/record length</span>
+<span class="n">frst_ord</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">(</span><span class="mi">65536</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="c1"># Magnitude = 1/SQRT(1 + (f/fc)^2))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">65536</span><span class="p">):</span>
+    <span class="n">frst_ord</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span>
+                   <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span>
+                    <span class="p">(</span><span class="n">i</span>\<span class="o">*</span><span class="n">bw_per_point</span><span class="p">)</span><span class="o">**</span><span class="mf">2.0</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">fo_enbw</span> <span class="o">=</span> <span class="n">arb_enbw</span><span class="p">(</span><span class="n">frst_ord</span><span class="p">,</span> <span class="n">bw_per_point</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This function can be used to calculate the ENBW of an arbitrary filter response, including the AD7124’s internal filters. The frequency response of the AD7124 SINC4 filter, 128sps sample rate can be calculated similar to the previous 50/60Hz rejection filter example. The arb_anbw function returns a ENBW of about 31Hz.</p>
+<p>The ADALM2000 noise generator can be used to validate this result. Setting the test noise generator to generate a band of 1000µV/ <span class="math notranslate nohighlight">\(\sqrtHz\)</span> should result in a total noise of about 5.69mVRMS, and measured results are approximately 5.1mVRMS total noise. The oscilloscope capture of the ADC input signal is plotted next to the ADC output data, in Figure :ref:`noiseblast`. Note the measured peak-to-peak noise of 426mV, while the ADC peak-to-peak noise is about 26mV. While such a high noise level is (hopefully) unrealistic in an actual precision signal chain, this exercise demonstrates that the ADC’s internal filter can be relied on to act as the primary bandwidth limiting, and hence noise reducing, element in a signal chain.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/labs/noise_adalm2000/ad7124_noise_blast_new.png"><img alt="image20" src="https://wiki.analog.com/_media/university/labs/noise_adalm2000/ad7124_noise_blast_new.png" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p>Figure N: Blasting AD7124 with “Excessive” Noise</p>
+</div>
+<p><em>A 1mV/ :math:`sqrtHz` noise band is driven into the AD7124-8 input. A qualitative reduction in noise is apparent; 426mV peak-to-peak noise at the ADC input results in approximately 25mV peak-to-peak noise at the ADC output. The 5.1mVRMS total output noise is close to the predicted 5.69mVRMS, given the 1mV/ :math:`sqrtHz` noise density and 31Hz ENBW of the ADC’s filter.</em></p>
+</section>
+<section id="conclusion">
+<h3>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<p>Noise is a limiting factor in any signal chain; once noise contaminates a signal, information is lost. Before building a signal acquisition system, the application requirements must be understood, components selected accordingly, and the prototype circuit tested. This tutorial offers a collection of methods that accurately model and measure sensor and signal chain noise that can be used during the design and testing process.</p>
+<p>The techniques detailed in this tutorial are, individually, nothing new. However, in order to achieve an adequate system, it becomes valuable to have a collection of fundamental, easy to implement, and low-cost techniques to enable signal chain modeling and verification. Even though industry continues to offer parts with increased performance, there will always be a certain limitation that one must be aware of. These techniques can not only be used to validate parts before building a mixed-mode signal chain, but also to identify design faults in an existing one.</p>
+</section>
+<section id="acknowledgements">
+<h3>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Jesper Steensgaard, who enabled/forced a paradigm shift in thinking about signal chain design, starting with the LTC2378-20.</p></li>
+<li><p>Travis Collins, Architect of Pyadi-iio (among many other things).</p></li>
+<li><p>Adrian Suciu, Software Team Manager and contributor to libm2k.</p></li>
+<li><p>Our patient and thorough reviewers at <a class="icon link reference external" href="https://github.com/scipy-conference/scipy_proceedings" target="_blank">SciPy Proceedings Github</a></p></li>
+</ul>
+</section>
+<section id="references">
+<h3>References<a class="headerlink" href="#references" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+<p>[1] “Converter Connectivity Tutorial”, <a class="icon link reference external" href="https://wiki.analog.com/university/labs/software/iio_intro_toolbox" target="_blank">https://wiki.analog.com/university/labs/software/iio_intro_toolbox</a>, accessed 1 July, 2021.</p>
+<p>[2] Analog Devices Education Tools Repository <a class="icon link reference external" href="https://doi.org/10.5281/zenodo.5105696" target="_blank">https://doi.org/10.5281/zenodo.5105696</a></p>
+<p>[3] Pauli Virtanen, Ralf Gommers et al. (2020) SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python. Nature Methods, 17(3), 261-272.</p>
+<p>[4] “LTspice Simulator”, <a class="icon adi reference external" href="https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator" target="_blank">en/design-center/design-tools-and-calculators/ltspice-simulator</a>.html, accessed 1 July, 2021.</p>
+<p>[5] Smith, Steven W, The Scientist &amp; Engineer’s Guide to Digital Signal Processing, <a class="icon adi reference external" href="https://www.analog.com/en/education/education-library/scientist_engineers_guide" target="_blank">en/education/education-library/scientist_engineers_guide</a>.html, accessed 1 July, 2021.</p>
+<p>[6] Man, Ching, “Quantization Noise: An Expanded Derivation of the Equation, SNR = 6.02 N + 1.76”, <a class="icon adi reference external" href="https://www.analog.com/media/en/training-seminars/tutorials/MT-229" target="_blank">media/en/training-seminars/tutorials/MT-229</a>.pdf, accessed 1 July, 2021.</p>
+<p>[7] Kester, Walt, “Taking the Mystery out of the Infamous Formula, “SNR = 6.02N + 1.76dB”” Analog Devices Tutorial, 2009, <a class="icon adi reference external" href="https://www.analog.com/media/en/training-seminars/tutorials/MT-001" target="_blank">media/en/training-seminars/tutorials/MT-001</a>.pdf, accessed 1 July, 2021.</p>
+<p>[8] “AD7124-8 Rev E” <a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/data-sheets/ad7124-8" target="_blank">media/en/technical-documentation/data-sheets/ad7124-8</a>.pdf, accessed 1 July, 2021.</p>
+<p>[9] Charles R. Harris, K. Jarrod Millman, et al. Array programming with NumPy, Nature, 585, 357–362 (2020)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DOI</span><span class="p">:</span><span class="mf">10.1038</span><span class="o">/</span><span class="n">s41586</span><span class="o">-</span><span class="mi">020</span><span class="o">-</span><span class="mi">2649</span><span class="o">-</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>[10] “pyadi-iio: Device Specific Python Interfaces For IIO Drivers”, <a class="icon link reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/pyadi-iio" target="_blank">https://wiki.analog.com/resources/tools-software/linux-software/pyadi-iio</a>, accessed 1 July, 2021.</p>
+<p>[11] “Scopy”, <a class="icon link reference external" href="https://wiki.analog.com/university/tools/m2k/scopy" target="_blank">https://wiki.analog.com/university/tools/m2k/scopy</a>, accessed 1 July, 2021.</p>
+<p>[12] “What is Libm2k?”, <a class="icon link reference external" href="https://wiki.analog.com/university/tools/m2k/libm2k/libm2k" target="_blank">https://wiki.analog.com/university/tools/m2k/libm2k/libm2k</a>, accessed 1 July, 2021.</p>
+<p>[13] “LTC2057/LTC2057HV High Voltage, Low Noise Zero-Drift Operational Amplifier”, <a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/data-sheets/2057f" target="_blank">media/en/technical-documentation/data-sheets/2057f</a>.pdf, accessed 1 July, 2021.</p>
+<p>[14] Kester, Walt, “Oversampling Interpolating DACs”, Analog Devices Tutorial, 2009, <a class="icon adi reference external" href="https://www.analog.com/media/en/training-seminars/tutorials/MT-017" target="_blank">media/en/training-seminars/tutorials/MT-017</a>.pdf, accessed 1 July, 2021.</p>
+<p>[15] Ruscak, Steve and Singer, L, “Using Histogram Techniques to Measure ADC Noise” Analog Dialogue, Volume 29, May, 1995. <a class="icon adi reference external" href="https://www.analog.com/en/analog-dialogue/articles/histogram-techniques-measure-adc-noise" target="_blank">en/analog-dialogue/articles/histogram-techniques-measure-adc-noise</a>.html, accessed 1 July, 2021.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

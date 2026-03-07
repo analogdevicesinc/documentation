@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This version is under development" name="description" />
+
+    <title>Yocto Linux 2.2.0 Quickstart Guide for ADSP-SC594 &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Yocto Linux 2.2.0 Quickstart Guide for ADSP-SC594</a></li>
+<li><a class="reference internal" href="#setting-up-your-host-pc">Setting Up Your Host PC</a><ul>
+<li><a class="reference internal" href="#preparing-the-buildtool">Preparing the buildtool</a></li>
+<li><a class="reference internal" href="#building-the-example">Building the example</a></li>
+<li><a class="reference internal" href="#running-u-boot-on-the-board-for-the-first-time">Running U-Boot on the Board for the first time</a></li>
+<li><a class="reference internal" href="#booting-linux-from-the-usb-mass-storage">Booting Linux from the USB Mass Storage</a><ul>
+<li><a class="reference internal" href="#formating-usb-stick">Formating USB stick</a></li>
+<li><a class="reference internal" href="#writing-kernel-and-rootfs-image-to-usb-mass-storage">Writing kernel and rootfs image to USB Mass Storage</a></li>
+<li><a class="reference internal" href="#booting-linux-from-usb-mass-storage">Booting Linux from USB Mass Storage</a></li>
+<li><a class="reference internal" href="#booting-rootfs-from-usb-stick">Booting rootfs from USB stick</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="yocto-linux-2-2-0-quickstart-guide-for-adsp-sc594">
+<h1>Yocto Linux 2.2.0 Quickstart Guide for ADSP-SC594<a class="headerlink" href="#yocto-linux-2-2-0-quickstart-guide-for-adsp-sc594" title="Link to this heading"></a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This version is under development</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The following instructions are for the ADSP-SC594-EZKIT development board (the EV-SC594-SOM System-on-Module (SOM) board attached to the EV-SOMCRR-EZKIT carrier board). For instructions for other processors and development boards please refer to <a class="reference internal" href="../../releaselandingpages/2.2.0.html"><span class="doc">Linux for ADSP-SC5xx Processors 2.2.0 (develop)</span></a></p>
+</div>
+</section>
+<section id="setting-up-your-host-pc">
+<h1>Setting Up Your Host PC<a class="headerlink" href="#setting-up-your-host-pc" title="Link to this heading"></a></h1>
+<p>The build system is currently supported on host PCs running Ubuntu 20.04 LTS 64-bit.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Installing Required Packages ==== In order to build and deploy Linux to your ADSP-SC594-EZKIT development board you will need to install the following packages on your host PC.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get update
+$ sudo apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat libsdl1.2-dev xterm u-boot-tools openssl curl tftpd-hpa python
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Installing CrossCore Embedded Studio ==== CrossCore Embedded Studio contains OpenOCD which is used to transfer U-Boot into RAM for the first initial boot of the device. The tools are created for 32-bit architecture and therefore requires a 32-bit libz package to run. Download and install it.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ wget https://download.analog.com/tools/CrossCoreEmbeddedStudio/Releases/Release_2.11.0/adi-CrossCoreEmbeddedStudio-linux-x86-2.11.0.deb
+$ sudo dpkg -i ./adi-CrossCoreEmbeddedStudio-linux-x86-2.11.0.deb
+$ sudo apt install lib32z1
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Configuring TFTP Service==== A TFTP server on the host is used to transfer images to the development board. Install and configure.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo vi /etc/default/tftpd-hpa
+
+#Replace the existing file with the following
+TFTP_USERNAME=&quot;tftp&quot;
+TFTP_DIRECTORY=&quot;/tftpboot&quot;
+TFTP_ADDRESS=&quot;0.0.0.0:69&quot;
+TFTP_OPTIONS=&quot;--secure&quot;
+#End of File
+
+$ sudo mkdir /tftpboot
+$ sudo chmod 777 /tftpboot
+$ sudo service tftpd-hpa restart
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Configure Minicom ==== In order to communicate with the U-Boot bootloader, a UART connection must be made between the host PC and the development board. It is recommended that you use minicom to do this. Minicom must be configured to connect to U-Boot correctly.</div>
+</div>
+<p>On the host PC open a terminal and execute the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install -y minicom
+$ sudo minicom -s
+
+            +-----[configuration]------+
+
+
+            | Filenames and paths      |
+
+            | File transfer protocols  |
+            | Serial port setup        |
+            | Modem and dialing        |
+            | Screen and keyboard      |
+            | Save setup as dfl        |
+            | Save setup as..          |
+            | Exit                     |
+            | Exit from Minicom        |
+            +--------------------------+
+
+
+# Select Serial port setup
+     Set Serial Device to /dev/ttyUSB0
+     Set Bps/Par/Bits to 115200 8N1
+     Set Hardware Flow Control to No
+
+     Close the Serial port setup option by press Esc
+ Select Save setup as dfl
+ Select Exit
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">/dev/ttyUSB0</span></code> might not correspond to the serial port of the board on every system. You can determine which <code class="docutils literal notranslate"><span class="pre">/dev</span></code> entry your board uses by running <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span> <span class="pre">/dev/ttyUSB*</span></code> twice, once when the serial port of the board is plugged in, and once when it isn’t.</p>
+</div>
+<p>&lt;/code&gt;</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Installing the Sources ==== The example is fully contained in the Analog Devices Yocto Linux github repositories.</div>
+</div>
+<p>To install the sources:</p>
+<div class="hide docutils container">
+<p>TODO: Make sure its the correct repo, branch, manifest file etc</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir ~/gxp
+$ cd ~/gxp
+$ mkdir bin
+$ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo &gt; ./bin/repo
+$ chmod a+x ./bin/repo
+$ ./bin/repo init \
+   -u https://github.com/analogdevicesinc/lnxdsp-repo-manifest.git \
+   -b develop/yocto-2.2.0 \
+   -m develop-yocto-2.2.0.xml
+$ ./bin/repo sync
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">===== Building the Image =====</div>
+</div>
+<section id="preparing-the-buildtool">
+<h2>Preparing the buildtool<a class="headerlink" href="#preparing-the-buildtool" title="Link to this heading"></a></h2>
+<p>Yocto requires the environment to be configured before building is possible. A setup-environment script in the gxp folder contains all the required environment settings for your build target. Source the setup script for your board:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ source setup-environment -m adsp-sc594-som-ezkit
+</pre></div>
+</div>
+<p>Sourcing the script will configure your build environment and create a build folder along with a local build configuration file. See the Yocto Manual for further details.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Note that the build environment needs to be sourced once only before building. If later working in a different terminal the setup-environment script should be sourced again. If sourcing the setup-environment script is done without specifying the machine Yocto will reuse the previous configuration settings and retain any changes made to the files in the conf folder.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</section>
+<section id="building-the-example">
+<h2>Building the example<a class="headerlink" href="#building-the-example" title="Link to this heading"></a></h2>
+<p>You can build three different versions of the root filesystem; minimal, ramdisk and full. To build the example images invoke bitbake from within the build directory created previously.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ bitbake adsp-sc5xx-minimal
+$ bitbake adsp-sc5xx-ramdisk
+$ bitbake adsp-sc5xx-full
+</pre></div>
+</div>
+<p>When the build completes you will see a warning that the ELF binary has relocations in .text. It is OK to ignore this warning</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Building a Linux distribution with Yocto is a significantly demanding process, both in CPU and network usage. A full build from scratch is estimated to take around 170 minutes for an 11th Gen Intel Core i5-11500T with 16 GB of RAM and a stable, fast Internet connection. This estimate can go up significantly for a poorer Internet connection or CPU resources, so set aside plenty of time for a clean build.</p>
+</div>
+</section>
+<section id="running-u-boot-on-the-board-for-the-first-time">
+<h2>Running U-Boot on the Board for the first time<a class="headerlink" href="#running-u-boot-on-the-board-for-the-first-time" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It’s always good practice to erase the contents of <code class="docutils literal notranslate"><span class="pre">/tftpboot/</span></code> before running and/or flashing a new build of U-Boot or Linux. You can do so by executing <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">/tftpboot/*</span></code> before proceeding</p>
+</div>
+<p>Copy the U-Boot SPL and Proper elf files to the tftp directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cp tmp/deploy/images/adsp-sc594-som-ezkit/u-boot-spl-sc594-som-ezkit.elf /tftpboot/
+$ cp tmp/deploy/images/adsp-sc594-som-ezkit/u-boot-proper-sc594-som-ezkit.elf /tftpboot/
+</pre></div>
+</div>
+<p>Before installing the software on to the development board, ensure that the following cables are connected:</p>
+<ul class="simple">
+<li><p>Board connected to network via ethernet cable using J13 connector.</p></li>
+<li><p>Board connected to host PC using USB micro cable, connected to USB/UART port on the development board</p></li>
+<li><p>Board connected to the ICE 1000 or ICE 2000 via the DEBUG port on the board</p></li>
+<li><p>ICE is also connected to host PC via USB mini cable</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc594-som-ezkit.jpg"><img alt="https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc594-som-ezkit.jpg" src="https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc594-som-ezkit.jpg" style="width: 400px;" />
+</a>
+<ul class="simple">
+<li><p>On the SOMCRR-EZKIT is a set of micro switches labelled SW1. These should all be set to the OFF position before continuing.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc594-som-ezkit-switches.jpg"><img alt="https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc594-som-ezkit-switches.jpg" src="https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc594-som-ezkit-switches.jpg" style="width: 400px;" />
+</a>
+<ul class="simple">
+<li><p>The Power jumper JP1 on the EV-SC594-SOM board should be fitted so that it shorts the two pins closest to the edge. This will enable the routing of power from the SOMCRR-EZKIT.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc594-som-ezkit-power-selector.jpg"><img alt="https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc594-som-ezkit-power-selector.jpg" src="https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc594-som-ezkit-power-selector.jpg" style="width: 400px;" />
+</a>
+<ul class="simple">
+<li><p>The BOOT MODE selector on the EV-SC594-SOM board should be turned to “0”.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc594-som-ezkit-bootmode-fault.jpg"><img alt="https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc594-som-ezkit-bootmode-fault.jpg" src="https://wiki.analog.com/_media/resources/tools-software/linuxdsp/docs/quickstartguide/adsp-sc594-som-ezkit-bootmode-fault.jpg" style="width: 400px;" />
+</a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The FAULT LED on the board will come on the first time the device is powered on. This is due to the BootROM failing to find a valid image stored in QSPI. Once the QSPI has been correctly programmed this will no longer be the case.</p>
+</div>
+<p>The console output from U-Boot and later on Linux will appear on the USB serial port configured in minicom earlier so open up minicom.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>;&#39;&#39;**Terminal1: minicom**&#39;&#39;
+:&lt;code&gt;$ sudo minicom &lt;/code&gt;
+</pre></div>
+</div>
+<p>In a separate console launch OpenOCD and connect to the development board.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">;</span><span class="s1">&#39;&#39;</span><span class="o">**</span><span class="n">Terminal2</span><span class="p">:</span> <span class="n">OpenOCD</span><span class="o">**</span><span class="s1">&#39;&#39;</span>
+<span class="p">:</span><span class="o">&lt;</span><span class="n">code</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>$ cd /opt/analog/cces/2.11.0/ARM/openocd/share/openocd/scripts $ sudo /opt/analog/cces/2.11.0/ARM/openocd/bin/openocd -f interface/&lt;ICE&gt;.cfg -f board/ev-sc594-som.cfg&lt;/code&gt; Where <code class="docutils literal notranslate"><span class="pre">&lt;ICE&gt;</span></code> should be replaced with <code class="docutils literal notranslate"><span class="pre">ice1000</span></code> or <code class="docutils literal notranslate"><span class="pre">ice2000</span></code> depending on your hardware. When successful you should see a message similar to the console output below</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Open</span> <span class="n">On</span><span class="o">-</span><span class="n">Chip</span> <span class="n">Debugger</span> <span class="p">(</span><span class="n">Analog</span> <span class="n">Devices</span> <span class="n">CCES</span> <span class="mf">2.11.0</span><span class="p">)</span>  <span class="n">OpenOCD</span> <span class="mf">0.10.0</span><span class="o">-</span><span class="n">gd1ba667</span> <span class="p">(</span><span class="mi">2022</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">13</span><span class="o">-</span><span class="mi">15</span><span class="p">:</span><span class="mi">58</span><span class="p">)</span>
+<span class="n">Licensed</span> <span class="n">under</span> <span class="n">GNU</span> <span class="n">GPL</span> <span class="n">v2</span>
+<span class="n">Report</span> <span class="n">bugs</span> <span class="n">to</span> <span class="o">&lt;</span><span class="n">processor</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">support</span><span class="nd">@analog</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span>
+<span class="n">Info</span> <span class="p">:</span> <span class="n">only</span> <span class="n">one</span> <span class="n">transport</span> <span class="n">option</span><span class="p">;</span> <span class="n">autoselect</span> <span class="s1">&#39;jtag&#39;</span>
+<span class="n">adapter</span> <span class="n">speed</span><span class="p">:</span> <span class="mi">5000</span> <span class="n">kHz</span>
+
+<span class="n">Info</span> <span class="p">:</span> <span class="n">halt</span> <span class="ow">and</span> <span class="n">restart</span> <span class="n">using</span> <span class="n">CTI</span>
+<span class="n">adspsc59x_a55_init</span>
+<span class="n">Info</span> <span class="p">:</span> <span class="n">Listening</span> <span class="n">on</span> <span class="n">port</span> <span class="mi">6666</span> <span class="k">for</span> <span class="n">tcl</span> <span class="n">connections</span>
+<span class="n">Info</span> <span class="p">:</span> <span class="n">Listening</span> <span class="n">on</span> <span class="n">port</span> <span class="mi">4444</span> <span class="k">for</span> <span class="n">telnet</span> <span class="n">connections</span>
+<span class="n">Info</span> <span class="p">:</span> <span class="n">ICE</span><span class="o">-</span><span class="mi">1000</span> <span class="n">firmware</span> <span class="n">version</span> <span class="ow">is</span> <span class="mf">1.0.2</span>
+<span class="n">Info</span> <span class="p">:</span> <span class="n">clock</span> <span class="n">speed</span> <span class="mi">5000</span> <span class="n">kHz</span>
+<span class="n">Info</span> <span class="p">:</span> <span class="n">JTAG</span> <span class="n">tap</span><span class="p">:</span> <span class="n">adspsc594</span><span class="o">.</span><span class="n">adjc</span> <span class="n">tap</span><span class="o">/</span><span class="n">device</span> <span class="n">found</span><span class="p">:</span> <span class="mh">0x0282e0cb</span> <span class="p">(</span><span class="n">mfg</span><span class="p">:</span> <span class="mh">0x065</span> <span class="p">(</span><span class="n">Analog</span> <span class="n">Devices</span><span class="p">),</span> <span class="n">part</span><span class="p">:</span> <span class="mh">0x282e</span><span class="p">,</span> <span class="n">ver</span><span class="p">:</span> <span class="mh">0x0</span><span class="p">)</span>
+<span class="n">Info</span> <span class="p">:</span> <span class="n">JTAG</span> <span class="n">tap</span><span class="p">:</span> <span class="n">adspsc594</span><span class="o">.</span><span class="n">cpu</span> <span class="n">enabled</span>
+<span class="n">Info</span> <span class="p">:</span> <span class="n">DAP</span> <span class="n">adspsc594</span><span class="o">.</span><span class="n">cpu</span> <span class="n">DPIDR</span> <span class="n">indicates</span> <span class="n">ADIv6</span> <span class="n">protocol</span> <span class="ow">is</span> <span class="n">being</span> <span class="n">used</span>
+<span class="n">Info</span> <span class="p">:</span> <span class="n">adspsc594</span><span class="o">.</span><span class="n">cpu</span><span class="p">:</span> <span class="n">hardware</span> <span class="n">has</span> <span class="mi">6</span> <span class="n">breakpoints</span><span class="p">,</span> <span class="mi">4</span> <span class="n">watchpoints</span>
+<span class="n">Info</span> <span class="p">:</span> <span class="n">starting</span> <span class="n">gdb</span> <span class="n">server</span> <span class="k">for</span> <span class="n">adspsc594</span><span class="o">.</span><span class="n">cpu</span> <span class="n">on</span> <span class="mi">3333</span>
+<span class="n">Info</span> <span class="p">:</span> <span class="n">Listening</span> <span class="n">on</span> <span class="n">port</span> <span class="mi">3333</span> <span class="k">for</span> <span class="n">gdb</span> <span class="n">connections</span>
+</pre></div>
+</div>
+<p>In a third console window launch GDB and type <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">extended-remote</span> <span class="pre">:3333</span></code>. This will make GDB to connect to the gdbserver on the local host using port 3333. Then, load the U-Boot SPL into RAM by typing <code class="docutils literal notranslate"><span class="pre">load</span> <span class="pre">u-boot-spl-sc594-som-ezkit.elf</span></code> and hit Ctrl+C to interrupt.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">;</span><span class="s1">&#39;&#39;</span><span class="o">**</span><span class="n">Terminal3</span><span class="p">:</span> <span class="n">GDB</span><span class="o">**</span><span class="s1">&#39;&#39;</span>
+<span class="p">:</span> <span class="o">&lt;</span><span class="n">code</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>$ cd /tftpboot $ /opt/analog/cces/2.11.0/ARM/arm-none-eabi/bin/arm-none-eabi-gdb u-boot-proper-sc594-som-ezkit.elf … (gdb) target extended-remote :3333 Remote debugging using :3333 0x000000000000352c in ?? () (gdb) load Loading section .text, size 0x150 lma 0x96000000 Loading section .efi_runtime, size 0xfb0 lma 0x96000150 Loading section .text_rest, size 0x5ad94 lma 0x96001800 Loading section .rodata, size 0x12f1c lma 0x9605c594 Loading section .hash, size 0x18 lma 0x9606f4b8 Loading section .dtb.init.rodata, size 0xac0 lma 0x9606f4d0 Loading section .data, size 0x47e8 lma 0x9606ff90 Loading section .got, size 0x8 lma 0x96074778 Loading section .got.plt, size 0x18 lma 0x96074780 Loading section .u_boot_list, size 0x2800 lma 0x96074798 Loading section .efi_runtime_rel, size 0x1b0 lma 0x96076f98 Loading section .rela.dyn, size 0xb700 lma 0x96077148 Start address 0x96000000, load size 532800 Transfer rate: 29 KB/sec, 12685 bytes/write. (gdb) c Continuing. &lt;/code&gt;</p>
+<p>At this point U-Boot will now be running in RAM on your target board. You should see U-Boot booting in the minicom console (Terminal 1). Press a key to interrupt the boot process before the countdown terminates:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">;</span><span class="s1">&#39;&#39;</span><span class="o">**</span><span class="n">Terminal1</span><span class="p">:</span> <span class="n">minicom</span><span class="o">**</span><span class="s1">&#39;&#39;</span>
+<span class="p">:</span>  <span class="o">&lt;</span><span class="n">code</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>U-Boot SPL 2020.10 (Aug 23 2022 - 13:09:23 +0000) ADI Boot Mode: 0 (JTAG/BOOTROM) SPL execution has completed. Please load U-Boot Proper via JTAG</p>
+<p>U-Boot 2020.10 (Aug 23 2022 - 13:09:23 +0000)</p>
+<p>Model: ADI sc594-som-ezkit</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Watchdog</span> <span class="n">enabled</span>
+</pre></div>
+</div>
+<p>I2C: ready DRAM: 224 MiB MMC: <a class="reference external" href="mailto:mmc&#37;&#52;&#48;310C7000">mmc<span>&#64;</span>310C7000</a>: 0 Loading Environment from SPIFlash… SF: Detected is25lp512 with page size 256 Bytes, erase size 64 KiB, total 64 MiB OK In: <a class="reference external" href="mailto:serial&#37;&#52;&#48;0x31003000">serial<span>&#64;</span>0x31003000</a> Out: <a class="reference external" href="mailto:serial&#37;&#52;&#48;0x31003000">serial<span>&#64;</span>0x31003000</a> Err: <a class="reference external" href="mailto:serial&#37;&#52;&#48;0x31003000">serial<span>&#64;</span>0x31003000</a> Net: eth0: <a class="reference external" href="mailto:eth&#37;&#52;&#48;0x31040000">eth<span>&#64;</span>0x31040000</a> Hit any key to stop autoboot: 0 =&gt; &lt;/code&gt;</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line">==== Booting the minimal image from QSPI ==== The U-Boot console is used to copy U-Boot (SPL and Proper), the minimal root filesystem image and the fitImage (which contains the kernel image and dtb file) into RAM and then write them to Flash. Copy the required files from &lt;BUILD DIR&gt;/tmp/deploy/images to your /tftpboot directory.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cp tmp/deploy/images/adsp-sc594-som-ezkit/stage1-boot.ldr /tftpboot/
+$ cp tmp/deploy/images/adsp-sc594-som-ezkit/stage2-boot.ldr /tftpboot/
+$ cp tmp/deploy/images/adsp-sc594-som-ezkit/fitImage /tftpboot/
+$ cp tmp/deploy/images/adsp-sc594-som-ezkit/adsp-sc5xx-minimal-adsp-sc594-som-ezkit.jffs2 /tftpboot
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">In the U-Boot console, set the IP address of the Host Linux PC that hosts the binary files on TFTP. Also, set the same address to the variable <code class="docutils literal notranslate"><span class="pre">serverip</span></code></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">;</span><span class="s1">&#39;&#39;</span><span class="o">**</span><span class="n">Terminal1</span><span class="p">:</span> <span class="n">minicom</span><span class="o">**</span><span class="s1">&#39;&#39;</span>
+<span class="p">:</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="n">setenv</span> <span class="n">tftpserverip</span> <span class="o">&lt;</span><span class="n">SERVERIP</span><span class="o">&gt;</span>
+<span class="o">=&gt;</span> <span class="n">setenv</span> <span class="n">serverip</span> <span class="o">&lt;</span><span class="n">SERVERIP</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To find the IP address of your host Linux PC you can issue the <code class="docutils literal notranslate"><span class="pre">ip</span> <span class="pre">addr</span></code> command from the shell or console.</p>
+</div>
+<p>If your network <strong>supports</strong> DHCP, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="n">run</span> <span class="n">update_qspi_sc594</span>
+</pre></div>
+</div>
+<p>If your network <strong>does NOT support</strong> DHCP, in the U-Boot console configure the board IP address and remove the “run init_ethernet;” from the “update_spi_sc594” command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>=&gt; setenv ipaddr &lt;IPADDR&gt;
+=&gt; edit update_spi_sc594
+=&gt; edit: &lt;remove &quot;run init_ethernet;&quot; from here&gt; sf probe ${sfdev}; sf erase 0 ${sfsize}; run update_spi_uboot; run update_spi_fit; run update_spi_rfs; sleep 3; saveenv
+=&gt; run update_qspi_sc594
+</pre></div>
+</div>
+<p>After removing “run init_ethernet;” from update_spi_sc594, issue the “run update_qspi_sc594” command as above.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If flashing a board that had been previously programmed, it’s good to erase the whole flash before as sometimes previous U-Boot installations might leave remnants. You can do that by typing <code class="docutils literal notranslate"><span class="pre">=&gt;</span> <span class="pre">sf</span> <span class="pre">probe</span> <span class="pre">2:1;</span> <span class="pre">sf</span> <span class="pre">erase</span> <span class="pre">0</span> <span class="pre">${sfsize}</span></code> on the U-Boot prompt before proceeding to the following instructions</p>
+</div>
+<p>You should see output similar to the following.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="n">run</span> <span class="n">update_qspi_sc594</span>
+<span class="n">PHY</span> <span class="mh">0x00</span><span class="p">:</span> <span class="n">OUI</span> <span class="o">=</span> <span class="mh">0x80028</span><span class="p">,</span> <span class="n">Model</span> <span class="o">=</span> <span class="mh">0x23</span><span class="p">,</span> <span class="n">Rev</span> <span class="o">=</span> <span class="mh">0x01</span><span class="p">,</span> <span class="mi">100</span><span class="n">baseT</span><span class="p">,</span> <span class="n">FDX</span>
+<span class="n">SF</span><span class="p">:</span> <span class="n">Detected</span> <span class="n">is25lp512</span> <span class="k">with</span> <span class="n">page</span> <span class="n">size</span> <span class="mi">256</span> <span class="n">Bytes</span><span class="p">,</span> <span class="n">erase</span> <span class="n">size</span> <span class="mi">64</span> <span class="n">KiB</span><span class="p">,</span> <span class="n">total</span> <span class="mi">64</span> <span class="n">MiB</span>
+<span class="n">SF</span><span class="p">:</span> <span class="mi">67108864</span> <span class="nb">bytes</span> <span class="o">@</span> <span class="mh">0x0</span> <span class="n">Erased</span><span class="p">:</span> <span class="n">OK</span>
+<span class="n">Speed</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">full</span> <span class="n">duplex</span>
+<span class="n">Using</span> <span class="n">eth</span><span class="o">@</span><span class="mh">0x31040000</span> <span class="n">device</span>
+<span class="n">TFTP</span> <span class="kn">from</span><span class="w"> </span><span class="nn">server</span> <span class="mf">10.37.33.116</span><span class="p">;</span> <span class="n">our</span> <span class="n">IP</span> <span class="n">address</span> <span class="ow">is</span> <span class="mf">10.37.33.113</span>
+<span class="n">Filename</span> <span class="s1">&#39;stage1-boot.ldr&#39;</span><span class="o">.</span>
+<span class="n">Load</span> <span class="n">address</span><span class="p">:</span> <span class="mh">0x96000000</span>
+<span class="n">Loading</span><span class="p">:</span> <span class="c1">######</span>
+         <span class="mf">3.6</span> <span class="n">MiB</span><span class="o">/</span><span class="n">s</span>
+<span class="n">done</span>
+<span class="n">Bytes</span> <span class="n">transferred</span> <span class="o">=</span> <span class="mi">79480</span> <span class="p">(</span><span class="mi">13678</span> <span class="nb">hex</span><span class="p">)</span>
+<span class="n">SF</span><span class="p">:</span> <span class="n">Detected</span> <span class="n">is25lp512</span> <span class="k">with</span> <span class="n">page</span> <span class="n">size</span> <span class="mi">256</span> <span class="n">Bytes</span><span class="p">,</span> <span class="n">erase</span> <span class="n">size</span> <span class="mi">64</span> <span class="n">KiB</span><span class="p">,</span> <span class="n">total</span> <span class="mi">64</span> <span class="n">MiB</span>
+<span class="n">device</span> <span class="mi">0</span> <span class="n">offset</span> <span class="mh">0x0</span><span class="p">,</span> <span class="n">size</span> <span class="mh">0x13678</span>
+<span class="n">SF</span><span class="p">:</span> <span class="mi">79480</span> <span class="nb">bytes</span> <span class="o">@</span> <span class="mh">0x0</span> <span class="n">Written</span><span class="p">:</span> <span class="n">OK</span>
+<span class="n">Speed</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">full</span> <span class="n">duplex</span>
+<span class="n">Using</span> <span class="n">eth</span><span class="o">@</span><span class="mh">0x31040000</span> <span class="n">device</span>
+<span class="n">TFTP</span> <span class="kn">from</span><span class="w"> </span><span class="nn">server</span> <span class="mf">10.37.33.116</span><span class="p">;</span> <span class="n">our</span> <span class="n">IP</span> <span class="n">address</span> <span class="ow">is</span> <span class="mf">10.37.33.113</span>
+<span class="n">Filename</span> <span class="s1">&#39;stage2-boot.ldr&#39;</span><span class="o">.</span>
+<span class="n">Load</span> <span class="n">address</span><span class="p">:</span> <span class="mh">0x96000000</span>
+<span class="n">Loading</span><span class="p">:</span> <span class="c1">#########################################</span>
+         <span class="mf">5.2</span> <span class="n">MiB</span><span class="o">/</span><span class="n">s</span>
+<span class="n">done</span>
+<span class="n">Bytes</span> <span class="n">transferred</span> <span class="o">=</span> <span class="mi">592288</span> <span class="p">(</span><span class="mi">909</span><span class="n">a0</span> <span class="nb">hex</span><span class="p">)</span>
+<span class="n">SF</span><span class="p">:</span> <span class="n">Detected</span> <span class="n">is25lp512</span> <span class="k">with</span> <span class="n">page</span> <span class="n">size</span> <span class="mi">256</span> <span class="n">Bytes</span><span class="p">,</span> <span class="n">erase</span> <span class="n">size</span> <span class="mi">64</span> <span class="n">KiB</span><span class="p">,</span> <span class="n">total</span> <span class="mi">64</span> <span class="n">MiB</span>
+<span class="n">device</span> <span class="mi">0</span> <span class="n">offset</span> <span class="mh">0x20000</span><span class="p">,</span> <span class="n">size</span> <span class="mh">0x909a0</span>
+<span class="n">SF</span><span class="p">:</span> <span class="mi">592288</span> <span class="nb">bytes</span> <span class="o">@</span> <span class="mh">0x20000</span> <span class="n">Written</span><span class="p">:</span> <span class="n">OK</span>
+<span class="n">Speed</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">full</span> <span class="n">duplex</span>
+<span class="n">Using</span> <span class="n">eth</span><span class="o">@</span><span class="mh">0x31040000</span> <span class="n">device</span>
+<span class="n">TFTP</span> <span class="kn">from</span><span class="w"> </span><span class="nn">server</span> <span class="mf">10.37.33.116</span><span class="p">;</span> <span class="n">our</span> <span class="n">IP</span> <span class="n">address</span> <span class="ow">is</span> <span class="mf">10.37.33.113</span>
+<span class="n">Filename</span> <span class="s1">&#39;fitImage&#39;</span><span class="o">.</span>
+<span class="n">Load</span> <span class="n">address</span><span class="p">:</span> <span class="mh">0x96000000</span>
+<span class="n">Loading</span><span class="p">:</span> <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">######################################################</span>
+         <span class="mf">5.6</span> <span class="n">MiB</span><span class="o">/</span><span class="n">s</span>
+<span class="n">done</span>
+<span class="n">Bytes</span> <span class="n">transferred</span> <span class="o">=</span> <span class="mi">14149218</span> <span class="p">(</span><span class="n">d7e662</span> <span class="nb">hex</span><span class="p">)</span>
+<span class="n">SF</span><span class="p">:</span> <span class="n">Detected</span> <span class="n">is25lp512</span> <span class="k">with</span> <span class="n">page</span> <span class="n">size</span> <span class="mi">256</span> <span class="n">Bytes</span><span class="p">,</span> <span class="n">erase</span> <span class="n">size</span> <span class="mi">64</span> <span class="n">KiB</span><span class="p">,</span> <span class="n">total</span> <span class="mi">64</span> <span class="n">MiB</span>
+<span class="n">device</span> <span class="mi">0</span> <span class="n">offset</span> <span class="mh">0x160000</span><span class="p">,</span> <span class="n">size</span> <span class="mh">0xd7e662</span>
+<span class="n">SF</span><span class="p">:</span> <span class="mi">14149218</span> <span class="nb">bytes</span> <span class="o">@</span> <span class="mh">0x160000</span> <span class="n">Written</span><span class="p">:</span> <span class="n">OK</span>
+<span class="n">Speed</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">full</span> <span class="n">duplex</span>
+<span class="n">Using</span> <span class="n">eth</span><span class="o">@</span><span class="mh">0x31040000</span> <span class="n">device</span>
+<span class="n">TFTP</span> <span class="kn">from</span><span class="w"> </span><span class="nn">server</span> <span class="mf">10.37.33.116</span><span class="p">;</span> <span class="n">our</span> <span class="n">IP</span> <span class="n">address</span> <span class="ow">is</span> <span class="mf">10.37.33.113</span>
+<span class="n">Filename</span> <span class="s1">&#39;adsp-sc5xx-minimal-adsp-sc594-som-ezkit.jffs2&#39;</span><span class="o">.</span>
+<span class="n">Load</span> <span class="n">address</span><span class="p">:</span> <span class="mh">0x96000000</span>
+<span class="n">Loading</span><span class="p">:</span> <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">#################################################################</span>
+         <span class="c1">##############################</span>
+         <span class="mf">5.6</span> <span class="n">MiB</span><span class="o">/</span><span class="n">s</span>
+<span class="n">done</span>
+<span class="n">Bytes</span> <span class="n">transferred</span> <span class="o">=</span> <span class="mi">30015488</span> <span class="p">(</span><span class="mi">1</span><span class="n">ca0000</span> <span class="nb">hex</span><span class="p">)</span>
+<span class="n">SF</span><span class="p">:</span> <span class="n">Detected</span> <span class="n">is25lp512</span> <span class="k">with</span> <span class="n">page</span> <span class="n">size</span> <span class="mi">256</span> <span class="n">Bytes</span><span class="p">,</span> <span class="n">erase</span> <span class="n">size</span> <span class="mi">64</span> <span class="n">KiB</span><span class="p">,</span> <span class="n">total</span> <span class="mi">64</span> <span class="n">MiB</span>
+<span class="n">device</span> <span class="mi">0</span> <span class="n">offset</span> <span class="mh">0x1000000</span><span class="p">,</span> <span class="n">size</span> <span class="mh">0x1ca0000</span>
+<span class="n">SF</span><span class="p">:</span> <span class="mi">30015488</span> <span class="nb">bytes</span> <span class="o">@</span> <span class="mh">0x1000000</span> <span class="n">Written</span><span class="p">:</span> <span class="n">OK</span>
+<span class="n">Saving</span> <span class="n">Environment</span> <span class="n">to</span> <span class="n">SPIFlash</span><span class="o">...</span> <span class="n">Erasing</span> <span class="n">SPI</span> <span class="n">flash</span><span class="o">...</span><span class="n">Writing</span> <span class="n">to</span> <span class="n">SPI</span> <span class="n">flash</span><span class="o">...</span><span class="n">done</span>
+<span class="n">OK</span>
+<span class="o">=&gt;</span>
+</pre></div>
+</div>
+<p>The U-Boot image, root filesystem and Linux kernel are now stored in QSPI. Adjust the BOOT MODE selector to <strong>position 1</strong> and press the RESET button, the board should boot into Linux.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="p">[</span>  <span class="n">OK</span>  <span class="p">]</span> <span class="n">Started</span> <span class="n">Login</span> <span class="n">Service</span><span class="o">.</span>
+<span class="p">[</span>  <span class="n">OK</span>  <span class="p">]</span> <span class="n">Reached</span> <span class="n">target</span> <span class="n">Multi</span><span class="o">-</span><span class="n">User</span> <span class="n">System</span><span class="o">.</span>
+         <span class="n">Starting</span> <span class="n">Update</span> <span class="n">UTMP</span> <span class="n">about</span> <span class="n">System</span> <span class="n">Runlevel</span> <span class="n">Changes</span><span class="o">...</span>
+<span class="p">[</span>  <span class="n">OK</span>  <span class="p">]</span> <span class="n">Started</span> <span class="n">Update</span> <span class="n">UTMP</span> <span class="n">about</span> <span class="n">System</span> <span class="n">Runlevel</span> <span class="n">Changes</span><span class="o">.</span>
+
+
+     <span class="o">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>  <span class="o">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>     <span class="o">@@@@@@@@@@@@@@@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>        <span class="o">@@@@@@@@@@@@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>            <span class="o">@@@@@@@@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>               <span class="o">@@@@@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>                   <span class="o">@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>                     <span class="o">@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>                        <span class="o">@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>                     <span class="o">@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>                   <span class="o">@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>               <span class="o">@@@@@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>            <span class="o">@@@@@@@@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>        <span class="o">@@@@@@@@@@@@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>     <span class="o">@@@@@@@@@@@@@@@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>  <span class="o">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span>
+
+        <span class="n">Analog</span> <span class="n">Devices</span> <span class="n">Yocto</span> <span class="n">Distribution</span>
+                 <span class="n">www</span><span class="o">.</span><span class="n">analog</span><span class="o">.</span><span class="n">com</span>
+              <span class="n">www</span><span class="o">.</span><span class="n">yoctoproject</span><span class="o">.</span><span class="n">org</span>
+
+<span class="n">adsp</span><span class="o">-</span><span class="n">sc594</span><span class="o">-</span><span class="n">som</span><span class="o">-</span><span class="n">ezkit</span> <span class="n">login</span><span class="p">:</span> <span class="n">root</span>
+<span class="n">Password</span><span class="p">:</span> <span class="n">adi</span>
+<span class="n">root</span><span class="nd">@adsp</span><span class="o">-</span><span class="n">sc594</span><span class="o">-</span><span class="n">som</span><span class="o">-</span><span class="n">ezkit</span><span class="p">:</span><span class="o">~</span><span class="c1">#</span>
+</pre></div>
+</div>
+<p>The username is <strong>root</strong> and the password is <strong>adi</strong>.</p>
+</section>
+<section id="booting-linux-from-the-usb-mass-storage">
+<h2>Booting Linux from the USB Mass Storage<a class="headerlink" href="#booting-linux-from-the-usb-mass-storage" title="Link to this heading"></a></h2>
+<section id="formating-usb-stick">
+<h3>Formating USB stick<a class="headerlink" href="#formating-usb-stick" title="Link to this heading"></a></h3>
+<p>Frist step is to format USB stick to U-Boot supported formats.</p>
+<p>To format the USB stick, follow the commands below. The example code in this section assumes that the USB device is reported to be /dev/sdb. Ensure that you change these commands to use your device.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo fdisk /dev/sdb
+/* Create primary partition 1, 256M size*/
+Command (m for help): n
+Select (default p): p
+Partition number (1-4, default 1): 1
+First sector (2048-3887103, default 2048): PRESS ENTER
+Last sector, +sectors or +size{K,M,G} (2048-3887103, default 3887103): PRESS ENTER
+
+/* Save partition */
+Command (m for help): w
+</pre></div>
+</div>
+<p>Format the USB stick to EXT4 filesystem</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo mkfs.ext4 /dev/sdb1
+</pre></div>
+</div>
+</section>
+<section id="writing-kernel-and-rootfs-image-to-usb-mass-storage">
+<h3>Writing kernel and rootfs image to USB Mass Storage<a class="headerlink" href="#writing-kernel-and-rootfs-image-to-usb-mass-storage" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir ~/mnt
+$ sudo mount -t ext4 /dev/sdb1 ~/mnt
+$ sudo mkdir ~/mnt/boot
+$ sudo cp tmp/deploy/images/adsp-sc594-ezkit/adsp-sc5xx-ramdisk-adsp-sc594-som-ezkit.cpio.xz.u-boot ~/mnt/boot/ramdisk.cpio.xz.u-boot
+$ sudo cp tmp/deploy/images/adsp-sc594-ezkit/fitImage ~/mnt/boot/
+$ sudo tar -xf tmp/deploy/images/adsp-sc594-ezkit/adsp-sc5xx-minimal-adsp-sc594-ezkit.tar.xz -C ~/mnt
+$ sudo umount ~/mnt
+</pre></div>
+</div>
+</section>
+<section id="booting-linux-from-usb-mass-storage">
+<h3>Booting Linux from USB Mass Storage<a class="headerlink" href="#booting-linux-from-usb-mass-storage" title="Link to this heading"></a></h3>
+<p>To boot from ADSP-SC594-EZKIT run commands from u-boot</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">setenv</span> <span class="n">usbload</span> <span class="s1">&#39;ext4load usb 0 $</span><span class="si">{initramaddr}</span><span class="s1"> /boot/$</span><span class="si">{initramfile}</span><span class="s1">; ext4load usb 0 $</span><span class="si">{loadaddr}</span><span class="s1"> /boot/$</span><span class="si">{imagefile}</span><span class="s1">;&#39;</span>
+<span class="n">setenv</span> <span class="n">usbboot</span> <span class="s1">&#39;usb start; run usbload; run ramargs; bootm $</span><span class="si">{loadaddr}</span><span class="s1"> $</span><span class="si">{initramaddr}</span><span class="s1">;&#39;</span>
+<span class="n">run</span> <span class="n">usbboot</span>
+</pre></div>
+</div>
+</section>
+<section id="booting-rootfs-from-usb-stick">
+<h3>Booting rootfs from USB stick<a class="headerlink" href="#booting-rootfs-from-usb-stick" title="Link to this heading"></a></h3>
+<p>Follow the steps to prepare USB stick in chapter above <a class="reference internal" href="#"><span class="doc">Yocto Linux 2.2.0 Quickstart Guide for ADSP-SC594</span></a>. Set environment variables in U-boot</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">setenv</span> <span class="n">usbargs</span> <span class="s1">&#39;setenv bootargs root=/dev/sda1 rw rootfstype=ext4 rootwait earlycon=adi_uart,0x31003000 console=ttySC0,115200&#39;</span>
+<span class="n">setenv</span> <span class="n">usbload</span> <span class="s1">&#39;ext4load usb 0 $</span><span class="si">{loadaddr}</span><span class="s1"> /boot/$</span><span class="si">{imagefile}</span><span class="s1">;&#39;</span>
+<span class="n">setenv</span> <span class="n">usbboot</span> <span class="s1">&#39;usb start; run usbload; run usbargs; bootm $</span><span class="si">{loadaddr}</span><span class="s1">;&#39;</span>
+</pre></div>
+</div>
+<p>And type to boot</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">run</span> <span class="n">usbboot</span>
+</pre></div>
+</div>
+<p>Now the rootfs is set to your USB stick and amount of space equals of size of partition on USB stick.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Booting Linux Using TFTP ==== In order to boot Linux, the TFTP server should be setup as <a class="reference internal" href="quickstart_sc594.html"><span class="doc">above</span></a> and (for both NFS and RAM boot) a copy of the kernel image and dtb file should be copied into the <strong>/tftpboot</strong> directory.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cp tmp/deploy/images/adsp-sc594-som-ezkit/Image /tftpboot
+$ cp tmp/deploy/images/adsp-sc594-som-ezkit/sc594-som-ezkit.dtb /tftpboot
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">=== RAM Boot === For RAM boot a copy of the image containing the filesystem needs copied to the /tftpboot directory.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cp tmp/deploy/images/adsp-sc594-som-ezkit/adsp-sc5xx-ramdisk-adsp-sc594-som-ezkit.cpio.xz.u-boot /tftpboot/ramdisk.cpio.xz.u-boot
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">=== NFS Boot === For NFS boot we use the Network File System which is stored in local Ubuntu Host. This is suggested when you do application development. To setup the NFS server:</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install nfs-kernel-server
+$ sudo vi /etc/exports
+
+#Add following commands
+/romfs *(rw,sync,no_root_squash,no_subtree_check)
+
+$ sudo mkdir /romfs/
+$ sudo chmod 777 /romfs/
+$ sudo service nfs-kernel-server start
+</pre></div>
+</div>
+<p>We can verify that the NFS service is running by executing</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo service nfs-kernel-server status
+</pre></div>
+</div>
+<p>The output will indicate that the server is active, i.e.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>● nfs-server.service - NFS server and services
+     Loaded: loaded (/lib/systemd/system/nfs-server.service; enabled; vendor preset: enabled)
+    Drop-In: /run/systemd/generator/nfs-server.service.d
+             └─order-with-mounts.conf
+     Active: active (exited) since Tue 2022-09-06 14:38:31 BST; 3 months 14 days ago
+   Main PID: 953 (code=exited, status=0/SUCCESS)
+      Tasks: 0 (limit: 18797)
+     Memory: 0B
+     CGroup: /system.slice/nfs-server.service
+
+Sep 06 14:38:29 $YOUR_HOSTNAME systemd[1]: Starting NFS server and services...
+Sep 06 14:38:31 $YOUR_HOSTNAME systemd[1]: Finished NFS server and services.
+</pre></div>
+</div>
+<p>If it’s reported as inactive, wait a few moments and check the status again.</p>
+<p>The root filesystem should then be copied to /romfs.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo tar -xf tmp/deploy/images/adsp-sc594-som-ezkit/adsp-sc5xx-full-adsp-sc594-som-ezkit.tar.xz -C /romfs
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">=== Booting into Linux from TFTP === Next, on the target, from u-boot, run one of the following command:</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=&gt;</span> <span class="n">run</span> <span class="n">ramboot</span>
+ <span class="ow">or</span>
+<span class="o">=&gt;</span> <span class="n">run</span> <span class="n">nfsboot</span>
+<span class="o">......</span>
+<span class="o">......</span>
+         <span class="n">Starting</span> <span class="n">Update</span> <span class="n">UTMP</span> <span class="n">about</span> <span class="n">System</span> <span class="n">Runlevel</span> <span class="n">Changes</span><span class="o">...</span>
+<span class="p">[</span>  <span class="n">OK</span>  <span class="p">]</span> <span class="n">Started</span> <span class="n">Update</span> <span class="n">UTMP</span> <span class="n">about</span> <span class="n">System</span> <span class="n">Runlevel</span> <span class="n">Changes</span><span class="o">.</span>
+
+
+     <span class="o">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>  <span class="o">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>     <span class="o">@@@@@@@@@@@@@@@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>        <span class="o">@@@@@@@@@@@@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>            <span class="o">@@@@@@@@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>               <span class="o">@@@@@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>                   <span class="o">@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>                     <span class="o">@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>                        <span class="o">@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>                     <span class="o">@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>                   <span class="o">@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>               <span class="o">@@@@@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>            <span class="o">@@@@@@@@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>        <span class="o">@@@@@@@@@@@@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>     <span class="o">@@@@@@@@@@@@@@@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@</span>  <span class="o">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span>
+     <span class="o">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span>
+
+        <span class="n">Analog</span> <span class="n">Devices</span> <span class="n">Yocto</span> <span class="n">Distribution</span>
+                 <span class="n">www</span><span class="o">.</span><span class="n">analog</span><span class="o">.</span><span class="n">com</span>
+              <span class="n">www</span><span class="o">.</span><span class="n">yoctoproject</span><span class="o">.</span><span class="n">org</span>
+
+<span class="n">adsp</span><span class="o">-</span><span class="n">sc594</span><span class="o">-</span><span class="n">som</span><span class="o">-</span><span class="n">ezkit</span> <span class="n">login</span><span class="p">:</span> <span class="n">root</span>
+<span class="n">Password</span><span class="p">:</span> <span class="n">adi</span>
+<span class="n">root</span><span class="nd">@adsp</span><span class="o">-</span><span class="n">sc594</span><span class="o">-</span><span class="n">som</span><span class="o">-</span><span class="n">ezkit</span><span class="p">:</span><span class="o">~</span><span class="c1">#</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Building the SDK ==== To build the SDK follow the instructions here <a class="reference internal" href="building-the-sdk.html"><span class="doc">Building the SDK</span></a>.</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This page gives an overview of using the IIO based firmware applications for Precision ADC data capturing. The firmware applications are developed on the ARM 32-bit microcontrollers and ‘ARM Mbed’ is the primary development platform used. The visualization of ADC data is done using various IIO clients such as IIO oscilloscope, ACE, Pyadi-iio drivers, Matlab Precision toolbox, which are developed and supported by Analog Devices." name="description" />
+
+    <title>Precision ADC Data Capture Using IIO Firmware Applications &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Precision ADC Data Capture Using IIO Firmware Applications</a><ul>
+<li><a class="reference internal" href="#data-capture-with-iio-firmware-application">Data Capture With IIO Firmware Application</a></li>
+<li><a class="reference internal" href="#limitations-of-data-capture-using-iio-application">Limitations of Data Capture Using IIO Application</a><ul>
+<li><a class="reference internal" href="#data-capturing-sampling-rate">Data Capturing/Sampling Rate</a></li>
+<li><a class="reference internal" href="#data-transmission-rate-serial-link">Data Transmission Rate (serial link)</a><ul>
+<li><a class="reference internal" href="#capturing-rate-transmission-rate">Capturing Rate &lt; Transmission Rate:</a></li>
+<li><a class="reference internal" href="#capturing-rate-transmission-rate-1">Capturing Rate &gt; Transmission Rate:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#buffer-size-limitations-in-firmware">Buffer size limitations in firmware</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#saving-captured-data">Saving Captured Data</a></li>
+<li><a class="reference internal" href="#iio-oscilloscope-client">IIO Oscilloscope (Client)</a></li>
+<li><a class="reference internal" href="#data-capture-with-iio-firmware-application-1">Data Capture With IIO Firmware Application</a></li>
+<li><a class="reference internal" href="#limitations-of-data-capture-using-iio-application-1">Limitations of Data Capture Using IIO Application</a><ul>
+<li><a class="reference internal" href="#data-capturingsampling-rate-1">Data Capturing/Sampling Rate</a></li>
+<li><a class="reference internal" href="#data-transmission-rate-serial-link-1">Data Transmission Rate (serial link)</a><ul>
+<li><a class="reference internal" href="#capturing-rate-transmission-rate-2">Capturing Rate &lt; Transmission Rate:</a></li>
+<li><a class="reference internal" href="#capturing-rate-transmission-rate-3">Capturing Rate &gt; Transmission Rate:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#buffer-size-limitations-in-firmware-1">Buffer size limitations in firmware</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#saving-captured-data-1">Saving Captured Data</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="precision-adc-data-capture-using-iio-firmware-applications">
+<h1>Precision ADC Data Capture Using IIO Firmware Applications<a class="headerlink" href="#precision-adc-data-capture-using-iio-firmware-applications" title="Link to this heading"></a></h1>
+<p>This page gives an overview of using the IIO based firmware applications for Precision ADC data capturing. The firmware applications are developed on the ARM 32-bit microcontrollers and ‘ARM Mbed’ is the primary development platform used. The visualization of ADC data is done using various IIO clients such as IIO oscilloscope, ACE, Pyadi-iio drivers, Matlab Precision toolbox, which are developed and supported by Analog Devices.</p>
+<section id="data-capture-with-iio-firmware-application">
+<h2>Data Capture With IIO Firmware Application<a class="headerlink" href="#data-capture-with-iio-firmware-application" title="Link to this heading"></a></h2>
+<p>This page focuses on the firmware part of ‘Data Capturing. The “<a class="reference internal" href="ad7606_mbed_iio_application.html"><span class="doc">AD7606 IIO Application</span></a>” is used as a reference for this discussion.</p>
+<p>IIO Oscilloscope can be used to capture and visualize the continuous analog or discrete signals from any ADC device using a IIO firmware application developed for that particular device. This allows user to monitor a real-time data. Using this firmware, a user can perform device calibration, change the gain, voltage range, data rate, etc. (based on device used) and observe the effects that different configurations have on the data displayed on IIO Oscilloscope. IIO Oscilloscope also allows users to save the data, which can further be used to process and analyze it.</p>
+<p>The diagram below shows the continuous capture of signals on an AD7606 ADC, which is an 8-channel DAS. A 1Khz signal is applied on inputs of all 8 analog channels. The max data capturing rate in firmware is ~30 to 40 KSPS. The data is transmitted from firmware application at 230400 baud rate using UART serial link.</p>
+<img alt="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_sine_wave_capture.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_sine_wave_capture.jpg" />
+<img alt="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_trapezoidal_wave_capture.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_trapezoidal_wave_capture.jpg" />
+<ul class="simple">
+<li></li>
+</ul>
+<p>The channels for which data is to be captured can be selected from the GUI window, along with the number of samples to display on screen in a single data read query. As shown below, all 8 channels are selected for data capture and the number of requested samples is set at 400 (default). This means, IIO oscilloscope requests 400 samples per channel, so in this case total 3200 samples. The channels are stored as shown below:</p>
+<img alt="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_select_chn_samples.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_select_chn_samples.jpg" />
+<ul class="simple">
+<li></li>
+</ul>
+</section>
+<section id="limitations-of-data-capture-using-iio-application">
+<h2>Limitations of Data Capture Using IIO Application<a class="headerlink" href="#limitations-of-data-capture-using-iio-application" title="Link to this heading"></a></h2>
+<p>IIO oscilloscope is intended as a debugging tool and can only be used for data visualization/capture. It does not perform any sort of data processing. There are multiple factors which can potentially impact the data capturing and visualization.</p>
+<ul class="simple">
+<li><p>Data Capturing/Sampling Rate</p></li>
+<li><p>Data Transmission Rate (serial link)</p></li>
+<li><p>Buffer size limitations in firmware</p></li>
+<li></li>
+</ul>
+<section id="data-capturing-sampling-rate">
+<h3>Data Capturing/Sampling Rate<a class="headerlink" href="#data-capturing-sampling-rate" title="Link to this heading"></a></h3>
+<p>The data capturing or sampling rate defines the maximum rate/speed at which data can be sampled and captured from the ADC using the IIO firmware application. For ADC’s, typical time to capture single ADC sample is defined as:</p>
+<p><strong>Time to capture single sample: ADC acquisition time + ADC sampling time + ADC data read time over digital interface</strong></p>
+<p>For AD7606, this time is typically 28usec for all 8-channels (obtained in IIO firmware). AD7606 captures all 8-channels in single conversion cycle. When calculating the sample rate per second, it is obtained as ~284 KSPS per 8 channels (28usec / 8 = 3.5usec. Sample rate/second = 1/3.5usec = 284 KSPS). This gives sample rate per channel as ~35KSPS.</p>
+<p>35Khz therefore can be considered as the sampling frequency. As per ‘Nyquist–Shannon sampling theorem’, the sampling frequency should theoretically be greater than twice the analog input frequency for faithful reproduction of the signal after conversion. However, in practice sampling frequency should be high enough to capture multiple slices/samples in given period, so that the input signal is replicated smoothly.</p>
+<p>Due to this limitations, IIO oscilloscope can capture frequencies which are very less than max possible data rate. In case of AD7606, it is possible to capture the signals with frequencies of 4Khz and less when no oversampling is present. At OSR &gt; 0, the data rate drops down and so higher frequency signals can’t be reproduced correctly. Below plot is captured with 17Khz analog input on channel 1 and it can be seen that the signal is not a pure sine wave.</p>
+<img alt="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_high_frequency_graph.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_high_frequency_graph.jpg" />
+<ul class="simple">
+<li></li>
+</ul>
+</section>
+<section id="data-transmission-rate-serial-link">
+<h3>Data Transmission Rate (serial link)<a class="headerlink" href="#data-transmission-rate-serial-link" title="Link to this heading"></a></h3>
+<p>This is the rate or speed at which data cane be transmitted to IIO oscilloscope over the serial link (e.g. UART). The data transmission rate and serial link used to capture the data plays an important role while capturing data at higher OSR’s Or in scenarios where transmission rate is higher or lower than data capturing/sampling rate. The IIO oscilloscope requests the data in aperiodic manner, meaning that new data capture request is sent immediately when data from previous request is received.</p>
+<section id="capturing-rate-transmission-rate">
+<h4>Capturing Rate &lt; Transmission Rate:<a class="headerlink" href="#capturing-rate-transmission-rate" title="Link to this heading"></a></h4>
+<p>If data capturing rate is lower than transmission rate, the firmware can wait for certain period of time before sufficient samples are captured in the buffer. If time to capture these samples is higher than IIO oscilloscope timeout period, the firmware returns the empty/invalid data. Therefore the user must always ensure that the data rate is always higher than the transmission rate at any instance. If this is not the case, transmission rate can be reduced by lowering the baud rate (for UART medium). Also, the requested number of samples must also be modified according to a data rate of device to avoid IIO oscilloscope getting timed-out or to have a huge discontinuity in the data visualization.</p>
+<p>Another factor that determines the IIO oscilloscope timeout is ‘sampling_frequency’ attribute. If this attribute is not defined, the timeout period for IIO oscilloscope during data capture is set to 2sec default, however, if this attribute is defined, the time is calculated as: number of requested samples * (1 / sampling_frequency). For example, if sampling frequency is set as 400SPS, the timeout period is:</p>
+<p>timeout = 400 (requested samples) * (1 / 10000 SPS) + 1sec = 1.4 sec</p>
+</section>
+<section id="capturing-rate-transmission-rate-1">
+<span id="id1"></span><h4>Capturing Rate &gt; Transmission Rate:<a class="headerlink" href="#capturing-rate-transmission-rate-1" title="Link to this heading"></a></h4>
+<p>If data capturing rate is too high compared to the transmission rate, the data acquisition into a buffer happens faster. So data buffer might fill faster compared to emptying operation. This might lead to a discontinuity on data visualization on IIO oscilloscope side as data visualization is limited by data transmission rate in this case (with slower serial communication link). If communication link is faster and matches to capturing/sampling rate, the visualization of data would be more continuous.</p>
+<ul class="simple">
+<li></li>
+</ul>
+</section>
+</section>
+<section id="buffer-size-limitations-in-firmware">
+<h3>Buffer size limitations in firmware<a class="headerlink" href="#buffer-size-limitations-in-firmware" title="Link to this heading"></a></h3>
+<p>The requested number of samples set in IIO oscilloscope must always be less than half the buffer size set in the IIO firmware. For the case of AD7606 devices, the max samples to be requested in a single query should not be greater than 4096 for a buffer size of 8192 samples. This is explained below:</p>
+<p>The buffer read and write happens in parallel through 2 different events. The data from buffer is read when new request from IIO oscilloscope occurs while write operation continues in the background typically through interrupt event which monitors the end of conversion (new sample available to read). While reading the data from buffer, at-least 128 samples offset must be present b/w read and write index of a buffer (this is shown in below diagram). In other words, the write index must always be greater than read index. The write index always increments faster compared to read index for devices with fast data capturing speed compared to transmit speed. For instance, AD7606 can capture 128 samples in 3.5msec, while time it takes to transmit 128 samples is 18msec &#64;230.4 KBPS rate. So, buffer fills faster than emptying it. For slower capturing devices, this situation is reversed. In those device it is always ensured in the firmware that read index does not cross the write index at any instance.</p>
+<p>So, considering this limitation, the firmware ensures that the buffer is always read completely after it is full, and before it starts writing new data from it’s head (start index). If this is not done, there is always a possibility that old data is overwritten when the buffer starts filling from the start or head. The write index stops at the end of the buffer when it is full and once the buffer is read completely it is moved to the start to begin filling data from the head in a circular fashion.</p>
+<p>The IIO data is always sent in chunks of 256 bytes. When converted into samples, it becomes 128 (256 / 2) for the AD7606B device due to its 16-bit (2-byte) resolution. If requested samples are 400, the number of loops becomes 400 / 128 = 3.21. So samples are transmitted as: 128, 128, 128, 84. This is done in single loop, so firmware reads the buffer for 128 samples, transmit them over UART link and then repeat the cycle until all 400 samples are sent. In the last loop, only 84 samples are read and sent to IIO oscilloscope.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_data_capture_in_firmware.jpg"><img alt="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_data_capture_in_firmware.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_data_capture_in_firmware.jpg" style="width: 600px;" />
+</a>
+<p>Now, consider the scenario where more than 4096 samples are requested. So assume 5000 samples are requested by IIO oscilloscope for 2 channels. The buffer will start filling the data and will reach the end of the buffer, thus write index pointing to 8192. The read is assumed to slower than write, so read index would be less than write (say read index is pointing to 2000). At this instance, the write buffer can’t really start capturing new data because it can override old data as a read is still in progress. Assume the read of 5000 samples is complete in the first request and read index has reached 5000. In the next request a further 5000 samples would be requested. But the problem now is that the buffer size is only 8192 and there are no extra samples ((5000 + 5000) - 8192 = 1808) available to transmit. If samples are not transmitted back to IIO oscilloscope or dummy/old data is sent, the misalignment of channel data occurs (when more than 1 channels are selected). This effects the data visualization on IIO oscilloscope. To avoid this problem, the number of requested samples should always be less than 4096 for buffer size of 8192 at any instance (or to be precise, the total requested samples must always be less than half the size of buffer). This however does not mean only 4096 sample size of buffer is utilized as described below:</p>
+<p>If requested samples are 1050, the max available size of buffer is: available size = (8192 / 1050) * 1050 = 7 * 1050 = 7350. Thus buffer utilizes 7350 samples size from max 8192.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span> <span class="n">Size</span> <span class="n">of</span> <span class="n">the</span> <span class="n">acquisition</span> <span class="n">buffer</span> <span class="p">(</span><span class="ow">in</span> <span class="n">terms</span> <span class="n">of</span> <span class="n">samples</span><span class="p">)</span> <span class="o">*/</span>
+<span class="c1">#define DATA_BUFFER_SIZE        (8192)</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The behavior of data capturing and displaying varies from device to device. Two two major things must be considered while designing IIO firmware for any device is: 1) Device capture speed 2) Data Transmission speed</p>
+<p>If capturing is slower for any device (low data rate), the ODR (output data rate) of device must be adjusted accordingly (if applicable) so that time to obtain requested samples is always less than the IIO oscilloscope timeout period. If ODR is fixed in the device, the time to capture number of requested samples by user should always be less than timeout period of IIO oscilloscope, otherwise invalid data is returned back. Therefore the user must provide valid count for requested samples.</p>
+</div>
+<p>If requested samples is set higher than the available buffer size, a constant value is transmitted to IIO oscilloscope to avoid IIO oscilloscope becoming unresponsive. As shown below, requested samples are 1000 * 8 = 8000, which is greater than 4096 (available buffer size). Therefore oscilloscope displays a constant value as an error indication.</p>
+<img alt="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_no_response.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_no_response.jpg" />
+<ul class="simple">
+<li></li>
+</ul>
+</section>
+</section>
+<section id="saving-captured-data">
+<h2>Saving Captured Data<a class="headerlink" href="#saving-captured-data" title="Link to this heading"></a></h2>
+<p>The data on IIO oscilloscope can be saved for further processing and analysis. The data is saved using a .csv format. The data can be captured for each selected channel during save option and only requested number of samples can be saved. So if 400 samples are requested, the data for only 400 samples would get saved into .csv file. The data is raw adc data and no extra processing is performed it while saving or capturing.</p>
+<img alt="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_data_save.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_data_save.jpg" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For detailed guide on using IIO based firmware applications, refer <a class="reference internal" href="ad7606_mbed_iio_application.html"><span class="doc">AD7606 IIO Application code</span></a>. Feel free to consult Analog Devices Engineer-Zone for feature requests, feedback, bug-reports etc.</p>
+</div>
+</section>
+<section id="iio-oscilloscope-client">
+<h2>IIO Oscilloscope (Client)<a class="headerlink" href="#iio-oscilloscope-client" title="Link to this heading"></a></h2>
+<p>This is a GUI (Graphical User Interface) based IIO client application for data visualization and device configuration/debugging. The data from IIO devices (ADCs/DACs) is transmitted over Serial/Ethernet/USB link to IIO Oscilloscope client through the abstracted layer of “libiio” (Library developed originally to interface with linux based IIO devices). You can download and install <a class="reference internal" href="../linux-software/iio_oscilloscope.html"><span class="doc">IIO Oscilloscope</span></a> from the links below.</p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p>IIO Oscilloscope installer for Windows (Use below link):</p>
+<ul class="simple">
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/iio-oscilloscope/tree/main/releases" target="_blank">IIO Oscilloscope windows installer (.exe)</a></p></li>
+</ul>
+<p>Libiio installer for Windows (Use below link):</p>
+<ul class="simple">
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/libiio/tree/main/releases" target="_blank">libiio windows installer (.exe)</a></p></li>
+</ul>
+</div>
+</section>
+<section id="data-capture-with-iio-firmware-application-1">
+<span id="id2"></span><h2>Data Capture With IIO Firmware Application<a class="headerlink" href="#data-capture-with-iio-firmware-application-1" title="Link to this heading"></a></h2>
+<p>This page focuses on the firmware part of ‘Data Capturing. The “<a class="reference internal" href="ad7606_mbed_iio_application.html"><span class="doc">AD7606 IIO Application</span></a>” is used as a reference for this discussion.</p>
+<p>IIO Oscilloscope can be used to capture and visualize the continuous analog or discrete signals from any ADC device using a IIO firmware application developed for that particular device. This allows user to monitor a real-time data. Using this firmware, a user can perform device calibration, change the gain, voltage range, data rate, etc. (based on device used) and observe the effects that different configurations have on the data displayed on IIO Oscilloscope. IIO Oscilloscope also allows users to save the data, which can further be used to process and analyze it.</p>
+<p>The diagram below shows the continuous capture of signals on an AD7606 ADC, which is an 8-channel DAS. A 1Khz signal is applied on inputs of all 8 analog channels. The max data capturing rate in firmware is ~30 to 40 KSPS. The data is transmitted from firmware application at 230400 baud rate using UART serial link.</p>
+<img alt="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_sine_wave_capture.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_sine_wave_capture.jpg" />
+<img alt="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_trapezoidal_wave_capture.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_trapezoidal_wave_capture.jpg" />
+<ul class="simple">
+<li></li>
+</ul>
+<p>The channels for which data is to be captured can be selected from the GUI window, along with the number of samples to display on screen in a single data read query. As shown below, all 8 channels are selected for data capture and the number of requested samples is set at 400 (default). This means, IIO oscilloscope requests 400 samples per channel, so in this case total 3200 samples. The channels are stored as shown below:</p>
+<img alt="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_select_chn_samples.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_select_chn_samples.jpg" />
+<ul class="simple">
+<li></li>
+</ul>
+</section>
+<section id="limitations-of-data-capture-using-iio-application-1">
+<span id="id3"></span><h2>Limitations of Data Capture Using IIO Application<a class="headerlink" href="#limitations-of-data-capture-using-iio-application-1" title="Link to this heading"></a></h2>
+<p>IIO oscilloscope is intended as a debugging tool and can only be used for data visualization/capture. It does not perform any sort of data processing. There are multiple factors which can potentially impact the data capturing and visualization.</p>
+<ul class="simple">
+<li><p>Data Capturing/Sampling Rate</p></li>
+<li><p>Data Transmission Rate (serial link)</p></li>
+<li><p>Buffer size limitations in firmware</p></li>
+<li></li>
+</ul>
+<section id="data-capturingsampling-rate-1">
+<span id="id4"></span><h3>Data Capturing/Sampling Rate<a class="headerlink" href="#data-capturingsampling-rate-1" title="Link to this heading"></a></h3>
+<p>The data capturing or sampling rate defines the maximum rate/speed at which data can be sampled and captured from the ADC using the IIO firmware application. For ADC’s, typical time to capture single ADC sample is defined as:</p>
+<p><strong>Time to capture single sample: ADC acquisition time + ADC sampling time + ADC data read time over digital interface</strong></p>
+<p>For AD7606, this time is typically 28usec for all 8-channels (obtained in IIO firmware). AD7606 captures all 8-channels in single conversion cycle. When calculating the sample rate per second, it is obtained as ~284 KSPS per 8 channels (28usec / 8 = 3.5usec. Sample rate/second = 1/3.5usec = 284 KSPS). This gives sample rate per channel as ~35KSPS.</p>
+<p>35Khz therefore can be considered as the sampling frequency. As per ‘Nyquist–Shannon sampling theorem’, the sampling frequency should theoretically be greater than twice the analog input frequency for faithful reproduction of the signal after conversion. However, in practice sampling frequency should be high enough to capture multiple slices/samples in given period, so that the input signal is replicated smoothly.</p>
+<p>Due to this limitations, IIO oscilloscope can capture frequencies which are very less than max possible data rate. In case of AD7606, it is possible to capture the signals with frequencies of 4Khz and less when no oversampling is present. At OSR &gt; 0, the data rate drops down and so higher frequency signals can’t be reproduced correctly. Below plot is captured with 17Khz analog input on channel 1 and it can be seen that the signal is not a pure sine wave.</p>
+<img alt="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_high_frequency_graph.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_high_frequency_graph.jpg" />
+<ul class="simple">
+<li></li>
+</ul>
+</section>
+<section id="data-transmission-rate-serial-link-1">
+<span id="id5"></span><h3>Data Transmission Rate (serial link)<a class="headerlink" href="#data-transmission-rate-serial-link-1" title="Link to this heading"></a></h3>
+<p>This is the rate or speed at which data cane be transmitted to IIO oscilloscope over the serial link (e.g. UART). The data transmission rate and serial link used to capture the data plays an important role while capturing data at higher OSR’s Or in scenarios where transmission rate is higher or lower than data capturing/sampling rate. The IIO oscilloscope requests the data in aperiodic manner, meaning that new data capture request is sent immediately when data from previous request is received.</p>
+<section id="capturing-rate-transmission-rate-2">
+<span id="id6"></span><h4>Capturing Rate &lt; Transmission Rate:<a class="headerlink" href="#capturing-rate-transmission-rate-2" title="Link to this heading"></a></h4>
+<p>If data capturing rate is lower than transmission rate, the firmware can wait for certain period of time before sufficient samples are captured in the buffer. If time to capture these samples is higher than IIO oscilloscope timeout period, the firmware returns the empty/invalid data. Therefore the user must always ensure that the data rate is always higher than the transmission rate at any instance. If this is not the case, transmission rate can be reduced by lowering the baud rate (for UART medium). Also, the requested number of samples must also be modified according to a data rate of device to avoid IIO oscilloscope getting timed-out or to have a huge discontinuity in the data visualization.</p>
+<p>Another factor that determines the IIO oscilloscope timeout is ‘sampling_frequency’ attribute. If this attribute is not defined, the timeout period for IIO oscilloscope during data capture is set to 2sec default, however, if this attribute is defined, the time is calculated as: number of requested samples * (1 / sampling_frequency). For example, if sampling frequency is set as 400SPS, the timeout period is:</p>
+<p>timeout = 400 (requested samples) * (1 / 10000 SPS) + 1sec = 1.4 sec</p>
+</section>
+<section id="capturing-rate-transmission-rate-3">
+<span id="id7"></span><h4>Capturing Rate &gt; Transmission Rate:<a class="headerlink" href="#capturing-rate-transmission-rate-3" title="Link to this heading"></a></h4>
+<p>If data capturing rate is too high compared to the transmission rate, the data acquisition into a buffer happens faster. So data buffer might fill faster compared to emptying operation. This might lead to a discontinuity on data visualization on IIO oscilloscope side as data visualization is limited by data transmission rate in this case (with slower serial communication link). If communication link is faster and matches to capturing/sampling rate, the visualization of data would be more continuous.</p>
+<ul class="simple">
+<li></li>
+</ul>
+</section>
+</section>
+<section id="buffer-size-limitations-in-firmware-1">
+<span id="id8"></span><h3>Buffer size limitations in firmware<a class="headerlink" href="#buffer-size-limitations-in-firmware-1" title="Link to this heading"></a></h3>
+<p>The requested number of samples set in IIO oscilloscope must always be less than half the buffer size set in the IIO firmware. For the case of AD7606 devices, the max samples to be requested in a single query should not be greater than 4096 for a buffer size of 8192 samples. This is explained below:</p>
+<p>The buffer read and write happens in parallel through 2 different events. The data from buffer is read when new request from IIO oscilloscope occurs while write operation continues in the background typically through interrupt event which monitors the end of conversion (new sample available to read). While reading the data from buffer, at-least 128 samples offset must be present b/w read and write index of a buffer (this is shown in below diagram). In other words, the write index must always be greater than read index. The write index always increments faster compared to read index for devices with fast data capturing speed compared to transmit speed. For instance, AD7606 can capture 128 samples in 3.5msec, while time it takes to transmit 128 samples is 18msec &#64;230.4 KBPS rate. So, buffer fills faster than emptying it. For slower capturing devices, this situation is reversed. In those device it is always ensured in the firmware that read index does not cross the write index at any instance.</p>
+<p>So, considering this limitation, the firmware ensures that the buffer is always read completely after it is full, and before it starts writing new data from it’s head (start index). If this is not done, there is always a possibility that old data is overwritten when the buffer starts filling from the start or head. The write index stops at the end of the buffer when it is full and once the buffer is read completely it is moved to the start to begin filling data from the head in a circular fashion.</p>
+<p>The IIO data is always sent in chunks of 256 bytes. When converted into samples, it becomes 128 (256 / 2) for the AD7606B device due to its 16-bit (2-byte) resolution. If requested samples are 400, the number of loops becomes 400 / 128 = 3.21. So samples are transmitted as: 128, 128, 128, 84. This is done in single loop, so firmware reads the buffer for 128 samples, transmit them over UART link and then repeat the cycle until all 400 samples are sent. In the last loop, only 84 samples are read and sent to IIO oscilloscope.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_data_capture_in_firmware.jpg"><img alt="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_data_capture_in_firmware.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_data_capture_in_firmware.jpg" style="width: 600px;" />
+</a>
+<p>Now, consider the scenario where more than 4096 samples are requested. So assume 5000 samples are requested by IIO oscilloscope for 2 channels. The buffer will start filling the data and will reach the end of the buffer, thus write index pointing to 8192. The read is assumed to slower than write, so read index would be less than write (say read index is pointing to 2000). At this instance, the write buffer can’t really start capturing new data because it can override old data as a read is still in progress. Assume the read of 5000 samples is complete in the first request and read index has reached 5000. In the next request a further 5000 samples would be requested. But the problem now is that the buffer size is only 8192 and there are no extra samples ((5000 + 5000) - 8192 = 1808) available to transmit. If samples are not transmitted back to IIO oscilloscope or dummy/old data is sent, the misalignment of channel data occurs (when more than 1 channels are selected). This effects the data visualization on IIO oscilloscope. To avoid this problem, the number of requested samples should always be less than 4096 for buffer size of 8192 at any instance (or to be precise, the total requested samples must always be less than half the size of buffer). This however does not mean only 4096 sample size of buffer is utilized as described below:</p>
+<p>If requested samples are 1050, the max available size of buffer is: available size = (8192 / 1050) * 1050 = 7 * 1050 = 7350. Thus buffer utilizes 7350 samples size from max 8192.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span> <span class="n">Size</span> <span class="n">of</span> <span class="n">the</span> <span class="n">acquisition</span> <span class="n">buffer</span> <span class="p">(</span><span class="ow">in</span> <span class="n">terms</span> <span class="n">of</span> <span class="n">samples</span><span class="p">)</span> <span class="o">*/</span>
+<span class="c1">#define DATA_BUFFER_SIZE        (8192)</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The behavior of data capturing and displaying varies from device to device. Two two major things must be considered while designing IIO firmware for any device is: 1) Device capture speed 2) Data Transmission speed</p>
+<p>If capturing is slower for any device (low data rate), the ODR (output data rate) of device must be adjusted accordingly (if applicable) so that time to obtain requested samples is always less than the IIO oscilloscope timeout period. If ODR is fixed in the device, the time to capture number of requested samples by user should always be less than timeout period of IIO oscilloscope, otherwise invalid data is returned back. Therefore the user must provide valid count for requested samples.</p>
+</div>
+<p>If requested samples is set higher than the available buffer size, a constant value is transmitted to IIO oscilloscope to avoid IIO oscilloscope becoming unresponsive. As shown below, requested samples are 1000 * 8 = 8000, which is greater than 4096 (available buffer size). Therefore oscilloscope displays a constant value as an error indication.</p>
+<img alt="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_no_response.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_no_response.jpg" />
+<ul class="simple">
+<li></li>
+</ul>
+</section>
+</section>
+<section id="saving-captured-data-1">
+<span id="id9"></span><h2>Saving Captured Data<a class="headerlink" href="#saving-captured-data-1" title="Link to this heading"></a></h2>
+<p>The data on IIO oscilloscope can be saved for further processing and analysis. The data is saved using a .csv format. The data can be captured for each selected channel during save option and only requested number of samples can be saved. So if 400 samples are requested, the data for only 400 samples would get saved into .csv file. The data is raw adc data and no extra processing is performed it while saving or capturing.</p>
+<img alt="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_data_save.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/tools-software/product-support-software/iio_osc_data_save.jpg" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For detailed guide on using IIO based firmware applications, refer <a class="reference internal" href="ad7606_mbed_iio_application.html"><span class="doc">AD7606 IIO Application code</span></a>. Feel free to consult Analog Devices Engineer-Zone for feature requests, feedback, bug-reports etc.</p>
+</div>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

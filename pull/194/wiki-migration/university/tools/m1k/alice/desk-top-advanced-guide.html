@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This document serves as a supplemental guide to the more advanced functionality of the ALICE Desktop software interface written for use with the ADALM1000 active learning kit hardware. It is assumed that the reader has more than a passing familiarity with the Python programing language." name="description" />
+
+    <title>Advanced Guide to ALICE Desktop, M1K: &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Advanced Guide to ALICE Desktop, M1K:</a><ul>
+<li><a class="reference internal" href="#objective">Objective:</a></li>
+<li><a class="reference internal" href="#background">Background:</a></li>
+<li><a class="reference internal" href="#customizing-alice-desktop">Customizing ALICE Desktop:</a></li>
+<li><a class="reference internal" href="#variables-and-arrays">Variables and Arrays:</a></li>
+<li><a class="reference internal" href="#fourier-series-of-cosines-for-a-square-wave">Fourier series of cosines for a square wave:</a><ul>
+<li><a class="reference internal" href="#fourier-series-of-sines-for-a-saw-tooth-wave">Fourier series of sines for a saw tooth wave:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#moving-array-data-from-and-to-files">Moving Array Data from and to Files:</a></li>
+<li><a class="reference internal" href="#special-built-in-functions">Special Built-in Functions</a></li>
+<li><a class="reference internal" href="#using-the-numpy-library">Using the Numpy library</a><ul>
+<li><a class="reference internal" href="#array-creation">Array Creation:</a></li>
+<li><a class="reference internal" href="#arithmetic-functions">Arithmetic functions:</a></li>
+<li><a class="reference internal" href="#trigonometric-functions">Trigonometric functions:</a></li>
+<li><a class="reference internal" href="#random-functions">Random functions:</a></li>
+<li><a class="reference internal" href="#rearranging-sample-points">Rearranging Sample points:</a></li>
+<li><a class="reference internal" href="#functions-to-extend-waveform">Functions to extend waveform:</a></li>
+<li><a class="reference internal" href="#window-functions">Window functions:</a></li>
+<li><a class="reference internal" href="#special-functions">Special functions:</a><ul>
+<li><a class="reference internal" href="#polynomial-fit-example">Polynomial Fit Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#appendix">Appendix:</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="advanced-guide-to-alice-desktop-m1k">
+<h1>Advanced Guide to ALICE Desktop, M1K:<a class="headerlink" href="#advanced-guide-to-alice-desktop-m1k" title="Link to this heading"></a></h1>
+<section id="objective">
+<h2>Objective:<a class="headerlink" href="#objective" title="Link to this heading"></a></h2>
+<p>This document serves as a supplemental guide to the more advanced functionality of the ALICE Desktop software interface written for use with the ADALM1000 active learning kit hardware. It is assumed that the reader has more than a passing familiarity with the Python programing language.</p>
+</section>
+<section id="background">
+<h2>Background:<a class="headerlink" href="#background" title="Link to this heading"></a></h2>
+<p>ALICE 1.3 Desktop is written in Python and includes the Numpy extension for numerical analysis. <a class="icon link reference external" href="https://en.wikipedia.org/wiki/NumPy" target="_blank">Numpy</a> is the fundamental Python package for scientific computing. It contains among other things, a powerful array object along with a large library of high-level mathematical functions to operate on these arrays. Such as histograms, the Fourier transform, polynomial curve fitting and random number capabilities. ALICE provides the user access to these functions through a number of the interfaces such as mathematical operations on captured waveforms, including digital filters, arbitrary waveform generation, FFTs and windowing functions.</p>
+</section>
+<section id="customizing-alice-desktop">
+<h2>Customizing ALICE Desktop:<a class="headerlink" href="#customizing-alice-desktop" title="Link to this heading"></a></h2>
+<p>There are a number of variables that the user can use to customize the appearance of the user interface. These variables are located near the top of the Python program file. Alternatively, especially for users of the Windows executable version of ALICE Desktop, a file named alice_init.ini can be created. It should be placed in the same directory with the alice-desktop-1.3.exe executable file or the directory where the program is started. The alice_init.ini file is read, if found, when ALICE Desktop starts and before any of the windows are created. If no init file is found the internal default settings are used.</p>
+<p>ALICE has the option to check the current firmware version and report if the version currently loaded on the board is up to date:</p>
+<div class="line-block">
+<div class="line">AllowFlashFirmware = 1 # allow user to flash new firmware on = 1, off = 0</div>
+<div class="line">IgnoreFirmwareCheck = 0 # Check firmware on startup on = 1, off = 0</div>
+</div>
+<p>The default text font size can be set as follows:</p>
+<p>FontSize = 8</p>
+<p>To improve the appearance of the desktop screens across operating systems ALICE supports Themed widgets. The theme used can be selected in the alice_init.ini file by adding or changing the following line:</p>
+<p>Style_String = ‘alt’</p>
+<p>Where string ‘alt’ contains name of the desired theme. In Windows 7 and up the builtin themes are: ‘winnative’, ‘clam’, ‘alt’, ‘default’, ‘classic’, ‘vista’, ‘xpnative’. For Linux the following are likely options: ‘clam’, ‘alt’, ‘default’, ‘classic’. Mac OS X may contain others like ‘aqua’. The widgets are generally configured to look the best using the ‘alt’ style which should be common across operating systems.</p>
+<p>How mouse focus is controlled can be either of two modes. The default is that the focus follows the mouse such that you don’t need to click inside a window to switch the mouse focus. The other mode is the opposite where the mouse focus does not follow the mouse location that is the mouse focus stays tied to selected window.</p>
+<p>Many of the aspects of the User Interface appearance can be customized by changing the following variables from their default settings (as in these examples):</p>
+<div class="line-block">
+<div class="line">BorderSize = 1 # Border Width of frames in pixels</div>
+<div class="line">ButtonOrder = 0 # swap order of channel control labels</div>
+<div class="line"># Widget relief can be RAISED, SUNKEN, GROOVE, RIDGE, and FLAT, SOLID</div>
+<div class="line">ButRelief = SOLID</div>
+<div class="line">LabRelief = FLAT</div>
+<div class="line">FrameRefief = FLAT # RIDGE</div>
+<div class="line">GUITheme = “Light” # color theme can be “Dark” “Light” “Blue” “LtBlue” “Custom”</div>
+<div class="line">FrameBG = “#d7d7d7” # Med gray, frame background color</div>
+<div class="line">ButtonText = “#000000” # black, button text color</div>
+<div class="line">ButtonGreen = “#88ff88” # light green (RUN, Conn, Power, etc)</div>
+<div class="line">ButtonRed = “#ff8888” # light red (STOP, etc)</div>
+</div>
+<p>The mouse focus modes can be st as follows:</p>
+<div class="line-block">
+<div class="line">MouseFocus = 1 # focus follows mouse around from window to window</div>
+<div class="line">MouseFocus = 0 # mouse focus stays tied to selected window</div>
+</div>
+<p>Many of the buttons and controls have balloon help that appears if the mouse hovers over a control for more than a few seconds. This feature can be turned on and off by the following:</p>
+<div class="line-block">
+<div class="line">ShowBallonHelp = 0 # balloon help off</div>
+<div class="line">ShowBallonHelp = 1 # balloon help on</div>
+</div>
+<p>To simplify the User interface controls for each virtual instrument, other than the AWG and Time display, can be optionally enabled / disabled (1=enabled, 0=disabled):</p>
+<div class="line-block">
+<div class="line">EnableXYPlotter = 1</div>
+<div class="line">EnablePhaseAnalizer = 1</div>
+<div class="line">EnableSpectrumAnalizer = 1</div>
+<div class="line">EnableBodePlotter = 1</div>
+<div class="line">EnableImpedanceAnalizer = 1</div>
+<div class="line">EnableOhmMeter = 1</div>
+</div>
+<p>A simplified set of trace controls in the right side menu of the Scope screen can be optionally turned on:</p>
+<p>ShowTraceControls = 1</p>
+<p>By setting the following switch in the alice_init.ini file ALICE will use this much simplified “Scope Only” display configuration. The switch is set to 0 by default to access the full set of ALICE instruments. The full set of AWG controls is included in the right-hand menu area. Under the Options drop down it is possible to open an access screen to enable the rest of the vitrual instrument functionality.</p>
+<p>EnableScopeOnly = 1</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/scope-only-screen.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/scope-only-screen.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/scope-only-screen.png" style="width: 600px;" />
+</a>
+<p>To further simplify the User interface it is possible to hide the advanced waveform Shapes in the AWG controls:</p>
+<p>AWGShowAdvanced.set(1) # &gt; 0 Show Advanced AWG shapes in menu</p>
+<p>How the AWG controls are arranged is set by the global AwgLayout; AwgLayout = “Horz” variable. Side by side horizontally is the default like this:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/awg-controls-window.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/awg-controls-window.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/awg-controls-window.png" style="width: 600px;" />
+</a>
+<p>Or by setting the variable to something other than “Horz”, such as “Vert”, can be stacked vertically like this:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/vertical-awg-win.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/vertical-awg-win.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/vertical-awg-win.png" style="width: 100px;" />
+</a>
+<p>Normally ALICE displays the board ID serial number at the top of each graphics display area. There is an option to supply a user specified text string instead:</p>
+<div class="line-block">
+<div class="line">LabelPlotText.set(0) # 1 = use user label string</div>
+<div class="line">PlotLabelText = “Custom Plot Label”</div>
+</div>
+<p>There are pairs of variables for each display window that set the size of the graphics drawing area in screen pixels. The default values are sized to optimally fill a screen with 1024X600 resolution. The menu buttons surrounding the graphics area need this much space to be properly displayed on most screens so using sizes smaller than the default may result in mangled menus.</p>
+<div class="line-block">
+<div class="line">GRW = 720 # Width of the Time grid</div>
+<div class="line">GRH = 390 # Height of the Time grid</div>
+<div class="line">GRWN = 720 # Width of the spectrum grid 720 default</div>
+<div class="line">GRHN = 390 # Height of the spectrum grid 390 default</div>
+<div class="line">GRWBP = 720 # Width of the Bode Plot grid 720 default</div>
+<div class="line">GRHBP = 390 # Height of the Bode Plot grid 390 default</div>
+<div class="line">GRWXY = 420 # Width of the XY grid 420 default</div>
+<div class="line">GRHXY = 390 # Height of the XY grid 390 default</div>
+<div class="line">GRWIA = 400 # Width of the Impedance grid 400 default</div>
+<div class="line">GRHIA = 400 # Height of the Impedance grid 400 default</div>
+</div>
+<p>The colors that are used to draw the various parts of the screen can be modified.</p>
+<p>Color = “#rrggbb” rr=red gg=green bb=blue, Hexadecimal values 00 - ff</p>
+<div class="line-block">
+<div class="line">COLORframes = “#000080” # 50% blue</div>
+<div class="line">COLORcanvas = “#000000” # 100% black used for background color</div>
+<div class="line">COLORgrid = “#808080” # 50% Gray used for grid lines</div>
+<div class="line">COLORzeroline = “#0000ff” # 100% blue used for vertical and horizontal center grid lines</div>
+<div class="line">COLORtrace1 = “#00ff00” # 100% green CH A voltage trace</div>
+<div class="line">COLORtrace2 = “#ff8000” # 100% orange CH B voltage trace</div>
+<div class="line">COLORtrace3 = “#00ffff” # 100% cyan CH A current trace</div>
+<div class="line">COLORtrace4 = “#ffff00” # 100% yellow CH B current trace</div>
+<div class="line">COLORtrace5 = “#ff00ff” # 100% magenta Math trace</div>
+<div class="line">COLORtrace6 = “#ff0000” # 100% red</div>
+<div class="line">COLORtrace7 = “#8080ff” # 100% purple</div>
+<div class="line">COLORtraceR1 = “#008000” # 50% green CH A voltage snapshot trace</div>
+<div class="line">COLORtraceR2 = “#804000” # 50% orange CH B voltage snapshot trace</div>
+<div class="line">COLORtraceR3 = “#008080” # 50% cyan CH A current snapshot trace</div>
+<div class="line">COLORtraceR4 = “#808000” # 50% yellow CH B current snapshot trace</div>
+<div class="line">COLORtraceR5 = “#800080” # 50% magenta Math snapshot trace</div>
+<div class="line">COLORtraceR6 = “#800000” # 50% red</div>
+<div class="line">COLORtraceR7 = “#4040a0” # 70% purple</div>
+<div class="line">COLORtext = “#ffffff” # 100% white used for Text display</div>
+<div class="line">COLORtrigger = “#ff0000” # 100% red used for trigger point</div>
+<div class="line">COLORsignalband = “#ff0000” # 100% red</div>
+<div class="line">COLORzeroline; COLORzeroline = “#0000ff”</div>
+</div>
+<p>Variable for selecting grid background color:</p>
+<div class="line-block">
+<div class="line">ColorMode.set(0) # = 0 black grid background, white text &gt; 0 white grid background, black text</div>
+<div class="line">Sets COLORcanvas and COLORtext variables.</div>
+</div>
+<p>Variable for width of grid lines in pixels:</p>
+<p>GridWidth = 1</p>
+<p>Value for on board resistors and external AD584 reference used in the self calibration procedure:</p>
+<div class="line-block">
+<div class="line">OnBoardRes = 50.83</div>
+<div class="line">AD584act = 2.5</div>
+</div>
+<p>Default math equations, These initialize the entry spaces the first time each matching dialog pop-up window opens.</p>
+<div class="line-block">
+<div class="line">MathString = “(VBuffA[t] + VBuffB[t] - CHAOffset)”</div>
+<div class="line">MathXString = “(VBuffA[t] - CHAOffset)”</div>
+<div class="line">MathYString = “(VBuffB[t] - CHBOffset)”</div>
+<div class="line">UserAString = “MaxV1-VATop”</div>
+<div class="line">UserALabel = “OverShoot”</div>
+<div class="line">UserBString = “MinV2-VBBase”</div>
+<div class="line">UserBLabel = “UnderShoot”</div>
+<div class="line">MathAxis = “V-A” # can be one of the following “V-A”, “V-B”, I-A”, “I-B”</div>
+<div class="line">MathXAxis = “V-A”</div>
+<div class="line">MathYAxis = “V-B”</div>
+<div class="line">AWGAMathString = “(VBuffA + VBuffB)/2”</div>
+<div class="line">AWGBMathString = “(VBuffA + VBuffB)/2”</div>
+<div class="line">FFTUserWindowString = “numpy.kaiser(SMPfft, 14) * 3”</div>
+<div class="line">DigFilterAString = “numpy.sinc(numpy.linspace(-1, 1, 91))”</div>
+<div class="line">DigFilterBString = “numpy.sinc(numpy.linspace(-1, 1, 91))”</div>
+</div>
+<p>Inside the alice_init.ini any of these variables can be set using the example format shown here:</p>
+<div class="line-block">
+<div class="line">GRW = 720</div>
+<div class="line">GRH = 390</div>
+<div class="line">GRWN = 720</div>
+<div class="line">GRHN = 390</div>
+<div class="line">GRWXY = 420</div>
+<div class="line">GRHXY = 390</div>
+<div class="line">GRWIA = 400</div>
+<div class="line">GRHIA = 400</div>
+</div>
+<p>User entry widgets can optionally be added to the Time (scope) and X-Y screens by setting the following variable in the init file:</p>
+<p>EnableUserEntries = 1</p>
+<p>The two Time user entries can be accessed using User1Entry.get(), User2Entry.get() variables and the two X-Y user entries can be accessed using User3Entry.get(), User4Entry.get() variables.</p>
+<p>The optional software interfaces can be enabled or disabled by setting the following variables to either 1 or 0 in the alice_init.ini file.</p>
+<div class="line-block">
+<div class="line">EnableDigIO = 1</div>
+<div class="line">EnableCommandInterface = 0</div>
+<div class="line">EnableMuxMode = 1</div>
+<div class="line">EnableMinigenMode = 0</div>
+<div class="line">EnablePIODACMode = 0</div>
+<div class="line">EnablePmodDA1Mode = 0</div>
+<div class="line">EnableDigPotMode = 0</div>
+<div class="line">EnableGenericSerialMode = 0</div>
+<div class="line">EnableAD5626SerialMode = 0</div>
+<div class="line">EnableDigitalFilter = 0</div>
+<div class="line">EnableMeasureScreen = 0</div>
+<div class="line">EnableETSScreen = 0</div>
+<div class="line">EnableHSsampling = 0</div>
+</div>
+</section>
+<section id="variables-and-arrays">
+<h2>Variables and Arrays:<a class="headerlink" href="#variables-and-arrays" title="Link to this heading"></a></h2>
+<p>ALICE uses a large number of variables and arrays to hold both the captured data as well as the results of calculations performed on the data. Below is a list of the variable and array names with explanations of their use and how they are calculated. Endsample = Last sample in Buffer</p>
+<p>hldn = number of samples from start of buffer to ignore based on Hold Off time setting.</p>
+<p><strong>Waveform calculated Vertical measurement constants:</strong></p>
+<div class="line-block">
+<div class="line">Channel A Average voltage, DCV1 = numpy.mean(VBuffA[hldn:Endsample])</div>
+<div class="line">Channel A Minimum voltage, MinV1 = numpy.amin(VBuffA[hldn:Endsample])</div>
+<div class="line">Channel A Maximum voltage, MaxV1 = numpy.amax(VBuffA[hldn:Endsample])</div>
+<div class="line">Channel A Top voltage, VATop is the voltage of the most positive peak in the histogram</div>
+<div class="line">Channel A Base voltage, VABase is the voltage of the least positive peak in the histogram</div>
+<div class="line">Channel A RMS voltage, SV1 = numpy.sqrt(numpy.mean(numpy.square(VBuffA[hldn:Endsample])))</div>
+<div class="line">Channel B Average voltage, DCV2 = numpy.mean(VBuffB[hldn:Endsample])</div>
+<div class="line">Channel B Minimum voltage, MinV2 = numpy.amin(VBuffB[hldn:Endsample])</div>
+<div class="line">Channel B Maximum voltage, MaxV2 = numpy.amax(VBuffB[hldn:Endsample])</div>
+<div class="line">Channel B Top voltage, VBTop is the voltage of the most positive peak in the histogram</div>
+<div class="line">Channel B Base voltage, VBBase is the voltage of the least positive peak in the histogram</div>
+<div class="line">Channel B RMS voltage, SV2 = numpy.sqrt(numpy.mean(numpy.square(VBuffB[hldn:Endsample])))</div>
+<div class="line">Channel A Average current in mA, DCI1 = numpy.mean(IBuffA[hldn:Endsample])*1000</div>
+<div class="line">Channel A Minimum current in mA, MinI1 = numpy.amin(IBuffA[hldn:Endsample]) ])*1000</div>
+<div class="line">Channel A Maximum current in mA, MaxI1 = numpy.amax(IBuffA[hldn:Endsample]) ])*1000</div>
+<div class="line">Channel A RMS current in mA, SI1 = numpy.sqrt(numpy.mean(numpy.square(IBuffA[hldn:Endsample])))*1000</div>
+<div class="line">Channel B Average current in mA, DCI2 = numpy.mean(IBuffB[hldn:Endsample])*1000</div>
+<div class="line">Channel B Minimum current in mA, MinI2 = numpy.amin(IBuffB[hldn:Endsample])</div>
+<div class="line">Channel B Maximum current in mA, MaxI2 = numpy.amax(IBuffB[hldn:Endsample])</div>
+<div class="line">Channel B RMS current in mA, SI2 = numpy.sqrt(numpy.mean(numpy.square(IBuffB[hldn:Endsample])))*1000</div>
+</div>
+<p><strong>Waveform calculated Horizontal measurement constants:</strong></p>
+<div class="line-block">
+<div class="line">CHAHW is the channel A High Pulse Width</div>
+<div class="line">CHALW is the channel A Low Pulse Width</div>
+<div class="line">CHADCy is the channel A Duty Cycle</div>
+<div class="line">CHAperiod is the channel A Period</div>
+<div class="line">CHAfreq is the channel A Frequency</div>
+<div class="line">CHABphase is the channel A to channel B relative phase angle</div>
+<div class="line">CHBHW is the channel B High Pulse Width</div>
+<div class="line">CHBLW is the channel B Low Pulse Width</div>
+<div class="line">CHBDCy is the channel B Duty Cycle</div>
+<div class="line">CHBperiod is the channel B Period</div>
+<div class="line">CHBfreq is the channel B Frequency</div>
+</div>
+<p><strong>Captured Data Waveform Buffers:</strong></p>
+<div class="line-block">
+<div class="line">VBuffA is the Channel A voltage sample array ( in volts )</div>
+<div class="line">VBuffB is the Channel B voltage sample array ( in volts )</div>
+<div class="line">IBuffA is the Channel A current sample array ( in amps, multiply by 1000 for mA )</div>
+<div class="line">IBuffB is the Channel B current sample array ( in amps, multiply by 1000 for mA )</div>
+<div class="line">VmemoryA is the Channel A voltage memory array used for Trace Averaging</div>
+<div class="line">VmemoryB is the Channel B voltage memory array used for Trace Averaging</div>
+<div class="line">ImemoryA is the Channel A current memory array used for Trace Averaging</div>
+<div class="line">ImemoryB is the Channel B current memory array used for Trace Averaging</div>
+<div class="line">HBuffA contains the histogram of the channel A voltage waveform</div>
+<div class="line">HBuffB contains the histogram of the channel B voltage waveform</div>
+<div class="line">VBuffMA is the Mux Mode A channel voltage sample array ( in volts )</div>
+<div class="line">VBuffMB is the Mux Mode B channel voltage sample array ( in volts )</div>
+<div class="line">VBuffMC is the Mux Mode C channel voltage sample array ( in volts )</div>
+<div class="line">VBuffMD is the Mux Mode D channel voltage sample array ( in volts )</div>
+</div>
+<p>t is the time index ( 10 uSec per point )</p>
+<p>SAMPLErate is the sampling rate, 100000 samples per Sec, or 10 uSec per sample</p>
+<p><strong>Vertical Position variables:</strong></p>
+<div class="line-block">
+<div class="line">CHAOffset is the value in the channel A voltage position entry window</div>
+<div class="line">CHBOffset is the value in the channel B voltage position entry window</div>
+<div class="line">CHAIOffset is the value in the channel A current position entry window</div>
+<div class="line">CHBIOffset is the value in the channel B current position entry window</div>
+</div>
+<p><strong>AWG waveform arrays:</strong></p>
+<div class="line-block">
+<div class="line">AWGAwaveform is the Channel A AWG waveform memory array (used for non-built in waveforms)</div>
+<div class="line">AWGBwaveform is the Channel B AWG waveform memory array (used for non-built in waveforms)</div>
+</div>
+<p>The following example Python syntax allows setting the start and stop points to be used in an array:</p>
+<p>AWGAwaveform[ start : stop ] where start and stop are integers.</p>
+<p><strong>Digital Filter coefficients:</strong></p>
+<div class="line-block">
+<div class="line">DFiltACoef # Scope channel A Digital filter coefficients</div>
+<div class="line">DFiltBCoef # Scope channel B Digital filter coefficients</div>
+<div class="line">AWGFiltACoef # AWG channel A Digital filter coefficients</div>
+<div class="line">AWGFiltBCoef # AWG channel B Digital filter coefficients</div>
+</div>
+<p>Use Example: VBuffA = numpy.convolve(VBuffA, DFiltACoef)</p>
+<p><strong>Frequency domain buffers:</strong></p>
+<p>FFTresultA contains the Channel A voltage magnitude FFT frequency bin results. To get the results in dB the following formula is used:</p>
+<p>dbA = (10 * math.log10(float(FFTresultA[n])) + 17) # gives amplitude in dBVolts where 0 dB = 1 Vrms</p>
+<p>FFTresultB, Same for Channel B</p>
+<p>FFTmemoryA is the Channel A FFT memory array used for Trace Averaging and Peak Hold modes</p>
+<p>FFTmemoryB, Same for Channel B</p>
+<p>SMPfft is the number of samples used when the FFT is calculated. It will always be a power of 2. And it will be the length of the FFT window function array.</p>
+<p><strong>Bode Plotter arrays:</strong></p>
+<p>FSweepAdB contains the Channel A voltage magnitude Bode plot frequency sweep results. To get the results in dB the following formula is used:</p>
+<p>dbA = (10 * math.log10(float(FSweepAdB[n])) + 17)</p>
+<p>FSweepBdB, Same for Channel B</p>
+<p>FSweepAPh, Channel A Phase in degrees</p>
+<p>FSweepBPh, Same for Channel B</p>
+</section>
+<section id="fourier-series-of-cosines-for-a-square-wave">
+<h2>Fourier series of cosines for a square wave:<a class="headerlink" href="#fourier-series-of-cosines-for-a-square-wave" title="Link to this heading"></a></h2>
+<p>One of the AWG waveforms that can be constructed is the Fourier series of cosines for a square wave.</p>
+<p>The routine starts by first making the cosine wave at the fundamental frequency:</p>
+<p>AWGAwaveform = numpy.cos(numpy.linspace(0, 2*numpy.pi, SAMPLErate/AWGAFreqvalue))</p>
+<p>It then loops over k ( only odd numbers ), the number of requested terms, calculating the harmonic and adding it to the waveform:</p>
+<div class="line-block">
+<div class="line">Harmonic = (math.sin(k*numpy.pi/2)/k)*(numpy.cos(numpy.linspace(0, k*2*numpy.pi, SAMPLErate/AWGAFreqvalue)))</div>
+<div class="line">AWGAwaveform = AWGAwaveform + Harmonic</div>
+</div>
+<p>After all the harmonic terms have been added the waveform is scaled and offset based on the entered Min and Max values.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">AWGAMakeFourier</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">AWGAwaveform</span><span class="p">,</span> <span class="n">AWGSAMPLErate</span><span class="p">,</span> <span class="n">AWGAAmplvalue</span><span class="p">,</span> <span class="n">AWGAOffsetvalue</span><span class="p">,</span> <span class="n">AWGALength</span>
+    <span class="k">global</span> <span class="n">AWGADutyCyclevalue</span><span class="p">,</span> <span class="n">AWGAFreqvalue</span><span class="p">,</span> <span class="n">duty1lab</span><span class="p">,</span> <span class="n">AWG_Amp_Mode</span> <span class="c1"># 0 = Min/Max mode, 1 = Amp/Offset</span>
+    <span class="k">global</span> <span class="n">AWGA2X</span><span class="p">,</span> <span class="n">AWG_2X</span><span class="p">,</span> <span class="n">SAMPLErate</span><span class="p">,</span> <span class="n">BaseSampleRate</span>
+    <span class="k">global</span> <span class="n">AWGA_Ext_Gain</span><span class="p">,</span> <span class="n">AWGA_Ext_Offset</span><span class="p">,</span> <span class="n">AWGB_Ext_Gain</span><span class="p">,</span> <span class="n">AWGB_Ext_Offset</span>
+
+    <span class="n">BAWGAAmpl</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">BAWGAOffset</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">BAWGAFreq</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">BAWGADutyCycle</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">Max_term</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">AWGADutyCyclevalue</span>\<span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">AWG_2X</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">TempRate</span> <span class="o">=</span> <span class="p">(</span><span class="n">BaseSampleRate</span>\<span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">TempRate</span> <span class="o">=</span> <span class="n">BaseSampleRate</span>
+    <span class="n">AWGAwaveform</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">AWGAwaveform</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span>\<span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">TempRate</span><span class="o">/</span><span class="n">AWGAFreqvalue</span><span class="p">)))</span> <span class="c1"># the fundamental</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="k">while</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">Max_term</span><span class="p">:</span>
+        <span class="c1"># Add odd harmonics up to max_term</span>
+        <span class="n">Harmonic</span> <span class="o">=</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k</span>\<span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.0</span><span class="p">)</span><span class="o">/</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">k</span>\<span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">TempRate</span><span class="o">/</span><span class="n">AWGAFreqvalue</span><span class="p">))))</span>
+        <span class="n">AWGAwaveform</span> <span class="o">=</span> <span class="n">AWGAwaveform</span> <span class="o">+</span> <span class="n">Harmonic</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1"># skip even numbers</span>
+    <span class="k">if</span> <span class="n">AWG_Amp_Mode</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">amplitude</span> <span class="o">=</span> <span class="p">(</span><span class="n">AWGAOffsetvalue</span><span class="o">-</span><span class="n">AWGAAmplvalue</span><span class="p">)</span><span class="o">/</span><span class="mf">2.0</span>
+        <span class="n">offset</span> <span class="o">=</span> <span class="p">(</span><span class="n">AWGAOffsetvalue</span><span class="o">+</span><span class="n">AWGAAmplvalue</span><span class="p">)</span><span class="o">/</span><span class="mf">2.0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">amplitude</span> <span class="o">=</span> <span class="n">AWGAAmplvalue</span>\<span class="o">*</span><span class="n">AWGA_Ext_Gain</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="n">offset</span> <span class="o">=</span> <span class="p">(</span><span class="n">AWGAOffsetvalue</span> <span class="o">*</span> <span class="n">AWGA_Ext_Gain</span><span class="o">.</span><span class="n">get</span><span class="p">())</span> <span class="o">+</span> <span class="n">AWGA_Ext_Offset</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+    <span class="n">AWGAwaveform</span> <span class="o">=</span> <span class="p">(</span><span class="n">AWGAwaveform</span> <span class="o">*</span> <span class="n">amplitude</span><span class="p">)</span> <span class="o">+</span> <span class="n">offset</span> <span class="c1"># scale and offset the waveform</span>
+    <span class="n">SplitAWGAwaveform</span><span class="p">()</span>
+    <span class="n">duty1lab</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Harmonics&quot;</span><span class="p">)</span>
+    <span class="n">BAWGAPhaseDelay</span><span class="p">()</span>
+    <span class="n">UpdateAwgCont</span><span class="p">()</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+<section id="fourier-series-of-sines-for-a-saw-tooth-wave">
+<h3>Fourier series of sines for a saw tooth wave:<a class="headerlink" href="#fourier-series-of-sines-for-a-saw-tooth-wave" title="Link to this heading"></a></h3>
+<p>Similar to the above built in AWG waveform Shape, ALICE contains a function to generate the Fourier series of sines for a saw tooth wave. The function can be run using the Math wave Shape by entering the function and passing the appropriate values or executed in the Command line tool or in a script.</p>
+<div class="line-block">
+<div class="line">The routine starts by first making the cosine wave at the fundamental frequency based on the Length value (number of samples in waveform):</div>
+<div class="line">Sn = Const * numpy.sin(numpy.pi*x)</div>
+</div>
+<p>It then loops over NumTerms, the number of requested terms, calculating the harmonic and adding it to the waveform. The final resulting waveform is then scaled by the Ampl value. Setting Ampl to a negative number will invert the waveform (direction of the saw tooth ramp).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">FourierSawTooth</span><span class="p">(</span><span class="n">Length</span><span class="p">,</span> <span class="n">NumTerms</span><span class="p">,</span> <span class="n">Ampl</span><span class="p">):</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="mi">1</span>                        <span class="c1"># Length of the interval</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">Length</span><span class="p">);</span> <span class="c1"># Create Length points on the interval [-3L, 3L]</span>
+    <span class="n">Const</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span>         <span class="c1"># Constant factor in the expression for B_n</span>
+    <span class="n">Sn</span> <span class="o">=</span> <span class="n">Const</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span>\<span class="o">*</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># Initialize vector sum series to zero</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="n">NumTerms</span><span class="p">:</span>
+        <span class="n">Const</span> <span class="o">=</span> <span class="o">-</span><span class="n">Const</span>  <span class="c1"># Efficient way to implement alternating sign</span>
+        <span class="n">Bn</span> <span class="o">=</span> <span class="n">Const</span><span class="o">/</span><span class="n">n</span>    <span class="c1"># Coefficients inversely proportional to n</span>
+        <span class="n">Fn</span> <span class="o">=</span> <span class="n">Bn</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">n</span>\<span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span>\<span class="o">*</span><span class="n">x</span><span class="p">)</span>   <span class="c1"># Calculate Fourier term</span>
+        <span class="n">Sn</span> <span class="o">=</span> <span class="n">Sn</span> <span class="o">+</span> <span class="n">Fn</span>    <span class="c1"># Add the term to Fourier sum</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">Sn</span> <span class="o">=</span> <span class="n">Sn</span> <span class="o">*</span> <span class="n">Ampl</span> <span class="c1"># Scale waveform by Ampl</span>
+    <span class="k">return</span> <span class="n">Sn</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="moving-array-data-from-and-to-files">
+<h2>Moving Array Data from and to Files:<a class="headerlink" href="#moving-array-data-from-and-to-files" title="Link to this heading"></a></h2>
+<p>ALICE includes the numpy built in functions to save and load the contents of any array to a file using the Command Line interface or inside a script file. These are in addition to the ( behind the scenes ) ways provided under the File drop down and other menus.</p>
+<p>To use the numpy function to save an array ( the VBUffA channel A voltage waveform buffer for example ) to a .csv file you would type in the Command Line interface:</p>
+<p>numpy.savetxt(‘scope_data.csv’, VBuffA, delimiter=’,’, fmt=’%2.4f’)</p>
+<p>Where “scope_data.csv” is the name of the destination file, VBuffA is of course the data array to save, delimiter=”,” tells the function to use a , to separate the columns ( there won’t be multiple columns since most ALICE arrays are one dimensional ) and fmt=‘%2.4f’ sets the format to 4 decimal places.</p>
+<p>To use the numpy function to load an array ( the AWGAwaveform AWG A waveform buffer for example ) from a .csv file you would type in the Command Line interface:</p>
+<p>numpy.loadtxt(‘awg_data.csv’)</p>
+<p>A second way to save data is a wrapper function around the Python wave package. For example, to save the VBuffA array ( channel A voltage waveform buffer ) to a mono .wav file ( at 100 KSPS ) you would type in the Command Line interface:</p>
+<p>Write_WAV(VBuffA, 2, “my_data.wav”)</p>
+<p>Where “my_data.wav” is the name of the destination file, VBuffA is of course the data array to save, and the 2 tells the program to save two copies of the array data to the file for example. This is handy to make longer versions of the relatively short buffer lengths, used in ALICE, that can be listened to by playing back the .wav file.</p>
+</section>
+<section id="special-built-in-functions">
+<h2>Special Built-in Functions<a class="headerlink" href="#special-built-in-functions" title="Link to this heading"></a></h2>
+<p>ALICE contains a number of special functions that can be used to measure, generate and manipulate waveform array data samples. These functions can be used to generate AWG waveforms using the Math wave Shape by entering the function and passing the appropriate values or executed in the Command line tool or in a script.</p>
+<p><strong>SinePower generator</strong></p>
+<p>The SinePower function generates a single cycle of the the wave shape with Length number of samples. The Phase variable can be an angle from 0 to 360 degrees. The wave will always be centered on +2.5V and amplitude will be +/- 1.0 V around that when the Ampl variable is set to 1.0. The “Power” variable is an exponent parameter for the SinePower waveform. If the power value is greater than 0, the sine function outputs: <span class="math notranslate nohighlight">\(sin(x)^{100/{100 - power}}\)</span> . If the power value is less than 0, the function becomes <span class="math notranslate nohighlight">\(sin(x)^{{100+power}/100}\)</span> . The wave will be a pure sine wave with Symmetry set to 0.0 and be a pure square wave with Symmetry set to 100. With Symmetry set to -99.9 the shape will be a pair of narrow positive and negative pulses.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">SinePower</span><span class="p">(</span><span class="n">Length</span><span class="p">,</span> <span class="n">Power</span><span class="p">,</span> <span class="n">Phase</span><span class="p">,</span> <span class="n">Ampl</span><span class="p">):</span>
+    <span class="c1"># Generate a Sine Power Pulse waveform of length samples with Symmetry, Phase and Ampl</span>
+    <span class="n">OutArray</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="mf">1.0E-5</span> <span class="c1"># 10 uSec</span>
+    <span class="n">frequency</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="n">t</span>\<span class="o">*</span><span class="n">Length</span><span class="p">)</span> <span class="c1"># Freq of one cycle</span>
+    <span class="n">exponent_setting</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">Power</span><span class="p">,</span> <span class="o">-</span><span class="mf">99.999999999</span><span class="p">,</span> <span class="mf">100.000</span><span class="p">)</span> <span class="o">/</span> <span class="mf">100.0</span>
+    <span class="k">if</span> <span class="n">exponent_setting</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">exponent</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">exponent_setting</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">exponent</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">exponent_setting</span><span class="p">)</span>
+    <span class="c1">#</span>
+    <span class="n">Len</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">Len</span> <span class="o">&lt;</span> <span class="n">Length</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">t</span> <span class="o">*</span> <span class="n">Len</span> <span class="o">*</span> <span class="n">frequency</span> <span class="o">+</span> <span class="n">Phase</span> <span class="o">/</span> <span class="mf">360.0</span>
+        <span class="n">plain_old_sine</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+        <span class="c1"># In the SinePower wave function, the &#39;Power&#39; value is used</span>
+        <span class="c1"># to indicate and exponent between 1.0 and 0.0.</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">copysign</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">plain_old_sine</span><span class="p">)</span> <span class="o">**</span> <span class="n">exponent</span><span class="p">,</span> <span class="n">plain_old_sine</span><span class="p">)</span>
+        <span class="n">OutArray</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Ampl</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
+        <span class="n">Len</span> <span class="o">=</span> <span class="n">Len</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="c1">#</span>
+    <span class="n">OutArray</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">OutArray</span><span class="p">)</span> <span class="o">+</span> <span class="mf">2.5</span> <span class="c1"># Center wavefrom on 2.5 V</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">OutArray</span><span class="p">)</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+<p><strong>Schroeder Multi-sine generator</strong></p>
+<p>Multi-sine signals are often used in frequency response measurements of a network or system.</p>
+<p>In 1970, Schroeder published a method for reducing the crest factor of multi-sine signals with flat amplitude spectra and equally spaced frequency components by choosing the phases φk such that φk=−k(k−1)π/k. The typical crest factor of a Schroeder multi-sine with flat amplitude spectra and uniformly spaced frequency components is approximately 1.6.</p>
+<p>The function returns an array of sample points of length Length, scaled by Ampl. The lowest, first tone has a period of Length samples. NrTones integer multiples of the first tomes are generated.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">SchroederPhase</span><span class="p">(</span><span class="n">Length</span><span class="p">,</span> <span class="n">NrTones</span><span class="p">,</span> <span class="n">Ampl</span><span class="p">):</span>
+    <span class="c1"># Generate a Schroeder Phase (Chirp) of Length samples and having NrTones</span>
+    <span class="n">OutArray</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">OutArray</span> <span class="o">=</span> <span class="n">Ampl</span>\<span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span>\<span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">Length</span><span class="p">))</span> <span class="c1"># the fundamental</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">while</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">NrTones</span><span class="p">:</span>
+        <span class="c1"># Add all harmonics up to NrTones</span>
+        <span class="n">Harmonic</span> <span class="o">=</span> <span class="n">Ampl</span>\<span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">k</span>\<span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">Length</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span>\<span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">k</span><span class="o">/</span><span class="n">NrTones</span><span class="p">))</span>
+        <span class="n">OutArray</span> <span class="o">=</span> <span class="n">OutArray</span> <span class="o">+</span> <span class="n">Harmonic</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">OutArray</span> <span class="o">=</span> <span class="n">OutArray</span> <span class="o">+</span> <span class="mf">2.5</span> <span class="c1"># Center wavefrom on 2.5 V</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">OutArray</span><span class="p">)</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+<p><strong>Generating Test Noise waveforms</strong></p>
+<p><strong>Time-series From Half-spectrum:</strong></p>
+<p>It is often useful to be able to produce not only flat, but arbitrary noise spectrum profiles - flat “bands” of noise, “pink noise”, “noise mountains” emulating peaking in some amplifiers. The Generate Time-series From Half-spectrum code block starts with a desired noise spectral density (which can be generated manually or from simulation), the sample rate of the time series, and produces a time series of voltage values that can be then played back through the AWG.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># Generate Time-series From Half-spectrum code block</span>
+<span class="c1"># takes: a desired noise spectral density array (freq)</span>
+<span class="c1"># the sample rate of the time series (fs),</span>
+<span class="c1"># returns a time series of voltage samples that can be sent to the AWG</span>
+<span class="c1">#</span>
+<span class="c1"># DC in first element.</span>
+<span class="c1"># Output length is 2x input length</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">time_points_from_freq</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">N</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">freq</span><span class="p">)</span>
+    <span class="n">rnd_ph_pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span><span class="o">*</span>
+                  <span class="n">numpy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span>\<span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span>
+                         <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">2.0</span>\<span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
+    <span class="n">rnd_ph_neg</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(</span><span class="n">rnd_ph_pos</span><span class="p">))</span>
+    <span class="n">rnd_ph_full</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(([</span><span class="mi">1</span><span class="p">],</span><span class="n">rnd_ph_pos</span><span class="p">,[</span><span class="mi">1</span><span class="p">],</span> <span class="n">rnd_ph_neg</span><span class="p">))</span>
+    <span class="n">r_s_full</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">freq</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">freq</span><span class="p">),</span> <span class="mi">1</span><span class="p">)))</span>
+    <span class="n">r_spectrum_rnd_ph</span> <span class="o">=</span> <span class="n">r_s_full</span> <span class="o">*</span> <span class="n">rnd_ph_full</span>
+    <span class="n">r_time_full</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifft</span><span class="p">(</span><span class="n">r_spectrum_rnd_ph</span><span class="p">)</span>
+<span class="c1">#    print(&quot;RMS imaginary component: &quot;,</span>
+<span class="c1">#          np.std(np.imag(r_time_full)),</span>
+<span class="c1">#          &quot; Should be close to nothing&quot;)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">density</span> <span class="o">==</span> <span class="kc">True</span><span class="p">):</span>
+        <span class="c1">#Note that this N is &quot;predivided&quot; by 2</span>
+        <span class="n">r_time_full</span> <span class="o">*=</span> <span class="n">N</span>\<span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">fs</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">r_time_full</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>** Some examples that use time_points_from_freq**</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">TimeSeriesNoise</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">Fsample</span><span class="p">,</span> <span class="n">mag</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+    <span class="c1"># Build Noise Time-series</span>
+    <span class="c1"># n = number of Freq Bins</span>
+    <span class="c1"># b = number of noise bands</span>
+    <span class="c1"># Fsample is Sample Rate</span>
+    <span class="c1"># generates four &quot;bands&quot; of mag V/rootHz noise</span>
+    <span class="n">mag</span> <span class="o">=</span> <span class="n">mag</span> <span class="o">*</span> <span class="mf">0.707106</span> <span class="c1"># scale by 1/sqrt 2 for RMS</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">b</span><span class="p">))</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">aband</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">width</span><span class="p">)</span>
+    <span class="n">zband</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">width</span><span class="p">)</span>
+    <span class="n">bands</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">aband</span><span class="p">,</span> <span class="n">zband</span><span class="p">))</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
+        <span class="n">bands</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">bands</span><span class="p">,</span> <span class="n">aband</span><span class="p">,</span> <span class="n">zband</span><span class="p">))</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">bands</span> <span class="o">=</span> <span class="n">bands</span>\<span class="o">*</span><span class="n">mag</span>
+    <span class="n">bands</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="c1"># Set DC bin content to zero</span>
+    <span class="k">return</span> <span class="n">time_points_from_freq</span><span class="p">(</span><span class="n">bands</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="n">Fsample</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># Generate Time samples for single frequency Bin</span>
+<span class="c1"># Uses IFFT</span>
+<span class="c1">#</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">TimeSeriesSingleTone</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">BinNum</span><span class="p">,</span> <span class="n">Fsample</span><span class="p">,</span> <span class="n">mag</span><span class="p">):</span>
+    <span class="c1"># Build Single tone Time-series</span>
+    <span class="c1"># n = number of Freq Bins</span>
+    <span class="c1"># BinNum = FFT Bin number</span>
+    <span class="c1"># Fsample is Sample Rate</span>
+    <span class="c1"># mag is tone amplitude</span>
+    <span class="n">bands</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">bands</span><span class="p">[</span><span class="n">BinNum</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">bands</span> <span class="o">=</span> <span class="n">bands</span> <span class="o">*</span> <span class="p">(</span><span class="n">mag</span><span class="o">/</span><span class="mf">2.0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">time_points_from_freq</span><span class="p">(</span><span class="n">bands</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="n">Fsample</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>** Colored Noise Generators**</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">PinkNoise</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">mag</span><span class="p">):</span>
+    <span class="c1"># Pink noise.</span>
+    <span class="c1"># Pink noise has equal power in bands that are proportionally wide.</span>
+    <span class="c1"># Power spectral density decreases with 3 dB per octave.</span>
+    <span class="c1"># N Length of sample array, mag magnitude scaling factor</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="c1"># white Noise</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">size</span><span class="p">)</span><span class="o">+</span><span class="mf">1.0</span><span class="p">)</span>  <span class="c1"># +1 to avoid divide by zero</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">irfft</span><span class="p">(</span><span class="n">X</span><span class="o">/</span><span class="n">S</span><span class="p">)</span><span class="o">.</span><span class="n">real</span><span class="p">[:</span><span class="n">N</span><span class="p">]</span> <span class="c1"># extremely tiny value 1e-9 without normalization</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="n">mag</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">numpy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">BlueNoise</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">mag</span><span class="p">):</span>
+    <span class="c1"># Blue noise.</span>
+    <span class="c1"># Power increases with 6 dB per octave.</span>
+    <span class="c1"># Power spectral density increases with 3 dB per octave.</span>
+    <span class="c1"># N Length of sample array, mag magnitude scaling factor</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="c1"># white Noise</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>  <span class="c1"># Filter</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">irfft</span><span class="p">(</span><span class="n">X</span>\<span class="o">*</span><span class="n">S</span><span class="p">)</span><span class="o">.</span><span class="n">real</span><span class="p">[:</span><span class="n">N</span><span class="p">]</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="n">mag</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">numpy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">BrownNoise</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">mag</span><span class="p">):</span>
+    <span class="c1"># Brown noise.</span>
+    <span class="c1"># Power decreases with -3 dB per octave.</span>
+    <span class="c1"># Power spectral density decreases with 6 dB per octave.</span>
+    <span class="c1"># N Length of sample array, mag magnitude scaling factor</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="c1"># white Noise</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">size</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>  <span class="c1"># Filter</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">irfft</span><span class="p">(</span><span class="n">X</span><span class="o">/</span><span class="n">S</span><span class="p">)</span><span class="o">.</span><span class="n">real</span><span class="p">[:</span><span class="n">N</span><span class="p">]</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="n">mag</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">numpy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">VioletNoise</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">mag</span><span class="p">):</span>
+    <span class="c1"># Violet noise.</span>
+    <span class="c1"># Power increases with +9 dB per octave.</span>
+    <span class="c1"># Power density increases with +6 dB per octave.</span>
+    <span class="c1"># N Length of sample array, mag magnitude scaling factor</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="c1"># white Noise</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>  <span class="c1"># Filter</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">irfft</span><span class="p">(</span><span class="n">X</span>\<span class="o">*</span><span class="n">S</span><span class="p">)</span><span class="o">.</span><span class="n">real</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="p">]</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="n">mag</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">numpy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+<p>** Digital single pole RC filter **</p>
+<p>This function is used mainly for compensating the response of any analog input resistor divider networks placed ahead of the analog inputs but can be used for any other filtering needs such as filtering AWG waveforms. The “RC” time constant is passed in uSec and the Gain can be either positive for high pass function or negative for low pass function.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Digital RC filter function for input divider frequency compensation</span>
+<span class="c1"># TC1 is in micro seconds</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">Digital_RC_High_Pass</span><span class="p">(</span> <span class="n">InBuff</span><span class="p">,</span> <span class="n">TC1</span><span class="p">,</span> <span class="n">Gain</span> <span class="p">):</span>
+    <span class="k">global</span> <span class="n">SAMPLErate</span><span class="p">,</span> <span class="n">Two_X_Sample</span>
+
+    <span class="n">OutBuff</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">InBuff</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">Two_X_Sample</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">Delta</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">SAMPLErate</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c1"># adjust for sligh difference in 2X sample mode?</span>
+        <span class="n">Delta</span> <span class="o">=</span> <span class="mf">0.88</span><span class="o">/</span><span class="n">SAMPLErate</span>
+    <span class="n">TC</span> <span class="o">=</span> <span class="n">TC1</span> <span class="o">*</span> <span class="mf">1.0E-6</span>
+    <span class="n">Alpha</span> <span class="o">=</span> <span class="n">TC</span> <span class="o">/</span> <span class="p">(</span><span class="n">TC</span> <span class="o">+</span> <span class="n">Delta</span><span class="p">)</span>
+    <span class="n">OutBuff</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span> <span class="c1"># initialize first output sample</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">OutBuff</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">Alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">OutBuff</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">InBuff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">InBuff</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="p">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">OutBuff</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">OutBuff</span><span class="p">)</span>
+    <span class="n">OutBuff</span> <span class="o">=</span> <span class="n">InBuff</span> <span class="o">+</span> <span class="p">(</span><span class="n">OutBuff</span> <span class="o">*</span> <span class="n">Gain</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">OutBuff</span>
+</pre></div>
+</div>
+<p>** Digital Filter Coefficient Generators**</p>
+<p>Higher order SINC filters can be generated by convolving SINC1 filters. For example, convolving two SINC1 filters (with a rectangular impulse response in time) will result in a SINC2 response, with a triangular impulse response.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># Higher order SINC filters can be generated by convolving first order Box Car filters</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">BuildRejectFilter</span><span class="p">(</span><span class="n">Order</span><span class="p">,</span> <span class="n">Freject</span><span class="p">,</span> <span class="n">Fsample</span><span class="p">):</span>
+    <span class="c1"># Order can be 1, 2, 3 or 4</span>
+    <span class="c1"># Fsample = 100000</span>
+    <span class="c1"># Calculate SINC1 oversample ratios for Freject</span>
+    <span class="n">osr</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">Fsample</span><span class="o">/</span><span class="n">Freject</span><span class="p">)</span> <span class="c1">#</span>
+    <span class="c1"># osr60 = int(Fsample/60) # 60 Hz example</span>
+    <span class="c1"># Create &quot;boxcar&quot; SINC1 filter</span>
+    <span class="n">sinc1</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">osr</span><span class="p">)</span>
+    <span class="c1"># sinc1_60 = np.ones(osr60)</span>
+    <span class="c1"># Calculate higher order filters</span>
+    <span class="n">sinc2</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">sinc1</span><span class="p">,</span> <span class="n">sinc1</span><span class="p">)</span>
+    <span class="n">sinc3</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">sinc2</span><span class="p">,</span> <span class="n">sinc1</span><span class="p">)</span>
+    <span class="n">sinc4</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">sinc2</span><span class="p">,</span> <span class="n">sinc2</span><span class="p">)</span>
+    <span class="n">fosr</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">Fsample</span><span class="o">/</span><span class="n">Freject</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">Order</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">sinc1</span><span class="o">/</span><span class="n">fosr</span>
+    <span class="k">elif</span> <span class="n">Order</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">sinc2</span><span class="o">/</span><span class="n">fosr</span>
+    <span class="k">elif</span> <span class="n">Order</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">sinc3</span><span class="o">/</span><span class="n">fosr</span>
+    <span class="k">elif</span> <span class="n">Order</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">sinc4</span><span class="o">/</span><span class="n">fosr</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">sinc1</span><span class="o">/</span><span class="n">fosr</span>
+    <span class="c1"># Here&#39;s the SINC4-ish filter</span>
+    <span class="c1"># with three zeros at 50Hz, one at 60Hz.</span>
+    <span class="c1"># filt_50_60_rej = np.convolve(sinc3_50, sinc1_60)</span>
+</pre></div>
+</div>
+<p><strong>Rearranging the order of samples:</strong></p>
+<p>Sometimes there is a need to rearrange the data samples in an array. The length of the array is not changed just the order of the samples. These two functions, Wrap and Unwrap, are inverses of each other.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">Wrap</span><span class="p">(</span><span class="n">InArray</span><span class="p">,</span> <span class="n">WrFactor</span><span class="p">):</span>
+    <span class="c1"># Build new array by skipping WrFactor samples and wrapping back around</span>
+    <span class="c1"># [1,2,3,4,5,6} becomes [1,3,5,2,4,6]</span>
+    <span class="c1"># effectively multiplies the frequency content by WrFactor</span>
+    <span class="n">OutArray</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">OutArray</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">OutArray</span><span class="p">)</span>
+    <span class="n">InArray</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">InArray</span><span class="p">)</span>
+    <span class="n">EndIndex</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">InArray</span><span class="p">)</span>
+    <span class="n">StartIndex</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">StartIndex</span> <span class="o">&lt;</span> <span class="n">WrFactor</span><span class="p">:</span>
+        <span class="n">OutArray</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">OutArray</span><span class="p">,</span> <span class="n">InArray</span><span class="p">[</span><span class="n">StartIndex</span><span class="p">:</span><span class="n">EndIndex</span><span class="p">:</span><span class="n">WrFactor</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">StartIndex</span> <span class="o">=</span> <span class="n">StartIndex</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">OutArray</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">UnWrap</span><span class="p">(</span><span class="n">InArray</span><span class="p">,</span> <span class="n">WrFactor</span><span class="p">):</span>
+    <span class="c1"># Build new array by splitting arrray into WrFactor sections and interleaving samples from each section</span>
+    <span class="c1"># [1,2,3,4,5,6} becomes [1,4,2,5,3,6]</span>
+    <span class="c1"># effectively divided the frequency content by WrFactor</span>
+    <span class="n">OutArray</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">InArray</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">InArray</span><span class="p">)</span>
+    <span class="n">EndIndex</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">InArray</span><span class="p">)</span><span class="o">/</span><span class="n">WrFactor</span><span class="p">)</span>
+    <span class="n">StartIndex</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">StartIndex</span> <span class="o">&lt;</span> <span class="n">EndIndex</span><span class="p">:</span>
+        <span class="n">LoopIndex</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">LoopIndex</span> <span class="o">&lt;</span> <span class="n">WrFactor</span><span class="p">:</span>
+            <span class="n">OutArray</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">InArray</span><span class="p">[</span><span class="n">StartIndex</span><span class="o">+</span><span class="n">LoopIndex</span><span class="p">])</span>
+            <span class="n">LoopIndex</span> <span class="o">=</span> <span class="n">LoopIndex</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">StartIndex</span> <span class="o">=</span> <span class="n">StartIndex</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">OutArray</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">OutArray</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">OutArray</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+<p>The following function opens a .wav audio file and writes the passed array of samples to it.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">Write_WAV</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">repeat</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">SAMPLErate</span>
+    <span class="c1"># write data array to mono .wav file 100KSPS</span>
+    <span class="c1"># copy buffer repeat times in output file</span>
+    <span class="c1"># Use : Write_WAV(VBuffB, 2, &quot;write_wave_1.wav&quot;)</span>
+    <span class="n">wavfile</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+    <span class="n">nchannels</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">sampwidth</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">framerate</span> <span class="o">=</span> <span class="n">SAMPLErate</span>
+    <span class="n">amplitude</span> <span class="o">=</span> <span class="mi">32766</span>
+    <span class="n">nframes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">comptype</span> <span class="o">=</span> <span class="s2">&quot;NONE&quot;</span>
+    <span class="n">compname</span> <span class="o">=</span> <span class="s2">&quot;not compressed&quot;</span>
+    <span class="n">wavfile</span><span class="o">.</span><span class="n">setparams</span><span class="p">((</span><span class="n">nchannels</span><span class="p">,</span>
+                        <span class="n">sampwidth</span><span class="p">,</span>
+                        <span class="n">framerate</span><span class="p">,</span>
+                        <span class="n">nframes</span><span class="p">,</span>
+                        <span class="n">comptype</span><span class="p">,</span>
+                        <span class="n">compname</span><span class="p">))</span>
+    <span class="c1"># Normalize data</span>
+    <span class="n">ArrN</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">ArrN</span> <span class="o">/=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+    <span class="n">frames</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">ArrN</span><span class="p">:</span>
+        <span class="n">mul</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="n">amplitude</span><span class="p">)</span>
+        <span class="c1"># print &quot;s: %f mul: %d&quot; % (s, mul)</span>
+        <span class="n">frames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="n">mul</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">frames</span><span class="p">))</span>
+    <span class="n">frames</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">frames</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="n">frames</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">repeat</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span> <span class="n">x</span> <span class="p">)</span>
+        <span class="n">wavfile</span><span class="o">.</span><span class="n">writeframes</span><span class="p">(</span><span class="n">frames</span><span class="p">)</span>
+    <span class="n">wavfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+<p><strong>Calculation of Relative Phase</strong></p>
+<p>There are a number of possible ways to measure the phase difference between two signals. The main method used by the ALICE measurements is by finding “zero-crossing” points in each waveform and calculating the phase from the time samples. A second method, used in the Phase Analyzer tool ( and Bode plotter) is the FFT. The following function calculates the relative based on this formula:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/sine-phase-formula.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/sine-phase-formula.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/sine-phase-formula.png" style="width: 400px;" />
+</a>
+<p>However, the results are incorrect if either of the two signals has a DC offset. The function removes any DC content. Also the result is only from 0 to +180º. It lacks quadrature calculation for a definitive + or - sign for the phase, which requires a bit more calculation.</p>
+<p>This method is strictly speaking only for use with sine wave signals of the same frequency but results for triangle waves is reasonably close and for square waves is only correct at 0 and 180º.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to calculate relative phase angle between two sine waves of the same frequency</span>
+<span class="c1"># Removes any DC content</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">Sine_Phase</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">DCV1</span><span class="p">,</span> <span class="n">DCV2</span><span class="p">,</span> <span class="n">VBuffA</span><span class="p">,</span> <span class="n">VBuffB</span>
+
+    <span class="n">sum1</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">sum2</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">sum12</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">VBuffA</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+       <span class="n">sum1</span> <span class="o">+=</span> <span class="p">(</span><span class="n">VBuffA</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">DCV1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">VBuffA</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">DCV1</span><span class="p">)</span>
+       <span class="n">sum2</span> <span class="o">+=</span> <span class="p">(</span><span class="n">VBuffB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">DCV2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">VBuffB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">DCV2</span><span class="p">)</span>
+       <span class="n">sum12</span> <span class="o">+=</span> <span class="p">(</span><span class="n">VBuffA</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">DCV1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">VBuffB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">DCV2</span><span class="p">)</span>
+       <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">acos</span><span class="p">(</span><span class="n">sum12</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sum1</span>\<span class="o">*</span><span class="n">sum2</span><span class="p">))</span><span class="o">*</span><span class="mf">180.0</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+<p><strong>Curve Fitting</strong></p>
+<p>The numpy library contains a polynomial fitting function. The following exponential curve fitting function is contained in ALICE.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit the function y = A * exp(B * x) to the data arrays xs and ys</span>
+<span class="c1"># returns (A, B)</span>
+<span class="c1"># From: https://mathworld.wolfram.com/LeastSquaresFittingExponential.html</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fit_exp</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">):</span>
+    <span class="n">S_x2_y</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">S_y_lny</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">S_x_y</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">S_x_y_lny</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">S_y</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">):</span>
+        <span class="n">S_x2_y</span> <span class="o">+=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+        <span class="n">S_y_lny</span> <span class="o">+=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">S_x_y</span> <span class="o">+=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+        <span class="n">S_x_y_lny</span> <span class="o">+=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">S_y</span> <span class="o">+=</span> <span class="n">y</span>
+    <span class="c1">#end</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">S_x2_y</span> <span class="o">*</span> <span class="n">S_y_lny</span> <span class="o">-</span> <span class="n">S_x_y</span> <span class="o">*</span> <span class="n">S_x_y_lny</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">S_y</span> <span class="o">*</span> <span class="n">S_x2_y</span> <span class="o">-</span> <span class="n">S_x_y</span> <span class="o">*</span> <span class="n">S_x_y</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">S_y</span> <span class="o">*</span> <span class="n">S_x_y_lny</span> <span class="o">-</span> <span class="n">S_x_y</span> <span class="o">*</span> <span class="n">S_y_lny</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">S_y</span> <span class="o">*</span> <span class="n">S_x2_y</span> <span class="o">-</span> <span class="n">S_x_y</span> <span class="o">*</span> <span class="n">S_x_y</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">b</span><span class="p">)</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+<p>As an example use case the following simple resistor and diode circuit shown in figure 1 is offered.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-0.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-0.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-0.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 1, Diode test circuit</p>
+</div>
+<p>The voltage across a small signal diode is measured using scope channel B and the diode current is measured using the AWG A channel current as the channel A voltage is swept using a triangle wave. The data samples in the VBuffB and IBuffA arrays is used to fit an exponential. In the following ALICE script, the data is analyzed and then plotted using the built-in pyplot functions from the Matplotlib library.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Note that this script uses the User Entry Widgets on the X-Y plotting screen to display the fit values for I<sub>S</sub> and N. You will need to have the User Entries enabled in the alice_init.ini file: EnableUserEntries = 1</p>
+<p>Alternatively these lines can be commented out and the values simply printed to the Console screen.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xs</span> <span class="o">=</span> <span class="n">VBuffB</span><span class="p">[</span><span class="mi">50</span><span class="p">:</span><span class="mi">500</span><span class="p">]</span> <span class="c1"># diode voltage</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">IBuffA</span><span class="p">[</span><span class="mi">50</span><span class="p">:</span><span class="mi">500</span><span class="p">]</span> <span class="c1"># diode current</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">ys</span> <span class="o">/</span> <span class="mf">1000.0</span> <span class="c1"># convert mA to Amps</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">ys</span><span class="p">)</span> <span class="c1"># make all y values positive for taking ln</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">ys</span> <span class="o">-</span> <span class="n">numpy</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">ys</span><span class="p">)</span> <span class="o">+</span> <span class="mf">2.2e-9</span> <span class="c1"># add offset and Is guess</span>
+
+<span class="c1"># Function to fit data I_d(x) + I_s = I_s * exp(x/(n\*Vt))</span>
+<span class="c1"># note that I_d + I_s is approx I_d since I_s is small</span>
+
+<span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span> <span class="o">=</span> <span class="n">fit_exp</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)</span>
+
+<span class="c1"># some constants</span>
+<span class="c1"># Saturation current I_s = 1.0e-9</span>
+<span class="c1"># Ideality factor n = 2</span>
+<span class="c1"># Thermal voltage, KT/q</span>
+<span class="n">Vt</span> <span class="o">=</span> <span class="mf">0.0259</span>
+<span class="c1"># guess values for Is and n</span>
+<span class="c1"># Iguess(x) = 5.0e-9*(exp(x/(2\*Vt))-1.0)</span>
+<span class="c1">#print( &quot;{Is} A = &quot;, A, &quot;B = &quot;, B )</span>
+<span class="n">Fit_N</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="n">Vt</span>\<span class="o">*</span><span class="n">B</span><span class="p">)</span> <span class="c1"># Fit n with Vt at 25 C</span>
+<span class="n">Is_String</span> <span class="o">=</span> <span class="s1">&#39; </span><span class="si">{0:.2e}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">AmA</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="mf">1000.0</span>
+<span class="n">User3Entry</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">END</span><span class="p">)</span>
+<span class="n">User3Entry</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">Is_String</span><span class="p">)</span>
+<span class="n">N_String</span> <span class="o">=</span> <span class="s1">&#39; </span><span class="si">{0:.2f}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Fit_N</span><span class="p">)</span>
+<span class="n">User4Entry</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">END</span><span class="p">)</span>
+<span class="n">User4Entry</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">N_String</span><span class="p">)</span>
+<span class="c1">#print (&quot;Vt = &quot;, Vt, &quot;Fit Vt = &quot;, Fit_Vt)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">VBuffB</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">500</span><span class="p">],</span> <span class="n">IBuffA</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">500</span><span class="p">],</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Raw Data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">VBuffB</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">500</span><span class="p">],</span> <span class="p">[</span><span class="n">AmA</span> <span class="o">*</span> <span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">B</span>\<span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">VBuffB</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">500</span><span class="p">]],</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fit&#39;</span><span class="p">)</span>
+<span class="c1">#plt.plot(xs, [2.2e-9 * (numpy.exp(x/(2.0\*0.0259))-1) for x in xs], &#39;r&#39;, label=&#39;Guess&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Exponential Diode Fit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Volts&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amps&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">block</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The following screenshots show the results:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/diode-exp-time.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/diode-exp-time.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/diode-exp-time.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 2, Time waveforms</p>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/diode-exp-x-y.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/diode-exp-x-y.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/diode-exp-x-y.png" style="width: 400px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 3, V-I X,Y plot</p>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/diode-exp-fit.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/diode-exp-fit.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/diode-exp-fit.png" style="width: 400px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 4, Curve fit results</p>
+</div>
+</section>
+<section id="using-the-numpy-library">
+<h2>Using the Numpy library<a class="headerlink" href="#using-the-numpy-library" title="Link to this heading"></a></h2>
+<p>ALICE includes the Numpy numerical library of array creation and manipulation functions. The reader is directed to the <a class="icon link reference external" href="https://docs.scipy.org/doc/numpy/reference/index.html" target="_blank">numpy documentation</a> for complete details on these functions. Here we will point out some of the more useful functions for creating and manipulating waveform sample arrays. Numpy contains many more than can be covered here. However, be sure to only use functions that return 1 dimensional arrays.</p>
+<p>In these example we use AWGAwaveform as the array variable but any of the ALICE internal waveform arrays can be of course used.</p>
+<section id="array-creation">
+<h3>Array Creation:<a class="headerlink" href="#array-creation" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">numpy.ones(length) Return a new array of given length filled with ones.</div>
+<div class="line">numpy.zeros(length) Return a new array of given length filled with zeros.</div>
+<div class="line">numpy.full(length, fill_value) Return a new array of given length, filled with fill_value.</div>
+<div class="line">numpy.linspace(start_value, stop_value, num=length) Return a new array of given length of evenly spaced numbers between start_value and stop_value.</div>
+<div class="line">numpy.logspace(start_value, stop_value, num=length, base=log_base) Return a new array of given length of numbers spaced evenly on a log scale. The base of the log can be optionally specified such as 10 or 2 etc.</div>
+</div>
+</section>
+<section id="arithmetic-functions">
+<h3>Arithmetic functions:<a class="headerlink" href="#arithmetic-functions" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">numpy.square(x) Return the element-wise square of the input.</div>
+<div class="line">numpy.sqrt(x) Return the positive square-root of an array, element-wise.</div>
+<div class="line">numpy.exp(x) Calculate the exponential of all elements in the input array.</div>
+<div class="line">numpy.log(x) Return the Natural logarithm, element-wise.</div>
+<div class="line">numpy.log10(x) Return the base 10 logarithm of the input array, element-wise.</div>
+</div>
+</section>
+<section id="trigonometric-functions">
+<h3>Trigonometric functions:<a class="headerlink" href="#trigonometric-functions" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">numpy.sin(x) Trigonometric Sine, element-wise.</div>
+<div class="line">numpy.cos(x) Cosine element-wise.</div>
+</div>
+<p>To create one cycle of a sine wave 400 samples long you will first create an array of values from 0 to 2*pi and then send it to the sine function like this.</p>
+<p>numpy.sin(numpy.linspace(0, 2*numpy.pi, 400))</p>
+<p>The waveform values will be from -1 to 1 so additionally you will need to scale and or offset the values to be between 0 than 5 for the AWG. In this example we create the sine wave centered on 2.5 V with a P-P of 4 V.</p>
+<p>(numpy.sin(numpy.linspace(0, 2*numpy.pi, 400)) * 2) + 2.5</p>
+<p>numpy.sinc(x) Return the sinc function.</p>
+<p>Much like the trig functions the input to the sinc function is a linear spaced array of points.</p>
+<p>numpy.sinc(numpy.linspace(-4, 4, 400)) will product 4 “cycles” 400 samples long.</p>
+<p>The values will be between -1 to 1 so additionally you will need to scale and or offset the values to be between 0 than 5 for the AWG. In this example we create the sinc pulse centered on 2.5 V with a peak value of 4.5 V.</p>
+<p>(numpy.sinc(numpy.linspace(-4, 4, 400)) * 2)+2.5</p>
+</section>
+<section id="random-functions">
+<h3>Random functions:<a class="headerlink" href="#random-functions" title="Link to this heading"></a></h3>
+<p>Many of the random number functions return arrays of random numbers. Here are a few examples:</p>
+<p>numpy.random.standard_normal(8000)+2.5 will return a 8,000 sample array of random numbers with a normal distribution, standard deviation = 1, centered on 2.5.</p>
+<p>numpy.random.uniform(1,4,10000) will return a 10,000 sample array of random numbers with a uniform distribution between 1 and 4.</p>
+<p>numpy.random.triangular(1, 2.5, 4, 10000) will return a 10,000 sample array of random numbers with a triangular distribution between 1 and 4, centered on 2.5.</p>
+</section>
+<section id="rearranging-sample-points">
+<h3>Rearranging Sample points:<a class="headerlink" href="#rearranging-sample-points" title="Link to this heading"></a></h3>
+<p>numpy.roll(AWGAwaveform, shift) Roll array elements by shift points. This will in effect change the relative timing delay or phase of the waveform.</p>
+<p>numpy.flip(AWGAwaveform) Reverse the order of elements in an array. This will reverse the order of the time samples in the array.</p>
+</section>
+<section id="functions-to-extend-waveform">
+<h3>Functions to extend waveform:<a class="headerlink" href="#functions-to-extend-waveform" title="Link to this heading"></a></h3>
+<p>numpy.concatenate( (AWGAwaveform, AWGBwaveform, … ) ) Join a sequence of arrays.</p>
+<p>numpy.repeat(AWGAwaveform, repeats) Repeat elements of an array. This will effectively lower the sample rate of the waveform. If repeat is 2 the frequency of the new waveform will be ½ what the original was.</p>
+<p>The pad function adds samples to the beginning and end of the array.</p>
+<div class="line-block">
+<div class="line">numpy.pad(AWGAwaveform, (100, 100), ‘edge’)</div>
+<div class="line">numpy.pad(AWGAwaveform, (100,100), ‘maximum’)</div>
+</div>
+<p>The first argument is the array variable, next is a list of the number of points to add. In the case of our one dimensional waveforms this is just two values for the beginning and end of the array. The third argument tells the function what values to use to extend the array. How the array is extended can be one of the following:</p>
+<div class="line-block">
+<div class="line">‘constant’ - Pads with a constant value.</div>
+<div class="line">‘edge’ - Pads with the edge values of array.</div>
+<div class="line">‘linear_ramp’ - Pads with the linear ramp between end_value and the array edge value.</div>
+<div class="line">‘maximum’ - Pads with the maximum value of all or part of the vector along each axis.</div>
+<div class="line">‘mean’ - Pads with the mean value of all or part of the vector along the axis.</div>
+<div class="line">‘median’ - Pads with the median value of all or part of the vector along the axis.</div>
+<div class="line">‘minimum’ - Pads with the minimum value of all or part of the vector along the axis.</div>
+<div class="line">‘reflect’ - Pads with the reflection of the vector mirrored on the first and last values of the vector along the axis.</div>
+<div class="line">‘symmetric’ - Pads with the reflection of the vector mirrored along the edge of the array.</div>
+<div class="line">‘wrap’ - Pads with the wrap of the vector along the axis. The first values are used to pad the end and the end values are used to pad the beginning.</div>
+</div>
+</section>
+<section id="window-functions">
+<h3>Window functions:<a class="headerlink" href="#window-functions" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">numpy.bartlett(length) Return the Bartlett window.</div>
+<div class="line">numpy.blackman(length) Return the Blackman window.</div>
+<div class="line">numpy.hamming(length) Return the Hamming window.</div>
+<div class="line">numpy.hanning(length) Return the Hanning window.</div>
+<div class="line">numpy.kaiser(length, beta) Return the Kaiser window</div>
+</div>
+</section>
+<section id="special-functions">
+<h3>Special functions:<a class="headerlink" href="#special-functions" title="Link to this heading"></a></h3>
+<p>numpy.convolve(a, v) Returns the discrete, linear convolution of two one-dimensional sequences.</p>
+<p>This is used primarily for digital filtering of waveform data arrays.</p>
+<p>numpy.polyfit(x, y, deg) Fit a polynomial p(x) = p[0] * x^deg + … + p[deg] of degree deg to points (x, y). Returns a vector of coefficients p that minimizes the squared error.</p>
+<p>numpy.poly1d(p) A convenience class, used to encapsulate “natural” operations on polynomials so that said operations may take on their customary form in code.</p>
+<section id="polynomial-fit-example">
+<h4>Polynomial Fit Example<a class="headerlink" href="#polynomial-fit-example" title="Link to this heading"></a></h4>
+<p>The following example shows how to use polyfit and poly1d to fit a 5<sup>th</sup> order polynomial to the voltage characteristics of diode and plot the polynomial over the plot of the measured data points.</p>
+<p>First construct the simple resistor and diode circuit shown in the figure.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-0.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-0.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-0.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure, Diode test circuit</p>
+</div>
+<p>Set Channel A AWG Min value to 0V and Max value to 5V. Set the Mode to SVMI and the Shape to triangle. Set the Freq to 100 Hz. Set Channel B mode to Hi-Z to measure the voltage across the diode.</p>
+<p>Set the Horz Time scale to 0.5mSec/Div. Hit Run, wait for a few seconds to capture some data then hit Stop. This should display the rising half of the triangle wave on Channel A from 0 to 5 V ( green trace ). The width of the grid will be 500 sample points ( 5 mSec at 10 uSec/sample). Channel B should display the voltage across the diode going from 0 to about 0.8 V ( orange trace ). You may want to change the vertical scale to 0.1 V/div and position to 0.5 for CH-B to display the waveform from 0 to 1 V. You should now have something like this:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-1.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-1.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-1.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Plot of Diode Voltage</p>
+</div>
+<p>Open the Command Line interface ( with the program stopped ). We want to fit a polynomial to the first 500 samples where CH-A ramps from 0 to 5 V. Type the following line into the entry space and hit return.</p>
+<p>global Zpoly; Zpoly = numpy.polyfit(VBuffA[0:499], VBuffB[0:499], 5)</p>
+<p>To check the terms of the polynomial type the following line into the entry space and hit return.</p>
+<p>print Zpoly</p>
+<p>In the ALICE desktop console window you should see something like this.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-2.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-2.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-2.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>ALICE console showing polynomial terms</p>
+</div>
+<p>We can use poly1d to make an object that makes this easy to plot on the screen. Type the following line into the entry space and hit return.</p>
+<p>global ZBuff; ZBuff = numpy.poly1d(Zpoly)</p>
+<p>Again to check the results type the following line into the entry space and hit return.</p>
+<p>print ZBuff</p>
+<p>In the ALICE desktop console window you should now see something like this.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-3.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-3.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-3.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>ALICE console showing polynomial equation</p>
+</div>
+<p>To plot the polynomial on the screen we will use the Math waveform feature. From the Math drop down menu select Math Axis and set it to V-B to use the same axis as the diode voltage plot. From the Math drop down menu select Enter Formula and enter the following:</p>
+<p>ZBuff(VBuffA[t])-CHBOffset</p>
+<p>This plots the value of the polynomial evaluated at each point in VBuffA as the time index t goes from 0 to 499 ( 5 mSec ). Be sure to note that () are used for ZBuff and not [] because it is a function and not an array like VBuffA. You should now see something like this on the display. The magenta Math plot is the polynomial.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-4.png"><img alt="https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-4.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/m1k/alice/poly-fit-4.png" style="width: 600px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Plot of measured data and polynomial</p>
+</div>
+</section>
+</section>
+</section>
+<section id="appendix">
+<h2>Appendix:<a class="headerlink" href="#appendix" title="Link to this heading"></a></h2>
+<p>For completeness, here are a few of the more obscure arrays used in ALICE:</p>
+<p>These trace “lines” are 2d X-Y arrays in screen pixels.</p>
+<div class="line-block">
+<div class="line">T1Vline = [] # Voltage Trace line channel A</div>
+<div class="line">T2Vline = [] # Voltage Trace line channel B</div>
+<div class="line">T1Iline = [] # Current Trace line channel A</div>
+<div class="line">T2Iline = [] # Current Trace line channel B</div>
+<div class="line">TMAVline = [] # Voltage Trace line MUX channel A</div>
+<div class="line">TMBVline = [] # Voltage Trace line MUX channel B</div>
+<div class="line">TMCVline = [] # Voltage Trace line MUX channel C</div>
+<div class="line">TMDVline = [] # Voltage Trace line MUX channel D</div>
+<div class="line">TMBRline = [] # V reference Trace line MUX channel B</div>
+<div class="line">TMCRline = [] # V reference line MUX channel C</div>
+<div class="line">TXYline = [] # XY Trace line</div>
+<div class="line">TXYRline = [] # XY reference trace line</div>
+<div class="line">Tmathline = [] # Math trace line</div>
+<div class="line">T1VRline = [] # V reference Trace line channel A</div>
+<div class="line">T2VRline = [] # V reference Trace line channel B</div>
+<div class="line">T1IRline = [] # I reference Trace line channel A</div>
+<div class="line">T2IRline = [] # I reference Trace line channel B</div>
+<div class="line">TMRline = [] # Math reference Trace line</div>
+</div>
+<div class="line-block">
+<div class="line">T1Fline = [] # Frequency Trace line channel A</div>
+<div class="line">T2Fline = [] # Frequency Trace line channel B</div>
+<div class="line">T1Pline = [] # Phase angle Trace line channel A - B</div>
+<div class="line">T2Pline = [] # Phase angle Trace line channel B - A</div>
+<div class="line">T1FRline = [] # F reference Trace line channel A</div>
+<div class="line">T2FRline = [] # F reference Trace line channel B</div>
+<div class="line">T1PRline = [] # Phase reference Trace line channel A - B</div>
+<div class="line">T2PRline = [] # Phase reference Trace line channel B - A</div>
+<div class="line">TFMline = [] # Frequency Math Trace</div>
+<div class="line">TFRMline = [] # Frequency reference Math Trace</div>
+</div>
+<div class="line-block">
+<div class="line">TAFline = [] # Bode Freq Trace line channel A</div>
+<div class="line">TBFline = [] # Bode Freq Trace line channel B</div>
+<div class="line">TAPline = [] # Bode Phase angle Trace line channel A - B</div>
+<div class="line">TBPline = [] # Bode Phase angle Trace line channel B - A</div>
+<div class="line">TAFRline = [] # Bode F reference Trace line channel A</div>
+<div class="line">TBFRline = [] # Bode F reference Trace line channel B</div>
+<div class="line">TAPRline = [] # Bode Phase reference Trace line channel A - B</div>
+<div class="line">TBPRline = [] # Bode Phase reference Trace line channel B - A</div>
+<div class="line">TBPMline = [] # Bode Frequency Math Trace</div>
+<div class="line">TBPRMline = [] # Bode Frequency reference Math Trace</div>
+</div>
+<p><strong>For Further Reading:</strong></p>
+<p><a class="icon link reference external" href="http://docs.scipy.org/doc/numpy/reference/index.html" target="_blank">http://docs.scipy.org/doc/numpy/reference/index.html</a></p>
+<p><strong>Return to ALICE 1.3 M1K</strong> <a class="reference internal" href="desk-top-users-guide.html"><span class="doc">User’s Guide</span></a></p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

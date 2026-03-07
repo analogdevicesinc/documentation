@@ -1,0 +1,272 @@
+.. _adrv904x quickstart zcu102:
+
+ZCU102 Quick start
+===============================================================================
+
+.. image:: ../../images/zcu102.jpg
+   :width: 900
+
+.. esd-warning::
+
+.. include-template:: ../../common/zcu102-zynqmp-setup.rst
+
+   label: adrv904x
+   eval_board: EVAL-ADRV904x
+   eval_board_link: en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adrv904x.html
+   fmc_port: HPC1
+   hdl_ref: adrv904x
+
+Boot messages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following is what is printed in the serial console, after you have
+connected to the proper ttyUSB or COM port:
+
+.. collapsible:: Complete boot log
+
+   ::
+
+      Zynq MP First Stage Boot Loader
+      Release 2025.1   Dec  9 2025  -  14:14:37
+      NOTICE:  BL31: Non secure code at 0x8000000
+      NOTICE:  BL31: v2.12.0(release):xilinx-v2025.1
+      NOTICE:  BL31: Built : 11:08:56, Aug 12 2025
+      PMUFW:  v1.1
+
+
+      U-Boot 2018.01-21442-gf06dec3cab (Feb 13 2025 - 17:12:07 +0200) Xilinx ZynqMP ZCU102 revA
+
+      I2C:   ready
+      DRAM:  4 GiB
+      EL Level:       EL2
+      Chip ID:        zu9eg
+      MMC:   sdhci@ff170000: 0 (SD)
+      *** Warning - bad CRC, using default environment
+
+      In:    serial@ff000000
+      Out:   serial@ff000000
+      Err:   serial@ff000000
+      Bootmode: LVL_SHFT_SD_MODE1
+      Net:   ZYNQ GEM: ff0e0000, phyaddr 15, interface rgmii-id
+
+      Warning: ethernet@ff0e0000 using MAC address from ROM
+      eth0: ethernet@ff0e0000
+      Hit any key to stop autoboot:  0
+      switch to partitions #0, OK
+      mmc0 is current device
+      ...
+      reading Image
+      44519936 bytes read in 2980 ms (14.2 MiB/s)
+      ## Flattened Device Tree blob at 04000000
+         Booting using the fdt blob at 0x4000000
+         Loading Device Tree to 000000000fff0000, end 000000000ffff0f4 ... OK
+
+      Starting kernel ...
+
+      [    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd034]
+      [    0.000000] Linux version 6.12.0-27064-g9495a3d76542 (spopa@HYB-JRXo5UEs61B) #16 SMP Tue Feb 17 17:01:10 EET 2026
+      [    0.000000] Machine model: ZynqMP ZCU102 Rev1.0
+      [    0.000000] earlycon: cdns0 at MMIO 0x00000000ff000000 (options '115200n8')
+      ...
+      [    1.017619] jesd204: created con: id=0, topo=0, link=0, /axi/spi@ff040000/ad9528-1@1 <-> /fpga-axi@0/axi-adxcvr-tx@84a80000
+      [    1.028155] jesd204: created con: id=1, topo=0, link=2, /axi/spi@ff040000/ad9528-1@1 <-> /fpga-axi@0/axi-adxcvr-rx@84a60000
+      [    1.039223] jesd204: created con: id=2, topo=0, link=0, /fpga-axi@0/axi-adxcvr-tx@84a80000 <-> /fpga-axi@0/axi-jesd204-tx@84a90000
+      [    1.050895] jesd204: created con: id=3, topo=0, link=2, /fpga-axi@0/axi-adxcvr-rx@84a60000 <-> /fpga-axi@0/axi-jesd204-rx@84aa0000
+      [    1.062597] jesd204: created con: id=4, topo=0, link=0, /fpga-axi@0/axi-jesd204-tx@84a90000 <-> /fpga-axi@0/axi-adrv904x-tx-hpc@84a04000
+      [    1.074788] jesd204: created con: id=5, topo=0, link=2, /fpga-axi@0/axi-jesd204-rx@84aa0000 <-> /axi/spi@ff040000/adrv904x-phy@0
+      [    1.086273] jesd204: created con: id=6, topo=0, link=0, /fpga-axi@0/axi-adrv904x-tx-hpc@84a04000 <-> /axi/spi@ff040000/adrv904x-phy@0
+      [    1.098218] jesd204: /axi/spi@ff040000/adrv904x-phy@0: JESD204[0:0] transition uninitialized -> initialized
+      [    1.107895] jesd204: /axi/spi@ff040000/adrv904x-phy@0: JESD204[0:2] transition uninitialized -> initialized
+      [    1.117583] jesd204: found 7 devices and 1 topologies
+      ...
+      [    1.940648] axi_sysid 85000000.axi-sysid-0: [adrv904x] [JESD_MODE=64B66B RX:RATE=24.33 M=8 L=4 S=1 NP=16 TPL_WIDTH= LINKS=1 TX:RATE=24.33 M=8 L=4 S=1 NP=16 TPL_WIDTH= LINKS=1] on [zcu102]
+      ...
+      [   29.767179] systemd[1]: Failed to look up module alias 'autofs4': Function not implemented
+      [   29.800681] systemd[1]: systemd 247.3-7+rpi1+deb11u2 running in system mode.
+
+      Welcome to Kuiper GNU/Linux 11.2 (bullseye)!
+
+      ...
+      My IP address is 192.168.100.2 169.254.173.46
+
+      Raspbian GNU/Linux 11 analog ttyPS0
+
+      analog login:
+
+Default login credentials:
+
+- Username: ``analog``
+- Password: ``analog``
+
+Verifying the setup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+After logging in, you can verify that the ADRV904x device is properly detected
+by the Linux kernel:
+
+.. shell::
+
+   $iio_info | grep iio:device
+    iio:device0: xilinx-ams
+    iio:device1: adrv904x-phy
+    iio:device2: axi-adrv904x-rx-hpc (buffer capable)
+    iio:device3: axi-adrv904x-tx-hpc (buffer capable)
+
+.. include:: ../../common/using-iio-osc.rst
+
+About the IIO devices
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Main receivers RX1 through RX8 are handled by the ``axi-adrv904x-rx-hpc`` IIO
+device.
+
+Channels:
+
+- IIO device channel: ``axi-adrv904x-rx-hpc``
+- Receiver inputs:
+
+  - {``voltage0_i``, ``voltage0_q``}: RX1
+  - {``voltage1_i``, ``voltage1_q``}: RX2
+  - {``voltage2_i``, ``voltage2_q``}: RX3
+  - {``voltage3_i``, ``voltage3_q``}: RX4
+  - {``voltage4_i``, ``voltage4_q``}: RX5
+  - {``voltage5_i``, ``voltage5_q``}: RX6
+  - {``voltage6_i``, ``voltage6_q``}: RX7
+  - {``voltage7_i``, ``voltage7_q``}: RX8
+
+Transmitters TX1 through TX8 are handled by the ``axi-adrv904x-tx-hpc`` IIO
+device.
+
+Channels:
+
+- IIO device channel: ``axi-adrv904x-tx-hpc``
+- Transmitter outputs:
+
+  - {``voltage0_i``, ``voltage0_q``}: TX1
+  - {``voltage1_i``, ``voltage1_q``}: TX2
+  - {``voltage2_i``, ``voltage2_q``}: TX3
+  - {``voltage3_i``, ``voltage3_q``}: TX4
+  - {``voltage4_i``, ``voltage4_q``}: TX5
+  - {``voltage5_i``, ``voltage5_q``}: TX6
+  - {``voltage6_i``, ``voltage6_q``}: TX7
+  - {``voltage7_i``, ``voltage7_q``}: TX8
+
+NLS profile (with observation receiver)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When using the NLS device tree (``zynqmp-zcu102-rev10-adrv904x-nls.dts``),
+the observation receiver path is enabled. The observation receiver IIO device
+appears as an additional device:
+
+.. shell::
+
+   $iio_info | grep iio:device
+    iio:device0: xilinx-ams
+    iio:device1: adrv904x-phy
+    iio:device2: axi-adrv904x-rx-hpc (buffer capable)
+    iio:device3: axi-adrv904x-tx-hpc (buffer capable)
+    iio:device4: axi-adrv904x-obs-hpc (buffer capable)
+
+To use the NLS profile, copy ``system.dtb`` built from
+``zynqmp-zcu102-rev10-adrv904x-nls.dts`` and ``DeviceProfileTest_NLS.bin``
+renamed to ``DeviceProfileTest.bin`` to the SD card boot partition.
+
+Using no-OS as software
+-------------------------------------------------------------------------------
+
+Necessary files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following files are needed for the system to boot:
+
+- HDL boot file: ``system_top.xsa``
+- no-OS project: :git-no-os:`projects/adrv904x`
+
+Instructions on how to build the boot files from source can be found here:
+
+- :external+no-OS:doc:`projects/rf-transceiver/adrv904x`. More no-OS build
+  details at :external+no-OS:doc:`build_guide`.
+- :external+hdl:ref:`adrv904x`. More HDL build details at
+  :external+hdl:ref:`build_hdl`.
+
+Required Software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- AMD Xilinx Vivado and Vitis (downloading Vitis from
+  `here <https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html>`_
+  will include Vivado as well)
+- An UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1)
+
+Required Hardware
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- AMD Xilinx :xilinx:`ZCU102` Rev 1.0 FPGA board and its power supply
+- :adi:`EVAL-ADRV904x <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adrv904x.html>` FMC evaluation board
+- 2x Micro-USB cables, one for UART and one for JTAG
+- (Optional) USB keyboard & mouse and a HDMI-compatible monitor
+
+More details as to why you need these, can be found at
+:ref:`adrv904x prerequisites`.
+
+.. note::
+
+   In Vitis IDE, set the HEAP size to ``0x800000`` and add the math library
+   (``-lm``) to the GCC linker flags. The evaluation board connects to the
+   **FMC HPC1** connector on the ZCU102.
+
+Demo applications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Three demo applications are available in the no-OS project, selected via
+Makefile variables:
+
+- **Basic example**: Initializes all components and enables the JESD204 link.
+  The transmitter outputs a DDS waveform with default parameters.
+- **DMA example**: Transmits sinewave patterns via DMA from lookup tables and
+  captures receive data to memory for analysis (exportable as CSV).
+- **IIO example**: Launches an IIOD server on the board, allowing connection
+  via an IIO client such as :ref:`iio-oscilloscope` to configure the
+  transceiver and capture data. The IIOD server runs at 921600 baud.
+
+Only one example can be active at a time.
+
+Switching between use cases
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Since no-OS runs bare-metal without a file system, all profile and firmware
+data is compiled into the binary as C headers in
+:git-no-os:`projects/adrv904x/src/common/firmware <projects/adrv904x/src/common/firmware>`.
+
+The entire device configuration for a given use case is contained in the
+profile binary (``DeviceProfileTest.bin``), which is generated using the ADI
+evaluation software (see the *ADRV904x Evaluation System User Guide*). The
+stream image (``stream_image.bin``) is also specific to a configuration.
+The firmware files (``ADRV9040_FW.bin``, ``ADRV9040_DFE_CALS_FW.bin``) are
+typically static and supplied by ADI.
+
+Radio control and JESD204 parameters (LO frequencies, channel masks, lane
+rates) are set directly in
+:git-no-os:`projects/adrv904x/src/common/initdata.c <projects/adrv904x/src/common/initdata.c>`
+as C structs (``deviceInitStruct``, ``utilityInit``).
+
+To switch to a different use case:
+
+#. Generate the new ``DeviceProfileTest.bin`` and ``stream_image.bin`` using
+   the ADI evaluation software.
+
+#. Convert each binary to a C header using ``xxd``:
+
+   .. code-block:: bash
+
+      xxd -i DeviceProfileTest.bin > DeviceProfileTest.h
+      xxd -i stream_image.bin > stream_image.h
+
+#. Copy the generated headers into
+   :git-no-os:`projects/adrv904x/src/common/firmware <projects/adrv904x/src/common/firmware>`,
+   replacing the existing files.
+
+#. If radio control or JESD204 parameters also changed, update the
+   corresponding fields in ``initdata.c`` (``deviceInitStruct`` and
+   ``utilityInit``).
+
+#. Rebuild the project.

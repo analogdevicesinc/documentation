@@ -1,0 +1,2830 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The ADV7511 is a 225 MHz High-Definition Multimedia Interface (HDMI®) transmitter, which is ideal for home entertainment products including DVD players/recorders, digital set top boxes, A/V receivers, gaming consoles, and PCs." name="description" />
+
+    <title>ADV7511 Transmitter API &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ADV7511 Transmitter API</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#functions-description">Functions description</a></li>
+<li><a class="reference internal" href="#notification-events">Notification events</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="adv7511-transmitter-api">
+<h1>ADV7511 Transmitter API<a class="headerlink" href="#adv7511-transmitter-api" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>The ADV7511 is a 225 MHz High-Definition Multimedia Interface (HDMI®) transmitter, which is ideal for home entertainment products including DVD players/recorders, digital set top boxes, A/V receivers, gaming consoles, and PCs.</p>
+<p>The digital video interface contains an HDMI 1.4- and a DVI 1.0-compatible transmitter, and supports all HDTV formats (including 1080p with 12-bit Deep Color). The ADV7511 supports the HDMI 1.4-specific features, HEAC (ARC), and 3D video. In addition to these features, the ADV7511 supports x.v.Color™, high bit rate audio, and programmable AVI InfoFrames. With the inclusion of HDCP, the ADV7511 allows the secure transmission of protected content as specified by the HDCP 1.4 protocol.</p>
+<p>The ADV7511 supports both S/PDIF and 8-channel I2S audio. Its high fidelity 8-channel I2S can transmit either stereo or 7.1 surround audio up to 768 kHz. The S/PDIF can carry compressed audio including Dolby® Digital, DTS®, and THX®. Fabricated in an advanced CMOS process, the ADV7511 is provided in a 100-lead LQFP surface-mount plastic package and is specified over the 0°C to +70°C temperature range.</p>
+<p>The transmitter library is a collection of APIs that provide a consistent interface to ADV7511. The library is a software layer that sits between the application and the TX hardware. The library is intended to serve two purposes:</p>
+<ul class="simple">
+<li><p>Provide the application with a set of APIs that can be used to configure HDMI TX hardware without the need for low-level register access. This makes the application portable across different revisions of the hardware and even across different hardware modules.</p></li>
+<li><p>Provide basic services to aid the application in controlling the TX module, such as interrupt service routine, HDCP high-level control and status information.</p></li>
+</ul>
+</section>
+<section id="functions-description">
+<h2>Functions description<a class="headerlink" href="#functions-description" title="Link to this heading"></a></h2>
+<p>The Transmitter library provides a comprehensive set of APIs to control, configure and provide status on all aspects of the HDMI TX module.</p>
+<p>Below is the list of all functions implemented in this library:</p>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxInit&lt;/fc&gt; (BOOL FullInit)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Power-up and initialize HDMI TX hardware and software module. This function will perform a complete TX module reset and brings the chip into a known state. The default behavior of the HDMI TX chip is to automatically power down if HPD is low. To change this default behavior, the API ADIAPI_TxOverrideHpdPD can be used. The TMDS clock and data lines will be disabled following a call to this API (or whenever the system is initialized) unless the configuration flag TX_ENABLE_TMDS_ON_INIT is set as described in the ADIAPI_TxSetConfig API.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>FullInit</strong> - select if it is required to perform full initialization (all h/w modules will be reset) or partial initialization (CEC module will not be affected).</p>
+<ul>
+<li><p><strong>TRUE</strong> -To perform full initialization. This should be used when doing a cold start.</p></li>
+<li><p><strong>FALSE</strong> - To perform partial initialization. This should be used for warm start (for example coming out of standby) to preserve the state of the CEC engine.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - HDMI TX hardware and software module was powered up and initialized.</p></li>
+<li><p><strong>ATVERR_FAILED</strong> - The chip is powered down.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxShutdown&lt;/fc&gt; (TX_PD_MODE PdMode)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Power down HDMI TX hardware. The chip power-down will be set to high and all TMDS lines will be disabled. This API can also be used to enter stand-by mode.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>PdMode</strong> - Select the power-down mode. Three power-down modes are available:</p>
+<ul>
+<li><p><strong>TX_PD_MODE1</strong> - Entire chip is powered down except HPD and Rx Sense interrupts and CEC engine.</p></li>
+<li><p><strong>TX_PD_MODE2</strong> - Everything is powered down except CEC engine.</p></li>
+<li><p><strong>TX_PD_MODE3</strong> - Everything is powered down.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSetConfig&lt;/fc&gt; (TX_CONFIG UserConfig, BOOL Set)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Configure how TX ISR responds to various events and set other generals operational parameters.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>UserConfig</strong> - Any of the TX_CONFIG values ORed together. Possible values are:</p>
+<ul>
+<li><p><strong>TX_INIT_ON_HPD_HIGH</strong> - This flag causes the TX ISR to perform h/w initialization when the HPD signal changes from low to high. The initialization is done by calling the ADIAPI_TxInit API.</p></li>
+<li><p><strong>TX_INIT_ON_HPD_LOW</strong> - This flag causes the TX ISR to perform h/w initialization when the HPD signal changes from high to low. The initialization is done by calling the ADIAPI_TxInit API.</p></li>
+<li><p><strong>TX_INIT_ON_EDID_ERROR</strong> - This flag causes the TX ISR to perform h/w initialization if an EDID segment is received that was not expected or requested. The initialization is done by calling the ADIAPI_TxInit API.</p></li>
+<li><p><strong>TX_HDCP_DISABLE_ON_ERROR</strong> - This flag causes the TX ISR to disable HDCP engine on any HDCP errors. Note that while this flag instructs the HDCP h/w to disable HDCP, the HDCP engine will not be actually disabled until it reaches authenticated state.</p></li>
+<li><p><strong>TX_ENABLE_TMDS_ON_INIT</strong> - This flag causes the any call to the ADIAPI_TxInit API to power-up TMDS clock and data lines. For more information, please refer to ADIAPI_TxInit API.</p></li>
+<li><p><strong>TX_ENABLE_DBG</strong> - This flag enables the debug messages from the TX module to be sent to the platform‟s console output channel. This flag only directs the debug messages to the output channel. To be able to see the messages on the console, the console must be enabled using the compilation switch “UART_DEBUG” as described in the ATV software architecture document.</p></li>
+</ul>
+</li>
+<li><p><strong>Set</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> - to set the flags supplied in UserConfig</p></li>
+<li><p><strong>FALSE</strong> - to reset the flags supplied in UserConfig</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxIsr&lt;/fc&gt; (void)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Process the TX device interrupts. This function should be called by the application as soon as a TX device interrupt is detected. If the application uses polling and the interrupt line from the HDMI TX to the MCU is not connected, this function can be called periodically to poll and process any outstanding interrupts.</p></li>
+<li><p>It should be noted that some of the TX interrupts can take relatively long time to process. For example, an EDID interrupt will consume at least the amount of time needed to read all 256 bytes of EDID via I2C. It is thus advisable for interrupt-driven real-time applications to disable the transmitter interrupt to the MCU before calling this function and re-enable it after this function returns.</p></li>
+<li><p>The application will be notified on any change of the operating conditions if the notification events are enabled using the ADIAPI_TxSetEnabledEvents API.</p></li>
+<li><p>The various interrupts, the action taken in the ISR and the associated notification event are listed in the table below. The details of the notification events can be found in the Notification events section.</p></li>
+</ul>
+<div class="box center docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Interrupt</p></th>
+<th class="head"><p>Default Action</p></th>
+<th class="head"><p>Notification Event</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HPD Low</p></td>
+<td><p>None</p></td>
+<td><p>TX_EVENT_HPD_CHG</p></td>
+</tr>
+<tr class="row-odd"><td><p>HPD High</p></td>
+<td><p>Hardware reset is performed (ADIAPI_TxInit will be called)</p></td>
+<td><p>TX_EVENT_HPD_CHG</p></td>
+</tr>
+<tr class="row-even"><td><p>Rx Sense Low/High</p></td>
+<td><p>None</p></td>
+<td><p>TX_EVENT_MSEN_CHG</p></td>
+</tr>
+<tr class="row-odd"><td><p>EDID Ready</p></td>
+<td><p>Read the next EDID segment up to TX_SUPPORTED_EDID_SEGMENTS to internal buffer</p></td>
+<td><p>TX_EVENT_EDID_READY when a new segment is fully read</p></td>
+</tr>
+<tr class="row-even"><td><p>BKSV ready</p></td>
+<td><p>Read and concatenate downstream BKSV into internal buffer</p></td>
+<td><p>TX_EVENT_BKSV_READY when ALL downstream BKSVs are received</p></td>
+</tr>
+<tr class="row-odd"><td><p>HDCP Authenticated</p></td>
+<td><p>None</p></td>
+<td><p>TX_EVENT_HDCP_AUTHENTICATED</p></td>
+</tr>
+<tr class="row-even"><td><p>HDCP Error</p></td>
+<td><p>None</p></td>
+<td><p>TX_EVENT_HDCP_ERROR</p></td>
+</tr>
+<tr class="row-odd"><td><p>Vsync Edge</p></td>
+<td><p>None</p></td>
+<td><p>TX_EVENT_VSYNC_EDGE</p></td>
+</tr>
+<tr class="row-even"><td><p>Audio FIFO Full</p></td>
+<td><p>None</p></td>
+<td><p>TX_EVENT_AUDIO_FIFO_FULL</p></td>
+</tr>
+<tr class="row-odd"><td><p>Embedded Sync Polarity Error</p></td>
+<td><p>None</p></td>
+<td><p>TX_EVENT_EMB_SYNC_ERROR</p></td>
+</tr>
+<tr class="row-even"><td><p>CEC TX Ready</p></td>
+<td><p>None</p></td>
+<td><p>TX_EVENT_CEC_TX_READY</p></td>
+</tr>
+<tr class="row-odd"><td><p>CEC RX Ready</p></td>
+<td><p>None</p></td>
+<td><p>TX_EVENT_CEC_RX_READY</p></td>
+</tr>
+<tr class="row-even"><td><p>CEC TX Retry timeout</p></td>
+<td><p>None</p></td>
+<td><p>TX_EVENT_CEC_ERR_TIMEOUT</p></td>
+</tr>
+<tr class="row-odd"><td><p>CEC TX Arbitration Lost</p></td>
+<td><p>None</p></td>
+<td><p>TX_EVENT_CEC_ERR_ARB_LOST</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>None</strong></p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - The ISR completed execution and no other interrupts are pending. All pending interrupts are cleared.</p></li>
+<li><p><strong>ATVERR_FAILED</strong> - No pending interrupts detected.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxIntPending&lt;/fc&gt; (void)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Check if TX interrupt is pending.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>None</strong></p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_TRUE</strong> - Pending interrupt detected.</p></li>
+<li><p><strong>ATVERR_FALSE</strong> - No pending interrupt detected.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSetEnabledEvents&lt;/fc&gt; (TX_EVENT Events, BOOL Enable)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>This API enables or disables user notification on certain events as described in the Notification events section.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Events</strong> - The events that needs to be enabled or disabled ORed together. For a list of valid events, please refer to the Notification events section. Only the events supplied in this parameter will be affected. All other events‟ state (Enabled/Disabled) will remain unchanged. The TX_EVENT enum also offers 3 additional values that are used as an event groups. This values are:</p>
+<ul>
+<li><p><strong>TX_EVENT_ALL_EVENTS</strong> - This value defines all supported events.</p></li>
+<li><p><strong>TX_EVENT_HDMI_EVENTS</strong> - This value groups all HDMI events. HDMI events are enabled by default and constitute the following events:</p>
+<ul>
+<li><p><strong>TX_EVENT_HPD_CHG</strong></p></li>
+<li><p><strong>TX_EVENT_MSEN_CHG</strong></p></li>
+<li><p><strong>TX_EVENT_EDID_READY</strong></p></li>
+<li><p><strong>TX_EVENT_BKSV_READY</strong></p></li>
+<li><p><strong>TX_EVENT_HDCP_AUTHENTICATED</strong></p></li>
+<li><p><strong>TX_EVENT_HDCP_ERROR</strong></p></li>
+</ul>
+</li>
+<li><p><strong>TX_EVENT_CEC_EVENTS</strong> - This value defines all CEC events. CEC events are:</p>
+<ul>
+<li><p><strong>TX_EVENT_CEC_RX_MSG</strong></p></li>
+<li><p><strong>TX_EVENT_CEC_TX_DONE</strong></p></li>
+<li><p><strong>TX_EVENT_CEC_TX_TIMEOUT</strong></p></li>
+<li><p><strong>TX_EVENT_CEC_TX_ARB_LOST</strong></p></li>
+<li><p><strong>TX_EVENT_CEC_TX_LOG_ADDR_ALLOC</strong></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Enable</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> - to enable notification on the supplied events.</p></li>
+<li><p><strong>FALSE</strong> - to disable notification on the supplied events.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxGetChipRevision&lt;/fc&gt; (UINT16 *TxRev)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Get HDMI TX chip revision.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>TxRev</strong> - Pointer to receive HDMI TX chip revision.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxOverrideHpdPd&lt;/fc&gt; (BOOL Override)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Maintain the current power state regardless of the state of the sink HPD signal. By default, HDMI TX chip will automatically power-down if the sink‟s HPD signal changes state from HIGH to LOW. This API can be used to change this default behaviour so that the chip will remain powered-up regardless of the state of the sink HPD.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Override</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> - to disable automatic power-down when sink HPD goes low.</p></li>
+<li><p><strong>FALSE</strong> - to enable automatic power-down when sink HPD goes low.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxEnableTmds&lt;/fc&gt; (BOOL Enable, BOOL SoftOn)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Enable or disable TMDS output clock and data lines.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Enable</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> - to enable TMDS clock and data lines.</p></li>
+<li><p><strong>FALSE</strong> - to disable TMDS clock and data lines.</p></li>
+</ul>
+</li>
+<li><p><strong>SoftOn</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> - to enable soft TMDS clock turn on. This avoids glitches in the TMDS clock when it is turned on.</p></li>
+<li><p><strong>FALSE</strong> - to disable the soft turn-on feature</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSetInputPixelFormat&lt;/fc&gt; (UCHAR BitsPerColor, TX_IN_FORMAT Format, UCHAR Style, TX_CHAN_ALIGN Align, BOOL RisingEdge, BOOL BitSwap)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Set HDMI TX input pixel data format. The HDMI TX can accept video data from 8 to 36 pins, with various configurations to accommodate 4:4:4 or 4:2:2 format, embedded or separate sync, single or double data rate, repeated pixels and different pin assignments to interface with video data sources. For most applications, the input pixel format needs to be set only once, unless the video source can change its output pixel format on the fly, in which case the HDMI TX input format must also be changed to match. For detailed information regarding HDMI TX input video pin assignments, please refer to the ADV7510 programming guide.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>BitsPerColor</strong> - Specify the number of bits per color component. This can be 8, 10 or 12.</p></li>
+<li><p><strong>Format</strong> - Video input format. This value indicates if the input video is SDR or DDR, with embedded or separate sync and if the input pixel clock is twice the pixel rate. This can be one of the following:</p>
+<ul>
+<li><p><strong>SDR_444_SEP_SYNC</strong></p></li>
+<li><p><strong>SDR_422_SEP_SYNC</strong></p></li>
+<li><p><strong>SDR_422_EMP_SYNC</strong></p></li>
+<li><p><strong>SDR_422_SEP_SYNC_2X_CLK</strong></p></li>
+<li><p><strong>SDR_422_EMB_SYNC_2X_CLK</strong></p></li>
+<li><p><strong>DDR_444_SEP_SYNC</strong></p></li>
+<li><p><strong>DDR_422_SEP_SYNC</strong></p></li>
+<li><p><strong>DDR_422_EMB_SYNC</strong></p></li>
+<li><p>For more information about input pin assignment for each case, please refer to the ADV7510 programming guide.</p></li>
+</ul>
+</li>
+<li><p><strong>Style</strong> - Three input styles are available: 1, 2 or 3.</p>
+<ul>
+<li><p>For more information about input pin assignment for each style, please refer to the ADV7510 programming guide.</p></li>
+</ul>
+</li>
+<li><p><strong>Align</strong> - This value specifies the bit alignment of each channel in 4:2:2 modes. Three alignment types are available:</p>
+<ul>
+<li><p><strong>ALIGN_LEFT</strong></p></li>
+<li><p><strong>ALIGN_RIGHT</strong></p></li>
+<li><p><strong>ALIGN_EVEN</strong></p></li>
+</ul>
+</li>
+</ul>
+<p>For more information about input pin assignment for each type, please refer to the ADV7510 programming guide.</p>
+<ul class="simple">
+<li><p><strong>RisingEdge</strong> - This value specifies the clocking edge for DDR modes.</p>
+<ul>
+<li><p><strong>TRUE</strong> - to select rising edge.</p></li>
+<li><p><strong>FALSE</strong> - to select falling edge.</p></li>
+</ul>
+</li>
+<li><p><strong>BitSwap</strong></p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - Indicate the function completed OK.</p></li>
+<li><p><strong>ATVERR_INV_PARM</strong> - Indicate that one or more of the input parameters are invalid or the selected combination of the input parameters is invalid.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSetInputVideoClock&lt;/fc&gt; (UCHAR ClkDivide)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Divide HDMI TX input video clock to generate the correct pixel clock. The input video clock to HDMI TX must be equal to the pixel clock. In cases where the input clock is NOT equal to the pixel clock, this function should be used to divide the input clock to generate the correct pixel clock. This function is designed to be used for compatibility with some older source devices.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>ClkDivide</strong> - Set to 1, 2 or 4 to divide HDMI TX input clock by 1, 2 or 4 to generate the pixel clock.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+<li><p><strong>ATVERR_INV_PARM</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSetOutputPixelFormat&lt;/fc&gt; (TX_OUT_ENCODING OutEnc, BOOL Interpolate)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Sets HDMI TX output pixel format. This API defines the up-conversion from 4:2:2 to 4:4:4 encoding or the down-conversion from 4:4:4 to 4:2:2 encoding along with the method to be used for up-conversion.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>OutEnc</strong> - This defines the required output pixel encoding format. This can be one of the following:</p>
+<ul>
+<li><p><strong>OUT_ENC_RGB_444</strong></p></li>
+<li><p><strong>OUT_ENC_YUV_444</strong></p></li>
+<li><p><strong>OUT_ENC_YUV_422</strong></p></li>
+<li><p>This value should match the Y1Y0 value sent in the AV info-frame.</p></li>
+</ul>
+</li>
+<li><p><strong>Interpolate</strong> - This parameter is used only when up-converting the input from 4:2:2 to 4:4:4 encoding.</p>
+<ul>
+<li><p><strong>TRUE</strong> - to up-convert using linear interpolation.</p></li>
+<li><p><strong>FALSE</strong> - to up-convert using line duplication.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+<li><p><strong>ATVERR_INV_PARM</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSetManualPixelRepeat&lt;/fc&gt; (UCHAR Vic, UCHAR Factor, UCHAR PrValue)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Manually set HDMI TX output pixel repetition rate and parameters.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Vic</strong> - This value defines the Video Identification Code that should be sent in the AV info-frame. See ADIAPI_TxSendAVInfoframe for more details.</p></li>
+<li><p><strong>Factor</strong> - This value defines the required multiplication factor of the input pixel clock. Possible values are 1, 2, 3 and 4.</p></li>
+<li><p><strong>PrValue</strong> - This value defined the PR (Pixel Repeat) value that should be sent in the AV info-frame. See ADIAPI_TxSendAVInfoframe for more details.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+<li><p><strong>ATVERR_INV_PARM</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSetAutoPixelRepeat&lt;/fc&gt; (UCHAR Mode, UCHAR Vic, TX_REFR_RATE RefRate, UCHAR AspectRatio)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Set HDMI TX to automatically calculate and output the correct pixel repetition rate based on detected video format and audio sampling frequency. The audio sampling frequency is either extracted from the stream or defined by the user. See ADIAPI_TxSetAudChStatSampFreq for more details.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Mode</strong></p>
+<ul>
+<li><p><strong>PR_NORMAL</strong> - Normal automatic pixel repetition. In this mode, HDMI TX will automatically calculate the required pixel repetition based on audio sampling rate and detected VIC. The resulting video identification code (VIC) and Pixel Repeat value (PR) will be automatically inserted in the AV info-frame. See ADIAPI_TxSendAVInfoframe for more details.</p></li>
+<li><p><strong>PR_MAX</strong> - Maximum automatic pixel repetition. This mode is similar to normal automatic mode, except the required pixel repetition will always be set to the highest possible value than HDMI TX is capable of. This makes video timing independent of audio timing.</p></li>
+</ul>
+</li>
+<li><p><strong>Vic</strong> - This value defines the video identification code (VIC) of the input video format. If the VIC of the input video is not known, this value must be set to 0xff and the „RefreshRate‟ and „Aspect‟ parameters must be used.</p></li>
+<li><p><strong>RefRate</strong> This value defines the refresh rate for video modes with low refresh rate or with 2x or 4x the normal refresh rate, when the „Vic‟ parameter is undefined (set to 0xff) Possible values are:</p>
+<ul>
+<li><p><strong>REFRESH_NORMAL</strong></p></li>
+<li><p><strong>REFRESH_LOW</strong></p></li>
+<li><p><strong>REFRESH_2X</strong></p></li>
+<li><p><strong>REFRESH_4X</strong></p></li>
+</ul>
+</li>
+<li><p><strong>AspectRatio</strong> This value defines the aspect ratio of the input video, when the „Vic‟ parameter is undefined (set to 0xff). Possible values are:</p>
+<ul>
+<li><p><strong>4*3</strong> - =12 for 4x3 aspect</p></li>
+<li><p><strong>16*9</strong> - =144 for 16x9 aspect</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+<li><p><strong>ATVERR_INV_PARM</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSetOutputColorDepth&lt;/fc&gt; (UCHAR Depth, TX_DC_METHOD DcMethod)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Set output colour depth and the method used to handle deep colour down-conversion. When the input colour depth to the HDMI TX is less than the colour depth of the output, the remaining least-significant bits of the output will be filled with 0s. When the input colour depth is larger than the output, truncation or active dithering can be used to reduce the colour depth.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Depth</strong> - Required colour depth of the output. This value can be 24, 30 or 36 and will correctly set the general control packet colour depth field. Any other value will be written un-modified to the General Control Packet CD (Colour Depth) field.</p></li>
+<li><p><strong>DcMethod</strong> - This value specifies the down-conversion method that will be used if the input colour depth is larger than the output colour depth. Possible values are:</p>
+<ul>
+<li><p><strong>TX_DC_TRUNCATE</strong></p></li>
+<li><p><strong>TX_DC_ACTIVE_DITHER</strong></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+<li><p><strong>ATVERR_INV_PARM</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSetCSC&lt;/fc&gt; (TX_CS_MODE InColorSpace, TX_CS_MODE OutColorSpace)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Set colour space conversion for HDMI TX chip.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>InColorSpace</strong> - Colour space output from TX device. This can be one of the following values:</p></li>
+</ul>
+<div class="box center docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>TX_CS_MODE</p></th>
+<th class="head"><p>Meaning</p></th>
+<th class="head"><p>Range</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HPD Low</p></td>
+<td><p>None</p></td>
+<td><p>TX_EVENT_HPD_CHG</p></td>
+</tr>
+<tr class="row-odd"><td><p>TX_CS_RGB</p></td>
+<td><p>RGB</p></td>
+<td><p>0-255</p></td>
+</tr>
+<tr class="row-even"><td><p>TX_CS_YUV_601</p></td>
+<td><p>YCrCb 601 (SDTV)</p></td>
+<td><p>16-235</p></td>
+</tr>
+<tr class="row-odd"><td><p>TX_CS_YUV_709</p></td>
+<td><p>YCrCb 709 (HDTV)</p></td>
+<td><p>16-235</p></td>
+</tr>
+<tr class="row-even"><td><p>TX_CS_YCC_601</p></td>
+<td><p>xvYCC 601 (Extended gamut SDTV)</p></td>
+<td><p>0-255</p></td>
+</tr>
+<tr class="row-odd"><td><p>TX_CS_YCC_709</p></td>
+<td><p>xvYCC 709 (Extended gamut HDTV)</p></td>
+<td><p>0-255</p></td>
+</tr>
+<tr class="row-even"><td><p>TX_CS_AUTO</p></td>
+<td><p>Disable CSC (out CS = In CS)</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">The</span> <span class="n">TX_CS_AUTO</span> <span class="n">setting</span> <span class="n">will</span> <span class="n">disable</span> <span class="n">Colour</span> <span class="n">Space</span> <span class="n">Conversion</span><span class="o">.</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>OutColorSpace</strong> - Colour space output from TX device. This can be one of the following values:</p></li>
+</ul>
+<div class="box center docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>TX_CS_MODE</p></th>
+<th class="head"><p>Meaning</p></th>
+<th class="head"><p>Range</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HPD Low</p></td>
+<td><p>None</p></td>
+<td><p>TX_EVENT_HPD_CHG</p></td>
+</tr>
+<tr class="row-odd"><td><p>TX_CS_RGB</p></td>
+<td><p>RGB</p></td>
+<td><p>0-255</p></td>
+</tr>
+<tr class="row-even"><td><p>TX_CS_YUV_601</p></td>
+<td><p>YCrCb 601 (SDTV)</p></td>
+<td><p>16-235</p></td>
+</tr>
+<tr class="row-odd"><td><p>TX_CS_YUV_709</p></td>
+<td><p>YCrCb 709 (HDTV)</p></td>
+<td><p>16-235</p></td>
+</tr>
+<tr class="row-even"><td><p>TX_CS_YCC_601</p></td>
+<td><p>xvYCC 601 (Extended gamut SDTV)</p></td>
+<td><p>0-255</p></td>
+</tr>
+<tr class="row-odd"><td><p>TX_CS_YCC_709</p></td>
+<td><p>xvYCC 709 (Extended gamut HDTV)</p></td>
+<td><p>0-255</p></td>
+</tr>
+<tr class="row-even"><td><p>TX_CS_AUTO</p></td>
+<td><p>Disable CSC (out CS = In CS)</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ul class="simple">
+<li><p>The TX_CS_AUTO setting will disable Colour Space Conversion.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+<li><p><strong>ATVERR_INV_PARM</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSetAudioInterface&lt;/fc&gt; (TX_AUD_FORMAT InputFormat, TX_AUD_PKT_TYPE OutType, UCHAR HbrStrmCount)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Set the input audio interface and output audio packet type.</p></li>
+<li><p>The TX device has 3 physical audio interfaces:</p>
+<ul>
+<li><p>4 I2S inputs (8 channels)</p></li>
+<li><p>SPDIF</p></li>
+<li><p>DSD</p></li>
+</ul>
+</li>
+<li><p>The I2S interface can accept data in the following formats:</p>
+<ul>
+<li><p>Standard I2S</p></li>
+<li><p>Right justified I2S</p></li>
+<li><p>Left justified I2S</p></li>
+<li><p>AES3 (IEC 60958-3)</p></li>
+</ul>
+</li>
+<li><p>Two different output packet formats can be selected when the input is I2S: Audio sample packet or HBR packet.</p></li>
+<li><p>When the input interface is I2S, for all formats except AES3, the channel status data to be sent to the receiver (in the ASP/HBR packet) must be explicitly set in the TX registers, since I2S contains pure audio samples. For AES3 format, the TX device can extract the channel status from the data stream or can use user-defined values from registers.</p></li>
+<li><p>The mapping between I2S input and the data sent in the audio sample packet is configurable (For example, I2S3 input left channel can be sent in the audio sample packet sub-frame 0 instead of the default sub-frame 6) See ADIAPI_TxSetAudChanMapping for details.</p></li>
+<li><p>The SPDIF interface can accept 2 channel L-PCM audio or AES3 (IEC 60958-3) audio at sampling rates of up to 192 KHz. The sampling frequency extracted from the stream will be sent in the Audio Sample Packet channel status bits. The sampling frequency used for pixel repeat can be either the one extracted from the stream or a user-defined value.</p></li>
+<li><p>As with I2S, the TX device can output either Audio Sample Packet or Hight Bit Rate packet when the input is SPDIF.</p></li>
+<li><p>The DSD interface can be used to input DSD or DST audio. The output audio packets will be either one- bit audio for DSD or DST audio packet for DST.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>InputFormat</strong> - This value defines the audio interface and format to be used for inputting audio to the HDMI TX. This can be one of the values defined in the table below. Note that some input formats cannot be used with certain output packet types.</p></li>
+</ul>
+<div class="box center docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>TX_AUD_FORMAT</p></th>
+<th class="head"><p>Input Interface</p></th>
+<th class="head"><p>Input Format</p></th>
+<th class="head"><p>Valid Output Packet Type (TX_AUD_PKT_TYPE)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TX_I2S_STD</p></td>
+<td><p>I2S</p></td>
+<td><p>Standard I2S</p></td>
+<td><p>AUD_SAMP_PKT HBR_STRM_PKT</p></td>
+</tr>
+<tr class="row-odd"><td><p>TX_I2S_RJUST</p></td>
+<td><p>I2S</p></td>
+<td><p>Right justified I2S</p></td>
+<td><p>AUD_SAMP_PKT HBR_STRM_PKT</p></td>
+</tr>
+<tr class="row-even"><td><p>TX_I2S_LJUST</p></td>
+<td><p>I2S</p></td>
+<td><p>Left justified I2S</p></td>
+<td><p>AUD_SAMP_PKT HBR_STRM_PKT</p></td>
+</tr>
+<tr class="row-odd"><td><p>TX_I2S_AES3</p></td>
+<td><p>I2S</p></td>
+<td><p>AES3 direct</p></td>
+<td><p>AUD_SAMP_PKT HBR_STRM_PKT</p></td>
+</tr>
+<tr class="row-even"><td><p>TX_I2S_SPDIF</p></td>
+<td><p>I2S</p></td>
+<td><p>IEC61937 Bi-phase Mark</p></td>
+<td><p>HBR_STRM_PKT</p></td>
+</tr>
+<tr class="row-odd"><td><p>TX_SPDIF</p></td>
+<td><p>SPDIF</p></td>
+<td><p>IEC61937 Bi-phase Mark</p></td>
+<td><p>AUD_SAMP_PKT</p></td>
+</tr>
+<tr class="row-even"><td><p>TX_DSD_NORM</p></td>
+<td><p>DSD</p></td>
+<td><p>DSD normal</p></td>
+<td><p>ONE_BIT_ASP</p></td>
+</tr>
+<tr class="row-odd"><td><p>TX_DSD_SDIF3</p></td>
+<td><p>DSD</p></td>
+<td><p>SDIF-3</p></td>
+<td><p>ONE_BIT_ASP</p></td>
+</tr>
+<tr class="row-even"><td><p>TX_DSD_DST</p></td>
+<td><p>DSD</p></td>
+<td><p>DST normal</p></td>
+<td><p>DST_AUD_PKT</p></td>
+</tr>
+<tr class="row-odd"><td><p>TX_DSD_DST_SDR</p></td>
+<td><p>DSD</p></td>
+<td><p>DST 2X</p></td>
+<td><p>DST_AUD_PKT</p></td>
+</tr>
+<tr class="row-even"><td><p>TX_DSD_DST_DDR</p></td>
+<td><p>DSD</p></td>
+<td><p>DSD 1X (DDR)</p></td>
+<td><p>DST_AUD_PKT</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>OutType</strong> - This value defines the audio type (packet type) that will be output by the HDMI TX as illustrated in the table below. Note that some packet types can be used only with certain input formats.</p></li>
+</ul>
+<div class="box center docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Output Packet Type (TX_AUD_PKT_TYPE)</p></th>
+<th class="head"><p>Definition</p></th>
+<th class="head"><p>Valid Input Formats</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AUD_SAMP_PKT</p></td>
+<td><p>Audio Sample Packet</p></td>
+<td><p>I2S_STD, I2S_RJUST, I2S_LJUST, I2S_AES3</p></td>
+</tr>
+<tr class="row-odd"><td><p>HBR_STRM_PKT</p></td>
+<td><p>High Bit Rate Audio Stream Packet</p></td>
+<td><p>I2S_STD, I2S_RJUST, I2S_LJUST, I2S_AES3, I2S_SPDIF</p></td>
+</tr>
+<tr class="row-even"><td><p>ONE_BIT_ASP</p></td>
+<td><p>One Bit Audio Sample Packet</p></td>
+<td><p>DSD_NORM, DSD_SDIF3</p></td>
+</tr>
+<tr class="row-odd"><td><p>DST_AUD_PKT</p></td>
+<td><p>DST Audio Packet</p></td>
+<td><p>DSD_DST, DSD_DST_SDR, DSD_DST_DDR</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>HbrStrmCount</strong> - This parameter is used only when the output audio packet type is HBR_STRM_PKT. It specifies the number of HBR streams encoding. This value can only be 1 or 4.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - Function completed OK.</p></li>
+<li><p><strong>ATVERR_INV_PARM</strong> - Invalid input parameter value.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSetAudChanMapping&lt;/fc&gt; (TX_AUD_CHAN InChan, TX_AUD_CHAN OutSample)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Set the mapping between I2S input channels and the output audio samples. The default setting is one- to-one according to the following table. The default setting can be changed using this API.</p></li>
+</ul>
+<div class="box center docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Input Channel</p></th>
+<th class="head"><p>Output Sample</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>I2S0 Left Channel</p></td>
+<td><p>Audio Sample 0 Left Channel</p></td>
+</tr>
+<tr class="row-odd"><td><p>I2S0 Right Channel</p></td>
+<td><p>Audio Sample 0 Right Channel</p></td>
+</tr>
+<tr class="row-even"><td><p>I2S1 Left Channel</p></td>
+<td><p>Audio Sample 1 Left Channel</p></td>
+</tr>
+<tr class="row-odd"><td><p>I2S1 Right Channel</p></td>
+<td><p>Audio Sample 1 Right Channel</p></td>
+</tr>
+<tr class="row-even"><td><p>I2S2 Left Channel</p></td>
+<td><p>Audio Sample 2 Left Channel</p></td>
+</tr>
+<tr class="row-odd"><td><p>I2S2 Right Channel</p></td>
+<td><p>Audio Sample 2 Right Channel</p></td>
+</tr>
+<tr class="row-even"><td><p>I2S3 Left Channel</p></td>
+<td><p>Audio Sample 3 Left Channel</p></td>
+</tr>
+<tr class="row-odd"><td><p>I2S3 Right Channel</p></td>
+<td><p>Audio Sample 3 Right Channel</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>InChan</strong> - Input channel ID. This can be one of the following:</p>
+<ul>
+<li><p><strong>CH0_LEFT</strong></p></li>
+<li><p><strong>CH0_RIGHT</strong></p></li>
+<li><p><strong>CH1_LEFT</strong></p></li>
+<li><p><strong>CH1_RIGHT</strong></p></li>
+<li><p><strong>CH2_LEFT</strong></p></li>
+<li><p><strong>CH2_RIGHT</strong></p></li>
+<li><p><strong>CH3_LEFT</strong></p></li>
+<li><p><strong>CH3_RIGHT</strong></p></li>
+</ul>
+</li>
+<li><p><strong>OutSample</strong> - Output sample position. This can be one of the following:</p>
+<ul>
+<li><p><strong>CH0_LEFT</strong></p></li>
+<li><p><strong>CH0_RIGHT</strong></p></li>
+<li><p><strong>CH1_LEFT</strong></p></li>
+<li><p><strong>CH1_RIGHT</strong></p></li>
+<li><p><strong>CH2_LEFT</strong></p></li>
+<li><p><strong>CH2_RIGHT</strong></p></li>
+<li><p><strong>CH3_LEFT</strong></p></li>
+<li><p><strong>CH3_RIGHT</strong></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - Function completed OK.</p></li>
+<li><p><strong>ATVERR_INV_PARM</strong> - Invalid input parameter value.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSetAudNValue&lt;/fc&gt; (UINT32 NValue)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Set „N‟ value that will be used by the HDMI TX to calculate the audio sampling frequency. CTS (Cycle Time Stamp) can be set using the API ADIAPI_TxSetAudCTS.</p></li>
+<li><p>HDMI TX uses both N and CTS to calculate the audio sampling frequency according to the formula: 128 fS = fTMDS_CLK N / CTS</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>NValue</strong> - Specify the 20-bit „N‟ value that HDMI TX will use to calculate the audio sampling frequency. If this value is set to 0, the N value will be calculated using the sampling frequency obtained from the current audio info-frame/audio channel status. If new audio info-frame or channel status is received, this function must be called to update the N value.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - Function completed OK.</p></li>
+<li><p><strong>ATVERR_INV_PARM</strong> - Invalid N value.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSetAudCTS&lt;/fc&gt; (UINT32 CTS)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Set CTS (Cycle Time Stamp) value that will be used by the HDMI TX to calculate the audio sampling frequency. The „N‟ value can be set using the API ADIAPI_TxSetAudNValue.</p></li>
+<li><p>HDMI TX uses both N and CTS to calculate the audio sampling frequency according to the formula: 128 fS = fTMDS_CLK N / CTS</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>CTS</strong> - Specify the 20-bit „CTS‟ value that HDMI TX will use to calculate the audio sampling frequency. If this value is set to 0, the CTS value will be automatically calculated by the chip using the SCLK.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - Function completed OK.</p></li>
+<li><p><strong>ATVERR_INV_PARM</strong> - Invalid CTS value.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSetAudMCLK&lt;/fc&gt; (TX_MCLK_FREQ MClk)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Set HDMI TX input audio master clock (MCLK) frequency. The MCLK can be externally supplied or internally generated using SCLK.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>MClk</strong> - Define the HDMI TX audio master clock frequency. This can be one of the following values:</p>
+<ul>
+<li><p><strong>TX_MCLK_128FS</strong> - Set MCLK = 128 * Sampling frequency.</p></li>
+<li><p><strong>TX_MCLK_256FS</strong> - Set MCLK = 256 * Sampling frequency.</p></li>
+<li><p><strong>TX_MCLK_384FS</strong> - Set MCLK = 384 * Sampling frequency.</p></li>
+<li><p><strong>TX_MCLK_512FS</strong> - Set MCLK = 512 * Sampling frequency.</p></li>
+<li><p><strong>TX_MCLK_HBR</strong> - Set MCLK for High Bit Rate audio.</p></li>
+<li><p><strong>TX_MCLK_AUTO</strong> - Generate MCLK internally using SCLK.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - Function completed OK.</p></li>
+<li><p><strong>ATVERR_INV_PARM</strong> - Invalid MCLK value.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSetAudClkPolarity&lt;/fc&gt; (BOOL RisingEdge)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Set the input clock polarity for MCLK, SCLK and DSD clock.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>RisingEdge</strong> - Clock polarity for MCLK, (if externally supplied) SCLK and DSD clock.</p>
+<ul>
+<li><p><strong>TRUE</strong> - to latch input data on rising edge.</p></li>
+<li><p><strong>FALSE</strong> - to latch input data on falling edge.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSetAudChStatSampFreq&lt;/fc&gt; (TX_AUD_FS SampFreq)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Set the sampling frequency to be sent in the Audio Sample Packet‟s channel status bits. The source of the sampling frequency (Extracted from input stream or defined by user) can be set independently from the rest of the channel status fields defined in the ADIAPI_Tx SetAudChanStatus API.</p></li>
+<li><p>The TX device can use the sampling frequency extracted from the input stream or the sampling frequency defined by user (in the channel status bits) for automatic pixel repeat calculation. See ADIAPI_TxSetAutoPixelRepeat for more details.</p></li>
+<li><p>The source of channel status bits and/or sampling frequency sent in the sample packet can be user- defined, extracted from input stream, or both, depending on the input audio format as described in the following table:</p></li>
+</ul>
+<div class="box center docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Input Audio</p></th>
+<th class="head"><p>Channel Status Source</p></th>
+<th class="head"><p>Sampling Frequency Source</p></th>
+<th class="head"><p>Sampling Frequency Source for Pixel Repeat</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>I2S</p></td>
+<td><p>User defined</p></td>
+<td><p>User defined</p></td>
+<td><p>User defined</p></td>
+</tr>
+<tr class="row-odd"><td><p>I2S – AES3</p></td>
+<td><p>User defined / From stream</p></td>
+<td><p>User defined / From stream</p></td>
+<td><p>User defined / From Stream</p></td>
+</tr>
+<tr class="row-even"><td><p>SPDIF</p></td>
+<td><p>From stream</p></td>
+<td><p>From Stream</p></td>
+<td><p>User defined / From Stream</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ul class="simple">
+<li><p>This API only defines the source and value of the channel status sampling frequency. Incorrect settings of the sampling frequency source will be ignored by the TX device (e.g., if input audio is I2S and the user selects the sampling frequency source to be from stream, the TX device will ignore the setting and use the latest programmed sampling frequency. The default sampling frequency is 44.1 KHz).</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>SampFreq</strong> - Specify the channel status sampling frequency that will be used for pixel repeat calculation and will be sent in the audio sample packet. This can be one of the following:</p>
+<ul>
+<li><p><strong>TX_FS_32KHZ</strong> - 32 KHz.</p></li>
+<li><p><strong>TX_FS_44KHZ</strong> - 44.1 KHz.</p></li>
+<li><p><strong>TX_FS_48KHZ</strong> - 48 KHz.</p></li>
+<li><p><strong>TX_FS_88KHZ</strong> - 88.2 KHz.</p></li>
+<li><p><strong>TX_FS_96KHZ</strong> - 96 KHz.</p></li>
+<li><p><strong>TX_FS_176KHZ</strong> - 176.4 KHz.</p></li>
+<li><p><strong>TX_FS_192KHZ</strong> - 192 KHz.</p></li>
+<li><p><strong>TX_FS_HBR</strong> - Setting for HBR audio (768 KHz).</p></li>
+<li><p><strong>TX_FS_FROM_STRM</strong> - Use sampling freq extracted from audio stream.</p></li>
+<li><p>Note that for HBR (High Bit Rate) audio, the sampling frequency must be set to TX_FS_HBR. This is done implicitly by the ADIAPI_TxSetAudioInterface API. Setting the sampling frequency to TX_FS_FROM_STRM will only change the source of the sampling frequency; the sampling frequency value programmed into the chip will not change.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - Function completed OK.</p></li>
+<li><p><strong>ATVERR_INV_PARM</strong> - Invalid SampFreq value.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSetAudChanStatus&lt;/fc&gt; (BOOL FromStream, TX_CHAN_STATUS *ChanStat)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Set HDMI TX audio channel status parameters. This function should be called when new audio channel status is received. This function will automatically set the size of the right-justified I2S word size, either from audio info-frame (if the audio info-frame sample size is not 0) or from the CsWordLen field of the supplied channel status.</p></li>
+<li><p>Depending on the input audio format, this API also defines the source of the channel status bits that will be sent in the audio sample packet (either user-defined or extracted from the input stream) as defined in the table below. The sampling frequency field of the channel status can also be independently set by the ADIAPI_TxSetAudChStatSampFreq API.</p></li>
+</ul>
+<div class="box center docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Input Audio</p></th>
+<th class="head"><p>Channel Status Source</p></th>
+<th class="head"><p>Sampling Frequency</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>I2S</p></td>
+<td><p>User defined</p></td>
+<td><p>Refer to ADIAPI_TxSetAudChStatSampFreq</p></td>
+</tr>
+<tr class="row-odd"><td><p>I2S – AES3</p></td>
+<td><p>User defined / From stream</p></td>
+<td><p>Refer to ADIAPI_TxSetAudChStatSampFreq</p></td>
+</tr>
+<tr class="row-even"><td><p>SPDIF</p></td>
+<td><p>From stream</p></td>
+<td><p>Refer to ADIAPI_TxSetAudChStatSampFreq</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>FromStream</strong> - This parameter indicate if the channel status data (sent in the audio sample packet) is to be extracted from the incoming audio stream or taken from the user defined values (pointed to by the ChanStat parameter) This option is only valid for audio modes where channel status data is present in the incoming audio stream. For all other modes, the channel status data will be taken from the user-defined values. The sampling frequency field of the channel status can also be set independently using the ADIAPI_TxSetAudChStatSampFreq API.</p>
+<ul>
+<li><p><strong>TRUE</strong> - to use channel status from audio stream.</p></li>
+<li><p><strong>FALSE</strong> - to use channel status supplied by the ChanStat parameter.</p></li>
+</ul>
+</li>
+<li><p><strong>ChanStat</strong> - Pointer to CHAN_STATUS structure containing the required audio channel status to be used. This parameter will be ignored if the FormStream parameter is set to TRUE. If FromStream is set to FALSE, the sampling frequency defined in the CsSampFreq field will overwrite any sampling frequency set by the ADIAPI_TxSetAudChStatSampFreq API and will also set the source of the sampling frequency to match the channel status source settings. If this is not wanted, the sampling frequency setting can be ignored by setting the CsSampFreq field to 0xFF.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxAudInputEnable&lt;/fc&gt; (TX_AUD_INTERFACE Interface, BOOL Enable)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Enable/Disable audio input signal to HDMI TX.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Interface</strong> - Specify the audio interface to enable/disable. This can be one of the following values:</p>
+<ul>
+<li><p><strong>TX_AUD_IN_I2S0</strong> - I2S channel 0.</p></li>
+<li><p><strong>TX_AUD_IN_I2S1</strong> - I2S channel 1.</p></li>
+<li><p><strong>TX_AUD_IN_I2S2</strong> - I2S channel 2.</p></li>
+<li><p><strong>TX_AUD_IN_I2S3</strong> - I2S channel 3.</p></li>
+<li><p><strong>TX_AUD_IN_I2S</strong> - All I2S channels (0-3).</p></li>
+<li><p><strong>TX_AUD_IN_SPDIF</strong> - SPDIF.</p></li>
+<li><p><strong>TX_AUD_IN_DSD0</strong> - DSD channel 0.</p></li>
+<li><p><strong>TX_AUD_IN_DSD1</strong> - DSD channel 1.</p></li>
+<li><p><strong>TX_AUD_IN_DSD2</strong> - DSD channel 2.</p></li>
+<li><p><strong>TX_AUD_IN_DSD3</strong> - DSD channel 3.</p></li>
+<li><p><strong>TX_AUD_IN_DSD4</strong> - DSD channel 4.</p></li>
+<li><p><strong>TX_AUD_IN_DSD5</strong> - DSD channel 5.</p></li>
+<li><p><strong>TX_AUD_IN_DSD6</strong> - DSD channel 6.</p></li>
+<li><p><strong>TX_AUD_IN_DSD7</strong> - DSD channel 7.</p></li>
+<li><p><strong>TX_AUD_IN_DSD</strong> - All DSD channels (0-7).</p></li>
+<li><p><strong>TX_AUD_IN_ALL</strong> - All audio inputs.</p></li>
+</ul>
+</li>
+<li><p><strong>Enable</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> - to enable the audio interface specified in the “Interface” parameter.</p></li>
+<li><p><strong>FALSE</strong> - to disable the audio interface specified in the “Interface” parameter.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - Function completed OK.</p></li>
+<li><p><strong>ATVERR_INV_PARM</strong> - Invalid Interface value.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSetI2sInput&lt;/fc&gt; (UCHAR ChanCount, UCHAR ChanAlloc, TX_AUD_PKT_TYPE AudType)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Enable I2S audio input 0-3 based on audio info-frame channel allocation and if the input stream is HBR.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>ChanCount</strong> - Number of audio channels (0-7).</p></li>
+<li><p><strong>ChanAlloc</strong> - Channel allocation field from Audio InfoFrame.</p></li>
+<li><p><strong>AudType</strong> - Input audio packet type as defined in the table below.</p></li>
+</ul>
+<div class="box center docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Audio Packet Type Packet Type (TX_AUD_PKT_TYPE)</p></th>
+<th class="head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AUD_SAMP_PKT</p></td>
+<td><p>Audio Sample Packet</p></td>
+</tr>
+<tr class="row-odd"><td><p>HBR_STRM_PKT</p></td>
+<td><p>High Bit Rate Audio Stream Packet</p></td>
+</tr>
+<tr class="row-even"><td><p>ONE_BIT_ASP</p></td>
+<td><p>One Bit Audio Sample Packet</p></td>
+</tr>
+<tr class="row-odd"><td><p>DST_AUD_PKT</p></td>
+<td><p>DST Audio Packet</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - Function completed OK.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSetOutputMode&lt;/fc&gt; (TX_OUTPUT_MODE OutMode)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Set output video mode of HDMI TX to HDMI or DVI.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>OutMode</strong> - Required HDMI TX output mode.</p>
+<ul>
+<li><p><strong>TX_OUT_MODE_HDMI</strong></p></li>
+<li><p><strong>TX_OUT_MODE_DVI</strong></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - Function completed OK.</p></li>
+<li><p><strong>ATVERR_INV_PARM</strong> - Invalid OutMode value.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxHdcpEnable&lt;/fc&gt; (BOOL EncEnable, BOOL FrameEncEnable)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Enable or disable HDCP on HDMI TX output.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>EncEnable</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> - to enable HDCP.</p></li>
+<li><p><strong>FALSE</strong> - to disable HDCP.</p></li>
+</ul>
+</li>
+<li><p><strong>FrameEncEnable</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> - to enable encryption of the current frame.</p></li>
+<li><p><strong>FALSE</strong> - to disable encryption of the current frame while maintaining HDCP synchronization.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxGetBksvList&lt;/fc&gt; (UCHAR *BksvList, UCHAR *NumOfBksvs)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Read BKSVs list from HDMI TX once all BKSVs are read.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>BksvList</strong> - Pointer to a buffer to receive the downstream BKSV list as read by the HDMI TX. This list is available only after HDMI TX read all downstream BKSVs. This list will not be available if HDCP is disabled or if any HDCP errors are detected. The size of the buffer must be large enough to accommodate the number of BKSVs specified in the TX_SUPPORTED_DS_DEVICE_COUNT configuration parameter (i.e., Minimum buffer size will be TX_SUPPORTED_DS_DEVICE_COUNT * 5). This parameter can be set to NULL to only return the number of available BKSVs in the NumOfBksvs parameter.</p></li>
+<li><p><strong>NumOfBksvs</strong> - This is a pointer to receive the number of BKSVs reported by the downstream device. This number will also include the downstream repeater BKSV if the downstream device is a repeater. This value normally specify the number of BKSVs returned in the BksvList buffer, unless the BKSV count reported by the downstream device exceeds TX_SUPPORTED_DS_DEVICE_COUNT, in which case the BksvList buffer will hold the first TX_SUPPORTED_DS_DEVICE_COUNT BKSVs.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - Function completed OK.</p></li>
+<li><p><strong>ATVERR_FAILED</strong> - HDCP is disabled or authentication is not complete or HDCP errors encountered.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxGetBstatus&lt;/fc&gt; (UINT16 *Bstatus, UCHAR *Bcaps)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Read downstream device Bstatus and Bcaps registers. Bstatus and Bcaps are available only if the state of the HDCP engine is HDCP_BSTATUS_READY, HDCP_BKSV_LIST_READY or HDCP_AUTHENTICATED. The HDCP state can be obtained by calling the ADIAPI_TxGetHdcpState API.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Bstatus</strong> - Pointer to receive the downstream device HDCP Bstatus register.</p></li>
+<li><p><strong>Bcaps</strong> - Pointer to receive the downstream device HDCP BCAPS register.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - Function completed OK.</p></li>
+<li><p><strong>ATVERR_FAILED</strong> - HDCP is disabled or downstream device is not available.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxGetHdcpState&lt;/fc&gt; (TX_HDCP_STATE *HdcpState)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Read the current status of HDCP engine.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>HdcpState</strong> - This is a pointer to receive the current status of HDCP engine. Possible states are:</p>
+<ul>
+<li><p><strong>TX_HDCP_NO_DS_DEVICE</strong></p></li>
+<li><p><strong>TX_HDCP_DISABLED</strong></p></li>
+<li><p><strong>TX_HDCP_BSTATUS_READY</strong></p></li>
+<li><p><strong>TX_HDCP_BKSV_LIST_READY</strong></p></li>
+<li><p><strong>TX_HDCP_AUTHENTICATED</strong></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - Function completed OK.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxGetLastHdcpError&lt;/fc&gt; (TX_HDCP_ERR *Error)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Return the last error status of HDCP engine. This API returns the last encountered HDCP error(s) since the previous read using this API. All returned error bits will be cleared following a call to this API.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Error</strong> - This is a pointer to receive HDCP errors that occurred since the last call to this API. Returned errors are OR-ed together. Possible error bits are:</p>
+<ul>
+<li><p><strong>TX_HDCP_ERR_BAD_RECV_BKSV</strong></p></li>
+<li><p><strong>TX_HDCP_ERR_RI_MISMATCH</strong></p></li>
+<li><p><strong>TX_HDCP_ERR_PJ_MISMATCH</strong></p></li>
+<li><p><strong>TX_HDCP_ERR_I2C_ERROR</strong></p></li>
+<li><p><strong>TX_HDCP_ERR_REP_DONE_TIMEOUT</strong></p></li>
+<li><p><strong>TX_HDCP_ERR_MAX_CASCADE_EXCEEDED</strong></p></li>
+<li><p><strong>TX_HDCP_ERR_V_DASH_CHECK_FAILED</strong></p></li>
+<li><p><strong>TX_HDCP_ERR_MAX_DEVICE_EXCEEDED</strong></p></li>
+</ul>
+</li>
+</ul>
+<p>All error bits will be cleared upon calling this function. HDMI TX automatically re-starts the authentication process on any HDCP error.</p>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxGetEdidSegment&lt;/fc&gt; (UCHAR SegNum, UCHAR *SegBuf)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Read a 256-byte EDID segment received by HDMI TX.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>SegNum</strong> - EDID segment number to read (Starting from 0).</p></li>
+<li><p><strong>SegBuf</strong> - This is a pointer to a 256-byte buffer to receive the requested EDID segment. This buffer will contain valid data only if the return value is ATVERR_OK.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - EdidBuf will contain the requested EDID segment.</p></li>
+<li><p><strong>ATVERR_FAILED</strong> - Requested EDID segment is not available.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxGetHpdMsenState&lt;/fc&gt; (BOOL *Hpd, BOOL *Msen)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Return the Hot Plug Detect and Monitor Sense state of HDMI TX.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Hpd</strong> - This is a pointer to receive the sink device Hot Plug Detect state. This parameter can be set to NULL if the HPD state is not required. If not NULL, on return, it will be set to TRUE if HPD is high and FALSE if HPD is low.</p></li>
+<li><p><strong>Msen</strong> - This is a pointer to receive the sink device monitor sense state. This parameter can be set to NULL if the monitor sense state is not required. If not NULL, on return, it will be TRUE if monitor sense is high and FALSE if monitor sense is low.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxGetEdidControllerState&lt;/fc&gt; (TX_EDID_CTRL_STATE *State)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Get EDID/HDCP controller state.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>State</strong> - This is a pointer to the current status of EDID/HDCP engine. Possible states are:</p>
+<ul>
+<li><p><strong>TX_HDCP_NO_DS_DEVICE</strong></p></li>
+<li><p><strong>TX_HDCP_DISABLED</strong></p></li>
+<li><p><strong>TX_HDCP_BSTATUS_READY</strong></p></li>
+<li><p><strong>TX_HDCP_BKSV_LIST_READY</strong></p></li>
+<li><p><strong>TX_HDCP_AUTHENTICATED</strong></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - Function completed OK.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxOutputModeHdmi&lt;/fc&gt; (BOOL *IsHdmi)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Get output mode: HDMI or DVI.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>IsHdmi</strong> - This is a pointer to the output mode. TRUE if the output mode is HDMI FALSE if the output mode is DVI.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_TRUE</strong> - Output mode is HDMI.</p></li>
+<li><p><strong>ATVERR_FALSE</strong> - Output mode is DVI.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxHdcpEnabled&lt;/fc&gt; (BOOL *HdcpOn)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Determine if HDCP is currently enabled.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>HdcpOn</strong> - Pointer to the current state of HDCP.</p>
+<ul>
+<li><p><strong>TRUE</strong> when HDCP is enabled.</p></li>
+<li><p><strong>FALSE</strong> when HDCP is disabled.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_TRUE</strong> - If HDCP is enabled.</p></li>
+<li><p><strong>ATVERR_FALSE</strong> - If HDCP is disabled.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxOutputEncrypted&lt;/fc&gt; (BOOL *Encrypted)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Check if the output is encrypted.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Encrypted</strong> - This is a pointer to encryption state. TRUE if the output is encrypted FALSE if the output is not encrypted.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_TRUE</strong> - Output is encrypted.</p></li>
+<li><p><strong>ATVERR_FALSE</strong> - Output is not encrypted.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxPllLocked&lt;/fc&gt; (BOOL *Locked)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Check if the PLL is locked.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Locked</strong> - This is a pointer to PLL lock state.</p>
+<ul>
+<li><p><strong>TRUE</strong> - if the PLL is locked.</p></li>
+<li><p><strong>FALSE</strong> - if the PLL is not locked.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_TRUE</strong> - PLL is locked.</p></li>
+<li><p><strong>ATVERR_FALSE</strong> - PLL is not locked.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxGetStatus&lt;/fc&gt; (TX_STATUS *TxStat)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>This API provides the status of HDMI TX module. It can be used by the application to get some information regarding HDMI TX current state.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>TxStat</strong> - This is a pointer to TX_STATUS structure to receive HDMI TX status information. The members of this structure are described below:</p>
+<ul>
+<li><p><strong>ChipPd</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> - if HDMI TX chip is powered down.</p></li>
+<li><p><strong>FALSE</strong> - if HDMI TX chip is in normal operation.</p></li>
+</ul>
+</li>
+<li><p><strong>TmdsPd</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> - if any of the TMDS lines (Ch0, Ch1, Ch2 or Clk) are powered down.</p></li>
+<li><p><strong>FALSE</strong> - if all of the TMDS lines (Ch0, Ch1, Ch2 or Clk) are powered up.</p></li>
+</ul>
+</li>
+<li><p><strong>Hpd</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> - if sink Hot Plug Detect is high.</p></li>
+<li><p><strong>FALSE</strong> - if sink Hot Plug Detect is low.</p></li>
+</ul>
+</li>
+<li><p><strong>MonSen</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> - if sink monitor sense is high.</p></li>
+<li><p><strong>FALSE</strong> - if sink monitor sense is low.</p></li>
+</ul>
+</li>
+<li><p><strong>OutputHdmi</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> - if the output is HDMI.</p></li>
+<li><p><strong>FALSE</strong> - if the output is DVI.</p></li>
+</ul>
+</li>
+<li><p><strong>PllLocked</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> - if video PLL is locked.</p></li>
+<li><p><strong>FALSE</strong> - if video PLL is not locked.</p></li>
+</ul>
+</li>
+<li><p><strong>VideoMuted</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> - if video output is blacked out.</p></li>
+<li><p><strong>FALSE</strong> - if video output is not muted.</p></li>
+</ul>
+</li>
+<li><p><strong>ClearAVMute</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> - if Clear AV mute is being sent to sink.</p></li>
+<li><p><strong>FALSE</strong> - if Clear AV mute is not being sent.</p></li>
+</ul>
+</li>
+<li><p><strong>SetAVMute</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> - if set AV mute is being sent to sink.</p></li>
+<li><p><strong>FALSE</strong> - if set AV mute is not being sent.</p></li>
+</ul>
+</li>
+<li><p><strong>AudioRep</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> - if audio output is enabled.</p></li>
+<li><p><strong>FALSE</strong> - if audio output is disabled (muted).</p></li>
+</ul>
+</li>
+<li><p><strong>SpdifEnable</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> - if SPDIF interface is enabled.</p></li>
+<li><p><strong>FALSE</strong> - if SPDIF interface is disabled.</p></li>
+</ul>
+</li>
+<li><p><strong>I2SEnable</strong></p>
+<ul>
+<li><p>Bits 0-3 will be set according to I2S channel 0-3 enable state.</p></li>
+<li><p>If a channel is enabled, the corresponding bit will be set to 1, otherwise it will be 0.</p></li>
+</ul>
+</li>
+<li><p><strong>DetectedVic</strong></p>
+<ul>
+<li><p>Video Identification code detected by HDMI TX</p></li>
+</ul>
+</li>
+<li><p><strong>HdcpErr</strong></p>
+<ul>
+<li><p>Will be set to the last received HDCP error.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxMuteAudio&lt;/fc&gt; (BOOL Mute)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>This API can be used to Mute or un-mute HDMI TX audio output. The audio will be muted by disabling audio sample packets output from HDMI TX.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Mute</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> - to mute HDMI TX audio output.</p></li>
+<li><p><strong>FALSE</strong> - to un-mute HDMI TX audio output.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxMuteVideo&lt;/fc&gt; (BOOL Mute)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>This API can be used to Mute or un-mute HDMI TX video output. The video will be muted by sending black level on all TMDS lines.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Mute</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> to mute HDMI TX video output.</p></li>
+<li><p><strong>FALSE</strong> to un-mute HDMI TX video output.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSetAvmute&lt;/fc&gt; (TX_AVMUTE State)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Sets or clear general control packet AVMUTE signal.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>State</strong> - The required state of Set AVMUTE and Clear AVMUTE signals in the general control packet. This can be one of the following values:</p>
+<ul>
+<li><p><strong>TX_AVMUTE_ON</strong> - Set SET_AVMUTE and clear CLEAR_AVMUTE.</p></li>
+<li><p><strong>TX_AVMUTE_OFF</strong> - Clear SET_AVMUTE and set CLEAR_AVMUTE.</p></li>
+<li><p><strong>TX_AVMUTE_NONE</strong> - Clear both SET_AVMUTE and CLEAR_AVMUTE.</p></li>
+<li><p><strong>TX_AVMUTE_BOTH</strong> - Set both SET_AVMUTE and CLEAR_AVMUTE. Please note that this setting is not allowed by HDMI.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxGetAvmute&lt;/fc&gt; (TX_AVMUTE *State)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Get Set/Clear AVMUTE state.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>State</strong> - Pointer to AVMUTE state. This can be one of the following values:</p>
+<ul>
+<li><p><strong>TX_AVMUTE_ON</strong> - Set SET_AVMUTE and clear CLEAR_AVMUTE.</p></li>
+<li><p><strong>TX_AVMUTE_OFF</strong> - Clear SET_AVMUTE and set CLEAR_AVMUTE.</p></li>
+<li><p><strong>TX_AVMUTE_NONE</strong> - Clear both SET_AVMUTE and CLEAR_AVMUTE.</p></li>
+<li><p><strong>TX_AVMUTE_BOTH</strong> - Set both SET_AVMUTE and CLEAR_AVMUTE. Please note that this setting is not allowed by HDMI.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxEnablePackets&lt;/fc&gt; (UINT16 Packets, BOOL Enable)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Enable or disable HDMI TX sending of selected packets and info frames. Once a packet send is enabled, HDMI TX will continue to send the packet periodically on intervals as specified in HDMI specification.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Packets</strong> - Packets that needs to enabled or disables ORed together. Possible values are:</p>
+<ul>
+<li><p><strong>PKT_AV_INFO_FRAME</strong></p></li>
+<li><p><strong>PKT_AUDIO_INFO_FRAME</strong></p></li>
+<li><p><strong>PKT_GC_PACKET</strong></p></li>
+<li><p><strong>PKT_ACP_PACKET</strong></p></li>
+<li><p><strong>PKT_SPD_PACKET</strong></p></li>
+<li><p><strong>PKT_GMD_PACKET</strong></p></li>
+<li><p><strong>PKT_ISRC1_PACKET</strong></p></li>
+<li><p><strong>PKT_ISRC2_PACKET</strong></p></li>
+<li><p><strong>PKT_MPEG_PACKET</strong></p></li>
+<li><p><strong>PKT_VS_PACKET</strong></p></li>
+<li><p><strong>PKT_ACR_PACKET</strong></p></li>
+<li><p><strong>PKT_AUDIO_CHANNEL_STATUS</strong></p></li>
+<li><p><strong>PKT_AUDIO_SAMPLE_PACKET</strong></p></li>
+<li><p><strong>PKT_ALL_PACKETS</strong></p></li>
+</ul>
+</li>
+<li><p><strong>Enable</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> - to enable sending of packets specified in the “Packets” parameter.</p></li>
+<li><p><strong>FALSE</strong> - to disable sending of packets specified in the “Packets” parameter.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxGetEnabledPackets&lt;/fc&gt; (UINT16 *Packets)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Get information about which packets are currently enabled.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Packets</strong> - Pointer to receive information about which packets are currently enabled. Enabled packets are returned as bit values ORed together. Possible values are:</p>
+<ul>
+<li><p><strong>PKT_AV_INFO_FRAME</strong></p></li>
+<li><p><strong>PKT_AUDIO_INFO_FRAME</strong></p></li>
+<li><p><strong>PKT_GC_PACKET</strong></p></li>
+<li><p><strong>PKT_ACP_PACKET</strong></p></li>
+<li><p><strong>PKT_SPD_PACKET</strong></p></li>
+<li><p><strong>PKT_GMD_PACKET</strong></p></li>
+<li><p><strong>PKT_ISRC_PACKET</strong></p></li>
+<li><p><strong>PKT_ACR_PACKET</strong></p></li>
+<li><p><strong>PKT_AUDIO_CHANNEL_STATUS</strong></p></li>
+<li><p><strong>PKT_AUDIO_SAMPLE_PACKET</strong></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSendAVInfoFrame&lt;/fc&gt; (UCHAR *Packet, UCHAR Size)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Send AV info-frame to the sink device. The AV info-frame packet repeat must be enabled using ADIAPI_TxEnablePackets to be able to send this packet.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Packet</strong> - Pointer to the AV info frame HB0 (Header Byte 0) This AV info-frame will be sent as-is to the sink device, except the VIC and PR (pixel repeat) fields. The VIC and PR fields sent to the sink will depend on the pixel repeat mode setting using the APIs ADIAPI_TxSetManualPixelRepeat and ADIAPI_TxSetAutoPixelRepeat.</p></li>
+<li><p><strong>Size</strong> - Byte size of the AV info frame (Must be 16).</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+<li><p><strong>ATVERR_INV_PARM</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSendAudioInfoFrame&lt;/fc&gt; (UCHAR *Packet, UCHAR Size)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Send Audio info-frame to the sink device. The Audio info-frame packet repeat must be enabled using ADIAPI_TxEnablePackets to be able to send this packet.</p></li>
+<li><p>This function will automatically set the size of the right-justified I2S word size if the supplied audio info- frame sample size is not 0.</p></li>
+<li><p>For HBR audio, the CA and CC fields of the audio info-frame must be set to 0x1F and 0x07 respectively, unless the ADIAPI_TxSetAudioInterface API is called afterward to adjust those two fields.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Packet</strong> - Pointer to the audio info-frame packet HB0 (Header Byte 0)</p></li>
+<li><p><strong>Size</strong> - Byte size of the packet (Must be 13).</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+<li><p><strong>ATVERR_INV_PARM</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSendACPPacket&lt;/fc&gt; (UCHAR *Packet, UCHAR Size)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Send ACP packet to the sink device. The ACP packet repeat must be enabled using ADIAPI_TxEnablePackets to be able to send this packet.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Packet</strong> - Pointer to the packet HB0 (Header Byte 0).</p></li>
+<li><p><strong>Size</strong> - Byte size of the packet.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+<li><p><strong>ATVERR_INV_PARM</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSendSPDPacket&lt;/fc&gt; (UCHAR *Packet, UCHAR Size)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Send SPD packet to the sink device. The SPD packet repeat must be enabled using ADIAPI_TxEnablePackets to be able to send this packet.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Packet</strong> - Pointer to the packet HB0 (Header Byte 0).</p></li>
+<li><p><strong>Size</strong> - Byte size of the packet.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+<li><p><strong>ATVERR_INV_PARM</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSendISRC1Packet&lt;/fc&gt; (UCHAR *Packet, UCHAR Size)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Send ISRC1 packet to the sink device. The ISRC1 packet repeat must be enabled using ADIAPI_TxEnablePackets to be able to send this packet.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Packet</strong> - Pointer to the 31-byte ISRC1 packet HB0 (Header Byte 0).</p></li>
+<li><p><strong>Size</strong> - Byte size of the packet.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+<li><p><strong>ATVERR_INV_PARM</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSendISRC2Packet&lt;/fc&gt; (UCHAR *Packet, UCHAR Size)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Send ISRC2 packet to the sink device. The ISRC2 packet repeat must be enabled using ADIAPI_TxEnablePackets to be able to send this packet.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Packet</strong> - Pointer to the 31-byte ISRC2 packet HB0 (Header Byte 0).</p></li>
+<li><p><strong>Size</strong> - Byte size of the packet.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+<li><p><strong>ATVERR_INV_PARM</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSendGMDPacket&lt;/fc&gt; (UCHAR *Packet, UCHAR Size)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Send Gamut Metadata packet to the sink device. The GMD packet repeat must be enabled using ADIAPI_TxEnablePackets to be able to send this packet.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Packet</strong> - Pointer to the packet HB0 (Header Byte 0).</p></li>
+<li><p><strong>Size</strong> - Byte size of the packet.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+<li><p><strong>ATVERR_INV_PARM</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSendMpegPacket&lt;/fc&gt; (UCHAR *Packet, UCHAR Size)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Send MPEG packet to the sink device. The MPEG packet repeat must be enabled using ADIAPI_TxEnablePackets to be able to send this packet.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Packet</strong> - Pointer to the packet HB0 (Header Byte 0).</p></li>
+<li><p><strong>Size</strong> - Byte size of the packet.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+<li><p><strong>ATVERR_INV_PARM</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSendSpare1Packet&lt;/fc&gt; (UCHAR *Packet, UCHAR Size)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Send any user-defined packet to the sink device. The TX Device has a general-purpose packet memory that can be filled with any data to be sent to the sink. One use of such packets is to send vendor-specific info-frame. The VS (Vendor-specific) packet repeat must be enabled using ADIAPI_TxEnablePackets to be able to send this packet.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Packet</strong> - Pointer to the packet HB0 (Header Byte 0).</p></li>
+<li><p><strong>Size</strong> - Byte size of the packet.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+<li><p><strong>ATVERR_INV_PARM</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSendSpare2Packet&lt;/fc&gt; (UCHAR *Packet, UCHAR Size)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Send any user-defined packet to the sink device. The TX Device has a general-purpose packet memory that can be filled with any data to be sent to the sink. One use of such packets is to send vendor-specific info-frame. The VS (Vendor-specific) packet repeat must be enabled using ADIAPI_TxEnablePackets to be able to send this packet.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Packet</strong> - Pointer to the packet HB0 (Header Byte 0).</p></li>
+<li><p><strong>Size</strong> - Byte size of the packet.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+<li><p><strong>ATVERR_INV_PARM</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxCecEnable&lt;/fc&gt; (BOOL Enable)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>This API enables or disables the CEC controller engine. This API is available only if CEC support is included by setting the Configuration switch „TX_INCLUDE_CEC‟.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Enable</strong></p>
+<ul>
+<li><p><strong>TRUE</strong> - to enable the CEC controller.</p></li>
+<li><p><strong>FALSE</strong> - to disable the CEC controller.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - Operation completed OK.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxCecReset&lt;/fc&gt; (void)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>This API resets the CEC controller engine. It is called as part of the ADIAPI_TxCecEnable API. This API is available only if CEC support is included by setting the Configuration switch „TX_INCLUDE_CEC‟.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>None</strong></p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - Operation completed OK.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxCecSendMessage&lt;/fc&gt; (UCHAR *MsgPtr, UCHAR MsgLen)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Send a CEC message. This API is available only if CEC support is included by setting the Configuration switch „TX_INCLUDE_CEC‟.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>MsgPtr</strong> - Pointer to the CEC message to be sent.</p></li>
+<li><p><strong>MsgLen</strong> - CEC message length.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+</ul>
+<p>Message is queued to be sent. The application must poll ADIAPI_TxCecGetStatus API to determine when send is completed before calling any further APIs.</p>
+<ul class="simple">
+<li><p><strong>ATVERR_FAILED</strong> - If CEC controller is busy. The message will not be sent.</p></li>
+<li><p><strong>ATVERR_INV_PARM</strong> - If MsgLen is larger than maximum message size (16 bytes).</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxCecSendMessageOut&lt;/fc&gt; (void)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Send out CEC message in buffer.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>None</strong></p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - If message is sent OK.</p></li>
+<li><p><strong>ATVERR_FAILED</strong> - If CEC controller is busy.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxCecResendLastMessage&lt;/fc&gt; (void)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>This API sends the last CEC massage again. This API is available only if CEC support is included by setting the Configuration switch „TX_INCLUDE_CEC‟.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>None</strong></p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - Message is queued to be sent. The application must poll ADIAPI_TxCecGetStatus API to determine when send is completed before calling any further APIs.</p></li>
+<li><p><strong>ATVERR_FAILED</strong> - If CEC controller is busy. The message will not be sent.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxCecReadMessage&lt;/fc&gt; (UCHAR *MsgPtr, UCHAR *MsgLen)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Read a CEC message if available. This API is available only if CEC support is included by setting the Configuration switch „TX_INCLUDE_CEC‟.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>MsgPtr</strong> - Pointer to a buffer to receive CEC message (maximum 16 bytes).</p></li>
+<li><p><strong>MsgLen</strong> - Pointer to receive CEC message length.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - Message read into MsgPtr parameter.</p></li>
+<li><p><strong>ATVERR_FAILED</strong> - If no message is available.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxCecSetLogicalAddr&lt;/fc&gt; (UCHAR LogAddr, UCHAR DevId, BOOL Enable)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>This API sets the device logical address. Up to 3 different logical addresses can be set for the device. To inquire about logical addresses available for use (not allocated) the application can use the ADIAPI_TxCecAllocateLogAddr API. This API is available only if CEC support is included by setting the Configuration switch „TX_INCLUDE_CEC‟.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>LogAddr</strong> - Logical address to be set for the device.</p></li>
+<li><p><strong>DevID</strong> - The device to set the logical address to. Up to 3 different devices can be used. This value can be 0, 1 or 2.</p></li>
+<li><p><strong>Enable</strong> - Enable or disable the logical address.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - Logical address set.</p></li>
+<li><p><strong>ATVERR_INV_PARM</strong> - If DevID is larger than 2.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxCecAllocateLogAddr&lt;/fc&gt; (UCHAR *LogAddrList)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>This API checks the availability of logical addresses. This API is available only if CEC support is included by setting the Configuration switch „TX_INCLUDE_CEC‟.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>LogAddrList</strong>- Pointer to a prioritized list of logical addresses that the device will try to obtain, terminated by 0xff.</p></li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - Operation is queued to be processed. The application must poll ADIAPI_TxCecGetStatus API to determine the logical address that can be used.</p></li>
+<li><p><strong>ATVERR_FAILED</strong> - If CEC controller is busy. The operation will not be completed.</p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxCecGetStatus&lt;/fc&gt; (UCHAR *Status)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>This API returns the status of the last performed CEC operation. Some CEC APIs return immediately and the application is required to poll CEC state to determine if the operation was successful.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Status</strong> - Pointer to receive status on CEC engine last operation. The value returned in the Status parameter depends on the return value of this API.</p>
+<ul>
+<li><p>If the return value is ATVERR_FAILED, the Status parameter will be set to the error code indicating the cause of failure.</p></li>
+<li><p>If the return value is ATVERR_OK, the Status parameter will be set according to the last requested operation as follows:</p></li>
+</ul>
+</li>
+</ul>
+<div class="box center docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>API</p></th>
+<th class="head"><p>Status value on success</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ADIAPI_TxCecEnable</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADIAPI_TxCecReset</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>ADIAPI_TxCecSendMessage</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADIAPI_TxCecResendLastMessage</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>ADIAPI_TxCecAllocateLogAddr</p></td>
+<td><p>First available (not allocated) logical address in the logical address list supplied to the API. If no logical address is available, this value will be 0xFF.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong> - Last CEC operation was completed OK. Result is returned in the “Status” parameter.</p></li>
+<li><p><strong>ATVERR_NOT_AVAILABLE</strong> - Last CEC operation is still in progress.</p></li>
+<li><p><strong>ATVERR_FAILED</strong> - Last CEC operation failed. Error code is returned in the “Status” parameter as:</p>
+<ul>
+<li><p><strong>CEC_ERR_TX_TIMEOUT</strong></p></li>
+<li><p><strong>CEC_ERR_ARB_LOST</strong></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxArcSetMode&lt;/fc&gt; (TX_ARC_MODE Mode)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Enable/Disable Audio Return Channel (ARC) operation. This API is valid only on TX or transceiver-type devices that support ARC feature.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Mode</strong> - Select required ARC mode. This can be one of the following:</p>
+<ul>
+<li><p><strong>TX_ARC_SINGLE</strong> - For single mode.</p></li>
+<li><p><strong>TX_ARC_COMMON</strong> - For common mode.</p></li>
+<li><p><strong>TX_ARC_OFF</strong> - To turn ARC feature off.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+<li><p><strong>ATVERR_NOT_AVAILABLE</strong></p></li>
+</ul>
+</div>
+<div class="box docutils container">
+<p><strong>ATV_ERR &lt;fc blue&gt;ADIAPI_TxSetVideoClkDelay&lt;/fc&gt; (TX_VIDEO_CLK_DELAY Delay)</strong></p>
+</div>
+<div class="box center docutils container">
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>Set delay for input video clock.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li><p><strong>Delay</strong> - Delay format. This can be one of the followings:</p>
+<ul>
+<li><p><strong>TX_VIDEO_CLK_DELAY_M_1200PS</strong> - Delay by -1200 psec.</p></li>
+<li><p><strong>TX_VIDEO_CLK_DELAY_M_800PS</strong> - Delay by -800 psec.</p></li>
+<li><p><strong>TX_VIDEO_CLK_DELAY_M_400PS</strong> - Delay by -400 psec.</p></li>
+<li><p><strong>TX_VIDEO_CLK_DELAY_NULL</strong> - No delay.</p></li>
+<li><p><strong>TX_VIDEO_CLK_DELAY_P_400PS</strong> - Delay by 400 psec.</p></li>
+<li><p><strong>TX_VIDEO_CLK_DELAY_P_800PS</strong> - Delay by 800 psec.</p></li>
+<li><p><strong>TX_VIDEO_CLK_DELAY_P_1200PS</strong> - Delay by 1200 psec.</p></li>
+<li><p><strong>TX_VIDEO_CLK_DELAY_P_1600PS</strong> - Delay by 1600 psec.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Return value</strong></p>
+<ul class="simple">
+<li><p><strong>ATVERR_OK</strong></p></li>
+</ul>
+</div>
+</section>
+<section id="notification-events">
+<h2>Notification events<a class="headerlink" href="#notification-events" title="Link to this heading"></a></h2>
+<p>The Transmitter library provide the option to notify the application of any changes in operating condition, thus relieving the application from polling the library for status changes. The application must define a function that will be called from the library (from inside ADIAPI_TxIsr) upon any change in operating conditions. The prototype for this function is as follows:</p>
+<p>UINT16 TRANSMITTER_Notification (TX_EVENT EventID, UINT16 EventSize, void *EventData)</p>
+<p>Where:</p>
+<ul class="simple">
+<li><p>EventID - This is a unique value that identifies the operating condition that has changed.</p></li>
+<li><p>EventSize - This parameter either specifies the size of the data pointed to by the EventData parameter or carries some other information related to the event. This value is event dependant as listed in the table below.</p></li>
+<li><p>EventData - This is a pointer to a buffer that contains event-specific information. If the event does not have an associated data, this value will be undefined. The table below lists all events and their associated data.</p></li>
+</ul>
+<p>Depending on the enabled events (See ADIAPI_TxSetEnabledEvents,) the application will be notified via the above function of the events listed in the following table:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Interrupt</p></th>
+<th class="head"><p>EventID</p></th>
+<th class="head"><p>EventSize</p></th>
+<th class="head"><p>EventData</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HPD Low</p></td>
+<td><p>TX_EVENT_HPD_CHG</p></td>
+<td><p>0</p></td>
+<td><p>Pointer to BOOL value = FALSE</p></td>
+</tr>
+<tr class="row-odd"><td><p>HPD High</p></td>
+<td><p>TX_EVENT_HPD_CHG</p></td>
+<td><p>0</p></td>
+<td><p>Pointer to BOOL value = TRUE</p></td>
+</tr>
+<tr class="row-even"><td><p>Rx Sense Low/High</p></td>
+<td><p>TX_EVENT_MSEN_CHG</p></td>
+<td><p>0</p></td>
+<td><p>Pointer to BOOL value: = FALSE if monitor sense is LOW TRUE if monitor sense is HIGH</p></td>
+</tr>
+<tr class="row-odd"><td><p>EDID Ready</p></td>
+<td><p>TX_EVENT_EDID_READY when a new EDID segment is fully read</p></td>
+<td><p>Index of the segment returned in EventData (0, 1, 2, etc)</p></td>
+<td><p>Pointer to buffer containing the EDID segment read from sink</p></td>
+</tr>
+<tr class="row-even"><td><p>BKSV ready</p></td>
+<td><p>TX_EVENT_BKSV_READY when all BKSVs are received</p></td>
+<td><p>Number of BKSVs returned in EventData</p></td>
+<td><p>Pointer to a concatenated list of all downstream BKSVs</p></td>
+</tr>
+<tr class="row-odd"><td><p>HDCP Authenticated</p></td>
+<td><p>TX_EVENT_HDCP_AUTHENTICATED</p></td>
+<td><p>0</p></td>
+<td><p>NULL</p></td>
+</tr>
+<tr class="row-even"><td><p>HDCP Error</p></td>
+<td><p>TX_EVENT_HDCP_ERROR</p></td>
+<td><p>0</p></td>
+<td><p>Pointer to TX_HDCP_ERR value containing the error code</p></td>
+</tr>
+<tr class="row-odd"><td><p>Vsync Edge</p></td>
+<td><p>TX_EVENT_VSYNC_EDGE</p></td>
+<td><p>0</p></td>
+<td><p>NULL</p></td>
+</tr>
+<tr class="row-even"><td><p>Audio FIFO Full</p></td>
+<td><p>TX_EVENT_AUDIO_FIFO_FULL</p></td>
+<td><p>0</p></td>
+<td><p>NULL</p></td>
+</tr>
+<tr class="row-odd"><td><p>Embedded Sync Polarity Error</p></td>
+<td><p>TX_EVENT_EMB_SYNC_ERROR</p></td>
+<td><p>0</p></td>
+<td><p>NULL</p></td>
+</tr>
+<tr class="row-even"><td><p>CEC TX Ready</p></td>
+<td><p>TX_EVENT_CEC_TX_READY</p></td>
+<td><p>0</p></td>
+<td><p>NULL</p></td>
+</tr>
+<tr class="row-odd"><td><p>CEC RX Ready</p></td>
+<td><p>TX_EVENT_CEC_RX_READY</p></td>
+<td><p>CEC message size</p></td>
+<td><p>CEC message</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The return value of the notification event function is not currently used and should always be set to 0.</p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

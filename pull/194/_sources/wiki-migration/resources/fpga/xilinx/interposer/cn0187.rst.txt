@@ -1,0 +1,150 @@
+CN0187 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7266`
+
+Reference Circuits
+------------------
+
+-  :adi:`CN0187`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-CN0187-SDPZ` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-CN0187-SDPZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cn0187.jpg
+   :alt: cn0187.jpg
+   :align: center
+   :width: 600px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`_
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-CN0187-SDPZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0187_sdp1z.jpg
+   :alt: cn0187_sdp1z.jpg
+   :align: center
+   :width: 400px
+
+The **EVAL-CN0187-SDPZ** measures peak and rms power at any RF frequency from 450 MHz to 6 GHz over a range of approximately 45 dB. The measurement results are converted to differential signals in order to eliminate noise and are provided as digital codes at the output of a 12-bit SAR ADC with serial interface and integrated reference. When using this evaluation board with the SDP board or BeMicro SDK board, apply +6 V and GND to Power Connector.
+
+The :adi:`AD7266` is a dual, 12-bit, high speed, low power, successive approximation ADC that operates from a single 2.7 V to 5.25 V power supply and features throughput rates up to 2 MSPS. The device contains two ADCs, each preceded by a 3-channel multiplexer, and a low noise, wide bandwidth track-and-hold amplifier that can handle input frequencies in excess of 30 MHz.
+
+The conversion process and data acquisition use standard control inputs allowing easy interfacing to microprocessors or DSPs. The input signal is sampled on the falling edge of CS; conversion is also initiated at this point. The conversion time is determined by the SCLK frequency. There are no pipelined delays associated with the part.
+
+The AD7266 uses advanced design techniques to achieve very low power dissipation at high throughput rates. With 5 V supplies and a 2 MSPS throughput rate, the part consumes 6.2 mA maximum. The part also offers flexible power/ throughput rate management when operating in normal mode as the quiescent current consumption is so low.
+
+The analog input range for the part can be selected to be a 0 V to VREF (or 2 × VREF) range, with either straight binary or twos complement output coding. The AD7266 has an on-chip 2.5 V reference that can be overdriven when an external reference is preferred. This external reference range is 100 mV to VDD.
+
+More information
+----------------
+
+-  :adi:`CN0187 Product Info <CN0187>` - pricing, samples, datasheet
+-  :adi:`AD7266 Product Info <AD7266>` - pricing, samples, datasheet
+-  :adi:`EVAL-CN0187-SDPZ evaluation board user guide <CN0187>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+-  FMC-SDP adapter board
+-  **EVAL-CN0187-SDPZ** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+-  The EVAL-CN0187 reference project for Xilinx KC705 FPGA.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **AD7266 Driver:** :git-no-OS:`device_drivers/AD7266`
+   
+   -  **CN0187 Commands:** :git-no-OS:`device_commands/CN187`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Run the Demonstration Project
+=============================
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+   | Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-CN0187 reference project for Xilinx KC705 FPGA board.
+
+========= =================================
+Command   Description
+========= =================================
+**help?** Displays all available commands.
+**data?** Displays VRMS Code and Peak Code.
+========= =================================
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`_
+
+
+.. _more-information-1:
+
+More information
+================
+
+-  :doc:`AD7266 Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/ad7266>`
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`_
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

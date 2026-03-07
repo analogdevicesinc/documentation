@@ -1,0 +1,177 @@
+Activity: Zener Diode current vs. voltage curves - ADALM1000
+============================================================
+
+Objective:
+----------
+
+The purpose of this activity is to investigate the current vs. voltage characteristics of the reverse breakdown region of Zener diodes.
+
+Notes:
+------
+
+As in all the ALM labs we use the following terminology when referring to the connections to the M1000 connector and configuring the hardware. The green shaded rectangles indicate connections to the M1000 analog I/O connector. The analog I/O channel pins are referred to as CA and CB. When configured to force voltage / measure current –V is added as in CA-V or when configured to force current / measure voltage –I is added as in CA-I. When a channel is configured in the high impedance mode to only measure voltage –H is added as CA-H.
+
+Scope traces are similarly referred to by channel and voltage / current. Such as CA-V , CB-V for the voltage waveforms and CA-I , CB-I for the current waveforms.
+
+Background:
+-----------
+
+The PN junction diode is a device which is commonly used in circuit applications such as rectification where current is allowed to flow in only one direction. When the diode is fabricated in silicon, the forward voltage drop is typically 0.7 V and the V\ :sub:`D` vs. I\ :sub:`D` characteristic relating diode voltage and current can be described by an exponential relationship:
+
+|image1| alm-lab2-e1.png
+
+where I\ :sub:`S` and n are scale factors, and kT/q (≈ 25.4 mV at room temperature) is the so called thermal voltage V\ :sub:`T`.
+
+Diode schematic symbols:
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Each type of diode has a specific schematic symbol which are variations of the conventional diode symbol shown on the left in figure 1. A sort of “Z” shaped cathode denotes a zener diode as in the second symbol in figure 1. An “S” shaped cathode denotes a Schottky diode as in the next symbol. The arrows pointing away from the diode denotes an LED as in the symbol on the right. Arrows pointing toward the diode would represent a photo diode light detector.
+
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab2-f1.png
+   :align: center
+   :width: 400px
+
+.. container:: centeralign
+
+   Figure 1, Diode schematic symbols
+
+
+Zener Diode Fundamentals:
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A Zener diode is similar in construction and operation to an ordinary diode. Unlike a conventional diode where the intended use is to prevent current in the reverse direction, a zener diode is mostly used in the reverse region above the breakdown voltage. The I vs V characteristic curve is similar to ordinary diode. By adjusting the doping of the P and N sides of the junction, it is possible to design a Zener diode that breaks down at anywhere from a few volts to a few hundred volts. See Figure 2. In this breakdown or zener region the diode voltage will remain approximately constant over a wide range of currents. The maximum reverse-bias potential that can be applied before entering the Zener region is called the Peak Inverse Voltage (PIV) or the Peak Reverse Voltage (PRV).
+
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab2-f2.png
+   :align: center
+   :width: 400px
+
+.. container:: centeralign
+
+   Figure 2, Forward and reverse Zener diode I/V characteristics
+
+
+At voltages above the onset of breakdown, an increase in applied voltage will cause more current to flow in the diode, but the voltage across the diode will stay very nearly at V\ :sub:`Z`. A Zener diode operated in reverse breakdown can provide a reference voltage for systems like voltage regulators or voltage comparators.
+
+Zener Breakdown voltage measurements:
+-------------------------------------
+
+Materials:
+~~~~~~~~~~
+
+| ADALM1000 hardware module
+| Solder-less Breadboard
+| Jumper wires
+| 1 – Resistor (100 Ω or any similar value from 100 Ω to 1 KΩ)
+| 1 – 470 KΩ Resistor
+| 1 – 1 MΩ Resistor
+| 1 – 1N4735 6.2 volt Zener diode
+| 2 - 1.5 Volt cells in series (AA cells for example)
+| Or
+| 1 – LT1054 voltage inverter
+| 1 - 10 KΩ Resistor
+| 1 - 20 KΩ Resistor
+| 1 - 50 KΩ potentiometer
+| 1 - 0.01 uF capacitor
+| 1 - 10 uF capacitor
+| 1 - 47 uF capacitor
+
+Directions:
+~~~~~~~~~~~
+
+To measure the reverse breakdown voltage of your Zener diode we need to produce a voltage difference larger than the breakdown voltage of the 6.2 V 1N4735 diode. The ADALM1000 hardware can only produce (and measure) voltages up to the 5 V maximum. We can add an external negative voltage source to combine with the positive internal voltage to produce a total voltage high enough for this experiment. The simplest way is to add a fixed negative voltage from an external battery (3 V) as shown in figure 3. By using different numbers of 1.5 V cells, negative voltages of -1.5, -3 and -4.5 are possible. The total reverse voltage applied to the Zener diode will be this negative voltage subtracted from the positive voltage generated by AWG channel A.
+
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-zener-fig3.png
+   :align: center
+   :width: 600px
+
+.. container:: centeralign
+
+   Figure 3, Zener diode I vs. V setup
+
+
+Alternatively the LT1054 DC-DC negative voltage converter from the Parts Kit can be configured to produce a negative voltage from the fixed positive 5 V supply of the ADALM1000. As shown in figure 4, the negative output voltage of the LT1054 can be adjusted from approximately 0 to – 5 V by adding a potentiometer circuit. Resistor R\ :sub:`1` is 10 KΩ, resistor R\ :sub:`2` is 20 KΩ and potentiometer R\ :sub:`POT` is 50 KΩ. Capacitor C\ :sub:`1` is 10 uF, C\ :sub:`2` is 47 uF and noise filter capacitor C\ :sub:`3` is 0.01 uF.
+
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-zener-fig4.png
+   :align: center
+   :width: 600px
+
+.. container:: centeralign
+
+   Figure 4, Adjustable negative voltage supply
+
+
+To measure the negative voltage applied to the lower end of the Zener we need to include the following voltage divider circuit to the input of channel B when in Hi-Z mode. To calibrate the voltage divider gain and offset settings connect R\ :sub:`1` alternately to GND and the fixed +5V supply. Change the DC settings until the average voltage measurement reading for CH-B is correct. Now by connecting R\ :sub:`1` to it you can measure the negative voltage on the lower end of the Zener diode.
+
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-zener-fig5.png
+   :align: center
+   :width: 500px
+
+.. container:: centeralign
+
+   Figure 5, Input voltage divider
+
+
+Using the values shown in figure 5 the channel B input voltage range should now be greater than +10 to -10 volts. More on the background of using these voltage dividers can be found in the Appendix below.
+
+Hardware Setup:
+~~~~~~~~~~~~~~~
+
+The channel A generator should be configured for a 100 Hz triangle wave with 5 volt Max and 0 volt Min such that it swings from 0 volts to +5 volts. This swing added to the negative offset from the LT1054 or external battery should be enough larger than the breakdown voltage of your 1N4735 6.2 volt Zener to measure the breakdown voltage. Be sure to connect the external negative voltage before taking your measurements. The Channel A current measurement will be the current in the Zener diode. If you are using one of the later model ADALM1000 boards with the 8 pin analog connector you can use the Split I/O mode on channel A to both source the triangle wave to the end of resistor R\ :sub:`1` in figure 3 using the CHA pin while measuring the voltage at the positive end of the Zener with the AIN pin. Now you can use the CAV – CBV math trace to plot the total voltage across the Zener diode.
+
+Procedure:
+~~~~~~~~~~
+
+Load the raw captured data for each example Zener diode into a data analysis software program like MATLAB or a spreadsheet (Excel) and calculate the diode current I\ :sub:`D`. Be sure to take into account the negative voltage offset to the measurements for channel B to obtain the true voltage across the zener diode. If using the external battery, you should probably measure the actual voltage for accurate measurements of the breakdown voltage. Plot the current vs. the calculated reverse bias voltage across the diode.
+
+Questions:
+~~~~~~~~~~
+
+| What is the slope (effective resistance) of the curve above the breakdown voltage?
+| How much does the voltage change as the current changes from 100uA to 10 mA?
+
+Appendix:
+---------
+
+Measuring Voltage Outside 0-5 V Range:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To keep production cost of the ADALM1000 board low, certain tradeoffs were made. One was to forego programmable input gain ranges that use resistor dividers and perhaps adjustable frequency compensation capacitors. This is a problematic limitation of the ADALM1000 limiting the input voltage range from 0 to +5 V.
+
+Before building any circuits that operate from power supplies outside the native 0 to 5 V range of the ADALM1000 we need to protect the analog inputs when in Hi-Z mode and extend the usable range of voltages. There are large protection diodes connected between the analog I/O pins and ground and the internal +5 volt power supply which are generally reverse biased when the voltage on the pins are in the range of 0 to 5 V. If the voltage on the pin were to go more than a forward diode voltage beyond this range the diodes will possibly conduct large currents.
+
+The limitation on the allowable voltages that can be measured directly can be expanded through the use of an external voltage divider. The input capacitance, C\ :sub:`INT`, of the analog inputs in the high Z mode is approximately 390 pF (for the rev D design and slightly higher for the rev F design). This relatively large capacitance along with relatively high resistance dividers can significantly lower the frequency response. In figure A1 we revisit the input structure of the ADALM1000 and connecting an external resistive voltage divider R\ :sub:`1` and R\ :sub:`2,3`. The contents of the blue box represent the input of the ADALM1000 in Hi-Z mode. To introduce an optional DC offset for measuring negative voltages resistor R\ :sub:`2` is included and could be connected to either the fixed 2.5V or 5V supplies on the ADALM1000. The C\ :sub:`INT` and effective resistance of the divider network form a low pass pole in the frequency response. To give you a rough idea let's use 400 pF for C\ :sub:`INT` and 1 MΩ for the resistor divider. That would result in a low pass response with a 3 dB roll-off starting at around 400 Hz. A capacitor would generally be needed across the input resistor R\ :sub:`1` to :doc:`frequency compensate the divider </wiki-migration/university/courses/alm1k/circuits1/alm-cir-voltage-divider>`. Such a hardware solution generally requires the capacitor (or alternatively the divider resistors) to be adjustable.
+
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-zener-figa1.png
+   :align: center
+   :width: 600px
+
+.. container:: centeralign
+
+   Figure A1, External voltage divider options.
+
+
+It would be nice to not have to use a compensation capacitor, adjustable or otherwise. The ALICE Desktop can adjust for any DC gain and offset when using an external divider. A digital (software) frequency compensation feature is also include in the ALICE 1.2 Desktop software package (down load the latest version from :git-alice:`GitHub <releases>`).
+
+The software frequency compensation for each channel consists of a cascade of two adjustable `first order high pass filters <https://en.wikipedia.org/wiki/High-pass_filter#Algorithmic_implementation>`_. The time constant and the gain of each stage can be adjusted. Normal first order high pass filters do not pass DC so a DC gain of 1 path is added to the overall second order high pass software compensation filter. This structure is often called a shelving filter because of the shape of its frequency response.
+
+In figure A2 we show the controls for the input frequency compensation. To turn on and off the compensation for Channels A and B check boxes are added under the Curves drop down menu. Turning on compensation applies to both the Scope and Spectrum tools (time and frequency measurements). The filter time constant and gain settings can be set using new entry slots in the Settings Controls screen. The DC gain and offset adjust controls are unchanged.
+
+.. image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-zener-figa2.png
+   :align: center
+   :width: 600px
+
+.. container:: centeralign
+
+   Figure A2, Software compensation controls
+
+
+A 500 Hz 0 to 5 V square wave from the Channel A AWG output is used to observe the step response of the resistor divider and adjust the compensation filter settings for a flat response.
+
+\**For Further Reading: \*\*
+
+`Diodes <https://en.wikipedia.org/wiki/Diode>`_
+
+**Return to ALM Lab Activity** :doc:`Table of Contents </wiki-migration/university/courses/alm1k/alm-labs-list>`
+
+.. |image1| image:: https://wiki.analog.com/_media/university/courses/alm1k/alm-lab2-e1.png
+   :width: 200px

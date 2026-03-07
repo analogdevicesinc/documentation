@@ -1,0 +1,173 @@
+CN0510 User Guide
+=================
+
+Overview
+--------
+
+The :adi:`CN0510` circuit is an electrochemical impedance spectroscopy (EIS) measurements system for characterizing Lithium Ion and other types of secondary batteries. EIS is a non-destructive perturbation technique used to examine processes occurring inside electrochemical systems. The system measures the impedance of the battery cell over a range of frequencies. The data can determine the state of health (SOH) and State of Charge (SOC) of a battery. This system is designed to excite and measure a battery’s internal impedance with frequencies from hertz to kilo-hertz utilizing an ultralow power analog front end (AFE) system.
+
+Ageing leads to performance degradation and irreversible changes in the battery’s chemistry. Impedance increases linearly with the decline in capacity. Monitoring the increase in impedance of a battery using EIS can determine the SOH and if the battery needs replacing, resulting in reduced system downtime and lower maintenance costs.
+
+Batteries require a current excitation, not voltage, and the impedance values are small, in the milliohm range. This system includes the necessary circuitry to inject a current into the battery and allows for calibration and sensing of the small impedances found in batteries.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0510/ref-board.png
+   :align: center
+   :width: 600px
+
+Required Equipment
+------------------
+
+Documents Needed
+~~~~~~~~~~~~~~~~
+
+-  :adi:`cn0510` Circuit Note
+-  :adi:`AD5941 Data Sheet <ad5941>`
+-  :doc:`EVAL–ADICUP3029 User Guide </wiki-migration/resources/eval/user-guides/eval-adicup3029>`
+
+Software Needed
+~~~~~~~~~~~~~~~
+
+-  :doc:`SensorPal </wiki-migration/resources/eval/user-guides/eval-ad5940/tools/sensorpal_setup_guide>`
+-  Serial Terminal Software (PuTTY, TeraTerm or similar)
+-  :doc:`Keil </wiki-migration/resources/eval/user-guides/eval-ad5940/tools/keil_setup_guide>` (Optional)
+
+Hardware Needed
+~~~~~~~~~~~~~~~
+
+-  :adi:`EVAL-ADICUP3029 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADICUP3029.html>` circuit board.
+-  :adi:`EVAL-AD5941BATZ <cn0510>` Battery Measurement Board.
+-  PC with a USB port and Windows® 7 (32-bit) or higher.
+-  USB type A to USB micro cable.
+-  BNC cables.
+-  Battery for measurement.
+
+--------------
+
+General Setup
+-------------
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0510/connected-ref-board.png
+   :align: center
+   :width: 800px
+
+.. warning::
+
+   Ensure the boards are powered before connecting the battery to avoid a short circuit.
+
+
+Hardware
+~~~~~~~~
+
+-  Connect the :adi:`EVAL-AD5941BATZ <cn0510>` to the EVAL-ADICUP3029 via the Arduino headers.
+-  Plug in BNC cables.
+-  Power the boards by connecting the micro USB cable into P10 on the EVAL-ADICUP3029 and the other end of the USB cable to your computer.
+-  Connect the battery as shown in figure above.
+
+   -  Connect F+ and S+ leads to the positive terminal of the battery.
+
+      -  Connect S- and F- to the negative terminal of the battery.
+      -  Connect red BNC wires of J1 and J2 to the positive terminal of the battery.
+
+Software
+~~~~~~~~
+
+There are two options for running battery impedance measurements on the EVAl-AD5941BATZ. The first is using SensorPal GUI tool. SensorPal provides an intuitive interface that allows the user to configure and update parameters such as frequency range and view measurement results in Nyquist form without needing to downlaod or use an IDE such as Keil. This option is best for rapid prototyping and measurement verification. The second option is to run the example projects in an IDE such as Keil to modify the low level embedded firmware. This options offers more control over the low level operation of the hardware but requires some knowledge of embedded C development
+
+SensorPal
+^^^^^^^^^
+
+-  Download and install SensorPal by following instructions :doc:`here </wiki-migration/resources/eval/user-guides/eval-ad5940/tools/sensorpal_setup_guide>`
+-  To run the battery impedance measurement drag and drop the Battery Impedance tab from the Electrochemical Techniques area on the left hand side of the screen to the Work Area which is located towards the top of the screen.
+-  Select desired measurement characteristics such as Start Frequency, Stop Frequency Point etc.
+-  Click Measure to begin the measurement
+-  The measurement may take some time to start as the hardware is initialized.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/sensorpal_batz.jpg
+   :width: 600px
+
+Embedded Firmware Development
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  Download one of the supported IDE environments :doc:`IAR Embedded Workbench </wiki-migration/resources/eval/user-guides/eval-ad5940/tools/iar_setup_guide>` or :doc:`Keil </wiki-migration/resources/eval/user-guides/eval-ad5940/tools/keil_setup_guide>`.
+-  Download the :doc:`AD5940 Source Code </wiki-migration/resources/eval/user-guides/eval-ad5940/tools/downloading_source_code>` from GitHub.
+
+   -  Note, there is a shared library for the AD5940 and AD5941 products.
+
+-  Navigate to the ad5940-examples and open the AD5940_BATImpedance example.
+
+   -  :doc:`In IAR </wiki-migration/resources/eval/user-guides/eval-ad5940/tools/iar_setup_guide>`
+
+      -  :doc:`In Keil </wiki-migration/resources/eval/user-guides/eval-ad5940/tools/keil_setup_guide>`
+
+-  Configure the default measurement parameters to your requirements.
+
+   -  Use the AD5940BATStructInit(void) function.\
+
+
+   |image1|
+
+      -  The data structure AppBATCfg_Type contains the configurable parameters for the application.
+      -  *Note, the hardware is optimized for frequencies above 1Hz. Measurements below this value are noisier due in part to the 1/f noise of the external amplifiers.*
+
+-  Build and compile the example project into a .BIN or .HEX file that can be used to flash the embedded target.
+
+Serial Terminal Output
+~~~~~~~~~~~~~~~~~~~~~~
+
+The measurement results are sent to the PC via UART. To establish connection over UART, connect the Micro-USB cable to the PC and to the EVAL-ADICUP3029 board. A serial terminal program is required to display the results. |image2| The following is the UART configuration:
+
+::
+
+     Select COM Port
+     Baud rate: 230400
+     Data: 8 bit
+     Parity: none
+     Stop: 1 bit
+     Flow Control: none
+
+
+.. note::
+
+   See `wiki/common <https://wiki.analog.com/wiki/common#serial_terminal_setup>`_
+
+
+Battery Test and Results
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Below is an example of the Nyquist plot obtained for a Lithium Ion battery measured using the EVAL-AD5941BATZ.
+
+
+|image3|
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   :adi:`EVAL-AD5941BATZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/CN0510-DesignSupport.zip>`
+
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  Allegro project
+   
+
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-AD5941BATZ?&v=RevE>`_ to receive all these great benefits and more!
+
+
+*End of Document*
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0510/serial-terminal.png
+   :width: 300px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0510/terminal-output.png
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0510/nyquist-plot.png
+   :width: 400px

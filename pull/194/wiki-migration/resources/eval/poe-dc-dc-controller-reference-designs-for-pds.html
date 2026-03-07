@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="OUTPUT (V/I)" name="description" />
+
+    <title>PoE DC-DC Controller Reference Designs for PDs &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">PoE DC-DC Controller Reference Designs for PDs</a></li>
+<li><a class="reference internal" href="#reference-design-table">Reference Design Table</a></li>
+<li><a class="reference internal" href="#dc-dc-topology-recommendations">DC-DC Topology Recommendations</a></li>
+<li><a class="reference internal" href="#standalone-poe-dc-dc-controllers">Standalone PoE DC-DC Controllers</a></li>
+<li><a class="reference internal" href="#poe-pd-controllers">PoE PD Controllers</a></li>
+<li><a class="reference internal" href="#poe-pd-dc-dc-controllers">PoE PD + DC-DC Controllers</a></li>
+<li><a class="reference internal" href="#poe-ideal-diode-bridge-controllers">PoE Ideal Diode Bridge Controllers</a></li>
+<li><a class="reference internal" href="#notes">Notes</a></li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="poe-dc-dc-controller-reference-designs-for-pds">
+<h1>PoE DC-DC Controller Reference Designs for PDs<a class="headerlink" href="#poe-dc-dc-controller-reference-designs-for-pds" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line">ADI’s Power over Ethernet (PoE) DC-DC controller reference designs for Powered Devices (PDs) have been designed, built and tested for various output power levels and voltages. These designs provide the user with a quick solution for their PoE design. Design components, including magnetics, have been sized for the specified output voltages and currents.</div>
+<div class="line">Schematics, Bill of Materials (BOMs), and layout files are available for evaluation boards and test reports are available for technical articles. Solutions include ADI’s integrated PoE PD + DC-DC controllers and standalone DC-DC controllers.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/ajaxperflookupdelay/pd_diagram.png"><img alt="image1" src="https://wiki.analog.com/_media/ajaxperflookupdelay/pd_diagram.png" style="width: 600px;" /></a></div>
+</div>
+</section>
+<section id="reference-design-table">
+<h1>Reference Design Table<a class="headerlink" href="#reference-design-table" title="Link to this heading"></a></h1>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>OUTPUT
+(V/I)</p></th>
+<th class="head"><p>*DC-DC
+EFFICIENCY</p></th>
+<th class="head"><p>TOPOLOGY</p></th>
+<th class="head"><p>DC-DC
+FEATURES</p></th>
+<th class="head"><p>DC-DC
+CONTROLLER</p></th>
+<th class="head"><p>INTEGRATED
+PD</p></th>
+<th class="head"><p>REFERENCE
+DESIGN</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IEEE 802.3af PoE (&lt;13W)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>3.3V/1A</p></td>
+<td><p>78.5%</p></td>
+<td><p>Flyback</p></td>
+<td><p>Non-Synchronous</p></td>
+<td><p>LTC4267</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/dc804b-a.html" target="_blank">DC804B-A</a></p></td>
+</tr>
+<tr class="row-even"><td><p>5V/0.77A</p></td>
+<td><p>86.4%</p></td>
+<td><p>Buck</p></td>
+<td><p>Non-Isolated
+Monolithic</p></td>
+<td><p>MAX5986A</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/max5986aevkit.html" target="_blank">MAX5986AEVKIT</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>3.3V/1.8A</p></td>
+<td><p>88.4%</p></td>
+<td><p>Flyback</p></td>
+<td><p>Non-Isolated
+Synchronous</p></td>
+<td><p>MAX5974E</p></td>
+<td></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/MAX5974EEVKIT.html" target="_blank">MAX5974EEVKIT</a></p></td>
+</tr>
+<tr class="row-even"><td><p>3.3V/2.6A</p></td>
+<td><p>81.0%</p></td>
+<td><p>Flyback</p></td>
+<td><p>Non-Synchronous</p></td>
+<td><p>LTC4267</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/dc917a.html" target="_blank">DC917A</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>5V/2.3A</p></td>
+<td><p>87.4%</p></td>
+<td><p>Flyback</p></td>
+<td><p>Wide Input Range
+Synchronous</p></td>
+<td><p>MAX5974A</p></td>
+<td></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/technical-articles/wide-input-flyback-converter-features-5v-2-6a--output.html" target="_blank">Technical Article</a></p></td>
+</tr>
+<tr class="row-even"><td><p>5V/2.3A</p></td>
+<td><p>89.3%</p></td>
+<td><p>Flyback</p></td>
+<td><p>No-Opto
+Synchronous</p></td>
+<td><p>LT4276C</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/dc2046a-f.html" target="_blank">DC2046A-F</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>12V/0.9A</p></td>
+<td><p>88.9%</p></td>
+<td><p>Flyback</p></td>
+<td><p>Non-Synchronous</p></td>
+<td><p>LTC4267</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/dc1145b.html" target="_blank">DC1145B</a></p></td>
+</tr>
+<tr class="row-even"><td><p>12V/1A</p></td>
+<td><p>91.8%</p></td>
+<td><p>Flyback</p></td>
+<td><p>No-Opto
+Synchronous
+Gate Drive Winding</p></td>
+<td><p>MAX5974A</p></td>
+<td></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/max5969aevkit.html" target="_blank">MAX5969AEVKIT</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>1.8V/2.5A
+2.5V/1.5A
+3.3V/0.5A</p></td>
+<td><p>80.8%</p></td>
+<td><p>Flyback</p></td>
+<td><p>Multiple Outputs
+Synchronous</p></td>
+<td><p>LTC4267</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/dc859a.html" target="_blank">DC859A</a></p></td>
+</tr>
+<tr class="row-even"><td><p>IEEE 802.3at PoE+ (&lt;25.5W)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>3.3V/6.8A</p></td>
+<td><p>90.9%</p></td>
+<td><p>Flyback</p></td>
+<td><p>No-Opto
+Synchronous</p></td>
+<td><p>LT4276B</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/dc2046a-a.html" target="_blank">DC2046A-A</a></p></td>
+</tr>
+<tr class="row-even"><td><p>5V/4.5A</p></td>
+<td><p>89.1%</p></td>
+<td><p>Flyback</p></td>
+<td><p>Wide Input Range
+No-Opto
+Synchronous</p></td>
+<td><p>LTC4278</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/dc1561b.html" target="_blank">DC1561B</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>5V/4.7A</p></td>
+<td><p>91.1%</p></td>
+<td><p>Flyback</p></td>
+<td><p>No-Opto
+Synchronous</p></td>
+<td><p>LTC4269-1</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/dc1335b-b.html" target="_blank">DC1335B-B</a></p></td>
+</tr>
+<tr class="row-even"><td><p>5V/4.7A</p></td>
+<td><p>91.6%</p></td>
+<td><p>Flyback</p></td>
+<td><p>No-Opto
+Synchronous</p></td>
+<td><p>LT4276B</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/dc2046a-b.html" target="_blank">DC2046A-B</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>5V/4.7A</p></td>
+<td><p>92.9%</p></td>
+<td><p>Forward</p></td>
+<td><p>No-Opto
+Synchronous</p></td>
+<td><p>MAX5974A</p></td>
+<td></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/max5974aevkit.html" target="_blank">MAX5974AEVKIT</a></p></td>
+</tr>
+<tr class="row-even"><td><p>5V/4.7A</p></td>
+<td><p>94.2%</p></td>
+<td><p>Forward</p></td>
+<td><p>Synchronous</p></td>
+<td><p>MAX5974C</p></td>
+<td></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/max5974cevkit.html" target="_blank">MAX5974CEVKIT</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>12V/1.9A</p></td>
+<td><p>89.2%</p></td>
+<td><p>Flyback</p></td>
+<td><p>Non-Synchronous</p></td>
+<td><p>MAX15000A</p></td>
+<td></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/max5969bevkit.html" target="_blank">MAX5969BEVKIT</a></p></td>
+</tr>
+<tr class="row-even"><td><p>12V/1.9A</p></td>
+<td><p>89.3%</p></td>
+<td><p>Flyback</p></td>
+<td><p>Wide Input Range
+No-Opto
+Synchronous</p></td>
+<td><p>LT4276B</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/dc2047a-a.html" target="_blank">DC2047A-A</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>12V/1.9A</p></td>
+<td><p>91.2%</p></td>
+<td><p>Flyback</p></td>
+<td><p>No-Opto
+Synchronous</p></td>
+<td><p>LTC4269-1</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/dc1335b-c.html" target="_blank">DC1335B-C</a></p></td>
+</tr>
+<tr class="row-even"><td><p>12V/1.9A</p></td>
+<td><p>92.2%</p></td>
+<td><p>Flyback</p></td>
+<td><p>No-Opto
+Synchronous
+Gate Drive Winding</p></td>
+<td><p>MAX5974A</p></td>
+<td></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/data-sheets/MAX5969AEVKIT.pdf" target="_blank">MAX5969AEVKIT</a>
+Scaled for 25.5W</p></td>
+</tr>
+<tr class="row-odd"><td><p>12V/1.9A</p></td>
+<td><p>92.8%</p></td>
+<td><p>Flyback</p></td>
+<td><p>No-Opto
+Synchronous</p></td>
+<td><p>LT4276B</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/dc2046a-c.html" target="_blank">DC2046A-C</a></p></td>
+</tr>
+<tr class="row-even"><td><p>24V/0.95A</p></td>
+<td><p>88.0%</p></td>
+<td><p>Forward</p></td>
+<td><p>Non-Synchronous</p></td>
+<td><p>MAX5974A</p></td>
+<td></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/reference-designs/maxrefdes1206.html" target="_blank">MAXREFDES1206</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>24V/0.95A</p></td>
+<td><p>91.6%</p></td>
+<td><p>Flyback</p></td>
+<td><p>No-Opto
+Synchronous</p></td>
+<td><p>LT4276B</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/dc2046a-d.html" target="_blank">DC2046A-D</a></p></td>
+</tr>
+<tr class="row-even"><td><p>3.3V/4A
+5V/2.4A
+11.8V/0.3A</p></td>
+<td><p>86.2%</p></td>
+<td><p>Flyback</p></td>
+<td><p>Multiple Outputs
+Synchronous</p></td>
+<td><p>LTC4269-1</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/data-sheets/42691fc.pdf" target="_blank">Datasheet Application</a>
+Page 37</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.3V/2A
+5V/3A</p></td>
+<td><p>90.2%</p></td>
+<td><p>Flyback</p></td>
+<td><p>Multiple Outputs
+Synchronous</p></td>
+<td><p>MAX5974A</p></td>
+<td></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/reference-designs/maxrefdes31.html" target="_blank">MAXREFDES31</a></p></td>
+</tr>
+<tr class="row-even"><td><p>IEEE 802.3bt PoE++ / LTPoE++ (&lt;51W)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>5V/7A</p></td>
+<td><p>91.7%</p></td>
+<td><p>Flyback</p></td>
+<td><p>No-Opto
+Synchronous</p></td>
+<td><p>LT4276A</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/dc2046a-e.html" target="_blank">DC2046A-E</a></p></td>
+</tr>
+<tr class="row-even"><td><p>12V/3A</p></td>
+<td><p>88.7%</p></td>
+<td><p>Buck</p></td>
+<td><p>Non-Isolated
+µModule</p></td>
+<td><p>LTM8027</p></td>
+<td></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/dc2125a.html" target="_blank">DC2125A</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>12V/3A</p></td>
+<td><p>92.4%</p></td>
+<td><p>Flyback</p></td>
+<td><p>No-Opto
+Synchronous</p></td>
+<td><p>LT4295</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/dc2475a-a.html" target="_blank">DC2475A-A</a></p></td>
+</tr>
+<tr class="row-even"><td><p>5V/9.4A</p></td>
+<td><p>93.3%</p></td>
+<td><p>Forward</p></td>
+<td><p>Synchronous</p></td>
+<td><p>MAX5974C</p></td>
+<td></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ltc9105-az.html" target="_blank">EVAL-LTC9105-AZ</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>12V/3.75A</p></td>
+<td><p>93.1%</p></td>
+<td><p>Flyback</p></td>
+<td><p>No-Opto
+Synchronous
+Gate Drive Winding</p></td>
+<td><p>MAX5974A</p></td>
+<td></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/max5996cevkit.html" target="_blank">MAX5996CEVKIT</a></p></td>
+</tr>
+<tr class="row-even"><td><p>12V/3.9A</p></td>
+<td><p>92.6%</p></td>
+<td><p>Flyback</p></td>
+<td><p>No-Opto
+Synchronous</p></td>
+<td><p>LT4295</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/dc2539a-a.html" target="_blank">DC2539A-A</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>24V/2.1A</p></td>
+<td><p>92.3%</p></td>
+<td><p>Flyback</p></td>
+<td><p>No-Opto
+Synchronous</p></td>
+<td><p>LT4295</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/data-sheets/LT4295.pdf" target="_blank">Datasheet Application</a>
+Page 28</p></td>
+</tr>
+<tr class="row-even"><td><p>48V/0.85A</p></td>
+<td><p>88.0%</p></td>
+<td><p>Forward</p></td>
+<td><p>Non-Synchronous</p></td>
+<td><p>MAX5974C</p></td>
+<td></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/reference-designs/maxrefdes1273.html" target="_blank">MAXREFDES1273</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>3.3V/3.3A
+8.8V/4.5A</p></td>
+<td><p>90.0%</p></td>
+<td><p>Forward</p></td>
+<td><p>Multiple Outputs
+Synchronous</p></td>
+<td><p>MAX5974C</p></td>
+<td></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/technical-articles/active-clamped-forward-dual-output-pd-provides-high-performance-solution-poe-applications.html" target="_blank">Technical Article</a></p></td>
+</tr>
+<tr class="row-even"><td><p>IEEE 802.3bt PoE++ / LTPoE++ (&lt;71.3W)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>5V/12.7A</p></td>
+<td><p>92.3%</p></td>
+<td><p>Forward</p></td>
+<td><p>Synchronous</p></td>
+<td><p>LT4276A</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/dc2262a-a.html" target="_blank">DC2262A-A</a></p></td>
+</tr>
+<tr class="row-even"><td><p>12V/5.5A</p></td>
+<td><p>93.8%</p></td>
+<td><p>Forward</p></td>
+<td><p>Synchronous
+Gate Drive Winding</p></td>
+<td><p>MAX5974D</p></td>
+<td></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/max5995bevkit.html" target="_blank">MAX5995BEVKIT</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>12V/5.5A</p></td>
+<td><p>94.3%</p></td>
+<td><p>Forward</p></td>
+<td><p>Synchronous</p></td>
+<td><p>LT4295</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/dc2584a-a.html" target="_blank">DC2584A-A</a></p></td>
+</tr>
+<tr class="row-even"><td><p>24V/2.7A</p></td>
+<td><p>90.0%</p></td>
+<td><p>Flyback</p></td>
+<td><p>No-Opto
+Synchronous</p></td>
+<td><p>MAX5974A</p></td>
+<td></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/reference-designs/maxrefdes1266.html" target="_blank">MAXREFDES1266</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>24V/2.7A</p></td>
+<td><p>92.6%</p></td>
+<td><p>Flyback</p></td>
+<td><p>No-Opto
+Synchronous</p></td>
+<td><p>LT4295</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/dc2476a-a.html" target="_blank">DC2476A-A</a></p></td>
+</tr>
+<tr class="row-even"><td><p>24V/2.8A</p></td>
+<td><p>94.0%</p></td>
+<td><p>Forward</p></td>
+<td><p>Synchronous</p></td>
+<td><p>LT4295</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/data-sheets/LT4295.pdf" target="_blank">Datasheet Application</a>
+Page 29</p></td>
+</tr>
+<tr class="row-odd"><td><p>52V/1.2A</p></td>
+<td><p>92.1%</p></td>
+<td><p>Flyback</p></td>
+<td><p>No-Opto
+Dual-Phase</p></td>
+<td><p>MAX15159</p></td>
+<td></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/max15159evkit.html" target="_blank">MAX15159EVKIT</a></p></td>
+</tr>
+<tr class="row-even"><td><p>LTPoE++ / Custom High Power Solutions (&gt;71.3W)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>12V/7A</p></td>
+<td><p>94.3%</p></td>
+<td><p>Forward</p></td>
+<td><p>Synchronous</p></td>
+<td><p>LT4276A</p></td>
+<td><p>Yes</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/dc2262a-b.html" target="_blank">DC2262A-B</a></p></td>
+</tr>
+<tr class="row-even"><td><p>12V/8.4A</p></td>
+<td><p>95.2%</p></td>
+<td><p>Forward</p></td>
+<td><p>Synchronous
+Gate Drive Winding</p></td>
+<td><p>MAX5974D</p></td>
+<td></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/max5992aevkit.html" target="_blank">MAX5992AEVKIT</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">* DC-DC Efficiency is measured from the input of the DC-DC converter to its output; this measurement does not include bridge or PD losses</div>
+<div class="line">=====DC-DC Converter Features===== <strong>Isolation</strong></div>
+<div class="line">IEEE 802.3 requires isolation between the Ethernet cable and all accessible non-Ethernet conductors. As most systems have a conductive chassis or external non-Ethernet connections, this requirement is met with an isolated converter. If the system has no external non-Ethernet connections and uses a non-conductive enclosure, then a <strong>non-isolated</strong> converter may be used. Unless otherwise noted, all solutions are isolated.</div>
+<div class="line"><strong>No-Opto Feedback</strong></div>
+<div class="line">Early isolated converters used opto-couplers to relay output information across the isolation barrier. Instead of using an opto-coupler, an isolated converter may support <strong>no-opto</strong> feedback. Flyback converters may use a third winding, and forward converters may use a coupled inductor. Unless otherwise noted, all isolated solutions use opto-coupler feedback.</div>
+<div class="line"><strong>Integration</strong></div>
+<div class="line">ADI offers various levels of integration. Many solutions include an <strong>integrated PD</strong> controller for a single IC solution, as indicated by the <strong>Integrated PD</strong> column. The MAX5986A is a <strong>monolithic</strong> buck controller that includes power switches into the package. The LTM8027 <strong>µModule</strong> includes the switching controller, power switches, inductor and all support components into a single package.</div>
+<div class="line"><strong>Synchronous Rectification</strong></div>
+<div class="line">Flyback and forward converters both have secondary rectifiers. <strong>Non-synchronous</strong> converters use diodes, while <strong>synchronous</strong> converters replace the diodes with MOSFETs for improved efficiency. ADI’s synchronous designs include options with dedicated secondary gate driver (precise control) and self-driven gate drive (reduced BOM). For self-driven synchronous designs, a dedicated <strong>gate drive winding</strong> can further simplify the BOM.</div>
+<div class="line"><strong>Multiple Outputs</strong></div>
+<div class="line">Isolated converters can support <strong>multiple outputs</strong> from a single converter by using multiple transformer windings, simplifying the design and potentially increasing overall efficiency. Unless otherwise noted, all designs are single output.</div>
+<div class="line"><strong>Wide Input Range</strong></div>
+<div class="line">IEEE 802.3 defines a 37V to 57V input voltage range, but some applications must support auxiliary inputs as low as 9V. This <strong>wide input range</strong> requires the right controller and modifications to the power stage. Unless otherwise noted, all solutions target 37V to 57V input only.</div>
+<div class="line"><strong>Dual-Phase</strong></div>
+<div class="line">For higher powers and high output voltages, <strong>dual-phase</strong> operation allows for compact solutions with lower output ripple.</div>
+</div>
+</section>
+<section id="dc-dc-topology-recommendations">
+<h1>DC-DC Topology Recommendations<a class="headerlink" href="#dc-dc-topology-recommendations" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><strong>Buck – Low to Medium Power and Non-Isolated</strong></p>
+<ul>
+<li><p>Compact Solutions with monolithic or µModule converters</p></li>
+<li><p>Recommended Controllers: <strong>MAX5986, LTM8027</strong></p></li>
+</ul>
+</li>
+<li><p><strong>Flyback – Low to High Power</strong></p>
+<ul>
+<li><p>Simplified BOM options with No-Opto Feedback</p></li>
+<li><p>Recommended Controllers: <strong>MAX5974, LTC4267, LTC4269-1, LT4276, LT4295</strong></p></li>
+</ul>
+</li>
+<li><p><strong>Forward – Medium to High Power</strong></p>
+<ul>
+<li><p>Best for high output currents</p></li>
+<li><p>Recommended Controllers: <strong>MAX5974, LT4276, LT4295</strong></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="standalone-poe-dc-dc-controllers">
+<h1>Standalone PoE DC-DC Controllers<a class="headerlink" href="#standalone-poe-dc-dc-controllers" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line"><strong>DC-DC Controllers</strong> provide a regulated and optionally isolated supply for powering downstream circuitry. Standalone DC-DC controllers are paired with PD interface controllers for a Powered Device solution. ADI offers many solutions that cover a wide range of input voltages, output powers, and topologies. Featured below, the MAX5974 controller family feature-set is well-suited for PoE applications.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/ajaxperflookupdelay/pd_dc-dc_only_image.png"><img alt="image2" src="https://wiki.analog.com/_media/ajaxperflookupdelay/pd_dc-dc_only_image.png" style="width: 500px;" /></a></div>
+<div class="line"><strong>Recommended Standalone PoE DC-DC Controllers</strong></div>
+<div class="line">^ DC-DC</div>
+<div class="line">Controller ^ Recommended</div>
+<div class="line">Topology ^ Input</div>
+<div class="line">Range ^ Feedback ^</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>MAX5974A</p></td>
+<td><p>Flyback</p></td>
+<td><p>20V - 57V</p></td>
+<td><p>No-Opto</p></td>
+</tr>
+<tr class="row-even"><td><p>MAX5974B</p></td>
+<td><p>Flyback</p></td>
+<td><p>10V - 57V</p></td>
+<td><p>No-Opto</p></td>
+</tr>
+<tr class="row-odd"><td><p>MAX5974C</p></td>
+<td><p>Forward</p></td>
+<td><p>20V - 57V</p></td>
+<td><p>Opto</p></td>
+</tr>
+<tr class="row-even"><td><p>MAX5974D</p></td>
+<td><p>Forward</p></td>
+<td><p>10V - 57V</p></td>
+<td><p>Opto</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="poe-pd-controllers">
+<h1>PoE PD Controllers<a class="headerlink" href="#poe-pd-controllers" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line"><strong>PD Controllers</strong> receive power from the cable by presenting IEEE 802.3af/at/bt-compliant Detection and Classification signatures to a compliant PSE. Once powered, the PD inrushes and enables the downstream circuitry such as DC-DC controllers. ADI provides solutions for IEEE 802.3af/at/bt/LTPoE++ standards and power levels.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/ajaxperflookupdelay/pd_only_image.png"><img alt="image3" src="https://wiki.analog.com/_media/ajaxperflookupdelay/pd_only_image.png" style="width: 500px;" /></a></div>
+<div class="line"><strong>Recommended PD Controllers</strong></div>
+<div class="line">^ PD</div>
+<div class="line">Controller ^ Standard ^ Max PD</div>
+<div class="line">Power ^ PD Features ^ Integrated</div>
+<div class="line">Hotswap FET ^ Power Path</div>
+<div class="line">Resistance ^</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>MAX5969</p></td>
+<td><p>IEEE 802.3af
+IEEE 802.3at</p></td>
+<td><p>25.5W</p></td>
+<td><p>Compact Solution</p></td>
+<td><p>Yes</p></td>
+<td><p>500mΩ</p></td>
+</tr>
+<tr class="row-even"><td><p>MAX5995B</p></td>
+<td><p>IEEE 802.3af
+IEEE 802.3at
+IEEE 802.3bt</p></td>
+<td><p>71.3W</p></td>
+<td><p>Ultra-Low Power
+and Sleep Modes</p></td>
+<td><p>Yes</p></td>
+<td><p>100mΩ</p></td>
+</tr>
+<tr class="row-odd"><td><p>MAX5996C</p></td>
+<td><p>IEEE 802.3af
+IEEE 802.3at
+IEEE 802.3bt</p></td>
+<td><p>71.3W</p></td>
+<td><p>Telemetry
+Power Combination</p></td>
+<td><p>Yes</p></td>
+<td><p>100mΩ</p></td>
+</tr>
+<tr class="row-even"><td><p>LTC9105</p></td>
+<td><p>IEEE 802.3af
+IEEE 802.3at
+IEEE 802.3bt</p></td>
+<td><p>71.3W</p></td>
+<td><p>Telemetry
+I2C Interface
+Input Prioritization</p></td>
+<td></td>
+<td><p>80mΩ</p></td>
+</tr>
+<tr class="row-odd"><td><p>LT4294</p></td>
+<td><p>IEEE 802.3af
+IEEE 802.3at
+IEEE 802.3bt</p></td>
+<td><p>71.3W</p></td>
+<td><p>Compact Solution</p></td>
+<td></td>
+<td><p>30mΩ</p></td>
+</tr>
+<tr class="row-even"><td><p>LT4293</p></td>
+<td><p>IEEE 802.3af
+IEEE 802.3at
+IEEE 802.3bt
+LTPoE++</p></td>
+<td><p>≥90W</p></td>
+<td><p>Supports Custom
+High Power Solutions</p></td>
+<td></td>
+<td><p>30mΩ</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="poe-pd-dc-dc-controllers">
+<h1>PoE PD + DC-DC Controllers<a class="headerlink" href="#poe-pd-dc-dc-controllers" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line"><strong>PD + DC-DC Controllers</strong> combine the PD interface controller and DC-DC controller into an integrated solution. ADI provides solutions for IEEE 802.3af/at/bt/LTPoE++ standards, as well as a wide range of input voltages, output powers, and topologies.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/ajaxperflookupdelay/pd_dc-dc_image.png"><img alt="image4" src="https://wiki.analog.com/_media/ajaxperflookupdelay/pd_dc-dc_image.png" style="width: 500px;" /></a></div>
+<div class="line"><strong>Recommended PD + DC-DC Controllers</strong></div>
+<div class="line">^ PD + DC-DC</div>
+<div class="line">Controller ^ Standard ^ Max PD</div>
+<div class="line">Power ^ Topology ^ DC-DC</div>
+<div class="line">Input Range ^ Integrated</div>
+<div class="line">PD ^ Integrated</div>
+<div class="line">Hotswap FET ^ Power Path</div>
+<div class="line">Resistance ^</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>MAX5986</p></td>
+<td><p>IEEE 802.3af</p></td>
+<td><p>6.49W</p></td>
+<td><p>Buck</p></td>
+<td><p>10V - 57V</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>1000mΩ</p></td>
+</tr>
+<tr class="row-even"><td><p>LTC4267</p></td>
+<td><p>IEEE 802.3af</p></td>
+<td><p>13W</p></td>
+<td><p>Flyback</p></td>
+<td><p>37V - 57V</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>1000mΩ</p></td>
+</tr>
+<tr class="row-odd"><td><p>LTC4269-1</p></td>
+<td><p>IEEE 802.3af
+IEEE 802.3at</p></td>
+<td><p>25.5W</p></td>
+<td><p>Flyback</p></td>
+<td><p>18V - 57V</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>700mΩ</p></td>
+</tr>
+<tr class="row-even"><td><p>LT4295</p></td>
+<td><p>IEEE 802.3af
+IEEE 802.3at
+IEEE 802.3bt</p></td>
+<td><p>71.3W</p></td>
+<td><p>Flyback
+Forward</p></td>
+<td><p>9V - 57V</p></td>
+<td><p>Yes</p></td>
+<td></td>
+<td><p>30mΩ</p></td>
+</tr>
+<tr class="row-odd"><td><p>LT4276A</p></td>
+<td><p>IEEE 802.3af
+IEEE 802.3at
+LTPoE++</p></td>
+<td><p>≥90W</p></td>
+<td><p>Flyback
+Forward</p></td>
+<td><p>9V - 57V</p></td>
+<td><p>Yes</p></td>
+<td></td>
+<td><p>30mΩ</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="poe-ideal-diode-bridge-controllers">
+<h1>PoE Ideal Diode Bridge Controllers<a class="headerlink" href="#poe-ideal-diode-bridge-controllers" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line"><strong>Input Diode Bridges</strong> polarity correct and OR the Ethernet cable voltages as required at the PD input. This is typically done with silicon or Schottky diode bridges which exhibit low efficiency. Ideal diode bridges replace diodes with MOSFETs for near zero losses. However, discrete implementations are leaky and have high component counts. LT4321-based ideal diode bridges eliminate more than 50 components and reduce solution size by 80% as compared to discrete ideal bridges. Auxiliary supply ORing diodes or AC to DC bridges may be replaced by the LT4320 for similar benefits.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/ajaxperflookupdelay/pd_bridge_image.png"><img alt="image5" src="https://wiki.analog.com/_media/ajaxperflookupdelay/pd_bridge_image.png" style="width: 500px;" /></a></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/ajaxperflookupdelay/pd_bridge_power.png"><img alt="image6" src="https://wiki.analog.com/_media/ajaxperflookupdelay/pd_bridge_power.png" style="width: 500px;" /></a></div>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/ajaxperflookupdelay/pd_bridge_comp_image.png"><img alt="https://wiki.analog.com/_media/ajaxperflookupdelay/pd_bridge_comp_image.png" src="https://wiki.analog.com/_media/ajaxperflookupdelay/pd_bridge_comp_image.png" style="width: 500px;" />
+</a>
+</section>
+<section id="notes">
+<h1>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h1>
+<p><strong>Legal Terms and Conditions</strong></p>
+<p>By using the evaluation board discussed herein (together with any tools, components documentation or support materials, the “Evaluation Board”), you are agreeing to be bound by the terms and conditions set forth below (“Agreement”) unless you have purchased the Evaluation Board, in which case the Analog Devices Standard Terms and Conditions of Sale shall govern. Do not use the Evaluation Board until you have read and agreed to the Agreement. Your use of the Evaluation Board shall signify your acceptance of the Agreement. This Agreement is made by and between you (“Customer”) and Analog Devices, Inc. (“ADI”), with its principal place of business at One Technology Way, Norwood, MA 02062, USA. Subject to the terms and conditions of the Agreement, ADI hereby grants to Customer a free, limited, personal, temporary, non-exclusive, non-sublicensable, non-transferable license to use the Evaluation Board FOR EVALUATION PURPOSES ONLY. Customer understands and agrees that the Evaluation Board is provided for the sole and exclusive purpose referenced above, and agrees not to use the Evaluation Board for any other purpose. Furthermore, the license granted is expressly made subject to the following additional limitations: Customer shall not (i) rent, lease, display, sell, transfer, assign, sublicense, or distribute the Evaluation Board; and (ii) permit any Third Party to access the Evaluation Board. As used herein, the term “Third Party” includes any entity other than ADI, Customer, their employees, affiliates and in-house consultants. The Evaluation Board is NOT sold to Customer; all rights not expressly granted herein, including ownership of the Evaluation Board, are reserved by ADI. CONFIDENTIALITY. This Agreement and the Evaluation Board shall all be considered the confidential and proprietary information of ADI. Customer may not disclose or transfer any portion of the Evaluation Board to any other party for any reason. Upon discontinuation of use of the Evaluation Board or termination of this Agreement, Customer agrees to promptly return the Evaluation Board to ADI. ADDITIONAL RESTRICTIONS. Customer may not disassemble, decompile or reverse engineer chips on the Evaluation Board. Customer shall inform ADI of any occurred damages or any modifications or alterations it makes to the Evaluation Board, including but not limited to soldering or any other activity that affects the material content of the Evaluation Board. Modifications to the Evaluation Board must comply with applicable law, including but not limited to the RoHS Directive. TERMINATION. ADI may terminate this Agreement at any time upon giving written notice to Customer. Customer agrees to return to ADI the Evaluation Board at that time. LIMITATION OF LIABILITY. THE EVALUATION BOARD PROVIDED HEREUNDER IS PROVIDED “AS IS” AND ADI MAKES NO WARRANTIES OR REPRESENTATIONS OF ANY KIND WITH RESPECT TO IT. ADI SPECIFICALLY DISCLAIMS ANY REPRESENTATIONS, ENDORSEMENTS, GUARANTEES, OR WARRANTIES, EXPRESS OR IMPLIED, RELATED TO THE EVALUATION BOARD INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTY OF MERCHANTABILITY, TITLE, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT OF INTELLECTUAL PROPERTY RIGHTS. IN NO EVENT WILL ADI AND ITS LICENSORS BE LIABLE FOR ANY INCIDENTAL, SPECIAL, INDIRECT, OR CONSEQUENTIAL DAMAGES RESULTING FROM CUSTOMER’S POSSESSION OR USE OF THE EVALUATION BOARD, INCLUDING BUT NOT LIMITED TO LOST PROFITS, DELAY COSTS, LABOR COSTS OR LOSS OF GOODWILL. ADI’S TOTAL LIABILITY FROM ANY AND ALL CAUSES SHALL BE LIMITED TO THE AMOUNT OF ONE HUNDRED US DOLLARS ($100.00). EXPORT. Customer agrees that it will not directly or indirectly export the Evaluation Board to another country, and that it will comply with all applicable United States federal laws and regulations relating to exports. GOVERNING LAW. This Agreement shall be governed by and construed in accordance with the substantive laws of the Commonwealth of Massachusetts (excluding conflict of law rules). Any legal action regarding this Agreement will be heard in the state or federal courts having jurisdiction in Suffolk County, Massachusetts, and Customer hereby submits to the personal jurisdiction and venue of such courts. The United Nations Convention on Contracts for the International Sale of Goods shall not apply to this Agreement and is expressly disclaimed.</p>
+<p>©2025 Analog Devices, Inc. All rights reserved. Trademarks and  registered trademarks are the property of their respective owners.</p>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

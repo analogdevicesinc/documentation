@@ -1,0 +1,281 @@
+MAX31865 - No-OS Driver
+=======================
+
+Supported Devices
+-----------------
+
+-  :adi:`MAX31865`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`MAX31865PMB1`
+
+| 
+| ===== Overview ===== The :adi:`MAX31865` is an easy-to-use resistance-to-digital converter optimized for platinum resistance temperature detectors (RTDs). An external resistor sets the sensitivity for the RTD being used and a precision delta-sigma ADC converts the ratio of the RTD resistance to the reference resistance into digital form.
+
+The :adi:`MAX31865`\ ’s inputs are protected against overvoltage faults as large as Q45V. Programmable detection of RTD and cable open and short conditions is included.
+
+Applications
+------------
+
+-  Industrial Equipment
+-  Medical Equipment
+-  Instrumentation
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/max31865/max31865.png
+   :align: center
+   :width: 400px
+
+ADI No-OS
+~~~~~~~~~
+
+The goal of ADI Microcontroller No-OS is to provide reference projects for lower end processors, which can't run Linux or aren't running a specific operating system, and to help those customers using microcontrollers with ADI parts. ADI No-OS offers **generic drivers**, which can be used as a base for any microcontroller platform and also **example projects**, which are using these drivers on various microcontroller platforms.
+
+| For more information about ADI No-OS and supported microcontroller platforms, visit the :doc:`No-OS User Guide </wiki-migration/resources/no-os>`.
+| ===== MAX31865 ADI No-OS driver =====
+
+Driver Source Code
+------------------
+
+The source code for MAX31865 driver can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of MAX31865 Driver|
+
+   -
+
+   |Implementation of MAX31865 Driver|
+
+This driver also uses the ADI utility library, so make sure you also add the necessary files to your project. The source code for the util library can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of ADI util library|
+
+   -
+
+   |Implementation file of ADI util library|
+
+To use the MAX32865 No-OS Driver, you need to provide the specific implementation for the communication APIs and the specific types they use. If the SPI communication is chosen, there are three functions which are called by the MAX31865 driver and have to be implemented:
+
+.. container:: center box
+
+   
+   +--------------------------------+---------------------------------------------+
+   | **no_os_spi_init()**           | initializes the communication peripheral.   |
+   +--------------------------------+---------------------------------------------+
+   | **no_os_spi_write_and_read()** | writes and reads data to/from the device.   |
+   +--------------------------------+---------------------------------------------+
+   | **no_os_spi_remove()**         | deinitializes the communication peripheral. |
+   +--------------------------------+---------------------------------------------+
+   
+
+
+And there are two data types that have to be defined:
+
+.. container:: center box
+
+   
+   +--------------------------+---------------------------------------------------------+
+   | **no_os_spi_desc**       | structure holding the SPI descriptor                    |
+   +--------------------------+---------------------------------------------------------+
+   | **no_os_spi_init_param** | structure holding the parameters for SPI initialization |
+   +--------------------------+---------------------------------------------------------+
+   
+
+
+An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using, can be found below:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Generic header file for SPI Communication APIs|
+
+Code Documentation
+------------------
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and can be accessed in these links:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `MAX31865 Header file <http://analogdevicesinc.github.io/no-OS/max31865_8h.html>`_
+   -  `MAX31865 Source file <http://analogdevicesinc.github.io/no-OS/max31865_8c.html>`_
+   
+
+
+Device Configuration
+--------------------
+
+Driver Initialization
+~~~~~~~~~~~~~~~~~~~~~
+
+| To use the device, you need to provide the support for the communication protocol (SPI) as mentioned above.
+| The first API function to be called is **max31865_init**. Make sure that it returns 0. This indicates a successful driver initialization.
+| === Bias Configuration === When no conversions are being performed, VBIAS may be disabled to reduce power dissipation. When automatic (continuous) conversion mode is selected, VBIAS remains on continuously.
+
+.. container:: center box
+
+   
+   +--------------------------+-------------------------------------------------------+
+   | **max31865_enable_bias** | Enable or disables the bias voltage on the RTD sensor |
+   +--------------------------+-------------------------------------------------------+
+   
+   |
+
+
+| === Conversion Mode Configuration === Conversion mode is configurable between automatic conversion mode where continuous conversion is used and "Normally Off" mode where 1-shot conversion is used, this also has a selectable 50/60Hz conversion rates.
+
+.. container:: center box
+
+   
+   +---------------------------+----------------------------------------------------+
+   | **max31865_auto_convert** | Option for continuous conversions between 50/60 Hz |
+   +---------------------------+----------------------------------------------------+
+   | **max31865_enable_50Hz**  | Option for 50Hz or 60Hz noise filters              |
+   +---------------------------+----------------------------------------------------+
+   
+   |
+
+
+| === Fault Threshold Configuration === The High Fault Threshold and Low Fault Threshold registers select the trip thresholds for RTD fault detection. The results of RTD conversions are compared with the values in these registers to generate the “Fault” bits in the Fault Status register. The RTD Data Registers, High Fault Threshold Registers, and Low Fault Threshold Registers all have the same format.
+
+.. container:: center box
+
+   
+   +----------------------------------+---------------------------------------------------------------------+
+   | **max31865_set_threshold**       | Update the contents of the HIGH and LOW FAULT registers of max31865 |
+   +----------------------------------+---------------------------------------------------------------------+
+   | **max31865_get_lower_threshold** | Read the raw 16-bit lower threshold value                           |
+   +----------------------------------+---------------------------------------------------------------------+
+   | **max31865_get_upper_threshold** | Read the raw 16-bit upper threshold value                           |
+   +----------------------------------+---------------------------------------------------------------------+
+   
+
+
+.. note::
+
+   The RTD High bit in the Fault Status Register is set if the RTD resistance register value is greater than or equal to the value in the High Fault Threshold register. The POR value of the High Fault Threshold register is FFFFh.
+
+
+|
+
+.. note::
+
+   The RTD Low bit in the Fault Status Register is set if the RTD resistance value is less than or equal to the value in the Low Fault Threshold register. The POR value of the Low Fault Threshold register is 0000h.
+
+
+   | === Wire Configuration === MAX31865 can be configured to support 2-wire, 3-wire and 4-wire types of RTD sensors.
+
+.. container:: center box
+
+   
+   ====================== =======================================
+   **max31865_set_wires** N-wire option for RTD measurement setup
+   ====================== =======================================
+   
+
+
+Driver Initialization Example
+-----------------------------
+
+Example Initialization Using Maxim SDK as Platform
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+     
+   int ret;
+
+   uint16_t low_thres, high_thres, rtd_raw;
+
+   struct max_spi_init_param max31865_extra = {
+       .num_slaves = 1,
+       .polarity = SPI_SS_POL_LOW,
+       .vssel = MXC_GPIO_VSSEL_VDDIOH,
+   };
+
+
+   struct max31865_init_param max31865_ip = {
+       .spi_init.device_id = 1,
+       .spi_init.max_speed_hz = 2000000,
+       .spi_init.chip_select = 0,
+       .spi_init.mode = NO_OS_SPI_MODE_3,
+       .spi_init.bit_order = NO_OS_SPI_BIT_ORDER_MSB_FIRST,
+       .spi_init.platform_ops = &max_spi_ops,
+       .spi_init.extra = &max31865_extra,
+   };
+
+   struct max31865_dev *max31865_device;
+
+   ret = max31865_init(&max31865_device, &max31865_ip);
+   if (ret)
+       return ret;
+
+   /* Set upper and lower threshold values */
+   ret = max31865_set_threshold(max31865_device, 0x2121, 0x4114);
+   if (ret)
+       return ret;
+
+   /* Obtain lower threshold value */
+   ret = max31865_get_lower_threshold(max31865_device, &low_thres);
+   if (ret)
+       return ret;
+
+   /* Obtain upper threshold value*/
+   ret = max31865_get_upper_threshold(max31865_device, &high_thres);
+   if(ret)
+       return ret;
+
+   /* Enable 50Hz filter */
+   ret = max31865_enable_50Hz(max31865_device, true);
+   if (ret)
+       return ret;
+
+   /* Configure for even wire setting */
+   ret = max31865_set_wires(max31865_device, false);
+   if (ret)
+       return ret;
+
+   while(1){
+
+       /* Read rtd register raw value (16 bits) */
+       ret = max31865_read_rtd(max31865_device, &rtd_raw);
+       if (ret)
+           return ret;
+
+       MXC_Delay(5000); 
+
+   }// end while
+
+   max31865_remove(max31865_device);
+
+   return 0;
+
+|
+
+.. |Header file of MAX31865 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/temperature/max31865pmb1/max31865`.h
+.. |Implementation of MAX31865 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/temperature/max31865pmb1/max31865`.c
+.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
+.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
+.. |Generic header file for SPI Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_spi`.h

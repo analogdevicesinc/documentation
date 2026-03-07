@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This user guide describes the AD6674 evaluation board AD6674-1000EBZ which provides all of the support circuitry required to operate the ADC in its various modes and configurations. The application software used to interface with the devices is also described. The user guide wiki applies to the follow evaluation boards:" name="description" />
+
+    <title>EVALUATING THE AD6674 IF DIVERSITY RECEIVER &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../_static/app.umd.js?v=fcf3088a"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">EVALUATING THE AD6674 IF DIVERSITY RECEIVER</a><ul>
+<li><a class="reference internal" href="#preface">Preface</a></li>
+<li><a class="reference internal" href="#ad6674-evaluation-board">AD6674 Evaluation Board</a></li>
+<li><a class="reference internal" href="#typical-measurement-setup">Typical Measurement Setup</a></li>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#helpful-documents">Helpful Documents</a></li>
+<li><a class="reference internal" href="#software-needed">Software Needed</a></li>
+<li><a class="reference internal" href="#tools">Tools</a></li>
+<li><a class="reference internal" href="#design-and-integration-files">Design and Integration Files</a></li>
+<li><a class="reference internal" href="#equipment-needed">Equipment Needed</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started</a><ul>
+<li><a class="reference internal" href="#configuring-the-board">Configuring the Board</a></li>
+<li><a class="reference internal" href="#software-setup">Software Setup</a></li>
+<li><a class="reference internal" href="#sample-configuration-1-nsr-mode">Sample Configuration 1: NSR Mode</a></li>
+<li><a class="reference internal" href="#sample-configuration-2-vdr-mode">Sample Configuration 2: VDR Mode</a></li>
+<li><a class="reference internal" href="#sample-configuration-2-1-vdr-mode-use-control-bits-as-vdr-punish-bits-and-the-vdr-high-low-resolution-bit">Sample Configuration 2.1: VDR Mode - Use Control Bits as VDR Punish Bits and the VDR High/Low Resolution Bit</a></li>
+<li><a class="reference internal" href="#sample-configuration-3-2-adcs-2ddcs-real-mode-decimate-by-2">Sample Configuration 3: 2 ADCs, 2DDCs, Real Mode Decimate by 2</a></li>
+<li><a class="reference internal" href="#sample-configuration-4-2-adcs-1ddc-complex-zif-mode-decimate-by-2">Sample Configuration 4: 2 ADCs, 1DDC, Complex ZIF Mode Decimate by 2</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#troubleshooting-tips">Troubleshooting Tips</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="evaluating-the-ad6674-if-diversity-receiver">
+<h1>EVALUATING THE AD6674 IF DIVERSITY RECEIVER<a class="headerlink" href="#evaluating-the-ad6674-if-diversity-receiver" title="Link to this heading"></a></h1>
+<section id="preface">
+<h2>Preface<a class="headerlink" href="#preface" title="Link to this heading"></a></h2>
+<p>This user guide describes the <a class="icon adi reference external" href="https://www.analog.com/AD6674" target="_blank">AD6674</a> evaluation board <a class="icon adi reference external" href="https://www.analog.com/AD6674" target="_blank">AD6674-1000EBZ</a> which provides all of the support circuitry required to operate the ADC in its various modes and configurations. The application software used to interface with the devices is also described. The user guide wiki applies to the follow evaluation boards:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Evaluation Board Part Number</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Board Revision</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>&lt;fc #9400d3&gt;AD6674-1000EBZ&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #9400d3&gt;Evaluation board for AD6674-1000; Full Bandwidth&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #9400d3&gt;9680CE04B&lt;/fc&gt;</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;fc #9400d3&gt;AD6674-750EBZ&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #9400d3&gt;Evaluation board for AD6674-750; Full Bandwidth&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #9400d3&gt;9680CE04B&lt;/fc&gt;</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;fc #9400d3&gt;AD6674-500EBZ&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #9400d3&gt;Evaluation board for AD6674-500; Full Bandwidth&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #9400d3&gt;9680CE04B&lt;/fc&gt;</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;fc #4682b4&gt;AD6674-LF1000EBZ&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #4682b4&gt;Evaluation board for AD6674-1000; up to 1GHz Input Bandwidth&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #4682b4&gt;9680CE02B&lt;/fc&gt;</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;fc #4682b4&gt;AD6674-LF750EBZ&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #4682b4&gt;Evaluation board for AD6674-750; up to 1GHz Input Bandwidth&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #4682b4&gt;9680CE02B&lt;/fc&gt;</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;fc #4682b4&gt;AD6674-LF500EBZ&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #4682b4&gt;Evaluation board for AD6674-500; up to 1GHz Input Bandwidth&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #4682b4&gt;9680CE02B&lt;/fc&gt;</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">The <a class="icon adi reference external" href="https://www.analog.com/AD6674" target="_blank">AD6674</a> data sheet provides additional information and should be consulted when using the evaluation board. All documents and software tools are available at <a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-development-platforms/high-speed-adc-data-capture-boards.html" target="_blank">High-Speed Converter Data Source/Capture Boards</a>. For additional information or questions, send an email to <a class="reference external" href="mailto:highspeed&#46;converters&#37;&#52;&#48;analog&#46;com">highspeed<span>&#46;</span>converters<span>&#64;</span>analog<span>&#46;</span>com</a>.</div>
+</div>
+</section>
+<section id="ad6674-evaluation-board">
+<h2>AD6674 Evaluation Board<a class="headerlink" href="#ad6674-evaluation-board" title="Link to this heading"></a></h2>
+<p><img alt="image1" src="https://wiki.analog.com/_media/resources/eval/ad9680evb2.jpg" /></p>
+<div class="centeralign docutils container">
+<p><em>Figure 1a.</em> <a class="icon adi reference external" href="https://www.analog.com/AD6674" target="_blank">AD6674</a> <em>Evaluation Board for full 2GHz Input Bandwidth</em></p>
+</div>
+<p><img alt="image2" src="https://wiki.analog.com/_media/resources/eval/ad9680_lfboard.jpg" /></p>
+<div class="centeralign docutils container">
+<p><em>Figure 1b.</em> <a class="icon adi reference external" href="https://www.analog.com/AD6674" target="_blank">AD6674</a> <em>Low Frequency Evaluation Board up to 1GHz Input Bandwidth</em></p>
+</div>
+<p>Figure 2 below compares the bandwidth available on the <a class="icon adi reference external" href="https://www.analog.com/AD6674" target="_blank">AD6674</a> normal evaluation boards and the <strong>“LF”</strong> boards<img alt="image3" src="https://wiki.analog.com/_media/resources/eval/gain_flatness_compare_ce04b_ce02b_5178_image001.png" /></p>
+<div class="centeralign docutils container">
+<p><em>Figure 2. Comparison of Bandwidth on the Normal and the “LF” boards</em></p>
+</div>
+</section>
+<section id="typical-measurement-setup">
+<h2>Typical Measurement Setup<a class="headerlink" href="#typical-measurement-setup" title="Link to this heading"></a></h2>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD6674" target="_blank">AD6674-1000EBZ</a> can be evaluated using the <a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v1" target="_blank">ADS7-V1EBZ</a> or <a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v2" target="_blank">ADS7-V2EBZ</a> FPGA data capture boards. Figures 3 and 4 below show the <a class="icon adi reference external" href="https://www.analog.com/AD6674" target="_blank">AD6674-1000EBZ</a> connected to the <a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v1" target="_blank">ADS7-V1EBZ</a> and <a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v2" target="_blank">ADS7-V2EBZ</a> respectively. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad9680_setup.jpg"><img alt="image4" src="https://wiki.analog.com/_media/resources/eval/ad9680_setup.jpg" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 3a. Evaluation Board Connection—</em><a class="icon adi reference external" href="https://www.analog.com/AD6674" target="_blank">AD6674-1000EBZ</a> <em>(on Left) and</em> <a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v1" target="_blank">ADS7-V1EBZ</a> <em>(on Right)</em></p>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad9680_setup-new_copy.jpg"><img alt="image5" src="https://wiki.analog.com/_media/resources/eval/ad9680_setup-new_copy.jpg" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 3b. Evaluation Board Connection—</em><a class="icon adi reference external" href="https://www.analog.com/AD6674" target="_blank">AD6674-LF1000EBZ</a> <em>(on Left) and</em> <a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v2" target="_blank">ADS7-V2EBZ</a> <em>(on Right)</em></p>
+</div>
+</section>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Full featured evaluation board for the <a class="icon adi reference external" href="https://www.analog.com/AD6674" target="_blank">AD6674</a></p></li>
+<li><p>SPI interface for setup and control</p></li>
+<li><p>Wide band Balun driven input</p></li>
+<li><p>No external supply needed. Uses 12V-1A and 3.3V-3A supplies from FMC</p></li>
+<li><p>VisualAnalog® and SPI controller software interfaces</p></li>
+</ul>
+</section>
+<section id="helpful-documents">
+<h2>Helpful Documents<a class="headerlink" href="#helpful-documents" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD6674" target="_blank">AD6674</a> Data Sheet</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v2" target="_blank">ADS7-V2EBZ</a>, <em>ADS7-V2EBZ Evaluation Kit</em></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v1" target="_blank">ADS7-V1EBZ</a>, <em>ADS7-V1EBZ Evaluation Kit</em></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/an-905" target="_blank">AN-905 Application Note</a>, <em>VisualAnalog Converter Evaluation Tool Version 1.0 User Manual</em></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/an-878" target="_blank">AN-878 Application Note</a>, <em>High Speed ADC SPI Control Software</em></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/an-877" target="_blank">AN-877 Application Note</a>, <em>Interface to High-Speed ADCs via SPI</em></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/an-835" target="_blank">AN-835 Application Note</a>, <em>Understanding ADC Testing and Evaluation</em></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/application-notes/AN-1371.pdf" target="_blank">AN-1371 Application Note</a>, <em>Variable Dynamic Range</em></p></li>
+</ul>
+</section>
+<section id="software-needed">
+<h2>Software Needed<a class="headerlink" href="#software-needed" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/resources/tools-software/ace" target="_blank">ACE</a> (Analysis | Control | Evaluation) or <a class="icon adi reference external" href="https://www.analog.com/en/design-center/interactive-design-tools/visualanalog.html" target="_blank">VisualAnalog</a> &amp; <a class="icon adi reference external" href="https://www.analog.com/en/design-center/interactive-design-tools/spicontroller.html" target="_blank">SPIController</a></p></li>
+</ul>
+</section>
+<section id="tools">
+<h2>Tools<a class="headerlink" href="#tools" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://beta-tools.analog.com/virtualeval" target="_blank">Virtual Eval Tool - BETA</a></p>
+<ul>
+<li><p><a class="icon link reference external" href="https://beta-tools.analog.com/virtualeval/#tool_pid=AD6674" target="_blank">AD6674 Virtual Evaluation Tool</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="design-and-integration-files">
+<h2>Design and Integration Files<a class="headerlink" href="#design-and-integration-files" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/ad9680/9680ce04b.zip" target="_blank">AD9680CE04B schematic, BOM, Gerber files</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/ad9680/9680ce02b.zip" target="_blank">AD9680CE02B schematic, BOM, Gerber files</a></p></li>
+</ul>
+</section>
+<section id="equipment-needed">
+<h2>Equipment Needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Analog signal source and antialiasing filter</p></li>
+<li><p>Sample clock source</p></li>
+<li><p>12V, 6.5A switching power supply (such as the SL POWER CENB1080A1251F01 supplied with <a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v2" target="_blank">ADS7-V2EBZ</a>/<a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v1" target="_blank">ADS7-V1EBZ</a>)</p></li>
+<li><p>PC running Windows®</p></li>
+<li><p>USB 2.0 port</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD6674" target="_blank">AD6674-1000EBZ</a> board</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v2" target="_blank">ADS7-V2EBZ</a> FPGA-based data capture kit, or <a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v1" target="_blank">ADS7-V1EBZ</a> FPGA-based data capture kit</p></li>
+</ul>
+</section>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">This section provides quick start procedures for using the evaluation board for AD6674.</div>
+</div>
+<section id="configuring-the-board">
+<h3>Configuring the Board<a class="headerlink" href="#configuring-the-board" title="Link to this heading"></a></h3>
+<p>Before using the software for testing, configure the evaluation board as follows:</p>
+<ul class="simple">
+<li><p>Connect the evaluation board to the <a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v2" target="_blank">ADS7-V2EBZ</a>/<a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v1" target="_blank">ADS7-V1EBZ</a> data capture board, as shown in Figures 1a and 1b.</p></li>
+<li><p>Connect one 12V, 6.5A switching power supply (such as the CENB1080A1251F01 supplied) to P4 on the <a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v2" target="_blank">ADS7-V2EBZ</a>/<a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v1" target="_blank">ADS7-V1EBZ</a> board. Connect the Standard-B USB port of the <a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v2" target="_blank">ADS7-V2EBZ</a>/<a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v1" target="_blank">ADS7-V1EBZ</a> board to the PC with the supplied USB cable.</p></li>
+<li><p>Turn on the <a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v2" target="_blank">ADS7-V2EBZ</a>/<a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v1" target="_blank">ADS7-V1EBZ</a>.</p></li>
+<li><p>The <a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v2" target="_blank">ADS7-V2EBZ</a>/<a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v1" target="_blank">ADS7-V1EBZ</a> will appear in the Device Manager.<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/fig2_devmgr.png"><img alt="image6" src="https://wiki.analog.com/_media/resources/eval/fig2_devmgr.png" style="width: 300px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 4. Device Manager showing</em> <a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v2" target="_blank">ADS7-V2EBZ</a><em>/</em><a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v1" target="_blank">ADS7-V1EBZ</a></p>
+</div>
+<ul class="simple">
+<li><p>If the Device Manager does not show the <a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v2" target="_blank">ADS7-V2EBZ</a>/<a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v1" target="_blank">ADS7-V1EBZ</a> listed, unplug all USB devices from the PC, uninstall and re-install SPIController and VisualAnalog and restart the hardware setup from step 1.</p></li>
+<li><p>On the ADC evaluation board, provide a clean, low jitter 750MHz clock source to connector J801 and set the amplitude to 14dBm. This is the ADC Sample Clock.</p></li>
+<li><p>On the ADC evaluation board, provide a clean, low jitter clock source to connector J804 and set the amplitude to 10dBm. This is the Reference Clock for the gigabit transceivers in the FPGA. The REFCLK frequency can be calculated using the following empirical formulae:</p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(\displaystyle LaneLineRate=M \times Nprime \times (\frac{10}{8}) \times f_{out}/L\)</span> bps/lane, where</p>
+</div>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(f_{out} = f_{ADC SAMPLE CLOCK}/DecimationRatio, Nprime=8 or 16\)</span> <em>(Default Nprime = 16)</em></p>
+</div>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(REFCLK = LaneLineRate/20\)</span></p>
+</div>
+<ul class="simple">
+<li><p>On the ADC evaluation board, use a clean signal generator with low phase noise to provide an input signal for channel A to P200. Use a shielded, RG-58, 50 Ω coaxial cable to connect the signal generator output to the ADC Evaluation Board. For best results, use a narrow-band, band-pass filter with 50 Ω terminations and an appropriate center frequency. (ADI uses TTE, Allen Avionics, and K &amp; L band-pass filters.)</p></li>
+<li><p>On the ADC evaluation board, use a clean signal generator with low phase noise to provide an input signal for channel B to P202. Use a shielded, RG-58, 50 Ω coaxial cable to connect the signal generator output to the ADC Evaluation Board. For best results, use a narrow-band, band-pass filter with 50 Ω terminations and an appropriate center frequency. (ADI uses TTE, Allen Avionics, and K &amp; L band-pass filters.)</p></li>
+</ul>
+</section>
+<section id="software-setup">
+<h3>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h3>
+<div class="indent docutils container">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ACE Plugin currently supporting only <strong>Nprime = 16</strong> and capture board <strong>ADS7-V2EBZ</strong>.</p>
+</div>
+</div>
+<details><summary>ACE Setup</summary><ul>
+<li><p>Download and install ACE if it is not already installed.
+-  The AD6674 ACE plug-in can be found under the <a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad9680.html#eb-relatedsoftware" target="_blank">AD6674 Evaluation Board Software Section</a>, or through ACE’s Plug-In Manager (Tools -&gt; Manage Plug-Ins).&lt;WRAP&gt;</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Tip: Some browsers (Such as Internet Explorer) may save the file as a .zip file instead of an .acezip file. If this happens, simply download and rename the file with an .acezip file extension.</p>
+</div>
+</li>
+<li><p>Once the .acezip file has been downloaded from the Analog Devices website, right click on it and install the plug-in, or double click to install.</p></li>
+<li><p>Click Start -&gt; All Programs -&gt; Analog Devices -&gt; ACE -&gt; ACE</p></li>
+<li><p>The AD6674 plug-in should appear as in Figure 5 if installed correctly.</p></li>
+</ul>
+<div class="centeralign docutils container">
+<p>}<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_ace_start.png"><img alt="image7" src="https://wiki.analog.com/_media/resources/eval/ad6674_ace_start.png" style="width: 400px;" /></a><em>Figure 5. ACE’s AD6674 Plug-in</em></p>
+</div>
+<ul class="simple">
+<li><p>If the AD6674 plug-in does not appear, or no board is detected, make sure the ADS7-V2 is powered on and the evaluation board is properly connected. Make sure that ACE has been updated to the most recent version and the necessary plug-ins have been installed.&lt;WRAP&gt;</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note: Differences may occur between ACE plug-in versions, including the version number seen in Figure 7 above or components in any of the other images below - however, these will not affect the performance of the part, nor the fundamental features described in this user guide.</p>
+</div>
+<p>&lt;/WRAP&gt;</p>
+<ul class="simple">
+<li><p>Double click on the plug-in to open it. This will open the AD6674 Board View.</p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><img alt="image8" src="https://wiki.analog.com/_media/resources/eval/ad6674_ace_board_view.png" /><em>Figure 6. AD6674 Board View</em></p>
+</div>
+<p>&lt;WRAP&gt;</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note: ACE will automatically program the FPGA (FPGA_DONE LED should be lit up) and load the default full bandwidth configuration.</p>
+</div>
+<p>&lt;/WRAP&gt;</p>
+<ul class="simple">
+<li><p>Double click on the blue AD6674 chip (in the middle of the board) to open up the Chip View.</p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_ace_chip_view.png"><img alt="image9" src="https://wiki.analog.com/_media/resources/eval/ad6674_ace_chip_view.png" style="width: 600px;" /></a><em>Figure 7. AD6674 Chip View</em></p>
+</div>
+</details><details><summary>Visual Analog & SPI Controller Setup</summary><p><strong>Visual Analog Setup</strong></p>
+<ul class="simple">
+<li><p>Click Start <span class="math notranslate nohighlight">\(right\)</span> All Programs <span class="math notranslate nohighlight">\(right\)</span> Analog Devices <span class="math notranslate nohighlight">\(right\)</span> VisualAnalog <span class="math notranslate nohighlight">\(right\)</span> VisualAnalog</p></li>
+<li><p>On the VisualAnalog “New Canvas” window, click <strong>ADC</strong> <span class="math notranslate nohighlight">\(right\)</span> <strong>Dual</strong> <span class="math notranslate nohighlight">\(right\)</span> <strong>AD6674</strong> <img alt="image10" src="https://wiki.analog.com/_media/resources/eval/ad6674_selecting_canvas.png" /></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p>//Figure 8. Selecting the <a class="icon adi reference external" href="https://www.analog.com/AD6674" target="_blank">AD6674</a> canvas *</p>
+</div>
+<p>* At this point, VisualAnalog will automatically detect the evaluation board and the FPGA data capture board and ask if it can program the FPGA with the appropriate bin file. This is shown in Figure 9.</p>
+<div class="centeralign docutils container">
+<p><a href="#id1"><span class="problematic" id="id2">*</span></a>Figure 9. Programming the <a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v2" target="_blank">ADS7-V2EBZ</a>*</p>
+</div>
+<p>* If VisualAnalog opens with a collapsed view, click on the “Expand Display” icon (see figure 10)</p>
+<div class="centeralign docutils container">
+<p><a href="#id3"><span class="problematic" id="id4">*</span></a>Figure 10. Expanding Display in VA*</p>
+</div>
+<p>* Click the* <strong>Settings</strong> <em>button in the</em> <strong>ADC Data Capture</strong> <a href="#id5"><span class="problematic" id="id6">*</span></a>block as shown in Figure 11 </p>
+<div class="centeralign docutils container">
+<p><a href="#id7"><span class="problematic" id="id8">*</span></a>Figure 11. Changing the ADC Capture Settings*</p>
+</div>
+<p>* On the* <strong>General</strong> <em>tab make sure the clock frequency is set to</em> <strong>750MHz</strong> <em>(or other clock frequency). The FFT capture length may be changed to 131072 (128k) or 262144 (256k) per channel. The</em> <a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v2" target="_blank">ADS7-V2</a> <em>and</em> <a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v1" target="_blank">ADS7-V1</a> <a href="#id9"><span class="problematic" id="id10">*</span></a>FPGA software supports up to 2M FFT capture (1M per channel)</p>
+<div class="centeralign docutils container">
+<p><a href="#id11"><span class="problematic" id="id12">*</span></a>Figure 12. Setting the clock frequency and Capture length*</p>
+</div>
+<p>* If the board did not Auto-program click on the* <strong>Capture Board</strong> <em>tab and browse to the</em> <strong>ad9680_ads7v1.bin</strong> <em>or the</em> <strong>ad9680_ads7v2.bin</strong> <em>file depending on which data capture board is being used. Click the</em> <strong>Program</strong> <em>button. The</em> <strong>FPGA_DONE</strong> <em>LED should illuminate on the</em> <a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v1" target="_blank">ADS7-V1</a> <em>board indicating that the FPGA has been correctly programmed. * On the</em> <strong>Device</strong> <em>tab. Make sure that</em> <strong>Enable Alternate REFCLK</strong> <em>option is unchecked. * Click</em> <strong>OK</strong><strong>SPI Controller Setup</strong><em>* Click Start :math:`right` All Programs :math:`right` Analog Devices :math:`right` SPIController :math:`right` SPIController * Select the appropriate configuration file when prompted. * In the</em> <strong>Global</strong> <em>tab, under the</em> <strong>Generic Read/Write</strong> <a href="#id13"><span class="problematic" id="id14">*</span></a>section, write 0x81 to register 0x000. This issues a Soft reset for the DUT. </p>
+<div class="centeralign docutils container">
+<p><a href="#id15"><span class="problematic" id="id16">*</span></a>Figure 13. Sending a Soft Reset to the AD6674*</p>
+</div>
+<p>* The JESD204B quick configuration and Lane Rate registers are available in the* <strong>ADCBase3</strong> <em>tab. Set the Lane Rate setting register 0x56E to</em> <strong>Low Lane Rate Mode</strong><a href="#id17"><span class="problematic" id="id18">*</span></a></p>
+<div class="centeralign docutils container">
+<p><a href="#id19"><span class="problematic" id="id20">*</span></a>Figure 14. Setting the JESD204B Lane Rate*</p>
+</div>
+<p>* Set the JESD204B Quick Configuration register 0x570. For 1000MSPS operation with with default conditions (<em>Noise Shaped Requantizer (NSR) Mode*), the values for</em> <strong>L.M.F</strong> <em>are</em> <strong>4.2.1</strong><a href="#id21"><span class="problematic" id="id22">*</span></a></p>
+<div class="centeralign docutils container">
+<p><a href="#id23"><span class="problematic" id="id24">*</span></a>Figure 15. Setting the JESD204B Quick Configuration Register*</p>
+</div>
+<p>* After the quick configuration setting is completed, the PLL Lock Detect register 0x56F will read 0x80 to denote a lock. The SPIController interface will show a “1” to denote a lock. * Toggle the JESD204B link by checking and then unchecking the* <strong>JESD204B Serial Transmit Power Down</strong> <em>box * Individual Channel control for</em> <strong>ADC A</strong> <em>and</em> <strong>ADC B</strong> <a href="#id25"><span class="problematic" id="id26">*</span></a>are done using the Device Index Register (0x008) in the Global tab.</p>
+<div class="centeralign docutils container">
+<p><a href="#id27"><span class="problematic" id="id28">*</span></a>Figure 16. Device Index for ADC Channel A and Channel B//</p>
+</div>
+<ul class="simple">
+<li><p>Under <strong>ADC A</strong> and <strong>ADC B</strong> tabs the options for Channel A and B are listed. Default settings have been programmed to ensure optimal performance for the input bandwidth and sample rate. Only the following options need to be operated with:</p>
+<ul>
+<li><p>Chip Configuration Register (2): This option allows the channel to be powered on</p></li>
+<li><p>Buffer Current Setting (18): This option allows the buffer current to change to enable better harmonic performance at different frequencies. At high analog input frequencies, the buffer current may need to be increased to optimize harmonic distortion performance (HD2, HD3). Keep in mind that at high frequencies, the performance is also jitter limited. So increasing the buffer currents may lead to diminishing returns with higher power consumption. Refer to the datasheet to understand the relationship between I<sub>AVDD3</sub> and Buffer Current Setting.</p></li>
+<li><p>Analog Input Differential Termination (16): This sets the input termination. Recommended settings are 500, 200, 100, 50 ohms. At lower termination settings, the harmonic distortion performance may show improvement, but the analog input signal amplitude will be reduced.</p></li>
+<li><p>Input Full Scale Range (25): At high input frequencies, in order to preserve the linearity of the input buffer, it may be beneficial to reduce the input full-scale range in order to get more harmonic distortion performance. This in turn may negatively affect the SNR of the ADC.</p></li>
+</ul>
+</li>
+</ul>
+</details></section>
+<section id="sample-configuration-1-nsr-mode">
+<h3>Sample Configuration 1: NSR Mode<a class="headerlink" href="#sample-configuration-1-nsr-mode" title="Link to this heading"></a></h3>
+<p>The default Chip Application Mode for the AD6674-750/AD6674-1000 is NSR with a chip decimation ratio of 2 (the AD6674-500 also defaults to NSR mode but with decimation disabled).</p>
+<details><summary>ACE Configuration</summary><ul class="simple">
+<li><p>Under <strong>Initial Configuration</strong> at board view, set the following configuration below:</p>
+<ul>
+<li><p>Clock input: <strong>750 MHz</strong></p></li>
+<li><p>Decimate/2: <strong>True</strong></p></li>
+<li><p>Bandwidth Mode: <strong>21%</strong></p></li>
+<li><p>Lane (L): <strong>4</strong></p></li>
+<li><p>Virtual Converter (M): <strong>2</strong></p></li>
+<li><p>Octets per Frame (F): <strong>1</strong></p></li>
+<li><p>Bits per Sample (N’): <strong>16</strong></p></li>
+</ul>
+</li>
+</ul>
+<div class="centeralign docutils container">
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_chip_settings.png"><img alt="image11" src="https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_chip_settings.png" style="width: 200px;" /></a><em>Figure 17. Chip Settings</em></p>
+</div>
+<ul class="simple">
+<li><p>Click <strong>Apply</strong> to apply the chip settings. Set the <strong>reference clock</strong> to <strong>187.5 MHz</strong> to match these settings and click AD6674 to be directed to chip view.&lt;WRAP&gt;</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note: ACE will automatically load the default NSR mode configuration and can skip to step 6 to proceed to <strong>Analysis</strong> tab to capture data.</p>
+</div>
+<p>&lt;/WRAP&gt;</p>
+<ul class="simple">
+<li><p>Click <strong>Apply</strong> at <strong>AD6674 Configuration</strong>, and then chip view will update to reflect all the changes made. If any changes are made, the chip can be read by clicking the <strong>Read All button</strong>.<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_read_all.png"><img alt="image12" src="https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_read_all.png" style="width: 600px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 18. Read All Button</em></p>
+</div>
+<ul class="simple">
+<li><p>Issue a <strong>Data Path Reset</strong> to the AD6674 by clicking its checkbox and then <strong>Apply Changes</strong>. The data path reset bit will automatically self-clear.<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_datapath_reset.png"><img alt="image13" src="https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_datapath_reset.png" style="width: 600px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 19. Data Path Reset</em></p>
+</div>
+<ul class="simple">
+<li><p>If the <strong>PLL Locked</strong> indicator lights up, you can reset it by powering down the JESD link using the <strong>Link Control</strong> dropdown box, and clicking <strong>Apply Changes</strong>.<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_link_control_powerdown.png"><img alt="image14" src="https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_link_control_powerdown.png" style="width: 600px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 20. PLL Lock, Link Power Down</em></p>
+</div>
+<ul class="simple">
+<li><p>Enable the <strong>Link Control</strong> again and <strong>Apply Changes</strong>.<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_link_control_active.png"><img alt="image15" src="https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_link_control_active.png" style="width: 600px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 21. PLL Lock, Link Enable</em></p>
+</div>
+<ul class="simple">
+<li><p>Click <strong>Proceed to Analysis</strong>. This is ACE’s Analysis tool for the data from the ADC, displaying both sample plots (Waveform) and FFTs. Click on <strong>FFT</strong> and <strong>Run Once</strong> to capture once.<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_analysis.png"><img alt="image16" src="https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_analysis.png" style="width: 600px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 22. Display FFTs and Run once</em></p>
+</div>
+<p>&lt;WRAP&gt;</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Tip: Capturing data using another program (e.g. VisualAnalog, proprietary code, etc.) while using ACE concurrently may cause errors in ACE’s data capture. If this occurs, the best solution is to restart the evaluation boards and work solely via ACE, or to setup the part in ACE then capture solely in the other program.</p>
+</div>
+<p>&lt;/WRAP&gt;</p>
+<ul class="simple">
+<li><p><strong>Channel A</strong> and <strong>Channel B</strong> can be selected individually to display their <strong>FFTs</strong>. A successful capture is shown below, with a 75 MHz signal inputted at on both Channel A and B. Adjust the amplitude of the input signal so that the fundamental is at the desired level. NSR imposes a ~3dB loss in the signal but does not impact the dynamic range. A -1.0 dBFS input signal will show as -4.0 dBFS in the FFT.<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_results.png"><img alt="image17" src="https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_results.png" style="width: 600px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 23. Example Data Capture to Channel B</em></p>
+</div>
+<ul class="simple">
+<li><p>To save the FFT plot, click on <strong>Export</strong> button at <strong>Analysis Results</strong> tab and save it to a location of choice.</p></li>
+</ul>
+</details><details><summary>Visual Analog & SPI Controller Configuration</summary><p><strong>SPI Controller Configuration</strong></p>
+<div class="centeralign docutils container">
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_spi_nsr_adcglobal.png"><img alt="image18" src="https://wiki.analog.com/_media/resources/eval/ad6674_spi_nsr_adcglobal.png" style="width: 800px;" /></a><em>Figure 24. Default Application Mode - NSR/Decimation by 2</em></p>
+</div>
+<ul class="simple">
+<li><p>The NSR mode settings are configured in the ADCA and ADCB tabs. The NSR defaults to 21% bandwidth mode with a tuning word of 0. Decimate by 2 is enabled by default also on the AD6674-750 and AD6674-1000 (and cannot be disabled in NSR mode).<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_spi_nsr_settings.png"><img alt="image19" src="https://wiki.analog.com/_media/resources/eval/ad6674_spi_nsr_settings.png" style="width: 300px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 25. Channel A and Channel B NSR Settings</em></p>
+</div>
+<p><strong>Visual Analog Configuration</strong></p>
+<ul class="simple">
+<li><p>The first item to configure in Visual Analog is the input clock frequency. This is the frequency of the input clock and NOT the decimated sample rate (if using decimation). Click in the ADC Data Capture block to open the settings. In this example, 750MHz is the input clock frequency.<img alt="image20" src="https://wiki.analog.com/_media/resources/eval/ad6674_nsr_datacapturesettings.png" /></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 26. AD6674-750 FFT Data Capture Settings</em></p>
+</div>
+<ul class="simple">
+<li><p>In order to obtain an FFT with NSR enabled, Visual Analog must be configured correctly. Click on the settings button on the FFT Analysis block and configure the settings in Visual Analog to match the NSR settings that have been programmed into the AD6674. Under Advanced Calculation, click the Enable box, select AD6674 NSR, and then select the appropriate bandwidth mode and tuning word. Make sure to set the Bandwidth to match the mode. When finished, click the Apply button and then the OK button to apply the settings. <img alt="image21" src="https://wiki.analog.com/_media/resources/eval/ad6674_fftanalysis_nsr_settings.png" /></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 27. AD6674-750 FFT Analysis NSR Settings</em></p>
+</div>
+<ul class="simple">
+<li><p>In this example, with an input clock of 750MHz, the output sample rate is 375MSPS. The default JESD204B lane configuration is 4.2.1 (L.M.F). The required REFCLK frequency is 187.5MHz (refer to step 7 in the section “Configuring the Board”).</p></li>
+<li><p>Click the Run button in Visual Analog and you should see the capture data similar to the plot below. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_fft_nsr.png"><img alt="image22" src="https://wiki.analog.com/_media/resources/eval/ad6674_fft_nsr.png" style="width: 800px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 28. AD6674-750 FFT with NSR Enabled</em></p>
+</div>
+<ul class="simple">
+<li><p>Adjust the amplitude of the input signal so that the fundamental is at the desired level. (Examine the <strong>Fund Power</strong> reading in the left panel of the VisualAnalog FFT window.) NSR imposes a ~3dB loss in the signal, but does not impact the dynamic range. A -1.0 dBFS input signal will show as -4.0 dBFS in the FFT in Visual Analog.</p></li>
+<li><p>To save the FFT plot do the following</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>Click on the Float Form button in the FFT window<img alt="image23" src="https://wiki.analog.com/_media/resources/eval/fig13_floatform.png" /></p></li>
+</ul>
+</div></blockquote>
+<div class="centeralign docutils container">
+<p><em>Figure 29. Floating the FFT window</em></p>
+</div>
+<ul class="simple">
+<li><p>Click on File <span class="math notranslate nohighlight">\(right\)</span> Save Form As button and save it to a location of choice<img alt="image24" src="https://wiki.analog.com/_media/resources/eval/ad6674_fft_graph_saveformas.png" /></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 30. Saving the FFT</em></p>
+</div>
+</details></section>
+<section id="sample-configuration-2-vdr-mode">
+<h3>Sample Configuration 2: VDR Mode<a class="headerlink" href="#sample-configuration-2-vdr-mode" title="Link to this heading"></a></h3>
+<details><summary>ACE Configuration</summary><ul class="simple">
+<li><p>Under <strong>Initial Configuration</strong> at board view, set the following configuration below:</p>
+<ul>
+<li><p>Clock input: <strong>750 MHz</strong></p></li>
+<li><p>Chip Operating Mode: <strong>VDR enabled</strong></p></li>
+<li><p>Complex Enabled: <strong>Dual Complex Mode</strong></p></li>
+<li><p>Bandwidth Mode: <strong>25%</strong></p></li>
+<li><p>Lane (L): <strong>4</strong></p></li>
+<li><p>Virtual Converter (M): <strong>2</strong></p></li>
+<li><p>Octets per Frame (F): <strong>1</strong></p></li>
+<li><p>Bits per Sample (N’): <strong>16</strong></p></li>
+</ul>
+</li>
+</ul>
+<div class="centeralign docutils container">
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_chip_settings.png"><img alt="image25" src="https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_chip_settings.png" style="width: 200px;" /></a><em>Figure 31. Chip Settings</em></p>
+</div>
+<ul class="simple">
+<li><p>Click <strong>Apply</strong> to apply the chip settings. Set the <strong>reference clock</strong> to <strong>375 MHz</strong> to match these settings and click AD6674 to be directed to chip view.&lt;WRAP&gt;</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note: ACE will automatically load the initialization sequence after applying initial configurations.</p>
+</div>
+<p>&lt;/WRAP&gt;</p>
+<ul class="simple">
+<li><p>In the chip view, set <strong>Tuning Word</strong> to <strong>0</strong> and click <strong>Apply</strong> at <strong>AD6674 Configuration</strong>. Then chip view will update to reflect all the changes made. If any changes are made, the chip can be read by clicking the <strong>Read All button</strong>.<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_read_all.png"><img alt="image26" src="https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_read_all.png" style="width: 600px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 32. Read All Button</em></p>
+</div>
+<ul class="simple">
+<li><p>Issue a <strong>Data Path Reset</strong> to the AD6674 by clicking its checkbox and then <strong>Apply Changes</strong>. The data path reset bit will automatically self-clear.<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_datapath_reset.png"><img alt="image27" src="https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_datapath_reset.png" style="width: 600px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 33. Data Path Reset</em></p>
+</div>
+<ul class="simple">
+<li><p>If the <strong>PLL Locked</strong> indicator lights up, you can reset it by powering down the JESD link using the <strong>Link Control</strong> dropdown box, and clicking <strong>Apply Changes</strong>.<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_link_control_powerdown.png"><img alt="image28" src="https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_link_control_powerdown.png" style="width: 600px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 34. PLL Lock, Link Power Down</em></p>
+</div>
+<ul class="simple">
+<li><p>Enable the <strong>Link Control</strong> again and <strong>Apply Changes</strong>.<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_link_control_active.png"><img alt="image29" src="https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_link_control_active.png" style="width: 600px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 35. PLL Lock, Link Enable</em></p>
+</div>
+<ul class="simple">
+<li><p>Click <strong>Proceed to Analysis</strong>. This is ACE’s Analysis tool for the data from the ADC, displaying both sample plots (Waveform) and FFTs. Click on <strong>FFT</strong> and <strong>Run Once</strong> to capture once.<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_analysis.png"><img alt="image30" src="https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_analysis.png" style="width: 600px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 36. Display FFTs and Run once</em></p>
+</div>
+<p>&lt;WRAP&gt;</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Tip: Capturing data using another program (e.g. VisualAnalog, proprietary code, etc.) while using ACE concurrently may cause errors in ACE’s data capture. If this occurs, the best solution is to restart the evaluation boards and work solely via ACE, or to setup the part in ACE then capture solely in the other program.</p>
+</div>
+<p>&lt;/WRAP&gt;</p>
+<ul class="simple">
+<li><p><strong>Channel A</strong> and <strong>Channel B</strong> can be selected individually to display their <strong>FFTs</strong>. A successful capture is shown below, with a 75MHz signal inputted at on both Channel A and B. Adjust the amplitude of the input signal so that the fundamental is at -1.0 dBFS. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_results.png"><img alt="image31" src="https://wiki.analog.com/_media/resources/eval/ad6674_sample2_ace_results.png" style="width: 600px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 37. Example Data Capture to Channel A and B</em></p>
+</div>
+<ul class="simple">
+<li><p>To save the FFT plot, click on <strong>Export</strong> button at <strong>Analysis Results</strong> tab and save it to a location of choice.</p></li>
+</ul>
+</details><details><summary>Visual Analog & SPI Controller Configuration</summary><p><strong>SPI Controller Configuration</strong></p>
+<ul class="simple">
+<li><p>The settings in the ADCBase0 tab must be changed to configure the AD6674 into VDR mode. To set up the AD6674 for VDR mode change the Chip Application Mode in register 0x200 to Variable Dynamic Range (VDR) Mode and set the Chip Decimation Ratio in register 0x201 to Full Sample Rate. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_spi_vdr_adcglobal.png"><img alt="image32" src="https://wiki.analog.com/_media/resources/eval/ad6674_spi_vdr_adcglobal.png" style="width: 800px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 38. Set Application Mode to VDR</em></p>
+</div>
+<ul class="simple">
+<li><p>The VDR mode tuning word can be configured in the ADC A and ADC B tabs. VDR defaults to 25% bandwidth complex mode with a tuning word of 0. The tuning word can be changed using the VDR Tuner Frequency selection (register 0x434). See the AD6674 data sheet for more details on the available bandwidth modes and tuning words. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_spi_vdr_tuningword.png"><img alt="image33" src="https://wiki.analog.com/_media/resources/eval/ad6674_spi_vdr_tuningword.png" style="width: 300px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 39. Channel A and Channel B VDR Settings</em></p>
+</div>
+<ul class="simple">
+<li><p>Using the default lane configuration in the AD6674 (L.M.F = 4.2.1) the JESD204B lane rate will be 7.5 Gbps which means the PLL must be set to Maximum Lane Rate Mode (0x56E) int he ADCBase3 tab in SPIController. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_spi_pllencode_maxlanerate.png"><img alt="image34" src="https://wiki.analog.com/_media/resources/eval/ad6674_spi_pllencode_maxlanerate.png" style="width: 600px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 40. PLL Encode Settings</em></p>
+</div>
+<p><strong>Visual Analog Configuration</strong></p>
+<ul class="simple">
+<li><p>The first item to configure in Visual Analog is the input clock frequency. This is the frequency of the input clock and NOT the decimated sample rate (if using decimation). Click in the ADC Data Capture block to open the settings. In this example, 750MHz is the input clock frequency.<img alt="image35" src="https://wiki.analog.com/_media/resources/eval/ad6674_nsr_datacapturesettings.png" /></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 41. AD6674-750 FFT Data Capture Settings</em></p>
+</div>
+<ul class="simple">
+<li><p>In this example, with an input clock of 750MHz, the output sample rate is 750MSPS. The default JESD204B lane configuration is 4.2.1 (L.M.F). The required REFCLK frequency is 375MHz (refer to step 7 in the section “Configuring the Board”).</p></li>
+<li><p>Click the Run button in Visual Analog and you should see the capture data similar to the plot below. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_fft_vdr.png"><img alt="image36" src="https://wiki.analog.com/_media/resources/eval/ad6674_fft_vdr.png" style="width: 800px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 42. AD6674-750 FFT with VDR Enabled</em></p>
+</div>
+<ul class="simple">
+<li><p>Adjust the amplitude of the input signal so that the fundamental is at the desired level. (Examine the <strong>Fund Power</strong> reading in the left panel of the VisualAnalog FFT window.) VDR imposes no loss on the input signal so a -1.0 dBFS input signal will show as -1.0 dBFS in the FFT in Visual Analog.</p></li>
+<li><p>To save the FFT plot do the following</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>Click on the Float Form button in the FFT window<img alt="image37" src="https://wiki.analog.com/_media/resources/eval/fig13_floatform.png" /></p></li>
+</ul>
+</div></blockquote>
+<div class="centeralign docutils container">
+<p><em>Figure 43. Floating the FFT window</em></p>
+</div>
+<ul class="simple">
+<li><p>Click on File <span class="math notranslate nohighlight">\(right\)</span> Save Form As button and save it to a location of choice<img alt="image38" src="https://wiki.analog.com/_media/resources/eval/ad6674_fft_graph_saveformas.png" /></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 44. Saving the FFT</em></p>
+</div>
+</details></section>
+<section id="sample-configuration-2-1-vdr-mode-use-control-bits-as-vdr-punish-bits-and-the-vdr-high-low-resolution-bit">
+<h3>Sample Configuration 2.1: VDR Mode - Use Control Bits as VDR Punish Bits and the VDR High/Low Resolution Bit<a class="headerlink" href="#sample-configuration-2-1-vdr-mode-use-control-bits-as-vdr-punish-bits-and-the-vdr-high-low-resolution-bit" title="Link to this heading"></a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Logic Analyzer <strong>not supported</strong> on AD6674 ACE Plugin. <em>Converter Control bit 0, 1, and 2 (0x559 and 0x55A)</em> and <em>Number of control bits per sample (0x58F)</em> can be configured thru ACE by accessing Chip’s Memory Map. For <strong>Logic Analyzer</strong>, Visual Analog can be used for data capture.</p>
+</div>
+<details><summary>Visual Analog & SPI Controller Configuration</summary><p><strong>SPI Controller Configuration</strong></p>
+<ul class="simple">
+<li><p>The first step, go to the ADCBase2 tab in SPIController to set up the control bits to select the VDR indicator bits. In this example Control Bit 2 is set to VDR Punish Bit 1, Control Bit 1 is set to VDR Punish Bit 0, and Control Bit 0 is set to the VDR High/Low resolution bit. (Similarly, the control bits may be set up to function as Overrange, Signal Monitor (SMON), or Fast Detect (FD) indicators.)<img alt="image39" src="https://wiki.analog.com/_media/resources/eval/ad6674_spi_vdr_bits_adcbase2.png" /></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 45. SPIController ADCBase2 Settings for VDR Indicators in the Control Bits</em></p>
+</div>
+<ul class="simple">
+<li><p>Next go to the ADCBase4 tab to set up the control bits to select the VDR indicator bits. In this example three control bits are sent per sample. In order to accommodate three control bits, the converter resolution (N) must be set to 13 bits (there are 16 available bits in the JESD204B data word and if three are used for control bits there are 13 bits available for the converter sample - in this example this means there will only be 13 bits available instead of the 14 bits of converter resolution.<img alt="image40" src="https://wiki.analog.com/_media/resources/eval/ad6674_spi_vdr_bits_adcbase4.png" /></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 46. SPIController ADCBase4 Settings for Enabling the Control Bits</em></p>
+</div>
+<p><strong>Visual Analog Configuration</strong></p>
+<ul class="simple">
+<li><p>The first step is to open a new Logic canvas in VisualAnalog. In the Logic canvas configure the Input Formatter to set the Resolution to 16 bits and the Alignment to 18 bits. This will create the space such that all three control bits can be visible in the Logic canvas.<img alt="image41" src="https://wiki.analog.com/_media/resources/eval/ad6674_va_inputformatter.png" /></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 47. Input Formatter Settings for VDR Indicators in the Control Bits</em></p>
+</div>
+<ul class="simple">
+<li><p>Next configure the Logic Analysis block for the data alignement. Set the High Bit to 15 and the low bit to 0. This will align the canvas such that all three control bits can be visible in the Logic canvas.<img alt="image42" src="https://wiki.analog.com/_media/resources/eval/ad6674_va_logicanalysis.png" /></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 48. Logic Analysis Settings for Bit Alignment</em></p>
+</div>
+<ul class="simple">
+<li><p>These settings will create the space in the Logic Canvas display so that all three control bits available in the JESD204B data stream will be visible. (While the example here is for VDR the control bits may be set up to function as Overrange, Signal Monitor (SMON), or Fast Detect (FD) indicators and can be viewed in the output data in a similar manner.) <img alt="image43" src="https://wiki.analog.com/_media/resources/eval/ad6674_va_logiccanvas_cbs_denoted.png" /></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 49. Logic Canvas Display Showing Available Control Bits</em></p>
+</div>
+<ul class="simple">
+<li><p>Once a signal is input that will trigger VDR to operate the VDR punish bits [1:0] and the VDR High/Low resolution bit can be seen in the Logic Canvas display. In this case control bit 2 is VDR punish bit 1, control bit 1 is VDR punish bit 0, and control bit 0 is the VDR High/Low resolution bit. <img alt="image44" src="https://wiki.analog.com/_media/resources/eval/ad6674_va_logiccanvas_cbs_denoted_inputsignal.png" /></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 50. Logic Canvas Display Showing Control Bits [2:0] Indicating VDR Status</em></p>
+</div>
+<ul class="simple">
+<li><p>Note that the data alignment from the FPGA to VisualAnalog will fill in the control bits starting from the LSB location in the Logic Canvas display. In this example data bit two is control bit 2, data bit 1 is control bit 1, and data bit 0 is control bit 0. If only using control bit 2 then this would reside in the data bit 0 location in the Logic Canvas display. <img alt="image45" src="https://wiki.analog.com/_media/resources/eval/ad6674_va_logiccanvas_cbs_denoted_cb2only.png" /></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 51. Logic Canvas Display Showing Control Bit 2 Only</em></p>
+</div>
+</details></section>
+<section id="sample-configuration-3-2-adcs-2ddcs-real-mode-decimate-by-2">
+<h3>Sample Configuration 3: 2 ADCs, 2DDCs, Real Mode Decimate by 2<a class="headerlink" href="#sample-configuration-3-2-adcs-2ddcs-real-mode-decimate-by-2" title="Link to this heading"></a></h3>
+<details><summary>ACE Configuration</summary><ul class="simple">
+<li><p>Under <strong>Initial Configuration</strong> at board view, set the following configuration below:</p>
+<ul>
+<li><p>Clock input: <strong>750 MHz</strong></p></li>
+<li><p>Chip Operating Mode: <strong>DDC 0 and DDC 1 on</strong></p></li>
+<li><p>DDC 0 and DDC 1 I/Q Input Select: <strong>Channel A</strong></p></li>
+<li><p>DDC 0 and DDC 1 Decimation Ratio: <strong>HB1_HB2</strong></p></li>
+<li><p>DDC 0 and DDC 1 Output Select: <strong>Real(I) Output Only.</strong></p></li>
+<li><p>Lane (L): <strong>4</strong></p></li>
+<li><p>Virtual Converter (M): <strong>2</strong></p></li>
+<li><p>Octets per Frame (F): <strong>1</strong></p></li>
+<li><p>Bits per Sample (N’): <strong>16</strong></p></li>
+</ul>
+</li>
+</ul>
+<div class="centeralign docutils container">
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_chip_settings.png"><img alt="image46" src="https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_chip_settings.png" style="width: 200px;" /></a><em>Figure 52. Chip Settings</em></p>
+</div>
+<ul class="simple">
+<li><p>Click <strong>Apply</strong> to apply the chip settings. Set the <strong>reference clock</strong> to <strong>187.5 MHz</strong> to match these settings and click AD6674 to be directed to chip view.&lt;WRAP&gt;</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note: ACE will automatically load the initialization sequence after applying initial configurations.</p>
+</div>
+<p>&lt;/WRAP&gt;</p>
+<ul class="simple">
+<li><p>In the chip view, set the following additional configuration to DDC 0 and DDC 1 by selecting the dropdown:</p>
+<ul>
+<li><p>NCO Frequency: <strong>93.75 MHz</strong></p></li>
+<li><p>IF Mode: <strong>Variable IF Mode</strong></p></li>
+<li><p>Gain Select: <strong>6 dB</strong></p></li>
+<li><p>Mixer Select: <strong>Real Mixer</strong></p></li>
+</ul>
+</li>
+<li><p>Click <strong>Apply</strong> at <strong>AD6674 Configuration</strong>. Then chip view will update to reflect all the changes made. If any changes are made, the chip can be read by clicking the <strong>Read All button</strong>.<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_read_all.png"><img alt="image47" src="https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_read_all.png" style="width: 600px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 53. Read All Button</em></p>
+</div>
+<ul class="simple">
+<li><p>After applying DDC settings, set <strong>DDC Soft Reset</strong> to <strong>DDC Held in Reset</strong> and <strong>Apply Changes</strong>, then return it back to <strong>Normal Operation</strong> and <strong>Apply Changes</strong>.<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_ddc_softreset.png"><img alt="image48" src="https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_ddc_softreset.png" style="width: 600px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 54. DDC Soft Reset</em></p>
+</div>
+<ul class="simple">
+<li><p>Issue a <strong>Data Path Reset</strong> to the AD6674 by clicking its checkbox and then <strong>Apply Changes</strong>. The data path reset bit will automatically self-clear.<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_datapath_reset.png"><img alt="image49" src="https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_datapath_reset.png" style="width: 600px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 55. Data Path Reset</em></p>
+</div>
+<ul class="simple">
+<li><p>If the <strong>PLL Locked</strong> indicator lights up, you can reset it by powering down the JESD link using the <strong>Link Control</strong> dropdown box, and clicking <strong>Apply Changes</strong>.<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_link_control_powerdown.png"><img alt="image50" src="https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_link_control_powerdown.png" style="width: 600px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 56. PLL Lock, Link Power Down</em></p>
+</div>
+<ul class="simple">
+<li><p>Enable the <strong>Link Control</strong> again and <strong>Apply Changes</strong>.<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_link_control_active.png"><img alt="image51" src="https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_link_control_active.png" style="width: 600px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 57. PLL Lock, Link Enable</em></p>
+</div>
+<ul class="simple">
+<li><p>Click <strong>Proceed to Analysis</strong>. This is ACE’s Analysis tool for the data from the ADC, displaying both sample plots (Waveform) and FFTs. Click on <strong>FFT</strong> and <strong>Run Once</strong> to capture once.<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_analysis.png"><img alt="image52" src="https://wiki.analog.com/_media/resources/eval/ad6674_sample1_ace_analysis.png" style="width: 600px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 58. Display FFTs and Run once</em></p>
+</div>
+<p>&lt;WRAP&gt;</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Tip: Capturing data using another program (e.g. VisualAnalog, proprietary code, etc.) while using ACE concurrently may cause errors in ACE’s data capture. If this occurs, the best solution is to restart the evaluation boards and work solely via ACE, or to setup the part in ACE then capture solely in the other program.</p>
+</div>
+<p>&lt;/WRAP&gt;</p>
+<ul class="simple">
+<li><p><strong>Channel A</strong> and <strong>Channel B</strong> can be selected individually to display their <strong>FFTs</strong>. A successful capture is shown below, with a 75MHz signal inputted at on both Channel A and B. Adjust the amplitude of the input signal so that the fundamental is at -1.0 dBFS. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_results.png"><img alt="image53" src="https://wiki.analog.com/_media/resources/eval/ad6674_sample3_ace_results.png" style="width: 600px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 59. Example Data Capture to Channel A and B</em></p>
+</div>
+<ul class="simple">
+<li><p>To save the FFT plot, click on <strong>Export</strong> button at <strong>Analysis Results</strong> tab and save it to a location of choice.</p></li>
+</ul>
+</details><details><summary>Visual Analog & SPI Controller Configuration</summary><p><strong>SPI Controller Configuration</strong></p>
+<ul class="simple">
+<li><p>The settings in the ADCBase0 tab must be changed to configure the AD6674 to use the DDCs. In this example the AD6674 is set up to use two DDCs (one per ADC channel) with real outputs and a decimation ratio of two. Set the Chip Application Mode in register 0x200 to Two Digital Down Converters and select the Only Real (I) Selected checkbox. Set the Chip Decimation Ratio in register 0x201 to Decimate by 2 Ratio. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_spi_2ddcrealdec2_adcglobal.png"><img alt="image54" src="https://wiki.analog.com/_media/resources/eval/ad6674_spi_2ddcrealdec2_adcglobal.png" style="width: 800px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 60. Set Application Mode to 2 DDCs Real Mode Decimate by 2</em></p>
+</div>
+<ul class="simple">
+<li><p>The DDC settings must be configured in ADCBase1, but first, the tuning step, translation frequency, and DDC Phase Increment must be calculated.</p>
+<ul>
+<li><p>The tuning step is equal to the output sample rate divided by 4096.</p>
+<ul>
+<li><p>tuning step = 375MSPS/4096 = 91552.734375</p></li>
+</ul>
+</li>
+<li><p>The translation frequency is equal to the output sample rate divided by 4*(decimation ratio).</p>
+<ul>
+<li><p>translation frequency = 375MSPS/(4*2) = 46875000</p></li>
+</ul>
+</li>
+<li><p>The DDC Phase Increment is equal to the translation frequency divided by the tuning step.</p>
+<ul>
+<li><p>DDC Phase Increment = 46875000/91552.734375 = 512</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Under DDCO CTRL and DDC1 CTRL in the ADCBase1 tab configure the DDCs to select 6dB Gain, Variable IF Mode, Real(I) Decimate by 2 Filter Selection, Both Input Sample Selections to Channel A for DDC0 and Channel B for DDC1, and the DDC Phase Increment to the calculated value of 512</p>
+<ul>
+<li><p>After changing DDC selections, perform a soft reset of the DDCs by checking and unchecking the box for DDC Soft Reset under the DDC Synchronization CTRL Reg (300). <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_spi_2ddcrealdec2_adcbase1.png"><img alt="image55" src="https://wiki.analog.com/_media/resources/eval/ad6674_spi_2ddcrealdec2_adcbase1.png" style="width: 650px;" /></a></p></li>
+</ul>
+</li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 61. Channel A and Channel B DDC Settings</em></p>
+</div>
+<ul class="simple">
+<li><p>Using the default lane configuration in the AD6674 (L.M.F = 4.2.1) the JESD204B lane rate will be 3.75Gbps which means that the PLL needs to be set to Low Lane Rate Mode (0x56E) in the ADCBase3 tab in SPIController. This is the default setting so no change is needed.</p></li>
+</ul>
+<p><strong>Visual Analog Configuration</strong></p>
+<ul class="simple">
+<li><p>The first item to configure in Visual Analog is the input clock frequency. This is the frequency of the input clock and NOT the decimated sample rate (if using decimation). Click in the ADC Data Capture block to open the settings. In this example, 750MHz is the input clock frequency. In addition, the DDC data must be selected under the Output Data section. DDC0 and DDC1 are being used in the AD6674 so this must be selected under the ADC Data Capture Settings.<img alt="image56" src="https://wiki.analog.com/_media/resources/eval/ad6674_2ddcrealdec2_datacapturesettings.png" /></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 62. AD6674-750 FFT Data Capture Settings</em></p>
+</div>
+<ul class="simple">
+<li><p>In this example, with an input clock of 750MHz, the output sample rate is 375MSPS. The default JESD204B lane configuration is 4.2.1 (L.M.F). The required REFCLK frequency is 187.5MHz (refer to step 7 in the section “Configuring the Board”).</p></li>
+<li><p>Click the Run button in Visual Analog and you should see the capture data similar to the plot below. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_fft_2ddcrealdec2.png"><img alt="image57" src="https://wiki.analog.com/_media/resources/eval/ad6674_fft_2ddcrealdec2.png" style="width: 800px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 63. AD6674-750 FFT with 2 DDCs in Real Mode with Dec2 Enabled</em></p>
+</div>
+<ul class="simple">
+<li><p>Adjust the amplitude of the input signal so that the fundamental is at the desired level. (Examine the <strong>Fund Power</strong> reading in the left panel of the VisualAnalog FFT window.) Real DDC operation imposes ~0.7 dB loss on the input signal but does not impact the dynamic range. A -1.0 dBFS input signal will show as -1.7 dBFS in the FFT in Visual Analog.</p></li>
+<li><p>To save the FFT plot do the following</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>Click on the Float Form button in the FFT window<img alt="image58" src="https://wiki.analog.com/_media/resources/eval/fig13_floatform.png" /></p></li>
+</ul>
+</div></blockquote>
+<div class="centeralign docutils container">
+<p><em>Figure 64. Floating the FFT window</em></p>
+</div>
+<ul class="simple">
+<li><p>Click on File <span class="math notranslate nohighlight">\(right\)</span> Save Form As button and save it to a location of choice<img alt="image59" src="https://wiki.analog.com/_media/resources/eval/ad6674_fft_graph_saveformas.png" /></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 65. Saving the FFT</em></p>
+</div>
+</details></section>
+<section id="sample-configuration-4-2-adcs-1ddc-complex-zif-mode-decimate-by-2">
+<h3>Sample Configuration 4: 2 ADCs, 1DDC, Complex ZIF Mode Decimate by 2<a class="headerlink" href="#sample-configuration-4-2-adcs-1ddc-complex-zif-mode-decimate-by-2" title="Link to this heading"></a></h3>
+<details><summary>Visual Analog & SPI Controller Configuration</summary><p><strong>SPI Controller Configuration</strong></p>
+<ul class="simple">
+<li><p>The settings in the ADCBase0 tab must be changed to configure the AD6674 to use the DDC. In this example the AD6674 will be set up to use one DDCs with a complex ZIF output (NCO bypassed) and a decimation ration of two. Set the Chip Application Mode in register 0x200 to One Digital Down Converter and make sure the Only Real (I) Selected checkbox is <strong>NOT</strong> checked. Set the Chip Decimation Ratio in register 0x201 to Decimate by 2 Ratio. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_spi_2adc1ddccomplexdec2_adcglobal.png"><img alt="image60" src="https://wiki.analog.com/_media/resources/eval/ad6674_spi_2adc1ddccomplexdec2_adcglobal.png" style="width: 800px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 74. Set Application Mode to 1 DDC Complex ZIF Mode Decimate by 2</em></p>
+</div>
+<ul class="simple">
+<li><p>The DDC settings must be configured under DDCO CTRL in the ADCBase1 tab configure the DDC to select Complex Mixer Selection, 0 Hz IF Mode, Decimate by 2 Filter Selection, Real (I) Input Sample Selection to Channel A for DDC0, and Complex (Q) Input Sample Selection to Channel B.</p>
+<ul>
+<li><p>After changing DDC selections, perform a soft reset of the DDCs by checking and unchecking the box for DDC Soft Reset under the DDC Synchronization CTRL Reg (300). <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_spi_2adc1ddccomplexdec2_adcbase1.png"><img alt="image61" src="https://wiki.analog.com/_media/resources/eval/ad6674_spi_2adc1ddccomplexdec2_adcbase1.png" style="width: 400px;" /></a></p></li>
+</ul>
+</li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 42. DDC Settings for Complex ZIF Mode</em></p>
+</div>
+<ul class="simple">
+<li><p>Using the default lane configuration in the AD6674 (L.M.F = 4.2.1) the JESD204B lane rate will be 3.75Gbps which means that the PLL needs to be set to Low Lane Rate Mode (0x56E) in the ADCBase3 tab in SPIController. This is the default setting so no change is needed.</p></li>
+</ul>
+<p><strong>Visual Analog Configuration</strong></p>
+<ul class="simple">
+<li><p>The first item to configure in Visual Analog is the input clock frequency. This is the frequency of the input clock and NOT the decimated sample rate (if using decimation). Click in the ADC Data Capture block to open the settings. In this example, 750MHz is the input clock frequency. In addition, the DDC data must be selected under the Output Data section. DDC0 is being used in the AD6674 so this must be selected under the ADC Data Capture Settings.<img alt="image62" src="https://wiki.analog.com/_media/resources/eval/ad6674_2adc1ddccomplexdec2_datacapturesettings.png" /></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 75. AD6674-750 FFT Data Capture Settings</em></p>
+</div>
+<ul class="simple">
+<li><p>In this example, with an input clock of 750MHz, the output sample rate is 750MSPS. The default JESD204B lane configuration is 4.2.1 (L.M.F). The output sample rate is 375MSPS and the required REFCLK frequency is 187.5MHz (refer to step 7 in the section “Configuring the Board”).</p></li>
+<li><p>In order to exclude the image frequency from the SFDR measurements, configure Visual Analog to remove the image from its calculations. This is done under the FFT Analysis settings. Under the User-Defined tab add a new row by clicking Add. Name it ‘Image’. Use a symbol such as the # and set the Freq to ‘-fund’. Set the Single-Side Band to 3 Bins and set it as ‘Spur, Exclude’. Once done, select the row, and then hit the Move Up button to place this new row just below the row with Fund.<a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_2adc1ddccomplexdec2_fftanalysissettings.png"><img alt="image63" src="https://wiki.analog.com/_media/resources/eval/ad6674_2adc1ddccomplexdec2_fftanalysissettings.png" style="width: 700px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 76. AD6674-750 FFT Analysis Settings for Complex Image</em></p>
+</div>
+<ul class="simple">
+<li><p>Click the Run button in Visual Analog and you should see the capture data similar to the plot below. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ad6674_fft_1ddccomplexdec2.png"><img alt="image64" src="https://wiki.analog.com/_media/resources/eval/ad6674_fft_1ddccomplexdec2.png" style="width: 800px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 77. AD6674-750 FFT with 1 DDC in Complex ZIF Mode with Dec2 Enabled</em></p>
+</div>
+<ul class="simple">
+<li><p>Adjust the amplitude of the input signal so that the fundamental is at the desired level. (Examine the “Fund Power” reading in the left panel of the VisualAnalog FFT window.) Complex DDC operation imposes ~1dB loss in the signal, but does not impact the dynamic range. A -1dBFS input signal will show as -2dBFS in Visual Analog.</p></li>
+<li><p>To save the FFT plot do the following</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>Click on the Float Form button in the FFT window<img alt="image65" src="https://wiki.analog.com/_media/resources/eval/fig13_floatform.png" /></p></li>
+</ul>
+</div></blockquote>
+<div class="centeralign docutils container">
+<p><em>Figure 78. Floating the FFT window</em></p>
+</div>
+<ul class="simple">
+<li><p>Click on File <span class="math notranslate nohighlight">\(right\)</span> Save Form As button and save it to a location of choice<img alt="image66" src="https://wiki.analog.com/_media/resources/eval/ad6674_fft_graph_saveformas.png" /></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 79. Saving the FFT</em></p>
+</div>
+</details></section>
+</section>
+<section id="troubleshooting-tips">
+<h2>Troubleshooting Tips<a class="headerlink" href="#troubleshooting-tips" title="Link to this heading"></a></h2>
+<p>** Evaluation board is not functioning properly **</p>
+<ul class="simple">
+<li><p>It is possible that a board component has been rendered inoperable by ESD, accidental shorting while probing, etc. Try checking the supply domain voltages of the board while it is powered. They should be as follows:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*&lt;</span><span class="n">WRAP</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Domain</p></th>
+<th class="head"><p>Test Point</p></th>
+<th class="head"><p>Approx. Voltage</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AVDD_1</p></td>
+<td><p>TP406</p></td>
+<td><p>1.25 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>AVDD_1</p></td>
+<td><p>TP106</p></td>
+<td><p>1.25 V</p></td>
+</tr>
+<tr class="row-even"><td><p>AVDD_2</p></td>
+<td><p>TP404</p></td>
+<td><p>2.50 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>AVDD_1P8</p></td>
+<td><p>TP401</p></td>
+<td><p>1.80 V</p></td>
+</tr>
+<tr class="row-even"><td><p>DVDD</p></td>
+<td><p>TP407</p></td>
+<td><p>1.25 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>DRVDD</p></td>
+<td><p>TP410</p></td>
+<td><p>1.25 V</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>&lt;/WRAP&gt;</p>
+<ul class="simple">
+<li><p>If a short is detected between any of the supply domains and ground, or an open is detected across fuse chip F400 or F401, a component may have been damaged.</p></li>
+</ul>
+<p>** Evaluation board is not communicating with the ADS7-V2 / No SPI communication <strong>* Make sure that the FPGA on the ADS7-V2 has been programmed - a lit LED DS15 (</strong>FPGA_DONE**) on the top of the ADS7-V2 and a powered fan are good indicators of the FPGA being programmed.</p>
+<ul class="simple">
+<li><p>Check the common mode voltage on the JESD204B traces. On the evaluation board, the common mode voltage should be roughly two-thirds of DRVDD_1. On the ADS7-V2, the common mode voltage should be around 1.2 volts.</p></li>
+<li><p>To test SPI operation, attempt to both read and write to register 0x00A (Scratch Pad) using ACE’s Register Debugger (Tools -&gt; Register Debugger). This register is an open register available for testing memory reads and writes. If the register reads back the same value written to it, SPI is operational.</p></li>
+<li><p>All registers reading back as either all ones or all zeros (i.e., 0xFF or 0x00) may indicate no SPI communication.</p></li>
+<li><p>Register 0x000 (SPI Configuration A) reading back 0x81 in ACE may indicate no SPI communication as a result of the FPGA on the ADS7-V2 not being programmed.</p></li>
+</ul>
+<p>** ACE software fails to capture date <strong>* Ensure that the board is functioning properly and that SPI communication is successful - see previous troubleshooting tips. * Check the Clock Status register 0x011C to see if the input sample clock is being detected. 0x01 indicates detection, 0x00 indicates no clock detected. Check the signal generator input on connector J801. Try checking the common mode voltage on the clock pins, which should be roughly two-thirds of AVDD_1. Try placing a differential oscilloscope probe on the clock pins to see if the clock signal is reaching the chip. * Check the PLL Locked indicator (see figure 23) or register 0x056F (PLL Status). If the light in the plugin chip view is green or if the register reads back 0x80, the PLL is locked. If it is not locked: * Check the clock being input to connector J801. * Check the JESD204B settings under the Initial Configuration. Reference the</strong> <a class="icon adi reference external" href="https://www.analog.com/AD6674" target="_blank">AD6674</a> <strong>datasheet for supported lane options. * Check the Reference Clock and make sure it matches your JESD settings. * Make sure P100 (Power Down / Standby Jumper) is not jumped.</strong> FFT plot appears abnormal **</p>
+<ul class="simple">
+<li><p>If you see a normal noise floor when you disconnect the signal generator from the analog input, be sure you are not overdriving the ADC. Reduce input level if necessary.</p></li>
+<li><p>In VisualAnalog, Click on the Settings button in the <strong>Input Formatter</strong> block. Check that <strong>Number Format</strong> is set to the correct encoding (twos compliment by default). Repeat for the other channel.</p></li>
+<li><p>Issue a <strong>Data Path Soft Reset</strong> to DUT.</p></li>
+</ul>
+<p>** The FFT plot appears normal, but performance is poor. **</p>
+<ul class="simple">
+<li><p>Make sure you are using the appropriate band-pass filter on the analog input.</p></li>
+<li><p>Make sure the signal generators for the clock and the analog input are clean (low phase noise).</p></li>
+<li><p>If you are using non-coherent sampling, change the analog input frequency slightly, or use coherent frequencies.</p></li>
+<li><p>Make sure the SPI config file matches the product being evaluated.</p></li>
+</ul>
+<p>** The FFT window remains blank after the Run button is clicked **</p>
+<ul class="simple">
+<li><p>Make sure the evaluation board is securely connected to the <a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v1" target="_blank">ADS7-V1EBZ</a>.</p></li>
+<li><p>Make sure the FPGA has been programmed by verifying that the <strong>Config DONE</strong> LED is illuminated on the <a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v1" target="_blank">ADS7-V1EBZ</a>. If this LED is not illuminated reprogram the FPGA through VisualAnalog. If the LED still does not illuminate disconnect the USB and power cord for 15 seconds. Connect again and repeat the <a class="icon adi reference external" href="https://www.analog.com/eval-ads7-v1" target="_blank">ADS7-V1EBZ</a> setup process.</p></li>
+<li><p>Make sure the correct FPGA <em>bin</em> file was used to program the FPGA.</p></li>
+<li><p>Ensure that the REFCLOCK is ON and set to the appropriate frequency.</p></li>
+<li><p>Ensure that JESD204B Configuration is correct and the Lane Line Rate is within PLL Range.</p></li>
+<li><p>Ensure that the ADC’s PLL is locked by checking the status of the PLL lock detect register <strong>0x56F</strong>.</p></li>
+<li><p>In VisualAnalog, be sure to configure the correct <strong>sample rate</strong> and output data selection. Click on the <strong>Settings</strong> button in the <strong>ADC Data Capture</strong> block, and verify that the <strong>Clock Frequency</strong> and <strong>Output Data</strong> are properly set.<img alt="image67" src="https://wiki.analog.com/_media/resources/eval/ad6674_capture_settings.png" /></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 80. Setting the correct clock frequency in VisualAnalog</em></p>
+</div>
+<p>** VisualAnalog indicates that the “FIFO capture timed out” or “FIFO not ready for read back” **</p>
+<ul class="simple">
+<li><p>Make sure all power and USB connections are secure.</p></li>
+<li><p>Ensure that JESD204B Configuration is within PLL Range and is on PLL Locked.</p></li>
+<li><p>Make sure that the REFCLOCK is ON and set to the appropriate frequency.</p></li>
+</ul>
+<p>** VisualAnalog displays a blank FFT when the RUN button is clicked **</p>
+<ul class="simple">
+<li><p>Ensure that the clock to the ADC is supplied. Read clock status thru register <strong>0x11C</strong>.</p></li>
+<li><p>Ensure that the ADC’s PLL is locked by checking the status of the PLL lock detect register <strong>0x56F</strong>.</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

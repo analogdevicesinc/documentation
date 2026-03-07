@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the AD-FMCOMMS8-EBZ on:" name="description" />
+
+    <title>AD-FMCOMMS8-EBZ Arria10 SoC Quick Start Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">AD-FMCOMMS8-EBZ Arria10 SoC Quick Start Guide</a><ul>
+<li><a class="reference internal" href="#required-software">Required Software</a></li>
+<li><a class="reference internal" href="#required-hardware">Required Hardware</a><ul>
+<li><a class="reference internal" href="#fmc-pin-connection-configuration-change">FMC Pin Connection Configuration Change</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#testing">Testing</a><ul>
+<li><a class="reference internal" href="#messages">Messages</a></li>
+<li><a class="reference internal" href="#iio-oscilloscope-remote">IIO Oscilloscope Remote</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#more-information">More information</a><ul>
+<li><a class="reference internal" href="#id3">More Information</a></li>
+<li><a class="reference internal" href="#support">Support</a></li>
+<li><a class="reference internal" href="#software-resources">Software resources</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="ad-fmcomms8-ebz-arria10-soc-quick-start-guide">
+<h1>AD-FMCOMMS8-EBZ Arria10 SoC Quick Start Guide<a class="headerlink" href="#ad-fmcomms8-ebz-arria10-soc-quick-start-guide" title="Link to this heading"></a></h1>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms8-ebz/quickstart/fmcomms8_a10soc.jpeg"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms8-ebz/quickstart/fmcomms8_a10soc.jpeg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms8-ebz/quickstart/fmcomms8_a10soc.jpeg" style="width: 600px;" />
+</a>
+<p>This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad-fmcomms8-ebz.html" target="_blank">AD-FMCOMMS8-EBZ</a> on:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.altera.com/products/boards_and_kits/dev-kits/altera/arria-10-soc-development-kit.html" target="_blank">Arria10 SoC Development Kit</a> Rev. C or later</p></li>
+</ul>
+<p>Instructions on how to build the Zynq Linux kernel and devicetrees from source can be found here:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../../tools-software/linux-software/kuiper-linux.html"><span class="doc">AD-FMC-SDCARD for Zynq &amp; Altera SoC Quick Start Guide</span></a></p></li>
+<li><p><a class="reference internal" href="../../../../tools-software/linux-software/altera_soc_images.html"><span class="doc">Altera SOC - Build Preloader and Bootloader Image</span></a></p></li>
+</ul>
+<section id="required-software">
+<h2>Required Software<a class="headerlink" href="#required-software" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>SD Card 16GB image using the instructions here: <a class="reference internal" href="../../../../tools-software/linux-software/kuiper-linux.html"><span class="doc">SDCARD for Zynq &amp; Altera SoC Quick Start Guide</span></a>.</p></li>
+<li><p>Copy next boot files from &lt;fc #ff0000&gt;<code class="docutils literal notranslate"><span class="pre">socfpga_arria10_socdk_fmcomms8</span></code>&lt;/fc&gt; directory directly on SD Card <code class="docutils literal notranslate"><span class="pre">BOOT</span></code> partition :</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">socfpga_arria10_socdk.rbf</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">socfpga_arria10_socdk_sdmmc.dtb</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zImage</span></code> (from <code class="docutils literal notranslate"><span class="pre">socfpga_arria10-common</span></code> folder)</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>Write preloader_bootloader.bin from &lt;fc #ff0000&gt;<code class="docutils literal notranslate"><span class="pre">socfpga_arria10_socdk_fmcomms8</span></code>&lt;/fc&gt; folder on third SD Card partition:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>root@raspberrypi:~# lsblk
+NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda           8:0    1 14.9G  0 disk
+├─sda1        8:1    1    1G  0 part /media/pi/BOOT
+├─sda2        8:2    1  7.6G  0 part /media/pi/rootfs
+└─sda3        8:3    1    4M  0 part
+root@raspberrypi:~# dd if=&quot;./preloader_bootloader.bin&quot; of=&quot;/dev/sda3&quot; bs=512
+2048+0 records in
+2048+0 records out
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.25035 s, 4.2 MB/s
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1).</p></li>
+</ul>
+</section>
+<section id="required-hardware">
+<h2>Required Hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.altera.com/products/boards_and_kits/dev-kits/altera/arria-10-soc-development-kit.html" target="_blank">Arria10 SoC Development Kit</a> Rev. C or later</p></li>
+<li><p><a class="reference internal" href="../../ad-fmcomms8-ebz.html"><span class="doc">AD-FMCOMMS8-EBZ</span></a> daughterboard</p></li>
+<li><p>Mini-USB cable</p></li>
+<li><p>Ethernet cable</p></li>
+<li><p>Optionally USB keyboard, mouse and a Display Port compatible monitor</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See <a class="icon link reference external" href="https://wiki.analog.com/wiki/common#esd_warning" target="_blank">wiki/common</a></p>
+</div>
+<section id="fmc-pin-connection-configuration-change">
+<h3>FMC Pin Connection Configuration Change<a class="headerlink" href="#fmc-pin-connection-configuration-change" title="Link to this heading"></a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>To be compatible with the AD-FMCOMMS8-EBZ daughterboard the Arria10 SoC Development Kit requires a minor rework.</p>
+<p>In the default configuration of the Arria10 SoC Development Kit some of the FMC header pins are connected to a dedicated clock chip. To be compatible with the AD-FMCOMMS8-EBZ daughterboard, these pins need to be connected directly to the FPGA.</p>
+</div>
+<p>The connection of those pins can be changed by moving the position of six zero Ohm resistors:</p>
+<ul class="simple">
+<li><p>R575 to R574</p></li>
+<li><p>R576 to R577</p></li>
+<li><p>R612 to R610</p></li>
+<li><p>R613 to R611</p></li>
+<li><p>R621 to R620</p></li>
+<li><p>R633 to R632</p></li>
+</ul>
+<p>These resistors can be found on the backside of the Arria10 SoC Development Kit underneath the FMC A connector (J29). The following picture shows the required configuration to be compatible with the AD-FMCOMMS8-EBZ.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms8-ebz/quickstart/a10soc_fmc_rework_6r.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms8-ebz/quickstart/a10soc_fmc_rework_6r.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms8-ebz/quickstart/a10soc_fmc_rework_6r.jpg" style="width: 400px;" />
+</a>
+</section>
+</section>
+</section>
+<section id="testing">
+<h1>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Connect the <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad-fmcomms8-ebz.html" target="_blank">AD-FMCOMMS8-EBZ</a> board to the FMCA carrier socket.</p></li>
+<li><p>Connect USB UART (Mini USB) to your host PC.</p></li>
+<li><p>Insert SD card into socket.</p></li>
+<li><p>Configure<a class="icon link reference external" href="https://www.altera.com/products/boards_and_kits/dev-kits/altera/arria-10-soc-development-kit.html" target="_blank">Arria10 SoC Development Kit</a> for SD Card booting (Set the Jumpers and Switches accordingly).</p></li>
+<li><p>Turn on the power switch on the FPGA board.</p></li>
+<li><p>Observe kernel and serial console messages on your terminal.</p></li>
+</ul>
+<section id="messages">
+<h2>Messages<a class="headerlink" href="#messages" title="Link to this heading"></a></h2>
+<details><summary>Complete kernel boot log (Click to expand)</summary><div class="box bggreen docutils container">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This specifies any shell prompt running on the target</p>
+</div>
+<details><summary>Boot log (click to expand)</summary><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>U-Boot 2014.10-00334-gf7a7e26-dirty (Jun 30 2021 - 18:17:34), Build: jenkins-master-hdl_jobs_for_linux-projects-fmcomms8.a10soc-125
+
+CPU   : Altera SOCFPGA Arria 10 Platform
+BOARD : Altera SOCFPGA Arria 10 Dev Kit
+I2C:   ready
+DRAM:  WARNING: Caches not enabled
+SOCFPGA DWMMC: 0
+FPGA: writing socfpga_arria10_socdk.rbf ...
+Full Configuration Succeeded.
+DDRCAL: Success
+INFO  : Skip relocation as SDRAM is non secure memory
+Reserving 2048 Bytes for IRQ stack at: ffe386e8
+DRAM  : 1 GiB
+WARNING: Caches not enabled
+MMC:   *** Warning - bad CRC, using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+Model: SOCFPGA Arria10 Dev Kit
+Net:   dwmac.ff800000
+Hit any key to stop autoboot:  0
+FPGA must be in Early Release mode to program core.
+fpga - loadable FPGA image support
+
+** Unable to read file u-boot.scr **
+7662488 bytes read in 381 ms (19.2 MiB/s)
+47522 bytes read in 17 ms (2.7 MiB/s)
+FPGA BRIDGES: enable
+Kernel image @ 0x010000 [ 0x000000 - 0x74eb98 ]
+## Flattened Device Tree blob at 00000100
+   Booting using the fdt blob at 0x000100
+   Loading Device Tree to 01ff1000, end 01fff9a1 ... OK
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 5.4.0-00475-gc588ee4 (jenkins@romlxbuild1.adlk.analog.com) (gcc version 9.2.0 (GCC)) #1847 SMP Fri Jul 2 09:07:42 IST 2021
+[    0.000000] CPU: ARMv7 Processor [414fc091] revision 1 (ARMv7), cr=10c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] OF: fdt: Machine model: Altera SOCFPGA Arria 10
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] cma: Reserved 128 MiB at 0x38000000
+[    0.000000] percpu: Embedded 19 pages/cpu s45196 r8192 d24436 u77824
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 260608
+[    0.000000] Kernel command line: console=ttyS0,115200 root=/dev/mmcblk0p2 rw rootwait
+[    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] Memory: 885384K/1048576K available (12288K kernel code, 1132K rwdata, 7240K rodata, 1024K init, 173K bss, 32120K reserved, 131072K cma-reserved, 131072K highmem)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.000000] ftrace: allocating 39905 entries in 78 pages
+[    0.000000] rcu: Hierarchical RCU implementation.
+[    0.000000] rcu:     RCU event tracing is enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+[    0.000000] NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+[    0.000000] L2C-310 erratum 769419 enabled
+[    0.000000] L2C-310 enabling early BRESP for Cortex-A9
+[    0.000000] L2C-310: enabling full line of zeros but not enabled in Cortex-A9
+[    0.000000] L2C-310 ID prefetch enabled, offset 1 lines
+[    0.000000] L2C-310 dynamic clock gating enabled, standby mode enabled
+[    0.000000] L2C-310 cache controller enabled, 8 ways, 512 kB
+[    0.000000] L2C-310: CACHE_ID 0x410030c9, AUX_CTRL 0x76460001
+[    0.000000] random: get_random_bytes called from start_kernel+0x328/0x4dc with crng_init=0
+[    0.000000] clocksource: timer1: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+[    0.000005] sched_clock: 32 bits at 100MHz, resolution 10ns, wraps every 21474836475ns
+[    0.000013] Switching to timer-based delay loop, resolution 10ns
+[    0.000211] Console: colour dummy device 80x30
+[    0.000241] Calibrating delay loop (skipped), value calculated using timer frequency.. 200.00 BogoMIPS (lpj=1000000)
+[    0.000251] pid_max: default: 32768 minimum: 301
+[    0.000367] Mount-cache hash table entries: 2048 (order: 1, 8192 bytes, linear)
+[    0.000380] Mountpoint-cache hash table entries: 2048 (order: 1, 8192 bytes, linear)
+[    0.000932] CPU: Testing write buffer coherency: ok
+[    0.000959] CPU0: Spectre v2: using BPIALL workaround
+[    0.001183] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.001694] Setting up static identity map for 0x100000 - 0x100060
+[    0.001810] rcu: Hierarchical SRCU implementation.
+[    0.002065] smp: Bringing up secondary CPUs ...
+[    0.002664] CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+[    0.002670] CPU1: Spectre v2: using BPIALL workaround
+[    0.002785] smp: Brought up 1 node, 2 CPUs
+[    0.002794] SMP: Total of 2 processors activated (400.00 BogoMIPS).
+[    0.002799] CPU: All CPU(s) started in SVC mode.
+[    0.003280] devtmpfs: initialized
+[    0.009355] VFP support v0.3: implementor 41 architecture 3 part 30 variant 9 rev 4
+[    0.009544] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.009561] futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+[    0.013437] NET: Registered protocol family 16
+[    0.015305] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    0.016090] hw-breakpoint: found 5 (+1 reserved) breakpoint and 1 watchpoint registers.
+[    0.016098] hw-breakpoint: maximum watchpoint size is 4 bytes.
+[    0.030610] altera_gpio ff200020.gpio: IRQ index 0 not found
+[    0.031515] vgaarb: loaded
+[    0.031794] SCSI subsystem initialized
+[    0.031963] usbcore: registered new interface driver usbfs
+[    0.031997] usbcore: registered new interface driver hub
+[    0.032041] usbcore: registered new device driver usb
+[    0.032169] usb_phy_generic soc:usbphy: soc:usbphy supply vcc not found, using dummy regulator
+[    0.033176] mc: Linux media interface: v0.10
+[    0.033206] videodev: Linux video capture interface: v2.00
+[    0.033284] pps_core: LinuxPPS API ver. 1 registered
+[    0.033290] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti &lt;giometti@linux.it&gt;
+[    0.033303] PTP clock support registered
+[    0.033706] jesd204: created con: id=0, topo=0, link=0, /soc/bridge@ff200000/axi-adrv9009-tx-xcvr@24000 &lt;-&gt; /soc/bridge@ff200000/axi-jesd204-tx@20000
+[    0.033723] jesd204: created con: id=1, topo=0, link=2, /soc/bridge@ff200000/axi-adrv9009-rx-os-xcvr@44000 &lt;-&gt; /soc/bridge@ff200000/axi-jesd204-rx@40000
+[    0.033738] jesd204: created con: id=2, topo=0, link=1, /soc/bridge@ff200000/axi-adrv9009-rx-xcvr@34000 &lt;-&gt; /soc/bridge@ff200000/axi-jesd204-rx@30000
+[    0.033752] jesd204: created con: id=3, topo=0, link=0, /soc/bridge@ff200000/spi@40/hmc7044-fmc@2 &lt;-&gt; /soc/bridge@ff200000/axi-adrv9009-tx-xcvr@24000
+[    0.033765] jesd204: created con: id=4, topo=0, link=2, /soc/bridge@ff200000/spi@40/hmc7044-fmc@2 &lt;-&gt; /soc/bridge@ff200000/axi-adrv9009-rx-os-xcvr@44000
+[    0.033777] jesd204: created con: id=5, topo=0, link=1, /soc/bridge@ff200000/spi@40/hmc7044-fmc@2 &lt;-&gt; /soc/bridge@ff200000/axi-adrv9009-rx-xcvr@34000
+[    0.033815] jesd204: created con: id=6, topo=0, link=1, /soc/bridge@ff200000/axi-jesd204-rx@30000 &lt;-&gt; /soc/bridge@ff200000/spi@40/adrv9009-phy-d@1
+[    0.033835] jesd204: created con: id=7, topo=0, link=2, /soc/bridge@ff200000/axi-jesd204-rx@40000 &lt;-&gt; /soc/bridge@ff200000/spi@40/adrv9009-phy-d@1
+[    0.033855] jesd204: created con: id=8, topo=0, link=0, /soc/bridge@ff200000/axi-jesd204-tx@20000 &lt;-&gt; /soc/bridge@ff200000/spi@40/adrv9009-phy-d@1
+[    0.033920] jesd204: created con: id=9, topo=0, link=1, /soc/bridge@ff200000/spi@40/adrv9009-phy-d@1 &lt;-&gt; /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0
+[    0.033958] jesd204: created con: id=10, topo=0, link=2, /soc/bridge@ff200000/spi@40/adrv9009-phy-d@1 &lt;-&gt; /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0
+[    0.034003] jesd204: created con: id=11, topo=0, link=0, /soc/bridge@ff200000/spi@40/adrv9009-phy-d@1 &lt;-&gt; /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0
+[    0.034032] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0: JESD204[0] transition uninitialized -&gt; initialized
+[    0.034040] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0: JESD204[1] transition uninitialized -&gt; initialized
+[    0.034047] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0: JESD204[2] transition uninitialized -&gt; initialized
+[    0.034052] jesd204: found 9 devices and 1 topologies
+[    0.034089] FPGA manager framework
+[    0.034165] Advanced Linux Sound Architecture Driver Initialized.
+[    0.034897] clocksource: Switched to clocksource timer1
+[    0.435085] NET: Registered protocol family 2
+[    0.435617] tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 6144 bytes, linear)
+[    0.435642] TCP established hash table entries: 8192 (order: 3, 32768 bytes, linear)
+[    0.435706] TCP bind hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.435814] TCP: Hash tables configured (established 8192 bind 8192)
+[    0.435952] UDP hash table entries: 512 (order: 2, 16384 bytes, linear)
+[    0.435993] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes, linear)
+[    0.436162] NET: Registered protocol family 1
+[    0.436558] RPC: Registered named UNIX socket transport module.
+[    0.436567] RPC: Registered udp transport module.
+[    0.436572] RPC: Registered tcp transport module.
+[    0.436576] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.436587] PCI: CLS 0 bytes, default 64
+[    0.437866] workingset: timestamp_bits=30 max_order=18 bucket_order=0
+[    0.443139] NFS: Registering the id_resolver key type
+[    0.443164] Key type id_resolver registered
+[    0.443170] Key type id_legacy registered
+[    0.443181] Installing knfsd (copyright (C) 1996 okir@monad.swb.de).
+[    0.443758] ntfs: driver 2.1.32 [Flags: R/W].
+[    0.443978] jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+[    0.475713] bounce: pool size: 64 pages
+[    0.475728] io scheduler mq-deadline registered
+[    0.475735] io scheduler kyber registered
+[    0.480388] dma-pl330 ffda1000.pdma: Loaded driver for PL330 DMAC-341330
+[    0.480402] dma-pl330 ffda1000.pdma:         DBUFF-512x8bytes Num_Chans-8 Num_Peri-32 Num_Events-8
+[    0.482788] Serial: 8250/16550 driver, 2 ports, IRQ sharing disabled
+[    0.483620] printk: console [ttyS0] disabled
+[    0.483668] ffc02100.serial1: ttyS0 at MMIO 0xffc02100 (irq = 37, base_baud = 6250000) is a 16550A
+[    1.272240] printk: console [ttyS0] enabled
+[    1.277949] brd: module loaded
+[    1.282464] at24 0-0051: 4096 byte 24c32 EEPROM, writable, 32 bytes/write
+[    1.318092] spi_altera ff200040.spi: base (ptrval), irq 40
+[    1.324346] altr_a10sr_gpio altr_a10sr_gpio.0.auto: DMA mask not set
+[    1.331474] libphy: Fixed MDIO Bus: probed
+[    1.336004] CAN device driver interface
+[    1.340048] socfpga-dwmac ff800000.ethernet: IRQ eth_wake_irq not found
+[    1.346654] socfpga-dwmac ff800000.ethernet: IRQ eth_lpi not found
+[    1.352896] socfpga-dwmac ff800000.ethernet: PTP uses main clock
+[    1.358907] socfpga-dwmac ff800000.ethernet: No sysmgr-syscon node found
+[    1.365588] socfpga-dwmac ff800000.ethernet: Unable to parse OF data
+[    1.371933] socfpga-dwmac: probe of ff800000.ethernet failed with error -524
+[    1.379125] stmmaceth ff800000.ethernet: IRQ eth_wake_irq not found
+[    1.385380] stmmaceth ff800000.ethernet: IRQ eth_lpi not found
+[    1.391254] stmmaceth ff800000.ethernet: PTP uses main clock
+[    1.397056] stmmaceth ff800000.ethernet: User ID: 0x10, Synopsys ID: 0x37
+[    1.403819] stmmaceth ff800000.ethernet:     DWMAC1000
+[    1.408700] stmmaceth ff800000.ethernet: DMA HW capability register supported
+[    1.415824] stmmaceth ff800000.ethernet: RX Checksum Offload Engine supported
+[    1.422927] stmmaceth ff800000.ethernet: COE Type 2
+[    1.427790] stmmaceth ff800000.ethernet: TX Checksum insertion supported
+[    1.434460] stmmaceth ff800000.ethernet: Enhanced/Alternate descriptors
+[    1.441050] stmmaceth ff800000.ethernet: Enabled extended descriptors
+[    1.447469] stmmaceth ff800000.ethernet: Ring mode enabled
+[    1.452929] stmmaceth ff800000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+[    1.468280] libphy: stmmac: probed
+[    1.471677] Micrel KSZ9031 Gigabit PHY stmmac-0:07: attached PHY driver [Micrel KSZ9031 Gigabit PHY] (mii_bus:phy_addr=stmmac-0:07, irq=POLL)
+[    1.485048] usbcore: registered new interface driver asix
+[    1.490460] usbcore: registered new interface driver ax88179_178a
+[    1.496562] usbcore: registered new interface driver cdc_ether
+[    1.502397] usbcore: registered new interface driver net1080
+[    1.508069] usbcore: registered new interface driver cdc_subset
+[    1.513982] usbcore: registered new interface driver zaurus
+[    1.519572] usbcore: registered new interface driver cdc_ncm
+[    1.525710] dwc2 ffb00000.usb: ffb00000.usb supply vusb_d not found, using dummy regulator
+[    1.533990] dwc2 ffb00000.usb: ffb00000.usb supply vusb_a not found, using dummy regulator
+[    1.542485] dwc2 ffb00000.usb: EPs: 16, dedicated fifos, 8064 entries in SPRAM
+[    1.550239] dwc2 ffb00000.usb: DWC OTG Controller
+[    1.554983] dwc2 ffb00000.usb: new USB bus registered, assigned bus number 1
+[    1.562022] dwc2 ffb00000.usb: irq 38, io mem 0xffb00000
+[    1.567466] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.04
+[    1.575713] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.582902] usb usb1: Product: DWC OTG Controller
+[    1.587599] usb usb1: Manufacturer: Linux 5.4.0-00475-gc588ee4 dwc2_hsotg
+[    1.594356] usb usb1: SerialNumber: ffb00000.usb
+[    1.599369] hub 1-0:1.0: USB hub found
+[    1.603133] hub 1-0:1.0: 1 port detected
+[    1.607671] ehci_hcd: USB 2.0 &#39;Enhanced&#39; Host Controller (EHCI) Driver
+[    1.614170] ehci-pci: EHCI PCI platform driver
+[    1.618951] usbcore: registered new interface driver uas
+[    1.624301] usbcore: registered new interface driver usb-storage
+[    1.630365] usbcore: registered new interface driver usbserial_generic
+[    1.636900] usbserial: USB Serial support registered for generic
+[    1.642900] usbcore: registered new interface driver ftdi_sio
+[    1.648645] usbserial: USB Serial support registered for FTDI USB Serial Device
+[    1.655987] usbcore: registered new interface driver upd78f0730
+[    1.661896] usbserial: USB Serial support registered for upd78f0730
+[    1.675514] rtc-ds1307 0-0068: registered as rtc0
+[    1.680290] i2c /dev entries driver
+[    1.684455] usbcore: registered new interface driver uvcvideo
+[    1.690204] USB Video Class driver (1.1.1)
+[    1.696941] ltc2978: probe of 0-005c failed with error -121
+[    1.703126] Synopsys Designware Multimedia Card Interface Driver
+[    1.709335] dw_mmc ff808000.dwmmc0: IDMAC supports 32-bit address mode.
+[    1.716108] dw_mmc ff808000.dwmmc0: Using internal DMA controller.
+[    1.722266] dw_mmc ff808000.dwmmc0: Version ID is 270a
+[    1.727435] dw_mmc ff808000.dwmmc0: DW MMC controller at irq 31,32 bit host data width,1024 deep fifo
+[    1.736712] mmc_host mmc0: card is polling.
+[    1.753501] mmc_host mmc0: Bus speed (slot 0) = 50000000Hz (slot req 400000Hz, actual 396825HZ div = 63)
+[    1.811082] mmc_host mmc0: Bus speed (slot 0) = 50000000Hz (slot req 50000000Hz, actual 50000000HZ div = 0)
+[    1.820832] mmc0: new high speed SDHC card at address 0007
+[    1.826995] mmcblk0: mmc0:0007 SD16G 14.4 GiB
+[    1.833923]  mmcblk0: p1 p2 p3
+[    1.984905] altr_a10sr spi1.0: SPI transfer timed out
+[    1.989952] spi_master spi1: failed to transfer one message from queue
+[    2.204896] altr_a10sr spi1.0: SPI transfer timed out
+[    2.209933] spi_master spi1: failed to transfer one message from queue
+[    2.424895] altr_a10sr spi1.0: SPI transfer timed out
+[    2.429929] spi_master spi1: failed to transfer one message from queue
+[    2.644896] altr_a10sr spi1.0: SPI transfer timed out
+[    2.649930] spi_master spi1: failed to transfer one message from queue
+[    2.656677] ledtrig-cpu: registered to indicate activity on CPUs
+[    2.662799] usbcore: registered new interface driver usbhid
+[    2.668366] usbhid: USB HID core driver
+[    2.673347] ad7291: probe of 0-002f failed with error -5
+[    2.679679] adrv9009 spi0.0: adrv9009_probe : enter
+[    2.685424] adrv9009 spi0.1: adrv9009_probe : enter
+[    2.715861] random: fast init done
+[    2.743900] jesd204: /soc/bridge@ff200000/spi@40/hmc7044-fmc@2,jesd204:2,parent=spi0.2: Using as SYSREF provider
+[    2.760781] altera_adxcvr ff234000.axi-adrv9009-rx-xcvr: Lane 0 CDR/CMU PLL &amp; RX offset calibration OK (600 us)
+[    2.773992] altera_adxcvr ff234000.axi-adrv9009-rx-xcvr: Lane 1 CDR/CMU PLL &amp; RX offset calibration OK (600 us)
+[    2.787640] altera_adxcvr ff234000.axi-adrv9009-rx-xcvr: Lane 2 CDR/CMU PLL &amp; RX offset calibration OK (600 us)
+[    2.801156] altera_adxcvr ff234000.axi-adrv9009-rx-xcvr: Lane 3 CDR/CMU PLL &amp; RX offset calibration OK (600 us)
+[    3.812819] altera_adxcvr ff234000.axi-adrv9009-rx-xcvr: Link activation error:
+[    3.820105] altera_adxcvr ff234000.axi-adrv9009-rx-xcvr:     Link PLL not locked
+[    3.827216] altera_adxcvr ff234000.axi-adrv9009-rx-xcvr:     Lane 0 transceiver not ready
+[    3.835105] altera_adxcvr ff234000.axi-adrv9009-rx-xcvr:     Lane 1 transceiver not ready
+[    3.842986] altera_adxcvr ff234000.axi-adrv9009-rx-xcvr:     Lane 2 transceiver not ready
+[    3.850878] altera_adxcvr ff234000.axi-adrv9009-rx-xcvr:     Lane 3 transceiver not ready
+[    3.858796] altera_adxcvr ff234000.axi-adrv9009-rx-xcvr: Altera ADXCVR (17.01.a) probed
+[    3.871277] altera_adxcvr ff244000.axi-adrv9009-rx-os-xcvr: Lane 0 CDR/CMU PLL &amp; RX offset calibration OK (600 us)
+[    3.884991] altera_adxcvr ff244000.axi-adrv9009-rx-os-xcvr: Lane 1 CDR/CMU PLL &amp; RX offset calibration OK (600 us)
+[    3.898850] altera_adxcvr ff244000.axi-adrv9009-rx-os-xcvr: Lane 2 CDR/CMU PLL &amp; RX offset calibration OK (600 us)
+[    3.912480] altera_adxcvr ff244000.axi-adrv9009-rx-os-xcvr: Lane 3 CDR/CMU PLL &amp; RX offset calibration OK (600 us)
+[    4.924406] altera_adxcvr ff244000.axi-adrv9009-rx-os-xcvr: Link activation error:
+[    4.931949] altera_adxcvr ff244000.axi-adrv9009-rx-os-xcvr:  Link PLL not locked
+[    4.939319] altera_adxcvr ff244000.axi-adrv9009-rx-os-xcvr:  Lane 0 transceiver ready
+[    4.947125] altera_adxcvr ff244000.axi-adrv9009-rx-os-xcvr:  Lane 1 transceiver ready
+[    4.954927] altera_adxcvr ff244000.axi-adrv9009-rx-os-xcvr:  Lane 2 transceiver ready
+[    4.962722] altera_adxcvr ff244000.axi-adrv9009-rx-os-xcvr:  Lane 3 transceiver ready
+[    4.970545] altera_adxcvr ff244000.axi-adrv9009-rx-os-xcvr: Altera ADXCVR (17.01.a) probed
+[    5.009595] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr: ATX PLL calibration OK (20 ms)
+[    5.027595] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr: Lane 0 TX termination and VOD calibration OK (600 us)
+[    5.047063] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr: Lane 1 TX termination and VOD calibration OK (600 us)
+[    5.068254] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr: Lane 2 TX termination and VOD calibration OK (600 us)
+[    5.093493] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr: Lane 3 TX termination and VOD calibration OK (600 us)
+[    5.116751] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr: Lane 4 TX termination and VOD calibration OK (600 us)
+[    5.135770] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr: Lane 5 TX termination and VOD calibration OK (600 us)
+[    5.158688] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr: Lane 6 TX termination and VOD calibration OK (600 us)
+[    5.181097] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr: Lane 7 TX termination and VOD calibration OK (600 us)
+[    6.192671] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr: Link activation error:
+[    6.199955] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr:     Link PLL not locked
+[    6.207065] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr:     Lane 0 transceiver ready
+[    6.214599] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr:     Lane 1 transceiver ready
+[    6.222140] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr:     Lane 2 transceiver ready
+[    6.229682] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr:     Lane 3 transceiver ready
+[    6.237223] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr:     Lane 4 transceiver ready
+[    6.244757] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr:     Lane 5 transceiver ready
+[    6.252303] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr:     Lane 6 transceiver ready
+[    6.259844] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr:     Lane 7 transceiver ready
+[    6.267408] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr: Altera ADXCVR (17.01.a) probed
+[    6.276564] fpga_manager fpga0: SoCFPGA Arria10 FPGA Manager registered
+[    6.283867] usbcore: registered new interface driver snd-usb-audio
+[    6.291621] oprofile: no performance counters
+[    6.296071] oprofile: using timer interrupt.
+[    6.300390] drop_monitor: Initializing network drop monitor service
+[    6.307286] NET: Registered protocol family 10
+[    6.312417] Segment Routing with IPv6
+[    6.316149] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    6.322481] NET: Registered protocol family 17
+[    6.326943] NET: Registered protocol family 15
+[    6.331516] can: controller area network core (rev 20170425 abi 9)
+[    6.337741] NET: Registered protocol family 29
+[    6.342166] can: raw protocol (rev 20170425)
+[    6.346428] can: broadcast manager protocol (rev 20170425 t)
+[    6.352064] can: netlink gateway (rev 20190810) max_hops=1
+[    6.357688] 8021q: 802.1Q VLAN Support v1.8
+[    6.361888] NET: Registered protocol family 36
+[    6.366341] Key type dns_resolver registered
+[    6.370675] ThumbEE CPU extension supported.
+[    6.374940] Registering SWP/SWPB emulation handler
+[    6.383416] adrv9009 spi0.0: adrv9009_probe : enter
+[    6.394026] adrv9009 spi0.1: adrv9009_probe : enter
+[    6.446153] cf_axi_dds ff254000.axi-adrv9009-tx-hpc: Analog Devices CF_AXI_DDS_DDS MASTER (9.01.b) at 0xFF254000 mapped to 0x(ptrval), probed DDS ADRV9009-X2
+[    6.460933] axi-jesd204-rx ff230000.axi-jesd204-rx: AXI-JESD204-RX (1.07.a) at 0xFF230000. Encoder 8b10b, width 4/4, lanes 4, jesd204-fsm.
+[    6.473969] axi-jesd204-rx ff240000.axi-jesd204-rx: AXI-JESD204-RX (1.07.a) at 0xFF240000. Encoder 8b10b, width 4/4, lanes 4, jesd204-fsm.
+[    6.486881] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[0] transition initialized -&gt; probed
+[    6.498933] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[1] transition initialized -&gt; probed
+[    6.510972] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[2] transition initialized -&gt; probed
+[    6.523019] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[0] transition probed -&gt; idle
+[    6.534451] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[1] transition probed -&gt; idle
+[    6.545890] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[2] transition probed -&gt; idle
+[    6.557330] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[0] transition idle -&gt; device_init
+[    6.569194] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[1] transition idle -&gt; device_init
+[    6.581057] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[2] transition idle -&gt; device_init
+[    6.592932] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[0] transition device_init -&gt; link_init
+[    6.605228] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[1] transition device_init -&gt; link_init
+[    6.617522] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[2] transition device_init -&gt; link_init
+[    6.629832] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[0] transition link_init -&gt; link_supported
+[    6.642387] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[1] transition link_init -&gt; link_supported
+[    6.654946] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[2] transition link_init -&gt; link_supported
+[    6.667928] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[0] transition link_supported -&gt; link_pre_setup
+[    6.680924] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[1] transition link_supported -&gt; link_pre_setup
+[    6.693913] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[2] transition link_supported -&gt; link_pre_setup
+[    6.706908] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[0] transition link_pre_setup -&gt; clk_sync_stage1
+[    6.719981] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[1] transition link_pre_setup -&gt; clk_sync_stage1
+[    6.733054] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[2] transition link_pre_setup -&gt; clk_sync_stage1
+[    6.746135] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[0] transition clk_sync_stage1 -&gt; clk_sync_stage2
+[    6.759299] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[1] transition clk_sync_stage1 -&gt; clk_sync_stage2
+[    6.772460] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[2] transition clk_sync_stage1 -&gt; clk_sync_stage2
+[    6.785627] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[0] transition clk_sync_stage2 -&gt; clk_sync_stage3
+[    6.798787] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[1] transition clk_sync_stage2 -&gt; clk_sync_stage3
+[    6.811946] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[2] transition clk_sync_stage2 -&gt; clk_sync_stage3
+[    6.825108] jesd204: /soc/bridge@ff200000/axi-jesd204-rx@30000,jesd204:6,parent=ff230000.axi-jesd204-rx: Possible instantiation for multiple chips; HDL lanes 4, Link[1] lanes 2
+[    6.840785] jesd204: /soc/bridge@ff200000/axi-jesd204-rx@40000,jesd204:7,parent=ff240000.axi-jesd204-rx: Possible instantiation for multiple chips; HDL lanes 4, Link[2] lanes 2
+[    6.859736] altera_adxcvr ff244000.axi-adrv9009-rx-os-xcvr: Lane 0 CDR/CMU PLL &amp; RX offset calibration OK (600 us)
+[    6.873476] altera_adxcvr ff244000.axi-adrv9009-rx-os-xcvr: Lane 1 CDR/CMU PLL &amp; RX offset calibration OK (600 us)
+[    6.887372] altera_adxcvr ff244000.axi-adrv9009-rx-os-xcvr: Lane 2 CDR/CMU PLL &amp; RX offset calibration OK (600 us)
+[    6.900868] altera_adxcvr ff244000.axi-adrv9009-rx-os-xcvr: Lane 3 CDR/CMU PLL &amp; RX offset calibration OK (600 us)
+[    7.912785] altera_adxcvr ff244000.axi-adrv9009-rx-os-xcvr: Link activation error:
+[    7.920327] altera_adxcvr ff244000.axi-adrv9009-rx-os-xcvr:  Link PLL not locked
+[    7.927695] altera_adxcvr ff244000.axi-adrv9009-rx-os-xcvr:  Lane 0 transceiver not ready
+[    7.935840] altera_adxcvr ff244000.axi-adrv9009-rx-os-xcvr:  Lane 1 transceiver not ready
+[    7.943980] altera_adxcvr ff244000.axi-adrv9009-rx-os-xcvr:  Lane 2 transceiver not ready
+[    7.952124] altera_adxcvr ff244000.axi-adrv9009-rx-os-xcvr:  Lane 3 transceiver not ready
+[    7.960284] jesd204: /soc/bridge@ff200000/axi-jesd204-tx@20000,jesd204:8,parent=ff220000.axi-jesd204-tx: Possible instantiation for multiple chips; HDL lanes 8, Link[0] lanes 4
+[    8.005980] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr: ATX PLL calibration OK (20 ms)
+[    8.024852] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr: Lane 0 TX termination and VOD calibration OK (600 us)
+[    8.048319] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr: Lane 1 TX termination and VOD calibration OK (600 us)
+[    8.076093] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr: Lane 2 TX termination and VOD calibration OK (600 us)
+[    8.110178] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr: Lane 3 TX termination and VOD calibration OK (600 us)
+[    8.138200] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr: Lane 4 TX termination and VOD calibration OK (600 us)
+[    8.160214] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr: Lane 5 TX termination and VOD calibration OK (600 us)
+[    8.192103] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr: Lane 6 TX termination and VOD calibration OK (600 us)
+[    8.222638] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr: Lane 7 TX termination and VOD calibration OK (600 us)
+[    9.234207] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr: Link activation error:
+[    9.241488] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr:     Link PLL not locked
+[    9.248596] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr:     Lane 0 transceiver ready
+[    9.256139] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr:     Lane 1 transceiver ready
+[    9.263674] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr:     Lane 2 transceiver ready
+[    9.271213] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr:     Lane 3 transceiver ready
+[    9.278753] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr:     Lane 4 transceiver ready
+[    9.286293] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr:     Lane 5 transceiver ready
+[    9.293826] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr:     Lane 6 transceiver ready
+[    9.301366] altera_adxcvr ff224000.axi-adrv9009-tx-xcvr:     Lane 7 transceiver ready
+[    9.308918] adrv9009 spi0.1: ADIHAL_resetHw
+[    9.654874] adrv9009 spi0.0: ADIHAL_resetHw
+[   10.000779] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[0] transition clk_sync_stage3 -&gt; link_setup
+[   10.013514] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[1] transition clk_sync_stage3 -&gt; link_setup
+[   10.026243] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[2] transition clk_sync_stage3 -&gt; link_setup
+[   10.039217] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[0] transition link_setup -&gt; opt_setup_stage1
+[   10.052037] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[1] transition link_setup -&gt; opt_setup_stage1
+[   10.064851] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[2] transition link_setup -&gt; opt_setup_stage1
+[   10.090788] random: crng init done
+[   16.230234] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[0] transition opt_setup_stage1 -&gt; opt_setup_stage2
+[   16.243576] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[1] transition opt_setup_stage1 -&gt; opt_setup_stage2
+[   16.256911] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[2] transition opt_setup_stage1 -&gt; opt_setup_stage2
+[   16.270491] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[0] transition opt_setup_stage2 -&gt; opt_setup_stage3
+[   16.283830] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[1] transition opt_setup_stage2 -&gt; opt_setup_stage3
+[   16.297164] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[2] transition opt_setup_stage2 -&gt; opt_setup_stage3
+[   16.310874] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[0] transition opt_setup_stage3 -&gt; opt_setup_stage4
+[   16.324211] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[1] transition opt_setup_stage3 -&gt; opt_setup_stage4
+[   16.337548] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[2] transition opt_setup_stage3 -&gt; opt_setup_stage4
+[   21.353349] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[0] transition opt_setup_stage4 -&gt; opt_setup_stage5
+[   21.366687] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[1] transition opt_setup_stage4 -&gt; opt_setup_stage5
+[   21.380020] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[2] transition opt_setup_stage4 -&gt; opt_setup_stage5
+[   21.393990] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[0] transition opt_setup_stage5 -&gt; clocks_enable
+[   21.407069] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[1] transition opt_setup_stage5 -&gt; clocks_enable
+[   21.420143] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[2] transition opt_setup_stage5 -&gt; clocks_enable
+[   21.433844] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[0] transition clocks_enable -&gt; link_enable
+[   21.446494] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[1] transition clocks_enable -&gt; link_enable
+[   21.459136] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[2] transition clocks_enable -&gt; link_enable
+[   21.565472] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[0] transition link_enable -&gt; link_running
+[   21.578032] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[1] transition link_enable -&gt; link_running
+[   21.590588] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[2] transition link_enable -&gt; link_running
+[   21.606494] adrv9009 spi0.1: adrv9009_info: adrv9009 Rev 192, Firmware 6.0.2 API version: 3.6.0.5 successfully initialized via jesd204-fsm
+[   21.622206] adrv9009 spi0.0: adrv9009_info: adrv9009-x2 Rev 192, Firmware 6.0.2 API version: 3.6.0.5 successfully initialized via jesd204-fsm
+[   21.634854] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[0] transition link_running -&gt; opt_post_running_stage
+[   21.648361] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[1] transition link_running -&gt; opt_post_running_stage
+[   21.661866] jesd204: /soc/bridge@ff200000/spi@40/adrv9009-phy-c@0,jesd204:0,parent=spi0.0: JESD204[2] transition link_running -&gt; opt_post_running_stage
+[   21.675396] axi-jesd204-tx ff220000.axi-jesd204-tx: AXI-JESD204-TX (1.06.a) at 0xFF220000. Encoder 8b10b, width 4/4, lanes 8, jesd204-fsm.
+[   21.708701] cf_axi_adc ff250000.axi-adrv9009-rx-hpc: ADI AIM (10.01.b) at 0xFF250000 mapped to 0x5eb60ce1, probed ADC ADRV9009-X2 as MASTER
+[   21.721402] of_cfs_init
+[   21.723872] of_cfs_init: OK
+[   21.726946] ALSA device list:
+[   21.729901]   No soundcards found.
+[   21.733482] ttyS0 - failed to request DMA
+[   21.767097] EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)
+[   21.775233] VFS: Mounted root (ext4 filesystem) on device 179:2.
+[   21.790678] devtmpfs: mounted
+[   21.796445] Freeing unused kernel memory: 1024K
+[   21.801290] Run /sbin/init as init process
+[   22.475184] systemd[1]: System time before build time, advancing clock.
+[   22.546767] systemd[1]: systemd 241 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD -IDN2 +IDN -PCRE2 default-hierarchy=hybrid)
+[   22.568629] systemd[1]: Detected architecture arm.
+
+Welcome to Kuiper GNU/Linux 10 (buster)!
+
+[   22.645923] systemd[1]: Set hostname to &lt;analog&gt;.
+[   23.028778] systemd[1]: File /lib/systemd/system/systemd-journald.service:12 configures an IP firewall (IPAddressDeny=any), but the local system does not support BPF/cgroup based firewalling.
+[   23.045972] systemd[1]: Proceeding WITHOUT firewalling in effect! (This warning is only shown for the first loaded unit using IP firewalling.)
+[   23.228395] systemd[1]: /etc/systemd/system/tof-server.service:1: Assignment outside of section. Ignoring.
+[   23.238082] systemd[1]: /etc/systemd/system/tof-server.service:2: Assignment outside of section. Ignoring.
+[   23.461171] systemd[1]: Listening on fsck to fsckd communication Socket.
+[  OK  ] Listening on fsck to fsckd communication Socket.
+[   23.495456] systemd[1]: Listening on udev Kernel Socket.
+[  OK  ] Listening on udev Kernel Socket.
+[   23.525477] systemd[1]: Listening on Syslog Socket.
+[  OK  ] Listening on Syslog Socket.
+[  OK  ] Created slice User and Session Slice.
+[  OK  ] Listening on initctl Compatibility Named Pipe.
+[  OK  ] Listening on Journal Socket.
+         Starting Set the console keyboard layout...
+         Mounting Kernel Debug File System...
+         Starting Load Kernel Modules...
+[  OK  ] Started Forward Password R…uests to Wall Directory Watch.
+[  OK  ] Created slice system-systemd\x2dfsck.slice.
+[  OK  ] Listening on Journal Socket (/dev/log).
+[  OK  ] Reached target Slices.
+[  OK  ] Reached target Swap.
+         Mounting RPC Pipe File System...
+[  OK  ] Listening on udev Control Socket.
+         Starting Journal Service...
+[  OK  ] Created slice system-serial\x2dgetty.slice.
+         Starting Restore / save the current clock...
+[  OK  ] Created slice system-getty.slice.
+         Starting udev Coldplug all Devices...
+[  OK  ] Started Journal Service.
+[  OK  ] Started Set the console keyboard layout.
+[  OK  ] Mounted Kernel Debug File System.
+[FAILED] Failed to start Load Kernel Modules.
+See &#39;systemctl status systemd-modules-load.service&#39; for details.
+[  OK  ] Mounted RPC Pipe File System.
+[  OK  ] Started Restore / save the current clock.
+         Starting Remount Root and Kernel File Systems...
+         Mounting Kernel Configuration File System...
+         Starting Apply Kernel Variables...
+[  OK  ] Mounted Kernel Configuration File System.
+[  OK  ] Started Apply Kernel Variables.
+[  OK  ] Started udev Coldplug all Devices.
+         Starting Helper to synchronize boot up for ifupdown...
+[  OK  ] Started Remount Root and Kernel File Systems.
+[  OK  ] Started Helper to synchronize boot up for ifupdown.
+         Starting Flush Journal to Persistent Storage...
+         Starting Create System Users...
+         Starting Load/Save Random Seed...
+[  OK  ] Started Create System Users.
+[  OK  ] Started Load/Save Random Seed.
+[  OK  ] Started Flush Journal to Persistent Storage.
+         Starting Create Static Device Nodes in /dev...
+[  OK  ] Started Create Static Device Nodes in /dev.
+         Starting udev Kernel Device Manager...
+[  OK  ] Reached target Local File Systems (Pre).
+[  OK  ] Started udev Kernel Device Manager.
+         Starting Show Plymouth Boot Screen...
+[  OK  ] Started Show Plymouth Boot Screen.
+[  OK  ] Started Forward Password R…s to Plymouth Directory Watch.
+[  OK  ] Reached target Local Encrypted Volumes.
+[  OK  ] Found device /dev/ttyS0.
+[  OK  ] Found device /dev/disk/by-partuuid/9bdcdc9c-01.
+         Starting File System Check…isk/by-partuuid/9bdcdc9c-01...
+[  OK  ] Started File System Check Daemon to report status.
+[  OK  ] Started File System Check …/disk/by-partuuid/9bdcdc9c-01.
+         Mounting /boot...
+[  OK  ] Mounted /boot.
+[  OK  ] Reached target Local File Systems.
+         Starting Raise network interfaces...
+         Starting Set console font and keymap...
+         Starting Tell Plymouth To Write Out Runtime Data...
+         Starting Preprocess NFS configuration...
+         Starting Create Volatile Files and Directories...
+[  OK  ] Started Preprocess NFS configuration.
+[  OK  ] Reached target NFS client services.
+[  OK  ] Reached target Remote File Systems (Pre).
+[  OK  ] Reached target Remote File Systems.
+[  OK  ] Started Tell Plymouth To Write Out Runtime Data.
+[  OK  ] Started Set console font and keymap.
+[  OK  ] Started Create Volatile Files and Directories.
+         Starting Network Time Synchronization...
+         Starting Update UTMP about System Boot/Shutdown...
+[  OK  ] Started Update UTMP about System Boot/Shutdown.
+[  OK  ] Started Network Time Synchronization.
+         Starting Load Kernel Modules...
+         Starting Tell Plymouth To Write Out Runtime Data...
+[  OK  ] Reached target System Time Synchronized.
+[  OK  ] Started Raise network interfaces.
+[  OK  ] Started Tell Plymouth To Write Out Runtime Data.
+[FAILED] Failed to start Load Kernel Modules.
+See &#39;systemctl status systemd-modules-load.service&#39; for details.
+[  OK  ] Reached target System Initialization.
+[  OK  ] Listening on D-Bus System Message Bus Socket.
+[  OK  ] Started Daily man-db regeneration.
+[  OK  ] Started Daily rotation of log files.
+[  OK  ] Listening on GPS (Global P…ioning System) Daemon Sockets.
+[  OK  ] Started Daily Cleanup of Temporary Directories.
+[  OK  ] Started CUPS Scheduler.
+[  OK  ] Reached target Paths.
+[  OK  ] Started Daily apt download activities.
+[  OK  ] Started Daily apt upgrade and clean activities.
+[  OK  ] Reached target Timers.
+[  OK  ] Listening on CUPS Scheduler.
+[  OK  ] Listening on Avahi mDNS/DNS-SD Stack Activation Socket.
+[  OK  ] Listening on triggerhappy.socket.
+[  OK  ] Reached target Sockets.
+[  OK  ] Reached target Basic System.
+         Starting dphys-swapfile - …unt, and delete a swap file...
+         Starting dhcpcd on all interfaces...
+[  OK  ] Started tof-server.service.
+[  OK  ] Started CUPS Scheduler.
+         Starting System Logging Service...
+         Starting Avahi mDNS/DNS-SD Stack...
+[  OK  ] Started Regular background program processing daemon.
+         Starting Login Service...
+         Starting Disk Manager...
+         Starting Check for Raspberry Pi EEPROM updates...
+         Starting rng-tools.service...
+         Starting LSB: Switch to on…nless shift key is pressed)...
+         Starting Modem Manager...
+         Starting triggerhappy global hotkey daemon...
+[  OK  ] Started D-Bus System Message Bus.
+         Starting WPA supplicant...
+[FAILED] Failed to start rng-tools.service.
+See &#39;systemctl status rng-tools.service&#39; for details.
+[  OK  ] Started Login Service.
+[  OK  ] Started triggerhappy global hotkey daemon.
+[  OK  ] Started System Logging Service.
+[  OK  ] Started dhcpcd on all interfaces.
+[  OK  ] Started Check for Raspberry Pi EEPROM updates.
+[  OK  ] Started WPA supplicant.
+[  OK  ] Started Avahi mDNS/DNS-SD Stack.
+         Starting Authorization Manager...
+[  OK  ] Started Make remote CUPS printers available locally.
+[  OK  ] Reached target Network.
+         Starting /etc/rc.local Compatibility...
+         Starting HTTP based time synchronization tool...
+         Starting OpenBSD Secure Shell server...
+[  OK  ] Started IIO Daemon.
+         Starting Permit User Sessions...
+[  OK  ] Started LSB: Switch to ond…(unless shift key is pressed).
+[  OK  ] Started dphys-swapfile - s…mount, and delete a swap file.
+[  OK  ] Started /etc/rc.local Compatibility.
+[  OK  ] Started HTTP based time synchronization tool.
+[  OK  ] Started Permit User Sessions.
+         Starting Hold until boot process finishes up...
+         Starting Light Display Manager...
+[  OK  ] Started Authorization Manager.
+[  OK  ] Started OpenBSD Secure Shell server.
+
+Raspbian GNU/Linux 10 analog ttyS0
+
+analog login: root (automatic login)
+
+Last login: Fri Jul  2 14:47:07 BST 2021 on ttyS0
+Linux analog 5.4.0-00475-gc588ee4 #1847 SMP Fri Jul 2 09:07:42 IST 2021 armv7l
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+root@analog:~#
+</pre></div>
+</div>
+</details></div>
+</details><p>These devices should be present:</p>
+<div class="box bggreen docutils container">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This specifies any shell prompt running on the target</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@analog</span><span class="p">:</span><span class="o">~</span><span class="c1"># iio_info | grep :device</span>
+        <span class="n">iio</span><span class="p">:</span><span class="n">device2</span><span class="p">:</span> <span class="n">hmc7044</span><span class="o">-</span><span class="n">fmc</span>
+        <span class="n">iio</span><span class="p">:</span><span class="n">device3</span><span class="p">:</span> <span class="n">adrv9009</span><span class="o">-</span><span class="n">phy</span><span class="o">-</span><span class="n">c</span>
+        <span class="n">iio</span><span class="p">:</span><span class="n">device4</span><span class="p">:</span> <span class="n">adrv9009</span><span class="o">-</span><span class="n">phy</span><span class="o">-</span><span class="n">d</span>
+        <span class="n">iio</span><span class="p">:</span><span class="n">device5</span><span class="p">:</span> <span class="n">axi</span><span class="o">-</span><span class="n">adrv9009</span><span class="o">-</span><span class="n">rx</span><span class="o">-</span><span class="n">obs</span><span class="o">-</span><span class="n">hpc</span> <span class="p">(</span><span class="n">buffer</span> <span class="n">capable</span><span class="p">)</span>
+        <span class="n">iio</span><span class="p">:</span><span class="n">device6</span><span class="p">:</span> <span class="n">axi</span><span class="o">-</span><span class="n">adrv9009</span><span class="o">-</span><span class="n">tx</span><span class="o">-</span><span class="n">hpc</span> <span class="p">(</span><span class="n">buffer</span> <span class="n">capable</span><span class="p">)</span>
+        <span class="n">iio</span><span class="p">:</span><span class="n">device7</span><span class="p">:</span> <span class="n">axi</span><span class="o">-</span><span class="n">adrv9009</span><span class="o">-</span><span class="n">rx</span><span class="o">-</span><span class="n">hpc</span> <span class="p">(</span><span class="n">buffer</span> <span class="n">capable</span><span class="p">)</span>
+<span class="n">root</span><span class="nd">@analog</span><span class="p">:</span><span class="o">~</span><span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+<p>For more details, check <a class="reference internal" href="../../ad-fmcomms8-ebz.html"><span class="doc">Getting started with ad-fmcomms8-ebz</span></a></p>
+</section>
+<section id="iio-oscilloscope-remote">
+<h2>IIO Oscilloscope Remote<a class="headerlink" href="#iio-oscilloscope-remote" title="Link to this heading"></a></h2>
+<p>Please see also here:<a class="reference internal" href="../../../../tools-software/linux-software/iio_oscilloscope.html"><span class="doc">Oscilloscope</span></a></p>
+<p>The IIO Oscilloscope application can be used to connect to another platform that has a connected device in order to configure the device and read data from it.</p>
+<p>Build and start osc on a network enabled Linux host.</p>
+<p>Once the application is launched goto Settings -&gt; Connect and enter the IP address of the target in the popup window.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Even thought this is Linux, this is a persistent file systems. Care should be taken not to corrupt the file system – please shut down things, don’t just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">shutdown</span> <span class="pre">-h</span> <span class="pre">now</span></code></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png"><img alt="image1" src="https://wiki.analog.com/_media/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/shutdown.png" style="width: 300px;" /></a></p>
+</div>
+</section>
+</section>
+<section id="more-information">
+<h1>More information<a class="headerlink" href="#more-information" title="Link to this heading"></a></h1>
+<p><a class="reference internal" href="../quick-start-guide.html"><span class="doc">FMCOMMS8 Quick Start Guide</span></a></p>
+<section id="id3">
+<h2>More Information<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../adrv9002/quickstart.html"><span class="doc">ADRV9001/2 Quick Start Guides</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="../../adrv9002/quickstart/zynqmp.html"><span class="doc">ADRV9002 Zynq UltraScale+ MPSoC ZCU102 Quick Start Guide</span></a></p></li>
+<li><p><a class="reference internal" href="../../adrv9002/quickstart/zynq.html"><span class="doc">ADRV9002 Zynq SoC ZC706 Quick Start Guide</span></a></p></li>
+<li><p><a class="reference internal" href="../../adrv9002/quickstart/zed.html"><span class="doc">ADRV9002 Zynq Zed Board Quick Start Guide</span></a></p></li>
+<li><p><a class="reference internal" href="../../adrv9002/quickstart/a10soc.html"><span class="doc">ADRV9002 Arria10 SoC Quick Start Guide</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="../../adrv9002/reference_hdl.html"><span class="doc">ADRV9001/ADRV9002 HDL Reference Design</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="../../adrv9002/axi_adrv9002.html"><span class="doc">AXI_ADRV9001/AXI_ADRV9002 Interface Core</span></a></p></li>
+<li><p><a class="reference internal" href="../../../../fpga/docs/hdl.html"><span class="doc">Building HDL how-to, ADI Reference Designs HDL User Guide</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="../../../../tools-software/linux-drivers/iio-transceiver/adrv9002-customization.html"><span class="doc">ADRV9002 Device Driver Customization</span></a></p></li>
+<li><p><a class="reference internal" href="../../../../tools-software/linux-drivers/iio-transceiver/adrv9002.html"><span class="doc">ADRV9002 Integrated Dual RF Transceiver Linux device driver</span></a></p></li>
+</ul>
+</section>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h2>
+<p>Analog Devices will provide limited online support for anyone using the reference design with Analog Devices components via the <a class="icon ez reference external" href="https://ez.analog.com/community/fpga" target="_blank">EngineerZone</a>.</p>
+</section>
+<section id="software-resources">
+<h2>Software resources<a class="headerlink" href="#software-resources" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../../tools-software/linux-drivers/iio-transceiver/adrv9002-customization.html"><span class="doc">ADRV9002 Device Driver Customization</span></a></p></li>
+<li><p><a class="reference internal" href="../../../../tools-software/linux-drivers/iio-transceiver/adrv9002.html"><span class="doc">ADRV9002 Integrated Dual RF Transceiver Linux device driver</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

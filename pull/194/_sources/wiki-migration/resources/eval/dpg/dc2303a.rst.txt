@@ -1,0 +1,157 @@
+EVALUATING THE LTC2000/LTC2000A DIGITAL-TO-ANALOG CONVERTER USING DC2303A
+=========================================================================
+
+Preface
+-------
+
+This user guide describes both the hardware and software setup needed to acquire data capture from :adi:`DC2303A <ltc2000/#evaluation-kit>` evaluation board to characterize :adi:`ltc2000` / :adi:`ltc2000a` 16-/14-/11-bit, 2.5-/2.7-GSPS, RF Digital-to-Analog Converters.
+
+This guide provides instructions for using DC2303A with KC705 controller board. Link to the User Guide for DC2085A with Stratix IV is provided for customers who still have this evaluation board.
+
+Typical Setup
+-------------
+
+.. container:: centeralign
+
+   \ |image1|\
+
+
+.. container:: centeralign
+
+   \ *Figure 1. LTC2000 / LTC2000A Typical Evaluation Setup Using DC2303A*\
+
+
+.. container:: centeralign
+
+   \ *Table 1. DC2303A Variants*\
+
+
+.. container:: centeralign
+
+   
+   ================ =========== ========== =============== ================
+   DC2303A VARIANTS PART NUMBER RESOLUTION MAX SAMPLE RATE OUTPUT FREQUENCY
+   ================ =========== ========== =============== ================
+   DC2303A-A        LTC2000-16  16-Bit     2.5 GSPS        DC to 1000MHz
+   DC2303A-B        LTC2000-14  14-Bit     2.5 GSPS        DC to 1000MHz
+   DC2303A-C        LTC2000-11  11-Bit     2.5 GSPS        DC to 1000MHz
+   DC2303A-D        LTC2000A-16 16-Bit     2.7 GSPS        DC to 1080MHz
+   DC2303A-E        LTC2000A-14 14-Bit     2.7 GSPS        DC to 1080MHz
+   DC2303A-F        LTC2000A-11 11-Bit     2.7 GSPS        DC to 1080MHz
+   ================ =========== ========== =============== ================
+   
+
+
+.. tip::
+
+   Tip: Click on any picture in this guide to open an enlarged version.
+
+
+Helpful Files
+-------------
+
+-  Demo Manual: `DC2303A Demo Manual <https://wiki.analog.com/_media/adi>media/en/technical-documentation/user-guides/855-DC2303A_REV01_DEMO_MANUAL.PDF>`__ and `DC2085A Demo Manual <https://wiki.analog.com/_media/adi>media/en/technical-documentation/user-guides/dc2085afb.pdf>`__ using Stratix IV.
+-  Datasheet: `LTC2000 <https://wiki.analog.com/_media/adi>media/en/technical-documentation/data-sheets/2000fb.pdf>`__ / `LTC2000A <https://wiki.analog.com/_media/adi>media/en/technical-documentation/data-sheets/2000afb.pdf>`__
+-  IBIS Model: :adi:`LTC2000 IBIS Model <media/en/package-pcb-model-library/ibis-models/ltc2000>` / :adi:`LTC2000A IBIS Model <media/en/package-pcb-model-library/ibis-models/ltc2000>`
+-  Schematics: `DC2303A <https://wiki.analog.com/_media/adi>media/en/technical-documentation/eval-board-schematic/710-DC2303A_REV02_PCA_SCHEMATIC.PDF>`__
+-  Design Files: :adi:`DC2303A <media/en/evaluation-documentation/evaluation-design-files/dc2303a-a-b-c-d-e-f.zip>`
+
+Software Needed
+---------------
+
+-  :adi:`LTDACGen <en/products/ltc2000.html#software-resources>`
+-  `AMD Vivado <https://www.xilinx.com/support/download.html>`_ (Version 2018.1 or later)
+-  top_FPGA.bit (FPGA Bitstream File)
+
+Hardware Needed
+---------------
+
+-  DC2303A Demo Board
+-  DC2159A FMC Communication Interface Board
+
+   -  USB-A to USB-Mini B Cable
+   -  50-ohm Resistor
+
+-  DC2233A Adapter Board
+-  AMD Kintex7 FPGA KC705 Evaluation Kit
+
+   -  Power Supply
+   -  USB-A to USB-Micro B Cable
+
+-  5-Vdc, 2-A Power Supply
+-  PC
+-  High-Frequency Continuous Wave Generator
+-  Spectrum Analyzer
+-  (2) SMA Cables
+-  (2) Power Supply Cables
+
+Quick Start Guide
+-----------------
+
+-  Download and install the **LTDACGen**.
+-  Attach DC2303A and DC2159A to KC705 through the FPGA board’s HPC and LPC FMC connectors, respectively.
+-  Connect **J1** and **J2** of the DC2233A to **J3** and **J1** of the DC2303A.
+-  Connect a **50-ohm resistor** to DC2159A across CN2 pins 23 and 2 then connect the board to PC using a USB cable.
+
+.. important::
+
+   Note: The 50-ohm resistor is required to allow the use of DC2159A for DAC evaluation.
+
+
+-  Switch on KC705. If the board is not pre-programmed, follow the steps below to configure the FPGA:
+
+   -  Download and install **Vivado**.
+
+      -  Connect KC705 **JTAG** to PC using a USB cable.
+      -  Launch Vivado then click **Open Hardware Manager**.
+      -  Select **Open target > Auto Connect**. Vivado should be able to detect and connect to the KC705 (See *Hardware* panel).
+      -  On the *Hardware* panel, right click on the FPGA and select **Program Device**.
+      -  Click on the **[…]** button beside the *Bitstream file* field and navigate to the **bit** file inside the **LTDACGen installer** folder.
+      -  After browsing to the bitstream file, click **Program** to program the FPGA.
+      -  Once programming is done, right click on the FPGA target on the *Hardware* panel then select **Close Target**.
+      -  Right click on the server (**localhost**) on the *Hardware* panel then select **Close Server**.
+      -  Exit Vivado and disconnect the USB cable connecting the KC705 to PC.
+
+-  Power up the DC2303A evaluation board by connecting it to a 5-Vdc, 2-A power supply through the +5V turret.
+-  Connect the continuous wave generator for clock input to **J4** using an SMA cable. Set the clock input to **2.5 GHz** and **10 dBm**.
+-  Connect the spectrum analyzer to **J3** of the DC2233A using an SMA cable.
+-  Open **LTDACGen**. All status indicators should be green as shown in Figure 2.\ |image2|\
+
+.. container:: centeralign
+
+   \ *Figure 2. Launching LTDACGen (FPGA Connected)*\
+
+
+-  Select **Sine** from the dropdown menu under the *FPGA LVDS Data* panel then press **Add**. As can be seen in Figure 3, the frequency should be set to 400 MHz by default.\ |image3|\
+
+.. container:: centeralign
+
+   \ *Figure 3. Generating a Sine Wave Pattern using LTDACGen*\
+
+
+-  Change the *Center Frequency* to **200 MHz** then click the **Update FPGA** button to send the data to the FPGA and program the DAC.  The FFT plots similar to Figures 4 should appear in the signal/spectrum analyzer.
+
+
+
+|image4|
+
+.. container:: centeralign
+
+   \ *Figure 4. Spectrum Analyzer Output*\
+
+
+Troubleshooting
+---------------
+
+-  Check if the USB cables are directly plugged into the PC USB ports to ensure enough power is supplied to the USB interface of KC705 and DC2159A.
+-  Check if a 50-ohm resistor is connected across CN2 pins 2 and 23.
+-  Power cycle the KC705 controller board then perform Step 5 of the Quick Start Guide.
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/dac/dc2303a_kc705.png
+   :width: 500px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/dac/Launching_LTDACGen_(FPGA_Connected).png
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/dac/generating_a_sine_wave_pattern_using_ltdacgen.png
+   :width: 400px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/dac/dc2303a_spectrumanalyzer.png
+   :width: 600px

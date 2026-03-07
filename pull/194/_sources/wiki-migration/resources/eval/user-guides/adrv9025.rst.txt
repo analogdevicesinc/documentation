@@ -1,0 +1,117 @@
+ADRV9026 & ADRV9029 Prototyping Platform User Guide
+===================================================
+
+.. important::
+
+   We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/documentation/eval/user-guide/transceiver/adrv9026/index.html\
+
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9026-355.png
+   :width: 200px
+
+The :adi:`EVAL-ADRV9026/ADRV9029 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADRV9026.html>`, are FMC radio cards for the :adi:`ADRV9026` respectively :adi:`ADRV9029`, highly integrated, radio frequency (RF) agile transceivers offering four independently controlled transmitters, dedicated observation receiver inputs for monitoring each transmitter channel, four independently controlled receivers, integrated synthesizers, and digital signal processing functions providing complete transceiver solutions. The devices provide the performance demanded by cellular infrastructure applications, such as small cell base station radios, macro 3G/4G/5G systems, and massive multiple in/multiple out (MIMO) base stations.
+
+The :adi:`EVAL-ADRV9026/ADRV9029 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADRV9026.html>` radio cards designed to showcase the :adi:`ADRV9026` (quad-channel wideband RF transceiver) and :adi:`ADRV9029` (quad-channel wideband RF transceiver with integrated DPD & CFR). The radio cards provide a 4x4 transceiver platform for device evaluation. All peripherals necessary for the radio card to operate include a separate high efficiency power circuit board, and a high-performance clocking solution included on the radio board. Connecting one of the radio cards with the FPGA motherboard :adi:`ADS9-V2EBZ` through the FMC connector form a complete evaluation platform for :adi:`ADRV9026` and :adi:`ADRV9029`. The :adi:`ADRV9026` evaluation kit can also be used to evaluate the performance of the :adi:`ADRV9010`.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/eval-adrv9029angle-web.png
+   :align: center
+
+Table of Contents
+-----------------
+
+People who follow the flow that is outlined, have a much better experience with things. However, like many things, documentation is never as complete as it should be. If you have any questions, feel free to :doc:`ask </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/help_and_support>`.
+
+-  Use the board to better understand the ADRV9026/ADRV9029
+
+   -  :doc:`What you need to get started </wiki-migration/resources/eval/user-guides/adrv9026/prerequisites>`
+   -  :doc:`Quick Start Guides </wiki-migration/resources/eval/user-guides/adrv9026/quickstart>`
+
+      -  :doc:`Linux on ZCU102 </wiki-migration/resources/eval/user-guides/adrv9026/quickstart/zynqmp>`
+      -  :doc:`Configure a pre-existing SD-Card </wiki-migration/resources/tools-software/linux-software/zynq_images>`
+      -  :doc:`Update the old card you received with your hardware </wiki-migration/resources/tools-software/linux-software/zynq_images>`
+
+   -  Linux Applications
+
+      -  :doc:`IIO Scope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+
+         -  :doc:`ADRV9026/ADRV9029 IIO Scope View </wiki-migration/resources/tools-software/linux-software/adrv9026_osc_main>`
+
+-  Design with the ADRV9026/ADRV9029
+
+   -  :doc:`Understanding the ADRV9026/ADRV9029 </wiki-migration/resources/eval/user-guides/adrv9026/adrv9026>`
+
+      -  :adi:`ADRV9026 Product page <ADRV9026>`
+      -  :adi:`ADRV9029 Product page <ADRV9029>`
+      -  :adi:`Full Datasheet and chip design package <en/products/adrv9026.html#product-documentation>`
+
+   -  Hardware in the Loop / How to design your own custom BaseBand
+
+      -  :doc:`GNU Radio </wiki-migration/resources/tools-software/linux-software/gnuradio>`
+      -  :doc:`Transceiver Toolbox </wiki-migration/resources/tools-software/transceiver-toolbox>`
+
+   -  Design a custom ADRV9026/ADRV9029 based platform
+
+      -  Linux software
+
+         -  :doc:`ADRV9026/ADRV9029 Integrated Radio Frequency Transceiver Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9025>`
+
+            -   :doc:`ADRV9026/ADRV9029 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9025-customization>`
+            -   :doc:`Customizing the devicetree on the target </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_tips_tricks>`
+
+         -  :doc:`JESD204 (FSM) Interface Linux Kernel Framework </wiki-migration/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
+         -  :doc:`AD9528 Low Jitter Clock Generator Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-pll/ad9528>`
+         -  :doc:`AXI-DMAC DMA Controller Linux Driver </wiki-migration/resources/tools-software/linux-drivers/axi-dmac>`
+         -  :doc:`JESD204B Transmit Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`
+
+            -  :doc:`JESD204B Status Utility </wiki-migration/resources/tools-software/linux-software/jesd_status>`
+
+         -  :doc:`JESD204B Receive Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
+
+            -  :doc:`JESD204B Status Utility </wiki-migration/resources/tools-software/linux-software/jesd_status>`
+
+         -  :doc:`JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
+
+            -  :doc:`JESD204 Eye Scan </wiki-migration/resources/tools-software/linux-software/jesd_eye_scan>`
+
+         -  :doc:`AXI ADC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
+         -  :doc:`AXI DAC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
+
+      -  :doc:`Changing the VCXO frequency and updating the default RF Transceiver Profile </wiki-migration/resources/eval/user-guides/rf-trx-vcxo-and-profiles>`
+      -  :git-no-OS:`ADRV9026/ADRV9029 No-OS System Level Design Setup <projects/adrv902x>`
+      -  :doc:`HDL Reference Design </wiki-migration/resources/eval/user-guides/adrv9026/ad9026_hdl>` which you must use in your FPGA.
+
+-  :doc:`Additional Documentation about SDR Signal Chains - The math behind the RF </wiki-migration/resources/eval/user-guides/ad-fmcomms1-ebz/math>`
+-  :doc:`Help and Support </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/help_and_support>`
+
+Software Defined Radio using the Linux IIO Framework
+----------------------------------------------------
+
+.. image:: http://ftp.fau.de/fosdem/2015/devroom-software_defined_radio/iiosdr.mp4
+   :alt: http://ftp.fau.de/fosdem/2015/devroom-software_defined_radio/iiosdr.mp4
+
+`Software Defined Radio using the Linux IIO Framework <http://ftp.fau.de/fosdem/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+
+ADI Articles
+------------
+
+-   Four Quick Steps to Production: Using Model-Based Design for Software-Defined Radio
+
+   -  :adi:`Part 1—the Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools <library/analogDialogue/archives/49-09/four-step-sdr-01.html>`
+   -  :adi:`Part 2—Mode S Detection and Decoding Using MATLAB and Simulink <library/analogDialogue/archives/49-10/four-step-sdr-02.html>`
+   -  :adi:`Part 3—Mode S Signals Decoding Algorithm Validation Using Hardware in the Loop <library/analogDialogue/archives/49-11/four-step-sdr-03.html>`
+   -  :adi:`Part 4 - Rapid Prototyping Using the Zynq SDR Kit and Simulink Code Generation Workflow <library/analogDialogue/archives/49-12/four-step-sdr-04.html>`
+
+MathWorks Webinars
+------------------
+
+-  `Modelling and Simulating Analog Devices’ RF Transceivers with MATLAB and SimRF <https://www.mathworks.com/videos/modelling-and-simulating-analog-devices-rf-transceivers-with-matlab-and-simrf-89934.html>`_
+-  `Getting Started with Software-Defined Radio using MATLAB and Simulink <https://www.mathworks.com/videos/getting-started-with-software-defined-radio-using-matlab-and-simulink-108646.html>`_
+
+Warning
+-------
+
+
+.. note::
+
+   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+

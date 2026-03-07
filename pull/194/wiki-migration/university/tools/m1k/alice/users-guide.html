@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This software uses an older version of libsmu / pysmu and is no longer recommended for use." name="description" />
+
+    <title>Active Learning Interface (for) Circuits (and) Electronics: &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Active Learning Interface (for) Circuits (and) Electronics:</a><ul>
+<li><a class="reference internal" href="#objective">Objective:</a></li>
+<li><a class="reference internal" href="#background">Background:</a></li>
+<li><a class="reference internal" href="#required-files">Required files:</a><ul>
+<li><a class="reference internal" href="#all-os">All OS:</a></li>
+<li><a class="reference internal" href="#windows">Windows:</a></li>
+<li><a class="reference internal" href="#linux">Linux:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#directions">Directions:</a></li>
+<li><a class="reference internal" href="#screen-setup">Screen Setup:</a><ul>
+<li><a class="reference internal" href="#the-right-side-menu-section">The Right Side Menu Section</a></li>
+<li><a class="reference internal" href="#the-bottom-menu-section">The Bottom Menu Section</a></li>
+<li><a class="reference internal" href="#the-graphics-display-area">The Graphics Display Area</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#customizing-alice">Customizing ALICE</a></li>
+<li><a class="reference internal" href="#appendix-a-advanced-math-traces">Appendix A: Advanced Math Traces</a></li>
+<li><a class="reference internal" href="#examples">Examples:</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="active-learning-interface-for-circuits-and-electronics">
+<h1>Active Learning Interface (for) Circuits (and) Electronics:<a class="headerlink" href="#active-learning-interface-for-circuits-and-electronics" title="Link to this heading"></a></h1>
+<p><strong>This software uses an older version of libsmu / pysmu and is no longer recommended for use.</strong></p>
+<p><a class="reference internal" href="desk-top-users-guide.html"><span class="doc">ALICE Desktop 1.1</span></a> is now recommended.</p>
+<section id="objective">
+<h2>Objective:<a class="headerlink" href="#objective" title="Link to this heading"></a></h2>
+<p>This document serves as a User’s Guide for the ALICE software interface written for use with the ADALM1000 active learning kit hardware.</p>
+</section>
+<section id="background">
+<h2>Background:<a class="headerlink" href="#background" title="Link to this heading"></a></h2>
+<p>Although the word ALICE can be spelled out from the title of this users guide, it is actually an allusion to the fantasy works of Lewis Carroll: 1865’s Alice’s Adventures in Wonderland and its 1871 sequel Through the Looking-Glass, and What Alice Found There. In these stories Alice explores a strange and wondrous world down a rabbit hole and on the other side of a mirror ( looking glass ). Hopefully, through the use of this software along with the ADALM1000 active learning kit hardware, Students can explore the strange and wondrous world of Circuits, Electronics and Electrical Engineering.</p>
+</section>
+<section id="required-files">
+<h2>Required files:<a class="headerlink" href="#required-files" title="Link to this heading"></a></h2>
+<p>The ALICE program is written in Python and requires that version 2.7.8 ( or higher ) of Python be installed on the user’s computer. The program only imports modules generally included with standard Python installation packages. The following additional files are required to run ALICE:</p>
+<p>Required external Python modules (site-packages for the correct Python version):</p>
+<p>NUMPY</p>
+<section id="all-os">
+<h3>All OS:<a class="headerlink" href="#all-os" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">alice-1.0.py(w)</div>
+<div class="line"><a class="icon link reference external" href="https://wiki.analog.com/_media/university/tools/alice-1.0.zip" target="_blank">ALICE zip file</a></div>
+</div>
+<div class="line-block">
+<div class="line">The zip file also contains the <a class="reference internal" href="sa-users-guide.html"><span class="doc">spectrum analyzer</span></a> version and the <a class="reference internal" href="../analog-mux.html"><span class="doc">analog input multiplexer</span></a> version of the program, alice-mux-1.0.py(w), which is used in conjunction with the circuit outlined in this Blog:</div>
+<div class="line"><img alt="Two Input Channels Not Enough for Ya" src="https://wiki.analog.com/_media/:ez:`community/university-program/blog/2015/07/07/two-input-channels-not-enough-for-ya`" /></div>
+</div>
+</section>
+<section id="windows">
+<h3>Windows:<a class="headerlink" href="#windows" title="Link to this heading"></a></h3>
+<p><a class="icon link reference external" href="https://ci.appveyor.com/api/projects/analogdevicesinc/libsmu/artifacts/libpysmu.pyd?branch=master&amp;job=Platform%3A%20x64" target="_blank">libpysmu.pyd (64 bit)</a> <a class="icon link reference external" href="https://ci.appveyor.com/api/projects/analogdevicesinc/libsmu/artifacts/libpysmu.pyd?branch=master&amp;job=Platform%3A%20x86" target="_blank">libpysmu.pyd (32 bit)</a> (needs to be in Python27\DLLs directory)</p>
+<p>Use of the <a class="reference internal" href="install.html"><span class="doc">Windows installer</span></a> is highly recommended.</p>
+</section>
+<section id="linux">
+<h3>Linux:<a class="headerlink" href="#linux" title="Link to this heading"></a></h3>
+<p><a class="icon link reference external" href="https://github.com/analogdevicesinc/libsmu" target="_blank">libpysmu.so</a></p>
+</section>
+</section>
+<section id="directions">
+<h2>Directions:<a class="headerlink" href="#directions" title="Link to this heading"></a></h2>
+<p>It is assumed that the reader is somewhat familiar with the functionality and capabilities of the ADALM1000 hardware. For more on the ADALM1000 hardware please refer to the following documents:</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="../../m1k.html"><span class="doc">ADALM1000 Overview</span></a></div>
+<div class="line"><a class="reference internal" href="../hw.html"><span class="doc">ADALM1000 Hardware</span></a></div>
+<div class="line"><a class="reference internal" href="../design.html"><span class="doc">ADALM1000 Design Document</span></a></div>
+<div class="line"><a class="reference internal" href="../analog-inputs.html"><span class="doc">ADALM1000 Analog Inputs</span></a></div>
+<div class="line"><a class="reference internal" href="../digital-outputs.html"><span class="doc">ADALM1000 Digital Outputs</span></a></div>
+</div>
+<p>First a few notes on nomenclature used in this document:</p>
+<div class="line-block">
+<div class="line">CA-V refers to the Channel A voltage signal</div>
+<div class="line">CA-I refers to the Channel A current signal</div>
+<div class="line">CB-V refers to the Channel B voltage signal</div>
+<div class="line">CB-I refers to the Channel B current signal</div>
+</div>
+</section>
+<section id="screen-setup">
+<h2>Screen Setup:<a class="headerlink" href="#screen-setup" title="Link to this heading"></a></h2>
+<p>Once the program is running the main screen, as shown in figure 1, should appear. It is sub divided into 4 sections. Be sure that the ALM1000 is plugged into the USB port before starting the program. If there is no ALM1000 present the green Conn button will be red and say Recon. Click this button after plugging in your ALM1000 to connect to the board.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/alice1_userguide_f1.png"><img alt="https://wiki.analog.com/_media/university/tools/alice1_userguide_f1.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/alice1_userguide_f1.png" style="width: 700px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 1 ALICE main screen</p>
+</div>
+<p>The menu section along the top, shown in figure 2, contains various buttons and drop-down menus that control Triggering, Horizontal time base, Horizontal position, how and what signals are displayed, and run acquisition / stop acquisition / exit program.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/alice1_userguide_f2.png"><img alt="https://wiki.analog.com/_media/university/tools/alice1_userguide_f2.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/alice1_userguide_f2.png" style="width: 800px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 2 Top menu buttons</p>
+</div>
+<p>The Trigger button is a drop down menu listing which signal to trigger on, CA-V, CA-I, CB-V, CB-I or none. There is a toggle selector for Auto Level triggering where the trigger level is automatically set to the mid point of the channel waveform each sweep. There is a toggle selector for single shot manual triggering. When in single shot mode clicking the Run button acquires a single time sweep. The Edge button is a drop down menu listing either the rising or falling edge for triggering. The Trigger Level entry window contains the trigger level in volts for CA-V and CB-V or mA for CA-I and CB-I. The 50% button sets the trigger level to the midpoint (50% point) of the selected trigger waveform. i.e. to the (maximum + minimum)/2.</p>
+<p>The Hold Off entry window, in mS, is used to shift the horizontal position ( apparent time 0 trigger point within the acquired sample point buffer) of the display. The data used for the vertical and horizontal waveform calculations is also shifted by that amount. The Hoz Poss entry window is used to change the horizontal posistion of the time trace. Normally, with the Hoz Poss set to 0 the left edge of the grid is “time 0”. Setting Hoz Poss to something else shifts the 0 time point on the grid by that amount ( in mSec ).</p>
+<p>The Time mS/Div spinbox entry window is used to set the horizontal time base in the standard 1, 2, 5 step increments. Other values may be entered manually.</p>
+<p>The Display drop down menu allows selection of either time or X vs Y display mode. It also allows selection of which of the four possible channel signals to plot on the X and Y axis. Given four possible signals, Channel A voltage and current, Channel B voltage and current, there are in theory 16 possible combinations for X and Y. Not all 16 have been implemented since, for example, plotting a signal vs itself such as CA-V vs CA-V is a rather meaningless straight line.</p>
+<p>It is also possible to plot select Math on one or the other or both axis. If Math is selected for just one axis then the selected trace from the Math drop down menu is used. Only a few of the built-in Math traces are supported. If Math is selected for both axis then the entered X formula and Y formula, using the Enter X or Y Formula buttons, will be plotted. This allows greater flexibility in X-Y plotting at the expense of the typing in the function to be plotted. See Appendix A on how to enter formulas. Any one of the four vertical axis controls can be chosen for the X and Y axis using the Math X or Y Axis buttons. Generally when X-Y plotting using Math one or the other of the four channels are not being displayed and its axis controls will be available to be used.</p>
+<p>There is also a check button to display the saved X-Y reference trace (see note below on Snap-Shot option).</p>
+<p>The Curves button allows the selection of which signal waveforms will be displayed when plotting vs time. The All button selects all four curves to be displayed and the None button clears all four curves. The None button is handy to turn off all the time curves when switching to the X-Y mode. It is also possible to select which of the possible stored reference time traces, if saved via the Snap-Shot option, will be displayed.</p>
+<p>The green PWR-On button toggles on and off the fixed analog +2.5 V and +5 V power supplies. The button turns red when the supplies are off. The power supplies do not turn completely off but go to around +2 V and can supply only about 20 mA when shorted to ground. This is much less than the 200 mA or so they could supply if accidentally shorted when on. It is good practice to turn off the supplies ( or better yet disconnect ) when making any modifications to the circuit under test.</p>
+<p>The green Run button starts continuous looping acquiring input samples. The red Stop button stops the acquisition looping. The Exit button exits (kills) the program.</p>
+<section id="the-right-side-menu-section">
+<h3>The Right Side Menu Section<a class="headerlink" href="#the-right-side-menu-section" title="Link to this heading"></a></h3>
+<p>The section along the right hand side, shown in figure 3, mostly contains the controls for the two AWG generator outputs. In addition there are four drop down menus at the top.</p>
+<p>The File drop down menu lists commands for saving and loading configuration settings (.cfg file). Also to save and load calibration settings (.cal files ). The calibration values are saved to a file with a unique name for your particular ALM1000 board based on the first 9 characters of the board device ID serial number. For example something like: 203131543_O.cal.</p>
+<p>The Save Screen button saves the graphics display area to an encapsulated postscript file (.eps). The Save Data button saves the captured channel A and B voltage and current signal data to a coma separated values file (.csv). For most Time/Div settings the number of sample points is 2 screen widths with a minimum of 1,000 samples and a maximum of 50,000. This saved table of raw sample values can then be loaded into other programs for analysis such a spreadsheet program or math program like MATLAB, or Octave.</p>
+<p>The Options drop down menu lists a command for enabling smoothing where spline curves are used to connect the input sample points rather than the default straight lines. A second option for connecting the sample points is to use a zero order hold function where a horizontal line and a vertical line are used. This looks like a stair step waveform much like the output of the Digital-to-Analog converters used to generate the output signals actually produce.</p>
+<p>Waveform averaging is supported by selecting the Trace Avg selector under the Options drop down menu. The number of captured data sets used for the average can also be set with the Num Avg button. The default value is 8. The average is automatically reset whenever the horizontal time base is changed.</p>
+<p>The Trace Width button allow the user to set the width of the trace lines in pixels. The default is 1.</p>
+<p>The currently displayed traces will be saved via the Snap-Shot option as reference traces. They can be added to the graphics plot area by selecting the desired trace from the Curves drop down menu for time plots and the Display drop down for X-Y plots. They will be drawn in a darker color corresponding to the matching main waveform trace.</p>
+<p>The Measure drop down menus, CA and CB list which vertical and horizontal measurements for the Channel A and B voltage and current traces are to be displayed along the bottom of the graphics display area. The displayed vertical measurements for both voltage and current can be the following:</p>
+<ul class="simple">
+<li><p>Average, which is the sample by sample sum of the data record divided by the number of samples. For most Time/Div settings the number of samples is 2 screen widths.</p></li>
+<li><p>Minimum, which is the minimum value within the data record.</p></li>
+<li><p>Maximum, which is the maximum value within the data record.</p></li>
+<li><p>Midpoint, which is the maximum value plus the minimum value divided by two.</p></li>
+<li><p>Peak-to-Peak, which is the maximum value minus the minimum value.</p></li>
+<li><p>RMS, which is the square root of the sum of the sample by sample data record squared divided by the number of samples.</p></li>
+</ul>
+<p>The displayed horizontal measurements for the voltage traces can be the following:</p>
+<ul class="simple">
+<li><p>High pulse width ( time waveform is above the mid-value</p></li>
+<li><p>Low pulse width ( time waveform is below the mid-value</p></li>
+<li><p>Duty Cycle ( percent of time waveform is High )</p></li>
+<li><p>Period ( time between 2 rising edges )</p></li>
+<li><p>Frequency ( 1 / period )</p></li>
+</ul>
+<p>The Math drop down menu lists which sample point by sample point calculated waveform combining the Channel A and B voltage and current signals is to be displayed: One of the following calculated waveforms can be displayed at a time:</p>
+<ul class="simple">
+<li><p>CA-V + CB-V, the sum of the channel A and B voltage waveforms</p></li>
+<li><p>CA-V - CB-V, the difference of the channel A and B voltage waveforms</p></li>
+<li><p>CB-V - CA-V, the difference of the channel B and A voltage waveforms</p></li>
+<li><p>CA-I - CB-I, the difference of the channel A and B current waveforms</p></li>
+<li><p>CB-I - CA-I, the difference of the channel B and A current waveforms</p></li>
+<li><p>CA-V * CA-I, the product of the channel A voltage and current waveforms which is instantaneous power</p></li>
+<li><p>CB-V * CB-I, the product of the channel B voltage and current waveforms which is instantaneous power</p></li>
+<li><p>CA-V / CA-I, the ratio of the channel A voltage and current waveforms which is instantaneous resistance</p></li>
+<li><p>CB-V / CB-I, the ratio of the channel B voltage and current waveforms which is instantaneous resistance</p></li>
+<li><p>CB-V / CA-V, the ratio of the channel B voltage and channels A voltage waveforms which is instantaneous voltage gain assuming CA-V is input and CB-V is output</p></li>
+<li><p>CB-I / CA-I, the ratio of the channel B current and channel A current waveforms which is instantaneous current gain assuming CA-I is input and CB-I is output</p></li>
+</ul>
+<p>The first three calculations result in voltages and share the corresponding left side voltage scale on the display grid. The two current differences result in a current and share the corresponding right side current scale on the display grid. The two product waveform calculations result in mW and share the corresponding right side scale on the display grid. The two voltage over current waveform calculations result in Ohms and share the corresponding right side scale on the display grid. These calculated waveforms can produce strange looking results for periodic waveforms driving non-resistive loads such as capacitors or inductors. The final two ratio calculations can be used to calculate voltage gain and current gain respectively and are dimensionless.</p>
+<p>If Math is selected then the formula entered with the Formula button, will be plotted vs time. This allows greater flexibility in waveform plotting at the expense of the typing in the function to be plotted. See Appendix A on how to enter formulas. Any one of the four vertical axis controls can be chosen for the Math axis using the Math X Axis button. Generally when plotting using Math one or the other of the four channels are not being displayed and its axis controls will be available to be used.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/alice1_userguide_f3.png"><img alt="https://wiki.analog.com/_media/university/tools/alice1_userguide_f3.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/alice1_userguide_f3.png" style="width: 120px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 3 Right side menu buttons</p>
+</div>
+<p>There are two identical sets of controls for configuring the Channel A and B outputs. First there is a drop down menu for selecting the Mode. The SVMI option is for sourcing voltage / measure current. The SIMV option is for sourcing current / measure voltage. The Hi-Z option disables the generator output (High Impedance mode). The Split I/O option separates the generator output signal from the voltage measurement input. In the Rev D version of ALM1000 only the source current function operates when the output and input are on separate pins so the Split I/O option automatically puts the hardware into the source current configuration. To turn the sourced current into a voltage the output termination options can be used. The hardware includes two 50 Ohm resistors that can be connected to the generator output pin. One resistor is tied to ground and the other is tied to the 2.5 V power supply. The drop down menu provides three options Open, To GND, and To 2.5V.</p>
+<p>The Shape drop down menu is used to select the shape of the output waveform. When DC is selected the constant value of the output voltage or current is set by the value in the Max entry window.</p>
+<p>The Min and Max entry windows program the minimum and maximum values for the output waveform. When in the voltage mode the values are in Volts, when in current mode the values are in mAmps. If the value entered in the Min window is higher ( more positive ) than the value entered in the Max window the apparent phase of the output wave is inverted. While this is somewhat redundant for the Sine, Triangle and Square wave shapes, given the Phase control described later, it is useful for determining if the Sawtooth or Stairstep shapes are rising or falling ramps.</p>
+<p>The Freq entry window programs the frequency of the waveform in Hertz. Given the 100KSPS maximum sample rate, the maximum allowed frequency is, by definition, 50 KHz but the practical upper limit is more like 20 KHz or less.</p>
+<p>The Phase entry window programs the relative phase of the output waveform in degrees from 0 to 360. The % entry window only applies to the Square shape and programs the duty cycle in percent from 0% to 100%.</p>
+<p>The current low level ALM1000 software only outputs signals as single shot bursts when the analog signals ( voltage and current ) are being sampled. The Sync AWG check box must be checked if you want to produce outputs in sync with the analog trace sweeps. If you are in Hi-Z mode for both CH A and CH B and are using the ALM as just a 2 input oscilloscope the box should not be checked.</p>
+<p>The ALM hardware provides four 3.3V CMOS digital input / output pins. At this time only static hi low functionality is supported. A simple interface is provided here. Each pin on the digital connector is actually connected to two GPIO port pins on the Micro-controller through two different series resistors. Refer to this <a class="reference internal" href="../digital-outputs.html"><span class="doc">document</span></a> which provides more details. The first digital control drop down menu controls port pins PA0-3. Each can be set to one of three states, 0, 1, or High-Z. The second digital control drop down menu controls port pins PA4-7 and again each can be set to one of three states, 0, 1, or High-Z. When both port pins for a given connector pin are set as High-Z that pin is considered a digital input. The state of the digital inputs is read each time the screen is up-dated and displayed above the upper right hand corner of the grid. A red square indicates an logic “0”, a green square indicates a logic “1” and a yellow square indicates that pin is configured as an output.</p>
+<p>At the bottom of this section, just above the ADI logo, are entry slots for both voltage and current, gain and offset calibration factors for each channel. Using the calibration procedure from the Voltmeter tool is the best way to get the voltage calibration factors. Refer to the Voltmeter User’s Guide for that procedure. Once you have the gain and offset numbers they can be entered here. Getting the current gain and offset factors requires a known resistance and is explained in the Ohmmeter User’s Guide. To save these calibration values to a file for future use, press the Save Cal button in the Files menu. To reload the saved calibration factors press the Load Cal button. The values are saved to a file with a unique name for this particular ALM1000 board based on the last 14 characters of the board device ID serial number. This program uses the same naming scheme as the Ohmmeter Tool, for example something like: 203131543_O.cal.</p>
+<p>The correction factors can be used for any external resistor divider attenuator networks that might be added to the channel A and B inputs ( possibly used when in the high impedance or Split I/O modes ). For more on the use of input attenuators please refer to the following two documents:</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="../analog-inputs.html"><span class="doc">M1K Analog Inputs</span></a></div>
+<div class="line"><a class="reference internal" href="../breadboard-adapter.html"><span class="doc">M1K Breadboard Adapters</span></a></div>
+</div>
+</section>
+<section id="the-bottom-menu-section">
+<h3>The Bottom Menu Section<a class="headerlink" href="#the-bottom-menu-section" title="Link to this heading"></a></h3>
+<p>The menu section along the bottom, shown in figure 4, contains the range and position controls for the Channel A and B voltage and current waveform displays. The entry labels are color coded to match the waveform trace colors.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/alice1_userguide_f4.png"><img alt="https://wiki.analog.com/_media/university/tools/alice1_userguide_f4.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/alice1_userguide_f4.png" style="width: 700px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 4 Bottom menu buttons</p>
+</div>
+<p>The V/Div and mA/Div spinboxs set the corresponding vertical ranges in the standard 1, 2, 5 step increments. Other values maybe entered manually. The position entry windows determine the vertical position of their scales with respect to the blue center line on the grid. That is to say the value entered corresponds to the number displayed next to the blue center line.</p>
+</section>
+<section id="the-graphics-display-area">
+<h3>The Graphics Display Area<a class="headerlink" href="#the-graphics-display-area" title="Link to this heading"></a></h3>
+<p>The graphics display area, show in figure 5, is where the various signal waveforms are plotted on a black background. It consists of a main 10 by 10 grid with the center vertical and horizontal grid lines drawn in dark blue. Each major grid is sub divided into 5 sub grids by the short tick marks along the blue center lines. The horizontal grid lines are labeled with color coded text to match the corresponding waveform trace with the voltage scales on the left and current scales on the right.</p>
+<p>The red triangle, drawn on the left side in the example shown because the trigger input is set to CA-V indicates the current trigger point.</p>
+<p>Above the main grid area is a line of text showing the device ID and Sample rate and if the acquisition loop is running, stopped or in single shot mode. Below the main grid are three lines of text which display various information about the displayed plots. The first line shows the current time per division setting and the horizontal position of the left most grid line with respect to 0 time i.e. the trigger point. It also displays horizontal measurements such as the period and frequency for channels A and B ( if it can find two rising edges ) when selected.</p>
+<p>The second and third lines of text are for displaying vertical information related to Channel A and Channel B respectively. The selected V/Div is displayed along with any of the vertical measurements selected for that voltage channel. If a current waveform is being displayed the selected mA/Div is displayed along with any of the vertical measurements selected for that current channel.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/alice1_userguide_f5.png"><img alt="https://wiki.analog.com/_media/university/tools/alice1_userguide_f5.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/alice1_userguide_f5.png" style="width: 700px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure 5 Graphics display area</p>
+</div>
+</section>
+</section>
+<section id="customizing-alice">
+<h2>Customizing ALICE<a class="headerlink" href="#customizing-alice" title="Link to this heading"></a></h2>
+<p>There are a number of variables that the user can use to customize the appearance of the user interface. These variables are located near the top of the Python program file. These two variables set the size of the graphics drawing area in screen pixels. The default values are sized to optimally fill a screen with 1024X600 resolution. The menu buttons surrounding the graphics area need this much space to be properly displayed on most screens so using sizes smaller than the default may result in mangled menus.</p>
+<div class="line-block">
+<div class="line">GRW = 720 # Width of the grid</div>
+<div class="line">GRH = 390 # Height of the grid</div>
+</div>
+<p>The colors that are used to draw the various parts of the screen can be modified.</p>
+<div class="line-block">
+<div class="line">Color = “#rrggbb” rr=red gg=green bb=blue, Hexadecimal values 00 - ff</div>
+<div class="line">COLORframes = “#000080” # 50% blue</div>
+<div class="line">COLORcanvas = “#000000” # 100% black used for background color</div>
+<div class="line">COLORgrid = “#808080” # 50% Gray used for grid lines</div>
+<div class="line">COLORzeroline = “#0000ff” # 100% blue used for vertical and horizontal center grid lines</div>
+<div class="line">COLORtrace1 = “#00ff00” # 100% green</div>
+<div class="line">COLORtrace2 = “#ff8000” # 100% orange CH B voltage trace</div>
+<div class="line">COLORtrace3 = “#00ffff” # 100% cyan CH A current trace</div>
+<div class="line">COLORtrace4 = “#ffff00” # 100% yellow CH B current trace</div>
+<div class="line">COLORtrace5 = “#ff00ff” # 100% magenta Math trace</div>
+<div class="line">COLORtraceR1 = “#008000” # 50% green CH A voltage snapshot trace</div>
+<div class="line">COLORtraceR2 = “#804000” # 50% orange CH B voltage snapshot trace</div>
+<div class="line">COLORtraceR3 = “#008080” # 50% cyan CH A current snapshot trace</div>
+<div class="line">COLORtraceR4 = “#808000” # 50% yellow CH B current snapshot trace</div>
+<div class="line">COLORtraceR5 = “#800080” # 50% magenta Math snapshot trace</div>
+<div class="line">COLORtext = “#ffffff” # 100% white used for Text display</div>
+<div class="line">COLORtrigger = “#ff0000” # 100% red used for trigger point</div>
+</div>
+</section>
+<section id="appendix-a-advanced-math-traces">
+<h2>Appendix A: Advanced Math Traces<a class="headerlink" href="#appendix-a-advanced-math-traces" title="Link to this heading"></a></h2>
+<p>In addition to the pre-programed Math traces, ALICE provides a method of plotting user defined equations or formulas using the voltage and current waveform buffers for channels A and B. The formulas are written in conventional Python syntax which is basically the same as you would expect to write any math expression. Any of the Python math module functions can be used such as math.sqrt() or math.sin() etc. Any of the ALICE global variables can be used but below is a list of the most useful available variables and constants:</p>
+<p>Waveform Buffers:</p>
+<div class="line-block">
+<div class="line">VBuffA is the Channel A voltage sample array ( in volts )</div>
+<div class="line">VBuffB is the Channel B voltage sample array ( in volts )</div>
+<div class="line">IBuffA is the Channel A current sample array ( in amps, multiply by 1000 for mA )</div>
+<div class="line">IBuffB is the Channel B current sample array ( in amps, multiply by 1000 for mA )</div>
+<div class="line">VmemoryA is the Channel A voltage memory array used for Trace Averaging</div>
+<div class="line">VmemoryB is the Channel B voltage memory array used for Trace Averaging</div>
+<div class="line">ImemoryA is the Channel A current memory array used for Trace Averaging</div>
+<div class="line">ImemoryB is the Channel B current memory array used for Trace Averaging</div>
+</div>
+<p>t is the time index ( 10 uSec per point )</p>
+<p>SAMPLErate is the sampling rate, 100000 samples per Sec, or 10 uSec per sample</p>
+<p>Vertical Position variables:</p>
+<div class="line-block">
+<div class="line">CHAOffset is the value in the channel A voltage position entry window</div>
+<div class="line">CHBOffset is the value in the channel B voltage position entry window</div>
+<div class="line">CHAIOffset is the value in the channel A current position entry window</div>
+<div class="line">CHBIOffset is the value in the channel B current position entry window</div>
+</div>
+<p>Waveform calculated measurements:</p>
+<div class="line-block">
+<div class="line">DCV1 is the channel A Average voltage</div>
+<div class="line">MinV1 is the channel A Minimum voltage</div>
+<div class="line">MaxV1 is the channel A Maximum voltage</div>
+<div class="line">DCV2 is the channel B Average voltage</div>
+<div class="line">MinV2 is the channel B Minimum voltage</div>
+<div class="line">MaxV2 is the channel B Maximum voltage</div>
+<div class="line">DCI1is the channel A Average current in mA</div>
+<div class="line">MinI1 is the channel A Minimum current in mA</div>
+<div class="line">MaxI1 is the channel A Maximum current in mA</div>
+<div class="line">DCI2 is the channel B Average current in mA</div>
+<div class="line">MinI2 is the channel B Minimum current in mA</div>
+<div class="line">MaxI2 is the channel B Maximum current in mA</div>
+</div>
+<p>As a simple example, to plot the difference between the channel A and B voltage waveforms the following formula would be used:</p>
+<p>(VBuffA[int(t)] - VBuffB[int(t)] - CHAOffset)</p>
+<p>As the program iterates over the time index t, the channel B voltage value is subtracted from the channel A voltage value and then offset on the screen by the channel A position variable. This replicates the built-in math trace CA-V – CB-V.</p>
+<p>A more advanced example calculates the time derivative of the channel B voltage waveform, or slew rate, and scales it to V/mSec:</p>
+<p>(VBuffB[int(t)] - VBuffB[int(t-1)] ) * 100</p>
+<p>Again as the program iterates over the time index t, the channel B voltage value at t-1 is subtracted from the channel B voltage value at t and then multiplied by 100. The 100 scales the time from the 10 uSec per time sample to 1 mSec. The screen shot in figure A1, shows the result for a 4 V p-p triangle wave at 1 KHz. Since we are not displaying the channel B current we can use its settings as the vertical axis for the math trace by setting the Math Axis to I-B. The triangle wave changes 4 V in 500 uS for a slew rate of + and – 8 V/mSec.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/alice1_userguide_a1.png"><img alt="https://wiki.analog.com/_media/university/tools/alice1_userguide_a1.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/alice1_userguide_a1.png" style="width: 700px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure A1, Calculating the slew rate</p>
+</div>
+<p>A few words of caution, care must be taken when writing the formula to not cause a Python syntax error or other math exception such as divide by zero. If you make a mistake ALICE will stop and put up the math formula entry screen so you can find and correct your mistake.</p>
+</section>
+<section id="examples">
+<h2>Examples:<a class="headerlink" href="#examples" title="Link to this heading"></a></h2>
+<p>To demonstrate some of the features of ALICE the following example circuit is offered. In figure E1 we see a simple NPN transistor ( 2N3904 ) in the common emitter configuration with a 100 KΩ resistor used to bias the base and a 1 KΩ resistor as the collector load. The collector load is supplied from the fixed +5 V power supply. We will use the ALICE software to plot I<sub>B</sub> vs V<sub>BE</sub>. We will also determine the value of CA-V corresponding to I<sub>C</sub> = 2 mA and then measure the input to output voltage gain around that operating point.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/alice1_userguide_e1.png"><img alt="https://wiki.analog.com/_media/university/tools/alice1_userguide_e1.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/alice1_userguide_e1.png" style="width: 500px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure E1, NPN common emitter amplifier</p>
+</div>
+<p>To plot V<sub>BE</sub> and I<sub>B</sub> we first start out with the channel B input (CB-V) connected to the base of the transistor. As the formula in figure E1 states, I<sub>B</sub> can be calculated by taking the difference of CA-V and CB-V and dividing by the 100 KΩ resistor value. 100 KΩ is chosen to simplify the calculations so that the current is found by just moving the decimal point of the measured voltage ( i.e. 1 V = 10 uA ).</p>
+<p>Set up ALICE as follows: Channel A, Mode set to SVMI, Shape set to Triangle, Min set to 0.0, Max set to 5.0, Freq set to 100. Channel B Mode set to Hi-Z. Be sure that the Sync AWG box is selected.</p>
+<p>The time base should be set to 0.5 mSec/Div so that the rising half cycle from 0 to 5.0 volts will fill the grid. Under the Curves menu select CA-V and CB-V. Under the Math menu select CAV - CBV.</p>
+<p>Press the green Run button. You should see something like figure E2.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/alice1_userguide_e2.png"><img alt="https://wiki.analog.com/_media/university/tools/alice1_userguide_e2.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/alice1_userguide_e2.png" style="width: 700px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure E2, V<sub>BE</sub> and I<sub>B</sub> plot</p>
+</div>
+<p>The green CA-V trace is the 0 to 5 V ramp that is being applied to the 100 KΩ resistor. The orange CB-V trace is the voltage on the base of the transistor or V<sub>BE</sub>. The magenta CAV-CBV math trace is the voltage across the 100 KΩ resistor and represents I<sub>B</sub> as 10 uA/V.</p>
+<p>Pause or Stop the program ( red Stop button )</p>
+<p>To make an XY plot of I<sub>B</sub> vs V<sub>BE</sub>, under the Curves menu press none to turn off all the time traces. Under the Display menu press the X-Y button. Under the Display menu also press the CB-V button in the -X Axis- section and the Math button in the -Y Axis- section. Set the CB V Pos entry to 0.5 and the CB V/Div to 0.1.</p>
+<p>Press the green Run button. You should see something like figure E3.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/alice1_userguide_e3.png"><img alt="https://wiki.analog.com/_media/university/tools/alice1_userguide_e3.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/alice1_userguide_e3.png" style="width: 700px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure E3, I<sub>B</sub> vs V<sub>BE</sub></p>
+</div>
+<p>The base current is very small when V<sub>BE</sub> is less than 0.6 V so there is likely to be noise in that part of the trace. Remember that the vertical voltage scale ( 0.5 V/Div ) is divided by the 100 KΩ resistor so it is 5 uA per division.</p>
+<p>To plot the collector current move the Channel B input to the collector of the transistor.</p>
+<p>Now we need to go back to the time display mode so under the Display menu press the Time button and the none buttons in the -X Axis- section and in the -Y Axis- section. Now under the Curves menu again select the CA-V and CB-V traces. Under the Math menu select none for now. Also set the CB V Pos entry to back to 2.5 and the CB V/Div back to 0.5.</p>
+<p>Press the green Run button. You should see something like figure E4.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/alice1_userguide_e4.png"><img alt="https://wiki.analog.com/_media/university/tools/alice1_userguide_e4.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/alice1_userguide_e4.png" style="width: 700px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure E4, V<sub>CE</sub> plot</p>
+</div>
+<p>To turn the plot of V<sub>CE</sub> into I<sub>C</sub> we can use the gain and offset calibration equation for channel B to calculate the equation for I<sub>C</sub> in figure E1. The calibration equation is as follows:</p>
+<p><span class="math notranslate nohighlight">\(V_dis = (V_raw - Offset ) \times Gain\)</span></p>
+<div class="line-block">
+<div class="line">Where:</div>
+<div class="line">V<sub>dis</sub> is the calibrated value to be displayed</div>
+<div class="line">V<sub>raw</sub> is the raw measured value</div>
+<div class="line">Offset is the calibration value entered</div>
+<div class="line">Gain is the calibration value entered</div>
+</div>
+<p>If we set the Offset equal to the actual value of the +5 V supply divided by the Gain calibration factor and change the sign of the Gain factor ( i.e. make it negative ) we have the formula for I<sub>C</sub> from figure E1. After changing the channel B offset and gain factors press the green Run button and you should see something like figure E5.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/alice1_userguide_e5.png"><img alt="https://wiki.analog.com/_media/university/tools/alice1_userguide_e5.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/alice1_userguide_e5.png" style="width: 700px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure E5, I<sub>C</sub> plot</p>
+</div>
+<p>I<sub>C</sub> should be nearly zero where CA-V is less than 0.6 V. You may need to tweak the Offset factor to get I<sub>C</sub> to be exactly on the 0.0 grid line. An easy way to check this is to temporarily move the channel B input to the +5 V power supply. Now the difference between CB-V and the supply is exactly zero.</p>
+<p>Remember that the vertical voltage scale ( 0.5 V/Div ) is divided by the 1 KΩ resistor so it is 0.5 mA per division. With the program paused, under the Options menu press the SnapShot button. This saves a copy of the displayed CA-V and CB-V traces. Under the Curves menus select RB-V. This will now display the saved I<sub>C</sub> plot.</p>
+<p>Now move the channel B input back to the base of the transistor. Under the Math menu select the CAV-CBV math trace. Reset the Channel B Offset and Gain calibration factors to their normal values.</p>
+<p>Press the green Run button. You should see something like figure E6.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/alice1_userguide_e6.png"><img alt="https://wiki.analog.com/_media/university/tools/alice1_userguide_e6.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/alice1_userguide_e6.png" style="width: 700px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure E6, I<sub>C</sub>, I<sub>B</sub> and V<sub>BE</sub> plot</p>
+</div>
+<p>Now we have plots of I<sub>C</sub> ( dark orange ), I<sub>B</sub> ( magenta ) and V<sub>BE</sub> ( orange ) on the same grid as the base resistor bias CA-V is swept from 0 to 5 V ( green ).</p>
+<p>With the program paused click the left mouse button while hovering over the I<sub>C</sub> trace ( dark orange ) where it crosses 2 V ( 2 mA ). A marker should appear on the screen. Click again at the exact same horizontal time point on the CA-V trace (green). A second marker should appear. In the upper left of the grid the time and voltage values for the two marker points should be displayed as we see in figure E7.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/alice1_userguide_e7.png"><img alt="https://wiki.analog.com/_media/university/tools/alice1_userguide_e7.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/alice1_userguide_e7.png" style="width: 700px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure E7, markers added.</p>
+</div>
+<p>The beta of the transistor can also be calculated by adding a marker to get the value of the base current (magenta trace) at the same horizontal point where I<sub>C</sub> is 2 mA. Beta will be I<sub>C</sub> / I<sub>B</sub>. For this example I<sub>B</sub> is about 13 uA so beta will be around 154.</p>
+<p>The CA-V value for the second marker should correspond to the bias point where I<sub>C</sub> is equal to 2 mA where we would like to center our input signal for the next measurement of the amplifier gain.</p>
+<p>Move the channel B input back to the collector of the transistor.</p>
+<p>Calculate new Min and Max values for Channel A by adding and subtracting 0.25 V to the 2 mA bias point we just measured. Enter these for Channel A. Set Channel A Shape to sine wave. Under the Curves menu turn off the RB-V trace and under the Math menu select none. Set the time base to 2.0 mS/Div so that two cycles of the input waveform are displayed. Under the Meas CA and CB menus in the -CA V- and -CB V- sections select Avg and P-P to be displayed.</p>
+<p>Press the green Run button. You should see something like figure E8.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/alice1_userguide_e8.png"><img alt="https://wiki.analog.com/_media/university/tools/alice1_userguide_e8.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/alice1_userguide_e8.png" style="width: 700px;" />
+</a>
+<div class="centeralign docutils container">
+<p>Figure E8, Amplifier input / output gain</p>
+</div>
+<p>The DC average of the output waveform should be at about 2 V below ( 2 mA in the collector load resistor ) the +5 V power supply or +3 V. The voltage gain of the amplifier will be the Channel B P-P value divided by the Channel A P-P value. Which for this example is about 1.5.</p>
+<p>For Further Reading:</p>
+<p>Return to <a class="reference internal" href="../../m1k.html"><span class="doc">Table of Contents</span></a>.</p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

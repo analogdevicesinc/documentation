@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="In order to proceed through the test case, first of all delete the Scopy *.ini file (saves previous settings made in Scopy tool) from the following path on Windows: C:\Users\your_username\AppData\Roaming\ADI ." name="description" />
+
+    <title>Initial Setup &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Initial Setup</a></li>
+<li><a class="reference internal" href="#test-title">Test Title</a><ul>
+<li><a class="reference internal" href="#b-channel-2-operation">B. Channel 2 Operation</a></li>
+<li><a class="reference internal" href="#c-channel-1-and-channel-2-operation">C. Channel 1 and Channel 2 Operation</a></li>
+<li><a class="reference internal" href="#d-additional-features">D. Additional Features</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <div class="line-block">
+<div class="line"><br /></div>
+<div class="line">====== Signal Generator - Test Case ======</div>
+</div>
+<section id="initial-setup">
+<h1>Initial Setup<a class="headerlink" href="#initial-setup" title="Link to this heading"></a></h1>
+<p>In order to proceed through the test case, first of all delete the Scopy *.ini file (saves previous settings made in Scopy tool) from the following path on Windows: C:\Users\your_username\AppData\Roaming\ADI .</p>
+<p>Open the Signal Generator instrument. The interface should look like the picture below:</p>
+<p><img alt="image1" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-test-case-initial-setup.png" /> Press multiple times on the “Run” button to check if the instrument works.</p>
+</section>
+<section id="test-title">
+<h1>Test Title<a class="headerlink" href="#test-title" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== A. Channel 1 Operation====</div>
+</div>
+<details><summary>Click to expand</summary><div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Test Steps</p></th>
+<th class="head"><p>Steps Resources</p></th>
+<th class="head"><p>Expected Results</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Testing the constant voltage generator</p></td>
+<td><ol class="arabic simple">
+<li><p>Turn on channel 1 and view the configuration window by clicking the on/off button and menu button respectively. Choose Constant from the configuration menu</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step1.png"><img alt="image35" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step1.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Checking increment/decrement value; ±1V</p></td>
+<td><ol class="arabic simple" start="2">
+<li><p>Set the knob to ± 1V interval. No orange dot on the center.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step2.png"><img alt="image36" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step2.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="3">
+<li><p>Change the voltage value using the up and down arrow</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step3.png"><img alt="image37" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step3.png" style="width: 200px;" /></a></p></td>
+<td><p>The voltage value should change accordingly with an increment or decrement of ±1V from -5V to 5V. The graphical representation should follow accordingly</p></td>
+</tr>
+<tr class="row-odd"><td><p>Checking increment/decrement value; ±100mV</p></td>
+<td><ol class="arabic simple" start="4">
+<li><p>Set the knob to ± 100mV interval. With orange dot on the center.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step4.png"><img alt="image38" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step4.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="5">
+<li><p>Change the voltage value using the up and down arrow</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step5.png"><img alt="image39" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step5.png" style="width: 200px;" /></a></p></td>
+<td><p>The voltage value should change accordingly with an increment or decrement of ±100mV from -5V to 5V. The graphical representation should follow accordingly</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="6">
+<li><p>Connect AWG ch1 to scope ch1+ and scope ch1- to gnd</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step6.png"><img alt="image40" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step6.png" style="width: 200px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="7">
+<li><p>Set the voltage value of the signal generator to 4.5V and set the Oscilloscope’s Volts/div from 1V/div to 5V/div and set the trigger mode to auto.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step7.png"><img alt="image41" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step7.png" style="width: 200px;" /></a></p></td>
+<td><p>The voltage reading on the oscilloscope should be from 4.4V to 4.6V using the cursor or from the measured data</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="8">
+<li><p>Set the voltage value of the signal generator to -4.5V and set the Oscilloscope’s Volts/div from 1V/div to 5V/div and set the trigger mode to auto.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step8.png"><img alt="image42" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step8.png" style="width: 200px;" /></a></p></td>
+<td><p>The voltage reading on the oscilloscope should be from -4.4V to -4.6V using the cursor or from the measured data</p></td>
+</tr>
+<tr class="row-even"><td><p>Testing different waveform types</p></td>
+<td><ol class="arabic simple">
+<li><p>Turn on channel 1 and view the configuration window by clicking the on/off button and menu button respectively. Choose Waveform from the configuration menu</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step1.png"><img alt="image43" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step1.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Checking increment/decrement value of Amplitude and Frequency; Large increment</p></td>
+<td><ol class="arabic simple" start="2">
+<li><p>Set the knob to without the orange dot on the center.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step2.png"><img alt="image44" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step2.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="3">
+<li><p>Change the Amplitude or Frequency value using the up and down arrow</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step3.png"><img alt="image45" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step3.png" style="width: 200px;" /></a></p></td>
+<td><p>The amplitude value should change accordingly with a high increment/decrement from 1uV to 10V. The frequency value should change accordingly with a high increment/decrement from 1mHz to 20MHz.The graphical representation should follow accordingly</p></td>
+</tr>
+<tr class="row-odd"><td><p>Checking increment/decrement value of Amplitude and Frequency; ±1 unit on least significant digit</p></td>
+<td><ol class="arabic simple" start="4">
+<li><p>Set the knob to with the orange dot on the center.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step4.png"><img alt="image46" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step4.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="5">
+<li><p>Change the voltage or frequency value using the up and down arrow</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step5.png"><img alt="image47" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step5.png" style="width: 200px;" /></a></p></td>
+<td><p>The Amplitude value should change accordingly with a ±1 unit on the least significant digit from 1uV to 10V. The frequency value should change accordingly with a ±1 unit on the least significant digit from 1mHz to 20MHz.The graphical representation should follow accordingly</p></td>
+</tr>
+<tr class="row-odd"><td><p>Checking increment/decrement value of the Offset Voltage and Phase; ±1V and ±45°</p></td>
+<td><ol class="arabic simple" start="6">
+<li><p>Set the knob without the orange dot on the center.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step6.png"><img alt="image48" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step6.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="7">
+<li><p>Change the Offset voltage or Phase value using the up and down arrow</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step7.png"><img alt="image49" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step7.png" style="width: 200px;" /></a></p></td>
+<td><p>The Offset voltage value should change accordingly with ±1 increment/decrement from -5V to 5V. The phase value should change accordingly with a ±45 increment/decrement from 0° to 360°.The graphical representation should follow accordingly</p></td>
+</tr>
+<tr class="row-odd"><td><p>Checking increment/decrement value of Offset voltage and Phase; ±100mV and ±1°</p></td>
+<td><ol class="arabic simple" start="8">
+<li><p>Set the knob to with the orange dot on the center.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step8.png"><img alt="image50" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step8.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="9">
+<li><p>Change the Offset voltage or Phase value using the up and down arrow</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step9.png"><img alt="image51" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step9.png" style="width: 200px;" /></a></p></td>
+<td><p>The Offset voltage value should change accordingly with ±.1 increment/decrement from -5V to 5V. The phase value should change accordingly with ±1 increment/decrement from 0° to 360°.The graphical representation should follow accordingly</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="10">
+<li><p>Connect AWG ch1 to scope ch1+ and scope ch1- to gnd</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step10.png"><img alt="image52" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step10.png" style="width: 200px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Testing Sinewave Waveform</p></td>
+<td><ol class="arabic simple" start="11">
+<li><p>Set the signal generator’s waveform type: Sinewave, Amplitude 5V, Frequency: 200Hz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 500mV/div, trigger mode: Auto and time base: 5ms.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step11.png"><img alt="image53" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step11.png" style="width: 200px;" /></a></p></td>
+<td><p>The measurement reading on Oscilloscope should be: Period: 5ms, Frequency: 200Hz, Peak-peak: 4.8V to 5.2V</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="12">
+<li><p>Set the signal generator’s waveform type: Sinewave, Amplitude 10V, Frequency: 500kHz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 2V/div, trigger mode: Auto and time base: 1us</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step12a.png"><img alt="image54" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step12a.png" style="width: 200px;" /></a></p></td>
+<td><p>The measurement reading on Oscilloscope should be: Period: 2.000us, Frequency: 500 kHz, Peak-peak: 9.6V to 10.2V</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="13">
+<li><p>Set the signal generator’s waveform type: Sinewave, Amplitude 10V, Frequency: 5MHz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 1V/div, trigger mode: Auto and time base: 200ns</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step13.png"><img alt="image55" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step13.png" style="width: 200px;" /></a></p></td>
+<td><p>The measurement reading on Oscilloscope should be: Period: 200ns, Frequency: 5MHz, Peak-peak: 8.9V to 9.2V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Testing Square Waveform</p></td>
+<td><ol class="arabic simple" start="14">
+<li><p>Set the signal generator’s waveform type: Square wave, Amplitude 5V, Frequency: 200Hz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 1V/div, trigger mode: Auto and time base: 5ms</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step14.png"><img alt="image56" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step14.png" style="width: 200px;" /></a></p></td>
+<td><p>Use the Oscilloscope’s cursor to check the peak to peak value of the Square wave generated, do not include the inherent overshoot of the signal. The measurement should be Period: 5.000ms, Frequency: 200Hz, peak to peak value: 4.8V to 5.2V and Min/Max: ±2.5V</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="15">
+<li><p>Set the signal generator’s waveform type: Square wave, Amplitude 10V, Frequency: 5MHz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 2V/div, trigger mode: Auto and time base: 100ns</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step15.png"><img alt="image57" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step15.png" style="width: 200px;" /></a></p></td>
+<td><p>Oscilloscope’s measurement should be Period: 200ns, Frequency: 5MHz, peak to peak value: 9.8V to 10.2V and Min/Max: ±5V</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="16">
+<li><p>Set the signal generator’s waveform type: Square wave, Amplitude 7V, Duty Cycle: 20%, Frequency: 100 kHz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 1V/div, trigger mode: Auto and time base: 2us</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step16.png"><img alt="image58" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step16.png" style="width: 200px;" /></a></p></td>
+<td><p>Oscilloscope’s measurement should be Period: 200ns, Frequency: 5MHz, peak to peak value: 6.8V to 7.2V and Min/Max: ±3.5V, +Duty Cycle: 20%, -Duty Cycl: 80%</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="17">
+<li><p>Repeat step 16 with varying duty cycle from 1% to 99%</p></li>
+</ol>
+</td>
+<td></td>
+<td><p>Oscilloscope’s measurement should be Period: 200ns, Frequency: 5MHz, peak to peak value: 6.8V to 7.2V and Min/Max: ±5V and the varying ±Duty Cycle</p></td>
+</tr>
+<tr class="row-odd"><td><p>Testing Triangle Waveform</p></td>
+<td><ol class="arabic simple" start="18">
+<li><p>Set the signal generator’s waveform type: Triangle, Amplitude 5V, Frequency: 200Hz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 1V/div, trigger mode: Auto and time base: 2ms</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step18.png"><img alt="image59" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step18.png" style="width: 200px;" /></a></p></td>
+<td><p>Oscilloscope’s measurement should be Period: 5.000ms, Frequency: 200Hz, peak to peak value: 4.8V to 5.2V and Min/Max: ±2.4V to ±2.6V</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="19">
+<li><p>Set the signal generator’s waveform type: Triangle, Amplitude 8V, Frequency: 2MHz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 1V/div, trigger mode: Auto and time base: 100ns</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step19.png"><img alt="image60" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step19.png" style="width: 200px;" /></a></p></td>
+<td><p>Oscilloscope’s measurement should be Period: 500.000ns, Frequency: 2MHz, peak to peak value: 7.8V to 8.2V and Min/Max: +/- 3.9V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Testing Rising Ramp Sawtooth Waveform</p></td>
+<td><ol class="arabic simple" start="20">
+<li><p>Set the signal generator’s waveform type: Rising Ramp Sawtooth, Amplitude 5V, Frequency: 200Hz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 1V/div, trigger mode: Auto and time base: 2ms</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step20.png"><img alt="image61" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step20.png" style="width: 200px;" /></a></p></td>
+<td><p>Oscilloscope’s measurement should be Period: 5.000ms, Frequency: 200Hz, peak to peak value: 4.8V to 5.2V and Min/Max: ±2.4V to ±2.7V. Use the Oscilloscope’s cursor to disregard the overshoot of the signal</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="21">
+<li><p>Set the signal generator’s waveform type: Rising Ramp Sawtooth, Amplitude 8V, Frequency: 1MHz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 1V/div, trigger mode: Auto and time base: 1us</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step21.png"><img alt="image62" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step21.png" style="width: 200px;" /></a></p></td>
+<td><p>Oscilloscope’s measurement should be Period: 1.000us, Frequency: 1MHz, peak to peak value: 7.8V to 8.2V and Min/Max: ±3.9V to ±4.1V. Use the Oscilloscope’s cursor to disregard the overshoot of the signal</p></td>
+</tr>
+<tr class="row-odd"><td><p>Testing Falling Ramp Sawtooth Waveform</p></td>
+<td><ol class="arabic simple" start="22">
+<li><p>Set the signal generator’s waveform type: Falling Ramp Sawtooth, Amplitude 5V, Frequency: 200Hz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 1V/div, trigger mode: Auto and time base: 2ms</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step22.png"><img alt="image63" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step22.png" style="width: 200px;" /></a></p></td>
+<td><p>Oscilloscope’s measurement should be Period: 5.000ms, Frequency: 200Hz, peak to peak value: 4.8V to 5.2V and Min/Max: ±2.4V to ±2.6V</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="23">
+<li><p>Set the signal generator’s waveform type: Falling Ramp Sawtooth, Amplitude 8V, Frequency: 1MHz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 1V/div, trigger mode: Auto and time base: 1us</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step23.png"><img alt="image64" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step23.png" style="width: 200px;" /></a></p></td>
+<td><p>Oscilloscope’s measurement should be Period: 1.000us, Frequency: 1MHz, peak to peak value: 7.8V to 8.2V and Min/Max: ±3.9V to ±4.1V. Use the Oscilloscope’s cursor to disregard the overshoot of the signal</p></td>
+</tr>
+<tr class="row-odd"><td><p>Testing Trapezoidal waveform</p></td>
+<td><ol class="arabic simple" start="24">
+<li><p>Set the signal generator’s waveform type: Trapezoidal, Amplitude: 5V, Rise Time: 1us, Fall Time: 1us, Hold High Time: 1us, Hold Low time Time: 1us. Set the Oscilloscope’s Volt/div: 2V, Trigger Mode: Auto and Time Base: 1us</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step24.png"><img alt="image65" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step24.png" style="width: 200px;" /></a></p></td>
+<td><p>Oscilloscope’s measurement should be Period: 4.000us, Frequency: 250kHz, peak to peak value: 4.8V to 5.2V and Min/Max: ±2.4V to ±2.6.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="25">
+<li><p>Set the signal generator’s waveform type: Trapezoidal, Amplitude: 10V, Rise Time: 1us, Fall Time: 1us, Hold High Time: 1us, Hold Low time Time: 1us. Set the Oscilloscope’s Volt/div: 2V, Trigger Mode: Auto and Time Base: 1us</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step25.png"><img alt="image66" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step25.png" style="width: 200px;" /></a></p></td>
+<td><p>Oscilloscope’s measurement should be Period: 4.000us, Frequency: 250kHz, peak to peak value: 9.6V to 10.4V and Min/Max: ±4.8V to ±5.2.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="26">
+<li><p>Set the signal generator’s waveform type: Trapezoidal, Amplitude: 10V, Rise Time: 200ns, Fall Time: 200ns, Hold High Time: 200ns, Hold Low time: 200ns. Set the Oscilloscope’s Volt/div: 2V, Trigger Mode: Auto and Time Base: 200ns</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step26.png"><img alt="image67" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step26.png" style="width: 200px;" /></a></p></td>
+<td><p>Oscilloscope’s measurement should be Period: 800ns, Frequency: 1.250MHz, peak to peak value: 9.6V to 10.4V and Min/Max: ±4.8V to ±5.2.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details><section id="b-channel-2-operation">
+<h2>B. Channel 2 Operation<a class="headerlink" href="#b-channel-2-operation" title="Link to this heading"></a></h2>
+<details><summary>Click to expand</summary><div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Test Steps</p></th>
+<th class="head"><p>Steps Resources</p></th>
+<th class="head"><p>Expected Results</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Testing the constant voltage generator</p></td>
+<td><ol class="arabic simple">
+<li><p>Turn on channel 2 and view the configuration window by clicking the on/off button and menu button respectively. Choose Constant from the configuration menu</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-constant_waveform-step1.png"><img alt="image101" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-constant_waveform-step1.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Checking increment/decrement value; ±1V</p></td>
+<td><ol class="arabic simple" start="2">
+<li><p>Set the knob to ± 1V interval. No orange dot on the center.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step2.png"><img alt="image102" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step2.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="3">
+<li><p>Change the voltage value using the up and down arrow</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step3.png"><img alt="image103" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step3.png" style="width: 200px;" /></a></p></td>
+<td><p>The voltage value should change accordingly with an increment or decrement of ±1V from -5V to 5V. The graphical representation should follow accordingly</p></td>
+</tr>
+<tr class="row-odd"><td><p>Checking increment/decrement value; ±100mV</p></td>
+<td><ol class="arabic simple" start="4">
+<li><p>Set the knob to ± 100mV interval. With orange dot on the center.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step4.png"><img alt="image104" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step4.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="5">
+<li><p>Change the voltage value using the up and down arrow</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step5.png"><img alt="image105" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step5.png" style="width: 200px;" /></a></p></td>
+<td><p>The voltage value should change accordingly with an increment or decrement of ±100mV from -5V to 5V. The graphical representation should follow accordingly</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="6">
+<li><p>Connect AWG ch2 to scope ch2+ and scope ch2- to gnd</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-constant_waveform-step6.png"><img alt="image106" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-constant_waveform-step6.png" style="width: 200px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="7">
+<li><p>Set the voltage value of the signal generator to 4.5V and set the Oscilloscope’s Volts/div from 1V/div to 5V/div and set the trigger mode to auto.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-constant_waveform-step7.png"><img alt="image107" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-constant_waveform-step7.png" style="width: 200px;" /></a></p></td>
+<td><p>The voltage reading on the oscilloscope should be from 4.4V to 4.6V using the cursor or from the measured data</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="8">
+<li><p>Set the voltage value of the signal generator to -4.5V and set the Oscilloscope’s Volts/div from 1V/div to 5V/div and set the trigger mode to auto.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-constant_waveform-step8.png"><img alt="image108" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-constant_waveform-step8.png" style="width: 200px;" /></a></p></td>
+<td><p>The voltage reading on the oscilloscope should be from -4.4V to -4.6V using the cursor or from the measured data</p></td>
+</tr>
+<tr class="row-even"><td><p>Testing different waveform types</p></td>
+<td><ol class="arabic simple">
+<li><p>Turn on channel 2 and view the configuration window by clicking the on/off button and menu button respectively. Choose Waveform from the configuration menu</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step1.png"><img alt="image109" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step1.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Checking increment/decrement value of Amplitude and Frequency; Large increment</p></td>
+<td><ol class="arabic simple" start="2">
+<li><p>Set the knob to without the orange dot on the center.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step2.png"><img alt="image110" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step2.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="3">
+<li><p>Change the Amplitude or Frequency value using the up and down arrow</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step3.png"><img alt="image111" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step3.png" style="width: 200px;" /></a></p></td>
+<td><p>The amplitude value should change accordingly with a high increment/decrement from 1uV to 10V. The frequency value should change accordingly with a high increment/decrement from 1mHz to 20MHz.The graphical representation should follow accordingly</p></td>
+</tr>
+<tr class="row-odd"><td><p>Checking increment/decrement value of Amplitude and Frequency; ±1 unit on least significant digit</p></td>
+<td><ol class="arabic simple" start="4">
+<li><p>Set the knob to with the orange dot on the center.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step4.png"><img alt="image112" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step4.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="5">
+<li><p>Change the voltage or frequency value using the up and down arrow</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step5.png"><img alt="image113" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step5.png" style="width: 200px;" /></a></p></td>
+<td><p>The Amplitude value should change accordingly with a ±1 unit on the least significant digit from 1uV to 10V. The frequency value should change accordingly with a ±1 unit on the least significant digit from 1mHz to 20MHz.The graphical representation should follow accordingly</p></td>
+</tr>
+<tr class="row-odd"><td><p>Checking increment/decrement value of the Offset and Phase; ±1V and ±45°</p></td>
+<td><ol class="arabic simple" start="6">
+<li><p>Set the knob without the orange dot on the center.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step6.png"><img alt="image114" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step6.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="7">
+<li><p>Change the Offset voltage or Phase value using the up and down arrow</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step7.png"><img alt="image115" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step7.png" style="width: 200px;" /></a></p></td>
+<td><p>The Offset voltage value should change accordingly with ±1 increment/decrement from -5V to 5V. The phase value should change accordingly with a ±45 increment/decrement from 0° to 360°.The graphical representation should follow accordingly</p></td>
+</tr>
+<tr class="row-odd"><td><p>Checking increment/decrement value of Offset voltage and Phase; ±100mV and ±1°</p></td>
+<td><ol class="arabic simple" start="8">
+<li><p>Set the knob to with the orange dot on the center.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step8.png"><img alt="image116" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step8.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="9">
+<li><p>Change the Offset voltage or Phase value using the up and down arrow</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step9.png"><img alt="image117" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step9.png" style="width: 200px;" /></a></p></td>
+<td><p>The Offset voltage value should change accordingly with ±.1 increment/decrement from -5V to 5V. The phase value should change accordingly with ±1 increment/decrement from 0° to 360°.The graphical representation should follow accordingly</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="10">
+<li><p>Connect AWG ch2 to scope ch2+ and scope ch2- to gnd</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step10.png"><img alt="image118" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step10.png" style="width: 200px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Testing Sinewave Waveform</p></td>
+<td><ol class="arabic simple" start="11">
+<li><p>Set the signal generator’s waveform type: Sinewave, Amplitude 5V, Frequency: 200Hz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 500mV/div, trigger mode: Auto and time base: 1ms.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step11.png"><img alt="image119" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step11.png" style="width: 200px;" /></a></p></td>
+<td><p>The measurement reading on Oscilloscope should be: Period: 5ms, Frequency: 200Hz, Peak-peak: 4.8V to 5.2V</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="12">
+<li><p>Set the signal generator’s waveform type: Sinewave, Amplitude 10V, Frequency: 500kHz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 2V/div, trigger mode: Auto and time base: 1us</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step12a.png"><img alt="image120" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-different_waveforms-step12a.png" style="width: 200px;" /></a></p></td>
+<td><p>The measurement reading on Oscilloscope should be: Period: 2.000us, Frequency: 500 kHz, Peak-peak: 9.6V to 10.2V</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="13">
+<li><p>Set the signal generator’s waveform type: Sinewave, Amplitude 10V, Frequency: 5MHz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 1V/div, trigger mode: Auto and time base: 100ns</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step13.png"><img alt="image121" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step13.png" style="width: 200px;" /></a></p></td>
+<td><p>The measurement reading on Oscilloscope should be: Period: 200ns, Frequency: 5MHz, Peak-peak: 8.9V to 9.2V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Testing Square Waveform</p></td>
+<td><ol class="arabic simple" start="14">
+<li><p>Set the signal generator’s waveform type: Square wave, Amplitude 5V, Frequency: 200Hz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 1V/div, trigger mode: Auto and time base: 5ms</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step14.png"><img alt="image122" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step14.png" style="width: 200px;" /></a></p></td>
+<td><p>Use the Oscilloscope’s cursor to check the peak to peak value of the Square wave generated, do not include the inherent overshoot of the signal. The measurement should be Period: 5.000ms, Frequency: 200Hz, peak to peak value: 4.8V to 5.2V and Min/Max: ±2.5V</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="15">
+<li><p>Set the signal generator’s waveform type: Square wave, Amplitude 10V, Frequency: 5MHz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 2V/div, trigger mode: Auto and time base: 100ns</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step15.png"><img alt="image123" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step15.png" style="width: 200px;" /></a></p></td>
+<td><p>Oscilloscope’s measurement should be Period: 200ns, Frequency: 5MHz, peak to peak value: 9.8V to 10.2V and Min/Max: ±5V</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="16">
+<li><p>Set the signal generator’s waveform type: Square wave, Amplitude 7V, Duty Cycle: 20%, Frequency: 100 kHz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 1V/div, trigger mode: Auto and time base: 2us</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step16.png"><img alt="image124" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step16.png" style="width: 200px;" /></a></p></td>
+<td><p>Oscilloscope’s measurement should be Period: 200ns, Frequency: 5MHz, peak to peak value: 6.8V to 7.2V and Min/Max: ±5V, +Duty Cycle: 20%, -Duty Cycl: 80%</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="17">
+<li><p>Repeat step 16 with varying duty cycle from 1% to 99%</p></li>
+</ol>
+</td>
+<td></td>
+<td><p>Oscilloscope’s measurement should be Period: 200ns, Frequency: 5MHz, peak to peak value: 6.8V to 7.2V and Min/Max: ±5V and the varying ±Duty Cycle</p></td>
+</tr>
+<tr class="row-odd"><td><p>Testing Triangle Waveform</p></td>
+<td><ol class="arabic simple" start="18">
+<li><p>Set the signal generator’s waveform type: Triangle, Amplitude 5V, Frequency: 200Hz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 1V/div, trigger mode: Auto and time base: 2ms</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step18.png"><img alt="image125" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step18.png" style="width: 200px;" /></a></p></td>
+<td><p>Oscilloscope’s measurement should be Period: 5.000ms, Frequency: 200Hz, peak to peak value: 4.8V to 5.2V and Min/Max: ±2.4V to ±2.6V</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="19">
+<li><p>Set the signal generator’s waveform type: Triangle, Amplitude 10V, Frequency: 2MHz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 1V/div, trigger mode: Auto and time base: 100ns</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step19.png"><img alt="image126" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step19.png" style="width: 200px;" /></a></p></td>
+<td><p>Oscilloscope’s measurement should be Period: 500.000ns, Frequency: 2MHz, peak to peak value: 8.8V to 9V.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Testing Rising Ramp Sawtooth Waveform</p></td>
+<td><ol class="arabic simple" start="20">
+<li><p>Set the signal generator’s waveform type: Rising Ramp Sawtooth, Amplitude 5V, Frequency: 200Hz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 1V/div, trigger mode: Auto and time base: 2ms</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step20.png"><img alt="image127" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step20.png" style="width: 200px;" /></a></p></td>
+<td><p>Oscilloscope’s measurement should be Period: 5.000ms, Frequency: 200Hz, peak to peak value: 4.8V to 5.2V and Min/Max: ±2.4V to ±2.7V. Use the Oscilloscope’s cursor to disregard the overshoot of the signal</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="21">
+<li><p>Set the signal generator’s waveform type: Rising Ramp Sawtooth, Amplitude 8V, Frequency: 1MHz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 1V/div, trigger mode: Auto and time base: 1us</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step21.png"><img alt="image128" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step21.png" style="width: 200px;" /></a></p></td>
+<td><p>Oscilloscope’s measurement should be Period: 1.000us, Frequency: 1MHz, peak to peak value: 7.8V to 8.2V and Min/Max: ±3.9V to ±4.1V. Use the Oscilloscope’s cursor to disregard the overshoot of the signal</p></td>
+</tr>
+<tr class="row-odd"><td><p>Testing Falling Ramp Sawtooth Waveform</p></td>
+<td><ol class="arabic simple" start="22">
+<li><p>Set the signal generator’s waveform type: Falling Ramp Sawtooth, Amplitude 5V, Frequency: 200Hz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 1V/div, trigger mode: Auto and time base: 2ms</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step22.png"><img alt="image129" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step22.png" style="width: 200px;" /></a></p></td>
+<td><p>Oscilloscope’s measurement should be Period: 5.000ms, Frequency: 200Hz, peak to peak value: 4.8V to 5.2V and Min/Max: ±2.4V to ±2.6V</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="23">
+<li><p>Set the signal generator’s waveform type: Falling Ramp Sawtooth, Amplitude 8V, Frequency: 1MHz, offset: 0V and Phase: 0 degrees. Set the Oscilloscope’s Volts/div: 1V/div, trigger mode: Auto and time base: 1us</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step23.png"><img alt="image130" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step23.png" style="width: 200px;" /></a></p></td>
+<td><p>Oscilloscope’s measurement should be Period: 1.000us, Frequency: 1MHz, peak to peak value: 7.8V to 8.2V and Min/Max: ±3.9V to ±4.1V. Use the Oscilloscope’s cursor to disregard the overshoot of the signal</p></td>
+</tr>
+<tr class="row-odd"><td><p>Testing Trapezoidal waveform</p></td>
+<td><ol class="arabic simple" start="24">
+<li><p>Set the signal generator’s waveform type: Trapezoidal, Amplitude: 5V, Rise Time: 1us, Fall Time: 1us, Hold High Time: 1us, Hold Low time Time: 1us. Set the Oscilloscope’s Volt/div: 2V, Trigger Mode: Auto and Time Base: 1us</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step24.png"><img alt="image131" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step24.png" style="width: 200px;" /></a></p></td>
+<td><p>Oscilloscope’s measurement should be Period: 4.000us, Frequency: 250kHz, peak to peak value: 4.8V to 5.2V and Min/Max: ±2.4V to ±2.6.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="25">
+<li><p>Set the signal generator’s waveform type: Trapezoidal, Amplitude: 10V, Rise Time: 1us, Fall Time: 1us, Hold High Time: 1us, Hold Low time Time: 1us. Set the Oscilloscope’s Volt/div: 2V, Trigger Mode: Auto and Time Base: 1us</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step25.png"><img alt="image132" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step25.png" style="width: 200px;" /></a></p></td>
+<td><p>Oscilloscope’s measurement should be Period: 4.000us, Frequency: 250kHz, peak to peak value: 9.6V to 10.4V and Min/Max: ±4.8V to ±5.2.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="26">
+<li><p>Set the signal generator’s waveform type: Trapezoidal, Amplitude: 10V, Rise Time: 200ns, Fall Time: 200ns, Hold High Time: 200ns, Hold Low time: 200ns. Set the Oscilloscope’s Volt/div: 2V, Trigger Mode: Auto and Time Base: 200ns</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step26.png"><img alt="image133" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_2-different_waveforms-step26.png" style="width: 200px;" /></a></p></td>
+<td><p>Oscilloscope’s measurement should be Period: 800ns, Frequency: 1.250MHz, peak to peak value: 9.6V to 10.4V and Min/Max: ±4.8V to ±5.2.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details></section>
+<section id="c-channel-1-and-channel-2-operation">
+<h2>C. Channel 1 and Channel 2 Operation<a class="headerlink" href="#c-channel-1-and-channel-2-operation" title="Link to this heading"></a></h2>
+<details><summary>Click to expand</summary><div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Test Steps</p></th>
+<th class="head"><p>Steps Resources</p></th>
+<th class="head"><p>Expected Results</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Test constant voltage generator for both channels simultaneously</p></td>
+<td><ol class="arabic simple">
+<li><p>Turn on channels 1 and 2 and view the configuration window by clicking the on/off button then the menu button. Choose Constant from the configuration menu for both channels</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-constant_waveform-step1.png"><img alt="image146" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-constant_waveform-step1.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side)</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="2">
+<li><p>Connect AWG ch1 to scope ch1+ and scope ch1- to gnd. Connect AWG ch2 to scope ch2+ and scope ch2- to gnd</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-constant_waveform-step2.png"><img alt="image147" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-constant_waveform-step2.png" style="width: 200px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="3">
+<li><p>Set signal generator’s channel 1 to 4.5V and channel 2 to -4.0V</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-constant_waveform-step3a.png"><img alt="image148" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-constant_waveform-step3a.png" style="width: 200px;" /></a><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-constant_waveform-step3b.png"><img alt="image149" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-constant_waveform-step3b.png" style="width: 200px;" /></a></p></td>
+<td><p>Open voltmeter instrument in DC mode. Channel 1 should have a voltage of 4.4V to 4.6V and channel 2 should have a voltage of -4.1V to -3.9V</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="4">
+<li><p>Set signal generator’s channel 1 to -4.5V and channel 2 to 4.0V</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-constant_waveform-step4a.png"><img alt="image150" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-constant_waveform-step4a.png" style="width: 200px;" /></a><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-constant_waveform-step4b.png"><img alt="image151" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-constant_waveform-step4b.png" style="width: 200px;" /></a></p></td>
+<td><p>Open voltmeter instrument in DC mode. Channel 1 should have a voltage of -4.4V to -4.6V and channel 2 should have a voltage of 4.1V to 3.9V</p></td>
+</tr>
+<tr class="row-even"><td><p>Test different waveforms for both channels simultaneously</p></td>
+<td><ol class="arabic simple">
+<li><p>Turn on channels 1 and 2 and view the configuration window by clicking the on/off button then the menu button. Choose waveform from the configuration menu for both channels</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-different_waveform-step1.png"><img alt="image152" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-different_waveform-step1.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side)</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="2">
+<li><p>Connect AWG ch1 to scope ch1+ and scope ch1- to gnd. Connect AWG ch2 to scope ch2+ and scope ch2- to gnd</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-different_waveform-step2.png"><img alt="image153" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-different_waveform-step2.png" style="width: 200px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Test phase configuration</p></td>
+<td><ol class="arabic simple" start="3">
+<li><p>Set signal generator channels 1 and 2 to either Sine or Triangle waveform type, they should be the same. For channel 1 set Amplitude: 5V, Frequency: 5kHz, offset: 0V and phase: 0°. Set signal generator’s channel 2 to Amplitude: 5V, Frequency: 5kHz, offset: 0V and phase: 180°. Set Oscilloscope’s both channel to Time Base: 200us, Volts/Div: 1V</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-different_waveform-step3.png"><img alt="image154" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-different_waveform-step3.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side)</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="4">
+<li><p>Run Oscilloscope, add channel with an input function: f(t) = sin(t1) + sin(t0).</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-different_waveform-step4.png"><img alt="image155" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-different_waveform-step4.png" style="width: 200px;" /></a></p></td>
+<td><p>The new plot’s value should be very close to 0V ranging around -0.2V to 0.2V</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="5">
+<li><p>Set signal generator channels 1 and 2 to either Sine or Triangle waveform type, they should be the same. For channel 1 set Amplitude: 5V, Frequency: 5kHz, offset: 0V and phase: 0°. Set signal generator’s channel 2 to Amplitude: 5V, Frequency: 5kHz, offset: 0V and phase: 360°. Set Oscilloscope’s both channel to Time Base: 200us, Volts/Div: 1V</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-different_waveform-step5.png"><img alt="image156" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-different_waveform-step5.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side)</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="6">
+<li><p>Run Oscilloscope, add channel with an input function: f(t) = sin(t1) - sin(t0).</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-different_waveform-step6.png"><img alt="image157" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1and2-different_waveform-step6.png" style="width: 200px;" /></a></p></td>
+<td><p>The new plot’s value should be very close to 0V ranging around -0.2V to 0.2V</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details></section>
+<section id="d-additional-features">
+<h2>D. Additional Features<a class="headerlink" href="#d-additional-features" title="Link to this heading"></a></h2>
+<details><summary>Click to expand</summary><div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Test Steps</p></th>
+<th class="head"><p>Steps Resources</p></th>
+<th class="head"><p>Expected Results</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Noise</p></td>
+<td><ol class="arabic simple">
+<li><p>Turn on Signal Generator’s channel 1 and set the following parameter, Waveform Type: Square Wave, Amplitude: 3V, Offset: 1.5V, Frequency: 1kHz, Phase: 0degrees and Duty Cycle: 50%</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_Noise_step1.png"><img alt="image176" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_Noise_step1.png" style="width: 100px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side).</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="2">
+<li><p>Connect AWG ch1 to scope ch1+ and scope ch1- to gnd</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step6.png"><img alt="image177" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step6.png" style="width: 100px;" /></a></p></td>
+<td><p>Check in the Oscilloscope if the Square Wave signal generated is from 0V to 3V.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="3">
+<li><p>Choose Uniform Noise Type in the dropdown menu and set it to 500mV</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_Noise_step3.png"><img alt="image178" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_Noise_step3.png" style="width: 100px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side)</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="4">
+<li><p>Set the Oscilloscope’s setting to Time Base: 100us, Volts/Div: 500mV/Div; Using the cursors measure the noise generated in the square waveform</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_Noise_step4.png"><img alt="image179" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_Noise_step4.png" style="width: 100px;" /></a></p></td>
+<td><p>The measured voltage should be close to 500mV. Check the step resource picture for reference.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="5">
+<li><p>Repeat steps 3 and 4 using different Noise Amplitude [1V, 1.5V, 2V and 2.5V]</p></li>
+</ol>
+</td>
+<td></td>
+<td><p>The measured voltage should be close to the desired noise voltage.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="6">
+<li><p>Repeat steps 3 to 5 using different Noise type</p></li>
+</ol>
+</td>
+<td></td>
+<td><p>The measured voltage should be close to the desired noise voltage.</p></td>
+</tr>
+<tr class="row-even"><td><p>Buffer</p></td>
+<td><ol class="arabic simple">
+<li><p>Download <a class="icon link reference external" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator_buffer_test.zip" target="_blank">buffer test files</a> . Open Signal Generator Instrument and click the Buffer Tab</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_Buffer_step1.png"><img alt="image180" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_Buffer_step1.png" style="width: 100px;" /></a></p></td>
+<td><p>Refer to the Step Resource Image for reference</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="2">
+<li><p>Connect AWG ch1 to scope ch1+ and scope ch1- to gnd</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step6.png"><img alt="image181" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step6.png" style="width: 100px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Test .csv file</p></td>
+<td><ol class="arabic simple" start="3">
+<li><p>Load the .csv file from the downloaded .zip file</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_Buffer_step3.png"><img alt="image182" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_Buffer_step3.png" style="width: 100px;" /></a></p></td>
+<td><p>The signal generated should be a stair step signal.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Test .mat file</p></td>
+<td><ol class="arabic simple" start="4">
+<li><p>Load the .mat file from the downloaded .zip file. Set the frequency to 20kHz, and the time base of Oscilloscope to 10ms.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_Buffer_step4.png"><img alt="image183" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_Buffer_step4.png" style="width: 100px;" /></a></p></td>
+<td><p>The signal generated should be a sine wave signal.</p></td>
+</tr>
+<tr class="row-even"><td><p>Math</p></td>
+<td><ol class="arabic simple">
+<li><p>Open Signal Generator Instrument and click the Math tab</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_Math_step1.png"><img alt="image184" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_Math_step1.png" style="width: 100px;" /></a></p></td>
+<td><p>Refer to the Step Resource image for reference.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="2">
+<li><p>Connect AWG ch1 to scope ch1+ and scope ch1- to gnd</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step6.png"><img alt="image185" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-channel_1-constant_waveform-step6.png" style="width: 100px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Generate Sine waves</p></td>
+<td><ol class="arabic simple" start="3">
+<li><p>In the Signal Generator Math Function tab, set frequency to 100Hz, and type in the function box 5*sin(t) and click apply. In the Oscilloscope instrument set Volts/div: 1V/div, Trigger: Auto, Time base: 2ms</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_Math_step3.png"><img alt="image186" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_Math_step3.png" style="width: 100px;" /></a></p></td>
+<td><p>The generated sine wave signal should have the following parameters, peak to peak: 9.6Vpp to 10.4Vpp, frequency: 100Hz, and period: 10ms. Refer to the Step resource image for reference</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="4">
+<li><p>In the Signal Generator Math Function tab, set frequency to 1kHz, and type in the function box 4*sin(10*t) and click apply. In the Oscilloscope instrument set Volts/div: 1V/div, Trigger: Auto, Time base: 20us</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_Math_step4.png"><img alt="image187" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_Math_step4.png" style="width: 100px;" /></a></p></td>
+<td><p>The generated sine wave signal should have the following parameters, peak to peak: 7.6Vpp to 8.4Vpp, frequency: 10kHz, and period: 100us. Refer to the Step resource image for reference</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="5">
+<li><p>In the Signal Generator Math Function tab, set frequency to 100kHz, and type in the function box 3*sin(50*t) and click apply. In the Oscilloscope instrument set Volts/div: 1V/div, Trigger: Auto, Time base: 100ns</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_Math_step5.png"><img alt="image188" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_Math_step5.png" style="width: 100px;" /></a></p></td>
+<td><p>The generated sine wave signal should have the following parameters, peak to peak: 5.6Vpp to 6.4Vpp, frequency: 5MHz, and period: 200ns. Refer to the Step resource image for reference</p></td>
+</tr>
+<tr class="row-odd"><td><p>Generate Square waves</p></td>
+<td><ol class="arabic simple" start="6">
+<li><p>In the Signal Generator Math Function tab, set frequency to 500kHz, and type in the function box 4*sin(t) + 4*sin(3*t)/3 + 4*sin(5*t)/5 + 4*sin(7*t)/7 + 4*sin(9*t)/9 + 4*sin(11*t)/11 (you can copy and paste the text to Scopy) and click apply. In the Oscilloscope instrument set Volts/div: 1V/div, Trigger: Auto, Time base: 500ns</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_Math_step6.png"><img alt="image189" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_Math_step6.png" style="width: 100px;" /></a></p></td>
+<td><p>The generated square wave signal should have the following parameters, peak to peak: 7Vpp to 7.4Vpp, frequency: 500kHz, and period: 2us. Refer to the Step resource image for reference</p></td>
+</tr>
+<tr class="row-even"><td><p>Waveform Phase – Seconds</p></td>
+<td><ol class="arabic simple">
+<li><p>Open Waveform tab. Set frequency to 500Hz. Set Phase to 90 degrees. Then change phase unit to seconds.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_phase_step1.png"><img alt="image190" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_phase_step1.png" style="width: 100px;" /></a></p></td>
+<td><p>The value of Phase should automatically change to 500us that is 90 degrees in seconds for a frequency of 500Hz.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="2">
+<li><p>Increase and decrease the value of phase.</p></li>
+</ol>
+</td>
+<td></td>
+<td><p>The display should follow accordingly.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="3">
+<li><p>Increase phase value to 1.5 ms. Then change again the unit to degrees.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_phase_step3.png"><img alt="image191" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_phase_step3.png" style="width: 100px;" /></a></p></td>
+<td><p>The value should now be 270 degrees.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="4">
+<li><p>Change frequency to 1 MHz. Then set phase to 1us. This corresponds to a full period of a 1MHz frequency.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_phase_step4.png"><img alt="image192" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_phase_step4.png" style="width: 100px;" /></a></p></td>
+<td><p>The interface should look like in steps resources picture.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="5">
+<li><p>Change phase unit to degrees.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_phase_step5.png"><img alt="image193" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator-additional_feature_phase_step5.png" style="width: 100px;" /></a></p></td>
+<td><p>The value should be 360 degrees.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details><p>Test Results will be recorded in the following document: <a class="icon link reference external" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/signal_generator_-_test_case.xlsx" target="_blank">Signal Generator Test Case</a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Return to Test Cases</strong> <a class="reference internal" href="../test-cases.html"><span class="doc">Table of Contents</span></a></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

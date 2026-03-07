@@ -1,0 +1,132 @@
+AD7156 - No-OS Driver for Renesas Microcontroller Platforms
+===========================================================
+
+.. include:: ../ad7156.rst
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+-  `Renesas Demo Kit for RX63N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx63n-yrdkrx63n-demonstration-kit-rx63n>`_
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `AD7156 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad7156_generic.zip>`_
+   -  `AD7156 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7156_rl78g13.zip>`_
+   -  `AD7156 RX63N Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7156_rx63n.zip>`_
+   
+
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD7156 demonstration project on a Renesas RL78G13 platform using the PmodCDC1.
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+-  `PmodCDC1 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-CDC1>`_
+
+Required Software
+-----------------
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`_
+
+Hardware Setup
+--------------
+
+A PmodCDC1 has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+
+::
+
+   PmodCDC1 J1 connector Pin SCL → YRDKRL78G13 J11 connector Pin 9
+   PmodCDC1 J1 connector Pin SDA → YRDKRL78G13 J6 connector Pin 23
+   PmodCDC1 J1 connector Pin GND → YRDKRL78G13 J11 connector Pin 5
+   PmodCDC1 J1 connector Pin VCC → YRDKRL78G13 J11 connector Pin 6
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_cdc1_rl78g13.jpg
+   :align: center
+
+Reference Project Overview
+--------------------------
+
+The reference project samples the input capacitance on both channels and simultaneously checks if any of the two buttons are pressed or released. The two horizontal bars show how much pressure is applied on the two buttons on the pmod. CH1 has 2pF input range and CH2 has 4pF input range.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_cdc1_rl78g13_screen.jpg
+   :align: center
+
+Software Project Tutorial
+-------------------------
+
+
+.. note::
+
+   See `rl78g13_software_tutorial_without_applilet3 <https://wiki.analog.com/rl78g13_software_tutorial_without_applilet3>`_
+
+
+Renesas RX63N Quick Start Guide
+===============================
+
+This section contains a description of the steps required to run the AD7156 demonstration project on a Renesas RX63N platform using the PmodCDC1.
+
+.. _required-hardware-1:
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RX63N (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/yrdkrx63n-yrdkrx63n-demonstration-kit-rx63n>`_
+-  PmodCDC1
+
+.. _required-software-1:
+
+Required Software
+-----------------
+
+-  `High-performance Embedded Workshop for RX63N family <https://www.renesas.com/us/en/software-tool/high-performance-embedded-workshop>`_
+-  `Renesas Peripheral Driver Library for RX63N family <https://www.renesas.com/us/en/software-tool/renesas-peripheral-driver-library>`_
+
+.. _hardware-setup-1:
+
+Hardware Setup
+--------------
+
+A PmodCDC1 has to be interfaced with the Renesas Demonstration Kit (RDK) for RX63N:
+
+::
+
+   PmodCDC1 J1 connector Pin SCL ? YRDKRX63N JN2 connector Pin 23
+   PmodCDC1 J1 connector Pin SDA ? YRDKRX63N JN2 connector Pin 22
+   PmodCDC1 J1 connector Pin GND ? YRDKRX63N J15 connector Pin 5
+   PmodCDC1 J1 connector Pin VCC ? YRDKRX63N J15 connector Pin 6
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_cdc1_rx63n.jpg
+   :align: center
+
+.. _reference-project-overview-1:
+
+Reference Project Overview
+--------------------------
+
+The reference project samples the input capacitance on both channels and simultaneously checks if any of the two buttons are pressed or released.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/pmod_cdc1_rx63n_screen.jpg
+   :align: center
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `rx63n_software_design <https://wiki.analog.com/rx63n_software_design>`_
+
+
+More information
+================
+
+.. include:: ../more-information.rst

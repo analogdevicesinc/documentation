@@ -1,0 +1,185 @@
+EVAL-CN0535-FMCZ User Guide
+===========================
+
+:adi:`CN0535` A data acquisition (DAQ) system measures real world physical phenomenon such as temperature, force, acceleration, or vibration, converting measurements into digital values for data processing, storage, or transmission to a remote location. A typical DAQ system is comprised of a sensor, analog filtering and signal conditioning circuitry, an analog-to-digital converter (ADC), and digital controller. Components for a DAQ solution are selected on a per application basis. Some DAQ systems are designed to minimize the overall system DC error from sensor, with fast settling filters for control-loop or multiplexed applications. Others are designed to provide superior AC performance, with low distortion and flat frequency response.
+
+The data acquisition system shown in figure below has simplified many of these design challenges into a single, flexible DAQ platform which can be used across a wide range of AC and DC applications.
+
+The wide input voltage range, high input impedance, and high input common mode voltage allows most sensors and signal sources to be connected directly to the input, without additional signal conditioning. The system has a programmable gain block for attenuation or amplification of the input signal in order to optimally utilize the input range of the ADC.
+
+The DC and AC performance of this system have been optimized to provide exceptional performance across the entire analog input bandwidth. The low input bias current minimizes the DC error due to a sensor’s output impedance, and the high common-mode rejection ratio (CMRR) minimizes the impact of common-mode noise pickup from the environment, especially when the sensor is located far from the DAQ system. All while carefully considering the AC effects and not adding overall noise and distortion into the system.
+
+The ADC has fully programmable digital filters with adjustable bandwidth and data rate, which can be tailor fitted to specific system requirements. The system’s analog filter rejects frequencies at multiples of the sampling frequency, eliminating aliasing concerns.
+
+
+| 
+
+|
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/block_diagram.jpg
+   :align: center
+
+| 
+
+Hardware Setup
+--------------
+
+Equipment Required
+~~~~~~~~~~~~~~~~~~
+
+-  CN0535 Circuit Evaluation Board (EVAL-CN0535-FMCZ)
+-  System Demonstration Platform Board (EVAL-SDP-CH1Z)
+-  AP2700 Signal Source or Equivalent
+
+Hardware Connection
+~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/hardware_setup.jpg
+   :align: center
+
+To begin using the evaluation board, take the following steps:
+
+1. Ensure the EVAL-SDP-CH1Z system demonstration platform board is disconnected from the PC. Install the :adi:`AD7768-1 Evaluation Board Software <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7768-1.html>`. Restart the PC after the software installation is complete.
+
+2. Connect the EVAL-SDP-CH1Zsystem demonstration platform board to the EVAL-CN0535-FMCZ reference design board. The J4 connector of the EVAL-SDP-CH1Z system demonstration platform board connects to the receiving socket, P1, on the EVAL-CN0535-FMCZ.
+
+
+|image1|
+
+3. Ensure the evaluation boards are connected firmly together by screwing them together.
+
+4. Connect the 12 V dc supply to the EVAL-SDP-CH1Z system demonstration platform board and then connect to the PC using the supplied USB cable. Choose to automatically search for the drivers for the EVAL-SDP-CH1Z if prompted by the operating system.
+
+5. Launch the AD7768-1 evaluation board software from the Analog Devices subfolder in the Programs menu
+
+6. Connect the differential input to the SMB connectors (J3 & J4). P7 can also be used as connection for the input if the source are using wires.
+
+
+|image2|
+
+7. Click Sample Button on the AD7768-1 evaluation software.
+
+Below is the measured values with a 5.9Vp-p sine input from an AP2700 signal source.
+
+FFT Tab
+
+
+|image3|
+
+| Waveform Tab |image4|
+
+System Gain Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Select the gain by configuring the switch (S2) on the EVAL-CN0535-FMCZ board. Table 1 shows the system gain and the corresponding input voltage ranges.
+
+
+|image5|
+
+| 
+
+ADC Driver (ADA4945-1) Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Select the ADC driver mode by configuring the switch (S2) on the EVAL-CN0535-FMCZ board.
+
+
+|image6|
+
+| 
+
+Software GUI Setup
+------------------
+
+GUI Main Window
+~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/gui_main.jpg
+   :align: center
+   :width: 600px
+
+The main window of the GUI allows the user to configure the following settings on the ADC
+
+1. Buffer Control : This allows the user to configure the internal ADC input and reference buffers
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/buffer.jpg
+   :align: center
+   :width: 400px
+
+2. Digital Filter Control : This allows the user to select the digital filter setting of the ADC
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/filter.jpg
+   :align: center
+   :width: 400px
+
+3. MCLK DIV : This allows the user to configure the MCLK divider setting on the ADC
+
+
+|image7|
+
+4. Power Mode : This sets the power mode setting on the ADC. the user can select from Fast, Median and Low power mode setting.
+
+
+|image8|
+
+| 
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   
+   :adi:`EVAL-CN0535-FMCZ Design & Integration Files <cn0535-designsupport>`
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  Allegro Project
+   
+
+
+Additional Information and Useful Links
+---------------------------------------
+
+-  :adi:`CN0535 Circuit Note Page <CN0535>`
+-  :adi:`CN0535 Design Support Package <CN0535-DesignSupport>`
+-  :adi:`AD7768-1 Product Page <AD7768-1>`
+-  :adi:`LTC6373 Product Page <LTC6373>`
+-  :adi:`ADA4945-1 Product Page <ADA4945-1>`
+-  :adi:`ADR444 Product Page <ADR444>`
+-  :adi:`AD8628 Product Page <AD8628>`
+-  :adi:`LT3095 Product Page <LT3095>`
+-  :adi:`ADP2300 Product Page <ADP2300>`
+-  :adi:`ADP7182 Product Page <ADP7182>`
+
+Software Projects and Platforms
+-------------------------------
+
+-  :doc:`CN0535 + SDP-K1 </wiki-migration/resources/eval/user-guides/circuits-from-the-lab/cn0535/sdp-k1>`
+
+Registration
+------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0535-FMCZ?&v=RevD>`_ to receive all these great benefits and more!
+
+
+*End of Document*
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/cn0535_sdp_connection.jpg
+   :width: 400px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/input_port.jpg
+   :width: 400px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/fft.jpg
+   :width: 400px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/time_domain.jpg
+   :width: 400px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/system_gain_config.jpg
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/adc_driver_config.jpg
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/mclk.jpg
+   :width: 400px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0535/pwrmd.jpg
+   :width: 400px

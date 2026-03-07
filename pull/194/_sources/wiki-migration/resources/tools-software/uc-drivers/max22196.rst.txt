@@ -1,0 +1,48 @@
+MAX22196 No-OS Driver
+=====================
+
+Supported Devices
+-----------------
+
+-  :adi:`MAX22194`
+-  :adi:`MAX22196`
+
+Overview
+--------
+
+The :adi:`MAX22194`, :adi:`MAX22196`\ is an industrial octal digital input that translates eight industrial 24V or TTL level inputs to logic level outputs. The device has a serial interface allowing configuration and reading of serialized data through SPI.
+
+GitHub Driver Documentation
+---------------------------
+
+Any other driver related documentation can be found on GitHub by following the next link:
+
+.. container:: round
+
+   
+   -
+
+
+   
+   |Documentation of MAX22196 Driver.|
+
+Downloads
+---------
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Implementation of MAX22196 Driver.|
+
+   -
+
+   |Header file of MAX22196 Driver.|
+
+.. |Documentation of MAX22196 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/digital-io/max22196/README`.rst
+.. |Implementation of MAX22196 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/digital-io/max22196/max22196`.c
+.. |Header file of MAX22196 Driver.| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/digital-io/max22196/max22196`.h

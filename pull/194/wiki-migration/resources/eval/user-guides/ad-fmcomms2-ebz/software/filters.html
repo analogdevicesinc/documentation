@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The AD9361 Filter Design Wizard is a small MATLAB App, which can be used to design transmitter and receiver FIR filters, which take into account the magnitude and phase response from other analog and digital stages in the filter chain. This tool provides not only a general purpose low pass filter designer, but also magnitude and phase equalization for other stages in the signal path." name="description" />
+
+    <title>MATLAB Filter Design Wizard for AD9361 &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">MATLAB Filter Design Wizard for AD9361</a><ul>
+<li><a class="reference internal" href="#videos">Videos</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#use-matlab-app">Use MATLAB App</a><ul>
+<li><a class="reference internal" href="#basic-functions">Basic Functions</a></li>
+<li><a class="reference internal" href="#advanced-functions">Advanced Functions</a></li>
+<li><a class="reference internal" href="#toolbar">Toolbar</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#use-matlab-functions">Use MATLAB Functions</a><ul>
+<li><a class="reference internal" href="#inputs-and-outputs">Inputs and Outputs</a><ul>
+<li><a class="reference internal" href="#inputs">Inputs</a></li>
+<li><a class="reference internal" href="#outputs">Outputs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#transmit">Transmit</a></li>
+<li><a class="reference internal" href="#receive">Receive</a></li>
+<li><a class="reference internal" href="#example-tx-lte-5">Example: Tx LTE-5</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#key-steps-in-design">Key Steps in Design</a><ul>
+<li><a class="reference internal" href="#define-filters">Define Filters</a><ul>
+<li><a class="reference internal" href="#define-analog-filters">Define Analog Filters</a></li>
+<li><a class="reference internal" href="#define-half-band-filters">Define Half Band Filters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#determine-half-band-filters">Determine Half-band Filters</a></li>
+<li><a class="reference internal" href="#design-tfir">Design TFIR</a></li>
+<li><a class="reference internal" href="#visualization">Visualization</a></li>
+<li><a class="reference internal" href="#some-notes-about-dbstop-fir">Some Notes About dBstop_FIR</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#c-c-source-for-internal-designer">C/C++ Source For Internal Designer</a><ul>
+<li><a class="reference internal" href="#getting-matlab-source-and-testing">Getting MATLAB Source and Testing</a></li>
+<li><a class="reference internal" href="#generating-c-c-source-code-from-matlab">Generating C/C++ Source Code From MATLAB</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#support">Support</a></li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="matlab-filter-design-wizard-for-ad9361">
+<h1>MATLAB Filter Design Wizard for AD9361<a class="headerlink" href="#matlab-filter-design-wizard-for-ad9361" title="Link to this heading"></a></h1>
+<p>The AD9361 Filter Design Wizard is a small <a class="icon link reference external" href="https://www.mathworks.com/products/matlab/" target="_blank">MATLAB</a> App, which can be used to design transmitter and receiver FIR filters, which take into account the magnitude and phase response from other analog and digital stages in the filter chain. This tool provides not only a general purpose low pass filter designer, but also magnitude and phase equalization for other stages in the signal path.</p>
+<p>With this wizard, users can perform the following tasks:</p>
+<ul class="simple">
+<li><p>Choose correct digital filters to use for receive and transmit.</p></li>
+<li><p>Design the programmable FIR filters, get the filter coefficients and save them in a .ftr file, which can be directly loaded into the hardware.</p></li>
+<li><p>Examine the independent response of each filter, and the composite response of all the filters, including both digital and analog filters.</p></li>
+</ul>
+<p>For information about the transmit and receive paths consult <a href="#id16"><span class="problematic" id="id17">`AD9361, AD9363, AD9364 transceiver outline &lt;/&gt;resources/eval/user-guides/ad-fmcomms2-ebz/ad9361&gt;`__</span></a>. This also includes information on alternative solutions for programming the transceiver’s filters.</p>
+<section id="videos">
+<h2>Videos<a class="headerlink" href="#videos" title="Link to this heading"></a></h2>
+<p>Here is a brief introduction on why everyone needs to, and how to use this tool.</p>
+<img alt="analogTV&gt;3845680080001" src="https://wiki.analog.com/_media/analogTV&gt;3845680080001" />
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>PREREQUISITES</strong></p>
+<p>In order to run the wizard, your <a class="icon link reference external" href="https://www.mathworks.com/products/matlab/" target="_blank">MATLAB</a> license needs to include the following components:</p>
+<ul class="simple">
+<li><p>MATLAB (R2015b or higher version is required)</p></li>
+<li><p>Signal Processing Toolbox</p></li>
+<li><p>DSP System Toolbox</p></li>
+</ul>
+<p>In addition, in order to generate HDL, your <a class="icon link reference external" href="https://www.mathworks.com/products/matlab/" target="_blank">MATLAB</a> license needs to include the following component:</p>
+<ul class="simple">
+<li><p>Fixed-Point Designer</p></li>
+</ul>
+</div>
+<p>In order to get the wizard, please go to Analog Devices GitHub. Different releases of AD9361 Filter Design Wizard and their source files can be found here:</p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<ul class="simple">
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/ad936x-filter-wizard/tree/main/releases" target="_blank">releases</a></p></li>
+<li><p>For each release, the wizard is available as a MATLAB App installer (mlappinstall) or in archive form (zip or tarball).</p></li>
+</ul>
+</div>
+<p>For more information about install and running MATLAB apps, please refer to: <a class="icon link reference external" href="http://www.mathworks.com/help/matlab/creating_guis/install-and-run-app.html" target="_blank">http://www.mathworks.com/help/matlab/creating_guis/install-and-run-app.html</a></p>
+<p>If using a checkout or unpacked archive, the application can be run in one of two ways:</p>
+<ul class="simple">
+<li><p>Right click “AD9361_Filter_Wizard.fig” and select “Open in GUIDE” to open the figure. Then type “Ctrl+T” to run the figure.</p></li>
+<li><p>Within the application directory run the command “AD9361_Filter_Wizard” from the MATLAB command line.</p></li>
+</ul>
+<p>The Filter Design Wizard has been applied in the RF Blockset (formerly SimRF) models of AD9361, provided by MathWorks as a hardware support package. <strong>Download this version if to be used with the AD9361 RF Blockset (formerly SimRF) model:</strong></p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/ad9361_filter_design_wizard_v2.mlappinstall" target="_blank">AD9361 Filter Design Wizard for RF Blockset (formerly SimRF) Model</a></p></li>
+</ul>
+</div>
+<p>To learn more about AD9361 modeling and to download the Tx and Rx models, the hardware support package can be found here:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="http://www.mathworks.com/hardware-support/analog-devices-rf-transceivers.html" target="_blank">http://www.mathworks.com/hardware-support/analog-devices-rf-transceivers.html</a></p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="use-matlab-app">
+<h1>Use MATLAB App<a class="headerlink" href="#use-matlab-app" title="Link to this heading"></a></h1>
+<p>Generally speaking, there are two ways you can use the design wizard:</p>
+<ul class="simple">
+<li><p>MATLAB App: A graphical user interface is created to facilitate the process of filter design. Users can easily define the input, observe the design performance, and specify the way they want to save the results. This is a more straightforward method to use the wizard.</p></li>
+<li><p>MATLAB function: The link to design functions can be found in the Download section. They are MATLAB functions, which users can launch from the MATLAB command window by properly defining the input parameters. Using this way, users have more control of the internal design process.</p></li>
+</ul>
+<p>In this section, we are going to elaborate on the first option - MATLAB App.</p>
+<section id="basic-functions">
+<h2>Basic Functions<a class="headerlink" href="#basic-functions" title="Link to this heading"></a></h2>
+<p>After you launch the MATLAB App, there shows a drop-down list in “Device Settings”, which includes the default parameter profiles for several widely used LTE applications. You can move the highlight bar to the one you would like to start with.</p>
+<p>This table is stored in <a class="icon git reference external" href="https://github.com/analogdevicesinc/ad936x-filter-wizard/tree/main/ad9361_settings.mat" target="_blank">github</a>.</p>
+<div class="column docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LTE Specification</p></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>LTE Bandwidth Set  <a class="footnote-reference brackets" href="#id11" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>Occupied RF Bandwidth</p></td>
+<td><p>Sample Rate</p></td>
+</tr>
+<tr class="row-odd"><td><p>MHz</p></td>
+<td><p>MHz</p></td>
+<td><p>MSPS</p></td>
+</tr>
+<tr class="row-even"><td><p>1.4</p></td>
+<td><p>1.08</p></td>
+<td><p>1.92</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>2.7</p></td>
+<td><p>3.84</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>4.5</p></td>
+<td><p>7.68</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>9</p></td>
+<td><p>15.36</p></td>
+</tr>
+<tr class="row-even"><td><p>15</p></td>
+<td><p>13.5</p></td>
+<td><p>23.04</p></td>
+</tr>
+<tr class="row-odd"><td><p>20</p></td>
+<td><p>18</p></td>
+<td><p>30.72</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="column docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>AD9361 settings</p></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sample Rate</p></td>
+<td><p>F<sub>PASS</sub></p></td>
+<td><p>F<sub>STOP</sub></p></td>
+<td><p>A<sub>PASS</sub></p></td>
+<td><p>A<sub>STOP</sub></p></td>
+</tr>
+<tr class="row-odd"><td><p>MSPS</p></td>
+<td><p>MHz</p></td>
+<td><p>MHz</p></td>
+<td><p>dB</p></td>
+<td><p>dB</p></td>
+</tr>
+<tr class="row-even"><td><p>1.92</p></td>
+<td><p>0.54</p></td>
+<td><p>0.66</p></td>
+<td><p>0.1</p></td>
+<td><p>80</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.84</p></td>
+<td><p>1.35</p></td>
+<td><p>1.65</p></td>
+<td><p>0.1</p></td>
+<td><p>80</p></td>
+</tr>
+<tr class="row-even"><td><p>7.68</p></td>
+<td><p>2.25</p></td>
+<td><p>2.75</p></td>
+<td><p>0.1</p></td>
+<td><p>80</p></td>
+</tr>
+<tr class="row-odd"><td><p>15.36</p></td>
+<td><p>4.5</p></td>
+<td><p>5.5</p></td>
+<td><p>0.1</p></td>
+<td><p>80</p></td>
+</tr>
+<tr class="row-even"><td><p>23.04</p></td>
+<td><p>6.75</p></td>
+<td><p>8.25</p></td>
+<td><p>0.1</p></td>
+<td><p>80</p></td>
+</tr>
+<tr class="row-odd"><td><p>30.72</p></td>
+<td><p>9</p></td>
+<td><p>11</p></td>
+<td><p>0.1</p></td>
+<td><p>80</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>The LTE Release-8 physical layer specification actually supports 105 different bandwidth options (not just the 6 shown above). Occupied RF Bandwidth from between 1.08MHz to 19.8MHz with 180kHz steps complies with the spec, and while these filters can be designed (manually) they are not included as defaults.</p>
+<p>In addition, you can also save your favorite parameter settings in this list, such as “foobar (Rx &amp; Tx)” shown in the figure.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/1start.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/1start.png" style="width: 600px;" />
+</a>
+<p>Assume that you choose the “LTE10 (Rx &amp; Tx)” profile, after you click it, all the parameters are filled in automatically for you, as shown in the figure below. There are three categories of input parameters: magnitude specifications, frequency specifications, and AD936x clock settings. If you are satisfied with all the parameters, you can go ahead and click “Design Filter” to start the design.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/2basic.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/2basic.png" style="width: 600px;" />
+</a>
+<p>As soon as the design process completes, you will see a magnitude plot displayed on the top half of the GUI, where the specified Fpass, Fstop, Apass and Astop are highlighted in the plot. The x-axis is from 0 to half of the data rate. Below it, on the right, you will see a “Filter Results” portion, where the actual Apass, Astop, the number of FIR taps and the pass band group delay variance are shown. From these numbers, you will get an idea whether the design meets the requirements quantitatively.</p>
+<p>If you are interested in more details of the design performance, you can click the “FVTool” buttons left to “Filter Results” to launch the <a class="icon link reference external" href="https://www.mathworks.com//help/signal/ref/fvtool.html" target="_blank">Filter Visualization Tool (fvtool)</a> provided by The MathWorks. For your convenience, we provide this tool on two different frequency scales. One is from 0 Hz to half of the data rate, the other is from 0 Hz up to half of the converter rate.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/3basicdesign.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/3basicdesign.png" style="width: 600px;" />
+</a>
+<p>If you are mainly interested in pass band, click the top button, it will open the following three figures:</p>
+<ul class="simple">
+<li><p>Magnitude response of half band filters and HB + designed FIR filter.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/fvtooldatarate.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/fvtooldatarate.png" style="width: 600px;" />
+</a>
+<ul class="simple">
+<li><p>Magnitude Response of the designed FIR only. Besides the magnitude response, you can use the toolbar on the upper left corner (as highlighted in square) to navigate to the other responses, including phase response, group delay response, impulse response, poles/zeros and etc. It will enable you to have a better understanding of the designed FIR.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/6fironly.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/6fironly.png" style="width: 600px;" />
+</a>
+<ul class="simple">
+<li><p>Overall group delay on pass band. For your convenience, the group delay variance has been calculated and indicated on the figure.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/5fvt2.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/5fvt2.png" style="width: 600px;" />
+</a>
+<p>If you are interested in the whole frequency band, click the bottom button, it will open the following figure:</p>
+<ul class="simple">
+<li><p>Magnitude response of half band filters and HB + designed FIR filter. You can easily have a closer observation on certain portion of the magnitude response by using the “Zoom In/Out” functions on the toolbar (as highlighted in square).</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/4fvt1.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/4fvt1.png" style="width: 600px;" />
+</a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information about the FVTool, please refer to: <a class="icon link reference external" href="http://www.mathworks.com/help/signal/ref/fvtool.html" target="_blank">http://www.mathworks.com/help/signal/ref/fvtool.html</a></p>
+</div>
+<p>After the deeper analysis, if you are satisfied with the results and would like to save the designed FIR filter, there are several options you can choose from. These options are in the “Controls” portion on the upper left corner of the GUI.</p>
+<ul class="simple">
+<li><p>Save object and data to workspace: If you will use the designed filter chain with some other MATLAB functions or Simulink models, you can simply leave it in the workspace by clicking “Save to Workspace” button, as shown in the figure below. After click this button and exit the App, you will find a mfilt.cascade object named “AD9361_Tx_Filter_object” or “AD9361_Rx_Filter_object” depending on whether it is on Tx or Rx.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/7save2ws.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/7save2ws.png" style="width: 600px;" />
+</a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When you click “Save to Workspace”, besides the filter object, there is also a data structure saved to workspace, which will initialize the SimRF model of FMCOMMS2. The data structure is named “FMCOMMS2_TX_Model_init” or “FMCOMMS2_RX_Model_init”.</p>
+<p>For more information about the SimRF model of FMCOMMS2, please refer to: <a class="icon link reference external" href="http://www.mathworks.com/hardware-support/analog-devices-rf-transceivers.html" target="_blank">http://www.mathworks.com/hardware-support/analog-devices-rf-transceivers.html</a></p>
+</div>
+<ul class="simple">
+<li><p>Save coefficients to a ftr file: If you will use the designed FIR filter with the IIO Oscilloscope application  <a class="footnote-reference brackets" href="#id12" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>, you can save the FIR coefficients by clicking “Coefficients to ftr File” button, as shown in the figure below.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/fig7.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/fig7.png" style="width: 600px;" />
+</a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You need to have designed both the Transmit and Receive filters before you can use the “Coefficients to ftr File” button. Otherwise, this button is grayed out.</p>
+</div>
+<p>After that, a window will pop up, asking you to specify the name and the location of the ftr file, as shown in the figure below.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/8savecoeff.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/8savecoeff.png" style="width: 600px;" />
+</a>
+<p>If you plan to use the Filter Design Wizard with a zyqn-based platform, there are several options available that will facilitate this process. These options are in the “Target (Zynq Board)” portion of the GUI.</p>
+<ul class="simple">
+<li><p>Connect to the target: In the IP box, you should input the IP address of the target. In Linux system, it can be easily found by the “ifconfig” command. Then, click the “Connect to Target” button.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/13connecttozynq.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/13connecttozynq.png" style="width: 600px;" />
+</a>
+<ul class="simple">
+<li><p>Read clock settings: If a target is detected at the specified IP address, the “Read Clock Settings” button will show up, as shown in the picture below. If you want to overwrite the current clock settings with the ones belong to the target, you can click this button.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/14readclock.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/14readclock.png" style="width: 600px;" />
+</a>
+<ul class="simple">
+<li><p>Save FIR coefficients to the target: If an FIR filter is designed for the target, the FIR coefficients can be saved directly to the target by clicking the “Coefficients to Target” button, as shown in the picture below.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/15tozynq.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/15tozynq.png" style="width: 600px;" />
+</a>
+</section>
+<section id="advanced-functions">
+<h2>Advanced Functions<a class="headerlink" href="#advanced-functions" title="Link to this heading"></a></h2>
+<p>The functions introduced so far provide a basic infrastructure to design and observe the FIR filter. If you would like to have more control and functionality, you can turn on the “Advanced” option, as shown in the figure below, which provides you with several more advanced options.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/9advanced.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/9advanced.png" style="width: 600px;" />
+</a>
+<ul class="simple">
+<li><p>Phase Equalization: If you would like to have the FIR filter do phase equalization, you can turn on the “Phase Equalization” option, as shown in the figure below. The main purpose of the phase equalization is to reduce the pass band group delay *variance* brought by analog filters, digital filters and FIR filter, so that for signals at different frequencies, they will be delayed by an almost identical amount when going through the filter chain.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/10targetdelay.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/10targetdelay.png" style="width: 600px;" />
+</a>
+<p>After you click “Design Filter”, the phase equalization part of the FIR design file is executed, and you will get an updated FIR filter design. Comparing the group delay variance in the Results portion, it is decreased from 16.6 ns to 1.52 ns with phase equalization. Also note that when the design process completes, there is an updated target delay number (this number is 0 before phase equalization) shown in the “Filter Options” portion.</p>
+<p>Please note the phase equalization process may take a few minutes, depending on the performance of your PC, since it tries to find a best target delay which yields the minimum group delay variance.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/10pheq.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/10pheq.png" style="width: 600px;" />
+</a>
+<ul class="simple">
+<li><p>Astop (FIR): This is a new parameter in magnitude specifications. It specifies the attenuation of FIR (not the composite response), which corresponds to the “dBstop_FIR” input in the design file. This parameter is not needed most of the time, so you can leave it as 0. However, if you do want to play around with it, you can enter a number there. For more information about “dBstop_FIR”, please refer to “Some Notes About dBstop_FIR” at the end of this page.</p></li>
+<li><p>Fcutoff (Analog): This is a new parameter in frequency specifications. It specifies the cutoff frequency of the analog Butterworth filters. By default, this parameter is calculated for you by the App according to the Fpass and Fstop you entered, so you can leave it as it is. However, if you do want to play around with it, you can enter a number there.</p></li>
+<li><p>Use Internal FIR: Due to the constraint on power consumption, some users may not want to use the FIR filter on AD936x. Instead, they want to move the FIR filter implementation on FPGA or some other processors. The Filter Design Wizard can also accommodate this requirement. If you decide not to use the AD936x FIR, you can turn off the “Use Internal FIR” option, as shown in the figure below, and click “Design Filter”. In this case, there is no longer any constraint on the number of the FIR taps, so the design file conducts a minimum order design. Comparing the FIR Taps in the Results portion, it is decreased from 128 to 105 if the AD936x FIR is not used.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/11usefir.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/11usefir.png" style="width: 600px;" />
+</a>
+<ul class="simple">
+<li><p>Generate HDL: Following the previous step, if you decide to have the FIR filter implemented on FPGA, the design wizard can help you generate the HDL code. By clicking “Generate HDL”, the ‘fdhdltool’ function (<a class="icon link reference external" href="http://www.mathworks.com/help/hdlfilter/fdhdltool.html" target="_blank">http://www.mathworks.com/help/hdlfilter/fdhdltool.html</a>) is called and the Generate HDL dialog box will pop up, as shown in the figure below. There are quite a few options you can choose concerning how you would like the HDL to be generated. In the end, by clicking “Generate”, the HDL will be generated for you.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/12createhdl.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/12createhdl.png" style="width: 600px;" />
+</a>
+</section>
+<section id="toolbar">
+<h2>Toolbar<a class="headerlink" href="#toolbar" title="Link to this heading"></a></h2>
+<p>The icons shown on the toolbar below provide a shortcut to some frequently used functions.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/13toolbar.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/13toolbar.png" style="width: 600px;" />
+</a>
+<p>From left to right, the first four icons are related to filter parameter settings:</p>
+<ul class="simple">
+<li><p>New Filter: It will open the drop-down list for you.</p></li>
+<li><p>Open Filter Design Parameters: It will open a saved parameter setting and load it for you.</p></li>
+<li><p>Save Parameters to File: It has the similar function as “Coefficients to ftr File” button.</p></li>
+<li><p>Save Parameters to Workspace: It has the similar function as “Object to Workspace” button.</p></li>
+</ul>
+<p>The next four icons work on the magnitude response plot shown in the GUI:</p>
+<ul class="simple">
+<li><p>Zoom In: Click the area of the axes where you want to zoom in, or drag the cursor to draw a box around the area you want to zoom in on.</p></li>
+<li><p>Zoom Out: Click the area of the axes where you want to zoom out, or drag the cursor to draw a box around the area you want to zoom out on.</p></li>
+<li><p>Pan: Interactively pan the view of a plot.</p></li>
+<li><p>Data Cursor: Enable the interactive data cursor mode.</p></li>
+</ul>
+</section>
+</section>
+<section id="use-matlab-functions">
+<h1>Use MATLAB Functions<a class="headerlink" href="#use-matlab-functions" title="Link to this heading"></a></h1>
+<p>In addition to MATLAB App, users can also employ the MATLAB functions to complete the filter design. What they need to do is to launch the MATLAB functions from the MATLAB command window by properly defining the input parameters in a MATLAB structure.</p>
+<p>In MATLAB command window, the command is:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">output</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">design_filter</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p>In order to use this method, you need to download the whole ad936x-filter-wizard repository from GitHub. The following are the two most important functions for this method:</p>
+<ul class="simple">
+<li><p>Main function: <a class="icon git reference external" href="https://github.com/analogdevicesinc/ad936x-filter-wizard/tree/main/design_filter" target="_blank">design_filter</a>.m</p></li>
+<li><p>Design file: <a class="icon git reference external" href="https://github.com/analogdevicesinc/ad936x-filter-wizard/tree/main/internal_design_filter" target="_blank">internal_design_filter</a>.m</p></li>
+</ul>
+</div>
+<p>Please note this method is suitable for those users who have a clear idea about the parameter settings. For those who are not sure about the parameters, the MATLAB App is a better way to start with.</p>
+<section id="inputs-and-outputs">
+<h2>Inputs and Outputs<a class="headerlink" href="#inputs-and-outputs" title="Link to this heading"></a></h2>
+<p>According to the design requirements, the inputs and outputs of the MATLAB function are as following:</p>
+<section id="inputs">
+<h3>Inputs<a class="headerlink" href="#inputs" title="Link to this heading"></a></h3>
+<p>Input structure containing the following fields:</p>
+<ul class="simple">
+<li><p>Rdata = input/output sample data rate (in Hz)</p></li>
+<li><p>FIR = FIR interpolation/decimation factor</p></li>
+<li><p>PLL_mult = PLL multiplication</p></li>
+<li><p>Fpass = passband frequency (in Hz)</p></li>
+<li><p>Fstop = stopband frequency (in Hz)</p></li>
+<li><p>Apass = max ripple allowed in passband (in dB)</p></li>
+<li><p>Astop = min attenuation in stopband (in dB)</p></li>
+<li><p>FIRdBmin = min rejection that FIR is required to have (in dB)</p></li>
+<li><p>phEQ = Phase Equalization on (not -1)/off (-1)</p></li>
+<li><p>int_FIR = Use AD9361 FIR on (1)/off (0)</p></li>
+<li><p>wnom = analog cutoff frequency (in Hz)</p></li>
+</ul>
+</section>
+<section id="outputs">
+<h3>Outputs<a class="headerlink" href="#outputs" title="Link to this heading"></a></h3>
+<p>Output structure containing the following fields:</p>
+<ul class="simple">
+<li><p>firtaps = fixed point FIR coefficients</p></li>
+<li><p>filter = system object for visualization (does not include analog filters)</p></li>
+<li><p>delay = actual delay used in phase equalization</p></li>
+</ul>
+</section>
+</section>
+<section id="transmit">
+<h2>Transmit<a class="headerlink" href="#transmit" title="Link to this heading"></a></h2>
+<p>According to AD9361 Filter Guide, the TX signal path is as following:</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/txfilter.png" />
+<p>The digital and analog paths are separated by DAC. Before DAC, there are four digital filters. The first one (PROG TX FIR) is a programmable poly-phase FIR filter, which can interpolate by a factor of 1, 2, or 4, or it can be bypassed if not needed. The others (HB1, HB2, HB3 and INT3) are all digital filters with fixed coefficients, and they can be turned on or turned off. After DAC, there are two low-pass analog filters.</p>
+</section>
+<section id="receive">
+<h2>Receive<a class="headerlink" href="#receive" title="Link to this heading"></a></h2>
+<p>According to AD9361 Filter Guide, the RX signal path is as following:</p>
+<img alt="Block diagram" src="https://wiki.analog.com/_media/rxfilter.png" />
+<p>The analog and digital paths are separated by ADC. Before ADC, there are two low-pass analog filters. After ADC, there are three digital filters with fixed coefficients (HB3/DEC3, HB2, HB1) followed by a programmable poly-phase FIR filter (PROG RX FIR). The FIR filter can be decimated by a factor of 1, 2, or 4, or it can be bypassed if not needed.</p>
+</section>
+<section id="example-tx-lte-5">
+<h2>Example: Tx LTE-5<a class="headerlink" href="#example-tx-lte-5" title="Link to this heading"></a></h2>
+<p>In this section, we present the results for LTE-5 transmit signal path by using the MATLAB function. The input parameters are defined in ad9361_settings.mat included in the repository.</p>
+<p>Therefore, in MATLAB command window, the command is:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="nb">input</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ad9361_settings</span><span class="p">.</span><span class="n">tx</span><span class="p">.</span><span class="n">LTE5</span><span class="p">;</span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">design_filter</span><span class="p">(</span><span class="nb">input</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>After this command is executed, in MATLAB, you will see the output structure saved in workspace. We can now observe the independent filter, as well as the composite response by specifying the stage of the object. For example,</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">TFIR</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">output</span><span class="p">.</span><span class="n">Hmd</span><span class="p">;</span>
+<span class="n">Hm1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">output</span><span class="p">.</span><span class="n">Hm1</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>If you are interested in the filter response of HB1, you can proceed to apply the fvtool on HB1,</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">hfvt1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">fvtool</span><span class="p">(</span><span class="n">Hm1</span><span class="p">,</span><span class="k">...</span>
+<span class="w">    </span><span class="s">&#39;FrequencyRange&#39;</span><span class="p">,</span><span class="s">&#39;Specify freq. vector&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+<span class="w">    </span><span class="s">&#39;FrequencyVector&#39;</span><span class="p">,</span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">122.88e6</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">2048</span><span class="p">),</span><span class="s">&#39;Fs&#39;</span><span class="p">,</span><span class="mf">122.88e6</span><span class="p">,</span><span class="k">...</span>
+<span class="w">    </span><span class="s">&#39;ShowReference&#39;</span><span class="p">,</span><span class="s">&#39;off&#39;</span><span class="p">,</span><span class="s">&#39;Color&#39;</span><span class="p">,</span><span class="s">&#39;White&#39;</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="n">hfvt1</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Color&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span>
+<span class="nb">set</span><span class="p">(</span><span class="n">hfvt1</span><span class="p">.</span><span class="n">CurrentAxes</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;YLim&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">100</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&#39;HB1&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>and you will get:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/HB1.png"><img alt="Block diagram" src="https://wiki.analog.com/_media/HB1.png" style="width: 600px;" />
+</a>
+</section>
+</section>
+<section id="key-steps-in-design">
+<h1>Key Steps in Design<a class="headerlink" href="#key-steps-in-design" title="Link to this heading"></a></h1>
+<p>In this section, we will talk about the key steps in AD9361 filter design. Referring to this section, you will have a better understanding of the MATLAB design files. Later on, if you would like to implement your own design algorithm, you can edit the design files to incorporate your changes.</p>
+<p>The AD9361 filter design file can be found here:</p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<ul class="simple">
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/ad936x-filter-wizard/tree/main/internal_design_filter" target="_blank">internal_design_filter</a>.m</p></li>
+</ul>
+</div>
+<p>Based on the structure of Tx and Rx filters, in the design process, we first need to determine which half band digital filters should be included. We then design the programmable FIR filter and get its coefficients. In the end, we complete the design and return the whole filter chain in an object. Since both Tx and Rx designs follow a similar workflow, the following steps take the Tx side for example.</p>
+<section id="define-filters">
+<h2>Define Filters<a class="headerlink" href="#define-filters" title="Link to this heading"></a></h2>
+<section id="define-analog-filters">
+<h3>Define Analog Filters<a class="headerlink" href="#define-analog-filters" title="Link to this heading"></a></h3>
+<p>For the analog part, there is a third-order Butterworth low-pass filter and a single-pole low-pass filter on the Tx side. Both of them can be easily defined by the MATLAB function <em>butter</em>  <a class="footnote-reference brackets" href="#id13" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> .</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">b1</span><span class="p">,</span><span class="n">a1</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">butter</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="o">\*</span><span class="nb">pi</span><span class="o">\*</span><span class="n">wc</span><span class="p">,</span><span class="s">&#39;s&#39;</span><span class="p">);</span><span class="w">     </span><span class="c">% 3rd order</span>
+<span class="p">[</span><span class="n">b2</span><span class="p">,</span><span class="n">a2</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">butter</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">\*</span><span class="nb">pi</span><span class="o">\*</span><span class="n">wreal</span><span class="p">,</span><span class="s">&#39;s&#39;</span><span class="p">);</span><span class="w">  </span><span class="c">% 1st order</span>
+</pre></div>
+</div>
+</section>
+<section id="define-half-band-filters">
+<h3>Define Half Band Filters<a class="headerlink" href="#define-half-band-filters" title="Link to this heading"></a></h3>
+<p>The digital filters with fixed coefficients can be easily defined by referring to the AD9361 filter guide. Since they are interpolation filters on transmit path, the coefficients declaration is followed by the mfilt.firinterp  <a class="footnote-reference brackets" href="#id14" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> function.</p>
+<p>Take HB1 for example, the full-scale range for this filter is 2^13, and it has an interpolation factor of 2, so its coefficients are scaled by 2^(-14).</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Define the filters with fixed coefficients</span>
+<span class="n">hb1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">14</span><span class="p">)</span><span class="o">*</span><span class="p">[</span><span class="o">-</span><span class="mi">53</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">313</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">-</span><span class="mi">1155</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">4989</span><span class="w"> </span><span class="mi">8192</span><span class="w"> </span><span class="mi">4989</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">-</span><span class="mi">1155</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">313</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">-</span><span class="mi">53</span><span class="p">];</span>
+<span class="n">Hm1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">mfilt</span><span class="p">.</span><span class="n">firinterp</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">hb1</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If your MATLAB license includes Fixed-Point Designer, the Hm1 object can be further defined in a fixed point format, which is a better representation of the real hardware:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">Hm1</span><span class="p">,</span><span class="s">&#39;arithmetic&#39;</span><span class="p">,</span><span class="s">&#39;fixed&#39;</span><span class="p">);</span>
+<span class="n">Hm1</span><span class="p">.</span><span class="n">InputWordLength</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">16</span><span class="p">;</span>
+<span class="n">Hm1</span><span class="p">.</span><span class="n">InputFracLength</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">14</span><span class="p">;</span>
+<span class="n">Hm1</span><span class="p">.</span><span class="n">FilterInternals</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;SpecifyPrecision&#39;</span><span class="p">;</span>
+<span class="n">Hm1</span><span class="p">.</span><span class="n">OutputWordLength</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">16</span><span class="p">;</span>
+<span class="n">Hm1</span><span class="p">.</span><span class="n">OutputFracLength</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">14</span><span class="p">;</span>
+<span class="n">Hm1</span><span class="p">.</span><span class="n">CoeffWordLength</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">16</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="determine-half-band-filters">
+<h2>Determine Half-band Filters<a class="headerlink" href="#determine-half-band-filters" title="Link to this heading"></a></h2>
+<p>Since there are 4 digital half-band filters on the TX signal path, there are a finite number of interpolations they can provide. Therefore, the digital half-band filters are picked up according to the overall interpolation factor required by the user.</p>
+</section>
+<section id="design-tfir">
+<h2>Design TFIR<a class="headerlink" href="#design-tfir" title="Link to this heading"></a></h2>
+<p>Ideally, when the whole filter chain is completed, it will have flat response of magnitude 1 on passband, and magnitude 0 on stopband, call it <span class="math notranslate nohighlight">\(Filter(\\omega)\)</span> . Since in the previous step, we have already picked up the digital filters, we can get the filter response without TFIR, call it <span class="math notranslate nohighlight">\(Filter1(\\omega)\)</span> . Therefore, the required response of TFIR is:</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle TFIR(\\omega)=Filter\frac{\\omega}{Filter1}(\\omega)\)</span> .</p>
+<p>On passband, the required response <em>rg</em> and the weight <em>w</em> is:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">rg1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">freqz</span><span class="p">(</span><span class="n">Filter1</span><span class="p">,</span><span class="n">omega</span><span class="p">,</span><span class="n">Fdac</span><span class="p">)</span><span class="o">.*</span><span class="n">analogresp</span><span class="p">(</span><span class="s">&#39;Tx&#39;</span><span class="p">,</span><span class="n">omega</span><span class="p">,</span><span class="n">Fdac</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">a1</span><span class="p">,</span><span class="n">b2</span><span class="p">,</span><span class="n">a2</span><span class="p">);</span>
+<span class="n">rg2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span>1<span class="nb">i</span><span class="o">\*</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">\*</span><span class="n">omega</span><span class="o">\*</span><span class="n">delay</span><span class="p">);</span>
+<span class="n">rg</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">rg2</span><span class="o">./</span><span class="n">rg1</span><span class="p">;</span>
+<span class="n">w</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">rg1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">dBinv</span><span class="p">(</span><span class="n">dBripple</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the analog filters, unlike digital filter, there is no “cascade” function to combine them and quickly calculate the composite response, so we made a helper function <em>analogresp</em> to calculate the overall response of the two analog filters and the converter. On the Tx side, the DAC is represented by a <em>sinc</em> function. While on the Rx side, the ADC is represented by a <em>sinc</em>^3 function.</p>
+<p><a class="icon git reference external" href="https://github.com/analogdevicesinc/ad936x-filter-wizard/tree/main/analogresp" target="_blank">analogresp</a>.m</p>
+</div>
+<p>On stopband, the required response <em>rg</em> = 0 and the weight <em>w</em> is:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">wg1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">freqz</span><span class="p">(</span><span class="n">Filter1</span><span class="p">,</span><span class="n">omega</span><span class="p">(</span><span class="n">Gpass</span><span class="o">+</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">),</span><span class="n">Fdac</span><span class="p">)</span><span class="o">.*</span><span class="n">analogresp</span><span class="p">(</span><span class="s">&#39;Tx&#39;</span><span class="p">,</span><span class="n">omega</span><span class="p">(</span><span class="n">Gpass</span><span class="o">+</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">),</span><span class="n">Fdac</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">a1</span><span class="p">,</span><span class="n">b2</span><span class="p">,</span><span class="n">a2</span><span class="p">));</span>
+<span class="n">wg2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">FIR_interp</span><span class="p">)</span><span class="o">*</span><span class="n">wg1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">dBinv</span><span class="p">(</span><span class="o">-</span><span class="n">dBstop</span><span class="p">));</span>
+<span class="n">wg3</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">dBinv</span><span class="p">(</span><span class="n">dBstop_FIR</span><span class="p">);</span>
+<span class="n">wg</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="n">wg2</span><span class="p">,</span><span class="n">wg3</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>One other constraint about TFIR is the number of filter taps. In the AD9361 Filter Guide, it says “the number of taps is configurable between a minimum of 16 taps and a maximum of 128 taps in groups of 16”. Therefore, the following piece of code calculates the tap number <em>N</em>:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Determine the number of taps for TFIR</span>
+<span class="k">switch</span><span class="w"> </span><span class="n">tfirint</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="n">Nmax</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">64</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">        </span><span class="n">Nmax</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">128</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">        </span><span class="n">Nmax</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">128</span><span class="p">;</span>
+<span class="k">end</span>
+
+<span class="n">N</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">min</span><span class="p">(</span><span class="mi">16</span><span class="o">\*</span><span class="nb">floor</span><span class="p">((</span><span class="n">Fdac</span><span class="o">\*</span><span class="n">DAC_mult</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">\*</span><span class="n">Fin</span><span class="p">)),</span><span class="n">Nmax</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Given the tap number <em>N</em>, the required response on passband and stopband (<em>A1</em> and <em>A2</em>), as well as the corresponding weights (<em>W1</em> and <em>W2</em>), we can now use fdesign.arbmag  <a class="footnote-reference brackets" href="#id15" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> function to design the TFIR filter. In the following piece, <em>B</em>=2, which means there are two bands in the design.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">fdesign</span><span class="p">.</span><span class="n">arbmag</span><span class="p">(</span><span class="s">&#39;N,B,F,A&#39;</span><span class="p">,</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">F1</span><span class="p">,</span><span class="n">A1</span><span class="p">,</span><span class="n">F2</span><span class="p">,</span><span class="n">A2</span><span class="p">);</span>
+<span class="n">Hd</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">design</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="s">&#39;equiripple&#39;</span><span class="p">,</span><span class="s">&#39;B1Weights&#39;</span><span class="p">,</span><span class="n">W1</span><span class="p">,</span><span class="s">&#39;B2Weights&#39;</span><span class="p">,</span><span class="n">W2</span><span class="p">,</span><span class="s">&#39;SystemObject&#39;</span><span class="p">,</span><span class="nb">true</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The design of the TFIR is saved in the system object <em>Hmd</em>. In order to get the 16-bit filter coefficients, the following line is used:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">tfirtaps</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Hmd</span><span class="p">.</span><span class="n">Numerator</span><span class="o">.*</span><span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="mi">16</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="visualization">
+<h2>Visualization<a class="headerlink" href="#visualization" title="Link to this heading"></a></h2>
+<p>fvtool opens FVTool and displays the magnitude response of the digital filter defined with the system object. Using FVTool you can display the phase response, group delay, impulse response, step response, pole-zero plot, and coefficients of the filter.</p>
+<p>For example, the following piece of code use fvtool to display the TFIR filter we just designed in the previous step. <em>Hmd</em> is the corresponding system object:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">fvtool</span><span class="p">(</span><span class="k">...</span>
+<span class="w">    </span><span class="n">Hmd</span><span class="p">,</span><span class="k">...</span>
+<span class="w">    </span><span class="s">&#39;FrequencyRange&#39;</span><span class="p">,</span><span class="s">&#39;Specify freq. vector&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+<span class="w">    </span><span class="s">&#39;FrequencyVector&#39;</span><span class="p">,</span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">clkTFIR</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">2048</span><span class="p">),</span><span class="s">&#39;Fs&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">    </span><span class="n">clkTFIR</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+<span class="w">    </span><span class="s">&#39;ShowReference&#39;</span><span class="p">,</span><span class="s">&#39;off&#39;</span><span class="p">,</span><span class="s">&#39;Color&#39;</span><span class="p">,</span><span class="s">&#39;White&#39;</span><span class="p">,</span><span class="s">&#39;Legend&#39;</span><span class="p">,</span><span class="s">&#39;off&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="some-notes-about-dbstop-fir">
+<h2>Some Notes About dBstop_FIR<a class="headerlink" href="#some-notes-about-dbstop-fir" title="Link to this heading"></a></h2>
+<p>The “dBstop_FIR” variable insures a ceiling where no matter how much rejection comes from external filters, the FIR filter is required to have a minimum rejection. To understand the reason for this, imagine that at some frequency we need 60dB of rejection and we have an external filter that gives us 75dB of rejection. If the FIR filter gave us 15dB of gain at that frequency, we would be meet the frequency response. However having gain in a stop band would cause the filter to resonate strongly at that frequency which would result in time domain problems such as very large coefficients and over-ranging of signals at that frequency. “dBstop_FIR” limits this concern.</p>
+<p>Picking up a proper dBstop_FIR value is a very important step in designing the filter. Since it determines the weight values on stopband, different dBstop_FIR will result in very different filter responses. It is suggested to try different dBstop_FIR values and observe the time-domain coefficients (it is desired to have smooth coefficients) and frequency-domain responses (passband ripple &amp; stopband attenuation) until you pick up a the one which shows the best combination of everything.</p>
+<p>Generally speaking, dBstop_FIR plays a more important role in narrow bandwidth filter design than in wide bandwidth filter design. It can even be omitted when designing a filter with wide bandwidth.</p>
+</section>
+</section>
+<section id="c-c-source-for-internal-designer">
+<h1>C/C++ Source For Internal Designer<a class="headerlink" href="#c-c-source-for-internal-designer" title="Link to this heading"></a></h1>
+<p>For users wishing to deploy or embed this filter designer into their own C/C++ source two options are available. First a GPL licensed C version of the <code class="docutils literal notranslate"><span class="pre">internal_filter_designer</span></code> function is provided as part of the :git-libad9361-iio&gt;`__ library. This includes all the necessary source to generate filter coefficients. Alternatively, if you do not want to utilize a GPL license with your eventual code or product the MATLAB source, which has been enhanced for code generation, can be found in the codegen-support branch of <cite>ad936x-filter-wizard &lt;https::`lib9361-iio &lt;/github.com/analogdevicesinc/ad936x-filter-wizard&gt;</cite>. A secondary designer function called <code class="docutils literal notranslate"><span class="pre">internal_filter_designer_cg</span></code> which supports code generation is provided in this branch. This function will only provide filter coefficients and will numerically match outputs of the non-codegen designer except when the AD9361 FIR is turned off. However, this mode is still supported and will generate filters with flat magnitude responses.</p>
+<section id="getting-matlab-source-and-testing">
+<h2>Getting MATLAB Source and Testing<a class="headerlink" href="#getting-matlab-source-and-testing" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">Required MathWorks Toolboxes and Products:</div>
+<div class="line">* <a class="icon link reference external" href="https://www.mathworks.com/products/matlab/" target="_blank">MATLAB</a></div>
+</div>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.mathworks.com/products/signal/" target="_blank">Signal Processing Toolbox</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.mathworks.com/products/fixed-point-designer/" target="_blank">Fixed-Point Designer</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.mathworks.com/products/matlab-coder/" target="_blank">MATLAB Coder</a></p></li>
+</ul>
+<p>The MATLAB source with code generation support is provided in the codegen-support branch of :git-ad936x-filter-wizard&gt;`__, which can be found here:</p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p>https::<a href="#id9"><span class="problematic" id="id10">`</span></a>ad936x-filter-wizard &lt;/github.com/analogdevicesinc/ad936x-filter-wizard/archive/codegen-support.zip</p>
+</div>
+<p>To make sure the code is functional and your local compilers are set up correctly, automated testing has been added to this repository. To run these tests first make sure you are in the root of the downloaded codegen-support branch and run:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">addpath</span><span class="p">(</span><span class="nb">genpath</span><span class="p">(</span><span class="s">&#39;test&#39;</span><span class="p">));</span>
+<span class="n">runTests</span>
+</pre></div>
+</div>
+<p>If you have MATLAB configured correctly you should observe the following output after the tests complete:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                   <span class="n">Name</span>                         <span class="n">Passed</span>    <span class="n">Failed</span>    <span class="n">Incomplete</span>    <span class="n">Duration</span>      <span class="n">Details</span>
+<span class="n">_____________________________________________</span>    <span class="n">______</span>    <span class="n">______</span>    <span class="n">__________</span>    <span class="n">________</span>    <span class="n">____________</span>
+
+<span class="s1">&#39;FilterDesignerTests/testRXMEX&#39;</span>                  <span class="n">true</span>      <span class="n">false</span>     <span class="n">false</span>         <span class="mf">160.63</span>      <span class="p">[</span><span class="mi">1</span><span class="n">x1</span> <span class="n">struct</span><span class="p">]</span>
+<span class="s1">&#39;FilterDesignerTests/testRXEQMEX&#39;</span>                <span class="n">true</span>      <span class="n">false</span>     <span class="n">false</span>         <span class="mf">14.787</span>      <span class="p">[</span><span class="mi">1</span><span class="n">x1</span> <span class="n">struct</span><span class="p">]</span>
+<span class="s1">&#39;FilterDesignerTests/testRXNonStandardFIRMEX&#39;</span>    <span class="n">true</span>      <span class="n">false</span>     <span class="n">false</span>          <span class="mf">18.38</span>      <span class="p">[</span><span class="mi">1</span><span class="n">x1</span> <span class="n">struct</span><span class="p">]</span>
+<span class="s1">&#39;FilterDesignerTests/testRXDLL&#39;</span>                  <span class="n">true</span>      <span class="n">false</span>     <span class="n">false</span>         <span class="mf">15.854</span>      <span class="p">[</span><span class="mi">1</span><span class="n">x1</span> <span class="n">struct</span><span class="p">]</span>
+<span class="s1">&#39;FilterDesignerTests/testRXNonStandardFIRDLL&#39;</span>    <span class="n">true</span>      <span class="n">false</span>     <span class="n">false</span>         <span class="mf">33.401</span>      <span class="p">[</span><span class="mi">1</span><span class="n">x1</span> <span class="n">struct</span><span class="p">]</span>
+<span class="s1">&#39;FilterDesignerTests/testTXMEX&#39;</span>                  <span class="n">true</span>      <span class="n">false</span>     <span class="n">false</span>         <span class="mf">7.6336</span>      <span class="p">[</span><span class="mi">1</span><span class="n">x1</span> <span class="n">struct</span><span class="p">]</span>
+<span class="s1">&#39;FilterDesignerTests/testTXEQMEX&#39;</span>                <span class="n">true</span>      <span class="n">false</span>     <span class="n">false</span>         <span class="mf">8.5157</span>      <span class="p">[</span><span class="mi">1</span><span class="n">x1</span> <span class="n">struct</span><span class="p">]</span>
+<span class="s1">&#39;FilterDesignerTests/testTXNonStandardFIRMEX&#39;</span>    <span class="n">true</span>      <span class="n">false</span>     <span class="n">false</span>          <span class="mf">16.03</span>      <span class="p">[</span><span class="mi">1</span><span class="n">x1</span> <span class="n">struct</span><span class="p">]</span>
+<span class="s1">&#39;FilterDesignerTests/testTXDLL&#39;</span>                  <span class="n">true</span>      <span class="n">false</span>     <span class="n">false</span>         <span class="mf">8.2624</span>      <span class="p">[</span><span class="mi">1</span><span class="n">x1</span> <span class="n">struct</span><span class="p">]</span>
+<span class="s1">&#39;FilterDesignerTests/testTXNonStandardFIRDLL&#39;</span>    <span class="n">true</span>      <span class="n">false</span>     <span class="n">false</span>         <span class="mf">26.961</span>      <span class="p">[</span><span class="mi">1</span><span class="n">x1</span> <span class="n">struct</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>These tests evaluate the numerical output of the generated designer with respect to the original designer. Usage of these tests can be helpful if modification of the MATLAB source is required. Note that it is possible to generate C/C++ source without the necessary compilers, but the generate code cannot be tested with the provided infrastructure.</p>
+</section>
+<section id="generating-c-c-source-code-from-matlab">
+<h2>Generating C/C++ Source Code From MATLAB<a class="headerlink" href="#generating-c-c-source-code-from-matlab" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">For convenience, an example script called <code class="docutils literal notranslate"><span class="pre">generate_internal_designer.m</span></code> is provided in the repository to generate C/C++ source and optionally compile a DLL. This script utilizes the <code class="docutils literal notranslate"><span class="pre">coder.Config</span></code> class to configure MATLAB Coder. For additional configuration options not used in the script consult <cite>coder.CodeConfig &lt;https://www.mathworks.com/help/coder/ref/coder.codeconfig.html?searchHighlight=coder.codeconfig-class&amp;s_tid=srchtitle&gt;</cite>. MATLAB Coder can be used to generate source code only, compile the generate code into a library, or compile external code with the newly generated code.</div>
+<div class="line">In the provided script, which we show a portion of here, a <code class="docutils literal notranslate"><span class="pre">coder.config</span></code> object is created and configured to generate C code with the majority of the code output to a single file. We disable binary compilation and turn off OpenMP calls which are enabled by default. Since MATLAB Coder requires knowledge of input types they are provided as the <code class="docutils literal notranslate"><span class="pre">args</span></code> input to the codegen call.</div>
+</div>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">cfg</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">coder</span><span class="p">.</span><span class="n">config</span><span class="p">(</span><span class="s">&#39;dll&#39;</span><span class="p">);</span>
+<span class="n">cfg</span><span class="p">.</span><span class="n">TargetLang</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;C&#39;</span><span class="p">;</span>
+<span class="n">cfg</span><span class="p">.</span><span class="n">FilePartitionMethod</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;SingleFile&#39;</span><span class="p">;</span>
+<span class="n">cfg</span><span class="p">.</span><span class="n">GenCodeOnly</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="n">outputLIBName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;libinternal_filter_designer&#39;</span><span class="p">;</span>
+<span class="n">result</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">codegen</span><span class="p">(</span><span class="s">&#39;-config&#39;</span><span class="p">,</span><span class="s">&#39;cfg&#39;</span><span class="p">,</span><span class="n">functionName</span><span class="p">,</span><span class="s">&#39;-O &#39;</span><span class="p">,</span><span class="s">&#39;disable:openmp&#39;</span><span class="p">,</span><span class="s">&#39;-args&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">,</span><span class="s">&#39;-o&#39;</span><span class="p">,</span><span class="n">outputLIBName</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Once this script completes the generated code will be available in the directory <code class="docutils literal notranslate"><span class="pre">codegen\dll\internal_filter_designer</span></code>. Example code is provided in the <code class="docutils literal notranslate"><span class="pre">cpp</span></code> folder of the root directory to demonstrate calls to the generated code. Due to MATLAB Coder styling before directly using the desired function a call to the initializer and terminator functions may be required as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Initialize</span> <span class="n">the</span> <span class="n">application</span><span class="o">.</span>
+<span class="n">internal_design_filter_cg_initialize</span><span class="p">();</span>
+
+<span class="o">//</span> <span class="n">Invoke</span> <span class="n">the</span> <span class="n">entry</span><span class="o">-</span><span class="n">point</span> <span class="n">functions</span><span class="o">.</span>
+<span class="n">main_internal_design_filter_cg</span><span class="p">();</span>
+
+<span class="o">//</span> <span class="n">Terminate</span> <span class="n">the</span> <span class="n">application</span><span class="o">.</span>
+<span class="n">internal_design_filter_cg_terminate</span><span class="p">();</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="support">
+<h1>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h1>
+<p>If you have any questions about these scripts/tools, please ask on the EngineerZone.<a class="icon ez reference external" href="https://ez.analog.com/community/linux-device-drivers/microcontroller-no-os-drivers" target="_blank">Help &amp; Support</a>.</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id11" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">1</a><span class="fn-bracket">]</span></span>
+<p>Release-8</p>
+</aside>
+<aside class="footnote brackets" id="id12" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">2</a><span class="fn-bracket">]</span></span>
+<p><a class="reference internal" href="../../../../tools-software/linux-software/iio_oscilloscope.html"><span class="doc">IIO_Oscilloscope</span></a></p>
+</aside>
+<aside class="footnote brackets" id="id13" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">3</a><span class="fn-bracket">]</span></span>
+<p><a class="icon link reference external" href="https://www.mathworks.com/help/signal/ref/butter.html" target="_blank">Butterworth filter design</a></p>
+</aside>
+<aside class="footnote brackets" id="id14" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">4</a><span class="fn-bracket">]</span></span>
+<p><a class="icon link reference external" href="https://www.mathworks.com/help/dsp/ref/mfilt.firinterp.html" target="_blank">FIR filter-based interpolator</a></p>
+</aside>
+<aside class="footnote brackets" id="id15" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">5</a><span class="fn-bracket">]</span></span>
+<p><a class="icon link reference external" href="https://www.mathworks.com/help/dsp/ref/fdesign.arbmag.html?searchHighlight=fdesign.arbmag&amp;s_tid=srchtitle" target="_blank">Arbitrary response magnitude filter specification object</a></p>
+</aside>
+</aside>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

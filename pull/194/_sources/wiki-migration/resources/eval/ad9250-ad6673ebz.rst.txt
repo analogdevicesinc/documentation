@@ -1,0 +1,245 @@
+EVALUATING THE AD9250/6673 ANALOG-TO-DIGITAL CONVERTERS
+=======================================================
+
+Preface
+-------
+
+| This user guide describes the :adi:`AD9250` and :adi:`AD6673` evaluation boards, :adi:`AD9250-170EBZ <AD9250>`, :adi:`AD9250-250EBZ <AD9250>` and :adi:`AD6673-250EBZ <AD6673>`, which provide all of the support circuitry required to operate these parts in their various modes and configurations. The application software used to interface with the devices is also described.
+| The :adi:`ad9250` and :adi:`ad6673` data sheets provide additional information and should be consulted when using the evaluation board. All documents and software tools are available at :adi:`www.analog.com/hsadcevalboard <hsadcevalboard>`. For additional information or questions, send an email to highspeedproductssupport@analog.com.
+| ===== Typical Measurement Setup =====
+| |image1|
+
+.. container:: centeralign
+
+   *Figure 1. Evaluation Board Connection—*\ :adi:`AD9250-170EBZ <AD9250>`\ *,* :adi:`AD9250-250EBZ <AD9250>` *or
+
+   *\ :adi:`AD6673-250EBZ <AD6673>`\ *\ (on Left) and* :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` *(on Right)*
+
+
+Features
+--------
+
+-  Full featured evaluation board for the :adi:`AD9250`/:adi:`AD6673`
+-  SPI interface for setup and control
+-  Balun/transformer or amplifier input drive option
+-  FMC Compatible Board, No external supplies required
+-  VisualAnalog® and SPI controller software interfaces
+
+Helpful Documents
+-----------------
+
+-  :adi:`AD9250` or :adi:`AD6673` data sheet
+-  High Speed ADC Capture Evaluation Kit Rev E (:adi:`HSC-ADC-EVALEZ <hsadcevalboard>`)
+-  :adi:`AN-905 Application Note <an-905>`, *VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*
+-  :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*
+-  :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*
+-  :adi:`AN-835 Application Note <an-835>`, *Understanding ADC Testing and Evaluation*
+-  `User Guide for AD6673 <https://wiki.analog.com/_media/resources/eval/quickstartguide_AD6673_FMC_rev0.pdf>`_, *User Guide for the AD6673*
+
+Software Needed
+---------------
+
+-  :adi:`SPI Controller <en/design-center/interactive-design-tools/spicontroller.html>`
+-  :adi:`Visual Analog <en/design-center/interactive-design-tools/visualanalog.html>`
+
+Design and Integration Files
+----------------------------
+
+-  Schematic: `ad9250_250ebz_sch.pdf <https://wiki.analog.com/_media/resources/eval/ad9250_250ebz_sch.pdf>`_
+   \* Layout: `ad9250_250ebz_lay.pdf <https://wiki.analog.com/_media/resources/eval/ad9250_250ebz_lay.pdf>`_
+   \* Bill of Material: `ad9250_250ebz_bom.xls <https://wiki.analog.com/_media/resources/eval/ad9250_250ebz_bom.xls>`_
+-  MCS File: `ad9250_evalez <https://wiki.analog.com/_media/resources/eval/user-guides/ad9250_evalez.zip>`_
+   \* SPI Controller Macro File: `ad9250_m2i2_spi_mgp.zip <https://wiki.analog.com/_media/resources/eval/user-guides/ad9250_m2i2_spi_mgp.zip>`_
+
+Equipment Needed
+----------------
+
+-  Analog signal source and antialiasing filter
+-  Sample clock source
+-  Switching power supply (12.0 V, 3.3 A)
+-  PC running Windows®
+-  USB 2.0 port
+-  :adi:`AD9250-250EBZ <AD9250>` board
+-  :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` FPGA-based data capture kit
+
+| 
+| ===== Getting Started ===== This section provides quick start procedures for using the :adi:`AD9250-170EBZ <AD9250>`, :adi:`AD9250-250EBZ <AD9250>` or :adi:`AD6673-250EBZ <AD6673>` board. Both the default and optional settings are described.
+| ==== Configuring the Board ==== Before using the software for testing, configure the evaluation board as follows:
+
+-  Connect the evaluation board to the data capture board, as shown in Figure 1.
+-  Connect one 12V, 3.3A switching power supply (such as the V-Infinity ETSA120330UDC-P5P-SZ supplied) to the HSC-ADC-EVALEZ board. Note: Make sure the 12V power supply is used.
+-  Connect the HSC-ADC-EVALEZ board to the PC with a USB cable. (Connect to P702.)
+-  On the AD9250 EVB, provide a clean, low jitter clock source to the connector labeled CLKIN at the desired ADC conversion rate with power level set between 10dBm and 14dBm.
+-  On the ADC evaluation board, use a clean signal generator with low phase noise to provide an input signal to the analog input at connector J100 (Channel A) and/or J200 (Channel B). Use a 1 m, shielded, RG 58, 50 Ω coaxial cable to connect the signal generator. For best results use a narrow-band, band-pass filter with 50 Ω terminations and an appropriate center frequency. (ADI uses TTE, Allen Avionics, and K and L band-pass filters.) In order for the input level to be near the ADC’s full scale, the generator level should be set to 8dBm to 12dBm – this level depends on the input frequency and any losses in bandpass filters.
+
+Setting up the ADC Data Capture
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| After configuring the board, set up the ADC data capture using the following steps:
+
+-  Open VisualAnalog on the connected PC. The appropriate part type should be listed in the status bar of the **VisualAnalog – New Canvas** window. Select the template that corresponds to the type of testing to be performed (see Figure 2, where the :adi:`AD9250` or :adi:`AD6673` is shown as example).
+   |image2|\
+
+.. container:: centeralign
+
+   \ *Figure 2. VisualAnalog, New Canvas Window*\
+
+
+-  After the template is selected, a message appears asking if the default configuration can be used to program the FPGA (Figure 3). Click **YES** and the window closes.
+   |image3|\
+
+.. container:: centeralign
+
+   \ *Figure 3. VisualAnalog Default Configuration Message*\
+
+
+-  To change features to settings other than the default settings, click the **Expand Display** button, located on the bottom right corner of the window, to see what is shown in Figure 5. Detailed instructions for changing the features and capture settings can be found in the :adi:`AN-905 Application Note <AN-905>`, *VisualAnalog Converter Evaluation Tool Version 1.0 User Manual*. After the changes are made to the capture settings, click the **Collapse Display** button (see Figure 4).
+
+
+
+|image4|
+
+.. container:: centeralign
+
+   \ *Figure 4. VisualAnalog Window Toolbar, Collapsed Display*\
+
+
+   |image5|
+
+.. container:: centeralign
+
+   \ *Figure 5. VisualAnalog, Main Window Expanded Display*\
+
+
+Evaluation and Test
+-------------------
+
+Setting up the SPI Controller Software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| After the ADC data capture board setup is complete, set up the SPI controller software using the following procedure:
+
+-  Open the SPI controller software by going to the **Start** menu or by double-clicking the **SPIController** software desktop icon. If prompted for a configuration file, select the appropriate one. If not, check the title bar of the window to determine which configuration is loaded. If necessary, choose **Cfg Open** from the **File** menu and select the appropriate file based on your part type. Note that the **CHIP ID(1)** box should be filled to indicate whether the correct SPI controller configuration file is loaded (see Figure 6).\ |image6|\
+
+.. container:: centeralign
+
+   \ *Figure 6. SPI Controller, CHIP ID(1) Box*\
+
+
+-  Click the **New DUT** button in the **SPIController** window (see Figure 7).\ |image7|\
+
+.. container:: centeralign
+
+   \ *Figure 7. SPI Controller, New DUT Button*\
+
+
+-  In the **ADCBase 0** tab of the **SPIController** window, find the **CLOCK DIVIDE(B)** box (see Figure 8). If using the clock divider, use the drop-down box to select the correct clock divide ratio, if necessary. See the appropriate part data sheet, the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.\ |image8|\
+
+.. container:: centeralign
+
+   \ *Figure 8. SPI Controller, ADCBase0 Page*\
+
+
+-  Note that other settings can be changed on the **ADCBase 0** page (see Figure 8) and the **ADC A** and **ADC B** pages (see Figure 9) to set up the part in the desired mode. The **ADCBase 0** page settings affect the entire part, whereas the settings on the **ADC A** and **ADC B** pages affect the selected channel only. See the appropriate part data sheet; the :adi:`AN-878 Application Note <an-878>`, *High Speed ADC SPI Control Software*, and the :adi:`AN-877 Application Note <an-877>`, *Interfacing to High Speed ADCs via SPI*, for additional information on the available settings.\ |image9|\
+
+.. container:: centeralign
+
+   \ *Figure 9. SPI Controller, Example ADC A Page*\
+
+
+-  Click the **Run** button in the **VisualAnalog** toolbar (see Figure 10).\ |image10|\
+
+.. container:: centeralign
+
+   \ *Figure 10. Run Button (Encircled in Red) in VisualAnalog Toolbar, Collapsed Display*\
+
+
+Adjusting the Amplitude of the Input Signal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The next step is to adjust the amplitude of the input signal for each channel as follows:
+
+-  Adjust the amplitude of the input signal so that the fundamental is at -1.0 dBFS. Examine the **Fund Power** reading in the left panel of the **VisualAnalog Graph - AD9250 Average FFT** window (see Figure 11) to verify this.\ |image11|\
+
+.. container:: centeralign
+
+   //Figure 11. Graph Window of VisualAnalog *
+
+
+\* Repeat this procedure for Channel B. \* Click the disk icon within the* **Graph** *window to save the performance plot data as .csv formatted file. See Figure 12 for AD9250 example. Please refer to the respective data sheet of the product of interest for its typical FFT performance.\ \
+
+.. container:: centeralign
+
+   * Figure 12. Typical FFT, AD9250//
+
+
+Optional Steps
+~~~~~~~~~~~~~~
+
+The following steps below are optional steps for validation of SPI Control:
+
+-  Force the data output of ADC A and/or ADC B to generate a long PN sequence as shown in Figure 13. |image12|\
+
+.. container:: centeralign
+
+   // Figure 13. SPI Control for PN Long Sequence Validation\ *
+
+
+\* Results in the noise floor of the selected ADC's FFT to increase significantly as shown in Figure 14. \
+
+.. container:: centeralign
+
+   * Figure 14. Increased Noise Floor on FFT//
+
+
+-  To re-program the FPGA, select the ADC Data Capture Settings window and click on the ‘Capture Board’ tab (see the box in the figure below). In the FPGA box select the program “ad9250_evalez.mcs” to configure the FPGA. After selecting the file, click the “Program” button to download the file to the FPGA. The ‘CONFIG_DONE’ LED should illuminate on the HSC-ADC-EVALEZ board indicating that the FPGA is now programmed.
+
+| 
+| ===== Troubleshooting Tips ===== If the FFT plot appears abnormal, do the following:
+
+-  If you see a normal noise floor when you disconnect the signal generator from the analog input, be sure you are not overdriving the ADC. Reduce the input level, if necessary.
+-  In **VisualAnalog**, click the **Settings** button in the **Input Formatter** block. Check that **Number Format** is set to correct encoding (2's complement by default).
+
+If the FFT appears normal but the performance is poor, check the following:
+
+-  Make sure that an appropriate filter is used on the analog input.
+-  Make sure that the signal generators for the clock and the analog input are clean (low phase noise).
+-  Change the analog input frequency slightly if noncoherent sampling is being used.
+-  Make sure that the SPI configuration file matches the product being evaluated.
+
+If the FFT window remains blank after **Run** is clicked, do the following:
+
+-  Make sure that the evaluation board is securely connected to the :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` board.
+-  Disconnect power from both the ADC evaluation board and the :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` board, disconnect the USB cable from the :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` board and begin again at Step 1.
+-  Make sure that the FPGA has been programmed by verifying that the **CONFIG_DONE** LED is illuminated on the :adi:`HSC-ADC-EVALEZ <hsadcevalboard>` board.
+-  Make sure that the correct FPGA program was installed.
+
+If VisualAnalog indicates that the **FIFO Capture timed out**, do the following:
+
+-  Make sure that all power and USB connections are secure.
+-  Double check that the encode clock source is present at the CLKIN connector.
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/ad9250_typical_setup.jpg
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/ad9250_va_new_canvas.png
+   :width: 500px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/ad9250_va_default_config.png
+   :width: 500px
+.. |image4| image:: https://wiki.analog.com/_media/resources/eval/ad9250_va_collapse_display.png
+   :width: 500px
+.. |image5| image:: https://wiki.analog.com/_media/resources/eval/ad9250_va_main_window.png
+   :width: 500px
+.. |image6| image:: https://wiki.analog.com/_media/resources/eval/ad9250_spi_cont_chip_id.png
+   :width: 600px
+.. |image7| image:: https://wiki.analog.com/_media/resources/eval/ad9250_spi_cont_new_dut.png
+   :width: 500px
+.. |image8| image:: https://wiki.analog.com/_media/resources/eval/ad9250_spi_cont_clock_divide.png
+   :width: 500px
+.. |image9| image:: https://wiki.analog.com/_media/resources/eval/ad9250_spi_cont_example_adca_page.png
+   :width: 500px
+.. |image10| image:: https://wiki.analog.com/_media/resources/eval/ad9250_va_run_button.png
+   :width: 500px
+.. |image11| image:: https://wiki.analog.com/_media/resources/eval/ad9250_va_graph_window.png
+   :width: 500px
+.. |image12| image:: https://wiki.analog.com/_media/resources/eval/ad9250_spi_cont_pn_seq.png
+   :width: 600px

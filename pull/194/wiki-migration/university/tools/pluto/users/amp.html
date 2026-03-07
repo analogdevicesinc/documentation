@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="In this article, we will examine the basics of propagation and motivate the use of amplifiers for RF transmission. We will also discuss some important specifications of amplifiers that are typically approached by practicing engineers." name="description" />
+
+    <title>Amplifiers &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Amplifiers</a></li>
+<li><a class="reference internal" href="#transmission">Transmission</a></li>
+<li><a class="reference internal" href="#free-space-path-loss">Free Space Path Loss</a></li>
+<li><a class="reference internal" href="#practical-things">Practical things</a><ul>
+<li><a class="reference internal" href="#theory-of-operation">Theory of Operation</a></li>
+<li><a class="reference internal" href="#power-supply-rejection-ratio-pssr">Power Supply Rejection Ratio (PSSR)</a></li>
+<li><a class="reference internal" href="#log-and-db">Log and dB</a></li>
+<li><a class="reference internal" href="#peak-to-average">Peak to Average</a></li>
+<li><a class="reference internal" href="#p1db">P1dB</a></li>
+<li><a class="reference internal" href="#noise">Noise</a></li>
+<li><a class="reference internal" href="#distortion">Distortion</a></li>
+<li><a class="reference internal" href="#power-supply-limits">Power Supply Limits</a></li>
+<li><a class="reference internal" href="#power-dissipation">Power Dissipation</a></li>
+<li><a class="reference internal" href="#s-parameters">S Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#measurements">Measurements</a><ul>
+<li><a class="reference internal" href="#signal-to-noise-ratio">Signal To Noise Ratio</a></li>
+<li><a class="reference internal" href="#noise-generation-and-power">Noise Generation and Power</a></li>
+<li><a class="reference internal" href="#s-parameters-1">S Parameters</a></li>
+<li><a class="reference internal" href="#results">Results</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="amplifiers">
+<h1>Amplifiers<a class="headerlink" href="#amplifiers" title="Link to this heading"></a></h1>
+<p>In this article, we will examine the basics of propagation and motivate the use of amplifiers for RF transmission. We will also discuss some important specifications of amplifiers that are typically approached by practicing engineers.</p>
+</section>
+<section id="transmission">
+<h1>Transmission<a class="headerlink" href="#transmission" title="Link to this heading"></a></h1>
+<p>To understand power in RF transmission, we need to go back to high school physics and do a little thought experiment.</p>
+<p>Imagine a <a class="icon link reference external" href="https://en.wikipedia.org/wiki/Dyson_sphere" target="_blank">Dyson Sphere</a>, an artificial hollow sphere of matter around a star. The energy (in Joules) that the encompassed star provides spreads out uniformly in all directions. The Luminosity or Power the star puts out is based on Joules/second, or Watts. The Brightness or power received at the surface of the Dyson-sphere received is based on the distance from the star and the surface of the inner surface of the sphere (and is measured in Watts/m^2). Suppose the Dyson-sphere has a radius of r, then the surface area of that sphere is <span class="math notranslate nohighlight">\(4pir^2\)</span> .</p>
+<p>If the total output power (or Luminosity) of the star is L Watts, and the surface area of that sphere is <span class="math notranslate nohighlight">\(4pir^2\)</span> , So the energy flowing through each square meter of the sphere every second is:</p>
+<p><span class="math notranslate nohighlight">\(B = L/4{\pi}r^2\)</span></p>
+<p>We call that the star’s brightness, B, and is measured in Watts/meter^2. This is known as a form of the “Inverse Square Law”, as the relationship is <span class="math notranslate nohighlight">\(1/r^2\)</span> not <span class="math notranslate nohighlight">\(1/r\)</span></p>
+<p>If the distance, r, is doubled then the brightness, B, (or received brightness) decreases by a factor of <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{2}^2\)</span> or a quarter the brightness.</p>
+<p>If the distance, r, is tripled then the brightness, B, (or received brightness) decreases by a factor of <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{2}^3\)</span> or a eighth the brightness.</p>
+<p>You can also look at this from the opposite way - if you need to read a book on the surface of the Dyson-sphere, what kind of output power do you need from the star, to get the appropriate amount of brightness? To double the brightness, you need to increase the power of the star by 4 times.</p>
+<p>If you still are not sure lets go way back to the middle school butter gun analogy, by watching the excellent video, put together by <a class="icon link reference external" href="https://www.youtube.com/user/fizzicsorg" target="_blank">Roger Linsell</a> of <a class="icon link reference external" href="http://www.fizzics.org/" target="_blank">http://www.fizzics.org/</a>.</p>
+<img alt="youtube&gt;JW3tT0L2gpc" src="https://wiki.analog.com/_media/youtube&gt;JW3tT0L2gpc" />
+</section>
+<section id="free-space-path-loss">
+<h1>Free Space Path Loss<a class="headerlink" href="#free-space-path-loss" title="Link to this heading"></a></h1>
+<p>As energy is transmitted by any transceiver it becomes dispersed across space and absorbed by the surrounding environment. This is typically referred to as path loss or loss or attenuation of energy over a distance. Although generally not accurate in most situations, the most common model for path loss is free-space path loss (FSPL). FSPL is the energy loss in an obstacle-free, line-of-sight path through free space. FSPL is proportional to the square of the distance:</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle L=\frac{4 \pi d}{\lambda}^2 = \frac{4 \pi d f}{c}^2\)</span> ,</p>
+<p>where <span class="math notranslate nohighlight">\(d\)</span> is the distance (meters) from the transmitter, <span class="math notranslate nohighlight">\(f\)</span> is the signal or carrier frequency (hertz), <span class="math notranslate nohighlight">\(\lambda\)</span> is the wavelength (meters), and <span class="math notranslate nohighlight">\(c\)</span> is the speed of light (meters per second). The equation above also assumes the transmitter is <a class="icon link reference external" href="https://en.wikipedia.org/wiki/Isotropy" target="_blank">isotropic</a> and is measured from the far field.</p>
+<p>This equation is typically provided in <span class="math notranslate nohighlight">\(dB\)</span> which can be calculated as:</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle L_{dB}=10log_10(\frac{4 \pi d f}{c}^2) = 20log_10(\frac{4 \pi d f}{c}) = 20log_10(d) + 20log_10(f) + 20log_10\frac{4 \pi}{c}\)</span> .</p>
+<p>Let us get some perspective on this equation from looking at the idea of receiver sensitivity (RS), which is the minimum power a signal can be received at and still recovered. For WiFi 802.11ac, this requirement is <span class="math notranslate nohighlight">\(-93 dBm\)</span> [FIX ME and ref]. Operating at <span class="math notranslate nohighlight">\(2.4 GHz\)</span> and examining distance as a function of transmit power we can observe the limited range of Pluto alone in orange in the figure below. However, by adding a <span class="math notranslate nohighlight">\(20 dBm\)</span> amplifier to Pluto we can substantially increase its range.</p>
+<img alt="range.svg" class="align-center" src="https://wiki.analog.com/_media/university/tools/pluto/users/range.svg" />
+</section>
+<section id="practical-things">
+<h1>Practical things<a class="headerlink" href="#practical-things" title="Link to this heading"></a></h1>
+<section id="theory-of-operation">
+<h2>Theory of Operation<a class="headerlink" href="#theory-of-operation" title="Link to this heading"></a></h2>
+<p>In a basic sense, amplifiers can be thought of as a tradeoff between signal gain and signal corruption. Gain is simply the ratio of the input to output signal amplitude. However, signal corrupt comes fin many forms but usually categorized as noise and distortion.</p>
+</section>
+<section id="power-supply-rejection-ratio-pssr">
+<h2>Power Supply Rejection Ratio (PSSR)<a class="headerlink" href="#power-supply-rejection-ratio-pssr" title="Link to this heading"></a></h2>
+<p>If the supply of an amplifier changes, its output should not, but it typically does. If a change of X volts in the supply produces an output voltage change of Y volts, then the PSRR on that supply (referred to the output, RTO) is X/Y. The dimensionless ratio is generally called the power supply rejection ratio (PSRR), and Power Supply Rejection (PSR) if it is expressed in dB. <em>However, PSRR and PSR are almost always used interchangeably, and there is little standardization within the semiconductor industry.</em></p>
+<p>PSSR can be expressed as a positive or negative value in dB, depending on whether the PSRR is defined as the power supply change divided by the output voltage change, or vice-versa. There is no accepted standard for this in the industry, and both conventions are in use.</p>
+</section>
+<section id="log-and-db">
+<h2>Log and dB<a class="headerlink" href="#log-and-db" title="Link to this heading"></a></h2>
+<p>The power P<sub>dBm</sub> in dBm is equal to 10 times the base 10 logarithm of the power P<sub>mW</sub> in milliwatts (mW) divided by 1 milliwatt (mW):</p>
+<p><span class="math notranslate nohighlight">\(P_{dBm} = 10 log_{10}(P_{mW}/{1mW})\)</span></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Power in mW</p></th>
+<th class="head"><p>Power in dBm</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0.1 mW</p></td>
+<td><p>-10 dBm</p></td>
+</tr>
+<tr class="row-odd"><td><p>0.3 mW</p></td>
+<td><p>-5 dBm</p></td>
+</tr>
+<tr class="row-even"><td><p>1 mW</p></td>
+<td><p>0 dBm</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.2 mW</p></td>
+<td><p>5 dBm</p></td>
+</tr>
+<tr class="row-even"><td><p>10 mW</p></td>
+<td><p>10 dBm</p></td>
+</tr>
+<tr class="row-odd"><td><p>32 mW</p></td>
+<td><p>15 dBm</p></td>
+</tr>
+<tr class="row-even"><td><p>100 mW</p></td>
+<td><p>20 dBm</p></td>
+</tr>
+<tr class="row-odd"><td><p>316 mW</p></td>
+<td><p>25 dBm</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A doubling of output power (from 1mW to 2mW) is only +3dBm. A gain of +20dBm, is output power increasing by a factor of 100 times in mW.</p>
+</section>
+<section id="peak-to-average">
+<h2>Peak to Average<a class="headerlink" href="#peak-to-average" title="Link to this heading"></a></h2>
+<p>The peak-to-average power ratio (PAPR) is the peak amplitude squared (giving the peak power) divided by the RMS value squared (giving the average power).</p>
+<p><span class="math notranslate nohighlight">\(PAPR_{%} = (t_{peak})^2/(t_{rms})^2 ;\)</span> <span class="math notranslate nohighlight">\(PAPR_{dB} = 10 log_{10}(t_{peak})^2/(t_{rms})^2\)</span></p>
+<p>whether expressed in percent in dB, PAPR is dimensionless quantity.</p>
+<p>When dealing with signals and amplifiers, it is the peak that we need to be concerned about, not the average power in the signal. Different types of modulation schemes have different peak to average power, and this needs to be taken into account.</p>
+</section>
+<section id="p1db">
+<h2>P1dB<a class="headerlink" href="#p1db" title="Link to this heading"></a></h2>
+<p>Normally, there is a direct relationship between input and output of an amplifier. As the input increases, the output increases the same amount. However, once the input reaches a certain level, the output signal begins to soft-limit, or compress. A parameter of interest here is the 1 dB compression point. This is the point where the output signal is compressed 1dB from an ideal input/output transfer function. This is shown in the figure within the region where the ideal slope = 1 line becomes dotted, and the actual response exhibits compression (solid).</p>
+<img alt="https://wiki.analog.com/_media/university/tools/pluto/users/p1db.svg" class="align-center" src="https://wiki.analog.com/_media/university/tools/pluto/users/p1db.svg" />
+<p>Typically, the 1 dB compression point is a function of frequency, and as one would expect, the distortion is worse at higher frequencies.</p>
+</section>
+<section id="noise">
+<h2>Noise<a class="headerlink" href="#noise" title="Link to this heading"></a></h2>
+<p>Two techniques are typically used for analyzing the noise, but each can be cumbersome. Noise spectral density (NSD) defines the noise power per unit bandwidth. It is represented in mean-square dBm/Hz or dBFS/Hz for ADCs and rms nV/√Hz for amplifiers. This incompatibility in units provides an obstacle to calculating system noise when an amplifier is driving an ADC, or a DAC is driving an amplifier.</p>
+<p>Noise figure (NF) is the log ratio of input SNR to the output SNR expressed in decibels. This specification, commonly used by RF engineers, makes sense in a purely RF world, but attempting to use NF calculations in a signal chain with an ADC can lead to misleading results.</p>
+</section>
+<section id="distortion">
+<h2>Distortion<a class="headerlink" href="#distortion" title="Link to this heading"></a></h2>
+<p>When a spectrally pure sinewave passes through an amplifier (or other active device), various harmonic distortion products are produced depending upon the nature and the severity of the non-linearity. However, simply measuring harmonic distortion produced by single tone sinewaves of various frequencies does not give all the information required to evaluate the amplifier’s potential performance in a communications application. In most communications systems there are a number of channels which are “stacked” in frequency. It is often required that an amplifier be rated in terms of the intermodulation distortion (IMD) produced with two or more specified tones applied.</p>
+<p>Intermodulation distortion products are of special interest in the IF and RF area, and a major concern in the design of radio receivers. Rather than simply examining the harmonic distortion or total harmonic distortion (THD) produced by a single tone sinewave input, it is often required to look at the distortion products produced by two tones.</p>
+<p>As shown in the figure, two tones f<sub>1</sub> and f<sub>2</sub> will produce second and third order intermodulation products.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/pluto/users/ip2andip3.svg"><img alt="https://wiki.analog.com/_media/university/tools/pluto/users/ip2andip3.svg" src="https://wiki.analog.com/_media/university/tools/pluto/users/ip2andip3.svg" style="width: 500px;" />
+</a>
+<p>The example shows the second and third order products produced by applying two frequencies, f<sub>1</sub> and f<sub>2</sub>, to a nonlinear device.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Order of Mixing</p></th>
+<th class="head"><p>Location of mixing products/Harmomics</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>first order</p></td>
+<td><p><span class="math notranslate nohighlight">\(2f_{1}, 2f_{2}\)</span> , <span class="math notranslate nohighlight">\(3f_{1}, 3f_{2}\)</span> , <span class="math notranslate nohighlight">\(4f_{1}, 4f_{2}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>second order</p></td>
+<td><p><span class="math notranslate nohighlight">\(f_{1} - f_{2}, f_{1} + f_{2}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>third order</p></td>
+<td><p><span class="math notranslate nohighlight">\(2f_{1} - f_{2}, 2f_{2} - f_{1}, 2f_{1} + f_{2}, 2f_{2} + f_{1}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The second order products located at f<sub>2</sub> + f<sub>1</sub> and f<sub>2</sub> – f<sub>1</sub> are located far away from the two tones, and may be removed by filtering. The third order products located at 2f<sub>1</sub> + f<sub>2</sub> and 2f<sub>2</sub> + f<sub>1</sub> may likewise be filtered. The third order products located at 2f<sub>1</sub> – f<sub>2</sub> and 2f<sub>2</sub>– f<sub>1</sub>, however, are close to the original tones, and filtering them is difficult.</p>
+<p>Third order IMD products are especially troublesome in multi-channel communications systems where the channel separation is constant across the frequency band. Third-order IMD products from large signals (blockers) can mask out smaller signals.</p>
+</section>
+<section id="power-supply-limits">
+<h2>Power Supply Limits<a class="headerlink" href="#power-supply-limits" title="Link to this heading"></a></h2>
+<p>The relationship between dBm (power with respect to 1mW) and Volts peak-peak for a sinusoidal signal in a 50-Ohm systems is:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>dBm</p></th>
+<th class="head"><p>mW</p></th>
+<th class="head"><p>Volts<sub>rms</sub></p></th>
+<th class="head"><p>Volts<sub>pp</sub></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-10</p></td>
+<td><p>0.1</p></td>
+<td><p>70.711 mV</p></td>
+<td><p>199.970 mV</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>223.607 mV</p></td>
+<td><p>632.360 mV</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>3.16</p></td>
+<td><p>0.398 V</p></td>
+<td><p>1.125 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>10</p></td>
+<td><p>0.707 V</p></td>
+<td><p>2.000 V</p></td>
+</tr>
+<tr class="row-even"><td><p>15</p></td>
+<td><p>31.6</p></td>
+<td><p>1.257 V</p></td>
+<td><p>3.556 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>20</p></td>
+<td><p>100</p></td>
+<td><p>2.236 V</p></td>
+<td><p>6.324 V</p></td>
+</tr>
+<tr class="row-even"><td><p>25</p></td>
+<td><p>316</p></td>
+<td><p>3.976 v</p></td>
+<td><p>11.246 V</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The question is, how do we get +20dBm (6.324V <sub>peak-peak</sub>) out of a system, when the power supply is limited to 5V? The trick is in how we connect the output stage. The output stage (RFOUT) is connected to Vcc through the inductor L1. From a DC perspective, inductors become short circuits, and RFOUT is setting at 5.0V, allowing a 10V<sub>peak-peak</sub> swing from the amplifier. This is also why it is AC-coupled by the output capacitor before it attaches to the antenna.</p>
+<img alt="https://wiki.analog.com/_media/university/tools/pluto/users/adl5606.svg" class="align-center" src="https://wiki.analog.com/_media/university/tools/pluto/users/adl5606.svg" />
+</section>
+<section id="power-dissipation">
+<h2>Power Dissipation<a class="headerlink" href="#power-dissipation" title="Link to this heading"></a></h2>
+<p>Supply Current in the ADL5606 datasheet is specified for a max on 390mA at 5.0V (or 1.95W). Although the ADL5606 is packaged in a thermally efficient 4 mm × 4 mm, 16-lead LFCSP (thermal resistance from junction to air (θ<sub>JA</sub>) is 52.9°C/W. This 1.95W dissipation times the θ<sub>JA</sub> is a temperature increase of 103.2 °C. Given a maximum junction temperature of 150°C, we either only use the part in sub 46.845°C environments, or work harder on spreading the heat out of the package, onto the PCB.</p>
+</section>
+<section id="s-parameters">
+<h2>S Parameters<a class="headerlink" href="#s-parameters" title="Link to this heading"></a></h2>
+<p><a class="icon link reference external" href="https://en.wikipedia.org/wiki/Scattering_parameters" target="_blank">Scattering</a> or S-parameters are commonly used to characterize 2-port networks. An S-parameter indicates the amount of power leaving one port of the network, given power entering another (or the same) port of the network. For a two port network (one input, one output), we number the ports 1 and 2, and measure 4 different ratios:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Measurement</p></th>
+<th class="head"><p>Leaving Port</p></th>
+<th class="head"><p>Entering Port</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>S<sub>11</sub></p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>S<sub>12</sub></p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>S<sub>21</sub></p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>S<sub>22</sub></p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<img alt="http://www.analog.com/-/media/analog/en/landing-pages/technical-articles/improve-s21-flatness-measurements/s21.jpg" class="align-center" src="http://www.analog.com/-/media/analog/en/landing-pages/technical-articles/improve-s21-flatness-measurements/s21.jpg" />
+<p>In the case of S<sub>21</sub>, the suffix “<sub>21</sub>” denotes the power leaving port 2, with power delivered to port 1. Note that in the RF world, S-parameters are measured using a 50Ω system. The source impedance driving port 1 must be 50Ω, and the load impedance presented to port 2 must also be 50Ω.</p>
+<p>Depending on what you are measuring - each measurement can be more important than another. For example, for an amplifier, S<sub>21</sub> measures the gain of the amplifier, with port 1 being the input and port 2 being the output. If an amplifier’s S<sub>21</sub>=0 dB, the amplifier has a gain of 1. For an antenna, S<sub>11</sub> represents how much power is reflected from the antenna back, and therefore is known as the reflection coefficient (or return loss). If an antenna’s S<sub>11</sub>=0 dB, then all the power being sent to the antenna is reflected from the antenna and nothing is radiated.</p>
+<p>S Parameters are normally measured over frequency, as a good amplifier will have a flat gain over frequency. When the gain varies over frequency, it is often called ripple. Ripple is evident once S<sub>21</sub> is measured over frequency.</p>
+</section>
+</section>
+<section id="measurements">
+<h1>Measurements<a class="headerlink" href="#measurements" title="Link to this heading"></a></h1>
+<section id="signal-to-noise-ratio">
+<h2>Signal To Noise Ratio<a class="headerlink" href="#signal-to-noise-ratio" title="Link to this heading"></a></h2>
+<p>When we consider the performance of a communication link, in the most basic sense, we are interested in the bandwidth and power of the transmitted signal. Bandwidth is measured from the power spectral density of signal and is also proportional to the bit rate. We define average energy per bit as:</p>
+<p><span class="math notranslate nohighlight">\(overlineE_b = overline{E}_s/log_2(M)\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(M\)</span> is the order of the modulation scheme and <span class="math notranslate nohighlight">\(overlineE_s\)</span> is the average symbol energy. Note that <span class="math notranslate nohighlight">\(overlineE_b\)</span> is of units Joules/bit. When considering an Additive White Gaussian Noise (AWGN) channel, we can write the power efficiency as <span class="math notranslate nohighlight">\(overline{E}_b/N_0\)</span> , where <span class="math notranslate nohighlight">\(N_0\)</span> is the noise power spectral density (PSD). Since AWGN is flat in frequency, or equal across all frequencies, channel noise can typically be measured over 1 Hz of spectrum. Therefore, <span class="math notranslate nohighlight">\(N_0\)</span> is in units Watts/Hz <span class="math notranslate nohighlight">\(right\)</span> Joules. <span class="math notranslate nohighlight">\(overline{E}_b/N_0\)</span> can be alternatively understood as normalized signal-to-noise ratio (SNR) and is related by the bitrate <span class="math notranslate nohighlight">\(R_b\)</span> and channel bandwidth <span class="math notranslate nohighlight">\(B\)</span></p>
+<p><span class="math notranslate nohighlight">\(SNR = overline{E}_b/N_0 \times R_s/B.\)</span></p>
+<p>SNR is commonly expressed in SNR in decibels (dB) and the equation above can be rewritten as:</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle SNR_{dB} = 10log_{10}(overline{E}_b/N_0) + 10log_{10}\frac{R_s}{{B}}\)</span></p>
+<p>When determining SNR of a signal it is important to understand that signals are band limited unlike noise. Therefore, as the observation bandwidth of the signal is increased the SNR becomes worse.</p>
+</section>
+<section id="noise-generation-and-power">
+<h2>Noise Generation and Power<a class="headerlink" href="#noise-generation-and-power" title="Link to this heading"></a></h2>
+<p>Calculation of power is a non-trivial exercise in practice and in many situations loosely defined. This is especially true when determining SNR. Let us first consider a unique example where we have scaled exponentials ( <span class="math notranslate nohighlight">\(s(t) = \alpha exp(j \pi f_c t)\)</span> ) in AWGN. A resulting FFT provided in the figure below, generated from some simple code for two different source signals:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">signal</span><span class="o">+</span><span class="n">noise</span><span class="p">;</span>
+<span class="o">%</span> <span class="n">View</span> <span class="n">averaged</span> <span class="n">spectrum</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">bandwidth</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">bandwidth</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">fftLen</span><span class="p">);</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">reshape</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">fftLen</span><span class="p">,</span><span class="n">frames</span><span class="p">);</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">fftshift</span><span class="p">(</span><span class="n">fft</span><span class="p">(</span><span class="n">R</span><span class="p">));</span>
+<span class="n">R_mean</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">R</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">fftLen</span><span class="p">;</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span><span class="mi">10</span>\<span class="o">*</span><span class="n">log10</span><span class="p">(</span><span class="n">R_mean</span><span class="p">));</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/pluto/users/snr_guess_dual-eps-converted-to-1.png"><img alt="https://wiki.analog.com/_media/university/tools/pluto/users/snr_guess_dual-eps-converted-to-1.png" class="align-center" src="https://wiki.analog.com/_media/university/tools/pluto/users/snr_guess_dual-eps-converted-to-1.png" style="width: 600px;" />
+</a>
+<p>An obvious question to ask would be “What is the SNR of these signals?”. However, we cannot directly derive the SNR from this plot alone. If we are using a spectrum or vector analyzer we need knowledge of the Resolution Bandwidth (RBW), which is a function of the FFT bin count and observation bandwidth. Since we already know the observation bandwidth (1 MHz), if we used a FFT of size 1024, then the true SNR is ~10 dB. An important aspect to note from the figure above is the shape of the signals <span class="math notranslate nohighlight">\(r_1\)</span> and <span class="math notranslate nohighlight">\(r_2\)</span> . In generation these two signals only differ in <span class="math notranslate nohighlight">\(f_c\)</span> , although they appear quite different in the figure. <span class="math notranslate nohighlight">\(r_2\)</span> was strictly chosen to be within a FFT bin and <span class="math notranslate nohighlight">\(r_2\)</span> strattles bins. This difference is due to the window effect of the FFT applied to the signals. This is commonly known as <em>scalloping</em> and will be dependent on the window chosen. fred harris (yes that capitalization is correct) provides a detailed overview of different windows and how to compensate for their effects in [harris1978]. When performing digital signal processing it is alway important to understand effects of discrete computations over the infinite resolution of our written equations.</p>
+<p>Now let us connect this to the theoretical concepts. We know that the power spectral density (PSD) is obtained through a Fourier Transform of a signal’s autocorrelation function. Formally written as:</p>
+<p><span class="math notranslate nohighlight">\(S_{XX}(f) = int-inftyinftyR_{XX}(\tau)e^{-j2 \pi f \tau} d\\tau\)</span></p>
+<p>where the autocorrelation of our process or signal <span class="math notranslate nohighlight">\(X(t)\)</span> is:</p>
+<p><span class="math notranslate nohighlight">\(R_{XX}(t_1,t_2) = E[X(t_1)X^{ast}(t_2)]\)</span> .</p>
+<p>In the case of AWGN this autocorrelation is simply:</p>
+<p><span class="math notranslate nohighlight">\(R_{XX}(t_1,t_2) = \sigma^2\)</span> (if <span class="math notranslate nohighlight">\(t_1=t_2\)</span> , <span class="math notranslate nohighlight">\(0\)</span> otherwise)</p>
+<p>where <span class="math notranslate nohighlight">\(\sigma^2\)</span> is the variance of the noise. Therefore, <span class="math notranslate nohighlight">\(S_{XX}=\sigma^2\)</span> for all frequencies within the observation bandwidth. Therefore, the power of the AWGN signal is simply <span class="math notranslate nohighlight">\(P_N = \sigma^2 \times B\)</span> . This result provides a mechanism for determining power from the PSD or frequency domain of a signal. However, it can be useful to calculate signal power from the time domain, and from Parseval’s theorem we know power is identical between domains. For an AWGN signal calculating the variance directly provides <span class="math notranslate nohighlight">\(P_N\)</span> , but this is not true for non-zero mean processes. In that case, power can be simply calculated based on the squared RMS or squared mean of the process samples. However, a significant amount of data should be collected to get a representative power value of the signal. In MATLAB for a complex input signal the power is simply:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">signalpower</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">mean</span><span class="p">(</span><span class="n">signal</span><span class="o">.*</span><span class="n">conj</span><span class="p">(</span><span class="n">signal</span><span class="p">)))</span><span class="o">^</span><span class="mi">2</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>However, the power unit is a bit tricker to determine. An instrument will provide the I/Q data in voltage based on some input impedance. Therefore, we can calculate the power directly in dBm easily:</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle P_{dBm} = 10log_{10} (P_{RMS}/1mW) = 10log_{10} \frac{I^2+Q^2}{2/R \times 1mW}\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(R\)</span> is the input resistance of the device. For an SDR I/Q values will be based on some uncalibrated ADC values and we typically define them of unit dBFS. Resulting in a power calculation that is not relatable to Watts. If it was desired to use an SDR an a instrument we would need to relate each output of the ADC to a specific input voltage at the antenna. This mapping would allow us to accurate measure quantities in SI units instead of relative units.</p>
+</section>
+<section id="s-parameters-1">
+<span id="id1"></span><h2>S Parameters<a class="headerlink" href="#s-parameters-1" title="Link to this heading"></a></h2>
+<p>This data was taken on a <a class="icon link reference external" href="https://www.keysight.com/en/pdx-x202208-pn-E5080A/ena-vector-network-analyzer?" target="_blank">Keysight ENA E5080A</a>:</p>
+<p>First we calibrate things with a cable, and connector, to make sure we see what is happening. We expect this to be a flat line, with 0dB of gain. (it is a cable after all).</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/pluto/users/cal_s21.png"><img alt="E5080A Calibration" src="https://wiki.analog.com/_media/university/tools/pluto/users/cal_s21.png" style="width: 600px;" />
+</a>
+<p>Then we can look at the S12 of the amplifier board. Here we can see gain between 2 and 3 GHz, with the flat part being between 2.4 and 2.5 GHz, just like we hope.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/pluto/users/c419_s21.png"><img alt="https://wiki.analog.com/_media/university/tools/pluto/users/c419_s21.png" src="https://wiki.analog.com/_media/university/tools/pluto/users/c419_s21.png" style="width: 600px;" />
+</a>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/pluto/users/c419_s21_zoom.png"><img alt="https://wiki.analog.com/_media/university/tools/pluto/users/c419_s21_zoom.png" src="https://wiki.analog.com/_media/university/tools/pluto/users/c419_s21_zoom.png" style="width: 600px;" />
+</a>
+<p>If we vary the amplitude at a constant frequency, we can see the P1dB point at +5dBm. In order to keep things operating in the linear region, we should make sure not to drive the amplifer board with more than +5dBm.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/pluto/users/c419_p1db.png"><img alt="https://wiki.analog.com/_media/university/tools/pluto/users/c419_p1db.png" src="https://wiki.analog.com/_media/university/tools/pluto/users/c419_p1db.png" style="width: 600px;" />
+</a>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Link to this heading"></a></h2>
+<p>The yellow line is an antenna, the red line is with the same antenna and the amplifier. You can see the +20dB of transmission at 2.4GHz.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/university/tools/pluto/users/c419_s21_ant_amp.png"><img alt="https://wiki.analog.com/_media/university/tools/pluto/users/c419_s21_ant_amp.png" src="https://wiki.analog.com/_media/university/tools/pluto/users/c419_s21_ant_amp.png" style="width: 600px;" />
+</a>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

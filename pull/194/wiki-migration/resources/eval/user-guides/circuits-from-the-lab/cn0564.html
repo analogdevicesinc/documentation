@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Monitoring and data acquisition systems require direct access to the sensors and actuators, preferably from a remote location and by means of a standardized communication method. With increased digitization and as industry 4.0 gain more ground, more analog sensors are being provided with a digital interface such as I2C or SPI. Digital signal integration is therefore increasing as they permit faster switch-on times and lower power consumption. In addition, further processing such as a wide variety of signal processing operations can be performed easily. I2C and SPI are examples of a highly ubiquitous and common digital interface that uses a synchronous serial communication. They are widely used for attaching lower-speed peripheral ICs to processors and microcontrollers in intra-board, short-distance communication." name="description" />
+
+    <title>EVAL-CN0564-ARDZ User Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">EVAL-CN0564-ARDZ User Guide</a><ul>
+<li><a class="reference internal" href="#introduction">INTRODUCTION</a></li>
+<li><a class="reference internal" href="#system-topology">SYSTEM TOPOLOGY</a><ul>
+<li><a class="reference internal" href="#fault-protection">1. Fault protection</a></li>
+<li><a class="reference internal" href="#extended-common-mode-range">2. Extended Common mode range</a><ul>
+<li><a class="reference internal" href="#selectable-baud-rates">Selectable Baud rates</a></li>
+<li><a class="reference internal" href="#interrupt-alert-signals">Interrupt/Alert signals</a></li>
+<li><a class="reference internal" href="#internal-slave-control-interface">Internal Slave/Control Interface</a></li>
+<li><a class="reference internal" href="#galvanic-isolation">Galvanic Isolation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#hardware-set-up">HARDWARE SET-UP</a><ul>
+<li><a class="reference internal" href="#equipment-needed">Equipment Needed</a></li>
+<li><a class="reference internal" href="#general-description">General Description</a></li>
+<li><a class="reference internal" href="#setting-up-the-evaluation-board-for-spi-communication">Setting up the Evaluation board for SPI communication</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#connectors-and-jumper-configurations">Connectors and Jumper Configurations</a><ul>
+<li><a class="reference internal" href="#i2c-extender-ltc4331-local-remote-pair">I2C extender (LTC4331 local-remote pair)</a></li>
+<li><a class="reference internal" href="#spi-extender-ltc4332-local-remote-pair">SPI extender (LTC4332 local-remote pair)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#test-points">Test Points</a></li>
+<li><a class="reference internal" href="#leds">LEDS</a></li>
+<li><a class="reference internal" href="#accelerometer-example-using-the-spi-extender">ACCELEROMETER EXAMPLE USING THE SPI EXTENDER</a></li>
+<li><a class="reference internal" href="#equipment-needed-for-this-example">Equipment Needed for this example</a><ul>
+<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li><a class="reference internal" href="#test">TEST</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software">Software</a><ul>
+<li><a class="reference internal" href="#additional-information-and-useful-links">Additional Information and Useful Links</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#reference-demos-software">Reference Demos &amp; Software</a></li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="eval-cn0564-ardz-user-guide">
+<h1>EVAL-CN0564-ARDZ User Guide<a class="headerlink" href="#eval-cn0564-ardz-user-guide" title="Link to this heading"></a></h1>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/pcb_main.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/pcb_main.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/pcb_main.png" style="width: 600px;" />
+</a>
+<section id="introduction">
+<h2>INTRODUCTION<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>Monitoring and data acquisition systems require direct access to the sensors and actuators, preferably from a remote location and by means of a standardized communication method. With increased digitization and as industry 4.0 gain more ground, more analog sensors are being provided with a digital interface such as I2C or SPI. Digital signal integration is therefore increasing as they permit faster switch-on times and lower power consumption. In addition, further processing such as a wide variety of signal processing operations can be performed easily. I2C and SPI are examples of a highly ubiquitous and common digital interface that uses a synchronous serial communication. They are widely used for attaching lower-speed peripheral ICs to processors and microcontrollers in intra-board, short-distance communication.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/spi_i2c.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/spi_i2c.jpg" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/spi_i2c.jpg" style="width: 400px;" />
+</a>
+<p>The distance limitation is one of the key disadvantages of these interfaces. System designers have traditionally extended these interfaces using repeaters or drivers with a higher drive strength at the expense of increasing the overall cost and power consumption. These solutions may be inconvenient for many applications and have other disadvantages that negate their usability. For example, there could be large distances between point to point systems resulting in the ends of the connecting cables having differences in the local ground potentials. This can cause major issues and damage either the controller or the remote node.</p>
+<p>The circuit shown in Figure (1) solves the problem of long distance, robust, SPI/I2C communication simply and easily without any sacrifices to circuit component count, operating speed, or software complexity. Ideal operation in high noise, harsh industrial environments require tolerance to large ground potential differences. The SPI/ I2C extenders feature robust transceivers which operate over an extended common mode range of ± 25V (for SPI communication) and ± 15V (for I2C communication) for distances up to 1200m. Each link consists of a single device at either end of the cable, capable of being powered from 3V to 5.5V, while a separate logic supply allows the I2C or SPI interface to operate from 1.62V to 5.5V. The extenders also provide an internal control interface for fault monitoring, which is critically important when monitoring equipment over long distances.</p>
+<p><img alt="image1" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/final_figure_1.png" /></p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><em>&lt;fc #ff0000&gt;Figure (1).</em> <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a> <em>featuring</em> <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> <em>and</em> <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> <em>can be using with sensors such as the MEMS accelerometers for remote sensing as well as in conjunction with ADCs with SPI/I2C interface to read data from analog sensors for endless applications.&lt;/fc&gt;</em></div>
+</div>
+<p>These extenders allow robust measurement and monitoring for many applications such as:</p>
+<ul class="simple">
+<li><p><strong>Condition-based Monitoring</strong></p></li>
+<li><p><strong>Factory Automation</strong></p></li>
+<li><p><strong>Building Automation</strong></p></li>
+<li><p><strong>Structural Monitoring</strong></p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/apps_diagram.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/apps_diagram.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/apps_diagram.png" style="width: 600px;" />
+</a>
+<div class="line-block">
+<div class="line">and many more…</div>
+<div class="line">where remote sensing and increased distance between the measurement source and the control circuitry is a key design requirement for safety purposes when monitoring conditions in a harsh environment.</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="system-topology">
+<h2>SYSTEM TOPOLOGY<a class="headerlink" href="#system-topology" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a> uses <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> and <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> to extend I2C/SPI signals up to 1200m.</div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Two <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4332</a>/<a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> devices are required for a complete extended SPI/I2C network.</p>
+</div>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> enable data transmission required for I2C communication between two devices. It encodes I2C signals from the controller into differential signals with up to 1 MHz which are then transmitted through the twisted pair of cables. At the remote end of the cable, the differential signals are received again by another <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> and decoded into I2C signals again, which are then routed to the peripheral.
+| Similarly, the <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4332</a> enable data transmission required for SPI communication between two devices. It encodes SPI signals from the controller into differential signals with up to 2 MHz which are then transmitted through the twisted pair of cables. At the remote end of the cable, the differential signals are received again by another <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4332</a> and decoded into SPI signals again, which are then routed to remote peripheral device.
+| ==== Long Distance Communication ====</p>
+<section id="fault-protection">
+<h3>1. Fault protection<a class="headerlink" href="#fault-protection" title="Link to this heading"></a></h3>
+<p>Both <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> and <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> have a <strong>±60V fault protected differential transceiver</strong> that allows I2C/SPI communication over a single twisted pair differential link up to 1200m.</p>
+</section>
+<section id="extended-common-mode-range">
+<h3>2. Extended Common mode range<a class="headerlink" href="#extended-common-mode-range" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">The transceiver operates over an extended common mode range of ± 25V for <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> (SPI extenders) and ± 15V for <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> (I2C extenders) making it suitable for noisy environments or systems with ground potential differences.</div>
+<div class="line">===3. ±40kV HBM on Interface pins + ESD/EFT protection === The link interface pins A, B, Y, Z on <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> and A, B on <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> feature protection to <strong>±40kV HBM</strong> with respect to GND, VCC (with a 4.7μF capacitor to GND), A or B/ A, B, Y, or Z without latchup or damage, during all modes of operation or while unpowered.</div>
+<div class="line">Both <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a>/<a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> also have an <strong>improved ESD protection</strong> that provides a high level of protection in the IEC ESD and EFT (Electrical Fast Transient) tests. Combined with the HBM test, the IEC tests help ensures that the <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a>/<a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> are robust under a wide range of real world hazards and capable of transmitting signals from a long distance.</div>
+</div>
+<section id="selectable-baud-rates">
+<h4>Selectable Baud rates<a class="headerlink" href="#selectable-baud-rates" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>For a given SPEED setting, cable length specifications given in Table 2 of the <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a>/<a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> datasheet must be adhered to or the they will not link</p>
+</div>
+<p><strong>Selectable baud rates</strong> over the cable allow balancing performance with cable length specific to the application. In the case of I2C communications, the <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> (local) – <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> (remote) link is transparent; the remote slave devices appear as local devices to a local master. However, in the case of the SPI extender solution, the <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> (local) – <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> (remote) incurs a one-word latency during read accesses only. Physically distant devices would need a dramatically reduced clock rate to accommodate the prop. delay within each bit width. To overcome this limitation, the <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> introduces a shift register into the MISO signal path.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>The SPI read command needs to be extended by one byte. If not, the last byte will be lost in the</strong> <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> <strong>MISO shift register when the Slave select is de-asserted.</strong></p>
+<p>Because the data sent from the SPI master to the slave experiences the same delay as the master-initiated interface clock (SCK), both will remain in sync across the entire data link. In the opposite direction, however, the slave sends data (MISO) to the master only when the first clock edge reaches the slave. This data will experience a second delay on its way back to the master, so the slave data will be out of sync by twice the cable’s propagation delay. Physically distant devices would need a dramatically reduced clock rate to accommodate the prop. delay within each bit width. To overcome this limitation, the LTC4332 introduces a shift register into the MISO signal path.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/shift_reg.png"><img alt="image2" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/shift_reg.png" style="width: 600px;" /></a> As a result, SPI write requests to remote slave devices are software transparent, but SPI read requests to remote slaves incur a one-byte latency, meaning the read command needs to be extended by one byte. If not, the last byte will be lost in the <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> MISO shift register when the Slave select is de-asserted. The WORD_LENGTH register (0x5h)(See the register map in the Datasheet for <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a>) indicative of the depth of the shift register in MISO signal path on <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a>, dictates when a SPI Master will begin receiving valid data on the MISO. For example, if the WORD_LENGTH is 8, the user would begin receiving valid MISO data 8 clock cycles after the Slave Select is asserted.</p>
+</div>
+</section>
+<section id="interrupt-alert-signals">
+<h4>Interrupt/Alert signals<a class="headerlink" href="#interrupt-alert-signals" title="Link to this heading"></a></h4>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a>/ <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> also support an interrupt signals that are mirrored from the remote network to the local network using the differential link for fault monitoring.</p>
+</section>
+<section id="internal-slave-control-interface">
+<h4>Internal Slave/Control Interface<a class="headerlink" href="#internal-slave-control-interface" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line">Both <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> and <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> feature an internal I2C/SPI slave that can be talked to by setting up an I2C address for this slave using the A1 and A2 pins on <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> for I2C communication or by pulling the SSC pin low on<a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> for SPI communication. Only SPI mode 0 and 1 can be used to talk to this slave.</div>
+<div class="line">This slave can be used to change configuration settings of the SPI or the I2C link such as the SPI mode (Any SPI mode(0,1,2,3) can be selected for the three separate slave select pins, SS1, SS2 &amp; SS3 on the <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> by writing to an internal register by initiating a write transfer to the internal slave that can access those registers. The word length which dictates the depth of the shift register in MISO signal path can also be adjusted by initiating a write command to the WORD_LENGTH register through this internal slave. It can also be used to access the internal fault registers for debugging and error reporting.</div>
+</div>
+</section>
+<section id="galvanic-isolation">
+<h4>Galvanic Isolation<a class="headerlink" href="#galvanic-isolation" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line">Various level of isolation may be required in some systems where the primary side is referenced to a different voltage (e.g. -48V distributed power systems) while the secondary side is referenced to ground etc. The local LTC4331/LTC4332 can be galvanically isolated from the remote <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a>/<a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> on <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a> using digital isolators like the <a class="icon adi reference external" href="https://www.analog.com/ADUM141E" target="_blank">ADUM141E</a>/<a class="icon adi reference external" href="https://www.analog.com/ADUM140E" target="_blank">ADUM140E</a>.</div>
+<div class="line">Digital isolation allows components to have ground potential differences provided by the <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> and <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a>, and still maintain a communication link. Isolation also provides protection against high voltages or currents caused by the line surges or ground loops that can occur in a system with multiple grounds.</div>
+<div class="line">Complete galvanic isolation can also be achieved using both power and signal isolation techniques. The isolated power supply uses a transformer driver IC to drive a discrete transformer, along with a simple rectifier and low-dropout regulator (LDO) to clean up the isolated rail. An integrated data and power solution eliminates the need for a separate, isolated dc-to dc converter in isolated designs. Figure (2) shows how the SPI extenders on <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a> can be isolated using <a class="icon adi reference external" href="https://www.analog.com/ADUM141E" target="_blank">ADUM141E</a>/<a class="icon adi reference external" href="https://www.analog.com/ADUM140E" target="_blank">ADUM140E</a> and <a class="icon adi reference external" href="https://www.analog.com/ADUM5020" target="_blank">ADUM5020</a>.</div>
+</div>
+<div class="line-block">
+<div class="line"><img alt="image3" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/final_figure2.png" /></div>
+<div class="line">&lt;fc #ff0000&gt; //Figure (2). Isolating the Master MCU from the local LTC4332 featured on <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a> using <a class="icon adi reference external" href="https://www.analog.com/ADUM141E" target="_blank">ADUM141E</a>/<a class="icon adi reference external" href="https://www.analog.com/ADUM140E" target="_blank">ADUM140E</a> and <a class="icon adi reference external" href="https://www.analog.com/ADUM5020" target="_blank">ADUM5020</a> // &lt;/fc&gt;</div>
+</div>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="hardware-set-up">
+<h2>HARDWARE SET-UP<a class="headerlink" href="#hardware-set-up" title="Link to this heading"></a></h2>
+<section id="equipment-needed">
+<h3>Equipment Needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ Evaluation Board</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADXL35X.html" target="_blank">EVAL-ADXL357 Evaluation Board</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-xlmount1.html" target="_blank">EVAL-XLMOUNT1</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.arduino.cc/en/Main/arduinoBoardUno&amp;gt;" target="_blank">Arduino UNO Rev 3</a></p></li>
+<li><p>USB Type A to USB Type B cable</p></li>
+<li><p>Jumper wires</p></li>
+<li><p>3 V to 5.5 V supply</p></li>
+</ul>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/userguide_evalcn0564.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/userguide_evalcn0564.png" />
+</section>
+<section id="general-description">
+<h3>General Description<a class="headerlink" href="#general-description" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line"><a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a> features a local-remote pair of both <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> and <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a>. It has Arduino headers for easy evaluation and integration of its SPI and I2C extenders with the widely available Arduino UNO and other Arduino compatible devices. The remote-local pair can be split at the V-groove on the PCB. The remote <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> / <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> is designed such that it can be mounted on a mechanically optimized block, <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-xlmount1.html" target="_blank">EVAL-XLMOUNT1</a>. This block has resonance optimized up to 20kHz and can be used with accelerometer (Z) breakout boards such as the <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADXL35X.html" target="_blank">EVAL-ADXL35X</a>, a breakout board for 3-Axis MEMS Accelerometers (e.g. <a class="icon adi reference external" href="https://www.analog.com/en/products/ADXL357.html" target="_blank">ADXL357</a>). This MEMS sensor will be used in a vibration sensing example demonstrated in this user guide for evaluating the SPI extenders of this evaluation board. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/split.png"><img alt="image4" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/split.png" style="width: 600px;" /></a></div>
+<div class="line"><strong>Powering up the local and remote side</strong> <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> <strong>:</strong></div>
+<div class="line">The <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a> has a local-remote pair of both <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> (SPI extenders) and <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> (I2C extenders) which requires power supply on both sides of the board. The local side <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> is powered via the VCC pin which is connected to both the 5V and the 3.3V pins on the Arduino header. A jumper is placed on the path so the user can either select from either 5V or 3.3V to power up the local side <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a>. Inserting the P10 jumper such that the pin 1 and 2 are connected on the P10 header will select the 5V supply from the Arduino header. Inserting this jumper such that pin 2 and 3 are connected will select the 3.3V supply. VCC is bypassed with 4.7μF ceramic capacitor to GND.</div>
+<div class="line">VL, the Logic Supply Voltage of the local side <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> is connected to the IOREF pin of the Arduino header. The logic supply voltage can range from 1.62V &lt; VL &lt; 5.5V. It is bypassed with 1μF ceramic capacitor to GND.</div>
+<div class="line">The remote side <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a>’s VCC pin can be powered up using the local side’s VCC supply by connecting pin 1 of the P5 header to the pin 1 of the P4 header. This is connected to the power supply of the local side. It can also be powered up by connecting an external supply to either pin 1 of the P5 header or to the remote side <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a>’s VL pin which is connected to pin 5 of the P8 header. This is placed on the area of the <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a>’s PCB with the remote side <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a>. The VL pin is connected to the VCC pin on the remote side <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> via R3, a solder on resistor. Therefore, powering up either of them will power up both the VCC and the VL pin of the remote side <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> only. To power them up separately, de-solder the R3 resistor. Like the local side <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a>, the remote side <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> has its VCC pin bypassed with 4.7μF ceramic capacitor to GND and VL pin bypassed with 1μF ceramic capacitor to GND. <img alt="image5" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/powersupply_ltc4331.png" /></div>
+<div class="line">//&lt;fc #ff0000&gt;Figure (3). When R3 resistor is soldered on, the remote side VCC and VL are connected. The remote side can be powered up by either (1) By connecting the remote side VCC (pin 1 of the P5 header) to the local side VCC (pin 1 of the P4 header), (2) By connecting the remote side VCC (pin 1 of the P5 header) to an external power supply or (3) By connecting an external power supply to the remote side VL pin on pin 5 of the P8 header.&lt;/fc&gt; //</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Remote Reset:</strong></div>
+<div class="line">The ON pin on the local side <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> can be used to trigger an internal reset which is held and outputs are disabled if it’s de-asserted. The ON pin is connected to IOREF by inserting the P12 jumper such that its pin 1 and 2 are connected. This enables all the outputs and disables reset. Insert the P12 jumper such that its pin 2 and 3 are connected to trigger the internal reset which disables the outputs. If the P12 jumper is not inserted, the ON pin is controlled externally by an MCU via the Arduino header.</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>LINK AND RDY:</strong></div>
+<div class="line">The Link pin outputs the Link Status. It is an Open-Drain Output. LINK is driven low after the <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a>’s I2C interface has joined the I2C bus in addition to establishing link communication with the remote side. It is pulled up to IOREF internally. The DS4 LED lights up when the link is established. To monitor its status, this pin is connected to the D5 pin on the Arduino header via the JP5 jumper. Insert this jumper in position B to monitor the LINK status using an MCU externally.</div>
+<div class="line">On the remote side, the LINK pin is pulled up to the remote side VL through a 10k ohm resistor. The DS5 LED lights up when the remote link is established.</div>
+<div class="line">The RDY pin is an I2C Ready Status Open-Drain Output. RDY is driven low after the device’s I2C interface has joined the bus. It is used to detect when the <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a>’s control interface is available in the absence of a connected link. The DS3 LED lights up when this happens. RDY is pulled up to IOREF via a 10k resistor.</div>
+<div class="line"><strong>The ALERT pin:</strong></div>
+<div class="line">It is a SMBALERT/Interrupt signal for the <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a>. ALERT is an open-drain output. Values set on the remote side ALERT propagate to the local side ALERT pin. In addition, ALERT is the SMBALERT function for the local side’s I2C control interface when enabled (i.e. The ALERT pin switches to a level-sensitive active low interrupt signal when register field INTR_MODE = 1). It is pulled-up to IOREF on the local side and Remote side VL on the remote side <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> through a 10k resistor. To monitor its status using an MCU externally via the D3 pin on the Arduino header, insert jumper JP3 in position C. Do not insert this jumper if not used.</div>
+<div class="line"><strong>The CNTRL pin:</strong> Values set on the local side CTRL pin propagate to the remote side CTRL pin over the differential link. On the remote side, CTRL is not driven at startup until the differential link is established. CTRL can be monitored using the CTRL test point. CTRL on the remote side <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> is connected to pin 1 on the P8 header. This pin can be monitored on the remote side to determine if the differential link has been established.</div>
+<div class="line"><strong>Setting the I2C address for the internal slave on the local side</strong> <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a><strong>:</strong> A1 and A2 are a 3-state input pins. A1 &amp; A2 selects one of eight possible I2C addresses assigned to the internal slave device. Disconnect the P9 and the P18 jumper to disable the internal I2C slave device. Set to high, low, or float as defined in Table below. (POS H = Connect pin 1 and 2 of the header, POS L = Connect pin 2 and 3 of the P18/P9 header) <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/table_address_select.png"><img alt="image6" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/table_address_select.png" style="width: 400px;" /></a></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>The SLO pin:</strong></div>
+<div class="line"><strong>Local Side:</strong></div>
+<div class="line">This is a slow Mode Input. To set it to low to limit the link transmitter slew rate which also limits the maximum link rate set by SPEED1 and SPEED2, insert jumper P15 in POS L (connect pin 2 and 3 of the P15 header). Insert jumper P15 in POS H (connect pin 1 and 2 of the P15 header) to disable it. Do not leave this jumper disconnected. SLO is referenced to GND and VCC and only valid for SPEED INDEX 0 and 1.</div>
+<div class="line"><strong>Remote side:</strong>:</div>
+<div class="line">To set it to low to limit the link transmitter slew rate which also limits the maximum link rate set by SPEED1 and SPEED2, solder the resistor JP11 in POS L (connect pin 2 and 3). Solder the resistor JP11 in POS H (connect pin 1 and 2 of the P15 header) to disable it. Do not leave this resistor disconnected.</div>
+<div class="line"><strong>Speed 1 and 2:</strong></div>
+<div class="line"><strong>Local Side:</strong></div>
+<div class="line">Speed 1 and 2 correspond to the P16 and the P17 headers. To set speed 1 to High, insert the P17 jumper in POS H (connect pin 1 and 2 of the P17 header). To set it to Low, insert the P17 jumper in POS L (connect pin 2 and 3 of the P17 header). Disconnect this jumper to float the Speed 1 pin.</div>
+<div class="line">To set speed 2 to high, insert the P16 jumper in POS H (connect pin 1 and 2 of the P16 header). To set it to Low, insert the P16 jumper in POS L (connect pin 2 and 3 of the P16 header). Disconnect this jumper to float the Speed 2 pin. Refer to Table 2 on the <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> datasheet to set Speed 1 and 2 to high, low or float to select a defined speed index.</div>
+<div class="line"><strong>Remote Side:</strong></div>
+<div class="line">JP13 and JP12 are solder on resistors that can be soldered to select a speed index on the remote side. (Speed index on the remote side should match the speed index selected on the local side). To set speed 1 to high, solder the resistor JP14 in POS H (connect pin 1 and 2). To set it to Low, solder the JP14 resistor in POS L (connect pin 2 and 3). Do not solder on the JP14 resistor to float the Speed 1 pin on the remote side. Refer to Table 2 on the <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> datasheet to set Speed 1 and 2 to high, low or float to select a defined speed index.</div>
+<div class="line">To set speed 2 to high, solder the resistor JP13 in POS H (connect pin 1 and 2). To set it to Low, solder the JP13 resistor in POS L (connect pin 2 and 3). Do not solder on the JP13 resistor to float the Speed 1 pin on the remote side. Refer to Table 2 on the <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> datasheet to set Speed 1 and 2 to high, low or float to select a defined speed index.</div>
+<div class="line"><strong>Connect the local side</strong> <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a> <strong>to the remote side</strong> <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a><strong>:</strong></div>
+<div class="line">Connect Pin 3 of the P4 header on the local side to Pin 3 of the P5 header on the remote side and Pin 4 of the P4 header on the local side to Pin 4 of the P5 header on the remote to connect the differential driver outputs on the local side to the differential receiver inputs on the remote side. R28 is a 110 ohm termination resistor that can be soldered or de-soldered. R27 is pulled up to VCC and R35 is pulled down to ground via 620 ohm resistors to implement fail-safe biasing.</div>
+<div class="line"><strong>SCL and SDA:</strong></div>
+<div class="line">SCL and SDA are pulled up to IOREF through 2k ohm resistors on the local side.</div>
+<div class="line">On the remote side, SCL and SDA are pulled up to the remote side VL through 2k ohm resistors. Remote side <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a>’s SCL and SDA pins are connected to pin 3 and 4 of the P8 header. Connect the remote peripheral’s SCL and SDA pins to these SCL and SDA pins on the P8 header.</div>
+</div>
+</section>
+<section id="setting-up-the-evaluation-board-for-spi-communication">
+<h3>Setting up the Evaluation board for SPI communication<a class="headerlink" href="#setting-up-the-evaluation-board-for-spi-communication" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line"><strong>Powering up the local and remote side</strong> <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a><strong>:</strong></div>
+<div class="line">The <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a> also features a local-remote pair of <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> (SPI extenders) which requires power supply on both sides of the board. The local side <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> is powered via the VCC pin which is connected to both the 5V and the 3.3V pins on the Arduino header. A jumper is placed on the path so the user can either select from either 5V or 3.3V to power up the local side <a class="icon adi reference external" href="https://www.analog.com/LTC4331" target="_blank">LTC4331</a>. Insert the P10 jumper such that the pin 1 and 2 are connected on the P10 header. This will select the 5V supply from the Arduino header. Inserting this jumper such that pin 2 and 3 are connected will select the 3.3V supply. VCC is bypassed with 4.7μF ceramic capacitor to GND.</div>
+<div class="line">VL, the Logic Supply Voltage of the local side <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> is connected to the IOREF pin of the Arduino header. The logic supply voltage can range from 1.62V &lt; VL &lt; 5.5V. It is bypassed with 1μF ceramic capacitor to GND.</div>
+<div class="line">The remote side <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a>’s VCC pin can be powered up using the local side’s VCC supply by connecting pin 5 of the P3 header to the pin 5 of the P6 header. This is connected to the power supply of the local side. It can also be powered up by connecting an external supply to either pin 5 of the P6 header or to the remote side <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a>’s VL pin which is connected to pin 7 of the P7 header. This is placed on the area of the <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a>’s PCB with the remote side <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a>. The VL pin is connected to the VCC pin on the remote side <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> via R24, a solder on resistor. Therefore, powering up either of them will power up both the VCC and the VL pin of the remote side <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> only. To power them up separately, de-solder the R24 resistor. Like the local side <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a>, the remote side <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> has its VCC pin bypassed with 4.7μF ceramic capacitor to GND and VL pin bypassed with 1μF ceramic capacitor to GND.</div>
+</div>
+<div class="line-block">
+<div class="line"><img alt="image7" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/powersupply_ltc4332.png" /></div>
+<div class="line">//&lt;fc #ff0000&gt;Figure (4). When R24 resistor is soldered on, the remote side VCC and VL are connected. The remote side can be powered up by either (1) By connecting the remote side VCC (pin 5 of the P6 header) to the local side VCC (pin 5 of the P3 header), (2) By connecting the remote side VCC (pin 5 of the P6 header) to an external power supply or (3) By connecting an external power supply to the remote side VL pin on pin 7 of the P7 header.&lt;/fc&gt; //</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Remote Reset:</strong></div>
+<div class="line">The ON pin on the local side <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> can be used to trigger an internal reset which is held and outputs are disabled if it’s de-asserted. The ON pin is connected to IOREF by inserting the P19 jumper such that its pin 1 and 2 are connected. This enables all the outputs and disables reset. Insert the P19 jumper such that its pin 2 and 3 are connected to trigger the internal reset which disables the outputs. If the P19 jumper is not inserted, the ON pin is controlled externally by an MCU via the Arduino header.</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>The LINK pin</strong></div>
+<div class="line">The Link pin outputs the Link Status. It is an Open-Drain Output. LINK is driven low when the <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> establishes link communication. It is pulled up to IOREF through a 10k ohm resistor. The DS2 LED lights up when the link is established. To monitor its status, this pin is connected to the D6 pin on the Arduino header via the JP5 jumper. Insert this jumper in position A to monitor the LINK status using an MCU externally.</div>
+<div class="line">On the remote side, the LINK pin is pulled up to the remote side VL through a 10k ohm resistor. The DS1 LED lights up when the remote link is established.</div>
+<div class="line"><strong>The INT pin:</strong></div>
+<div class="line">INT is an open-drain output in local mode and an input in remote mode. Values set on the remote side INT propagate to the local side INT pin. In addition, INT is the level-sensitive active low interrupt signal for the <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a>’s control interface. It is pulled-up to IOREF on the local side and Remote side VL on the remote side <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> through a 10k resistor. To monitor its status using an MCU externally via the D2 pin on the Arduino header, insert jumper JP3 in position B. Do not insert this jumper if not used.</div>
+<div class="line"><strong>The SC pin:</strong></div>
+<div class="line">This is the Control Interface Select Input (Active Low). SSC enables access to the <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> internal control registers. When is use, insert the JP3 jumper in position D. SSC can be set low externally via the D4 pin on the Arduino header to initiate a SPI transfer to the internal slave device inside <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> using pins SCK, MOSI, and MISO. SSC must be set high externally via the D4 pin on the Arduino header when the SPI bus is idle. SSC is only used on the local side <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a>. SSC is weakly pulled to VL internally in <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> and can be unconnected if not used. To leave it unconnected, disconnect the JP3 jumper in position D.</div>
+<div class="line"><strong>The SS_1 pin:</strong></div>
+<div class="line">Remote Slave Select 1 (Active Low). When in local mode, SS1 is an input. Set SS1 low to initiate a remote SPI transfer to the remote peripheral device using pins SCK, MOSI, and MISO. SS1 can be set low externally via the D10 pin on the Arduino header. Connect the JP1 jumper in position D if D10 on the Arduino is configured as the Slave select pin. On the remote side <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a>, SS1 is an output. Connect the remote SPI peripheral’s chip select to pin 1 of the P7 header on the remote side <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a>. SS1 must be set high when the SPI bus is idle. SS1 is weakly pulled to VL internally in <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> and can be unconnected if not used.</div>
+<div class="line"><strong>Speed 1 and 2:</strong></div>
+<div class="line"><strong>Local Side:</strong></div>
+<div class="line">Speed 1 and 2 correspond to the P1 and the P2 headers on the local side. To set speed 1 to High, insert the P1 jumper in POS H (connect pin 1 and 2 of the P1 header). To set it to Low, insert the P1 jumper in POS L (connect pin 2 and 3 of the P1 header). Disconnect this jumper to float the Speed 1 pin.</div>
+<div class="line">To set speed 2 to high, insert the P2 jumper in POS H (connect pin 1 and 2 of the P2 header). To set it to Low, insert the P2 jumper in POS L (connect pin 2 and 3 of the P2 header). Disconnect this jumper to float the Speed 2 pin. Refer to Table 2 on the <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> datasheet to set Speed 1 and 2 to high, low or float to select a defined speed index.</div>
+<div class="line"><strong>Remote Side:</strong></div>
+<div class="line">JP4 and JP2 are solder on resistors that can be soldered to select a speed index on the remote side. (Speed index on the remote side should match the speed index selected on the local side). To set speed 1 to high, solder the resistor JP4 in POS H (connect pin 1 and 2). To set it to Low, solder the JP4 resistor in POS L (connect pin 2 and 3). Do not solder on the JP4 resistor to float the Speed 1 pin on the remote side. Refer to Table 2 on the <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> datasheet to set Speed 1 and 2 to high, low or float to select a defined speed index.</div>
+<div class="line">To set speed 2 to high, solder the resistor JP2 in POS H (connect pin 1 and 2). To set it to Low, solder the JP2 resistor in POS L (connect pin 2 and 3). Do not solder on the JP2 resistor to float the Speed 1 pin on the remote side. Refer to Table 2 on the <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> datasheet to set Speed 1 and 2 to high, low or float to select a defined speed index.</div>
+<div class="line"><strong>Connect the local side</strong> <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> <strong>to the remote side</strong> <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a><strong>:</strong></div>
+<div class="line">Connect Pin 1 of the P3 header on the local side to Pin 1 of the P6 header on the remote side, Pin 2 of the P3 header on the local side to Pin 2 of the P6 header on the remote side, Pin 3 of the P3 header on the local side to Pin 3 of the P6 header on the remote side and Pin 4 of the P3 header on the local side to Pin 4 of the P6 header on the remote side to connect the differential driver outputs and receiver inputs on the local side to the differential receiver inputs and driver outputs on the remote side. R7 and R8 are 110 ohm termination resistors for the local side receiver inputs and remote side receiver inputs respectively that can be soldered or de-soldered. R5 and R9 are pulled up to VCC and R6 and R10 are pulled down to ground via 620 ohm resistors to implement fail-safe biasing on the local and the remote side.</div>
+<div class="line"><strong>MISO, MOSI and SCK:</strong></div>
+<div class="line">On the remote side, MISO, MOSI and SCK are connected to pin 3 and 4 and 5 of the P7 header. Connect the remote peripheral’s MISO, MOSI and SCK pins to remote side MISO, MOSI and SCK pins on the P7 header.</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="connectors-and-jumper-configurations">
+<h2>Connectors and Jumper Configurations<a class="headerlink" href="#connectors-and-jumper-configurations" title="Link to this heading"></a></h2>
+<section id="i2c-extender-ltc4331-local-remote-pair">
+<h3>I2C extender (LTC4331 local-remote pair)<a class="headerlink" href="#i2c-extender-ltc4331-local-remote-pair" title="Link to this heading"></a></h3>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/i2c_headers.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/i2c_headers.png" />
+<p><img alt="image8" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/i2c_header_pic.png" /> <img alt="image9" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/i2c_jumpers.png" /></p>
+</section>
+<section id="spi-extender-ltc4332-local-remote-pair">
+<h3>SPI extender (LTC4332 local-remote pair)<a class="headerlink" href="#spi-extender-ltc4332-local-remote-pair" title="Link to this heading"></a></h3>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/spi_headers.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/spi_headers.png" />
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/spi_header_pic.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/spi_header_pic.png" />
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/spi_jumpers.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/spi_jumpers.png" />
+</section>
+</section>
+<section id="test-points">
+<h2>Test Points<a class="headerlink" href="#test-points" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/testpoints.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/testpoints.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/testpoints.png" style="width: 600px;" />
+</a>
+</section>
+<section id="leds">
+<h2>LEDS<a class="headerlink" href="#leds" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/led.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/led.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/led.png" style="width: 600px;" />
+</a>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/led_shown.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/led_shown.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/led_shown.png" style="width: 600px;" />
+</a>
+</section>
+<hr class="docutils" />
+<section id="accelerometer-example-using-the-spi-extender">
+<h2>ACCELEROMETER EXAMPLE USING THE SPI EXTENDER<a class="headerlink" href="#accelerometer-example-using-the-spi-extender" title="Link to this heading"></a></h2>
+<p>The following section describes how the <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a> was setup and tested for its SPI extender (Local <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> -Remote <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a>). The remote and the local side can be split at the V-groove as shown in the section above. Once split, the remote side of the board (i.e. featuring the remote <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a>) can be mounted on a mechanically optimized block, <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-xlmount1.html" target="_blank">EVAL-XLMOUNT1</a> (i.e. it has resonance optimized up to 20kHz). This can be used with accelerometer (Z) breakout boards such as the <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADXL35X.html" target="_blank">EVAL-ADXL357</a>, a breakout board for 3-Axis MEMS Accelerometers featuring <a class="icon adi reference external" href="https://www.analog.com/en/products/ADXL357.html" target="_blank">ADXL357</a>.</p>
+<p>In this example, <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a>will be used with an Arduino UNO to read acceleration data with <a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/user-guides/EVAL-ADXL356-357-UG-1119.pdf" target="_blank">EVAL-ADXL357</a> for an easy evaluation of its SPI extenders.</p>
+</section>
+<section id="equipment-needed-for-this-example">
+<h2>Equipment Needed for this example<a class="headerlink" href="#equipment-needed-for-this-example" title="Link to this heading"></a></h2>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/stuffneeded.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/stuffneeded.png" />
+<section id="getting-started">
+<h3>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line"><strong>1. Download the Arduino sketch provided for evaluating either the SPI extenders on the</strong> <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a> <strong>Evaluation Board and program the Arduino using it.</strong></div>
+<div class="line"><strong>2. Plug in the</strong> <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a> <strong>board into the Arduino Uno Rev 3</strong></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/spi1.png"><img alt="image10" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/spi1.png" style="width: 400px;" /></a></div>
+<div class="line"><strong>3. Connect the</strong> <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> <strong>(Remote side) on the</strong> <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a> <strong>to a MEMS ACCELEROMETER ON THE</strong> <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADXL35X.html" target="_blank">EVAL-ADXL357</a> <strong>as follows:</strong></div>
+<div class="line">a. Solder the pin-header on to the <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADXL35X.html" target="_blank">EVAL-ADXL357</a> board. The 4-wire serial interface communicates in either the SPI or I2C protocol. The interface affectively autodetects the format being used, requiring no configuration control to select the format.</div>
+<div class="line">b. Connect the Remote slave select pin (Pin 1) of the P7 header on the <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a> to the slave select pin (Pin 2) of the P2 header on the <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADXL35X.html" target="_blank">EVAL-ADXL357</a>.</div>
+<div class="line">c. Connect the Remote MOSI pin (Pin 4) of the P7 header on the <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a> to the MOSI pin (Pin 6) of the P2 header on the <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADXL35X.html" target="_blank">EVAL-ADXL357</a>.</div>
+<div class="line">d. Connect the Remote MISO pin (Pin 3) of the P7 header on the <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a> the MISO pin (Pin 5) of the P2 header on the <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADXL35X.html" target="_blank">EVAL-ADXL357</a>.</div>
+<div class="line">e. Connect the Remote SCK pin (Pin 5) of the P7 header on the <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a> to the SCK pin (Pin 4) of the P2 header on the <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADXL35X.html" target="_blank">EVAL-EVAL-ADXL357</a>.</div>
+<div class="line">f. Connect the VDD pin (Pin 3) of the P1 header on the <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADXL35X.html" target="_blank">EVAL-ADXL357</a>to a 3.3V Power Supply.</div>
+<div class="line">g. Connect the VDDIO pin (Pin 1) of the P1 header on the <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADXL35X.html" target="_blank">EVAL-ADXL357</a> to a 3.3V Logic supply.</div>
+<div class="line">h. Connect the Remote VL (Pin 7) of the P7 header on the <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a> to the 5V/3.3V Logic supply.</div>
+<div class="line">i. Connect pin 5 of the P1 header on the <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADXL35X.html" target="_blank">EVAL-ADXL357</a> to GND.</div>
+<div class="line">j. Connect the GND pin (Pin 8) of the P7 header on the <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a> to GND. This is GND for the Remote <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> side.</div>
+<div class="line"><img alt="image11" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/spi_2.png" /></div>
+<div class="line"><strong>4. Make jumper Connections as follows:</strong></div>
+<div class="line">a. P10 jumper should placed so the Pin 2 and 3 on P10 are connected on the <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a>. This will select 5V power supply option.</div>
+<div class="line">b. JP1 jumper should be placed in position D to connect the Slave Select pin on the local <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> to the D10 pin on the Arduino header.</div>
+<div class="line">c. JP5 jumper should be placed in position A to connect the Link pin on the local <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> to the D6 on the Arduino header 2. Link is driven low when device establishes connection. It is pulled up to VIOREF internally to monitor status if VIOREF is supplied. If the Link pin is not used, float or connect to GND.</div>
+<div class="line">d. JP3 jumper should be placed in position B to connect the interrupt pin on the local <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> to the D2 on the Arduino header. It is pulled up to VIOREF internally.</div>
+<div class="line">e. By default, Speed index 8 is selected on the remote <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> (solder jumpers are used). The Speed index on the local side should be the same as the remote side.</div>
+<div class="line">f. P1 jumper should be placed in the position so its pin 2 and 3 are connected. Similarly, jumper P2 should also be placed in the position so its pin 2 and 3 are connected. This will select speed index 8 to match the speed index on the local side.</div>
+<div class="line">g. P19 jumper should be placed so its pin 1 and 2 are connected. This connects the ON pin on the local <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> to IOREF. This will enable the input.</div>
+<div class="line"><img alt="image12" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/spi3.png" /></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>5. Connect</strong> <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> <strong>(Local side) to the</strong> <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> <strong>(Remote side) as follows:</strong></div>
+<div class="line">a. Connect the Y pin of the P3 header (pin 1) on the Local <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> side to the A pin of the P6 header (pin 1) on the remote <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> side.</div>
+<div class="line">b. Connect the Z pin of the P3 header (pin 2) on the Local <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> side to the B pin of the P6 header (pin 2) on the remote <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> side.</div>
+<div class="line">c. Connect the A pin of the P3 header (pin 3) on the Local <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> side to the Y pin of the P6 header (pin 3) on the remote <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> side.</div>
+<div class="line">d. Connect the B pin of the P3 header (pin 4) on the Local <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> side to the Z pin of the P6 header (pin 4) on the remote <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> side.</div>
+<div class="line">e. Connect pin 6 of the P3 header to GND. This is GND for the Local side.</div>
+<div class="line">f. Pin 5 of the P6 header is remote side <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a>’s VCC power supply pin. As R24 is soldered on, remote side <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a>’s VL pin supplies power to this pin.</div>
+<div class="line">g. Connect pin 6 of the P6 header to GND. This is GND for the Remote side.</div>
+<div class="line"><img alt="image13" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/spi4.png" /></div>
+</div>
+</section>
+<section id="test">
+<h3>TEST<a class="headerlink" href="#test" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Mount the <a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/user-guides/EVAL-ADXL356-357-UG-1119.pdf" target="_blank">EVAL-ADXL357Z</a> and the remote <a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332</a> on the <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-xlmount1.html" target="_blank">EVAL- XLMOUNT1</a> and turn on the power supplies that power up the boards. You should now be able to see 3 LEDS flash on the <a class="icon adi reference external" href="https://www.analog.com/EVAL-CN0564-ARDZ" target="_blank">EVAL-CN0564-ARDZ</a> board (2 LEDS on the local, 1 on the remote side). The X, Y and Z data read by the ADXL357 MEMS accelerometer (on the <a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/user-guides/EVAL-ADXL356-357-UG-1119.pdf" target="_blank">EVAL-ADXL357Z</a> from the remote side) will be printed on the Serial Monitor. Download the Python .exe file and save it in a local directory. Exit the Serial Monitor and run the Python .exe file to see a real-time plot of the acceleration data.</div>
+<div class="line">The X, Y and Z acceleration (g) data is stored in three separate files by the python script and can be found in the same location containing the .exe file. <img alt="image14" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/spi5.png" /></div>
+</div>
+<p><strong>Real time acceleration data from</strong> <a class="icon adi reference external" href="https://www.analog.com/en/products/ADXL357.html" target="_blank">ADXL357</a> <strong>can be plotted using the python .exe file:</strong></p>
+<img alt="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/pythongui.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/pythongui.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The user needs to enter their COM PORT and BAUD RATE when prompted by the console</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="schematic-pcb-layout-bill-of-materials">
+<h2>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h2>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon adi reference external" href="https://www.analog.com/cn0564-designsupport" target="_blank">EVAL-CN0564-ARDZ Design &amp; Integration Files</a></p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/02-060019-01-b.pdf" target="_blank">Schematic</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/08_060019b.pdf" target="_blank">PCB Layout</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/bom.zip" target="_blank">BOM</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/ltspicedatavisualization.zip" target="_blank">LTSPICE Schematic for Accelerometer Data Visualization</a></p></li>
+</ul>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="software">
+<h1>Software<a class="headerlink" href="#software" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/readadxl357.zip" target="_blank">Arduino Sketch</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.arduino.cc/en/software" target="_blank">Arduino IDE</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.arduino.cc/en/Reference/SPI" target="_blank">Arduino SPI Library</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0564/realtimeadxl357.zip" target="_blank">.exe Python Real Time ADXL357 Data Plotter</a></p></li>
+</ul>
+<hr class="docutils" />
+<section id="additional-information-and-useful-links">
+<h2>Additional Information and Useful Links<a class="headerlink" href="#additional-information-and-useful-links" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4332 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/LTC4332" target="_blank">LTC4331 Product Page</a></p></li>
+<li><p><a class="icon ez reference external" href="https://ez.analog.com/interface-isolation/f/q-a/538627/ltc4332-is-slave-select-ssx-independent-of-sck/399504#399504" target="_blank">LTC4332 Ezone Discussion</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/DC2799A.html" target="_blank">DC2799A</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/media/en/dsp-documentation/evaluation-kit-manuals/DC2754A.pdf" target="_blank">DEMO MANUAL DC2754A</a></p></li>
+</ul>
+</section>
+</section>
+<section id="reference-demos-software">
+<h1>Reference Demos &amp; Software<a class="headerlink" href="#reference-demos-software" title="Link to this heading"></a></h1>
+<p>// End of Document //</p>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

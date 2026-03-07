@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The basic operation of the NPN transistor was introduced in the “Introduction to Transistors” lab. In this lab we build and evaluate a Class A amplifier using a NPN transistor and a few passive elements. Initial amplifier configurations were divided into classes based upon the angle of a sine wave being amplified in which the transistor was operational. This angle is called the conduction angle. In Class A amplifiers, the transistor is operational over the full sine wave cycle, so its conduction angle is 360 degrees. This type of operation produces relatively low distortion, mostly limited to the distortion of the transistor itself, but is also low on efficiency since the transistor dissipates considerable DC power even when there is no input signal present. We will delve further into the efficiency of Class A amplifiers in the Theory section. The three commonly-used Class A bipolar transistor configurations are the common-emitter (CE), emitter-follower (EF) (sometimes called common-collector, CC), and common-base (CB) amplifiers. Other classes include amplifiers with conduction angles less than 360 degrees, amplifiers that use pulsed digital signals followed by lowpass filters, and amplifiers with power supply voltages that track the signal being amplified in order to maximize efficiency. We investigate the CE configuration in this lab, which is capable of voltage and current amplification, and is likely the most widely-used Class A amplifier configuration. Reference to the schematic in the Procedure section of the lab will be helpful when reading the remainder of this section." name="description" />
+
+    <title>Class A NPN Common-Emitter Amplifier &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Class A NPN Common-Emitter Amplifier</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#objective">Objective</a></li>
+<li><a class="reference internal" href="#materials-and-apparatus">Materials and Apparatus</a></li>
+<li><a class="reference internal" href="#procedure">Procedure</a></li>
+<li><a class="reference internal" href="#theory">Theory</a></li>
+<li><a class="reference internal" href="#observations-and-conclusions">Observations and Conclusions</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="class-a-npn-common-emitter-amplifier">
+<h1>Class A NPN Common-Emitter Amplifier<a class="headerlink" href="#class-a-npn-common-emitter-amplifier" title="Link to this heading"></a></h1>
+<img alt="analogTV&gt;5179788276001" class="align-right" src="https://wiki.analog.com/_media/analogTV&gt;5179788276001" />
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>The basic operation of the NPN transistor was introduced in the “Introduction to Transistors” lab. In this lab we build and evaluate a <em>Class A</em> amplifier using a NPN transistor and a few passive elements. Initial amplifier configurations were divided into classes based upon the angle of a sine wave being amplified in which the transistor was operational. This angle is called the <em>conduction angle</em>. In Class A amplifiers, the transistor is operational over the full sine wave cycle, so its conduction angle is 360 degrees. This type of operation produces relatively low distortion, mostly limited to the distortion of the transistor itself, but is also low on efficiency since the transistor dissipates considerable DC power even when there is no input signal present. We will delve further into the efficiency of Class A amplifiers in the Theory section. The three commonly-used Class A bipolar transistor configurations are the common-emitter (CE), emitter-follower (EF) (sometimes called common-collector, CC), and common-base (CB) amplifiers. Other classes include amplifiers with conduction angles less than 360 degrees, amplifiers that use pulsed digital signals followed by lowpass filters, and amplifiers with power supply voltages that track the signal being amplified in order to maximize efficiency. We investigate the CE configuration in this lab, which is capable of voltage and current amplification, and is likely the most widely-used Class A amplifier configuration. Reference to the schematic in the Procedure section of the lab will be helpful when reading the remainder of this section.</p>
+<p>The CE amplifier is generally used as a voltage amplifier, and the phase of its output voltage is inverted with respect to that of its input voltage. The input voltage is applied to the base and the output voltage is taken from the collector; most often these voltages are measured with respect to a ground, or zero volt, reference. As the base current increases, the collector current increases as a factor of β multiplied by the base current. The collector current flows through a collector resistor R<sub>C</sub> connected between the collector and a DC power supply, producing a voltage drop across R<sub>C</sub>. This action causes the collector voltage to drop as the voltage applied to the base increases, thereby producing an output voltage that is 180 degrees out-of-phase with the input voltage.</p>
+<p>All Class A amplifiers require a <em>DC bias</em> to set the <em>quiescent point</em>, or <em>Q-point</em> at which the amplifier operates. The quiescent point is defined as the transistor’s DC collector current I<sub>C</sub> and collector-to-emitter voltage V<sub>CE</sub> when no input signal is present. When an input signal is applied the collector current and collector-to-emitter voltage increase and decrease, out-of-phase with each other. It is important to ensure that there is sufficient range available for the collector current and the base-emitter voltage, and this is the primary consideration when setting the Q-point. The signals being amplified ride on the DC bias and are often referred to as <em>incremental</em> or <em>signal</em> voltages and currents. DC quantities are represented by variables with upper-case letters with upper-case subscripts, incremental quantities are represented by lower-case letters with lower-case subscripts, and the two together are represented by lower-case letters with upper-case subscripts. This nomenclature is used in <em>small signal</em> transistor modeling in which circuit behavior with small, incremental signals is analyzed around a particular Q-point.</p>
+<p>The inputs and outputs of Class A amplifiers can be either DC- or AC-coupled. When DC-coupled, the DC voltage of the source that is feeding the amplifier input must match the DC bias voltage required by the amplifier input, and similarly, the DC voltage of the output must match the DC voltage requirement of the input of whatever the amplifier is feeding. Often several Class A amplifier stages are DC-coupled together in a cascade, and the inter-stage DC levels are designed to be compatible with one another. AC-coupling is simpler in that each stage can have its own bias configuration, independent of the other stages, but AC-coupled systems do not pass DC, which is often a requirement. In this lab we build a simple AC-coupled CE amplifier stage and use it to amplify a voltage and drive an AC-coupled 1 KΩ load.</p>
+<p>The gain of a CE amplifier can be precisely calculated using circuit analysis, but it can also be estimated by simply inspecting the circuit. In the simplest CE amplifiers, a single emitter resistor R<sub>E</sub> is connected between the emitter and a voltage lower than that connected to R<sub>C</sub>, often the system ground. This resistor forms part of the transistor’s bias network and also plays a part in determining the gain of the amplifier. As we learned in the “Introduction to Transistors” lab, we can estimate the emitter and collector currents to be approximately equal to each other. If R<sub>E</sub> is connected between the emitter and system ground, the signal voltage across R<sub>E</sub> will be a close replica of the voltage applied to the base, only shifted down by approximately 0.7 VDC – the standard base-emitter drop we learned about in the “Introduction to Transistors” lab. This signal voltage produces a current in R<sub>E</sub> that is approximately equal to v<sub>i</sub>/R<sub>E</sub>, where v<sub>i</sub> is the input voltage to the amplifier. This is the emitter signal current i<sub>e</sub>, which is approximately equal to the collector signal current i<sub>c</sub>, which flows through R<sub>C</sub>. From this we can see that the collector signal voltage v<sub>c</sub>, which is also the output voltage v<sub>o</sub> is equal to -i<sub>c</sub>R<sub>C</sub>. Combining these results we get -v<sub>o</sub> = v<sub>i</sub>[R<sub>C</sub>/R<sub>E</sub>], and the gain v<sub>o</sub>/v<sub>i</sub> = -R<sub>C</sub>/R<sub>E</sub>. The minus sign indicates the 180 degree phase inversion that exists between the input and output signal voltages. In the lab we will see how to set the bias point as required by the load, and how loading affects the overall amplifier gain. We will see that the large output resistance of the CE amplifier causes an undesirable voltage drop when the amplifier is driving a load, and why another low-output resistance stage is often added to CE amplifiers that drive moderate to heavy loads.</p>
+</section>
+<section id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Link to this heading"></a></h2>
+<p>To design, build, and test a CE amplifier, using a 2N3904 NPN transistor, with a loaded voltage gain of -5 and input resistance of at least 1 KΩ that is capable of driving an AC-coupled 1 KΩ load with a 2 V<sub>P-P</sub> sine wave. To verify that the amplifier Q-point and gain are close to their designed values. To observe the effects of loading on a CE amplifier output. To understand and be able to calculate CE amplifier voltage gain, power gain, and efficiency. Following completion of this lab you should be able to give the definition of a Class A amplifier and explain the basic operation of a CE amplifier, explain what a Q-point is, explain how output loading affects the overall voltage gain of a CE amplifier, and calculate the amplifier voltage gain, power gain, and efficiency of a CE amplifier.</p>
+</section>
+<section id="materials-and-apparatus">
+<h2>Materials and Apparatus<a class="headerlink" href="#materials-and-apparatus" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Data sheet handout for the 2N3904 NPN transistor</p></li>
+<li><p>Computer running PixelPulse software</p></li>
+<li><p>Analog Devices ADALM1000 (M1K)</p></li>
+<li><p>Solderless breadboard and jumper wires from the ADALP2000 Analog Parts Kit</p></li>
+<li><ol class="arabic simple">
+<li><p>2N3904 NPN transistor from the ADALP2000 Analog Parts Kit</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple">
+<li><p>10 Ω resistor from the ADALP2000 Analog Parts Kit</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple">
+<li><p>47 Ω resistor from the ADALP2000 Analog Parts Kit</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>100 Ω resistor from the ADALP2000 Analog Parts Kit</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple">
+<li><p>470 Ω resistor from the ADALP2000 Analog Parts Kit</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple">
+<li><p>1 KΩ resistor from the ADALP2000 Analog Parts Kit</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple">
+<li><p>1.5 KΩ resistor from the ADALP2000 Analog Parts Kit</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple">
+<li><p>6.8 KΩ resistor from the ADALP2000 Analog Parts Kit</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>47 μF capacitor from the ADALP2000 Analog Parts Kit</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple">
+<li><p>220 μF capacitor from the ADALP2000 Analog Parts Kit</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="procedure">
+<h2>Procedure<a class="headerlink" href="#procedure" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Construct the following circuit on the solderless breadboard</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_10_image_1.png"><img alt="lab_10_image_1.png" src="https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_10_image_1.png" style="width: 800px;" /></a></p>
+<ul class="simple">
+<li><p>Refer to the illustration below for one way to install the components in the solderless breadboard</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_10_assembly_image_1.png"><img alt="lab_10_assembly_image_1.png" src="https://wiki.analog.com/_media/university/courses/engineering_discovery/lab_10_assembly_image_1.png" style="width: 1000px;" /></a></p>
+<ul class="simple">
+<li><p>Run PixelPulse and plug in the M1K using the supplied USB cable</p></li>
+<li><p>Update M1K firmware, if necessary</p></li>
+<li><p>Disable “Repeated Sweep” mode; waveforms can be paused for analysis</p></li>
+<li><p>Set up the M1K to source voltage/measure current on Channel A and measure voltage on Channel B</p></li>
+<li><p>Set up Channel A source waveform for a 100 Hz “Sine” output that swings between 2.3 V and of 2.7 V</p></li>
+<li><p>Observe the output voltage into the 1 KΩ load resistor on Channel B and verify that it is swinging nominally +/- 1 V about the 2.5 V baseline and that it is 180 degrees out-of-phase with the input signal</p></li>
+<li><p>Remove the 1 KΩ load resistor and observe the voltage at the collector on Channel B and verify that it is swinging nominally +/- 1.47 V about a 2.8 V bias voltage and that it is also 180 degrees out-of-phase with the input signal. Note that these voltages may vary somewhat due to resistor tolerances</p></li>
+<li><p>Note any visible distortions in the output signals</p></li>
+<li><p>Remove the input signal and measure the DC bias voltages at the base, emitter, and collector, and verify that these are at their designed levels, allowing for resistor tolerances</p></li>
+<li><p>Calculate the voltage gain, power gain, and efficiency of this amplifier – see theory section for details</p></li>
+<li><p>This common-emitter amplifier is coupled to the emitter-follower amplifier designed in the “Class A NPN Emitter-Follower Amplifier” lab so it is recommended that this lab remain assembled on the solderless breadboard until completion of that lab</p></li>
+</ul>
+</section>
+<section id="theory">
+<h2>Theory<a class="headerlink" href="#theory" title="Link to this heading"></a></h2>
+<p>All Class A amplifiers, no matter what they use for an amplifying device, operate about a Q-point. The amplifier idles at the Q-point until a signal is applied to its input. When an input signal is applied, the amplifier output voltage and current swing up and down according to the input signal. In the CE NPN transistor circuit used in this lab, the voltage across the transistor output and the current flowing in and out of the collector are out-of-phase with each other, i.e., v<sub>CE</sub> is out-of-phase with i<sub>C</sub>. We know that in our simple CE amplifier v<sub>CE</sub> can vary between the supply voltage and the saturation voltage, v<sub>CE</sub>(sat), which is typically a few tenths of a volt. In normal applications, we do not run the output voltage right up to these limits, but instead allow for some margin in order to prevent serious output signal distortion. Also, it is important to remember that the collector-emitter junction in a BJT must always remain reverse-biased in order to operate in the forward active region.</p>
+<p>The Q-point is the (v<sub>CE</sub>, i<sub>C</sub>) point with no input signal. In order to obtain maximum output voltage swing, it makes sense to set the Q-point v<sub>CE</sub> halfway between the upper and lower limits, which is typically somewhere near mid-power-supply. The minimum Q-point setting for i<sub>C</sub> depends on the load current requirements. When the voltage across the load is increasing, the current into the load is increasing and the current into the collector is decreasing. When the voltage into the load reaches its maximum level of approximately the supply voltage, the collector current goes to zero and all of the current from the supply flows into the load. The minimum Q-point collector current must therefore be equal to the amount of collector current that is taken away from the collector current when the voltage into the load swings from its baseline to its maximum level. Our load resistance is AC-coupled, and we are swinging +/- 1 V (2 V<sub>P-P</sub>) about a 2.5 V baseline into the 1 KΩ load, which requires +/- 1 mA. This means we require a minimum of 1 mA quiescent collector current in the transistor. In practical circuits, we usually make this larger in order to provide margin, and there may be other factors that influence this choice. We know, however, that we cannot have I<sub>C</sub> &lt; 1 mA.</p>
+<p>In our amplifier, the base bias voltage was designed to be approximately 1 VDC using the voltage divider, though it will be a little less than this due to the small, though finite, base current. In many cases we can ignore base current, but we will see in this amplifier that because the emitter voltage is low, a small change in base voltage, which translates to a similar change in emitter voltage, can cause a significant percentage change in collector current. Additionally, the resistors have 5% tolerance, which can introduce additional error in collector current. Using the voltage divider rule, we calculate that without loading, the voltage at the base is 0.2(5 V) = 1 V. In order to estimate the base current, we can estimate the emitter current as (1 V - 0.7 V)/57 Ω ≈ 5.3 mA. Using β = 200 for the transistor, the base current can be estimated to be approximately 5.3 mA/200 = 26.5 μA. This current flows through the parallel combination of the two base bias resistors, so the voltage drop due to base current can be estimated to be (26.5 μA)(6.8 KΩ||1.7 KΩ) ≈ 36 mV. The base voltage, accounting for base current, can now be estimated to be 1 V - 36 mV ≈ 0.96 V. Note that this slightly changes the collector current, which slightly changes the base current, so technically these calculations are iterative, but one iteration is generally sufficient. The emitter current can now be estimated as (0.96 V - 0.7 V)/57 Ω ≈ 4.6 mA. From this example we can see how a small change in base voltage can significantly change the emitter current, and hence collector current, when the emitter voltage is small. We require small base and emitter voltages since we are operating on a relatively low supply voltage of 5 V and need to keep the collector-base junction reverse-biased over the full collector voltage swing. The next step is to estimate the collector bias voltage as 5 V - (4.6 mA)(470 Ω) ≈ 2.8 V. In order to get our required output swing of +/-1 V across the load resistor we will need about +/-1.47 V at the collector to compensate for the amplifier output resistance of 470 Ω being loaded by the 1 KΩ load. This means that the collector voltage will swing between 1.33 V and 4.27 V, which keeps the collector-base voltage reverse-biased and provides sufficient margin to the supply voltage. Note that since we have a reasonably large output swing and are fairly close to the dynamic range limits, we will incur some possibly visible distortion in the output waveform.</p>
+<p>The efficiency of an amplifier is defined as the ratio of the power delivered to its load to the power consumed from the power supply. It is the percentage of the total power consumed from the supply that is delivered to the load. Class A amplifiers are not terribly efficient when compared with other amplifier classes, but they are simple and can have less distortion than some of the other classes and therefore remain quite popular in spite of their poor efficiency. We can calculate the maximum theoretical efficiency of an ideal Class A amplifier driving a capacitively coupled resistive load (for mathematical simplicity, we will reference the load voltage to ground so that the voltage across the load swings above and below ground). To start with, we use an ideal amplifying device with an output voltage that can swing between zero volts and the supply voltage, V<sub>S</sub>. If we set the Q-point V<sub>CE</sub>, defined as V<sub>CE</sub>(Q), at mid supply, the peak voltage we can put into the load will be equal to V<sub>CE</sub>(Q). To get maximum efficiency, we need to set the quiescent collector current, defined as I<sub>C</sub>(Q), at its minimum value. The peak current into the load is also equal to I<sub>C</sub>(Q). When dealing with power in AC systems using periodic signals, we use <em>root-mean-square</em>, or <em>rms</em>, values of voltage and current. The rms value of a periodic signal is calculated by squaring the signal, taking the mean (average) of the squared signal over one period, then taking the square root. The rms value of a sine wave with zero baseline is equal to 1/√2 times its peak level. The voltage and current are in phase in a resistive load, so the maximum power into the load is simply the maximum rms voltage across the load multiplied by the maximum rms current into the load. The result for our Class A amplifier is therefore:</p>
+<p><span class="math notranslate nohighlight">\(P_LOAD(max) = (1/√2)(V_CE(Q))(1/√2)(I_C(Q)) = 0.5V_CE(Q)I_C(Q)\)</span></p>
+<p>The quiescent current drawn from the supply is I<sub>C</sub>(Q). Since we set V<sub>CE</sub>(Q) at the middle of the supply voltage, we will need at least 2V<sub>CE</sub>(Q) to get our full output swing, so the minimum power supply voltage is 2V<sub>CE</sub>(Q). The minimum power drawn from the supply is therefore:</p>
+<p><span class="math notranslate nohighlight">\(P_SUPPLY(min) = 2V_CE(Q)I_C(Q)\)</span></p>
+<p>We can now determine the maximum theoretical efficiency, η, as the ratio of the maximum power into the load to the minimum power drawn from the supply.</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \eta = {P_LOAD}(max)/{P_SUPPLY}(min) = 0.5{V_CE(Q)}{I_C}\frac{Q}{2}{V_CE}(Q){I_C}(Q) = 0.\frac{5}{2} = 0.25 = 25%\)</span></p>
+<p>The maximum theoretical efficiency of a Class A amplifier with an ideal amplifying device is therefore 25%. For a number of reasons, most practical Class A amplifiers operate at efficiencies far less than this. One important reason is that as a general rule, Class A amplifier harmonic distortion decreases as the quiescent current increases. When biased at a particular Q-point, BJTs can be modeled as transconductance amplifiers. An ideal linear transconductance amplifier produces an output current that is equal to its input voltage multiplied by a gain factor. BJTs have an exponential transconductance characteristic that looks something like the diode current versus voltage characteristic we saw in the Introduction to Diodes and LEDs lab. As we move the bias point up the exponential curve – by increasing the quiescent current – the exponential characteristic becomes more linear about the bias point, and the amplifier produces less harmonic distortion. There is therefore a tradeoff between quiescent current, and thereby efficiency, and harmonic distortion.</p>
+<p>We can calculate the efficiency of the amplifier studied in this lab with a 2 V<sub>P-P</sub> voltage applied to the 1 KΩ load resistor. We used more quiescent current than the absolute minimum of 1 mA, so we should expect to achieve significantly less efficiency than the theoretical maximum. The power into the load is:</p>
+<p><span class="math notranslate nohighlight">\(P_LOAD = (1/√2)(1 V_PEAK)(1/√2)(1 mA_PEAK) = 0.5 mW_rms\)</span></p>
+<p>The quiescent power drawn from the supply is:</p>
+<p><span class="math notranslate nohighlight">\(P_SUPPLY = V_CE(Q)I_C(Q) = (2.8 V - 0.26 V)(4.6 mA) ≈ 11.7 mW\)</span></p>
+<p>The efficiency is therefore:</p>
+<p><span class="math notranslate nohighlight">\(\eta = 0.5 mW/11.7 mW ≈ 4.3%\)</span></p>
+<p>The voltage gain, A<sub>V</sub>, of a CE amplifier can be determined using a transistor model and circuit theory, but it can also be estimated by simply inspecting the circuit. It’s important to remember that with transistor analysis, we have DC bias analysis and AC signal analysis. In the AC analysis, used to calculate the voltage gain, we can view the large bypass capacitors as AC short circuits and ignore the DC bias conditions (as long as we stay within the forward active region of operation). We start by observing that the input signal voltage v<sub>i</sub> is applied to the base, along with the required DC bias voltage. The signal voltage at the emitter is approximately equal to v<sub>i</sub> (it is in fact a little smaller than v<sub>i</sub> due to the finite β of the transistor, but for β ≥ 100 this is a reasonable approximation), shifted down by one base-emitter voltage drop of approximately 0.7 VDC. The signal voltage at the emitter produces a signal current in R<sub>E</sub>, and when R<sub>E</sub> is connected to ground, as it is in this lab, the signal current in R<sub>E</sub> is approximately equal to v<sub>i</sub>/R<sub>E</sub>. For β ≥ 100 we saw earlier that i<sub>C</sub> ≈ i<sub>E</sub>, so essentially the same current level that flows through R<sub>E</sub> flows through R<sub>C</sub>. The output signal voltage v<sub>o</sub> is equal to i<sub>c</sub>R<sub>C</sub>, which is approximately equal to i<sub>e</sub>R<sub>C</sub>. We can combine these results as follows to get the approximate voltage gain, remembering that the output voltage is 180 degrees out-of-phase with the input signal, so the gain includes a (-) sign.</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle v_o = i_cR_C ≈ \frac{-v_i}{{R_E}}{R_C} = -v_i\frac{R_C}{{R_E}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(A_V = v_o/v_i ≈ -R_C/R_E\)</span></p>
+<p>It is also important to include the <em>incremental emitter resistance</em>, r<sub>e</sub>, which is the equivalent incremental signal resistance in the emitter, in the total emitter resistance. This resistance is equal to the <em>thermal voltage</em>, V<sub>T</sub>, divided by the quiescent collector current, I<sub>C</sub>. The thermal voltage comes from the exponential equation that defines the BJT transconductance, and is equal to kT/q where k is the Boltzmann constant, T is absolute temperature in K, and q is the charge of one electron in coulombs. At room temperature, V<sub>T</sub> ≈ 26 mV. In our circuit r<sub>e</sub> ≈ 26 mV/4.6 mA ≈ 5.7 Ω. The total emitter resistance R<sub>E</sub>(total) = R<sub>E</sub> + r<sub>e</sub>. The final gain equation for the CE amplifier can be written as:</p>
+<p><span class="math notranslate nohighlight">\(A_V ≈ -R_C/R_E + r_e\)</span></p>
+<p>The approximate voltage gain for the simple CE amplifier in this lab is therefore determined by the ratio of the collector resistance to the total emitter resistance with a 180 degree inversion in phase. Using the circuit values and calculated value for r<sub>e</sub>, we can calculate the gain for the amplifier in this lab as</p>
+<p><span class="math notranslate nohighlight">\(A_V ≈ -470 Ω/57 Ω + 5.7 Ω ≈ -7.5\)</span></p>
+<p>Accounting for the voltage divider loss incurred by the 470 Ω amplifier output resistance and the 1 KΩ load resistance, we can calculate the loaded gain as</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle A_V(loaded) ≈ -7.5\frac{1 kΩ}{{1470 Ω}} ≈ -5.1\)</span></p>
+<p>One problem encountered with this simple circuit is the interdependence of bias setting and gain setting. Both depend on R<sub>E</sub> and R<sub>C</sub>, and large gain requires large R<sub>C</sub> and/or small R<sub>E</sub>. The output resistance is R<sub>C</sub>, so making R<sub>C</sub> large produces a large output resistance, which is undesirable. Since R<sub>E</sub> is part of what sets the quiescent current, a low value of R<sub>E</sub> used to obtain a large gain can require high quiescent current and/or a low base voltage. A technique that adds a degree of independence between bias setting and gain setting involves bypassing all or part of R<sub>E</sub> with a (typically large) bypass capacitor. This allows us more freedom in setting the bias point and gain. As a simple example, a large capacitor could be placed between the 10 Ω in the emitter circuit and ground, increasing the AC gain and keeping the DC bias point unchanged. Doing this does change the circuit’s AC behavior, and this must be taken account when using this technique.</p>
+<p>The last topic we will address is the <em>power gain</em> of the CE amplifier, but first we must introduce the <em>decibel</em>. Back in the early days of telephony, the <em>bel</em> unit was introduced to express the common logarithm of a power ratio, and was named after Alexander Graham Bell. Expressing quantities in logarithmic form is useful for many reasons, and allows a wide range of quantities to be compressed into a smaller range, simplifying things like graphing functions. The bel is defined as</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle number of bels = log_10\frac{P_2}{{P_1}}\)</span></p>
+<p>The bel is a relatively large quantity so it was divided into tenths, called a <em>decibel</em> or “tenth of a bel” and abbreviated as <em>dB</em>. Since there are ten dB in one bel, we must multiply the number of bels by 10 to get the number of decibels</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle number of dB = 10log_10\frac{P_2}{{P_1}}\)</span></p>
+<p>In our study of the power gain of CE amplifiers, we are concerned with the ratio of the output power P<sub>o</sub> to the input power P<sub>i</sub>. This is defined as the power gain of the amplifier, A<sub>P</sub>, which is often specified in dB</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle A_P(dB) = 10log_10\frac{P_o}{{P_i}}\)</span></p>
+<p>We need to determine the input resistance R<sub>i</sub> of the amplifier in order to calculate the power into the amplifier. R<sub>i</sub> is equal to the equivalent resistance presented by the voltage divider base bias network in parallel with the resistance looking onto the transistor base. The input resistance looking into the base, R<sub>i,base</sub> is calculated as follows:</p>
+<p><span class="math notranslate nohighlight">\(R_{i,base} = βr_e + (1 + β)R_E\)</span></p>
+<p>Using β = 200 from the Introduction to Transistors lab, and substituting numbers from this lab, we have</p>
+<p><span class="math notranslate nohighlight">\(R_{i,base} = (200)5.7 Ω + (1 + 200)57 Ω ≈ 1.14 KΩ + 11.5 KΩ ≈ 12.6 KΩ\)</span></p>
+<p>We can see that the second term in this expression dominates, as is often the case. The voltage divider presents an equivalent resistance of 6.8 KΩ||1.7 KΩ = 1.36 KΩ. The total input resistance is therefore</p>
+<p><span class="math notranslate nohighlight">\(R_i = 12.6 KΩ||1.36 KΩ ≈ 1.2 KΩ\)</span></p>
+<p>The rms power into the amplifier for any periodic input voltage is [kv<sub>i</sub>]<sup>2</sup>/R<sub>i</sub> = k<sup>2</sup>v<sub>i</sub><sup>2</sup>/R<sub>i</sub> where k is a constant that depends on the waveform (k = 1/√2 for a sine wave). The rms output power into the load is [kv<sub>o</sub>]<sup>2</sup>/R<sub>L</sub> = k<sup>2</sup>v<sub>o</sub><sup>2</sup>/R<sub>L</sub>. We know that v<sub>o</sub> = A<sub>V</sub>v<sub>i</sub>, and if we make that substitution, we can calculate the power gain based simply on A<sub>V</sub>, R<sub>i</sub>, and R<sub>L</sub> as follows</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle A_P = P_o/P_i = {{k^2}({A_V}{v_i})^2}/{R_L}/{{k^2}{v_i}^2}/{R_i} = {k^2}{{A_V}^2}{{v_i}^2}/R_L/{{k^2}{v_i}^2}/{R_i} = A_V^2\frac{R_i}{{R_L}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle A_P(dB) = 10log_10[A_V^2\frac{R_i}{{R_L}}] = 20log_10{|A_V|} + 10log_10\frac{R_i}{{R_L}}\)</span></p>
+<p>We need to use the magnitude of the voltage gain in case the amplifier produces a phase inversion. Since the M1K provides a very low output resistance when sourcing voltage, the voltage loss incurred due to input loading the M1K source resistance is insignificant so we can ignore this. We can now calculate the power gain of the CE amplifier for our circuit as follows</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle A_P = A_V^2\frac{R_i}{{R_L}} = (-5.1)^2\frac{1.2 KΩ}{{1 KΩ}} ≈ 31.2\)</span></p>
+<p><span class="math notranslate nohighlight">\(A_P(dB) = 10log_10(31.2) ≈ 15 dB\)</span></p>
+<p>We can also use the dB formula to get the result directly in dB</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle A_P(dB) = 20log_10{5.1) + 10log_10\frac{1.2 KΩ}{{1 KΩ}} ≈ 15 dB\)</span></p>
+</section>
+<section id="observations-and-conclusions">
+<h2>Observations and Conclusions<a class="headerlink" href="#observations-and-conclusions" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Class A amplifiers have a 360 degree conduction angle</p></li>
+<li><p>Class A amplifiers operate about a Q-point</p></li>
+<li><p>The input and output voltages of a CE amplifier are out-of-phase with each other</p></li>
+<li><p>Class A amplifiers are less efficient than other amplifier classes</p></li>
+<li><p>The maximum efficiency of an ideal Class A amplifier with a capacitively coupled load is 25%</p></li>
+<li><p>Most practical Class A amplifier efficiency is significantly less than the theoretical maximum</p></li>
+<li><p>Base current can be neglected when calculating the base bias voltage for Class A amplifiers when emitter voltage is large, but must be taken into account when the voltage drop incurred by the base current flowing through the equivalent base biasing resistance is a significant fraction of the emitter voltage</p></li>
+<li><p>CE amplifiers provide voltage and current gain</p></li>
+<li><p>The unloaded voltage gain of a CE amplifier depends on the collector resistance, emitter resistance and internal emitter resistance of the transistor</p></li>
+<li><p>Loaded CE amplifier gain depends on its output resistance and load resistance</p></li>
+<li><p>Power gain of a CE amplifier can be calculated knowing its voltage gain, input resistance, and load resistance</p></li>
+</ul>
+<p><strong>Return to</strong> <a class="reference internal" href="../engineering_discovery.html"><span class="doc">Engineering Discovery Index</span></a></p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

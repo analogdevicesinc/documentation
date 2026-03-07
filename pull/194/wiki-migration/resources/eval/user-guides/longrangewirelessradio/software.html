@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The ADI Long Range Wireless Radio Software is accompanied by an open-source software stack and associated collaterals, enabling a complete experience from evaluation and prototyping all the way to production firmware and applications development." name="description" />
+
+    <title>ADI Long Range Wireless Radio Software User Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ADI Long Range Wireless Radio Software User Guide</a></li>
+<li><a class="reference internal" href="#software-setup">Software Setup</a><ul>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#requirements-1">Requirements</a></li>
+<li><a class="reference internal" href="#hardware">Hardware</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#phase-4-setting-up-a-self-hosted-application-server">PHASE 4: Setting up a Self-Hosted Application Server</a><ul>
+<li><a class="reference internal" href="#requirements-2">Requirements</a><ul>
+<li><a class="reference internal" href="#configuring-host-pc-for-the-gateway">4.1 Configuring Host PC for the Gateway</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#phase-5-connecting-a-sensor-node-to-the-gateway">PHASE 5: Connecting a Sensor Node to the Gateway</a><ul>
+<li><a class="reference internal" href="#creating-a-device-profile">5.1 Creating a Device Profile</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#faqs">FAQs</a></li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="adi-long-range-wireless-radio-software-user-guide">
+<h1>ADI Long Range Wireless Radio Software User Guide<a class="headerlink" href="#adi-long-range-wireless-radio-software-user-guide" title="Link to this heading"></a></h1>
+<p>The ADI Long Range Wireless Radio Software is accompanied by an open-source software stack and associated collaterals, enabling a complete experience from evaluation and prototyping all the way to production firmware and applications development.</p>
+<p>The system’s firmware is based on Analog Devices’ open-source programming and debugging tool called Maxim Micro Software Development Installer Kit (MaximSDK), which includes most of the tools required for embedded code development and debugging as well as libraries enabling host-side connectivity for system configuration and data transfer over UART.</p>
+</section>
+<section id="software-setup">
+<h1>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h1>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Host PC (Windows 10 or later) with administrator access</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="icon link reference external" href="https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net462-web-installer" target="_blank">Microsoft .Net Framework 4.6.2</a></p>
+<ul>
+<li><p>1920 by 1080 or greater screen resolution, recommended</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    * with downloaded:
+      * [[https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/ad-max32wise-slz_firmware.zip|AD-MAX32WISE-SLZ Firmware (Rel1.0.0)]]
+        * [[https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/wireless_sensor_hub.zip|ADI Wireless Sensor Hub Standalone Software (Rev 1.0.3)]]
+          * [[http://sourceforge.net/project/showfiles.php?group_id=67297|UART serial monitor]]
+          * [[https://etcher.balena.io|Balena Etcher]] image writing tool
+          * [[https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html|Chirpstack Gateway OS]]
+*  [[https://store.rakwireless.com/products/rak5146-kit?variant=41577988161734|RAK5146 PiHAT Kit]] consisting of
+  * One (1) RAK5146 SPI module
+    * One (1) RAK5146 PiHAT
+      * Long range and GPS antenna
+      * Spacers and nuts kit for secure mounting of the PiHAT
+* One (1) [[https://www.raspberrypi.com/products/raspberry-pi-4-model-b/|Raspberry Pi 4]] with 5V Type-C Power supply
+* One (1) Micro SD card
+* One (1) LAN cable
+* One (1) Micro USB to USB cable
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">====== PHASE 2: Firmware Setup ======</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure you have completed the steps described in <a class="reference internal" href="../ad-max32sxwise-sl.html"><span class="doc">PHASE 1: Hardware Setup</span></a> before proceeding with the steps listed below.</p>
+</div>
+<ul class="simple">
+<li><p>Download and install the <a class="icon link reference external" href="https://sourceforge.net/projects/realterm/files/latest/download" target="_blank">UART serial monitor</a>. This will be needed to view the activity of the Sensor Node via UART serial interface.</p></li>
+</ul>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p><strong>This setup uses the Real Term serial monitor, but other UART serial terminals may also be used.</strong></p>
+<p>Real Term requires .NET framework to be installed on the Host PC to function properly. Make sure to install this requirement before using this serial terminal: <a class="icon link reference external" href="https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net462-web-installer" target="_blank">.NET Framework 4.6.2</a></p>
+</div>
+<ul>
+<li><p>Download the <a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/ad-max32wise-slz_firmware.zip" target="_blank">AD-MAX32WISE-SLZ Firmware (Rel1.0.0)</a> and extract the file to a known location.</p></li>
+<li><p>Double-click on the &lt;fc #6495ed&gt;<strong>AD-MAX32WISE-SLZ-Rel1.0.0.exe.</strong>&lt;/fc&gt; and follow the installation prompts.</p></li>
+<li><p>Go to &lt;fc #6495ed&gt;<strong>C:\Analog Devices\AD-MAX32WISE-SLZ-Rel1.0.0\Software\ad_max32wise_src\bin</strong>&lt;/fc&gt; and find the firmware you need to load based on the chosen sensor node.
+The firmware folder should contain the BIN, ELF, and HEX file. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/bin_files.png"><img alt="image1" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/bin_files.png" style="width: 600px;" /></a></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/bin_files_2.png"><img alt="image2" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/bin_files_2.png" style="width: 600px;" /></a></p>
+</li>
+<li><p>Go to My Computer and search for the DAPLINK drive. Drag and drop (or copy and paste) the .bin or .hex firmware files directly into the DAPLINK drive. To check if the flashing is successful, check the DAPLINK directory and make sure there is no <strong>FAIL.TXT</strong> file. In case there is, repeat the drag and drop step.</p></li>
+<li><p>Reset the Base Board by pressing the <strong>S1</strong> reset button.</p></li>
+<li><p>Open the UART serial monitor to check if the firmware has been loaded correctly. Make sure to use the following settings:</p></li>
+</ul>
+<div class="center round box docutils container">
+<ul class="simple">
+<li><p>Ports: Take note of the COM port used by checking the <strong>Device Manager</strong></p></li>
+<li><p>Baud Rates and Ports: set to <strong>921600</strong></p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/2.png"><img alt="image3" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/2.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>Display formatting: set to <strong>ANSI</strong></p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/1.png"><img alt="image4" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/1.png" style="width: 600px;" /></a></p>
+</div>
+<ul>
+<li><p>Once configured, open the serial monitor.</p></li>
+<li><p>Take note of the <strong>DevEUI (64-bit end-device identifier)</strong>. This will be used later during the gateway setup.
+To redisplay the DevEUI on the screen, reset the MAX32670-SX-ARDZ Base Board by pressing the S1 button.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/deveui.png"><img alt="image5" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/deveui.png" style="width: 600px;" /></a></p>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">====== PHASE 3: Gateway Setup ====== To demonstrate the long range radio communication capability based on the chirp spread spectrum (CSS) technique, a gateway connection must first be established.</div>
+<div class="line">A gateway transmits the data received from the Base Board and Sensor Nodes to the internet or to your local application server. In order to do this, you must properly set up the Concentrator and the Host MCU.</div>
+<div class="line">This setup uses the <a class="icon link reference external" href="https://store.rakwireless.com/products/rak5146-kit?variant=41577988161734" target="_blank">Raspberry Pi 4</a> as the hardware and <a class="icon link reference external" href="https://www.chirpstack.io/docs/" target="_blank">ChirpStack v4</a> as the gateway OS. Follow below instructions to set up the gateway connection and use the web interface for your applications.</div>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gateway_setup.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gateway_setup.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gateway_setup.png" style="width: 1000px;" />
+</a>
+</section>
+<section id="requirements-1">
+<span id="id1"></span><h2>Requirements<a class="headerlink" href="#requirements-1" title="Link to this heading"></a></h2>
+</section>
+<section id="hardware">
+<h2>Hardware<a class="headerlink" href="#hardware" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://store.rakwireless.com/products/rak5146-kit?variant=41577988161734" target="_blank">RAK5146 PiHAT Kit</a> consisting of</p>
+<ul>
+<li><p>RAK5146 SPI module</p></li>
+<li><p>RAK5146 PiHAT</p></li>
+<li><p>IPEX long range antenna</p></li>
+<li><p>IPEX GPS antenna (optional if RAK5146 SPI with GPS is selected)</p></li>
+<li><p>Spacers and nuts kit for secure mounting of the PiHAT</p></li>
+</ul>
+</li>
+<li><p><a class="icon link reference external" href="https://www.raspberrypi.com/products/raspberry-pi-4-model-b/" target="_blank">Raspberry Pi 4</a></p>
+<ul>
+<li><p>with Power supply (5 V)</p></li>
+<li><p>with Type-C cable</p></li>
+</ul>
+</li>
+<li><p>Host PC with administrator access</p>
+<ul>
+<li><p>Windows 10 OS or later</p></li>
+<li><p>Microsoft .Net Framework 4.6.2</p></li>
+<li><p>1920 by 1080 or greater screen resolution, recommended</p></li>
+</ul>
+</li>
+<li><p>Micro SD card (16 GB or larger)</p></li>
+<li><p>USB keyboard and mouse</p></li>
+<li><p>LAN cable</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">=== Software ===</div>
+</div>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://etcher.balena.io" target="_blank">Balena Etcher</a> image writing tool</p></li>
+<li><p><a class="icon link reference external" href="https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html" target="_blank">Chirpstack Gateway OS version 4.1.1</a></p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">=== Documentation ===</div>
+</div>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.chirpstack.io/docs/" target="_blank">About ChirpStack</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.chirpstack.io/docs/chirpstack-gateway-os/index.html" target="_blank">ChirpStack Gateway OS</a></p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== 3.1 Hardware Assembly of the Concentrator ====</div>
+<div class="line">&lt;fc #6495ed&gt;<strong>What is a Concentrator?</strong>&lt;/fc&gt;</div>
+<div class="line">A concentrator is an essential part of any gateway because it enables the reception and transmission of data packets from and to the end devices. It can receive multiple signals to serve a large number of end device.</div>
+<div class="line">In this example, the <a class="icon link reference external" href="https://store.rakwireless.com/products/rak5146-kit?variant=41577988161734" target="_blank">RAK5146 PiHAT Kit</a> and the <a class="icon link reference external" href="https://www.raspberrypi.com/products/raspberry-pi-4-model-b/" target="_blank">Raspberry Pi 4</a> act as the concentrator.</div>
+<div class="line">Follow below steps to setup the concentrator hardware:</div>
+</div>
+<ul class="simple">
+<li><p>Insert the RAK5146 SPI module into the mPCIe slot on the RAK2287 Pi HAT. Make sure the card fits snugly into the connector.</p></li>
+<li><p>Gently press the SPI module down and fasten it using the screws provided.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gateway_1.png"><img alt="image6" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gateway_1.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>Connect the RAK5146 PiHAT to the Raspberry Pi using the 40-pin connector.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rpi_4_with_rak5146_hat.png"><img alt="image7" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rpi_4_with_rak5146_hat.png" style="width: 400px;" /></a></p>
+<ul class="simple">
+<li><p>Connect the Raspberry Pi to the Host PC using the LAN cable.</p></li>
+<li><p>Power on the Raspberry Pi by plugging in a 5 V power supply using the Type-C USB connector.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== 3.2 Imaging the SD Card with ChirpStack OS ====</div>
+<div class="line">* Download the <a class="icon link reference external" href="https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html" target="_blank">Chirpstack Gateway OS version 4.1.1 or latest</a></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This setup uses the Raspberry Pi 4B Full Image</p>
+</div>
+<ul class="simple">
+<li><p>Download and install <a class="icon link reference external" href="https://etcher.balena.io" target="_blank">Balena Etcher</a> image writing tool. Note that this setup uses the Balena Etcher tool for writing the image on SD card. You can use other image writing tools of your choice.</p></li>
+<li><p>Run the Balena Etcher tool.</p></li>
+<li><p>Insert the micro SD card into the Host PC.</p></li>
+<li><p>Click &lt;fc #6495ed&gt;<strong>Flash from file</strong>&lt;/fc&gt; from the options shown in the interface.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/flashing_sd_card.png"><img alt="image8" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/flashing_sd_card.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>Navigate to the location where the downloaded Chirpstack Gateway OS is saved.</p></li>
+<li><p>Select target and choose the targeted micro SD card drive.</p></li>
+<li><p>Click &lt;fc #6495ed&gt;<strong>Flash</strong>&lt;/fc&gt; to start the burning process of the image in the chosen SD card.</p></li>
+<li><p>Wait until it is done.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/flashing_sd_card_2.png"><img alt="image9" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/flashing_sd_card_2.png" style="width: 600px;" /></a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>In case the flashing fails, consult this guide to resolve the issue: <a class="icon link reference external" href="https://etcher.balena.io/#FAQs" target="_blank">Balena Etcher FAQs</a></p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>After the first boot, the gateway might reboot automatically to apply some changes. The Full Image will set up the PostgreSQL database on its first boot. This could take a couple of minutes and during this time the gateway will be less responsive.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== 3.3 Gateway Configuration ====</div>
+<div class="line">* Insert the imaged SD card on the designated slot on the Raspberry Pi.</div>
+</div>
+<ul class="simple">
+<li><p>Connect the Host PC to ChirpStack WiFi.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/chirpstack_wifi.png"><img alt="image10" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/chirpstack_wifi.png" style="width: 400px;" /></a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When prompted to enter password, use <strong>ChirpStackAP</strong> (case-sensitive)</p>
+</div>
+<ul class="simple">
+<li><p>Access the ChirpStack open network and check its assigned IP Address through SSH connection. Open CMD on the Host PC.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/open_cmd.png"><img alt="image11" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/open_cmd.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>Establish Secure Shell (SSH) connection using admin account and ChirpStack static IP. Enter this on the terminal <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">admin&#64;192.168.0.1</span></code></p></li>
+<li><p>SSH connection will ask for the password input. Use below credentials:</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/ssh_password_input.png"><img alt="image12" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/ssh_password_input.png" style="width: 600px;" /></a></p>
+<div class="center round box docutils container">
+<p>Chirpstack details</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a href="#id6"><span class="problematic" id="id7">**</span></a>Username: admin
+Password: admin</div>
+</div>
+<p>StaticIP: 192.168.0.1**</p>
+</div>
+<ul class="simple">
+<li><p>Once connected, check the assigned ChirpStack IP by typing &lt;fc #6495ed&gt;<strong>ifconfig</strong>&lt;/fc&gt;</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/chirpstack_ip.png"><img alt="image13" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/chirpstack_ip.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>This will show all configs, look for &lt;fc #6495ed&gt;<strong>eth0</strong>&lt;/fc&gt; and save the IP address assigned to it.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In this example, the IP assigned is <strong>169.254.117.207</strong>. By saving the assigned IP, you’ll be able to establish an SSH connection on your machine without having to connect through the ChirpStack open network.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/eth0_ip.png"><img alt="image14" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/eth0_ip.png" style="width: 600px;" /></a></p>
+</div>
+<ul class="simple">
+<li><p>Open the Raspberry Pi terminal, then enter &lt;code&gt; sudo gateway-config &lt;/code&gt;</p></li>
+<li><p>In the main menu, choose <strong>Setup concentrator shield</strong>.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/configuring_the_concentrator.png"><img alt="image15" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/configuring_the_concentrator.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>Choose <strong>RAK5146 (with GNSS)</strong>.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rak5146_with_gnss_.png"><img alt="image16" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rak5146_with_gnss_.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>Choose <strong>AU915</strong>.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/au915.png"><img alt="image17" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/au915.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>Choose <strong>Channels 0 to 7 + 64</strong>.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/channels.png"><img alt="image18" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/channels.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>The Concentrator restarts and goes back to the main menu.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gateway_created.png"><img alt="image19" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gateway_created.png" style="width: 400px;" /></a></p>
+<ul class="simple">
+<li><p>Quit the main menu.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">If you have properly configured the gateway and installed the required SD card image, then you are ready to use the ChirpStack Network Server.</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">—-</div>
+</div>
+</section>
+</section>
+<section id="phase-4-setting-up-a-self-hosted-application-server">
+<h1>PHASE 4: Setting up a Self-Hosted Application Server<a class="headerlink" href="#phase-4-setting-up-a-self-hosted-application-server" title="Link to this heading"></a></h1>
+<section id="requirements-2">
+<span id="id8"></span><h2>Requirements<a class="headerlink" href="#requirements-2" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Raspberry Pi 4 with ChirpStack version 4.1.1 IO booted</p></li>
+<li><p>Host PC with Admin Access</p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/wireless_sensor_hub.zip" target="_blank">ADI Wireless Sensor Standalone Software</a></p></li>
+<li><p>LAN cable</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="configuring-host-pc-for-the-gateway">
+<h3>4.1 Configuring Host PC for the Gateway<a class="headerlink" href="#configuring-host-pc-for-the-gateway" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Enabling Port 5050 facilitates seamless communication between the Gateway and the Local server machine via the specified open Port connection (in this instance, 5050). The selection of port 5050 is based on its recommendation, ensuring it falls within a universally understood range of ports that are not commonly used for standard purposes elsewhere.</p>
+</div>
+<ul class="simple">
+<li><p>Access &lt;fc #6495ed&gt;Advance Firewall&lt;/fc&gt; settings in your computer. <a href="#id10"><span class="problematic" id="id11">|\||</span></a></p></li>
+<li><p>Create a new &lt;fc #6495ed&gt;Inbound Rule&lt;/fc&gt;. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/inbound_rule_1.png"><img alt="image20" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/inbound_rule_1.png" style="width: 700px;" /></a></p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/inbound_rule_2.png"><img alt="image21" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/inbound_rule_2.png" style="width: 700px;" /></a></p>
+<ul class="simple">
+<li><p>Follow the steps below to configure the device. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config.png"><img alt="image22" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config.png" style="width: 700px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config_2.png"><img alt="image23" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config_2.png" style="width: 700px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config_3.png"><img alt="image24" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config_3.png" style="width: 700px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config_4.png"><img alt="image25" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config_4.png" style="width: 700px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config_5.png"><img alt="image26" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config_5.png" style="width: 700px;" /></a></p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config_6.png"><img alt="image27" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/rule_config_6.png" style="width: 700px;" /></a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== 4.2 Installing the GUI and Accessing the Gateway ====</div>
+<div class="line">* Download and extract the <a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/wireless_sensor_hub.zip" target="_blank">ADI Wireless Sensor Standalone Software</a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/extracting_file.png"><img alt="image28" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/extracting_file.png" style="width: 600px;" /></a></div>
+</div>
+<ul class="simple">
+<li><p>Once extracted, run the <strong>ADI Wireless Sensor Standalone Software</strong> with administrator privileges.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/run_admin_privileges.png"><img alt="image29" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/run_admin_privileges.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>This will start the initialization process and run the process on your PC.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/initializing_and_run.png"><img alt="image30" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/initializing_and_run.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>Check the IP address assigned to the Raspberry Pi gateway. Take note that the server will show all connections available, select the IP of the connector you used. In this example, it’s the Apple USB Ethernet Adapter. This information will be used in Step 5.3.4 to integrate data from the gateway to the GUI.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/ip_address.png"><img alt="image31" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/ip_address.png" style="width: 700px;" /></a></p>
+<ul class="simple">
+<li><p>Use the assigned ChirpStack IP address saved earlier to access its configuration interface.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In this example, it is &lt;fc #6495ed&gt;<strong>169.254.117.207</strong>&lt;/fc&gt;</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">If you haven’t saved the IP address, revisit Steps 3 to 7 in <a class="reference internal" href="#"><span class="doc">Gateway Configuration section</span></a></div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Add the &lt;fc #6495ed&gt;ChirpStack Port (8080)&lt;/fc&gt; to the end of IP address. Open a page in the browser using the &lt;fc #6495ed&gt;<strong>URL 169.254.117.207:8080</strong>&lt;/fc&gt;</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/adding_chirpstack_port.png"><img alt="image32" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/adding_chirpstack_port.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>This will open the login page. Enter the same credentials we used to establish an SSH connection with the ChirpStack Gateway.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/log_in_page.png"><img alt="image33" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/log_in_page.png" style="width: 600px;" /></a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">—-</div>
+</div>
+</section>
+</section>
+</section>
+<section id="phase-5-connecting-a-sensor-node-to-the-gateway">
+<h1>PHASE 5: Connecting a Sensor Node to the Gateway<a class="headerlink" href="#phase-5-connecting-a-sensor-node-to-the-gateway" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line">This section describes how to connect your sensor node to ChirpStack and how to validate that it can successfully send data. At this point, it is assumed that you have a working ChirpStack environment with a connected gateway.</div>
+</div>
+<section id="creating-a-device-profile">
+<h2>5.1 Creating a Device Profile<a class="headerlink" href="#creating-a-device-profile" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line">Before you can add a device (sensor node) to ChirpStack, you need to create a device-profile. In general, it is a good practice to create separate device-profiles for different types of devices (sensor nodes). A device-profile contains the capabilities of your device.</div>
+</div>
+<ul class="simple">
+<li><p>Once you are in the ChirpStack landing page, navigate to the &lt;fc #6495ed&gt;<strong>Applications tab</strong>&lt;/fc&gt;.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/landing_page.png"><img alt="image34" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/landing_page.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>Click &lt;fc #6495ed&gt;<strong>Device profiles</strong>&lt;/fc&gt; under the &lt;fc #6495ed&gt;<strong>Tenant</strong>&lt;/fc&gt; category, as shown below.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/software/gate_way_setup/device_profile.png"><img alt="image35" src="https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/software/gate_way_setup/device_profile.png" style="width: 200px;" /></a></p>
+<ul class="simple">
+<li><p>Click on the &lt;fc #6495ed&gt;<strong>Add device profile</strong>&lt;/fc&gt; button.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/software/gate_way_setup/add_device_profile.png"><img alt="image36" src="https://wiki.analog.com/_media/resources/eval/user-guides/lora-reference-design/software/gate_way_setup/add_device_profile.png" style="width: 800px;" /></a></p>
+<ul class="simple">
+<li><p>Answer all required information under the &lt;fc #6495ed&gt;<strong>General</strong>&lt;/fc&gt; tab, and then click &lt;fc #6495ed&gt;<strong>Submit</strong>&lt;/fc&gt; once done. For the Name, enter the desired sensor node name.</p></li>
+</ul>
+<div class="center round box docutils container">
+<p>The following shows the other configuration required to add a sensor node:</p>
+<ul class="simple">
+<li><p>Region: AU915</p></li>
+<li><p>Region Configuration: AU915 (channels 0-7 +64)</p></li>
+<li><p>MAC Version: LoRaWAN 1.0.4</p></li>
+<li><p>Regional parameters revision: A</p></li>
+<li><p>ADR algorithm: Default ADR algorithm (LoRa only)</p></li>
+<li><p>Expected uplink interval (sec): 10</p></li>
+<li><p>Device-status request frequency (req/day): 8640</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/add_device_profile_example.png"><img alt="image37" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/add_device_profile_example.png" style="width: 1500px;" /></a></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== 5.2 Enrolling Device Applications ====</div>
+<div class="line">* After adding a device, click the &lt;fc #6495ed&gt;<strong>Applications</strong>&lt;/fc&gt; option under Tenant.</div>
+</div>
+<ul class="simple">
+<li><p>Click on the &lt;fc #6495ed&gt;<strong>Add application</strong>&lt;/fc&gt; button.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/add_application_button.png"><img alt="image38" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/add_application_button.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>Write the desired Application Name on the space provided. Hit &lt;fc #6495ed&gt;<strong>Submit</strong>&lt;/fc&gt; once done.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/submit_application.png"><img alt="image39" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/submit_application.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>Open the Application created and add a device. Ensure that in naming the devices, you must include a SPECIFIC KEYWORD (not case-sensitive) to distinguish which sensor nodes will be shown on the GUI. The naming codes of sensor nodes are as follows:</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<div class="line-block">
+<div class="line">| <strong>Sensor</strong> | <strong>Code Name</strong> |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>EV-FLOWMETER-ARDZ</p></td>
+<td><p>flow</p></td>
+</tr>
+<tr class="row-even"><td><p>EV-STRUCTURAL-ARDZ</p></td>
+<td><p>sms</p></td>
+</tr>
+<tr class="row-odd"><td><p>EV-CATTLETAG-ARDZ</p></td>
+<td><p>cattle</p></td>
+</tr>
+<tr class="row-even"><td><p>EV-ADE9000SHIELDZ</p></td>
+<td><p>e-meter</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">The following details are also needed:</div>
+</div>
+<ul class="simple">
+<li><p>Name: previously defined application name set from the previous steps</p></li>
+<li><p>Device EUI (EUI64): unique serial number of the device</p></li>
+<li><p>Device profile: previously defined device profile set from the previous steps</p></li>
+</ul>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/device_details.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/device_details.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/device_details.png" style="width: 600px;" />
+</a>
+<ol class="arabic simple" start="5">
+<li><p>Once done, click &lt;fc #6495ed&gt;<strong>Submit</strong>&lt;/fc&gt;.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<div class="line-block">
+<div class="line">For OTAA devices, confirm that when the device tries to OTAA activate, you see a <strong>JoinRequest</strong> message followed by a <strong>JoinAccept</strong> message.</div>
+<div class="line">If you do not see a JoinRequest and JoinAccept, click on the &lt;fc #6495ed&gt;<strong>Flush OTAA devices</strong>&lt;/fc&gt; button.</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line">6. Enter the &lt;fc #6495ed&gt;<strong>Application key</strong>&lt;/fc&gt; and hit &lt;fc #6495ed&gt;<strong>Submit</strong>&lt;/fc&gt; once done. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/app_key.png"><img alt="image40" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/app_key.png" style="width: 600px;" /></a></div>
+<div class="line"><br /></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For this demo, the&lt;fc #6495ed&gt; Application key is <strong>2b7e151628aed2a6abf7158809cf4f3c</strong>&lt;/fc&gt;</p>
+<div class="line-block">
+<div class="line">The App Key included in the LoraMAC was used as is for the purpose of evaluation. Users can generate the App Key and add it in the source code on their own.</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line">==== 5.3 Setting up Local Host URL for the Application Server ====</div>
+</div>
+<ul class="simple">
+<li><p>Once you are in Applications tab, select and open &lt;fc #6495ed&gt;<strong>WiSe_Sensors</strong>&lt;/fc&gt;.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gateway_applications.png"><img alt="image41" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gateway_applications.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>Inside ADI_SENSOR_NODE application, navigate to the &lt;fc #6495ed&gt;Integrations&lt;/fc&gt; tab.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/integration.png"><img alt="image42" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/integration.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>In Integrations tab, select the edit button in the HTTP Configuration section.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/integrations.png"><img alt="image43" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/integrations.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>Change the Event Endpoint URL to the IP of the adapter your gateway is connected.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In this example, it is the IP of the Apple Network Adapter, which is <a class="icon link reference external" href="http://169.254.178.157:5050/api/data/post" target="_blank">http://169.254.178.157:5050/api/data/post</a>.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/endpoint_event_url_1.png"><img alt="image44" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/endpoint_event_url_1.png" style="width: 600px;" /></a></p>
+</div>
+<ul class="simple">
+<li><p>After updating the HTTP Integration endpoint URL, submit the changes by pressing the submit button below.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/http_integration.png"><img alt="image45" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/http_integration.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>A pop-up message will appear saying HTTP Integration updated.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/http_integration_success.png"><img alt="image46" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/http_integration_success.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>Now you can access the Local Application Server by using the local host URL shown during initialization.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/local_host_url.png"><img alt="image47" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/local_host_url.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>Open your browser and enter the URL <a class="icon link reference external" href="http://localhost:5050" target="_blank">http://localhost:5050</a> . Now you’ll be able to see and monitor your active nodes.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== 5.4 Local Application Server GUI ==== After you have successfully added a device (sensor node) and an application in the Chirpstack network, you will be able to view the graphical representation of the data collected by the sensor, as shown in the example below:</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>*Smart Motor Sensor GUI</strong></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gui_smart_motor_sensor.png"><img alt="image48" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gui_smart_motor_sensor.png" style="width: 1000px;" /></a></div>
+<div class="line"><strong>*Flow Meter Sensor GUI</strong></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gui_flow_meter_sensor.png"><img alt="image49" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gui_flow_meter_sensor.png" style="width: 1000px;" /></a></div>
+<div class="line"><strong>*E-meter Sensor GUI</strong></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gui_e-meter_sensor.png"><img alt="image50" src="https://wiki.analog.com/_media/resources/eval/user-guides/longrangewirelessradio/gui_e-meter_sensor.png" style="width: 1000px;" /></a></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>***Cattle Tag Sensor GUI** \\ {{ :resources:eval:user-guides:longrangewirelessradio:gui_cattletag.png?1000
+
+
+|}} \\
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="faqs">
+<h1>FAQs<a class="headerlink" href="#faqs" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="center round box docutils container">
+<p><strong>Q. Why is the serial application not responding after opening the port?</strong>​</p>
+<div class="line-block">
+<div class="line">A. It usually happens whenever the power of the base board is not enough to operate the board.</div>
+<div class="line"><strong>Q. Can we use other gateways aside from ChirpStack?</strong></div>
+<div class="line">A. Customers are not limited to use ChirpStack gateway, it is possible to use other gateways available in the market.</div>
+<div class="line"><strong>Q. What maximum number a gateway can handle?</strong></div>
+<div class="line">A. It depends on the channels available per assigned region and the time division set by the user on sending data from the nodes to gateway.</div>
+<div class="line"><strong>Q. Is there another way to see the GUI without using the local setup?</strong></div>
+<div class="line">A. The GUI can also be accessed through cloud service, but it is not supported by ADI.</div>
+<div class="line"><strong>Q. What is the maximum distance the gateway and nodes can communicate?</strong></div>
+<div class="line">A. The gateway and nodes’ maximum and effective range may vary depending on the modulation parameters, transmit power, antenna gain, environmental conditions, and obstacles present in the communication path. In practice, it can reach several kilometers in rural areas with a clear line of sight. The effective range may be shorter in urban areas where obstacle and interference are present.</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

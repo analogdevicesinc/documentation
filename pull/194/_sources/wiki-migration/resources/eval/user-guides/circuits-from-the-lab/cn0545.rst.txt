@@ -1,0 +1,201 @@
+CN-0545 Hardware and Software User Guide
+========================================
+
+Overview
+--------
+
+:adi:`CN-0545 <CN0545>` is a completely an integrated 0.1°C thermistor measurement system based on a low power, low noise, integrated 24-bit Σ-Δ analog-to-digital converter (ADC). The system can achieve high resolution, low non-linearity and low noise performance as well as very high 50 Hz and 60 Hz rejection. For temperatures in the range of -50°C to +150°C, thermistors provide an excellent combination of sensitivity, accuracy, cost, and simplicity.
+
+The :adi:`AD7124-4 <en/products/ad7124-4.html>` can be configured for 4 differential or 7 pseudo differential input channels, while the :adi:`AD7124-8 <en/products/ad7124-8.html>` can be configured for 8 differential or 15 pseudo differential channels. The on-chip programmable gain array (PGA) ensures that signals of small amplitude can be interfaced directly to the ADC. The system integrates several important system building blocks required to support thermistor measurements, including the constant current source, programmable gain amplifier (PGA), internal reference, and the analog and reference input buffers ideal for resistance measurements. This allows direct interface with the sensor, greatly simplifying the design while reducing PCB size, cost and power consumption. 
+
+Several options of the on-chip digital filtering, integrated diagnostics, and three power modes provide application flexibility. The current consumed in low power mode is only 255 µA and 930 µA in full power mode. In power-down mode, the complete ADC along with its auxiliary functions are powered down so that the device consumes 1 µA typical. The power options make the device suitable for battery powered applications, loop powered application, and non-power critical applications.
+
+The device also has a power down option. In power-down mode, the complete ADC along with its auxiliary functions are powered down so that the device consumes 1 µA typical. The :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>` also has extensive diagnostic functionality integrated as part of its comprehensive feature set.
+
+This user guide will discuss how to operate the :adi:`EVAL-AD7124-4SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-4?doc=cn0383.pdf>`/:adi:`EVAL-AD7124-8SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-8?doc=cn0383.pdf>` (CN-0545 Evaluation Hardware), the :adi:`EVAL-SDP-CB1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/SDP-B.html>` (SDP-B) and the `AD7124_EVAL+ Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/evalcd/ad7124>`_. A complete design support package for the CN-0545 evaluation material containing schematics, layouts (native and Gerber), and bill-of-materials can be found at: :adi:`CN0545-DesignSupport`.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad7124-singlethermistor.png
+   :align: center
+
+Required Equipment
+------------------
+
+-  :adi:`EVAL-AD7124-4SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-4?doc=cn0383.pdf>`/:adi:`EVAL-AD7124-8SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-8?doc=cn0383.pdf>` (CN-0545 Evaluation Hardware)
+-  :adi:`EVAL-SDP-CB1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/SDP-B.html>` (SDP-B) controller board
+-  `AD7124_EVAL+ Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/evalcd/ad7124>`_
+-  Power supply: 7 V or 9 V wall wart
+-  10k Ω (type 44031) NTC (Negative Temperature Coefficient) thermistor sensor
+-  A PC running Windows® with USB 2.0 port
+
+Getting Started
+---------------
+
+A complete software user guide for the :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>` and the SDP board can be found in the :adi:`EVAL-AD7124-4SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-4?doc=cn0383.pdf>`/:adi:`EVAL-AD7124-8SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-8?doc=cn0383.pdf>` user guide and the :adi:`EVAL-SDP-CB1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/SDP-B.html>` User Guide. Software is required to interface with the hardware. This software can be downloaded from ftp://ftp.analog.com/pub/evalcd/AD7124. If the setup file does not run automatically, double-click setup.exe from the file. Install the evaluation software before connecting the evaluation board and SDP board to the USB port of the PC to ensure that the evaluation system is correctly recognized when connected to the PC. After the evaluation software installation is complete, connect the SDP board (via Connector A) to the :adi:`EVAL-AD7124-4SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-4?doc=cn0383.pdf>`/:adi:`EVAL-AD7124-8SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-8?doc=cn0383.pdf>` and then connect the SDP board to the USB port of the PC using the supplied cable. When the evaluation system is detected, proceed through any dialog boxes that appear to complete the installation.
+
+General Setup and Test
+----------------------
+
+Do not connect power to the hardware until both the EVAL-AD7124-4SDZ/EVAL-AD7124-8SDZ and SDP boards are connected via connector A. Figure below shows a functional block diagram of the test setup for the single and multiple thermistor configuration. The :adi:`EVAL-AD7124-4SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-4?doc=cn0383.pdf>`/:adi:`EVAL-AD7124-8SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-8?doc=cn0383.pdf>` evaluation board is required to test the circuit. In addition, the following sensor and resistors are required for proper operation:
+
+-  NTC Thermistor 10k +/-0.1C
+-  10k Ω (type 44031) NTC (Negative Temperature Coefficient) thermistor sensor
+
+Single Thermistor
+~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad7124-1.1thermistor.png
+   :align: center
+   :width: 400px
+
+Multiple Thermistor
+~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/ad7124-8thermistor.png
+   :align: center
+   :width: 400px
+
+Hardware Setup
+--------------
+
+To configure the hardware, take the following steps:
+
+-  Set all links on the EVAL-AD7124-4SDZ/EVAL-AD7124-8SDZ to the default board positions as outlined in the :adi:`EVAL-AD7124-4SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-4?doc=cn0383.pdf>`/:adi:`EVAL-AD7124-8SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-8?doc=cn0383.pdf>` user guide.
+-  Power the board with a 7 V or 9 V power source connected to J5.
+-  Connect the Thermistor and precision reference resistor. See figure below.
+-  For Thermistor measurements, ensure that the following jumpers and links are properly connected.
+
+   -  LK3 - Jumper from REFIN1- to AVSS, this jumper should be inserted.
+
+      -  LK4 - This jumper is used to apply an external 2.5V or internal 2.5V to REFIN1+, this jumper should be inserted to B.
+
+-  Connect the SDP board to the PC via the USB cable.
+
+Evaluation Board Connector for Thermistor Measurement
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad7124/evb_1.2thermistor.png
+   :align: center
+   :width: 600px
+
+Using the Evaluation Software
+-----------------------------
+
+The `AD7124_EVAL+ Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/evalcd/ad7124>`_ interfaces with the :adi:`EVAL-AD7124-4SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-4?doc=cn0383.pdf>`/:adi:`EVAL-AD7124-8SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-8?doc=cn0383.pdf>` and :adi:`EVAL-SDP-CB1Z <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/SDP-B.html>` hardware. It can be used to connect to the hardware, configure the ADC, perform a calibrations and execute conversions to evaluate each Thermistor configuration (CN-0545) reference design.
+
+Run the `AD7124_EVAL+ Software <https://wiki.analog.com/ftp/ftp.analog.com/pub/evalcd/ad7124>`_, The evaluation software supports both the :adi:`AD7124-4 <en/products/ad7124-4.html>` and the :adi:`AD7124-8 <en/products/ad7124-8.html>` devices. On running the software, the user selects the evaluation board that is connected to the PC. For the AD7124-4, select :adi:`EVAL-AD7124-4SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD7124-4?doc=cn0383.pdf>` from the drop-down list, as shown in Figure below.
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/drop_down.png
+   :align: center
+   :width: 400px
+
+After selecting the Evaluation board, the window shown in Figure below appears.
+
+
+|image1|
+
+Demo Mode and ADC Software Configurations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To configure the :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>` for Thermistor measurement, click the **Thermistor demo mode button** (see Figure above). Clicking the demo mode button configures the ADC software for Thermistor configurations. Additional instructions are provided regarding the thermistor configuration when the |image2| button is clicked.
+
+Thermistor demo mode
+^^^^^^^^^^^^^^^^^^^^
+
+To configure the :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>` for Thermistor measurements, click the Thermistor demo mode button. Clicking the Thermistor button configures the ADC software as follows:
+
+**1. Channel_0:**
+
+-  AINP_0 = AIN2
+-  AINM_0 = AIN3
+-  Setup0
+-  Enabled = TRUE
+
+**2. Setup_0:**
+
+-  PGA_0 = 1
+-  Internal reference
+-  AIN_BUFP, AIN_BUFM both = ENABLED
+-  Bipolar mode
+-  FS_0 = 384
+-  FILTER_MODE_0 = SINC4
+
+**3. ADC_Control:**
+
+-  MODE = Continuous Conversion
+-  POWER_MODE = FULL
+-  Internal reference enable
+
+Calibrations
+~~~~~~~~~~~~
+
+| One additional step is required before the :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>` is configured for **Thermistor** measurements: an internal full-scale and zero-scale calibration of the :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>`. This calibration can be performed via the Register Map tab, as shown in below. |image3|
+| 1. Click the **ADC_Control register**
+| 2. Select **Low Power** mode
+| 3. Internal full-scale calibration
+
+-  The AD7124-4 is factory calibrated at a gain of 1, and the resulting gain coefficient is the default gain coefficient on the device. The device does not support further internal full-scale calibrations at a gain of 1.
+
+::
+
+   4. Perform an internal zero-scale calibration.
+   * Click the **Mode** bitfield of the ADC control register.
+   * In the **Mode** bitfield, select the internal zero-scale calibration option. 
+   * Check the calibrations performed by clicking the **Offset0** register in the register tree, and check that the coefficients have changed.
+   5. When calibrations are complete, change the power mode to the required mode of operation, and ensure that the ADC is set to continuous conversion mode by selecting **Continuous** from the drop-down box in the *Mode* bit field of the **ADC_Control** register. 
+
+Thermistor Measurements
+~~~~~~~~~~~~~~~~~~~~~~~
+
+After calibrations, the board and device can now be configured for Thermistor measurements as discussed above.
+
+Click the corresponding Thermistor demo mode and click SAMPLE to start gathering samples from the :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>`. The Waveform tab and the Histogram tab show the data gathered from the :adi:`AD7124-4 <en/products/ad7124-4.html>`/:adi:`AD7124-8 <en/products/ad7124-8.html>`.
+
+Waveform Tab
+^^^^^^^^^^^^
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/waveform.png
+   :align: center
+   :width: 600px
+
+Histogram Tab
+^^^^^^^^^^^^^
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/histogram.png
+   :align: center
+   :width: 600px
+
+More Information and Useful Links
+---------------------------------
+
+-  :adi:`CN0545 Circuit Note Page <CN0545>`
+-  :adi:`CN0384 Circuit Note Page <CN0384>`
+-  :adi:`CN0383 Circuit Note Page <CN0383>`
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+.. admonition:: Download
+   :class: download
+
+   
+   :adi:`CN0545 Design & Integration Files <cn0545-designsupport>`
+   
+   -  Schematics
+   -  PCB Layout
+   -  Bill of Materials
+   -  Allegro Project
+   
+
+
+Software
+--------
+
+-  :adi:`EVAL-AD7124 Temperature Measurement <resources:tools-software:product-support-software:ad7124_temperature_measurement_demo>`
+-  :adi:`AD7124_EVAL+ Software <ftp://ftp.analog.com/pub/evalcd/AD7124>`
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/thermistor_demo_eval.png
+   :width: 600px
+.. |image2| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/qq.png
+   :width: 30px
+.. |image3| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0383/register_map.png
+   :width: 600px

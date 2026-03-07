@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Link to higher level page: Satcom Reference Design" name="description" />
+
+    <title>Receiver Signal Chain Overview and Theory of Operation &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Receiver Signal Chain Overview and Theory of Operation</a><ul>
+<li><a class="reference internal" href="#rx-beamforming-network">RX Beamforming Network</a></li>
+<li><a class="reference internal" href="#down-converter-design-and-operation">Down-converter Design and Operation</a><ul>
+<li><a class="reference internal" href="#frequency-plan">Frequency Plan</a></li>
+<li><a class="reference internal" href="#spurious-performance">Spurious performance</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#if-section">IF Section</a></li>
+<li><a class="reference internal" href="#analog-to-digital-converter-adc-dsp">Analog to Digital Converter (ADC) + DSP</a></li>
+<li><a class="reference internal" href="#timing-and-control">Timing and Control</a><ul>
+<li><a class="reference internal" href="#rx-beamforming-network-1">RX Beamforming Network</a></li>
+<li><a class="reference internal" href="#down-conversion-and-if-section">Down-conversion and IF Section</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rx-performance-simulations-and-measurements">RX Performance Simulations and Measurements</a><ul>
+<li><a class="reference internal" href="#wideband-signal-conditioning-only">Wideband Signal Conditioning Only</a><ul>
+<li><a class="reference internal" href="#noise-power-spectral-simulation">Noise Power Spectral Simulation</a></li>
+<li><a class="reference internal" href="#two-tone-test-spectral-simulation">Two-Tone Test Spectral Simulation</a></li>
+<li><a class="reference internal" href="#system-cascade">System Cascade</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#beamforming-front-end-only">Beamforming Front End Only</a><ul>
+<li><a class="reference internal" href="#noise-power-spectral-simulation-1">Noise Power Spectral Simulation</a></li>
+<li><a class="reference internal" href="#two-tone-test-spectral-simulation-1">Two-Tone Test Spectral Simulation</a></li>
+<li><a class="reference internal" href="#system-cascade-1">System Cascade</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#wideband-signal-conditioning-and-beamforming-combined">Wideband Signal Conditioning and Beamforming Combined</a><ul>
+<li><a class="reference internal" href="#noise-power-spectral-simulation-2">Noise Power Spectral Simulation</a></li>
+<li><a class="reference internal" href="#two-tone-test-spectral-simulation-2">Two-Tone Test Spectral Simulation</a></li>
+<li><a class="reference internal" href="#system-cascade-2">System Cascade</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="receiver-signal-chain-overview-and-theory-of-operation">
+<h1>Receiver Signal Chain Overview and Theory of Operation<a class="headerlink" href="#receiver-signal-chain-overview-and-theory-of-operation" title="Link to this heading"></a></h1>
+<p>Link to higher level page: <a class="reference internal" href="../satcom-ref-design.html"><span class="doc">Satcom Reference Design</span></a></p>
+<p>The overall RX block diagram is shown below. The wiki sections below will walk through the design elements of each sub-circuit.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_v2.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_v2.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_v2.jpg" style="width: 600px;" />
+</a>
+<section id="rx-beamforming-network">
+<h2>RX Beamforming Network<a class="headerlink" href="#rx-beamforming-network" title="Link to this heading"></a></h2>
+<p>The 4T4R beamforming network consists of a modular array of four BFIC tiles, allowing for sixteen elements. The multi-beam analog beamforming begins with an <a class="icon adi reference external" href="https://www.analog.com/ADL8142" target="_blank">ADL8142</a> LNA. The signal then passes through a Ka-band bandpass filter (27.5-30GHz), followed by the <a class="icon adi reference external" href="https://www.analog.com/ADAR3001S" target="_blank">ADAR3001S</a> BFIC. After the <a class="icon adi reference external" href="https://www.analog.com/ADAR3001S" target="_blank">ADAR3001S</a>, each of the four components of every channel are combined using an <a class="icon adi reference external" href="https://www.analog.com/ADAR5000" target="_blank">ADAR5000</a> Wilkinson combiner.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_beamforming_network_v2.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_beamforming_network_v2.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_beamforming_network_v2.jpg" style="width: 600px;" />
+</a>
+</section>
+<hr class="docutils" />
+<section id="down-converter-design-and-operation">
+<h2>Down-converter Design and Operation<a class="headerlink" href="#down-converter-design-and-operation" title="Link to this heading"></a></h2>
+<p>By utilizing high performance silicon switches such as the <a class="icon adi reference external" href="https://www.analog.com/ADRF5024" target="_blank">ADRF5024</a> and <a class="icon adi reference external" href="https://www.analog.com/ADRF5144" target="_blank">ADRF5144</a>, the down-converter design allows for three separate signal paths. High frequency X, Ku and Ka-band signals are applied to the LNA input of the <a class="icon adi reference external" href="https://www.analog.com/ADMFM2000" target="_blank">ADMFM2000</a>. After LNA amplification and optional off-chip filtering, the input signal is applied to the <a class="icon adi reference external" href="https://www.analog.com/ADMFM2000" target="_blank">ADMFM2000</a>’s internal mixer where it is down converted to an IF by mixing with an external LO. For more information about LO generation for this particular design, <a class="icon link reference external" href="https://wiki.analog.com/resources/eval/developer-kits/space-based-satcom-ref-design/lo-overview" target="_blank">see this link</a>. Midrange C-band signals bypass the internal LNA and mixer but still use the <a class="icon adi reference external" href="https://www.analog.com/ADMFM2000" target="_blank">ADMFM2000</a>’s internal filtering and VGA. S-band and lower signals bypass the <a class="icon adi reference external" href="https://www.analog.com/ADMFM2000" target="_blank">ADMFM2000</a> SIP and are sampled by the <a class="icon adi reference external" href="https://www.analog.com/AD9082" target="_blank">AD9082</a> ADC after further IF conditioning.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_downconversion_v2.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_downconversion_v2.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_downconversion_v2.jpg" style="width: 600px;" />
+</a>
+<section id="frequency-plan">
+<h3>Frequency Plan<a class="headerlink" href="#frequency-plan" title="Link to this heading"></a></h3>
+<p>The following table shows the frequency conversion paths for this design.</p>
+<p><img alt="image1" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_freq_plan.jpg" /></p>
+<p>The image below shows a graphical representation of the frequency plan. The x-axis represents the operational frequency of the reference design while the y-axis represents the different frequency bands ranging from L to Ka. Markers are shown for RF frequency, IF frequency, sampling frequency (Fs), image frequency, and alias frequency.</p>
+<p>The horizontal lines represent the bandwidth of RF, IF, and aliasing frequency for each frequency band. The solid vertical lines show Fs and Fs/2, which are used to determine at what frequencies aliasing will occur. For frequencies higher than the 8GHz usable analog bandwidth of the <a class="icon adi reference external" href="https://www.analog.com/AD9082" target="_blank">AD9082</a>, down conversion from an RF to IF is required. For the lower frequencies (C-band and below), an IF is not required so only the RF is plotted.</p>
+<p>Shown below, the sampling frequency is lowered to 5GHz from 6GHz to avoid the signal folding onto itself over the boundary separating the second and third Nyquist zone.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_freq_plan_chart.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_freq_plan_chart.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_freq_plan_chart.jpg" style="width: 1000px;" />
+</a>
+</section>
+<section id="spurious-performance">
+<h3>Spurious performance<a class="headerlink" href="#spurious-performance" title="Link to this heading"></a></h3>
+</section>
+</section>
+<hr class="docutils" />
+<section id="if-section">
+<h2>IF Section<a class="headerlink" href="#if-section" title="Link to this heading"></a></h2>
+<p>The IF section is the final segment before the <a class="icon adi reference external" href="https://www.analog.com/AD9082" target="_blank">AD9082</a> ADC. Similar to the <a class="reference internal" href="#"><span class="doc">down-converter section</span></a>, there are three pathways for signal conditioning ahead of the ADC. An <a class="icon adi reference external" href="https://www.analog.com/HMC8413" target="_blank">HMC8413</a> wideband GaAs LNA provides moderate gain before the signal is filtered. The high frequencies such as Ka, Ku, X-band are conditioned in switch path 1 of an <a class="icon adi reference external" href="https://www.analog.com/ADRF5040" target="_blank">ADRF5040</a> silicon switch. Signals from S-band and lower are conditioned in switch path 2 while signals from C-band are filtered in switch path 3.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/sactom_rx_if_section_v2.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/sactom_rx_if_section_v2.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/sactom_rx_if_section_v2.jpg" style="width: 600px;" />
+</a>
+</section>
+<hr class="docutils" />
+<section id="analog-to-digital-converter-adc-dsp">
+<h2>Analog to Digital Converter (ADC) + DSP<a class="headerlink" href="#analog-to-digital-converter-adc-dsp" title="Link to this heading"></a></h2>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD9082" target="_blank">AD9082</a> (“MxFE”) is an ideal digitizer for this wideband RF front end due to its high level of integration, performance, and RF sampling rate. The MxFE’s high instantaneous and analog input bandwidth enable RF sampling up to 8GHz, providing architectural and frequency planning flexibility at the system level. It also has highly configurable, on-chip DSP capabilities (DDC/DUC channelizers, NCOs, and programmable FIR filters) as well as four DAC channels and two ADCs for use in this multi-channel system.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_adc_dsp_fpga.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_adc_dsp_fpga.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_adc_dsp_fpga.jpg" style="width: 600px;" />
+</a>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/ADF4371" target="_blank">ADF4371</a> integrated PLL/VCO is an ideal choice for generating the MxFE sample clock. The <a class="icon adi reference external" href="https://www.analog.com/ADF4371" target="_blank">ADF4371</a> can generate a clean, low-jitter clock from 62.5MHz up to 32GHz, and its differential outputs are capable of directly driving the MxFE clock pins. The <a class="icon adi reference external" href="https://www.analog.com/ADF4371" target="_blank">ADF4371</a> is also used to generate clocking for the LO signal. You can read more about the LO signal path <a class="reference internal" href="lo-overview.html"><span class="doc">here</span></a>.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/LTC6953" target="_blank">LTC6953</a> clock distributor is used to ensure proper clock synchronization between all of the <a class="icon adi reference external" href="https://www.analog.com/ADF4371" target="_blank">ADF4371</a> devices in the reference design. An external source generates a clock signal, which is then buffered and replicated before being sent to the FPGA, the <a class="icon adi reference external" href="https://www.analog.com/AD9082" target="_blank">AD9082</a>, and both the <a class="reference internal" href="lo-overview.html"><span class="doc">TX and RX LO signal paths</span></a>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Although only a single <a class="icon adi reference external" href="https://www.analog.com/LTC6953" target="_blank">LTC6953</a> is required for 4T4R, With EZSync™ or ParallelSync™, multichip synchronization is realizable, allowing for expandability while maintaining the proper clock signals.</p>
+</div>
+<p>The <a class="icon link reference external" href="http://www.analog.com/en/design-center/interactive-design-tools/frequency-folding-tool.html" target="_blank">ADI Frequency Planning Utility tool</a> was used to determine the optimal <a class="icon adi reference external" href="https://www.analog.com/AD9082" target="_blank">AD9082</a> ADC sample rate, IF sampling frequency, and IF bandwidth. A 6GSPS ADC rate allows for maximum instantaneous bandwidth (IBW) and complete avoidance of HD2 aliasing in-band for a 1GHz signal bandwidth centered at 4.5GHz (2nd Nyquist). The figure below illustrates this.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/developer-kits/freqfoldinggraphic.png"><img alt="https://wiki.analog.com/_media/resources/eval/developer-kits/freqfoldinggraphic.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/developer-kits/freqfoldinggraphic.png" style="width: 800px;" />
+</a>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The receiver and transmitter front ends described in this reference design use a frequency plan designed using the <a class="icon adi reference external" href="https://www.analog.com/AD9082" target="_blank">AD9082</a>, specifically with 6GSPS and 12GSPS ADC and DAC sample rates, respectively. However, for the case of C-band operation, both the ADC and DAC sample rates are lowered to avoid the signal overlapping the edge of the 2nd and 3rd Nyquist boundary. The RF components themselves are wideband enough to allow for flexibility in the frequency plan and filtering.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="timing-and-control">
+<h2>Timing and Control<a class="headerlink" href="#timing-and-control" title="Link to this heading"></a></h2>
+<p>Automatic gain control (AGC), RF path switching, and beam switching/reconfiguration often have critical timing specs that drive component selection, especially in systems that require fast frequency hopping or wideband tuning. The RF switches, DSAs, and tunable beam states in the receiver signal chain offer fast switching and settling times, a high degree of configurability, and can be controlled via standard parallel and/or SPI interfaces. The tables below list the control interfaces and minimum configuration and settling time details at the component level for each of the sections of this reference design.</p>
+<section id="rx-beamforming-network-1">
+<span id="id1"></span><h3>RX Beamforming Network<a class="headerlink" href="#rx-beamforming-network-1" title="Link to this heading"></a></h3>
+<p>Inside of the <a class="icon adi reference external" href="https://www.analog.com/ADAR3001S" target="_blank">ADAR3001S</a>, there are 16 digital step attenuators and 16 time delay units (TDU) combined into Variable Amplitude and Phase (VAP) blocks. Each digital step attenuator provides up to 31.5dB of attenuation with a resolution of 0.5dB. Each TDU can provide up to 35.3 ps of delay in steps of 0.56 ps. Each of the VAPs can tuned in a minimum of 10ns.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/ADAR3001S" target="_blank">ADAR3001S</a> contains internal RAM which can store up to 64 states for each beam for a total of 256 beam states. For faster access, there is also optional FIFO memory, which stores up to 16 beam states per channel for a total of 64 beam states. The <a class="icon adi reference external" href="https://www.analog.com/ADAR3001S" target="_blank">ADAR3001S</a> is conveniently controlled by 4-wire SPI, allowing for control of up to 16 devices on the same serial line.</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_bf_control_requirements_v2.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_bf_control_requirements_v2.jpg" />
+</section>
+<section id="down-conversion-and-if-section">
+<h3>Down-conversion and IF Section<a class="headerlink" href="#down-conversion-and-if-section" title="Link to this heading"></a></h3>
+<p>The downconversion and IF section starts with an <a class="icon adi reference external" href="https://www.analog.com/ADRF5730" target="_blank">ADRF5730</a> 6-bit digital step attenuator capable of up to 31.5dB of attenuation in 0.5dB steps. These DSAs can be controlled either by parallel logic level voltages determined by truth tables or by 3-wire SPI. The internal DSAs of the <a class="icon adi reference external" href="https://www.analog.com/ADMFM2000" target="_blank">ADMFM2000</a> work by parallel voltage control inputs. All of the RF switches, including the internal switches of the <a class="icon adi reference external" href="https://www.analog.com/ADMFM2000" target="_blank">ADMFM2000</a>, are controlled by parallel digital voltage supplies. In order to achieve full functionality of the switches, they must be kept at either a digital “high” or “low” state, determined by their respective datasheets.</p>
+<img alt="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_no_bf_control_requirements_v2.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_no_bf_control_requirements_v2.jpg" />
+</section>
+</section>
+<hr class="docutils" />
+<section id="rx-performance-simulations-and-measurements">
+<h2>RX Performance Simulations and Measurements<a class="headerlink" href="#rx-performance-simulations-and-measurements" title="Link to this heading"></a></h2>
+<section id="wideband-signal-conditioning-only">
+<h3>Wideband Signal Conditioning Only<a class="headerlink" href="#wideband-signal-conditioning-only" title="Link to this heading"></a></h3>
+<p>The following simulations were created using Keysight SystemVue/Genesys. All components in the RX signal chain were modeled with frequency-dependent sys-parameter or s-parameter datasets to ensure accurate simulation results. The signal chain below takes into account the following components:</p>
+<ul class="simple">
+<li><p>Manufacturer-provided, frequency-dependent s-parameter or sys-parameter datasets for every active and passive RF component</p></li>
+<li><p>A standalone model of the <a class="icon adi reference external" href="https://www.analog.com/ADMFM2000" target="_blank">ADMFM2000</a> microwave downconverter containing signal chains each with their own frequency-dependent s-parameter or sys-parameter datasets</p></li>
+<li><p>Frequency-dependent component interconnect modeling i.e. PCB trace loss approximation for DC-50GHz CPWG traces, 30mil Rogers 4350 PCB stackup</p></li>
+</ul>
+<img alt="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_only_no_bf_genesys_v2.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_only_no_bf_genesys_v2.jpg" />
+<p>The Genesys workspace incorporates various system level cascade analyses that takes advantage of MATLAB equation-based frequency planning. Three different analyses are shown below:</p>
+<ul class="simple">
+<li><p>Noise power Spectral Simulation</p></li>
+<li><p>Two-Tone Test Spectral Simulation</p></li>
+<li><p>System Cascade highlighting gain (CGAIN), noise figure (CNF), third input third order intercept (EIIP3), input 1dB compression point (EIP1DB), minimum detectable signal (MDS), and carrier to noise distortion ratio (CNDR)</p></li>
+</ul>
+<section id="noise-power-spectral-simulation">
+<h4>Noise Power Spectral Simulation<a class="headerlink" href="#noise-power-spectral-simulation" title="Link to this heading"></a></h4>
+<p>The noise power spectral simulation shown below uses 76 individual carrier tones with a total combined input power of -11 dBm spanning from 30GHz to 31GHz for a total bandwidth of 1000MHz. Harmonics calculated up to the third order and thermal noise are included. Tones below -150dBm are ignored. After passing through the necessary system path, the IF frequency, shown on the second plot, becomes 4500MHz which can be directly sampled by the <a class="icon adi reference external" href="https://www.analog.com/AD9082" target="_blank">AD9082</a>.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/input_signal_no_bf_v2.jpg"><img alt="image2" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/input_signal_no_bf_v2.jpg" style="width: 425px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/output_signal_no_bf_v2.jpg"><img alt="image3" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/output_signal_no_bf_v2.jpg" style="width: 425px;" /></a></p>
+</section>
+<section id="two-tone-test-spectral-simulation">
+<h4>Two-Tone Test Spectral Simulation<a class="headerlink" href="#two-tone-test-spectral-simulation" title="Link to this heading"></a></h4>
+<p>The two tone spectral simulation shown below uses 2 individual carrier tones with a total combined input power of -11 dBm centered around 30.5GHz to 31GHz and a delta of 50MHz. Harmonics calculated up to the third order and thermal noise are included. Tones below -150dBm are ignored.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/two_tone_test_input_no_bf_v2.jpg"><img alt="image4" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/two_tone_test_input_no_bf_v2.jpg" style="width: 425px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/two_tone_test_output_no_bf_v2.jpg"><img alt="image5" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/two_tone_test_output_no_bf_v2.jpg" style="width: 425px;" /></a></p>
+</section>
+<section id="system-cascade">
+<h4>System Cascade<a class="headerlink" href="#system-cascade" title="Link to this heading"></a></h4>
+<p>As mentioned above, the system cascade simulation measures gain (CGAIN), noise figure (CNF), third input third order intercept (EIIP3), input 1dB compression point (EIP1DB), minimum detectable signal (MDS), and carrier to noise distortion ratio (CNDR). The x-axis shows all of the individual components cascaded together and the nodes in between. The variables are shown on two separate y axes for scaling purposes. The markers are placed on “Node 10” which comes directly after the digital equalizer.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/system_level_cascade_no_bf_v2.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/system_level_cascade_no_bf_v2.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/system_level_cascade_no_bf_v2.jpg" style="width: 600px;" />
+</a>
+</section>
+</section>
+<section id="beamforming-front-end-only">
+<h3>Beamforming Front End Only<a class="headerlink" href="#beamforming-front-end-only" title="Link to this heading"></a></h3>
+<p>The following simulations were created using Keysight SystemVue/Genesys. All components in the RX signal chain were modeled with frequency-dependent sys-parameter or s-parameter datasets to ensure accurate simulation results. The signal chain below takes into account the following components:</p>
+<ul class="simple">
+<li><p>Manufacturer-provided, frequency-dependent s-parameter or sys-parameter datasets for every active and passive RF component</p></li>
+<li><p>Frequency-dependent component interconnect modeling i.e. PCB trace loss approximation for DC-50GHz CPWG traces, 30mil Rogers 4350 PCB stackup</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_bf_only_genesys_v2.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_bf_only_genesys_v2.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_bf_only_genesys_v2.jpg" style="width: 650px;" />
+</a>
+<p>The Genesys workspace incorporates various system level cascade analyses that takes advantage of MATLAB equation-based frequency planning. Three different analyses are shown below:</p>
+<ul class="simple">
+<li><p>Noise power Spectral Simulation</p></li>
+<li><p>Two-Tone Test Spectral Simulation</p></li>
+<li><p>System Cascade highlighting gain (CGAIN), noise figure (CNF), third input third order intercept (EIIP3), input 1dB compression point (EIP1DB), minimum detectable signal (MDS), and carrier to noise distortion ratio (CNDR)</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Simulations below use the <a class="icon adi reference external" href="https://www.analog.com/ADAR3001" target="_blank">ADAR3001</a> definition for channel gain. Channel gain is the power ratio between a single RF output and single RF input, with all other inputs terminated with 50Ω, DSA code = 0, and TDU code = 0. In a real scenario, coherent gain would be used and is the power ratio between a single RF output and single RF input, with the other three inputs driven. All inputs would have similar amplitude and would be phased such that they combine coherently. For <a class="icon adi reference external" href="https://www.analog.com/ADAR3001" target="_blank">ADAR3001</a> coherent gain (dB) = channel gain (dB) + 12 (dB). For <a class="icon adi reference external" href="https://www.analog.com/ADAR5000" target="_blank">ADAR5000</a> coherent gain (dB) = channel gain (dB) + 6 (dB).</p>
+</div>
+<section id="noise-power-spectral-simulation-1">
+<span id="id2"></span><h4>Noise Power Spectral Simulation<a class="headerlink" href="#noise-power-spectral-simulation-1" title="Link to this heading"></a></h4>
+<p>The noise power spectral simulation shown below uses 76 individual carrier tones with a total combined input power of -40 dBm spanning from 30GHz to 31GHz for a total bandwidth of 1000MHz. Harmonics calculated up to the third order and thermal noise are included. Tones below -200dBm are ignored. After passing through the analog beamforming front end, the signal is ready for further conditioning by the wideband receiver section.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_input_signal_bf_only_v1.jpg"><img alt="image6" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_input_signal_bf_only_v1.jpg" style="width: 425px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_output_signal_bf_only_v1.jpg"><img alt="image7" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_output_signal_bf_only_v1.jpg" style="width: 425px;" /></a></p>
+</section>
+<section id="two-tone-test-spectral-simulation-1">
+<span id="id3"></span><h4>Two-Tone Test Spectral Simulation<a class="headerlink" href="#two-tone-test-spectral-simulation-1" title="Link to this heading"></a></h4>
+<p>The two tone spectral simulation shown below uses 2 individual carrier tones each with an input power of -40 dBm centered around 30.5GHz to 31GHz and a delta of 50MHz. Harmonics calculated up to the third order and thermal noise are included. Tones below -200dBm are ignored.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_two_tone_test_input_bf_only_v1.jpg"><img alt="image8" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_two_tone_test_input_bf_only_v1.jpg" style="width: 425px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_two_tone_test_output_bf_only_v1.jpg"><img alt="image9" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_two_tone_test_output_bf_only_v1.jpg" style="width: 425px;" /></a></p>
+</section>
+<section id="system-cascade-1">
+<span id="id4"></span><h4>System Cascade<a class="headerlink" href="#system-cascade-1" title="Link to this heading"></a></h4>
+<p>As mentioned above, the system cascade simulation measures gain (CGAIN), noise figure (CNF), third input third order intercept (EIIP3), input 1dB compression point (EIP1DB), minimum detectable signal (MDS), and carrier to noise distortion ratio (CNDR). The x-axis shows all of the individual components cascaded together and the nodes in between. The variables are shown on two separate y axes for scaling purposes. The markers are placed on “Node 10” which comes directly after the digital equalizer.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_system_level_cascade_bf_only.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_system_level_cascade_bf_only.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_system_level_cascade_bf_only.jpg" style="width: 600px;" />
+</a>
+</section>
+</section>
+<section id="wideband-signal-conditioning-and-beamforming-combined">
+<h3>Wideband Signal Conditioning and Beamforming Combined<a class="headerlink" href="#wideband-signal-conditioning-and-beamforming-combined" title="Link to this heading"></a></h3>
+<p>The following simulations were created using Keysight SystemVue/Genesys. All components in the RX signal chain were modeled with frequency-dependent sys-parameter or s-parameter datasets to ensure accurate simulation results. The signal chain below takes into account the following components:</p>
+<ul class="simple">
+<li><p>Manufacturer-provided, frequency-dependent s-parameter or sys-parameter datasets for every active and passive RF component</p></li>
+<li><p>A standalone model of the <a class="icon adi reference external" href="https://www.analog.com/ADMFM2000" target="_blank">ADMFM2000</a> microwave downconverter containing signal chains each with their own frequency-dependent s-parameter or sys-parameter datasets</p></li>
+<li><p>Frequency-dependent component interconnect modeling i.e. PCB trace loss approximation for DC-50GHz CPWG traces, 30mil Rogers 4350 PCB stackup</p></li>
+</ul>
+<img alt="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_combined_genesys_v2.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_combined_genesys_v2.jpg" />
+<p>The Genesys workspace incorporates various system level cascade analyses that takes advantage of MATLAB equation-based frequency planning. Three different analyses are shown below:</p>
+<ul class="simple">
+<li><p>Noise power Spectral Simulation</p></li>
+<li><p>Two-Tone Test Spectral Simulation</p></li>
+<li><p>System Cascade highlighting gain (CGAIN), noise figure (CNF), third input third order intercept (EIIP3), input 1dB compression point (EIP1DB), minimum detectable signal (MDS), and carrier to noise distortion ratio (CNDR)</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Simulations below use the <a class="icon adi reference external" href="https://www.analog.com/ADAR3001" target="_blank">ADAR3001</a> definition for channel gain. Channel gain is the power ratio between a single RF output and single RF input, with all other inputs terminated with 50Ω, DSA code = 0, and TDU code = 0. In a real scenario, coherent gain would be used and is the power ratio between a single RF output and single RF input, with the other three inputs driven. All inputs would have similar amplitude and would be phased such that they combine coherently. For <a class="icon adi reference external" href="https://www.analog.com/ADAR3001" target="_blank">ADAR3001</a> coherent gain (dB) = channel gain (dB) + 12 (dB). For <a class="icon adi reference external" href="https://www.analog.com/ADAR5000" target="_blank">ADAR5000</a> coherent gain (dB) = channel gain (dB) + 6 (dB).</p>
+</div>
+<section id="noise-power-spectral-simulation-2">
+<span id="id5"></span><h4>Noise Power Spectral Simulation<a class="headerlink" href="#noise-power-spectral-simulation-2" title="Link to this heading"></a></h4>
+<p>The noise power spectral simulation shown below uses 76 individual carrier tones with a total combined input power of -40 dBm spanning from 30GHz to 31GHz for a total bandwidth of 1000MHz. Harmonics calculated up to the third order and thermal noise are included. Tones below -200dBm are ignored. After passing through the necessary system path, the IF frequency, shown on the second plot, becomes 4500MHz which can be directly sampled by the <a class="icon adi reference external" href="https://www.analog.com/AD9082" target="_blank">AD9082</a>.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_input_signal_combined_v1.jpg"><img alt="image10" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_input_signal_combined_v1.jpg" style="width: 425px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_output_signal_combined_v1.jpg"><img alt="image11" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_output_signal_combined_v1.jpg" style="width: 425px;" /></a></p>
+</section>
+<section id="two-tone-test-spectral-simulation-2">
+<span id="id6"></span><h4>Two-Tone Test Spectral Simulation<a class="headerlink" href="#two-tone-test-spectral-simulation-2" title="Link to this heading"></a></h4>
+<p>The two tone spectral simulation shown below uses 2 individual carrier tones with a total combined input power of -11 dBm centered around 30.5GHz to 31GHz and a delta of 50MHz. Harmonics calculated up to the third order and thermal noise are included. Tones below -150dBm are ignored.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_two_tone_test_input_combined_v1.jpg"><img alt="image12" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_two_tone_test_input_combined_v1.jpg" style="width: 425px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_two_tone_test_output_combined_v1.jpg"><img alt="image13" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_two_tone_test_output_combined_v1.jpg" style="width: 425px;" /></a></p>
+</section>
+<section id="system-cascade-2">
+<span id="id7"></span><h4>System Cascade<a class="headerlink" href="#system-cascade-2" title="Link to this heading"></a></h4>
+<p>As mentioned above, the system cascade simulation measures gain (CGAIN), noise figure (CNF), third input third order intercept (EIIP3), input 1dB compression point (EIP1DB), minimum detectable signal (MDS), and carrier to noise distortion ratio (CNDR). The x-axis shows all of the individual components cascaded together and the nodes in between. The variables are shown on two separate y axes for scaling purposes. The markers are placed on “Node 10” which comes directly after the digital equalizer.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_system_level_cascade_combined_v1.jpg"><img alt="image14" src="https://wiki.analog.com/_media/resources/eval/developer-kits/space-based-satcom-ref-design/satcom_rx_system_level_cascade_combined_v1.jpg" style="width: 600px;" /></a></p>
+<p><a class="reference internal" href="../satcom-ref-design.html"><span class="doc">Home</span></a></p>
+<hr class="docutils" />
+</section>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

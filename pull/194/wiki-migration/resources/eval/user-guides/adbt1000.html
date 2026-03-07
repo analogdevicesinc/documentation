@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="=======ADBT1000 System Demo User Guide=======" name="description" />
+
+    <title>Features &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Features</a></li>
+<li><a class="reference internal" href="#evaluation-kit-contents">Evaluation Kit Contents</a></li>
+<li><a class="reference internal" href="#hardware-requirements">Hardware Requirements</a></li>
+<li><a class="reference internal" href="#general-description">General Description</a></li>
+<li><a class="reference internal" href="#warning">Warning</a></li>
+<li><a class="reference internal" href="#adbt1000-battery-testing-and-formation-evaluation-board">ADBT1000 Battery Testing and Formation Evaluation Board</a></li>
+<li><a class="reference internal" href="#simplified-block-diagram">Simplified Block Diagram</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started</a><ul>
+<li><a class="reference internal" href="#powering-the-system">Powering The System</a></li>
+<li><a class="reference internal" href="#board-connection-sequence">Board Connection Sequence</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#evaluation-board-hardware">Evaluation Board Hardware</a><ul>
+<li><a class="reference internal" href="#system-control-board">System Control Board</a><ul>
+<li><a class="reference internal" href="#dc-bus-monitor">DC Bus Monitor</a></li>
+<li><a class="reference internal" href="#isense-filter-and-vsense-buffer-provisions">ISense Filter and VSense Buffer Provisions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#switching-power-module">Switching Power Module</a><ul>
+<li><a class="reference internal" href="#battery-voltage-detect">Battery Voltage Detect</a></li>
+<li><a class="reference internal" href="#thermistor-connection">Thermistor Connection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#evaluation-board-software">Evaluation Board Software</a><ul>
+<li><a class="reference internal" href="#installing-the-adbt1000-gui">Installing the ADBT1000 GUI</a><ul>
+<li><a class="reference internal" href="#installation-steps">Installation Steps</a></li>
+<li><a class="reference internal" href="#changing-the-serial-peripheral-interface-spi-baud-rate">Changing the Serial Peripheral Interface (SPI) Baud Rate</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kingware-quick-start-up">KingWare Quick Start Up</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#using-kingware">Using KingWare</a><ul>
+<li><a class="reference internal" href="#general-functions">General Functions</a><ul>
+<li><a class="reference internal" href="#page-navigation">Page Navigation</a></li>
+<li><a class="reference internal" href="#device-connection">Device Connection</a></li>
+<li><a class="reference internal" href="#stop-instructions">Stop Instructions</a></li>
+<li><a class="reference internal" href="#bell-icon">Bell Icon</a></li>
+<li><a class="reference internal" href="#data-polling-interrupt-polling">Data Polling/Interrupt Polling</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuring-the-system">Configuring the System</a></li>
+<li><a class="reference internal" href="#configuring-channels">Configuring Channels</a><ul>
+<li><a class="reference internal" href="#parallel-configuration">Parallel Configuration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#getting-live-data">Getting Live Data</a></li>
+<li><a class="reference internal" href="#running-diagnostics">Running Diagnostics</a><ul>
+<li><a class="reference internal" href="#eis-analysis">EIS Analysis</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#instructions">Instructions</a><ul>
+<li><a class="reference internal" href="#channel-card">Channel Card</a></li>
+<li><a class="reference internal" href="#channel-editor">Channel Editor</a></li>
+<li><a class="reference internal" href="#execution-modes">Execution Modes</a><ul>
+<li><a class="reference internal" href="#manual-mode">Manual Mode</a></li>
+<li><a class="reference internal" href="#semi-automatic-mode">Semi-Automatic Mode</a></li>
+<li><a class="reference internal" href="#automatic-mode">Automatic Mode</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#loop-instructions">Loop Instructions</a></li>
+<li><a class="reference internal" href="#editor-features">Editor Features</a></li>
+<li><a class="reference internal" href="#activity-monitor">Activity Monitor</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#registers-tab">Registers Tab</a></li>
+<li><a class="reference internal" href="#help-tab">Help Tab</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#evaluation-board-schematics-and-layout">Evaluation Board Schematics and Layout</a><ul>
+<li><a class="reference internal" href="#system-control-board-1">System Control Board</a></li>
+<li><a class="reference internal" href="#switching-power-module-1">Switching Power Module</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bill-of-materials">Bill of Materials</a></li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <p>=======ADBT1000 System Demo User Guide=======</p>
+<section id="features">
+<h1>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line">Full featured system evaluation board for ADBT1000</div>
+<div class="line">Charge and discharge batteries under constant current (CC), constant voltage (CV), and</div>
+<div class="line">constant power (CP), discharge additionally allows constant resistance (CR)</div>
+<div class="line">Allows multiple charge and discharge configurations</div>
+<div class="line">Channels fully functional for Li-Ion cell formation and testing similar to real world</div>
+<div class="line">manufacturing equipment</div>
+<div class="line">Energy recycling capability</div>
+<div class="line">Intuitive Graphic User Interface (GUI) for easy configuration</div>
+</div>
+</section>
+<section id="evaluation-kit-contents">
+<h1>Evaluation Kit Contents<a class="headerlink" href="#evaluation-kit-contents" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line">1 System Control Board</div>
+<div class="line">4 Switching Power Modules</div>
+</div>
+</section>
+<section id="hardware-requirements">
+<h1>Hardware Requirements<a class="headerlink" href="#hardware-requirements" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line">Power Supply Capable of providing +/-15V</div>
+<div class="line">DC Bus Supply 12 to 36V</div>
+<div class="line">SPD-S Controller Board</div>
+<div class="line">Test Battery or an Electronic Load</div>
+<div class="line">Computer with installed Graphical User Interface for ADBT1000_Eval_Software</div>
+</div>
+</section>
+<section id="general-description">
+<h1>General Description<a class="headerlink" href="#general-description" title="Link to this heading"></a></h1>
+<p>The ADBT1000 system demo evaluation kit is a recommended starting point for users building battery formation and test equipment based on the ADBT1000 Four Channel AFE, Digital Controller, and PWM for Battery Formation and Test. The system is composed of the ADBT1000 controller board, which has sockets for accommodating 4 switching power modules, and an SDP board as the host interface to run the software. The system has an intuitive graphic user interface (GUI), called KingWare, which serves as the user hub for configuration, evaluation, debugging, datalogging and rapid prototyping of the system demo board. The ADBT1000 datasheet should be consulted in conjunction with this user guide.</p>
+</section>
+<section id="warning">
+<h1>Warning<a class="headerlink" href="#warning" title="Link to this heading"></a></h1>
+<p>When testing this system with lithium-ion (Li-Ion) batteries, take care not to overcharge or over-discharge the batteries, or to sink/source more than the maximum current recommended by the manufacturer of the battery. Exceeding these ratings can not only damage the battery but can also cause it to explode or catch on fire.</p>
+</section>
+<section id="adbt1000-battery-testing-and-formation-evaluation-board">
+<h1>ADBT1000 Battery Testing and Formation Evaluation Board<a class="headerlink" href="#adbt1000-battery-testing-and-formation-evaluation-board" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000scb1kitangle.jpg"><img alt="System Demo Board Photograph" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000scb1kitangle.jpg" style="width: 800px;" /></a></div>
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 1. System Demo Board Photograph</em></p>
+</div>
+</section>
+<section id="simplified-block-diagram">
+<h1>Simplified Block Diagram<a class="headerlink" href="#simplified-block-diagram" title="Link to this heading"></a></h1>
+<p><img alt="image1" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_system_demo_simplified_block_diagram.svg" /></p>
+<div class="centeralign docutils container">
+<p><em>Figure 2. System Demo Simplified Block Diagram</em></p>
+</div>
+</section>
+<section id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h1>
+<section id="powering-the-system">
+<h2>Powering The System<a class="headerlink" href="#powering-the-system" title="Link to this heading"></a></h2>
+<p>The system requires the following power supplies:</p>
+<ul class="simple">
+<li><p>+/-15V for Auxiliary Power Input</p></li>
+<li><p>DC Bus Power Input of 12 to 36V, depending on application</p></li>
+</ul>
+</section>
+<section id="board-connection-sequence">
+<h2>Board Connection Sequence<a class="headerlink" href="#board-connection-sequence" title="Link to this heading"></a></h2>
+<p>The following sequence is recommended for board operation. Refer to Figure 7 for the recommended test setup.</p>
+<ul class="simple">
+<li><p>Connect switching power modules(P6) to connectors J3 to J6 of the system control board (SCB).</p></li>
+<li><p>Connect the Device Under Test (electronic load or battery) to connector P5 on the switching power module.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_two_wire_load_connection.jpg"><img alt="2-wire Battery Connection" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_two_wire_load_connection.jpg" style="width: 300px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 3. 2-wire Battery Connection</em></p>
+</div>
+<ul class="simple">
+<li><p>Connect the SDP-S controller to the System Control Board.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_sdp_s_connection.jpg"><img alt="SDP-S Connection" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_sdp_s_connection.jpg" style="width: 300px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 4. SDP-S Connection</em></p>
+</div>
+<ul class="simple">
+<li><p>Connect power supplies of +/-15V to P5 of the system control board for the Auxiliary Power Input.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_auxiliary_power_supply_connection.jpg"><img alt="image2" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_auxiliary_power_supply_connection.jpg" style="width: 300px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 5. Auxiliary Power Supply Connection</em></p>
+</div>
+<ul class="simple">
+<li><p>Connect power supplies for the DC bus voltage to P2 of the system control board. Connect an electronic load in parallel. Set the electronic load to CV mode at a level about 200mV above the DC bus voltage.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/dc_bus_connection.jpg"><img alt="DC Bus Connection" src="https://wiki.analog.com/_media/resources/eval/user-guides/dc_bus_connection.jpg" style="width: 300px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 6. DC Bus Connection</em></p>
+</div>
+<ul class="simple">
+<li><p>Turn on Auxiliary power, then DC bus voltage, then electronic load at DC bus.</p></li>
+<li><p>Connect the SDP-S board to the PC with the USB cable.</p></li>
+<li><p>Software can now be launched.//</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_test_setup.svg"><img alt="image3" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_test_setup.svg" style="width: 600px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 7. ADBT1000 Test Setup</em></p>
+</div>
+<p>//</p>
+</section>
+</section>
+<section id="evaluation-board-hardware">
+<h1>Evaluation Board Hardware<a class="headerlink" href="#evaluation-board-hardware" title="Link to this heading"></a></h1>
+<section id="system-control-board">
+<h2>System Control Board<a class="headerlink" href="#system-control-board" title="Link to this heading"></a></h2>
+<p>The System Control Board (SCB) serves as the main controller of the system and houses the ADBT1000. Connectors J3 to J6 mate with the Switching Power Modules (SPM) to provide the PWM control signals for the MOSFET drivers, and to feedback the battery current and battery voltage signals to the SCB. This modular approach of the system gives the user flexibility in the design of the system. Provisions are available for using an external clock and an external reference on the board. The SCB uses auxiliary supplies of +/-15V to generate several supply rails which will power the onboard circuitry, as well as the switching power modules attached to it. The ratings of the DC Bus must be enough to provide the necessary current required to charge the batteries. The available supply rails are:</p>
+<ul class="simple">
+<li><p>+/-15V</p></li>
+<li><p>+/-12V</p></li>
+<li><p>+10V</p></li>
+<li><p>+5V</p></li>
+<li><p>+3.3V</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_scb.jpg"><img alt="ADBT1000 System Control Board" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_scb.jpg" style="width: 700px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 8. System Control Board</em></p>
+<div class="line-block">
+<div class="line">Table 1 below shows the onboard connectors on the SCB and their corresponding functions.</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Table 1. SCB Connections and Functions</strong></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_scb_connections_and_functions.jpg"><img alt="image4" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_scb_connections_and_functions.jpg" style="width: 600px;" /></a></p>
+</div>
+<section id="dc-bus-monitor">
+<h3>DC Bus Monitor<a class="headerlink" href="#dc-bus-monitor" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">The DC Bus input provides the high side voltage for the half bridge on the switching power module. The DC bus monitor provides a way of feeding this voltage back to the ADBT1000 in a feedforward control mechanism to reduce effects of any sudden interference on the DC bus supply. However, this voltage must be scaled down before going into the ADBT1000. There are onboard resistor dividers which can be used for this purpose. Refer to Table 2 for the correct setting to keep the input to the ADC within range. The scaling factor is the effective resistor divider ratio required for a nominal to max DC bus voltage range given below.</div>
+<div class="line">Ensure that these jumpers are set up correctly according to the nominal bus voltage before powering up the system.</div>
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Table 2. Jumper Settings for DC Bus Monitor</strong></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt10000_jumper_setting_for_dc_bus_monitor.jpg"><img alt="image5" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt10000_jumper_setting_for_dc_bus_monitor.jpg" style="width: 400px;" /></a></p>
+</div>
+</section>
+<section id="isense-filter-and-vsense-buffer-provisions">
+<h3>ISense Filter and VSense Buffer Provisions<a class="headerlink" href="#isense-filter-and-vsense-buffer-provisions" title="Link to this heading"></a></h3>
+<p>The SCB has onboard provisions for the sensed battery voltages and currents from the switching power module. Each channel has the following provisions:</p>
+<ul class="simple">
+<li><p>Differential low pass filter provision for reducing any switching noise that may couple through the current sense resistor. The capacitors do not come preinstalled. The user should install the appropriate capacitor values to use the filter.</p></li>
+<li><p>Buffer amplifier to provide a high impedance interface to the battery.</p></li>
+</ul>
+</section>
+</section>
+<section id="switching-power-module">
+<h2>Switching Power Module<a class="headerlink" href="#switching-power-module" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The Switching Power Module contains a bidirectional half bridge power FET configuration that enables charging and discharging of cells. Overvoltage, undervoltage and overcurrent protection is incorporated for the half-bridge FETs. A four (4) wire pluggable terminal block enables either a 4-wire or 2-wire connection to the battery. A two wire pluggable terminal block enables connecting to a thermistor. Each SPM is rated at 10A.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_spm.jpg"><img alt="image6" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_spm.jpg" style="width: 400px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 9. Switching Power Module</em></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Table 3. SPM Jumper Functions and Configurations</strong></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_spm_jumper_function_and_configuration.jpg"><img alt="image7" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_spm_jumper_function_and_configuration.jpg" style="width: 400px;" /></a></p>
+</div>
+<section id="battery-voltage-detect">
+<h3>Battery Voltage Detect<a class="headerlink" href="#battery-voltage-detect" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">The switching power module includes a battery voltage detect feature, which is intended to sense when the battery is connected with a reverse polarity.</div>
+<div class="line">Short pins 2 and 3 of connector P1 to use this feature. When a battery is connected with a reverse polarity, the battery will be isolated from the PWM drive circuit. The battery voltage detection feature can be disabled by shorting pins 1 to 2 on connector P1. This may be necessary when charging and discharging outputs less than 500mV.</div>
+<div class="line">Warning: Do not apply more than -1.5V on the battery output or excessive currents can result.</div>
+</div>
+</section>
+<section id="thermistor-connection">
+<h3>Thermistor Connection<a class="headerlink" href="#thermistor-connection" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">The board has a provision for connecting a thermistor to measure thermal effects on the board. This signal is routed to the SCB through connector P6 and is used as feedback to the ADBT1000. If a voltage is used to simulate a thermistor response, the correct polarity, shown in Figure 9 below must be observed.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_thermistor_connection.jpg"><img alt="image8" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_thermistor_connection.jpg" style="width: 300px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 10. Thermistor Connection</em></p>
+</div>
+</section>
+</section>
+</section>
+<section id="evaluation-board-software">
+<h1>Evaluation Board Software<a class="headerlink" href="#evaluation-board-software" title="Link to this heading"></a></h1>
+<section id="installing-the-adbt1000-gui">
+<h2>Installing the ADBT1000 GUI<a class="headerlink" href="#installing-the-adbt1000-gui" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The ADBT1000 (Graphical User Interface) GUI can be downloaded from the ADBT1000 product page on the Analog Devices website.</div>
+<div class="line">Install the software to have access and control to the System Control Board (SCB) through the Analog Devices System Demonstration Platform (SDP). The default location for the software is “C:\Program Files (x86)\Analog Devices\ADBT1000_Eval_Software”</div>
+<div class="line">This location contains the executable software and support files.</div>
+</div>
+<section id="installation-steps">
+<h3>Installation Steps<a class="headerlink" href="#installation-steps" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Download the file from the ADBT1000 Product Page and unzip the file.</p></li>
+</ul>
+<p><img alt="image9" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_choose_folder.svg" /></p>
+<div class="centeralign docutils container">
+<p><em>Figure 11. Choose Folder Location</em></p>
+</div>
+<ul class="simple">
+<li><p>Run the ADBT1000_Eval_Software_setup.exe in the unzipped folder.</p></li>
+<li><p>The Setup Wizard will come up as in Figure 12 below. Click Next.</p></li>
+</ul>
+<p><img alt="image10" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_start.svg" /></p>
+<div class="centeralign docutils container">
+<p><em>Figure 12. Start of Installation Wizard</em></p>
+</div>
+<ul class="simple">
+<li><p>Accept the license agreement, then select the destination location for the software.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_choose_location.svg"><img alt="image11" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_choose_location.svg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 13. Choose Installation Location</em></p>
+</div>
+<ul class="simple">
+<li><p>Select all components to be installed then click Next</p></li>
+<li><p>Choose whether to add a Desktop shortcut and click Next. When the Installation summary as shown in Figure 14 below comes up, click <strong>Install</strong>.</p></li>
+</ul>
+<p><img alt="image12" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_summary_set.svg" /></p>
+<div class="centeralign docutils container">
+<p><em>Figure 14. Summary of set Installation</em></p>
+</div>
+<ul class="simple">
+<li><p>Wait for installation to complete. The software can then be launched.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_finish.svg"><img alt="image13" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_finish.svg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 15. Installation Finish</em></p>
+</div>
+</section>
+<section id="changing-the-serial-peripheral-interface-spi-baud-rate">
+<h3>Changing the Serial Peripheral Interface (SPI) Baud Rate<a class="headerlink" href="#changing-the-serial-peripheral-interface-spi-baud-rate" title="Link to this heading"></a></h3>
+<p>The SDP can operate with a baud rate up to a maximum of 8MHz. The default frequency is set to 200kBaud. This can be changed once the software is installed. To change the baud rate;</p>
+<ul class="simple">
+<li><p>Find the device-config file in the path as shown in the Figure below.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_path_for_device_config_file.svg"><img alt="image14" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_path_for_device_config_file.svg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 16. Path for Device Configuration File</em></p>
+</div>
+<ul class="simple">
+<li><p>Change the value in the variable “sclkFrequency” to 8000000 in order to run at the maximum baud rate.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_editing_sclk.svg"><img alt="image15" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_installation_editing_sclk.svg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 17. Editing the SCLK Frequency</em></p>
+</div>
+</section>
+</section>
+<section id="kingware-quick-start-up">
+<h2>KingWare Quick Start Up<a class="headerlink" href="#kingware-quick-start-up" title="Link to this heading"></a></h2>
+<p>Once KingWare is installed and the system is powered up, follow the proceeding steps to configure the board.</p>
+<ul class="simple">
+<li><p>To launch the software, click <strong>Windows</strong> and run the ADBT1000_Eval_Software or double click the shortcut icon created on the desktop during installation. The home page below should come up.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_home_page.svg"><img alt="image16" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_home_page.svg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 18. KingWare Home Page</em></p>
+</div>
+<ul class="simple">
+<li><p>Click <strong>Connect</strong> to get started. Once the board is connected, click <strong>Start</strong> to proceed to configuring the system.</p></li>
+<li><p>Configure the settings for the application. Default values are also pre-loaded on the software. These can be found in Table 4 in the following section. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_quick_setup.svg"><img alt="image17" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_quick_setup.svg" style="width: 400px;" /></a></p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><em>Figure 19. Quick Setup Using KingWare</em></p>
+</div>
+<ul class="simple">
+<li><p>Click <strong>Continue</strong> once the setup is complete. This will initiate a precharge operation and will load all the equivalent values onto the registers of the ADBT1000.</p></li>
+<li><p>When this is done, the user will be taken to the <strong>Configure Channel</strong> tab on KingWare. Input values for the Voltage limit, Current limit, Time limit, Current setpoint and Voltage setpoint.</p></li>
+<li><p>Click <strong>Execute</strong>. This will start system operation and the system will automatically start taking data. Switch to the <strong>Live Data</strong> tab to view battery current and voltage.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_example_cc-cv_operation.svg"><img alt="image18" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_example_cc-cv_operation.svg" style="width: 200px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 20. Example CC-CV Operation when Executed</em></p>
+</div>
+</section>
+</section>
+<section id="using-kingware">
+<h1>Using KingWare<a class="headerlink" href="#using-kingware" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line">There are several tabs in KingWare which allow the user to get full functionality of the board. These will be described in the following sections. Please note that the datasheet should be consulted when configuring and operating the board.</div>
+<div class="line">It is important to note that the software must be run with the jumpers in their desired configurations. If any settings, for example, the load or jumper settings, need to be changed, it is recommended that operation first be stopped and the GUI disconnected. After changes on the board are done, rerun the configuration settings. It is critical that jumper settings be changed while the power is off.</div>
+</div>
+<section id="general-functions">
+<h2>General Functions<a class="headerlink" href="#general-functions" title="Link to this heading"></a></h2>
+<p>The KingWare platform comes with general functions that will be usable throughout the evaluation.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_connection.jpg"><img alt="image19" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_connection.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 21. ADBT1000 Connection</em></p>
+</div>
+<section id="page-navigation">
+<h3>Page Navigation<a class="headerlink" href="#page-navigation" title="Link to this heading"></a></h3>
+<p>On KingWare, clicking on the Analog Devices logo will navigate the user back to the Home page.</p>
+</section>
+<section id="device-connection">
+<h3>Device Connection<a class="headerlink" href="#device-connection" title="Link to this heading"></a></h3>
+<p>The LED on the ADBT1000 in Figure 22 indicates whether the device is connected or not. The green LED indicates that the device is connected. Clicking <strong>Disconnect</strong> will disconnect the device from the application. Conversely, clicking Connect will connect the device back to the application.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_general_functions.jpg"><img alt="image20" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_general_functions.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 22. General Functions</em></p>
+</div>
+</section>
+<section id="stop-instructions">
+<h3>Stop Instructions<a class="headerlink" href="#stop-instructions" title="Link to this heading"></a></h3>
+<p>This can be used to stop all operation on the board. This will be useful if an error occurs during the run, for example, if some currents get too high.</p>
+</section>
+<section id="bell-icon">
+<h3>Bell Icon<a class="headerlink" href="#bell-icon" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Clicking on the Bell icon will show the Activity Monitor, which logs all data writes and reads done by the tool. When new interrupts occur, a red dot will appear on the bell icon.</div>
+<div class="line">On the Activity Monitor drop-down, the user will be able to see all the events that have been done. This feature is useful for tracking procedures in the whole use of the system. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_activity_monitor.svg"><img alt="image21" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_activity_monitor.svg" style="width: 400px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 23. Activity Monitor</em></p>
+</div>
+<p>Users can view entire log files by clicking the Show Full Logs hypertext on the upper right of the Activity Monitor. This will open a file explorer with the location of the csv file.</p>
+</section>
+<section id="data-polling-interrupt-polling">
+<h3>Data Polling/Interrupt Polling<a class="headerlink" href="#data-polling-interrupt-polling" title="Link to this heading"></a></h3>
+<p><strong>Data polling</strong> indicates that the system is currently capturing current and voltage data from the device. The <strong>Interrupt polling</strong> button should be enabled if the user wants to receive interrupts from the device. This is enabled by default.</p>
+</section>
+</section>
+<section id="configuring-the-system">
+<h2>Configuring the System<a class="headerlink" href="#configuring-the-system" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">As discussed in the KingWare quick start section, to start operating the board, the user must fill in the required parameters on the <strong>Configure Systems tab</strong>. These parameters come pre-filled with default values upon installation. The default values for these settings can be seen in Table 4. However, the software stores the last programmed configuration, so when the settings are changed, these will be the default once the software is re-opened.</div>
+<div class="line">Clicking on the expand button on the right side of each parameter will show a dropdown menu that gives the user more options to customize the application. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_expand_button.svg"><img alt="image22" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_expand_button.svg" style="width: 400px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 24. Expand Button</em></p>
+</div>
+<p>The user may also navigate through the configurations through the Up and Down arrow at the bottom of the page.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_navigation_button.svg"><img alt="image23" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_navigation_button.svg" style="width: 200px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 25. Navigation Button</em></p>
+</div>
+<p>Once the parameters have been set with the desired values, pressing <strong>Continue</strong> will start a precharge operation and a write to the ADBT1000 registers. It will also bring the user to the <strong>Configure Channel tab</strong>. The <strong>Continue</strong> button will be enabled only if all the questions in the wizard are answered. If the user provides invalid values to any of the configurations or leaves any of them empty, the button will be disabled until all the configurations are answered.</p>
+<div class="centeralign docutils container">
+<p><strong>Table 4. Default Configuration for System</strong></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_default_values.jpg"><img alt="image24" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_default_values.jpg" style="width: 800px;" /></a></p>
+</div>
+</section>
+<section id="configuring-channels">
+<h2>Configuring Channels<a class="headerlink" href="#configuring-channels" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The <strong>Configure Channel tab</strong> allows the user to visually configure and operate each channel of the system demo board. In this tab, the user can select charge, discharge, and rest modes, and set limits for the specific application. The battery, bus, and power stage buttons can be connected or isolated. On running the startup sequence, these buttons will be green, indicating that they are connected. The background of the container will be changed based on the instruction the user executes. Figure 27 depicts modes of Charge, Discharge, and Rest, respectively.</div>
+<div class="line">The modes of operation can be set in this tab. The user can choose to do a charge, discharge, or rest cycle. Upon choosing the preferred cycle, the user can choose the mode in the following dropdown: <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_charge_or_discharge_mode.svg"><img alt="image25" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_charge_or_discharge_mode.svg" style="width: 300px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 26. Charge or Discharge Mode</em></p>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_example_channel_modes.svg"><img alt="image26" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_example_channel_modes.svg" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 27. Example Channel Modes</em></p>
+</div>
+<p>The ADBT1000 has two control loops per channel: the I-channel and the V-channel. The mode selected will determine which control loop is active. There are 32 modes in all for both charge and discharge cycles, however, the 4 basic modes are discussed below:
+| * Constant Current (CC)
+| I-channel is in control, loop target will be set to ISET</p>
+<ul class="simple">
+<li><p>Constant Voltage (CV)
+V-channel is in control, loop target will be set to VSET</p></li>
+<li><p>Constant Power (CP)
+I-channel is in control, loop target will be set to PSET/VMEAS where PSET is the power setpoint</p></li>
+<li><p>Constant Resistance (CR)
+I-channel is in control, loop target will be set to VMEAS*GSET where GSET is the conductance setpoint</p></li>
+</ul>
+<p>There are five variables that need to be set in order to execute an operation. These are enumerated below. Refer to the ADBT1000 datasheet for the description of these variables.</p>
+<ul class="simple">
+<li><p>Voltage Limit</p></li>
+<li><p>Current Limit</p></li>
+<li><p>Time Limit</p></li>
+<li><p>Voltage Setpoint</p></li>
+<li><p>Current Setpoint</p></li>
+</ul>
+<p>VMEAS determines where the measurement is being taken.</p>
+<ul class="simple">
+<li><p>BVP/BVN – actual battery voltage is being measured</p></li>
+<li><p>CVS/BVN – capacitor voltage is being measured</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_vmeas_options.svg"><img alt="image27" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_vmeas_options.svg" style="width: 300px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 28. Vmeas Options</em></p>
+</div>
+<div class="line-block">
+<div class="line">When the modes and the limits are set, clicking Execute will start the cycle. During execution, the top right portion of each channel will display the actual measured battery voltage and battery current. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_measured_battery_voltage_and_current.svg"><img alt="image28" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_measured_battery_voltage_and_current.svg" style="width: 300px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 29. Measured Battery Voltage and Current</em></p>
+</div>
+<div class="line-block">
+<div class="line">If the user wants to change any parameters, the changes can be made to the variables, but the changes will not apply until the user clicks <strong>Update</strong>. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_update_button.svg"><img alt="image29" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_update_button.svg" style="width: 300px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 30. Update Button</em></p>
+</div>
+<div class="line-block">
+<div class="line">The channels are grouped based on the master slave configuration. By default, the channels are configured as Individual. The following section will discuss parallel configuration. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_header_channel_configuration.svg"><img alt="image30" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_header_channel_configuration.svg" style="width: 300px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 31. Header Channel Configuration</em></p>
+</div>
+<section id="parallel-configuration">
+<h3>Parallel Configuration<a class="headerlink" href="#parallel-configuration" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Multiple channels can work in parallel. Inside a group of multiple channels working in parallel, a channel will be declared as the master and will transmit IMEAS to the other channels. The master channel will operate as configured but the slave channels will operate in CC mode.</div>
+<div class="line">To operate in a parallel configuration, go to the <strong>Configure Systems</strong> tab. Under Channel Configurations, there are several options for the desired mode: Two Pair, Parallel, and Individual and Two Pair. The description of each is shown in Table 5. Parallel Configurations.</div>
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>**Table 5. Parallel Configurations **</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_parallel_configuration.jpg"><img alt="image31" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_parallel_configuration.jpg" style="width: 800px;" /></a></p>
+</div>
+<div class="line-block">
+<div class="line">After setting the mode, under Master Slave Configurations, choose which channels are to be configured as master or slave as in the figure below:</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_master_and_slave_channel_configuration.svg"><img alt="image32" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_master_and_slave_channel_configuration.svg" style="width: 400px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 32. Master and Slave Channel Configurations</em></p>
+</div>
+<div class="line-block">
+<div class="line">Take note that when operating channels in parallel, the master should be connected in a 4-wire configuration, while the slave channels should be connected in a 2-wire configuration. Also, the current setpoint for the channels should be specified as the total of the desired charge current divided by the number of channels in parallel. Therefore, for 2 channels in parallel, the current setpoint will be half of the desired, and for all channels in parallel, the current setpoint is the total current divided by 4. The current displayed on the top right of the master channel will be the sum of all the channels.</div>
+<div class="line">Figure 33 shows an example for a two-pair configuration using Channels A and B. Note that only the master slave can be configured when in the <strong>Configure Channel</strong> tab. Example data is also shown in the figure. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_parallel_channel_configuration_and_data.svg"><img alt="image33" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_parallel_channel_configuration_and_data.svg" style="width: 800px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 33. Parallel Channel Configuration and Data</em></p>
+</div>
+</section>
+</section>
+<section id="getting-live-data">
+<h2>Getting Live Data<a class="headerlink" href="#getting-live-data" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The <strong>Live Data</strong> tab allows the user to monitor the currents and voltages on each channel of the system demo board. This provides an easy way to monitor the activity on each channel of the board. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_configure_live_data.svg"><img alt="image34" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_configure_live_data.svg" style="width: 800px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 34. Configure Live Data Tab</em></p>
+</div>
+<div class="line-block">
+<div class="line">When the operation is executed from the channel configuration tab, the software will automatically start taking data. The plot below shows actual data taken on the software in CC-CV mode of operation. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_actual_data_showing_cc-cv_operation.svg"><img alt="image35" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_actual_data_showing_cc-cv_operation.svg" style="width: 400px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 35. Actual Data Showing CC-CV Operation</em></p>
+</div>
+<div class="line-block">
+<div class="line">Data is not logged until the logging feature is enabled. To enable logging, click the gear on the top right portion of KingWare. Check the channels which need to be datalogged, and click <strong>Start</strong>. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_start_of_datalogging.svg"><img alt="image36" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_start_of_datalogging.svg" style="width: 200px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 36. Start Data Logging</em></p>
+</div>
+<div class="line-block">
+<div class="line">Clicking on <strong>show logs</strong> hyperlink at the bottom of the options will open a folder where the csv files are stored.</div>
+<div class="line">The <strong>Reset</strong> button on the top right of the tab will reset all graphs in the Live Data page. On clicking this button, the application will ask for confirmation, and when the user chooses Yes, all data from the page will be cleared. The data is still stored on the disk if logging was enabled. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_reset_data_button.svg"><img alt="image37" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_reset_data_button.svg" style="width: 200px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 37. Reset Data Button</em></p>
+</div>
+</section>
+<section id="running-diagnostics">
+<h2>Running Diagnostics<a class="headerlink" href="#running-diagnostics" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The <strong>Diagnostics</strong> tab allows the user to monitor the control functions for the system. An EIS analysis can be performed through this tab. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_diagnostic_tab.svg"><img alt="image38" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_diagnostic_tab.svg" style="width: 800px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 38. Diagnostic Tab</em></p>
+</div>
+<section id="eis-analysis">
+<h3>EIS Analysis<a class="headerlink" href="#eis-analysis" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">During EIS Analysis, users can provide required NCO &amp; DEMOD values in the configuration tab, PID values in the PID tab, and Frequency type and values in the Frequency tab. The user can start the analysis only after enabling NCO &amp; DEMOD.</div>
+<div class="line">The default values of PID will be fetched from the PID values provided in the Configure Systems wizard. Users can modify the default values and provide custom values.</div>
+</div>
+</section>
+</section>
+<section id="instructions">
+<h2>Instructions<a class="headerlink" href="#instructions" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The <strong>Instruct</strong> Tab allows executing instructions through scripts. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_instruct_tab.svg"><img alt="image39" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_instruct_tab.svg" style="width: 800px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 39. Instruct Tab</em></p>
+</div>
+<section id="channel-card">
+<h3>Channel Card<a class="headerlink" href="#channel-card" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">There are 4 channel cards (apart from the Register Settings card) vertically arranged on the left side of the Instructions tab. Each card pertains to one channel in the device and displays high-level information about the channel.</div>
+<div class="line">Each card displays the execution state of the channel and has a drop-down to select the mode of execution. The card also displays whether the channel is a Master or a Slave. Clicking the channel card would open the channel editor, where the user can write instructions pertaining to that channel. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_channel_execution_mode.svg"><img alt="image40" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_channel_execution_mode.svg" style="width: 300px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 40. Channel Execution Mode</em></p>
+</div>
+<div class="line-block">
+<div class="line">The user can edit only in master channels. Any change in the master channel is automatically reflected in the slave channels. The channel cards also display the latest channel interrupt. The interrupt messages will be cleared once the user clicks on any of the other channel cards. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_channel_card_with_instruction_interrupt.svg"><img alt="image41" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_channel_card_with_instruction_interrupt.svg" style="width: 300px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 41. Channel Card with Instruction Interrupt</em></p>
+</div>
+</section>
+<section id="channel-editor">
+<h3>Channel Editor<a class="headerlink" href="#channel-editor" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">The instruction commands supported are <strong>Charge</strong>, <strong>Discharge</strong>, <strong>Rest</strong>, <strong>Halt</strong>, and <strong>Loop</strong>. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_auto-suggestion_on_channel_editor.svg"><img alt="image42" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_auto-suggestion_on_channel_editor.svg" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 42. Auto-Suggestion on Channel Editor</em></p>
+</div>
+<div class="line-block">
+<div class="line">Clicking on the mode would fill the payloads of the particular mode. The payloads would be displayed with default values which the user can change. The black colored words indicate the payload keywords, while the blue colored words indicate the corresponding payload values which can be configured. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_mode_with_payload.svg"><img alt="image43" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_mode_with_payload.svg" style="width: 400px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 43. Mode with Payload</em></p>
+</div>
+<div class="line-block">
+<div class="line">The register-field pop up would be displayed whenever the user clicks on payload values. This pop up allows user to change the payload values. The title of the pop up represents the name of the payload. The pop up contains the particular payload’s register field name, unit, field value and the bits representation. Upon hovering over one field, the related bits of the fields are highlighted in the bit wise section. Changing the field values in the pop up would change the corresponding field value in the editor and vice versa. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_vlimit_register_field.svg"><img alt="image44" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_vlimit_register_field.svg" style="width: 300px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 44. VLimit Register Field</em></p>
+</div>
+<div class="line-block">
+<div class="line">Once the instructions are written in the editor, the user can click on the <strong>Execute</strong> button in case of automatic mode. Upon clicking the <strong>Execute</strong> button, the corresponding register writes for the instruction are written to the instruction memory registers and the instruction starts executing. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_execute_button.svg"><img alt="image45" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_execute_button.svg" style="width: 200px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 45. Execute Button</em></p>
+</div>
+<div class="line-block">
+<div class="line">In the case of manual or semi-auto mode, the user needs to click on <strong>Load Instruction</strong> before executing. Clicking on the <strong>Stop</strong> button would stop the instruction execution. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_load_instruction_button.svg"><img alt="image46" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_load_instruction_button.svg" style="width: 200px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 46. Load Instruction Button</em></p>
+</div>
+<div class="line-block">
+<div class="line">The user is prevented from navigating to the <strong>Configure Channel</strong> and <strong>Configure Systems</strong> page, as well as closing the tool when any of the channels is in the execution state.</div>
+</div>
+</section>
+<section id="execution-modes">
+<h3>Execution Modes<a class="headerlink" href="#execution-modes" title="Link to this heading"></a></h3>
+<p>The Instruction Tab supports three modes of execution: Manual, Semi-Auto, and Automatic. Each of these modes will be discussed in this section.</p>
+<section id="manual-mode">
+<h4>Manual Mode<a class="headerlink" href="#manual-mode" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line">In manual sequencing mode, the user can write multiple instructions in the editor and load the first set of instructions by clicking <strong>Load Instruction</strong>. On loading, the instruction is written into the next instruction area of the channel register map and grayed out. User can start the instruction execution by clicking <strong>Execute</strong>. The instruction pointer in the editor points to the next set of instructions. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_instructions_in_manaul_mode.svg"><img alt="image47" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_instructions_in_manaul_mode.svg" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 47. Instructions in Manual Mode</em></p>
+</div>
+<div class="line-block">
+<div class="line">It is expected that the user will write the next instruction and click <strong>Load instruction</strong> upon receiving <strong>Instruction Done</strong> or <strong>Instruction Timeout</strong> interrupt. The Execute button will be enabled, and upon clicking the button, it executes the next set of loaded instructions.</div>
+</div>
+</section>
+<section id="semi-automatic-mode">
+<h4>Semi-Automatic Mode<a class="headerlink" href="#semi-automatic-mode" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line">In semi-auto sequencing mode, the user needs to load the first set of instructions to the device by clicking the <strong>Load Instruction</strong> button. On loading, the first instruction set is grayed out and is written into the next instruction area of the channel register map. On clicking <strong>Execute</strong>, the self-clearing bit “START” is set, thus initiating the execution of this instruction. The instruction pointer in the editor points to the next set of instructions to be loaded.</div>
+<div class="line">It is expected that the user will write the next instruction and click the <strong>Load instruction</strong> button upon receiving <strong>Instruction Done</strong> or <strong>Instruction Timeout</strong> interrupt. On clicking the <strong>Load Instruction</strong> button, the next instruction is written to the next instruction register and the “NEXT_INSTR_READY” bit is set. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_instructions_in_semi-automatic-mode.svg"><img alt="image48" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_instructions_in_semi-automatic-mode.svg" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 48. Instructions in Semi-Automatic Mode</em></p>
+</div>
+</section>
+<section id="automatic-mode">
+<h4>Automatic Mode<a class="headerlink" href="#automatic-mode" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line">In auto sequencing mode, all instructions are programmed in instruction memory. On clicking <strong>Execute</strong>, the self-clearing bit “START” is set, thus initiating the execution of the instructions. The instructions are grayed out on execution. The memory address pointer is displayed at the top of the channel editor. <strong>Sequence Completed interrupt</strong> is generated when all instructions have been executed. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_instructions_in_automatic_mode.svg"><img alt="image49" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_instructions_in_automatic_mode.svg" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 49. Instructions in Automatic Mode</em></p>
+</div>
+<div class="line-block">
+<div class="line">User can stop the instruction execution by clicking the <strong>Stop</strong> button.</div>
+</div>
+</section>
+</section>
+<section id="loop-instructions">
+<h3>Loop Instructions<a class="headerlink" href="#loop-instructions" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Loop instruction is supported only in automatic mode. The syntax of loop instruction: <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_loop_instruction.jpg"><img alt="image50" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_loop_instruction.jpg" style="width: 200px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 50. Loop Instruction</em></p>
+</div>
+<div class="line-block">
+<div class="line">The user can write charge, discharge, or rest instructions inside the loop. On clicking the <strong>Execute</strong> button, the first instruction will be executed. After the occurrence of <strong>Instruction Done</strong> interrupt, the next instruction will be executed. The loop restarts after completing the execution of all the instructions inside. The loop executes the instructions inside for the number of times indicated by the variable <strong>count</strong> in the syntax. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_loop_example.svg"><img alt="image51" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_loop_example.svg" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 51. Loop Example</em></p>
+</div>
+<div class="line-block">
+<div class="line">An example loop instruction was run and results can be seen on the Live Data tab. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_live_data_for_loop_example.jpg"><img alt="image52" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_live_data_for_loop_example.jpg" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 52. Live Data for Loop Example</em></p>
+</div>
+</section>
+<section id="editor-features">
+<h3>Editor Features<a class="headerlink" href="#editor-features" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">The register and the channel editors comprise the below features: <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_editor_features.jpg"><img alt="image53" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_editor_features.jpg" style="width: 200px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 53. Editor Features</em></p>
+</div>
+<div class="line-block">
+<div class="line">* Undo/Redo – undo or redo the commands</div>
+</div>
+<ul class="simple">
+<li><p>Open – open an existing file with the commands to be executed</p></li>
+<li><p>Save – save the executed commands to a text file in .txt format</p></li>
+<li><p>Delete – clears the editor content</p></li>
+</ul>
+</section>
+<section id="activity-monitor">
+<h3>Activity Monitor<a class="headerlink" href="#activity-monitor" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">This monitor allows viewing the results of executed scripts, interrupts and warnings. User can view the results of channels either collectively or individually from the toggle button to the top right of the activity monitor. The channel selected in the toggle button corresponds to the active channel card. The monitor has support to filter events like ‘All events’, ‘Interrupts’ and ‘Warnings’. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_activity_monitor_on_instruct_tab.jpg"><img alt="image54" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_activity_monitor_on_instruct_tab.jpg" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 54. Activity Monitor on Instruct Tab</em></p>
+</div>
+</section>
+</section>
+<section id="registers-tab">
+<h2>Registers Tab<a class="headerlink" href="#registers-tab" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">This page allows communication with the device registers through scripts. This page comprises a script editor and status editor. The script editor allows to type the script which has to be executed and the status editor allows to view the result of the executed script. Multiple read and write operations are supported. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_register_tab.svg"><img alt="image55" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_register_tab.svg" style="width: 800px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 55. Configure Register Tab</em></p>
+</div>
+<div class="line-block">
+<div class="line">While clicking on the register value, a window having the field details of the respective register will appear. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_register_window.svg"><img alt="image56" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_register_window.svg" style="width: 400px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 56. Register Window</em></p>
+</div>
+<div class="line-block">
+<div class="line">The header of the window represents the name of the register, and also contains the field name, size of the field and its controls.</div>
+<div class="line">From this window, field values and its bit representation of the respective field can be identified by hovering the field. On changing the value of the field, those changes will affect the register value in the script editor and vice versa.</div>
+<div class="line">The <strong>Execute</strong> button execute the script in the editor and updates the status in the status editor. This button will be enabled only if the scripts in the editor are valid.</div>
+</div>
+</section>
+<section id="help-tab">
+<h2>Help Tab<a class="headerlink" href="#help-tab" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The Help tab provides the user with quick links to the user manual and quick start procedures for the system. <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_help_tab.svg"><img alt="image57" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_gui_help_tab.svg" style="width: 800px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 57. Help Tab</em></p>
+</div>
+</section>
+</section>
+<section id="evaluation-board-schematics-and-layout">
+<h1>Evaluation Board Schematics and Layout<a class="headerlink" href="#evaluation-board-schematics-and-layout" title="Link to this heading"></a></h1>
+<section id="system-control-board-1">
+<span id="id1"></span><h2>System Control Board<a class="headerlink" href="#system-control-board-1" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_adbt1000_connections.svg"><img alt="image58" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_adbt1000_connections.svg" style="width: 800px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 58. ADBT1000 Connections</em></p>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_on_board_battery_monitor.svg"><img alt="image59" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_on_board_battery_monitor.svg" style="width: 450px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 59. Onboard Battery Monitor</em></p>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_spi_connections.svg"><img alt="image60" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_spi_connections.svg" style="width: 800px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 60. SPI Connections</em></p>
+</div>
+<div class="line-block">
+<div class="line"><img alt="image61" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_dc_bus_monitor_connection.svg" /></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 61. DC Bus Monitor Connections</em></p>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_power_sections.svg"><img alt="image62" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_power_sections.svg" style="width: 800px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 62. Power Section</em></p>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_current_sense_filter.svg"><img alt="image63" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_current_sense_filter.svg" style="width: 800px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 63. Current Sense Filter</em></p>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_voltage_sense_buffers.svg"><img alt="image64" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_voltage_sense_buffers.svg" style="width: 800px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 64. Voltage Sense Buffer</em></p>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_connections_for_spm_sockets.svg"><img alt="image65" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_connections_for_spm_sockets.svg" style="width: 800px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 65. Connections for SPM Sockets</em></p>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_top_layer.svg"><img alt="image66" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_top_layer.svg" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 66. System Control Board Top Layer</em></p>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_1_primary.svg"><img alt="image67" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_1_primary.svg" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 67. System Control Board Layer 1 Primary</em></p>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_2_ground.svg"><img alt="image68" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_2_ground.svg" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 68. System Control Board Layer 2 Ground</em></p>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_3_signal.svg"><img alt="image69" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_3_signal.svg" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 69. System Control Board Layer 3 Signal</em></p>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_4_signal.svg"><img alt="image70" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_4_signal.svg" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 70. System Control Board Layer 4 Signal</em></p>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_5_ground.svg"><img alt="image71" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_5_ground.svg" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 71. System Control Board Layer 5 Ground</em></p>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_6_secondary.svg"><img alt="image72" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_scb_layer_6_secondary.svg" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 72. System Control Board Layer 6 Secondary</em></p>
+</div>
+</section>
+<section id="switching-power-module-1">
+<span id="id2"></span><h2>Switching Power Module<a class="headerlink" href="#switching-power-module-1" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_system_power_module.svg"><img alt="image73" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_system_power_module.svg" style="width: 800px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 73. System Power Module</em></p>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_current_sense_and_socket_connections.svg"><img alt="image74" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_schematic_current_sense_and_socket_connections.svg" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 74. Current Sense and Socket Connection</em></p>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_silkscreen1.svg"><img alt="image75" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_silkscreen1.svg" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 75. Switching Power Module Silkscreen</em></p>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_primary_layer.svg"><img alt="image76" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_primary_layer.svg" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 76. Switching Power Module Primary Layer</em></p>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_ground_layer.svg"><img alt="image77" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_ground_layer.svg" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 77. Switching Power Module Ground Layer</em></p>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_power_layer.svg"><img alt="image78" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_power_layer.svg" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 78. Switching Power Module Power Layer</em></p>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_secondary_layer.svg"><img alt="image79" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_layout_spm_secondary_layer.svg" style="width: 600px;" /></a></div>
+</div>
+<div class="centeralign docutils container">
+<p><em>Figure 79. Switching Power Module Secondary Layer</em></p>
+</div>
+</section>
+</section>
+<section id="bill-of-materials">
+<h1>Bill of Materials<a class="headerlink" href="#bill-of-materials" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Table 5. System Control Board</strong></p>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt100_bom_scb2.1.svg"><img alt="image80" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt100_bom_scb2.1.svg" style="width: 797px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb3.svg"><img alt="image81" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb3.svg" style="width: 795px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb4.svg"><img alt="image82" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb4.svg" style="width: 798px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb5.svg"><img alt="image83" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb5.svg" style="width: 800px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb6.svg"><img alt="image84" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb6.svg" style="width: 800px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb7.svg"><img alt="image85" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_scb7.svg" style="width: 800px;" /></a>
+|</p>
+<div class="centeralign docutils container">
+<p><strong>Table 6. Switching Power Module</strong></p>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_spm1.1.svg"><img alt="image86" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_spm1.1.svg" style="width: 800px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_spm2.svg"><img alt="image87" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_spm2.svg" style="width: 800px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_spm3.svg"><img alt="image88" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_bom_spm3.svg" style="width: 800px;" /></a>
+| <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_copyright1.svg"><img alt="image89" src="https://wiki.analog.com/_media/resources/eval/user-guides/adbt1000_copyright1.svg" style="width: 800px;" /></a></p>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

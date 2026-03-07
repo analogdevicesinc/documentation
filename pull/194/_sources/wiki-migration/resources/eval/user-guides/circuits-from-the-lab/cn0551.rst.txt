@@ -1,0 +1,160 @@
+EVAL-CN0551-EBZ User Guide
+==========================
+
+General Description
+-------------------
+
+| The :adi:`EVAL-CN0551-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0551.html>` is a four-layer printed circuit board (PCB) that allows evaluation of the :adi:`CN0551` USB-powered, 433.92 MHz RF power amplifier circuit. The board is fabricated with a 2 oz./2 oz. copper cladding and IPC-4101 (or IPC-4103) laminates and bonding materials.
+| Designed to be used with the :adi:`ADALM-PLUTO`, the :adi:`EVAL-CN0551-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0551.html>` features a small form-factor with dimensions of 25.40 mm × 60.25 mm x 1.57 mm (PCB only). The evaluation board uses standard 50 Ω SMA coaxial connectors for its RF signal path — for easy integration with RF systems; a male connector is used for the RF input and a female connector is used for the RF output. Coplanar waveguides are used for the RF traces on the board, which have a characteristic impedance of 50 Ω. A micro-USB connector is used for the input power, allowing the evaluation board to use most +5 V wall-wart power supplies available in the market.
+|
+
+.. note::
+
+   **Evaluation Kit Contents:**
+
+   
+   -  :adi:`EVAL-CN0551-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0551.html>` Circuit Evaluation Board
+   
+   |
+
+
+| ===== Evaluation Board Hardware =====
+
+Primary Side
+~~~~~~~~~~~~
+
+| 
+| |Figure 1. Top View of EVAL-CN0522-EBZ|
+| === RFIN Plug (J1) === |Figure 2. RFIN Port| The RF input to the evaluation board must be connected to the male SMA connector J1.
+| *The maximum RF input to the* :adi:`EVAL-CN0551-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0551.html>` *is -3 dBm. Do not use a higher input level to avoid damaging the circuit.*
+| === RFOUT Port (J2) === |Figure 3. RFOUT Port| The RF output of the evaluation board must be connected to the female SMA connector J2.
+| *The maximum RF output of the* :adi:`EVAL-CN0551-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0551.html>` *is +27 dBm. Ensure that the RF load to be driven can handle the amplified RF signal. Use an RF attenuator if necessary to avoid damage.*
+| === LED Indicators (POWER and TOVER)=== The evaluation board uses two LEDs to indicate its current status.
+| |Figure 4. LED Indicators| *The green LED (POWER) lights up when power is present on the board, the red LED (TOVER) lights up when the amplifier circuit is disabled due to the board temperature exceeding the temperature switch trip point.*
+| ^ LED Indications of Board Status ^^^
+
++-----------+-----------+----------------------------------------------------------------------------+
+| **POWER** | **TOVER** | **Board Status**                                                           |
++-----------+-----------+----------------------------------------------------------------------------+
+| Off       | Off       | No power                                                                   |
++-----------+-----------+----------------------------------------------------------------------------+
+| On        | Off       | Normal operation                                                           |
++-----------+-----------+----------------------------------------------------------------------------+
+| On        | On        | Overtemperature (:adi:`ADL5324` is disabled)                               |
++-----------+-----------+----------------------------------------------------------------------------+
+
+| 
+| === Power Supply Connector (P1) === |Figure 5. Micro-USB Port| A +5 V power supply must be connected to the VCC line through the micro-USB port P1.
+| *The total typical supply current of the on-board RF amplifiers is 175 mA. However, this requirement increases at higher temperatures (refer to Page 11, Figure 26 on the* :adi:`ADL5324` *data sheet and Page 12, Figure 34 on the* :adi:`AD8353` *data sheet for more information). As such, it is recommended to use a power supply with a maximum current rating of at least 0.5 A to ensure full functionality.*
+| ==== Secondary Side ====
+| |Figure 6. Bottom View of EVAL-CN0551-EBZ|
+| === Changing the Temperature Switch Trip Point (JP1 and JP2) === The trip point of the temperature switch can be set using the solder jumpers JP1 and JP2, as shown in the table below.
+| |Figure 7. ADT6401 Jumper Settings| *When the board temperature reaches the trip point, the* :adi:`ADT6401` *will disable the supply voltage to the amplifier stages.*
+| ^ Selecting a Trip Point for the ADT6401 ^^^^
+
+================ ================ ============== ==============
+**JP1 Setting**  **JP2 Setting**  **Trip Point** **Hysteresis**
+B                B                +65°C          10°C
+A                B                +75°C          10°C
+No solder jumper B                +85°C          10°C
+B                A                +95°C          10°C
+A                A                +105°C         10°C
+No solder jumper A                +115°C         10°C
+B                No solder jumper +5°C           2°C
+A                No solder jumper -5°C           2°C
+No solder jumper No solder jumper -15°C          2°C
+================ ================ ============== ==============
+
+| 
+|
+
+.. important::
+
+   Due to considerable thermal dissipation of the RF amplifiers, the last three options should not be used.
+
+
+| ===== Connecting the EVAL-CN0551-EBZ to the ADALM-PLUTO =====
+| |image1|
+|
+
+.. note::
+
+   An :adi:`EVAL-CN0417-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0417.html>` is shown in this picture. However, the same connections also apply for the :adi:`EVAL-CN0551-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0551.html>`.
+
+
+   | To properly operate the :adi:`EVAL-CN0551-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0551.html>` using the :adi:`ADALM-PLUTO`, follow the steps below:
+
+-  Connect the 5 V dc power source to the micro-USB port P1. Upon applying power to the board, the green LED indicator for POWER will light up.
+-  Connect the Tx port of the :adi:`ADALM-PLUTO` to the RFIN plug J1. The RF signal will pass through an on-board SAW filter and will be ac-coupled to the RF amplifier input.
+-  Connect the RF load (usually an antenna) to the female SMA connector J2.
+
+|
+
+|
+
+.. warning::
+
+   Warning: Do not directly connect the RFOUT port of the :adi:`EVAL-CN0551-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0551.html>` to the Rx port of the :adi:`ADALM-PLUTO`. The maximum RF input that the :adi:`ADALM-PLUTO` can safely handle is +2.5 dBm.
+
+
+Schematic, Layout and Bill of Materials
+---------------------------------------
+
+| 
+|
+
+.. admonition:: Download
+   :class: download
+
+   :adi:`CN0551 Design and Integration Files <cn0551-DesignSupport>`
+
+   
+   -  Schematic
+   -  Bill of Materials
+   -  Gerber Files
+   -  Allegro Layout Files
+   -  Assembly Drawing
+   
+   |
+
+
+| ===== More Information and Useful Links =====
+
+-  :adi:`CN0551 Circuit Note Page <CN0551>`
+-  :adi:`ADL5324 Product Page <ADL5324>`
+-  :adi:`AD8353 Product Page <AD8353>`
+-  :adi:`ADT6401 Product Page <ADT6401>`
+-  :adi:`ADG901 Product Page <ADG901>`
+-  :adi:`ADP196 Product Page <ADP196>`
+-  :adi:`ADM7160 Product Page <ADM7160>`
+-  :adi:`LTM4693 Product Page <LTM4693>`
+-  :adi:`ADALM-PLUTO Product Page <ADALM-PLUTO>`
+-  :doc:`ADALM-PLUTO Overview </wiki-migration/university/tools/pluto>`
+-  :doc:`Amplifiers for RF Transmission on Analog Wiki </wiki-migration/university/tools/pluto/users/amp>`
+
+Board Registration
+------------------
+
+.. tip::
+
+   Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register Now <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0551-EBZ?&v=RevD>`_ to receive all these great benefits and more!
+
+
+*End of Document*
+
+.. |Figure 1. Top View of EVAL-CN0522-EBZ| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0551/eval-cn0551-ebz-top.png
+   :width: 1000px
+.. |Figure 2. RFIN Port| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0551/eval-cn0551-ebz-rfin.png
+   :width: 150px
+.. |Figure 3. RFOUT Port| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0551/eval-cn0551-ebz-rfout.png
+   :width: 150px
+.. |Figure 4. LED Indicators| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0551/eval-cn0551-ebz-led.png
+   :width: 100px
+.. |Figure 5. Micro-USB Port| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0551/eval-cn0551-ebz-usb.png
+   :width: 150px
+.. |Figure 6. Bottom View of EVAL-CN0551-EBZ| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0551/eval-cn0551-ebz-bottom.png
+   :width: 1000px
+.. |Figure 7. ADT6401 Jumper Settings| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0551/eval-cn0551-ebz-jumpers.png
+   :width: 100px
+.. |image1| image:: https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0522/cn0417.png
+   :width: 400px

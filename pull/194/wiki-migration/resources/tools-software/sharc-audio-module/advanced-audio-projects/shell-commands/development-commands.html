@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The purpose of these commands is to help users or developers of the Audio Starter debug system level issues, issues with hardware connections, etc. This section describes each of the development and debug related shell commands in detail." name="description" />
+
+    <title>Development and Debug Commands &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Development and Debug Commands</a><ul>
+<li><a class="reference internal" href="#live-file-editing-edit">Live File Editing (edit)</a></li>
+<li><a class="reference internal" href="#example-shell-command-test">Example Shell Command (test)</a></li>
+<li><a class="reference internal" href="#automated-on-target-command-execution-run">Automated On-Target Command Execution (run)</a></li>
+<li><a class="reference internal" href="#internal-flash-hex-dump-dump">Internal Flash Hex Dump (dump)</a></li>
+<li><a class="reference internal" href="#file-system-file-hex-dump-fdump">File-System File Hex Dump (fdump)</a></li>
+<li><a class="reference internal" href="#system-delay-delay">System Delay (delay)</a></li>
+<li><a class="reference internal" href="#execute-raw-i2c-transfer-i2c">Execute Raw I2C Transfer (i2c)</a></li>
+<li><a class="reference internal" href="#check-for-active-i2c-devices-i2c-probe">Check for Active I2C Devices (i2c_probe)</a></li>
+<li><a class="reference internal" href="#stack-usage-stacks">Stack Usage (stacks)</a></li>
+<li><a class="reference internal" href="#cpu-system-utilization-cpu">CPU System Utilization (cpu)</a></li>
+<li><a class="reference internal" href="#system-logging-report-syslog">System Logging Report (syslog)</a></li>
+<li><a class="reference internal" href="#usb-audio-statistics-usb">USB Audio Statistics (usb)</a></li>
+<li><a class="reference internal" href="#dynamic-memory-allocation-usage-meminfo">Dynamic Memory Allocation Usage (meminfo)</a></li>
+<li><a class="reference internal" href="#software-reflash-update">Software Reflash (update)</a></li>
+<li><a class="reference internal" href="#shell-screen-resize-resize">Shell Screen Resize (resize)</a></li>
+<li><a class="reference internal" href="#shell-output-redirect-shell">Shell Output Redirect (shell)</a></li>
+<li><a class="reference internal" href="#argument-echo-echo">Argument Echo (echo)</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="development-and-debug-commands">
+<h1>Development and Debug Commands<a class="headerlink" href="#development-and-debug-commands" title="Link to this heading"></a></h1>
+<p>The purpose of these commands is to help users or developers of the Audio Starter debug system level issues, issues with hardware connections, etc. This section describes each of the development and debug related shell commands in detail.</p>
+<hr class="docutils" />
+<section id="live-file-editing-edit">
+<h2>Live File Editing (edit)<a class="headerlink" href="#live-file-editing-edit" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>This command allows you to edit files, live, in one of the supported file-systems on the Audio Starter. Additionally, this command will create a new file for editing, if the file does not currently exist. This is especially useful for creating new command files to run on target (See the command <em>run</em>) or for inspecting files for correctness.
+To edit or create a file for editing that resides in the non-default file-system, append the device drive identifier to the filename. See the command <em>drive</em> for more details.</p></td>
+</tr>
+<tr class="row-even"><td><p>** Syntax **</p></td>
+<td><p><em>edit &lt;filename&gt;</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/edit_help.png"><img alt="image7" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/edit_help.png" style="width: 400px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Inputs</strong></p></td>
+<td><p><strong>filename</strong> - This is the filename to open or create for editing.
+<em>Range(string, required): any</em></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Outputs</strong></p></td>
+<td><p>Edit View of file</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Example Usage</strong></p></td>
+<td><p><em>edit test.cmd</em>
+This creates a new file called <em>test.cmd</em> in the default file-system and opens it for edit.
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/edit1.jpg"><img alt="image8" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/edit1.jpg" style="width: 400px;" /></a>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/edit.jpg"><img alt="image9" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/edit.jpg" style="width: 400px;" /></a>
+The following commands can be used for editing:
+<strong>Ctrl-S</strong> - Control Key + s-key (lowercase) = Save
+<strong>Ctrl-Q</strong> - Control Key + q-key (lowercase) = Quit
+<strong>Ctrl-F</strong> - Control Key + f-key (lowercase) = Find
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/edit3.jpg"><img alt="image10" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/edit3.jpg" style="width: 400px;" /></a>
+Typing in a command like <em>ver</em> and then saving will display the number of bytes saved on the disk.
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/edit4.jpg"><img alt="image11" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/edit4.jpg" style="width: 400px;" /></a>
+Quitting will then close the file which allows it to be accessed later.
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/edit5.jpg"><img alt="image12" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/edit5.jpg" style="width: 400px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="example-shell-command-test">
+<h2>Example Shell Command (test)<a class="headerlink" href="#example-shell-command-test" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>This is an example shell command that users can use to experiment with the codebase further. All of the hooks for shell execution are already in place so if a user needs to execute some functionality quickly or just wants to try out compilation and dive deeper into the Audio Starter, this is a great starting point.
+Currently, this shell command is empty:
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/test.jpg"><img alt="image18" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/test.jpg" style="width: 400px;" /></a>
+But it could be populated with experimental or test code:
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/test1.jpg"><img alt="image19" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/test1.jpg" style="width: 400px;" /></a>
+Which will become visible when the shell command is executed (after re-compilation and re-flashing of course :))
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/test3.jpg"><img alt="image20" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/test3.jpg" style="width: 400px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>** Syntax **</p></td>
+<td><p><em>test [args…]</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/test_help.png"><img alt="image21" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/test_help.png" style="width: 400px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Inputs</strong></p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Outputs</strong></p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Example Usage</strong></p></td>
+<td><p><em>test</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/test4.jpg"><img alt="image22" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/test4.jpg" style="width: 400px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="automated-on-target-command-execution-run">
+<h2>Automated On-Target Command Execution (run)<a class="headerlink" href="#automated-on-target-command-execution-run" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Short options support status</strong>:</p>
+<div class="line-block">
+<div class="line">* <strong>ADZS-SC589-MINI</strong> - v4.0.0 or greater</div>
+<div class="line">* <strong>ADZS-SC584-EZLITE</strong> - TBD</div>
+<div class="line">* <strong>EV-SC594-SOM</strong> - TBD</div>
+</div>
+<ul class="simple">
+<li><p><strong>EV-SC598-SOM</strong> - TBD</p></li>
+</ul>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>This command executes a series of shell commands that are stored in a <em>.cmd</em> that lives in one of the available file-systems on the Audio Starter. This can be useful for quickly and automatically running a series of commands in a sequence, especially as the state of the Audio Starter is not persistent across a power-cycle.
+For example, if a user is using the Audio Starter for a demo application that needs to set up a series of routes with a wav file enabled and streaming, it may be more convenient to simply save that series of commands to a file on the Audio Starter, rather than re-type them into the shell after each power cycle. Generally these type of files are denoted as <em>*.cmd</em>.
+Outside of this command, <em>.cmd</em> files can also be run via the pushbuttons (<em>pushbtn1.cmd</em> and <em>pushbtn2.cmd</em> in the default file-system) on the hardware and automatically at startup (file must be named <em>shell.cmd</em> and must reside in <em>sf:</em>).
+To run a command file that resides in the non-default file-system, append the device drive identifier to the filename. See the command <em>drive</em> for more details.
+&lt;fc #FF0000&gt;Run command may be interrupted by pressing <strong>CTRL + C</strong>. &lt;/fc&gt;</p></td>
+</tr>
+<tr class="row-even"><td><p>** Syntax **</p></td>
+<td><p><em>run [options] &lt;file1&gt; [&lt;file2&gt; …]</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/help_run.jpg"><img alt="image25" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/help_run.jpg" style="width: 400px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Inputs</strong></p></td>
+<td><p><strong>file1</strong> - This is the name of the <em>.cmd</em> file to execute.
+<em>Range(string, required): any</em>
+<em>Note that subsequent files are optional.</em>
+<strong>OPTIONS</strong>
+<strong>-l &lt;loop count&gt;</strong>
+This option can be used to run one or more command files the determined number of times. If not set, command files will be run once.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Outputs</strong></p></td>
+<td><p>Prints any outputs executed by commands that reside in the <em>.cmd</em> file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Example Usage</strong></p></td>
+<td><p><em>run test.cmd</em>
+This will run a file called <em>test.cmd</em> that resides within the default file-system. The commands that live within this file are visible with the <em>cat</em> command (see below). Each command is separated by a new line.
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/run.png"><img alt="image26" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/run.png" style="width: 400px;" /></a>
+<em>run -l 10 file1.cmd file2.cmd</em>
+This will run <em>file1.cmd</em> and <em>file2.cmd</em> 10 times.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="internal-flash-hex-dump-dump">
+<h2>Internal Flash Hex Dump (dump)<a class="headerlink" href="#internal-flash-hex-dump-dump" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>This command dumps the raw bytes of the internal flash file-system, starting from a requested address specified by the inputs.</p></td>
+</tr>
+<tr class="row-even"><td><p>** Syntax **</p></td>
+<td><p><em>dump [addr] &lt;len&gt;</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/dump.jpg"><img alt="image29" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/dump.jpg" style="width: 400px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Inputs</strong></p></td>
+<td><p><strong>addr</strong> - This is the starting address to start dumping
+<em>Range(long integer, required): [0 MAX_UL]</em>
+<strong>len</strong> - This is the maximum number of bytes to dump
+<em>Range(long integer, optional, default = 1): [0, MAX_UL]</em>
+Both decimal and hexadecimal are accepted formats.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Outputs</strong></p></td>
+<td><p>Displays bytes from memory address</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Example Usage</strong></p></td>
+<td><p><em>dump 10 6</em>
+This will dump 6 bytes starting from address 0xA.
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/dump.png"><img alt="image30" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/dump.png" style="width: 400px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="file-system-file-hex-dump-fdump">
+<h2>File-System File Hex Dump (fdump)<a class="headerlink" href="#file-system-file-hex-dump-fdump" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>This command dumps the raw bytes of a given file from a supported file-system, starting from a requested address specified by the inputs. To dump raw bytes of a file that resides in the non-default file-system, append the device drive identifier to the filename. See the command <em>drive</em> for more details.</p></td>
+</tr>
+<tr class="row-even"><td><p>** Syntax **</p></td>
+<td><p><em>fdump [file] &lt;start&gt; &lt;size&gt;</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/fdump_help.png"><img alt="image33" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/fdump_help.png" style="width: 400px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Inputs</strong></p></td>
+<td><p><strong>file</strong> - This is the name of the file whose raw bytes are to be dumped.
+<em>Range(string, required): any</em>
+<strong>start</strong> - This is the starting address into the file whose contents are to be dumped.
+//Range(long integer, optional, default = 0): [0, MAX_UL] //
+<strong>size</strong> - This is the size, in bytes, to dump.
+<em>Range(long integer, optional, default = Full File): [0, MAX_UL]</em></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Outputs</strong></p></td>
+<td><p>Displays file content in hex format</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Example Usage</strong></p></td>
+<td><p><em>fdump test.bin 0x20 32</em>
+This dumps the contents of the file <em>test.bin</em> starting at address 0x20 with 32 byes dumped.
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/fdump.png"><img alt="image34" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/fdump.png" style="width: 400px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="system-delay-delay">
+<h2>System Delay (delay)<a class="headerlink" href="#system-delay-delay" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>This invokes a system delay. This is useful adding timing sequences to <em>.cmd</em> files. See <em>run</em> for more details.</p></td>
+</tr>
+<tr class="row-even"><td><p>** Syntax **</p></td>
+<td><p><em>delay &lt;ms&gt;</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/delay_help.png"><img alt="image37" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/delay_help.png" style="width: 400px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Inputs</strong></p></td>
+<td><p><strong>ms</strong> - The amount of time to delay, in milliseconds.
+<em>Range(long integer, optional, default = 0 (no delay)): [0, MAX_UL]</em></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Outputs</strong></p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Example Usage</strong></p></td>
+<td><p><em>delay 1000</em> In the shell, this executes a delay of 1 second.
+An example of a delay in a <em>.cmd</em> which routes the ADC Input to a wave file for recording, turns on a wave sink, delays for 10 seconds to finish the recording, then turns the recording off.
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/delay.jpg"><img alt="image38" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/delay.jpg" style="width: 400px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="execute-raw-i2c-transfer-i2c">
+<h2>Execute Raw I2C Transfer (i2c)<a class="headerlink" href="#execute-raw-i2c-transfer-i2c" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>This command executes a raw I2C read or write transfer. This is useful for communicating directly with on-board I2C devices for debugging purposes (without the need for modifying direct source code). Note that this command can handle both 8-bit and 16-bit register addresses (<em>mem_addr</em> in the input list below), but only supports 7-bit addressing (10-bit addressing is NOT supported).
+At the lowest layer, this command calls a single <em>writeRead</em> API, which inserts a repeated start condition in-between the write and read transaction. For example, the below scenario shows a single read, with a 16-bit register address, reading two bytes of data:
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/restartexample.jpg"><img alt="image52" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/restartexample.jpg" style="width: 400px;" /></a>
+The following formats are supported:
+<strong>Single read with 8-bit or 16-bit memory addresses</strong>:
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_read_single_8bit.jpg"><img alt="image53" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_read_single_8bit.jpg" style="width: 400px;" /></a>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_read_single_16bit.jpg"><img alt="image54" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_read_single_16bit.jpg" style="width: 400px;" /></a>
+<strong>Burst read with 8-bit or 16-bit memory addresses</strong>:
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_read_burst_8bit.jpg"><img alt="image55" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_read_burst_8bit.jpg" style="width: 400px;" /></a>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_read_burst_16bit.jpg"><img alt="image56" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_read_burst_16bit.jpg" style="width: 400px;" /></a>
+<strong>Single write with 8-bit or 16-bit addresses</strong>:
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_write_single_8bit.jpg"><img alt="image57" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_write_single_8bit.jpg" style="width: 400px;" /></a>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_write_single_16bit.jpg"><img alt="image58" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_write_single_16bit.jpg" style="width: 400px;" /></a>
+<strong>Burst write with 8-bit or 16-bit addresses</strong>:
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_write_burst_8bit.jpg"><img alt="image59" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_write_burst_8bit.jpg" style="width: 400px;" /></a>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_write_burst_16bit.jpg"><img alt="image60" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_write_burst_16bit.jpg" style="width: 400px;" /></a>
+<em>Note that the structure of the I2C read or write can vary from device to device. It is important to refer to the device’s datasheet to understand the proper formatting of the I2C message. And although this command attempts to be flexible enough to cover a range of formats, it is not guaranteed to work with every single I2C device format that exists.</em></p></td>
+</tr>
+<tr class="row-even"><td><p>** Syntax **</p></td>
+<td><p><em>i2c &lt;i2c_port&gt; &lt;i2c_addr&gt; &lt;mem_addr&gt; &lt;wdata&gt; &lt;length&gt; [addr_len]</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_help.jpg"><img alt="image61" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_help.jpg" style="width: 400px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Inputs</strong></p></td>
+<td><p><strong>i2c_port</strong> - This is the physical I2C Port that the I2C device is connected to. Refer to the hardware schematic to understand the proper port to use.
+<em>Range(integer, required) = [0, 5]</em>
+<strong>i2c_addr</strong> - This is the physical I2C address of the I2C device.
+<em>Range(integer, hexadecimal, required): Any 7-bit address</em>
+<strong>mem_addr</strong> - This is the starting address in the device’s register address space for reading or writing to.
+<em>Range(integer, required): [0, MAX_U16]</em>
+<strong>wdata</strong> - This is the raw data that will be used to write to the I2C device, in comma-separated, string format.
+<em>Range(string, comma-separated, required): Integer or hexadecimal values enclosed by double-quotes. Use empty quotes for a read-only operation.</em>
+<strong>length</strong> - The number of bytes to read.
+<em>Range(integer, required): [0, MAX_UL]</em>
+<strong>addr_len</strong> - The size, in bytes, of the memory address.
+<em>Range(integer, optional, default = 1): [1, 2], 1 = 1-byte memory address, 2 = 2-byte memory address</em>
+<strong>The command will try to infer this parameter value by checking the size of the i2c_addr value. If this value is greater than 255, the default memory address size will be 2-bytes rather than 1-byte. For devices which require an upper and lower byte, even in the range less than 255, the user MUST still input 2 for this parameter.</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Outputs</strong></p></td>
+<td><p><strong>On Reads</strong>
+<strong>I2C Device</strong> - This is the 7-bit address that was read from
+<strong>addr</strong> - This is the starting address that was read from
+<strong>bytes read</strong> - This is the number of bytes that was read, in both decimal and hexadecimal format
+<strong>n-byte address length</strong> - This is the address length format that was used during the read operation
+<strong>&lt;addr&gt;: &lt;data&gt;</strong> - This is the actual data read</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Example Usage</strong></p></td>
+<td><p><em>i2c 0 0x38 0x4000 “” 1 2</em>
+This reads one byte from register address 0x4000 from device 0x38 (ADAU1761)
+<em>i2c 0 0x38 0x4002 “” 6 2</em>
+This reads 6 bytes starting from register address 0x4002 from device 0x38 (ADAU1761)
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_readexample.jpg"><img alt="image62" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_readexample.jpg" style="width: 400px;" /></a>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_readexample1.jpg"><img alt="image63" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_readexample1.jpg" style="width: 400px;" /></a>
+<em>i2c 0 0x38 0x4000 “0x03” 0 2</em>
+and
+<em>i2c 0 0x38 0x4000 “” 1 2</em>
+This writes one byte of data (0x03) to register 0x4000 to device 0x38 and then proceeds to read the same register to verify the same contents were read back.
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_writeexample.jpg"><img alt="image64" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/i2c_writeexample.jpg" style="width: 400px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="check-for-active-i2c-devices-i2c-probe">
+<h2>Check for Active I2C Devices (i2c_probe)<a class="headerlink" href="#check-for-active-i2c-devices-i2c-probe" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>This command looks for active external ICs connected via I2C by running through the entire 7-bit I2C address space.
+<em>Note that this command only works when the physical I2C port is configured in the project. That is, the I2C peripheral itself is opened and configured and any physical hardware pin-muxing is already set up for I2C functionality.</em></p></td>
+</tr>
+<tr class="row-even"><td><p>** Syntax **</p></td>
+<td><p><em>i2c_probe &lt;i2c_port&gt;</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/i2c_probe_help.png"><img alt="image67" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/i2c_probe_help.png" style="width: 400px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Inputs</strong></p></td>
+<td><p><strong>i2c_port</strong> - This is the physical I2C Port to probe. On the Audio Starter running DSPs, this is typically denoted as <em>TWIn</em>, where <em>n</em> is the port number. Refer to the hardware schematic to understand the proper port to use.
+<em>Range(integer, required): [0, 5]</em></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Outputs</strong></p></td>
+<td><p>Displays I2C device addresses for entered I2C port</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Example Usage</strong></p></td>
+<td><p><em>i2c_probe 0</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/i2c_probe.png"><img alt="image68" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/i2c_probe.png" style="width: 400px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="stack-usage-stacks">
+<h2>Stack Usage (stacks)<a class="headerlink" href="#stack-usage-stacks" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>This returns the number of words remaining in the task stack. For example, on a 32 bit machine a return value of 1 would indicate that 4 bytes of stack were unused. If the return value is zero then the task has likely overflowed its stack. If the return value is close to zero then the task has come close to overflowing its stack. Stack usage should be checked periodically during development to ensure usage is not approaching an overflow condition.
+<em>Note that the stack here is referring to the tasks allocated to an OS task rather than the processor stack.</em>
+See <a class="icon link reference external" href="https://www.freertos.org/Documentation/02-Kernel/04-API-references/03-Task-utilities/04-uxTaskGetStackHighWaterMarkformoredetails." target="_blank">Stack Usage</a> for more details.</p></td>
+</tr>
+<tr class="row-even"><td><p>** Syntax **</p></td>
+<td><p><em>stacks</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/stacks_help.png"><img alt="image71" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/stacks_help.png" style="width: 400px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Inputs</strong></p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Outputs</strong></p></td>
+<td><p>Number of words remaining in stack, per configured task</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Example Usage</strong></p></td>
+<td><p><em>stacks</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/stacks.png"><img alt="image72" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/stacks.png" style="width: 400px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="cpu-system-utilization-cpu">
+<h2>CPU System Utilization (cpu)<a class="headerlink" href="#cpu-system-utilization-cpu" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>This command reports the processor utilization.
+On the ARM, this value is a percentage, whose value is inversely proportional to the amount of time spent idling. That is, the higher the percentage, the less time the processor is spent idling, indicating that more time is being spent executing in ISR context. A higher value or values approaching 100% indicates that the system is running out of cycles to execute all processes on time.
+On the SHARC processors, this value is reported in <em>CYCLES</em> and is the measurement of cycles spent processing SHARC input and output audio.
+<em>Note that the peak usage value reported for the ARM is cleared once this command is called. That is, the next peak value reported is the peak value calculated since the last time this command was called and is not the value reported of all time.</em></p></td>
+</tr>
+<tr class="row-even"><td><p>** Syntax **</p></td>
+<td><p><em>cpu</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/cpu_help.png"><img alt="image75" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/cpu_help.png" style="width: 400px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Inputs</strong></p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Outputs</strong></p></td>
+<td><p>Displays cpu usage of all cores with current and peak usage</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Example Usage</strong></p></td>
+<td><p><em>cpu</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/cpu.png"><img alt="image76" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/cpu.png" style="width: 400px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="system-logging-report-syslog">
+<h2>System Logging Report (syslog)<a class="headerlink" href="#system-logging-report-syslog" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>This command reports the various internal logging events of the system that may be of use for users of the Audio Starter, such as SD Card connection status, ethernet status, etc. This command will remain open and active to report new events as they appear until the user presses enter.
+<em>Note that once the user presses enter, thus exiting the live system log, all of the previously displayed system log contents are flushed. This means that the next time the syslog command is executed, only the latest events logged will be displayed. If nothing has been logged, it will simply display an empty system log.</em></p></td>
+</tr>
+<tr class="row-even"><td><p>** Syntax **</p></td>
+<td><p><em>syslog</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/syslog_help.png"><img alt="image79" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/syslog_help.png" style="width: 400px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Inputs</strong></p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Outputs</strong></p></td>
+<td><p>Displays live system log</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Example Usage</strong></p></td>
+<td><p><em>syslog</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/syslog.png"><img alt="image80" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/syslog.png" style="width: 400px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="usb-audio-statistics-usb">
+<h2>USB Audio Statistics (usb)<a class="headerlink" href="#usb-audio-statistics-usb" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>This command displays useful statistics related to USB (UAC2) audio. It also allows you to change the UAC2 audio clock domain to/from A2B and System domains as well as reset the statistics. This can be useful while debugging USB audio related tasks or issues.</p></td>
+</tr>
+<tr class="row-even"><td><p>** Syntax **</p></td>
+<td><p><em>usb</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/usb_help.png"><img alt="image85" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/usb_help.png" style="width: 400px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Inputs</strong></p></td>
+<td><p><strong>in|out</strong> This is the direction (RX/TX) of USB whose domain will be changed or whose statistics will be reset.
+<em>Range(string, lowercase, required): [in, out]</em>
+<strong>domain</strong> - This is the clock domain that the USB (UAC2) audio should be running on.
+<em>Range(string, lowercase, required): [a2b, system]</em>
+<strong>reset</strong> - This clears the statistics. Requires the <em>in|out</em> parameter when used.
+<em>Range(string, lowercase): [reset]</em></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Outputs</strong></p></td>
+<td><p>Displays data about Rx and Tx USB packets</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Example Usage</strong></p></td>
+<td><p><em>usb</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/usb.png"><img alt="image86" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/usb.png" style="width: 400px;" /></a>
+<em>usb out reset</em>
+This clears the statistics for USB out (Rx).
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/usbreset.jpg"><img alt="image87" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/usbreset.jpg" style="width: 400px;" /></a>
+<em>usb in domain a2b</em>
+This sets the domain of the USB in (Tx) to be on the A2B Domain.
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/usba2b.jpg"><img alt="image88" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/usba2b.jpg" style="width: 400px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="dynamic-memory-allocation-usage-meminfo">
+<h2>Dynamic Memory Allocation Usage (meminfo)<a class="headerlink" href="#dynamic-memory-allocation-usage-meminfo" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>This command displays the usage of all of the dynamically allocated memory in the system. For heaps managed by <a class="icon link reference external" href="https://github.com/rhempel/umm_malloc" target="_blank">umm_malloc</a>, each heap type, the name of the heap, the total heap size, the total amount of heap allocated and the remaining amount of heap left (units are in bytes) is displayed.
+Additionally, for heaps managed by <em>umm_malloc</em>, the integrity of the memory is also verified. This can be a useful diagnostic when checking for buffer overflows and other areas of memory corruption during development.
+<em>Note that heap management is split between system (</em>umm_malloc<em>), FreeRTOS (</em>heap_4<em>) and SAE (</em>internally managed<em>).</em></p></td>
+</tr>
+<tr class="row-even"><td><p>** Syntax **</p></td>
+<td><p><em>meminfo</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/meminfo_help.png"><img alt="image91" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/meminfo_help.png" style="width: 400px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Inputs</strong></p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Outputs</strong></p></td>
+<td><p>**Heap &lt;heap_name&gt; Info: **
+<strong>Total</strong> = Total assigned in memory, <strong>Allocated</strong> = Memory/entry currently in-use, <strong>Free</strong> = Memory/entry no longer allocated
+<strong>Entries</strong> - This refers to the number of buffers that were allocated for this heap.
+<strong>Blocks</strong> - This refers to the physical memory, in bytes, for total heap.
+<strong>Contig</strong> - This refers to the physical contiguous memory, in bytes, for total heap, accounting for alignment rules.
+<strong>Heap Integrity</strong> - This specifies if the heap is ok to use or if it has any corruption which should be investigated further.
+<strong>FreeRTOS Info:</strong>
+<strong>Free</strong>:
+<strong>Blocks</strong> - This is the number of blocks remaining in the FreeRTOS heap.
+<strong>Current</strong> - This is the available heap space, in bytes, remaining.
+<strong>Min</strong> - This was the minimum number of bytes that were ever free.
+<strong>SHARC Audio Engine Info:</strong>
+<strong>Blocks:
+Total</strong> - This is the total blocks available in the SAE heap.
+<strong>Allocated</strong> - This is the number of blocks currently allocated.
+<strong>Free</strong> - This is the number of free blocks remaining.
+<strong>Size:
+Free</strong> - This is the size of the free heap, in bytes.
+<strong>Allocated</strong> - This is the amount of memory, in bytes, allocated by the SAE.
+<strong>Max</strong> - This is the maximum size of the contiguous free heap, in bytes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Example Usage</strong></p></td>
+<td><p><em>meminfo</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/meminfo.png"><img alt="image92" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/meminfo.png" style="width: 400px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="software-reflash-update">
+<h2>Software Reflash (update)<a class="headerlink" href="#software-reflash-update" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>This command provides the ability to update the firmware on the external flash from a user’s PC (via XMODEM) and put them onto one of the available file-systems on the Audio Starter. Note that the user MUST use a terminal program that supports XMODEM transfers to use this command. See the Shell Overview for more details.
+Users must perform a system reset or a power-on reset for the changes to take effect.
+<strong>Warning! There is no validity check on the file being transferred so use this command with caution! Failure to do so can cause your external flash to become corrupted and not bootable, requiring you to recover via a different supported flashing method for your platform. See</strong> <a class="reference internal" href="../appendix-a.html"><span class="doc">Software Update</span></a> <strong>for details.</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>** Syntax **</p></td>
+<td><p><em>update</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/update_help.png"><img alt="image98" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/update_help.png" style="width: 400px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Inputs</strong></p></td>
+<td><p>Firmware to be updated via xmodem in <em>.LDR</em> format</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Outputs</strong></p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Example Usage</strong></p></td>
+<td><p><em>update</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/update.png"><img alt="image99" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands-capabilities/update.png" style="width: 400px;" /></a>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/receive2.jpg"><img alt="image100" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/receive2.jpg" style="width: 400px;" /></a>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/update.jpg"><img alt="image101" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/update.jpg" style="width: 400px;" /></a>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/update2.jpg"><img alt="image102" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/update2.jpg" style="width: 400px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="shell-screen-resize-resize">
+<h2>Shell Screen Resize (resize)<a class="headerlink" href="#shell-screen-resize-resize" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>This command provides the ability to resize the shell terminal screen via command. The size specified is in the size of columns, line, where each column and line is equivalent to the size of a single character displayed on the screen. Note that an input of <em>columns = 0</em>, <em>lines = 0</em> resets the terminal to a standard size.</p></td>
+</tr>
+<tr class="row-even"><td><p>** Syntax **</p></td>
+<td><p><em>resize [columns [lines]]</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/resize.jpg"><img alt="image106" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/resize.jpg" style="width: 400px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Inputs</strong></p></td>
+<td><p><strong>columns</strong> - This is the number of characters to size the columns of the terminal
+<em>Range(integer, optional): [0, MAX_UL]</em>
+<strong>lines</strong> - This is the number of characters to size the lines of the terminal
+<em>Range(integer, optional): [0, MAX_UL]</em></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Outputs</strong></p></td>
+<td><p>Current columns and lines, in character width</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Example Usage</strong></p></td>
+<td><p><em>resize 20 40</em>
+This sets the column size to 20 characters and the lines size to 20 characters. <a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/resize2.jpg"><img alt="image107" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/resize2.jpg" style="width: 400px;" /></a>
+<em>resize</em>
+This displays the current size of the terminal.
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/resize3.jpg"><img alt="image108" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/resize3.jpg" style="width: 400px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="shell-output-redirect-shell">
+<h2>Shell Output Redirect (shell)<a class="headerlink" href="#shell-output-redirect-shell" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Support status</strong>:</p>
+<div class="line-block">
+<div class="line">* <strong>ADZS-SC589-MINI</strong> - v4.0.0 or greater</div>
+<div class="line">* <strong>ADZS-SC584-EZLITE</strong> - TBD</div>
+<div class="line">* <strong>EV-SC594-SOM</strong> - TBD</div>
+</div>
+<ul class="simple">
+<li><p><strong>EV-SC598-SOM</strong> - TBD</p></li>
+</ul>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>This command provides the ability to redirect print statements from the system and shell commands to something other than standard output, i.e. to the system log or to a specified output file.</p></td>
+</tr>
+<tr class="row-even"><td><p>** Syntax **</p></td>
+<td><p><em>shell [redirect] [value] [arg]</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellredirect.jpg"><img alt="image114" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellredirect.jpg" style="width: 400px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Inputs</strong></p></td>
+<td><p><strong>redirect</strong> - This is the action that the shell command should execute. Note that this may be expanded in the future.
+<em>Range(string, optional): [redirect]</em>
+<strong>value</strong> - This is the value associated with the where system printing should route to A value of 0 selects <em>none</em> which will completely suppresses any print statements. A value of 1 will select <em>stdout</em> which will print directly to standard out (i.e. shell, telnet, etc.). A value of 2 selects <em>syslog</em> which re-routes system printing to the system log. See <a class="reference internal" href="#"><span class="doc">syslog</span></a> for more details about system logging. A value of 3 selects <em>file</em> which re-routes system printing to a file, specified by the user.
+<em>Range(integer, optional, default = 1 (stdout)): [0, 1, 2, 3]</em>
+<strong>arg</strong> - This input value is ONLY used when the redirect value is set to <em>3:file</em>. Use this parameter to set the filename of your choosing for the printed output.
+//Range(string, required (when <em>value = 3</em>): any//</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Outputs</strong></p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Example Usage</strong></p></td>
+<td><p><em>shell redirect</em>
+or
+<em>shell redirect 1</em>
+This sets the system printing to standard out.
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellredirect1.jpg"><img alt="image115" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellredirect1.jpg" style="width: 400px;" /></a>
+<em>shell redirect 0</em>
+This completely suppresses system printing.
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellredirect2.jpg"><img alt="image116" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellredirect2.jpg" style="width: 400px;" /></a>
+<em>shell redirect 2</em>
+This re-routes system printing to the system log.
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellredirect3.jpg"><img alt="image117" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellredirect3.jpg" style="width: 400px;" /></a>
+<em>shell redirect 3 printFile.txt</em>
+This re-routes system printing to a requested file.
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellredirect4.jpg"><img alt="image118" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/shellredirect4.jpg" style="width: 400px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="argument-echo-echo">
+<h2>Argument Echo (echo)<a class="headerlink" href="#argument-echo-echo" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Support status</strong>:</p>
+<div class="line-block">
+<div class="line">* <strong>ADZS-SC589-MINI</strong> - v4.0.0 or greater</div>
+<div class="line">* <strong>ADZS-SC584-EZLITE</strong> - TBD</div>
+<div class="line">* <strong>EV-SC594-SOM</strong> - TBD</div>
+</div>
+<ul class="simple">
+<li><p><strong>EV-SC598-SOM</strong> - TBD</p></li>
+</ul>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>This command provides the ability to echo a string back to the system output. This can be useful for debugging and scripting of the shell command file (<em>.cmd</em>). See the <em>run</em> command for more details.
+No quotes, single quotes and double quotes are all accepted.</p></td>
+</tr>
+<tr class="row-even"><td><p>** Syntax **</p></td>
+<td><p><em>echo [arg_1] … [arg_n]</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/echo.jpg"><img alt="image121" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/echo.jpg" style="width: 400px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Inputs</strong></p></td>
+<td><p><strong>arg_1 - arg_n</strong> - String argument to be displayed on the system out.
+<em>Range(string, optional): any</em></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Outputs</strong></p></td>
+<td><p>Displays <em>arg_1 - arg_n</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Example Usage</strong></p></td>
+<td><p><em>echo</em>
+or
+<em>echo Hello World!</em>
+<a class="reference internal" href="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/echo1.jpg"><img alt="image122" src="https://wiki.analog.com/_media/resources/tools-software/sharc-audio-module/advanced-audio-projects/shell-commands/echo1.jpg" style="width: 400px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<img alt="Shell Commands#.network-commands|Network Commands#.|Shell Commands#.audio-commands|Audio Commands" src="https://wiki.analog.com/_media/navigationShellCommands" />
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

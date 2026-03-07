@@ -1,0 +1,7 @@
+ADV7625/ADV7626/ADV7627 Wiki pages
+==================================
+
+OSD application notes
+=====================
+
+:doc:`ADV7625/ADV7626/ADV7627 OSD graphic capabilities using Fbox, Ibox and Tbox </wiki-migration/products/audio-video/analoghdmidvi-interfaces/adv7625/osd/graphics-capabilities-for-fbox-tbox-ibox>`

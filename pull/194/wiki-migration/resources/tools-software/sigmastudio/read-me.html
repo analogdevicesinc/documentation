@@ -1,0 +1,1953 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="~~GOTO&gt;resources/tools-software/sigmastudio/releaseinfo?0~~" name="description" />
+
+    <title>Analog Devices Inc. SigmaStudio™ Version History &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Analog Devices Inc. SigmaStudio™ Version History</a><ul>
+<li><a class="reference internal" href="#analog-devices-inc-sigmastudio">Analog Devices Inc. SigmaStudio™</a><ul>
+<li><a class="reference internal" href="#installation-notes">Installation Notes</a><ul>
+<li><a class="reference internal" href="#system-requirements">System Requirements</a></li>
+<li><a class="reference internal" href="#to-install-sigmastudio-3-12-or-higher-versions">To install SigmaStudio™ 3.12 or higher versions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#updates-sigmastudio-3-12-3-beta">Updates SigmaStudio 3.12.3 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-12-3-beta">Bug Fixes SigmaStudio 3.12.3 BETA</a></li>
+<li><a class="reference internal" href="#updates-sigmastudio-3-12-2-beta">Updates SigmaStudio 3.12.2 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-12-2-beta">Bug Fixes SigmaStudio 3.12.2 BETA</a></li>
+<li><a class="reference internal" href="#updates-sigmastudio-3-12-1-beta">Updates SigmaStudio 3.12.1 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-12-1-beta">Bug Fixes SigmaStudio 3.12.1 BETA</a></li>
+<li><a class="reference internal" href="#updates-sigmastudio-3-12-0-beta">Updates SigmaStudio 3.12.0 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-12-0-beta">Bug Fixes SigmaStudio 3.12.0 BETA</a></li>
+<li><a class="reference internal" href="#updates-sigmastudio-3-11-2-beta">Updates SigmaStudio 3.11.2 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-11-2-beta">Bug Fixes SigmaStudio 3.11.2 BETA</a></li>
+<li><a class="reference internal" href="#updates-sigmastudio-3-11-1-beta">Updates SigmaStudio 3.11.1 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-11-1-beta">Bug Fixes SigmaStudio 3.11.1 BETA</a></li>
+<li><a class="reference internal" href="#updates-sigmastudio-3-11-0-beta">Updates SigmaStudio 3.11.0 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-11-0-beta">Bug Fixes SigmaStudio 3.11.0 BETA</a></li>
+<li><a class="reference internal" href="#updates-sigmastudio-3-10-4-beta">Updates SigmaStudio 3.10.4 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-10-4-beta">Bug Fixes SigmaStudio 3.10.4 BETA</a></li>
+<li><a class="reference internal" href="#updates-sigmastudio-3-10-3-beta">Updates SigmaStudio 3.10.3 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-10-3-beta">Bug Fixes SigmaStudio 3.10.3 BETA</a></li>
+<li><a class="reference internal" href="#updates-sigmastudio-3-10-2-beta">Updates SigmaStudio 3.10.2 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-10-2-beta">Bug Fixes SigmaStudio 3.10.2 BETA</a></li>
+<li><a class="reference internal" href="#updates-sigmastudio-3-10-1-beta">Updates SigmaStudio 3.10.1 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-10-1-beta">Bug Fixes SigmaStudio 3.10.1 BETA</a></li>
+<li><a class="reference internal" href="#updates-sigmastudio-3-10-0-beta">Updates SigmaStudio 3.10.0 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-10-0-beta">Bug Fixes SigmaStudio 3.10.0 BETA</a></li>
+<li><a class="reference internal" href="#updates-sigmastudio-3-9-2-beta">Updates SigmaStudio 3.9.2 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-9-2-beta">Bug Fixes SigmaStudio 3.9.2 BETA</a></li>
+<li><a class="reference internal" href="#updates-sigmastudio-3-9-1-beta">Updates SigmaStudio 3.9.1 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-9-1-beta">Bug Fixes SigmaStudio 3.9.1 BETA</a></li>
+<li><a class="reference internal" href="#updates-sigmastudio-3-9-0-beta">Updates SigmaStudio 3.9.0 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-9-0-beta">Bug Fixes SigmaStudio 3.9.0 BETA</a></li>
+<li><a class="reference internal" href="#updates-sigmastudio-3-8-2">Updates SigmaStudio 3.8.2</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-8-2">Bug Fixes SigmaStudio 3.8.2</a></li>
+<li><a class="reference internal" href="#updates-sigmastudio-3-8-1-beta">Updates SigmaStudio 3.8.1 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-8-0-beta">Bug Fixes SigmaStudio 3.8.0 BETA</a></li>
+<li><a class="reference internal" href="#updates-sigmastudio-3-7-7">Updates SigmaStudio 3.7.7</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-7-6">Bug Fixes SigmaStudio 3.7.6</a></li>
+<li><a class="reference internal" href="#enhancements-sigmastudio-3-7-6">Enhancements SigmaStudio 3.7.6</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-7-5-beta">Bug Fixes SigmaStudio 3.7.5 BETA</a></li>
+<li><a class="reference internal" href="#enhancements-sigmastudio-3-7-5-beta">Enhancements SigmaStudio 3.7.5 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-7-4-beta">Bug Fixes SigmaStudio 3.7.4 BETA</a></li>
+<li><a class="reference internal" href="#enhancements-sigmastudio-3-7-4-beta">Enhancements SigmaStudio 3.7.4 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-7-3-beta">Bug Fixes SigmaStudio 3.7.3 BETA</a></li>
+<li><a class="reference internal" href="#enhancements-sigmastudio-3-7-3-beta">Enhancements SigmaStudio 3.7.3 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-7-2-beta">Bug Fixes SigmaStudio 3.7.2 BETA</a></li>
+<li><a class="reference internal" href="#enhancements-sigmastudio-3-7-2-beta">Enhancements SigmaStudio 3.7.2 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-6-3-beta">Bug Fixes SigmaStudio 3.6.3 BETA</a></li>
+<li><a class="reference internal" href="#enhancements-sigmastudio-3-6-3-beta">Enhancements SigmaStudio 3.6.3 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-6-2-beta">Bug Fixes SigmaStudio 3.6.2 BETA</a></li>
+<li><a class="reference internal" href="#enhancements-sigmastudio-3-6-2-beta">Enhancements SigmaStudio 3.6.2 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-6-1-beta">Bug Fixes SigmaStudio 3.6.1 BETA</a></li>
+<li><a class="reference internal" href="#enhancements-sigmastudio-3-6-1-beta">Enhancements SigmaStudio 3.6.1 BETA</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-5-release">SigmaStudio 3.5 Release</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-5-7-beta">Bug Fixes SigmaStudio 3.5.7 BETA</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-5-7-beta">Enhancements in SigmaStudio 3.5.7 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-5-6-beta">Bug Fixes SigmaStudio 3.5.6 BETA</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-5-6-beta">Enhancements in SigmaStudio 3.5.6 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-5-5-beta">Bug Fixes SigmaStudio 3.5.5 BETA</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-5-5-beta">Enhancements in SigmaStudio 3.5.5 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-5-4-beta">Bug Fixes SigmaStudio 3.5.4 BETA</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-5-4-beta">Enhancements in SigmaStudio 3.5.4 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-5-3-beta">Bug Fixes SigmaStudio 3.5.3 BETA</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-5-3-beta">Enhancements in SigmaStudio 3.5.3 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-5-2-beta">Bug Fixes SigmaStudio 3.5.2 BETA</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-5-2-beta">Enhancements in SigmaStudio 3.5.2 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-5-1-beta">Bug Fixes SigmaStudio 3.5.1 BETA</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-5-1-beta">Enhancements in SigmaStudio 3.5.1 BETA</a></li>
+<li><a class="reference internal" href="#bug-fixes-sigmastudio-3-5-0-beta">Bug Fixes SigmaStudio 3.5.0 BETA</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-4">SigmaStudio 3.4</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-3-0">Enhancements in SigmaStudio 3.3.0</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-2-0">Enhancements in SigmaStudio 3.2.0</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-2-0-major-bug-fixes">SigmaStudio 3.2.0 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-1-20">Enhancements in SigmaStudio 3.1.20</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-1-20-major-bug-fixes">SigmaStudio 3.1.20 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-1-9">Enhancements in SigmaStudio 3.1.9</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-1-9-major-bug-fixes">SigmaStudio 3.1.9 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-1-8">Enhancements in SigmaStudio 3.1.8</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-1-8-major-bug-fixes">SigmaStudio 3.1.8 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-1-7">Enhancements in SigmaStudio 3.1.7</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-1-7-major-bug-fixes">SigmaStudio 3.1.7 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-1-6">Enhancements in SigmaStudio 3.1.6</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-1-6-major-bug-fixes">SigmaStudio 3.1.6 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-1-5-major-bug-fixes">SigmaStudio 3.1.5 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-1-4">Enhancements in SigmaStudio 3.1.4</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-1-4-major-bug-fixes">SigmaStudio 3.1.4 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-1-3">Enhancements in SigmaStudio 3.1.3</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-1-3-major-bug-fixes">SigmaStudio 3.1.3 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-1-2">Enhancements in SigmaStudio 3.1.2</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-1-2-major-bug-fixes">SigmaStudio 3.1.2 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-1-1">Enhancements in SigmaStudio 3.1.1</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-1-1-major-bug-fixes">SigmaStudio 3.1.1 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-1-0">Enhancements in SigmaStudio 3.1.0</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-1-0-major-bug-fixes">SigmaStudio 3.1.0 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-0-13">Enhancements in SigmaStudio 3.0.13</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-0-13-major-bug-fixes">SigmaStudio 3.0.13 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-0-12">Enhancements in SigmaStudio 3.0.12</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-0-12-major-bug-fixes">SigmaStudio 3.0.12 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-0-11">Enhancements in SigmaStudio 3.0.11</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-0-11-major-bug-fixes">SigmaStudio 3.0.11 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-0-10">Enhancements in SigmaStudio 3.0.10</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-0-10-major-bug-fixes">SigmaStudio 3.0.10 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-0-9">Enhancements in SigmaStudio 3.0.9</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-0-8-major-bug-fixes">SigmaStudio 3.0.8 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-0-7">Enhancements in SigmaStudio 3.0.7</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-0-7-major-bug-fixes">SigmaStudio 3.0.7 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-0-6-major-bug-fixes">SigmaStudio 3.0.6 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-0-5-major-bug-fixes">SigmaStudio 3.0.5 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-0-4">Enhancements in SigmaStudio 3.0.4</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-0-4-major-bug-fixes">SigmaStudio 3.0.4 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-0-3">Enhancements in SigmaStudio 3.0.3</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-0-3-major-bug-fixes">SigmaStudio 3.0.3 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-0-2-major-bug-fixes">SigmaStudio 3.0.2 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#sigmastudio-3-0-1-major-bug-fixes">SigmaStudio 3.0.1 Major Bug Fixes</a></li>
+<li><a class="reference internal" href="#enhancements-in-sigmastudio-3-0-0">Enhancements in SigmaStudio 3.0.0</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bug-reports">Bug Reports</a></li>
+<li><a class="reference internal" href="#requests-for-features">Requests for Features</a></li>
+<li><a class="reference internal" href="#legal-notices">Legal Notices</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <p>~~GOTO&gt;resources/tools-software/sigmastudio/releaseinfo?0~~</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This page is not maintained. Please refer to the following page instead.</p>
+<p><a class="reference internal" href="releaseinfo.html"><span class="doc">Release Information</span></a></p>
+</div>
+<section id="analog-devices-inc-sigmastudio-version-history">
+<h1>Analog Devices Inc. SigmaStudio™ Version History<a class="headerlink" href="#analog-devices-inc-sigmastudio-version-history" title="Link to this heading"></a></h1>
+<section id="analog-devices-inc-sigmastudio">
+<h2>Analog Devices Inc. SigmaStudio™<a class="headerlink" href="#analog-devices-inc-sigmastudio" title="Link to this heading"></a></h2>
+<p>Welcome to Analog Devices, Inc. (ADI) SigmaStudio™ 3.12 ReadMe file. SigmaStudio Graphical Development Tool supports SigmaDSP™ and other audio processor products. Learn more about ADI’s Audio Signal Processors by visiting <a class="icon adi reference external" href="https://www.analog.com/SigmaDSP" target="_blank">http://www.analog.com/sigmadsp</a>.</p>
+<p><a class="reference internal" href="../sigmastudio.html"><span class="doc">Click here to return to the SigmaStudio and SigmaDSP Documentation top page.</span></a></p>
+<section id="installation-notes">
+<h3>Installation Notes<a class="headerlink" href="#installation-notes" title="Link to this heading"></a></h3>
+<section id="system-requirements">
+<h4>System Requirements<a class="headerlink" href="#system-requirements" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line">Windows 7 x86/x64*</div>
+<div class="line">Windows Vista*</div>
+<div class="line">Windows XP Professional or Home Edition with SP2**</div>
+<div class="line">Microsoft .NET Framework 3.5</div>
+<div class="line">256 MB of RAM (256 MB recommended)</div>
+<div class="line">50 MB of available hard disk space</div>
+<div class="line">1024 x 768 screen resolution</div>
+<div class="line">USB 2.0 data port (Required for use with Evaluation hardware only)</div>
+</div>
+<div class="line-block">
+<div class="line">* The user must be an administrator when installing SigmaStudio.</div>
+<div class="line">* * ADI no longer supports Windows XP</div>
+</div>
+</section>
+<section id="to-install-sigmastudio-3-12-or-higher-versions">
+<h4>To install SigmaStudio™ 3.12 or higher versions<a class="headerlink" href="#to-install-sigmastudio-3-12-or-higher-versions" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Quit any applications you are running.</p></li>
+<li><p>Double-click on the SigmaStudio 3.x installer, “Sigma Studio xxx.exe”, to start the installation.</p></li>
+<li><p>Review the contents of the license agreement, if you agree click “I Agree”.</p></li>
+<li><p>SigmaStudio 3.x may be installed alongside or over an existing copy of SigmaStudio, Select an existing installation directory if you want to overwrite a previous SigmaStudio version.</p></li>
+<li><p>If you are installing SigmaStudio for the first time, restart your computer when the installation is complete.</p></li>
+</ul>
+</section>
+</section>
+<section id="updates-sigmastudio-3-12-3-beta">
+<h3>Updates SigmaStudio 3.12.3 BETA<a class="headerlink" href="#updates-sigmastudio-3-12-3-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Initial phase can be configured now in Sin, Square, Triangle and Sawtooth wave oscillators for ADAU145x.</p></li>
+<li><p>Audio signal router algorithms are added.</p></li>
+<li><p>‘Value Hold’ algorithm can hold multiple input channels for ADAU145x.</p></li>
+<li><p>‘Export System Files’ generates the Netlist information into xml format.</p></li>
+<li><p>External SPI Delay module can now support 24 bit addressable SPI RAMs for ADAU145x.</p></li>
+<li><p>Text In filter’s user control is updated</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-12-3-beta">
+<h3>Bug Fixes SigmaStudio 3.12.3 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-12-3-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Maximum and minimum values of Linear gain is now calculated depends on the type of core.</p></li>
+<li><p>Compilation error in the NxM mixer for some values of N, M is fixed.</p></li>
+<li><p>Bug in export for the NxM mixer is fixed. (ADAU145X)</p></li>
+<li><p>Copy Paste bug in DC source is fixed.</p></li>
+<li><p>Issue while creating a copy of the module which does not contain an algorithm, is fixed.</p></li>
+<li><p>Misleading info in Combo: RMS + Peak module is corrected.</p></li>
+<li><p>Issue while updating the parameter for High order shelving filter, is fixed.</p></li>
+<li><p>T connection module is updated to restrict the connection between modules from different ICs.</p></li>
+<li><p>Schematic status update is corrected for “Allow Realtime AB Testing” feature.</p></li>
+<li><p>Issue with the FIR filter MIPS calculation is fixed for ADAU144x.</p></li>
+</ul>
+</details></section>
+<section id="updates-sigmastudio-3-12-2-beta">
+<h3>Updates SigmaStudio 3.12.2 BETA<a class="headerlink" href="#updates-sigmastudio-3-12-2-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>ADAU1372 has been added to the library.</p></li>
+<li><p>New High Order Shelving filters for 3rd Generation Cores (ADAU144X, ADAU176X)</p></li>
+<li><p>ParametricEQ now supports up to 192 kHz Fs GUI representation.</p></li>
+<li><p>Hilbert Transform, Voice Activity Detector (VAD), Super Bass algorithms are implemented for ADAU145X processor.</p></li>
+<li><p>New version of Dynamics Processors which outputs compressor gain is added</p></li>
+<li><p>Linear Interpolator algorithm is implemented as a growable algorithm for ADAU145X and ADAU144X processors.</p></li>
+<li><p>Support to directly switch the communication protocol from I2C to SPI for ADAU144x</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-12-2-beta">
+<h3>Bug Fixes SigmaStudio 3.12.2 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-12-2-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>ADAU145X, fix incorrect hold logic for “Max and Hold”, “Max Abs and Hold”, and “Min and Hold” blocks.</p></li>
+<li><p>Reverb algorithm for AD1940.</p></li>
+<li><p>ParametricEQ fixed for first order filter on ADAU145x.</p></li>
+<li><p>Fixed transfer function calculation of Subtraction and Signal Invert modules for ADAU145x</p></li>
+</ul>
+</details></section>
+<section id="updates-sigmastudio-3-12-1-beta">
+<h3>Updates SigmaStudio 3.12.1 BETA<a class="headerlink" href="#updates-sigmastudio-3-12-1-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Save-restore support added for right-click context menu settings (e.g. slew-time, data-memory, block-size). This update supports preservation of the menu settings during copy/paste, undo/redo, project/cell “Settings”, scripting and “Control UI”.</p></li>
+<li><p>“ADI Surround”, “Beam Forming (fixed)”, “Automatic EQ”, “Crossover Filter (double precision)”, “Pitch Transposer” and “GPIO Conditioning” algorithms implemented for ADAU145X processor</p></li>
+<li><p>New ADAU145x Basic DSP Delay algorithm supports selection between the 2 data memories.</p></li>
+<li><p>Arithmetic Shift operation added for ADAU145x</p></li>
+<li><p>ADAU145x support for 32.0 (“RAW 32bit”) format serial audio data, format option is located in right click context menu of inputs and outputs.</p></li>
+<li><p>Holters filter with agnostic GUI.</p></li>
+<li><p>ADAU1772 is SPI ready.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-12-1-beta">
+<h3>Bug Fixes SigmaStudio 3.12.1 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-12-1-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Mid EQ out of index issue caused by opening a SStudio v3.9 or older version project.</p></li>
+<li><p>ADAU1450 register controls user interface fixed</p></li>
+</ul>
+</details></section>
+<section id="updates-sigmastudio-3-12-0-beta">
+<h3>Updates SigmaStudio 3.12.0 BETA<a class="headerlink" href="#updates-sigmastudio-3-12-0-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Support for multi-rate signal flow (multiple sampling rates or block-sizes in a single schematic design window).</p></li>
+<li><p>Multi Tap Gain algorithm implemented for AD194x, ADAU170x, ADAU176x processors.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-12-0-beta">
+<h3>Bug Fixes SigmaStudio 3.12.0 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-12-0-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Level detector with output display for AD1940.</p></li>
+<li><p>Standard RMS Compressor read back indicator worked for AD1940.</p></li>
+<li><p>ADAU145x register window on the routing matrix and serial ports.</p></li>
+<li><p>Parametric EQ cell, low pass and high pass first order filter selection.</p></li>
+</ul>
+</details></section>
+<section id="updates-sigmastudio-3-11-2-beta">
+<h3>Updates SigmaStudio 3.11.2 BETA<a class="headerlink" href="#updates-sigmastudio-3-11-2-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>SigmaStudio load time performance improvements for 64 bit OS</p></li>
+<li><p>Added right click context menu for copy of “Output Window” text to clipboard</p></li>
+<li><p>Presence of obsolete algorithm code in legacy projects indicated in assembler output window</p></li>
+<li><p>Automatic Volume Control (AVC) implemented for ADAU145x processor</p></li>
+<li><p>N-channel peak compressor implemented for ADAU145X processor</p></li>
+<li><p>Multi Tap Gain algorithm implemented for ADAU145x processor</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-11-2-beta">
+<h3>Bug Fixes SigmaStudio 3.11.2 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-11-2-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Standard Peak Dynamic processor fix for ADAU145x to match full range -135dB to +21dB.</p></li>
+<li><p>Memory error for large ADAU145x design using One Shot, Value Cross Detect, or DC Blocker</p></li>
+<li><p>ADAU145x Logic “AB in CD out” condition fixed, GUI was not setting proper algorithm mode</p></li>
+<li><p>Loading “hierarchy board” file caused mouse cursor to disappear</p></li>
+</ul>
+</details></section>
+<section id="updates-sigmastudio-3-11-1-beta">
+<h3>Updates SigmaStudio 3.11.1 BETA<a class="headerlink" href="#updates-sigmastudio-3-11-1-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Transfer function for the two way adder on the ADAU1772 is now implemented.</p></li>
+<li><p>RealTimeDisplay cell now supports ADAU145x data format.</p></li>
+<li><p>Added ADAU1452 NLMS filter algorithm.</p></li>
+<li><p>Mono Dynamics Bass Boost and Adaptive Mixer Dual graph algorithms added for ADAU145x.</p></li>
+<li><p>Configurable SPI memory erase cycle time to support large flash memories for ADAU145x.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-11-1-beta">
+<h3>Bug Fixes SigmaStudio 3.11.1 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-11-1-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>ADAU145x Linear interpolator now supports more than 128 points.</p></li>
+<li><p>ADAU145x multiple instances of DC Blocker filter causes exception.</p></li>
+<li><p>ADAU1451 register control routing matrix window fixed.</p></li>
+<li><p>ADAU145x NxM Multiple Ctrl Mixer cell causes exception.</p></li>
+<li><p>ADAU145x External Volume (HW Slew) slew control function and state save/restore fixed.</p></li>
+<li><p>ADAU145x incorrect instruction cycle count estimate for large FIR filters</p></li>
+<li><p>Selfboot EEPROM I2C device settings not compatible with ADAU1701/ADAU1772 eval boards.</p></li>
+<li><p>ADAU1772 EEPROM write causes exception.</p></li>
+<li><p>ADAU145x block processing context save/restore added for peripheral math accelerators.</p></li>
+<li><p>ADAU145X rounding mode is now disabled (round to –inf) by default.</p></li>
+</ul>
+</details></section>
+<section id="updates-sigmastudio-3-11-0-beta">
+<h3>Updates SigmaStudio 3.11.0 BETA<a class="headerlink" href="#updates-sigmastudio-3-11-0-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Adding Advanced Pith Shifter DEMO algorithm</p></li>
+<li><p>Adding single precision ParametricEQ.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-11-0-beta">
+<h3>Bug Fixes SigmaStudio 3.11.0 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-11-0-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Export files using CRC and clearing Program memory methods were missing.</p></li>
+<li><p>Fixed the real delay wrong calculated of fractional delay.</p></li>
+</ul>
+</details></section>
+<section id="updates-sigmastudio-3-10-4-beta">
+<h3>Updates SigmaStudio 3.10.4 BETA<a class="headerlink" href="#updates-sigmastudio-3-10-4-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>New multi-tap delay mixer: AD194x, ADAU170x, ADAU176x, ADAU144x</p></li>
+<li><p>New linear value NxM mixer (all processors).</p></li>
+<li><p>ADAU145x algorithms: Standard Compressor, DC Blocking Filter, Pink Noise Filter, Lookup Table (8.24), Pulse Count, Timer, Stop Watch, Envelope, State Machine, MUX w/ slew, Voltage Controlled Delay, Multi-tap Delay, Fractional Delay, Max, Min, One Shot, Value Cross, Value Hold, Abs Max, Master Port Delay, Master Port Writer.</p></li>
+<li><p>ADAU145X framework changes required for silicon Revision D support (backward compatible)</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-10-4-beta">
+<h3>Bug Fixes SigmaStudio 3.10.4 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-10-4-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Projects from version 3.5 or earlier would not open in version 3.10</p></li>
+<li><p>Parametric EQ Index Selectable filter on IIR, now it displays correctly all the curves.</p></li>
+<li><p>Fixed the interaction problem between different “OneShot Rise, Reset” block.</p></li>
+<li><p>Fixed “Boost Min” save and restore issue on “General 2nd Order w var Param/Lookup/Slew”.</p></li>
+<li><p>Fixed source-destination reversal of links and hierarchy board input/output distortion due to connections made in reverse direction.</p></li>
+<li><p>Fixed Min and Hold and Max and Hold algorithms.</p></li>
+<li><p>Sequence window, fixed corruption when editing data or bytes when data spans more than 1 line.</p></li>
+<li><p>Fixed ADAU145x Linear Interpolator table not initialized correctly.</p></li>
+<li><p>Fixed ADAU145x index selectable mux, demux and Look-up-table (LUT): offset value “out of range” error in large projects.</p></li>
+<li><p>Fixed ADAU145X NxM mixer algorithm, gain values not downloaded</p></li>
+<li><p>Fixed ADAU145X GPIO algorithm: interrupt protection required</p></li>
+</ul>
+</details></section>
+<section id="updates-sigmastudio-3-10-3-beta">
+<h3>Updates SigmaStudio 3.10.3 BETA<a class="headerlink" href="#updates-sigmastudio-3-10-3-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Added multiple channels FIR and obsolete the old one.</p></li>
+<li><p>Added lower range log look up table which ranged from -90dB to +6 dB.</p></li>
+<li><p>ADAU145X framework updated</p></li>
+<li><p>Added no MIPS and no Data usage switch for ADAU1761, ADAU1781 and ADAU144x.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-10-3-beta">
+<h3>Bug Fixes SigmaStudio 3.10.3 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-10-3-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Register window fixes for ADAU1772 on the PGA/ADC tab, all four pop suppression buttons. On Output/Serial Port tab, both the DAC0 and DAC1 gain sliders, and pop suppression buttons under “Headphone Control” section.</p></li>
+<li><p>ADAU1772 Parametric EQ bug when used with a two way mixer.</p></li>
+<li><p>“Export system files” capability for ADAU1772 is now fixed.</p></li>
+<li><p>ADAU1701, ADAU1702, and ADAU1401 had a GPIO option on MP0 and MP6 of TDM8 in and TDM out respectively, which is no longer supported. The register window has been updated accordingly.</p></li>
+<li><p>NxM mixer cell has been modified so that the export files avoid the address repetition.</p></li>
+<li><p>ParametricEQ multiple filter bug for ADAU145x core.</p></li>
+</ul>
+</details></section>
+<section id="updates-sigmastudio-3-10-2-beta">
+<h3>Updates SigmaStudio 3.10.2 BETA<a class="headerlink" href="#updates-sigmastudio-3-10-2-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>New DC Input Entry and New Single Volume (Write to Selected parameter) with no MIPS and no Data usage for ADAU1761, ADAU1781 and ADAU144x.</p></li>
+<li><p>Enable / Disable button got bigger for most filters. A new phase shift button was included on the filters.</p></li>
+<li><p>Updated DSP Configuration Window for ADAU145x</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-10-2-beta">
+<h3>Bug Fixes SigmaStudio 3.10.2 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-10-2-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Hilbert Transform now works properly for ADAU1701 and AD1940.</p></li>
+<li><p>VCO with phase reset is ready for ADAU1701 and AD1940.</p></li>
+<li><p>Fixed the ADAU1461 I/O problem on digital input 9.</p></li>
+<li><p>Fixed MidEQ Shelving filter downloading coefficients twice.</p></li>
+</ul>
+</details></section>
+<section id="updates-sigmastudio-3-10-1-beta">
+<h3>Updates SigmaStudio 3.10.1 BETA<a class="headerlink" href="#updates-sigmastudio-3-10-1-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>New ADAU145X processor</p></li>
+<li><p>Add Standard Dynamics processors for ADAU1701 and AD1940.</p></li>
+<li><p>New Real Time Display and Single Level detector with no MIPS and no Data usage for ADAU144x, and low power DSP.</p></li>
+<li><p>New Stereo and Mono Peak Dynamics Processors with higher range (-90 dB, +24 dB) with and without external detect for ADAU1701 and AD1940.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-10-1-beta">
+<h3>Bug Fixes SigmaStudio 3.10.1 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-10-1-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>VCO with reset algorithm for ADAU1701 and AD1940 is fixed.</p></li>
+</ul>
+</details></section>
+<section id="updates-sigmastudio-3-10-0-beta">
+<h3>Updates SigmaStudio 3.10.0 BETA<a class="headerlink" href="#updates-sigmastudio-3-10-0-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>New dynamics interpolator with feed forward graph.</p></li>
+<li><p>New no averaging level detectors with and inverse display and speed control.</p></li>
+<li><p>New parameter read back block with no DATA instructions, for ADAU176x, ADAU1781 and ADAU144x.</p></li>
+<li><p>New linear sweep blocks (2 externally triggered and 2 on/off switch).</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-10-0-beta">
+<h3>Bug Fixes SigmaStudio 3.10.0 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-10-0-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>SigmaStudio load time has been reduced.</p></li>
+<li><p>Pulse generator approximates user’s duty cycle input.</p></li>
+</ul>
+</details></section>
+<section id="updates-sigmastudio-3-9-2-beta">
+<h3>Updates SigmaStudio 3.9.2 BETA<a class="headerlink" href="#updates-sigmastudio-3-9-2-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Export to Linux files now supports XML format. Implementation of Export to Linux files for ADAU1701.</p></li>
+<li><p>Single band level detector supports linear display.</p></li>
+<li><p>New peak dynamics processors with external detect (Mono/Stereo) that supports fast release for low frequencies.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-9-2-beta">
+<h3>Bug Fixes SigmaStudio 3.9.2 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-9-2-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><p>(None)</p>
+</details></section>
+<section id="updates-sigmastudio-3-9-1-beta">
+<h3>Updates SigmaStudio 3.9.1 BETA<a class="headerlink" href="#updates-sigmastudio-3-9-1-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Single band level detector has now a new graphic adjustable display.</p></li>
+<li><p>Added All-pass selection to “First Order Filters” type in General (2nd Order) Filter</p></li>
+<li><p>Added user selectable phase wrapped/un-wrapped and radians/degrees options in probe window</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-9-1-beta">
+<h3>Bug Fixes SigmaStudio 3.9.1 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-9-1-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>FIR Filter table is fixed, with all coefficients set to zero except the first.</p></li>
+</ul>
+</details></section>
+<section id="updates-sigmastudio-3-9-0-beta">
+<h3>Updates SigmaStudio 3.9.0 BETA<a class="headerlink" href="#updates-sigmastudio-3-9-0-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Extended probe window frequency axis to 96kHz maximum.</p></li>
+<li><p>Added log lookup table for ADAU170x and ADAU144x.</p></li>
+<li><p>Made simple sub-harmonic support ADAU176x, ADAU1781 and ADAU144x.</p></li>
+<li><p>Added Quad VCO support ADAU1701 and AD1940.</p></li>
+<li><p>Added VCO with flexible phase for ADAU170x and ADAU144x.</p></li>
+<li><p>Added two externally triggered sweeps for ADAU170x and ADAU144x.</p></li>
+<li><p>Added square root approximation for ADAU170x and ADAU144x.</p></li>
+<li><p>Added peak compressor with zero cross for ADAU176x, ADAU1781 and ADAU144x.</p></li>
+<li><p>Added elliptical interpolated IIR low pass filter for ADAU176x, ADAU1781 and ADAU144X.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-9-0-beta">
+<h3>Bug Fixes SigmaStudio 3.9.0 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-9-0-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Change schematic view mouse wheel zoom steps to match the zoom menu zoom step sizes.</p></li>
+<li><p>Decrease font size and add tooltips in the ADAU144X register window to fix readability issues.</p></li>
+<li><p>Optimized schematic linking reduces compile times for large projects</p></li>
+</ul>
+</details></section>
+<section id="updates-sigmastudio-3-8-2">
+<h3>Updates SigmaStudio 3.8.2<a class="headerlink" href="#updates-sigmastudio-3-8-2" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Added optimized sine tone generator which used subroutine.</p></li>
+<li><p>SigmaStudio application was not appearing in the toolbar at launch when opened with a project.</p></li>
+<li><p>Sequence Window download operation was inserting read-back after each write, this is now a user option “Verify on Download” that is disabled by default.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-8-2">
+<h3>Bug Fixes SigmaStudio 3.8.2<a class="headerlink" href="#bug-fixes-sigmastudio-3-8-2" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Additional .dspproj file can now be opened from Windows Explorer when SigmaStudio is already running.</p></li>
+<li><p>SigmaStudio application was not appearing in the toolbar at launch when opened with a project.</p></li>
+<li><p>Sequence Window download operation was inserting read-back after each write, this is now a user option “Verify on Download“ that is disabled by default.</p></li>
+</ul>
+</details></section>
+<section id="updates-sigmastudio-3-8-1-beta">
+<h3>Updates SigmaStudio 3.8.1 BETA<a class="headerlink" href="#updates-sigmastudio-3-8-1-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Added Virtual Control Interface, user customizable system tuning graphical interface.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-8-0-beta">
+<h3>Bug Fixes SigmaStudio 3.8.0 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-8-0-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Fix duplicate parameter naming in “Export System Files” for the Pitch Transpose.</p></li>
+<li><p>Certain projects were set as dirty (i.e. modified) immediately on file open.</p></li>
+</ul>
+</details></section>
+<section id="updates-sigmastudio-3-7-7">
+<h3>Updates SigmaStudio 3.7.7<a class="headerlink" href="#updates-sigmastudio-3-7-7" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Windows Administrator privileges are required for installation</p>
+<ul>
+<li><p>The option for installing as ‘All Users’ or ‘Just Me’ was removed.</p></li>
+<li><p>The default location of the Sample Scripts and Sample Schematics has changed</p></li>
+</ul>
+</li>
+<li><p>Automatic Add-Ins: at startup SigmaStudio will automatically scan all DLL files located in the SigmaStudio installation directly and enable them for use in SigmaStudio. The existing Tools | Add-Ins Browser can still be used to add external libraries or disable a library.</p></li>
+<li><p>The “Reverb” algorithm’s user interface has been visually redesigned.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-7-6">
+<h3>Bug Fixes SigmaStudio 3.7.6<a class="headerlink" href="#bug-fixes-sigmastudio-3-7-6" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Lookup table editor prevents the user to delete text lines accidentally.</p></li>
+<li><p>The bypass and enable of ADAU1373’s PLLA and PLLB were inverted. N div was also inverted.</p></li>
+<li><p>FIR filters now support copy/paste and Hierarchy board save/load. Existing Hierarchy board files must be resaved before the FIR settings will be restored when on hierarchy board load.</p></li>
+<li><p>Hierarchy board load behavior changed to better support large hierarchy files. Loading a hierarchy board is now a destruction (non-undoable) operation.</p></li>
+<li><p>SignalDetection decay time fixed for ADAU1701 and AD1940.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-sigmastudio-3-7-6">
+<h3>Enhancements SigmaStudio 3.7.6<a class="headerlink" href="#enhancements-sigmastudio-3-7-6" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Knobs in SigmaStudio support click protection property, tooltip value indicator, and speed control. Value label indicators do not clutter anymore.</p></li>
+<li><p>ADAU1772 included.</p></li>
+<li><p>Added a Mono peak compressor with external detection.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-7-5-beta">
+<h3>Bug Fixes SigmaStudio 3.7.5 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-7-5-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>The continuous read check box’s check status of RealTimeDisplay was disturbed.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-sigmastudio-3-7-5-beta">
+<h3>Enhancements SigmaStudio 3.7.5 BETA<a class="headerlink" href="#enhancements-sigmastudio-3-7-5-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Added “Pulse Generator” for ADAU176x, ADAU1781, ADAU1701 and AD1940.</p></li>
+<li><p>Made RealTimeDisplay work for the 1701 and 1940.</p></li>
+<li><p>Gain Envelope algorithms moved from “ADI Algorithms” category to “Volume Controls”.</p></li>
+<li><p>ADAU1772 DSP is now added into SigmaStudio environment.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-7-4-beta">
+<h3>Bug Fixes SigmaStudio 3.7.4 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-7-4-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Gen 2nd Order filter is fixed. This will prevent error for unsupported Q values.</p></li>
+<li><p>Index Selectable Independent Multiple Band filter is fixed. Filter editor will now display all the controls in any row of the filter.</p></li>
+<li><p>Index Selectable Independent Multiple Band filter and Index Selectable filters are fixed. The module will not show error message upon removing the last filter while in selected state.</p></li>
+<li><p>Chime algorithm modulation issue. Now is fixed and output a full scale signal.</p></li>
+<li><p>Modified “Pitch Transpose” using UIData serialization.</p></li>
+<li><p>Copy/Paste of block hierarchy board is fixed. This will prevent boards containing block processing modules getting pasted in the sample processing design tab.</p></li>
+<li><p>Copy/Paste of sample hierarchy board is fixed. This will prevent all sub-boards getting pasted in the main design tab.</p></li>
+<li><p>Scripting interface is fixed. This will remove the restrictions in connecting 2 block processing modules using script.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-sigmastudio-3-7-4-beta">
+<h3>Enhancements SigmaStudio 3.7.4 BETA<a class="headerlink" href="#enhancements-sigmastudio-3-7-4-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Linear interpolator has added a GUI for intuitive usability.</p></li>
+<li><p>Added “Fractional Delay” controls and algorithms both Voltage Controlled and User Controlled.</p></li>
+<li><p>Added “Pitch Transpose” controls and algorithms both Voltage Controlled and User Controlled.</p></li>
+<li><p>Added “Pulse Generator” for ADAU176x, ADAU1781, ADAU1701 and AD1940.</p></li>
+<li><p>Added a “tiny circle” for “DSP Read Back” to control the cell start/stop continuous read back.</p></li>
+<li><p>Filter stability criteria imposed on “State Variable Filter” controls.</p></li>
+<li><p>More automation APIs added to SigmaStudioServer.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-7-3-beta">
+<h3>Bug Fixes SigmaStudio 3.7.3 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-7-3-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><p>(None)</p>
+</details></section>
+<section id="enhancements-sigmastudio-3-7-3-beta">
+<h3>Enhancements SigmaStudio 3.7.3 BETA<a class="headerlink" href="#enhancements-sigmastudio-3-7-3-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Add a mono super bass.</p></li>
+<li><p>Add a gain output volume control.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-7-2-beta">
+<h3>Bug Fixes SigmaStudio 3.7.2 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-7-2-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>TreeToolbox multiple DSP crash fixed.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-sigmastudio-3-7-2-beta">
+<h3>Enhancements SigmaStudio 3.7.2 BETA<a class="headerlink" href="#enhancements-sigmastudio-3-7-2-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Sound String algorithm added.</p></li>
+<li><p>Probe – Stimulus data flow efficiency enhanced.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-6-3-beta">
+<h3>Bug Fixes SigmaStudio 3.6.3 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-6-3-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Unordered List ItemParametric EQ first order filter coefficients are now generated correctly.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-sigmastudio-3-6-3-beta">
+<h3>Enhancements SigmaStudio 3.6.3 BETA<a class="headerlink" href="#enhancements-sigmastudio-3-6-3-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Volume control has new min, max, and step limit values while using it in the linear scale.</p></li>
+<li><p>The installer prompts the option to install as “All Users” or as an “Individual User”.</p></li>
+<li><p>SigmaStudio will no longer use elevation to open.</p></li>
+<li><p>TCP/IP implementation for ADAU1761.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-6-2-beta">
+<h3>Bug Fixes SigmaStudio 3.6.2 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-6-2-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Unordered List ItemFilter table generator format fix. This will prevent the user to input an unsupported format.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-sigmastudio-3-6-2-beta">
+<h3>Enhancements SigmaStudio 3.6.2 BETA<a class="headerlink" href="#enhancements-sigmastudio-3-6-2-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Unordered List ItemPolar plotter is now part of Basic DSP toolbox.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-6-1-beta">
+<h3>Bug Fixes SigmaStudio 3.6.1 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-6-1-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Fixed bug in 8 channel cross mixer caused when growing the cell by more than one.</p></li>
+<li><p>Export files naming issues on variable declarations were fixed.</p></li>
+<li><p>Standard Dynamics processors attack and hold value issues fixed.</p></li>
+<li><p>ADAU1x61 Signal Path registers had been corrected from a series of GUI components out of their place.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-sigmastudio-3-6-1-beta">
+<h3>Enhancements SigmaStudio 3.6.1 BETA<a class="headerlink" href="#enhancements-sigmastudio-3-6-1-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Absolute Max Value, Max Value , and Min Value Algorithms added.</p></li>
+<li><p>RMS table cell extends range from -93 to +3 dB. (Before was -93 to 0 dB).</p></li>
+<li><p>RMS table cell has lower and upper limit. Upper limit output is mapped to the +3dB value and lower limit to the -93 dB.</p></li>
+<li><p>Index Selectable EQ Cell enhanced its GUI: Now it only displays the row of filters that is selected. It updates the window when selecting different rows. The focus on the add, delete, and show buttons is selected as not focused after moving the mouse pointer away from them.</p></li>
+<li><p>Read/Write and Sequencer window now updates the Register Window.</p></li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-5-release">
+<h3>SigmaStudio 3.5 Release<a class="headerlink" href="#sigmastudio-3-5-release" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Unordered List ItemIncludes all bug fixes and enhancements from previous SigmaStudio 3.5.x Beta</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-5-7-beta">
+<h3>Bug Fixes SigmaStudio 3.5.7 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-5-7-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Optimized filters transfer function is now fixed.</p></li>
+<li><p>SigmaServer external interface fixed to support for Windows7</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-5-7-beta">
+<h3>Enhancements in SigmaStudio 3.5.7 BETA<a class="headerlink" href="#enhancements-in-sigmastudio-3-5-7-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Two Dimensional Lookup table algorithm has been added.</p></li>
+<li><p>Support for SSM2529.</p></li>
+<li><p>SSM2518 included.</p></li>
+<li><p>ALT+Drag wiring mode, connects all pins in source black to all pins in destination block</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-5-6-beta">
+<h3>Bug Fixes SigmaStudio 3.5.6 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-5-6-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Low latency register excluded from sequence download for ADAU1x82</p></li>
+<li><p>General 2nd Order with variable Parameter/Lookup/Slew serialization issue.</p></li>
+<li><p>TreeToolBox Block Processing / Stream Data issue fixed.</p></li>
+<li><p>Lookup Table does not allow empty strings in the table and will not increase the number of points of the system. The only way to increase the number of points is through the main control.</p></li>
+<li><p>When saving as while on Block processing tab the Main form title now updates.</p></li>
+<li><p>NumericTextBox enable/disable back color is now fixed.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-5-6-beta">
+<h3>Enhancements in SigmaStudio 3.5.6 BETA<a class="headerlink" href="#enhancements-in-sigmastudio-3-5-6-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Index Independent EQ has now a new control GUI. It depicts a clue description tooltip for each button. It has two extra buttons that adds and removes rows.</p></li>
+<li><p>Lookup Table now is expressed on both linear and dB units.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-5-5-beta">
+<h3>Bug Fixes SigmaStudio 3.5.5 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-5-5-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Fixed transfer function for subtraction library. The TF has it’s polarity inverted, The code was corrected.</p></li>
+<li><p>ADAU1x61 register window added “User” preset on the ALC Presets, fixing a bug where the Left/Right input volumes were disabled.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-5-5-beta">
+<h3>Enhancements in SigmaStudio 3.5.5 BETA<a class="headerlink" href="#enhancements-in-sigmastudio-3-5-5-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Added Hoffman Transform.</p></li>
+<li><p>Added quadrature output VCO.</p></li>
+<li><p>Added adaptive beam forming algorithm.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-5-4-beta">
+<h3>Bug Fixes SigmaStudio 3.5.4 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-5-4-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Change in b1 coefficient minimum value for the IIR control.</p></li>
+<li><p>For the AD193x family, on PLL and Clock Control Register 1 the ADC Clock definition was swapped. Now it is reverted and working properly.</p></li>
+<li><p>ADAU1x81 register 0x4010 bitfield [2] enable -&gt; 0 and disable -&gt; 1.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-5-4-beta">
+<h3>Enhancements in SigmaStudio 3.5.4 BETA<a class="headerlink" href="#enhancements-in-sigmastudio-3-5-4-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Real Time Display now supports Y-axis configuration and Format.</p></li>
+<li><p>DB Volume and DB Volume “Compact” with subroutine algorithms for multiple input channels have been added.</p></li>
+<li><p>Text-In and Index Selectable Multiple Band Filters now support Peaking Filter.</p></li>
+<li><p>DC Block filter is now double precision.</p></li>
+<li><p>Compiler Output information for multiple ICs.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-5-3-beta">
+<h3>Bug Fixes SigmaStudio 3.5.3 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-5-3-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Unordered List ItemSequencer Output Export Files fixed and support for multiple IC sequences.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-5-3-beta">
+<h3>Enhancements in SigmaStudio 3.5.3 BETA<a class="headerlink" href="#enhancements-in-sigmastudio-3-5-3-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><p>(None)</p>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-5-2-beta">
+<h3>Bug Fixes SigmaStudio 3.5.2 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-5-2-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Unordered List ItemFix on the PARAMS.h file from the “Export Output Files” tool.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-5-2-beta">
+<h3>Enhancements in SigmaStudio 3.5.2 BETA<a class="headerlink" href="#enhancements-in-sigmastudio-3-5-2-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>No need to re-compile “Frozen” schematics. All the download information is stored in the schematic.</p></li>
+<li><p>RMS Dynamics Processors: Capability to switch between Units from dB/s to milliseconds and vice versa.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-5-1-beta">
+<h3>Bug Fixes SigmaStudio 3.5.1 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-5-1-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><p>(None)</p>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-5-1-beta">
+<h3>Enhancements in SigmaStudio 3.5.1 BETA<a class="headerlink" href="#enhancements-in-sigmastudio-3-5-1-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Micro Controller output files will no longer show “NumBytes_IC_1.dat” or “TxBuffer_IC_1.dat” to reduce redundant output information.</p></li>
+<li><p>All Filters have a new upper frequency limit of 96 kHz.</p></li>
+</ul>
+</details></section>
+<section id="bug-fixes-sigmastudio-3-5-0-beta">
+<h3>Bug Fixes SigmaStudio 3.5.0 BETA<a class="headerlink" href="#bug-fixes-sigmastudio-3-5-0-beta" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Made the following modules Obsolete: Optimized Single Precision Filter 2-Channel, Optimized Double Precision Filter 2-Channel.In previous versions these modules auto-assigned non-optimized code for less than 3 biquads in series. The modules were re-added to the library without this automatic feature and will always use the optimized code regardless of how many biquads are in series.</p></li>
+<li><p>Enhancements in SigmaStudio 3.5.0 BETA</p></li>
+<li><p>Adding new modules:</p>
+<ul>
+<li><p>Optimized Single Precision Filter 1-Channel (ADAU144x, ADAU176x, ADAU178x)</p></li>
+<li><p>Optimized Double Precision Filter 1-Channel (ADAU144x, ADAU176x, ADAU178x)</p></li>
+</ul>
+</li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-4">
+<h3>SigmaStudio 3.4<a class="headerlink" href="#sigmastudio-3-4" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Fixed size of General 2nd Order Filters Frequency control to always display 5 digits and Tooltip</p></li>
+<li><p>Incremented Chebyshev ripple from 5 to 10 on 2nd order filters.</p></li>
+<li><p>Added multiply value to Real Time display to scale the signal read back from the DSP.</p></li>
+<li><p>Parametric EQ IIR coefficient window bug fix.</p></li>
+<li><p>Fixed the Hard Clip, Soft Clip, and Advanced Clip algorithms multiple parameter write upon algorithm growth</p></li>
+<li><p>Added the following new algorithms/modules:</p>
+<ul>
+<li><p>Bitwise Logic (ADAU144x, ADAU176x, ADAU178x)</p></li>
+</ul>
+</li>
+<li><p>Unordered List ItemLinear Interpolator Block no longer supports invalid Number of Points in Table and Serialization fixed for Max/Min saving values when Min saved as 1.0</p></li>
+<li><p>ParametricEQ:</p>
+<ul>
+<li><p>When disabling and enabling a filter, sometimes the Boost value goes to zero.</p></li>
+<li><p>Boost value now goes from +30 dB to -100 dB, before it went to -30 dB.</p></li>
+</ul>
+</li>
+<li><p>Unordered List ItemAdded the following new algorithms/modules:</p>
+<ul>
+<li><p>Single Band Level Detector Running Average (ADAU144x, ADAU176x, ADAU178x)</p></li>
+<li><p>Single Band Level Detector Direct Read (ADAU144x, ADAU176x, ADAU178x)</p></li>
+</ul>
+</li>
+<li><p>Added the Real Time Display algorithm, which is a graphical version of the Readback algorithm.</p></li>
+<li><p>Added Signal Detect algorithm and cell</p></li>
+<li><p>Fixed bug on non programmable IC’s (showing a communication error)</p></li>
+<li><p>HW Configuration and Schematic Tabs are displayed as tabs and not as buttons.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-3-0">
+<h3>Enhancements in SigmaStudio 3.3.0<a class="headerlink" href="#enhancements-in-sigmastudio-3-3-0" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Windows Vista and Windows 7 x64 support.</p></li>
+<li><p>New installation process:</p>
+<ul>
+<li><p>Default Installation file path location for x64 architecture is Program Files (x64).</p></li>
+<li><p>Default SigmaStudio projects including the “Sample Schematics” path location is \&lt;users&gt;\Documents\Analog Devices\SigmaStudio &lt;version&gt;\Projects.</p></li>
+<li><p>Addins.xml default path is AppData\Roaming\Analog Devices\SigmaStudio &lt;version&gt;</p></li>
+<li><p>During installation process, the user will be prompted with an additional USBi installation. This is to install the right USBi drivers into the current machine and it only needs to be run once.</p></li>
+</ul>
+</li>
+<li><p>PLL wait command during “download-compile”.</p></li>
+<li><p>Export uC files with the wait command. This includes Sequencer support on wait command.</p></li>
+<li><p>Envelope time span from 10 ms to 4400 ms.</p></li>
+<li><p>Peaking No Post Gain now supports full range (-90 dB -&gt; +24 dB).</p></li>
+<li><p>New SigmaDSP Gen3 volume controls (Linear Gain, RC Gain optimized, dB, and dB compact).</p></li>
+<li><p>ADAU1701 Assembler modification to better display MIPS used at design time.</p></li>
+<li><p>Additions and updates to Gen3 core assemblers.</p></li>
+<li><p>Addition of NoiseReduction algorithm to standard library</p></li>
+<li><p>Addition of SuperBass algorithm to standard library</p></li>
+<li><p>Increase of Index Lookup Table size to 500 from 100</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-2-0">
+<h3>Enhancements in SigmaStudio 3.2.0<a class="headerlink" href="#enhancements-in-sigmastudio-3-2-0" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>SigmaStudio toolbox were optimized and thus would open faster.</p></li>
+<li><p>Tree Toolbox now displays Algorithm Description.</p></li>
+<li><p>New Standard Peaking Dynamics Processors.</p></li>
+<li><p>New Standard Independent Channel Linked/Unlinked Dynamics Processors.</p></li>
+<li><p>Added the following new algorithms/modules</p>
+<ul>
+<li><p>Voice Activity Detector (VAD) Standard (ADAU144x, ADAU176x, ADAU178x)</p></li>
+<li><p>Voice Activity Detector (VAD) With Acceleration (ADAU144x, ADAU176x, ADAU178x)</p></li>
+<li><p>Endless Loop Chime (AD1940, ADAU170x, ADAU144x, ADAU176x, ADAU178x)</p></li>
+<li><p>Peak Envelope Ext. Decay (AD1940, ADAU170x, ADAU144x, ADAU176x, ADAU178x)</p></li>
+</ul>
+</li>
+<li><p>SigmaStudio A/B comparison download time enhanced.</p></li>
+<li><p>Implementation of CRC and Watchdog for ADAU144x.</p></li>
+<li><p>Existing algorithms made available for ADAU178x platform:</p>
+<ul>
+<li><p>Division</p></li>
+<li><p>Multi-tap Voltage Controlled Decay</p></li>
+<li><p>Value Hold</p></li>
+<li><p>Absolute Value</p></li>
+<li><p>RMS Table</p></li>
+<li><p>Peak Envelope w/ External Decay Input</p></li>
+<li><p>Mono Peak Compressor (no External Detection Input)</p></li>
+<li><p>Mono RMS Compressor w/ External Detection (no Hold, no Decay, no Post Gain)</p></li>
+<li><p>Stereo RMS Compressor w/ External Detection (no Hold, no Decay, no Post Gain)</p></li>
+<li><p>Mono Full Range Compressor (no External Detection Input)</p></li>
+<li><p>N-Channel RMS Compressor</p></li>
+<li><p>Stereo Hi Resolution RMS Compressor</p></li>
+<li><p>Stereo Full Range RMS Compressor w/ External Detection Input)</p></li>
+<li><p>Stereo Full Range RMS Compressor (no External Detection Input)</p></li>
+<li><p>Counter</p></li>
+<li><p>Timer w/ External Reset</p></li>
+<li><p>Stop Watch w/ External Reset</p></li>
+<li><p>2-Channel Mixer</p></li>
+<li><p>3-Channel Mixer</p></li>
+<li><p>8-Channel Mixer</p></li>
+<li><p>DC block Filter</p></li>
+<li><p>De-emphasis Filter</p></li>
+<li><p>General 2nd Order Index Selectable (Double and Single Precision)</p></li>
+<li><p>General 2nd Order Lookup</p></li>
+<li><p>State Variable Filter</p></li>
+<li><p>State Variable Filter w/ Q Input</p></li>
+<li><p>Tracking Filter</p></li>
+<li><p>General 2nd Order w/ var Param/Lookup/Slew</p></li>
+<li><p>First order w/ var Param/Lookup/Slew</p></li>
+<li><p>Multiple Control Mixer (No Slew Standard)</p></li>
+<li><p>Multiple Conrtol Mixer (Clickless SW Slew)</p></li>
+<li><p>Single Control Mixer (No Slew Standard)</p></li>
+<li><p>Single Control Mixer (Clickless SW Slew)</p></li>
+<li><p>Single Control Splitter (No Slew Standard)</p></li>
+<li><p>Single Control Splitter (Clickless SW Slew)</p></li>
+<li><p>Multiple Control Splitter (No Slew Standard)</p></li>
+<li><p>Multiple Control Splitter (Clickless SW Slew)</p></li>
+<li><p>Stereo Mixer (No Slew Standard)</p></li>
+<li><p>Stereo Mixer (Clickless SW Slew)</p></li>
+<li><p>Index Selectable De-Multiplexer (Mono)</p></li>
+<li><p>Index Selectable De-Multiplexer (Stereo)</p></li>
+<li><p>Index Selectable Multiplexer w/ Slew (Mono)</p></li>
+</ul>
+</li>
+<li><p>New feature for supporting cell enable/disable with password upon right-click</p></li>
+<li><p>New mouse icon change to indicate when cell is movable</p></li>
+<li><p>Added AVC.dll to installer (not added to the auto addins file)</p></li>
+<li><p>Added Pin name for some algorithms on tool-tip hover over pins</p></li>
+<li><p>Added AllPass filter to the Index Selectable Multiple Filter Control</p></li>
+<li><p>Micro Controller Enable/Disable Parameter Export for each individual control.</p></li>
+<li><p>ADAU144x Register cleanup.</p></li>
+<li><p>Chime algorithm cleanup.</p></li>
+<li><p>Chime hierarchy modification on TreeToolbox. It belongs to “Sources” category.</p></li>
+<li><p>Filter Q on some filters was limited to additional knob range. Bug Fix</p></li>
+<li><p>Fixed internal hierarchy cell renaming bugs</p></li>
+<li><p>Capture window and exported uC files display the algorithm hierarchical structure on parameters</p></li>
+<li><p>Read back cell now has a variable timer for continuous reads.</p></li>
+<li><p>Added base address, offset, and algorithm index to be used for report on selected ICs.</p></li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-2-0-major-bug-fixes">
+<h3>SigmaStudio 3.2.0 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-2-0-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Label position bug on save/open fixed.</p></li>
+<li><p>Addins Browser Installer error message upon adding a valid Dll fixed.</p></li>
+<li><p>Chime time/frequency controls now update the algorithm slope.</p></li>
+<li><p>Changed the Chime min and max time.</p></li>
+<li><p>Compressor Graph UI serialization on first point fixed.</p></li>
+<li><p>GUI add/remove drag-point errors were fixed for all chime and envelope algorithms. Misbehavior of the points was also fixed.</p></li>
+<li><p>TreeToolBox “Unclassified” Folder with multiple listings issue was corrected.</p></li>
+<li><p>Parametric EQ</p>
+<ul>
+<li><p>Additional Filter bug upon modifying X-min axis fixed.</p></li>
+<li><p>SpinText color upon bug on enable/disable fixed.</p></li>
+</ul>
+</li>
+<li><p>Dejitter window register bug fixed for ADAU1381, ADAU 178x and ADAU1x61</p></li>
+<li><p>Standard Independent RMS Dynamics Processor Algorithm:</p>
+<ul>
+<li><p>Attack and Release controls now are updating its value every time they get modified.</p></li>
+<li><p>Compression Visualization issue fixed.</p></li>
+</ul>
+</li>
+<li><p>Mono MUX No Slew: Changed the algorithm numbering system to avoid duplicate addresses.</p></li>
+<li><p>Sequencer Window Export Files: Exports files with the right number of address bytes for ICs that have address bytes different than two.</p></li>
+<li><p>Register download sequence changed for all GEN3 cores to support Start Pulse Select/Sample Rate register before the DSP Core Run Bit to ensure beginning code being run upon multiple link/compile/downloads</p></li>
+<li><p>Export micro controller files are saved on the assigned location.</p></li>
+<li><p>Control’s Settings/Options bug fixed.</p></li>
+<li><p>Hierarchy cell renaming fixes.</p></li>
+<li><p>Filter Q maximum value bug fix.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-1-20">
+<h3>Enhancements in SigmaStudio 3.1.20<a class="headerlink" href="#enhancements-in-sigmastudio-3-1-20" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Added Self-boot EEPROM *.hex file export to Sequence Window for custom self-boot configurations.</p></li>
+<li><p>Re-introduce GPIO Conditioning “Up/Down control, index output” algorithm, useful when indexing multiple lookup tables from the same GPIO input.</p></li>
+<li><p>Added a new Context Menu to the read back module that would allow continuous read back with a .5 seconds timer.</p></li>
+<li><p>Fixed a bug found on the control that controls filter’s Q were it allowed values higher than 15 to be written were the application was throwing an exception.</p></li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-1-20-major-bug-fixes">
+<h3>SigmaStudio 3.1.20 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-1-20-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Bug fix for the Running Average Algorithm running on GEN2 processors (AD1940, ADAU170x)</p></li>
+<li><p>Fix ADAU144x Self-boot EEPROM file errors, missing start pulse and core enable registers.</p></li>
+<li><p>Include “DSP Readback” algorithm’s parameter definitions in exported system header files.</p></li>
+<li><p>Add ADAV46xx I2C interfaces for EVAL-ADUSB2 (USBi)</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-1-9">
+<h3>Enhancements in SigmaStudio 3.1.9<a class="headerlink" href="#enhancements-in-sigmastudio-3-1-9" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Added the following new algorithms/modules:</p>
+<ul>
+<li><p>Standard Independent RMS (ADAU144x, ADAU176x, ADAU178x)</p></li>
+<li><p>Standard RMS (ADAU144x, ADAU176x, ADAU178x)</p></li>
+<li><p>Value Cross Detection (AD1940, ADAU170x, ADAU144x, ADAU176x, ADAU178x)</p></li>
+<li><p>Pulse Counter (AD1940, ADAU170x, ADAU144x, ADAU176x, ADAU178x)</p></li>
+<li><p>Running Average Envelope (AD1940, ADAU170x, ADAU144x, ADAU176x, ADAU178x)</p></li>
+</ul>
+</li>
+<li><p>Sequence Window: The ability to export independent files for each sequence mode for uC usage.</p></li>
+<li><p>Filter Bypass added to MidEQ Filter</p></li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-1-9-major-bug-fixes">
+<h3>SigmaStudio 3.1.9 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-1-9-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>The Envelope Folder in Dynamics Processing was organized in the TreeToolBox to reflect proper naming match to algorithms. [Previously named “RMS” envelope is actually the square output of the RMS envelope – See the help file for more information]</p></li>
+<li><p>Naming fixed for parameters in the Multiple Control mixer. This problem only exhibited itself when multiple instances and growths of the algorithm were present causing a naming conflict violation.</p></li>
+<li><p>Chime GUI. An error occurred while the user put together two drag points. Each drag point will be separated to avoid this common error.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-1-8">
+<h3>Enhancements in SigmaStudio 3.1.8<a class="headerlink" href="#enhancements-in-sigmastudio-3-1-8" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Added the Index Selectable Independent Multiple Bi-quad Filter algorithm for GEN2</p>
+<ul>
+<li><p>1 Channel Single Precision</p></li>
+<li><p>1 Channel Double Precision</p></li>
+<li><p>2 Channel Single Precision</p></li>
+<li><p>2 Channel Double Precision</p></li>
+</ul>
+</li>
+<li><p>Added Beta version of Phase Response for Transfer Function Window using Probe/Stimuli</p></li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-1-8-major-bug-fixes">
+<h3>SigmaStudio 3.1.8 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-1-8-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Fixed Square Root algorithm bug for GEN2 parts.</p></li>
+<li><p>Fixed Bug for ADAU170x projects when doing copy/paste operation on controls with parameters, whose new address did not exist in the address map</p></li>
+<li><p>System Export Files bugs fixed, undefined registers and register name conflicts</p></li>
+<li><p>SigmaStudio Script, “ObjectConnect()” function errors fixed.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-1-7">
+<h3>Enhancements in SigmaStudio 3.1.7<a class="headerlink" href="#enhancements-in-sigmastudio-3-1-7" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Added a filter bypass option on the control for the following filter cells:</p>
+<ul>
+<li><p>General (2nd Order)</p></li>
+<li><p>Text-In Filter</p></li>
+<li><p>General (1st Order)</p></li>
+<li><p>Parametric EQ</p></li>
+<li><p>Index Selectable Independent Multiple Band</p></li>
+<li><p>General 2nd Order Index Selectable</p></li>
+</ul>
+</li>
+<li><p>Added the Index Selectable Independent Multiple Biquad Filter algorithm for GEN</p></li>
+</ul>
+<p>Note: This was incorrectly implemented in 3.1.7. This feature is available in version 3.1.8</p>
+</details></section>
+<section id="sigmastudio-3-1-7-major-bug-fixes">
+<h3>SigmaStudio 3.1.7 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-1-7-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Fixed FIR Table Editor window from crashing upon initial open/close without modifying points</p></li>
+<li><p>Fixed opacity Bug on Parametric EQ algorithm upon download</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-1-6">
+<h3>Enhancements in SigmaStudio 3.1.6<a class="headerlink" href="#enhancements-in-sigmastudio-3-1-6" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>USBi support for the AD193x codecs (SPI: AD1938/AD1939, I2C: AD1937)</p></li>
+<li><p>USBi support for ADAU1371 (I2C).</p></li>
+<li><p>ADAU1371 Register window for Filter Coefficient calculation.</p></li>
+<li><p>Standard RMS Dynamics Processor: Low Range (-90 - 6 dB); real time signal representation on the dynamic graph; Compressor and Expander Ratio slider; Attack, Hold, and Release are now displayed in milliseconds; and it is available only for Gen 3 DSPs.</p></li>
+<li><p>Chime- Envelope with and without infinite loop.</p></li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-1-6-major-bug-fixes">
+<h3>SigmaStudio 3.1.6 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-1-6-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Export System Files, fixed errors in (*.h) header file register/param definitions.</p></li>
+<li><p>Non-Modulo fix.</p></li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-1-5-major-bug-fixes">
+<h3>SigmaStudio 3.1.5 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-1-5-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Disallow parameter download during project load</p></li>
+<li><p>ADAU144x non-modulo size no longer fixed at 256 data values</p></li>
+<li><p>Gain (RC slew) and 2Channel – Double Precision, Optimized algorithms updated to properly support all GEN3 parts</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-1-4">
+<h3>Enhancements in SigmaStudio 3.1.4<a class="headerlink" href="#enhancements-in-sigmastudio-3-1-4" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Added the following new algorithms/modules:</p>
+<ul>
+<li><p>SuperPhat Spatialization</p></li>
+<li><p>Offline Microphone Match</p></li>
+<li><p>Combo Peak/RMS Compressor</p></li>
+</ul>
+</li>
+<li><p>New Settings Toolbar feature added to support multiple coefficient parameter settings for a schematic project.</p></li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-1-4-major-bug-fixes">
+<h3>SigmaStudio 3.1.4 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-1-4-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>USB Communication channel for ADAU170x fixed to allow proper communication for certain parameters.</p></li>
+<li><p>The Link/Compile/Download sequence was modified to ensure the proper register sequence and sample rate is set for GEN3 ICs.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-1-3">
+<h3>Enhancements in SigmaStudio 3.1.3<a class="headerlink" href="#enhancements-in-sigmastudio-3-1-3" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>The entire library of filters, now support a lower limit center or cutoff frequency of 1Hz on all filter controls. Previous versions of SigmaStudio limited the lowest frequency value that could be entered, but now all filter controls allow values down to 1Hz.</p></li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-1-3-major-bug-fixes">
+<h3>SigmaStudio 3.1.3 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-1-3-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>The SW Clickless Mute algorithm was not working properly for the ADAU170x IC. A new method for downloading the proper mute coefficient was implemented to fix this issue.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-1-2">
+<h3>Enhancements in SigmaStudio 3.1.2<a class="headerlink" href="#enhancements-in-sigmastudio-3-1-2" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Added the following new algorithms/modules:</p>
+<ul>
+<li><p>Advanced Soft Clip</p></li>
+<li><p>Square Root (Standard)</p></li>
+<li><p>Square Root (Ultra Precision)</p></li>
+</ul>
+</li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-1-2-major-bug-fixes">
+<h3>SigmaStudio 3.1.2 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-1-2-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>The beginning code for GEN3 cores was updated to reflect a new order of initialization for use with the DAGS. Any new ICs used in projects will have the updated code. Existing schematic projects will have the old default beginning code saved. In order to update to the newest beginning code, drop a new IC in the hardware window of the project schematic and copy the existing algorithms to the new IC.</p></li>
+<li><p>The Parameter Index Lookup Filters have renamed coefficients to avoid a potential bug. This only exhibited itself with more than 10 instantiations of the algorithms each with 10 or more curves. The algorithms affected were:</p>
+<ul>
+<li><p>General (2nd Order/Lookup)</p></li>
+<li><p>General 2nd Order Index Selectable – Double and Single Precision</p></li>
+<li><p>General 2nd Order w var Param/Lookup/Slew</p></li>
+</ul>
+</li>
+<li><p>The Parameter Index Lookup Filter Cell had legacy code that downloaded incorrect filter values to the DSP. This mechanism was updated to ensure proper filter coefficient download.</p></li>
+<li><p>Multiple Link/Compile/Download compilations for GEN3 projects using algorithm code with DAG updates cause intermittent behavior with coefficient download. A new register sequence is implemented for the Link/Compile/Download operation to ensure proper coefficient operation.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-1-1">
+<h3>Enhancements in SigmaStudio 3.1.1<a class="headerlink" href="#enhancements-in-sigmastudio-3-1-1" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Added new algorithms to the Index Selectable Independent Multiple Band Filter</p>
+<ul>
+<li><p>2 Channel Single Precision</p></li>
+<li><p>1 Channel Double Precision</p></li>
+<li><p>1 Channel Single Precision</p></li>
+</ul>
+</li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-1-1-major-bug-fixes">
+<h3>SigmaStudio 3.1.1 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-1-1-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>The following GEN3 SW Slew Volume algorithms were fixed to support double precision volume handling for low signal levels.</p>
+<ul>
+<li><p>Gain (RC Slew)</p></li>
+<li><p>Growable Single Vol Ctrl</p></li>
+</ul>
+</li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-1-0">
+<h3>Enhancements in SigmaStudio 3.1.0<a class="headerlink" href="#enhancements-in-sigmastudio-3-1-0" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Allow the creation of hierarchy board from a selection of multiple cells</p></li>
+<li><p>Allow rapid Register Settings (same concept as copying Cell settings). This functionality can be found by right clicking the DSP and following the context menu)</p></li>
+<li><p>Provide a file “Properties” Dialog.</p></li>
+<li><p>Right clicking the schematic tab to open or get the path of current project files provides easier access to compiled output.</p></li>
+<li><p>Added Index Selectable Stereo Biquad Filter with asymmetrical filter number selection.</p></li>
+<li><p>Added Frequency chimes</p>
+<ul>
+<li><p>Linked Freq/Amp Sweep</p></li>
+<li><p>Distinct Freq/Amp Sweep</p></li>
+<li><p>Freq Sweep Full Scale</p></li>
+</ul>
+</li>
+<li><p>Added Register Sequencer functionality to Data Capture window</p></li>
+<li><p>Added Parameter RAM visualization list to Data Capture window</p></li>
+<li><p>Added new GPIO modules</p>
+<ul>
+<li><p>Push Button Volume</p></li>
+<li><p>Push Button Volume, Mute</p></li>
+<li><p>Rotary Volume</p></li>
+<li><p>Toggle On/Off</p></li>
+<li><p>Toggle Counter (Rising and Falling Edge algorithms)</p></li>
+</ul>
+</li>
+<li><p>Modified and improved 3rd generation compiler outputs to directly write into the output window to better show DSP resources</p></li>
+<li><p>Added support for ADAU1761 and ADAU1361</p></li>
+<li><p>Added support for ADAU1781 and ADAU1381</p></li>
+<li><p>Added the following new modules</p>
+<ul>
+<li><p>Enhanced Stereo Capture</p></li>
+<li><p>Mono2Stereo</p></li>
+<li><p>Logic Buffer</p></li>
+<li><p>Zero Comparator</p></li>
+<li><p>One Shot Fall (with and without reset)</p></li>
+<li><p>One Shot Rise (with and without reset)</p></li>
+<li><p>Signal Subtract</p></li>
+<li><p>Data Controlled Clip</p></li>
+<li><p>Standard Cubic Soft Clip</p></li>
+</ul>
+</li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-1-0-major-bug-fixes">
+<h3>SigmaStudio 3.1.0 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-1-0-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Moved Standard Clip to be placed in new Tree Toolbox folder (Non Linear Processors)</p></li>
+<li><p>“Soft” GPIO Read/Write interface blocks for the 3rd generation cores that do not have interface registers.</p></li>
+<li><p>New Capture Window Read back implementation (Read Request + Read Result)</p></li>
+<li><p>Updated “System Files”, C formatted header files which mimic SigmaStudio download. The sequencer window also exports to .h files</p></li>
+<li><p>Change IC on board now properly applies to nested cells</p></li>
+<li><p>Improved support for large font sizes</p></li>
+<li><p>Updated SigmaServer automation/scripting interface (Improved Matlab interoperability)</p></li>
+<li><p>USBi support for 1940 and ADAV46xx</p></li>
+<li><p>Index Selectable Multiple Filter Bug fixes</p></li>
+<li><p>Register Window ADAU1x61 update</p></li>
+<li><p>White Noise Algorithm output was scaled down to be between ±1</p></li>
+<li><p>Fixed the 1702 Maximum Memory of Parameter RAM to 1024</p></li>
+<li><p>Fixed Index Selectable Filter for Chebyshev Filters</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-0-13">
+<h3>Enhancements in SigmaStudio 3.0.13<a class="headerlink" href="#enhancements-in-sigmastudio-3-0-13" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>ADAU144x: SigmaDSP Digital Audio Processor with Flexible Audio Routing Matrix</p></li>
+<li><p>Added MONO “Peaking Compressor” algorithm</p></li>
+<li><p>Modified compressors to allow better precision when setting crossover points. This is now done by allowing right clicking on points.</p></li>
+<li><p>Added linear interpolator block.</p></li>
+<li><p>Improved Compiler output reporting for 3rd generation cores.</p></li>
+<li><p>Modified and optimized White noise.</p></li>
+<li><p>Modified 1936 data ram assignation to make better use of memory.</p></li>
+<li><p>Modified Non Modulo Register assignation.</p></li>
+<li><p>Increased maximum number of tabs available for FIR filters.</p></li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-0-13-major-bug-fixes">
+<h3>SigmaStudio 3.0.13 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-0-13-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Microsoft .NET Framework 3.0/3.5 causing SigmaStudio crash at startup</p></li>
+<li><p>SigmaStudio Sampling Rate, 11.025kHz instead of 11kHz, 22.05kHz instead of 22kHz</p></li>
+<li><p>Feedback algorithm fixed for ADAU144x</p></li>
+<li><p>ADAU1701/1401 register controls updated for compatibility with revised silicon</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-0-12">
+<h3>Enhancements in SigmaStudio 3.0.12<a class="headerlink" href="#enhancements-in-sigmastudio-3-0-12" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Improved Index Selectable Filter: Maximum filter count increased to 100, optimized user interface response. Added First Order index selectable filter algorithm.</p></li>
+<li><p>Algorithm optimizations for “General 1st/2nd Order w var Param/Lookup/Slew” and “Parameter Tone with Index Lookup Tables” blocks.</p></li>
+<li><p>Improved Alias block, alias blocks share a common name for easier identification.</p></li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-0-12-major-bug-fixes">
+<h3>SigmaStudio 3.0.12 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-0-12-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Mute block fixed, mute block might not function properly when two mute blocks use contiguous slew ram.</p></li>
+<li><p>1st order High-Pass filter algorithm update, now has constant gain across all frequencies.</p></li>
+<li><p>“On/Off Switch” source set to off on SigmaStudio download.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-0-11">
+<h3>Enhancements in SigmaStudio 3.0.11<a class="headerlink" href="#enhancements-in-sigmastudio-3-0-11" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Add support for ADAV46xx products, Audio Processors for Advanced TV.</p></li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-0-11-major-bug-fixes">
+<h3>SigmaStudio 3.0.11 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-0-11-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Prevent use of comma ‘,’ or space ‘ ‘ for numerical decimal place in non-English versions of Windows, only the period character ‘.’ is supported.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-0-10">
+<h3>Enhancements in SigmaStudio 3.0.10<a class="headerlink" href="#enhancements-in-sigmastudio-3-0-10" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Capture window display mode of Address in hexadecimal format and Data in binary format.</p></li>
+<li><p>User Comment font can be modified by right clicking the User Comment block.</p></li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-0-10-major-bug-fixes">
+<h3>SigmaStudio 3.0.10 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-0-10-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Parametric EQ block did not support multi-channel input, the first input was processed and copied to all outputs. Any additional inputs were ignored.</p></li>
+<li><p>Signal Merger and Signal Add blocks had the same algorithm name which introduced errors when using both blocks in the same schematic design. The Signal Merger’s algorithm has been renamed. This change should not affect legacy designs.</p></li>
+<li><p>Alias Block caused errors when using Copy and Paste. Alias blocks could not be renamed.</p></li>
+<li><p>General (2nd Order) “Tone Control” filter equations were not included in the Help file.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-0-9">
+<h3>Enhancements in SigmaStudio 3.0.9<a class="headerlink" href="#enhancements-in-sigmastudio-3-0-9" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>It is no longer required to connect unused block output pin to the “Schematic Terminal” block. Linking will succeed with unconnected output pins.</p></li>
+<li><p>USBSerialConverter (EVAL-ADUSB1) supports SPI communication with all SigmaDSP ICs; previously SPI was only available for AD1940.</p></li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-0-8-major-bug-fixes">
+<h3>SigmaStudio 3.0.8 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-0-8-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Fix ADAU1701/1702 safeload write for EVAL-ADUSB2 (USBi) interface.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-0-7">
+<h3>Enhancements in SigmaStudio 3.0.7<a class="headerlink" href="#enhancements-in-sigmastudio-3-0-7" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>E2PROM download and read/write support added for EVAL-ADUSB2 (USBi) interface.</p></li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-0-7-major-bug-fixes">
+<h3>SigmaStudio 3.0.7 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-0-7-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>“DSP Readback” block’s value can be incorrect when reading from a GPIO input.</p></li>
+<li><p>ADAU1702 compiler has incorrect size of 512 for Parameter RAM, should be 1024.</p></li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-0-6-major-bug-fixes">
+<h3>SigmaStudio 3.0.6 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-0-6-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Fixed, unexpected error dialogs when compiling projects. Caused by Enhanced schematic status indicator introduced in 3.0.4.</p></li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-0-5-major-bug-fixes">
+<h3>SigmaStudio 3.0.5 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-0-5-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Fixed, mouse cursor could disappear in schematic window after compilation.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-0-4">
+<h3>Enhancements in SigmaStudio 3.0.4<a class="headerlink" href="#enhancements-in-sigmastudio-3-0-4" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Improved low signal level performance for RMS Compressor blocks.</p></li>
+<li><p>Enhanced schematic status indicator, now displays USB communication status. Refer to the “Link/Compile/Download” topic in the SigmaStudio Help for more information.</p></li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-0-4-major-bug-fixes">
+<h3>SigmaStudio 3.0.4 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-0-4-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Fixed compressor Hold and Decay time-constant controls. In previous versions the TC calculation was incorrect, limiting the time-constants to a smaller range than is supported by the compressor algorithms. Depending on Hold and Decay settings, this fix may affect the system response in legacy designs utilizing RMS compressor blocks.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-0-3">
+<h3>Enhancements in SigmaStudio 3.0.3<a class="headerlink" href="#enhancements-in-sigmastudio-3-0-3" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Parametric EQ: graphical adjustment of filter response, create complex responses using up to 15 cascaded 2nd order filters, available in the Toolbox’s “Filters” category.</p></li>
+<li><p>Crossover: graphical design of 2-way and 3-way crossover filters, selectable crossover types (2nd-8th order Linkwitz-Riley, 2nd-4th order Butterworth, and 2nd-4th order Bessel) , available in the Toolbox’s “Filters” category.</p></li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-0-3-major-bug-fixes">
+<h3>SigmaStudio 3.0.3 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-0-3-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Feedback blocks not functioning properly in some cases.</p></li>
+<li><p>DC Input Entry range limited to -16.0 when set to 28.0 format, should be -(2^27).</p></li>
+<li><p>Links (Wires) between hierarchy boards are not created during paste operation or board file loading.</p></li>
+<li><p>“Delete” command missing in schematic right click menu.</p></li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-0-2-major-bug-fixes">
+<h3>SigmaStudio 3.0.2 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-0-2-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Maximum delay value set to 1 sample on during cut/paste or undo/redo operation.</p></li>
+<li><p>Default block name and block “Settings” set during copy/paste are not equivalent, this causes settings malfunction and name conflicts until the project is reloaded.</p></li>
+</ul>
+</details></section>
+<section id="sigmastudio-3-0-1-major-bug-fixes">
+<h3>SigmaStudio 3.0.1 Major Bug Fixes<a class="headerlink" href="#sigmastudio-3-0-1-major-bug-fixes" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>Deleting a hierarchy board’s input or output blocks can reset the control settings of blocks contained in the hierarchy board.</p></li>
+<li><p>Edit Control drawing error when scrolling or displaying overlapped dialogs.</p></li>
+<li><p>Probe Window “Always on top” behavior is unexpected.</p></li>
+</ul>
+</details></section>
+<section id="enhancements-in-sigmastudio-3-0-0">
+<h3>Enhancements in SigmaStudio 3.0.0<a class="headerlink" href="#enhancements-in-sigmastudio-3-0-0" title="Link to this heading"></a></h3>
+<details><summary>Click for details</summary><ul class="simple">
+<li><p>“General 2nd Order Index Selectable” filter with graphical adjustment of filter response.</p></li>
+<li><p>Sawtooth, Square, and Triangle wave source algorithms.</p></li>
+<li><p>Mux and Mixer algorithms with software slew.</p></li>
+<li><p>Project and cell settings; State of all block/algorithm controls can be saved and recalled to/from “settings” files for a/b comparisons or re-using settings between projects.</p></li>
+<li><p>“Tree Toolbox” window, design building blocks are functionally categorized for each IC in a tree view.</p></li>
+<li><p>“Change IC”, change IC can be applied to a selection, assigning the IC for all selected block(s) and algorithm(s) in a single operation.</p></li>
+<li><p>Hierarchy Files, Hierarchy boards can be saved as files and re-used in new designs.</p></li>
+<li><p>Hierarchy Board “Hide”, Hierarchy board tabs can be hidden and optionally password protected to protect confidential design elements.</p></li>
+<li><p>Hierarchy Board “Freeze”, Hierarchy boards can be individually frozen to prevent modifications.</p></li>
+<li><p>Undo/Redo support, All design modification can be undone and re-done.</p></li>
+<li><p>Cut/Copy/Paste support, schematic design blocks (blocks) can be copied and pasted, within a design and between project files.</p></li>
+<li><p>Schematic Printing, schematic designs can be printed.</p></li>
+<li><p>Enhanced capture window, communication capture window can be docked and customized.</p></li>
+</ul>
+</details></section>
+</section>
+<section id="bug-reports">
+<h2>Bug Reports<a class="headerlink" href="#bug-reports" title="Link to this heading"></a></h2>
+<p>If you experience something you think might be a bug in SigmaStudio, please report it by posting on the <a class="icon ez reference external" href="https://ez.analog.com/community/dsp/sigmadsp" target="_blank">SigmaDSP Community on EngineerZone</a>. Please describe what you did, what error resulted, the version of SigmaStudio, and include any error messages from SigmaStudio.</p>
+<p>Unless additional information is needed, you will not receive a direct response.</p>
+</section>
+<section id="requests-for-features">
+<h2>Requests for Features<a class="headerlink" href="#requests-for-features" title="Link to this heading"></a></h2>
+<p>If you have an idea or request for additional features or enhancements of SigmaStudio, your input is always welcome. Please submit any suggestions by posting them on the <a class="icon ez reference external" href="https://ez.analog.com/community/dsp/sigmadsp" target="_blank">SigmaDSP Community on EngineerZone</a>.</p>
+</section>
+<section id="legal-notices">
+<h2>Legal Notices<a class="headerlink" href="#legal-notices" title="Link to this heading"></a></h2>
+<p>SigmaStudio is a registered trademark of Analog Devices, Inc. All other trademarks are the property of their respective owners.</p>
+<p>Analog Devices, Inc, One Technology Way, P.O. Box 9106, Norwood, MA 02062-9106, U.S.A. © 2015 Analog Devices, Inc. All rights reserved.</p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

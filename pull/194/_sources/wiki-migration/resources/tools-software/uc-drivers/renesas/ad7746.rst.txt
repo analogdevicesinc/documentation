@@ -1,0 +1,206 @@
+AD7746 - Microcontroller No-OS Driver
+=====================================
+
+.. important::
+
+   You're looking at a legacy page. A newer driver and reference project demo are available at :doc:`this page </wiki-migration/resources/tools-software/uc-drivers/ad7746>`.
+
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7745`
+-  :adi:`AD7746`
+-  :adi:`AD7747`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7746EBZ`
+-  :adi:`EVAL-AD7747EBZ`
+
+Overview
+--------
+
+The :adi:`AD7745`/:adi:`AD7746` are a high resolution, Σ-Δ capacitance-to-digital converter (CDC). The capacitance to be measured is connected directly to the device inputs. The architecture fea-tures inherent high resolution (24-bit no missing codes, up to 21-bit effective resolution), high linearity (±0.01%), and high accuracy (±4 fF factory calibrated). The :adi:`AD7745`/:adi:`AD7746` capacitance input range is ±4 pF (changing), while it can accept up to 17 pF common-mode capacitance (not changing), which can be balanced by a programmable on-chip, digital-to-capacitance converter (CAPDAC).
+
+The :adi:`AD7745` has one capacitance input channel, while the :adi:`AD7746` has two channels. Each channel can be configured as single-ended or differential. The :adi:`AD7745`/:adi:`AD7746` are designed for floating capacitive sensors. For capacitive sensors with one plate connected to ground, the :adi:`AD7747` is recommended.
+
+The parts have an on-chip temperature sensor with a resolution of 0.1°C and accuracy of ±2°C. The on-chip voltage reference and the on-chip clock generator eliminate the need for any external components in capacitive sensor applications. The parts have a standard voltage input, which together with the differential reference input allows easy interface to an external temperature sensor, such as an RTD, thermistor, or diode.
+
+The :adi:`AD7745`/:adi:`AD7746` have a 2-wire, I2C-compatible serial interface. Both parts can operate with a single power supply from 2.7 V to 5.25 V. They are specified over the automotive temperature range of –40°C to +125°C and are housed in a 16-lead TSSOP package.
+
+Applications
+~~~~~~~~~~~~
+
+Automotive, Industrial and Medical Systems for:
+
+-  Pressure Measurement
+-  Position Sensors
+-  Level Sensors
+-  Flowmeters
+-  Humidity Sensors
+-  Impurity Detection
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ad7746_eval_ebz.jpg
+   :align: center
+
+The goal of this project (Microcontroller No-OS) is to be able to provide reference projects for lower end processors, which can't run Linux, or aren't running a specific operating system, to help those customers using microcontrollers with ADI parts. Here you can find a generic driver which can be used as a base for any microcontroller platform and also specific drivers for Renesas platforms.
+
+**HW Platform(s):**
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+
+Driver Description
+------------------
+
+The driver contains two parts:
+
+-  The driver for the AD7746 part, which may be used, without modifications, with any microcontroller.
+-  The Communication Driver, where the specific communication functions for the desired type of processor and communication protocol have to be implemented. This driver implements the communication with the device and hides the actual details of the communication protocol to the ADI driver.
+
+The Communication Driver has a standard interface, so the AD7746 driver can be used exactly as it is provided.
+
+There are three functions which are called by the AD7746 driver:
+
+-  I2C_Init() – initializes the communication peripheral.
+-  I2C_Write() – writes data to the device.
+-  I2C_Read() – reads data from the device.
+
+|image1|
+
+.. container:: centeralign
+
+   I2C driver architecture
+
+
+The following functions are implemented in this version of AD7746 driver:
+
++-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| Function                                                                                        | Description                                                                                              |
++=================================================================================================+==========================================================================================================+
+| unsigned char AD7746_Init(void)                                                                 | Initializes the I2C communication peripheral.                                                            |
++-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| void AD7746_Write(unsigned char subAddr, unsigned char\* dataBuffer, unsigned char bytesNumber) | Writes data into AD7746 registers, starting from the selected register address pointer.                  |
++-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| void AD7746_Read(unsigned char subAddr, unsigned char\* dataBuffer, unsigned char bytesNumber)  | Reads data from AD7746 registers, starting from the selected register address pointer.                   |
++-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| void AD7746_Reset(void)                                                                         | Resets the AD7746.                                                                                       |
++-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| unsigned long AD7746_GetVTData(void)                                                            | Waits until a conversion on a voltage/temperature channel has been finished and returns the output data. |
++-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| unsigned long AD7746_GetCapData(void)                                                           | Waits until a conversion on a capacitive channel has been finished and returns the output data.          |
++-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+
+Downloads
+---------
+
+-  `AD7746 Generic Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7746_generic.zip>`_
+-  `AD7746 RL78G13 Driver <https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7746_rl78g13.zip>`_
+
+Renesas RL78G13 Quick Start Guide
+=================================
+
+This section contains a description of the steps required to run the AD7746 demonstration project on a Renesas RL78G13 platform.
+
+Required Hardware
+-----------------
+
+-  `Renesas Demo Kit for RL78G13 (Renesas) <https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rl78-low-power-8-16-bit-mcus/yrdkrl78g13-yrdkrl78g13-demonstration-kit-rl78g13>`_
+-  :adi:`EVAL-AD7746EBZ(ADI) <AD7746>`
+
+Required Software
+-----------------
+
+-  `IAR Embedded Workbench for Renesas RL78 Kickstart <http://www.iar.com/en/Products/IAR-Embedded-Workbench/Renesas-RL78/>`_
+-  `Applilet4 for RL78G13 <https://www.renesas.com/us/en/software-tool/ap4-applilet>`_
+
+Hardware Setup
+--------------
+
+An EVAL-AD7746EBZ has to be interfaced with the Renesas Demonstration Kit (RDK) for RL78G13:
+
+::
+
+     EVAL-AD7746EBZ LK2 connector Pin AVDD → YRDKRL78G13 J11 connector Pin 6
+     EVAL-AD7746EBZ LK2 connector Pin SDA  → YRDKRL78G13 J6 connector Pin 23
+     EVAL-AD7746EBZ LK2 connector Pin SCL  → YRDKRL78G13 J11 connector Pin 9
+     EVAL-AD7746EBZ LK2 connector Pin AGND → YRDKRL78G13 J11 connector Pin 5
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7746_rl78g13.jpg
+   :align: center
+
+Software Setup
+--------------
+
+With the **Applilet3 for RL78G13** tool the following peripherals have to be configured:
+
+CSI10 (Clocked Serial Interface 10) – For the ST7579 LCD
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Choose to generate the Transmit/receive function for the CSI10 and configure the interface with the following settings:
+
+-  Transfer mode setting: **Single transfer mode**
+-  Data length setting : **8 bits**
+-  Transfer direction setting: **MSB**
+-  Specification of data timing: **Type 1**
+-  Transfer rate setting – Clock mode: **Internal clock (master)**
+-  Transfer rate setting – Baudrate: **1000000** (bps)
+-  Interrupt setting – Transfer interrupt priority (INTCSI10): **Low**
+-  Uncheck the callback functions.
+
+TM00 (Timer 00) – For the DelayMs() function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Configure TM00 as an interval timer:
+
+-  Interval timer setting - Interval value(16 bits): **1** ms
+-  Interval timer setting - Uncheck *Generates INTM00 when counting is started*
+-  Interrupt setting - Uncheck // End of timer channel 0 count, generate an interrupt (INTM00)//
+
+Watchdog Timer
+~~~~~~~~~~~~~~
+
+Disable the watchdog timer:
+
+-  Choose for the Watchdog timer operation setting: **Unused** option.
+
+Reference Project Overview
+--------------------------
+
+The reference project configures the device to read data from the internal temperature sensor and from the second capacitive channel (on the AD7746 evaluation board, the second capacitive channel is used with the on-board capacitive length sensor demo).
+
+First, the part has to be calibrated to the length of the ruler:
+
+-  When the message "Remove ruler" appears, user has 5 seconds to remove the ruler. After these 5 seconds, a read is made automaticaly.
+-  When the message "Place ruler to 51 mm (2 inch)" appears, user has 10 seconds to place the ruler at the 51 mm/2 inch mark. After these 10 seconds, another read is made automaticaly.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7746_rl78g13_screen_1.jpg
+   :align: center
+
+The part is now calibrated to the length of the ruler.
+
+After the calibration is done, the temperature and the length are displayed on the screen. The length value changes as the user slides the ruler on the evaluation board.
+
+.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/ad7746_rl78g13_screen_2.jpg
+   :align: center
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `rl78g13_software_tutorial <https://wiki.analog.com/rl78g13_software_tutorial>`_
+
+
+More information
+================
+
+
+.. note::
+
+   See `more-information <https://wiki.analog.com/more-information>`_
+
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/i2c_architecture.png

@@ -1,0 +1,147 @@
+CN0188 FMC-SDP Interposer & Evaluation Board / Xilinx KC705 Reference Design
+============================================================================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7171`
+
+Reference Circuits
+------------------
+
+-  :adi:`CN0188`
+
+Overview
+========
+
+This document presents the steps to setup an environment for using the :adi:`EVAL-CN0188-SDPZ` evaluation board together with the Xilinx KC705 FPGA board and the Xilinx Embedded Development Kit (EDK). Below is presented a picture of the EVAL-CN0188-SDPZ Evaluation Board with the Xilinx KC705 board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/cn0188.jpg
+   :alt: cn0188.jpg
+   :align: center
+   :width: 600px
+
+
+.. note::
+
+   See `common_sdp <https://wiki.analog.com/common_sdp>`_
+
+
+Below is presented a picture of **SDP-B** Controller Board with the **EVAL-CN0188-SDPZ** Evaluation Board.
+
+.. image:: https://wiki.analog.com/_media/resources/fpga/altera/bemicro/cn0188_sdp1z.jpg
+   :alt: cn0188_sdp1z.jpg
+   :align: center
+   :width: 400px
+
+The **EVAL-CN0188-SDPZ** board monitors current in individual channels of -48 V to better than 1% accuracy. The load current passes through a shunt resistor, which is external to the circuit. The shunt resistor value is chosen so that the shunt voltage is approximately 50 mV at maximum load current. When using this evaluation board with the SDP board or BeMicro SDK board, apply +6 V and GND to Connector J3.
+
+The :adi:`AD7171` is a very low power 16-bit analog-to-digital converter (ADC). It contains a precision 16-bit sigma-delta (S-?) ADC and an on-chip oscillator. Consuming only 135 µA, the AD7171 is particularly suitable for portable or battery operated products where very low power is a requirement. The AD7171 also has a power-down mode in which the device consumes 5 µA, thus increasing the battery life of the product.
+
+For ease-of-use, all the features of the AD7171 are controlled by dedicated pins. Each time a data read occurs, eight status bits are appended to the 16-bit conversion. These status bits contain a pattern sequence that can be used to confirm the validity of the serial transfer.
+
+The output data rate of the AD7171 is 125 Hz, whereas the settling time is 24 ms. The AD7171 has one differential input and a gain of 1. This is useful in applications where the user needs to use an external amplifier to implement system-specific filtering or gain requirements.
+
+More information
+----------------
+
+-  :adi:`CN0188 Product Info <CN0188>` - pricing, samples, datasheet
+-  :adi:`AD7171 Product Info <AD7171>` - pricing, samples, datasheet
+-  :adi:`EVAL-CN0188-SDPZ evaluation board user guide <CN0188>`
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+
+Getting Started
+===============
+
+The first objective is to ensure that you have all of the items needed and to install the software tools so that you are ready to create and run the evaluation project.
+
+Required Hardware
+-----------------
+
+-  `Xilinx KC705 FPGA board <https://www.xilinx.com/products/boards-and-kits/EK-K7-KC705-G.htm>`_
+-  FMC-SDP adapter board
+-  **EVAL-CN0188-SDPZ** evaluation board
+
+Required Software
+-----------------
+
+-  Xilinx ISE 14.6.
+-  UART Terminal (Termite/Tera Term/Hyperterminal), baud rate 115200.
+-  The EVAL-CN0188 reference project for Xilinx KC705 FPGA.
+
+Downloads
+---------
+
+|
+
+.. admonition:: Download
+   :class: download
+
+   | \* **AD7171 Driver:** :git-no-OS:`device_drivers/AD7171`
+   
+   -  **CN0188 Commands:** :git-no-OS:`device_commands/CN0188`
+   -  **Xilinx Boards Common Drivers:** :git-no-OS:`platform_drivers/Xilinx/SDP_Common`
+   -  **EDK KC705 Reference project:** :git-fpgahdl_xilinx:`cf_sdp_kc705`
+   
+   |
+
+   |
+
+
+Run the Demonstration Project
+=============================
+
+Hardware setup
+--------------
+
+|
+
+.. important::
+
+   | Before connecting the ADI evaluation board to the Xilinx KC705 make sure that the VADJ_FPGA voltage of the KC705 is set to 3.3V. For more details on how to change the setting for VADJ_FPGA visit the Xilinx KC705 product page.
+
+
+-  Use the FMC-SDP interposer to connect the ADI evaluation board to the Xilinx KC705 board on the FMC LPC connector.
+-  Connect the JTAG and UART cables to the KC705 and power up the FPGA board.
+
+Reference Project Overview
+--------------------------
+
+The following commands were implemented in this version of EVAL-CN0188 reference project for Xilinx KC705 FPGA board.
+
+============ ===================================
+Command      Description
+============ ===================================
+**help?**    Displays all available commands.
+**voltage?** Displays the input voltage in [mV].
+**adcCode?** Displays the output ADC code.
+============ ===================================
+
+Commands can be executed using a serial terminal connected to the UART peripheral of Xilinx KC705 FPGA.
+
+The following image shows a generic list of commands in a serial terminal connected to Xilinx KC705 FPGA's UART peripheral.
+
+
+|Terminal_KC705.jpg|
+
+Software Project Setup
+----------------------
+
+
+.. note::
+
+   See `import_workspace <https://wiki.analog.com/import_workspace>`_
+
+
+.. _more-information-1:
+
+More information
+================
+
+
+.. note::
+
+   See `ez_common <https://wiki.analog.com/ez_common>`_
+
+
+.. |Terminal_KC705.jpg| image:: https://wiki.analog.com/_media/resources/fpga/xilinx/interposer/Terminal_KC705.jpg

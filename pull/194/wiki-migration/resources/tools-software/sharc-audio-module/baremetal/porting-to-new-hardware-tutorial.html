@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This tutorial covers how to port the Bare Metal Framework to a custom hardware platform. The Bare Metal Framework is designed to be portable. As discussed in the Selecting Between Different Hardware Platforms section, all of the hardware platform specific code resides in a .c/.h file pair on each core." name="description" />
+
+    <title>Porting the Bare Metal Framework to a New Hardware Platform &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Porting the Bare Metal Framework to a New Hardware Platform</a><ul>
+<li><a class="reference internal" href="#step-1-creating-new-framework-files-for-your-hardware-platform">Step 1: Creating new framework files for your hardware platform</a></li>
+<li><a class="reference internal" href="#step-2-create-a-new-preprocessor-variable-for-the-new-audio-framework">Step 2: Create a new preprocessor variable for the new audio framework</a></li>
+<li><a class="reference internal" href="#step-3-on-the-arm-core-configure-system-initialization-code">Step 3: On the ARM Core, Configure System Initialization Code</a></li>
+<li><a class="reference internal" href="#step-4-on-the-sharc-core-1-configure-the-audio-dma">Step 4: On the SHARC Core 1, Configure the Audio DMA</a></li>
+<li><a class="reference internal" href="#step-5-on-the-sharc-core-1-update-the-audio-callback">Step 5: On the SHARC Core 1, Update the Audio Callback</a></li>
+<li><a class="reference internal" href="#further-changes">Further Changes</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="porting-the-bare-metal-framework-to-a-new-hardware-platform">
+<h1>Porting the Bare Metal Framework to a New Hardware Platform<a class="headerlink" href="#porting-the-bare-metal-framework-to-a-new-hardware-platform" title="Link to this heading"></a></h1>
+<p>This tutorial covers how to port the Bare Metal Framework to a custom hardware platform. The Bare Metal Framework is designed to be portable. As discussed in the <a class="reference internal" href="audio-frameworks.html"><span class="doc">Selecting Between Different Hardware Platforms</span></a> section, all of the hardware platform specific code resides in a .c/.h file pair on each core.</p>
+<ul class="simple">
+<li><p>Create new audio framework files (.c/.h file pair for each core) and add the framework to audio_system_config.h</p>
+<ul>
+<li><p>On the pair of files for the ARM core</p>
+<ul>
+<li><p>Add any external ADC, DAC, CODEC initialization code</p>
+<ul>
+<li><p>Configure any GPIO</p>
+<ul>
+<li><p>Configure the Signal Routing Unit (SRU) to connect the external components to the</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>On the first SHARC core, configure the DMA(s)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<section id="step-1-creating-new-framework-files-for-your-hardware-platform">
+<h2>Step 1: Creating new framework files for your hardware platform<a class="headerlink" href="#step-1-creating-new-framework-files-for-your-hardware-platform" title="Link to this heading"></a></h2>
+<p>It’s likely going to be easiest to clone one of the existing frameworks and use this as a starting point.</p>
+<p>Presently, there are two audio frameworks that ship with the Bare Metal Framework. The first is called <code class="docutils literal notranslate"><span class="pre">audio_frameworks/audio_framework_8ch_sam_and_audioproj_fin</span></code> and this provides support for the hardware components on the SHARC Audio Module. The second is called <code class="docutils literal notranslate"><span class="pre">audio_frameworks/audio_framework_16ch_sam_and_automotive_fin</span></code> and this provides support for audio components on the 16-channel automotive Fin (but provide support for the audio components on the SHARC Audio Module).</p>
+<p>One notable distinction between the two is the number of general purpose audio channels that are available to pass audio data between the L1 memory of the two SHARC cores. With <code class="docutils literal notranslate"><span class="pre">audio_framework_8ch_sam_and_audioproj_fin</span></code>, 8 channels of audio are available for moving audio between SHARC Core 1 and SHARC Core 2. With <code class="docutils literal notranslate"><span class="pre">audio_framework_16ch_sam_and_automotive_fin</span></code>, 16 channels of audio are available for moving audio between SHARC Core 1 and SHARC Core 2. Audio data is moved between cores via background DMA so there isn’t more processing overhead when using 16 channels. However, we do need to allocate L1 memory for these channels on each core.</p>
+<p>We’ll start by cloning one of these two file pairs on each core and providing our new files with a unique name. Let’s call it “Hardware Platform One”. In total, we’ll create 6 new files (2 for each core) and each will be a copy of the corresponding <code class="docutils literal notranslate"><span class="pre">audio_framework_8ch_sam_and_audioproj_fin</span></code> .c or .h file on each core.</p>
+<p>In the ARM core project (sam_baremetal_framework_core0 in CCES): <code class="docutils literal notranslate"><span class="pre">audio_frameworks/audio_framework_hardware_platform_one_arm.c</span></code> <code class="docutils literal notranslate"><span class="pre">audio_frameworks/audio_framework_hardware_platform_one_arm.h</span></code></p>
+<p>In the SHARC core 1 project (sam_baremetal_framework_core1 in CCES): <code class="docutils literal notranslate"><span class="pre">audio_frameworks/audio_framework_hardware_platform_one_core1.c</span></code> <code class="docutils literal notranslate"><span class="pre">audio_frameworks/audio_framework_hardware_platform_one_core1.h</span></code></p>
+<p>In the SHARC core 2 project (sam_baremetal_framework_core2 in CCES): <code class="docutils literal notranslate"><span class="pre">audio_frameworks/audio_framework_hardware_platform_one_core2.c</span></code> <code class="docutils literal notranslate"><span class="pre">audio_frameworks/audio_framework_hardware_platform_one_core2.h</span></code></p>
+</section>
+<section id="step-2-create-a-new-preprocessor-variable-for-the-new-audio-framework">
+<h2>Step 2: Create a new preprocessor variable for the new audio framework<a class="headerlink" href="#step-2-create-a-new-preprocessor-variable-for-the-new-audio-framework" title="Link to this heading"></a></h2>
+<p>One nice feature of the Bare Metal framework is we can switch between hardware platforms by changing a single field in the audio_system_config.h file. This is managed with preprocessor variables that are used to selectively include the audio framework files associated with each platform.</p>
+<p>The first thing we’ll do is create a new definition in <code class="docutils literal notranslate"><span class="pre">audio_system_config.h</span></code> for our framework as shown below. Ensure that only one audio framework is set to TRUE.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">//*****************************************************************************</span>
+<span class="c1">// 3. Select an audio processing framework to use (only select one)</span>
+<span class="c1">//*****************************************************************************</span>
+
+<span class="c1">// Standard audio processing framework (SHARC Audio Module and SHARC Audio Module + DIY board)</span>
+<span class="cp">#define FRAMEWORK_8CH_SINGLE_OR_DUAL_CORE_A2B           FALSE</span>
+
+<span class="c1">// Audio processing framework for use with the automotive daughter board</span>
+<span class="cp">#define FRAMEWORK_16CH_SINGLE_OR_DUAL_CORE_AUTOMOTIVE   FALSE</span>
+
+<span class="c1">// Bypasses the ADSP-SC589 so I2S signals routed directly between ADAU1761 and A2B controller (GPIO4 = LED on this board)</span>
+<span class="cp">#define FRAMEWORK_BYPASS_SC589_A2B                      FALSE</span>
+
+<span class="c1">// Our first custom hardware platform</span>
+<span class="cp">#define FRAMEWORK_HARDWARE_PLATFORM_ONE                 TRUE</span>
+</pre></div>
+</div>
+<p>Next, we’ll then add this same new preprocessor definition / variable to a file called <code class="docutils literal notranslate"><span class="pre">src/audio_framework_selector.h</span></code> on core 0/ARM core, <code class="docutils literal notranslate"><span class="pre">src/audio_framework_selector.h</span></code> on core 1/SHARC core 1, <code class="docutils literal notranslate"><span class="pre">audio_framework_selector.h</span></code> on core 2/SHARC core 2.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef _AUDIO_FRAMEWORK_ARM_H_</span>
+<span class="cp">#define _AUDIO_FRAMEWORK_ARM_H_</span>
+
+<span class="c1">// Set audio system parameters in this file</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;common/audio_system_config.h&quot;</span>
+
+<span class="cp">#if defined(FRAMEWORK_8CH_SINGLE_OR_DUAL_CORE_A2B) &amp;&amp; FRAMEWORK_8CH_SINGLE_OR_DUAL_CORE_A2B</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;audio_frameworks/audio_framework_8ch_sam_and_audioproj_fin_arm.h&quot;</span>
+
+<span class="cp">#elif defined(FRAMEWORK_16CH_SINGLE_OR_DUAL_CORE_AUTOMOTIVE) &amp;&amp; FRAMEWORK_16CH_SINGLE_OR_DUAL_CORE_AUTOMOTIVE</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;audio_frameworks/audio_framework_16ch_sam_and_automotive_fin_arm.h&quot;</span>
+
+<span class="cp">#elif defined(FRAMEWORK_BYPASS_SC589_A2B) &amp;&amp; FRAMEWORK_BYPASS_SC589_A2B</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;audio_frameworks/audio_framework_a2b_bypass_sc589_arm.h&quot;</span>
+
+<span class="c1">// Support for our first custom hardware platform</span>
+<span class="cp">#elif defined(FRAMEWORK_HARDWARE_PLATFORM_ONE) &amp;&amp; FRAMEWORK_HARDWARE_PLATFORM_ONE</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;audio_frameworks/audio_framework_hardware_platform_one_arm.h&quot;</span>
+
+<span class="cp">#endif </span><span class="c1">// Audio frameworks</span>
+
+<span class="cp">#endif </span><span class="c1">// _AUDIO_FRAMEWORK_ARM_H_</span>
+</pre></div>
+</div>
+<p>Make the same modification to the audio_framework_ file on each core and be sure to point to the new local .h file you cloned in the step prior.</p>
+<p>At the top of your cloned audio framework .c files on each core, add the same pre-processor variable to the top of the file. This will ensure only the audio framework files we have selected in audio_system_config.h is compiled.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Define your audio system parameters in this file</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;common/audio_system_config.h&quot;</span>
+
+<span class="cp">#if defined(FRAMEWORK_HARDWARE_PLATFORM_ONE) &amp;&amp; FRAMEWORK_HARDWARE_PLATFORM_ONE</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;audio_framework_hardware_platform_one_arm.h&quot;</span>
+</pre></div>
+</div>
+<p>Finally, at the very bottom of your cloned audio framework .c files on each core, you’ll find an integer declaration. This is here only to prevent compiler warnings when the current framework is not selected but this file is compiled. Change this to a unique name at the end of each of these files so we don’t end up with a linker error like so:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">audio_framework_hardware_platform_one</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>In summary, add a new preprocessor variable to audio_system_config.h for your new audio framework. Add this variable to <code class="docutils literal notranslate"><span class="pre">audio_framework_hardware_platform_one_arm.h</span></code>, <code class="docutils literal notranslate"><span class="pre">audio_framework_hardware_platform_one_core1.h</span></code> and <code class="docutils literal notranslate"><span class="pre">audio_framework_hardware_platform_one_core2.h</span></code>. And finally, add this variable to the top of our three new, cloned .c files for our new audio framework (one on each core).</p>
+<p>To confirm that everything is configured properly, do a clean build and ensure everything compiles and links properly. At this point, we’ve just selected a cloned version of the 8 channel SHARC Audio Module framework.</p>
+</section>
+<section id="step-3-on-the-arm-core-configure-system-initialization-code">
+<h2>Step 3: On the ARM Core, Configure System Initialization Code<a class="headerlink" href="#step-3-on-the-arm-core-configure-system-initialization-code" title="Link to this heading"></a></h2>
+<p>Open up <code class="docutils literal notranslate"><span class="pre">audio_frameworks/audio_framework_hardware_platform_one_arm.c</span></code> on the ARM core and locate the function, <code class="docutils literal notranslate"><span class="pre">audioframework_initialize()</span></code>. This function is called by <code class="docutils literal notranslate"><span class="pre">src/startup_core_core0.c</span></code> and is initializes the following components in our system:</p>
+<ul class="simple">
+<li><p>The Signal Routing Unit (SRU) which routes I2S/TDM audio signals from the pins of the processor to the SPORTs (synchronous serial ports used for audio) and other audio peripherals such as the Sample Rate Converters (SRUs).</p></li>
+<li><p>GPIO pin configuruation</p></li>
+<li><p>External ADC, DAC, CODEC initialization via I2C or SPI</p></li>
+</ul>
+<p>The first thing we’ll do is configure the Signal Routing Unit (SRU).</p>
+<p>The <strong>Signal Routing Unit (SRU)</strong> is a very powerful and useful peripheral. This tutorial won’t go into great depth about how to use this peripheral but in short, it allows us to dynamically “wire” signals to/from the pins of the ADSP-SC589 and/or to/from various internal peripherals.</p>
+<p>The file <code class="docutils literal notranslate"><span class="pre">drivers/sru_simple/sru_simple.c</span></code> contains a number of configurations that you can use as a starting point. You can either create a new function in this driver or add the SRU config code directly to <code class="docutils literal notranslate"><span class="pre">audioframework_initialize()</span></code>.</p>
+<p>There are two existing SRU configuration calls in <code class="docutils literal notranslate"><span class="pre">audioframework_initialize()</span></code> that you can remove and replace with your own configuration code. You can use the contents of these functions as a rough template as you’re wiring up the peripherals in your system.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Configure the DAI / SRU to use the ADAU1761 as an I2S clock/FS master to SPORT 0 and A2B to SPORT 1</span>
+<span class="n">sru_config_sharc_sam_a2b_master</span><span class="p">();</span>
+
+<span class="c1">// Configure SPDIF to connect to SPORT2.  Divide the fs.</span>
+<span class="n">sru_config_spdif</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The next thing we’ll do is configure our GPIO pins. There is a function called <code class="docutils literal notranslate"><span class="pre">gpio_initialize()</span></code> that contains the initialization routines for the GPIO pins. These routines use the bare metal gpio driver located at <code class="docutils literal notranslate"><span class="pre">drivers/bm_gpio_driver/bm</span> <span class="pre">_gpio.h</span></code> which makes it easy to configure various GPIO pins as inputs and outputs and optionally attach interrupt callbacks to the input pins.</p>
+<p>Finally, we’ll add any initialization code for our external components such as ADCs, DACs and CODECs. The existing <code class="docutils literal notranslate"><span class="pre">audio_framework_hardware_platform_one_arm.c</span></code> file will have the initialization code for the ADAU1761 which we can replace. You can either perform I2C or SPI reads and writes to your external components here directly (using twi_simple and spi_simple drivers). If you’re using an Analog Devices audio ADC, DAC or CODEC, you may be able to use SigmaStudio to generate the initialization code for you. See <a class="reference internal" href="driver-creation-tutorial.html"><span class="doc">Tutorial: Creating Drivers for Audio Components</span></a> for more information on how to use SigmaStudio to generate initialization code.</p>
+<p>Below is an example of what a new version of the audioframework_initialize() could look like. In this example, we have a fictional audio codec that we can configure over I2C/TWI with an I2C address of 0x40. The I2S/TDM signals from this component connect to the DAI0 pins 1-4 on the ADSP-SC589. Note the additional include files at the top of this snippet which need to be added too.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Add some additional headers so we can access SRU and TWI</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;drivers/bm_twi_driver/bm_twi.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;srusc589.h&gt;</span>
+
+<span class="cm">/**</span>
+<span class="cm">  * @brief      ARM audio framework initialization function</span>
+<span class="cm"> *</span>
+<span class="cm">  * This function initializes any external components, selects the right</span>
+<span class="cm">  * SRU / DAI configuration, and sets the sample rate.</span>
+<span class="cm"> *</span>
+<span class="cm"> */</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">audioframework_initialize</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">  * Set system-wide audio parameters in our shared memory structure between cores.</span>
+<span class="cm">  * While sample rate is set initially via pre-processor variables, there may be</span>
+<span class="cm">  * situations where they are modified on the fly.</span>
+<span class="cm">     */</span>
+
+<span class="w">    </span><span class="n">multiCoreAudioCtrl</span><span class="o">-&gt;</span><span class="n">audio_sample_rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AUDIO_SAMPLE_RATE</span><span class="p">;</span>
+<span class="w">    </span><span class="n">multiCoreAudioCtrl</span><span class="o">-&gt;</span><span class="n">audio_block_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="p">;</span>
+<span class="w">    </span><span class="n">multiCoreAudioCtrl</span><span class="o">-&gt;</span><span class="n">core_clock_frequency</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CORE_CLOCK_FREQ_HZ</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Initialize GPIO</span>
+<span class="w">    </span><span class="n">gpio_initialize</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Set to false while we initialize the external audio components in our system</span>
+<span class="w">    </span><span class="n">multiCoreAudioCtrl</span><span class="o">-&gt;</span><span class="n">ARM_Audio_Peripheral_Initialization_Complete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Initialize state variables and pointers for the audio framework</span>
+<span class="w">    </span><span class="n">multiCoreAudioCtrl</span><span class="o">-&gt;</span><span class="n">SHARC_Core1_Ready_For_Audio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">    </span><span class="n">multiCoreAudioCtrl</span><span class="o">-&gt;</span><span class="n">SHARC_Core2_Ready_For_Audio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Configure the SRU to route I2S/TDM signals from DAI0 pins 1-4 to SPORT0</span>
+<span class="w">    </span><span class="n">SRU</span><span class="p">(</span><span class="n">HIGH</span><span class="p">,</span><span class="w"> </span><span class="n">DAI0_PBEN01_I</span><span class="p">);</span><span class="w">       </span><span class="c1">// DAC data is an output</span>
+<span class="w">    </span><span class="n">SRU</span><span class="p">(</span><span class="n">LOW</span><span class="p">,</span><span class="w">  </span><span class="n">DAI0_PBEN02_I</span><span class="p">);</span><span class="w">       </span><span class="c1">// ADC data is an input</span>
+<span class="w">    </span><span class="n">SRU</span><span class="p">(</span><span class="n">LOW</span><span class="p">,</span><span class="w">  </span><span class="n">DAI0_PBEN03_I</span><span class="p">);</span><span class="w">       </span><span class="c1">// CLK is an input</span>
+<span class="w">    </span><span class="n">SRU</span><span class="p">(</span><span class="n">LOW</span><span class="p">,</span><span class="w">  </span><span class="n">DAI0_PBEN04_I</span><span class="p">);</span><span class="w">       </span><span class="c1">// FS is an input</span>
+
+<span class="w">    </span><span class="n">SRU</span><span class="p">(</span><span class="n">DAI0_PB03_O</span><span class="p">,</span><span class="w"> </span><span class="n">SPT0_ACLK_I</span><span class="p">);</span><span class="w">  </span><span class="c1">// route BCLK output to SPORT0A clock input</span>
+<span class="w">    </span><span class="n">SRU</span><span class="p">(</span><span class="n">DAI0_PB03_O</span><span class="p">,</span><span class="w"> </span><span class="n">SPT0_BCLK_I</span><span class="p">);</span><span class="w">  </span><span class="c1">// route also to SPORT0B clock input</span>
+
+<span class="w">    </span><span class="n">SRU</span><span class="p">(</span><span class="n">DAI0_PB04_O</span><span class="p">,</span><span class="w"> </span><span class="n">SPT0_AFS_I</span><span class="p">);</span><span class="w">   </span><span class="c1">// route FS output to SPORT0A frame sync</span>
+<span class="w">    </span><span class="n">SRU</span><span class="p">(</span><span class="n">DAI0_PB04_O</span><span class="p">,</span><span class="w"> </span><span class="n">SPT0_BFS_I</span><span class="p">);</span><span class="w">   </span><span class="c1">// route FS output to SPORT0B frame sync</span>
+
+<span class="w">    </span><span class="n">SRU</span><span class="p">(</span><span class="n">DAI0_PB02_O</span><span class="p">,</span><span class="w"> </span><span class="n">SPT0_BD0_I</span><span class="p">);</span><span class="w">   </span><span class="c1">// route ADC pin to SPT0 BD0 input</span>
+<span class="w">    </span><span class="n">SRU</span><span class="p">(</span><span class="n">SPT0_AD0_O</span><span class="p">,</span><span class="w">  </span><span class="n">DAI0_PB01_I</span><span class="p">);</span><span class="w">  </span><span class="c1">// route SPT0A AD0 output to DAC pin</span>
+
+<span class="w">    </span><span class="c1">// Initialize some I2C audio codec at I2C address 0x40 connected to TWI0 pins</span>
+<span class="w">    </span><span class="n">BM_TWI</span><span class="w">    </span><span class="n">codec_twi</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">twi_initialize</span><span class="p">(</span><span class="w"> </span><span class="o">&amp;</span><span class="n">codec_twi</span><span class="p">,</span><span class="w"> </span><span class="mh">0x40</span><span class="p">,</span><span class="w"> </span><span class="n">TWI_TYPICAL_SCLK0_FREQ</span><span class="p">,</span><span class="w"> </span><span class="n">TWI0</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w">  </span><span class="n">TWI_SIMPLE_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// handle I2C init error here</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Write a value of 0x80 to codec to start it</span>
+<span class="w">    </span><span class="n">twi_write</span><span class="p">(</span><span class="w"> </span><span class="o">&amp;</span><span class="n">codec_twi</span><span class="p">,</span><span class="w"> </span><span class="mh">0x80</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">// The ARM is all ready to go!</span>
+<span class="w">    </span><span class="n">multicore_data</span><span class="o">-&gt;</span><span class="n">arm_audio_peripheral_initialization_complete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="step-4-on-the-sharc-core-1-configure-the-audio-dma">
+<h2>Step 4: On the SHARC Core 1, Configure the Audio DMA<a class="headerlink" href="#step-4-on-the-sharc-core-1-configure-the-audio-dma" title="Link to this heading"></a></h2>
+<p>SHARC Core 1 is primarily responsible for routing audio between the two SHARC cores and the SPORTs which connect to various audio devices and peripherals.</p>
+<p>The current framework which we cloned is design to route audio to and from three different sources/sinks: the ADAU1761 (8 channels), the A2B bus (8 channels) and S/PDIF (2 channels).</p>
+<p>For the sake of example, let’s say that our new audio hardware platform has a single 8 channel codec and this is the only audio component that we’ll communicate with in our new hardware platform.</p>
+<p>The first thing we’ll do is update the various memory buffers. There are two types of memory buffers that the framework uses. The first are fixed point buffers which contain the raw, fixed point audio data that is coming from, going to the various audio components in our system. The second are floating point buffers which contain the audio data that we’ll be processing within the callbacks. SHARC core 1 handles the movement of data and floating-point&lt;-&gt;fixed-point conversion between these two types of buffers.</p>
+<p>At the top of <code class="docutils literal notranslate"><span class="pre">audio_frameworks/audio_framework_hardware_platform_one_core1.c</span></code> are the fixed point buffers declarations used for DMA. There are two buffers for each direction as the DMA is capable of automatically ping-ponging between buffers. When we’re processing one set of buffers, the DMA engine is transmitting/receiving the other set. As you can see below, we have one pair of buffers for transmit and one pair for receive. Data from each audio channel be stacked in each buffer is the (total number of channels from that device) x (system wide audio block size). The DMA engine takes care of de-interleaving the data so each channel of audio is grouped together / stacked. The <code class="docutils literal notranslate"><span class="pre">section()</span></code> directive places these buffers in L1 memory to ensure highest computational performance.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Fixed-point (raw ADC/DAC data) DMA buffers for ping-pong / double-buffered DMA</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">section</span><span class="p">(</span><span class="s">&quot;seg_dmda_nw&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">sport0_dma_rx_0_buffer</span><span class="p">[</span><span class="n">AUDIO_CHANNELS</span><span class="err">\</span><span class="o">*</span><span class="n">AUDIO_BLOCK_SIZE</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">section</span><span class="p">(</span><span class="s">&quot;seg_dmda_nw&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">sport0_dma_rx_1_buffer</span><span class="p">[</span><span class="n">AUDIO_CHANNELS</span><span class="err">\</span><span class="o">*</span><span class="n">AUDIO_BLOCK_SIZE</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">section</span><span class="p">(</span><span class="s">&quot;seg_dmda_nw&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">sport0_dma_tx_0_buffer</span><span class="p">[</span><span class="n">AUDIO_CHANNELS</span><span class="err">\</span><span class="o">*</span><span class="n">AUDIO_BLOCK_SIZE</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">section</span><span class="p">(</span><span class="s">&quot;seg_dmda_nw&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">sport0_dma_tx_1_buffer</span><span class="p">[</span><span class="n">AUDIO_CHANNELS</span><span class="err">\</span><span class="o">*</span><span class="n">AUDIO_BLOCK_SIZE</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+</pre></div>
+</div>
+<p>Below the fixed-point DMA buffer declarations, we see the floating-point buffer declarations. We’ll reduce this to a single input and output buffer for our CODEC. Having all of our 8 audio channels packed into one long contiguous buffer allows us more efficiently perform the fixed/floating point conversion.</p>
+<p>Below our input and output buffers for our codec, we’ll also preserve the second set of buffers which is used to move 8 channels of audio data to the second SHARC core if we’re using both cores to process audio.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Floating-point buffers that we will process / operate on</span>
+<span class="c1">// These are aligned to 32-byte boundaries so we can use fast DMAs to move them around</span>
+<span class="cp">#pragma align 32</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">codec_audiochannels_out</span><span class="p">[</span><span class="n">AUDIO_CHANNELS</span><span class="err">\</span><span class="o">*</span><span class="n">AUDIO_BLOCK_SIZE</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w">    </span><span class="c1">// Audio to DACs</span>
+<span class="cp">#pragma align 32</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">codec_audiochannels_in</span><span class="p">[</span><span class="n">AUDIO_CHANNELS</span><span class="err">\</span><span class="o">*</span><span class="n">AUDIO_BLOCK_SIZE</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w">     </span><span class="c1">// Audio from ADCs</span>
+
+<span class="cp">#if (USE_BOTH_CORES_TO_PROCESS_AUDIO)</span>
+<span class="cp">#pragma align 32</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">audiochannels_from_sharc_core2</span><span class="p">[</span><span class="n">AUDIO_CHANNELS</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w">      </span><span class="c1">// Audio from SHARC Core 2</span>
+<span class="cp">#pragma align 32</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">audiochannels_to_sharc_core2</span><span class="p">[</span><span class="n">AUDIO_CHANNELS</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w">        </span><span class="c1">// Audio from SHARC Core 2</span>
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+<p>Now we’ll create points into our input and output buffers that will allow us to access each audio channel from our audio callbacks. We’ll also preserve the code we’re using to set up the audio buffers going to and from SHARC core 2.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// 8 input channels from the codec</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_codec_0_left_In</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">codec_audiochannels_In</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_codec_0_right_In</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">codec_audiochannels_In</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">1</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_codec_1_left_In</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">codec_audiochannels_In</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_codec_1_right_In</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">codec_audiochannels_In</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">3</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_codec_2_left_In</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">codec_audiochannels_In</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">4</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_codec_2_right_In</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">codec_audiochannels_In</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">5</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_codec_3_left_In</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">codec_audiochannels_In</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">6</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_codec_3_right_In</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">codec_audiochannels_In</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">7</span><span class="p">;</span>
+
+<span class="c1">// 8 output channels to the codec</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_codec_0_left_Out</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">codec_audiochannels_Out</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_codec_0_right_Out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">codec_audiochannels_Out</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">1</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_codec_1_left_Out</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">codec_audiochannels_Out</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_codec_1_right_Out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">codec_audiochannels_Out</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">3</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_codec_2_left_Out</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">codec_audiochannels_Out</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">4</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_codec_2_right_Out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">codec_audiochannels_Out</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">5</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_codec_3_left_Out</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">codec_audiochannels_Out</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">6</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_codec_3_right_Out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">codec_audiochannels_Out</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">7</span><span class="p">;</span>
+
+<span class="cp">#if (USE_BOTH_CORES_TO_PROCESS_AUDIO)</span>
+
+<span class="c1">// Processed audio data from SHARC Core</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_from_sharc_core2_0_left</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannels_from_sharc_core2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_from_sharc_core2_0_right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannels_from_sharc_core2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">1</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_from_sharc_core2_1_left</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannels_from_sharc_core2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_from_sharc_core2_1_right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannels_from_sharc_core2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">3</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_from_sharc_core2_2_left</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannels_from_sharc_core2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">4</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_from_sharc_core2_2_right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannels_from_sharc_core2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">5</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_from_sharc_core2_3_left</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannels_from_sharc_core2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">6</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_from_sharc_core2_3_right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannels_from_sharc_core2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">7</span><span class="p">;</span>
+
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_to_sharc_core2_0_left</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannels_to_sharc_core2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_to_sharc_core2_0_right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannels_to_sharc_core2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">1</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_to_sharc_core2_1_left</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannels_to_sharc_core2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_to_sharc_core2_1_right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannels_to_sharc_core2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">3</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_to_sharc_core2_2_left</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannels_to_sharc_core2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">4</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_to_sharc_core2_2_right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannels_to_sharc_core2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">5</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_to_sharc_core2_3_left</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannels_to_sharc_core2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">6</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">audiochannel_to_sharc_core2_3_right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannels_to_sharc_core2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="err">\</span><span class="o">*</span><span class="mi">7</span><span class="p">;</span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+<p>Next, we’ll update our buffer aliases. This allows us to always read and write from a standard set of buffer names in our audio callback regardless of whether we’re using one core or both cores. In our callback, when write to the <code class="docutils literal notranslate"><span class="pre">AudioChannel_0_Left_Out[]</span></code> buffer, we’re either writing to the buffer heading to core 2 when we’re using both cores or we’re writing to the buffer that will be transmitted to our codec when using just one core. This way, we can flip between single core processing and dual core processing (via <code class="docutils literal notranslate"><span class="pre">audio_system_config.h</span></code>) without having to re-write any of our audio processing code in the audio processing callback.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Define</span> <span class="n">alias</span> <span class="n">pointers</span> <span class="k">for</span> <span class="n">inputs</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_0_left_in</span>  <span class="o">=</span> <span class="n">codec_audiochannels_in</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">0</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_0_right_in</span> <span class="o">=</span> <span class="n">codec_audiochannels_in</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">1</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_1_left_in</span>  <span class="o">=</span> <span class="n">codec_audiochannels_in</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">2</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_1_right_in</span> <span class="o">=</span> <span class="n">codec_audiochannels_in</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">3</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_2_left_in</span>  <span class="o">=</span> <span class="n">codec_audiochannels_in</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">4</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_2_right_in</span> <span class="o">=</span> <span class="n">codec_audiochannels_in</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">5</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_3_left_in</span>  <span class="o">=</span> <span class="n">codec_audiochannels_in</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">6</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_3_right_in</span> <span class="o">=</span> <span class="n">codec_audiochannels_in</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">7</span><span class="p">;</span>
+
+<span class="c1">#if (USE_BOTH_CORES_TO_PROCESS_AUDIO)</span>
+
+<span class="o">//</span> <span class="n">If</span> <span class="n">we</span><span class="s1">&#39;re in dual core, point our alias to the buffers heading to SHARC 2.</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_0_left_out</span>  <span class="o">=</span> <span class="n">audiochannels_To_sharc_core2</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">0</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_0_right_out</span> <span class="o">=</span> <span class="n">audiochannels_To_sharc_core2</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">1</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_1_left_out</span>  <span class="o">=</span> <span class="n">audiochannels_To_sharc_core2</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">2</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_1_right_out</span> <span class="o">=</span> <span class="n">audiochannels_To_sharc_core2</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">3</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_2_left_out</span>  <span class="o">=</span> <span class="n">audiochannels_To_sharc_core2</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">4</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_2_right_out</span> <span class="o">=</span> <span class="n">audiochannels_To_sharc_core2</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">5</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_3_left_out</span>  <span class="o">=</span> <span class="n">audiochannels_To_sharc_core2</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">6</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_3_right_out</span> <span class="o">=</span> <span class="n">audiochannels_To_sharc_core2</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">7</span><span class="p">;</span>
+
+<span class="c1">#else</span>
+<span class="o">//</span> <span class="n">Otherwise</span><span class="p">,</span> <span class="n">point</span> <span class="n">our</span> <span class="n">alias</span> <span class="n">buffers</span> <span class="n">back</span> <span class="n">out</span> <span class="n">to</span> <span class="n">the</span> <span class="n">codec</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_0_left_out</span>  <span class="o">=</span> <span class="n">codec_audiochannels_out</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">0</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_0_right_out</span> <span class="o">=</span> <span class="n">codec_audiochannels_out</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">1</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_1_left_out</span>  <span class="o">=</span> <span class="n">codec_audiochannels_out</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">2</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_1_right_out</span> <span class="o">=</span> <span class="n">codec_audiochannels_out</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">3</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_2_left_out</span>  <span class="o">=</span> <span class="n">codec_audiochannels_out</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">4</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_2_right_out</span> <span class="o">=</span> <span class="n">codec_audiochannels_out</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">5</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_3_left_out</span>  <span class="o">=</span> <span class="n">codec_audiochannels_out</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">6</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">audiochannel_3_right_out</span> <span class="o">=</span> <span class="n">codec_audiochannels_out</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">7</span><span class="p">;</span>
+<span class="c1">#endif</span>
+
+<span class="o">//</span> <span class="n">Declare</span> <span class="n">buffers</span> <span class="n">to</span> <span class="n">write</span> <span class="n">directly</span> <span class="n">to</span> <span class="n">codec</span> <span class="n">output</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">codec_0_left_out</span>  <span class="o">=</span> <span class="n">codec_audiochannels_out</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">0</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">codec_0_right_out</span> <span class="o">=</span> <span class="n">codec_audiochannels_out</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">1</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">codec_1_left_out</span>  <span class="o">=</span> <span class="n">codec_audiochannels_out</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">2</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">codec_1_right_out</span> <span class="o">=</span> <span class="n">codec_audiochannels_out</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">3</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">codec_2_left_out</span>  <span class="o">=</span> <span class="n">codec_audiochannels_out</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">4</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">codec_2_right_out</span> <span class="o">=</span> <span class="n">codec_audiochannels_out</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">5</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">codec_3_left_out</span>  <span class="o">=</span> <span class="n">codec_audiochannels_out</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">6</span><span class="p">;</span>
+<span class="nb">float</span> <span class="o">*</span> <span class="n">codec_3_right_out</span> <span class="o">=</span> <span class="n">codec_audiochannels_out</span> <span class="o">+</span> <span class="n">AUDIO_BLOCK_SIZE</span>\<span class="o">*</span><span class="mi">7</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Update <code class="docutils literal notranslate"><span class="pre">audio_frameworks/audio_framework_hardware_platform_one_core1.h</span></code> to ensure these variables you’ve created are present in the header file too.</p>
+<p>At this point, our various memory buffers and pointers are all ready.</p>
+<p>Next, we need to configure the DMA and our serial ports (SPORTs). The <code class="docutils literal notranslate"><span class="pre">drivers/bm_audio_flow_driver/</span></code> driver has a utility function for configuring both the DMA and the SPORT for each of our audio devices. Since the existing framework has three different audio sources/sinks, you’ll find three such struct definitions in <code class="docutils literal notranslate"><span class="pre">audio_frameworks/audio_framework_hardware_platform_one_core1.c</span></code>. We can remove all but the definition for SPORT0.</p>
+<p>The C struct definition is shown below. Here we provide information about the number of channels and audio block size, the audio buffers that the DMA engine will read from/write to, the SPORT configuration, and whether or not we want this DMA to generate an interrupt each time it transfers an audio frame (channels x block size). The code below shows an example of the DMA configuration for our 8 channel audio codec.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// DMA &amp; SPORT Configuration for SPORT 0 (CODEC connection)</span>
+<span class="n">SPORT_DMA_CONFIG</span><span class="w">   </span><span class="n">SPR0_CODEC_8CH_Config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="p">.</span><span class="n">sport_number</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="n">SPORT0</span><span class="p">,</span>
+
+<span class="w">    </span><span class="p">.</span><span class="n">dma_audio_channels</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">AUDIO_CHANNELS</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">dma_audio_block_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="p">,</span>
+
+<span class="w">    </span><span class="p">.</span><span class="n">dma_tx_buffer_0</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">sport0_dma_tx_0_buffer</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">dma_tx_buffer_1</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">sport0_dma_tx_1_buffer</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">dma_rx_buffer_0</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">sport0_dma_rx_0_buffer</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">dma_rx_buffer_1</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">sport0_dma_rx_1_buffer</span><span class="p">,</span>
+
+<span class="w">    </span><span class="c1">// SPORT Transmit</span>
+<span class="w">    </span><span class="p">.</span><span class="n">pREG_SPORT_CTL_A</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mh">0x1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">BITP_SPORT_CTL_A_DTYPE</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">     </span><span class="c1">// Right justify, sign extend</span>
+<span class="w">                          </span><span class="p">(</span><span class="mh">0x1F</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">BITP_SPORT_CTL_A_SLEN</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">     </span><span class="c1">// 32-bit transfers</span>
+<span class="w">                          </span><span class="n">BITM_SPORT_CTL_A_CKRE</span><span class="w">  </span><span class="o">|</span><span class="w">              </span><span class="c1">// Sample on rising edge</span>
+<span class="w">                          </span><span class="n">BITM_SPORT_CTL_A_FSR</span><span class="w"> </span><span class="o">|</span><span class="w">                </span><span class="c1">// Frame sync required</span>
+<span class="w">                          </span><span class="n">BITM_SPORT_CTL_A_DIFS</span><span class="w"> </span><span class="o">|</span><span class="w">               </span><span class="c1">// Data independent FS</span>
+<span class="w">                          </span><span class="n">BITM_SPORT_CTL_A_LFS</span><span class="w"> </span><span class="o">|</span><span class="w">                </span><span class="c1">// Active low FS / LR CLK</span>
+<span class="w">                          </span><span class="n">BITM_SPORT_CTL_A_SPTRAN</span><span class="w"> </span><span class="o">|</span><span class="w">             </span><span class="c1">// SPORT is transmitter</span>
+<span class="w">                          </span><span class="mi">0</span><span class="p">,</span>
+
+<span class="w">    </span><span class="p">.</span><span class="n">pREG_SPORT_MCTL_A</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">BITM_SPORT_MCTL_A_MCE</span><span class="w"> </span><span class="o">|</span><span class="w">               </span><span class="c1">// Multi-channel enable</span>
+<span class="w">                          </span><span class="p">(</span><span class="mh">0x1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">BITP_SPORT_MCTL_A_MFD</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="c1">// Frame delay = 1</span>
+<span class="w">                          </span><span class="p">((</span><span class="mi">8-1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">BITP_SPORT_MCTL_A_WSIZE</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="c1">// 8 words / frame</span>
+<span class="w">                          </span><span class="mi">0</span><span class="p">,</span>
+
+<span class="w">    </span><span class="p">.</span><span class="n">pREG_SPORT_CS0_A</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">AUDIO_CHANNELS_MASK</span><span class="p">,</span><span class="w">   </span><span class="c1">// 8 channels</span>
+
+<span class="w">    </span><span class="c1">// SPORT Receive</span>
+<span class="w">    </span><span class="p">.</span><span class="n">pREG_SPORT_CTL_B</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mh">0x1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">BITP_SPORT_CTL_B_DTYPE</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">     </span><span class="c1">// Right justify, sign extend</span>
+<span class="w">                          </span><span class="p">(</span><span class="mh">0x1F</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">BITP_SPORT_CTL_B_SLEN</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">     </span><span class="c1">// 32-bit transfers</span>
+<span class="w">                          </span><span class="n">BITM_SPORT_CTL_A_CKRE</span><span class="w">  </span><span class="o">|</span><span class="w">              </span><span class="c1">// Sample on rising edge</span>
+<span class="w">                          </span><span class="n">BITM_SPORT_CTL_B_FSR</span><span class="w"> </span><span class="o">|</span><span class="w">                </span><span class="c1">// Frame sync required</span>
+<span class="w">                          </span><span class="n">BITM_SPORT_CTL_B_DIFS</span><span class="w"> </span><span class="o">|</span><span class="w">               </span><span class="c1">// Data independent FS</span>
+<span class="w">                          </span><span class="n">BITM_SPORT_CTL_B_LFS</span><span class="w"> </span><span class="o">|</span><span class="w">                </span><span class="c1">// Active low FS / LR CLK</span>
+<span class="w">                          </span><span class="mi">0</span><span class="p">,</span>
+
+<span class="w">    </span><span class="p">.</span><span class="n">pREG_SPORT_MCTL_B</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">BITM_SPORT_MCTL_B_MCE</span><span class="w"> </span><span class="o">|</span><span class="w">               </span><span class="c1">// Multi-channel enable</span>
+<span class="w">                          </span><span class="p">(</span><span class="mh">0x1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">BITP_SPORT_MCTL_B_MFD</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="c1">// Frame delay = 1</span>
+<span class="w">                          </span><span class="p">((</span><span class="mi">8-1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">BITP_SPORT_MCTL_B_WSIZE</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="c1">// 8 words / frame</span>
+<span class="w">                          </span><span class="mi">0</span><span class="p">,</span>
+
+<span class="w">    </span><span class="p">.</span><span class="n">pREG_SPORT_CS0_B</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">AUDIO_CHANNELS_MASK</span><span class="p">,</span><span class="w">   </span><span class="c1">// 8 channels</span>
+
+<span class="w">    </span><span class="p">.</span><span class="n">generates_interrupts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">dma_interrupt_routine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">audioframework_dma_handler</span>
+
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>The interrupt handler can be mostly left as is. There are only two small changes:</p>
+<ol class="arabic simple">
+<li><p>Remove the fixed-float processing for the second and third set of audio buffers in the original framework.</p></li>
+</ol>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="kt">uint32_t</span><span class="p">)</span><span class="w"> </span><span class="n">sport_dma_cfg</span><span class="o">-&gt;</span><span class="n">DMA_Descriptor_RX_0_LIST</span><span class="p">.</span><span class="n">Next_Desc</span><span class="w"> </span><span class="o">!=</span>
+<span class="w">     </span><span class="p">(</span><span class="o">*</span><span class="n">sport_dma_cfg</span><span class="o">-&gt;</span><span class="n">pREG_DMA_RX_DSCPTR_NXT</span><span class="p">)</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">audioflow_float_to_fixed</span><span class="p">(</span><span class="n">codec_audiochannels_out</span><span class="p">,</span><span class="w"> </span><span class="n">sport0_dma_tx_0_buffer</span><span class="p">,</span><span class="w"> </span><span class="n">AUDIO_CHANNELS</span><span class="err">\</span><span class="o">*</span><span class="n">AUDIO_BLOCK_SIZE</span><span class="p">);</span>
+<span class="w">    </span><span class="n">audioflow_fixed_to_float</span><span class="p">(</span><span class="n">sport0_dma_rx_0_buffer</span><span class="p">,</span><span class="w"> </span><span class="n">codec_audiochannels_in</span><span class="p">,</span><span class="w">  </span><span class="n">AUDIO_CHANNELS</span><span class="err">\</span><span class="o">*</span><span class="n">AUDIO_BLOCK_SIZE</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">audioflow_float_to_fixed</span><span class="p">(</span><span class="n">codec_audiochannels_out</span><span class="p">,</span><span class="w"> </span><span class="n">sport0_dma_tx_1_buffer</span><span class="p">,</span><span class="w"> </span><span class="n">AUDIO_CHANNELS</span><span class="err">\</span><span class="o">*</span><span class="n">AUDIO_BLOCK_SIZE</span><span class="p">);</span>
+<span class="w">    </span><span class="n">audioflow_fixed_to_float</span><span class="p">(</span><span class="n">sport0_dma_rx_1_buffer</span><span class="p">,</span><span class="w"> </span><span class="n">codec_audiochannels_in</span><span class="p">,</span><span class="w">  </span><span class="n">AUDIO_CHANNELS</span><span class="err">\</span><span class="o">*</span><span class="n">AUDIO_BLOCK_SIZE</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Update the code to zero output buffers in the case of a MIPS overflow</p></li>
+</ol>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Detect and handle the &quot;frame dropped&quot; event</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">last_audio_frame_completed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// Make a call to the callback</span>
+<span class="w">    </span><span class="n">processaudio_mips_overflow</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Zero output buffers so we get silence instead of repeated audio</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AUDIO_CHANNELS</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cp">#if (USE_BOTH_CORES_TO_PROCESS_AUDIO)</span>
+<span class="w">            </span><span class="n">audiochannels_to_sharc_core2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="cp">#endif</span>
+<span class="w">        </span><span class="n">codec_audiochannels_out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">   </span><span class="c1">// &lt;-- Update this line with the codec buffer</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Update dropped audio frame counter</span>
+<span class="w">    </span><span class="n">multicore_data</span><span class="o">-&gt;</span><span class="n">sharc_core1_dropped_audio_frames</span><span class="o">++</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Don&#39;t trigger the software interrupt for audio processing on this block</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>And similarly, in <code class="docutils literal notranslate"><span class="pre">audioframework_initialize()</span></code>, we to call audioflow_init_sport_dma() for our single audio periperhal (remove the others).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Initialize</span> <span class="n">peripherals</span> <span class="ow">and</span> <span class="n">DMA</span> <span class="n">to</span> <span class="n">configure</span> <span class="n">audio</span> <span class="n">data</span> <span class="n">I</span><span class="o">/</span><span class="n">O</span> <span class="n">flow</span>
+<span class="n">audioflow_init_sport_dma</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">SPR0_CODEC_8CH_Config</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>The last step is reducing the DMA and SPORT enable code to enable just SPORT0 (and its corresponding DMAs).</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">audioframework_start</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// Enable RX and TX DMAs for SPORT0</span>
+<span class="w">    </span><span class="n">SPORT_DMA_ENABLE</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">SPORT_DMA_ENABLE</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Enable SPORT0</span>
+<span class="w">    </span><span class="n">SPORT_ENABLE</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">SPORT_ENABLE</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="step-5-on-the-sharc-core-1-update-the-audio-callback">
+<h2>Step 5: On the SHARC Core 1, Update the Audio Callback<a class="headerlink" href="#step-5-on-the-sharc-core-1-update-the-audio-callback" title="Link to this heading"></a></h2>
+<p>The last thing we need to do is to update the <code class="docutils literal notranslate"><span class="pre">processaudio_output_routing()</span></code> routing function in callback_audio_processing.cpp on SHARC Core 1. As described in the comments, this function routes audio from SHARC Core 2 to the output buffers associated with the various peripherals we have connected to the SHARC.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#if (USE_BOTH_CORES_TO_PROCESS_AUDIO)</span>
+
+<span class="cm">/*</span>
+<span class="cm">  * When using a dual core configuration, SHARC Core 1 is responsible for routing the</span>
+<span class="cm">  * processed audio from SHARC Core 2 to the various output buffers for the</span>
+<span class="cm">  * devices connected to the SC589.  For example, in a dual core framework, SHARC Core 1</span>
+<span class="cm">  * may pass 8 channels of audio to Core 2, and then receive 8 channels of processed audio</span>
+<span class="cm">  * back from Core 2.  It is this routine where we route these channels to the ADAU1761,</span>
+<span class="cm">  * the A2B bus, SPDIF, etc.</span>
+<span class="cm"> */</span>
+<span class="cp">#pragma optimize_for_speed</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">processaudio_output_routing</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">AUDIO_BLOCK_SIZE</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">// Send all 8 channels from SHARC core 2 to our codec</span>
+<span class="w">        </span><span class="n">codec_0_left_out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannel_from_sharc_core2_0_left</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="n">codec_0_right_out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannel_from_sharc_core2_0_right</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="n">codec_1_left_out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannel_from_sharc_core2_1_left</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="n">codec_1_right_out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannel_from_sharc_core2_1_right</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="n">codec_2_left_out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannel_from_sharc_core2_2_left</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="n">codec_2_right_out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannel_from_sharc_core2_2_right</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="n">codec_3_left_out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannel_from_sharc_core2_3_left</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="n">codec_3_right_out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">audiochannel_from_sharc_core2_3_right</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+<p>There are no modifications necessary for SHARC core 2.</p>
+</section>
+<section id="further-changes">
+<h2>Further Changes<a class="headerlink" href="#further-changes" title="Link to this heading"></a></h2>
+<p>Depending on your hardware configuration, the ports assignments of the peripherals you’re using may have changed. In this case, open up the system.svc (at the bottom of the project file tree in the ARM core in CCES). The window that opens will have a number of tabs at the bottom. Click Pin Multiplexing and here you’ll be able to map the peripherals you’re using to the corresponding I/O pins on the processor.</p>
+<hr class="docutils" />
+<img alt="Creating Drivers for New Audio Components#.|Bare Metal Framework#flashing|Programming BM Framework to Flash" src="https://wiki.analog.com/_media/navigationSHARCAudioModule#driver-creation-tutorial" />
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

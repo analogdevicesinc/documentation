@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="We are in the process of migrating our documentation to GitHub Pages." name="description" />
+
+    <title>EVAL-CN0503-ARDZ Hardware User Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">EVAL-CN0503-ARDZ Hardware User Guide</a><ul>
+<li><a class="reference internal" href="#materials-needed">Materials Needed</a></li>
+<li><a class="reference internal" href="#led-and-photodiode-boards">LED and Photodiode Boards</a><ul>
+<li><a class="reference internal" href="#led-boards">LED Boards</a></li>
+<li><a class="reference internal" href="#photodiode-pd-boards">Photodiode (PD) Boards</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#assembling-the-mechanical-fixtures">Assembling the Mechanical Fixtures</a><ul>
+<li><a class="reference internal" href="#assembling-the-base">Assembling the Base</a><ul>
+<li><a class="reference internal" href="#mounting-the-base">Mounting the Base</a></li>
+<li><a class="reference internal" href="#connecting-the-led-and-photodiode-pd-boards">Connecting the LED and Photodiode (PD) Boards</a></li>
+<li><a class="reference internal" href="#inserting-the-flourescent-filters">Inserting the Flourescent Filters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#assembling-the-tower">Assembling the Tower</a><ul>
+<li><a class="reference internal" href="#securing-the-beamsplitter">Securing the Beamsplitter</a></li>
+<li><a class="reference internal" href="#securing-the-condenser-lens">Securing the Condenser Lens</a></li>
+<li><a class="reference internal" href="#adding-a-narrowband-transmit-filter-and-neutral-density-filter-optional">Adding a Narrowband Transmit Filter and Neutral Density Filter (Optional)</a></li>
+<li><a class="reference internal" href="#placing-the-cuvette-cover">Placing the Cuvette Cover</a></li>
+<li><a class="reference internal" href="#placing-the-cuvette">Placing the Cuvette</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#video-guides">Video Guides</a><ul>
+<li><a class="reference internal" href="#unboxing">Unboxing</a></li>
+<li><a class="reference internal" href="#assembly-video">Assembly Video</a></li>
+<li><a class="reference internal" href="#basic-fluoresence-demo">Basic Fluoresence Demo</a></li>
+<li><a class="reference internal" href="#mounting-the-tower-to-the-base">Mounting the Tower to the Base</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jumper-settings">Jumper Settings</a><ul>
+<li><a class="reference internal" href="#v-ldo-enable">1.8V LDO Enable</a></li>
+<li><a class="reference internal" href="#io-voltage-selection">IO Voltage Selection</a></li>
+<li><a class="reference internal" href="#led-supply-selection">LED Supply Selection</a></li>
+<li><a class="reference internal" href="#photodiode-selection">Photodiode Selection</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#arduino-connection">Arduino Connection</a></li>
+<li><a class="reference internal" href="#demo-hardware-setup">Demo Hardware Setup</a><ul>
+<li><a class="reference internal" href="#optical-path-1">Optical Path 1</a></li>
+<li><a class="reference internal" href="#optical-path-2">Optical Path 2</a></li>
+<li><a class="reference internal" href="#optical-path-3">Optical Path 3</a></li>
+<li><a class="reference internal" href="#optical-path-4">Optical Path 4</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-reference-design-demo">Software Reference Design &amp; Demo</a></li>
+<li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
+<li><a class="reference internal" href="#d-printed-files-mechanical-base-and-cuvette-holder">3D Printed Files (Mechanical Base and Cuvette Holder)</a></li>
+<li><a class="reference internal" href="#registration">Registration</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="eval-cn0503-ardz-hardware-user-guide">
+<h1>EVAL-CN0503-ARDZ Hardware User Guide<a class="headerlink" href="#eval-cn0503-ardz-hardware-user-guide" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>We are in the process of migrating our documentation to GitHub Pages.</p>
+<div class="line-block">
+<div class="line">The latest version of this page can be found at <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0503-ardz/index.html" target="_blank">https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-cn0503-ardz/index.html</a></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a> is a reconfigurable multi-parameter optical liquid measurement platform capable of performing colorimetry, turbidity, and fluorometry. The design minimizes complexity by using a highly integrated multimodal sensor front end capable of simultaneously driving four LEDs, and synchronously measuring four pairs of photodiodes at a flexible sampling rate. Furthermore, the front end has on-chip digital filters and high ambient light rejection which allow the platform to operate regardless of environmental lighting conditions.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/fullphoto.jpg"><img alt="image1" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/fullphoto.jpg" style="width: 600px;" /></a></div>
+</div>
+<section id="materials-needed">
+<h2>Materials Needed<a class="headerlink" href="#materials-needed" title="Link to this heading"></a></h2>
+<p>Here are the list of items and their photos included in <a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a>.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Qty</p></th>
+<th class="head"><p>Item Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Image</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Main Board</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a> Main PCB with <a class="icon adi reference external" href="https://www.analog.com/ADPD4101" target="_blank">ADPD4101</a></p></td>
+<td><p>To be updated</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>LED Boards</p></td>
+<td><p>Accessory PCB with onboard LED (with wavelengths of 365nm, 405nm, 430nm, 470nm, 530nm, 568nm, 615nm, and 630nm plus 4 spare boards)</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_160726.jpg"><img alt="image23" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_160726.jpg" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>Transmit Photodiode (PD) Boards</p></td>
+<td><p>Accessory PCB with onboard Photodiode</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_165212.jpg"><img alt="image24" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_165212.jpg" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Fluorescent Photodiode (PD) Boards</p></td>
+<td><p>Accessory PCB with onboard Photodiode</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_165220.jpg"><img alt="image25" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_165220.jpg" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Mounted Base</p></td>
+<td><p>3D Printed PLA Fixture</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/towerbase.jpg"><img alt="image26" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/towerbase.jpg" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Cuvette Holder</p></td>
+<td><p>3D Printed PLA Fixture</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/cuvetteholder.jpg"><img alt="image27" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/cuvetteholder.jpg" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Beamsplitter Cover</p></td>
+<td><p>3D Printed PLA Fixture</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/beamsplittercover.jpg"><img alt="image28" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/beamsplittercover.jpg" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Lens Cover</p></td>
+<td><p>3D Printed PLA Fixture</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/lenscover.jpg"><img alt="image29" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/lenscover.jpg" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Cuvette Holder Cover</p></td>
+<td><p>3D Printed PLA Fixture</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/cuvettecover.jpg"><img alt="image30" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/cuvettecover.jpg" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>Cuvettes</p></td>
+<td><p><a class="icon link reference external" href="https://www.fireflysci.com/disposable-fluorescence-cells/type-1flp-disposable-macro-cuvettes-lightpath-10mm" target="_blank">Type 1FLP Disposable Macro Cuvettes UV Plastic(Lightpath: 10mm)</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173638.jpg"><img alt="image31" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173638.jpg" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Condenser Lens</p></td>
+<td><p><a class="icon link reference external" href="https://www.edmundoptics.com/p/10mm-dia-x-66mm-fl-uncoated-molded-aspheric-condenser-lens/30541/" target="_blank">10mm Dia. x 6.6mm FL, Uncoated Molded Aspheric Condenser Lens</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173707.jpg"><img alt="image32" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173707.jpg" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Beamsplitter</p></td>
+<td><p><a class="icon link reference external" href="https://www.edmundoptics.com/p/125-x-175mm-50r50t-plate-beamsplitter/5798/" target="_blank">12.5 x 17.5mm, 50R/50T, Plate Beamsplitter</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_174738.jpg"><img alt="image33" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_174738.jpg" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Fluorescent Filter</p></td>
+<td><p><a class="icon link reference external" href="https://www.edmundoptics.com/p/gg-475-125mm-dia-longpass-filter/11320/" target="_blank">SCHOTT GG-475, 12.5mm Dia., Longpass Filter</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_112002.jpg"><img alt="image34" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_112002.jpg" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>S1 Screw</p></td>
+<td><p><a class="icon link reference external" href="https://www.digikey.com/PMS4400063PH" target="_blank">0.7’’ 4-40 Phillips Pan Head Machine Screw</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173902.jpg"><img alt="image35" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173902.jpg" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>12</p></td>
+<td><p>S2 Screw</p></td>
+<td><p><a class="icon link reference external" href="https://www.digikey.com/PMS4400050PH" target="_blank">0.575’’ 4-40 Phillips Pan Head Machine Screw</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_174224.jpg"><img alt="image36" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_174224.jpg" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>S3 Screw</p></td>
+<td><p><a class="icon link reference external" href="https://www.digikey.com/PTCSF4400100PH" target="_blank">1.0’’ 4-40 Phillips Pan Head Machine Screw</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173924.jpg"><img alt="image37" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173924.jpg" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>16</p></td>
+<td><p>Hex Nut</p></td>
+<td><p><a class="icon link reference external" href="https://www.digikey.com/36-7248-3-ND" target="_blank">4-40 Hex Nut</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173939.jpg"><img alt="image38" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173939.jpg" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>M1 Magnet</p></td>
+<td><p><a class="icon link reference external" href="https://www.kjmagnetics.com/proddetail.asp?prod=D41" target="_blank">D41 magnet</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_114125.jpg"><img alt="image39" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_114125.jpg" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>M2 Magnet</p></td>
+<td><p><a class="icon link reference external" href="https://www.kjmagnetics.com/proddetail.asp?prod=D52-N52" target="_blank">D52 magnet</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/m2_magnet.jpg"><img alt="image40" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/m2_magnet.jpg" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Plastic Standoffs and Plastic Screws</p></td>
+<td><p><a class="icon link reference external" href="https://www.digikey.com/36-1902E-ND" target="_blank">Plastic Standoffs</a> and <a class="icon link reference external" href="https://www.digikey.com/36-9327-ND" target="_blank">Plastic Screws</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/standoffs.jpg"><img alt="image41" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/standoffs.jpg" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Neutral Density Filter (Optional, not included)</p></td>
+<td><p><a class="icon link reference external" href="https://www.thorlabs.com/thorproduct.cfm?partnumber=NE510B" target="_blank">Unmounted Ø1/2” Absorptive ND Filter, Optical Density: 1.0</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173657.jpg"><img alt="image42" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173657.jpg" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Narrowband Transmit Filter (Optional, not included)</p></td>
+<td><p><a class="icon link reference external" href="https://www.edmundoptics.com/p/568nm-cwl-10nm-fwhm-125mm-mounted-diameter/20163/" target="_blank">568nm CWL, 10nm FWHM, 12.5mm Mounted Diameter</a></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173651.jpg"><img alt="image43" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_173651.jpg" style="width: 200px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="led-and-photodiode-boards">
+<h2>LED and Photodiode Boards<a class="headerlink" href="#led-and-photodiode-boards" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The <a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a> supports 4 channels or paths of light which can be configured for different types of optical measurements. The 2 channels at the sides are capable of measuring light intensity reflected at 90 degrees from the liquid sample to support measurements for turbidity, fluorescence, etc. The LED boards placed in each of the 4 channels are interchangeable and natively support 8 different wavelengths. Additional spare boards are available to accommodate LEDs with other wavelengths.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/pathlayout.jpg"><img alt="image44" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/pathlayout.jpg" style="width: 600px;" /></a></div>
+</div>
+<section id="led-boards">
+<h3>LED Boards<a class="headerlink" href="#led-boards" title="Link to this heading"></a></h3>
+<p>There are 12 LED boards listed below which are included in <a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a> covering 8 different wavelengths, 2 spare boards for custom Lite-On LEDs, and 2 spare boards for Lumiled LEDs.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LED Board</p></th>
+<th class="head"><p>Image</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>365nm wavelength LED Board</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_130028.jpg"><img alt="image45" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_130028.jpg" style="width: 200px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>405nm wavelength LED Board</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_130034_1.jpg"><img alt="image46" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_130034_1.jpg" style="width: 200px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>430nm wavelength LED Board</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_130012_1.jpg"><img alt="image47" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_130012_1.jpg" style="width: 200px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>470nm wavelength LED Board</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_130004_1.jpg"><img alt="image48" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_130004_1.jpg" style="width: 200px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>530nm wavelength LED Board</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_130019_1.jpg"><img alt="image49" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_130019_1.jpg" style="width: 200px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>568nm wavelength LED Board</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_125936_1.jpg"><img alt="image50" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_125936_1.jpg" style="width: 200px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>615nm wavelength LED Board</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_125953_1.jpg"><img alt="image51" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_125953_1.jpg" style="width: 200px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>630nm wavelength LED Board</p></td>
+<td><p>To be Updated</p></td>
+</tr>
+<tr class="row-odd"><td><p>Spare Lite-on LED Board</p></td>
+<td><p>To be Updated</p></td>
+</tr>
+<tr class="row-even"><td><p>Spare Lumiled LED Board</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_130040_1.jpg"><img alt="image52" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200501_130040_1.jpg" style="width: 200px;" /></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="photodiode-pd-boards">
+<h3>Photodiode (PD) Boards<a class="headerlink" href="#photodiode-pd-boards" title="Link to this heading"></a></h3>
+<p>There are a total of 6 PD boards used in <a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a>, 4 Transmit PD Boards and 2 Fluorescent PD Boards. The Transmit PD Boards are used to measure light intensity passing through the liquid sample. The Fluorescent PD boards are used to measure light intensity reflected at 90 degrees to the side from the light sample.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>PD Board</p></th>
+<th class="head"><p>Image</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Transmit PD Board</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_165212.jpg"><img alt="image53" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_165212.jpg" style="width: 200px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Fluorescent PD Board</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_165220.jpg"><img alt="image54" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_165220.jpg" style="width: 200px;" /></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="assembling-the-mechanical-fixtures">
+<h2>Assembling the Mechanical Fixtures<a class="headerlink" href="#assembling-the-mechanical-fixtures" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a> uses 3D printed mechanical fixtures to enable four directed light paths to the liquid sample held in a <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette</a>. The mechanical fixtures can be classified into two separate objects: the ** <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Mounted Base</a>** and the <strong>Tower</strong>. The <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Mounted Base</a> is capable of holding four <strong>Towers</strong> which are freely interchangeable, as well as two <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Fluorescent Filters</a>. The <strong>Tower</strong> holds the <strong>Cuvette</strong>, which contains the liquid sample, and optical glass items: a <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Condenser Lens</a>, a <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Neutral Density Filter</a>, a <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Narrowband Transmit Filter</a>, and a <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Beamsplitter</a>. Below are two videos showing the assembly of the base and tower, respectively.</div>
+</div>
+<section id="assembling-the-base">
+<h3>Assembling the Base<a class="headerlink" href="#assembling-the-base" title="Link to this heading"></a></h3>
+<section id="mounting-the-base">
+<h4>Mounting the Base<a class="headerlink" href="#mounting-the-base" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line">A <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Mounted Base</a> fits on top of the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Main Board</a> by following the outlined position in the silkscreen. At its bottom, attach 4 <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">M1 magnets</a> to the provisions as shown below.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_094741.jpg"><img alt="image55" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_094741.jpg" style="width: 600px;" /></a></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Watch out for these magnets as they may fall off when placing the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Mounted Base</a> on top of the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Main Board</a></p>
+</div>
+<div class="line-block">
+<div class="line">The <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Mounted Base</a> will fit snugly between the LED and PD connectors.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_100643.jpg"><img alt="image56" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_100643.jpg" style="width: 600px;" /></a></div>
+<div class="line">Secure the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Mounted Base</a> to the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Main Board</a> using 10 <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">S2 Screws</a> and 10 <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Hex Nuts</a> at the holes at its sides as shown below.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_113023.jpg"><img alt="image57" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_113023.jpg" style="width: 600px;" /></a></div>
+</div>
+</section>
+<section id="connecting-the-led-and-photodiode-pd-boards">
+<h4>Connecting the LED and Photodiode (PD) Boards<a class="headerlink" href="#connecting-the-led-and-photodiode-pd-boards" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line">The <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">LED Boards</a> are drawn with a huge ‘X’ on the silkscreen which marks the center of the area of interest or the active area of the LED. To mount the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">LED Boards</a>, face the top of the board with the LED facing towards the small window of the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Mounted Base</a> and attach the 4-pin female connectors to the jumper headers marked LED as shown below.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_113432.jpg"><img alt="image58" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200428_113432.jpg" style="width: 600px;" /></a></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Be sure to check if the ‘X’ mark is centered at the middle of the small window of the base</p>
+</div>
+<div class="line-block">
+<div class="line">To mount the photodiode (PD) boards, face the top of the board with the photodiode facing towards the small window of the base and attach the 4-pin female connectors to the jumper headers marked PD as shown below.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_103950.jpg"><img alt="image59" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_103950.jpg" style="width: 400px;" /></a><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_104010.jpg"><img alt="image60" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_104010.jpg" style="width: 400px;" /></a></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The two <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Fluorescent PD Boards</a> should be placed at opposite sides of the base. The exact centering of the photodiode is not crucial</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To replace or remove the PD and LED boards, pull the the notch in each board using a flat screw driver or fingernail to lift it up from the jumper headers</p>
+</div>
+</section>
+<section id="inserting-the-flourescent-filters">
+<h4>Inserting the Flourescent Filters<a class="headerlink" href="#inserting-the-flourescent-filters" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line">Two <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Fluorescent Filters</a> can be placed in the square slot in front of each <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Fluorescent PD Board</a> as shown below</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_112032.jpg"><img alt="image61" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_112032.jpg" style="width: 600px;" /></a></div>
+</div>
+</section>
+</section>
+<section id="assembling-the-tower">
+<h3>Assembling the Tower<a class="headerlink" href="#assembling-the-tower" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">The tower holds the optical glass items and the cuvette which holds the liquid sample. This section details how each of these items are assembled into position to form the light path and also, the 3D printed mechanical fixtures which hold them in place (<a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Holder</a>, <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Holder Cover</a>, <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Beamsplitter Cover</a>, and <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Lens Cover</a>).</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Following the proper order of steps to assemble the tower makes it easier to do as well as prioritizes the important optical glass pieces.</p>
+</div>
+<section id="securing-the-beamsplitter">
+<h4>Securing the Beamsplitter<a class="headerlink" href="#securing-the-beamsplitter" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line">The <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Beamsplitter</a> is used to direct the light path to both the liquid sample in the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette</a> as well as the reference photodiode located below it. It is angled at 45 degrees with respect to the light path and should be held tightly in place. Slight movements of the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Beamsplitter</a> will affect the measurement ratios obtained from the transmit photodiode and reference photodiode.</div>
+</div>
+<ul class="simple">
+<li><p>Starting with the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Holder</a>, insert two <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Hex Nuts</a> to each of the two circular depressions as shown below. These should be completely pressed and held tight to the depression to avoid the hassle of them coming off later.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_185807.jpg"><img alt="image62" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_185807.jpg" style="width: 400px;" /></a></p>
+<ul class="simple">
+<li><p>Insert the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Beamsplitter</a> in the angled 45 degree slit. Be careful in applying pressure as this may damage the part.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_185845.jpg"><img alt="image63" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_185845.jpg" style="width: 400px;" /></a></p>
+<ul class="simple">
+<li><p>Secure the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Beamsplitter</a> with the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Beamsplitter Cover</a> as shown below.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_185908.jpg"><img alt="image64" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_185908.jpg" style="width: 400px;" /></a></p>
+<ul class="simple">
+<li><p>Screw the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Beamsplitter</a> to the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Holder</a> using 2 <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">S1 Screws</a> at the two holes as shown below. Be sure to drive the screws in until the head no longer protrudes from the depression.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190014.jpg"><img alt="image65" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190014.jpg" style="width: 400px;" /></a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Check for slight movements of <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Beamsplitter</a> by listening for clicking sounds when you shake the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Holder</a>.</p>
+</div>
+</section>
+<section id="securing-the-condenser-lens">
+<h4>Securing the Condenser Lens<a class="headerlink" href="#securing-the-condenser-lens" title="Link to this heading"></a></h4>
+<p>The <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Condenser Lens</a> is used to focus and direct the light from the LED to through the tower and form the light path. Thus, it is important that the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Condenser Lens</a> be positioned properly and tightly secured so that no slight movements occur.</p>
+<ul class="simple">
+<li><p>Attach 2 <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Hex Nuts</a> to each of the two circular depressions on the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Holder</a> as shown below. These should be completely pressed and held tight to the depression to avoid the hassle of them coming off later.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190111.jpg"><img alt="image66" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190111.jpg" style="width: 400px;" /></a></p>
+<ul class="simple">
+<li><p>Place the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Condenser Lens</a> on the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Holder</a>. This will be easier to do by rotating the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Holder</a> vertically so that the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Condenser Lens</a> will drop in position.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190145.jpg"><img alt="image67" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190145.jpg" style="width: 400px;" /></a></p>
+<ul class="simple">
+<li><p>Press the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Lens Cover</a> to the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Holder</a> and screw it in place using an <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">S2 Screw</a> at the bottom hole &lt;fc #008000&gt;(marked green)&lt;/fc&gt; and an <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">S1 Screw</a> at the top hole &lt;fc #800000&gt;(marked red)&lt;/fc&gt; as show below.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190252.jpg"><img alt="image68" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190252.jpg" style="width: 400px;" /></a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Check for slight movements of the lens by listening for clicking sounds when you shake the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Holder</a>.</p>
+</div>
+</section>
+<section id="adding-a-narrowband-transmit-filter-and-neutral-density-filter-optional">
+<h4>Adding a Narrowband Transmit Filter and Neutral Density Filter (Optional)<a class="headerlink" href="#adding-a-narrowband-transmit-filter-and-neutral-density-filter-optional" title="Link to this heading"></a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This step is typically not required, because the EVAL-CN0503-ARDZ kit does not contain these components. Both the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Narrowband Transmit Filter</a> and <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Neutral Density Filter</a> are optional items which can be added to the optical path if your application requires it.</p>
+</div>
+<ul class="simple">
+<li><p>The <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Narrowband Transmit Filter</a> is used to select specific wavelengths of light from a wideband LED. Place the filter in to the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Holder</a> as shown below. The placement does not need to be as secure and tight as the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Beamsplitter</a> and <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Condenser Lens</a>.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190425.jpg"><img alt="image69" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190425.jpg" style="width: 400px;" /></a></p>
+<ul class="simple">
+<li><p>The <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Neutral Density Filter</a> is used to decrease the light intensity for a wide range of wavelengths. For instances wherein the LED light intensity easily saturates the photodiode current input to the <a class="icon adi reference external" href="https://www.analog.com/ADPD4101" target="_blank">ADPD4101</a>, adding the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Neutral Density Filter</a> will help decrease the input current range.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190439.jpg"><img alt="image70" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190439.jpg" style="width: 400px;" /></a></p>
+</section>
+<section id="placing-the-cuvette-cover">
+<h4>Placing the Cuvette Cover<a class="headerlink" href="#placing-the-cuvette-cover" title="Link to this heading"></a></h4>
+<p>The <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Cover</a> secures the hold for the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette</a> and shields the measurement light path from external sources. It also prevents the optional filters to be knocked out of the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Holder</a>. Thus, it is necessary to lock the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Holder</a> as detailed below.</p>
+<ul class="simple">
+<li><p>Insert a <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Hex Nut</a> in the depression in the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Cover</a>. This should be completely pressed and held tight to the depression to avoid the hassle of it coming off later.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190531.jpg"><img alt="image71" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190531.jpg" style="width: 400px;" /></a></p>
+<ul class="simple">
+<li><p>Place the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Cover</a> on top of the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Holder</a> as shown below</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190545.jpg"><img alt="image72" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190545.jpg" style="width: 400px;" /></a></p>
+<ul class="simple">
+<li><p>Secure the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Cover</a> using an <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">S3 Screw</a> at the specified hole shown below.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190713.jpg"><img alt="image73" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190713.jpg" style="width: 400px;" /></a></p>
+</section>
+<section id="placing-the-cuvette">
+<h4>Placing the Cuvette<a class="headerlink" href="#placing-the-cuvette" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line">The <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette</a> can easily be added to the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Holder</a> as shown below.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190743.jpg"><img alt="image74" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190743.jpg" style="width: 400px;" /></a></div>
+<div class="line"><strong>(Optional)</strong> The <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Holder</a> is a tight fit for 10mm by 10mm <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette</a>. When using a smaller-sized cuvette, a provisional screw hole can be used to press against the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette</a> and secure it.</div>
+</div>
+<ul class="simple">
+<li><p>Remove the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Cover</a> and insert a <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Hex Nut</a> in the depression in the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Holder</a> as shown below. This should be completely pressed and held tight to the depression to avoid the hassle of it coming off later.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190512.jpg"><img alt="image75" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190512.jpg" style="width: 400px;" /></a></p>
+<ul class="simple">
+<li><p>Replace the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Cover</a> and attach an <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">S2 Screw</a> at the specified hole in the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Cuvette Holder</a> as shown below. The depth of the screw can be adjusted to increase or decrease the tightness of the hold.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190755.jpg"><img alt="image76" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190755.jpg" style="width: 400px;" /></a></p>
+</section>
+</section>
+<section id="video-guides">
+<h3>Video Guides<a class="headerlink" href="#video-guides" title="Link to this heading"></a></h3>
+<section id="unboxing">
+<h4>Unboxing<a class="headerlink" href="#unboxing" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line"><img alt="youtube&gt;FaHWg4H_XkU" src="https://wiki.analog.com/_media/youtube&gt;FaHWg4H_XkU" /></div>
+</div>
+</section>
+<section id="assembly-video">
+<h4>Assembly Video<a class="headerlink" href="#assembly-video" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line"><img alt="youtube&gt;bH7nCD6H8c0" src="https://wiki.analog.com/_media/youtube&gt;bH7nCD6H8c0" /></div>
+</div>
+</section>
+<section id="basic-fluoresence-demo">
+<h4>Basic Fluoresence Demo<a class="headerlink" href="#basic-fluoresence-demo" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line"><img alt="youtube&gt;97YHC4MVhbU" src="https://wiki.analog.com/_media/youtube&gt;97YHC4MVhbU" /></div>
+</div>
+</section>
+<section id="mounting-the-tower-to-the-base">
+<h4>Mounting the Tower to the Base<a class="headerlink" href="#mounting-the-tower-to-the-base" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line">The <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Mounted Base</a> accommodates up to a maximum of 4 <strong>Towers</strong>. <strong>Towers</strong> are interchangeable and can be placed in any of the 4 positions. To attach the <strong>Tower</strong> to the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Mounted Base</a>, it should hang from the top of the walls of the base as shown below. Slight pressure may be needed to fully push the <strong>Tower</strong> down.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190852.jpg"><img alt="image77" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200429_190852.jpg" style="width: 400px;" /></a></div>
+</div>
+</section>
+</section>
+</section>
+<section id="jumper-settings">
+<h2>Jumper Settings<a class="headerlink" href="#jumper-settings" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The <a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a> has ten jumper positions which configure different settings as shown below. Also, the default shunt positions are highlighted.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/jumperlocations.jpg"><img alt="image78" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/jumperlocations.jpg" style="width: 600px;" /></a></div>
+</div>
+<section id="v-ldo-enable">
+<h3>1.8V LDO Enable<a class="headerlink" href="#v-ldo-enable" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">P1.8V enables the 1.8V LDO supply which sources its input voltage from the Arduino 3.3V pin. By default, a shunt is placed in P1.8V.</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>P1.8 Shunt</p></th>
+<th class="head"><p>1.8V LDO Status</p></th>
+<th class="head"><p>Image</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>With Shunt (Default)</strong></p></td>
+<td><p>LDO Enabled</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1.8v_-_ard.png"><img alt="image79" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1.8v_-_ard.png" style="width: 100px;" /></a></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>No Shunt</strong></p></td>
+<td><p>LDO Disabled</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1.8v.png"><img alt="image80" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1.8v.png" style="width: 100px;" /></a></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>When using <a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a> with an Arduino microcontroller, the LDO should be enabled. When using <a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a> with the EVAL-ADPDUCZ, the LDO should be disabled.</p>
+</div>
+</section>
+<section id="io-voltage-selection">
+<h3>IO Voltage Selection<a class="headerlink" href="#io-voltage-selection" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">IOSEL selects the source of the logic level voltage for the <a class="icon adi reference external" href="https://www.analog.com/ADPD4101" target="_blank">ADPD4101</a>. By default, a shunt is placed connecting pins 1 and 2.</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>IOSEL Shunt Position</p></th>
+<th class="head"><p>Source of Logic Level Voltage</p></th>
+<th class="head"><p>Image</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>ARD Position</strong></p></td>
+<td><p>Sourced from Arduino IOREF pin</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/iosel_-_ard.png"><img alt="image81" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/iosel_-_ard.png" style="width: 100px;" /></a></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Connecting pins 1 and 2</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>EXT Position</strong></p></td>
+<td><p>Sourced from EVAL-ADPDUCZ 1.8V</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/iosel_-_ext.png"><img alt="image82" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/iosel_-_ext.png" style="width: 100px;" /></a></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>2 and 3</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="led-supply-selection">
+<h3>LED Supply Selection<a class="headerlink" href="#led-supply-selection" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">There are 4 jumper selection headers to set the supply source of each of the four LED connections. Each follow the same selection rules for shunt placement. By default, a shunt is placed connecting pins 1 and 2 for all 4 jumper headers.</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LD1SEL Shunt Position</p></th>
+<th class="head"><p>Source of LED1 supply</p></th>
+<th class="head"><p>Image</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>VARD Position</strong></p></td>
+<td><p>Sourced from Arduino 5V</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld1sel_-_ard.png"><img alt="image83" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld1sel_-_ard.png" style="width: 100px;" /></a></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Connecting pins 1 and 2</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>VEXT Position</strong></p></td>
+<td><p>Sourced from EVAL-ADPDUCZ VBOOST</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld1sel_-ext.png"><img alt="image84" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld1sel_-ext.png" style="width: 100px;" /></a></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Connecting pins 3 and 4</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LD2SEL Shunt Position</p></th>
+<th class="head"><p>Source of LED2 supply</p></th>
+<th class="head"><p>Image</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>VARD Position</strong></p></td>
+<td><p>Sourced from Arduino 5V</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld2sel_-_ard.png"><img alt="image85" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld2sel_-_ard.png" style="width: 100px;" /></a></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Connecting pins 1 and 2</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>VEXT Position</strong></p></td>
+<td><p>Sourced from EVAL-ADPDUCZ VBOOST</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld2sel_-_ext.png"><img alt="image86" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld2sel_-_ext.png" style="width: 100px;" /></a></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Connecting pins 3 and 4</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LD3SEL Shunt Position</p></th>
+<th class="head"><p>Source of LED3 supply</p></th>
+<th class="head"><p>Image</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>VARD Position</strong></p></td>
+<td><p>Sourced from Arduino 5V</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld3sel_-_ard.png"><img alt="image87" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld3sel_-_ard.png" style="width: 100px;" /></a></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Connecting pins 1 and 2</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>VEXT Position</strong></p></td>
+<td><p>Sourced from EVAL-ADPDUCZ VBOOST</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld3sel_-_ext.png"><img alt="image88" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld3sel_-_ext.png" style="width: 100px;" /></a></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Connecting pins 3 and 4</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LD4SEL Shunt Position</p></th>
+<th class="head"><p>Source of LED4 supply</p></th>
+<th class="head"><p>Image</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>VARD Position</strong></p></td>
+<td><p>Sourced from Arduino 5V</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld4sel_-_ard.png"><img alt="image89" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld4sel_-_ard.png" style="width: 100px;" /></a></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Connecting pins 1 and 2</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>VEXT Position</strong></p></td>
+<td><p>Sourced from EVAL-ADPDUCZ VBOOST</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld4sel_-_ext.png"><img alt="image90" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld4sel_-_ext.png" style="width: 100px;" /></a></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Connecting pins 3 and 4</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Each LED is connected to a transistor which protects the LED drivers of the <a class="icon adi reference external" href="https://www.analog.com/ADPD4101" target="_blank">ADPD4101</a> from overvoltage.</p>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LED Channel</p></th>
+<th class="head"><p>Shunt Position</p></th>
+<th class="head"><p>LED Power Source</p></th>
+<th class="head"><p>Image</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>LD1SEL</p></td>
+<td><p><strong>VARD Position</strong></p></td>
+<td><p>Sourced from Arduino 5V</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld1sel_-_ard.png"><img alt="image91" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld1sel_-_ard.png" style="width: 100px;" /></a></p></td>
+<td><p>Connecting pins 1 and 2</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><strong>VEXT Position</strong></p></td>
+<td><p>Sourced from P8 VBOOST</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld1sel_-ext.png"><img alt="image92" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld1sel_-ext.png" style="width: 100px;" /></a></p></td>
+<td><p>Connecting pins 3 and 4</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>LD2SEL</p></td>
+<td><p><strong>VARD Position</strong></p></td>
+<td><p>Sourced from Arduino 5V</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld2sel_-_ard.png"><img alt="image93" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld2sel_-_ard.png" style="width: 100px;" /></a></p></td>
+<td><p>Connecting pins 1 and 2</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><strong>VEXT Position</strong></p></td>
+<td><p>Sourced from P8 VBOOST</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld2sel_-_ext.png"><img alt="image94" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld2sel_-_ext.png" style="width: 100px;" /></a></p></td>
+<td><p>Connecting pins 3 and 4</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>LD3SEL</p></td>
+<td><p><strong>VARD Position</strong></p></td>
+<td><p>Sourced from Arduino 5V</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld3sel_-_ard.png"><img alt="image95" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld3sel_-_ard.png" style="width: 100px;" /></a></p></td>
+<td><p>Connecting pins 1 and 2</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><strong>VEXT Position</strong></p></td>
+<td><p>Sourced from P8 VBOOST</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld3sel_-_ext.png"><img alt="image96" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld3sel_-_ext.png" style="width: 100px;" /></a></p></td>
+<td><p>Connecting pins 3 and 4</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>LD4SEL</p></td>
+<td><p><strong>VARD Position</strong></p></td>
+<td><p>Sourced from Arduino 5V</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld4sel_-_ard.png"><img alt="image97" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld4sel_-_ard.png" style="width: 100px;" /></a></p></td>
+<td><p>Connecting pins 1 and 2</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><strong>VEXT Position</strong></p></td>
+<td><p>Sourced from P8 VBOOST</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld4sel_-_ext.png"><img alt="image98" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/ld4sel_-_ext.png" style="width: 100px;" /></a></p></td>
+<td><p>Connecting pins 3 and 4</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="photodiode-selection">
+<h3>Photodiode Selection<a class="headerlink" href="#photodiode-selection" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">There are 4 photodiode selection headers available to the two side light paths. These 2 light paths have the option to use a fluorescent photodiode located at right angles from the light path. The combination of which photodiodes to be used by the <a class="icon adi reference external" href="https://www.analog.com/ADPD4101" target="_blank">ADPD4101</a> can be configured by two selection headers, one for each input channel. Each selection header requires two shunts to configure, to connect both anode and cathode of the photodiode</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>P1ASEL Shunt Positions</p></th>
+<th class="head"><p>Photodiode Connected to the First Input Channel</p></th>
+<th class="head"><p>Image</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>0 DEG Position</strong>
+Connecting pins 1 and 3
+Connecting pins 2 and 4</p></td>
+<td><p>Transmit photodiode is connected to the first input channel</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1asel_-_0.png"><img alt="image101" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1asel_-_0.png" style="width: 100px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>90 DEG Position</strong>
+Connecting pins 3 and 5
+Connecting pins 2 and 6</p></td>
+<td><p>Fluorescent photodiode is connected to the first input channel</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1asel_-_90.png"><img alt="image102" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1asel_-_90.png" style="width: 100px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>P1BSEL Shunt Positions</p></th>
+<th class="head"><p>Photodiode Connected to the Second Input Channel</p></th>
+<th class="head"><p>Image</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>90 DEG Position</strong>
+Connecting pins 1 and 3
+Connecting pins 2 and 4</p></td>
+<td><p>Fluorescent photodiode is connected to the second input channel</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1bsel_-_90.png"><img alt="image105" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1bsel_-_90.png" style="width: 100px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>REF DEG Position</strong>
+Connecting pins 3 and 5
+Connecting pins 2 and 6</p></td>
+<td><p>Reference photodiode is connected to the second input channel</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1bsel_-_0.png"><img alt="image106" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p1bsel_-_0.png" style="width: 100px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>P4ASEL Shunt Positions</p></th>
+<th class="head"><p>Photodiode Connected to the First Input Channel</p></th>
+<th class="head"><p>Image</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>0 DEG Position</strong>
+Connecting pins 1 and 3
+Connecting pins 2 and 4</p></td>
+<td><p>Transmit photodiode is connected to the first input channel</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p4asel_-_0.png"><img alt="image109" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p4asel_-_0.png" style="width: 100px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>90 DEG Position</strong>
+Connecting pins 3 and 5
+Connecting pins 2 and 6</p></td>
+<td><p>Fluorescent photodiode is connected to the first input channel</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p4asel_-_90.png"><img alt="image110" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p4asel_-_90.png" style="width: 100px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>P4BSEL Shunt Positions</p></th>
+<th class="head"><p>Photodiode Connected to the Second Input Channel</p></th>
+<th class="head"><p>Image</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>90 DEG Position</strong>
+Connecting pins 1 and 3
+Connecting pins 2 and 4</p></td>
+<td><p>Fluorescent photodiode is connected to the second input channel</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p4bsel_-_90.png"><img alt="image113" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p4bsel_-_90.png" style="width: 100px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>REF DEG Position</strong>
+Connecting pins 3 and 5
+Connecting pins 2 and 6</p></td>
+<td><p>Reference photodiode is connected to the second input channel</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p4bsel_-_0.png"><img alt="image114" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/p4bsel_-_0.png" style="width: 100px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="arduino-connection">
+<h2>Arduino Connection<a class="headerlink" href="#arduino-connection" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The <a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a> is stacks on top of the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADICUP3029" target="_blank">EVAL-ADICUP3029</a> or any Arduino microcontroller using the <strong>PWMH</strong>, <strong>PWML</strong>, <strong>POWER</strong>, and <strong>ANALOG</strong> headers. You will also have to remove the stand-offs from the <a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a> as shown below.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200502_160856.jpg"><img alt="image115" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/img_20200502_160856.jpg" style="width: 600px;" /></a></div>
+</div>
+</section>
+<section id="demo-hardware-setup">
+<h2>Demo Hardware Setup<a class="headerlink" href="#demo-hardware-setup" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">This section details the hardware setup of <a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a> for a demonstration showing 4 different experiments in each optical path, utilizing colorimetry (absorbance measurement), turbidity, and fluorescence measurement. Below is a general block diagram of the setup.</div>
+<div class="line">Listed in the table below are the <a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">LED Boards</a> and optional optical glass components used in each path.</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Item</p></th>
+<th class="head"><p>Optical Path 1</p></th>
+<th class="head"><p>Optical Path 2</p></th>
+<th class="head"><p>Optical Path 3</p></th>
+<th class="head"><p>Optical Path 4</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">LED Board</a></p></td>
+<td><p>365nm LED Board</p></td>
+<td><p>430nm LED Board</p></td>
+<td><p>615nm LED Board</p></td>
+<td><p>530nm LED Board</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Fluorescent Filter</a></p></td>
+<td><p>&lt;fc #008000&gt;Used&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #800000&gt;Not Used&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #800000&gt;Not Used&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #800000&gt;Not Used&lt;/fc&gt;</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Neutral Density Filter</a></p></td>
+<td><p>&lt;fc #800000&gt;Not Used&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #800000&gt;Not Used&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #800000&gt;Not Used&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #800000&gt;Not Used&lt;/fc&gt;</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://wiki.analog.com/" target="_blank">Narrowband Transmit Filter</a></p></td>
+<td><p>&lt;fc #800000&gt;Not Used&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #800000&gt;Not Used&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #800000&gt;Not Used&lt;/fc&gt;</p></td>
+<td><p>&lt;fc #800000&gt;Not Used&lt;/fc&gt;</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">The jumper configuration of the <a class="icon adi reference external" href="https://www.analog.com/CN0503" target="_blank">CN0503</a> for this setup is shown below.</div>
+</div>
+<section id="optical-path-1">
+<h3>Optical Path 1<a class="headerlink" href="#optical-path-1" title="Link to this heading"></a></h3>
+<p>In optical path 1, the experiment shows the detection of quinine in tonic water using fluorescence measurements. Optionally, you can also use samples of soda water and de-ionized water for comparison.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="cn0503/fluorescence.html"><span class="doc">Optical Platform: Fluorescence Measurement Demo (ADICUP3029 + EVAL-CN0503-ADRZ)</span></a></p></li>
+</ul>
+</section>
+<section id="optical-path-2">
+<h3>Optical Path 2<a class="headerlink" href="#optical-path-2" title="Link to this heading"></a></h3>
+<p>In optical path 2, the experiment shows pH measurement by using colorimetry to detect changes the solution through the bromothymol blue indicator. As pH changes from an acidic level to a neutral and basic level, bromothymol blue changes color from yellow to blue. A yellow colored solution will block 430nm light while a blue colored solution will allow it to pass. The change in pH can be done using a simple aquarium kit.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="cn0503/colorimetry.html"><span class="doc">Optical Platform: pH Measurement Demo (ADICUP3029 + EVAL-CN0503-ADRZ)</span></a></p></li>
+</ul>
+</section>
+<section id="optical-path-3">
+<h3>Optical Path 3<a class="headerlink" href="#optical-path-3" title="Link to this heading"></a></h3>
+<p>In optical path 3, the experiment shows nitrate detection using colorimetry. Using the API reagent found in nitrate test kits, a solution with a higher concentration of nitrate turns into a darker shade of red. As a result, the degree of absorbance of 615nm light decreases with the increasing nitrate concentration.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="cn0503/nitrate-measurement.html"><span class="doc">Optical Platform: Nitrate Measurement Demo (ADICUP3029 + EVAL-CN0503-ADRZ)</span></a></p></li>
+</ul>
+</section>
+<section id="optical-path-4">
+<h3>Optical Path 4<a class="headerlink" href="#optical-path-4" title="Link to this heading"></a></h3>
+<p>In optical path 4, the experiment shows turbidity measurements of cloudy water made by adding a a drop of milk and de-ionized water using 530nm light.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="cn0503/turbidity.html"><span class="doc">Optical Platform: Turbidity Measurement Demo (ADICUP3029 + EVAL-CN0503-ADRZ)</span></a></p></li>
+</ul>
+</section>
+</section>
+<section id="software-reference-design-demo">
+<h2>Software Reference Design &amp; Demo<a class="headerlink" href="#software-reference-design-demo" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../eval-adicup3029/reference_designs/demo_cn0503.html"><span class="doc">Optical Water Quality Platform Setup (ADICUP3029 + EVAL-CN0503-ADRZ)</span></a></p></li>
+<li><p><a class="reference internal" href="cn0503/fluorescence.html"><span class="doc">Optical Platform: Fluorescence Measurement Demo (ADICUP3029 + EVAL-CN0503-ADRZ)</span></a></p></li>
+<li><p><a class="reference internal" href="cn0503/colorimetry.html"><span class="doc">Optical Platform: pH Measurement Demo (ADICUP3029 + EVAL-CN0503-ADRZ)</span></a></p></li>
+<li><p><a class="reference internal" href="cn0503/turbidity.html"><span class="doc">Optical Platform: Turbidity Measurement Demo (ADICUP3029 + EVAL-CN0503-ADRZ)</span></a></p></li>
+<li><p><a class="reference internal" href="cn0503/nitrate-measurement.html"><span class="doc">Optical Platform: Nitrate Measurement Demo (ADICUP3029 + EVAL-CN0503-ADRZ)</span></a></p></li>
+</ul>
+</section>
+<section id="schematic-pcb-layout-bill-of-materials">
+<h2>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon adi reference external" href="https://www.analog.com/cn0503-designsupport" target="_blank">EVAL-CN0503-ARDZ Design &amp; Integration Files</a></p>
+<ul class="simple">
+<li><p>Schematics</p></li>
+<li><p>PCB Layout</p></li>
+<li><p>Bill of Materials</p></li>
+<li><p>Allegro Project</p></li>
+</ul>
+</div>
+</section>
+<section id="d-printed-files-mechanical-base-and-cuvette-holder">
+<h2>3D Printed Files (Mechanical Base and Cuvette Holder)<a class="headerlink" href="#d-printed-files-mechanical-base-and-cuvette-holder" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon link reference external" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/rev_d.zip" target="_blank">EVAL-CN0503-ARDZ STL Files</a></p>
+<ul class="simple">
+<li><p>Mounted Base</p></li>
+<li><p>Assembled Cuvette Holder (made up of the next several files)</p>
+<ul>
+<li><p>Cuvette Holder</p></li>
+<li><p>Cuvette Holder Cover</p></li>
+<li><p>Beamsplitter Cover</p></li>
+<li><p>Lens Cover</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ADI has ordered additional assembled Cuvette Holders from <a class="icon link reference external" href="https://www.shapeways.com/" target="_blank">Shapeways</a> and received high quality prints back, although there are certainly other vendors capable of printing these files. ADI is not responsible for any printing mishaps or issues with the printing vendors, we are merely providing our feedback.</p>
+</div>
+</section>
+<section id="registration">
+<h2>Registration<a class="headerlink" href="#registration" title="Link to this heading"></a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. <a class="icon link reference external" href="https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0503-ARDZ?&amp;v=RevA" target="_blank">Register</a> to receive all these great benefits and more!</p>
+</div>
+<p>// End of Document //</p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

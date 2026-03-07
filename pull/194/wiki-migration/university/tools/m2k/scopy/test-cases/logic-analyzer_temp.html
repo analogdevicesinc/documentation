@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Open the Logic Analyzer instrument. The interface should look like the picture below:" name="description" />
+
+    <title>B. Group Operation &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">B. Group Operation</a></li>
+<li><a class="reference internal" href="#c-additional-features">C. Additional Features</a></li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <div class="line-block">
+<div class="line"><br /></div>
+<div class="line">====== Logic Analyzer - Test Case ======</div>
+<div class="line">===== Initial Setup ===== In order to proceed through the test case, first of all delete the Scopy *.ini file (saves previous settings made in Scopy tool) from the following path on Windows: C:\Users\your_username\AppData\Roaming\ADI .</div>
+</div>
+<p>Open the Logic Analyzer instrument. The interface should look like the picture below:</p>
+<img alt="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/la-initialsetup.png" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/la-initialsetup.png" />
+<div class="line-block">
+<div class="line">Press multiple times on the “Run” button to check if the instrument works.</div>
+<div class="line">===== Test Title =====</div>
+<div class="line">==== A. Individual Pin Operation====</div>
+</div>
+<details><summary>Click to expand</summary><div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Test Steps</p></th>
+<th class="head"><p>Steps Resources</p></th>
+<th class="head"><p>Expected Results</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Checking Channel’s Trigger Function</p></td>
+<td><ol class="arabic simple">
+<li><p>Enable channel DIO0 and DIO1 on Logic analyzer, on the settings menu set sample rate to 50ksps and add a delay ex. -142 samples. On Pattern generator, enable DIO1, set the following parameter: Pattern: clock, Frequency: 100Hz, Phase: 0 degrees and Duty Cycle: 50%. On Digital IO instrument, set DIO0 as output</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.0a.png"><img alt="image37" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.0a.png" style="width: 200px;" /></a><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.1a.png"><img alt="image38" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.1a.png" style="width: 200px;" /></a><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.2a.png"><img alt="image39" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.2a.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side). Additional signals from the pattern generator and Logic analyzer from DIO2 to DIO15 at different frequencies will be better.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rising edge trigger</p></td>
+<td><ol class="arabic simple" start="2">
+<li><p>Set DIO0’s trigger to rising edge configuration, run Digital IO, pattern generator and logic analyzer instrument. Change DIO0’s output from 0 to 1 from the Digital IO’s instrument</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step2a.png"><img alt="image40" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step2a.png" style="width: 200px;" /></a></p></td>
+<td><p>The logic analyzer should initiate a capture</p></td>
+</tr>
+<tr class="row-even"><td><p>Falling edge trigger</p></td>
+<td><ol class="arabic simple" start="3">
+<li><p>Set DIO0’s trigger to falling edge configuration and run both pattern generator and logic analyzer. Change DIO0’s output from 1 to 0 from the Digital IO’s instrument</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step3a.png"><img alt="image41" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step3a.png" style="width: 200px;" /></a></p></td>
+<td><p>The logic analyzer should initiate a capture</p></td>
+</tr>
+<tr class="row-odd"><td><p>Any edge trigger</p></td>
+<td><ol class="arabic simple" start="4">
+<li><p>Set DIO0’s trigger to any edge configuration and run both pattern generator and logic analyzer. Change DIO0’s output either from 1 to 0 or 0 to 1 from the Digital IO’s instrument</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step4.0a.png"><img alt="image42" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step4.0a.png" style="width: 200px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step4.1a.png"><img alt="image43" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step4.1a.png" style="width: 200px;" /></a></p></td>
+<td><p>The logic analyzer should initiate a capture</p></td>
+</tr>
+<tr class="row-even"><td><p>Low trigger</p></td>
+<td><ol class="arabic simple" start="5">
+<li><p>Set DIO0’s Low configuration and run both pattern generator and logic analyzer. Set DIO0’s output to 0</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step5a.png"><img alt="image44" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step5a.png" style="width: 200px;" /></a></p></td>
+<td><p>The logic analyzer should continuously capture the signal</p></td>
+</tr>
+<tr class="row-odd"><td><p>High Trigger</p></td>
+<td><ol class="arabic simple" start="6">
+<li><p>Set DIO0’s trigger to high configuration and run both pattern generator and logic analyzer. Set DIO0’s output to 1</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step6a.png"><img alt="image45" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step6a.png" style="width: 200px;" /></a></p></td>
+<td><p>The logic analyzer should continuously capture the signal</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="7">
+<li><p>Repeat steps 1 to 6 using DIO1 to DIO15 as triggers in the logic analyzer and Digital IO instrument and the remaining DIO channel as the signal to be captured of using Pattern generator</p></li>
+</ol>
+</td>
+<td></td>
+<td><p>The results should all be the same</p></td>
+</tr>
+<tr class="row-odd"><td><p>Testing External Triggers</p></td>
+<td><ol class="arabic simple">
+<li><p>On Digital IO instrument set DIO0 as output. No changes on Pattern Generator. On Logic Analyzer’s trigger menu, turn on the External trigger. Select source as External Trigger In.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.0b.png"><img alt="image46" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.0b.png" style="width: 200px;" /></a><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.1b.png"><img alt="image47" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.1b.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” pictures. Turning on the External Trigger should automatically turn off the triggers set on every DIO channels if there are any.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="2">
+<li><p>Connect Trigger in 1 to DIO0</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step2b.png"><img alt="image48" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step2b.png" style="width: 200px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Rising Edge Trigger</p></td>
+<td><ol class="arabic simple" start="3">
+<li><p>Set External 1’s trigger to rising edge configuration, run Digital IO, pattern generator and logic analyzer instrument. Change DIO0’s output from 0 to 1 from the Digital IO instrument</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step3b.png"><img alt="image49" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step3b.png" style="width: 200px;" /></a></p></td>
+<td><p>The logic analyzer should initiate a capture</p></td>
+</tr>
+<tr class="row-even"><td><p>Falling Edge Trigger</p></td>
+<td><ol class="arabic simple" start="4">
+<li><p>Set External 1’s trigger to falling edge configuration, run Digital IO, pattern generator and logic analyzer instrument. Change DIO0’s output from 1 to 0 from the Digital IO instrument</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step4b.png"><img alt="image50" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step4b.png" style="width: 200px;" /></a></p></td>
+<td><p>The logic analyzer should initiate a capture</p></td>
+</tr>
+<tr class="row-odd"><td><p>Any Edge Trigger</p></td>
+<td><ol class="arabic simple" start="5">
+<li><p>Set External 1’s trigger to any edge configuration, run Digital IO, pattern generator and logic analyzer instrument. Change DIO0’s output from 1 to 0 or 0 to 1 from the Digital IO instrument</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step5b.png"><img alt="image51" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step5b.png" style="width: 200px;" /></a></p></td>
+<td><p>The logic analyzer should initiate a capture</p></td>
+</tr>
+<tr class="row-even"><td><p>Low Trigger</p></td>
+<td><ol class="arabic simple" start="6">
+<li><p>Set External 1’s trigger to low trigger configuration, run Digital IO, pattern generator and logic analyzer instrument. Set DIO0’s output to 0 from the Digital IO instrument</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step6b.png"><img alt="image52" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step6b.png" style="width: 200px;" /></a></p></td>
+<td><p>The logic analyzer should continuously capture the signals</p></td>
+</tr>
+<tr class="row-odd"><td><p>High Trigger</p></td>
+<td><ol class="arabic simple" start="7">
+<li><p>Set External 1’s trigger to high trigger configuration, run Digital IO, pattern generator and logic analyzer instrument. Set DIO0’s output to 1 from the Digital IO instrument</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step7b.png"><img alt="image53" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step7b.png" style="width: 200px;" /></a></p></td>
+<td><p>The logic analyzer should continuously capture the signals.</p></td>
+</tr>
+<tr class="row-even"><td><p>Testing Oscilloscope Source External Trigger</p></td>
+<td><ol class="arabic simple" start="8">
+<li><p>In Logic analyzer enable External trigger and set Source to Oscilloscope</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_exttrig_source.png"><img alt="image54" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_exttrig_source.png" style="width: 200px;" /></a></p></td>
+<td><p>The logic anayzer should initiate a capture when the Oscilloscope is triggered.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="9">
+<li><p>Connect W1 to 1+ and GND to 1- and generate a Sine Waveform with 2V peak-to-peak amplitude and 200Hz frequency. Set the Oscilloscope trigger to normal and Condition to Rising Edge.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_settings.png"><img alt="image55" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_settings.png" style="width: 200px;" /></a></p></td>
+<td><p>The Oscilloscope should be triggered when the two blue Trigger cursors are intersected on the rising edge of the signal.</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="10">
+<li><p>Run Signal Generator, Oscilloscope and Logic analizer and verify if the Logic analyzer is triggered at the same time with the Oscilloscope.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_waiting.png"><img alt="image56" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/osc_waiting.png" style="width: 200px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/logic_waiting.png"><img alt="image57" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/logic_waiting.png" style="width: 200px;" /></a></p></td>
+<td><p>If you drag the horizontal cursor in the Oscilloscope window above or below the signal, it should be in Waiting state, and Logic analyzer will be Waiting too.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="11">
+<li><p>Repeat steps 9-11 for each condition of the trigger available in Oscilloscope</p></li>
+</ol>
+</td>
+<td></td>
+<td><p>Logic Analyzer and Oscilloscope should capture signals simultaneously and be in Waiting state at the same time.</p></td>
+</tr>
+<tr class="row-even"><td><p>Testing the Trigger Modes</p></td>
+<td><ol class="arabic simple">
+<li><p>On Pattern Generator, enable DIO2 and then set it to clock pattern 5KHz frequency. On Logic Analyzer, enable DIO0, DIO1, and DIO2. Set DIO0 and DIO1 trigger to both HIGH. Disable External trigger.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.0b.png"><img alt="image58" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.0b.png" style="width: 200px;" /></a><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.1b.png"><img alt="image59" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.1b.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” pictures. Turning on the External Trigger should automatically turn off the triggers set on every DIO channels if there are any.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="2">
+<li><p>On Digital IO instrument set DIO0 and DIO1 as output.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step2b.png"><img alt="image60" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step2b.png" style="width: 200px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>OR Mode</p></td>
+<td><ol class="arabic simple" start="3">
+<li><p>On Logic Analyzer’s trigger configuration, set the trigger logic to OR. On Digital IO instrument, Set DIO0’s output to 0 and DIO1’s output to 0. Run Digital IO, Pattern Generator and Logic Analyzer Instrument</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step3e.png"><img alt="image61" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step3e.png" style="width: 200px;" /></a></p></td>
+<td><p>The logic analyzer should be on waiting mode and not capture any signal.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="4">
+<li><p>On Digital IO instrument, Set DIO0 or DIO1’s output to 1.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step4e.png"><img alt="image62" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step4e.png" style="width: 200px;" /></a></p></td>
+<td><p>The logic analyzer should start capturing signal when either of the DIO0 or DIO1 is HIGH.</p></td>
+</tr>
+<tr class="row-even"><td><p>AND Mode</p></td>
+<td><ol class="arabic simple" start="5">
+<li><p>On Logic Analyzer’s trigger configuration, set the trigger logic to AND. On Digital IO instrument, Set DIO0’s output to 0 and DIO1’s output to 1. Run Digital IO, Pattern Generator and Logic Analyzer Instrument</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step5e.png"><img alt="image63" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step5e.png" style="width: 200px;" /></a></p></td>
+<td><p>The logic analyzer should be on waiting mode and not capture any signal.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="6">
+<li><p>On Digital IO instrument, Set DIO0’s and DIO1’s output to 1.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step6e.png"><img alt="image64" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step6e.png" style="width: 200px;" /></a></p></td>
+<td><p>The logic analyzer should start capturing signal only when DIO0 and DIO1 are HIGH</p></td>
+</tr>
+<tr class="row-even"><td><p>Checking Channel’s Clock Signal Measurement Accuracy</p></td>
+<td><ol class="arabic simple">
+<li><p>Enable channel DIO0, on the settings menu set sample rate to 50ksps, enable the cursor. On Pattern generator’s DIO0, set the following parameter: Pattern: clock, Frequency: 100Hz, Phase: 0 degrees and Duty Cycle: 50%.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.0c.png"><img alt="image65" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1.0c.png" style="width: 200px;" /></a></p></td>
+<td><p>Refer to the step resource picture</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="2">
+<li><p>Move the cursors to the consecutive rising edges or consecutive falling edges</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step2c.png"><img alt="image66" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step2c.png" style="width: 200px;" /></a></p></td>
+<td><p>The data measured by the cursor should be close to ∆t: 10ms and 1/∆t: 100Hz</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="3">
+<li><p>Enable Lock cursor feature and measure the next edges</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step3c.png"><img alt="image67" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step3c.png" style="width: 200px;" /></a></p></td>
+<td><p>The data measured by the cursor should be close to ∆t: 10ms and 1/∆t: 100Hz</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="4">
+<li><p>Set logic analyzer’s settings to sample rate: 100Msps, position: 0s. Set pattern generator DIO0’s parameters to: Pattern: clock, Frequency: 2.5MHz, Phase: 0 degrees and Duty Cycle: 50%.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step4c.png"><img alt="image68" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step4c.png" style="width: 200px;" /></a></p></td>
+<td><p>Refer to the step resource picture</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="5">
+<li><p>Move the cursors to the consecutive rising edges or consecutive falling edges</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step5c.png"><img alt="image69" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step5c.png" style="width: 200px;" /></a></p></td>
+<td><p>The data measured by the cursor should be close to ∆t: 400ns and 1/∆t: 2.5MHz</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="6">
+<li><p>Enable Lock cursor feature and measure the next edges</p></li>
+</ol>
+</td>
+<td></td>
+<td><p>The data measured by the cursor should be close to ∆t: 400ns and 1/∆t: 2.5MHz</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="7">
+<li><p>Set logic analyzer’s settings to sample rate: 20ksps. Set pattern generator DIO0’s parameters to: Pattern: clock, Frequency: 100Hz, Phase: 0 degrees and Duty Cycle: 70%.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step7.0c.png"><img alt="image70" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step7.0c.png" style="width: 200px;" /></a></p></td>
+<td><p>Refer to the step resource.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="8">
+<li><p>Move the cursors to the rising and falling edge of the upper limit</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step8c.png"><img alt="image71" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step8c.png" style="width: 200px;" /></a></p></td>
+<td><p>The data measured by the cursor should be close to ∆t: 7ms</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="9">
+<li><p>Enable Lock cursor feature and measure the next edges</p></li>
+</ol>
+</td>
+<td></td>
+<td><p>The data measured by the cursor should be close to ∆t: 7ms</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="10">
+<li><p>Move the cursors to the falling and rising edge of the lower limit</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step10c.png"><img alt="image72" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step10c.png" style="width: 200px;" /></a></p></td>
+<td><p>The data measured by the cursor should be close to ∆t: 3ms</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="11">
+<li><p>Enable Lock cursor feature and measure the next edges</p></li>
+</ol>
+</td>
+<td></td>
+<td><p>The data measured by the cursor should be close to ∆t: 3ms</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="12">
+<li><p>Repeat steps 1 to 7 using DIO1 to DIO15 of both pattern generator and logic analyzer</p></li>
+</ol>
+</td>
+<td></td>
+<td><p>The results should all be the same</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details><section id="b-group-operation">
+<h1>B. Group Operation<a class="headerlink" href="#b-group-operation" title="Link to this heading"></a></h1>
+<details><summary>Click to expand</summary><div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Test Steps</p></th>
+<th class="head"><p>Steps Resources</p></th>
+<th class="head"><p>Expected Results</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Parallel Mode</p></td>
+<td><ol class="arabic simple">
+<li><p>In logic analyzer, add a parallel decoder. Set Clock line to DIO8 and set Data lines 0-7 to DIO0 to DIO7. In pattern generator, group DIO0 to DIO7 set as number pattern. Enable DIO8 and set to Clock with 500Hz frequency.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step1.0a.png"><img alt="image89" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step1.0a.png" style="width: 200px;" /></a><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step1.1a.png"><img alt="image90" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step1.1a.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="2">
+<li><p>Run the Pattern Generator and Logic analyzer instrument. Set in the pattern generator’s instrument the desired decimal value.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step2a.png"><img alt="image91" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step2a.png" style="width: 200px;" /></a></p></td>
+<td><p>On the logic analyzer plot, the reading is in hex format. For reference, 50 decimal = 32 hex, 100 decimal = 64 hex and 250 decimal = FA</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="3">
+<li><p>In logic analyzer, add another parallel decoder. Set Clock line to DIO8 and set Data lines 0-6 to DIO9 to DIO15.In pattern generator, group DIO9 to DIO15 set as number pattern</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step3.0a.png"><img alt="image92" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step3.0a.png" style="width: 200px;" /></a><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step3.1a.png"><img alt="image93" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step3.1a.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="4">
+<li><p>Run the Pattern Generator and Logic analyzer instrument. Set in the pattern generator’s instrument the desired decimal value of both groups.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step4a.png"><img alt="image94" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step4a.png" style="width: 200px;" /></a></p></td>
+<td><p>On the logic analyzer plot, the reading is in hex format. For reference, 50 decimal = 32 hex, 100 decimal = 64 hex and 250 decimal = FA</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPI Mode</p></td>
+<td><ol class="arabic simple" start="5">
+<li><p>In logic analyzer set sample rate: 50ksps, group DIO0 to DIO3. Add an SPI decoder, set DIO0: CLK, DIO1: MISO, DIO2: CS# and DIO3: MOSI, set DIO2’s trigger to falling edge. In the pattern generator group DIO0 to DIO2, set Pattern: SPI, Frequency: 5kHz, Bytes per frame: 2, Interframe space 4, Data: insert 4 bytes in hex form e.g: AB CD EF 15</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step5.0a.png"><img alt="image95" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step5.0a.png" style="width: 200px;" /></a><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step5.1a.png"><img alt="image96" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step5.1a.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="6">
+<li><p>Connect DIO1 to DIO3</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step6a.png"><img alt="image97" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step6a.png" style="width: 200px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="7">
+<li><p>Run Pattern Generator and Logic analyzer</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step7a.png"><img alt="image98" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step7a.png" style="width: 200px;" /></a></p></td>
+<td><p>In the logic analyzer the plotted MISO and MOSI data should have a similar data and 2 bytes per frame</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="8">
+<li><p>Repeat step 5 to 7 using different groups in the logic analyzer, DIO4:DIO7, DIO8:DIO11 and DIO12:DIO15</p></li>
+</ol>
+</td>
+<td><p>Image</p></td>
+<td><p>The results should be the same</p></td>
+</tr>
+<tr class="row-odd"><td><p>UART Mode</p></td>
+<td><ol class="arabic simple" start="9">
+<li><p>In logic analyzer set time base: 1ms, group DIO0 to DIO1, set DIO0: TX and DIO1: RX, set DIO0’s trigger to falling edge, set Baud rate: 9600, data bits: 8, parity type: none, stop bits: 1.0, bit order: lsb-first, data format: ASCII. In the pattern generator, group DIO0 , set Pattern: UART, Baud: 9600, Stop bit: 1, Parity: none.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step9a.png"><img alt="image99" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step9a.png" style="width: 200px;" /></a><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step9.1a.png"><img alt="image100" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step9.1a.png" style="width: 200px;" /></a></p></td>
+<td><p>The interface should look like in the “Step Resources” picture (left side).</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="10">
+<li><p>Connect DIO0 to DIO1</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step10a.png"><img alt="image101" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step10a.png" style="width: 200px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="11">
+<li><p>Run the Pattern Generator, set in the pattern generator’s instrument the desired ASCII value.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step11a.png"><img alt="image102" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step11a.png" style="width: 200px;" /></a></p></td>
+<td><p>On the logic analyzer plot, the TX and RX data should be the same</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="12">
+<li><p>In step 9, change the Baud rate to 115200 for both pattern generator and logic analyzer</p></li>
+</ol>
+</td>
+<td></td>
+<td><p>Refer to the step resource picture</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="13">
+<li><p>Repeat step 9 to 12 using different groups in the logic analyzer, DIO1:DIO2, DIO2:DIO3 … . . DIO14:DIO15</p></li>
+</ol>
+</td>
+<td></td>
+<td><p>The results should be the same</p></td>
+</tr>
+<tr class="row-even"><td><p>PWM Mode</p></td>
+<td><p>14.In Logic Analyzer, Group DIO0, Set DIO0: Data, Polarity: active-high. In pattern generator, set pattern: Clock, Frequency: 10Hz</p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step14.1a.png"><img alt="image103" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step14.1a.png" style="width: 200px;" /></a></p></td>
+<td><p>Refer to the step resource image</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="15">
+<li><p>Run pattern generator and logic analyzer. Set the duty cycle of the clock signal to 5%, 30%, 50%, 75% and 95%</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step15a.png"><img alt="image104" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/group_operation-step15a.png" style="width: 200px;" /></a></p></td>
+<td><p>The Data should follow the phase degrees set in the pattern generator</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="16">
+<li><p>In step 14 change the polarity of the PWM to active-low and repeat step 15</p></li>
+</ol>
+</td>
+<td></td>
+<td><p>The data should follow (100% - phase shift set).</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="17">
+<li><p>Repeat step 14 to 16 for DIO1… .DIO15</p></li>
+</ol>
+</td>
+<td></td>
+<td><p>The result should be the same</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details></section>
+<section id="c-additional-features">
+<h1>C. Additional Features<a class="headerlink" href="#c-additional-features" title="Link to this heading"></a></h1>
+<details><summary>Click to expand</summary><div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Test Steps</p></th>
+<th class="head"><p>Steps Resources</p></th>
+<th class="head"><p>Expected Results</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Customizing the channel’s visual representation</p></td>
+<td><ol class="arabic simple">
+<li><p>Enable channel DIO0, in the menu there are options for name and trace height</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1d.png"><img alt="image122" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step1d.png" style="width: 200px;" /></a></p></td>
+<td><p>Refer to the step resource picture</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="2">
+<li><p>Change the name using the text box in the setting</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step2d.png"><img alt="image123" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step2d.png" style="width: 200px;" /></a></p></td>
+<td><p>The name should change accordingly. See step resource image for reference</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="3">
+<li><p>Change the trace height of each pin</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step3d.png"><img alt="image124" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step3d.png" style="width: 200px;" /></a></p></td>
+<td><p>The height of the signal should change accordingly. See step resource image for reference</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="4">
+<li><p>Repeat steps 1 to 3 for DIO1 to DIO15</p></li>
+</ol>
+</td>
+<td></td>
+<td><p>The results should be the same</p></td>
+</tr>
+<tr class="row-even"><td><p>Reset instrument</p></td>
+<td><ol class="arabic simple" start="5">
+<li><p>In the Preferences menu click Reset Scopy</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step6d.png"><img alt="image125" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/individual_operation-step6d.png" style="width: 200px;" /></a></p></td>
+<td><p>All the changes made from name, thickness and color should return to default. See step resource image for reference.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Testing the Export Functionality</p></td>
+<td><ol class="arabic simple">
+<li><p>In the pattern generator, set two consecutive channel with similar configuration: DIO0 and DIO1: Pattern: Clock, Frequency: 100Hz, Phase: 0 and Duty Cycle: 50%. DIO2 and DIO3: Pattern: Clock, Frequency: 300Hz, Phase: 0 and Duty Cycle: 50%. DIO4 and DIO5: Pattern: Clock, Frequency: 500Hz, Phase: 0 and Duty Cycle: 50%. DIO6 and DIO7: Pattern: Clock, Frequency: 150Hz, Phase: 0 and Duty Cycle: 80%. DIO8 and DIO9: Pattern: Clock, Frequency: 200Hz, Phase: 0 and Duty Cycle: 20%. Group DIO10 to DIO15: Pattern: Number Pattern and Data: 50.Run Logic Analyzer and Pattern Generator</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/additional_feature-step1b.png"><img alt="image126" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/additional_feature-step1b.png" style="width: 200px;" /></a></p></td>
+<td><p>Refer to the step resource picture</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="2">
+<li><p>On the settings menu, click export button.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/additional_feature-step2b.png"><img alt="image127" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/additional_feature-step2b.png" style="width: 200px;" /></a></p></td>
+<td><p>A File menu box should appear allowing the user to choose the file destination</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="3">
+<li><p>On the settings menu, click export button.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/additional_feature-step3b.png"><img alt="image128" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/additional_feature-step3b.png" style="width: 200px;" /></a></p></td>
+<td><p>A File menu box should appear allowing the user to choose the file destination</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="4">
+<li><p>Choose the desired file destination and save the file on all formats. Choose the desired configuration on different file formats.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/additional_feature-step4b.png"><img alt="image129" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/additional_feature-step4b.png" style="width: 200px;" /></a></p></td>
+<td><p>The files should appear in the specified folder</p></td>
+</tr>
+<tr class="row-odd"><td><p>Print Plot</p></td>
+<td><ol class="arabic simple">
+<li><p>In logic analyzer, group DIO0 to DIO7, set DIO0 : DIO0 … . DIO7:DIO7, set time base: 5ms. In pattern generator, group DIO0 to DIO7 set as binary counter. Run both instruments. In the Logic Analyzer, press “Print” button and save the file.</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/la_print.png"><img alt="image130" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/la_print.png" style="width: 200px;" /></a></p></td>
+<td><p>The file obtained should be similar to: <a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/la_plotScreenshot.png"><img alt="image131" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/la_plotScreenshot.png" style="width: 200px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Decoder Table</p></td>
+<td><ol class="arabic simple">
+<li><p>In pattern generator add and set channel 0 to UART with Baud rate “9600” and Data to Send “123”. In logic analyzer add UART decoder with RX on channel 0, Baud rate “9600” and Data format “ascii”. In general settings set Sample Rate 1Msps and Nr of samples to 10k samples. Run pattern generator and logic analyzer</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step1.png"><img alt="image132" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step1.png" style="width: 200px;" /></a></p></td>
+<td><p>Plot should look like the resource image</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="2">
+<li><p>Open decoder table, open settings. Set Group by “RX data”, Group size “3”, disable all rows except for “RX data” in Filter</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step2.png"><img alt="image133" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step2.png" style="width: 200px;" /></a></p></td>
+<td><p>This should result in each table row having 3 annotations of RX data (only count the ones directly under the sample/time info box)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="3">
+<li><p>Set Group offset to each multiple of 3 (the input should automatically top out at the total number RX data annotations). For each offset, search for “^3$” (make sure to press enter in the search box after each offset change)</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step3.png"><img alt="image134" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step3.png" style="width: 200px;" /></a></p></td>
+<td><p>Every time there should be at least one “3” value annotation on each table row and look similar to the resource image</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="4">
+<li><p>Set the offset to “9”, click on each table row and double click annotations on plot. You can zoom out by right clicking the plot</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step4.png"><img alt="image135" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step4.png" style="width: 200px;" /></a></p></td>
+<td><p>Clicking rows should zoom in the plot, centering it on the equivalent group. Double clicking on the plot should scroll and select the equivalent table row annotation (this will reset the Group by combo box)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="5">
+<li><p>Add a Gray code decoder and set Sample Rate to 1Msps and Nr of samples to 4M samples. Run pattern generator and logic analyzer and open decoder table settings</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step5.png"><img alt="image136" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step5.png" style="width: 200px;" /></a></p></td>
+<td><p>The decoder table settings will be disabled and a “waiting for plot …” label should appear while the plot is loading</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><ol class="arabic simple" start="6">
+<li><p>In settings set Decoder to “Gray code”, Group by “Increments”, Group size “3”, Group offset “1”, Filter out all except for Phases and press Export. Perform 2 exports, using .csv and .txt formats</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step6.png"><img alt="image137" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step6.png" style="width: 200px;" /></a></p></td>
+<td><p>“exporting …” label will appear until it finishes exporting. Both files should only contain information about Gray code: Phases annotations. Files must be similar to the ones in the resource image</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><ol class="arabic simple" start="7">
+<li><p>Go through every decoder and each Group by option it has and press the Single button</p></li>
+</ol>
+</td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step7.png"><img alt="image138" src="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/decoder_table-step7.png" style="width: 200px;" /></a></p></td>
+<td><p>When pressing Single button it should only reset the filters and Search. Make sure that the table is correctly organized each time</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details><div class="line-block">
+<div class="line">Test Results will be recorded in the following document: <a class="icon link reference external" href="https://wiki.analog.com/_media/university/tools/m2k/scopy/test-cases/logic_analyzer_-_test_case.xlsx" target="_blank">Logic Analyzer Test Case</a></div>
+<div class="line"><strong>Return to Test Cases</strong> <a class="reference internal" href="../test-cases.html"><span class="doc">Table of Contents</span></a></div>
+</div>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

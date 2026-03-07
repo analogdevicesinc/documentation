@@ -1,0 +1,415 @@
+AD-FMCDAQ3-EBZ Virtex UltraScale+ VCU118 Quick Start Guide
+==========================================================
+
+|VCU118_daq3.jpg| This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the AD-FMCDAQ3-EBZ on `VCU118 <https://www.xilinx.com/VCU118>`_
+
+Prerequisites
+-------------
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-   `Xilinx VCU118 <https://www.xilinx.com/VCU118>`_ Rev 1.0 or later board
+-  :adi:`AD-FMCDAQ3-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-fmcdaq3-ebz.html>` FMC board
+-  Ethernet cable
+-  2 x Micro-USB cable
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  You need a Host PC (Windows or Linux)
+-  A UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1)
+-  Xilinx Vivado 2019.1 or later - Xilinx Software Commandline Tool(XCST)
+-  Bitfile and Linux ELF image
+-  IIO Scope `Download <https://wiki.analog.com/https/github.com/analogdevicesinc/iio-oscilloscope/releases>`_
+
+.. tip::
+
+   \ :doc:`Pre-build Images for VCU118 and FMCDAQ3. </wiki-migration/resources/tools-software/linux-drivers/platforms/microblaze_loading>`\
+
+
+Setting up the hardware (VCU118)
+--------------------------------
+
+You will need to:
+
+::
+
+   -Get the [[https://www.xilinx.com/VCU118| Xilinx VCU118]]
+   {{ resources:eval:user-guides:ad-fmcdaq3-ebz:quickstart:vcu118.png?900 }}
+   -Connect the AD-FMCDAQ3-EBZ FMC board to the FPGA carrier **FMC+** socket(J22).
+   -Connect USB UART J4 (Micro USB) and USB JTAG J106 (Micro USB) to your host PC.
+   -Set the jumpers of SW16 - which controls the JTAG Mode: 1: **off**, 2: **on**, 3: **off**, 4: **on** as seen in the below picture
+   {{ resources:eval:user-guides:ad-fmcdaq3-ebz:quickstart:sw16_vcu118.jpg?400 }}
+   -Plug the Power Supply into 12V Power input connector (J15).
+   -Turn it on.
+
+
+.. note::
+
+   See `wiki/common <https://wiki.analog.com/wiki/common#esd_warning>`_
+
+
+Programming the FPGA
+--------------------
+
+There are two ways of loading the design. One is using the XCST command line, and the second method is to run the tcl script which takes care of loading the bit file and the Linux image.
+
+1. Loading the design using XSCT command line
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In Windows, you can run the XSCT terminal from start menu → Xilinx Design Tools → Xilinx Software Command Line Tool.
+
+::
+
+   ****** Xilinx Software Commandline Tool (XSCT) v2021.1
+     **** SW Build 1933 on 2021-06-09-14:19:58
+       ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+   xsct% connect
+
+   attempting to launch hw_server
+   ****** Xilinx hw_server v2021.1
+     **** Build date : Jun 10 2021 at 20:17:23
+       ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved
+   INFO: hw_server application started
+   INFO: Use Ctrl-C to exit hw_server application
+   ****** Xilinx hw_server v2021.1
+     **** Build date : Jun 10 2021 at 20:17:23
+       ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+   INFO: hw_server application started
+   INFO: Use Ctrl-C to exit hw_server application
+   INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
+   tcfchan#0
+
+   xsct% fpga -f system_top.bit
+
+   100%   29MB   1.7MB/s  00:17
+
+   xsct% targets
+
+     1  xcvu9p
+        2  MicroBlaze Debug Module at USER2
+           3  MicroBlaze #0 (Running)
+        4  Legacy Debug Hub
+        
+   xsct% target 3
+   xsct% targets
+
+     1  xcvu9p
+        2  MicroBlaze Debug Module at USER2
+           3* MicroBlaze #0 (Running)
+        4  Legacy Debug Hub
+        
+   xsct% dow simpleImage.vcu118_fmcdaq3.strip
+
+   Downloading Program -- C:/Users/PPop/Downloads/simpleImage.vcu118_fmcdaq3/simpleImage.vcu118_fmcdaq3.strip
+           section, .text: 0x80000000 - 0x804763ab
+           section, __fdt_blob: 0x804763ac - 0x804863ab
+           section, .rodata: 0x80487000 - 0x808b110f
+           section, .builtin_fw: 0x808b1110 - 0x808b1133
+           section, __ksymtab: 0x808b1134 - 0x808b746b
+           section, __ksymtab_gpl: 0x808b746c - 0x808bc483
+           section, __ksymtab_strings: 0x808bc484 - 0x808d6973
+           section, __param: 0x808d6974 - 0x808d6e5f
+           section, __modver: 0x808d6e60 - 0x808d6fff
+           section, __ex_table: 0x808d7000 - 0x808d844f
+           section, .notes: 0x808d8450 - 0x808d848b
+           section, .sdata2: 0x808d848c - 0x808d8fff
+           section, .data: 0x808d9000 - 0x8095893f
+           section, .init.text: 0x80959000 - 0x8097a75b
+           section, .init.data: 0x8097a75c - 0x8097c053
+           section, .init.ivt: 0x8097c054 - 0x8097c07b
+           section, .init.setup: 0x8097c07c - 0x8097c3f3
+           section, .initcall.init: 0x8097c3f4 - 0x8097c80f
+           section, .con_initcall.init: 0x8097c810 - 0x8097c813
+           section, .init.ramfs: 0x8097c814 - 0x80c2a9fb
+           section, .bss: 0x80c2b000 - 0x80c4225b
+   100%   12MB   0.2MB/s  00:56
+   Setting PC to Program Start Address 0x80000000
+   Successfully downloaded C:/Users/PPop/Downloads/simpleImage.vcu118_fmcdaq3/simpleImage.vcu118_fmcdaq3.strip
+   xsct% Info: MicroBlaze #0 (target 3) Stopped at 0x0 (Stop)
+
+   xsct% con 
+
+   Info: MicroBlaze #0 (target 3) Running
+
+   xsct% disconnect
+
+   xsct% Info: tcfchan#0 closed
+
+2. Loading the design using tcl script
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Run Vivado TCL Shell from Windows start menu → Xilinx Design Suite → Vivado → Vivado TCL Shell. (In Linux, source the settings.sh file first)
+
+::
+
+   ****** Vivado v2021.1 (64-bit)
+     **** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+     **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+       ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+       
+   Vivado% cd \path\to\simpleImage.vcu118_fmcdaq3
+   Vivado% xsct run.tcl
+
+   ***** Xilinx hw_server v2021.1
+     **** Build date : Jun 10 2021 at 20:17:23
+       ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+   INFO: hw_server application started
+   NFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
+   Vivado%
+
+.. tip::
+
+   In case of using older releases of VIVADO **xsct run.tcl** command is replaced by **xmd -tcl run.tcl**
+
+
+Remote IIO Oscilloscope
+~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+   -Plug your ethernet cable into the RJ45 ethernet connector(J10)
+   -Observe kernel and serial console messages on your UART terminal(**Standard COM Port** not Enhanced COM Port)
+
+==== ========
+user password
+==== ========
+root analog
+==== ========
+
+::
+
+   Ramdisk addr 0x00000000,
+   Compiled-in FDT at 0x804763ac
+   Linux version 4.19.0-g17f4223 (jenkins@romlxbuild1.adlk.analog.com) (gcc version 8.2.0 (crosstool-NG 1.20.0)) #1866 Tue Jul 27 13:47:17 IST 2021
+   setup_memory: max_mapnr: 0x30000
+   setup_memory: min_low_pfn: 0x80000
+   setup_memory: max_low_pfn: 0xb0000
+   setup_memory: max_pfn: 0xb0000
+   Zone ranges:
+     DMA      [mem 0x0000000080000000-0x00000000afffffff]
+     Normal   empty
+   Movable zone start for each node
+   Early memory node ranges
+     node   0: [mem 0x0000000080000000-0x00000000ffffefff]
+   Initmem setup node 0 [mem 0x0000000080000000-0x00000000ffffefff]
+   On node 0 totalpages: 196608
+     DMA zone: 1536 pages used for memmap
+     DMA zone: 0 pages reserved
+     DMA zone: 196608 pages, LIFO batch:63
+   setup_cpuinfo: initialising
+   setup_cpuinfo: Using full CPU PVR support
+   ERROR: Microblaze HW_MUL-different for PVR and DTS
+   wt_msr_noirq
+   pcpu-alloc: s0 r0 d32768 u32768 alloc=1\*32768
+   pcpu-alloc: [0] 0
+   Built 1 zonelists, mobility grouping on.  Total pages: 195072
+   Kernel command line: console=ttyUL0,115200
+   Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+   Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+   Memory: 766124K/786432K available (4568K kernel code, 510K rwdata, 4416K rodata, 2886K init, 92K bss, 20308K reserved, 0K cma-reserved)
+   Kernel virtual memory layout:
+     * 0xffffe000..0xfffff000  : fixmap
+     * 0xffffe000..0xffffe000  : early ioremap
+     * 0xb0000000..0xffffe000  : vmalloc & ioremap
+   NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+   irq-xilinx: mismatch in kind-of-intr param
+   irq-xilinx: /amba_pl/interrupt-controller@41200000: num_irq=16, edge=0xffff05f0
+   /amba_pl/timer@41c00000: irq=1
+   clocksource: xilinx_clocksource: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+   xilinx_timer_shutdown
+   xilinx_timer_set_periodic
+   sched_clock: 32 bits at 100MHz, resolution 10ns, wraps every 21474836475ns
+   Calibrating delay loop... 49.35 BogoMIPS (lpj=246784)
+   pid_max: default: 32768 minimum: 301
+   Mount-cache hash table entries: 2048 (order: 1, 8192 bytes)
+   Mountpoint-cache hash table entries: 2048 (order: 1, 8192 bytes)
+   devtmpfs: initialized
+   random: get_random_u32 called from bucket_table_alloc.isra.6+0x1e8/0x218 with crng_init=0
+   clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+   futex hash table entries: 256 (order: -1, 3072 bytes)
+   NET: Registered protocol family 16
+   jesd204: found 0 devices and 0 topologies
+   clocksource: Switched to clocksource xilinx_clocksource
+   NET: Registered protocol family 2
+   tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 4096 bytes)
+   TCP established hash table entries: 8192 (order: 3, 32768 bytes)
+   TCP bind hash table entries: 8192 (order: 3, 32768 bytes)
+   TCP: Hash tables configured (established 8192 bind 8192)
+   UDP hash table entries: 512 (order: 1, 8192 bytes)
+   UDP-Lite hash table entries: 512 (order: 1, 8192 bytes)
+   NET: Registered protocol family 1
+   RPC: Registered named UNIX socket transport module.
+   RPC: Registered udp transport module.
+   RPC: Registered tcp transport module.
+   RPC: Registered tcp NFSv4.1 backchannel transport module.
+   random: fast init done
+   Skipping unavailable RESET gpio -2 (reset)
+   workingset: timestamp_bits=30 max_order=18 bucket_order=0
+   jffs2: version 2.2. (NAND) (SUMMARY)  © 2001-2006 Red Hat, Inc.
+   Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+   io scheduler noop registered
+   io scheduler deadline registered
+   io scheduler cfq registered (default)
+   io scheduler mq-deadline registered
+   io scheduler kyber registered
+   Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+   40600000.serial: ttyUL0 at MMIO 0x40600000 (irq = 5, base_baud = 0) is a uartlite console [ttyUL0] enabled
+   brd: module loaded
+   Xilinx SystemACE device driver, major=254
+   xilinx_spi 44a70000.axi_quad_spi: no CS gpios available
+   libphy: Fixed MDIO Bus: probed
+   xilinx_axienet 40c00000.ethernet: TX_CSUM 2
+   xilinx_axienet 40c00000.ethernet: RX_CSUM 2
+   xilinx_axienet 40c00000.ethernet: missing/invalid xlnx,addrwidth property, using default
+   libphy: Xilinx Axi Ethernet MDIO: probed i2c /dev entries driver
+   i2c i2c-0: Added multiplexed i2c bus 1 at24 2-0050: 256 byte 24c02 EEPROM, writable, 1 bytes/write
+   i2c i2c-0: Added multiplexed i2c bus 2
+   i2c i2c-0: Added multiplexed i2c bus 3
+   i2c i2c-0: Added multiplexed i2c bus 4
+   i2c i2c-0: Added multiplexed i2c bus 5
+   i2c i2c-0: Added multiplexed i2c bus 6
+   i2c i2c-0: Added multiplexed i2c bus 7
+   i2c i2c-0: Added multiplexed i2c bus 8
+   pca954x 0-0075: registered 8 multiplexed busses for I2C switch pca9548
+   ad9528 spi0.0: spi0.0 supply vcc not found, using dummy regulator
+   ad9528 spi0.0: Linked as a consumer to regulator.0
+   axi_adxcvr 44a50000.axi-ad9680-adxcvr: AXI-ADXCVR-RX (17.01.a) using CPLL on GTY 4 at 0x44A50000. Number of lanes: 4.
+   axi_adxcvr 44a60000.axi-ad9152-adxcvr: AXI-ADXCVR-TX (17.01.a) using QPLL on GTY 4 at 0x44A60000. Number of lanes: 4.
+   NET: Registered protocol family 17
+   ad9680 spi0.2: AD9680 PLL LOCKED
+   cf_axi_adc 44a10000.axi-ad9680-hpc: ADI AIM (10.01.b) at 0x44A10000 mapped to 0x(ptrval), probed ADC AD9680 as MASTER
+   cf_axi_dds 44a04000.axi-ad9152-hpc: Analog Devices CF_AXI_DDS_DDS MASTER (9.01.b) at 0x44A04000 mapped to 0x(ptrval), probed DDS AD9152
+   Freeing unused kernel memory: 2884K
+   This architecture does not have kernel memory protection.
+   Run /init as init process
+   Starting logging: OK
+   Initializing random number generator... random: dd: uninitialized urandom read (512 bytes read)
+   done.
+   Starting network: udhcpc: started, v1.27.2
+   net eth0: Promiscuous mode disabled.
+   net eth0: Promiscuous mode disabled.
+   udhcpc: sending discover
+   xilinx_axienet 40c00000.ethernet eth0: Link is Down
+   udhcpc: sending discover
+   xilinx_axienet 40c00000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
+   udhcpc: sending discover
+   udhcpc: sending discover
+   udhcpc: sending select for 10.48.65.155
+   udhcpc: lease of 10.48.65.155 obtained, lease time 21600
+   deleting routers
+   adding dns 10.32.51.110
+   adding dns 10.64.53.110
+   Starting dropbear sshd: random: dropbear: uninitialized urandom read (32 bytes read)
+   OK
+   Starting IIO Server Daemon
+
+   Welcome to Buildroot
+   buildroot login: root
+   Password:
+   #
+
+Run the ifconfig command on your UART terminal and get your board IP
+
+::
+
+   # ifconfig
+   eth0      Link encap:Ethernet  HWaddr 00:0A:35:00:00:00
+             inet addr:your_board_ip  Bcast:         Mask:255.255.255.0
+             UP BROADCAST RUNNING  MTU:1500  Metric:1
+             RX packets:965 errors:0 dropped:0 overruns:0 frame:0
+             TX packets:3 errors:0 dropped:0 overruns:0 carrier:0
+             collisions:0 txqueuelen:1000
+             RX bytes:126276 (123.3 KiB)  TX bytes:1026 (1.0 KiB)
+
+Check the available IIO devices (the following should be present):
+
+::
+
+   # iio_info | grep iio:device
+
+           iio:device3: axi-ad9152-hpc (buffer capable)
+           iio:device1: ad9528
+           iio:device2: axi-ad9680-hpc (buffer capable)
+           iio:device0: ad7291
+
+Open IIO Scope application and type ip:board_ip in the URI tab
+
+
+|iio_scope_board_ip-VCU118.png|
+
+You should see two screens:
+
+.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/print_daq3_iio_osc_zcu102.png
+   :alt: print_daq3_iio_osc_zcu102.png
+   :align: center
+   :width: 1000px
+
+More Information
+----------------
+
+-  :doc:`AD-FMCDAQ3-EBZ User Guide </wiki-migration/resources/eval/user-guides/ad-fmcdaq3-ebz>`
+-  :doc:`AD-FMCDAQ3-EBZ HDL Reference Design </wiki-migration/resources/eval/user-guides/ad-fmcdaq3-ebz/reference_hdl>`
+
+Useful links
+------------
+
+-  :doc:`AD9081/AD9082/AD9988/AD9986 Quick Start Guides </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart>`
+
+   -  :doc:`Zynq-7000 SoC ZC706 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/zynq>`
+   -  :doc:`Zynq UltraScale+ MPSoC ZCU102 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/zynqmp>`
+   -  :doc:`Virtex UltraScale+ VCU118 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/microblaze>`
+   -  :doc:`Versal ACAP VCK190 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/versal>`
+   -  `Arria10 SoC Quick Start Guide <https://wiki.analog.com/resources/eval/user-guides/ad9081/quickstart/a10soc]>`_
+
+-  :doc:`AD9081-FMCA-EBZ (Single MxFE) HDL Reference Design </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/ad9081_fmca_ebz_hdl>`
+
+   -  :doc:`ADI Reference Designs HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`
+   -  :doc:`Generic JESD204B block designs </wiki-migration/resources/fpga/docs/hdl/generic_jesd_bds>`
+   -  :doc:`JESD204B High-Speed Serial Interface Support </wiki-migration/resources/fpga/peripherals/jesd204>`
+
+-  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
+
+::
+
+         - [[resources:tools-software:linux-drivers:jesd204:jesd204-fsm-framework|JESD204 (FSM) Interface Linux Kernel Framework]]
+         - [[resources:tools-software:linux-drivers:iio-pll:hmc7044|HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver]]
+         - [[resources:tools-software:linux-drivers:axi-dmac| AXI-DMAC DMA Controller Linux Driver]]
+         - [[resources:tools-software:linux-drivers:jesd204:axi_jesd204_tx|JESD204B Transmit Linux Driver]]
+           - [[resources:tools-software:linux-software:jesd_status|JESD204B Status Utility]] 
+         - [[resources:tools-software:linux-drivers:jesd204:axi_jesd204_rx|JESD204B Receive Linux Driver]]
+           - [[resources:tools-software:linux-software:jesd_status|JESD204B Status Utility]] 
+         - [[resources:tools-software:linux-drivers:jesd204:axi_adxcvr|JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver]]
+           - [[resources:tools-software:linux-software:jesd_eye_scan|JESD204 Eye Scan]]
+         - [[resources:tools-software:linux-drivers:iio-adc:axi-adc-hdl|AXI ADC HDL Linux Driver]]
+         - [[resources:tools-software:linux-drivers:iio-dds:axi-dac-dds-hdl|AXI DAC HDL Linux Driver]]
+   * [[:resources:tools-software:hsx-toolbox|MATLAB Support]]
+        * MATLAB support is provided through the [[:resources:tools-software:hsx-toolbox|High Speed Converter Toolbox]]
+   * [[resources:tools-software:linux-software:pyadi-iio| Python Support]]
+        * PYTHON support is provided through the [[resources:tools-software:linux-software:pyadi-iio|Device Specific Python Interfaces For IIO Drivers]] 
+        * [[https://analogdevicesinc.github.io/pyadi-iio/|PyADI-IIO Documentation]]
+        * [[https://analogdevicesinc.github.io/pyadi-iio/devices/adi.ad9081.html|AD9081 class documentation]]
+   * Product Datasheet
+       * [[:adi:`media/en/technical-documentation/data-sheets/AD9081`.pdf|AD9081]]
+       * [[:adi:`media/en/technical-documentation/data-sheets/AD9082`.pdf|AD9082]]
+       * [[:adi:`media/en/technical-documentation/data-sheets/AD9988`.pdf|AD9988]]
+       * [[:adi:`media/en/technical-documentation/data-sheets/AD9986`.pdf|AD9986]]
+   * [[:adi:`media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578`.pdf|UG-1578, Device User Guide]]
+   * [[:adi:`media/en/technical-documentation/user-guides/ad9081-fmca-ebz-9082-fmca-ebz-ug-1829`.pdf|UG-1829, Evaluation Board User Guide]]
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone <community/fpga>`.
+
+Software support
+----------------
+
+-  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
+
+
+.. |VCU118_daq3.jpg| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/VCU118_daq3.jpg
+   :width: 550px
+.. |iio_scope_board_ip-VCU118.png| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/iio_scope_board_ip-VCU118.png

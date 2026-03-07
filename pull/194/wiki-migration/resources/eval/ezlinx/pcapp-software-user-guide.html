@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="See wiki/common" name="description" />
+
+    <title>Introduction &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Introduction</a></li>
+<li><a class="reference internal" href="#main-window">Main Window</a></li>
+<li><a class="reference internal" href="#board-configuration-window">Board Configuration Window</a></li>
+<li><a class="reference internal" href="#isolated-rs-232">Isolated RS-232</a><ul>
+<li><a class="reference internal" href="#rs-232-configuration-window">RS-232 Configuration Window</a></li>
+<li><a class="reference internal" href="#rs-232-send-receive-window">RS-232 Send/Receive Window</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#isolated-rs-485-rs-422">Isolated RS – 485 / RS – 422</a><ul>
+<li><a class="reference internal" href="#rs-485-rs-422-configuration-window">RS-485/ RS-422 Configuration Window</a></li>
+<li><a class="reference internal" href="#rs-485-rs-422-send-receive-window">RS-485 / RS-422 Send/Receive Window</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#isolated-i2c">Isolated I2C</a><ul>
+<li><a class="reference internal" href="#i2c-configuration-window">I2C Configuration Window</a></li>
+<li><a class="reference internal" href="#i2c-send-receive-window">I2C Send/Receive Window</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#isolated-spi">Isolated SPI</a><ul>
+<li><a class="reference internal" href="#spi-configuration-window">SPI Configuration Window</a></li>
+<li><a class="reference internal" href="#spi-send-receive-window">SPI Send/Receive Window</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#isolated-can">Isolated CAN</a><ul>
+<li><a class="reference internal" href="#can-configuration-window">CAN Configuration Window</a></li>
+<li><a class="reference internal" href="#can-send-receive-window">CAN Send/Receive Window</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#isolated-lvds">Isolated LVDS</a><ul>
+<li><a class="reference internal" href="#lvds-configuration-window">LVDS Configuration Window</a></li>
+<li><a class="reference internal" href="#lvds-send-receive-window">LVDS Send/Receive Window</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#gpio-leds">GPIO (LEDs)</a></li>
+<li><a class="reference internal" href="#firmware-update">Firmware Update</a></li>
+<li><a class="reference internal" href="#transceiver-status-window">Transceiver Status Window</a></li>
+<li><a class="reference internal" href="#transceivers-configuration-window">Transceivers Configuration Window</a></li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See <a class="icon link reference external" href="https://wiki.analog.com/wiki/common#retired" target="_blank">wiki/common</a></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a class="reference internal" href="../ezlinx.html"><span class="doc">ezLINX™ iCoupler® Isolated Interface Development Environment Homepage</span></a></div>
+<div class="line">====== ezLINX Sample PC Application Software User Guide ====== <a class="reference internal" href="pcapp-installation-guide.html"><span class="doc">ezLINX Sample PC Application Installation Guide</span></a></div>
+</div>
+<p><a class="reference internal" href="usb-ip-config.html"><span class="doc">Isolated USB ethernet gadget network adapter configuration</span></a></p>
+<section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<p>The <em>ez</em>LINX <em>i</em>Coupler Isolated Interface Development Environment provides users with a convenient, cost-effective method of evaluating various isolated communication standards. This significantly reduces design and evaluation time for designers who are using Analog Devices isolated transceivers in their design. The <em>ez</em>LINX hardware platform contains an Analog Devices ADSP-BF548 processor which runs the open source uCLinux kernel and <em>ez</em>LINX embedded sample application. A Sample PC Application is also provided, which integrates with the <em>ez</em>LINX hardware platform via isolated USB, allowing for a complete plug and play evaluation and development experience with 8 isolated communication interfaces:</p>
+<ul class="simple">
+<li><p>Isolated USB</p></li>
+<li><p>Isolated CAN</p></li>
+<li><p>Isolated RS-485/RS-422</p></li>
+<li><p>Isolated RS-232</p></li>
+<li><p>Isolated I2C</p></li>
+<li><p>Isolated SPI</p></li>
+<li><p>Isolated LVDS</p></li>
+</ul>
+<p>The embedded software application is written in C and the Sample PC Application is written in Microsoft Visual C# and uses version 4 of the Microsoft .NET Framework. The Sample PC Application and embedded software have many features when used together, including the following:</p>
+<ul class="simple">
+<li><p>Simultaneous data transmission/reception on multiple isolated interfaces</p></li>
+<li><p>User friendly software which can instantly switch between running interfaces</p></li>
+<li><p>View data traffic during current session</p></li>
+<li><p>Interfaces are readily customizable to suit your application</p></li>
+<li><p>Embedded firmware is easily updated through isolated USB</p></li>
+<li><p>Quickly save and load your entire configuration for all communication standards</p></li>
+<li><p>Supports hardware routing of signals between interfaces</p></li>
+</ul>
+<p>The open source nature of both the PC Application and the embedded software allow the user to view and edit the source code of the application to obtain the best use of the ezLINX hardware system for their application. The source code and Sample PC Application can be downloaded <a class="reference internal" href="../ezlinx.html"><span class="doc">here</span></a>.</p>
+</section>
+<section id="main-window">
+<h1>Main Window<a class="headerlink" href="#main-window" title="Link to this heading"></a></h1>
+<p>Upon starting the ezLINX Sample PC Application the Main System window is displayed:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig1MainWindow.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig1MainWindow.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig1MainWindow.jpg" style="width: 850px;" />
+</a>
+<div class="centeralign docutils container">
+<p><em>Figure1: Main Window</em></p>
+</div>
+<p>From this window we see a complete overview of the ezLINX hardware system and how it integrates with the ADSP-BF548 processor. The Sample PC Application is designed to easily allow for the simultaneous use and evaluation of multiple communication standards. The application has two sidebars at the left and the right of the main window with seven active buttons allowing access to the different transceiver interfaces. These interfaces can be accessed from any window in the application. The color of these buttons indicates the status of the transceiver, so:</p>
+<ul class="simple">
+<li><p>The <strong>Light Gray</strong> color: the transceiver is deactivated and disconnected.</p></li>
+<li><p>The <strong>Steel Blue</strong> color: the transceiver is activated and disconnected.</p></li>
+<li><p>The <strong>Royal Blue</strong> color: the transceiver is activated and connected.</p></li>
+</ul>
+<p>The STATUS bar along the bottom of the window shows whether the application is connected to an ezLINX hardware platform, the IP address of that hardware platform, and the transceivers on the hardware which are currently enabled. Clicking on the word STATUS opens the Transceiver Status Window, where you can view the amount of data sent and received by each interface in the current session. The Main Window of the application also has 3 buttons located under the system block diagram:</p>
+<p><strong>- Connect</strong></p>
+<p>The Connect button in the main window serves to establish a connection with the ezLINX hardware board using the current IP address configuration.</p>
+<p>**- View Configuration **</p>
+<p>The View Configuration button opens the Configuration Window, which displays the complete system configuration of all transceivers on the ezLINX hardware board.</p>
+<p>**- Configure **</p>
+<p>The Configure button opens the Board Configuration Window to configure the IP address to connect to, change the IP configuration of the connected ezLINX hardware, or apply updates to the embedded software of the ezLINX hardware. The Board Configuration Window can also be accessed at any time by clicking on the image of the ezLINX hardware at the bottom left of the application.</p>
+</section>
+<section id="board-configuration-window">
+<h1>Board Configuration Window<a class="headerlink" href="#board-configuration-window" title="Link to this heading"></a></h1>
+<p>There are two possibilities to open the Board Configuration Window:</p>
+<ol class="arabic simple">
+<li><p>By pressing the Configure button, the below window appears:</p></li>
+</ol>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig2ConfigurationwindowfromConfigurebutton.jpg"><img alt="image1" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig2ConfigurationwindowfromConfigurebutton.jpg" style="width: 850px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 2: Configuration window from Configure button</em></p>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>By clicking on the image of the ezLINX hardware platform on the bottom left of the application, the below window appears:</p></li>
+</ol>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig3ConfigurationWindowfromtheezLINXimage.jpg"><img alt="image2" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig3ConfigurationWindowfromtheezLINXimage.jpg" style="width: 850px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 3: Configuration Window from the ezLINX image</em></p>
+</div>
+<p>The Configuration Window is divided into three boxes:</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="em docutils container">
+<p>Network Features Box</p>
+</div>
+<p>: Modify the network features of the ezLINX hardware platform.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig4Networkfeaturesbox.jpg"><img alt="image3" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig4Networkfeaturesbox.jpg" style="width: 500px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 4: Network features box</em></p>
+</div>
+<p>**Connect to IP Address: **</p>
+<p>The IP address of the ezLINX hardware platform which the PC Application will connect to when the <strong>Connect</strong> button is pressed.</p>
+<p>The default address is 192.168.3.21.</p>
+<p>**Set New Address To: **</p>
+<p>Modify the IP address of the connected ezLINX hardware platform. You must check the <strong>Set New Address</strong> To box and connect to a hardware platform to use this and the two functions below.</p>
+<p><strong>New Subnet Mask:</strong></p>
+<p>Specify a new Subnet Mask for the connected ezLINX hardware platform.</p>
+<p><strong>New IP Gateway:</strong></p>
+<p>Specify a new IP Gateway for the connected ezLINX hardware platform.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="em docutils container">
+<p>Firmware Upgrade Box</p>
+</div>
+<p>: In order to facilitate the update of the embedded software flashed on the ezLINX hardware platform, the application gives this function to easily load newer firmware versions, by using the <strong>Send</strong> button to select the new embedded software version to be loaded to the ezLINX hardware platform.For information on how to perform a firmware update refer to the section on Updating Embedded Firmware later in this guide. The Firmware Upgrade Box also provides the functionality to check the current PC Application software and the embedded firmware versions on the ezLINX hardware platform.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/update_firmware.jpg"><img alt="image4" src="https://wiki.analog.com/_media/resources/eval/ezlinx/update_firmware.jpg" style="width: 200px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 5: Firmware Upgrade box</em></p>
+</div>
+<p>**PC Version: **</p>
+<p>The current PC Software Application version.</p>
+<p>**Embedded Version: **</p>
+<p>The embedded software version on the ezLINX hardware platform. Click the *Check* button to request which version is currently on the hardware platform.</p>
+<p>**DLL Version: **</p>
+<p>The current DLL version.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="em docutils container">
+<p>Enable/Disable Box</p>
+</div>
+<p>:this box can be used to switch any of the transceivers on the ezLINX hardware platform on or off. To enable or disable an interface check the box next to the interface name.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig6EnableDisablebox.jpg"><img alt="image5" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig6EnableDisablebox.jpg" style="width: 300px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 6: Enable/Disable box</em></p>
+</div>
+<p>A notification message will be displayed above the checked transceiver indicating that the transceiver is currently enabled. See the following figure:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig7Notificationmessageforenabledtransceivers.jpg"><img alt="image6" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig7Notificationmessageforenabledtransceivers.jpg" style="width: 850px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 7: Notification message for enabled transceivers</em></p>
+</div>
+</section>
+<section id="isolated-rs-232">
+<h1>Isolated RS-232<a class="headerlink" href="#isolated-rs-232" title="Link to this heading"></a></h1>
+<p>The isolated RS-232 interface on the ezLINX development platform is implemented using Analog Devices <a class="icon adi reference external" href="https://www.analog.com/adm3252e" target="_blank">adm3252e</a> driver/receiver. For more information on the hardware implementation of the RS-232 interface click <a class="reference internal" href="isolated-rs232.html"><span class="doc">here</span></a>.</p>
+<section id="rs-232-configuration-window">
+<h2>RS-232 Configuration Window<a class="headerlink" href="#rs-232-configuration-window" title="Link to this heading"></a></h2>
+<p>To open the RS-232 configuration menu select it from the button on the top right of the Application. This opens the RS-232 Configuration Window:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig8RS232ConfigurationWindow.jpg"><img alt="image7" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig8RS232ConfigurationWindow.jpg" style="width: 850px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 8: RS232 Configuration Window</em></p>
+</div>
+<p>To configure the RS-232 for use, check the <strong>Transceiver Enable</strong> box (seen above). The Transceiver Enable box is present on all the configuration windows, and is used to enable or disable the transceivers on the ezLINX hardware.</p>
+<p>The RS-232 Configuration Window is divided into three boxes:</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="em docutils container">
+<p>Interface Settings Box</p>
+</div>
+<p>: To select the appropriate communication interface for RS-232 transceiver.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig9Interfacesettingsbox.jpg"><img alt="image8" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig9Interfacesettingsbox.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 9: Interface settings box</em></p>
+</div>
+<p>Select UART3 from the drop-down interface menu.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="em docutils container">
+<p>RS-232 Settings Box</p>
+</div>
+<p>: To communicate with ezLINX hardware board through the RS-232 port, you need to configure the device using the following features:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig10RS-232settingsbox.jpg"><img alt="image9" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig10RS-232settingsbox.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 10: RS-232 settings box</em></p>
+</div>
+<p><strong>Baud Rate:</strong></p>
+<p>Select the symbol rate for the RS-232 device. Note that the ADM3251E RS-232 transceiver’s performance is not specified above 460800 Baud.</p>
+<p>From the <strong>Baud Rate</strong> drop-down menu, you can select different transmission rate values from: 110 bits/s to 1000000 bits/s</p>
+<p><strong>Parity:</strong></p>
+<p>Select whether to append an even, odd or no parity bit to the end of each word transmitted.</p>
+<p><strong>Stop Bits:</strong></p>
+<p>Select between using one or two stop bits.</p>
+<p><strong>Word Size:</strong></p>
+<p>Select whether the application sends 7 bit words or 8 bit words.</p>
+<p><strong>Flow Control:</strong></p>
+<p>Select whether or not to use flow control. When connected to the ezLINX hardware platform no flow control should be selected.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="em docutils container">
+<p>RS-232 Routing Box</p>
+</div>
+<p>: The RS-232 interface supports hardware routing to the outputs of other interfaces. To enable hardware routing check the Enable Routing box and select the interface to route to from the drop down menu. To route to RS-485 select UART2 from the drop down menu.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig11RS-232Routingbox.jpg"><img alt="image10" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig11RS-232Routingbox.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 11: RS-232 Routing box</em></p>
+</div>
+</section>
+<section id="rs-232-send-receive-window">
+<h2>RS-232 Send/Receive Window<a class="headerlink" href="#rs-232-send-receive-window" title="Link to this heading"></a></h2>
+<p>Shown below is the send/receive window for the RS-232 protocol. The window consists of two main sections; a send window on the left and a receive window on the right. To send data from the RS-232 port, type the data to be sent into the left hand text box. Click <strong>Send Data</strong> button to transmit the contents of the text box. Data sent to the RS-232 port will automatically appear in the right hand receive window in real time.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig12RS-232Send-ReceiveWindow.jpg"><img alt="image11" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig12RS-232Send-ReceiveWindow.jpg" style="width: 850px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 12: RS-232 Send/Receive Window</em></p>
+</div>
+<p>There are also a variety of other functions which can be used from this window.</p>
+<p><strong>On/Off buttons:</strong></p>
+<p>Turns the transceiver on or off. When off the RS-232 transceiver is disconnected.</p>
+<p><strong>Send Data:</strong></p>
+<p>Transmit the text contained in the Send box.</p>
+<p><strong>Auto:</strong></p>
+<p>Toggles the Auto setting, which transmits data automatically as you type it in the Send box.</p>
+<p><strong>Load File:</strong></p>
+<p>Opens a load file menu to select a .txt file to send. The contents of the file are automatically sent through the RS – 232 port once loaded.</p>
+<p><strong>Clear:</strong></p>
+<p>Clears the text box.</p>
+<p><strong>Send Data Format:</strong></p>
+<p>Choose whether to send the characters in the text box as HEX or ASCII data.</p>
+<p><strong>Receive Data Format:</strong></p>
+<p>Choose whether to display the received data on the screen as HEX or ACSII characters.</p>
+<p><strong>Save To File:</strong></p>
+<p>Opens a create .txt file window. Once created all received data will be saved to this file.</p>
+<p>Click again to toggle the Save To File function.</p>
+<p>**Log To File: **</p>
+<p>Opens a create .txt file window. Once created all received data will be logged to this file with a timestamp. Click again to toggle the Log to File function.</p>
+<p>To close the Send /Receive Window simply turn the transceiver off and click on a different interface button, or deselect the RS-232 interface button from the sidebar to return to the RS-232 Configuration Window.</p>
+</section>
+</section>
+<section id="isolated-rs-485-rs-422">
+<h1>Isolated RS – 485 / RS – 422<a class="headerlink" href="#isolated-rs-485-rs-422" title="Link to this heading"></a></h1>
+<p>Both the isolated RS-485 and isolated RS-422 interfaces on the ezLINX development platform were implemented using Analog Devices <a class="icon adi reference external" href="https://www.analog.com/adm2587e" target="_blank">adm2587e</a> transceiver. For more information on the hardware implementation of the RS-485 / RS-422 interfaces click <a class="reference internal" href="isolated-rs485-rs422.html"><span class="doc">here</span></a>.</p>
+<section id="rs-485-rs-422-configuration-window">
+<h2>RS-485/ RS-422 Configuration Window<a class="headerlink" href="#rs-485-rs-422-configuration-window" title="Link to this heading"></a></h2>
+<p>In the ezLINX Sample PC Application both the RS-485 and the RS-422 protocols are implemented in the same section. To open this interface menu select it using the button on the top left of the Application. This opens the RS-485 / RS-422 configuration window:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig13RS-485ConfigurationWindow.jpg"><img alt="image12" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig13RS-485ConfigurationWindow.jpg" style="width: 850px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 13: RS-485 Configuration Window</em></p>
+</div>
+<p>To configure the RS-485/RS-422 for use, check the <strong>Transceiver Enable</strong> box (seen above). The Transceiver Enable box is present on all the configuration windows, and is used to enable or disable the transceivers on the ezLINX hardware.</p>
+<p>The RS-485/RS-422 Configuration Window is divided into three boxes:</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="em docutils container">
+<p>Interface Settings Box</p>
+</div>
+<p>: To select the appropriate interface for RS-485 transceiver.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig14InterfaceSettingsBox.jpg"><img alt="image13" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig14InterfaceSettingsBox.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 14: Interface Settings Box</em></p>
+</div>
+<p>Select UART2 from the drop-down interface menu.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="em docutils container">
+<p>RS-485 Settings Box</p>
+</div>
+<p>: to communicate with ezLINX hardware board through RS-485 port, you need to configure the device using the following features:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig15RS-485SettingsBox.jpg"><img alt="image14" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig15RS-485SettingsBox.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 15: RS-485 Settings Box</em></p>
+</div>
+<p><strong>Baud Rate:</strong></p>
+<p>Select the symbol rate for the RS-485 / RS-422 device. Note that the ADM2587E transceiver’s performance is not specified above 500 kBaud. From the “Baud Rate” drop-down menu, you can select different transmission rate values from: 110 bits/s to 1000000 bits/s</p>
+<p><strong>Parity:</strong></p>
+<p>Select whether to append an even, odd or no parity bit to the end of each word transmitted.</p>
+<p><strong>Stop Bits:</strong></p>
+<p>Select between using one or two stop bits.</p>
+<p><strong>Word Size:</strong></p>
+<p>Select whether the application sends 7 bit words or 8 bit words.</p>
+<p><strong>Flow Control:</strong></p>
+<p>Select whether or not to use flow control. When connected to the ezLINX hardware platform no flow control should be selected.</p>
+<p><strong>Duplex:</strong></p>
+<p>Choose between half and full duplex operation. If using half duplex operation jumpers JP3, JP4 and JP40 should be connected on the ezLINX hardware</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="em docutils container">
+<p>RS-485 / RS-422 Routing Box</p>
+</div>
+<p>: The RS-485 / RS-422 interface supports hardware routing to the outputs of other interfaces. To enable hardware routing check the <strong>Enable Routing</strong> box and select the interface to route to from the drop down menu. To route to RS-232 select UART3 from the drop down menu.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig16Routingbox.jpg"><img alt="image15" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig16Routingbox.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 16: Routing box</em></p>
+</div>
+</section>
+<section id="rs-485-rs-422-send-receive-window">
+<h2>RS-485 / RS-422 Send/Receive Window<a class="headerlink" href="#rs-485-rs-422-send-receive-window" title="Link to this heading"></a></h2>
+<p>Shown below is the transmit/receive window for the RS-485/RS-422 protocol. The window is identical to the RS-232 send/receive window. The left hand text box is used to transmit data via the Send Data button, and the right hand text box is used to receive real time data.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig17RS-485-RS-422Send-ReceiveWindow.jpg"><img alt="image16" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig17RS-485-RS-422Send-ReceiveWindow.jpg" style="width: 850px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 17: RS-485/RS-422 Send/Receive Window</em></p>
+</div>
+<p>The following functions are also available:</p>
+<p><strong>On/Off buttons:</strong></p>
+<p>Turns the transceiver on or off. When off the RS-485 / RS -422 transceiver is disconnected.</p>
+<p><strong>Send Data:</strong></p>
+<p>Transmit the text contained in the Send box.</p>
+<p><strong>Auto:</strong></p>
+<p>Toggles the Auto setting, which transmits data automatically as you type it in the Send box.</p>
+<p><strong>Load File:</strong></p>
+<p>Opens a load file menu to select a .txt file to send. The contents of the file are automatically sent through the RS-485 / RS-422 port once loaded.</p>
+<p><strong>Clear:</strong></p>
+<p>Clears the text box.</p>
+<p><strong>Send Data Format:</strong></p>
+<p>Choose whether to send the characters in the text box as HEX or ASCII data.</p>
+<p><strong>Receive Data Format:</strong></p>
+<p>Choose whether to display the received data on the screen as HEX or ACSII characters.</p>
+<p><strong>Save To File:</strong></p>
+<p>Opens a create .txt file window. Once created all received data will be saved to this file.</p>
+<p>Click again to toggle the Save To File function.</p>
+<p>**Log To File: **</p>
+<p>Opens a create .txt file window. Once created all received data will be logged to this file with a timestamp. Click again to toggle the Log to File function.</p>
+<p>To close the Send/Receive window simply turn the transceiver off and click on a different interface button, or deselect the RS-485/RS-422 interface button from the sidebar to return to the RS—485/RS-422 Configuration Window.</p>
+</section>
+</section>
+<section id="isolated-i2c">
+<h1>Isolated I2C<a class="headerlink" href="#isolated-i2c" title="Link to this heading"></a></h1>
+<p>The isolated Inter-Integrated Circuit (I2C) interface on the ezLINX development platform is implemented using Analog Devices <a class="icon adi reference external" href="https://www.analog.com/adum1250" target="_blank">adum1250</a> and <a class="icon adi reference external" href="https://www.analog.com/adum5000" target="_blank">adum5000</a>. For more information on the I2C hardware implementation click <a class="reference internal" href="isolated-i2c.html"><span class="doc">here</span></a>.</p>
+<section id="i2c-configuration-window">
+<h2>I2C Configuration Window<a class="headerlink" href="#i2c-configuration-window" title="Link to this heading"></a></h2>
+<p>To open the I2C interface select it from the left hand sidebar. This will open the I2C configuration window:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig18I2CConfigurationWindow.jpg"><img alt="image17" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig18I2CConfigurationWindow.jpg" style="width: 850px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 18: I2C Configuration Window</em></p>
+</div>
+<p>To configure the I2C for use, check the <strong>Transceiver Enable</strong> box (seen above). The Transceiver Enable box is present on all the configuration windows, and is used to enable or disable the transceivers on the ezLINX hardware.</p>
+<p>The I2C Configuration Window is divided into two boxes:</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="em docutils container">
+<p>Interface Settings Box</p>
+</div>
+<p>: to select the appropriate interface for I2C transceiver.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig19InterfaceSettingsBox.jpg"><img alt="image18" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig19InterfaceSettingsBox.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 19: Interface Settings Box</em></p>
+</div>
+<p>Select TWI1 from the drop-down interface menu.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="em docutils container">
+<p>I2C Settings Box</p>
+</div>
+<p>: to communicate with ezLINX hardware board through I2C protocol, you need to configure the device using the following features:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig20I2Csettingsbox.jpg"><img alt="image19" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig20I2Csettingsbox.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 20: I2C settings box</em></p>
+</div>
+<p><strong>Client:</strong></p>
+<p>If you are using the ADUM1250 as a master device, this specifies which client to connect to. If you are using the ADUM1250 as a slave device, this specifies the client address of the transceiver.</p>
+<p><strong>Baud Rate:</strong></p>
+<p>Select either 100 Baud or 400 Baud as the symbol rate.</p>
+<p><strong>Mode:</strong></p>
+<p>Select whether to configure the connected device as a master or a slave.</p>
+<p><strong>Write Read Flag:</strong></p>
+<p>Select whether the device is performing a read or write operation.</p>
+<p>To confirm your selection click the <strong>Use Changes</strong> button. If you are connected to an ezLINX hardware platform and the <strong>Enable Transceiver</strong> box is checked, this will open the I2C Transmit/Receive window.</p>
+</section>
+<section id="i2c-send-receive-window">
+<h2>I2C Send/Receive Window<a class="headerlink" href="#i2c-send-receive-window" title="Link to this heading"></a></h2>
+<p>Shown below is the transmit/receive window for the I2C protocol. The left hand text box is used to transmit data via the <strong>Send Data</strong> button, and the right hand text box is used to receive real time data.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig21-I2CSend-ReceiveWindow.jpg"><img alt="image20" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig21-I2CSend-ReceiveWindow.jpg" style="width: 850px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 21: I2C Send/Receive Window</em></p>
+</div>
+<p>The I2C module can only send Hexadecimal data. When using the ezLINX I2C transceiver to write to a slave device, data must be sent in multiples of 2 bytes (4 HEX digits) for correct operation. The first byte represents the memory address to write to, while the second byte contains the value to be written to that address. When using the I2C transceiver to read from a slave device, the data must be sent as one or more whole bytes (multiples of 2 HEX digits). Each byte specifies a memory address to read from. When sent the value of that register will be received by the master from the slave and displayed in the Receive window.</p>
+<p>The following functions are also available:</p>
+<p><strong>On/Off buttons:</strong></p>
+<p>Turns the transceiver on or off. When off the I2C transceiver is disconnected.</p>
+<p>**Send Data: **</p>
+<p>Transmit the text written in the Send box.</p>
+<p><strong>Auto:</strong></p>
+<p>Toggles the Auto setting, which transmits data automatically as you type it in the Send box.</p>
+<p><strong>Load File:</strong></p>
+<p>Opens a load file menu to select a .txt file to send. The contents of the file are automatically sent through the I2C port once loaded. Files must contain hexadecimal characters only.</p>
+<p><strong>Clear:</strong></p>
+<p>Clears the text box.</p>
+<p><strong>Save To File:</strong></p>
+<p>Opens a create .txt file window. Once created all received data will be saved to this file.</p>
+<p>Click again to toggle the Save To File function.</p>
+<p>**Log To File: **</p>
+<p>Opens a create .txt file window. Once created all received data will be logged to this file with a timestamp. Click again to toggle the Log to File function.</p>
+<p>To close the Send/Receive window simply turn the transceiver off and click on a different interface button, or deselect the I2C interface button from the sidebar to return to the I2C Configuration Window.</p>
+</section>
+</section>
+<section id="isolated-spi">
+<h1>Isolated SPI<a class="headerlink" href="#isolated-spi" title="Link to this heading"></a></h1>
+<p>The two isolated Serial Peripheral Interface (SPI) ports on the ezLINX development platform are implemented using Analog Devices <a class="icon adi reference external" href="https://www.analog.com/adum3401" target="_blank">adum3401</a>, <a class="icon adi reference external" href="https://www.analog.com/adum3402" target="_blank">adum3402</a> and <a class="icon adi reference external" href="https://www.analog.com/adum5000" target="_blank">adum5000</a> signal and power isolators. For more information on the SPI hardware implementation click <a class="reference internal" href="isolated-spi.html"><span class="doc">here</span></a>.</p>
+<p>.</p>
+<section id="spi-configuration-window">
+<h2>SPI Configuration Window<a class="headerlink" href="#spi-configuration-window" title="Link to this heading"></a></h2>
+<p>To open the SPI menu select it using the button on the right hand sidebar of the Application. This opens the SPI configuration window:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig22-SPIConfigurationWindow.jpg"><img alt="image21" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig22-SPIConfigurationWindow.jpg" style="width: 850px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 22: SPI Configuration Window.</em></p>
+</div>
+<p>To configure the SPI for use, check the <strong>Transceiver Enable</strong> box (seen above). The Transceiver Enable box is present on all the configuration windows, and is used to enable or disable the transceivers on the ezLINX hardware.</p>
+<p>The SPI Configuration interface is divided into three boxes:</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="em docutils container">
+<p>Interface Settings Box</p>
+</div>
+<p>: To select the appropriate interface for SPI transceiver.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig23-InterfaceSettingsBox.jpg"><img alt="image22" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig23-InterfaceSettingsBox.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 23: Interface Settings Box.</em></p>
+</div>
+<p>Select SPI0, SPI1 or SPI2 from the drop-down interface menu.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="em docutils container">
+<p>SPI Settings Box</p>
+</div>
+<p>: to communicate with ezLINX hardware board through SPI protocol, you need to choose the following parameters:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig24-SPISettingsBox.jpg"><img alt="image23" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig24-SPISettingsBox.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 24: SPI Settings Box.</em></p>
+</div>
+<p><strong>Max Speed:</strong></p>
+<p>Specifies the max speed (in bps) that the SPI interface will operate at. The maximum baud rate that can be used it 32.81 MHz.</p>
+<p>**LSB First: **</p>
+<p>Activate the LSB (Least Significant Byte) First mode.</p>
+<p>On power up, MSB-first mode is the default. This can be changed by programming the configuration register. In LSB-first mode, the serial exchange starts with the lowest-order bit and ends with the MSB (Most Significant Byte).</p>
+<p>The instruction is 16 bits long, consisting of 2 bytes. From the SPI configuration window, you can choose the number of bits to be reversed.</p>
+<p><strong>Word Size:</strong></p>
+<p>Select whether to send data as 1, 2 or 4 byte words.</p>
+<p><strong>Operation Mode:</strong></p>
+<p>Select whether the device is operating as a master as a slave.</p>
+<p><strong>Channel:</strong></p>
+<p>This is only available when the Operation Mode selected is Master. This selects which slave device to connect to, via the slave select lines. The ezLINX hardware platform has 3 slave select lines and a master can thus be connected to up to 3 slave devices. To confirm your selection click the Use Changes button. If you are connected to an ezLINX hardware platform and the Enable Transceiver box is checked, this will open the SPI Send/Receive window</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="em docutils container">
+<p>SPI Routing Box</p>
+</div>
+<p>: The SPI interfaces support hardware routing to the outputs of other interfaces. To enable hardware routing check the <strong>Enable Routing</strong> box and select the interface to route to from the drop down menu. To route to RS-232 select UART3 from the drop down menu.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig25-Routingbox.jpg"><img alt="image24" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig25-Routingbox.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 25: Routing box.</em></p>
+</div>
+<p>To confirm your selection click the Use Changes button. If you are connected to an ezLINX hardware platform and the Enable Transceiver box is checked, this will open the SPI Send/Receive window.</p>
+</section>
+<section id="spi-send-receive-window">
+<h2>SPI Send/Receive Window<a class="headerlink" href="#spi-send-receive-window" title="Link to this heading"></a></h2>
+<p>Shown below is the transmit/receive window for the SPI protocol. The left hand text box is used to transmit data via the Send Data button, and the right hand text box is used to receive real time data.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig26-SPISend-ReceiveWindow.jpg"><img alt="image25" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig26-SPISend-ReceiveWindow.jpg" style="width: 850px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 26: SPI Send/Receive Window.</em></p>
+</div>
+<p>The following functions are also available:</p>
+<p><strong>On/Off buttons:</strong></p>
+<p>Turns the transceiver on or off. When off the SPI transceiver is disconnected.</p>
+<p><strong>Auto:</strong></p>
+<p>Toggles the Auto setting, which transmits data automatically as you type it in the Send box.</p>
+<p><strong>Load File:</strong></p>
+<p>Opens a load file menu to select a .txt file to send. The contents of the file are automatically sent through the SPI port once loaded.</p>
+<p><strong>Clear:</strong></p>
+<p>Clears the text box.</p>
+<p><strong>Send Data Format:</strong></p>
+<p>Choose whether to send the characters in the text box as HEX or ASCII data.</p>
+<p><strong>Receive Data Format:</strong></p>
+<p>Choose whether to display the received data on the screen as HEX or ACSII characters.</p>
+<p><strong>Save To File:</strong></p>
+<p>Opens a create .txt file window. Once created all received data will be saved to this file. Click again to toggle the Save To File function.</p>
+<p><strong>Log To File:</strong></p>
+<p>Opens a create .txt file window. Once created all received data will be logged to this file with a timestamp. Click again to toggle the Log to File function.</p>
+<p>To close the Send /Receive window simply turn the transceiver off and click on a different interface button, or deselect the SPI interface button from the sidebar to return to the SPI Configuration Window.</p>
+</section>
+</section>
+<section id="isolated-can">
+<h1>Isolated CAN<a class="headerlink" href="#isolated-can" title="Link to this heading"></a></h1>
+<p>The isolated Controller Area Network (CAN) interface on the ezLINX development platform is implemented using Analog Devices <a class="icon adi reference external" href="https://www.analog.com/adm3053" target="_blank">adm3053</a> transceiver. For more information on the CAN hardware implementation click <a class="reference internal" href="isolated-can.html"><span class="doc">here</span></a>.</p>
+<section id="can-configuration-window">
+<h2>CAN Configuration Window<a class="headerlink" href="#can-configuration-window" title="Link to this heading"></a></h2>
+<p>To open the CAN menu select it from the sidebar on the left hand side of the Application. The CAN button on the right hand side of the application is unimplemented and can’t be selected. Selecting CAN from the left hand sidebar opens the CAN configuration window shown below:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig27-CANConfigurationWindow.jpg"><img alt="image26" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig27-CANConfigurationWindow.jpg" style="width: 850px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 27: CAN Configuration window.</em></p>
+</div>
+<p>To configure the CAN for use, check the “Transceiver Enable” box (seen above). The Transceiver Enable box is present on all the configuration windows, and is used to enable or disable the transceivers on the ezLINX hardware. The CAN Configuration interface is divided into three boxes:</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="em docutils container">
+<p>Interface Settings Box</p>
+</div>
+<p>: to select the appropriate interface for CAN transceiver.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig28-InterfaceSettingsBox.jpg"><img alt="image27" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig28-InterfaceSettingsBox.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 28: Interface settings box.</em></p>
+</div>
+<p>Select CAN0 from the drop-down interface menu.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="em docutils container">
+<p>CAN Settings Box</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">to communicate with ezLINX hardware board through CAN protocol, you need to specify the following data<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig29-CANSettingsBox.jpg"><img alt="image28" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig29-CANSettingsBox.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 29: CAN Settings Box.</em></p>
+</div>
+<p><strong>Bit Rate:</strong></p>
+<p>Select the bit rate that the ADM3053 will operate at. Note that the ADM3053 is not specified at data rates above 1Mbps.</p>
+<p><strong>Error Filter:</strong></p>
+<p>Error filter allows detection of hardware issues on the physical transceiver layer as well as arbitration problems and error frames. The reception of error frames is disabled by default. To enable it, check the “Error Filter” box. You can then select your desired error filter from the below list by checking the relevant box:</p>
+<p>CAN_ERR_TX_TIMEOUT : TX timeout (netdevice driver).</p>
+<p>CAN_ERR_LOSTARB : Lost arbitration.</p>
+<p>CAN_ERR_CRTL : Controller problems.</p>
+<p>CAN_ERR_PROT : Protocol violations.</p>
+<p>CAN_ERR_TRX : Transceiver status.</p>
+<p>CAN_ERR_ACK : Received no ACK on transmission.</p>
+<p>CAN_ERR_BUSOFF : Bus off.</p>
+<p>CAN_ERR_BUSERROR : Bus error.</p>
+<p>CAN_ERR_RESTARTED : Controller restarted.</p>
+<p>CAN_ERR_MASK : Omit EFF, RTR, ERR flags.</p>
+<p><strong>CAN Filter/Mask:</strong></p>
+<p>The reception of CAN frames can be controlled by three filters/masks. Each filter/mask can be used for messages with either standard or extended identifiers. Note that you must check the box next to the appropriate name of the filter/mask to enter your selected value.</p>
+<p><strong>Normal Filter 1 – 3:</strong></p>
+<p>Filter for standard frame (11 bit identifier).</p>
+<p><strong>Extended Filter 1 – 3:</strong></p>
+<p>Filter for extended frame (29 bit identifier).</p>
+<p><strong>Normal Mask 1 – 3:</strong></p>
+<p>Mask for standard frame (11 bit identifier).</p>
+<p><strong>Extended Filter 1 - 3:</strong></p>
+<p>Mask for extended frame (29 bit identifier).</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="em docutils container">
+<p>CAN Routing Box</p>
+</div>
+<p>: The CAN interface supports hardware routing to the outputs of other interfaces. To enable hardware routing check the Enable Routing box and select the interface to route to from the drop down menu. To route to RS-485 select UART2 from the drop down menu.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig30-RoutingBox.jpg"><img alt="image29" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig30-RoutingBox.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 30: Routing box.</em></p>
+</div>
+<p>To confirm your selection click the Use Changes button. If you are connected to an ezLINX hardware platform and the Enable Transceiver box is checked, this will open the CAN Send/Receive window.</p>
+</section>
+<section id="can-send-receive-window">
+<h2>CAN Send/Receive Window<a class="headerlink" href="#can-send-receive-window" title="Link to this heading"></a></h2>
+<p>Shown below is the transmit/receive window for the CAN protocol. The left hand text box is used to transmit data via the Send Data button, and the right hand text box is used to receive real time data.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig31-CANSendReceiveWindow.jpg"><img alt="image30" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig31-CANSendReceiveWindow.jpg" style="width: 850px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 31: CAN Send/Receive window.</em></p>
+</div>
+<p>The CAN module can only send Hexadecimal data. The colon is used to separate the two parts of each CAN message. Each CAN message have both an identifier and the data. The identifier can be either a standard identifier (SID), ranging from 000h – 7FFh, or an extended ID (EXID), from 8000 0000h – FFFF FFFFh. The data section of each CAN message must be sent as whole bytes (multiples of two HEX digits). Some examples of CAN messages are shown below:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig32-ExamplesofCANMessages.jpg"><img alt="image31" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig32-ExamplesofCANMessages.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 32: Examples of CAN messages.</em></p>
+</div>
+<p>The following functions are also available:</p>
+<p><strong>On/Off buttons:</strong></p>
+<p>Turns the transceiver on or off. When off the CAN transceiver can not transmit or receive data.</p>
+<p><strong>Auto:</strong></p>
+<p>Toggles the Auto setting, which transmits data automatically as you type it in the Send box.</p>
+<p><strong>Load File:</strong></p>
+<p>Before using this function you must check the File box. Opens a load file menu to select a .txt file to send. Your choice must be a correctly formatted file containing only hexadecimal values, with the identifier and data sections of each CAN message separated by a colon (no spaces). The contents of the file are automatically sent through the CAN port once loaded.</p>
+<p><strong>Clear:</strong></p>
+<p>Clears the text box.</p>
+<p><strong>Save To File:</strong></p>
+<p>Opens a create .txt file window. Once created all received data will be saved to this file.</p>
+<p>Click again to toggle the Save To File function.</p>
+<p>**Log To File: **</p>
+<p>Opens a create .txt file window. Once created all received data will be logged to this file with a timestamp. Click again to toggle the Log to File function.</p>
+<p>To close the Send/Receive window simply turn the transceiver off and click on a different interface button, or deselect the CAN interface button from the sidebar to return to the CAN Configuration Window.</p>
+</section>
+</section>
+<section id="isolated-lvds">
+<h1>Isolated LVDS<a class="headerlink" href="#isolated-lvds" title="Link to this heading"></a></h1>
+<p>The isolated LVDS interface on the ezLINX hardware platform is implemented using the <a class="icon adi reference external" href="https://www.analog.com/adum3442" target="_blank">adum3442</a> and <a class="icon adi reference external" href="https://www.analog.com/adum5000" target="_blank">adum5000</a> signal and power isolators, and the <a class="icon adi reference external" href="https://www.analog.com/adn4663" target="_blank">adn4663</a> and <a class="icon adi reference external" href="https://www.analog.com/adn4664" target="_blank">adn4664</a> LVDS receivers and drivers. For more information on the LVDS implementation click <a class="reference internal" href="isolated-lvds.html"><span class="doc">here</span></a>.</p>
+<section id="lvds-configuration-window">
+<h2>LVDS Configuration Window<a class="headerlink" href="#lvds-configuration-window" title="Link to this heading"></a></h2>
+<p>To open the Low Voltage Differential Signalling (LVDS) menu select it from the sidebar on the right hand side of the Application. This opens the LVDS configuration window shown below:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig33-LVDSConfigurationWindow.jpg"><img alt="image32" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig33-LVDSConfigurationWindow.jpg" style="width: 850px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 33: LVDS Configuration Window.</em></p>
+</div>
+<p>To configure the LVDS interface for use, check the <strong>Transceiver Enable</strong> box (seen above). The Transceiver Enable box is present on all the configuration windows, and is used to enable or disable the transceivers on the ezLINX hardware.</p>
+<p>The LVDS Configuration interface is divided into two boxes:</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="em docutils container">
+<p>Interface Settings Box</p>
+</div>
+<p>: To select the appropriate interface for LVDS transceiver.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig34-InterfaceSettingsBox.jpg"><img alt="image33" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig34-InterfaceSettingsBox.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 34: Interface settings box.</em></p>
+</div>
+<p>Select SPORT2 from the drop-down interface menu.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="em docutils container">
+<p>LVDS Settings Box</p>
+</div>
+<p>: to configure the LVDS interface:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig35-LVDSSettingsBox.jpg"><img alt="image34" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig35-LVDSSettingsBox.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 35: LVDS settings box.</em></p>
+</div>
+<p><strong>Baud Rate Tx:</strong></p>
+<p>Specifies the baud rate that the LVDS interface will transmit data at.</p>
+<p><strong>Baud Rate Rx:</strong></p>
+<p>Specifies the baud rate that the LVDS interface will read received data at.</p>
+<p><strong>Word Size:</strong></p>
+<p>Select whether to send data in 1 or 2 byte words.</p>
+<p><strong>Frame Delay:</strong></p>
+<p>Transfer delay.</p>
+<p><strong>Active Low:</strong></p>
+<p>Active Low Enable and Power-Down Input with Pull-Down (3 V TTL/CMOS). If EN is held high, EN enables the drivers when low or open circuit and disables the drivers and powers down the device when high.</p>
+<p><strong>Internal Clock Tx:</strong></p>
+<p>Select whether to use the internal clock to driver the LVDS transmitter, or to trigger on an external clock. Select 1 for an internal clock or 0 for an external clock. For best results for board to board communication one device should use an internal clock and the other device trigger on this clock.</p>
+<p><strong>Internal Clock Rx:</strong></p>
+<p>Select whether to use the internal clock to drive the LVDS receiver, or to trigger on an external clock. Select 1 for an internal clock or 0 for an external clock. For best results for board to board communication one device should use an internal clock and the other device trigger on this clock. Secondary Channel Enable:</p>
+<p>Select whether to enable the second LVDS channel (Pins 17 – 32). Select 1 to enable this channel or 0 to disable it.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="em docutils container">
+<p>LVDS Routing Box</p>
+</div>
+<p>: The LVDS interface supports hardware routing to the outputs of other interfaces. To enable hardware routing check the Enable Routing box and select the interface to route to from the drop down menu. To route to RS-485 select UART2 from the drop down menu.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig36-LVDSRoutingBox.jpg"><img alt="image35" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig36-LVDSRoutingBox.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 36: LVDS Routing Box.</em></p>
+</div>
+<p>To confirm your selection click the <strong>Use Changes</strong> button. If you are connected to an ezLINX hardware platform and the <strong>Enable Transceiver</strong> box is checked, this will open the LVDS Send/Receive window.</p>
+</section>
+<section id="lvds-send-receive-window">
+<h2>LVDS Send/Receive Window<a class="headerlink" href="#lvds-send-receive-window" title="Link to this heading"></a></h2>
+<p>Shown below is the transmit/receive window for the LVDS protocol. The window is identical to the RS -232 send/receive window. The left hand text box is used to transmit data via the <strong>Send Data</strong> button, and the right hand text box is used to receive real time data.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig37-LVDSSend-ReceiveWindow.jpg"><img alt="image36" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig37-LVDSSend-ReceiveWindow.jpg" style="width: 850px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 37: LVDS Send/Receive window.</em></p>
+</div>
+<p>The following functions are also available:</p>
+<p><strong>On/Off buttons:</strong></p>
+<p>Turns the transceiver on or off. When off the LVDS transceiver can not transmit or receive data.</p>
+<p><strong>Auto:</strong></p>
+<p>Toggles the Auto setting, which transmits data automatically as you type it in the Send box.</p>
+<p><strong>Load File:</strong></p>
+<p>Opens a load file menu to select a .txt file to send. The contents of the file are automatically sent through the LVDS port once loaded.</p>
+<p><strong>Clear:</strong></p>
+<p>Clears the text box.</p>
+<p><strong>Send Data Format:</strong></p>
+<p>Choose whether to send the characters in the text box as HEX or ASCII data.</p>
+<p><strong>Receive Data Format:</strong></p>
+<p>Choose whether to display the received data on the screen as HEX or ACSII characters.</p>
+<p><strong>Save To File:</strong></p>
+<p>Opens a create .txt file window. Once created all received data will be saved to this file. Click again to toggle the Save To File function.</p>
+<p><strong>Log To File:</strong></p>
+<p>Opens a create .txt file window. Once created all received data will be logged to this file with a timestamp. Click again to toggle the Log to File function.</p>
+<p>To close the Send /Receive window simply turn the transceiver off and click on a different interface button, or deselect the LVDS interface button from the sidebar to return to the LVDS Configuration Window.</p>
+</section>
+</section>
+<section id="gpio-leds">
+<h1>GPIO (LEDs)<a class="headerlink" href="#gpio-leds" title="Link to this heading"></a></h1>
+<p>The Sample PC Application also has GPIO functionality, through which you can control 6 LED’s on the ezLINX hardware platform. To access the GPIO interface, select the GPIO button from the left hand sidebar of the application. This opens the GPIO Interface Settings window.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig38-GPIOConfigurationWindow.jpg"><img alt="image37" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig38-GPIOConfigurationWindow.jpg" style="width: 850px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 38: GPIO Configuration Window.</em></p>
+</div>
+<p>To enable a GPIO pin, check the GPIO box on the left hand side of the screen.</p>
+<p>The GPIO Configuration Window is divided into two boxes:</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="em docutils container">
+<p>Interface Settings Box</p>
+</div>
+<p>: to select the appropriate interface for GPIO transceiver.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig39-InterfaceSettingsBox.jpg"><img alt="image38" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig39-InterfaceSettingsBox.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 39: Interface settings box.</em></p>
+</div>
+<p>Select GPIO from the drop-down interface menu.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="em docutils container">
+<p>GPIO Settings Box</p>
+</div>
+<p>: to configure GPIO pins:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig40-GPIOSettingsBox.jpg"><img alt="image39" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig40-GPIOSettingsBox.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 40: GPIO Settings Box.</em></p>
+</div>
+<p><strong>Direction:</strong></p>
+<p>Select whether you wish to configure the GPIO pin as an input or an output. Select 0 for Input and 1 for output.</p>
+<p><strong>GPIO Pin:</strong></p>
+<p>Select which GPIO pin to use.</p>
+<p><strong>Value:</strong></p>
+<p>Select the binary value for the GPIO pin.</p>
+<p>By checking multiple GPIO enable boxes, you can use multiple GPIO pins together. To confirm your settings click the Use Changes box at the bottom of the screen.</p>
+</section>
+<section id="firmware-update">
+<h1>Firmware Update<a class="headerlink" href="#firmware-update" title="Link to this heading"></a></h1>
+<p>To update the embedded software version on the evaluation board, there are a number of steps you must follow. First the application FTPServer.exe must be allowed through Windows Firewall. To do this, go to:</p>
+<p><strong>Windows XP / Vista:</strong> Start → Control Panel → Windows Firewall → Exceptions → Add Program</p>
+<p><strong>Windows 7:</strong> Start → Control Panel (All items view) → Windows Firewall → Allow a program through Windows Firewall → Change settings → Allow another program And select FTPServer.exe from the distributed package.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig41_WindowsFirewall.jpg"><img alt="image40" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig41_WindowsFirewall.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 41: Allow FTPServer through Windows Firewall.</em></p>
+</div>
+<p>To use FTPServer.exe, you must configure the application to connect to the correct IP address. In Configure Settings, under PASV Settings, you must select the IP address of the adapter used to connect the board to the PC from the drop down menu, as shown below:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig42_FTPServerWindow.jpg"><img alt="image41" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig42_FTPServerWindow.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 42: Update Firmware.</em></p>
+</div>
+<p>In User Accounts, you must then change the path to the directory containing the uImage file to be downloaded to the ezLINX hardware platform. Click Start at the top left of the application to begin running the FTP service.</p>
+<p>From the PC software enter the IP Address of the server that contains the needed uImage than press Send button.</p>
+<p>The software application prompts you to restart the application.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig43_RestartApplicationWindow.jpg"><img alt="image42" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Fig43_RestartApplicationWindow.jpg" style="width: 400px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 43: Restart Application to update the embedded software version.</em></p>
+</div>
+<p>Close the application and wait approximately 2 – 3 minutes for the the application to erase the hardware platform and download and extract the new firmware version. <strong>WARNING: Do not reset the ezLINX hardware during the update.</strong> You will know the transfer is complete when the data sent counter at the bottom right of the Quick ‘n Easy FTP Server application is equal to the size of the update file. The board must then be reset and the PC application started. To confirm that the firmware update was downloaded correctly, go to the board configuration window and click the Check button next to the Embedded Version box. This should display the new version.</p>
+</section>
+<section id="transceiver-status-window">
+<h1>Transceiver Status Window<a class="headerlink" href="#transceiver-status-window" title="Link to this heading"></a></h1>
+<p>The Transceivers Status window (shown below) allows the user to monitor the status of each interface as it transmits data. To access the Transceivers Status window click on the word STATUS on the bottom left hand side of the application. The enabled transceivers will show up with a checked box, and the amount of data sent and received through each interface during the current session is shown in the boxes in kilobytes. The Tx box displays the amount of kilobytes of data that has been sent through that transceiver, and the Rx box displays the amount of kilobytes of data has been received. To refresh the figures you must close and reopen the Transceivers Status window as the figures do not update in real-time.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/TRANSCEIVERSTATUS.jpg"><img alt="image43" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/TRANSCEIVERSTATUS.jpg" style="width: 500px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 44: Transceiver Status window.</em></p>
+</div>
+</section>
+<section id="transceivers-configuration-window">
+<h1>Transceivers Configuration Window<a class="headerlink" href="#transceivers-configuration-window" title="Link to this heading"></a></h1>
+<p>To access the Transceiver Configuration window (shown below) select the View Configuration button at the bottom of the application. The Transceivers Configuration window allows the user to view the global configuration of all transceivers and GPIO on the ezLINX hardware platform. From here you can see which transceivers are enabled, what hardware routing is active and the settings of each individual interface. The configuration can not be modified from this window, however the application supports loading and saving configurations as an XML file. To save your current configuration simply click the Save button and choose a name. To load a previously saved configuration press Load and select the desired XML config file.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/ConfigurationWindow.jpg"><img alt="image44" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/ConfigurationWindow.jpg" style="width: 800px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 45: Configuration window</em></p>
+</div>
+<p>The configuration window has three buttons at the left bottom enabling the following functionalities:</p>
+<ol class="arabic simple">
+<li><p>Load an existing configuration from an XML file through the “Load” button. The Load Interface will appear:</p></li>
+</ol>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/LoadInterface.jpg"><img alt="image45" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/LoadInterface.jpg" style="width: 300px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 46: Loading an existing configuration to the board.</em></p>
+</div>
+<ul class="simple">
+<li><p>Clicking on “OK” button means that you enable the load of this configuration.</p></li>
+<li><p>Clicking on “Cancel” button, the load will be canceled and this window will be closed.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Save the current configuration to a new XML file when clicking on the Save button.</p></li>
+<li><p>Close the configuration window using the Close button. A confirmation message will appear asking if the configuration changes should be kept or not.</p></li>
+</ol>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Askforkeepingtheloadedconfiguration.jpg"><img alt="image46" src="https://wiki.analog.com/_media/resources/eval/ezlinx/v1.1.3/ug/Askforkeepingtheloadedconfiguration.jpg" style="width: 300px;" /></a></p>
+<div class="centeralign docutils container">
+<p><em>Figure 47: Ask for keeping the loaded configuration before closing the configuration window.</em></p>
+</div>
+<p><strong>Note:</strong> When a configuration is loaded you must exit the Transceivers Configuration window via the Close button. Exiting the window via the X will not load the configuration.</p>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

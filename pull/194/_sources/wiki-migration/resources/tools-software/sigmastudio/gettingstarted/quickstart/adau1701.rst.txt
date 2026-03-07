@@ -1,0 +1,36 @@
+ADAU1701
+========
+
+.. important::
+
+   This guide refers to the pre-2007 version of the ADAU1701 evaluation board. It will be updated soon. For updated user guide information, check here: :adi:`UG-072.pdf <static/imported-files/user_guides/UG-072.pdf>`.
+
+
+Your First Project: Stereo Audio Input/Output with Volume Control
+-----------------------------------------------------------------
+
+-  Launch SigmaStudio and create a new project. The Hardware Configuration tab and workspace will display.
+-  Drag a DSPSigma100, E2Prom, and an EvalBoard100 block into the workspace.
+-  Connect the EvalBoard100 to the DSPSigma100 block by clicking and dragging from the top blue output pin to the green input pin.
+-  Connect the DSPSigma100 bottom blue output pin to the green input pin on the E2Prom block.
+-  The result should look something like this:
+
+.. image:: https://wiki.analog.com/_media/quickstart1.png
+   :alt: quickstart1.png
+
+-  Click Schematic (tab at the top of workspace).
+-  Click IO in the Toolbox and drag an Input block to the workspace.
+-  Click Volume Controls in the Toolbox and drag a Single Volume Control to the workspace.
+-  Right-click that block (called Single 1) and choose Add Algorithm → IC1 → Gain (no slew). (This adds input / output.)
+-  Connect the Input block’s blue output pins to the green input pins on the Volume Control.
+-  Click IO in the Toolbox and drag two Output blocks to the workspace.
+-  If your speakers aren’t connected to outputs 0/1, use the dropdown to change them to the correct outputs.
+-  Connect the Volume Control blue output pins to the green input pins on the Output blocks.
+-  After ensuring that your board is powered and connected to the PC, click Link-Compile-Download on the taskbar.
+
+Assuming the project compiled without error, you will be in **Ready-Download** mode and see something similar to this figure.
+
+.. image:: https://wiki.analog.com/_media/quickstart2.png
+   :alt: quickstart2.png
+
+-  Start your source playing and you should hear audio. Move the volume slider to change the level.

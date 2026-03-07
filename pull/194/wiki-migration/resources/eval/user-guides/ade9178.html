@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The high-level structure of the design is illustrated in the block diagram below. Dotted lines indicate the isolation barrier of the design. Protective earth is shown on the safe side. Current and voltage measurement on phases A, B and C is performed after the power supply circuitry ensuring the customer is not charged for power losses in the EVSE. It is performed after the relay, just before the connector to the EV. This means metrology should always be read as zero when the relay is open. Voltage is also measured before the relay on each phase. The difference between the two voltage measurements can be used to detect stuck relay events. Pen fault detection is also performed using these pre-relay potential dividers." name="description" />
+
+    <title>Using ADE9178 for EV Charger Metrology Solution &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Using ADE9178 for EV Charger Metrology Solution</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li><a class="reference internal" href="#functional-block-diagram">Functional Block Diagram</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#analog-front-end-detailed-design">Analog Front-End Detailed Design</a></li>
+<li><a class="reference internal" href="#pen-fault-detection">Pen Fault Detection</a><ul>
+<li><a class="reference internal" href="#introduction-to-pen-fault-detection">Introduction to Pen Fault Detection</a></li>
+<li><a class="reference internal" href="#solution-from-analog-devices">Solution from Analog Devices</a></li>
+<li><a class="reference internal" href="#setting-up-the-ade9178-part-for-pen-fault-detection">Setting up the ADE9178 Part for PEN Fault Detection</a><ul>
+<li><a class="reference internal" href="#dips-and-swells-on-pen-fault-channels">Dips and Swells on PEN Fault Channels</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stuck-relay-detection">Stuck Relay Detection</a><ul>
+<li><a class="reference internal" href="#introduction-to-stuck-relay-detection">Introduction to Stuck Relay Detection</a></li>
+<li><a class="reference internal" href="#setting-up-the-ade9178-part-for-stuck-relay-detection">Setting up the ADE9178 Part for Stuck Relay Detection</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#layout-information">Layout Information</a><ul>
+<li><a class="reference internal" href="#emc-guidelines">EMC Guidelines</a></li>
+<li><a class="reference internal" href="#emissions">Emissions</a><ul>
+<li><a class="reference internal" href="#isopower-emissions-ade9113x4-32-5pf">Isopower Emissions ADE9113x4 32.5pF</a></li>
+<li><a class="reference internal" href="#isopower-emissions-ade9113x4-67pf">Isopower Emissions ADE9113x4 67pF</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#via-placement">VIA Placement</a><ul>
+<li><a class="reference internal" href="#how-to-utilise-a-single-pcb-design-for-single-phase-three-phase-configurations">How to Utilise a Single PCB Design for Single-Phase &amp; Three-Phase Configurations</a></li>
+<li><a class="reference internal" href="#physical-changes">Physical Changes</a></li>
+<li><a class="reference internal" href="#general-configuration-changes">General Configuration Changes</a></li>
+<li><a class="reference internal" href="#pen-fault-configuration-changes">PEN Fault Configuration Changes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="using-ade9178-for-ev-charger-metrology-solution">
+<h1>Using ADE9178 for EV Charger Metrology Solution<a class="headerlink" href="#using-ade9178-for-ev-charger-metrology-solution" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">This application note details the metrology component of a 22kW three phase AC Electric Vehicle Supply Equipment (EVSE) design. The metrology solution has been built around the ADE9178 metrology IC and ADE911x isolated, simultaneously sampling Σ-Δ ADCs. This part comes in a 2 (ADE9112) or 3 (ADE9113) channel variant. The phase currents are sensed using shunts, and the phase voltages are measured using resistor dividers. A MAX32672 micro-controller manages the ADE9178 over SPI communications. The design also features a residual current detector (RCD), 4-pole relay, LCD display, CF pulse output and non-volatile memory module (EEPROM).</div>
+<div class="line">This document provides details on how to reproduce this design. It also highlights the features of the ADE9178 metrology IC which are of particular use in an EVSE use case. These include PEN fault detection and stuck relay detection. For both of these, a detailed guide is included on how to setup the part to use the feature and interpret the results.</div>
+</div>
+<section id="functional-block-diagram">
+<h3>Functional Block Diagram<a class="headerlink" href="#functional-block-diagram" title="Link to this heading"></a></h3>
+<p>The high-level structure of the design is illustrated in the block diagram below. Dotted lines indicate the isolation barrier of the design. Protective earth is shown on the safe side. Current and voltage measurement on phases A, B and C is performed after the power supply circuitry ensuring the customer is not charged for power losses in the EVSE. It is performed after the relay, just before the connector to the EV. This means metrology should always be read as zero when the relay is open. Voltage is also measured before the relay on each phase. The difference between the two voltage measurements can be used to detect stuck relay events. Pen fault detection is also performed using these pre-relay potential dividers.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/jever_block_diagram.png"><img alt="jever_block_diagram.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/jever_block_diagram.png" style="width: 750px;" /></a> <em>Figure 1: Functional Block Diagram</em></p>
+</section>
+</section>
+<section id="analog-front-end-detailed-design">
+<h2>Analog Front-End Detailed Design<a class="headerlink" href="#analog-front-end-detailed-design" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">The analog front-end of the design consists of four ADCs. Three of the ADCs are 2 channel isolated ADE9112 parts. These are used to convert voltage and current measurements on phases A, B and C. On each of these ADCs, channel input pins IP and IM are connected to a 500μΩ shunt. Since maximum voltage range of input pins IP and IM is ±31.25mV, full-scale current inputs for the design are given by:</div>
+<div class="line"><span class="math notranslate nohighlight">\(\displaystyle I_{FS} = (I_{ADCFS}/Shunt_{RES} \times \sqrt{2}) = (0.\frac{03125}{500} \times 10^{-6} \times \sqrt{2}) = 44.188A_{rms}\)</span></div>
+<div class="line">The other channel input pins V1P and V1M are connected to a potential divider consisting of three 330kΩ resistors on the top of the divider and a 1kΩ resistor on the bottom giving a divider ratio of:</div>
+<div class="line"><span class="math notranslate nohighlight">\(R2/R1+R2 = 1000/(1000+990 \times 10^3) = 0.001\)</span></div>
+</div>
+<div class="line-block">
+<div class="line">Therefore, since maximum voltage range of input pins V1P and V1M is ±1V in fully differential mode, theoretical full-scale voltage inputs for the design are given by:</div>
+<div class="line"><span class="math notranslate nohighlight">\(\displaystyle V_{FS_T} = (V_{ADCFS}/Divider Ratio \times \sqrt{2}) = (\frac{1}{0}.001 \times \sqrt{2}) = 707V_{rms}\)</span></div>
+</div>
+<div class="line-block">
+<div class="line">However, this circuit is not configured in fully differential mode since V1M is tied to AGND. This is known as psuedo differential operation. The single-ended voltage range of input pins V1P and V1M is ±0.5V, which gives the actual allowable full-scale voltage inputs as:</div>
+<div class="line"><span class="math notranslate nohighlight">\(\displaystyle V_{FS} = (V_{ADCFS}/Divider Ratio \times \sqrt{2}) = (0.\frac{5}{0}.001 \times \sqrt{2}) = 353.55V_{rms}\)</span></div>
+</div>
+<div class="line-block">
+<div class="line">We still use the theoretical maximum full-scale voltage of 707Vrms when calculating values for ADE9178 configuration registers, as we will see below.</div>
+<div class="line">The fourth ADC is a 3 channel isolated ADE9113 part. All three channels are connected to a potential divider for voltage measurement. V1P/ V1M and V2P/ V2M are connected to identical dividers to the ones connected to the 9112 ADCs, with real full-scale voltage 353.55Vrms. However, current channel input pins IP and IM have full-scale inputs of only ±31.25mV so using the same divider ratio would result in a much smaller voltage input range. Refer to ADE9113 datasheet for these specifications. Therefore, for the third divider we use a bottom resistor of 63.4Ω. This standard value gets us close to a full-scale range of 353.55Vrms. Divider ratio:</div>
+<div class="line"><span class="math notranslate nohighlight">\(R2/R1+R2 = 63.4/(63.4+990 \times 10^3) = 64.036 \times 10^-6\)</span></div>
+</div>
+<p>Full-scale voltage is calculated as:</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle V_{FS} = (I_{ADCFS}/Divider Ratio \times \sqrt{2}) = (0.\frac{03125}{64}.036 \times 10^-6 \times \sqrt{2}) = 345.073V_{rms}\)</span></p>
+<div class="line-block">
+<div class="line">During the calibration phase we can ensure gain registers are set to give exact 353.55Vrms full-scale. For information on how to calibrate channels please refer to the ADE9178 Datasheet.</div>
+<div class="line">1.8kΩ ferrite beads are used on certain ADC pins to suppress high frequency signals. Converted output signals from the ADCs are sent over SPI communications to the ADE9178 part. 10kΩ pull-up resistors are placed on the SPI lines. Reset pins from the ADCs and ADE9178 are all tied together in this design. Various decoupling capacitors should be installed. More details are given in the diagram below.</div>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ade9178_test_circuit.png"><img alt="ade9178_test_circuit.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ade9178_test_circuit.png" style="width: 700px;" /></a> <em>Figure 2: Analog Front-End Detailed Block Diagram</em></p>
+</section>
+<section id="pen-fault-detection">
+<h2>Pen Fault Detection<a class="headerlink" href="#pen-fault-detection" title="Link to this heading"></a></h2>
+<section id="introduction-to-pen-fault-detection">
+<h3>Introduction to Pen Fault Detection<a class="headerlink" href="#introduction-to-pen-fault-detection" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">In electrical installations, a Protective Earth to Neutral (PEN) fault refers to a fault condition involving the protective earth (PE) conductor, neutral conductor (N) and the combined PEN conductor. A PEN fault occurs when there is an open circuit or fault in the PEN conductors. This can happen due to damaged insulations, open circuits, etc. PEN faults can be hazardous as they can result in the loss of protective earth connection and cause exposed metal parts of the electrical installation to become live, which could cause electric shock. Therefore, for EVSE it is is important to identify PEN fault events and cut power to the installation for safety by opening the relay.</div>
+<div class="line">The BS7671:2018 is the British safety standard for electrical installation and wiring safety. This standard requires protection against pen fault. One way of implementing this is if the neutral to earth voltage of an installation exceeds 70Vrms, the EV charger must open its relays within 5 seconds to cut power to the system. Its important to note most other regions do not have a standard requiring PEN fault detection.</div>
+<div class="line">Currently, various methods are available in the market for detecting PEN faults. One approach involves directly measuring the fault voltage against an earth reference voltage by installing an earth electrode alongside the EV charger. Another solution measures the current in the PE conductor using a current transformer. In both cases, if the fault voltage/ current exceeds the set threshold specified above, the contactors are switched open minimising electric shock risk. However, these solutions add extra cost and complexity to the installation.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/app-notes/pen_fault_explanation.png"><img alt="pen_fault_explanation.png" src="https://wiki.analog.com/_media/resources/app-notes/pen_fault_explanation.png" style="width: 550px;" /></a> <em>Figure 3: Explanation of PEN Fault</em></div>
+</div>
+</section>
+<section id="solution-from-analog-devices">
+<h3>Solution from Analog Devices<a class="headerlink" href="#solution-from-analog-devices" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">The ADE9178 metrology IC has been designed to allow for simple PEN fault detection according to the BS7671:2018 standard. Unlike other options, ADI’s solution does not introduce significant extra cost, weight or size to the system. Existing measurements from the ADE9178 already required for energy accumulation in the EV charger are used to calculate the fault voltage. A simplified circuit diagram of what we are measuring can be seen in figure 4.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/circuit_diagram.png"><img alt="circuit_diagram.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/circuit_diagram.png" style="width: 550px;" /></a> <em>Figure 4: Circuit Diagram Explaining ADI’s Pen Fault Solution</em></div>
+</div>
+<div class="line-block">
+<div class="line">A 5-pole relay is shown here because switching earth, linked with the live conductors is required by the UK BS7671:2018 standard for PEN fault detection. In the general EVSE design shown in figure 1 we include a 4-pole relay and as a result the design does not support the BS7671:2018 regulation. Users can decide themselves the importance of installing a 5-pole relay and should consult the BS7671:2018 standard for the exact wording.</div>
+<div class="line">The method to calculate the fault voltage is as follows. For each ADC sample the following calculation is performed:</div>
+<div class="line"><span class="math notranslate nohighlight">\(\displaystyle Vfault_RMS = RMS(\frac{VL1 + VL2 + VL3}{3})\)</span></div>
+</div>
+<div class="line-block">
+<div class="line">where VL1, VL2 and VL3 are the line to neutral voltages for each phase which are measured by the ADE9178. The metrology device calculates the RMS of Vfault over N cycles and if RMS of Vfault is over 70Vrms then an interrupt is raised to instruct the host MCU to open the relay.</div>
+<div class="line">The above formula only holds true when the three phases are balanced. As a result, we must also disconnect the device when there is a “significant voltage imbalance” between the phases. This edge case is covered in the BS7671:2018. Therefore, we also use the metrology device to measure phase-to-phase voltage. If the phase-to-phase RMS voltages go above/ below 15% of nominal, then the supply should be disconnected. This makes the solution robust.</div>
+</div>
+</section>
+<section id="setting-up-the-ade9178-part-for-pen-fault-detection">
+<h3>Setting up the ADE9178 Part for PEN Fault Detection<a class="headerlink" href="#setting-up-the-ade9178-part-for-pen-fault-detection" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Three data processing channels in ADE9178 are used for PEN fault detection: PEN_CHANA, PEN_CHANB and PEN_CHANC. The PEN channels can be configured using the PEN_CHANSELA, PEN_CHANSELB and PEN_CHANSELC bits in the PEN_CONFIG register. The PEN channels can be set to any of the 12 ADC channels: AV, BV, CV, AI, BI, CI, AUX0, AUX1, AUX2, AUX3, AUX4 and AUX5. We can see a diagram of how the channels are mapped in our application below.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/app-notes/mapping.png"><img alt="mapping.png" src="https://wiki.analog.com/_media/resources/app-notes/mapping.png" style="width: 400px;" /></a> <em>Figure 5: Diagram of Channel Mapping between ADCs and ADE9178</em></div>
+</div>
+<div class="line-block">
+<div class="line">For our application we want to perform pen fault detection before the relay. Therefore, we use the voltage dividers on the phases connected to ADE9113 part (see figure 1 above). From detailed front-end diagram shown in figure 2 we can see that ADE9113 current channel is tied to phase A. From our mapping diagram this is tied to AUX3. So we use AUX3 to measure phase A pen fault.</div>
+<div class="line">Since ADE9113 V1 channel is tied to phase B we use AUX4 to measure phase B pen fault. Finally, since ADE9113 V2 channel is tied to phase C we use AUX5 to measure phase C pen fault.</div>
+</div>
+<p>Every one cycle the following RMS values are calculated:</p>
+<ul class="simple">
+<li><p>VSUMRMSONE = (PEN_CHANA + PEN_CHANB + PEN_CHANC)/3</p></li>
+<li><p>VABRMSONE = PEN_CHANA - PEN_CHANB</p></li>
+<li><p>VACRMSONE = PEN_CHANA - PEN_CHANC</p></li>
+<li><p>VBCRMSONE = PEN_CHANB - PEN_CHANC</p></li>
+</ul>
+<div class="line-block">
+<div class="line">The period for any one of the PEN channels is calculated based on PEN_LP_SEL bits in the PEN_CONFIG register and is stored in the PEN_PERIOD register. This period value is used to calculate the PEN channel RMSONE measurements.</div>
+<div class="line">Separate RMS offset calibration values are provided for each PEN channel (VSUMRMSONEOS, VABRMSONEOS, VACRMSONEOS, VBCRMSONEOS).</div>
+<div class="line">For our EVSE application we configure PEN_CONFIG as follows:</div>
+</div>
+<ul class="simple">
+<li><p>PEN_CHANSELA = 1001 = AUX3 Data Processing Path</p></li>
+<li><p>PEN_CHANSELB = 1010 = AUX4 Data Processing Path</p></li>
+<li><p>PEN_CHANSELC = 1011 = AUX5 Data Processing Path</p></li>
+<li><p>PEN_LP_SEL = 11 = Period based on Combined PEN Channels (AUX3 + AUX4 - AUX5)/2</p></li>
+</ul>
+<p>The PEN Fault output registers will then be calculated as follows:</p>
+<ul class="simple">
+<li><p>VSUMRMSONE = (AUX3 + AUX4 + AUX5)/3</p></li>
+<li><p>VABRMSONE = AUX3 - AUX4</p></li>
+<li><p>VACRMSONE = AUX3 - AUX5</p></li>
+<li><p>VBCRMSONE = AUX4 - AUX5</p></li>
+<li><p>PEN_PERIOD = Period of Combined PEN Channels</p></li>
+</ul>
+<div class="line-block">
+<div class="line">We now have all the necessary measurements to detect a PEN fault condition, based on the fault voltage (VSUMRMSONE) and the phase-to-phase voltages.</div>
+</div>
+<section id="dips-and-swells-on-pen-fault-channels">
+<h4>Dips and Swells on PEN Fault Channels<a class="headerlink" href="#dips-and-swells-on-pen-fault-channels" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line">We can now setup ADE9178 to detect dips and swells on PEN fault channels automatically if they exceed certain thresholds. If you recall, allowable thresholds set by the BS7671:2018 were 70Vrms for the Vfault value and above/ below 15% of nominal for phase-to-phase voltages. Nominal phase-to-phase voltages are 400Vrms.</div>
+<div class="line">The relevant configuration registers are shown in the table below. Swells can be detected based on VSUMRMSONE value while both dips and swells can be detected on the three phase-to-phase voltage RMS values (VABRMSONE, VACRMSONE and VBCRMSONE).</div>
+</div>
+<p><strong>Table 1. PEN Fault Dip and Swell Configuration</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Swell Level Config Register</strong></p></th>
+<th class="head"><p><strong>Swell Cycle Config Register</strong></p></th>
+<th class="head"><p><strong>Dip Level Config Register</strong></p></th>
+<th class="head"><p><strong>Dip Cycle Config Register</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>VSUMSWELLONE_LVL</p></td>
+<td><p>VSUMSWELLONE_CYC</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>VABSWELLONE_LVL</p></td>
+<td><p>VABSWELLONE_CYC</p></td>
+<td><p>VABDIPONE_LVL</p></td>
+<td><p>VABDIPONE_CYC</p></td>
+</tr>
+<tr class="row-even"><td><p>VACSWELLONE_LVL</p></td>
+<td><p>VACSWELLONE_CYC</p></td>
+<td><p>VACDIPONE_LVL</p></td>
+<td><p>VACDIPONE_CYC</p></td>
+</tr>
+<tr class="row-odd"><td><p>VBCSWELLONE_LVL</p></td>
+<td><p>VBCSWELLONE_CYC</p></td>
+<td><p>VBCDIPONE_LVL</p></td>
+<td><p>VBCDIPONE_CYC</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">The calculation for setting these configuration values is as follows.</div>
+<div class="line">For the “level” configuration values, we set them as a percentage of full-scale voltage of the application (in our case we use theoretical full-scale 707Vrms). Therefore, if we want to trigger a swell event when VSUMRMSONE (Vfault) goes above 70Vrms:</div>
+</div>
+<p><span class="math notranslate nohighlight">\(Vrms/Vfst = 70V{rms}/707V{rms} = 0.099\)</span></p>
+<p><span class="math notranslate nohighlight">\(RMS_{FSCODE} \times 0.099 = 107310840 \times 0.099 = 10623773\)</span></p>
+<div class="line-block">
+<div class="line">where RMS_FS_CODE value can be found in the ADE9178 datasheet. This decimal value must be converted to hex before inputting to the part, which equals 0xA21B1D.</div>
+<div class="line">For setting a phase-to-phase swell level, for example VABRMSONE, we want to trigger a swell event when it exceeds +15% of nominal voltage. Nominal phase-to-phase voltages are 400V so 15% of that is 60V:</div>
+</div>
+<p><span class="math notranslate nohighlight">\(Vrms/Vfst = 460V{rms}/707V{rms} = 0.6506\)</span></p>
+<p><span class="math notranslate nohighlight">\(RMS_{FSCODE} \times 0.6506 = 107310840 \times 0.6506 = 69816432\)</span></p>
+<div class="line-block">
+<div class="line">This equals 0x4295070 in hexadecimal. The same principle is followed when setting the phase-to-phase voltage level for dip events. We want to trigger a dip event when VABRMSONE drops below -15% of nominal voltage.</div>
+<div class="line"><span class="math notranslate nohighlight">\(Vrms/Vfst = 340V{rms}/707V{rms} = 0.4809\)</span></div>
+</div>
+<p><span class="math notranslate nohighlight">\(RMS_{FSCODE} \times 0.4809 = 107310840 \times 0.4809 = 51605783\)</span></p>
+<div class="line-block">
+<div class="line">This equals 0x3137117 in hexadecimal.</div>
+<div class="line">Setting the number of cycles is much more straightforward. This is the amount of cycles for which the PEN fault channel value must exceed the dip/swell condition before it is flagged. A single cycle is 20ms for frequency 50Hz. For example, setting number of cycles to 5 would represent 100ms. We must convert the desired number of cycles to hexadecimal before entering it into the part. If number of cycles is set to 0, this will default to 1 cycle (20ms). To set number of cycles to a reasonable value, refer to recommendation in the BS7671:2018 standard. Users should set number of cycles to avoid both oversensitivity and missing potential pen fault events.</div>
+<div class="line">Four status bits are provided for pen fault channel swells: VSUMSWELLONE, VABSWELLONE, VACSWELLONE and VBCSWELLONE. These are in the STATUS2 register.</div>
+<div class="line">Three status bits are provided for pen fault channel dips: VABDIPONE, VACDIPONE and VBCDIPONE. These are also in the STATUS2 register.</div>
+<div class="line">If desired, we can configure the part to generate interrupts on IRQ2 pin every time a PEN Fault condition is triggered. In our application IRQ2 is connected to the MCU which allows us to open the relay and disconnect the EV charger, in-line with the BS7671:2018 standard. To generate IRQ2 outputs, set DIP_SWELL_ONE_IRQ_MODE bit in CONFIG0 to 1 so that bits in the STATUS2 register are set only when entering or exiting the dip/swell condition. Also set relevant bits in the MASK2 register. See register map in ADE9178 datasheet for full details.</div>
+</div>
+</section>
+</section>
+</section>
+<section id="stuck-relay-detection">
+<h2>Stuck Relay Detection<a class="headerlink" href="#stuck-relay-detection" title="Link to this heading"></a></h2>
+<section id="introduction-to-stuck-relay-detection">
+<h3>Introduction to Stuck Relay Detection<a class="headerlink" href="#introduction-to-stuck-relay-detection" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">Power relays are electromechanical devices that are used to control the flow of electrical power in a circuit. A common use case for power relays is electric vehicle charging stations. Power relays consist of a coil which generates a magnetic field when a current flows through it, and a set of contacts that are mechanically switched by the magnetic field. When the coil is energised, contacts close and current flows through the relay and into the load. In our application the load is the EV. When the coil is de-energised the contacts open, the circuit is broken and the flow of current is stopped. This is controlled by the MAX32672 microcontroller.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/app-notes/relay.png"><img alt="relay.png" src="https://wiki.analog.com/_media/resources/app-notes/relay.png" style="width: 300px;" /></a> <em>Figure 6: How an Electromechanical Relay Operates</em></div>
+</div>
+<div class="line-block">
+<div class="line">Analog Devices recommends the use of AHER3191 4-pole power relay from Panasonic for this design. We want to control the flow of power on all 3 phases plus neutral. It is compliant with relevant standards IEC 61851-1 and IEC 62955.</div>
+<div class="line">A well documented problem with relays of this kind is they can become “fused” or stuck in the connected position. Without some form of feedback, the user then has no knowledge that the relay is still connected and current may still be flowing. This poses an obvious safety risk. This section will explain how to setup ADE9178 to perform stuck relay detection which will feed input back to the user if the relay is fused shut.</div>
+</div>
+</section>
+<section id="setting-up-the-ade9178-part-for-stuck-relay-detection">
+<h3>Setting up the ADE9178 Part for Stuck Relay Detection<a class="headerlink" href="#setting-up-the-ade9178-part-for-stuck-relay-detection" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">From figure 1 above, in our example design the relay is connected just before the metrology measurements are performed, but after the auxiliary voltage divider measurements input to the ADE9113 part.</div>
+<div class="line">When the relay is opened by the MAX32672 we do a check. Metrology phase voltage measurements should theoretically be 0Vrms since they are taken after the relay. To perform this check we take a measurement from the standard rmsone registers (AVRMSONE, BVRMSONE, CVRMSONE). If any of the phases have a voltage that is greater than 15% of nominal voltage (34.5Vrms) we indicate a stuck relay may have occurred.</div>
+<div class="line">Threshold level can be set by the user and should be chosen to avoid both oversensitivity and missing potential stuck relay events.</div>
+</div>
+</section>
+</section>
+<section id="layout-information">
+<h2>Layout Information<a class="headerlink" href="#layout-information" title="Link to this heading"></a></h2>
+<section id="emc-guidelines">
+<h3>EMC Guidelines<a class="headerlink" href="#emc-guidelines" title="Link to this heading"></a></h3>
+<p>In order to comply with relevant standards, PCB must pass a variety of electromagnetic compatibility (EMC) tests outlined in the IEC standards. The recommendations below cover layout requirements in order to pass these tests and focus mainly on emissions.</p>
+</section>
+<section id="emissions">
+<h3>Emissions<a class="headerlink" href="#emissions" title="Link to this heading"></a></h3>
+<p>Emissions refer to the electromagnetic energy that a device generates and releases into its environment during normal operation.</p>
+<p>It is found that in order to pass emissions tests a stitch cap is required on the internal layers of the board with a capacitance of 32.5pF. This is a minimum requirement. Increasing the stitch cap more will increase the capacitance and reduce the emissions further, at the cost of additional board area.</p>
+<p>This is made clear by the results shown below. Graphs of vertical and horizontal emissions results are shown for two stitch cap sizes. While the 32.5pF performs adequately, a 67pF stitch cap results in better emissions performance. The full table of results for the 32.5pF stitch cap is also shown, indicating headroom at each frequency.</p>
+<section id="isopower-emissions-ade9113x4-32-5pf">
+<h4>Isopower Emissions ADE9113x4 32.5pF<a class="headerlink" href="#isopower-emissions-ade9113x4-32-5pf" title="Link to this heading"></a></h4>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/emissions_32.5pF.png"><img alt="emissions_32.5pF.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/emissions_32.5pF.png" style="width: 800px;" /></a> <em>Figure 7: ADE9113x4 with ADE9178 Prescan 0 Degrees, 3M Chamber, 32.5pF stitch cap</em></p>
+<div class="centeralign docutils container">
+<p><strong>Table 2. Radiated Emissions, 32.5pF stitch cap, Vertical and Horizontal, 30MHz to 1GHz</strong></p>
+</div>
+<div class="center docutils container">
+<div class="centeralign docutils container">
+<p>Polarity</p>
+</div>
+<p>** | **</p>
+<div class="centeralign docutils container">
+<p>Frequency</p>
+</div>
+<div class="centeralign docutils container">
+<p>(MHz)</p>
+</div>
+<p>** | **</p>
+<div class="centeralign docutils container">
+<p>CISPR32_ClassB</p>
+</div>
+<div class="centeralign docutils container">
+<p>Requirement</p>
+</div>
+<div class="centeralign docutils container">
+<p>(dBuV/m)</p>
+</div>
+<p>** | **</p>
+<div class="centeralign docutils container">
+<p>QP</p>
+</div>
+<div class="centeralign docutils container">
+<p>(dBuV/m)</p>
+</div>
+<p>** | **</p>
+<div class="centeralign docutils container">
+<p>Margin</p>
+</div>
+<div class="centeralign docutils container">
+<p>(dB)</p>
+</div>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a></p>
+<div class="line-block">
+<div class="line"><strong>Degrees</strong> |</div>
+</div>
+<p>+=======================================+======================================================================+==================================================================================================================+==================================================================+==================================================================+=============+</p>
+<div class="line-block">
+<div class="line">Horizontal                            |</div>
+</div>
+<div class="centeralign docutils container">
+<p>325.51</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>47</p>
+</div>
+<div class="line-block">
+<div class="line">32.34                                                            | -14.66                                                           | 30          |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Horizontal                            |</div>
+</div>
+<div class="centeralign docutils container">
+<p>327.70</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>47</p>
+</div>
+<div class="line-block">
+<div class="line">35.23                                                            | -11.77                                                           | 30          |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Horizontal                            |</div>
+</div>
+<div class="centeralign docutils container">
+<p>329.92</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>47</p>
+</div>
+<div class="line-block">
+<div class="line">34.41                                                            | -12.59                                                           | 30          |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Horizontal                            |</div>
+</div>
+<div class="centeralign docutils container">
+<p>348.10</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>47</p>
+</div>
+<div class="line-block">
+<div class="line">39.44                                                            | -7.56                                                            | 30          |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Vertical                              |</div>
+</div>
+<div class="centeralign docutils container">
+<p>348.10</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>47</p>
+</div>
+<div class="line-block">
+<div class="line">33.62                                                            | -13.38                                                           | 330         |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Vertical                              |</div>
+</div>
+<div class="centeralign docutils container">
+<p>350.08</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>47</p>
+</div>
+<div class="line-block">
+<div class="line">31.51                                                            | -15.49                                                           | 330         |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Horizontal                            |</div>
+</div>
+<div class="centeralign docutils container">
+<p>354.12</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>47</p>
+</div>
+<div class="line-block">
+<div class="line">35.47                                                            | -11.53                                                           | 180         |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Horizontal                            |</div>
+</div>
+<div class="centeralign docutils container">
+<p>356.22</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>47</p>
+</div>
+<div class="line-block">
+<div class="line">41.43                                                            | -5.57                                                            | 30          |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Vertical                              |</div>
+</div>
+<div class="centeralign docutils container">
+<p>356.22</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>47</p>
+</div>
+<div class="line-block">
+<div class="line">33.29                                                            | -13.71                                                           | 330         |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Horizontal                            |</div>
+</div>
+<div class="centeralign docutils container">
+<p>360.15</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>47</p>
+</div>
+<div class="line-block">
+<div class="line">41.08                                                            | -5.92                                                            | 60          |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Vertical                              |</div>
+</div>
+<div class="centeralign docutils container">
+<p>360.24</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>47</p>
+</div>
+<div class="line-block">
+<div class="line">35.49                                                            | -11.51                                                           | 330         |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Horizontal                            |</div>
+</div>
+<div class="centeralign docutils container">
+<p>362.22</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>47</p>
+</div>
+<div class="line-block">
+<div class="line">40.06                                                            | -6.94                                                            | 300         |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Vertical                              |</div>
+</div>
+<div class="centeralign docutils container">
+<p>362.40</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>47</p>
+</div>
+<div class="line-block">
+<div class="line">34.03                                                            | -12.97                                                           | 330         |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Vertical                              |</div>
+</div>
+<div class="centeralign docutils container">
+<p>364.56</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>47</p>
+</div>
+<div class="line-block">
+<div class="line">35.52                                                            | -11.48                                                           | 330         |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Horizontal                            |</div>
+</div>
+<div class="centeralign docutils container">
+<p>364.59</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>47</p>
+</div>
+<div class="line-block">
+<div class="line">39.69                                                            | -7.31                                                            | 60          |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Vertical                              |</div>
+</div>
+<div class="centeralign docutils container">
+<p>366.93</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>47</p>
+</div>
+<div class="line-block">
+<div class="line">33.79                                                            | -13.21                                                           | 330         |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Horizontal                            |</div>
+</div>
+<div class="centeralign docutils container">
+<p>368.76</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>47</p>
+</div>
+<div class="line-block">
+<div class="line">34.88                                                            | -12.12                                                           | 300         |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Vertical                              |</div>
+</div>
+<div class="centeralign docutils container">
+<p>368.85</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>47</p>
+</div>
+<div class="line-block">
+<div class="line">31.91                                                            | -15.09                                                           | 330         |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Vertical                              |</div>
+</div>
+<div class="centeralign docutils container">
+<p>382.71</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>47</p>
+</div>
+<div class="line-block">
+<div class="line">27.41                                                            | -19.59                                                           | 330         |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Vertical                              |</div>
+</div>
+<div class="centeralign docutils container">
+<p>397.32</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="centeralign docutils container">
+<p>47</p>
+</div>
+<div class="line-block">
+<div class="line">31.41                                                            | -15.59                                                           | 330         |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="isopower-emissions-ade9113x4-67pf">
+<h4>Isopower Emissions ADE9113x4 67pF<a class="headerlink" href="#isopower-emissions-ade9113x4-67pf" title="Link to this heading"></a></h4>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/67pF.jpg"><img alt="67pF.jpg" src="https://wiki.analog.com/_media/resources/eval/user-guides/67pF.jpg" style="width: 600px;" /></a> <em>Figure 8: ADE9113x4 with ADE9178 Prescan 0 Degrees, 3M Chamber, 67pF stitch cap</em></p>
+<p>This internal stitch capacitance has low inductance which means it performs better than external caps. The cap dielectric is required to be &gt;0.4mm in compliance with IEC 62052-31:2015. A table of requirements for stackup and creepage/ clearance derived from the standard is shown below. Note that your requirements may be different to this table so please consult the full IEC standard to derive your own values.</p>
+<p>The thicker the dielectric is the larger the cap area required. Therefore, the recommendation is to keep the dielectric thickness between 0.4mm and 0.5mm.</p>
+<p>An image of the recommended board stackup is shown below with 0.508mm between board layers which adds headroom over the minimum requirement:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/stackup.jpg"><img alt="stackup.jpg" src="https://wiki.analog.com/_media/resources/eval/user-guides/ade9113_layout_recommendations/stackup.jpg" style="width: 700px;" /></a> <em>Figure 9: Board Stackup</em></p>
+<p><strong>Table 3. IEC62052-31:2015 Stackup and Creepage/Clearance Recommendations for Metering Applications</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">*<strong>*^</strong>Clearance (mm)<strong>^</strong>Creepage (mm)<strong>^</strong>Distance between layers, d (mm)<strong>^</strong>Distance between internal adjacent conductors , L (mm)** |</div>
+</div>
+<p>+=============================================================================================================================================================+</p>
+<div class="line-block">
+<div class="line">Basic Insulation                                                                                                                                            |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Reinforced Insulation                                                                                                                                       |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<p>The images of the PCB layout below show the stitch cap dimensions used to get 32.5pF of capacitance. Using the measurements shown, we get a capacitor area of:</p>
+<p><span class="math notranslate nohighlight">\(A = 15.2mm \times 28.7mm = 437.3mm^2\)</span></p>
+<p>We can then verify the capacitance is correct with the below formula:</p>
+<p><span class="math notranslate nohighlight">\(C = K \times E_0 \times A/D = 4.2 \times 8.854 \times 10^{-12} \times 437.3 \times 10^{-6}/0.5 \times 10^{-3} = 32.5pF\)</span></p>
+<p>where:</p>
+<ul class="simple">
+<li><p>E0 is the permittivity of free space</p></li>
+<li><p>K is the dielectric constant of the material</p></li>
+<li><p>A is the overlapping surface area of the plates in m2</p></li>
+<li><p>D is the distance between the plates in m</p></li>
+</ul>
+<p>The images below also show the different board layers. The image on the left is of Layer 1 in red which carries the signals and Layer 2 in green which is AGND_1. Layer 2 makes up the top of the stitching cap. The image on the right highlights Layer 3 in purple which is DGND. Layer 3 extends under the ADE9112/3 to make up the bottom plate of the stitching cap. Therefore, where Layers 2 and 3 intersect forms the stitching cap.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/stitch_cap.png"><img alt="stitch_cap.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/stitch_cap.png" style="width: 500px;" /></a> <em>Figure 10: PCB Layout showing Stitching Cap made up of Layers 2 and 3</em></p>
+</section>
+</section>
+<section id="via-placement">
+<h3>VIA Placement<a class="headerlink" href="#via-placement" title="Link to this heading"></a></h3>
+<p>Through VIAs should be limited as much as possible. This is because the keep out zone around each VIA takes away from the PCB stitching cap area, reducing the capacitance. The images below take a detailed look at each VIA on the layout, specifying where they need to be placed. The figure below shows the ADE9113 ground VIAs. These need to be placed as close to the ADE9113 as possible.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/via1.png"><img alt="via1.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/via1.png" style="width: 300px;" /></a> <em>Figure 11: VIAs around the ADE9113</em></p>
+<p>The figure below shows the VIAs placed for decoupling purposes. These should be placed close to capacitors.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/via2.png"><img alt="via2.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/via2.png" style="width: 300px;" /></a> <em>Figure 12: Decoupling VIAs</em></p>
+<p>The final figure shows the VIAs used to ground the copper which shields the input traces. Without these VIAs there would be dangling copper pours on the layout.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/via3.png"><img alt="via3.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/via3.png" style="width: 300px;" /></a> <em>Figure 13: VIAs used to ground the copper which shields the input traces</em></p>
+<section id="how-to-utilise-a-single-pcb-design-for-single-phase-three-phase-configurations">
+<h4>How to Utilise a Single PCB Design for Single-Phase &amp; Three-Phase Configurations<a class="headerlink" href="#how-to-utilise-a-single-pcb-design-for-single-phase-three-phase-configurations" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line">Through the use of different population options a single PCB design can be used in a single-phase configuration instead of three-phase. This may be useful for some customers.</div>
+</div>
+</section>
+<section id="physical-changes">
+<h4>Physical Changes<a class="headerlink" href="#physical-changes" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line">Physical schematic/layout changes need to be made to the analog front-end as shown in figure 11. For a single-phase version, the following components should now be marked as do not install (DNI):</div>
+</div>
+<ul class="simple">
+<li><p>Phase B ADE9112 and all surrounding components</p></li>
+<li><p>Phase C ADE9112 and all surrounding components</p></li>
+<li><p>ADE9113 Phase B and C voltage dividers since those phases are no longer present.</p></li>
+</ul>
+<div class="line-block">
+<div class="line">We use the ADE9113 for stuck relay detection and pen fault detection which is why we need to keep it but remove the phase B and C voltage dividers. If stuck relay detection/ pen fault is not required it is possible to remove the ADE9113 as well to further simplify and lower the cost of the design.</div>
+<div class="line">In terms of new components, A 0Ω link should be installed between phase A ADE9112 MISO pin and ADE9113 MOSI pin. This signal was previously routed through the other ADCs but now it goes directly to the ADE9113 as there are only two ADCs in the chain.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ade9178_test_circuit_single_phase.png"><img alt="ade9178_test_circuit_single_phase.png" src="https://wiki.analog.com/_media/resources/eval/user-guides/ade9178_test_circuit_single_phase.png" style="width: 700px;" /></a> <em>Figure 11: Analog Front-End Detailed Block Diagram for Single-Phase Configuration</em></div>
+</div>
+</section>
+<section id="general-configuration-changes">
+<h4>General Configuration Changes<a class="headerlink" href="#general-configuration-changes" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line">In addition to physical changes, certain ADE9178 configuration registers need to be adjusted as well. In ADC_CONFIG register we need to change NUM_ADC bits to 2 instead of 4 which is the default.</div>
+<div class="line">The ADE9178 supports three voltage channels (AV, BV, CV), three current channels (AI, BI, CI) and 6 auxiliary channels (AUX0, AUX1…, AUX5). The part provides a multiplexer option to allow any ADC output to be redirected to any processing data path by writing appropriate slot number to ADC_REDIRECT0 and ADC_REDIRECT1 register.</div>
+<div class="line">For the original 4 ADC configuration, the ADC SPI frames will contain data in the following order shown in table 4. Also shown is the new 2 ADC configuration. As we can see from this table, data from the last ADC, the ADE9113, comes first.</div>
+</div>
+<p><strong>Table 4. ADC Channel to ADE9178 Slot Mapping for 4 and 2 ADC Configurations</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>4 ADCs Connected (NUM_ADC = 0x4)</strong></p></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"><p><strong>2 ADCs Connected (NUM_ADC = 0x2)</strong></p></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Phase</p></td>
+<td><p>ADC Channel</p></td>
+<td><p>ADE9178 SLOT</p></td>
+<td><p>Phase</p></td>
+<td><p>ADC Channel</p></td>
+<td><p>ADE9178 Slot</p></td>
+</tr>
+<tr class="row-odd"><td><p>Phase A (ADE9113)</p></td>
+<td><p>I</p></td>
+<td><p>SLOT0</p></td>
+<td><p>Phase A (ADE9113)</p></td>
+<td><p>I</p></td>
+<td><p>SLOT0</p></td>
+</tr>
+<tr class="row-even"><td><p>Phase B (ADE9113)</p></td>
+<td><p>V1</p></td>
+<td><p>SLOT1</p></td>
+<td><p>Phase B (ADE9113)</p></td>
+<td><p>V1</p></td>
+<td><p>SLOT1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Phase C (ADE9113)</p></td>
+<td><p>V2</p></td>
+<td><p>SLOT2</p></td>
+<td><p>Phase C (ADE9113)</p></td>
+<td><p>V2</p></td>
+<td><p>SLOT2</p></td>
+</tr>
+<tr class="row-even"><td><p>Phase C</p></td>
+<td><p>I</p></td>
+<td><p>SLOT3</p></td>
+<td><p>Phase A</p></td>
+<td><p>I</p></td>
+<td><p>SLOT3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Phase C</p></td>
+<td><p>V1</p></td>
+<td><p>SLOT4</p></td>
+<td><p>Phase A</p></td>
+<td><p>V1</p></td>
+<td><p>SLOT4</p></td>
+</tr>
+<tr class="row-even"><td><p>Phase C</p></td>
+<td><p>NC</p></td>
+<td><p>SLOT5</p></td>
+<td><p>Phase A</p></td>
+<td><p>NC</p></td>
+<td><p>SLOT5</p></td>
+</tr>
+<tr class="row-odd"><td><p>Phase B</p></td>
+<td><p>I</p></td>
+<td><p>SLOT6</p></td>
+<td><p>Ignored</p></td>
+<td><p>I</p></td>
+<td><p>SLOT6</p></td>
+</tr>
+<tr class="row-even"><td><p>Phase B</p></td>
+<td><p>V1</p></td>
+<td><p>SLOT7</p></td>
+<td><p>Ignored</p></td>
+<td><p>V1</p></td>
+<td><p>SLOT7</p></td>
+</tr>
+<tr class="row-odd"><td><p>Phase B</p></td>
+<td><p>NC</p></td>
+<td><p>SLOT8</p></td>
+<td><p>Ignored</p></td>
+<td><p>NC</p></td>
+<td><p>SLOT8</p></td>
+</tr>
+<tr class="row-even"><td><p>Phase A</p></td>
+<td><p>I</p></td>
+<td><p>SLOT9</p></td>
+<td><p>Ignored</p></td>
+<td><p>I</p></td>
+<td><p>SLOT9</p></td>
+</tr>
+<tr class="row-odd"><td><p>Phase A</p></td>
+<td><p>V1</p></td>
+<td><p>SLOT10</p></td>
+<td><p>Ignored</p></td>
+<td><p>V1</p></td>
+<td><p>SLOT10</p></td>
+</tr>
+<tr class="row-even"><td><p>Phase A</p></td>
+<td><p>NC</p></td>
+<td><p>SLOT11</p></td>
+<td><p>Ignored</p></td>
+<td><p>NC</p></td>
+<td><p>SLOT11</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Therefore, for a change in NUM_ADC, ADC_REDIRECT0 and ADC_REDIRECT1 which set which slots are assigned to which ADCs must be changed. For the 2 ADC configuration above: SLOT0, SLOT1 and SLOT2 remain unchanged. SLOT3 goes from being mapped to the current channel of phase C to the current channel of phase A. SLOT4 and SLOT5 are also now mapped to phase A.</p>
+<div class="line-block">
+<div class="line">The below table indicates ADC_REDIRECTx values for our default 4 ADC configuration and our 2 ADC single phase configuration. These settings ensure that the correct channels are assigned to the correct slots as shown in table 4 above. To see how these numbers are set, the register map and ADE9178 datasheet can be consulted.</div>
+<div class="line"><strong>Table 5. ADCREDIRECTx Values for Three-Phase 4 ADC Configuration and Single-Phase 2 ADC Configuration</strong></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>NUM_ADC Value</strong></p></th>
+<th class="head"><p><strong>ADC_REDIRECT0 Value</strong></p></th>
+<th class="head"><p><strong>ADC_REDIRECT1 Value</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0x4</p></td>
+<td><p>0x6431D2A</p></td>
+<td><p>0x410150B</p></td>
+</tr>
+<tr class="row-odd"><td><p>0x2</p></td>
+<td><p>0x3FFFFC64</p></td>
+<td><p>0x4107FE5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="pen-fault-configuration-changes">
+<h4>PEN Fault Configuration Changes<a class="headerlink" href="#pen-fault-configuration-changes" title="Link to this heading"></a></h4>
+<div class="line-block">
+<div class="line">The change from three-phase to single-phase configuration also requires some modification to the pen fault settings. Since phase B and phase C are no longer being measured, the three-phase Vfault formula above no longer holds. Additionally, phase-to-phase dip and swell events should no longer trigger a pen fault event since any phase-to-phase measurements referencing disabled B and C phases such as VAB, VAC will be incorrect. All configuration registers in table 1 should be set to their defaults (VSUMSWELLONE_LVL…, etc.) to prevent this.</div>
+<div class="line">For pen fault detection now we can simply use the AUX3RMSONE register since from our front-end diagram (figure 2) and mapping diagram (figure 5) we know this corresponds to the phase A measurement before the relay. According to the BS7671:2018 British safety standard, if the voltage between the line (phase A) and neutral conductors goes above 253Vrms or below 207Vrms then the EV charger should disconnect within 5 seconds.</div>
+<div class="line">As before we can configure dip/ swell registers so we trigger an interrupt if these conditions are breached. In this case we need to configure the AUX3SWELLONE_LVL, AUX3SWELLONE_CYC, AUX3DIPONE_LVL and AUX3DIPONE_CYC registers.</div>
+<div class="line">For the swell condition, we set AUX3SWELLONE_LVL to the following value, using theoretical full-scale in the calculation:</div>
+</div>
+<p><span class="math notranslate nohighlight">\(Vrms/Vfst = 253V{rms}/707V{rms} = 0.3579\)</span></p>
+<p><span class="math notranslate nohighlight">\(RMS_{FSCODE} \times 0.3579 = 107310840 \times 0.3579 = 38401191\)</span></p>
+<p>which when converted into hex yields 0x249F4A7. Similarly, for the dip condition, we set AUX3DIPONE_LVL to the following value:</p>
+<p><span class="math notranslate nohighlight">\(Vrms/Vfst = 207V{rms}/707V{rms} = 0.2928\)</span></p>
+<p><span class="math notranslate nohighlight">\(RMS_{FSCODE} \times 0.2928 = 107310840 \times 0.2928 = 31419157\)</span></p>
+<div class="line-block">
+<div class="line">which when converted into hex gives 0x1DF6B15.</div>
+<div class="line">User can set number of cycles (AUX3SWELLONE_CYC, AUX3DIPONE_CYC) to a reasonable level by referring to recommendation in the BS7671:2018 standard. Users should set number of cycles to avoid both oversensitivity and missing potential pen fault events.</div>
+<div class="line">More details can be found in the ADE9178 datasheet and register map.</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

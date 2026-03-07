@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This document describes the usage of A2B communication channel module for inter-processor communication over A2B. The module enables exchange of control and command messages between the Host and a Sub node processor using the Mailbox feature of A2B Transceivers." name="description" />
+
+    <title>A2B CommChannel Integartion Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">A2B CommChannel Integartion Guide</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li><a class="reference internal" href="#scope">Scope</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#specifications">Specifications</a><ul>
+<li><a class="reference internal" href="#target-platform">Target Platform</a></li>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#dependencies">Dependencies</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#communication-channel-architecture">Communication Channel Architecture</a></li>
+<li><a class="reference internal" href="#programmers-reference">Programmers Reference</a><ul>
+<li><a class="reference internal" href="#files">Files</a><ul>
+<li><a class="reference internal" href="#header-files">Header Files</a></li>
+<li><a class="reference internal" href="#source-files">Source Files</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#api-functions">API Functions</a></li>
+<li><a class="reference internal" href="#api-data-types">API Data Types</a></li>
+<li><a class="reference internal" href="#configurable-macros">Configurable macros</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#application-integration">Application Integration</a><ul>
+<li><a class="reference internal" href="#initialization">Initialization</a></li>
+<li><a class="reference internal" href="#handling-events">Handling Events</a></li>
+<li><a class="reference internal" href="#periodic-ticking">Periodic Ticking</a></li>
+<li><a class="reference internal" href="#transmission-of-messages">Transmission of messages</a></li>
+<li><a class="reference internal" href="#reception-of-messages">Reception of messages</a></li>
+<li><a class="reference internal" href="#enable-disable-framing">Enable/Disable Framing</a></li>
+<li><a class="reference internal" href="#sequence-diagram">Sequence Diagram</a></li>
+<li><a class="reference internal" href="#interrupt-polling-mode">Interrupt/Polling Mode</a><ul>
+<li><a class="reference internal" href="#a2b-main">A2B Main</a></li>
+<li><a class="reference internal" href="#a2b-smart-sub">A2B Smart Sub</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#porting-instructions">Porting Instructions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#running-the-sample-demo">Running the Sample Demo</a><ul>
+<li><a class="reference internal" href="#adsp-sc594">ADSP-SC594</a><ul>
+<li><a class="reference internal" href="#system-requirements">System Requirements</a><ul>
+<li><a class="reference internal" href="#software-requirements">Software Requirements</a></li>
+<li><a class="reference internal" href="#hardware-requirements">Hardware Requirements</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a><ul>
+<li><a class="reference internal" href="#connections">Connections</a></li>
+<li><a class="reference internal" href="#running-sample-demo">Running sample Demo</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#demo-use-cases">Demo Use-cases</a><ul>
+<li><a class="reference internal" href="#sub-node-authentication">Sub Node authentication</a></li>
+<li><a class="reference internal" href="#switching-between-audio-sources">Switching between Audio Sources</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#terminology">Terminology</a></li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="a2b-commchannel-integartion-guide">
+<h1>A2B CommChannel Integartion Guide<a class="headerlink" href="#a2b-commchannel-integartion-guide" title="Link to this heading"></a></h1>
+</section>
+<section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<p>This document describes the usage of A2B communication channel module for inter-processor communication over A2B. The module enables exchange of control and command messages between the Host and a Sub node processor using the Mailbox feature of A2B Transceivers.</p>
+<section id="scope">
+<h2>Scope<a class="headerlink" href="#scope" title="Link to this heading"></a></h2>
+<p>This document is intended to assist the application developers integrating the communication channel module to their system.</p>
+</section>
+</section>
+<section id="specifications">
+<h1>Specifications<a class="headerlink" href="#specifications" title="Link to this heading"></a></h1>
+<section id="target-platform">
+<h2>Target Platform<a class="headerlink" href="#target-platform" title="Link to this heading"></a></h2>
+<p>A2B communication channel is developed as a generic C module and hence can be ported to any platform. It is by default intended to be run on a smart Sub consisting of a controller connected to A2B Sub transceiver.</p>
+</section>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
+<p>A2B Communication channel has the following features</p>
+<ul class="simple">
+<li><p>Support for communication over mailbox between Main and Sub nodes</p></li>
+<li><p>Configurable communication message size</p></li>
+<li><p>Segmentation and Re-assembly of messages greater than Mailbox transmission size of 4 bytes</p></li>
+<li><p>Non-Blocking Transmission APIs</p></li>
+<li><p>Generic C implementation and hence portable across platform</p></li>
+</ul>
+</section>
+<section id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading"></a></h2>
+<p>The A2B communication channel does not have any dependencies on the smart Sub node controller it runs on. However, at the system level, to communicate to the Main node the communication channel must also be running on the controller connected to the A2B Main transceiver and a suitable A2B stack capable of configuring and discovering the network. ADI A2B Stack Software provided by ADI has communication channel feature integrated. It enables quick and easy integration with a smart Sub running communication channel for exchanging messages via mailbox. For more details on utilizing the ADI A2B Stack Software for communicating over mailbox refer to the <a class="reference internal" href="a2bssplusstackuserguide.html"><span class="doc">A2B Stack user guide</span></a>. Alternatively, if the host controller on Main node runs a non-ADI stack the communication channel needs to be ported onto the Main node controller. The steps for the same are provided in <a class="reference internal" href="#"><span class="doc">Porting instructions</span></a> section.</p>
+</section>
+</section>
+<section id="communication-channel-architecture">
+<h1>Communication Channel Architecture<a class="headerlink" href="#communication-channel-architecture" title="Link to this heading"></a></h1>
+<p>The Communication Channel (CommCh) architecture is as shown in <a class="reference internal" href="#"><span class="doc">Figure 1</span></a>.</p>
+<img alt="https://wiki.analog.com/_media/resources/tools-software/a2bv2/communication_channel_architecture.png" class="align-center" src="https://wiki.analog.com/_media/resources/tools-software/a2bv2/communication_channel_architecture.png" />
+<div class="centeralign docutils container">
+<p><strong>Figure 1:</strong> Communication Channel Architecture</p>
+</div>
+<p>The communication channel component interfaces to the application using the API functions. The communication channel executes the platform dependant I2C communication using the PAL layer. The framework must also implement the PAL for the communication channel. It creates a communication channel instance and passes the PAL context associated for the instance. Application also requests for new transmission of messages via API. All the APIs are handled by the API interface of communication channel. The engine block of communication channel is responsible for framing/de-framing of messages from application. During transmission it segments the message received from application into segments of size 4 bytes to be transmitted over mailbox using the PAL layer. Additional protocol header information is appended for assembly and error checking at the receiver. During reception the engine processes every 4-byte chunk received from mailbox and assembles the chunks into a complete message after checking the validity of each chunk based on the protocol headers. All status information is given to the application via call-backs. It is used to inform applicable of new message received, the status of a transmission request and other error information. The communication channel works in a non-blocking mode which means that application must periodically tick the communication channel. On this tick the periodic polling of mailbox interrupts from A2B transceiver is done over the I2C bus using the PAL layer. During transmission after a 4-byte chunk is written to the local mailbox, polling is used to detect the mailbox empty interrupt which indicates that the Main has read the data. On receiving this interrupt, the next 4-byte chunk from the message is transmitted. Polling is also used to check for mailbox full interrupt which indicates that new data has been written from Main. On receiving this interrupt data from mailbox is read and passed to communication engine for further processing.</p>
+</section>
+<section id="programmers-reference">
+<h1>Programmers Reference<a class="headerlink" href="#programmers-reference" title="Link to this heading"></a></h1>
+<section id="files">
+<h2>Files<a class="headerlink" href="#files" title="Link to this heading"></a></h2>
+<p>Communication channel consists of source and header files. The header files are available in the folder <em>‘ADI_A2B-SSPlus_Software-RelX.Y.Z/Target/a2bcommchannel/inc/ ’</em> in the release package and the source folders in <em>‘ADI_A2B-SSPlus_Software-RelX.Y.Z /Target/a2bcommchannel/src/’</em>.</p>
+<section id="header-files">
+<h3>Header Files<a class="headerlink" href="#header-files" title="Link to this heading"></a></h3>
+<p>The header files that need to be included by the Sub application are as explained below</p>
+<ul class="simple">
+<li><p><em>adi_a2b_commch_interface.h</em> - Contains the message identifiers that are reserved to be exchanged by A2B Main plugin of A2B stack on the Main node with communication channel on Sub nodes. User should not modify these macros. Macros if any required for custom messages to be exchanged between Sub and Main should be declared as part of application header files.</p></li>
+<li><p><em>adi_a2b_commch.h</em> - Contains the structures, data types and API definitions related to the APIs.</p></li>
+<li><p><em>regdefs.h</em> – This file contains all the A2B register definitions macros and masks for all the A2B chip registers. This file is available in the example communication channel Sub project in the path <em>‘ADI_A2B-SSPlus_Software-RelX.Y.Z/Target/examples/advancedapp/mboxcommch/a2b-sc59x-commch-smartslv/app/inc’</em>.</p></li>
+<li><p><em>ctypes.h</em> – This file contains the basic C data type definitions used by the communication channel. This file is available in the example communication channel Sub project in the path <em>‘ADI_A2B-SSPlus_Software-RelX.Y.Z/Target/examples/advancedapp/mboxcommch/a2b-sc59x-commch-smartslv/pal/inc/platform/a2b’</em>.</p></li>
+</ul>
+</section>
+<section id="source-files">
+<h3>Source Files<a class="headerlink" href="#source-files" title="Link to this heading"></a></h3>
+<p>The source files required by to be included in the Sub are as below</p>
+<ul class="simple">
+<li><p><em>adi_a2b_commch_engine.c</em> - Contains the functions related to the communication engine. The communication engine runs the framing/de-framing protocol.</p></li>
+<li><p><em>adi_a2b_commch.c</em> - Contains the APIs related to the communication channel. It also contains the functions related to the polling and mailbox transmission &amp; reception interface calls to PAL layer.</p></li>
+</ul>
+</section>
+</section>
+<section id="api-functions">
+<h2>API Functions<a class="headerlink" href="#api-functions" title="Link to this heading"></a></h2>
+<p>This various API functions to be used on the Sub node and their purpose are summarized in below Table.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>API Function</strong></p></th>
+<th class="head"><p><strong>Purpose</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>adi_a2b_CommChPalInit</p></td>
+<td><p>Create a communication channel PAL context</p></td>
+</tr>
+<tr class="row-odd"><td><p>adi_a2b_CommChCreate</p></td>
+<td><p>Create an instance of communication channel</p></td>
+</tr>
+<tr class="row-even"><td><p>adi_a2b_CommChDestroy</p></td>
+<td><p>Destroy an instance of communication channel</p></td>
+</tr>
+<tr class="row-odd"><td><p>adi_a2b_CommChTxMsg</p></td>
+<td><p>Send a message over communication channel</p></td>
+</tr>
+<tr class="row-even"><td><p>adi_a2b_CommChTick</p></td>
+<td><p>Tick the communication channel instance</p></td>
+</tr>
+<tr class="row-odd"><td><p>adi_a2b_CommChSetFraming</p></td>
+<td><p>Set the framing of an instance of communication channel</p></td>
+</tr>
+<tr class="row-even"><td><p>adi_a2b_CommChGetFraming</p></td>
+<td><p>Get the framing of an instance of communication channel</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="centeralign docutils container">
+<p><strong>Table:</strong> API functions summary</p>
+</div>
+<p>The detailed description of the API functions is provided in the API reference document. Refer to “Communication Channel Sub” sub-section under “Communication Channel” section in API reference document as shown in <a class="reference internal" href="#"><span class="doc">Figure 2</span></a>.</p>
+<p><img alt="image1" src="https://wiki.analog.com/_media/resources/tools-software/a2bv2/api_reference_document.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure 2:</strong> API reference document</p>
+</div>
+</section>
+<section id="api-data-types">
+<h2>API Data Types<a class="headerlink" href="#api-data-types" title="Link to this heading"></a></h2>
+<p>The detailed description of the Data Structures, Enumerations are provided in the API reference document. Refer to “Communication Channel Sub” sub-section under “Communication Channel” section in API reference document as shown in <a class="reference internal" href="#"><span class="doc">Figure 2</span></a>.</p>
+</section>
+<section id="configurable-macros">
+<h2>Configurable macros<a class="headerlink" href="#configurable-macros" title="Link to this heading"></a></h2>
+<p>The detailed description of the configurable macros in CommCh Engine and CommCh are provided in the API reference document. Refer to “Communication Channel Engine” &amp; “Communication Channel Sub” sub-section under “Communication Channel” section in API reference document as shown in <a class="reference internal" href="#"><span class="doc">Figure 2</span></a>.</p>
+</section>
+</section>
+<section id="application-integration">
+<h1>Application Integration<a class="headerlink" href="#application-integration" title="Link to this heading"></a></h1>
+<p>This section explains the flow of initializing and communicating using the communication channel in the application on Sub. Ensure that the communication channel source and include files as explained in <a class="reference internal" href="#"><span class="doc">Files</span></a> section is included in the Sub project.</p>
+<section id="initialization">
+<h2>Initialization<a class="headerlink" href="#initialization" title="Link to this heading"></a></h2>
+<p>The application information structure used in code snippets below is as shown in <a class="reference internal" href="#"><span class="doc">Code Snippet 1</span></a>. It contains the communication channel related structures to be maintained by the application.</p>
+<img alt="https://wiki.analog.com/_media/resources/tools-software/a2bv2/application_information_structure_for_communication_channel.png" class="align-center" src="https://wiki.analog.com/_media/resources/tools-software/a2bv2/application_information_structure_for_communication_channel.png" />
+<div class="centeralign docutils container">
+<p><strong>Code Snippet 1:</strong> Application Information Structure for communication Channel</p>
+</div>
+<p>The steps to initialize a communication channel on Sub node is as follows. The <a class="reference internal" href="#"><span class="doc">Code Snippet 2</span></a> shows the same.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="o">*</span> <span class="n">Application</span> <span class="n">should</span> <span class="n">define</span> <span class="n">the</span> <span class="n">PAL</span> <span class="n">function</span> <span class="k">for</span> <span class="n">regwrite</span><span class="p">,</span> <span class="n">regRead</span> <span class="ow">and</span> <span class="n">timer</span> <span class="n">functions</span> <span class="n">specific</span> <span class="n">to</span> <span class="n">the</span> <span class="n">platform</span><span class="o">.</span>
+<span class="o">*</span>       <span class="n">Next</span> <span class="n">a</span> <span class="n">communication</span> <span class="n">channel</span> <span class="n">context</span> <span class="n">must</span> <span class="n">be</span> <span class="n">created</span> <span class="k">with</span> <span class="n">the</span> <span class="n">I2C</span> <span class="n">PAL</span> <span class="n">function</span> <span class="n">pointers</span> <span class="k">for</span> <span class="n">the</span> <span class="n">platform</span> <span class="n">using</span> <span class="n">the</span> <span class="o">//</span><span class="n">adi_a2b_CommChPalInit</span><span class="o">//</span> <span class="n">API</span><span class="o">.</span>
+<span class="o">*</span>       <span class="n">Next</span> <span class="n">the</span> <span class="n">communication</span> <span class="n">channel</span> <span class="n">instance</span> <span class="n">should</span> <span class="n">be</span> <span class="n">created</span> <span class="n">specifying</span> <span class="n">the</span> <span class="n">required</span> <span class="n">configuration</span> <span class="n">using</span> <span class="n">the</span> <span class="o">//</span><span class="n">adi_a2b_CommChCreate</span><span class="o">//</span> <span class="n">API</span><span class="o">.</span> <span class="n">The</span> <span class="n">configuration</span> <span class="n">should</span> <span class="n">specify</span> <span class="n">the</span> <span class="n">memory</span> <span class="k">for</span> <span class="n">the</span> <span class="n">instance</span> <span class="ow">and</span> <span class="n">application</span> <span class="n">callback</span> <span class="k">for</span> <span class="n">handling</span> <span class="n">the</span> <span class="n">events</span><span class="o">.</span> <span class="n">The</span> <span class="n">A2B</span> <span class="n">Sub</span> <span class="n">node</span> <span class="n">transceiver</span> <span class="n">local</span> <span class="n">I2C</span> <span class="n">address</span> <span class="ow">is</span> <span class="n">specified</span> <span class="n">using</span> <span class="n">the</span> <span class="o">**</span><span class="n">ADI_A2B_COMMCH_SLVNODE_I2C_ADDR</span><span class="o">**</span> <span class="n">macro</span><span class="o">.</span> <span class="n">The</span> <span class="n">context</span> <span class="k">for</span> <span class="n">the</span> <span class="n">Communication</span> <span class="n">channel</span> <span class="ow">and</span> <span class="n">default</span> <span class="n">Rx</span> <span class="ow">and</span> <span class="n">Tx</span> <span class="n">mailbox</span> <span class="n">are</span> <span class="n">also</span> <span class="n">to</span> <span class="n">be</span> <span class="n">specified</span><span class="o">.</span>
+</pre></div>
+</div>
+<img alt="https://wiki.analog.com/_media/resources/tools-software/a2bv2/initialization_of_communication_channel_at_Slave.png" class="align-center" src="https://wiki.analog.com/_media/resources/tools-software/a2bv2/initialization_of_communication_channel_at_Slave.png" />
+<div class="centeralign docutils container">
+<p><strong>Code Snippet 2:</strong> Initialization of Communication Channel at Sub</p>
+</div>
+</section>
+<section id="handling-events">
+<h2>Handling Events<a class="headerlink" href="#handling-events" title="Link to this heading"></a></h2>
+<p>The <em>a2b_app_CommChCallBk</em> callback registered during initialization should handle the various events as shown in below code snippet 3.</p>
+<p><img alt="image2" src="https://wiki.analog.com/_media/resources/tools-software/a2bv2/communication_channel_event_handling_at_Slave.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Code Snippet 3:</strong> Communication Channel Event handling at Sub</p>
+</div>
+</section>
+<section id="periodic-ticking">
+<h2>Periodic Ticking<a class="headerlink" href="#periodic-ticking" title="Link to this heading"></a></h2>
+<p>The communication channel instance should be periodically ticked by calling the <em>adi_a2b_CommChTick</em> API as shown in <a class="reference internal" href="#"><span class="doc">Code Snippet 4</span></a>. This performs the following activities</p>
+<ul class="simple">
+<li><p>Schedules the 4-byte chunk I2C mailbox writes of any messages pending for transmission.</p></li>
+<li><p>Check for the timeout of last transmitted 4-byte chunk over mailbox.</p></li>
+<li><p>Polling for mailbox interrupts and initiate mailbox read once data is received.</p></li>
+</ul>
+<p>This should be called at a period lesser than or equal to the interrupt polling period <strong>ADI_A2B_COMMCH_INTR_POLLING_PERIOD</strong> which is set to 1ms by default.</p>
+<p><img alt="image3" src="https://wiki.analog.com/_media/resources/tools-software/a2bv2/periodic_ticking_at_Slave.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Code Snippet 4:</strong> Periodic Ticking at Sub</p>
+</div>
+</section>
+<section id="transmission-of-messages">
+<h2>Transmission of messages<a class="headerlink" href="#transmission-of-messages" title="Link to this heading"></a></h2>
+<p>Application can initiate the transmission over the communication channel using the <em>adi_a2b_CommChTxMsg</em> API as shown in <a class="reference internal" href="#"><span class="doc">Code Snippet 5</span></a>. The result of the transmission is indicated via a communication channel event through a callback to the application which is registered during initialization. An event type of <strong>A2B_COMMCH_EVENT_TX_DONE</strong> indicates confirmation of transmission and an event type of <strong>A2B_COMMCH_EVENT_TX_TIMEOUT</strong> indicates a timeout. The code snippet is shown in <a class="reference internal" href="#"><span class="doc">Handling Events</span></a> section as part of handling events.</p>
+<p><img alt="image4" src="https://wiki.analog.com/_media/resources/tools-software/a2bv2/transmission_over_communication_channel_at_Slave.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Code Snippet 5:</strong> Transmission over Communication Channel at Sub</p>
+</div>
+</section>
+<section id="reception-of-messages">
+<h2>Reception of messages<a class="headerlink" href="#reception-of-messages" title="Link to this heading"></a></h2>
+<p>Any new message received is indicated to application by the communication channel via the application callback with the event type A2B_COMMCH_EVENT_RX_MSG. It is as explained as part of <a class="reference internal" href="#"><span class="doc">Handling Events</span></a> section.</p>
+</section>
+<section id="enable-disable-framing">
+<h2>Enable/Disable Framing<a class="headerlink" href="#enable-disable-framing" title="Link to this heading"></a></h2>
+<p>Application can enable or disable framing for a communication channel instance using the <em>adi_a2b_app_CommChSetFraming</em> API as shown in <a class="reference internal" href="#"><span class="doc">Code Snippet 6</span></a>.</p>
+<p><img alt="image5" src="https://wiki.analog.com/_media/resources/tools-software/a2bv2/commch_set_framing.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Code Snippet 6:</strong> CommCh Set Framing</p>
+</div>
+<p>Application can get the current framing information for a communication channel instance using the <em>adi_a2b_app_CommChGetFraming</em> API as shown in <a class="reference internal" href="#"><span class="doc">Code Snippet 7</span></a>.</p>
+<p><img alt="image6" src="https://wiki.analog.com/_media/resources/tools-software/a2bv2/commch_get_framing.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Code Snippet 7:</strong> CommCh Get Framing</p>
+</div>
+</section>
+<section id="sequence-diagram">
+<h2>Sequence Diagram<a class="headerlink" href="#sequence-diagram" title="Link to this heading"></a></h2>
+<p>The communication channel is intended to be run a Sub node however it can be ported to a Main node as well. See <a class="reference internal" href="#"><span class="doc">Porting Instructions</span></a> section for more details. The <a class="reference internal" href="#"><span class="doc">Figure 3</span></a> shows the sequence diagram of a communication handshake between Main and Sub nodes using communication channel.</p>
+<p><img alt="image7" src="https://wiki.analog.com/_media/resources/tools-software/a2bv2/Master_Slave_message_handshake_sequence.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure 3:</strong> Main Sub Message Handshake Sequence</p>
+</div>
+<p>The sequence of events is as described below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="o">*</span> <span class="n">The</span> <span class="n">Main</span> <span class="n">node</span> <span class="n">software</span> <span class="n">on</span> <span class="n">start</span><span class="o">-</span><span class="n">up</span> <span class="n">performs</span> <span class="n">the</span> <span class="n">A2B</span> <span class="n">network</span> <span class="n">discovery</span> <span class="ow">and</span> <span class="n">configures</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">Sub</span> <span class="n">nodes</span> <span class="n">on</span> <span class="n">start</span> <span class="n">up</span><span class="o">.</span> <span class="n">It</span> <span class="n">configures</span> <span class="n">the</span> <span class="n">required</span> <span class="n">mailbox</span> <span class="n">register</span> <span class="n">settings</span> <span class="ow">in</span> <span class="nb">all</span> <span class="n">Sub</span> <span class="n">nodes</span> <span class="k">for</span> <span class="n">communication</span> <span class="n">channel</span><span class="o">.</span> <span class="n">The</span> <span class="n">mailbox</span> <span class="n">registers</span>    <span class="n">MBOX0_CTL</span> <span class="ow">and</span> <span class="n">MBOX1_CTL</span> <span class="n">should</span> <span class="n">be</span> <span class="n">configured</span> <span class="n">to</span> <span class="n">the</span> <span class="n">values</span> <span class="mh">0x3D</span> <span class="ow">and</span> <span class="mh">0x3F</span> <span class="n">to</span> <span class="n">ensure</span> <span class="n">the</span> <span class="n">following</span> <span class="n">configurations</span> <span class="n">of</span> <span class="n">mailbox</span><span class="p">:</span>  \\  <span class="o">*</span> <span class="n">Mailbox</span> <span class="n">data</span> <span class="n">length</span> <span class="n">should</span> <span class="n">be</span> <span class="mi">4</span> <span class="nb">bytes</span> \\  <span class="o">*</span> <span class="n">Mailbox</span> <span class="n">full</span> <span class="ow">and</span> <span class="n">empty</span> <span class="n">interrupts</span> <span class="n">should</span> <span class="n">be</span> <span class="n">enabled</span> \\  <span class="o">*</span> <span class="n">Mailbox</span> <span class="mi">0</span> <span class="n">should</span> <span class="n">be</span> <span class="n">configured</span> <span class="k">as</span> <span class="n">receive</span> <span class="n">mailbox</span> <span class="p">(</span><span class="n">where</span> <span class="n">Main</span> <span class="n">transmits</span> <span class="n">to</span> <span class="n">Sub</span><span class="p">)</span> <span class="ow">and</span> <span class="n">mailbox</span> <span class="mi">1</span> <span class="n">should</span> <span class="n">be</span> <span class="n">configured</span> <span class="k">as</span> <span class="n">transmit</span> <span class="p">(</span><span class="n">where</span> <span class="n">Sub</span> <span class="n">transmits</span> <span class="n">to</span> <span class="n">Main</span><span class="p">)</span><span class="o">.</span> \\ <span class="n">The</span> <span class="n">Main</span> <span class="n">node</span> <span class="n">also</span> <span class="n">initializes</span> <span class="n">a</span> <span class="n">PAL</span> <span class="n">context</span> <span class="ow">and</span> <span class="n">creates</span> <span class="n">the</span> <span class="n">communication</span> <span class="n">instances</span> <span class="n">using</span> <span class="n">the</span> <span class="n">APIs</span> <span class="o">//</span><span class="n">adi_a2b_CommChPalInit</span><span class="o">//</span> <span class="o">&amp;</span> <span class="o">//</span><span class="n">adi_a2b_CommChCreate</span><span class="o">//</span> <span class="n">respectively</span><span class="o">.</span> <span class="n">Similarly</span><span class="p">,</span> <span class="n">the</span> <span class="n">Sub</span> <span class="n">node</span> <span class="n">also</span> <span class="n">initializes</span> <span class="n">the</span> <span class="n">PAL</span> <span class="n">context</span> <span class="ow">and</span> <span class="n">creates</span> <span class="n">the</span> <span class="n">communication</span> <span class="n">instances</span> <span class="n">using</span> <span class="n">the</span> <span class="n">APIs</span> <span class="o">//</span><span class="n">adi_a2b_CommChPalInit</span><span class="o">//</span> <span class="o">&amp;</span> <span class="o">//</span><span class="n">adi_a2b_CommChCreate</span><span class="o">//</span> <span class="n">respectively</span><span class="o">.</span>
+<span class="o">*</span>  <span class="n">Post</span> <span class="n">initialization</span> <span class="n">the</span> <span class="n">Main</span> <span class="ow">and</span> <span class="n">Sub</span> <span class="n">node</span> <span class="n">call</span> <span class="n">the</span> <span class="o">//</span><span class="n">adi_a2b_CommChTick</span><span class="o">//</span> <span class="n">API</span> <span class="n">periodically</span> <span class="n">to</span> <span class="n">poll</span> <span class="n">the</span> <span class="n">A2B</span> <span class="n">node</span> <span class="k">for</span> <span class="n">mailbox</span> <span class="n">interrupts</span> <span class="p">(</span><span class="k">if</span> <span class="n">configured</span> <span class="k">for</span> <span class="n">polling</span><span class="p">)</span> <span class="ow">and</span> <span class="k">for</span> <span class="n">transmitting</span> <span class="n">message</span> <span class="n">chunks</span> <span class="n">once</span> <span class="n">a</span> <span class="n">transmission</span> <span class="ow">is</span> <span class="n">initiated</span><span class="o">.</span>
+<span class="o">*</span> <span class="n">The</span> <span class="n">Main</span> <span class="n">node</span> <span class="n">initiates</span> <span class="n">the</span> <span class="n">transmission</span> <span class="n">of</span> <span class="n">the</span> <span class="n">message</span> <span class="k">with</span> <span class="n">the</span> <span class="n">request</span> <span class="n">message</span> <span class="n">ID</span> <span class="n">specifying</span> <span class="n">the</span> <span class="n">information</span> <span class="n">required</span> <span class="kn">from</span><span class="w"> </span><span class="nn">Sub</span> <span class="n">using</span> <span class="n">the</span> <span class="o">//</span><span class="n">adi_a2b_CommChTxMsg</span><span class="o">//</span> <span class="n">API</span><span class="o">.</span> <span class="n">Once</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">message</span> <span class="n">data</span> <span class="n">has</span> <span class="n">been</span> <span class="n">written</span> <span class="n">to</span> <span class="n">the</span> <span class="n">remote</span> <span class="n">Sub</span> <span class="n">receive</span> <span class="n">mailbox</span> <span class="ow">and</span> <span class="n">Sub</span> <span class="n">has</span> <span class="n">read</span> <span class="n">the</span> <span class="n">same</span><span class="p">,</span> <span class="n">the</span> <span class="n">application</span> <span class="ow">is</span> <span class="n">notified</span> <span class="n">that</span> <span class="n">the</span> <span class="n">transmission</span> <span class="ow">is</span> <span class="n">complete</span> <span class="n">via</span> <span class="n">callback</span> <span class="k">with</span> <span class="n">transmission</span> <span class="n">complete</span> <span class="n">event</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">message</span> <span class="n">ID</span> <span class="n">by</span> <span class="n">the</span> <span class="n">communication</span> <span class="n">channel</span><span class="o">.</span>
+<span class="o">*</span> <span class="n">In</span> <span class="n">the</span> <span class="n">Sub</span> <span class="n">node</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">mailbox</span> <span class="n">data</span> <span class="n">received</span> <span class="kn">from</span><span class="w"> </span><span class="nn">Main</span> <span class="ow">is</span> <span class="n">processed</span> <span class="n">by</span> <span class="n">the</span> <span class="n">communication</span> <span class="n">channel</span> <span class="n">engine</span> <span class="ow">and</span> <span class="n">once</span> <span class="n">a</span> <span class="n">valid</span> <span class="n">message</span> <span class="ow">is</span> <span class="n">decoded</span> <span class="n">the</span> <span class="n">same</span> <span class="ow">is</span> <span class="n">notified</span> <span class="n">to</span> <span class="n">the</span> <span class="n">application</span> <span class="n">via</span> <span class="n">callback</span><span class="o">.</span> <span class="n">The</span> <span class="n">callback</span> <span class="n">contains</span> <span class="n">the</span> <span class="n">request</span> <span class="n">message</span> <span class="n">data</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">ID</span> <span class="k">with</span> <span class="n">event</span> <span class="nb">type</span> <span class="n">indicating</span> <span class="n">that</span> <span class="n">a</span> <span class="n">new</span> <span class="n">message</span> <span class="n">has</span> <span class="n">arrived</span><span class="o">.</span>
+<span class="o">*</span> <span class="n">Now</span> <span class="n">the</span> <span class="n">Sub</span> <span class="n">node</span> <span class="n">responds</span> <span class="k">with</span> <span class="n">the</span> <span class="n">response</span> <span class="n">message</span> <span class="k">with</span> <span class="n">the</span> <span class="n">unique</span> <span class="n">ID</span> <span class="n">by</span> <span class="n">initiating</span> <span class="n">a</span> <span class="n">new</span> <span class="n">transmission</span> <span class="n">using</span> <span class="n">the</span> <span class="o">//</span><span class="n">adi_a2b_CommChTxMsg</span><span class="o">//</span> <span class="n">API</span><span class="o">.</span> <span class="n">Once</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">message</span> <span class="n">data</span> <span class="n">has</span> <span class="n">been</span> <span class="n">written</span> <span class="n">to</span> <span class="n">the</span> <span class="n">local</span> <span class="n">transmit</span> <span class="n">Sub</span> <span class="n">mailbox</span> <span class="ow">and</span> <span class="n">Main</span> <span class="n">has</span> <span class="n">read</span> <span class="n">the</span> <span class="n">same</span><span class="p">,</span> <span class="n">the</span> <span class="n">application</span> <span class="ow">is</span> <span class="n">notified</span> <span class="n">that</span> <span class="n">the</span> <span class="n">transmission</span> <span class="ow">is</span> <span class="n">complete</span> <span class="n">via</span> <span class="n">callback</span> <span class="k">with</span> <span class="n">transmission</span> <span class="n">complete</span> <span class="n">event</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">message</span> <span class="n">ID</span> <span class="n">by</span> <span class="n">the</span> <span class="n">communication</span> <span class="n">channel</span><span class="o">.</span>
+<span class="o">*</span> <span class="n">In</span> <span class="n">the</span> <span class="n">Main</span> <span class="n">node</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">mailbox</span> <span class="n">data</span> <span class="n">received</span> <span class="kn">from</span><span class="w"> </span><span class="nn">Sub</span> <span class="ow">is</span> <span class="n">processed</span> <span class="n">by</span> <span class="n">the</span> <span class="n">communication</span> <span class="n">channel</span> <span class="n">engine</span> <span class="ow">and</span> <span class="n">once</span> <span class="n">a</span> <span class="n">valid</span> <span class="n">message</span> <span class="ow">is</span> <span class="n">decoded</span> <span class="n">the</span> <span class="n">same</span> <span class="ow">is</span> <span class="n">notified</span> <span class="n">to</span> <span class="n">the</span> <span class="n">application</span> <span class="n">via</span> <span class="n">callback</span><span class="o">.</span> <span class="n">The</span> <span class="n">callback</span> <span class="n">contains</span> <span class="n">the</span> <span class="n">response</span> <span class="n">message</span> <span class="n">data</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">ID</span> <span class="k">with</span> <span class="n">event</span> <span class="nb">type</span> <span class="n">indicating</span> <span class="n">that</span> <span class="n">a</span> <span class="n">new</span> <span class="n">message</span> <span class="n">has</span> <span class="n">arrived</span><span class="o">.</span> <span class="n">With</span> <span class="n">this</span> <span class="n">the</span> <span class="n">handshake</span> <span class="n">between</span> <span class="n">Main</span> <span class="ow">and</span> <span class="n">Sub</span> <span class="ow">is</span> <span class="n">complete</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="interrupt-polling-mode">
+<h2>Interrupt/Polling Mode<a class="headerlink" href="#interrupt-polling-mode" title="Link to this heading"></a></h2>
+<p>This section explains how to configure CommCh to operate in either interrupt or polling mode</p>
+<section id="a2b-main">
+<h3>A2B Main<a class="headerlink" href="#a2b-main" title="Link to this heading"></a></h3>
+<p>If CommCh is used along with ADI’s A2B stack, define “ENABLE_INTERRUPT_PROCESS” macro in a2bapp_defs.h to operate the stack along with CommCh in interrupt mode. Refer to <a class="reference internal" href="a2bssplusstackuserguide.html"><span class="doc">A2B Stack user guide</span></a> for more details on how to configure the stack to operate in interrupt mode. Follow the steps as explained in <a class="reference internal" href="#"><span class="doc">A2B Smart Sub</span></a> section if CommCh is integrated with Non-ADI A2B stack at the Main.</p>
+</section>
+<section id="a2b-smart-sub">
+<h3>A2B Smart Sub<a class="headerlink" href="#a2b-smart-sub" title="Link to this heading"></a></h3>
+<p>If CommCh is used along with Smart Sub,</p>
+<ul class="simple">
+<li><p>Register for a GPIO pin interrupt after <em>adi_a2b_CommChPalInit</em> function. Refer to code under else condition of <strong>“#if A2B_POLL_MB”</strong> macro in <a class="reference internal" href="#"><span class="doc">Code Snippet 8</span></a> for the same.</p></li>
+<li><p>In the callback function of the GPIO pin interrupt, set a flag to indicate the interrupt.Now after the adi_a2b_CommChTick periodic function, call the <em>a2b_CommChIntrQuery</em> function after to query the mailbox interrupts if the interrupt flag is set. Refer to code under <strong>“#if A2B_POLL_MB == 0”</strong> macro in Code <a class="reference internal" href="#"><span class="doc">Code Snippet 4</span></a> for the same.</p></li>
+</ul>
+</section>
+</section>
+<section id="porting-instructions">
+<h2>Porting Instructions<a class="headerlink" href="#porting-instructions" title="Link to this heading"></a></h2>
+<p>The communication channel by default is expected to run on a Sub node controller. On the Main node controller, it is advised to run the ADI A2B Software Stack and use the communication channel feature integrated to communicate with the Subs. An example Main demo application using communication channel with ADI A2B Software stack is available in <em>.\ADI_A2B-SSPlus_Software-RelX.Y.Z \Target\examples\advancedapp\mboxcommch\a2b-sc58x-commch-mstr</em> folder and the corresponding Sub demo application using the communication channel is available in the <em>.\ADI_A2B-SSPlus_Software-RelX.Y.Z \Target\examples\advancedapp\mboxcommch\a2b-sc59x-commch-smartslv’</em> folder. Refer to <a class="reference internal" href="#"><span class="doc">Running the Sample Demo</span></a> section on detailed steps to set up and run the demo. For detailed steps to integrate the communication channel using ADI A2B software stack on Main application refer to the <a class="reference internal" href="a2bssplusstackuserguide.html"><span class="doc">A2B Stack user guide</span></a>.</p>
+<p>If, however a non-ADI stack is used on the Main node controller for network discovery and configuration then the communication channel should be initialized correctly with eNodeType and nTargetNodeNum. Refer to <a class="reference internal" href="#"><span class="doc">Code Snippet 8</span></a> on how to initialize the CommCh if it’s being integrated with non-ADI stack on the Main node.</p>
+<p><img alt="image8" src="https://wiki.analog.com/_media/resources/tools-software/a2bv2/commch_integration_with_a2b_stack_on_Master_node.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Code Snippet 8:</strong>CommCh Integration with A2B Stack on Main Node</p>
+</div>
+</section>
+</section>
+<section id="running-the-sample-demo">
+<h1>Running the Sample Demo<a class="headerlink" href="#running-the-sample-demo" title="Link to this heading"></a></h1>
+<section id="adsp-sc594">
+<h2>ADSP-SC594<a class="headerlink" href="#adsp-sc594" title="Link to this heading"></a></h2>
+<p>This section describes the procedure to run the sample Communication Channel demo available at <em>.\Target\examples\advancedapp\mboxcommch</em>. This example demonstrates usage of Communication channel APIs for exchanging messages between Main and a smart Sub for the following two use cases.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#"><span class="doc">Sub node authentication</span></a></p></li>
+<li><p><a class="reference internal" href="#"><span class="doc">Switching between Audio sources</span></a></p></li>
+</ul>
+<p>The sample demo configuration is as shown in <a class="reference internal" href="#"><span class="doc">Figure 4</span></a>. The demo uses ADSP-SC594 as host processor and smart Sub, both running an instance of Communication Channel, for exchange of messages over A2B Mailbox.</p>
+<p><img alt="image9" src="https://wiki.analog.com/_media/resources/tools-software/a2bv2/adsp-sc594_as_Master_and_smart_Slave.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure 4:</strong>ADSP-SC594 as Main and Smart Sub</p>
+</div>
+<p>The A2B schematic for the demo configuration is available in <em>‘ADI_A2B-SSPlus_Software-RelX.Y.Z/ Schematics/SC59x/A2BSchematics/ adi_a2b_3NodeSampleDemoConfig - SmartSub.dspproj’</em>. The bus configuration .c file used in the Main is generated from this schematic. Refer <a class="reference internal" href="a2bssplususerguide.html"><span class="doc">A2B SigmaStudio+ user guide</span></a> for customizing A2B schematics and generating new bus/ node configuration files.</p>
+<section id="system-requirements">
+<h3>System Requirements<a class="headerlink" href="#system-requirements" title="Link to this heading"></a></h3>
+<section id="software-requirements">
+<h4>Software Requirements<a class="headerlink" href="#software-requirements" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Install Cross Core Embedded Studio 2.10.0 or later from the link www.analog.com/cces</p></li>
+<li><p>Install the ADSP-SC59X Board Support Package 1.0.0 or later from the link <a class="icon link reference external" href="https://download.analog.com/tools/EZBoards/EV-SC59x/Releases/Release_1.0.0/ADI_EV-SC59x_EZ-KIT-Rel1.0.0.exe" target="_blank">https://download.analog.com/tools/EZBoards/EV-SC59x/Releases/Release_1.0.0/ADI_EV-SC59x_EZ-KIT-Rel1.0.0.exe</a></p></li>
+<li><p>SigmaStudio+ setup as explained in <a class="reference internal" href="a2bssplususerguide.html"><span class="doc">A2B SigmaStudio+ user guide</span></a> is required only if modifying the demo A2B schematic.</p></li>
+</ul>
+</section>
+<section id="hardware-requirements">
+<h4>Hardware Requirements<a class="headerlink" href="#hardware-requirements" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>EV-SOMCRR-EZKIT Rev A or above</p></li>
+<li><p>EV-SC594-SOM Rev A or above</p></li>
+<li><p>ADZS-AD2435MINI Board</p></li>
+<li><p>EVAL-AD2435WJ3LZ Boards</p></li>
+<li><p>Three 12V Power Supply 1.5A</p></li>
+<li><p>ICE-1000 programmer with USB cable</p></li>
+<li><p>ICE-2000 programmer with USB cable</p></li>
+<li><p>Two audio source devices (e.g. iPods)</p></li>
+<li><p>One audio sink device (e.g. Speakers)</p></li>
+</ul>
+</section>
+</section>
+<section id="hardware-setup">
+<h3>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h3>
+<section id="connections">
+<h4>Connections<a class="headerlink" href="#connections" title="Link to this heading"></a></h4>
+<p>After completing all connections, the A2B system should look as shown in <a class="reference internal" href="#"><span class="doc">Figure 5</span></a>.</p>
+<ul class="simple">
+<li><p>Mount ADZS-AD2435MINI Board with I2C address 0x6A on Connector J10 of EV-SOMCRR-EZKIT.</p></li>
+<li><p>Connect a JTAG emulator from PC to EV-SC594-SOM board</p></li>
+</ul>
+<p><img alt="image10" src="https://wiki.analog.com/_media/resources/tools-software/a2bv2/demo_setup_commch.png" /></p>
+<div class="centeralign docutils container">
+<p><strong>Figure 5:</strong>Demo Setup</p>
+</div>
+</section>
+<section id="running-sample-demo">
+<h4>Running sample Demo<a class="headerlink" href="#running-sample-demo" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Connect ICE-1000 programmer to JTAG port of EV-SC594-SOM Main board and to PC through USB cable and connect ICE-2000 to ADSP-SC594-SOM Sub board. Power on both the boards.</p></li>
+<li><p>Open two instances of CCES and import Target project into the workspace.</p></li>
+<li><p>Open one instance of CCES and import Target project available in <em>.\ADI_A2B-SSPlus_Software-RelX.Y.Z \Target\examples\advancedapp\mboxcommch\</em> into the workspace using ‘File-&gt;Import-&gt;Existing Projects into Workspace’ browse and select ‘a2b-sc59x-commch-smartslv’. Build the project using ‘Project-&gt;Build Project’ option.</p></li>
+<li><p>Open other instance of CCES and import Target project available in <em>.\ADI_A2B-SSPlus_Software-RelX.Y.Z \Target\examples\advancedapp\mboxcommch\</em> into the workspace using ‘File-&gt;Import-&gt;Existing Projects into Workspace’ browse and select ‘a2b-sc59x-commch-mstr_Core0. Build the project using ‘Project-&gt;Build Project’ option.</p></li>
+<li><p>Run the ADSP-SC594 smartSub project first and then the ADSP-SC594 Main project by selecting a debug configuration.</p></li>
+<li><p>The audio input to the Main should start playing out from smart Sub board indicating successful authentication of the Sub as explained in <a class="reference internal" href="#"><span class="doc">Sub Node authentication</span></a> section.</p></li>
+<li><p>Press push button 1 on the SOMCRR-EZ Main board. This should cause the audio output on ADSP-SC594 Sub to start playing audio from AD2435WJ3LZ input source.</p></li>
+<li><p>Press push button 2 to switch back audio from ADSP-SC594 Main board to be played at ADSP-SC594 Sub again. The messages exchange in switching audio is explained in <a class="reference internal" href="#"><span class="doc">Switching between Audio Sources</span></a> section.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If Emulator is used the first time: Create a new debug configuration using Run-&gt;Debug Configurations, create new session, select the processor (ADSP-SC594) and click NEXT, select Emulator and click NEXT, choose In-Circuit Emulator platform (example: ADSP-SC594 via ICE1000) and click NEXT, then click FINISH.</p>
+</div>
+</section>
+</section>
+<section id="demo-use-cases">
+<h3>Demo Use-cases<a class="headerlink" href="#demo-use-cases" title="Link to this heading"></a></h3>
+<p>The following two use cases were demonstrated in this example.</p>
+<section id="sub-node-authentication">
+<h4>Sub Node authentication<a class="headerlink" href="#sub-node-authentication" title="Link to this heading"></a></h4>
+<p>Custom Node authentication via Mailbox option was enabled for ADSP-SC594 smart Sub in the demo A2B schematic. The A2B software stack running on the ADSP-SC594 Main node sends an authentication request message with ID <strong>A2B_COMMCH_MSG_REQ_SLV_NODE_SIGNATURE</strong> to the smart Sub. The Sub node then responds with its node ID using message ID <strong>A2B_COMMCH_MSG_RSP_SLV_NODE_SIGNATURE</strong>. The Main then verifies the received Node ID against the ID specified in the schematic.</p>
+<p>The successful discovery and playback of audio from smart Sub node indicates the successful Sub node authentication using Communication channel messages.</p>
+</section>
+<section id="switching-between-audio-sources">
+<h4>Switching between Audio Sources<a class="headerlink" href="#switching-between-audio-sources" title="Link to this heading"></a></h4>
+<p>Upon running the demo, audio from the Main node plays out at Sub ADSP-SC594 post successful discovery. The audio from the AD2435WJ3LZ Sub board is also routed to the ADSP-SC594 Sub. Based on a push button command, the Main initiates a communication channel message of ID <strong>A2B_COMMCH_MSG_REQ_XFADE_AUDIO_SRC</strong> wherein it specifies the audio source to be played at the output. Upon receiving the message, the Sub switches the audio source as specified in the message and responds with the message ID <strong>A2B_COMMCH_MSG_RSP_SLV_NODE_SIGNATURE</strong>.</p>
+<p>The successful switching of audio source upon push button press indicates the successful exchanges Communication channel messages for audio source switch.</p>
+</section>
+</section>
+</section>
+</section>
+<section id="terminology">
+<h1>Terminology<a class="headerlink" href="#terminology" title="Link to this heading"></a></h1>
+<div class="centeralign docutils container">
+<p><strong>Table:</strong> Terminology</p>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Term</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A2B</p></td>
+<td><p>Automotive Audio Bus</p></td>
+</tr>
+<tr class="row-odd"><td><p>A2B node</p></td>
+<td><p>Refers to AD242x/AD243x.</p></td>
+</tr>
+<tr class="row-even"><td><p>Main Node</p></td>
+<td><p>A2B transceiver that is connected to the host processor is considered as the Main A2B node.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sub Node</p></td>
+<td><p>A2B Sub Transceiver with local peripherals such as speakers and microphones.</p></td>
+</tr>
+<tr class="row-even"><td><p>I2C</p></td>
+<td><p>Is a multi-Main single-ended serial bus used for attaching low-speed peripherals to a processor. In TWI / I2C protocol the serial data transmission is done in asynchronous mode. This protocol uses only two wires named SDA (serial data) and SCL (serial clock) for communicating between two or more ICs.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

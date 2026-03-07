@@ -1,0 +1,11 @@
+Evaluating the AD22372
+======================
+
+| //
+| ==== AD22372 Breakout Board documentation: ====
+| `Preliminary User Guide <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/eval-ad22372z_ug-xxx.docx>`_ for the AD22372 Breakout Board
+| // `ADXL372 Breakout Board Schematic <https://wiki.analog.com/_media/mems/301-720_adxl372z_-_schematic.pdf>`_
+| // `ADXL372 Breakout Board Layout <https://wiki.analog.com/_media/mems/301-720_adxl372z_-_layout.pdf>`_
+| ==== AD22372 Example Code ====
+| ADXL22372 register map ADXL372.h and SPI interface example code is offered
+| `adxl372_example_code.zip <https://wiki.analog.com/_media/resources/eval/user-guides/inertial-mems/accelerometers/adxl372_example_code.zip>`_

@@ -1,0 +1,2614 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The EVAL-LTPA-KIT or LTpowerAnalyzer software features Bode Plot measurement, Transient Response Measurement, Output Impedance Measurement, and simultaneous viewing and analysis of signals in both time and frequency domains." name="description" />
+
+    <title>EVAL-LTPA-KIT Software Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">EVAL-LTPA-KIT Software Guide</a><ul>
+<li><a class="reference internal" href="#system-requirements">System Requirements</a></li>
+<li><a class="reference internal" href="#downloads">Downloads</a></li>
+<li><a class="reference internal" href="#software-installation">Software Installation</a><ul>
+<li><a class="reference internal" href="#installing-the-software-dependencies">Installing the Software Dependencies</a><ul>
+<li><a class="reference internal" href="#libiio-ver-0-25">Libiio Ver. 0.25</a></li>
+<li><a class="reference internal" href="#installing-libm2k-ver-0-7-0">Installing libm2k Ver. 0.7.0</a></li>
+<li><a class="reference internal" href="#installing-m2k-usb-drivers">Installing M2K USB Drivers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#measurements">Measurements</a></li>
+<li><a class="reference internal" href="#bode-plot">BODE PLOT</a><ul>
+<li><a class="reference internal" href="#bode-measurement-tab-interface">Bode Measurement Tab Interface</a><ul>
+<li><a class="reference internal" href="#bode-graph-tab-interface">Bode Graph Tab Interface</a></li>
+<li><a class="reference internal" href="#copying-analysis-data">Copying Analysis Data</a></li>
+<li><a class="reference internal" href="#load-modify-and-save-data">Load, Modify, and Save Data</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#setting-the-bode-plot-injection-level">Setting the Bode Plot Injection Level</a></li>
+<li><a class="reference internal" href="#saving-and-importing-data-to-excel">Saving and Importing Data to Excel</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#transient-response">TRANSIENT RESPONSE</a><ul>
+<li><a class="reference internal" href="#transient-tab-interface">Transient Tab Interface</a><ul>
+<li><a class="reference internal" href="#transient-pulse-measurement-setup">Transient Pulse Measurement Setup</a></li>
+<li><a class="reference internal" href="#transient-graph-tab-interface">Transient Graph Tab Interface</a></li>
+<li><a class="reference internal" href="#transient-analysis-tab">Transient Analysis Tab</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#making-multiple-pulse-transient-analysis">Making Multiple Pulse Transient Analysis</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#output-impedance">OUTPUT IMPEDANCE</a><ul>
+<li><a class="reference internal" href="#impedance-measurement-setup">Impedance Measurement Setup</a></li>
+<li><a class="reference internal" href="#impedance-graph-tab">Impedance Graph Tab</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#oscilloscope">OSCILLOSCOPE</a><ul>
+<li><a class="reference internal" href="#scope-cursor-tab">Scope Cursor Tab</a></li>
+<li><a class="reference internal" href="#copying-analysis-data-1">Copying Analysis Data</a></li>
+<li><a class="reference internal" href="#scope-impedance-analysis">Scope Impedance Analysis</a></li>
+<li><a class="reference internal" href="#missing-scope-trigger">Missing Scope Trigger</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#additional-gui-controls">Additional GUI Controls</a><ul>
+<li><a class="reference internal" href="#how-to-hide-traces">How to Hide Traces</a></li>
+<li><a class="reference internal" href="#how-to-delete-traces">How to Delete Traces</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#using-the-ltpoweranalyzer-with-ltpowercad">Using the LTpowerAnalyzer with LTpowerCAD</a></li>
+<li><a class="reference internal" href="#checking-for-software-updates">Checking for Software Updates</a></li>
+<li><a class="reference internal" href="#additional-resources">Additional Resources</a></li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="eval-ltpa-kit-software-guide">
+<h1>EVAL-LTPA-KIT Software Guide<a class="headerlink" href="#eval-ltpa-kit-software-guide" title="Link to this heading"></a></h1>
+<p>The EVAL-LTPA-KIT or LTpowerAnalyzer software features Bode Plot measurement, Transient Response Measurement, Output Impedance Measurement, and simultaneous viewing and analysis of signals in both time and frequency domains.</p>
+<section id="system-requirements">
+<h2>System Requirements<a class="headerlink" href="#system-requirements" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Operating System</p></td>
+<td><p>Windows 10 or later versions</p></td>
+</tr>
+<tr class="row-even"><td><p>Processor</p></td>
+<td><p>2.0 GHz or faster processor</p></td>
+</tr>
+<tr class="row-odd"><td><p>Memory</p></td>
+<td><p>8 GB RAM</p></td>
+</tr>
+<tr class="row-even"><td><p>Storage</p></td>
+<td><p>1 GB</p></td>
+</tr>
+<tr class="row-odd"><td><p>Additional Notes</p></td>
+<td><p>These minimum requirements ensures that the LTpowerAnalyzer software will run. Better system requirements may improve user experience</p></td>
+</tr>
+<tr class="row-even"><td><p>Prerequisite software</p></td>
+<td><p>Python 3.9 or later versions</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="downloads">
+<h2>Downloads<a class="headerlink" href="#downloads" title="Link to this heading"></a></h2>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon link reference external" href="https://swdownloads.analog.com/LTpowerAnalyzer/SetupLTpowerAnalyzer.exe" target="_blank">LTpowerAnalyzer Software Installer</a></p>
+</div>
+</section>
+<section id="software-installation">
+<h2>Software Installation<a class="headerlink" href="#software-installation" title="Link to this heading"></a></h2>
+<p>This section provides a step-by-step procedure of installing the LTpowerAnalyzer software. For this demonstration, the LTpowerAnalyzer software version is <strong>LTPA Ver. 1.8.1.2.</strong></p>
+<ul class="simple">
+<li><p>Download the <a class="icon link reference external" href="https://swdownloads.analog.com/LTpowerAnalyzer/SetupLTpowerAnalyzer.exe" target="_blank">LTpowerAnalyzer Software Installer Package</a></p></li>
+<li><p>Locate the executable file “<strong>SetupLTpowerAnalyzer.exe</strong>” inside the downloads folder.</p></li>
+<li><p>Double click the installer file. A notification window will pop up, listing the accompanying drivers and libraries necessary to run the LTpowerAnalyzer software. Click <strong>OK</strong> to proceed.</p></li>
+<li><p>Select a destination location to install the LTpowerAnalyzer folder files. By default, the software files will install at the location <strong>C:\Program Files (x86)\LTpowerAnalyzer</strong>. To select a different location, click the <em>Browse</em> option.</p></li>
+<li><p>After choosing a destination location, click <em>Install</em> to proceed with the installation of the LTpowerAnalyzer software.</p></li>
+</ul>
+<p>&gt;</p>
+<section id="installing-the-software-dependencies">
+<h3>Installing the Software Dependencies<a class="headerlink" href="#installing-the-software-dependencies" title="Link to this heading"></a></h3>
+<section id="libiio-ver-0-25">
+<h4>Libiio Ver. 0.25<a class="headerlink" href="#libiio-ver-0-25" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Carefully read and understand the License Agreement form before proceeding.</p></li>
+<li><p>Click the <strong>I accept the agreement</strong> option.</p></li>
+<li><p>Click <strong>Next</strong> to proceed with the installation.</p></li>
+<li><p>Click <strong>Install</strong> to proceed with the installation.</p></li>
+<li><p>Wait until the installation completes. A pop-up window telling the completion of the Libiio Setup will show up.</p></li>
+<li><p>Click <strong>Finish</strong>.</p></li>
+</ul>
+<p>&gt;</p>
+</section>
+<section id="installing-libm2k-ver-0-7-0">
+<h4>Installing libm2k Ver. 0.7.0<a class="headerlink" href="#installing-libm2k-ver-0-7-0" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Carefully read and understand the License Agreement form before proceeding.</p></li>
+<li><p>Click the <strong>I accept the agreement</strong> option.</p></li>
+<li><p>Click <strong>Next</strong> to proceed with the installation.</p></li>
+<li><p>Select the additional installs with the libm2k. NOTE: The Overwrite libiio option appears when the was previously installed this in your system.</p></li>
+<li><p>Click <strong>Next</strong> to proceed with the installation.</p></li>
+<li><p>Click <strong>Install</strong> to initiate the libm2k driver installation.</p></li>
+<li><p>Wait until the installation wizard for libm2k finishes.</p></li>
+<li><p>Click <strong>Finish</strong>.</p></li>
+</ul>
+<p>&gt;</p>
+</section>
+<section id="installing-m2k-usb-drivers">
+<h4>Installing M2K USB Drivers<a class="headerlink" href="#installing-m2k-usb-drivers" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Carefully read and understand the License Agreement form before proceeding.</p></li>
+<li><p>Click the <strong>I accept the agreement</strong> option.</p></li>
+<li><p>Click <strong>Next</strong> to proceed with the installation.</p></li>
+<li><p>Click <strong>Install</strong> to begin the installation process.</p></li>
+<li><p>Click <strong>Next</strong> to proceed with the installation wizard. Should a Window Security prompt pop-up, click Install to proceed with the installation.</p></li>
+<li><p>Check the list of device drivers to be installed.</p></li>
+<li><p>Click <strong>Finish</strong>.</p></li>
+<li><p>Proceed with finishing the M2K USB Device Drivers installation.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">Complete the entire LTpowerAnalyzer Setup Wizard with all required dependencies.</div>
+</div>
+<p>A desktop shortcut will be automatically created. Launch the LTpowerAnalyzer software by clicking the shortcut.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">===== Calibration ===== The LTpowerAnalyzer requires that a DC offset and gain system calibration be performed in order to achieve the most accurate results. The ADALM2000 W1 and W2 outputs will drift about 20 mV to 50 mV when power is first applied, and the circuit board starts to heat up. The outputs will stabilize after about 10 minutes, when another calibration should be run.</div>
+</div>
+<p>When the program is started, it will try to restore the previously saved calibration. If no calibration has yet been run, a warning will be generated:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/calibrationwarning.png"><img alt="image1" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/calibrationwarning.png" style="width: 400px;" /></a></p>
+<div class="center docutils container">
+<p><strong>No Calibration Data Found Warning</strong></p>
+</div>
+<p>To perform a calibration, click on the <strong>Calibration -&gt; Run</strong> menu item. The calibration data will be saved in the <strong>AppData directory</strong> usually found at <strong>C:\Users\(Your User Name)\AppData\Local\LTpowerAnalyzer\LTpowerAnalyzer.xml</strong>.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/run_calibrate.png"><img alt="image2" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/run_calibrate.png" style="width: 400px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Running a Calibration</strong></p>
+</div>
+<p>Since the self-calibration routine modifies the W1 and W2 outputs, it is important that the current probe output not be powered during the calibration routine, otherwise the current probe could generate a large current pulse. If the current probe is connected, the output voltage will be measured before starting the calibration routine. If the measured voltage is too high, the following error message will be generated, and the calibration aborted.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/calibrationwarning2.png"><img alt="image3" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/calibrationwarning2.png" style="width: 400px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Current Probe Voltage Too High Warning</strong></p>
+</div>
+<p>Below are the required connections when performing a calibration. It is important to adhere with the connections guide to proceed with a calibration.</p>
+<div class="center docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>LTpowerAnalyzer Main Board
+(LB3031A) Pin</strong></p></td>
+<td><p><strong>Connection During Calibration</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>OUT+, OUT-, IN+, IN-, VOUT+, VOUT-</p></td>
+<td><p>Constant DC voltage or floating</p></td>
+</tr>
+<tr class="row-odd"><td><p>T+, T-,</p></td>
+<td><p>Injection resistor termination or floating</p></td>
+</tr>
+<tr class="row-even"><td><p>GND</p></td>
+<td><p>Ground</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Current Probe (LB3058A) Pin</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>V+</p></td>
+<td><p>Floating or shorted to V- or GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>V-</p></td>
+<td><p>Floating or connected to Ground</p></td>
+</tr>
+<tr class="row-even"><td><p>(V+ ) - (V-)</p></td>
+<td><p>0V</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">===== Sweep Amplitude Tab ===== The <strong>Sweep Amplitude tab</strong> contains the injection signal control for Bode plot measurements, and the loading current sweep for output impedance measurement. This feature allows users to program any arbitrary signal sweeping curve.</div>
+</div>
+<p>&lt;fc #6495ed&gt;<strong>Bode Plot Measurement: Voltage Injection Signal</strong>&lt;/fc&gt;</p>
+<p>Program the voltage injection signal amplitude sweep based on your frequency of interest. This can be done by adding rows in the leftmost table in the Bode tab under the Sweep Amplitude window.</p>
+<p><em>Bode Tab</em></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Frequency</strong></p></td>
+<td><p>Selected frequency points where the voltage amplitude for the injection signal may be set. The frequency points may be selected between 100 Hz and 10 MHz.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Amplitude</strong></p></td>
+<td><p>Set the peak-to-peak amplitude of the injection voltage signal. These values may be set between 0 mV pk-pk to 500 mV pk-pk.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/sourceamplitudebode.png"><img alt="image4" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/sourceamplitudebode.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Amplitude Sweeping for Injection Signal Window for Bode Plot Measurements</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">&lt;fc #6495ed&gt;<strong>Output Impedance Measurement: Loading Current Sweep</strong>&lt;/fc&gt;</div>
+</div>
+<p>Set the load current sweep level for output impedance measurement. Rows can be added at the leftmost table of the Impedance tab under the Sweep Amplitude window.</p>
+<p><em>Impedance Tab</em></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Frequency</strong></p></td>
+<td><p>Selected frequency points where the amplitude of the loading current may be set. The frequency points may be selected between 100 Hz and 10 MHz.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Amplitude</strong></p></td>
+<td><p>Set the peak-to-peak amplitude of the loading current for each selected frequency. These values may be set between 0A peak-to-peak up to 5A peak-to-peak.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/amplitude_sweeping_for_output_impedance_measurement.png"><img alt="image5" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/amplitude_sweeping_for_output_impedance_measurement.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Amplitude Sweeping for the Load Current Window for Output Impedance Measurement</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">—-</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+<section id="measurements">
+<h1>Measurements<a class="headerlink" href="#measurements" title="Link to this heading"></a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Make sure that you have set up the hardware for <strong>Bode Measurement</strong> as described in the <a class="reference internal" href="hardware.html"><span class="doc">EVAL-LTPA-KIT Hardware Setup Guide</span></a> before proceeding with the steps listed below.</p>
+</div>
+</section>
+<section id="bode-plot">
+<h1>BODE PLOT<a class="headerlink" href="#bode-plot" title="Link to this heading"></a></h1>
+<section id="bode-measurement-tab-interface">
+<h2>Bode Measurement Tab Interface<a class="headerlink" href="#bode-measurement-tab-interface" title="Link to this heading"></a></h2>
+<p>The Bode Measurement Setup is on the left side of the window.</p>
+<div class="center docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><em>Sweep Control</em></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>Start Frequency</strong></p></td>
+<td><p>100 Hz to 10 MHz</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Stop Frequency</strong></p></td>
+<td><p>100 Hz to 10 MHz</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Points</strong></p></td>
+<td><p>The number of points in the sweep. In Auto mode, fewer points are used at low frequencies and more are used above 10 kHz.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Speed</strong></p></td>
+<td><p>The speed is set by adjusting the number of injection sine wave periods per acquisition. The Fast-setting results in a noisier measurement.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Append</strong></p></td>
+<td><p>When checked, the new sweep data will be appended to the graph. When not checked all previous data will be cleared before the sweep begins.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Run/Stop</strong></p></td>
+<td><p>Click the <strong>Run</strong> button to start the sweep. A sweep in progress can be stopped by clicking the <em>Stop</em> button. Disabled when the meter is disconnected.</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Signal Source</em></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Transformer</strong></p></td>
+<td><p>The signal amplitude is adjusted for using the transformer outputs (±500 mV)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>W1</strong></p></td>
+<td><p>The signal amplitude is adjusted for using the W1 output (±5 V)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Switching Frequency</em></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>Design</strong></p></td>
+<td><p>The expected design switching frequency used to help get an accurate frequency measurement. For LDOs, the switching frequency can be set to zero or ignored.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Tol (%)</strong></p></td>
+<td><p>The design value tolerance. Sets the width of the frequency window around the Design value in which to search for the switching frequency.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Measured</strong></p></td>
+<td><p>The measured switching frequency. If the switching frequency is not found within the tolerance around the design frequency, the result will be set to “?”
+If the voltages are much less than 1 mV like an LDO, then the switching frequency will be reported as 0. The switching frequency value is used to adjust the injection frequency in order to avoid aliased switching frequency harmonics.</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>DC Probe Current</em></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>DC Probe Current</strong></p></td>
+<td><p>A dropdown box that lists all available current options. This sets the current probe to act as a DC Load</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Zero</strong></p></td>
+<td><p>Sets the DC Probe Current back to 0A</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Enabled</strong></p></td>
+<td><p>Enables the Current Probe to act as a DC Load when checked</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_bodegraphtab.png"><img alt="image6" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_bodegraphtab.png" style="width: 600px;" /></a></p>
+</div>
+<div class="center docutils container">
+<p><strong>Bode Plot Measurement Tab</strong></p>
+</div>
+<section id="bode-graph-tab-interface">
+<h3>Bode Graph Tab Interface<a class="headerlink" href="#bode-graph-tab-interface" title="Link to this heading"></a></h3>
+<p>Click on the <strong>Graph tab</strong> on the right to bring up the graph setup.</p>
+<div class="center docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><em>X-axis</em></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>Minimum</strong></p></td>
+<td><p>100 Hz to 10 MHz</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Maximum</strong></p></td>
+<td><p>100 Hz to 10 MHz</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>AutoScale</strong></p></td>
+<td><p>The X-axis data will be automatically scaled</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Y Axis (Gain)</em></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>Minimum</strong></p></td>
+<td><p>-500 dB to 500 dB</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Maximum</strong></p></td>
+<td><p>-500 dB to 500 dB</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Increments</strong></p></td>
+<td><p>Number of Y-axis increments</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>AutoScale</strong></p></td>
+<td><p>The Y-axis data will be automatically scaled</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Y2 Axis (Phase)</em></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Minimum</strong></p></td>
+<td><p>-360 Deg to 360 Deg</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Maximum</strong></p></td>
+<td><p>-360 Deg to 360 Deg</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Increments</strong></p></td>
+<td><p>Number of Y2 Axis increments</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>AutoScale</strong></p></td>
+<td><p>The Y2 Axis data will be automatically scaled when checked</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_bodegraphtab1.png"><img alt="image7" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_bodegraphtab1.png" style="width: 600px;" /></a></p>
+</div>
+<div class="center docutils container">
+<p><strong>Bode Plot Measurement Graph Tab</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">=== Bode Analysis Tab Interface === Click on the <strong>Analysis tab</strong> on the right to bring up the sweep results.</div>
+</div>
+<div class="center docutils container">
+<p><em>Bode Analysis Tab</em></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Fsw</strong></p></td>
+<td><p>The switching frequency</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Ripple</strong></p></td>
+<td><p>The peak-to-peak ripple measurement in the time domain</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Freq at Gain = 0</strong></p></td>
+<td><p>The frequency at which the gain crosses zero for the first time and the phase margin is measured</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Phase Margin</strong></p></td>
+<td><p>The phase when the gain crosses zero for the first time</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Gain at Fsw / 2</strong></p></td>
+<td><p>The gain at 1/2 the switching frequency</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Freq at Phase = 0</strong></p></td>
+<td><p>The frequency when the phase crosses 0 on the plot and the gain margin is measured</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Gain Margin</strong></p></td>
+<td><p>The gain margin which is (0 dB - gain) when the phase crosses 0 on the plot for the first time</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_bodeanatab.png"><img alt="image8" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_bodeanatab.png" style="width: 600px;" /></a></p>
+</div>
+<div class="center docutils container">
+<p><strong>Bode Plot Measurement Analysis Tab</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</section>
+<section id="copying-analysis-data">
+<h3>Copying Analysis Data<a class="headerlink" href="#copying-analysis-data" title="Link to this heading"></a></h3>
+<p>Copying the measurement data from the analysis tab works differently. This section provides the step-by-step procedure to copy the data. This also applies for all the measurement tabs that provides analysis information.</p>
+<ul class="simple">
+<li><p>Right-click on the <strong>Analysis Tab</strong> to see the <strong>“Copy Data”</strong> option.</p></li>
+<li><p>After the <strong>“Copy Data”</strong> option comes out, left-click to copy the measurement data.</p></li>
+<li><p>Paste the data to an excel spreadsheet by pressing <strong>CTRL+V</strong>.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="load-modify-and-save-data">
+<h3>Load, Modify, and Save Data<a class="headerlink" href="#load-modify-and-save-data" title="Link to this heading"></a></h3>
+<p><em>File Menu</em></p>
+<p>Click on the <strong>file menu</strong> to save or open a .BOD file that includes all the data and the setup. A previously saved file can be opened and viewed without being connected to the Analog Discovery 2. You can also open the <strong>LTPowerAnaylyzer.bod example file</strong>.</p>
+<p><em>Pop-Up Menu</em></p>
+<p>Right-click on the <strong>Bode Plot</strong> to show the pop-up menu.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Save Image</strong></p></td>
+<td><p>Save a PNG image to disk</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Copy Image</strong></p></td>
+<td><p>Copy the image to the clipboard</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Copy Data</strong></p></td>
+<td><p>Copy the data to the clipboard</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Edit Title</strong></p></td>
+<td><p>Edit the plot title</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Add Text Annotation</strong></p></td>
+<td><p>Add a text box that can be edited and moved around the plot</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Edit Annotation</strong></p></td>
+<td><p>Left-click an annotation to select it, then right-click and select the <strong>Edit Annotation</strong> to edit the text and orientation</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Copy Annotation</strong></p></td>
+<td><p>Left-click an annotation to select it, then right-click and select <strong>Copy Annotation</strong> make a copy</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Delete Annotation</strong></p></td>
+<td><p>Left-click an annotation to select it, then right-click and select <strong>Delete Annotation</strong> to remove it</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Making a Bode Plot Measurement ==== After setting up the hardware, you may now start making gain and phase measurements. This section provides a step-by-step guide on how to use the Bode Plot feature of the LTpowerAnalyzer software.</div>
+</div>
+<ol class="arabic simple">
+<li><p>Launch the LTpowerAnalyzer software.</p></li>
+</ol>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/launching_the_ltpoweranalyzer_software_without_the_current_probe.png"><img alt="image9" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/launching_the_ltpoweranalyzer_software_without_the_current_probe.png" style="width: 600px;" /></a></div>
+<div class="line"><br /></div>
+</div>
+<div class="center docutils container">
+<p><strong>Launching the LTpowerAnalyzer Software Without the Current Probe</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">Check the status bar at the bottom of the main window. It should indicate that it found the M2k or Analog Discover 2 and the LTpowerAnalyzer main board is connected. In this example, we are not using the LB3058A current probe since we are only interested in taking a bode plot measurement.</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">2. Run a calibration.</div>
+</div>
+<p>Turn off the power to the demo board, then run a calibration.</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bode_plot_getting_started_calibration_2.png"><img alt="image10" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bode_plot_getting_started_calibration_2.png" style="width: 600px;" /></a></div>
+<div class="line"><br /></div>
+</div>
+<div class="center docutils container">
+<p><strong>Running a Calibration</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">3. Set up the Injection Level.</div>
+</div>
+<ul class="simple">
+<li><p>STEP #1: Click on the <strong>Sweep Amplitude tab</strong>.</p></li>
+<li><p>STEP #2: Click the <strong>Bode tab</strong>.</p></li>
+<li><p>STEP #3: Set the injection level for each frequency in the measurement. You may add additional points by inserting rows.</p></li>
+</ul>
+<p>The sweep injection amplitude vs. frequency graph is updated as additional rows or points are added.</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/impedanceinjectionlevelwithmenu.png"><img alt="image11" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/impedanceinjectionlevelwithmenu.png" style="width: 600px;" /></a></div>
+<div class="line"><br /></div>
+</div>
+<div class="center docutils container">
+<p><strong>Setting the Injection Level</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">4. Run a Sweep.</div>
+</div>
+<ul class="simple">
+<li><p>STEP #1: Should an external load is unavailable, the current probe can be set as a DC load. Carefully select the desired DC Probe Current Level. Ensure that the selected DC Probe Current will not exceed the used Current Probe’s rating and the DUT.</p></li>
+<li><p>STEP #2: Enter the designed switching frequency and tolerance as well as the desired <strong>Sweep Control</strong> parameters.</p></li>
+<li><p>STEP #3: Click the “<strong>Enabled</strong>” option under the DC Probe Current and then click the <strong>RUN</strong> button to start the measurement.</p></li>
+<li><p>STEP #4: When the measurement is complete, the measured parameters can be viewed by clicking on the <strong>Analysis tab</strong> on the right.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib4_bodemeas.png"><img alt="image12" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib4_bodemeas.png" style="width: 600px;" /></a></div>
+<div class="line"><br /></div>
+</div>
+<div class="center docutils container">
+<p><strong>Running a Bode Plot Measurement</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">5. Rename the Measurements.</div>
+</div>
+<ul class="simple">
+<li><p>STEP #1: Click on the <strong>Data</strong> tab on the right.</p></li>
+<li><p>STEP #2: Click on the <strong>Name value</strong> you want to change. After typing the desired waveform name, press the <strong>ENTER</strong> or <strong>RETURN</strong> key.</p></li>
+</ul>
+<p>The legend will automatically be updated to the new name.</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_bodemeas.png"><img alt="image13" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_bodemeas.png" style="width: 600px;" /></a></div>
+<div class="line"><br /></div>
+</div>
+<div class="center docutils container">
+<p><strong>Renaming the Measurements</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">6. Edit the <strong>Plot Title</strong>.</div>
+</div>
+<ul class="simple">
+<li><p>STEP #1: Right-click on the graph and select <strong>Edit Title</strong>.</p></li>
+<li><p>STEP #2: Type in the new title.</p></li>
+<li><p>STEP #3: Click the <strong>OK</strong> button.</p></li>
+</ul>
+<p>The plot title will be automatically updated to the new title.</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib6_bodemeas.png"><img alt="image14" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib6_bodemeas.png" style="width: 600px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib7_bodemeas.png"><img alt="image15" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib7_bodemeas.png" style="width: 600px;" /></a></div>
+<div class="line"><br /></div>
+</div>
+<div class="center docutils container">
+<p><strong>Editing the Main Title</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">7. Add a Text Annotation.</div>
+</div>
+<ul class="simple">
+<li><p>STEP #1: Right-click on the graph and select <strong>Add Text Annotation</strong>.</p></li>
+<li><p>STEP #2: Type in the text annotations.</p></li>
+<li><p>STEP #3: Click the <strong>OK</strong> button.</p></li>
+</ul>
+<p>Next, select the new annotation by placing the cursor over it and then left click. The annotation can then be resized and moved as needed.</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib8_bodemeas.png"><img alt="image16" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib8_bodemeas.png" style="width: 600px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib9_bodemeas.png"><img alt="image17" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib9_bodemeas.png" style="width: 600px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib10_bodemeas.png"><img alt="image18" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib10_bodemeas.png" style="width: 600px;" /></a></div>
+<div class="line"><br /></div>
+</div>
+<div class="center docutils container">
+<p><strong>Adding a Text Annotation</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">8. Saving the Results.</div>
+</div>
+<ul class="simple">
+<li><p>STEP #1: Select the Save option in the <strong>File tab: File &gt; Save</strong></p></li>
+<li><p>STEP #2: Enter the file name of the saved data.</p></li>
+<li><p>STEP #3: Click Save. A <strong>Data File</strong> type will save the setup and the data.</p></li>
+</ul>
+<p>Note that the <strong>Setup File</strong> type will only save the setup.</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib11_bodemeas.png"><img alt="image19" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib11_bodemeas.png" style="width: 600px;" /></a> <a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib12_bodemeas.png"><img alt="image20" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib12_bodemeas.png" style="width: 600px;" /></a></div>
+<div class="line"><br /></div>
+</div>
+<div class="center docutils container">
+<p><strong>Saving a Bode Plot Measurement</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="setting-the-bode-plot-injection-level">
+<h2>Setting the Bode Plot Injection Level<a class="headerlink" href="#setting-the-bode-plot-injection-level" title="Link to this heading"></a></h2>
+<p>The injected signal level can affect the results of the gain and phase measurements. At low frequencies, the open-loop gain is high, so the signal at the input to the DUT is small, leading to a noisy reading. By increasing the injected signal level at low frequencies, the noise in the reading can be reduced. As the frequency is increased, the DUT needs to drive the decreasing output capacitance impedance, which can cause the DUT’s control loop to go non-linear, leading to distortion and inaccurate gain and phase measurements. At the mid frequencies, it is best to set the signal level to as low a value as possible. At higher frequencies (~ 500 kHz+), the gain can be much less than 1 and it might be useful to increase the signal level again.</p>
+<p>The injection level vs. frequency can be set by clicking on the Bode Source tab and entering the break points into the table on the left. The maximum signal level is 500 mV pk-pk. Right click on the table to bring up a menu which will help edit the data in the table.</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_bodeinjlvl.png"><img alt="image21" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_bodeinjlvl.png" style="width: 600px;" /></a></div>
+<div class="line"><br /></div>
+</div>
+<div class="center docutils container">
+<p><strong>Setting the Bode Plot Injection Level</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_bodeinjlvl.png"><img alt="image24" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_bodeinjlvl.png" style="width: 400px;" /></a> <strong>Tapered vs. Constant 20 mV Injection Levels</strong></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_bodeinjlvl.png"><img alt="image25" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_bodeinjlvl.png" style="width: 400px;" /></a> <strong>Tapered vs. Constant 100 mV Injection Levels</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">With a constant 20 mV pk-pk injection level, both the gain and phase measurements are noticeably noisier at low frequencies because of the small input signal due to high open-loop gain.</div>
+</div>
+<p>With a constant 100 mV pk-pk injection level, there is less noise at low frequencies, ripple in the phase along with gain and phase errors are noticeable beyond 10 kHz, indicating too much signal level.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="saving-and-importing-data-to-excel">
+<h2>Saving and Importing Data to Excel<a class="headerlink" href="#saving-and-importing-data-to-excel" title="Link to this heading"></a></h2>
+<p>The LTpowerAnalyzer allows users to import acquired Bode plot measurements to an Excel Spreadsheet. Measurement data can be accessed under the Data tab next to the Graph tab in the Bode Plot pane. Data are arranged in a spreadsheet manner.</p>
+<p>Acquired data are arranged under the following:</p>
+<div class="center docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>#</strong></p></td>
+<td><p>The sweep number of the data set.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Frequency</strong></p></td>
+<td><p>Measured frequency in Hertz at a particular data point</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Gain (dB)</strong></p></td>
+<td><p>Measured gain in decibels at a particular data point</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Phase (deg)</strong></p></td>
+<td><p>Measured phase in degrees at a particular data point</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Vin (V pk-pk)</strong></p></td>
+<td><p>Measured input voltage in volts at a particular data point</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Vout (V pk-pk)</strong></p></td>
+<td><p>Measured output voltage in volts at a particular data point</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ul class="simple">
+<li><p>STEP #1: Click on the <strong>Data Tab</strong>.</p></li>
+<li><p>STEP #2: Click on the data you want to select, or type <strong>CTRL-A</strong> to add all the data.</p></li>
+<li><p>STEP #3: Type <strong>CTRL+C</strong> to copy the selected or highlighted data to the clipboard.</p></li>
+<li><p>Go to <strong>EXCEL</strong> and type <strong>CTRL-V</strong> to paste the data.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bodeplotdatagrid.jpg"><img alt="image26" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bodeplotdatagrid.jpg" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Bode Plot Measurement Data View</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bodeplotanalysisdatatabexel.jpg"><img alt="image27" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/bodeplotanalysisdatatabexel.jpg" style="width: 400px;" /></a></div>
+</div>
+<div class="center docutils container">
+<p><strong>Bode Plot Data Pasted into Excel</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">—-</div>
+</div>
+</section>
+</section>
+<section id="transient-response">
+<h1>TRANSIENT RESPONSE<a class="headerlink" href="#transient-response" title="Link to this heading"></a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Make sure that you have properly set up the hardware for Transients Measurement as described in the <a class="reference internal" href="hardware.html"><span class="doc">EVAL-LTPA-KIT Hardware Guide</span></a> before proceeding to below steps.</p>
+</div>
+<p>Navigate through the different functionalities of the transient response measurement feature of the LTpowerAnalyzer.</p>
+<div class="group docutils container">
+<div class="half column docutils container">
+<ul class="simple">
+<li><p>Transient Interface Guide</p></li>
+<li><p>Making a Transient Measurement</p></li>
+<li><p>Transient Multiple Pulse Analysis</p></li>
+</ul>
+</div>
+<div class="half column docutils container">
+<ul class="simple">
+<li><p>Transient PWL Measurement Setup</p></li>
+<li><p>Transient Rise &amp; Fall Times</p></li>
+<li><p>Extending Vout Measurement Range</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<section id="transient-tab-interface">
+<h2>Transient Tab Interface<a class="headerlink" href="#transient-tab-interface" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="transient-pulse-measurement-setup">
+<h3>Transient Pulse Measurement Setup<a class="headerlink" href="#transient-pulse-measurement-setup" title="Link to this heading"></a></h3>
+<p><em>Transient Control</em></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Low Current</strong></p></td>
+<td><p>0A to the High Current</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>High Current</strong></p></td>
+<td><p>0A to the probe maximum current</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Pulse Width</strong></p></td>
+<td><p>The current pulse width in seconds</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Duty Cycle</strong></p></td>
+<td><p>The pulse duty cycle when more than one pulse is selected. Disabled when Low Current is 0</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Pulse Count</strong></p></td>
+<td><p>The number of pulse counts. Disabled when Low Current is 0</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Rise Time</strong></p></td>
+<td><p>The current pulse rise time. Disabled when Low Current is 0</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Fall Time</strong></p></td>
+<td><p>The current pulse fall time. Disabled when Low Current is 0</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Run</strong></p></td>
+<td><p>Run the transient measurement. Disabled when the meter is not connected</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Append</strong></p></td>
+<td><p>Data will be erased before a measurement if the Append box is not checked</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Switching Frequency</em></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Design</strong></p></td>
+<td><p>The expected design switching frequency used to help get an accurate frequency measurement. For LDOs, the switching frequency can be set to zero or ignored</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Tol(%)</strong></p></td>
+<td><p>The Design value tolerance. Sets the width of the frequency window around the Design value in which to search for the switching frequency</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Measured</strong></p></td>
+<td><p>The measured switching frequency. If the switching frequency is not found within the tolerance around the design frequency, the result will be set to “?”
+If the voltages are much less than 1mV like an LDO, then the switching frequency will be reported as 0. The switching frequency value is used to filter the voltage waveform before calculating the settling times</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_pulsemeas.png"><img alt="image28" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_pulsemeas.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Transient Pulse Measurement Setup</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">=== Transient PWL Measurement Setup === The current can also be described by a Piece Wise Linear (PWL) set of time, value points. The time must be increasing and greater than 0 for each data point and can be specified as an absolute time point relative to 0, or a differential time point relative to the previous time point in the list by placing a + sign before the value. Simply click on the box in the table and enter the value.</div>
+</div>
+<ul class="simple">
+<li><p>Right click on the <strong>PWL table</strong> to bring up the PWL menu to modify the contents of the table.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_pwlmeas.png"><img alt="image29" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_pwlmeas.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Transient PWL Measurement Setup</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</section>
+<section id="transient-graph-tab-interface">
+<h3>Transient Graph Tab Interface<a class="headerlink" href="#transient-graph-tab-interface" title="Link to this heading"></a></h3>
+<div class="hi docutils container">
+<p><em>Trigger</em></p>
+<div class="line-block">
+<div class="line"><a href="#id1"><span class="problematic" id="id2">|</span></a></div>
+</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Channel</strong></p></td>
+<td><p>Current or Voltage</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Edge</strong></p></td>
+<td><p>Rising or Falling</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Mode</strong></p></td>
+<td><p>Auto or Normal</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Level</strong></p></td>
+<td><p>The trigger level in either Amps or Volts depending on the channel selected.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>AutoLevel</strong></p></td>
+<td><p>The current trigger level is set automatically when checked</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><strong>AutoLevel</strong>                        | The current trigger level is set automatically when checked                                                                                                                                   |</div>
+</div>
+<div class="hi docutils container">
+<p><em>Time Base</em></p>
+<div class="line-block">
+<div class="line"><a href="#id3"><span class="problematic" id="id4">|</span></a></div>
+</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Range</strong></p></td>
+<td><p>The time base range in seconds/division. Disabled when AutoScale is checked.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Offset</strong></p></td>
+<td><p>Time base offset in number of divisions. Disabled when AutoScale is checked</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>AutoScale</strong></p></td>
+<td><p>The time base data will be automatically scaled when checked</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><strong>AutoScale</strong>                        | The time base data will be automatically scaled when checked                                                                                                                                  |</div>
+</div>
+<div class="hi docutils container">
+<p><em>Load Current</em></p>
+<div class="line-block">
+<div class="line"><a href="#id5"><span class="problematic" id="id6">|</span></a></div>
+</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Range</strong></p></td>
+<td><p>The load current (Y1) range in amps/division. Disabled when AutoScale is checked</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Offset</strong></p></td>
+<td><p>The load current offset in number of divisions. Disabled when AutoScale is checked</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>DC Load Current</strong></p></td>
+<td><p>The load current of an external parallel DC electronic load. Simply added to the measured values</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Enable</strong></p></td>
+<td><p>The load current waveform is visible when checked</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>AutoScale</strong></p></td>
+<td><p>The load current data will be automatically scaled when checked</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><strong>AutoScale</strong>                        | The load current data will be automatically scaled when checked                                                                                                                               |</div>
+</div>
+<div class="hi docutils container">
+<p><em>Output Voltage</em></p>
+<div class="line-block">
+<div class="line"><a href="#id7"><span class="problematic" id="id8">|</span></a></div>
+</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Range</strong></p></td>
+<td><p>The output voltage (Y2) range in amps/division. Disabled when AutoScale is checked</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Offset</strong></p></td>
+<td><p>The output voltage offset in number of divisions. Disabled when AutoScale is checked</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Scale Factor</strong></p></td>
+<td><p>The scale factor that will be multiplied by each measured Vout value. Allows for front end attenuation to expand the measurement range. See Extending Vout Measurement Range for more details</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Enable</strong></p></td>
+<td><p>The output voltage waveform is visible when checked</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>AutoScale</strong></p></td>
+<td><p>The output voltage data will be automatically scaled when checked</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><strong>AutoScale</strong>                        | The output voltage data will be automatically scaled when checked                                                                                                                             |</div>
+</div>
+<div class="hi docutils container">
+<p><em>Graph Markers</em></p>
+<div class="line-block">
+<div class="line"><a href="#id9"><span class="problematic" id="id10">|</span></a></div>
+</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Visible</strong></p></td>
+<td><p>The graph markers are visible when checked</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_pulsemeas1.png"><img alt="image30" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_pulsemeas1.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Transient Graph Tab</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">=== Transient Analysis Limit Display === When the <strong>Show Limits</strong> box is checked, a light-gray box will be drawn around the voltage waveform with the Y values set by the values in the Lower Limit and Upper Limit combo boxes.</div>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_limidisp.png"><img alt="image31" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_limidisp.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Transient Analysis with Limits Displayed</strong></p>
+</div>
+<p>If the voltage waveform remains inside the box, the limit text will turn green, otherwise the text will be red.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_limidisp.png"><img alt="image34" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_limidisp.png" style="width: 500px;" /></a>
+<strong>Transient Analysis Passing Set Limits indicated by Green Text</strong></p></td>
+<td><p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_limidisp.png"><img alt="image35" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_limidisp.png" style="width: 500px;" /></a>
+<strong>Transient Analysis Failing Set Limits indicated by Red Text</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="transient-analysis-tab">
+<h3>Transient Analysis Tab<a class="headerlink" href="#transient-analysis-tab" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Transient Number</strong></p></td>
+<td><p>The transient sweep number to analyze</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Settling (%)</strong></p></td>
+<td><p>The settling time voltage threshold as a percentage of Vout for the settling time measurement</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Lower Limit(%)</strong></p></td>
+<td><p>The lower limit as a percentage of Vout for the limit display</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Upper Limit(%)</strong></p></td>
+<td><p>The upper limit as a percentage of Vout for the limit display</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Show Analysis</strong></p></td>
+<td><p>The graphical analysis display will be visible when checked. The analysis will display Vout min and max and the settling times.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Show Limits</strong></p></td>
+<td><p>The limits window will be displayed when checked</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_tranana.png"><img alt="image36" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_tranana.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Transient Analysis Tab</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">=== Copying Analysis Data === Copying the measurement data from the analysis tab works differently. This section provides the step-by-step procedure to copy the data. This also applies for all the measurement tabs that provides analysis information.</div>
+</div>
+<ul class="simple">
+<li><p>Right click on the <strong>Analysis Tab</strong> to see the <strong>Copy Data</strong> option.</p></li>
+<li><p>After the <strong>Copy Data</strong> option comes out, left-click to copy the measurement data.</p></li>
+<li><p>Paste the data to an excel spreadsheet by pressing <strong>CTRL+V</strong>.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1trananalysiscopy.png"><img alt="image37" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1trananalysiscopy.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Oscilloscope Measurement Analysis Tab</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Making a Transient Measurement ==== After setting up the hardware, here’s a step-by-step guide on how to use the Transients Response Measurement feature of the LTpowerAnalyzer software.</div>
+</div>
+<ol class="arabic simple">
+<li><p>Check the system status</p></li>
+</ol>
+<ul class="simple">
+<li><p>Click on the <strong>Transient tab</strong> and check the status bar at the bottom of the main window. It should indicate that it found the M2k or Analog Discover 2 and the LB3031A main board and LB3058A current probe is connected. The measurement output voltage and current probe temperature should be displayed.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/transientgettingstarted_2.png"><img alt="image38" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/transientgettingstarted_2.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Transient Tab with the Current Probe Connected</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">2. Run a calibration.</div>
+</div>
+<ul class="simple">
+<li><p>Turn off the power to the demo board, discharge the demo board output capacitor by shorting the outputs, then run a calibration.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/transientgettingstarted_2.png"><img alt="image39" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/transientgettingstarted_2.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Running a Calibration</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">3. Running Transients</div>
+</div>
+<div class="line-block">
+<div class="line">The Transient Control pane offers two controlled transients stimuli, the Pulse Control and Piecewise Linear Control. The use of each transient control features will be discussed in the following.</div>
+<div class="line"><em>3.a Pulse Control</em></div>
+</div>
+<p>This transient control sends a rectangular load pulse or a train of load pulses to the DUT to induce transience. Configure the Pulse transient control pane based on the intended application the DUT is to be simulated with.</p>
+<ul class="simple">
+<li><p>STEP #1: Set the switching frequency and tolerance for the DUT.</p></li>
+<li><p>STEP #2: Set the low current, high current, pulse width, pulse duty cycle, pulse count, and the rise and fall time of the pulse transient for the DUT.</p></li>
+<li><p>STEP #3: Click the <strong>RUN</strong> button to start the measurements. Wait until the graph of the transient measurements appear at the window.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_extranmeas.png"><img alt="image40" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_extranmeas.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Guide on Running a Pulse Control Transient</strong></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/pwltransient.jpg"><img alt="image41" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/pwltransient.jpg" style="width: 600px;" /></a></p>
+</div>
+<div class="center docutils container">
+<p><strong>Sample Result of a Pulse Control Transient Stimuli</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><em>3.b Piecewise Linear Function Control</em></div>
+</div>
+<p>The Piecewise Linear (PWL) control scheme sends a piecewise linear load waveform to the DUT. This allows users to simulate an arbitrary waveform as a load to the DUT. Configure the PWL transient control pane based on the intended application the DUT is to be simulated with.</p>
+<ul class="simple">
+<li><p>STEP #1: Set the switching frequency and tolerance for the DUT.</p></li>
+<li><p>STEP #2: Set the different current levels for each point in time. Add succeeding rows to increase the number of data points for the PWL control.</p></li>
+<li><p>STEP #3: Click the RUN button to start the measurements. Wait until the graph of the transient measurements appear at the window.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_extranmeas.png"><img alt="image42" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_extranmeas.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Setting up a Piece Wise Linear Transient Control</strong></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib6_extranmeas.png"><img alt="image43" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib6_extranmeas.png" style="width: 600px;" /></a></p>
+</div>
+<div class="center docutils container">
+<p><strong>Running a PWL Transient Measurement</strong></p>
+</div>
+</section>
+</section>
+<section id="making-multiple-pulse-transient-analysis">
+<h2>Making Multiple Pulse Transient Analysis<a class="headerlink" href="#making-multiple-pulse-transient-analysis" title="Link to this heading"></a></h2>
+<p>Sometimes the voltage response depends on the timing of the current pulse with respect to the switching cycle. This can be explored by looking at multiple pulses with programmable widths and duty cycles.</p>
+<ol class="arabic simple">
+<li><p>Configuring the transient control parameters</p></li>
+</ol>
+<ul class="simple">
+<li><p>STEP #1: Indicate the switching frequency and tolerance of the DUT.</p></li>
+<li><p>STEP #2: Select the number of pulse counts.</p></li>
+<li><p>STEP #3: Indicate the desired pulse width of the pulse train.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_multipulana.png"><img alt="image44" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_multipulana.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Configuring the Transient Tab for Multiple Pulse Analysis</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">2. Click <strong>RUN</strong> to run a Transient Analysis.</div>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_multipulana.png"><img alt="image45" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_multipulana.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Sample Multiple Pulse Transient Analysis</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Transient Rise and Fall Times ==== The effect of different load current rise and fall times on the transient response can be explored by setting their values with the Rise Time and Fall Time combo boxes. The rise times are programmable only when the Low Current is set to a minimum value other than zero in order to overcome the offset of the amplifier in the current control loop on the current probe.</div>
+</div>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_rifati.png"><img alt="image46" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_rifati.png" style="width: 600px;" /></a></div>
+<div class="line"><br /></div>
+</div>
+<div class="center docutils container">
+<p><strong>Transient Rise Time Comparison</strong></p>
+</div>
+<p>When the Low Current is set to zero, the rise and fall times will be fixed at ~200 ns, which is set by the loop bandwidth of the current source.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_rifati.png"><img alt="image47" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_rifati.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Locked Control Parameters at Low Current = 0 A</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Extending VOUT Measurement Range ==== The Vout+ to GND and Vout- to GND signal range is limited to ±600 mV which is sufficient for the majority of applications. The plot below shows Vout+ being driven with a sine wave generator at two different amplitudes to show the clipping that occurs when the signal level gets too high. Notice that the Output Voltage Scale Factor is set to 1.0</div>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_extmeasran.png"><img alt="image48" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_extmeasran.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Nominal Vout+ Signal Range Example</strong></p>
+</div>
+<p>Sometimes the range needs to be extended, which can be accomplished by placing a resistor divider in front of VOUT+ and VOUT-. Any ratio can be selected to extend the range, but the noise will go up as the division ratio is increased. The sum of the resistor values should be kept less than 10 kΩ.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_extmeasran.png"><img alt="image49" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_extmeasran.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Adding Resistor Dividers to Extend the Vout Range</strong></p>
+</div>
+<p>The plot below shows the Vout+ input being driven with a sine wave generator with two different amplitudes driving the input to the 1k-1k resistor divider. Notice that the range has doubled and that the Output Voltage Scale Factor is set to 2.0 to get the right values.</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_extmeasran.png"><img alt="image50" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_extmeasran.png" style="width: 600px;" /></a></div>
+<div class="line"><br /></div>
+</div>
+<div class="center docutils container">
+<p><strong>1k-1k Resistor Divider on Vout+ Extends the Range</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">—-</div>
+</div>
+</section>
+</section>
+<section id="output-impedance">
+<h1>OUTPUT IMPEDANCE<a class="headerlink" href="#output-impedance" title="Link to this heading"></a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Make sure that you have properly set up the hardware for Output Impedance Measurement as described in the <a class="reference internal" href="hardware.html"><span class="doc">EVAL-LTPA-KIT Hardware Guide</span></a> before proceeding to below steps.</p>
+</div>
+<p>Navigate the following sections to learn about the Impedance Measurement feature of the LTpowerAnalyzer.</p>
+<ul class="simple">
+<li><p>Impedance Measurement Interface Guide</p></li>
+<li><p>Make and Impedance Measurement</p></li>
+<li><p>Setting The Impedance Current Level</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Impedance Tab Interface ==== Navigate the following sections to learn about the interface of the Impedance Measurement window.</div>
+</div>
+<ul class="simple">
+<li><p>Impedance Measurement Setup</p></li>
+<li><p>Impedance Graph Tab</p></li>
+</ul>
+<p>›</p>
+<section id="impedance-measurement-setup">
+<h2>Impedance Measurement Setup<a class="headerlink" href="#impedance-measurement-setup" title="Link to this heading"></a></h2>
+<p>After successfully connecting a current probe to the DUT, the status bar at the bottom indicates the maximum probe current, the DC output voltage of the DUT, and the temperature of the current probe. Set the current load levels in the <strong>Sweep Amplitude Tab</strong>, then click the <strong>Run</strong> button to take a measurement.</p>
+<p><em>Impedance Sweep Control</em></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Start Frequency</strong></p></td>
+<td><p>100 Hz to 10 MHz</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Stop Frequency</strong></p></td>
+<td><p>100 Hz to 10 MHz</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Points</strong></p></td>
+<td><p>The number of points in the sweep. In Auto mode fewer points are used at low frequencies, and more are used above 10 kHz</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Speed</strong></p></td>
+<td><p>The speed is set by adjusting the number of injection sine wave periods per acquisition. Fast results in a noisier measurement</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Append</strong></p></td>
+<td><p>When checked, the new sweep data will be appended to the graph. When not checked all previous data will be cleared before the sweep begins</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Run/Stop</strong></p></td>
+<td><p>Click the <strong>Run button</strong> to start the sweep. A sweep in progress can be stopped by clicking the <strong>Stop button</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Switching Frequency</em></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Design</strong></p></td>
+<td><p>The expected design switching frequency used to help get an accurate frequency measurement. For LDOs, the switching frequency can be set to zero or ignored.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Tol (%)</strong></p></td>
+<td><p>The design value tolerance. Sets the width of the frequency window around the design value in which to search for the switching frequency.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Measured</strong></p></td>
+<td><p>The measured switching frequency. If the switching frequency is not found within the tolerance around the design frequency, the result will be set to “?”
+If the voltages are much less than 1 mV like an LDO, then the switching frequency will be reported as 0. The switching frequency value is used to adjust the injection frequency in order to avoid aliased switching frequency harmonics.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_impmeasset.png"><img alt="image51" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_impmeasset.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Impedance Measurement Setup</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="impedance-graph-tab">
+<h2>Impedance Graph Tab<a class="headerlink" href="#impedance-graph-tab" title="Link to this heading"></a></h2>
+<div class="center docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><em>X-axis</em></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>Minimum</strong></p></td>
+<td><p>100 Hz to 10 Mhz</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Maximum</strong></p></td>
+<td><p>100 Hz to 10 Mhz</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>AutoScale</strong></p></td>
+<td><p>The X-axis data will be automatically scaled</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Y-axis (Impedance)</em></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>Minimum</strong></p></td>
+<td><p>0 Ω to 100 Ω</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Maximum</strong></p></td>
+<td><p>0 Ω to 100 Ω</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Increments</strong></p></td>
+<td><p>Number of Y1 Axis increments</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>AutoScale</strong></p></td>
+<td><p>The Y-axis data will be automatically scaled</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Y2 Axis (Phase)</em></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Minimum</strong></p></td>
+<td><p>-360 Deg to 360 Deg</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Maximum</strong></p></td>
+<td><p>-360 Deg to 360 Deg</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Increments</strong></p></td>
+<td><p>Number of Y2 Axis increments</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>AutoScale</strong></p></td>
+<td><p>The Y2 Axis data will be automatically scaled when checked</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_impegraph.png"><img alt="image52" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_impegraph.png" style="width: 600px;" /></a></p>
+</div>
+<div class="center docutils container">
+<p><strong>Impedance Graph Tab</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Making an Impedance Measurement ==== Ensure that the hardware has been properly set up as described in the <a class="reference internal" href="hardware.html"><span class="doc">EVAL-LTPA-KIT Hardware Guide</span></a> before performing these measurements. The following section discusses the procedure to make an impedance measurement using the LTpowerAnalyzer software.</div>
+</div>
+<ol class="arabic simple">
+<li><p>Check the system status.</p></li>
+</ol>
+<p>Click on the <strong>Impedance tab</strong> and check the status bar at the bottom of the main window. It should indicate that it found the M2k or Analog Discover 2 and the LB3031A mother board and LB3058A current probe is connected. The measurement output voltage and current probe temperature should be displayed.</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_impemeas.png"><img alt="image53" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_impemeas.png" style="width: 600px;" /></a></div>
+</div>
+<div class="center docutils container">
+<p><strong>Impedance Tab with the Current Probe Connected</strong></p>
+</div>
+<div class="line-block">
+<div class="line">2. Run a calibration if needed.</div>
+</div>
+<p>Turn off the power to the demo board, discharge the demo board output capacitor by shorting the outputs, then run a calibration.</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_impemeas.png"><img alt="image54" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_impemeas.png" style="width: 600px;" /></a></div>
+<div class="line"><br /></div>
+</div>
+<div class="center docutils container">
+<p><strong>Running a Calibration Procedure</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">3. Set up the impedance measurement injection current level.</div>
+</div>
+<ul class="simple">
+<li><p>STEP #1: Click on the** Sweep Amplitude tab**.</p></li>
+<li><p>STEP #2: Click the <strong>Impedance tab</strong>.</p></li>
+<li><p>STEP #3: Set the load current amplitude level for each frequency in the measurement. You may add additional points by inserting rows.</p></li>
+</ul>
+<p>The graph displaying the sweeping of the load current amplitude vs. frequency graph is updated as additional rows or points are added.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib4_impemeas.png"><img alt="image55" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib4_impemeas.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Set the Impedance Measurement Injection Current Level</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">4. Run an impedance measurement.</div>
+</div>
+<ul class="simple">
+<li><p>STEP #1: Under the <strong>Impedance functionality</strong>, set the desired designed switching frequency and the tolerance associated with the device under testing.</p></li>
+<li><p>STEP #2: Set the Start and Stop frequency for the impedance sweep. You may also set the number of points and the acquisition speed for the output impedance measurement.</p></li>
+<li><p>STEP #3: Click <strong>Run</strong>. Wait until the output impedance measurement is finished.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_impemeas.png"><img alt="image56" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_impemeas.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Run an Impedance Measurement</strong></p>
+</div>
+<p>Set up the impedance control parameters, the expected switching frequency and tolerance window; set up the trigger and graph parameters, then click the <strong>RUN</strong> button.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Setting the Impedance Current Level ==== The current load signal level can affect the results of the impedance measurement. At low frequencies, the supply impedance can be very low, so the voltage signal is small, leading to a noisy reading. By increasing the current load signal level at low frequencies, the noise in the reading can be reduced.</div>
+</div>
+<p>The current load amplitude vs. frequency can be set by clicking on the <strong>Impedance Source tab</strong> and entering the break points into the table on the left. The maximum current signal level is determined by which current probe is connected. Right-click on the table to bring up a menu which allows data editing in the table.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_impelvl.png"><img alt="image57" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_impelvl.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Setting the Impedance Measurement Current Level</strong></p>
+</div>
+<p>The average current of the sine wave is equal to approximately 1.1 (I<sub>peak-to-peak</sub> / 2) which includes a little DC offset to ensure the waveform does not distort near zero. For measuring the impedance with a larger DC load, and external DC current load is required. For the 10 A, 50 A, and 100 A current probes, the maximum current amplitude is limited to 5 A peak-to-peak or a current that keeps the average current to keep the DC power dissipation of the current probe less than 10 W.</p>
+<p>The 10 A current probe gives the best results for an output impedance measurement since the injection current is a larger fraction of the maximum probe current, leading to a less noisy sine wave.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_impelvl.png"><img alt="image58" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_impelvl.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Current Sine Wave</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">—-</div>
+</div>
+</section>
+</section>
+<section id="oscilloscope">
+<h1>OSCILLOSCOPE<a class="headerlink" href="#oscilloscope" title="Link to this heading"></a></h1>
+<p>Navigate the scope feature of the LTpowerAnalyzer through the listed sections below:</p>
+<ul class="simple">
+<li><p>Oscilloscope Interface</p></li>
+<li><p>Measuring Switcher Ripple Voltage</p></li>
+<li><p>Scope Missing Trigger</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Oscilloscope Interface ====</div>
+<div class="line">=== Scope Graph Tab === Click on the <strong>Scope tab</strong> to display the oscilloscope instrument which lets the user enable the Bode transformer injection voltage, or impedance load current at given frequency and amplitude, then analyze the time domain and frequency domain FFT signals at the input and output.</div>
+</div>
+<div class="hi docutils container">
+<p><em>Configuration</em></p>
+<div class="line-block">
+<div class="line"><a href="#id11"><span class="problematic" id="id12">|</span></a></div>
+</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Bode</strong></p></td>
+<td><p>Select the Bode measurement mode with the transformer injection voltage enabled, and the differential signals measured on IN+, IN- and OUT+, OUT-</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Impedance</strong></p></td>
+<td><p>Select the Impedance measurement mode with the probe current sine wave load enabled, and the signals measured on I+, I- and VOUT+, VOUT-</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><strong>Impedance</strong>                                                                       | Select the Impedance measurement mode with the probe current sine wave load enabled, and the signals measured on I+, I- and VOUT+, VOUT-                                                                                                                                                                                             |</div>
+</div>
+<div class="hi docutils container">
+<p><em>Signal Generator Frequency</em></p>
+<div class="line-block">
+<div class="line"><a href="#id13"><span class="problematic" id="id14">|</span></a></div>
+</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Frequency</strong></p></td>
+<td><p>The signal frequency from 100 Hz to 10 MHz</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Enable</strong></p></td>
+<td><p>The Bode transformer injection voltage or impedance sine wave probe load current is enabled when checked, off when not checked</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Slider</strong></p></td>
+<td><p>A fast way to adjust the frequency</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><strong>Slider</strong>                                                                          | A fast way to adjust the frequency                                                                                                                                                                                                                                                                                                   |</div>
+</div>
+<div class="hi docutils container">
+<p><em>Signal Generator Amplitude</em></p>
+<div class="line-block">
+<div class="line"><a href="#id15"><span class="problematic" id="id16">|</span></a></div>
+</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Amplitude (pk-pk)</strong></p></td>
+<td><p>The peak-to-peak amplitude of the Bode transformer injection voltage or impedance sine wave probe load current. In the Bode configuration, the amplitude is set at the output of the transformer driver, so the impedance of the transformer coupled with the impedance of the transformer load will lower the actual value measured</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><strong>Amplitude (pk-pk)</strong>                                                               | The peak-to-peak amplitude of the Bode transformer injection voltage or impedance sine wave probe load current. In the Bode configuration, the amplitude is set at the output of the transformer driver, so the impedance of the transformer coupled with the impedance of the transformer load will lower the actual value measured |</div>
+</div>
+<div class="hi docutils container">
+<p><em>Signal Source</em></p>
+<div class="line-block">
+<div class="line"><a href="#id17"><span class="problematic" id="id18">|</span></a></div>
+</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Transformer</strong></p></td>
+<td><p>The signal amplitude is adjusted for using the transformer outputs (±500 mV). Default signal generator for impedance configuration</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>W1</strong></p></td>
+<td><p>The signal amplitude is adjusted for using the W1 output (±5 V). Not available during impedance configuration</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><strong>W1</strong>                                                                              | The signal amplitude is adjusted for using the W1 output (±5 V). Not available during impedance configuration                                                                                                                                                                                                                        |</div>
+</div>
+<div class="hi docutils container">
+<p><em>FFT</em></p>
+<div class="line-block">
+<div class="line"><a href="#id19"><span class="problematic" id="id20">|</span></a></div>
+</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Average</strong></p></td>
+<td><p>Number of averages for the displayed FFT data</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><strong>Average</strong>                                                                         | Number of averages for the displayed FFT data                                                                                                                                                                                                                                                                                        |</div>
+</div>
+<div class="hi docutils container">
+<p><em>Filter</em></p>
+<div class="line-block">
+<div class="line"><a href="#id21"><span class="problematic" id="id22">|</span></a></div>
+</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Frequency</strong></p></td>
+<td><p>The cutoff frequency of the 4th order low pass digital filter.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Enabled</strong></p></td>
+<td><p>The filter is enabled when checked, off when not checked</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><strong>Enabled</strong>                                                                         | The filter is enabled when checked, off when not checked                                                                                                                                                                                                                                                                             |</div>
+</div>
+<div class="hi docutils container">
+<p><em>DC Probe Current (Unavailable during Impedance configuration)</em></p>
+<div class="line-block">
+<div class="line"><a href="#id23"><span class="problematic" id="id24">|</span></a></div>
+</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>DC Current</strong></p></td>
+<td><p>A dropdown box of selectable load current levels for using the current probe as a DC load. The available minimum and maximum values are determined by the used current probe</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Zero</strong></p></td>
+<td><p>Zeroes the selected load current level</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Enabled</strong></p></td>
+<td><p>Enables the use of the current probe as a DC load when the checkbox is clicked</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><strong>Enabled</strong>                                                                         | Enables the use of the current probe as a DC load when the checkbox is clicked                                                                                                                                                                                                                                                       |</div>
+</div>
+<div class="hi docutils container">
+<p><em>Buttons</em></p>
+<div class="line-block">
+<div class="line"><a href="#id25"><span class="problematic" id="id26">|</span></a></div>
+</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Run/Stop</strong></p></td>
+<td><p>Samples continuously when the RUN is clicked, stops when the STOP is clicked</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Single</strong></p></td>
+<td><p>Make a single sample</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopegraph.jpg"><img alt="image59" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopegraph.jpg" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Oscilloscope Graph Tab</strong></p>
+</div>
+<p>&gt;</p>
+<section id="scope-cursor-tab">
+<h2>Scope Cursor Tab<a class="headerlink" href="#scope-cursor-tab" title="Link to this heading"></a></h2>
+<p>Click on the Cursor tab on the right to bring up the cursor setup. There are two cursors available, and can be moved by holding down the left mouse button while the pointer is over the dashed vertical black cursor line.</p>
+<p><em>Scope Cursor Tab</em></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>#</strong></p></td>
+<td><p>The sweep number to attach the cursor to</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ON</strong></p></td>
+<td><p>Cursor is visible when checked</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Snap to Data</strong></p></td>
+<td><p>The cursor will snap to the sampled data points when checked. If unchecked, the cursor will interpolate between sampled points.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Show Marker</strong></p></td>
+<td><p>The diamond shaped data marker will be visible when checked.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Show Values</strong></p></td>
+<td><p>The data values at the cursor position will be visible when checked.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Show Cross Hairs</strong></p></td>
+<td><p>The horizontal cross hairs will be visible when checked.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopecursors.jpg"><img alt="image60" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopecursors.jpg" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Scope Cursors Tab</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">=== Scope Bode Analysis === When the Bode analysis configuration is selected, click on the <strong>Analysis tab</strong> to display the scope measurement data.</div>
+</div>
+<p><em>Analysis Tab</em></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Acquisition Time</strong></p></td>
+<td><p>The time required to sample the entire data set</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Sample Frequency</strong></p></td>
+<td><p>The scope sample frequency in Hz</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Signal Frequency</strong></p></td>
+<td><p>The measured signal frequency in Hz</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Cycle Count</strong></p></td>
+<td><p>The number of injected sine wave cycles per acquisition</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Samples/Cycle</strong></p></td>
+<td><p>The number of samples per injection sine wave cycle</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Ripple IN (pk-pk)</strong></p></td>
+<td><p>The measured IN time domain peak-to-peak ripple voltage</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Ripple OUT (pk-pk)</strong></p></td>
+<td><p>The measured OUT time domain peak-to-peak ripple voltage</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Signal FFT Bin</strong></p></td>
+<td><p>The FFT bin of the injected sine wave, or the maximum FFT magnitude if the signal generator is disabled</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>FFT Bin Size</strong></p></td>
+<td><p>The FFT bin size in Hz.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>FFT IN (pk-pk)</strong></p></td>
+<td><p>The IN signal FFT magnitude at the Signal FFT Bin in volts</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>FFT OUT (pk-pk)</strong></p></td>
+<td><p>The OUT signal FFT magnitude at the Signal FFT Bin in volts</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Gain (OUT/IN)</strong></p></td>
+<td><p>The OUT/IN gain at the Signal FFT Bin in dB</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Phase (IN-OUT)</strong></p></td>
+<td><p>The IN-OUT phase at the Signal FFT Bin in Deg</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopebode.jpg"><img alt="image61" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopebode.jpg" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Scope Bode Analysis Tab</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="copying-analysis-data-1">
+<span id="id27"></span><h2>Copying Analysis Data<a class="headerlink" href="#copying-analysis-data-1" title="Link to this heading"></a></h2>
+<p>Copying the measurement data from the analysis tab works differently. This section provides the step-by-step procedure to copy the data. This also applies for all the measurement tabs that provides analysis information.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_copyanalysis.png"><img alt="image62" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib5_copyanalysis.png" style="width: 600px;" /></a></p>
+<div class="center round box docutils container">
+<p><strong>Oscilloscope Measurement Analysis Tab</strong></p>
+</div>
+<ul class="simple">
+<li><p>Right-click on the <strong>Analysis Tab</strong> to see the <strong>Copy Data</strong> option</p></li>
+<li><p>After the <strong>Copy Data</strong> option comes out, left-click to copy the measurement data.</p></li>
+<li><p>Paste the data to an excel spreadsheet by pressing <strong>CTRL+V</strong>.</p></li>
+</ul>
+<p>&gt;</p>
+</section>
+<section id="scope-impedance-analysis">
+<h2>Scope Impedance Analysis<a class="headerlink" href="#scope-impedance-analysis" title="Link to this heading"></a></h2>
+<p>When the impedance analysis configuration is selected, click on the <strong>Analysis tab</strong> to display the scope measurement data.</p>
+<p><em>Analysis Tab</em></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Acquisition Time</strong></p></td>
+<td><p>The time required to sample the entire data set</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Sample Frequency</strong></p></td>
+<td><p>The scope sample frequency in Hz.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Signal Frequency</strong></p></td>
+<td><p>The measured signal frequency in Hz.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Cycle Count</strong></p></td>
+<td><p>The number of current sine wave cycles per acquisition.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Samples/Cycle</strong></p></td>
+<td><p>The number of samples per current sine wave cycle.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Ripple ILOAD (pk-pk)</strong></p></td>
+<td><p>The measured ILOAD time domain peak-to-peak ripple current in amps</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Ripple VOUT (pk-pk)</strong></p></td>
+<td><p>The measured OUT time domain peak-to-peak ripple voltage in volts</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Signal FFT Bin</strong></p></td>
+<td><p>The FFT bin of the probe load current sine wave, or the maximum FFT magnitude if the signal generator is disabled</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>FFT Bin Size</strong></p></td>
+<td><p>The FFT bin size in Hz.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>FFT ILOAD (pk-pk)</strong></p></td>
+<td><p>The ILOAD signal FFT magnitude at the Signal FFT Bin in amps</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>FFT VOUT (pk-pk)</strong></p></td>
+<td><p>The OUT signal FFT magnitude at the Signal FFT Bin in volts</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Zout</strong></p></td>
+<td><p>The VOUT/ILOAD gain at the Signal FFT Bin in Ohms</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Zphase</strong></p></td>
+<td><p>The ILOAD-VOUT phase at the Signal FFT Bin in Deg</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_scopeimpe.png"><img alt="image63" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_scopeimpe.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Scope Impedance Analysis Tab</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">&gt;</div>
+</div>
+</section>
+<section id="missing-scope-trigger">
+<h2>Missing Scope Trigger<a class="headerlink" href="#missing-scope-trigger" title="Link to this heading"></a></h2>
+<p>When the scope is not able to trigger on a waveform, the <strong>Missing Trigger</strong> message will appear in the upper-left corner of the screen. In this example, the power supply is turned off.</p>
+<p>Notice that measured Vout displayed at the bottom is close to ground in this screen shot. If the supply is on and it still won’t trigger, check the trigger level or switch the trigger mode from Normal to Auto to force the trigger.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_mistrig.png"><img alt="image64" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_mistrig.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Oscilloscope Missing Trigger</strong></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_mistrig.png"><img alt="image65" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_mistrig.png" style="width: 600px;" /></a></p>
+</div>
+<div class="center docutils container">
+<p><strong>Changing the Trigger Mode from Normal to Auto</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Measuring Switcher Ripple Voltage ==== The oscilloscope feature of the LTpowerAnalyzer provides automatic measurements of ripple in the voltage traces, and measurement of the switcher frequency by checking the FFT trace.</div>
+</div>
+<ol class="arabic simple">
+<li><p>Configuring the Oscilloscope Settings</p></li>
+</ol>
+<ul class="simple">
+<li><p>Select the <strong>Bode</strong> configuration.</p></li>
+<li><p>Ensure that the Signal Generator is <em>disabled</em>.</p></li>
+<li><p>If an external load is not available, attach a current probe to your DUT and set a DC current at the DC Probe Current setting and click the <strong>Enable</strong> checkbox.</p></li>
+<li><p>Click <strong>RUN</strong> to start displaying the signal waveform. The scope window should start showing the measured waveform.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_meswripv.png"><img alt="image66" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_meswripv.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Configuring the Scope Settings for Ripple Measurements</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">2. Measuring waveform ripple with the Analysis Tab</div>
+</div>
+<ul class="simple">
+<li><p>Waveform ripple in the scope window can be measured by checking the <strong>Analysis tab</strong>.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopeswitchingfrequency.jpg"><img alt="image67" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/scopeswitchingfrequency.jpg" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Ripple Measurements in the Analysis Tab</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">3. Measuring switcher frequency with FFT Waveform and Cursor Tab</div>
+</div>
+<ul class="simple">
+<li><p>The switcher frequency can also be checked from the FFT waveform by using the cursor tab.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_meswripv.png"><img alt="image68" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_meswripv.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Switcher Frequency Measurement in the FFT Waveform</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">—-</div>
+</div>
+</section>
+</section>
+<section id="additional-gui-controls">
+<h1>Additional GUI Controls<a class="headerlink" href="#additional-gui-controls" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Cursor Tab ==== There are two cursors available, and each of the cursors can be moved by holding down the left mouse button while the pointer is over the dashed vertical black cursor line.</div>
+</div>
+<p>Click on the <strong>Cursor tab</strong> on the right to bring up the cursor setup.</p>
+<p><em>Cursor Tab Functions</em></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>#</strong></p></td>
+<td><p>The sweep number to attach the cursor to</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ON</strong></p></td>
+<td><p>Cursor is visible when checked</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Snap to Data</strong></p></td>
+<td><p>The cursor will snap to the sampled data points when checked. If unchecked, the cursor will interpolate between sampled points</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Show Marker</strong></p></td>
+<td><p>The diamond shaped data marker will be visible when checked</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Show Values</strong></p></td>
+<td><p>The data values at the cursor position will be visible when checked</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Show Cross Hairs</strong></p></td>
+<td><p>The horizontal cross hairs will be visible when checked</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_curstab.png"><img alt="image69" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_curstab.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Cursor Tab View</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Data Tab ==== The <strong>Data tab</strong> allows users to modify each dataset, such as renaming, deleting, or changing the visibility. Click on the <strong>Data tab</strong> on the right to bring up the data setup.</div>
+</div>
+<div class="center docutils container">
+<p><em>Data Tab Functions</em></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>#</strong></p></td>
+<td><p>The sweep number of the data set</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Name</strong></p></td>
+<td><p>The name of the data set that is visible in the legend.
+To change the text, click on the given name to make an edit</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Visible</strong></p></td>
+<td><p>The data set is visible when checked, hidden when not checked</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Select</strong></p></td>
+<td><p>When checked, the data set can be deleted by clicking the Delete button</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Legend</strong></p></td>
+<td><p>The legend will be visible when checked</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Hide All</strong></p></td>
+<td><p>All data will be hidden when clicked</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Show All</strong></p></td>
+<td><p>All data will be visible when clicked</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Delete All</strong></p></td>
+<td><p>All data will be deleted when clicked</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Delete</strong></p></td>
+<td><p>The selected data will be deleted when clicked</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_dattab.png"><img alt="image70" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_dattab.png" style="width: 600px;" /></a></p>
+</div>
+<div class="center docutils container">
+<p><strong>Data Tab View</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Renaming, Hiding, and Deleting Traces ==== When appending many traces to a single graph, it is helpful to give a name to a trace that will show up in the legend.</div>
+</div>
+<p>To rename a trace, click on the <strong>Data tab</strong> on the right.</p>
+<ul class="simple">
+<li><p>Click on the <strong>Data tab</strong> to access the Waveform Data Editor.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_rename.png"><img alt="image71" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_rename.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>Click on a box in the <strong>Name column</strong> and change the name.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_rename.png"><img alt="image72" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_rename.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>Click the <strong>RETURN</strong> or <strong>ENTER</strong> key to update the trace names. Trace legend names are automatically updated.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="how-to-hide-traces">
+<h2>How to Hide Traces<a class="headerlink" href="#how-to-hide-traces" title="Link to this heading"></a></h2>
+<p>Appending multiple data increases the number of legends and start blocking measurement traces. This can be resolved using these ways: by removing the legends completely, editing the number of visible traces, or by adding an offset to the <strong>Graph tab</strong> or by dragging it up.</p>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_hiding.png"><img alt="image73" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_hiding.png" style="width: 600px;" /></a></div>
+<div class="line"><br /></div>
+</div>
+<div class="center docutils container">
+<p><strong>Legends Blocking Portions of the Traces</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">1. Moving the Origin Cursor</div>
+</div>
+<ul class="simple">
+<li><p>Click and drag the red origin cursor up or down to move the covered traces.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_hiding.png"><img alt="image74" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_hiding.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Movable Origin Cursor</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">2. Hiding All Trace Legends</div>
+</div>
+<ul class="simple">
+<li><p>Hide all trace labels by clicking the <strong>Legend</strong> checkbox.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_hiding.png"><img alt="image75" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_hiding.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Trace Legends Checkbox</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">3. Hiding a Specific Traces</div>
+</div>
+<ul class="simple">
+<li><p>Click on the <strong>Data tab</strong> to access the Waveform Data Editor.</p></li>
+<li><p>Click the corresponding checkbox of the trace under visible that you want to hide. Trace legends are automatically updated.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib4_hiding.png"><img alt="image76" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib4_hiding.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Hiding a Trace via the Visible Column</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="how-to-delete-traces">
+<h2>How to Delete Traces<a class="headerlink" href="#how-to-delete-traces" title="Link to this heading"></a></h2>
+<p>Measurement traces that are no longer needed can be removed to avoid cluttering the entire measurement windowpane.</p>
+<ol class="arabic simple">
+<li><p>Deleting specific traces</p></li>
+</ol>
+<ul class="simple">
+<li><p>In the <strong>Data tab</strong>, under the Waveform Data Editor, tick the check box of the corresponding traces you would like to delete.</p></li>
+<li><p>Click <strong>Delete</strong>. Selected traces will be automatically removed.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_delete.png"><img alt="image77" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_delete.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Deleting Specific Traces</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">2. Deleting all traces</div>
+</div>
+<ul class="simple">
+<li><p>To delete all traces, click the <strong>Delete All</strong> button.</p></li>
+<li><p>The windowpane will be automatically updated with all traces removed.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_delete.png"><img alt="image78" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_delete.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Delete All Button</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Docking and Undocking Forms ==== Each form in the main window (right window below) can be undocked by right clicking its tab.</div>
+</div>
+<ul class="simple">
+<li><p>Point your cursor at the tab form you would like to undock (in this case the Bode Plot tab).</p></li>
+<li><p>Cursor still pointed at the tab form, right-click your mouse to undock the form.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">The undocked form will appear as a separate pop-up window.</div>
+</div>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_undock.png"><img alt="image79" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_undock.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Undocking Forms in the LTpowerAnalyzer Software</strong></p>
+</div>
+<p>Separated forms can be merged back into the main window by clicking on the <strong>X</strong> icon in the upper right-hand corner of the form.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_undock.png"><img alt="image80" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_undock.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Merging Undocked Forms</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">—-</div>
+</div>
+</section>
+</section>
+<section id="using-the-ltpoweranalyzer-with-ltpowercad">
+<h1>Using the LTpowerAnalyzer with LTpowerCAD<a class="headerlink" href="#using-the-ltpoweranalyzer-with-ltpowercad" title="Link to this heading"></a></h1>
+<p>The Bode Plot data measured by the LTpowerAnalyzer can be imported into the LTpowerCAD software to help optimize the design. You must have the version of LTpowerCAD that is authorized for ADI internal use for the interface to work. Here are the steps to follow:</p>
+<ul class="simple">
+<li><p>Launch LTpowerCAD and open LTpowerAnalyzer interface.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad1.png"><img alt="image81" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad1.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>Copy and paste from LTpowerAnalyzer to LTpowerCAD.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad2.png"><img alt="image82" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad2.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>Import LTpowerAnalyzer data to LTpowerCAD.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad3.png"><img alt="image83" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad3.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>Re-compensate measured loop gain in LTpowerCAD.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad4.png"><img alt="image84" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad4.png" style="width: 600px;" /></a></p>
+<ul class="simple">
+<li><p>Re-adjust loop compensation network.</p></li>
+</ul>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad5.png"><img alt="image85" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/ltpowercad5.png" style="width: 600px;" /></a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">—-</div>
+</div>
+</section>
+<section id="checking-for-software-updates">
+<h1>Checking for Software Updates<a class="headerlink" href="#checking-for-software-updates" title="Link to this heading"></a></h1>
+<p><strong>Version 1.6.9</strong> and later allows the latest version of the software to be downloaded by clicking on the <strong>Check for Updates</strong> entry in the Help menu.</p>
+<p>The updater will contact the server for the latest software version information, and if the server version is newer, the Update button will be enabled. Clicking on the <strong>Update button</strong> will download and launch the latest install file.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_upcheck.png"><img alt="image86" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib1_upcheck.png" style="width: 600px;" /></a></p>
+<div class="center docutils container">
+<p><strong>Checking for Updates in the Help Menu</strong></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_upcheck.png"><img alt="image87" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib2_upcheck.png" style="width: 400px;" /></a></p>
+</div>
+<div class="center docutils container">
+<p><strong>Local Version Out-of-Date Status Message</strong></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_upcheck.png"><img alt="image88" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib3_upcheck.png" style="width: 400px;" /></a></p>
+</div>
+<div class="center docutils container">
+<p><strong>LTpowerAnalyzer Software Installer File</strong></p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib4_upcheck.png"><img alt="image89" src="https://wiki.analog.com/_media/resources/eval/user-guides/eval-ltpa-kit/lib4_upcheck.png" style="width: 400px;" /></a></p>
+</div>
+<div class="center docutils container">
+<p><strong>Checking for Updates After Installation</strong></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">—-</div>
+</div>
+</section>
+<section id="additional-resources">
+<h1>Additional Resources<a class="headerlink" href="#additional-resources" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/eval-ltpa-kit" target="_blank">EVAL-LTPA-KIT Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADALM2000" target="_blank">ADALM2000 Advanced Active Learning Module</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/lp/ltpowercad.html" target="_blank">LTpowerCAD Power Supply Design Tool</a></p></li>
+</ul>
+<hr class="docutils" />
+<img alt="EVAL-LTPA-KIT Hardware Guide #:resources:eval:user-guides:eval-ltpa-kit|EVAL-LTPA-KIT Overview #none" class="align-left" src="https://wiki.analog.com/_media/navigation#/resources/eval/user-guides/eval-ltpa-kit/hardware" />
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

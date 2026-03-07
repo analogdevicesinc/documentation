@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The default username and password for the device are as follows:" name="description" />
+
+    <title>AD-GMSL522-SL Getting Started Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=a525f648" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=fcf3088a"></script>
+    <link rel="icon" href="../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        
+        <a id="logo" href="../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">AD-GMSL522-SL Getting Started Guide</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#ad-gmsl522-sl-hardware-overview">AD-GMSL522-SL Hardware Overview</a></li>
+<li><a class="reference internal" href="#first-time-setup-getting-started">First Time Setup / Getting Started</a><ul>
+<li><a class="reference internal" href="#assembling-the-som-to-the-board">Assembling the SoM to the Board</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#general-tips-for-using-the-ad-gmsl522-sl-board">General Tips for Using the AD-GMSL522-SL Board</a></li>
+<li><a class="reference internal" href="#streaming-video-data-via-generic-sensor-driver">Streaming Video Data via “Generic Sensor Driver”</a></li>
+<li><a class="reference internal" href="#loopback-testing-and-exercises">Loopback Testing and Exercises</a><ul>
+<li><a class="reference internal" href="#looping-back-the-on-board-max96717-to-the-on-board-max96724-streaming-a-checkerboard-pattern-from-the-max96717">Looping back the On-Board MAX96717 to the On-Board MAX96724 (streaming a checkerboard pattern from the MAX96717)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#scripting-with-the-ad-gmsl522-sl-board">Scripting with the AD-GMSL522-SL Board</a></li>
+<li><a class="reference internal" href="#debugging-csi-input-to-ad-gmsl522-sl-board">Debugging CSI Input to AD-GMSL522-SL Board</a></li>
+<li><a class="reference internal" href="#other-helpful-software-and-improvements">Other Helpful Software and Improvements</a><ul>
+<li><a class="reference internal" href="#viewing-ad-gmsl522-sl-remotely-using-nomachine">Viewing AD-GMSL522-SL Remotely Using NoMachine</a></li>
+<li><a class="reference internal" href="#booting-from-nvme">Booting From NVMe</a></li>
+<li><a class="reference internal" href="#booting-from-sd-card">Booting From SD Card</a></li>
+<li><a class="reference internal" href="#restarting-the-fan-service">Restarting the Fan Service</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ad-gmsl522-sl-hardware-specifics">AD-GMSL522-SL Hardware Specifics</a><ul>
+<li><a class="reference internal" href="#block-diagram">Block Diagram</a></li>
+<li><a class="reference internal" href="#i2c">I2C</a></li>
+<li><a class="reference internal" href="#mipi-qth-samtec-connector">MIPI / QTH SAMTEC CONNECTOR</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../products/adsp/index.html">Digital Signal Processors (ADSP)</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/linux-support.html">Linux support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/setup.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/sc598-clock-tree.html">SC598 Clock Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../products/adsp/use-cases.html">Use cases</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../linux/kuiper/index.html">Kuiper</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/ad9084-profile-generator/index.html">AD9084 (Apollo) Profile Generator</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/iio-oscilloscope/ad9084/index.html">AD9084</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/application-software/lora-software/index.html">ADI Long Range Wireless Radio Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/index.html">AD-ACEVSECRDSET-SL</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-acevsecrdset-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-2" id="toctree-collapse-13-2"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-13-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardpfwd-sl/index.html">AD-APARDPFW-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-apardspoe-sl/index.html">AD-APARDSPOE-SL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/ad-t1lusb-ebz/index.html">AD-T1LUSB2.0-EBZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-apard32690-sl/nina-w102/index.html">NINA-W102 Networking Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-3" id="toctree-collapse-13-3"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-13-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-4" id="toctree-collapse-13-4"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-13-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-5" id="toctree-collapse-13-5"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-13-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/index.html">Functional Safety Ready Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ethernetapldevice-sl/power/index.html">Power Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-6" id="toctree-collapse-13-6"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-13-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/card-specifications/index.html">AD-FMCOMMS3-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-fmcomms3-ebz/hardware-guide/config-options/index.html">FMCOMMS3 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl-d-e-adp/index.html">AD-GMSL-D-E-ADP#</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-7" id="toctree-collapse-13-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-13-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl716mipi-evk/index.html">AD-GMSL716MIPI-EVK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmsl717mipi-evk/index.html">AD-GMSL717MIPI-EVK</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-8" id="toctree-collapse-13-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP#</a><label for="toctree-collapse-13-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/amd-kria/index.html">Using with AMD Kria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/nvidia-jetson/index.html">Using with Nvidia Jetson Orin Nano</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Using with Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-9" id="toctree-collapse-13-9"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-13-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kbnc-ebz/index.html">AD-M2KBNC-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-m2kcbl-ebz/index.html">AD-M2KCBL-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-10" id="toctree-collapse-13-10"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/index.html">AD-MAX32LRWISE-SL</a><label for="toctree-collapse-13-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/ev-cattletag-ardz/index.html">EV-CATTLETAG-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32lrwise-sl/max32670-lr-ardz/index.html">MAX32670-LR-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-11" id="toctree-collapse-13-11"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/index.html">AD-MAX32SXWISE-SL</a><label for="toctree-collapse-13-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-flowmeter-ardz/index.html">EV-FLOWMETER-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/ev-structural-ardz/index.html">EV-STRUCTURAL-ARDZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-max32sxwise-sl/max32670-sx-ardz/index.html">MAX32670-SX-ARDZ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-12" id="toctree-collapse-13-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/index.html">AD-PAARRAY3552R-SL</a><label for="toctree-collapse-13-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-paarray3552r-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-13" id="toctree-collapse-13-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/index.html">AD-PQMON-SL</a><label for="toctree-collapse-13-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-pqmon-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-ps3803-rd/index.html">AD-PS3803-RD</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-14" id="toctree-collapse-13-14"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/index.html">AD-RPI-T1LPSE-SL</a><label for="toctree-collapse-13-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-rpi-t1lpse-sl/basic-sample-application/index.html">Basic Sample Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-15" id="toctree-collapse-13-15"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/index.html">AD-SWIOT1L-SL</a><label for="toctree-collapse-13-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/firmware-guide/index.html">Firmware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-synchrona14-ebz/index.html">AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-16" id="toctree-collapse-13-16"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-13-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-17" id="toctree-collapse-13-17"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/index.html">EVAL-AD4060/AD4062-ARDZ</a><label for="toctree-collapse-13-17"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/linux.html">Linux User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/user-guide/no-os.html">No-OS User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad4062-ardz/tools.html">Libraries and GUI Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18" id="toctree-collapse-13-18"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/index.html">AD9084-FMCA-EBZ (Apollo)</a><label for="toctree-collapse-13-18"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-18-1" id="toctree-collapse-13-18-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-18-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/microblaze.html">Virtex UltraScale+ VCU118/VCU128</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/versal.html">Versal ACAP VCK190/VPK180</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/agilex.html">Intel Agilex 7 I-Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/ad9084_ebz/quickstart/new_usecase.html">Running a new JESD mode on hardware</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adalp2000/index.html">ADALP2000</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-19" id="toctree-collapse-13-19"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/index.html">ADMV96S-WGBE-EK1</a><label for="toctree-collapse-13-19"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/hardware-guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/admv96s-wgbe-ek1/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-20" id="toctree-collapse-13-20"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/index.html">ADRD3161-01Z</a><label for="toctree-collapse-13-20"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd3161-01z/production-guide.html">ADRD3161-01Z Production Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adrd8012-01Z/index.html">ADRD8012-01Z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5592R-pmdz/index.html">EVAL-AD5592R-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad5593r-pmdz/index.html">EVAL-AD5593R-PMDZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-21" id="toctree-collapse-13-21"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/index.html">EVAL-AD7124-8-PMDZ</a><label for="toctree-collapse-13-21"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad7124-8-pmdz/demo/index.html">EVAL-AD7124-8-PMDZ Demo Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22" id="toctree-collapse-13-22"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-13-22"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-22-1" id="toctree-collapse-13-22-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-13-22-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-23" id="toctree-collapse-13-23"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/index.html">EVAL-ADBMS6830BMSW</a><label for="toctree-collapse-13-23"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adbms6830bmsw/software-guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24" id="toctree-collapse-13-24"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-13-24"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-24-1" id="toctree-collapse-13-24-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-24-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25" id="toctree-collapse-13-25"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-13-25"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-25-1" id="toctree-collapse-13-25-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-25-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv902x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26" id="toctree-collapse-13-26"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-13-26"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-26-1" id="toctree-collapse-13-26-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-26-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv9032/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27" id="toctree-collapse-13-27"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-13-27"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-27-1" id="toctree-collapse-13-27-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/index.html">Quick start</a><label for="toctree-collapse-13-27-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-adrv904x/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0359-ebz/index.html">EVAL-CN0359-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0417-ebz/index.html">EVAL-CN0417-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0419-ebz/index.html">EVAL-CN0419-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-28" id="toctree-collapse-13-28"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-13-28"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0518-ebz/index.html">EVAL-CN0518-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0521-ebz/index.html">EVAL-CN0521-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0523-ebz/index.html">EVAL-CN0523-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0534-ebz/index.html">EVAL-CN0534-EBZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29" id="toctree-collapse-13-29"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/index.html">EVAL-CN0540-ARDZ</a><label for="toctree-collapse-13-29"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/iio-oscilloscope.html">Using the System with IIO Oscilloscope</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-29-1" id="toctree-collapse-13-29-1"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-13-29-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/coraz7s.html">CoraZ7-07s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0540-ardz/quickstart/de10nano.html">DE10-Nano</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0550-ebz/index.html">EVAL-CN0550-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0554-rpiz/index.html">EVAL-CN0554-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0555-ebz/index.html">EVAL-CN0555-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0556-ebz/index.html">EVAL-CN0556-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0579-ardz/index.html">EVAL-CN0579-ARDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0581-ebz/index.html">EVAL-CN0581-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0582-usbz/index.html">EVAL-CN0582-USBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0583-som/index.html">EVAL-CN0583-SOM</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-30" id="toctree-collapse-13-30"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/index.html">EVAL-CN0584-EBZ</a><label for="toctree-collapse-13-30"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/digital-template/index.html">Digital Template Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0584-ebz/matlab-configuration/index.html">MATLAB Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0585-fmcz/index.html">EVAL-CN0585-FMCZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0588-ebz/index.html">EVAL-CN0588-EBZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-31" id="toctree-collapse-13-31"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-13-31"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-32" id="toctree-collapse-13-32"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/index.html">EVAL-LTPA-KIT (LTpowerAnalyzer Kit)</a><label for="toctree-collapse-13-32"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/hardware_guide/index.html">EVAL-LTPA-KIT Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/fthr-pmd-intz/index.html">FTHR-PMD-INTZ</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">University Program</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-1" id="toctree-collapse-14-1"/><div class="collapse"><a class="reference internal" href="../../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-14-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15-1" id="toctree-collapse-15-1"/><div class="collapse"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/index.html">DEMO High-Performance Analog Meets AI</a><label for="toctree-collapse-15-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../learning/demo_hp_analog_meets_ai/software/index.html">Software Configuration and Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/sw_infrastructure/index.html">Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_a_precision_converter_fpga_integration_journey/index.html">A Precision Converter FPGA Integration Journey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshop_kuiper/index.html">Customizing ADI Kuiper Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_software_defined_instrumentation/index.html">Software Defined Instrumentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_introduction_to_electronics/index.html">Introduction to Electronics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_baremetal/index.html">Embedded Baremetal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_embedded_linux/index.html">Embedded Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../learning/workshops_applied_systems_control/index.html">Applied Systems Control Workshop</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Contributing and Guidelines</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="ad-gmsl522-sl-getting-started-guide">
+<h1>AD-GMSL522-SL Getting Started Guide<a class="headerlink" href="#ad-gmsl522-sl-getting-started-guide" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default username and password for the device are as follows:</p>
+<div class="line-block">
+<div class="line">Username: analog</div>
+<div class="line">Password: analog</div>
+</div>
+</div>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The AD-GMSL522-SL Development Board or simply “GMSL Dev Board” is just another name for the AD-GMSL522-SL board. Note that these three names are used interchangeably throughout this Getting Started Guide.</p>
+</div>
+<p>This page will go over high-level features and functions of the AD-GMSL522-SL Board. The following, specifically, will be covered:</p>
+<ul class="simple">
+<li><p>Required Hardware</p></li>
+<li><p>Recommended Hardware</p></li>
+<li><p>AD-GMSL522-SL Board I/O</p></li>
+<li><p>First time board bring-up</p></li>
+<li><p>Required software download/install</p></li>
+<li><p>Recommended tools/software</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Pre-Requisites ==== No prior training is required to go through the content of this document. A basic understanding of the GMSL technology, however, is recommended. The following sub-sections detail the required and recommended hardware/software to get the AD-GMSL522-SL board up and running properly.</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Required Hardware ==== The following hardware is required to enable critical features of the AD-GMSL522-SL Board. The AD-GMSL522-SL board and vetted hardware is shown below. The customer will need to procure their own Jetson Module and corresponding heatsink.</div>
+</div>
+<ul class="simple">
+<li><p>AD-GMSL522-SL Board: <a class="icon link reference external" href="https://wcm2.cldnet.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/ad-gmsl522-sl.html" target="_blank">https://wcm2.cldnet.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/ad-gmsl522-sl.html</a></p></li>
+<li><p>(If not using SoM-included version) Compatible Jetson SOM: <a class="icon link reference external" href="https://www.arrow.com/en/products/900-83668-0000-000/nvidia" target="_blank">https://www.arrow.com/en/products/900-83668-0000-000/nvidia</a></p></li>
+<li><p>(If not using SoM-included version) Heat Sink for SOM: <a class="icon link reference external" href="https://www.mouser.com/ProductDetail/Auvidea/70797?qs=vmHwEFxEFR%2FrptlH5I2KWQ%3D%3D" target="_blank">https://www.mouser.com/ProductDetail/Auvidea/70797?qs=vmHwEFxEFR%2FrptlH5I2KWQ%3D%3D</a></p></li>
+<li><p>12V 8A Power Supply: <a class="icon link reference external" href="https://www.amazon.com/TOBWOLF-100V-240V-Transformer-Switching-Converter/dp/B0B1DGBVKB?th=1" target="_blank">https://www.amazon.com/TOBWOLF-100V-240V-Transformer-Switching-Converter/dp/B0B1DGBVKB?th=1</a></p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Recommended Hardware ====</div>
+</div>
+<ul class="simple">
+<li><p>Ethernet Cable or USB&lt;-&gt;WIFI Adapter</p></li>
+<li><p>MicroUSB Cable</p></li>
+<li><p>USB mouse and keyboard</p></li>
+<li><p>NVMe Module: <a class="icon link reference external" href="https://www.amazon.com/dp/B09QVP977F?ref_=cm_sw_r_cso_em_apin_dp_G1BNY16H5HNVZBR4SAHA" target="_blank">https://www.amazon.com/dp/B09QVP977F?ref_=cm_sw_r_cso_em_apin_dp_G1BNY16H5HNVZBR4SAHA</a></p></li>
+<li><p>SD Card: <a class="icon link reference external" href="https://www.amazon.com/dp/B09X7CRKRZ?psc=1" target="_blank">https://www.amazon.com/dp/B09X7CRKRZ?psc=1</a></p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Required Software and Downloads ====</div>
+</div>
+<ul class="simple">
+<li><p>AD-GMSL522-SL image for flashing: <a class="icon link reference external" href="https://swdownloads.analog.com/cse/aditof/Viper/gmsl522_1.tar.gz" target="_blank">https://swdownloads.analog.com/cse/aditof/Viper/gmsl522_1.tar.gz</a></p></li>
+<li><p>GMSL GUI Server and other useful tools: <a class="icon git reference external" href="https://github.com/analogdevicesinc/gmsl/tree/main/AD-GMSL522-SL" target="_blank">AD-GMSL522-SL</a></p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Recommended Tools and Software ==== The following software are tools that are commonly referenced and used during different examples, demos and tutorials for AD-GMSL522-SL. To be able to easily follow along with these lessons, it is recommended to download and install these tools.</div>
+</div>
+<ul class="simple">
+<li><p>NoMachine (there is a following section below for more information)</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">—-</div>
+</div>
+</section>
+<section id="ad-gmsl522-sl-hardware-overview">
+<h2>AD-GMSL522-SL Hardware Overview<a class="headerlink" href="#ad-gmsl522-sl-hardware-overview" title="Link to this heading"></a></h2>
+<p>In this section, the inputs, outputs, and other general hardware features of the AD-GMSL522-SL board will be discussed.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== GMSL Camera Inputs ==== One way to send video data to the AD-GMSL522-SL board is through GMSL-2 compatible camera modules. They can be connected to the onboard FAKRA connectors, INA+, INB+, INC+, and IND+. These FAKRA connectors are connected directly to the onboard MAX96724. In addition to being connected to the deserializer these connectors are also shorted to +12V. This means that the camera modules can be powered from the AD-GMSL522-SL board and do not need to be powered internally. This is important to note because it means that another voltage source should not be connected to these FAKRA connectors, otherwise damage could be caused to either the AD-GMSL522-SL board, or the user’s module.</div>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/viper_fakra_Board_correct_output.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/viper_fakra_Board_correct_output.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/viper_fakra_Board_correct_output.png" style="width: 800px;" />
+</a>
+<p>The MAX96724 has its Port B CSI-2 DPHY bus connected to the input of the Jetson SoM. The second way that a user can send video to the Jetson SoM is through the SAMTEC connector on the bottom of the board. Any GMSL2 CSI-2 DPHY deserializer Evkit, or user-designed, board can be connected to this port. This SAMTEC connector has 2x 1x4 CSI-2 DPHY ports connected directly to the Jetson SoM inputs. Additionally, this connector can supply power, an I2C connection to the Jetson, and GPIO connections to the Jetson to control things like frame sync, or power down signals, for instance.</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/samtec_connector_image.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/samtec_connector_image.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/samtec_connector_image.png" style="width: 800px;" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== CSI Input to Jetson SoM ==== Depending on whether you are using camera modules through the onboard MAX96724, or an Evkit connected to the onboard CSI SAMTEC connector, or both, you will need to know which CSI input port to the Jetson is connected. The below graphic shows which CSI Ports on the Jetson go to which video inputs to the AD-GMSL522-SL board.</div>
+</div>
+<div class="line-block">
+<div class="line">For more specifics about CSI connections, refer to the hardware overview document: <a class="reference internal" href="hardware.html"><span class="doc">hardware</span></a></div>
+<div class="line">==== I2C Busses ==== The Jetson has many different possible I2C busses and therefore it is important to know which I2C bus connects to where on AD-GMSL522-SL board. For more specifics about the I2C busses on AD-GMSL522-SL board, refer to the hardware overview document: <a class="reference internal" href="hardware.html"><span class="doc">hardware</span></a></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">—-</div>
+</div>
+</section>
+<section id="first-time-setup-getting-started">
+<h2>First Time Setup / Getting Started<a class="headerlink" href="#first-time-setup-getting-started" title="Link to this heading"></a></h2>
+<section id="assembling-the-som-to-the-board">
+<h3>Assembling the SoM to the Board<a class="headerlink" href="#assembling-the-som-to-the-board" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>First, attach the heatsink to the SOM.</p></li>
+<li><p>Next, plug in the SOM to the AD-GMSL522-SL board at an angle, and once the SOM is seated into the connector, push the SOM down until it is parallel with the carrier board, at which point the locks should engage to keep the SOM at a certain position.</p></li>
+<li><p>Install standoffs to keep SOM safely in a firm and locked position.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Flashing the AD-GMSL522-SL Board ====</div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>In this next section, if you see an error during flashing, indicating ‘strings’ is not installed, run the following commands on your host PC to install the required libraries:</p>
+<div class="line-block">
+<div class="line"><em>sudo apt update</em></div>
+<div class="line"><em>sudo apt install binutils</em></div>
+</div>
+</div>
+<p>First, your Linux PC needs to be configured to be able to flash Jetson devices. To do this, follow NVIDIA’s documentation to install and run their “SDK Manager” program: <a class="icon link reference external" href="https://docs.nvidia.com/sdk-manager/download-run-sdkm/index.html" target="_blank">https://docs.nvidia.com/sdk-manager/download-run-sdkm/index.html</a> Now, let’s begin with flashing the AD-GMSL522-SL image onto the NVIDIA Xavier SOM. Follow the next steps to do so:</p>
+<ul class="simple">
+<li><p>With the power off, place jumpers to short pins 3-4 on the P11 header to force USB Recovery Mode for the Jetson Xavier. See below picture for a diagram showing jumpers to be shorted. Pins 9-10 should always be shorted.</p></li>
+<li><p>Plug in the power and programming cable to the AD-GMSL522-SL board via the micro USB connector, P6.</p></li>
+<li><p>Untar, or extract, the image that was downloaded in the “Required Software” section of this document</p>
+<ul>
+<li><p>sudo tar -xvf &lt;filename&gt;</p></li>
+</ul>
+</li>
+<li><p>Change working directory to the new directory created during the untar process.</p></li>
+<li><p>On the host pc (this must be done with a Linux OS), run the following command to flash the Jetson SoM.</p>
+<ul>
+<li><p>sudo ./flash.sh gmsl522-p3668-0001-qspi-emmc mmcblk0p1</p></li>
+</ul>
+</li>
+<li><p>Flashing will take some time. When it completes, you should see the following message at the end of the terminal:</p>
+<ul>
+<li><p>“The target t186ref has been flashed properly.”</p></li>
+</ul>
+</li>
+<li><p>Reset the board to boot from internal eMMC via:</p>
+<ul>
+<li><p>Power down the board, and remove the FORCE_REC jumpered pin and remove the USB connection</p>
+<ul>
+<li><p>Power cycle the board. Note the fan will run and stop depending on the load level</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Power cycle the AD-GMSL522-SL board.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is very important at this point not to run automatic installing commands like apt-get update because the current viper file system was created with an older version of JetPack – 5.3.1.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Updating the Digital Potentiometers on AD-GMSL522-SL ====</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The AD-GMSL522-SL boards are sent to the user with the digital potentiometers already programmed and good for almost all use-cases. By default, the MAX96724 and MAX96717 are configured in the following way:</p>
+<ul class="simple">
+<li><p>6Gbps Forward Link Speed (Both MAX96724 and MAX96717)</p></li>
+<li><p>I2C communication method (instead of UART) (Both MAX96724 and MAX96717)</p></li>
+<li><p>8-Bit I2C Address 0x4E (MAX96724)</p></li>
+<li><p>8-bit I2C Address 0x84 (MAX96717)</p></li>
+</ul>
+</div>
+<p>The digital potentiometers on the AD-GMSL522-SL board control the voltage that is sent to the configuration pins of the GMSL devices, and therefore, control which mode the GMSL devices are booted up in. Learn more about the configuration pins in the MAX96724 or the MAX96717 datasheets. To update or change these voltages run the following script. This should be run once when the board is first received, and again any time a change to the digital potentiometer output voltage is required. The potentiometers will save the configuration in their EEPROM, so it is not required to run this script after every reboot.</p>
+<ul class="simple">
+<li><p>Change directory where the vr_config.sh script is located.</p></li>
+<li><p>On the AD-GMSL522-SL board, execute the vr_config.sh script to update the potentiometers:</p>
+<ul>
+<li><p>sudo ./vr_config.sh</p></li>
+</ul>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">=== How to Change Configuration Pin Voltages for Onboard SERDES === Below is an example of the digital potentiometer circuit on the AD-GMSL522-SL board. As you can see, the digital pot sets the point along the internal where the voltage is measured. Because the internal resistor of the potentiometer is 200k, the pullup and pulldown resistors on the H and L pins have almost no effect and can therefore be ignored. With this in mind, it can be stated that the voltage see on the configuration pins of the SERDES is almost exactly the voltage set by the programming of the potentiometer between 0 and 255. i.e., the voltage on the configuration pin can be summarized by this equation: CFG(V)=VDDIO*ProgrammedValue Where ProgrammedValue is a hex value between 0 and 255 and is set per device in the vr_config file. A snippet of the configuration file is shown below. Additionally, there are comments in the configuration file to give example hex values to set for different configuration profiles at the bottom of the file.</div>
+</div>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/vr_config.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/vr_config.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/vr_config.png" style="width: 800px;" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Updating/Changing Device Tree Blobs (boot modes) ==== Multiple different device tree blobs (dtbs) are available for AD-GMSL522-SL user’s convenience. They each have a separate use. For example, one dtb will allow any™ sensor resolution to be streamed to AD-GMSL522-SL but the user will need to program the SERDES and sensor themselves. Another dtb, however, will only allow a certain sensor to be streamed and viewed with the Jetson, but the sensor and SERDES programming will be executed at power up and is not configurable. To change the dtb to boot from, follow these steps:</div>
+</div>
+<ul class="simple">
+<li><p>Download the dtb files from: LINK_TO_GITHUB_TBD</p></li>
+<li><p>use the update_dtb.sh script found in the tools portion of the github:</p>
+<ul>
+<li><p>sudo chmod +x ./update_dtb.sh</p>
+<ul>
+<li><p>sudo ./update_dtb.sh /path/to/dtb/file.dtb</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>reboot the GMSL522 board to have the board boot with the new dtb file specified.</p></li>
+</ul>
+<p>Below are the DTBs currently available:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>DTB Name</p></th>
+<th class="head"><p>DTB Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>tegra194-p3668-0001-gmsl522-revb-gmsl-0.dts</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-odd"><td><p>tegra194-p3668-0001-gmsl522-revb-gmsl-1.dts</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-even"><td><p>tegra194-p3668-0001-gmsl522-revb-gmsl-3.dts</p></td>
+<td><p>Generic Sensor Driver – 1.5G – 4L – Four VC – NO Emb Lines</p></td>
+</tr>
+<tr class="row-odd"><td><p>tegra194-p3668-0001-gmsl522-revb-gmsl-4.dts</p></td>
+<td><p>Generic Sensor Driver – 2.5G – 4L – Four VC – NO Emb Lines</p></td>
+</tr>
+<tr class="row-even"><td><p>tegra194-p3668-0001-gmsl522-revb-gmsl-5.dts</p></td>
+<td><p>For use with the AD-GMSL717MIPI-EVK</p></td>
+</tr>
+<tr class="row-odd"><td><p>tegra194-p3668-0001-gmsl522-revb-gmsl-6.dts</p></td>
+<td><p>Generic Sensor Driver – 1.5G – 2L – Four VC – NO Emb Lines</p></td>
+</tr>
+<tr class="row-even"><td><p>tegra194-p3668-0001-gmsl522-revb-gmsl-7.dts</p></td>
+<td><p>Generic Sensor Driver – 2.5G – 2L – Four VC – NO Emb Lines</p></td>
+</tr>
+<tr class="row-odd"><td><p>tegra194-p3668-0001-gmsl522-revb-gmsl-8.dts</p></td>
+<td><p>Generic Sensor Driver – 1.5G – 4L – Four VC – 2 Emb Lines</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For more information on how to create your own device trees, or modify the AD-GMSL522-SL Kernel for your own custom use case, see this webpage: <a class="icon link reference external" href="https://github.com/nvidia" target="_blank">nvidia</a></p>
+<p>The video devices when using the generic sensor driver are mapped to the jetson like below:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>CSI Port from Deserializer</p></th>
+<th class="head"><p>Video Device</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Offboard (Samtec Connector) Port A VC0</p></td>
+<td><p>/dev/video0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Offboard (Samtec Connector) Port A VC1</p></td>
+<td><p>/dev/video1</p></td>
+</tr>
+<tr class="row-even"><td><p>Offboard (Samtec Connector) Port A VC2</p></td>
+<td><p>/dev/video2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Offboard (Samtec Connector) Port A VC3</p></td>
+<td><p>/dev/video3</p></td>
+</tr>
+<tr class="row-even"><td><p>Offboard (Samtec Connector) Port B VC0</p></td>
+<td><p>/dev/video4</p></td>
+</tr>
+<tr class="row-odd"><td><p>Onboard MAX96724 Port B VC0</p></td>
+<td><p>/dev/video5</p></td>
+</tr>
+<tr class="row-even"><td><p>Onboard MAX96724 Port B VC1</p></td>
+<td><p>/dev/video6</p></td>
+</tr>
+<tr class="row-odd"><td><p>Onboard MAX96724 Port B VC2</p></td>
+<td><p>/dev/video7</p></td>
+</tr>
+<tr class="row-even"><td><p>Onboard MAX96724 Port B VC3</p></td>
+<td><p>/dev/video8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">==== Verify Proper Flashing/Setup ==== Once the Jetson has been flashed and the configuration pins of the SERDES have been properly updated, you should be able to probe the i2c bus of the AD-GMSL522-SL board and see the SERDES there. Open a terminal and run the following command:</div>
+</div>
+<ul class="simple">
+<li><p>i2cdetect -y -r 1 (reads all devices on the I2C Bus #1. If a device is detected, its 7-bit address is noted)</p></li>
+</ul>
+<p>If the board and SERDES are properly configured, you should see the following:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/i2cdetect.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/i2cdetect.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/i2cdetect.jpg" style="width: 800px;" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">—-</div>
+</div>
+</section>
+</section>
+<section id="general-tips-for-using-the-ad-gmsl522-sl-board">
+<h2>General Tips for Using the AD-GMSL522-SL Board<a class="headerlink" href="#general-tips-for-using-the-ad-gmsl522-sl-board" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>If ‘looping back’ the onboard MAX96717 to the onboard MAX96724, it is best practice to disable the MAX96717 local control channel. This way, I2C communication will not be duplicated and only sent to the MAX96717 via the GMSL link. To do this, set register bit 5 in register 0x0001 HIGH. For example, if operating the max96717 in 6G mode, set register 0x0001 == 0x28.</p></li>
+<li><p>The MAX96724 has two MIPI ports. One of these ports is connected to the Jetson while the other port is connected to the MAX96717. Specifically, MIPI Port B is connected to the Jetson, while MIPI Port A is connected to the MAX96717. This will be important when specifying in the GUI tools where to send the video data.</p></li>
+<li><p>There are two micro-USB inputs to the Jetson. One is used for debug information from the Jetson while the other is used for GPIO. Unless you are looking for kernel and boot messages from the Jetson, P6 is the correct connector to use. P6 should be used if you are trying to connect the GMSL GUI to the Jetson, for example.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">—-</div>
+</div>
+</section>
+<section id="streaming-video-data-via-generic-sensor-driver">
+<h2>Streaming Video Data via “Generic Sensor Driver”<a class="headerlink" href="#streaming-video-data-via-generic-sensor-driver" title="Link to this heading"></a></h2>
+<p>The “generic sensor driver” device tree of the AD-GMSL522-SL board allows a user to stream any resolution camera and any sort of MIPI CSI-2 datatype, within the capabilities of the jetson. There is one limitation to this tool, and it is that no embedded data may be used. Future device trees will allow different numbers of embedded data at the TOP of the image frame but are currently unavailable. The Jetson, as of writing this, does not currently support any embedded data at the BOTTOM of the image frame. To utilize this tool, the SERDES and the accompanying image sensors must be programmed by the user. This can be done in a number of ways: The GMSL GUI connected directly to an evkit, the GMSL GUI connected through the AD-GMSL522-SL board, the “GMSL User Space Drivers”, or any other user-defined way. In general, the sensor can be streamed by following the below steps:</p>
+<ul class="simple">
+<li><p>Verify you are booting with the correct DTB for your application. Important points for DTB choice are: Number of MIPI lanes from DES to Jetson, MIPI Speed, Embedded lines or no. See section above for how to update DTB file.</p></li>
+<li><p>Program the SERDES</p>
+<ul>
+<li><p>One way to do this is to open the GMSL server on AD-GMSL522-SL board, and run the GUI via a user’s PC</p>
+<ul>
+<li><p>Using the “CSI Configuration Tool” in the GMSL GUI, generate a SERDES script</p></li>
+<li><p>Program the SERDES using the “Load (.CPP) File” tool</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Program the Image Sensor</p>
+<ul>
+<li><p>This step will require the user to have a set of register writes to program the sensor and cause it to stream video data. There are few ways to get this data but normally it can be acquired from the image sensor vendor.</p>
+<ul>
+<li><p>Program the Image Sensor. If the register writes are configured in the same way that that the SERDES register writes are, i.e., in a .cpp format, the GMSL GUI can be used to program the sensor, again, using the “Load (.CPP) File” tool.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Configure the v4l2 video pipeline</p>
+<ul>
+<li><p>Below is one example of this command. Note where the resolution is stated, and where the datatype is stated. To find supported image formats, or datatypes, of the Jetson, another command can be executed:</p>
+<ul>
+<li><p>Command to configure pipeline: v4l2-ctl –device /dev/video5 –set-fmt-video=width=1920,height=1280,pixelformat=BG12</p>
+<ul>
+<li><p>Command to find supported pixel formats: v4l2-ctl –list-formats</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Stream</p>
+<ul>
+<li><p>Once the pipeline is properly configured to the incoming data, the video viewer, qv4l2 should be called. However, which CSI input to the Jetson being used, needs to be specified. See the following command:</p>
+<ul>
+<li><p>qv4l2 -d /dev/video5</p>
+<ul>
+<li><p>The following video devices should be used depending on which MIPI Input is used:</p>
+<ul>
+<li><p>QTH SAMTEC MIPI Port A VC0: /dev/video0</p>
+<ul>
+<li><p>QTH SAMTEC MIPI Port A VC1: /dev/video1</p>
+<ul>
+<li><p>QTH SAMTEC MIPI Port A VC2: /dev/video2</p></li>
+<li><p>QTH SAMTEC MIPI Port A VC3: /dev/video3</p></li>
+<li><p>QTH SAMTEC MIPI Port B VC0: /dev/video4</p></li>
+<li><p>Onboard MAX96724 MIPI Port B: /dev/video5</p></li>
+<li><p>Onboard MAX96724 MIPI Port B: /dev/video6</p></li>
+<li><p>Onboard MAX96724 MIPI Port B: /dev/video7</p></li>
+<li><p>Onboard MAX96724 MIPI Port B: /dev/video8</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Click the green “Play” button to stream the video (see image below)</p></li>
+<li><p>Make sure not to change any of the parameters in the window because it will override what was done in the previous step.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/better_v4l2_thing.jpg"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/better_v4l2_thing.jpg" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/better_v4l2_thing.jpg" style="width: 800px;" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">—-</div>
+</div>
+</section>
+<section id="loopback-testing-and-exercises">
+<h2>Loopback Testing and Exercises<a class="headerlink" href="#loopback-testing-and-exercises" title="Link to this heading"></a></h2>
+<p>For the following two sub sections, connect your AD-GMSL522-SL board in the following way. Some of these components may not be necessary depending on how you have your system setup. For instance, if you are using NoMachine, an external display is not necessary. An ethernet is not explicitly needed for this exercise unless a connection to the internet, or an intranet for use of NoMachine or another VNC. It is important to have a coax cable connected between the MAX96717 output and the MAX96724 “A” input.</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/viper_block_diagram_using_loopback_section.png"><img alt="image1" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/viper_block_diagram_using_loopback_section.png" style="width: 800px;" /></a></p>
+<section id="looping-back-the-on-board-max96717-to-the-on-board-max96724-streaming-a-checkerboard-pattern-from-the-max96717">
+<h3>Looping back the On-Board MAX96717 to the On-Board MAX96724 (streaming a checkerboard pattern from the MAX96717)<a class="headerlink" href="#looping-back-the-on-board-max96717-to-the-on-board-max96724-streaming-a-checkerboard-pattern-from-the-max96717" title="Link to this heading"></a></h3>
+<p>In this exercise, the functionality of both the MAX96717 and the MAX96724 on the AD-GMSL522-SL board will be exercised. The MAX96717 will uses its internal pattern generator functionality to build a checkboard pattern and then send that pattern to the MAX96724 which will pass that pattern along to the Jetson to be viewed. This exercise will utilize the following:</p>
+<ul class="simple">
+<li><p>A Windows PC to run the GMSL GUI</p>
+<ul>
+<li><p>Pattern Generator Tool</p>
+<ul>
+<li><p>CSI Programming Tool</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>qv4l2 on the Jetson</p></li>
+<li><p>Device Tree “-3” to allow generic input video stream resolutions, datatypes, and frame rates. Make sure to update the extconf.txt file. If you do not know how to do this, refer back to this section.</p></li>
+</ul>
+<div class="line-block">
+<div class="line">Follow these steps to stream the pattern generator tool on the AD-GMSL522-SL board:</div>
+<div class="line">To start, set up your hardware like in the diagram below. Depending on whether or not you are using NoMachine or some other remote-viewing software, your setup may differ. The critical part is that there is a COAX cable connected between the MAX96717 output, and the MAX96724 input “A”.</div>
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl522-sl/viper_pattern_generator_setup.png"><img alt="image2" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl522-sl/viper_pattern_generator_setup.png" style="width: 600px;" /></a></div>
+</div>
+<ul class="simple">
+<li><p>On the AD-GMSL522-SL board, start the GMSL server:</p>
+<ul>
+<li><p>./gmsl-uart-server –i2c=/dev/i2c-1 –serial=/dev/ttyGS0</p></li>
+</ul>
+</li>
+<li><p>On your Windows PC, start the GUI and verify you can detect the GMSL SERDES.</p></li>
+<li><p>Use the CSI Programming Tool to build a script that has the following parameters (recall that the MAX96724 is using I2C address 0x4E, and the MAX96717 is using I2C address 0x84):</p>
+<ul>
+<li><p>‘RGB888 Datatype with Virtual Channel 0’ input to the serializer (technically, the RGB888 will be generated in the serializer, but we need this step to get to the next step)</p>
+<ul>
+<li><p>‘RGB888 Datatype with Virtual Channel 0’ output from the deserializer on MIPI Port B.</p></li>
+<li><p>Generate the script and save it somewhere you can find it.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>You can verify your by checking it against the script in the proper appendix.</p></li>
+<li><p>Use that script to program the SERDES using the Load (.CPP) function the GMSL GUI.</p></li>
+<li><p>Now, open the “Video Timing and Pattern Generator” Tool in the GUI</p></li>
+<li><p>Set the parameters of the tool to match what is shown below:</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl522-sl/viper_video_pattern_generator.png"><img alt="image3" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl522-sl/viper_video_pattern_generator.png" style="width: 600px;" /></a> 9. Click the “Start Video Generation” button at the bottom of the window to start the generator.</div>
+<div class="line">If everything has been done correctly up to this point, MIPI data should be leaving the MAX96724 from MIPI Port B and going to the Jetson. This can be verified by reading register 0x08D1 in the MAX96724. If the register value is toggling, you know data is outputting the deserializer.</div>
+</div>
+<ul class="simple">
+<li><p>Configure the jetson to expect an input resolution of 1920x1080 and RAW12 pixel format</p>
+<ul>
+<li><p>v4l2-ctl –device /dev/video5 –set-fmt-video=width=1920,height=1080,pixelformat=AR24</p></li>
+</ul>
+</li>
+<li><p>Start the video streaming application, qv4l2, from video device 2</p>
+<ul>
+<li><p>qv4l2 -d /dev/video5</p></li>
+</ul>
+</li>
+<li><p>Click the green play button to begin streaming the checkerboard.</p></li>
+</ul>
+<p>At this point, a black and white checkboard should be shown on the display. Because the pattern generator builds a static image, it will look like the frame is frozen. Your screen should look similar to this:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/gmsl_gui_pattern_generator_output_showing.png"><img alt="image4" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/gmsl_gui_pattern_generator_output_showing.png" style="width: 400px;" /></a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">—-</div>
+</div>
+</section>
+</section>
+<section id="scripting-with-the-ad-gmsl522-sl-board">
+<h2>Scripting with the AD-GMSL522-SL Board<a class="headerlink" href="#scripting-with-the-ad-gmsl522-sl-board" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">WIP</div>
+</div>
+</section>
+<section id="debugging-csi-input-to-ad-gmsl522-sl-board">
+<h2>Debugging CSI Input to AD-GMSL522-SL Board<a class="headerlink" href="#debugging-csi-input-to-ad-gmsl522-sl-board" title="Link to this heading"></a></h2>
+<p>If the SERDES and Sensor are properly programmed, and CSI data is going to the Jetson, you can use the following technique to attempt to debug. To see the low-level details of the MIPI interface to the Jetson, we must enable tracing. Follow these steps to see the trace details:</p>
+<ul class="simple">
+<li><p>Enable tracing. This step must be done as a ‘super user’. Even creating the file must be done as a super user.</p>
+<ul>
+<li><p>Become a super user</p>
+<ul>
+<li><p>sudo su</p></li>
+<li><p>Create a shell script with the following contents</p>
+<ul>
+<li><p>E.g. (vim enable_tracing.sh)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>&lt;blockquote&gt;#! /bin/sh</p>
+<p>sudo echo 1 &gt; /sys/kernel/debug/tracing/tracing_on sudo echo 30720 &gt; /sys/kernel/debug/tracing/buffer_size_kb sudo echo 1 &gt; /sys/kernel/debug/tracing/events/tegra_rtcpu/enable sudo echo 1 &gt; /sys/kernel/debug/tracing/events/freertos/enable sudo echo 2 &gt; /sys/kernel/debug/camrtc/log-level sudo echo 1 &gt; /sys/kernel/debug/tracing/events/camera_common/enable sudo echo &gt; /sys/kernel/debug/tracing/trace</p>
+<p>sudo echo file vi2_fops.c +p &gt; /sys/kernel/debug/dynamic_debug/control sudo echo file csi2_fops.c +p &gt; /sys/kernel/debug/dynamic_debug/control</p>
+<p>sudo echo file vi4_fops.c +p &gt; /sys/kernel/debug/dynamic_debug/control sudo echo file csi.c +p &gt; /sys/kernel/debug/dynamic_debug/control sudo echo file csi4_fops.c +p &gt; /sys/kernel/debug/dynamic_debug/control sudo echo file nvcsi.c +p &gt; /sys/kernel/debug/dynamic_debug/control</p>
+<p>sudo cat /sys/kernel/debug/tracing/trace&lt;/blockquote&gt;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="o">*</span> <span class="n">Make</span> <span class="n">this</span> <span class="n">file</span> <span class="n">executable</span>
+    <span class="o">*</span> <span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="o">&lt;</span><span class="n">file</span> <span class="n">name</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">E</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">enable_tracing</span><span class="o">.</span><span class="n">sh</span><span class="p">)</span>
+    <span class="o">*</span> <span class="n">execute</span> <span class="n">the</span> <span class="n">script</span>
+      <span class="o">*</span> <span class="n">enable_tracing</span><span class="o">.</span><span class="n">sh</span>
+<span class="o">*</span> <span class="n">now</span> <span class="n">enable</span> <span class="n">streaming</span> <span class="n">using</span> <span class="n">qv4l2</span><span class="p">,</span> <span class="k">for</span> <span class="n">instance</span><span class="o">.</span>
+<span class="o">*</span> <span class="n">Let</span> <span class="n">the</span> <span class="n">stream</span> <span class="n">run</span> <span class="k">for</span> <span class="n">a</span> <span class="n">several</span> <span class="n">seconds</span> <span class="n">to</span> <span class="n">collect</span> <span class="n">enough</span> <span class="n">data</span>
+<span class="o">*</span> <span class="n">Save</span> <span class="n">the</span> <span class="n">trace</span> <span class="n">logs</span>
+  <span class="o">*</span> <span class="n">cat</span> <span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="n">kernel</span><span class="o">/</span><span class="n">debug</span><span class="o">/</span><span class="n">tracing</span><span class="o">/</span><span class="n">trace</span> <span class="o">&gt;</span> <span class="n">trace_output</span><span class="o">.</span><span class="n">txt</span>
+<span class="o">*</span> <span class="n">View</span> <span class="n">the</span> <span class="n">logs</span>
+</pre></div>
+</div>
+<p>The error codes can be found in the logs. Here is one example:</p>
+<p><a class="reference internal" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/viper_debugging_csi_shortframe.png"><img alt="image5" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/viper_debugging_csi_shortframe.png" style="width: 800px;" /></a></p>
+<p>Additionally, the Orin Technical Reference Manual (TRM) can be found on NVIDIA’s collateral site to get more information on the errors. This is an excerpt from the TRM:</p>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/viper_debugging_csi_orin_trm.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/viper_debugging_csi_orin_trm.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad-viper-sl/viper_debugging_csi_orin_trm.png" style="width: 800px;" />
+</a>
+<p>More info on this technique and what the trace is saying can be found here: <a class="icon link reference external" href="https://elinux.org/Jetson/l4t/Camera_BringUp" target="_blank">https://elinux.org/Jetson/l4t/Camera_BringUp</a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">—-</div>
+</div>
+</section>
+<section id="other-helpful-software-and-improvements">
+<h2>Other Helpful Software and Improvements<a class="headerlink" href="#other-helpful-software-and-improvements" title="Link to this heading"></a></h2>
+<section id="viewing-ad-gmsl522-sl-remotely-using-nomachine">
+<h3>Viewing AD-GMSL522-SL Remotely Using NoMachine<a class="headerlink" href="#viewing-ad-gmsl522-sl-remotely-using-nomachine" title="Link to this heading"></a></h3>
+<p>NoMachine allows users to connect to any computer with very little latency and high resolution. This is recommended to be used because of the common use case of viewing video data requires low latency and high-resolution video. Compared to other remote desktop viewers, NoMachine has much higher quality video streaming. To install NoMachine on your AD-GMSL522-SL Board and Host PC, follow this tutorial from Jetsonhacks: <a class="icon link reference external" href="https://jetsonhacks.com/2023/12/03/nomachine-jetson-remote-desktop/" target="_blank">https://jetsonhacks.com/2023/12/03/nomachine-jetson-remote-desktop/</a> Or view their own documentation at: <a class="icon link reference external" href="https://www.nomachine.com/" target="_blank">https://www.nomachine.com/</a></p>
+</section>
+<section id="booting-from-nvme">
+<h3>Booting From NVMe<a class="headerlink" href="#booting-from-nvme" title="Link to this heading"></a></h3>
+<p>The default memory module on the Jetson Xavier is only 16GB large. Given the fact that the AD-GMSL522-SL GMSL kernel is already ~14GB large, there is not much space left to do anything useful. One way to remedy this situation is to buy and use an NVMe. NVMe is typically much faster than the internal eMMC of the Xavier NX so the upgrade is not just space, but speed as well. To get this upgrade, one can buy the vetted NVMe module in the “Recommended Hardware” section of this document, and then follow the tutorial from JetsonHacks on how to boot from NVMe.</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://github.com/jetsonhacks/rootOnNVMe" target="_blank">https://github.com/jetsonhacks/rootOnNVMe</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.youtube.com/watch?v=ZK5FYhoJqIg" target="_blank">https://www.youtube.com/watch?v=ZK5FYhoJqIg</a></p></li>
+</ul>
+</section>
+<section id="booting-from-sd-card">
+<h3>Booting From SD Card<a class="headerlink" href="#booting-from-sd-card" title="Link to this heading"></a></h3>
+<p>Boot via SD card will be done the same way as an NVMe. In the case of the Jetson Xavier NX, the SOM will always boot from eMMC, initially, but if properly configured, can then hand over the boot process to another memory medium. Therefore, it will always be required that a working image is flashed to the eMMC of the Jetson, and then, that, or a new filesystem, is placed onto the SD card.</p>
+</section>
+<section id="restarting-the-fan-service">
+<h3>Restarting the Fan Service<a class="headerlink" href="#restarting-the-fan-service" title="Link to this heading"></a></h3>
+<p>There is a known bug on the NVIDIA forums stating that sometimes, the fan will run at full speed constantly. This appeared in Jetpack Version 5.1 it is believed. To fix this issue, run the following command: &lt;code&gt; sudo systemctl restart nvfancontrol.service &lt;/code&gt;</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">—-</div>
+</div>
+</section>
+</section>
+<section id="ad-gmsl522-sl-hardware-specifics">
+<h2>AD-GMSL522-SL Hardware Specifics<a class="headerlink" href="#ad-gmsl522-sl-hardware-specifics" title="Link to this heading"></a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>There is a separate document that goes into more details on these following hardware topics. See: <a class="reference internal" href="hardware.html"><span class="doc">AD-GMSL522-SL Hardware Guide</span></a></p>
+</div>
+<section id="block-diagram">
+<h3>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl522-sl/ad-gmsl522-sl_block_diagram.png"><img alt="https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl522-sl/ad-gmsl522-sl_block_diagram.png" class="align-center" src="https://wiki.analog.com/_media/resources/eval/user-guides/ad-gmsl522-sl/ad-gmsl522-sl_block_diagram.png" style="width: 800px;" />
+</a>
+</section>
+<section id="i2c">
+<h3>I2C<a class="headerlink" href="#i2c" title="Link to this heading"></a></h3>
+<p>There are multiple ways to interface with the GMSL devices on AD-GMSL522-SL such as the Linux I2CSET and I2CGET functions as well as smbus, though, regardless of the method, one should pay attention to which I2C bus of the Jetson is connected to which GMSL parts or connectors. See below for some example commands and what bus goes where.</p>
+<ul class="simple">
+<li><p>I2C Bus 1: MAX96724, MAX96717</p></li>
+<li><p>I2C Bus 2: CSI SAMTEC Connector</p></li>
+</ul>
+<p>Some example commands to test out I2C are below:</p>
+<ul class="simple">
+<li><p>i2cdetect -y -r 1 (reads all devices on the I2C Bus #1. If a device is detected, its 7-bit address is noted)</p></li>
+</ul>
+</section>
+<section id="mipi-qth-samtec-connector">
+<h3>MIPI / QTH SAMTEC CONNECTOR<a class="headerlink" href="#mipi-qth-samtec-connector" title="Link to this heading"></a></h3>
+<p>A QTH-030-01-L-D-A high speed connector is present on the bottom of the board. GMSL to CSI deserializer evaluation kits can be connected here. In the default configuration, if an evaluation kit is mounted on the carrier board, power to it will not be supplied by the carrier board. R136, R153, R152 can be soldered on the carrier to connect the Evkit to the power supplies of the AD-GMSL522-SL carrier board.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please check the board and don’t plug the power supply of the evkit connected to P1 if R152 is installed</p>
+</div>
+<p>12 MIPI CSI lanes (CSI0-CSI3) of the XavierNX are routed to this connector, supporting either 4x2, 2x4 CSI-2 DPHY v1.2 configurations.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">===== Appendix 1 (proper script for pattern generator viewing exercise) =====</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Name: dmcginle</span>
+<span class="c1"># Date: 4/22/2024</span>
+<span class="c1"># Version: 6.6.5</span>
+<span class="c1">#</span>
+<span class="c1"># I2C Address(0x), Register Address(0x), Register Value(0x), Read Modify Write(0x)</span>
+<span class="c1">#</span>
+<span class="c1"># THIS DATA FILE, AND ALL INFORMATION CONTAINED THEREIN,</span>
+<span class="c1"># IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,</span>
+<span class="c1"># EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO</span>
+<span class="c1"># THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR</span>
+<span class="c1"># PURPOSE AND NONINFRINGEMENT.</span>
+<span class="c1"># IN NO EVENT SHALL ANALOG DEVICES, INC. BE LIABLE FOR ANY CLAIM,</span>
+<span class="c1"># DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,</span>
+<span class="c1"># TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE DATA FILE,</span>
+<span class="c1"># THE INFORMATION CONTAINED THEREIN, OR ITS USE FOR ANY PURPOSE.</span>
+<span class="c1"># BEFORE USING THIS DATA FILE IN ANY APPLICATION FOR PRODUCTION OR DEPLOYMENT,</span>
+<span class="c1"># THE CUSTOMER IS SOLELY RESPONSIBLE FOR TESTING AND VERIFYING</span>
+<span class="c1"># THE CONTENT OF THIS DATA FILE IN CONNECTION WITH THEIR PRODUCTS AND SYSTEM(S).</span>
+<span class="c1"># ---------------------------------------------------------------------------------</span>
+<span class="c1">#</span>
+<span class="c1">#            _____ _____</span>
+<span class="c1">#      /\</span>
+
+<span class="o">|</span>  <span class="n">__</span> \<span class="n">_</span>   <span class="n">_</span><span class="o">|</span>
+
+<span class="c1">#     /  \  | |  | || |</span>
+<span class="c1">#    / /\ \ | |  | || |</span>
+<span class="c1">#   / ____ \| |__| ||</span>
+
+<span class="o">|</span><span class="n">_</span>
+<span class="c1">#  /_/    \_\_____/_____|</span>
+
+<span class="c1">#</span>
+<span class="c1"># ---------------------------------------------------------------------------------</span>
+<span class="o">*/</span>
+<span class="o">/*</span>
+<span class="c1"># This script is validated on:</span>
+<span class="c1"># MAX96717</span>
+<span class="c1"># MAX96724</span>
+<span class="c1"># Please refer to the Errata sheet for each device.</span>
+<span class="c1"># ---------------------------------------------------------------------------------</span>
+<span class="o">*/</span>
+<span class="o">//</span>
+<span class="o">//</span> <span class="n">CSIConfigurationTool</span>
+<span class="o">//</span>
+<span class="o">//</span> <span class="n">GMSL</span><span class="o">-</span><span class="n">A</span> <span class="o">/</span> <span class="n">Serializer</span><span class="p">:</span> <span class="n">MAX96717</span> <span class="p">(</span><span class="n">Pixel</span> <span class="n">Mode</span><span class="p">)</span> <span class="o">/</span> <span class="n">Mode</span><span class="p">:</span> <span class="mi">1</span><span class="n">x4</span> <span class="o">/</span> <span class="n">Device</span> <span class="n">Address</span><span class="p">:</span> <span class="mh">0x84</span> <span class="o">/</span> <span class="n">Multiple</span><span class="o">-</span><span class="n">VC</span> <span class="n">Case</span><span class="p">:</span> <span class="n">Single</span> <span class="n">VC</span> <span class="o">/</span> <span class="n">Pipe</span> <span class="n">Sharing</span><span class="p">:</span> <span class="n">Separate</span> <span class="n">Pipes</span>
+<span class="o">//</span> <span class="n">PipeZ</span><span class="p">:</span>
+<span class="o">//</span> <span class="n">Input</span> <span class="n">Stream</span><span class="p">:</span> <span class="n">VC0</span> <span class="n">RGB888</span> <span class="n">PortB</span> <span class="p">(</span><span class="n">D</span><span class="o">-</span><span class="n">PHY</span><span class="p">)</span>
+
+<span class="o">//</span> <span class="n">Deserializer</span><span class="p">:</span> <span class="n">MAX96724</span> <span class="o">/</span> <span class="n">Mode</span><span class="p">:</span> <span class="mi">2</span> <span class="p">(</span><span class="mi">1</span><span class="n">x4</span><span class="p">)</span> <span class="o">/</span> <span class="n">Device</span> <span class="n">Address</span><span class="p">:</span> <span class="mh">0x4E</span>
+<span class="o">//</span> <span class="n">Pipe0</span><span class="p">:</span>
+<span class="o">//</span> <span class="n">GMSL</span><span class="o">-</span><span class="n">A</span> <span class="n">Input</span> <span class="n">Stream</span><span class="p">:</span> <span class="n">VC0</span> <span class="n">RGB888</span> <span class="n">PortB</span> <span class="o">-</span> <span class="n">Output</span> <span class="n">Stream</span><span class="p">:</span> <span class="n">VC0</span> <span class="n">RGB888</span> <span class="n">PortB</span> <span class="p">(</span><span class="n">D</span><span class="o">-</span><span class="n">PHY</span><span class="p">)</span>
+
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x04</span><span class="p">,</span><span class="mh">0x0B</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span> <span class="o">//</span> <span class="n">BACKTOP</span> <span class="p">:</span> <span class="n">BACKTOP12</span> <span class="o">|</span> <span class="n">CSI_OUT_EN</span> <span class="p">(</span><span class="n">CSI_OUT_EN</span><span class="p">):</span> <span class="n">CSI</span> <span class="n">output</span> <span class="n">disabled</span>
+<span class="o">//</span> <span class="n">Link</span> <span class="n">Initialization</span> <span class="k">for</span> <span class="n">Deserializer</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0x06</span><span class="p">,</span><span class="mh">0xF1</span><span class="p">,</span> <span class="o">//</span> <span class="n">DEV</span> <span class="p">:</span> <span class="n">REG6</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">LINK_EN_A</span> <span class="p">(</span><span class="n">LINK_EN_A</span><span class="p">):</span> <span class="n">Enabled</span> <span class="o">|</span> <span class="n">LINK_EN_B</span> <span class="p">(</span><span class="n">LINK_EN_B</span><span class="p">):</span> <span class="n">Disabled</span> <span class="o">|</span> <span class="n">LINK_EN_C</span> <span class="p">(</span><span class="n">LINK_EN_C</span><span class="p">):</span> <span class="n">Disabled</span> <span class="o">|</span> <span class="n">LINK_EN_D</span> <span class="p">(</span><span class="n">LINK_EN_D</span><span class="p">):</span> <span class="n">Disabled</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0x03</span><span class="p">,</span><span class="mh">0xFE</span><span class="p">,</span> <span class="o">//</span> <span class="n">DEV</span> <span class="p">:</span> <span class="n">REG3</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">DIS_REM_CC_A</span> <span class="p">(</span><span class="n">GMSL</span> <span class="n">Link</span> <span class="n">A</span> <span class="n">I2C</span> <span class="n">Port</span> <span class="mi">0</span><span class="p">):</span> <span class="n">Enabled</span> <span class="o">|</span> <span class="n">DIS_REM_CC_B</span> <span class="p">(</span><span class="n">GMSL</span> <span class="n">Link</span> <span class="n">B</span> <span class="n">I2C</span> <span class="n">Port</span> <span class="mi">0</span><span class="p">):</span> <span class="n">Disabled</span> <span class="o">|</span> <span class="n">DIS_REM_CC_C</span> <span class="p">(</span><span class="n">GMSL</span> <span class="n">Link</span> <span class="n">C</span> <span class="n">I2C</span> <span class="n">Port</span> <span class="mi">0</span><span class="p">):</span> <span class="n">Disabled</span> <span class="o">|</span> <span class="n">DIS_REM_CC_D</span> <span class="p">(</span><span class="n">GMSL</span> <span class="n">Link</span> <span class="n">D</span> <span class="n">I2C</span> <span class="n">Port</span> <span class="mi">0</span><span class="p">):</span> <span class="n">Disabled</span>
+<span class="mh">0x00</span><span class="p">,</span><span class="mh">0x01</span><span class="p">,</span> <span class="o">//</span> <span class="ne">Warning</span><span class="p">:</span> <span class="n">The</span> <span class="n">actual</span> <span class="n">recommended</span> <span class="n">delay</span> <span class="ow">is</span> <span class="mi">5</span> <span class="n">usec</span><span class="o">.</span>
+<span class="o">//</span> <span class="n">Video</span> <span class="n">Transmit</span> <span class="n">Configuration</span> <span class="k">for</span> <span class="n">Serializer</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x84</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0x02</span><span class="p">,</span><span class="mh">0x03</span><span class="p">,</span> <span class="o">//</span> <span class="n">DEV</span> <span class="p">:</span> <span class="n">REG2</span> <span class="o">|</span> <span class="n">VID_TX_EN_Z</span> <span class="p">(</span><span class="n">VID_TX_EN_Z</span><span class="p">):</span> <span class="n">Disabled</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x84</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0x02</span><span class="p">,</span><span class="mh">0x03</span><span class="p">,</span> <span class="o">//</span> <span class="n">DEV</span> <span class="p">:</span> <span class="n">REG2</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">VID_TX_EN_Z</span> <span class="p">(</span><span class="n">VID_TX_EN_Z</span><span class="p">):</span> <span class="n">Disabled</span>
+<span class="o">//</span>
+<span class="o">//</span> <span class="n">INSTRUCTIONS</span> <span class="n">FOR</span> <span class="n">GMSL</span><span class="o">-</span><span class="n">A</span> <span class="n">SERIALIZER</span> <span class="n">MAX96717</span>
+<span class="o">//</span>
+<span class="o">//</span> <span class="n">MIPI</span> <span class="n">D</span><span class="o">-</span><span class="n">PHY</span> <span class="n">Configuration</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x84</span><span class="p">,</span><span class="mh">0x03</span><span class="p">,</span><span class="mh">0x30</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_RX</span> <span class="p">:</span> <span class="n">MIPI_RX0</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">RSVD</span> <span class="p">(</span><span class="n">Port</span> <span class="n">Configuration</span><span class="p">):</span> <span class="mi">1</span><span class="n">x4</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x84</span><span class="p">,</span><span class="mh">0x03</span><span class="p">,</span><span class="mh">0x83</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_RX_EXT</span> <span class="p">:</span> <span class="n">EXT11</span> <span class="o">|</span> <span class="n">Tun_Mode</span> <span class="p">(</span><span class="n">Tunnel</span> <span class="n">Mode</span><span class="p">):</span> <span class="n">Disabled</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x84</span><span class="p">,</span><span class="mh">0x03</span><span class="p">,</span><span class="mh">0x31</span><span class="p">,</span><span class="mh">0x30</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_RX</span> <span class="p">:</span> <span class="n">MIPI_RX1</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">ctrl1_num_lanes</span> <span class="p">(</span><span class="n">Port</span> <span class="n">B</span> <span class="o">-</span> <span class="n">Lane</span> <span class="n">Count</span><span class="p">):</span> <span class="mi">4</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x84</span><span class="p">,</span><span class="mh">0x03</span><span class="p">,</span><span class="mh">0x32</span><span class="p">,</span><span class="mh">0xE0</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_RX</span> <span class="p">:</span> <span class="n">MIPI_RX2</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">phy1_lane_map</span> <span class="p">(</span><span class="n">Lane</span> <span class="n">Map</span> <span class="o">-</span> <span class="n">PHY1</span> <span class="n">D0</span><span class="p">):</span> <span class="n">Lane</span> <span class="mi">2</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">phy1_lane_map</span> <span class="p">(</span><span class="n">Lane</span> <span class="n">Map</span> <span class="o">-</span> <span class="n">PHY1</span> <span class="n">D1</span><span class="p">):</span> <span class="n">Lane</span> <span class="mi">3</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x84</span><span class="p">,</span><span class="mh">0x03</span><span class="p">,</span><span class="mh">0x33</span><span class="p">,</span><span class="mh">0x04</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_RX</span> <span class="p">:</span> <span class="n">MIPI_RX3</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">phy2_lane_map</span> <span class="p">(</span><span class="n">Lane</span> <span class="n">Map</span> <span class="o">-</span> <span class="n">PHY2</span> <span class="n">D0</span><span class="p">):</span> <span class="n">Lane</span> <span class="mi">0</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">phy2_lane_map</span> <span class="p">(</span><span class="n">Lane</span> <span class="n">Map</span> <span class="o">-</span> <span class="n">PHY2</span> <span class="n">D1</span><span class="p">):</span> <span class="n">Lane</span> <span class="mi">1</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x84</span><span class="p">,</span><span class="mh">0x03</span><span class="p">,</span><span class="mh">0x34</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_RX</span> <span class="p">:</span> <span class="n">MIPI_RX4</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">phy1_pol_map</span> <span class="p">(</span><span class="n">Polarity</span> <span class="o">-</span> <span class="n">PHY1</span> <span class="n">Lane</span> <span class="mi">0</span><span class="p">):</span> <span class="n">Normal</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">phy1_pol_map</span> <span class="p">(</span><span class="n">Polarity</span> <span class="o">-</span> <span class="n">PHY1</span> <span class="n">Lane</span> <span class="mi">1</span><span class="p">):</span> <span class="n">Normal</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x84</span><span class="p">,</span><span class="mh">0x03</span><span class="p">,</span><span class="mh">0x35</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_RX</span> <span class="p">:</span> <span class="n">MIPI_RX5</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">phy2_pol_map</span> <span class="p">(</span><span class="n">Polarity</span> <span class="o">-</span> <span class="n">PHY2</span> <span class="n">Lane</span> <span class="mi">0</span><span class="p">):</span> <span class="n">Normal</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">phy2_pol_map</span> <span class="p">(</span><span class="n">Polarity</span> <span class="o">-</span> <span class="n">PHY2</span> <span class="n">Lane</span> <span class="mi">1</span><span class="p">):</span> <span class="n">Normal</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">phy2_pol_map</span> <span class="p">(</span><span class="n">Polarity</span> <span class="o">-</span> <span class="n">PHY2</span> <span class="n">Clock</span> <span class="n">Lane</span><span class="p">):</span> <span class="n">Normal</span>
+<span class="o">//</span> <span class="n">Controller</span> <span class="n">to</span> <span class="n">Pipe</span> <span class="n">Mapping</span> <span class="n">Configuration</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x84</span><span class="p">,</span><span class="mh">0x03</span><span class="p">,</span><span class="mh">0x08</span><span class="p">,</span><span class="mh">0x64</span><span class="p">,</span> <span class="o">//</span> <span class="n">FRONTTOP</span> <span class="p">:</span> <span class="n">FRONTTOP_0</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">RSVD</span> <span class="p">(</span><span class="n">CLK_SELZ</span><span class="p">):</span> <span class="n">Port</span> <span class="n">B</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">START_PORTB</span> <span class="p">(</span><span class="n">START_PORTB</span><span class="p">):</span> <span class="n">Enabled</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x84</span><span class="p">,</span><span class="mh">0x03</span><span class="p">,</span><span class="mh">0x11</span><span class="p">,</span><span class="mh">0x40</span><span class="p">,</span> <span class="o">//</span> <span class="n">FRONTTOP</span> <span class="p">:</span> <span class="n">FRONTTOP_9</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">START_PORTBZ</span> <span class="p">(</span><span class="n">START_PORTBZ</span><span class="p">):</span> <span class="n">Start</span> <span class="n">Video</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x84</span><span class="p">,</span><span class="mh">0x03</span><span class="p">,</span><span class="mh">0x18</span><span class="p">,</span><span class="mh">0x64</span><span class="p">,</span> <span class="o">//</span> <span class="n">FRONTTOP</span> <span class="p">:</span> <span class="n">FRONTTOP_16</span> <span class="o">|</span> <span class="n">mem_dt1_selz</span> <span class="p">(</span><span class="n">mem_dt1_selz</span><span class="p">):</span> <span class="mh">0x64</span>
+<span class="o">//</span> <span class="n">Pipe</span> <span class="n">Configuration</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x84</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0x5B</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span> <span class="o">//</span> <span class="n">CFGV__VIDEO_Z</span> <span class="p">:</span> <span class="n">TX3</span> <span class="o">|</span> <span class="n">TX_STR_SEL</span> <span class="p">(</span><span class="n">TX_STR_SEL</span> <span class="n">Pipe</span> <span class="n">Z</span><span class="p">):</span> <span class="mh">0x0</span>
+<span class="o">//</span>
+<span class="o">//</span> <span class="n">INSTRUCTIONS</span> <span class="n">FOR</span> <span class="n">DESERIALIZER</span> <span class="n">MAX96724</span>
+<span class="o">//</span>
+<span class="o">//</span> <span class="n">Video</span> <span class="n">Pipes</span> <span class="n">And</span> <span class="n">Routing</span> <span class="n">Configuration</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0xF0</span><span class="p">,</span><span class="mh">0x60</span><span class="p">,</span> <span class="o">//</span> <span class="n">VIDEO_PIPE_SEL</span> <span class="p">:</span> <span class="n">VIDEO_PIPE_SEL_0</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">VIDEO_PIPE_SEL_0</span> <span class="p">(</span><span class="n">Pipe</span> <span class="mi">0</span> <span class="n">GMSL2</span> <span class="n">PHY</span><span class="p">):</span> <span class="n">A</span> <span class="o">|</span> <span class="n">VIDEO_PIPE_SEL_0</span> <span class="p">(</span><span class="n">Pipe</span> <span class="mi">0</span> <span class="n">Input</span> <span class="n">Pipe</span><span class="p">):</span> <span class="n">X</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0xF4</span><span class="p">,</span><span class="mh">0x01</span><span class="p">,</span> <span class="o">//</span> <span class="n">VIDEO_PIPE_SEL</span> <span class="p">:</span> <span class="n">VIDEO_PIPE_EN</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">VIDEO_PIPE_EN</span> <span class="p">(</span><span class="n">Video</span> <span class="n">Pipe</span> <span class="mi">0</span><span class="p">):</span> <span class="n">Enabled</span> <span class="o">|</span> <span class="n">VIDEO_PIPE_EN</span> <span class="p">(</span><span class="n">Video</span> <span class="n">Pipe</span> <span class="mi">1</span><span class="p">):</span> <span class="n">Disabled</span> <span class="o">|</span> <span class="n">VIDEO_PIPE_EN</span> <span class="p">(</span><span class="n">Video</span> <span class="n">Pipe</span> <span class="mi">2</span><span class="p">):</span> <span class="n">Disabled</span> <span class="o">|</span> <span class="n">VIDEO_PIPE_EN</span> <span class="p">(</span><span class="n">Video</span> <span class="n">Pipe</span> <span class="mi">3</span><span class="p">):</span> <span class="n">Disabled</span> <span class="o">|</span> <span class="n">STREAM_SEL_ALL</span> <span class="p">(</span><span class="n">Stream</span> <span class="n">Select</span> <span class="n">All</span><span class="p">):</span> <span class="n">Disabled</span>
+<span class="o">//</span> <span class="n">Pipe</span> <span class="n">to</span> <span class="n">Controller</span> <span class="n">Mapping</span> <span class="n">Configuration</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x09</span><span class="p">,</span><span class="mh">0x0B</span><span class="p">,</span><span class="mh">0x07</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_TX__0</span> <span class="p">:</span> <span class="n">MIPI_TX11</span> <span class="o">|</span> <span class="n">MAP_EN_L</span> <span class="p">(</span><span class="n">MAP_EN_L</span> <span class="n">Pipe</span> <span class="mi">0</span><span class="p">):</span> <span class="mh">0x7</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x09</span><span class="p">,</span><span class="mh">0x0C</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_TX__0</span> <span class="p">:</span> <span class="n">MIPI_TX12</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">MAP_EN_H</span> <span class="p">(</span><span class="n">MAP_EN_H</span> <span class="n">Pipe</span> <span class="mi">0</span><span class="p">):</span> <span class="mh">0x0</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x09</span><span class="p">,</span><span class="mh">0x0D</span><span class="p">,</span><span class="mh">0x24</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_TX__0</span> <span class="p">:</span> <span class="n">MIPI_TX13</span> <span class="o">|</span> <span class="n">MAP_SRC_0</span> <span class="p">(</span><span class="n">MAP_SRC_0</span> <span class="n">Pipe</span> <span class="mi">0</span> <span class="n">DT</span><span class="p">):</span> <span class="mh">0x24</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">MAP_SRC_0</span> <span class="p">(</span><span class="n">MAP_SRC_0</span> <span class="n">Pipe</span> <span class="mi">0</span> <span class="n">VC</span><span class="p">):</span> <span class="mh">0x0</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x09</span><span class="p">,</span><span class="mh">0x0E</span><span class="p">,</span><span class="mh">0x24</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_TX__0</span> <span class="p">:</span> <span class="n">MIPI_TX14</span> <span class="o">|</span> <span class="n">MAP_DST_0</span> <span class="p">(</span><span class="n">MAP_DST_0</span> <span class="n">Pipe</span> <span class="mi">0</span> <span class="n">DT</span><span class="p">):</span> <span class="mh">0x24</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">MAP_DST_0</span> <span class="p">(</span><span class="n">MAP_DST_0</span> <span class="n">Pipe</span> <span class="mi">0</span> <span class="n">VC</span><span class="p">):</span> <span class="mh">0x0</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x09</span><span class="p">,</span><span class="mh">0x0F</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_TX__0</span> <span class="p">:</span> <span class="n">MIPI_TX15</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">MAP_SRC_1</span> <span class="p">(</span><span class="n">MAP_SRC_1</span> <span class="n">Pipe</span> <span class="mi">0</span> <span class="n">DT</span><span class="p">):</span> <span class="mh">0x0</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">MAP_SRC_1</span> <span class="p">(</span><span class="n">MAP_SRC_1</span> <span class="n">Pipe</span> <span class="mi">0</span> <span class="n">VC</span><span class="p">):</span> <span class="mh">0x0</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x09</span><span class="p">,</span><span class="mh">0x10</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_TX__0</span> <span class="p">:</span> <span class="n">MIPI_TX16</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">MAP_DST_1</span> <span class="p">(</span><span class="n">MAP_DST_1</span> <span class="n">Pipe</span> <span class="mi">0</span> <span class="n">DT</span><span class="p">):</span> <span class="mh">0x0</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">MAP_DST_1</span> <span class="p">(</span><span class="n">MAP_DST_1</span> <span class="n">Pipe</span> <span class="mi">0</span> <span class="n">VC</span><span class="p">):</span> <span class="mh">0x0</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x09</span><span class="p">,</span><span class="mh">0x11</span><span class="p">,</span><span class="mh">0x01</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_TX__0</span> <span class="p">:</span> <span class="n">MIPI_TX17</span> <span class="o">|</span> <span class="n">MAP_SRC_2</span> <span class="p">(</span><span class="n">MAP_SRC_2</span> <span class="n">Pipe</span> <span class="mi">0</span> <span class="n">DT</span><span class="p">):</span> <span class="mh">0x1</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">MAP_SRC_2</span> <span class="p">(</span><span class="n">MAP_SRC_2</span> <span class="n">Pipe</span> <span class="mi">0</span> <span class="n">VC</span><span class="p">):</span> <span class="mh">0x0</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x09</span><span class="p">,</span><span class="mh">0x12</span><span class="p">,</span><span class="mh">0x01</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_TX__0</span> <span class="p">:</span> <span class="n">MIPI_TX18</span> <span class="o">|</span> <span class="n">MAP_DST_2</span> <span class="p">(</span><span class="n">MAP_DST_2</span> <span class="n">Pipe</span> <span class="mi">0</span> <span class="n">DT</span><span class="p">):</span> <span class="mh">0x1</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">MAP_DST_2</span> <span class="p">(</span><span class="n">MAP_DST_2</span> <span class="n">Pipe</span> <span class="mi">0</span> <span class="n">VC</span><span class="p">):</span> <span class="mh">0x0</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x09</span><span class="p">,</span><span class="mh">0x2D</span><span class="p">,</span><span class="mh">0x2A</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_TX__0</span> <span class="p">:</span> <span class="n">MIPI_TX45</span> <span class="o">|</span> <span class="n">MAP_DPHY_DEST_0</span> <span class="p">(</span><span class="n">MAP_DPHY_DST_0</span> <span class="n">Pipe</span> <span class="mi">0</span><span class="p">):</span> <span class="mh">0x2</span> <span class="o">|</span> <span class="n">MAP_DPHY_DEST_1</span> <span class="p">(</span><span class="n">MAP_DPHY_DST_1</span> <span class="n">Pipe</span> <span class="mi">0</span><span class="p">):</span> <span class="mh">0x2</span> <span class="o">|</span> <span class="n">MAP_DPHY_DEST_2</span> <span class="p">(</span><span class="n">MAP_DPHY_DST_2</span> <span class="n">Pipe</span> <span class="mi">0</span><span class="p">):</span> <span class="mh">0x2</span>
+<span class="o">//</span> <span class="n">Double</span> <span class="n">Mode</span> <span class="n">Configuration</span>
+<span class="o">//</span> <span class="n">MIPI</span> <span class="n">D</span><span class="o">-</span><span class="n">PHY</span> <span class="n">Configuration</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x08</span><span class="p">,</span><span class="mh">0xA0</span><span class="p">,</span><span class="mh">0x04</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_PHY</span> <span class="p">:</span> <span class="n">MIPI_PHY0</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">phy_4x2</span> <span class="p">(</span><span class="n">Port</span> <span class="n">Configuration</span><span class="p">):</span> <span class="mi">2</span> <span class="p">(</span><span class="mi">1</span><span class="n">x4</span><span class="p">)</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x09</span><span class="p">,</span><span class="mh">0x8A</span><span class="p">,</span><span class="mh">0xD0</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_TX__2</span> <span class="p">:</span> <span class="n">MIPI_TX10</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">CSI2_LANE_CNT</span> <span class="p">(</span><span class="n">Port</span> <span class="n">B</span> <span class="o">-</span> <span class="n">Lane</span> <span class="n">Count</span><span class="p">):</span> <span class="mi">4</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x08</span><span class="p">,</span><span class="mh">0xA4</span><span class="p">,</span><span class="mh">0xE4</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_PHY</span> <span class="p">:</span> <span class="n">MIPI_PHY4</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">phy2_lane_map</span> <span class="p">(</span><span class="n">Lane</span> <span class="n">Map</span> <span class="o">-</span> <span class="n">PHY2</span> <span class="n">D0</span><span class="p">):</span> <span class="n">Lane</span> <span class="mi">0</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">phy2_lane_map</span> <span class="p">(</span><span class="n">Lane</span> <span class="n">Map</span> <span class="o">-</span> <span class="n">PHY2</span> <span class="n">D1</span><span class="p">):</span> <span class="n">Lane</span> <span class="mi">1</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">phy3_lane_map</span> <span class="p">(</span><span class="n">Lane</span> <span class="n">Map</span> <span class="o">-</span> <span class="n">PHY3</span> <span class="n">D0</span><span class="p">):</span> <span class="n">Lane</span> <span class="mi">2</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">phy3_lane_map</span> <span class="p">(</span><span class="n">Lane</span> <span class="n">Map</span> <span class="o">-</span> <span class="n">PHY3</span> <span class="n">D1</span><span class="p">):</span> <span class="n">Lane</span> <span class="mi">3</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x08</span><span class="p">,</span><span class="mh">0xA6</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_PHY</span> <span class="p">:</span> <span class="n">MIPI_PHY6</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">phy2_pol_map</span> <span class="p">(</span><span class="n">Polarity</span> <span class="o">-</span> <span class="n">PHY2</span> <span class="n">Lane</span> <span class="mi">0</span><span class="p">):</span> <span class="n">Normal</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">phy2_pol_map</span> <span class="p">(</span><span class="n">Polarity</span> <span class="o">-</span> <span class="n">PHY2</span> <span class="n">Lane</span> <span class="mi">1</span><span class="p">):</span> <span class="n">Normal</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">phy3_pol_map</span> <span class="p">(</span><span class="n">Polarity</span> <span class="o">-</span> <span class="n">PHY3</span> <span class="n">Lane</span> <span class="mi">0</span><span class="p">):</span> <span class="n">Normal</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">phy3_pol_map</span> <span class="p">(</span><span class="n">Polarity</span> <span class="o">-</span> <span class="n">PHY3</span> <span class="n">Lane</span> <span class="mi">1</span><span class="p">):</span> <span class="n">Normal</span> <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">phy2_pol_map</span> <span class="p">(</span><span class="n">Polarity</span> <span class="o">-</span> <span class="n">PHY2</span> <span class="n">Clock</span> <span class="n">Lane</span><span class="p">):</span> <span class="n">Normal</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x09</span><span class="p">,</span><span class="mh">0x83</span><span class="p">,</span><span class="mh">0x07</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_TX__2</span> <span class="p">:</span> <span class="n">MIPI_TX3</span> <span class="o">|</span> <span class="n">DESKEW_INIT</span> <span class="p">(</span><span class="n">Controller</span> <span class="mi">2</span> <span class="n">Auto</span> <span class="n">Initial</span> <span class="n">Deskew</span><span class="p">):</span> <span class="n">Disabled</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x09</span><span class="p">,</span><span class="mh">0x84</span><span class="p">,</span><span class="mh">0x01</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_TX__2</span> <span class="p">:</span> <span class="n">MIPI_TX4</span> <span class="o">|</span> <span class="n">DESKEW_PER</span> <span class="p">(</span><span class="n">Controller</span> <span class="mi">2</span> <span class="n">Periodic</span> <span class="n">Deskew</span><span class="p">):</span> <span class="n">Disabled</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x1E</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0xF4</span><span class="p">,</span> <span class="o">//</span>  <span class="p">(</span><span class="n">config_soft_rst_n</span> <span class="o">-</span> <span class="n">PHY2</span><span class="p">):</span> <span class="mh">0x0</span>
+<span class="o">//</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">predefined</span> <span class="p">(</span><span class="n">coarse</span><span class="p">)</span> <span class="n">CSI</span> <span class="n">output</span> <span class="n">frequency</span>
+<span class="o">//</span> <span class="n">CSI</span> <span class="n">Phy</span> <span class="mi">2</span> <span class="ow">is</span> <span class="mi">1500</span> <span class="n">Mbps</span><span class="o">/</span><span class="n">lane</span><span class="o">.</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x1E</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0xF4</span><span class="p">,</span> <span class="o">//</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x04</span><span class="p">,</span><span class="mh">0x1B</span><span class="p">,</span><span class="mh">0x2F</span><span class="p">,</span> <span class="o">//</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x1E</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0xF5</span><span class="p">,</span> <span class="o">//</span>  <span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span>  <span class="p">(</span><span class="n">config_soft_rst_n</span> <span class="o">-</span> <span class="n">PHY2</span><span class="p">):</span> <span class="mh">0x1</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x08</span><span class="p">,</span><span class="mh">0xA2</span><span class="p">,</span><span class="mh">0xC4</span><span class="p">,</span> <span class="o">//</span> <span class="n">MIPI_PHY</span> <span class="p">:</span> <span class="n">MIPI_PHY2</span> <span class="o">|</span> <span class="n">phy_Stdby_n</span> <span class="p">(</span><span class="n">phy_Stdby_0</span><span class="p">):</span> <span class="n">Put</span> <span class="n">PHY0</span> <span class="ow">in</span> <span class="n">standby</span> <span class="n">mode</span> <span class="o">|</span> <span class="n">phy_Stdby_n</span> <span class="p">(</span><span class="n">phy_Stdby_1</span><span class="p">):</span> <span class="n">Put</span> <span class="n">PHY1</span> <span class="ow">in</span> <span class="n">standby</span> <span class="n">mode</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x4E</span><span class="p">,</span><span class="mh">0x04</span><span class="p">,</span><span class="mh">0x0B</span><span class="p">,</span><span class="mh">0x02</span><span class="p">,</span> <span class="o">//</span> <span class="n">BACKTOP</span> <span class="p">:</span> <span class="n">BACKTOP12</span> <span class="o">|</span> <span class="n">CSI_OUT_EN</span> <span class="p">(</span><span class="n">CSI_OUT_EN</span><span class="p">):</span> <span class="n">CSI</span> <span class="n">output</span> <span class="n">enabled</span>
+<span class="o">//</span> <span class="n">Video</span> <span class="n">Transmit</span> <span class="n">Configuration</span> <span class="k">for</span> <span class="n">Serializer</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x84</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0x02</span><span class="p">,</span><span class="mh">0x43</span><span class="p">,</span> <span class="o">//</span> <span class="n">DEV</span> <span class="p">:</span> <span class="n">REG2</span> <span class="o">|</span> <span class="n">VID_TX_EN_Z</span> <span class="p">(</span><span class="n">VID_TX_EN_Z</span><span class="p">):</span> <span class="n">Enabled</span>
+<span class="mh">0x04</span><span class="p">,</span><span class="mh">0x84</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0x02</span><span class="p">,</span><span class="mh">0x43</span><span class="p">,</span> <span class="o">//</span> <span class="n">DEV</span> <span class="p">:</span> <span class="n">REG2</span>
+
+<span class="o">|</span> <span class="p">(</span><span class="n">Default</span><span class="p">)</span> <span class="n">VID_TX_EN_Z</span> <span class="p">(</span><span class="n">VID_TX_EN_Z</span><span class="p">):</span> <span class="n">Enabled</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2025, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

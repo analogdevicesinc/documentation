@@ -1,0 +1,81 @@
+AD7091R5 ADC Linux Driver
+=========================
+
+Supported Devices
+-----------------
+
+-  :adi:`AD7091R-5`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`EVAL-AD7091R-5SDZ`
+
+Description
+-----------
+
+The AD7091R-5 is a 12-bit, multichannel, ultralow power, successive approximation analog-to-digital converter (ADC).
+
+.. image:: https://wiki.analog.com/_media/software/driver/linux/ad7091r5_bd.png
+   :align: center
+   :width: 400px
+
+Hardware configuration
+======================
+
+.. image:: https://wiki.analog.com/_media/software/driver/linux/ad7091r5.jpg
+   :align: center
+   :width: 600px
+
+Adding Linux driver support
+===========================
+
+Enabling the driver
+-------------------
+
+Configure kernel with "make menuconfig" (alternatively use "make xconfig" or "make qconfig")
+
+.. hint::
+
+   The AD7091R5 Driver depends on **CONFIG_I2C**
+
+
+::
+
+   Linux Kernel Configuration
+       Device Drivers  --->
+           ...
+           <*>     Industrial I/O support --->
+               --- Industrial I/O support
+               ...
+               Analog to digital converters  ---> 
+                   ...
+                   <*>   Analog Devices AD7091R5 ADC driver
+                   ...
+               ...
+           ...
+
+Adding a device tree entry
+--------------------------
+
+Required properties
+~~~~~~~~~~~~~~~~~~~
+
+-  **compatible**: Must be "adi,ad7091r5".
+-  **reg**: I2C address for the device.
+
+Optional properties
+~~~~~~~~~~~~~~~~~~~
+
+-  **vref-supply**: phandle + specifier to a regulator for the external VREF supply. If no external VREF is supplied this attribute should be omitted.
+   see: Documentation/devicetree/bindings/regulator/regulator.txt
+
+Device tree example
+~~~~~~~~~~~~~~~~~~~
+
+::
+
+   adc@0 {
+       compatible: "adi,ad7091r5";
+       reg = <0x2F>;
+   };

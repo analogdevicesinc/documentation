@@ -1,0 +1,341 @@
+LTC6953 - No-OS Driver
+======================
+
+Supported Devices
+-----------------
+
+-  :adi:`LTC6953`
+
+Evaluation Boards
+-----------------
+
+-  :adi:`DC2610A`
+
+| 
+| ===== Overview ===== The :adi:`LTC6953` is a high performance, ultralow jitter, JESD204B/C clock distribution IC. The :adi:`LTC6953`\ ’s 11 outputs can be configured as up to five JESD204B/C subclass 1 device clock/SYSREF pairs plus one general-purpose output, or simply 11 general-purpose clock outputs for non-JESD204B/C applications. Each output has its own individually programmable frequency divider and output driver. All outputs can also be synchronized and set to precise phase alignment using individual coarse half cycle digital delays and fine analog time delays.
+
+For applications requiring more than 11 total outputs, multiple LTC6953s can be connected together with :adi:`LTC6952`'s and :adi:`LTC6955`'s using the EZSync or ParallelSync synchronization protocols.
+
+Applications
+------------
+
+-  High Performance Data Converter Clocking
+-  Wireless Infrastructure
+-  Test and Measurement
+
+.. container:: center
+
+
+   ..
+
+|image1|
+
+.. container:: center
+
+   *<fc #000000>DC2610A (with LTC6953 on-board chip) </fc>*
+
+
+ADI No-OS
+~~~~~~~~~
+
+The goal of ADI Microcontroller No-OS is to provide reference projects for lower end processors, which can't run Linux or aren't running a specific operating system, and to help those customers using microcontrollers with ADI parts. ADI No-OS offers **generic drivers**, which can be used as a base for any microcontroller platform and also **example projects**, which are using these drivers on various microcontroller platforms.
+
+| For more information about ADI No-OS and supported microcontroller platforms, visit the :doc:`No-OS User Guide </wiki-migration/resources/no-os>`.
+| ===== LTC6953 ADI No-OS Driver =====
+
+Driver Source Code
+------------------
+
+The source code for the LTC6953 driver can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of LTC6953 Driver|
+
+   -
+
+   |Implementation of LTC6953 Driver|
+
+The LTC6953 driver also uses the ADI utility library, so make sure you add the necessary files to your project. The source code for the utility library can be found here:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Header file of ADI util library|
+
+   -
+
+   |Implementation file of ADI util library|
+
+| To use the LTC6953 No-OS Driver, you need to provide the specific implementation for the communication APIs as well as the specific data types to be used.
+| If SPI communication is chosen, these are the three functions to be called by the LTC6953 driver and have to be implemented:
+
+.. container:: center box
+
+   
+   +--------------------------------+---------------------------------------------+
+   | Function                       | Description                                 |
+   +================================+=============================================+
+   | **no_os_spi_init()**           | initializes the communication peripheral    |
+   +--------------------------------+---------------------------------------------+
+   | **no_os_spi_write_and_read()** | writes and reads data to or from the device |
+   +--------------------------------+---------------------------------------------+
+   | **no_os_spi_remove()**         | deinitializes the communication peripheral  |
+   +--------------------------------+---------------------------------------------+
+   
+
+
+And these are the two data types that have to be defined:
+
+.. container:: center box
+
+   
+   +--------------------------+---------------------------------------------------------+
+   | Function                 | Description                                             |
+   +==========================+=========================================================+
+   | **no_os_spi_desc**       | structure holding the SPI descriptor                    |
+   +--------------------------+---------------------------------------------------------+
+   | **no_os_spi_init_param** | structure holding the parameters for SPI initialization |
+   +--------------------------+---------------------------------------------------------+
+   
+
+
+An example of a header file containing the prototypes of the functions which have to be implemented, along with some generic data types they are using, can be found below:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -
+
+
+   
+   |Generic header file for SPI Communication APIs|
+
+Code Documentation
+------------------
+
+Source code documentation for the driver is automatically generated using the Doxygen tool and can be accessed in these links:
+
+.. admonition:: Download
+   :class: download
+
+   
+   -  `LTC6953 Header file <http://analogdevicesinc.github.io/no-OS/doxygen/ltc6953_8h.html>`_
+   -  `LTC6953 Source file <http://analogdevicesinc.github.io/no-OS/doxygen/ltc6953_8c.html>`_
+   
+
+
+Device Configuration
+--------------------
+
+| 
+| === Driver Initialization === To use the device, you need to provide the support for the communication protocol (SPI) as mentioned above.
+| The first API function to be called is **ltc6953_init**. Make sure that it returns 0, this indicates a successful driver initialization.
+
+Reset Options
+~~~~~~~~~~~~~
+
+To reset the device, you may use below function:
+
+.. container:: center box
+
+   
+   ================= ===========================================
+   Function          Description
+   ================= ===========================================
+   **ltc6953_reset** has the same effect as power-on-reset (POR)
+   ================= ===========================================
+   
+
+
+Power Mode Options
+~~~~~~~~~~~~~~~~~~
+
+To set the power mode of the device, you may use the following functions:
+
+.. container:: center box
+
+   
+   ========================== ======================================
+   Function                   Description
+   ========================== ======================================
+   **ltc6953_power_down_all** powers down all output channels
+   **ltc6953_power_down_vco** powers down VCO input
+   **ltc6953_power_down**     sets power mode of a specified channel
+   ========================== ======================================
+   
+
+
+Synchronization Settings
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+To configure the synchronization, you may use the following functions:
+
+.. container:: center box
+
+   
+   ======================= ===============================
+   Function                Description
+   ======================= ===============================
+   **ltc6953_ezsync_mode** EZSync Mode
+   **ltc6953_ssrq_mode**   Software SYNC or SYSREF request
+   **ltc6953_sync_mode**   Enable Synchronization
+   ======================= ===============================
+   
+
+
+Output Channels Configuration
+-----------------------------
+
+Each output channel can be configured separately.
+
+Channel Divider
+~~~~~~~~~~~~~~~
+
+The 11 independent, identical output dividers are driven directly from the input buffer. They divide the input frequency by the output divider value to produce a 50% duty cycle output signal at frequency in 1 of the 11 channels. The function **ltc6953_set_output_divider** sets the values for the corresponding registers based on the value of the divider.
+
+Channel Delays
+~~~~~~~~~~~~~~
+
+Synchronization allows the start times of each output divider to be delayed by the value programmed into the digital delay bits (DDELx). The analog delay blocks (ADELx) are useful in trimming signal timing differences caused by non-ideal PCB routing.
+
+.. container:: center box
+
+   
+   ============================= ====================================
+   Function                      Description
+   ============================= ====================================
+   **ltc6953_set_digital_delay** sets digital delay of output channel
+   **ltc6953_set_analog_delay**  sets analog delay of output channel
+   ============================= ====================================
+   
+
+
+Channel SYNC Enable
+~~~~~~~~~~~~~~~~~~~
+
+| Enables SYNC or SYSREF on output channel. Use function **ltc6953_enable_sync**.
+| === Channel SYSREF Mode === Can be configured when output channel's SRQEN bit is set to 1. Use function **ltc6953_set_mode**.
+
+.. container:: center box
+
+   
+   ==== ====================
+   Mode Description
+   ==== ====================
+   0    Free Run
+   1    Gated Pulse
+   2    Request Pass-Through
+   3    2\*SYSCT Pulses
+   ==== ====================
+   
+
+
+Channel Output Inversion
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The OINV bits of the channel can selectively invert the sense of each output to facilitate board routing without having to cross matched-length traces. Use function **ltc6953_invert_output**.
+
+| 
+| ==== Driver Initialization Example ====
+
+Example Initialization Using Maxim SDK as Platform
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: c
+
+   #include <stdint.h>
+   #include <stdlib.h>
+   #include "ltc6953.h"
+
+   void main()
+   {
+
+       int ret;
+       bool is_ok;
+
+       struct max_spi_init_param max_spi_extra = {
+       .num_slaves = 1,
+       .polarity = SPI_SS_POL_LOW,
+       .vssel = MXC_GPIO_VSSEL_VDDIOH,
+       };
+
+       const struct no_os_spi_init_param ltc6953_spi_ip = {
+       .device_id = 1,
+       .max_speed_hz = 2000000,
+       .chip_select = 0,
+       .mode = NO_OS_SPI_MODE_0,
+       .bit_order = NO_OS_SPI_BIT_ORDER_MSB_FIRST,
+       .platform_ops = &max_spi_ops,
+       .extra = &max_spi_extra,
+       .parent = NULL,
+       };
+
+       struct ltc6953_dev *ltc6953_dev;
+       struct ltc6953_init_param ltc6953_dev_ip = {
+           .spi_init = ltc6953_spi_ip,
+       };
+       
+       ret = ltc6953_init(&ltc6953_dev, &ltc6953_dev_ip);
+       if (ret) 
+               return ret;
+
+       /* Enable VCO Input Filter */
+       ret = ltc6953_enable_filter(ltc6953_dev, true);
+       if (ret)
+               return ret;
+
+       /* Configure Single Channel */
+       uint32_t channel = 0;
+
+       /* Set Power Mode for Channel 0 */
+       ret = ltc6953_power_mode(ltc6953_dev, channel, 0x00);
+       if (ret)
+           return ret;
+
+       /* Set Output Divider for Channel 0*/
+       ret = ltc6953_set_output_divider(ltc6953_dev, channel, 0x1300);
+       if (ret)
+               return ret;
+
+       /* Read register h00 */
+       ret = ltc6953_vco_status(ltc6953_dev, &is_ok);
+       if (ret)
+           return ret;
+
+       printf("%d", (uint8_t)is_ok);
+
+       MXC_Delay(5000);
+
+       ret = ltc6953_power_down_all(ltc6953_dev, true);
+       if (ret)
+               return ret;
+
+       ret = ltc6953_power_down_vco(ltc6953_dev, true);
+       if (ret)
+           return ret;
+
+       ret = ltc6953_remove(ltc6953_dev);
+       if (ret)
+               return ret;
+   }
+
+.. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/ltc6953top-web.png
+   :width: 400px
+.. |Header file of LTC6953 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/ltc6953/ltc6953`.h
+.. |Implementation of LTC6953 Driver| image:: https://wiki.analog.com/_media/:git-no-OS:`drivers/frequency/ltc6953/ltc6953`.c
+.. |Header file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_util`.h
+.. |Implementation file of ADI util library| image:: https://wiki.analog.com/_media/:git-no-OS:`util/no_os_util`.c
+.. |Generic header file for SPI Communication APIs| image:: https://wiki.analog.com/_media/:git-no-OS:`include/no_os_spi`.h
