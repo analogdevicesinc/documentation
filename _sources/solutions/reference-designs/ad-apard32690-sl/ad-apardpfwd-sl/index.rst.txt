@@ -90,6 +90,9 @@ port independently. To utilize this feature:
 .. csv-table::
    :file: adin2111_power_down_selection.csv
 
+.. clear-content::
+   :break:
+
 Secondary Side
 ~~~~~~~~~~~~~~
 
