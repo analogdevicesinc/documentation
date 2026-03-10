@@ -24,6 +24,7 @@ needs_extensions = {
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store',
                     'solutions/reference-designs/common/zcu102-zynqmp-setup.rst']
 source_suffix = '.rst'
+suppress_warnings = ['misc.highlighting_failure']
 
 # -- Custom extensions configuration ------------------------------------------
 
